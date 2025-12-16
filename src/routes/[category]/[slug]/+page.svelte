@@ -8,3 +8,10 @@
   <h1>{data.title}</h1>
   {@html data.contentHTML}
 </article>
+
+<style lang="sass">
+  @reference '#app.css'
+
+  :global(figure)
+    @apply after:block after:inner-border
+</style>

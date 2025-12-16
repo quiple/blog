@@ -30,6 +30,7 @@
     "gray-matter": "^4.0.3",
     "husky": "^9.1.7",
     "marked": "^17.0.1",
+    "marked-directive": "^1.0.7",
     "marked-footnote": "^1.4.0",
     "marked-smartypants-lite": "^1.0.3",
     "marked-subsuper-text": "^1.0.4",

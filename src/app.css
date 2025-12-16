@@ -12,7 +12,7 @@
   --font-zhHant: Geist-Variable, PingFang TC, Noto Sans TC, Microsoft JhengHei UI, ui-sans-serif, system-ui, sans-serif;
   --default-font-feature-settings: 'palt' 1, 'ss01' 1, 'ss03' 1;
   --header-height: 5.25rem;
-  --footer-height: 5rem;
+  --footer-height: 0;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
@@ -154,16 +154,16 @@
 @utility prose-shadcn {
   @apply prose max-w-none prose-zinc dark:prose-invert;
   h1 {
-    @apply scroll-m-20 text-4xl font-bold tracking-tight;
+    @apply scroll-m-(--header-height) text-4xl leading-tight font-bold tracking-tight;
   }
   h2 {
-    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+    @apply scroll-m-(--header-height) border-b pb-2 text-3xl leading-snug font-semibold tracking-tight transition-colors first:mt-0;
   }
   h3 {
-    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+    @apply scroll-m-(--header-height) text-2xl font-semibold tracking-tight;
   }
   h4 {
-    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+    @apply scroll-m-(--header-height) text-xl font-semibold tracking-tight;
   }
   p {
     @apply leading-7 not-first:mt-6;
@@ -190,6 +190,6 @@
     @apply [&>a]:before:content-['['] [&>a]:after:content-[']'];
   }
   a {
-    @apply text-blue-500 no-underline dark:text-blue-400;
+    @apply scroll-m-(--header-height) text-blue-500 no-underline dark:text-blue-400;
   }
 }

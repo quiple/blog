@@ -2,10 +2,23 @@ import {error} from '@sveltejs/kit'
 import {blogPosts, getMetadataFromMatter} from '$lib/content'
 import matter from 'gray-matter'
 import {marked} from 'marked'
+import {createDirectives, presetDirectiveConfigs, type DirectiveConfig} from 'marked-directive'
 import markedFootnote from 'marked-footnote'
 import {markedSmartypantsLite} from 'marked-smartypants-lite'
 import markedSubSuper from 'marked-subsuper-text'
 import type {PageServerLoad} from './$types'
+
+const figureDirective: DirectiveConfig = {
+  level: 'block',
+  marker: '::',
+  renderer(token) {
+    if (token.meta.name === 'figure') {
+      return `<figure><img src="${token.attrs?.src}" alt="${token.text}"><figcaption>${token.text}</figcaption></figure>`
+    }
+
+    return false
+  },
+}
 
 export const load: PageServerLoad = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
@@ -15,6 +28,7 @@ export const load: PageServerLoad = async ({params}) => {
   const {content, data} = matter(rawContent)
 
   marked.use(markedSmartypantsLite())
+  marked.use(createDirectives([...presetDirectiveConfigs, figureDirective]))
   marked.use(markedSubSuper())
   marked.use(markedFootnote())
   const contentHTML = marked.parse(content)
