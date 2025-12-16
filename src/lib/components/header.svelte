@@ -7,26 +7,13 @@
   import {Input} from '$lib/components/ui/input/index'
   import {toggleMode} from 'mode-watcher'
 
-  const scrollY = 240 - 42
-
   let query = $state('')
   let inputElement = $state<HTMLInputElement | null>(null)
-  // let headerClassName = $derived($isBanner === true ? 'hero' : '')
 
   const onKeydown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && inputElement && document.activeElement === inputElement) {
       goto(`/search?q=${query.trim().replaceAll(' ', '+')}`)
     }
-  }
-
-  const onScroll = () => {
-    const path = page.url.pathname
-    const isMediaOrUserPage = path.startsWith('/anime/') || path.startsWith('/manga/') || path.startsWith('/user/')
-
-    // if ($isBanner !== null && isMediaOrUserPage) {
-    //   if (window.scrollY > scrollY) isBanner.set(false)
-    //   else isBanner.set(true)
-    // }
   }
 
   $effect(() => {
@@ -35,7 +22,7 @@
   })
 </script>
 
-<svelte:window on:keydown={onKeydown} on:scroll={onScroll} />
+<svelte:window on:keydown={onKeydown} />
 
 <header>
   <div class="gradient-blur">
