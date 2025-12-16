@@ -1,0 +1,22 @@
+trailingComma: 'all'
+tabWidth: 2
+semi: false
+singleQuote: true
+bracketSpacing: false
+printWidth: 120
+importOrder:
+  - '^svelte$'
+  - '<THIRD_PARTY_MODULES>'
+  - '^#.+'
+  - '^$.+'
+  - '^[.]'
+plugins:
+  - '@prettier/plugin-oxc'
+  - 'prettier-plugin-tailwindcss'
+  - 'prettier-plugin-svelte'
+  - '@ianvs/prettier-plugin-sort-imports'
+tailwindStylesheet: './src/app.css'
+overrides:
+  - files: '**/*.svelte'
+    options:
+      parser: svelte
