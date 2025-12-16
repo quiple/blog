@@ -186,4 +186,10 @@
   small {
     @apply text-sm leading-none font-medium;
   }
+  sup {
+    @apply [&>a]:before:content-['['] [&>a]:after:content-[']'];
+  }
+  a {
+    @apply text-blue-500 no-underline dark:text-blue-400;
+  }
 }
