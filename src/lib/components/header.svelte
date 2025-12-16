@@ -2,6 +2,7 @@
   import {LogIn, Menu, Moon, Search, Settings, Sun, User} from '@lucide/svelte'
   import {goto} from '$app/navigation'
   import {page} from '$app/state'
+  import Q from '$lib/components/q.svelte'
   import {Button} from '$lib/components/ui/button/index'
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index'
   import {Input} from '$lib/components/ui/input/index'
@@ -50,8 +51,7 @@
         </DropdownMenu.Content>
       </DropdownMenu.Root>
       <a href="/" class="flex items-center gap-1 self-center transition">
-        <span class="text-2xl font-extrabold tracking-tight">AniList</span>
-        <span class="font-light">한국어</span>
+        <Q class="w-9" />
       </a>
     </div>
 
@@ -93,7 +93,7 @@
       :global(input)
         @apply bg-muted-foreground/12 dark:bg-ring/12 border-primary-foreground/15 dark:border-foreground/15 placeholder:text-primary-foreground/56 dark:placeholder:text-foreground/56
     section
-      @apply relative container-x flex justify-between items-start gap-8 z-10
+      @apply relative container-x !max-w-full !px-6 flex justify-between items-start gap-8 z-10
     .gradient-blur
       @apply top-0 absolute md:fixed w-full h-[84px] bg-linear-to-b from-background/50 to-transparent transition
       & > div,

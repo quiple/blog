@@ -3,7 +3,6 @@
   import '#fonts.sass'
   import 'non.geist'
   import favicon from '$lib/assets/favicon.svg'
-  import Footer from '$lib/components/footer.svelte'
   import Header from '$lib/components/header.svelte'
   import {ModeWatcher} from 'mode-watcher'
 
@@ -19,8 +18,6 @@
 <main class="container-x">
   {@render children()}
 </main>
-
-<Footer />
 
 <style lang="sass">
   @reference '#app.css'

@@ -181,7 +181,7 @@
     @apply my-6 ms-6 list-disc [&>li]:mt-2;
   }
   code {
-    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold before:content-none after:content-none;
   }
   small {
     @apply text-sm leading-none font-medium;

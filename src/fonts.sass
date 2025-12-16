@@ -13,4 +13,4 @@ $plexjp-path: 'node_modules/@ibm/plex-sans-jp/fonts/complete/woff2/hinted'
         display: swap
       @if $family == IBMPlexSansJP
         size-adjust: 92%
-      src: url('/#{if($family == IBMPlexSansKR, $plexkr-path, $plexjp-path)}/#{$family}-#{$name}.woff2') format('woff2')
+      src: url('/#{if(sass($family == IBMPlexSansKR): $plexkr-path; else: $plexjp-path)}/#{$family}-#{$name}.woff2') format('woff2')
