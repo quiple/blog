@@ -12,6 +12,9 @@
 <style lang="sass">
   @reference '#app.css'
 
-  :global(figure)
-    @apply after:block after:inner-border
+  article
+    :global(figure)
+      @apply mx-auto max-w-fit flex flex-col items-start
+      & > :global(div)
+        @apply relative inner-border after:rounded-md rounded-md overflow-hidden
 </style>
