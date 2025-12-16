@@ -1,0 +1,16 @@
+$families: IBMPlexSansKR, IBMPlexSansJP
+$fonts: 100 ExtraLight, 200 Light, 300 Regular, 400 Text, 500 Medium, 600 SemiBold, 700 Bold
+$plexkr-path: 'node_modules/@ibm/plex-sans-kr/fonts/complete/woff2/hinted'
+$plexjp-path: 'node_modules/@ibm/plex-sans-jp/fonts/complete/woff2/hinted'
+
+@each $family in $families
+  @each $weight, $name in $fonts
+    @font-face
+      font:
+        family: #{$family}-web
+        style: normal
+        weight: $weight
+        display: swap
+      @if $family == IBMPlexSansJP
+        size-adjust: 92%
+      src: url('/#{if($family == IBMPlexSansKR, $plexkr-path, $plexjp-path)}/#{$family}-#{$name}.woff2') format('woff2')
