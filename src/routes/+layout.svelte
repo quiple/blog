@@ -1,6 +1,7 @@
 <script lang="ts">
   import '#app.css'
   import '#fonts.sass'
+  import 'non.geist'
   import favicon from '$lib/assets/favicon.svg'
   import Footer from '$lib/components/footer.svelte'
   import Header from '$lib/components/header.svelte'
@@ -15,4 +16,15 @@
 
 <Header />
 
-{@render children()}
+<main class="container-x">
+  {@render children()}
+</main>
+
+<Footer />
+
+<style lang="sass">
+  @reference '#app.css'
+
+  main
+    @apply min-h-[calc(100vh-var(--header-height)-var(--footer-height))]
+</style>
