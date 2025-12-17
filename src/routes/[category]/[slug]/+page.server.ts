@@ -37,11 +37,13 @@ export const load: PageServerLoad = async ({params}) => {
     },
   }
 
-  marked.use(markedSmartypantsLite())
-  marked.use(createDirectives([...presetDirectiveConfigs, figureDirective]))
-  marked.use(markedSubSuper())
-  marked.use(markedFootnote())
-  marked.use({renderer})
+  marked.use(
+    markedSmartypantsLite(),
+    createDirectives([...presetDirectiveConfigs, figureDirective]),
+    markedSubSuper(),
+    markedFootnote(),
+    {renderer},
+  )
   const contentHTML = marked.parse(content)
 
   const postMetaData = getMetadataFromMatter(params.category, params.slug, data)
