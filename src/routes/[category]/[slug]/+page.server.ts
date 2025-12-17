@@ -2,13 +2,13 @@ import {error} from '@sveltejs/kit'
 import {blogPosts, getMetadataFromMatter} from '$lib/content'
 import matter from 'gray-matter'
 import rehypeStringify from 'rehype-stringify'
+import {remark} from 'remark'
 import remarkCjkFriendly from 'remark-cjk-friendly'
 import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
-import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import smartypants from 'remark-smartypants'
-import {unified} from 'unified'
+import strip from 'strip-markdown'
 import type {PageServerLoad} from './$types'
 
 // const figureDirective: DirectiveConfig = {
@@ -41,17 +41,11 @@ export const load: PageServerLoad = async ({params}) => {
 
   const postMetaData = getMetadataFromMatter(params.category, params.slug, data)
   postMetaData.title = (
-    await unified()
-      .use(remarkParse)
-      .use(smartypants, {dashes: 'oldschool'})
-      .use(remarkRehype)
-      .use(rehypeStringify)
-      .process(postMetaData.title)
+    await remark().use(strip).use(smartypants, {dashes: 'oldschool'}).process(postMetaData.title)
   ).toString()
 
   const contentHTML = (
-    await unified()
-      .use(remarkParse)
+    await remark()
       .use(remarkDirective)
       .use(remarkGfm)
       .use(remarkCjkFriendly)
