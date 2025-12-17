@@ -1,5 +1,6 @@
 ---
 title: 원작자의 대사조차 퇴짜 맞는다?! 팬을 계속 사로잡는 ‘유유시키다움’의 비밀
+media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/27573
 pubDate: 2017-06-19
 ---

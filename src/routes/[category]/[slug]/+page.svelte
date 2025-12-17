@@ -5,7 +5,13 @@
 </script>
 
 <article>
-  <h1>{data.title}</h1>
+  <h1 class="mb-2!">{data.title}</h1>
+  <div class="metadata">
+    {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(data.pubDate)}{#if data.media}&#8194;&bullet;&#8194;<a
+        href={data.source}>{data.media}</a
+      >
+    {/if}
+  </div>
   {@html data.contentHTML}
 </article>
 
@@ -14,6 +20,10 @@
 
   article
     @apply prose-shadcn max-w-xl mx-auto text-justify
+    .metadata
+      @apply text-muted-foreground text-sm
+      a
+        @apply text-muted-foreground font-normal
     :global(figure)
       @apply mx-auto max-w-fit flex flex-col items-start
       & > :global(div)
