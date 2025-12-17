@@ -4,7 +4,7 @@
   let {data}: PageProps = $props()
 </script>
 
-<article class="prose-shadcn max-w-xl mx-auto text-justify">
+<article>
   <h1>{data.title}</h1>
   {@html data.contentHTML}
 </article>
@@ -13,6 +13,7 @@
   @reference '#app.css'
 
   article
+    @apply prose-shadcn max-w-xl mx-auto text-justify
     :global(figure)
       @apply mx-auto max-w-fit flex flex-col items-start
       & > :global(div)
