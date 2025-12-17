@@ -23,5 +23,5 @@
   @reference '#app.css'
 
   main
-    @apply min-h-[calc(100vh-var(--header-height)-var(--footer-height))]
+    @apply min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-8
 </style>
