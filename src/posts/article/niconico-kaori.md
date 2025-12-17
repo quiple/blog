@@ -93,8 +93,6 @@ pubDate: 2017-03-16
 **かおり氏：**
 いつもの日常のなかにある等身大のスペシャルイベントなんですよね。このお泊まり会をアバンに持ってきたいというのは、最初のシナリオ会議のときに私から提案させていただいたものです。パジャマパーティーがあって、縁の制服お風呂や唯の裸すき焼きの妄想シーンがあってと、サービスもてんこ盛りですからね（笑）。そのうえ相川さんたちも同じ日にお泊まり会をしているので、グループ同士のやり取りまであって、『ゆゆ式』サイズの特別感と同時に、みんなの仲のいい雰囲気も垣間見れる素敵なエピソードだなと。
 
-#gallery-1 { margin: auto; } #gallery-1 .gallery-item { float: left; margin-top: 10px; text-align: center; width: 50%; } #gallery-1 img { border: 2px solid #cfcfcf; } #gallery-1 .gallery-caption { margin-left: 0; } /\* see gallery_shortcode() in wp-includes/media.php \*/
-
 ![](https://originalnews.nico/wp-content/uploads/2017/03/yu5.jpg)
 ![](https://originalnews.nico/wp-content/uploads/2017/03/yu52.jpg)
 ©三上小又・芳文社／ゆゆ式SP情報処理部
@@ -124,8 +122,6 @@ TVシリーズのときは原作の第4巻までのエピソードがメイン�
 
 **かおり氏：**
 まずTVシリーズのことは忘れて、晋之さんの絵の魅力、女の子を柔らかくかわいらしく描くところを意識してデザインしてくださいとお願いしました。また頭身の基準にしていただいたのは、カバー裏表紙のイラストです。原作ではカラーイラストと、扉絵と、4コマとでそれぞれ頭身が描き分けてありますし、4コマのなかに限っても、ギャグの度合いによってコマごとにいろんなデフォルメがかかっているので、一番リアルめの頭身の立ち姿が、しかもカラーで確認できるのが、カバー裏表紙だったんです。
-
-#gallery-2 { margin: auto; } #gallery-2 .gallery-item { float: left; margin-top: 10px; text-align: center; width: 33%; } #gallery-2 img { border: 2px solid #cfcfcf; } #gallery-2 .gallery-caption { margin-left: 0; } /\* see gallery_shortcode() in wp-includes/media.php \*/
 
 ![](https://originalnews.nico/wp-content/uploads/2017/03/yu7-600x424.png)
 ![](https://originalnews.nico/wp-content/uploads/2017/03/yu72-600x424.png)
@@ -161,8 +157,6 @@ TVシリーズのころは場面転換に便利だからという理由もあっ
 目のデザインも、最近の原作のカラーイラストに合わせて、瞳孔のUの字を実線ではなく太めの色トレスのみにして、瞳の下のほうに二段階に撮影処理を入れてもらうなど、こだわったポイントですね。
 あと細かいところでは、髪の毛のハイライトも原作の変化に合わせて、太い一本線の先にスーっと消し込むグラデーション処理をかけてあります。ただ長谷川だけは丸いハイライトで、しかもよく見ると2色になってるんですよ。原作第8巻の表紙がわかりやすいんですけど、明るいハイライトとちょっと暗めのハイライトの2種類があって、手間はかかってしまうんですけどお願いして再現していただきました。撮影監督の若林（優）さんも『ゆゆ式』が大好きなので、「表紙のあの感じを出したいです！」とお伝えしたら「わかりました。やりましょう」と言ってくださって。そのおかげで、かなり再現度高くできたんじゃないかなと思います。
 
-#gallery-1 { margin: auto; } #gallery-1 .gallery-item { float: left; margin-top: 10px; text-align: center; width: 50%; } #gallery-1 img { border: 2px solid #cfcfcf; } #gallery-1 .gallery-caption { margin-left: 0; } /\* see gallery_shortcode() in wp-includes/media.php \*/
-
 ![](https://originalnews.nico/wp-content/uploads/2017/03/yu9.jpg)
 ![](https://originalnews.nico/wp-content/uploads/2017/03/yu92.jpg)
 ©三上小又・芳文社／ゆゆ式SP情報処理部
@@ -176,8 +170,6 @@ TVシリーズのころは場面転換に便利だからという理由もあっ
 
 **かおり氏：**
 美術も原作の変化を取り入れて大きく変えましたね。たとえば原作でも途中の巻から徐々に、背景の影のところにフリーハンドの縦線を入れる表現が増えてきて。この感じをアニメでも出したいと菱沼さんにお願いして、うまく再現していただきました。あとはTVシリーズと比べて光の感じも少し落ち着かせて、また今回は秋ということで、うろこ雲を何度か印象的に登場させるようにしています。TVシリーズでも季節感は大事にしたところなので、ここはこだわったポイントですね。
-
-#gallery-2 { margin: auto; } #gallery-2 .gallery-item { float: left; margin-top: 10px; text-align: center; width: 50%; } #gallery-2 img { border: 2px solid #cfcfcf; } #gallery-2 .gallery-caption { margin-left: 0; } /\* see gallery_shortcode() in wp-includes/media.php \*/
 
 ![](https://originalnews.nico/wp-content/uploads/2017/03/yu10.jpg)
 ![](https://originalnews.nico/wp-content/uploads/2017/03/yu101-after.jpg)
