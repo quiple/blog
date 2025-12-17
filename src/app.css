@@ -187,7 +187,7 @@
     @apply text-sm leading-none font-medium;
   }
   sup {
-    @apply [&>a]:before:content-['['] [&>a]:after:content-[']'];
+    @apply not-italic [&>a]:before:content-['['] [&>a]:after:content-[']'];
   }
   a {
     @apply scroll-m-(--header-height) text-blue-500 no-underline dark:text-blue-400;
