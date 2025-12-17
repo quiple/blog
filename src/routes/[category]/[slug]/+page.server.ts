@@ -35,7 +35,7 @@ export const load: PageServerLoad = async ({params}) => {
     await remark().use(strip).use(smartypants, {dashes: 'oldschool'}).process(postMetaData.title)
   ).toString()
 
-  const contentHTML = (
+  const contentHtml = (
     await remark()
       .use(remarkDirective)
       .use(figure)
@@ -47,9 +47,19 @@ export const load: PageServerLoad = async ({params}) => {
       .process(content)
   ).toString()
 
+  const contentPlainText = (
+    await remark()
+      .use(remarkGfm)
+      .use(remarkCjkFriendly)
+      .use(strip)
+      .use(smartypants, {dashes: 'oldschool'})
+      .process(content)
+  ).toString()
+
   return {
     ...postMetaData,
-    contentHTML,
+    contentHtml,
+    contentPlainText,
   }
 }
 

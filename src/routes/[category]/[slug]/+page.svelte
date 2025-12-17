@@ -4,6 +4,13 @@
   let {data}: PageProps = $props()
 </script>
 
+<svelte:head>
+  <title>{data.title}</title>
+  <meta property="og:title" content={data.title} />
+  <meta name="description" content={data.description ?? data.contentPlainText} />
+  <meta property="og:description" content={data.description} />
+</svelte:head>
+
 <article>
   <h1 class="mb-2!">{data.title}</h1>
   <div class="metadata">
@@ -14,7 +21,7 @@
       >
     {/if}
   </div>
-  {@html data.contentHTML}
+  {@html data.contentHtml}
 </article>
 
 <style lang="sass">
