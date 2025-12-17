@@ -39,11 +39,11 @@ export const load: PageServerLoad = async ({params}) => {
     await remark()
       .use(remarkDirective)
       .use(figure)
+      .use(remarkRehype)
+      .use(rehypeStringify)
       .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(smartypants, {dashes: 'oldschool'})
-      .use(remarkRehype)
-      .use(rehypeStringify)
       .process(content)
   ).toString()
 
