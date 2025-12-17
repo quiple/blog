@@ -7,6 +7,7 @@ import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
 import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
+import smartypants from 'remark-smartypants'
 import {unified} from 'unified'
 import type {PageServerLoad} from './$types'
 
@@ -39,6 +40,14 @@ export const load: PageServerLoad = async ({params}) => {
   const {content, data} = matter(rawContent)
 
   const postMetaData = getMetadataFromMatter(params.category, params.slug, data)
+  postMetaData.title = (
+    await unified()
+      .use(remarkParse)
+      .use(smartypants, {dashes: 'oldschool'})
+      .use(remarkRehype)
+      .use(rehypeStringify)
+      .process(postMetaData.title)
+  ).toString()
 
   const contentHTML = (
     await unified()
@@ -46,6 +55,7 @@ export const load: PageServerLoad = async ({params}) => {
       .use(remarkDirective)
       .use(remarkGfm)
       .use(remarkCjkFriendly)
+      .use(smartypants, {dashes: 'oldschool'})
       .use(remarkRehype)
       .use(rehypeStringify)
       .process(content)

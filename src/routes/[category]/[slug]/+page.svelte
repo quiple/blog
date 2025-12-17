@@ -1,16 +1,11 @@
 <script lang="ts">
-  import rehypeStringify from 'rehype-stringify'
-  import remarkParse from 'remark-parse'
-  import remarkRehype from 'remark-rehype'
-  import {unified} from 'unified'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()
-  const title = (await unified().use(remarkParse).use(remarkRehype).use(rehypeStringify).process(data.title)).toString()
 </script>
 
 <article>
-  <h1 class="mb-2!">{title}</h1>
+  <h1 class="mb-2!">{data.title}</h1>
   <div class="metadata">
     {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(data.pubDate)}{#if data.media}&#8194;&bullet;&#8194;<a
         target="_blank"
