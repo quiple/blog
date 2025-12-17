@@ -89,14 +89,3 @@ function figure() {
     })
   }
 }
-
-// const figureDirective: DirectiveConfig = {
-//   level: 'block',
-//   marker: '::',
-//   renderer(token) {
-//     if (token.meta.name === 'figure') {
-//       return `<figure><div class="self-center"><img class="not-prose" src="${token.attrs?.src}" alt="${token.text.replace(/<[^>]*>?/g, '')}"></div><figcaption>${token.text}</figcaption></figure>`
-//     }
-//     return false
-//   },
-// }
