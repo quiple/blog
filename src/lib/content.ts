@@ -15,6 +15,7 @@ export const blogPostMetadataSchema = v.object({
   slug: v.pipe(v.string(), v.trim()),
   title: v.pipe(v.string(), v.trim()),
   description: v.optional(v.pipe(v.string(), v.trim())),
+  source: v.optional(v.pipe(v.string(), v.url(), v.trim())),
   pubDate: v.pipe(v.date()),
   lastMod: v.optional(v.pipe(v.date())),
   tags: v.optional(
