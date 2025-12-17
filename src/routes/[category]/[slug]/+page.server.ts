@@ -1,6 +1,7 @@
 import {error} from '@sveltejs/kit'
 import {blogPosts, getMetadataFromMatter} from '$lib/content'
 import matter from 'gray-matter'
+import type {Root} from 'mdast'
 import rehypeStringify from 'rehype-stringify'
 import {remark} from 'remark'
 import remarkCjkFriendly from 'remark-cjk-friendly'
@@ -53,10 +54,11 @@ export const load: PageServerLoad = async ({params}) => {
 }
 
 function figure() {
-  return (tree: any) => {
+  return (tree: Root) => {
     visit(tree, function (node) {
       if (node.type === 'leafDirective') {
         if (node.name !== 'figure') return
+        console.log(node.data)
 
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
@@ -67,11 +69,13 @@ function figure() {
           {
             type: 'element',
             tagName: 'div',
+            properties: {class: 'self-center'},
             children: [
               {
                 type: 'element',
                 tagName: 'img',
                 properties: {src: src, class: 'not-prose'},
+                children: [],
               },
             ],
           },
@@ -79,9 +83,11 @@ function figure() {
             type: 'element',
             tagName: 'figcaption',
             properties: {},
+            children: [
+              // {type: 'text', value: data.value}
+            ],
           },
         ]
-        console.log(data)
       }
     })
   }
