@@ -9,18 +9,8 @@ import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
 import smartypants from 'remark-smartypants'
 import strip from 'strip-markdown'
+import {visit} from 'unist-util-visit'
 import type {PageServerLoad} from './$types'
-
-// const figureDirective: DirectiveConfig = {
-//   level: 'block',
-//   marker: '::',
-//   renderer(token) {
-//     if (token.meta.name === 'figure') {
-//       return `<figure><div class="self-center"><img class="not-prose" src="${token.attrs?.src}" alt="${token.text.replace(/<[^>]*>?/g, '')}"></div><figcaption>${token.text}</figcaption></figure>`
-//     }
-//     return false
-//   },
-// }
 
 // const renderer = {
 //   link(link: any) {
@@ -47,6 +37,7 @@ export const load: PageServerLoad = async ({params}) => {
   const contentHTML = (
     await remark()
       .use(remarkDirective)
+      .use(figure)
       .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(smartypants, {dashes: 'oldschool'})
@@ -60,3 +51,49 @@ export const load: PageServerLoad = async ({params}) => {
     contentHTML,
   }
 }
+
+function figure() {
+  return (tree: any) => {
+    visit(tree, function (node) {
+      if (node.type === 'leafDirective') {
+        if (node.name !== 'figure') return
+
+        const data = node.data || (node.data = {})
+        const attributes = node.attributes || {}
+        const src = attributes.src
+
+        data.hName = 'figure'
+        data.hChildren = [
+          {
+            type: 'element',
+            tagName: 'div',
+            children: [
+              {
+                type: 'element',
+                tagName: 'img',
+                properties: {src: src, class: 'not-prose'},
+              },
+            ],
+          },
+          {
+            type: 'element',
+            tagName: 'figcaption',
+            properties: {},
+          },
+        ]
+        console.log(data)
+      }
+    })
+  }
+}
+
+// const figureDirective: DirectiveConfig = {
+//   level: 'block',
+//   marker: '::',
+//   renderer(token) {
+//     if (token.meta.name === 'figure') {
+//       return `<figure><div class="self-center"><img class="not-prose" src="${token.attrs?.src}" alt="${token.text.replace(/<[^>]*>?/g, '')}"></div><figcaption>${token.text}</figcaption></figure>`
+//     }
+//     return false
+//   },
+// }
