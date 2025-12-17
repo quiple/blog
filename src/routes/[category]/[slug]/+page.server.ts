@@ -82,7 +82,7 @@ function figure() {
             type: 'element',
             tagName: 'figcaption',
             properties: {},
-            children: [{type: 'text', value: node.children[0].value}],
+            children: [{type: 'text', value: (node.children[0] as any).value}],
           },
         ]
       }
