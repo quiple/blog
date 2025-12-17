@@ -29,7 +29,6 @@ export const load: PageServerLoad = async ({params}) => {
 
   const renderer = {
     link(link: any) {
-      console.log(link.href)
       const linkStr = marked.Renderer.prototype.link.call(this, link)
       if (/^(https?:)?\/\//g.test(link.href)) {
         return linkStr.replace('<a', "<a target='_blank' rel='nofollow noreferrer noopener'")
