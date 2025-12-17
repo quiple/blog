@@ -8,6 +8,8 @@
   <h1 class="mb-2!">{data.title}</h1>
   <div class="metadata">
     {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(data.pubDate)}{#if data.media}&#8194;&bullet;&#8194;<a
+        target="_blank"
+        rel="nofollow noreferrer noopener"
         href={data.source}>{data.media}</a
       >
     {/if}
