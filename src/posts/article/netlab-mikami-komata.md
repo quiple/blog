@@ -1,5 +1,6 @@
 ---
 title: ‘실재감’ × ‘적당한 에로함’ = 《유유시키》? 작가 미카미 코마타에게 묻는 연재 10주년의 지금까지와 앞으로
+source: https://nlab.itmedia.co.jp/cont/articles/3286966/
 pubDate: 2019-01-26
 ---
 
