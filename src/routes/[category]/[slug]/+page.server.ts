@@ -58,7 +58,6 @@ function figure() {
     visit(tree, function (node) {
       if (node.type === 'leafDirective') {
         if (node.name !== 'figure') return
-        console.log(node.data)
 
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
@@ -83,9 +82,7 @@ function figure() {
             type: 'element',
             tagName: 'figcaption',
             properties: {},
-            children: [
-              // {type: 'text', value: data.value}
-            ],
+            children: [{type: 'text', value: ''}],
           },
         ]
       }
