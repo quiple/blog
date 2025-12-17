@@ -2,7 +2,6 @@ import {error} from '@sveltejs/kit'
 import {blogPosts, getMetadataFromMatter} from '$lib/content'
 import matter from 'gray-matter'
 import {marked} from 'marked'
-import type {Links} from 'marked'
 import {createDirectives, presetDirectiveConfigs, type DirectiveConfig} from 'marked-directive'
 import markedFootnote from 'marked-footnote'
 import {markedSmartypantsLite} from 'marked-smartypants-lite'
@@ -28,18 +27,10 @@ export const load: PageServerLoad = async ({params}) => {
 
   const {content, data} = matter(rawContent)
 
-  const renderer = {
-    link(href: string, title: string, text: string) {
-      const link = marked.Renderer.prototype.link.call(this, href, title, text)
-      return link.replace('<a', "<a target='_blank' rel='nofollow noreferrer noopener'")
-    },
-  }
-
   marked.use(markedSmartypantsLite())
   marked.use(createDirectives([...presetDirectiveConfigs, figureDirective]))
   marked.use(markedSubSuper())
   marked.use(markedFootnote())
-  marked.use({renderer})
   const contentHTML = marked.parse(content)
 
   const postMetaData = getMetadataFromMatter(params.category, params.slug, data)
