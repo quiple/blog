@@ -178,10 +178,10 @@
     @apply mt-6 border-s-2 ps-6 italic [&>p]:before:content-none [&>p]:after:content-none;
   }
   & > ul {
-    @apply my-6;
+    @apply my-6 ms-6;
   }
   ul {
-    @apply ms-6 list-disc [&>li]:mt-2;
+    @apply list-disc [&>li]:mt-2;
   }
   code {
     @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold before:content-none after:content-none;
