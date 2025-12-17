@@ -1,11 +1,15 @@
 <script lang="ts">
+  import {marked} from 'marked'
+  import {markedSmartypantsLite} from 'marked-smartypants-lite'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()
+
+  marked.use(markedSmartypantsLite())
 </script>
 
 <article>
-  <h1 class="mb-2!">{data.title}</h1>
+  <h1 class="mb-2!">{marked.parseInline(data.title)}</h1>
   <div class="metadata">
     {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(data.pubDate)}{#if data.media}&#8194;&bullet;&#8194;<a
         target="_blank"
