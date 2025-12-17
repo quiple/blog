@@ -2,22 +2,33 @@
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()
+
+  let jsonLd = $derived(
+    JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: data.title,
+      datePublished: `${data.pubDate}+09:00`,
+      image: ['https://example.com/photos/1x1/photo.jpg'],
+    }),
+  )
 </script>
 
 <svelte:head>
   <title>{data.title}</title>
   <meta property="og:title" content={data.title} />
-  <meta name="description" content={data.description ?? data.contentPlainText} />
-  <meta property="og:description" content={data.description} />
+  <meta name="description" content={data.description ?? data.contentSummary} />
+  <meta property="og:description" content={data.description ?? data.contentSummary} />
+  {@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
 <article>
   <h1 class="mb-2!">{data.title}</h1>
   <div class="metadata">
-    {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(data.pubDate)}{#if data.media}&#8194;&bullet;&#8194;<a
-        target="_blank"
-        rel="nofollow noreferrer noopener"
-        href={data.source}>{data.media}</a
+    {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
+      Date.parse(`${data.pubDate}+09:00`),
+    )}{#if data.media}&#8194;&bullet;&#8194;<a target="_blank" rel="nofollow noreferrer noopener" href={data.source}
+        >{data.media}</a
       >
     {/if}
   </div>

@@ -47,19 +47,23 @@ export const load: PageServerLoad = async ({params}) => {
       .process(content)
   ).toString()
 
-  const contentPlainText = (
+  const contentSummary = (
     await remark()
       .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(strip)
       .use(smartypants, {dashes: 'oldschool'})
       .process(content)
-  ).toString()
+  )
+    .toString()
+    .substring(0, 200)
+    .replaceAll('\n', ' ')
+    .replaceAll('  ', ' ')
 
   return {
     ...postMetaData,
     contentHtml,
-    contentPlainText,
+    contentSummary,
   }
 }
 
