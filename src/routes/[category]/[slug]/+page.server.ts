@@ -22,9 +22,9 @@ export const load: PageServerLoad = async ({params}) => {
   const {content, data} = matter(rawContent)
 
   const postMetaData = getMetadataFromMatter(params.category, params.slug, data)
-  postMetaData.title = (
-    await remark().use(strip).use(smartypants, {dashes: 'oldschool'}).process(postMetaData.title)
-  ).toString()
+  postMetaData.title = (await remark().use(strip).use(smartypants, {dashes: 'oldschool'}).process(postMetaData.title))
+    .toString()
+    .replaceAll('\n', '')
 
   const contentHtml = (
     await remark()
