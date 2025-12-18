@@ -35,20 +35,3 @@
   </div>
   {@html data.contentHtml}
 </article>
-
-<style lang="sass">
-  @reference '#app.css'
-
-  article
-    @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto text-justify
-    .metadata
-      @apply text-muted-foreground text-sm
-      a
-        @apply text-muted-foreground font-normal
-    :global(figure)
-      @apply mx-auto max-w-fit flex flex-col items-start
-      & > :global(div)
-        @apply relative inner-border after:rounded-md rounded-md overflow-hidden shadow-xs
-    :global([target=_blank])
-      @apply after:content-['↗'] after:px-0.5
-</style>

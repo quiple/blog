@@ -27,4 +27,16 @@
 
   main
     @apply min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-8
+    :global(article)
+      @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto text-justify
+      :global(.metadata)
+        @apply text-muted-foreground text-sm
+        :global(a)
+          @apply text-muted-foreground font-normal
+      :global(figure)
+        @apply mx-auto max-w-fit flex flex-col items-start
+        & > :global(div)
+          @apply relative inner-border after:rounded-md rounded-md overflow-hidden shadow-xs
+      :global([target=_blank])
+        @apply after:content-['↗'] after:px-0.5
 </style>
