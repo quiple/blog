@@ -69,38 +69,35 @@ export const load: PageServerLoad = async ({params}) => {
 
 function figure() {
   return (tree: Root) => {
-    visit(tree, function (node) {
-      if (node.type === 'leafDirective') {
-        if (node.name !== 'figure') return
+    visit(tree, 'leafDirective', (node) => {
+      if (node.name !== 'figure') return
 
-        const data = node.data || (node.data = {})
-        const attributes = node.attributes || {}
-        const src = attributes.src
-        console.log(node.children)
+      const data = node.data || (node.data = {})
+      const attributes = node.attributes || {}
+      const src = attributes.src
 
-        data.hName = 'figure'
-        data.hChildren = [
-          {
-            type: 'element',
-            tagName: 'div',
-            properties: {class: 'self-center'},
-            children: [
-              {
-                type: 'element',
-                tagName: 'img',
-                properties: {src: src, class: 'not-prose'},
-                children: [],
-              },
-            ],
-          },
-          {
-            type: 'element',
-            tagName: 'figcaption',
-            properties: {},
-            children: node.children as any,
-          },
-        ]
-      }
+      data.hName = 'figure'
+      data.hChildren = [
+        {
+          type: 'element',
+          tagName: 'div',
+          properties: {class: 'self-center'},
+          children: [
+            {
+              type: 'element',
+              tagName: 'img',
+              properties: {src: src, class: 'not-prose'},
+              children: [],
+            },
+          ],
+        },
+        {
+          type: 'element',
+          tagName: 'figcaption',
+          properties: {},
+          children: node.children as any,
+        },
+      ]
     })
   }
 }
