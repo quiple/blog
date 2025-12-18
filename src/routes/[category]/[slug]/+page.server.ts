@@ -31,7 +31,7 @@ export const load: PageServerLoad = async ({params}) => {
       .use(remarkDirective)
       .use(figure)
       .use(remarkRehype)
-      .use(rehypeExternalLinks, {rel: ['nofollow', 'noreferrer', 'noopener']})
+      .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow', 'noreferrer', 'noopener']})
       .use(rehypeStringify)
       .use(remarkGfm)
       .use(remarkCjkFriendly)
@@ -67,7 +67,6 @@ function figure() {
       const data = node.data || (node.data = {})
       const attributes = node.attributes || {}
       const src = attributes.src
-      console.log(node)
 
       data.hName = 'figure'
       node.children = [
