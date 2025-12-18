@@ -40,7 +40,7 @@
   @reference '#app.css'
 
   article
-    @apply prose-shadcn max-w-2xl mx-auto text-justify
+    @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto text-justify
     .metadata
       @apply text-muted-foreground text-sm
       a
