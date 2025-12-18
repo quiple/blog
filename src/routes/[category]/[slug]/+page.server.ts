@@ -1,6 +1,7 @@
 import {error} from '@sveltejs/kit'
 import {blogPosts, getMetadataFromMatter} from '$lib/content'
 import matter from 'gray-matter'
+import {h} from 'hastscript'
 import type {Root} from 'mdast'
 import rehypeStringify from 'rehype-stringify'
 import {remark} from 'remark'
@@ -69,34 +70,24 @@ export const load: PageServerLoad = async ({params}) => {
 
 function figure() {
   return (tree: Root) => {
-    visit(tree, 'leafDirective', (node) => {
+    visit(tree, 'containerDirective', (node) => {
       if (node.name !== 'figure') return
 
       const data = node.data || (node.data = {})
       const attributes = node.attributes || {}
       const src = attributes.src
+      console.log(node)
 
       data.hName = 'figure'
-      data.hChildren = [
+      data.hProperties = h('figure', node.attributes || {}).properties
+
+      node.children = [
         {
-          type: 'element',
-          tagName: 'div',
-          properties: {class: 'self-center'},
-          children: [
-            {
-              type: 'element',
-              tagName: 'img',
-              properties: {src: src, class: 'not-prose'},
-              children: [],
-            },
-          ],
+          type: 'html',
+          value: `<figure><div class="self-center"><img class="not-prose" src="${src}"></div><figcaption>`,
         },
-        {
-          type: 'element',
-          tagName: 'figcaption',
-          properties: {},
-          children: node.children as any,
-        },
+        ...node.children[0].children,
+        {type: 'html', value: `</figcaption></figure>`},
       ]
     })
   }
