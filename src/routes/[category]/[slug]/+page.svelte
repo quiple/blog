@@ -1,4 +1,5 @@
 <script lang="ts">
+  import {BASE_URL} from '$lib/constants'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()
@@ -9,7 +10,7 @@
       '@type': 'NewsArticle',
       headline: data.title,
       datePublished: `${data.pubDate}+09:00`,
-      image: ['https://example.com/photos/1x1/photo.jpg'],
+      image: [`${BASE_URL}${data.image}`],
     }),
   )
 </script>
