@@ -6,6 +6,7 @@ import rehypeExternalLinks from 'rehype-external-links'
 import rehypeStringify from 'rehype-stringify'
 import {remark} from 'remark'
 import remarkCjkFriendly from 'remark-cjk-friendly'
+import remarkCjkFriendlyGfmStrikethrough from 'remark-cjk-friendly-gfm-strikethrough'
 import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
@@ -32,6 +33,7 @@ export const load: PageServerLoad = async ({params}) => {
       .use(figure)
       .use(remarkRehype, {allowDangerousHtml: true})
       .use(remarkCjkFriendly)
+      .use(remarkCjkFriendlyGfmStrikethrough)
       .use(remarkGfm)
       .use(smartypants, {dashes: 'oldschool'})
       .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow', 'noreferrer', 'noopener']})
@@ -42,6 +44,7 @@ export const load: PageServerLoad = async ({params}) => {
   const contentSummary = (
     await remark()
       .use(remarkCjkFriendly)
+      .use(remarkCjkFriendlyGfmStrikethrough)
       .use(remarkGfm)
       .use(strip)
       .use(smartypants, {dashes: 'oldschool'})
