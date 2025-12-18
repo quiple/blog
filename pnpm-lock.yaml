@@ -99,8 +99,8 @@ importers:
         specifier: ^11.1.2
         version: 11.1.2
       remark-smartypants:
-        specifier: ^3.0.2
-        version: 3.0.2
+        specifier: github:quiple/remark-smartypants
+        version: https://codeload.github.com/quiple/remark-smartypants/tar.gz/485a8e000c84a5399891aaf0b2ed040844b9704b
       sass:
         specifier: ^1.97.0
         version: 1.97.0
@@ -1997,8 +1997,9 @@ packages:
   remark-rehype@11.1.2:
     resolution: {integrity: sha512-Dh7l57ianaEoIpzbp0PC9UKAdCSVklD8E5Rpw7ETfbTl3FqcOOgq5q2LVDhgGCkaBv7p24JXikPdvhhmHvKMsw==}
 
-  remark-smartypants@3.0.2:
-    resolution: {integrity: sha512-ILTWeOriIluwEvPjv67v7Blgrcx+LZOkAUVtKI3putuhlZm84FnqDORNXPPm+HY3NdZOMhyDwZ1E+eZB/Df5dA==}
+  remark-smartypants@https://codeload.github.com/quiple/remark-smartypants/tar.gz/485a8e000c84a5399891aaf0b2ed040844b9704b:
+    resolution: {tarball: https://codeload.github.com/quiple/remark-smartypants/tar.gz/485a8e000c84a5399891aaf0b2ed040844b9704b}
+    version: 3.0.2
     engines: {node: '>=16.0.0'}
 
   remark-stringify@11.0.0:
@@ -2010,8 +2011,9 @@ packages:
   retext-latin@4.0.0:
     resolution: {integrity: sha512-hv9woG7Fy0M9IlRQloq/N6atV82NxLGveq+3H2WOi79dtIYWN8OaxogDm77f8YnVXJL2VD3bbqowu5E3EMhBYA==}
 
-  retext-smartypants@6.2.0:
-    resolution: {integrity: sha512-kk0jOU7+zGv//kfjXEBjdIryL1Acl4i9XNkHxtM7Tm5lFiCog576fjNC9hjoR7LTKQ0DsPWy09JummSsH1uqfQ==}
+  retext-smartypants@https://codeload.github.com/quiple/retext-smartypants/tar.gz/9ffd738be922f1e1f39eb50b3a266b49bd68977a:
+    resolution: {tarball: https://codeload.github.com/quiple/retext-smartypants/tar.gz/9ffd738be922f1e1f39eb50b3a266b49bd68977a}
+    version: 6.2.0
 
   retext-stringify@4.0.0:
     resolution: {integrity: sha512-rtfN/0o8kL1e+78+uxPTqu1Klt0yPzKuQ2BfWwwfgIUSayyzxpM1PJzkKt4V8803uB9qSy32MvI7Xep9khTpiA==}
@@ -4038,10 +4040,10 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.3
 
-  remark-smartypants@3.0.2:
+  remark-smartypants@https://codeload.github.com/quiple/remark-smartypants/tar.gz/485a8e000c84a5399891aaf0b2ed040844b9704b:
     dependencies:
       retext: 9.0.0
-      retext-smartypants: 6.2.0
+      retext-smartypants: https://codeload.github.com/quiple/retext-smartypants/tar.gz/9ffd738be922f1e1f39eb50b3a266b49bd68977a
       unified: 11.0.5
       unist-util-visit: 5.0.0
 
@@ -4066,7 +4068,7 @@ snapshots:
       parse-latin: 7.0.0
       unified: 11.0.5
 
-  retext-smartypants@6.2.0:
+  retext-smartypants@https://codeload.github.com/quiple/retext-smartypants/tar.gz/9ffd738be922f1e1f39eb50b3a266b49bd68977a:
     dependencies:
       '@types/nlcst': 2.0.3
       nlcst-to-string: 4.0.0
