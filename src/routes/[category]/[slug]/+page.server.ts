@@ -39,8 +39,8 @@ export const load: PageServerLoad = async ({params}) => {
     await remark()
       .use(remarkDirective)
       .use(figure)
-      .use(remarkRehype)
-      .use(rehypeStringify)
+      .use(remarkRehype, {allowDangerousHtml: true})
+      .use(rehypeStringify, {allowDangerousHtml: true})
       .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(smartypants, {dashes: 'oldschool'})
@@ -76,6 +76,7 @@ function figure() {
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
         const src = attributes.src
+        console.log(node.children)
 
         data.hName = 'figure'
         data.hChildren = [
@@ -96,7 +97,7 @@ function figure() {
             type: 'element',
             tagName: 'figcaption',
             properties: {},
-            children: [{type: 'text', value: (node.children[0] as any).value}],
+            children: node.children,
           },
         ]
       }
