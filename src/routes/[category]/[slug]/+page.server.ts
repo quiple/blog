@@ -31,10 +31,10 @@ export const load: PageServerLoad = async ({params}) => {
     await remark()
       .use(remarkDirective)
       .use(figure)
-      .use(remarkRehype, {allowDangerousHtml: true})
+      .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(remarkCjkFriendlyGfmStrikethrough)
-      .use(remarkGfm)
+      .use(remarkRehype, {allowDangerousHtml: true})
       .use(smartypants, {dashes: 'oldschool'})
       .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow', 'noreferrer', 'noopener']})
       .use(rehypeStringify, {allowDangerousHtml: true})
@@ -43,9 +43,9 @@ export const load: PageServerLoad = async ({params}) => {
 
   const contentSummary = (
     await remark()
+      .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(remarkCjkFriendlyGfmStrikethrough)
-      .use(remarkGfm)
       .use(strip)
       .use(smartypants, {dashes: 'oldschool'})
       .process(content)
@@ -54,6 +54,7 @@ export const load: PageServerLoad = async ({params}) => {
     .substring(0, 200)
     .replaceAll('\n', ' ')
     .replaceAll('  ', ' ')
+    .trim()
 
   return {
     ...postMetaData,
