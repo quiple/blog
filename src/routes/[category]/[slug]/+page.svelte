@@ -10,7 +10,7 @@
       '@type': 'NewsArticle',
       headline: data.title,
       datePublished: `${data.pubDate}+09:00`,
-      image: [`${BASE_URL}${data.image}`],
+      image: data.image && [`${BASE_URL}${data.image}`],
     }),
   )
 </script>
