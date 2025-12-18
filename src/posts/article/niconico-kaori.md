@@ -1,5 +1,5 @@
 ---
-title: 열광적인 팬들에게 지지받는 애니메이션 '유유시키'가 TV 시리즈 종영 4년 후에도 계속 사랑받는 이유 --- 원작 사랑으로 가득한 OVA 제작 비화
+title: 열광적인 팬들에게 지지받는 애니메이션 《유유시키》가 TV 시리즈 종영 4년 후에도 계속 사랑받는 이유 --- 원작 사랑으로 가득한 OVA 제작 비화
 media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/15200
 image: /img/article/yuyushiki_pc-修正.jpg
