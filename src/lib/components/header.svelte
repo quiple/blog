@@ -36,7 +36,7 @@
   </div>
   <section>
     <div class="flex gap-2">
-      <DropdownMenu.Root>
+      <!-- <DropdownMenu.Root>
         <DropdownMenu.Trigger>
           {#snippet child({props})}
             <Button {...props} size="icon" variant="secondary" aria-label="메뉴">
@@ -49,17 +49,17 @@
           <DropdownMenu.Item onclick={() => goto('/user/quiple')}><User /> 프로필</DropdownMenu.Item>
           <DropdownMenu.Item onclick={() => goto('/settings')}><Settings /> 설정</DropdownMenu.Item>
         </DropdownMenu.Content>
-      </DropdownMenu.Root>
+      </DropdownMenu.Root> -->
       <a href="/" class="flex items-center gap-1 self-center transition">
         <Q class="w-9" />
       </a>
     </div>
 
     <div class="flex gap-2">
-      <div class="relative hidden md:block">
+      <!-- <div class="relative hidden md:block">
         <Search class="absolute top-2.5 left-2.5 z-10 h-4 w-4" />
         <Input name="search" type="text" class="pl-8" bind:value={query} bind:ref={inputElement} placeholder="검색" />
-      </div>
+      </div> -->
       <Button onclick={toggleMode} variant="secondary" size="icon">
         <Sun class="scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
         <Moon class="absolute scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
