@@ -2,7 +2,6 @@
   import '#app.css'
   import '#fonts.sass'
   import 'non.geist'
-  import favicon from '$lib/assets/favicon.svg'
   import Header from '$lib/components/header.svelte'
   import {ModeWatcher} from 'mode-watcher'
 
