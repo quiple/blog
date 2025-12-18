@@ -9,7 +9,11 @@
   let {children} = $props()
 </script>
 
-<svelte:head><link rel="icon" href={favicon} /></svelte:head>
+<svelte:head>
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/q-32.png" />
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/img/q.svg" />
+  <link rel="apple-touch-icon" type="image/png" href="/img/q.png" />
+</svelte:head>
 
 <ModeWatcher />
 
