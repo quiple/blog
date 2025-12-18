@@ -1,7 +1,6 @@
 import {error} from '@sveltejs/kit'
 import {blogPosts, getMetadataFromMatter} from '$lib/content'
 import matter from 'gray-matter'
-import {h} from 'hastscript'
 import type {Root} from 'mdast'
 import rehypeStringify from 'rehype-stringify'
 import {remark} from 'remark'
