@@ -84,6 +84,7 @@ function figure() {
           type: 'html',
           value: `<div class="self-center"><img class="not-prose" src="${src}"></div><figcaption>`,
         },
+        // @ts-ignore
         ...node.children[0].children,
         {type: 'html', value: `</figcaption>`},
       ]
