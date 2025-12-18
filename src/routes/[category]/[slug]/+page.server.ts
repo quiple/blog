@@ -2,6 +2,7 @@ import {error} from '@sveltejs/kit'
 import {blogPosts, getMetadataFromMatter} from '$lib/content'
 import matter from 'gray-matter'
 import type {Root} from 'mdast'
+import rehypeExternalLinks from 'rehype-external-links'
 import rehypeStringify from 'rehype-stringify'
 import {remark} from 'remark'
 import remarkCjkFriendly from 'remark-cjk-friendly'
@@ -12,16 +13,6 @@ import smartypants from 'remark-smartypants'
 import strip from 'strip-markdown'
 import {visit} from 'unist-util-visit'
 import type {PageServerLoad} from './$types'
-
-// const renderer = {
-//   link(link: any) {
-//     const linkStr = marked.Renderer.prototype.link.call(this, link)
-//     if (/^(https?:)?\/\//g.test(link.href)) {
-//       return linkStr.replace('<a', "<a target='_blank' rel='nofollow noreferrer noopener'")
-//     }
-//     return linkStr
-//   },
-// }
 
 export const load: PageServerLoad = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
@@ -39,8 +30,9 @@ export const load: PageServerLoad = async ({params}) => {
     await remark()
       .use(remarkDirective)
       .use(figure)
-      .use(remarkRehype, {allowDangerousHtml: true})
-      .use(rehypeStringify, {allowDangerousHtml: true})
+      .use(remarkRehype)
+      .use(rehypeExternalLinks, {rel: ['nofollow', 'noreferrer', 'noopener']})
+      .use(rehypeStringify)
       .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(smartypants, {dashes: 'oldschool'})

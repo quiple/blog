@@ -38,6 +38,7 @@
     "prettier": "^3.7.4",
     "prettier-plugin-svelte": "^3.4.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "rehype-external-links": "^3.0.0",
     "rehype-stringify": "^10.0.1",
     "remark": "^15.0.1",
     "remark-cjk-friendly": "^1.2.3",
