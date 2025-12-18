@@ -30,7 +30,6 @@
     "bits-ui": "^2.14.4",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
-    "hastscript": "^9.0.1",
     "husky": "^9.1.7",
     "mode-watcher": "^1.1.0",
     "non.geist": "github:quiple/non.geist",
