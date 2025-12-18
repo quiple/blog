@@ -79,15 +79,13 @@ function figure() {
       console.log(node)
 
       data.hName = 'figure'
-      data.hProperties = h('figure', node.attributes || {}).properties
-
       node.children = [
         {
           type: 'html',
-          value: `<figure><div class="self-center"><img class="not-prose" src="${src}"></div><figcaption>`,
+          value: `<div class="self-center"><img class="not-prose" src="${src}"></div><figcaption>`,
         },
         ...node.children[0].children,
-        {type: 'html', value: `</figcaption></figure>`},
+        {type: 'html', value: `</figcaption>`},
       ]
     })
   }
