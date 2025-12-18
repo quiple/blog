@@ -97,7 +97,7 @@ function figure() {
             type: 'element',
             tagName: 'figcaption',
             properties: {},
-            children: node.children,
+            children: node.children as any,
           },
         ]
       }
