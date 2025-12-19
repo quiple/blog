@@ -23,9 +23,27 @@ export const load: PageServerLoad = async ({params}) => {
   const {content, data} = matter(rawContent)
 
   const postMetaData = getMetadataFromMatter(params.category, params.slug, data)
+
   postMetaData.title = (await remark().use(strip).use(smartypants, {dashes: 'oldschool'}).process(postMetaData.title))
     .toString()
     .replaceAll('\n', '')
+
+  postMetaData.description =
+    postMetaData.description ??
+    (
+      await remark()
+        .use(remarkGfm)
+        .use(remarkCjkFriendly)
+        .use(remarkCjkFriendlyGfmStrikethrough)
+        .use(strip)
+        .use(smartypants, {dashes: 'oldschool'})
+        .process(content)
+    )
+      .toString()
+      .substring(0, 200)
+      .replaceAll('\n', ' ')
+      .replaceAll('  ', ' ')
+      .trim()
 
   const contentHtml = (
     await remark()
@@ -41,25 +59,9 @@ export const load: PageServerLoad = async ({params}) => {
       .process(content)
   ).toString()
 
-  const contentSummary = (
-    await remark()
-      .use(remarkGfm)
-      .use(remarkCjkFriendly)
-      .use(remarkCjkFriendlyGfmStrikethrough)
-      .use(strip)
-      .use(smartypants, {dashes: 'oldschool'})
-      .process(content)
-  )
-    .toString()
-    .substring(0, 200)
-    .replaceAll('\n', ' ')
-    .replaceAll('  ', ' ')
-    .trim()
-
   return {
     ...postMetaData,
     contentHtml,
-    contentSummary,
   }
 }
 
