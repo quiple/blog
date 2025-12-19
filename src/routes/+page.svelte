@@ -8,10 +8,7 @@
   <ul class="flex flex-col">
     {#each data.posts as post}
       <li>
-        <a
-          href={post.relativeURL}
-          class="flex gap-4 hover:before:opacity-100 before:scale-95 hover:before:scale-100 before:opacity-0 relative before:absolute before:rounded-xl before:inset-0 before:-z-10 before:bg-muted before:transition py-2 pl-3 pr-2 rounded-xl"
-        >
+        <a href={post.relativeURL} class="flex gap-4 before:rounded-xl py-2 pl-3 pr-2 rounded-xl hover-bg-muted">
           <div class="grow">
             <strong class="line-clamp-1 mb-1">{post.title}</strong>
             <p class="text-sm line-clamp-3 mb-1">{post.description}</p>
