@@ -20,6 +20,7 @@
   <meta property="og:title" content={data.title} />
   <meta name="description" content={data.description ?? data.contentSummary} />
   <meta property="og:description" content={data.description ?? data.contentSummary} />
+  <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
 </svelte:head>
 
