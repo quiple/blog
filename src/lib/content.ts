@@ -32,13 +32,7 @@ export const blogPostMetadataSchema = v.object({
   ),
 })
 
-export function getMetadataFromMatter(
-  category: string,
-  slug: string,
-  data: {
-    [key: string]: unknown
-  },
-) {
+export function getMetadataFromMatter(category: string, slug: string, data: {[key: string]: unknown}) {
   const post = v.parse(blogPostMetadataSchema, {
     category,
     slug,
