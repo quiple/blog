@@ -42,7 +42,7 @@ export const load: PageServerLoad = async ({params}) => {
       .substring(0, 200)
       .replaceAll('\n', ' ')
       .replaceAll('  ', ' ')
-      .trim()
+      .trim() + '\u2026'
 
   const contentHtml = (
     await remark()

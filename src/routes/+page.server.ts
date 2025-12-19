@@ -35,7 +35,7 @@ export const load: PageServerLoad = async () => {
         .substring(0, 200)
         .replaceAll('\n', ' ')
         .replaceAll('  ', ' ')
-        .trim()
+        .trim() + '\u2026'
   }
 
   return {posts}
