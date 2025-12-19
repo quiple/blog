@@ -21,7 +21,6 @@ export const load: PageServerLoad = async ({params}) => {
   if (!rawContent) return error(404)
 
   const {content, data} = matter(rawContent)
-
   const postMetaData = getMetadataFromMatter(params.category, params.slug, data)
 
   postMetaData.title = (await remark().use(strip).use(smartypants, {dashes: 'oldschool'}).process(postMetaData.title))
