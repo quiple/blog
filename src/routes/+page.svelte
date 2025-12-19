@@ -11,8 +11,13 @@
         <a href={post.relativeURL} class="flex gap-4">
           <div class="grow">
             <strong class="line-clamp-1 mb-1">{post.title}</strong>
-            <p class="text-muted-foreground text-sm line-clamp-3">{post.description}</p>
-            <small></small>
+            <p class="text-sm line-clamp-3 mb-1">{post.description}</p>
+            <small class="text-muted-foreground">
+              {#if post.media}
+                {post.media}&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
+                Date.parse(`${post.origDate}+09:00`),
+              )}
+            </small>
           </div>
           {#if post.image}
             <div
