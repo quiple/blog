@@ -36,7 +36,7 @@
       :global(figure)
         @apply mx-auto max-w-fit flex flex-col items-start
         & > :global(div)
-          @apply relative inner-border after:rounded-md rounded-md overflow-hidden shadow-xs
+          @apply inner-border after:rounded-md rounded-md shadow-xs
       :global([target=_blank])
         @apply after:content-['↗'] after:px-0.5
 </style>
