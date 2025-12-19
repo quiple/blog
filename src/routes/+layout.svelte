@@ -28,7 +28,7 @@
   main
     @apply min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-8
     :global(article)
-      @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto text-justify
+      @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto
       :global(.metadata)
         @apply text-muted-foreground text-sm
         :global(a)
