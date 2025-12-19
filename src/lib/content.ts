@@ -46,10 +46,8 @@ export function getMetadataFromMatter(
   })
   const canonicalURL = new URL(`/${post.category}/${post.slug}`, BASE_URL).toString()
   const relativeURL = `/${post.category}/${post.slug}`
-  const ogImage = `/content/${post.slug}/og.jpg`
-  const heroImage = `/content/${post.slug}/hero.webp`
 
-  return {...post, canonicalURL, relativeURL, ogImage, heroImage}
+  return {...post, canonicalURL, relativeURL}
 }
 
 export type Post = ReturnType<typeof getMetadataFromMatter>
