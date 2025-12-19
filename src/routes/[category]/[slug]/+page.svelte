@@ -9,7 +9,7 @@
       '@context': 'https://schema.org',
       '@type': 'NewsArticle',
       headline: data.title,
-      datePublished: `${data.pubDate}+09:00`,
+      datePublished: `${data.origDate}+09:00`,
       image: data.image && [`${BASE_URL}${data.image}`],
     }),
   )
@@ -28,7 +28,7 @@
   <h1 class="mb-2!">{data.title}</h1>
   <div class="metadata">
     {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-      Date.parse(`${data.pubDate}+09:00`),
+      Date.parse(`${data.origDate}+09:00`),
     )}{#if data.media}&#8194;&bullet;&#8194;<a target="_blank" rel="nofollow noreferrer noopener" href={data.source}
         >{data.media}</a
       >

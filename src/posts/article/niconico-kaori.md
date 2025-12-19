@@ -3,8 +3,8 @@ title: 열광적인 팬들에게 지지받는 애니메이션 《유유시키》
 media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/15200
 image: /img/article/yuyushiki_pc-修正.jpg
-pubDate: 2017-03-16T17:00
-transDate: 2025-12-18T00:30
+origDate: 2017-03-16T17:00
+pubDate: 2025-12-18T00:30
 ---
 
 약 4년 만의 기다려온 신작 OVA가 2017년 2월 22일 발매되어 호평을 받고 있다.

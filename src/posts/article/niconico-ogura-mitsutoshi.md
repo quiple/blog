@@ -3,8 +3,8 @@ title: 팬들에게 계속 사랑받는 애니메이션 《유유시키》 프�
 media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/19387
 image: /img/article/yuyushiki_interview02.2_pc.jpg
-pubDate: 2017-05-08T11:00
-transDate: 2025-12-18T23:09
+origDate: 2017-05-08T11:00
+pubDate: 2025-12-18T23:09
 ---
 
 2017년 2월 22일에 발매된 《유유시키(ゆゆ式)》 OVA는 2013년 TV 시리즈로부터 4년이 지났음에도 불구하고 품절 사태가 속출할 만큼 큰 호응을 얻으며 받아들여졌다.

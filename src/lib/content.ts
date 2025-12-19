@@ -18,8 +18,8 @@ export const blogPostMetadataSchema = v.object({
   source: v.optional(v.pipe(v.string(), v.url(), v.trim())),
   image: v.optional(v.pipe(v.string(), v.trim())),
   media: v.optional(v.pipe(v.string(), v.trim())),
+  origDate: v.pipe(v.string(), v.isoDateTime(), v.trim()),
   pubDate: v.pipe(v.string(), v.isoDateTime(), v.trim()),
-  transDate: v.pipe(v.string(), v.isoDateTime(), v.trim()),
   tags: v.optional(
     v.pipe(
       v.string(),
@@ -55,7 +55,7 @@ export function getBlogPostsMetadata() {
 
       return getMetadataFromMatter(category, slug, data)
     })
-    .sort((a, b) => Date.parse(`${b.transDate.valueOf()}+09:00`) - Date.parse(`${a.transDate.valueOf()}+09:00`))
+    .sort((a, b) => Date.parse(`${b.pubDate.valueOf()}+09:00`) - Date.parse(`${a.pubDate.valueOf()}+09:00`))
 
   return posts
 }
