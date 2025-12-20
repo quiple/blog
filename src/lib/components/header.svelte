@@ -73,7 +73,7 @@
   @reference '#app.css'
 
   header
-    @apply relative md:sticky top-0 py-6 z-50
+    @apply relative md:sticky top-0 py-4 sm:py-6 z-50
     :global(Button), :global(input)
       @apply text-foreground dark:text-secondary-foreground backdrop-blur-xs
     :global(Button)
@@ -93,7 +93,7 @@
       :global(input)
         @apply bg-muted-foreground/12 dark:bg-ring/12 border-primary-foreground/15 dark:border-foreground/15 placeholder:text-primary-foreground/56 dark:placeholder:text-foreground/56
     section
-      @apply relative container-x !max-w-full !px-6 flex justify-between items-start gap-8 z-10
+      @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-8 z-10
     .gradient-blur
       @apply top-0 absolute md:fixed w-full h-[84px] bg-linear-to-b from-background/50 to-transparent transition
       & > div,
