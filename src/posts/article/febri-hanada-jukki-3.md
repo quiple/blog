@@ -1,5 +1,5 @@
 ---
-title: 『ガールズバンドクライ』シリーズ構成・花田十輝が「バンドもの」で描きたかったこと③
+title: 《걸즈 밴드 크라이》 시리즈 구성 하나다 줏키가 '밴드물'에서 그리고 싶었던 것 ③
 media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_01_03/
 image: /img/article/ep13_s013c321_comp_v04_2400.jpg
