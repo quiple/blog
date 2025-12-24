@@ -2,6 +2,7 @@
 title: 『ガールズバンドクライ』シリーズ構成・花田十輝が「バンドもの」で描きたかったこと①
 media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_01_01/
+image: /img/article/live01_s101c013_comp_v04_2400.jpg
 origDate: 2024-08-26T12:00
 pubDate: 2025-12-24T12:00
 ---
