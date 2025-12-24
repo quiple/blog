@@ -26,14 +26,6 @@
 <svelte:window on:keydown={onKeydown} />
 
 <header>
-  <div class="gradient-blur">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
   <section>
     <div class="flex gap-2">
       <!-- <DropdownMenu.Root>
@@ -94,79 +86,4 @@
         @apply bg-muted-foreground/12 dark:bg-ring/12 border-primary-foreground/15 dark:border-foreground/15 placeholder:text-primary-foreground/56 dark:placeholder:text-foreground/56
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-8 z-10
-    .gradient-blur
-      @apply top-0 absolute md:fixed w-full h-[84px] bg-linear-to-b from-background/50 to-transparent transition
-      & > div,
-      &::before,
-      &::after
-        @apply absolute inset-0
-      &::before
-        @apply z-[1] backdrop-blur-[.5px] content-['']
-        mask: linear-gradient(
-          to top,
-          rgba(0,0,0,0) 0%,
-          rgba(0,0,0,1) 12.5%,
-          rgba(0,0,0,1) 25%,
-          rgba(0,0,0,0) 37.5%
-        )
-      & > div:nth-of-type(1)
-        @apply z-[2] backdrop-blur-[1px]
-        mask: linear-gradient(
-          to top,
-          rgba(0,0,0,0) 12.5%,
-          rgba(0,0,0,1) 25%,
-          rgba(0,0,0,1) 37.5%,
-          rgba(0,0,0,0) 50%
-        )
-      & > div:nth-of-type(2)
-        @apply z-[3] backdrop-blur-[1.5px]
-        mask: linear-gradient(
-          to top,
-          rgba(0,0,0,0) 25%,
-          rgba(0,0,0,1) 37.5%,
-          rgba(0,0,0,1) 50%,
-          rgba(0,0,0,0) 62.5%
-        )
-      & > div:nth-of-type(3)
-        @apply z-[4] backdrop-blur-[2px]
-        mask: linear-gradient(
-          to top,
-          rgba(0,0,0,0) 37.5%,
-          rgba(0,0,0,1) 50%,
-          rgba(0,0,0,1) 62.5%,
-          rgba(0,0,0,0) 75%
-        )
-      & > div:nth-of-type(4)
-        @apply z-[5] backdrop-blur-[2.5px]
-        mask: linear-gradient(
-          to top,
-          rgba(0,0,0,0) 50%,
-          rgba(0,0,0,1) 62.5%,
-          rgba(0,0,0,1) 75%,
-          rgba(0,0,0,0) 87.5%
-        )
-      & > div:nth-of-type(5)
-        @apply z-[6] backdrop-blur-[3px]
-        mask: linear-gradient(
-          to top,
-          rgba(0,0,0,0) 62.5%,
-          rgba(0,0,0,1) 75%,
-          rgba(0,0,0,1) 87.5%,
-          rgba(0,0,0,0) 100%
-        )
-      & > div:nth-of-type(6)
-        @apply z-[7] backdrop-blur-[3.5px]
-        mask: linear-gradient(
-          to top,
-          rgba(0,0,0,0) 75%,
-          rgba(0,0,0,1) 87.5%,
-          rgba(0,0,0,1) 100%
-        )
-      &::after
-        @apply z-[8] backdrop-blur-[4px] content-['']
-        mask: linear-gradient(
-          to top,
-          rgba(0,0,0,0) 87.5%,
-          rgba(0,0,0,1) 100%
-        )
 </style>
