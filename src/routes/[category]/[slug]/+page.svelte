@@ -63,5 +63,5 @@
     &.title
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] top-(--header-height)
       .container-x > div
-        @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto
+        @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto [--tw-prose-headings:var(--hero-foreground-color)]
 </style>
