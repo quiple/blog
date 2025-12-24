@@ -3,6 +3,7 @@ title: 열광적인 팬들에게 지지받는 애니메이션 《유유시키》
 media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/15200
 image: /img/article/yuyushiki_pc-修正.jpg
+imageForeground: fff
 origDate: 2017-03-16T17:00
 pubDate: 2025-12-18T00:30
 ---

@@ -3,6 +3,7 @@ title: 《걸즈 밴드 크라이》 시리즈 구성 하나다 줏키가 '밴�
 media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_01_02/
 image: /img/article/ep11_s011c267_comp_v03_2400.jpg
+imageForeground: fff
 origDate: 2024-08-27T12:00
 pubDate: 2025-12-24T23:59
 ---

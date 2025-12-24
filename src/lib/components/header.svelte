@@ -6,14 +6,26 @@
   import {Button} from '$lib/components/ui/button/index'
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index'
   import {Input} from '$lib/components/ui/input/index'
+  import {isHero} from '$lib/stores/header'
   import {toggleMode} from 'mode-watcher'
 
   let query = $state('')
   let inputElement = $state<HTMLInputElement | null>(null)
+  let headerClassName = $derived($isHero === true ? 'hero' : '')
 
   const onKeydown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && inputElement && document.activeElement === inputElement) {
       goto(`/search?q=${query.trim().replaceAll(' ', '+')}`)
+    }
+  }
+
+  const onScroll = () => {
+    const path = page.url.pathname
+    const isArticlePage = path.startsWith('/article/')
+
+    if ($isHero !== null && isArticlePage) {
+      if (window.scrollY < window.innerHeight / 2 - 42) isHero.set(true)
+      else isHero.set(false)
     }
   }
 
@@ -23,10 +35,16 @@
   })
 </script>
 
-<svelte:window on:keydown={onKeydown} />
+<svelte:window on:keydown={onKeydown} on:scroll={onScroll} />
 
-<header>
+<header class={headerClassName}>
   <section>
+    <div class="flex gap-2">
+      <a href="/" class="flex items-center gap-1 self-center transition">
+        <Q class="w-9" />
+      </a>
+    </div>
+
     <div class="flex gap-2">
       <!-- <DropdownMenu.Root>
         <DropdownMenu.Trigger>
@@ -36,18 +54,12 @@
             </Button>
           {/snippet}
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content align="start">
+        <DropdownMenu.Content align="end">
           <DropdownMenu.Item onclick={() => goto('/login')}><LogIn /> 로그인</DropdownMenu.Item>
           <DropdownMenu.Item onclick={() => goto('/user/quiple')}><User /> 프로필</DropdownMenu.Item>
           <DropdownMenu.Item onclick={() => goto('/settings')}><Settings /> 설정</DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Root> -->
-      <a href="/" class="flex items-center gap-1 self-center transition">
-        <Q class="w-9" />
-      </a>
-    </div>
-
-    <div class="flex gap-2">
       <!-- <div class="relative hidden md:block">
         <Search class="absolute top-2.5 left-2.5 z-10 h-4 w-4" />
         <Input name="search" type="text" class="pl-8" bind:value={query} bind:ref={inputElement} placeholder="검색" />
@@ -73,15 +85,7 @@
     :global(input)
       @apply bg-transparent dark:bg-ring/12 border-foreground/13 dark:border-foreground/15 placeholder:text-foreground/63 dark:placeholder:text-foreground/56
     &.hero
-      @apply text-primary-foreground dark:text-foreground
-      :global([data-slot=badge])
-        @apply bg-input dark:bg-primary text-primary dark:text-primary-foreground
-      :global(Button), :global(input)
-        @apply text-primary-foreground dark:text-secondary-foreground
-      :global(Button)
-        @apply bg-muted-foreground/25 dark:bg-ring/25 hover:bg-muted-foreground/21 dark:hover:bg-ring/21
-      :global(input)
-        @apply bg-muted-foreground/12 dark:bg-ring/12 border-primary-foreground/15 dark:border-foreground/15 placeholder:text-primary-foreground/56 dark:placeholder:text-foreground/56
+      @apply text-(--hero-foreground-color)
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-8
 </style>

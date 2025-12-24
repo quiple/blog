@@ -1,4 +1,5 @@
 <script lang="ts">
+  import {hero} from '$lib/actions/hero'
   import {BASE_URL} from '$lib/constants'
   import type {PageProps} from './$types'
 
@@ -22,7 +23,10 @@
   <meta property="og:description" content={data.description} />
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
+  {@html `<style>:root { --hero-foreground-color: #${data.imageForeground}; }</style>`}
 </svelte:head>
+
+<div use:hero={{isLoading: false, hasHero: Boolean(data.image)}}></div>
 
 {#if data.image}
   <div class="hero bg" style:background-image={`url(${data.image})`}></div>
