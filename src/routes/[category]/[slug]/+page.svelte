@@ -64,9 +64,9 @@
   @reference '#app.css'
 
   .hero
-    @apply w-[calc(100vw-var(--scrollbar-width))] inset-0 absolute!
+    @apply inset-0 absolute!
     &.bg
-      @apply bg-cover bg-center inner-b-border -z-10 h-[50vh]
+      @apply w-[calc(100vw-var(--scrollbar-width))] bg-cover bg-center inner-b-border -z-10 h-[50vh]
     &.title
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] max-w-[calc(36rem+2rem)] sm:max-w-[calc(36rem+4rem)] md:max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-[50vh] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
       & > div
