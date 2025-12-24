@@ -51,7 +51,7 @@
         <DropdownMenu.Trigger>
           {#snippet child({props})}
             <Button {...props} size="icon" variant="ghost" aria-label="메뉴">
-              <Menu />
+              <Menu class="size-6" />
             </Button>
           {/snippet}
         </DropdownMenu.Trigger>
