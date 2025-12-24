@@ -23,7 +23,7 @@
   <meta property="og:description" content={data.description} />
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
-  {@html `<style>:root { --hero-foreground-color: #${data.imageForeground}; }</style>`}
+  {@html `<style>:root { --hero-foreground-color: #${data.imageForeground.toString()}; }</style>`}
 </svelte:head>
 
 <div use:hero={{hasHero: Boolean(data.image)}}></div>
