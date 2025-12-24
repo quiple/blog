@@ -74,8 +74,6 @@
       @apply bg-transparent dark:bg-ring/12 border-foreground/13 dark:border-foreground/15 placeholder:text-foreground/63 dark:placeholder:text-foreground/56
     &.hero
       @apply text-primary-foreground dark:text-foreground
-      .gradient-blur
-        @apply from-foreground/50 dark:from-background/50
       :global([data-slot=badge])
         @apply bg-input dark:bg-primary text-primary dark:text-primary-foreground
       :global(Button), :global(input)
