@@ -33,16 +33,14 @@
 {#if data.image}
   <div class="hero bg" style:background-image={`url(${data.image})`}></div>
   <div class="hero title">
-    <div class="container-x">
-      <div>
-        <h1 class="mb-2!">{data.title}</h1>
-        <div class="metadata">
-          {#if data.media}
-            <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
-            >&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-            Date.parse(`${data.origDate}+09:00`),
-          )}
-        </div>
+    <div>
+      <h1 class="mb-2!">{data.title}</h1>
+      <div class="metadata">
+        {#if data.media}
+          <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
+          >&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
+          Date.parse(`${data.origDate}+09:00`),
+        )}
       </div>
     </div>
   </div>
@@ -70,13 +68,13 @@
     &.bg
       @apply bg-cover bg-center inner-b-border -z-10 h-[50vh]
     &.title
-      @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] top-(--header-height)
-      .container-x > div
-        @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto [--tw-prose-headings:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)] [--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-body:var(--hero-foreground)]
-    .metadata
-      @apply text-sm mb-3
-      a
-        @apply font-normal text-(--hero-foreground)!
-        &[target=_blank]
-          @apply after:content-['↗'] after:px-0.5
+      @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] max-w-[calc(36rem+2rem)] sm:max-w-[calc(36rem+4rem)] md:max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-[50vh] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
+      & > div
+        @apply prose-shadcn mx-auto [--tw-prose-headings:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)] [--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-body:var(--hero-foreground)]
+        .metadata
+          @apply text-sm mb-3
+          a
+            @apply font-normal text-(--hero-foreground)!
+            &[target=_blank]
+              @apply after:content-['↗'] after:px-0.5
 </style>
