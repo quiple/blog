@@ -23,7 +23,9 @@
   <meta property="og:description" content={data.description} />
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
-  {@html `<style>:root { --hero-foreground-color: #${data.imageForeground.toString()}; }</style>`}
+  {#if data.image}
+    {@html `<style>:root { --hero-foreground-color: #${data.imageForeground.toString()}; }</style>`}
+  {/if}
 </svelte:head>
 
 <div use:hero={{hasHero: Boolean(data.image)}}></div>
@@ -34,6 +36,13 @@
     <div class="container-x">
       <div>
         <h1 class="mb-2!">{data.title}</h1>
+        <div class="metadata">
+          {#if data.media}
+            <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
+            >&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
+            Date.parse(`${data.origDate}+09:00`),
+          )}
+        </div>
       </div>
     </div>
   </div>
@@ -64,4 +73,10 @@
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] top-(--header-height)
       .container-x > div
         @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto [--tw-prose-headings:var(--hero-foreground-color)]
+    .metadata
+      @apply text-muted-foreground text-sm
+      a
+        @apply text-muted-foreground font-normal
+        &[target=_blank]
+          @apply after:content-['↗'] after:px-0.5
 </style>
