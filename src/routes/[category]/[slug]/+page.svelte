@@ -70,7 +70,7 @@
     &.title
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-[50vh] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
       & > div
-        @apply prose-shadcn mx-auto [--tw-prose-headings:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)] [--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-body:var(--hero-foreground)]
+        @apply prose-shadcn mx-auto [--tw-prose-headings:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)] [--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-body:var(--hero-foreground)] -translate-x-[calc(var(--scrollbar-width)/2)]
         .metadata
           @apply text-sm mb-3
           a
