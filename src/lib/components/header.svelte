@@ -30,6 +30,7 @@
   }
 
   $effect(() => {
+    if ($isHero === true) onScroll()
     const q = page.url.searchParams.get('q')
     query = q?.replaceAll('+', ' ') || ''
   })
