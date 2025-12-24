@@ -152,7 +152,7 @@
 }
 
 @utility hover-bg-muted {
-  @apply relative before:absolute before:inset-0 before:-z-10 before:scale-95 before:bg-muted before:opacity-0 before:transition hover:before:scale-100 hover:before:opacity-100;
+  @apply relative before:absolute before:inset-0 before:-z-1 before:scale-95 before:bg-muted before:opacity-0 before:transition hover:before:scale-100 hover:before:opacity-100;
 }
 
 @utility prose-shadcn {
