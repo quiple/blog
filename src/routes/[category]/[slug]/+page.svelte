@@ -25,10 +25,12 @@
 </svelte:head>
 
 {#if data.image}
-  <div class="hero" style:background-image={`url(${data.image})`}></div>
-  <div class="hero container-x">
-    <div>
-      <h1 class="mb-2!">{data.title}</h1>
+  <div class="hero bg" style:background-image={`url(${data.image})`}></div>
+  <div class="hero title">
+    <div class="container-x">
+      <div>
+        <h1 class="mb-2!">{data.title}</h1>
+      </div>
     </div>
   </div>
 {/if}
@@ -51,11 +53,11 @@
   @reference '#app.css'
 
   .hero
-    @apply h-[50vh] w-[calc(100vw-var(--scrollbar-width))] inset-0 absolute!
-    &:not(.container-x)
-      @apply bg-cover bg-center inner-b-border -z-1
-    &.container-x
-      @apply justify-center items-end flex
-    &.container-x > div
-      @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto
+    @apply w-[calc(100vw-var(--scrollbar-width))] inset-0 absolute!
+    &.bg
+      @apply bg-cover bg-center inner-b-border -z-10 h-[50vh]
+    &.title
+      @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] top-(--header-height)
+      .container-x > div
+        @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto
 </style>
