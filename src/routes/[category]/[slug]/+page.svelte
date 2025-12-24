@@ -72,11 +72,11 @@
     &.title
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] top-(--header-height)
       .container-x > div
-        @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto prose-h1:text-(--hero-foreground)
+        @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto [--tw-prose-headings:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)] [--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-body:var(--hero-foreground)]
     .metadata
-      @apply text-sm
+      @apply text-sm mb-3
       a
-        @apply font-normal
+        @apply font-normal text-(--hero-foreground)!
         &[target=_blank]
           @apply after:content-['↗'] after:px-0.5
 </style>
