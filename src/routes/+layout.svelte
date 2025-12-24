@@ -18,7 +18,7 @@
 
 <Header />
 
-<main class="container-x">
+<main>
   {@render children()}
 </main>
 
@@ -26,9 +26,9 @@
   @reference '#app.css'
 
   main
-    @apply min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-8 md:-mt-(--header-height) md:pt-6
+    @apply container-x min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-8 [--header-height:68px] sm:[--header-height:84px]
     :global(article)
-      @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto
+      @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto md:-mt-(--header-height) md:pt-6 [.hero+&]:pt-[calc(50vh-var(--header-height))] md:[.hero+&]:pt-[50vh]
       :global(.metadata)
         @apply text-muted-foreground text-sm
         :global(a)
