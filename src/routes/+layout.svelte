@@ -26,7 +26,7 @@
   @reference '#app.css'
 
   main
-    @apply min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-8
+    @apply min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-8 md:-mt-(--header-height) md:pt-6
     :global(article)
       @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto
       :global(.metadata)
