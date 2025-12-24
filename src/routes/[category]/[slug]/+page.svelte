@@ -24,7 +24,7 @@
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
   {#if data.image}
-    {@html `<style>:root { --hero-foreground-color: #${data.imageForeground.toString()}; }</style>`}
+    {@html `<style>:root { --hero-foreground: #${data.imageForeground.toString()}; }</style>`}
   {/if}
 </svelte:head>
 
@@ -72,11 +72,11 @@
     &.title
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] top-(--header-height)
       .container-x > div
-        @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto [--tw-prose-headings:var(--hero-foreground-color)]
+        @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto prose-h1:text-(--hero-foreground)
     .metadata
-      @apply text-muted-foreground text-sm
+      @apply text-sm
       a
-        @apply text-muted-foreground font-normal
+        @apply font-normal
         &[target=_blank]
           @apply after:content-['↗'] after:px-0.5
 </style>
