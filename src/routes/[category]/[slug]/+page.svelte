@@ -26,7 +26,7 @@
   {@html `<style>:root { --hero-foreground-color: #${data.imageForeground}; }</style>`}
 </svelte:head>
 
-<div use:hero={{isLoading: false, hasHero: Boolean(data.image)}}></div>
+<div use:hero={{hasHero: Boolean(data.image)}}></div>
 
 {#if data.image}
   <div class="hero bg" style:background-image={`url(${data.image})`}></div>
