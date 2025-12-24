@@ -1,7 +1,6 @@
 import {isHero} from '$lib/stores/header'
 
 type HeroParams = {
-  isLoading: boolean
   hasHero: boolean
 }
 
@@ -13,9 +12,7 @@ type HeroParams = {
  */
 export function hero(_node: HTMLElement, params: HeroParams) {
   const setHeroState = (p: HeroParams) => {
-    if (!p.isLoading) {
-      isHero.set(p.hasHero ? true : null)
-    }
+    isHero.set(p.hasHero ? true : null)
   }
 
   setHeroState(params)
