@@ -3,7 +3,7 @@ title: 키라라 역사에 남을 최종 보스 '일상계 동아리물에 저�
 media: 네토라보
 source: https://nlab.itmedia.co.jp/cont/articles/3330234/
 origDate: 2021-12-25T20:00
-pubDate: 2025-12-25T10:58
+pubDate: 2025-12-25T12:58
 ---
 
 > '일상계' 청춘이 끝난 뒤의 이야기.
