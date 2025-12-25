@@ -139,6 +139,11 @@
   button {
     @apply cursor-pointer;
   }
+  .sr-only {
+    @apply absolute -m-px size-px overflow-hidden border-0 border-none p-0;
+    clip: rect(0, 0, 0, 0);
+    clip-path: polygon(0 0, 0 0, 0 0);
+  }
 }
 
 @utility container-x {
