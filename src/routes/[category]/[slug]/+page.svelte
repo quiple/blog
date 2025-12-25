@@ -72,7 +72,7 @@
       & > div
         @apply prose-shadcn mx-auto [--tw-prose-headings:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)] [--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-body:var(--hero-foreground)] md:-translate-x-[calc(var(--scrollbar-width)/2)] pr-(--scrollbar-width) md:pr-0
         .metadata
-          @apply text-sm mb-3
+          @apply text-sm mb-6
           a
             @apply font-normal text-(--hero-foreground)!
             &[target=_blank]
