@@ -73,6 +73,7 @@ function figure() {
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
         const src = attributes.src
+        const className = attributes.class
 
         data.hName = 'figure'
         node.children =
@@ -80,13 +81,13 @@ function figure() {
             ? [
                 {
                   type: 'html',
-                  value: `<div class="self-center"><img class="not-prose" src="${src}"></div>`,
+                  value: `<div class="self-center"><img class="not-prose ${className}" src="${src}"></div>`,
                 },
               ]
             : [
                 {
                   type: 'html',
-                  value: `<div class="self-center"><img class="not-prose" src="${src}"></div><figcaption>`,
+                  value: `<div class="self-center"><img class="not-prose ${className}" src="${src}"></div><figcaption>`,
                 },
                 // @ts-ignore
                 ...node.children[0].children,
