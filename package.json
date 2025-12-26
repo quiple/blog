@@ -12,7 +12,8 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write .",
-    "lint": "oxlint --type-aware"
+    "lint": "oxlint --type-aware",
+    "img": "sharp --input './src/lib/assets/article/*.*' --output './static/img/article' --format avif --quality 40"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
@@ -48,6 +49,7 @@
     "remark-rehype": "^11.1.2",
     "remark-smartypants": "github:quiple/remark-smartypants",
     "sass": "^1.97.1",
+    "sharp-cli": "^5.2.0",
     "strip-markdown": "^6.0.0",
     "svelte": "^5.46.1",
     "svelte-check": "^4.3.5",
