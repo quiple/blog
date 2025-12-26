@@ -3,7 +3,7 @@ title: 원작자의 대사조차 퇴짜 맞는다?! 팬을 계속 사로잡는 '
 media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/27573
 image: /img/article/yuyushiki_interview03_pc.jpg
-imageForeground: 000
+imageForeground: '000'
 origDate: 2017-06-19T11:00
 pubDate: 2025-12-17T20:45
 ---
