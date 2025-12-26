@@ -40,8 +40,6 @@
         @apply mx-auto max-w-fit flex flex-col items-start
         & > :global(div)
           @apply inner-border after:rounded-md rounded-md shadow-xs
-      :global(img)
-        @apply max-h-[calc(100vh-3rem)]
       :global([target=_blank])
         @apply after:content-['↗'] after:px-0.5
 </style>
