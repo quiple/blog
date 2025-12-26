@@ -63,8 +63,7 @@
     "vite": "^7.3.0"
   },
   "lint-staged": {
-    "**/*": "prettier --write . --ignore-unknown",
-    "src/lib/assets/article": "pnpm img"
+    "**/*": "prettier --write . --ignore-unknown"
   },
   "imports": {
     "#app.css": "./src/app.css",
