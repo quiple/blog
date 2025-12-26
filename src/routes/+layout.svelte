@@ -2,6 +2,9 @@
   import '#app.css'
   import '#fonts.sass'
   import 'non.geist'
+  import favicon32 from '$lib/assets/q-32.png'
+  import appleTouchIcon from '$lib/assets/q.png'
+  import favicon from '$lib/assets/q.svg'
   import Header from '$lib/components/header.svelte'
   import {ModeWatcher} from 'mode-watcher'
 
@@ -9,9 +12,9 @@
 </script>
 
 <svelte:head>
-  <link rel="icon" type="image/png" sizes="32x32" href="/img/q-32.png" />
-  <link rel="icon" type="image/svg+xml" sizes="any" href="/img/q.svg" />
-  <link rel="apple-touch-icon" type="image/png" href="/img/q.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
+  <link rel="icon" type="image/svg+xml" sizes="any" href={favicon} />
+  <link rel="apple-touch-icon" type="image/png" href={appleTouchIcon} />
 </svelte:head>
 
 <ModeWatcher />
