@@ -12,7 +12,7 @@ TV 애니메이션 방영으로부터 약 4년, 2017년 2월 22일에 발매된 
 
 그렇다면 마지막에는 《유유시키》를 낳은 부모에게 이야기를 듣지 않을 수 없을 것이다. 최종회가 되는 이번에는 《유유시키》 원작자 **미카미 코마타(三上小又)**의 인터뷰를 전한다.
 
-:::figure{src="/img/article/yuyushiki_comics.jpg"}
+:::figure{src="/img/article/yuyushiki_comics.avif" class="w-100"}
 유유시키 (1) (망가 타임 KR 코믹스) (출처: [아마존](https://www.amazon.co.jp/dp/B00CA086WM))
 :::
 
