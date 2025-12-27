@@ -14,7 +14,7 @@ pubDate: 2025-12-25T12:58
 
 [^1]: 햐쿠타케 테루: SNS부의 설립자이자 초대 부장. '뭐든 할 수 있는 테루 씨'라고 자칭하지만, 이는 '진심으로 몰두할 수 있는 것이 없다', '타인을 믿지 못한다'는 사실의 이면이기도 했다.
 
-:::figure{src="/img/article/sutemantlb01_w490.jpg"}
+:::figure{src="/img/article/sutemantlb01_w490.avif"}
 모든 일의 원흉에 어울리는 포즈를 취하는 테루 선배.
 :::
 
