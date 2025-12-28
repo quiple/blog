@@ -9,6 +9,7 @@ import remarkCjkFriendly from 'remark-cjk-friendly'
 import remarkCjkFriendlyGfmStrikethrough from 'remark-cjk-friendly-gfm-strikethrough'
 import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
+import remarkGithubAlerts from 'remark-github-alerts'
 import remarkRehype from 'remark-rehype'
 import smartypants from 'remark-smartypants'
 import strip from 'strip-markdown'
@@ -52,6 +53,7 @@ export const load: PageServerLoad = async ({params}) => {
       .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(remarkCjkFriendlyGfmStrikethrough)
+      .use(remarkGithubAlerts)
       .use(remarkRehype, {allowDangerousHtml: true})
       .use(smartypants, {dashes: 'oldschool'})
       .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow', 'noreferrer', 'noopener']})

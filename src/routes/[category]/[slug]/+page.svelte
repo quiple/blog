@@ -4,6 +4,9 @@
   import {BASE_URL} from '$lib/constants'
   import {mode} from 'mode-watcher'
   import type {PageProps} from './$types'
+  import 'remark-github-alerts/styles/github-colors-light.css'
+  import 'remark-github-alerts/styles/github-colors-dark-class.css'
+  import 'remark-github-alerts/styles/github-base.css'
 
   let {data}: PageProps = $props()
 
