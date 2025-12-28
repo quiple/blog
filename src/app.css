@@ -206,4 +206,7 @@
   a {
     @apply scroll-m-(--header-height) text-blue-500 no-underline hover:underline dark:text-blue-400;
   }
+  figcaption {
+    @apply text-justify;
+  }
 }
