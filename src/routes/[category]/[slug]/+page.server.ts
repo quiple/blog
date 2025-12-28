@@ -76,7 +76,7 @@ function figure() {
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
         const src = attributes.src
-        const className = attributes.class
+        const className = attributes.class ?? ''
 
         data.hName = 'figure'
         node.children =
