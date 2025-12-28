@@ -28,6 +28,7 @@
 
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
+
   {#if data.image}
     <meta property="og:image" content={data.image} />
     {@html `<style>:root { --hero-foreground: #${data.imageForeground.toString()}; }</style>`}
