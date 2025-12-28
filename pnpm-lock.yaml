@@ -103,7 +103,7 @@ importers:
         version: 4.0.1
       remark-github-alerts:
         specifier: quiple/remark-github-alerts
-        version: https://codeload.github.com/quiple/remark-github-alerts/tar.gz/5ec81a99c48deb5ccec09805069a15441cd7b195(@types/mdast@4.0.4)(unified@11.0.5)
+        version: https://codeload.github.com/quiple/remark-github-alerts/tar.gz/14adca9688a3b48034a1832ed4bbc7ba8decf54d(@types/mdast@4.0.4)(unified@11.0.5)
       remark-rehype:
         specifier: ^11.1.2
         version: 11.1.2
@@ -2281,8 +2281,8 @@ packages:
   remark-gfm@4.0.1:
     resolution: {integrity: sha512-1quofZ2RQ9EWdeN34S79+KExV1764+wCUGop5CPL1WGdD0ocPpu91lzPGbwWMECpEpd42kJGQwzRfyov9j4yNg==}
 
-  remark-github-alerts@https://codeload.github.com/quiple/remark-github-alerts/tar.gz/5ec81a99c48deb5ccec09805069a15441cd7b195:
-    resolution: {tarball: https://codeload.github.com/quiple/remark-github-alerts/tar.gz/5ec81a99c48deb5ccec09805069a15441cd7b195}
+  remark-github-alerts@https://codeload.github.com/quiple/remark-github-alerts/tar.gz/14adca9688a3b48034a1832ed4bbc7ba8decf54d:
+    resolution: {tarball: https://codeload.github.com/quiple/remark-github-alerts/tar.gz/14adca9688a3b48034a1832ed4bbc7ba8decf54d}
     version: 0.1.1
     peerDependencies:
       '@types/mdast': ^4.0.0
@@ -4635,7 +4635,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  remark-github-alerts@https://codeload.github.com/quiple/remark-github-alerts/tar.gz/5ec81a99c48deb5ccec09805069a15441cd7b195(@types/mdast@4.0.4)(unified@11.0.5):
+  remark-github-alerts@https://codeload.github.com/quiple/remark-github-alerts/tar.gz/14adca9688a3b48034a1832ed4bbc7ba8decf54d(@types/mdast@4.0.4)(unified@11.0.5):
     dependencies:
       '@types/mdast': 4.0.4
       unified: 11.0.5
