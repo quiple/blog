@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {LogIn, Menu, Moon, Search, Settings, Sun, User} from '@lucide/svelte'
+  import {Menu, Moon, Search, Sun} from '@lucide/svelte'
   import {goto} from '$app/navigation'
   import {page} from '$app/state'
   import Q from '$lib/components/q.svelte'
