@@ -45,6 +45,9 @@
   {#if data.image}
     <meta property="og:image" content={data.image} />
     {@html `<style>:root { --hero-foreground: #${data.imageForeground.toString()}; }</style>`}
+    {#if data.outline}
+      {@html `<style>:root { --outline-color: #${data.outline}; }</style>`}
+    {/if}
   {/if}
 </svelte:head>
 
@@ -52,7 +55,7 @@
 
 {#if data.image}
   <div class="hero bg" style:background-image={`url('${data.image}')`}></div>
-  <div class={['hero title', data.outline && 'line']} style={data.outline && `--outline-color: #${data.outline}`}>
+  <div class={['hero title', data.outline && 'line']}>
     <div>
       <h1 class="mb-2!" style={`--content: '${data.title}'`}>{data.title}</h1>
       <div

@@ -1,7 +1,9 @@
 <script lang="ts">
-  import {Menu, Moon, Search, Sun} from '@lucide/svelte'
+  import {Menu, Moon, ReplaceAll, Search, Sun} from '@lucide/svelte'
   import {goto} from '$app/navigation'
   import {page} from '$app/state'
+  import menu from '$lib/assets/menu.svg'
+  import q from '$lib/assets/q-logo.svg'
   import Q from '$lib/components/q.svelte'
   import {Button} from '$lib/components/ui/button/index'
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index'
@@ -41,7 +43,7 @@
 <header class={headerClassName}>
   <section>
     <div class="flex gap-2">
-      <a href="/" class="flex items-center gap-1 self-center transition">
+      <a href="/" class="logo" style={`--svg: url("${q}")`}>
         <Q class="w-9" />
       </a>
     </div>
@@ -50,17 +52,22 @@
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
           {#snippet child({props})}
-            <Button {...props} size="icon" variant="ghost" aria-label="메뉴">
+            <Button
+              {...props}
+              class="menu"
+              size="icon"
+              variant="ghost"
+              aria-label="메뉴"
+              style={`--svg: url("${menu}")`}
+            >
               <Menu class="size-6" />
             </Button>
           {/snippet}
         </DropdownMenu.Trigger>
         <DropdownMenu.Content align="end">
           <DropdownMenu.Item onclick={toggleMode}>
-            {#if mode.current === 'dark'}
-              <Sun /> 라이트 테마
-            {:else}
-              <Moon /> 다크 테마
+            {#if mode.current === 'dark'}<Sun /> 라이트 테마
+            {:else}<Moon /> 다크 테마
             {/if}
           </DropdownMenu.Item>
         </DropdownMenu.Content>
@@ -78,6 +85,14 @@
       @apply text-(--hero-foreground)
       :global(Button):hover
         @apply text-(--hero-foreground) bg-(--hero-foreground)/10
+      .logo, :global(.menu)
+        @apply before:opacity-100
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-8
+      .logo
+        @apply flex items-center gap-1 self-center transition relative
+      :global(.menu)
+        @apply relative before:mask-size-[24px]
+      .logo, :global(.menu)
+        @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:[mask-image:var(--svg)] before:mask-center before:mask-no-repeat
 </style>
