@@ -16,10 +16,10 @@ export const blogPostMetadataSchema = v.object({
   title: v.pipe(v.string(), v.trim()),
   description: v.optional(v.pipe(v.string(), v.trim())),
   source: v.optional(v.pipe(v.string(), v.url(), v.trim())),
+  origAuthor: v.optional(v.pipe(v.string(), v.url(), v.trim())),
   image: v.optional(v.pipe(v.string(), v.trim())),
   imageForeground: v.optional(v.pipe(v.string(), v.trim())),
   media: v.optional(v.pipe(v.string(), v.trim())),
-  origAuthor: v.optional(v.pipe(v.string(), v.url(), v.trim())),
   origDate: v.pipe(v.string(), v.isoDateTime(), v.trim()),
   pubDate: v.pipe(v.string(), v.isoDateTime(), v.trim()),
   tags: v.optional(
