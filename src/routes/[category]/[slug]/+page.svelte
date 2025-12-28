@@ -68,6 +68,7 @@
     </div>
   {/if}
   {@html data.contentHtml}
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </article>
 
 <style lang="sass">
