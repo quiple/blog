@@ -25,7 +25,7 @@
           {#if post.image}
             <div
               class="inner-border shrink-0 aspect-square h-22 bg-cover bg-center after:rounded-sm rounded-sm shadow-xs"
-              style:background-image={`url(${post.image})`}
+              style:background-image={`url('${post.image}')`}
             ></div>
           {/if}
         </a>

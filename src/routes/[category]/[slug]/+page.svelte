@@ -51,10 +51,10 @@
 <div use:hero={{hasHero: Boolean(data.image)}}></div>
 
 {#if data.image}
-  <div class="hero bg" style:background-image={`url(${data.image})`}></div>
-  <div class="hero title">
+  <div class="hero bg" style:background-image={`url('${data.image}')`}></div>
+  <div class={['hero title', data.outline && 'line']} style={data.outline && `--outline-color: #${data.outline}`}>
     <div>
-      <h1 class="mb-2!">{data.title}</h1>
+      <h1 class="mb-2!" style={`--content: '${data.title}'`}>{data.title}</h1>
       <div class="metadata">
         {#if data.media}
           <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
@@ -98,4 +98,7 @@
             @apply font-normal text-(--hero-foreground)!
             &[target=_blank]
               @apply after:content-['↗'] after:px-0.5
+      &.line h1::before
+        @apply content-(--content) absolute -z-1
+        -webkit-text-stroke: 6px var(--outline-color)
 </style>
