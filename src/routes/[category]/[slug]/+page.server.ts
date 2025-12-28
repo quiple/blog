@@ -48,6 +48,7 @@ export const load: PageServerLoad = async ({params}) => {
     await remark()
       .use(remarkDirective)
       .use(figure)
+      .use(tweet)
       .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(remarkCjkFriendlyGfmStrikethrough)
@@ -94,6 +95,27 @@ function figure() {
                 {type: 'html', value: `</figcaption>`},
               ]
       }
+    })
+  }
+}
+
+function tweet() {
+  return (tree: Root) => {
+    visit(tree, 'leafDirective', (node) => {
+      if (node.name !== 'tweet') return
+
+      const data = node.data || (node.data = {})
+      const attributes = node.attributes || {}
+      const id = attributes.id
+
+      data.hName = 'blockquote'
+      data.hProperties = {class: 'twitter-tweet'}
+      node.children = [
+        {
+          type: 'html',
+          value: `<a href="https://twitter.com/username/status/${id}?ref_src=twsrc%5Etfw"></a>`,
+        },
+      ]
     })
   }
 }
