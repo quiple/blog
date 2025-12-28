@@ -25,6 +25,9 @@
   <meta property="og:title" content={data.title} />
   <meta property="og:description" content={data.description} />
   <meta property="article:published_time" content={`${data.origDate}+09:00`} />
+  {#if data.origAuthor}
+    <meta property="article:author" content={data.origAuthor} />
+  {/if}
 
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
