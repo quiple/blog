@@ -44,4 +44,6 @@
           @apply inner-border after:rounded-md rounded-md shadow-xs
       :global([target=_blank])
         @apply after:content-['↗'] after:px-0.5
+      :global(.twitter-tweet)
+        @apply mx-auto my-0!
 </style>
