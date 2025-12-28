@@ -39,7 +39,7 @@
         :global(a)
           @apply text-muted-foreground font-normal
       :global(figure)
-        @apply mx-auto max-w-fit flex flex-col items-start
+        @apply mx-auto [blockquote_&]:mx-0 max-w-fit flex flex-col items-start
         & > :global(div)
           @apply inner-border after:rounded-md rounded-md shadow-xs
       :global([target=_blank]:not(.metadata [target=_blank]))
