@@ -55,7 +55,12 @@
   <div class={['hero title', data.outline && 'line']} style={data.outline && `--outline-color: #${data.outline}`}>
     <div>
       <h1 class="mb-2!" style={`--content: '${data.title}'`}>{data.title}</h1>
-      <div class="metadata">
+      <div
+        class="metadata"
+        style={`--content: '${data.media} • ${new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
+          Date.parse(`${data.origDate}+09:00`),
+        )}'`}
+      >
         {#if data.media}
           <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
           >&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
@@ -96,9 +101,10 @@
           @apply text-sm mb-6
           a
             @apply font-normal text-(--hero-foreground)!
-            &[target=_blank]
-              @apply after:content-['↗'] after:px-0.5
       &.line h1::before
+        @apply content-(--content) absolute -z-1
+        -webkit-text-stroke: 6px var(--outline-color)
+      &.line .metadata::before
         @apply content-(--content) absolute -z-1
         -webkit-text-stroke: 6px var(--outline-color)
 </style>

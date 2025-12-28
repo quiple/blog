@@ -4,6 +4,7 @@ media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/19387
 image: /img/article/yuyushiki_interview02.2_pc.jpg
 imageForeground: '000'
+outline: 'fff'
 origDate: 2017-05-08T11:00
 pubDate: 2025-12-18T23:09
 ---
