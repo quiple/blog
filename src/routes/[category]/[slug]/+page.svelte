@@ -1,6 +1,8 @@
 <script lang="ts">
+  import {onMount} from 'svelte'
   import {hero} from '$lib/actions/hero'
   import {BASE_URL} from '$lib/constants'
+  import {mode} from 'mode-watcher'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()
@@ -14,6 +16,14 @@
       image: data.image && [`${BASE_URL}${data.image}`],
     }),
   )
+
+  onMount(() => {
+    const tweets = document.querySelectorAll('.twitter-tweet')
+
+    for (let i = 0; i < tweets.length; i++) {
+      ;(tweets[i] as HTMLElement).dataset.theme = mode.current
+    }
+  })
 </script>
 
 <svelte:head>

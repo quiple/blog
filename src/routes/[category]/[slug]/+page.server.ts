@@ -109,7 +109,10 @@ function tweet() {
       const id = attributes.id
 
       data.hName = 'blockquote'
-      data.hProperties = {class: 'twitter-tweet'}
+      data.hProperties = {
+        class: 'twitter-tweet',
+        'data-lang': 'ko',
+      }
       node.children = [
         {
           type: 'html',
