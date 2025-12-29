@@ -2,9 +2,9 @@
 title: 《걸크라》는 왜 반골 정신 넘치는 걸작이 되었나? 하나다 줏키에게 듣는 캐릭터를 돋보이게 하는 각본술
 media: 리얼사운드
 source: https://realsound.jp/movie/2024/08/post-1747342.html
-# image: /img/article/yuyushiki_interview02.2_pc.avif
-# imageForeground: 'fff'
-# outline: '001af4'
+image: /img/article/20240813-girlsbandcry-5.avif
+imageForeground: 'fff'
+outline: '000'
 origDate: 2024-08-14T18:00
 pubDate: 2025-12-29T16:00
 ---
