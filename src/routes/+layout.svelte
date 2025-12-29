@@ -47,5 +47,6 @@
       :global(.twitter-tweet)
         @apply mx-auto my-0!
       :global(iframe)
+        @apply max-w-full w-xl 2xl:w-2xl
         color-scheme: initial
 </style>
