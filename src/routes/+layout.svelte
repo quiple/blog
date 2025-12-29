@@ -46,6 +46,6 @@
         @apply after:content-['↗'] after:px-0.5
       :global(.twitter-tweet)
         @apply mx-auto my-0!
-        :global(iframe)
-          color-scheme: initial
+      :global(iframe)
+        color-scheme: initial
 </style>
