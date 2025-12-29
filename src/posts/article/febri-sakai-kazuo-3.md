@@ -6,7 +6,7 @@ origAuthor: https://mae-9.hatenablog.com
 # image: /img/article/20240813-girlsbandcry-5.avif
 # imageForeground: fff
 origDate: 2024-10-02T12:00
-pubDate: 2025-12-29T20:43
+pubDate: 2025-12-29T23:31
 ---
 
 > 《걸즈 밴드 크라이(ガールズバンドクライ, 이하 걸크라)》의 영상 면에서의 매력을 시리즈 디렉터인 사카이 카즈오(酒井和男)에게 묻는 인터뷰 연재의 마지막인 제3회. '움직임'이나 라이브 장면의 화제를 중심으로 영상의 매력과 그에 관여한 스태프들의 업무 방식을 들어보았다. 그리고 최종회 전개에 대해서도...
