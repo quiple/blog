@@ -76,7 +76,10 @@ function figure() {
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
         const src = attributes.src
+        const id = attributes.id
         const className = attributes.class ?? ''
+        const img = `<img class="not-prose ${className}" src="${src}">`
+        const youtube = `<iframe class="max-w-full w-xl 2xl:w-2xl ${className}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
 
         data.hName = 'figure'
         node.children =
@@ -84,13 +87,13 @@ function figure() {
             ? [
                 {
                   type: 'html',
-                  value: `<div class="self-center"><img class="not-prose ${className}" src="${src}"></div>`,
+                  value: `<div class="self-center">${id ? youtube : img}</div>`,
                 },
               ]
             : [
                 {
                   type: 'html',
-                  value: `<div class="self-center"><img class="not-prose ${className}" src="${src}"></div><figcaption>`,
+                  value: `<div class="self-center">${id ? youtube : img}</div><figcaption>`,
                 },
                 // @ts-ignore
                 ...node.children[0].children,
