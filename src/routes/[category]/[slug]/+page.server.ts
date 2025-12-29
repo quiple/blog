@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import type {Root} from 'mdast'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeStringify from 'rehype-stringify'
+import {cn} from '$lib/utils'
 import {remark} from 'remark'
 import remarkCjkFriendly from 'remark-cjk-friendly'
 import remarkCjkFriendlyGfmStrikethrough from 'remark-cjk-friendly-gfm-strikethrough'
@@ -78,8 +79,8 @@ function figure() {
         const src = attributes.src
         const id = attributes.id
         const className = attributes.class ?? ''
-        const img = `<img class="not-prose ${className}" src="${src}">`
-        const youtube = `<iframe class="max-w-full w-xl 2xl:w-2xl ${className}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
+        const img = `<img class="${cn('not-prose', className)}" src="${src}">`
+        const youtube = `<iframe class="${cn('max-w-full w-xl 2xl:w-2xl aspect-video', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
 
         data.hName = 'figure'
         node.children =
