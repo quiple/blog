@@ -3,7 +3,7 @@ title: 팬들에게 계속 사랑받는 애니메이션 《유유시키》 프�
 media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/19387
 image: /img/article/yuyushiki_interview02.2_pc.avif
-imageForeground: 'fff'
+imageForeground: fff
 outline: '001af4'
 origDate: 2017-05-08T11:00
 pubDate: 2025-12-18T23:09
