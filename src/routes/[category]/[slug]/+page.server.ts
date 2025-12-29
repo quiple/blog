@@ -93,13 +93,13 @@ function figure() {
             ? [
                 {
                   type: 'html',
-                  value: `<div class="self-center">${content}</div>`,
+                  value: `<div class="self-center ${node.name !== 'figure' && 'after:hidden'}">${content}</div>`,
                 },
               ]
             : [
                 {
                   type: 'html',
-                  value: `<div class="self-center">${content}</div><figcaption>`,
+                  value: `<div class="self-center ${node.name !== 'figure' && 'after:hidden'}">${content}</div><figcaption>`,
                 },
                 // @ts-ignore
                 ...node.children[0].children,
