@@ -6,7 +6,7 @@ origAuthor: https://mae-9.hatenablog.com
 # image: /img/article/20240813-girlsbandcry-5.avif
 # imageForeground: fff
 origDate: 2024-10-01T12:00
-pubDate: 2025-12-29T20:43
+pubDate: 2025-12-29T23:10
 ---
 
 > TV 애니메이션 《걸즈 밴드 크라이(ガールズバンドクライ, 이하 걸크라)》의 영상으로서의 매력과 그 배경을 파헤치는 시리즈 디렉터 사카이 카즈오(酒井和男) 인터뷰 연재. 제2회에서는 그림 콘티와 연출 테크닉 및 그 뿌리, 그리고 이를 풀 3D CG 영상으로 구현하기 위한 수많은 고안과 집념을 깊이 있게 다룬다.
