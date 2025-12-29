@@ -1,5 +1,5 @@
 ---
-title: 《걸크라》는 왜 반골 정신 넘치는 걸작이 되었나? 하나다 줏키에게 듣는 캐릭터를 돋보이게 하는 각본술
+title: 《걸크라》는 왜 반골 정신 넘치는 걸작이 되었나? 하나다 줏키에게 듣는, 캐릭터를 돋보이게 하는 각본술
 media: 리얼사운드
 source: https://realsound.jp/movie/2024/08/post-1747342.html
 origAuthor: https://x.com/Hotakasugi
