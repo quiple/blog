@@ -5,7 +5,7 @@ source: https://realsound.jp/movie/2024/08/post-1747342.html
 origAuthor: https://x.com/Hotakasugi
 image: /img/article/20240813-girlsbandcry-5.avif
 imageForeground: 'fff'
-outline: '000'
+# outline: '000'
 origDate: 2024-08-14T18:00
 pubDate: 2025-12-29T16:00
 ---
