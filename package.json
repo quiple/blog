@@ -13,7 +13,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write .",
     "lint": "oxlint --type-aware",
-    "img": "sharp --input ./src/lib/assets/article/*.* --output ./static/img/article --format avif --quality 40"
+    "img": "sharp --input ./src/lib/assets/article/*.* --output ./static/img/article --format avif --quality 50"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
