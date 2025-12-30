@@ -2,7 +2,7 @@
 title: 팬들에게 계속 사랑받는 애니메이션 《유유시키》 프로듀서가 작품에 대한 남다른 애정을 계속 숨겼던 이유
 media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/19387
-image: /img/article/yuyushiki_interview02.2_pc.avif
+image: yuyushiki_interview02.2_pc.avif
 imageForeground: fff
 outline: '001af4'
 origDate: 2017-05-08T11:00

@@ -3,7 +3,7 @@ title: 《걸크라》는 어떻게 반골 정신 넘치는 걸작이 되었나?
 media: 리얼사운드
 source: https://realsound.jp/movie/2024/08/post-1747342.html
 origAuthor: https://x.com/Hotakasugi
-image: /img/article/20240813-girlsbandcry-5.avif
+image: 20240813-girlsbandcry-5.avif
 imageForeground: fff
 origDate: 2024-08-14T18:00
 pubDate: 2025-12-29T16:00

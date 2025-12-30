@@ -10,13 +10,14 @@
 
   let {data}: PageProps = $props()
 
-  let jsonLd = $derived(
+  const image = $derived(data.image ? `/img/article/${data.image}` : '')
+  const jsonLd = $derived(
     JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'NewsArticle',
       headline: data.title,
       datePublished: `${data.origDate}+09:00`,
-      image: data.image && [`${BASE_URL}${data.image}`],
+      image: image && [`${BASE_URL}${image}`],
     }),
   )
 
@@ -45,8 +46,8 @@
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
 
-  {#if data.image}
-    <meta property="og:image" content={data.image} />
+  {#if image}
+    <meta property="og:image" content={image} />
     {@html `<style>:root { --hero-foreground: #${data.imageForeground.toString()}; }</style>`}
     {#if data.outline}
       {@html `<style>:root { --outline-color: #${data.outline}; }</style>`}
@@ -54,10 +55,10 @@
   {/if}
 </svelte:head>
 
-<div use:hero={{hasHero: Boolean(data.image)}}></div>
+<div use:hero={{hasHero: Boolean(image)}}></div>
 
-{#if data.image}
-  <div class="hero bg" style:background-image={`url('${data.image}')`}></div>
+{#if image}
+  <div class="hero bg" style:background-image={`url('${image}')`}></div>
   <div class={['hero title', data.outline && 'line']}>
     <div>
       <h1 class="mb-2!" style={`--content: '${data.title}'`}>{data.title}</h1>
@@ -78,7 +79,7 @@
 {/if}
 
 <article>
-  {#if !data.image}
+  {#if !image}
     <h1 class="mb-2!">{data.title}</h1>
     <div class="metadata">
       {#if data.media}
