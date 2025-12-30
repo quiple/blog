@@ -2,7 +2,8 @@
 title: 키라라 역사에 남을 최종 보스 '일상계 동아리물에 저주받은 졸업생'이 탄생한 이유 --- 《스텔라의 마법》 완결 기념 쿠로바 U 인터뷰
 media: 네토라보
 source: https://nlab.itmedia.co.jp/cont/articles/3330234/
-origAuthor: https://www.mashiro-writer.com
+origAuthor: 마시로
+origAuthorURL: https://www.mashiro-writer.com
 origDate: 2021-12-25T20:00
 pubDate: 2025-12-25T12:58
 ---

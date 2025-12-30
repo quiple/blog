@@ -2,7 +2,8 @@
 title: 《걸즈 밴드 크라이》 시리즈 구성 하나다 줏키가 '밴드물'에서 그리고 싶었던 것 ②
 media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_01_02/
-origAuthor: https://mae-9.hatenablog.com
+origAuthor: 마에다 히사시
+origAuthorURL: https://mae-9.hatenablog.com
 image: ep11_s011c267_comp_v03_2400.avif
 imageForeground: fff
 origDate: 2024-08-27T12:00
@@ -10,8 +11,6 @@ pubDate: 2025-12-24T23:59
 ---
 
 > 2024년 2분기의 충격작, 토에이 애니메이션의 오리지널 TV 애니메이션 《걸즈 밴드 크라이(ガールズバンドクライ)》. 그 재미의 비밀을 파헤치는 시리즈 구성 하나다 줏키(花田十輝) 인터뷰 제2회는 주인공 이세리 니나의 키 퍼슨인 모모카, 그리고 히나와의 관계성을 깊게 파고든다.
-
-취재·글 / 마에다 히사시 (前田久)
 
 ## "니나는 당신 그 자체더군"이라는 말을 들었다
 

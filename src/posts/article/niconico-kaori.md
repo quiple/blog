@@ -2,6 +2,8 @@
 title: 열광적인 팬들에게 지지받는 애니메이션 《유유시키》가 TV 시리즈 종영 4년 후에도 계속 사랑받는 이유 --- 원작 사랑으로 가득한 OVA 제작 비화
 media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/15200
+origAuthor: 타카세 코지
+origAuthorURL: https://x.com/takase_merca
 image: yuyushiki_pc-修正.avif
 imageForeground: fff
 outline: '001af4'
@@ -24,8 +26,6 @@ pubDate: 2025-12-18T00:30
 심야 애니메이션은 종종 소비 사이클이 짧다는 지적을 받는다. 그런 가운데 **왜 《유유시키》는 이토록 장기간에 걸쳐 팬들을 사로잡았는가.**
 
 그 이유를 찾기 위해, 이번에는 그런 《유유시키》를 팬들마저 감탄하게 만드는 완성도로 애니메이션화해 온 **카오리(かおり) 감독**과의 인터뷰를 감행했다. OVA의 콘셉트부터 제작 뒷이야기, TV 시리즈로부터의 변화까지 풍성하게 이야기를 들어보았다.
-
-취재·글 / 타카세 츠카사 (高瀬司)
 
 :::figure{src="/img/article/yu1.avif"}
 &copy; 미카미 코마타 · 호분샤 / 유유시키 SP 정보처리부

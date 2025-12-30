@@ -2,7 +2,8 @@
 title: 《걸즈 밴드 크라이》 시리즈 구성 하나다 줏키가 '밴드물'에서 그리고 싶었던 것 ③
 media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_01_03/
-origAuthor: https://mae-9.hatenablog.com
+origAuthor: 마에다 히사시
+origAuthorURL: https://mae-9.hatenablog.com
 image: ep13_s013c321_comp_v04_2400.avif
 imageForeground: fff
 origDate: 2024-08-28T12:00
@@ -10,8 +11,6 @@ pubDate: 2025-12-25T00:31
 ---
 
 > 2024년 2분기를 석권한 토에이 애니메이션의 오리지널 TV 애니메이션 《걸즈 밴드 크라이(ガールズバンドクライ)》. 그 매력을 파헤치는 시리즈 구성 하나다 줏키(花田十輝) 인터뷰의 최종회. 마지막으로는 토게나시 토게아리의 '틀리지 않은' 존재 방식에 대해 다시 한번 생각한다.
-
-취재·글 / 마에다 히사시 (前田久)
 
 ## 스바루가 고민을 해결하는 과정은 일부러 명확히 보여주지 않았다
 

@@ -2,7 +2,8 @@
 title: 시리즈 디렉터 사카이 카즈오가 돌아보는 《걸즈 밴드 크라이》의 영상 제작 ①
 media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_02_01/
-origAuthor: https://mae-9.hatenablog.com
+origAuthor: 마에다 히사시
+origAuthorURL: https://mae-9.hatenablog.com
 image: ep01_s001c199_comp_v03_2400.avif
 imageForeground: fff
 origDate: 2024-09-30T12:00
@@ -10,8 +11,6 @@ pubDate: 2025-12-29T22:57
 ---
 
 > TV 애니메이션 《걸즈 밴드 크라이(ガールズバンドクライ, 이하 걸크라)》의 키 퍼슨에 대한 롱 인터뷰 기획. 지난달 공개한 하나다 줏키(花田十輝)에 이어 이번에는 시리즈 디렉터 사카이 카즈오(酒井和男)에게 풀 3D CG 작품으로서 야심 찬 내용이 된 본작의 제작 뒷이야기를 묻는다. 첫 회는 기획의 시작부터 영상의 큰 방향성을 결정하기까지의 분투에 대해. 또한, 취재에는 프로듀서 히라야마 타다시(平山理志)도 동석하여 보충 설명을 해주었다.
-
-취재·글 / 마에다 히사시 (前田久)
 
 ## 눈에 보이지 않는 것을 제대로 그려내고 싶다
 

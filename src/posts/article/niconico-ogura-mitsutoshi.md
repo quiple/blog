@@ -2,6 +2,8 @@
 title: 팬들에게 계속 사랑받는 애니메이션 《유유시키》 프로듀서가 작품에 대한 남다른 애정을 계속 숨겼던 이유
 media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/19387
+origAuthor: 타카세 코지
+origAuthorURL: https://x.com/takase_merca
 image: yuyushiki_interview02.2_pc.avif
 imageForeground: fff
 outline: '001af4'
@@ -26,8 +28,6 @@ pubDate: 2025-12-18T23:09
 하지만 그러면서도 각처에서 오구라 씨의 인터뷰를 보면, 다른 스태프들이 이야기하는 그의 무용담과 비교해 쿨한 말투가 눈에 띈다. 그 이유는 무엇일까.
 
 그래서 이번에는 그 비밀을 시작으로 TV 시리즈부터 신작 OVA, 그리고 향후 전개까지 애니메이션 《유유시키》의 발자취의 모든 것을 오구라 프로듀서에게 회고해 달라고 부탁했다.
-
-취재·글 / 타카세 츠카사 (高瀬司)
 
 :::figure{src="/img/article/image0012.avif"}
 &copy; 미카미 코마타 · 호분샤 / 유유시키 SP 정보처리부

@@ -18,6 +18,18 @@
       headline: data.title,
       datePublished: `${data.origDate}+09:00`,
       image: image && [`${BASE_URL}${image}`],
+      author: data.origAuthor && [
+        data.origAuthorURL
+          ? {
+              '@type': 'Person',
+              name: data.origAuthor,
+              url: data.origAuthorURL,
+            }
+          : {
+              '@type': 'Person',
+              name: data.origAuthor,
+            },
+      ],
     }),
   )
 

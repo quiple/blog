@@ -2,7 +2,8 @@
 title: 《걸즈 밴드 크라이》 시리즈 구성 하나다 줏키가 '밴드물'에서 그리고 싶었던 것 ①
 media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_01_01/
-origAuthor: https://mae-9.hatenablog.com
+origAuthor: 마에다 히사시
+origAuthorURL: https://mae-9.hatenablog.com
 image: live01_s101c013_comp_v04_2400.avif
 imageForeground: fff
 origDate: 2024-08-26T12:00
@@ -10,8 +11,6 @@ pubDate: 2025-12-24T23:04
 ---
 
 > 분노도 기쁨도 슬픔도, 모든 것을 쏟아부은 밴드 애니메이션으로서 2024년 2분기에 선풍을 일으킨 토에이 애니메이션의 오리지널 TV 애니메이션 《걸즈 밴드 크라이(ガールズバンドクライ)》. 그 창작의 비밀을 파헤치는 인터뷰 기획 제1탄의 주인공은 시리즈 구성을 맡은 하나다 줏키(花田十輝). 그가 '밴드물'에 담은 뜨거운 진심이란?
-
-취재·글 / 마에다 히사시 (前田久)
 
 ## '토게토게'에는 기획이 시작될 무렵의 내 모습이 투영되어 있을지도 모른다
 
