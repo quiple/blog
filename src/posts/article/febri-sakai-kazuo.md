@@ -59,7 +59,7 @@ pubDate: 2025-12-29T22:57
 
 **사카이**: 3D로 작업하면서 가장 우려했던 부분이자 제 안에서 완전히 소화되지 않았던 부분은 '움직임'입니다. 《걸크라》에서는 화면은 풀 3D, '움직임'은 풀 애니메이션(풀 프레임)이라는 형식에 도전했는데, 이는 그동안 여러 풀 3D 애니메이션 작품을 보면서 작품의 장르나 이야기 내용과 상관없이 '볼 수 있는 작품'과 '차마 못 보겠는 작품'의 차이가 무엇인지 깊이 고민한 결과입니다.
 
-![](https://febri.jp/wp/wp-content/uploads/2024/09/live03_s103c011_comp_v01.0799_result_1280.jpg)
+::figure{src="/img/article/live03_s103c011_comp_v01.0799_result_1280.avif"}
 
 > 궁금하네요.
 
@@ -79,7 +79,7 @@ pubDate: 2025-12-29T22:57
 
 **사카이**: 아, 맞습니다. 그것에 가까운 발상입니다.
 
-![](https://febri.jp/wp/wp-content/uploads/2024/09/live07_LIVE_Master_1533_result_1280.jpg)
+::figure{src="/img/article/live07_LIVE_Master_1533_result_1280.avif"}
 
 ## 3D 스태프에게는 "어쨌든 귀엽게 해달라"고 요청했다
 
