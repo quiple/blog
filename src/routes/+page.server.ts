@@ -9,6 +9,8 @@ import strip from 'strip-markdown'
 import type {PageServerLoad} from './$types'
 
 export const load: PageServerLoad = async () => {
+  const title = 'quiple'
+  const description = '번역 블로그.'
   const posts = getBlogPostsMetadata()
 
   for (let i = 0; i < posts.length; i++) {
@@ -38,5 +40,5 @@ export const load: PageServerLoad = async () => {
         .trim() + '\u2026'
   }
 
-  return {posts}
+  return {title, description, posts}
 }
