@@ -1,8 +1,19 @@
 <script lang="ts">
+  import {BASE_URL} from '$lib/constants'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()
 </script>
+
+<svelte:head>
+  <title>{data.title}</title>
+  <meta name="description" content={data.description} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content={BASE_URL} />
+  <meta property="og:title" content={data.title} />
+  <meta property="og:description" content={data.description} />
+</svelte:head>
 
 <div class="max-w-xl 2xl:max-w-2xl mx-auto">
   <ul class="flex flex-col">
