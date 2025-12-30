@@ -3,8 +3,8 @@ title: 시리즈 디렉터 사카이 카즈오가 돌아보는 《걸즈 밴드 
 media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_02_03/
 origAuthor: https://mae-9.hatenablog.com
-# image: /img/article/20240813-girlsbandcry-5.avif
-# imageForeground: fff
+image: /img/article/ep01_s001c327_comp_v03_2400.avif
+imageForeground: fff
 origDate: 2024-10-02T12:00
 pubDate: 2025-12-29T23:31
 ---
