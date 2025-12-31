@@ -77,9 +77,14 @@
   <!-- {#if image || data.outline} -->
   {@html `
       <style>
+        ::view-transition-group-children(post-image-wrapper-${data.slug}) {
+          overflow: clip;
+        }
+        ::view-transition-old(post-image-wrapper-${data.slug}),
         ::view-transition-old(post-image-${data.slug}) {
           opacity: 0;
         }
+        ::view-transition-new(post-image-wrapper-${data.slug}),
         ::view-transition-new(post-image-${data.slug}) {
           animation-name: zoom-in;
         }
@@ -128,7 +133,9 @@
 {/snippet}
 
 {#if image}
-  <div class="hero bg" style:background-image={`url('${image}')`} use:transition={`post-image-${data.slug}`}></div>
+  <div class="hero bg" use:transition={`post-image-wrapper-${data.slug}`}>
+    <div style:background-image={`url('${image}')`} use:transition={`post-image-${data.slug}`}></div>
+  </div>
   <div class={['hero title', data.outline && 'line']}>
     <div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
@@ -155,16 +162,18 @@
 
   @keyframes -global-zoom-in
     from
-      height: 5.5rem
+      transform: scale(2)
       border-radius: 6px
     to
-      height: 50vh
+      transform: scale(1)
       border-radius: 0
 
   .hero
     @apply inset-0 absolute!
     &.bg
-      @apply w-[calc(100vw-var(--scrollbar-width))] bg-cover bg-center inner-b-border -z-10 h-[50vh]
+      @apply w-[calc(100vw-var(--scrollbar-width))] inner-b-border -z-10 h-[50vh] [view-transition-group:contain]
+      div
+        @apply size-full bg-cover bg-center
     &.title
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-[50vh] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
       & > div
