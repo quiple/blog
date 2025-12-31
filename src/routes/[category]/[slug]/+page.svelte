@@ -1,5 +1,6 @@
 <script lang="ts">
   import {onMount} from 'svelte'
+  import {Newspaper, PencilLine} from '@lucide/svelte'
   import {hero} from '$lib/actions/hero'
   import {BASE_URL} from '$lib/constants'
   import {mode} from 'mode-watcher'
@@ -82,30 +83,36 @@
 
 <div use:hero={{hasHero: Boolean(image)}}></div>
 
+{#snippet metadata(isOutline: boolean = false)}
+  <div
+    class="metadata"
+    style={isOutline
+      ? `--content: '${data.media && `${data.media} • `}${data.author && `${data.author} • `}${new Intl.DateTimeFormat(
+          'ko-KR',
+          {
+            dateStyle: 'long',
+          },
+        ).format(Date.parse(`${data.origDate}+09:00`))}'`
+      : null}
+  >
+    {#if data.media}
+      <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
+      >&#8194;&bullet;&#8194;{/if}{#if data.author}<a
+        target="_blank"
+        rel="nofollow noreferrer noopener"
+        href={data.authorURL}>{data.author}</a
+      >&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
+      Date.parse(`${data.origDate}+09:00`),
+    )}
+  </div>
+{/snippet}
+
 {#if image}
   <div class="hero bg" style:background-image={`url('${image}')`}></div>
   <div class={['hero title', data.outline && 'line']}>
     <div>
       <h1 class="mb-2!" style={`--content: '${data.title}'`}>{data.title}</h1>
-      <div
-        class="metadata"
-        style={`--content: '${data.media && `${data.media} • `}${data.author && `${data.author} • `}${new Intl.DateTimeFormat(
-          'ko-KR',
-          {
-            dateStyle: 'long',
-          },
-        ).format(Date.parse(`${data.origDate}+09:00`))}'`}
-      >
-        {#if data.media}
-          <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
-          >&#8194;&bullet;&#8194;{/if}{#if data.author}<a
-            target="_blank"
-            rel="nofollow noreferrer noopener"
-            href={data.authorURL}>{data.author}</a
-          >&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-          Date.parse(`${data.origDate}+09:00`),
-        )}
-      </div>
+      {@render metadata(Boolean(data.outline))}
     </div>
   </div>
 {/if}
@@ -113,17 +120,7 @@
 <article>
   {#if !image}
     <h1 class="mb-2!">{data.title}</h1>
-    <div class="metadata">
-      {#if data.media}
-        <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
-        >&#8194;&bullet;&#8194;{/if}{#if data.author}<a
-          target="_blank"
-          rel="nofollow noreferrer noopener"
-          href={data.authorURL}>{data.author}</a
-        >&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-        Date.parse(`${data.origDate}+09:00`),
-      )}
-    </div>
+    {@render metadata()}
   {/if}
   {@html data.contentHtml}
   {#if isContainTwitter}
