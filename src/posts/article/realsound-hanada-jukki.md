@@ -2,7 +2,8 @@
 title: 《걸크라》는 어떻게 반골 정신 넘치는 걸작이 되었나? 하나다 줏키에게 듣는, 캐릭터를 돋보이게 하는 각본술
 media: 리얼사운드
 source: https://realsound.jp/movie/2024/08/post-1747342.html
-origAuthor: https://x.com/Hotakasugi
+origAuthor: 스기모토 호타카
+origAuthorURL: https://x.com/Hotakasugi
 image: 20240813-girlsbandcry-5.avif
 imageForeground: fff
 origDate: 2024-08-14T18:00
