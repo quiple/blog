@@ -89,12 +89,19 @@
       <h1 class="mb-2!" style={`--content: '${data.title}'`}>{data.title}</h1>
       <div
         class="metadata"
-        style={`--content: '${data.media} • ${data.author} • ${new Intl.DateTimeFormat('ko-KR', {
-          dateStyle: 'long',
-        }).format(Date.parse(`${data.origDate}+09:00`))}'`}
+        style={`--content: '${data.media && `${data.media} • `}${data.author && `${data.author} • `}${new Intl.DateTimeFormat(
+          'ko-KR',
+          {
+            dateStyle: 'long',
+          },
+        ).format(Date.parse(`${data.origDate}+09:00`))}'`}
       >
         {#if data.media}
           <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
+          >&#8194;&bullet;&#8194;{/if}{#if data.author}<a
+            target="_blank"
+            rel="nofollow noreferrer noopener"
+            href={data.authorURL}>{data.author}</a
           >&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
           Date.parse(`${data.origDate}+09:00`),
         )}
@@ -109,6 +116,10 @@
     <div class="metadata">
       {#if data.media}
         <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
+        >&#8194;&bullet;&#8194;{/if}{#if data.author}<a
+          target="_blank"
+          rel="nofollow noreferrer noopener"
+          href={data.authorURL}>{data.author}</a
         >&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
         Date.parse(`${data.origDate}+09:00`),
       )}
