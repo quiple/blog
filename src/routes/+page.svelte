@@ -54,7 +54,7 @@
                 ::view-transition-old(post-image-${post.slug}) {
                   animation-name: zoom-out;
                 }
-                ::view-transition-new(post-image-wrapper-${post.slug})
+                ::view-transition-new(post-image-wrapper-${post.slug}),
                 ::view-transition-new(post-image-${post.slug}) {
                   opacity: 0;
                 }
