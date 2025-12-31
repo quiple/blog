@@ -10,10 +10,13 @@
   import {Input} from '$lib/components/ui/input/index'
   import {isHero} from '$lib/stores/header'
   import {mode, toggleMode} from 'mode-watcher'
+  import {setupViewTransition} from 'sveltekit-view-transition'
 
   let query = $state('')
   let inputElement = $state<HTMLInputElement | null>(null)
   let headerClassName = $derived($isHero === true ? 'hero' : '')
+
+  const {transition} = setupViewTransition()
 
   const onKeydown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && inputElement && document.activeElement === inputElement) {
@@ -40,7 +43,7 @@
 
 <svelte:window on:keydown={onKeydown} on:scroll={onScroll} />
 
-<header class={headerClassName}>
+<header class={headerClassName} use:transition={'header'}>
   <section>
     <div class="flex gap-2">
       <a href="/" class="logo" style={`--svg: url("${q}")`}>
@@ -80,7 +83,7 @@
   @reference '#app.css'
 
   header
-    @apply relative md:sticky top-0 py-4 sm:py-6
+    @apply relative md:sticky top-0 py-4 sm:py-6 z-1
     &.hero
       @apply text-(--hero-foreground)
       :global(Button):hover
