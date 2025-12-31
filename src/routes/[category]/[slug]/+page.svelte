@@ -31,6 +31,18 @@
               name: data.origAuthor,
             },
       ],
+      publisher: data.media && [
+        data.source
+          ? {
+              '@type': 'Organization',
+              name: data.media,
+              url: data.source,
+            }
+          : {
+              '@type': 'Organization',
+              name: data.media,
+            },
+      ],
     }),
   )
 
