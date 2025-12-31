@@ -1,7 +1,7 @@
 <script lang="ts">
   import {onMount} from 'svelte'
-  import {Newspaper, PencilLine} from '@lucide/svelte'
   import {hero} from '$lib/actions/hero'
+  import * as Tooltip from '$lib/components/ui/tooltip/index.js'
   import {BASE_URL} from '$lib/constants'
   import {mode} from 'mode-watcher'
   import type {PageProps} from './$types'
@@ -101,9 +101,18 @@
         target="_blank"
         rel="nofollow noreferrer noopener"
         href={data.authorURL}>{data.author}</a
-      >&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-      Date.parse(`${data.origDate}+09:00`),
-    )}
+      >&#8194;&bullet;&#8194;{/if}<Tooltip.Provider>
+      <Tooltip.Root>
+        <Tooltip.Trigger class="cursor-default">
+          {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${data.origDate}+09:00`))}
+        </Tooltip.Trigger>
+        <Tooltip.Content>
+          {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'medium'}).format(
+            Date.parse(`${data.origDate}+09:00`),
+          )}
+        </Tooltip.Content>
+      </Tooltip.Root>
+    </Tooltip.Provider>
   </div>
 {/snippet}
 
