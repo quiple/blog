@@ -171,9 +171,9 @@
   .hero
     @apply inset-0 absolute!
     &.bg
-      @apply w-[calc(100vw-var(--scrollbar-width))] inner-b-border -z-10 h-[50vh] [view-transition-group:contain]
+      @apply w-[calc(100vw-var(--scrollbar-width))]  -z-10 h-[50vh] [view-transition-group:contain]
       div
-        @apply size-full bg-cover bg-center
+        @apply size-full bg-cover bg-center inner-b-border
     &.title
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-[50vh] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
       & > div
