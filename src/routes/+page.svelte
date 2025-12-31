@@ -88,6 +88,7 @@
     to
       opacity: 0
       height: 5.5rem
+
   @keyframes -global-zoom-out-new
     from
       opacity: 0
