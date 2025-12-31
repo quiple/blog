@@ -74,13 +74,15 @@
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
 
-  {#if image}
-    <meta property="og:image" content={image} />
-    {@html `<style>:root { --hero-foreground: #${data.imageForeground.toString()}; }</style>`}
-    {#if data.outline}
-      {@html `<style>:root { --outline-color: #${data.outline}; }</style>`}
-    {/if}
-  {/if}
+  {@html `
+    <style>
+      :root {
+        --slug: #${data.slug};
+        ${image && `--hero-foreground: #${data.imageForeground.toString()};`}
+        ${data.outline && `--outline-color: #${data.outline.toString()};`}
+      }
+    </style>
+  `}
 </svelte:head>
 
 <div use:hero={{hasHero: Boolean(image)}}></div>
@@ -143,6 +145,11 @@
 
 <style lang="sass">
   @reference '#app.css'
+
+  :global(.post-image::view-transition-old(post-image))
+    @apply -z-50
+  :global(.post-image::view-transition-new(post-image))
+    @apply -z-50
 
   .hero
     @apply inset-0 absolute!
