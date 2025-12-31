@@ -15,7 +15,7 @@
   const jsonLd = $derived(
     JSON.stringify({
       '@context': 'https://schema.org',
-      '@type': 'NewsArticle',
+      '@type': 'Article',
       headline: data.title,
       datePublished: `${data.origDate}+09:00`,
       image: image && [`${BASE_URL}${image}`],
@@ -36,7 +36,7 @@
           ? {
               '@type': 'Organization',
               name: data.media,
-              url: data.source,
+              url: `${new URL(data.source).protocol}//${new URL(data.source).hostname}`,
             }
           : {
               '@type': 'Organization',
