@@ -51,6 +51,15 @@
             <div
               class="inner-border shrink-0 aspect-square h-22 bg-cover bg-center after:rounded-sm rounded-sm shadow-xs"
               style:background-image={`url('/img/thumbnail/${post.image}')`}
+              use:transition={{
+                name: `post-image-${post.slug}`,
+                shouldApply({navigation}) {
+                  return navigation?.to?.params?.slug === post.slug
+                },
+                applyImmediately({navigation}) {
+                  return navigation?.from?.params?.slug === post.slug
+                },
+              }}
             ></div>
           {/if}
         </a>
