@@ -2,7 +2,7 @@
 title: 시리즈 디렉터 사카이 카즈오가 돌아보는 《걸즈 밴드 크라이》의 영상 제작 ③
 media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_02_03/
-origAuthor: 마에다 히사시
+origAuthor: 마에다 히사시 (前田久)
 origAuthorURL: https://mae-9.hatenablog.com
 image: ep01_s001c327_comp_v03_2400.avif
 imageForeground: fff

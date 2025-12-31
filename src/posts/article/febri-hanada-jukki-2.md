@@ -2,7 +2,7 @@
 title: 《걸즈 밴드 크라이》 시리즈 구성 하나다 줏키가 '밴드물'에서 그리고 싶었던 것 ②
 media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_01_02/
-origAuthor: 마에다 히사시
+origAuthor: 마에다 히사시 (前田久)
 origAuthorURL: https://mae-9.hatenablog.com
 image: ep11_s011c267_comp_v03_2400.avif
 imageForeground: fff

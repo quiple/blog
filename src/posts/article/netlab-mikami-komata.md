@@ -2,7 +2,7 @@
 title: "'실재감' × '적당한 에로함' = 《유유시키》? 작가 미카미 코마타에게 묻는 연재 10주년의 지금까지와 앞으로"
 media: 네토라보
 source: https://nlab.itmedia.co.jp/cont/articles/3286966/
-origAuthor: 마시로
+origAuthor: 마시로 (ましろ)
 origAuthorURL: https://www.mashiro-writer.com
 origDate: 2019-01-26T12:00
 pubDate: 2025-12-17T06:52
