@@ -74,14 +74,16 @@
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
 
-  {@html `
-    <style>
-      :root {
-        ${image && `--hero-foreground: #${data.imageForeground.toString()};`}
-        ${data.outline && `--outline-color: #${data.outline.toString()};`}
-      }
-    </style>
-  `}
+  {#if image || data.outline}
+    {@html `
+      <style>
+        :root {
+          ${image && `--hero-foreground: #${data.imageForeground.toString()};`}
+          ${data.outline ? `--outline-color: #${data.outline.toString()};` : ''}
+        }
+      </style>
+    `}
+  {/if}
 </svelte:head>
 
 <div use:hero={{hasHero: Boolean(image)}}></div>
