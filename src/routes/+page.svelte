@@ -24,18 +24,7 @@
       <li>
         <a href={post.relativeURL} class="list-item">
           <div class="grow z-1">
-            <strong
-              class="line-clamp-1 mb-1"
-              use:transition={{
-                name: `post-title-${post.slug}`,
-                shouldApply({navigation}) {
-                  return navigation?.to?.params?.slug === post.slug
-                },
-                applyImmediately({navigation}) {
-                  return navigation?.from?.params?.slug === post.slug
-                },
-              }}>{post.title}</strong
-            >
+            <strong class="line-clamp-1 mb-1" use:transition={`post-title-${post.slug}`}>{post.title}</strong>
             <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
             <small class="text-muted-foreground" use:transition={`post-metadata-${post.slug}`}>
               {#if post.media}
