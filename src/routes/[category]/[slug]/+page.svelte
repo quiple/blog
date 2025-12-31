@@ -8,6 +8,7 @@
   import 'remark-github-alerts/styles/github-colors-light.css'
   import 'remark-github-alerts/styles/github-colors-dark-class.css'
   import 'remark-github-alerts/styles/github-base.css'
+  import {scale} from 'svelte/transition'
   import {setupViewTransition} from 'sveltekit-view-transition'
 
   let {data}: PageProps = $props()
@@ -74,16 +75,32 @@
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
 
-  {#if image || data.outline}
-    {@html `
+  <!-- {#if image || data.outline} -->
+  {@html `
       <style>
+        @keyframes zoom-in {
+          from {
+            height: 5.5rem;
+            border-radius: 6px;
+          }
+          to {
+            height: 50vh;
+            border-radius: 0;
+          }
+        }
+        ::view-transition-old(post-image-${data.slug}) {
+          opacity: 0;
+        }
+        ::view-transition-new(post-image-${data.slug}) {
+          animation-name: zoom-in;
+        }
         :root {
           ${image && `--hero-foreground: #${data.imageForeground.toString()};`}
           ${data.outline ? `--outline-color: #${data.outline.toString()};` : ''}
         }
       </style>
     `}
-  {/if}
+  <!-- {/if} -->
 </svelte:head>
 
 <div use:hero={{hasHero: Boolean(image)}}></div>

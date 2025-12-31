@@ -48,6 +48,26 @@
             </small>
           </div>
           {#if post.image}
+            {@html `
+              <style>
+                @keyframes zoom-in {
+                  from {
+                    height: 50vh;
+                    border-radius: 0;
+                  }
+                  to {
+                    height: 5.5rem;
+                    border-radius: 6px;
+                  }
+                }
+                ::view-transition-old(post-image-${post.slug}) {
+                  animation-name: zoom-in;
+                }
+                ::view-transition-new(post-image-${post.slug}) {
+                  opacity: 0;
+                }
+              </style>
+            `}
             <div
               class="inner-border shrink-0 aspect-square h-22 bg-cover bg-center after:rounded-sm rounded-sm shadow-xs"
               style:background-image={`url('/img/thumbnail/${post.image}')`}
