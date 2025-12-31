@@ -77,7 +77,6 @@
   {@html `
     <style>
       :root {
-        --slug: #${data.slug};
         ${image && `--hero-foreground: #${data.imageForeground.toString()};`}
         ${data.outline && `--outline-color: #${data.outline.toString()};`}
       }
@@ -145,11 +144,6 @@
 
 <style lang="sass">
   @reference '#app.css'
-
-  :global(.post-image::view-transition-old(post-image))
-    @apply -z-50
-  :global(.post-image::view-transition-new(post-image))
-    @apply -z-50
 
   .hero
     @apply inset-0 absolute!
