@@ -8,7 +8,6 @@
   import 'remark-github-alerts/styles/github-colors-light.css'
   import 'remark-github-alerts/styles/github-colors-dark-class.css'
   import 'remark-github-alerts/styles/github-base.css'
-  import {scale} from 'svelte/transition'
   import {setupViewTransition} from 'sveltekit-view-transition'
 
   let {data}: PageProps = $props()
@@ -78,16 +77,6 @@
   <!-- {#if image || data.outline} -->
   {@html `
       <style>
-        @keyframes zoom-in {
-          from {
-            height: 5.5rem;
-            border-radius: 6px;
-          }
-          to {
-            height: 50vh;
-            border-radius: 0;
-          }
-        }
         ::view-transition-old(post-image-${data.slug}) {
           opacity: 0;
         }
@@ -163,6 +152,14 @@
 
 <style lang="sass">
   @reference '#app.css'
+
+  @keyframes -global-zoom-in
+    from
+      height: 5.5rem
+      border-radius: 6px
+    to
+      height: 50vh
+      border-radius: 0
 
   .hero
     @apply inset-0 absolute!
