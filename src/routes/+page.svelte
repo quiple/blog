@@ -25,7 +25,7 @@
         >
           <div class="grow">
             <strong class="line-clamp-1 mb-1">{post.title}</strong>
-            <p class="text-sm line-clamp-3 mb-1">{post.description}</p>
+            <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
             <small class="text-muted-foreground">
               {#if post.media}
                 {post.media}&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
