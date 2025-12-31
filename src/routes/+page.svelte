@@ -50,20 +50,19 @@
                 ::view-transition-group-children(post-image-wrapper-${post.slug}) {
                   overflow: clip;
                 }
-                ::view-transition-old(post-image-wrapper-${post.slug}),
                 ::view-transition-old(post-image-${post.slug}) {
-                  animation-name: zoom-out;
+                  animation-name: zoom-out-old;
                 }
-                ::view-transition-new(post-image-wrapper-${post.slug}),
                 ::view-transition-new(post-image-${post.slug}) {
-                  opacity: 0;
+                  animation-name: zoom-out-new;
                 }
               </style>
             `}
             <div
               class="img"
+              style:background-image={`url('/img/thumbnail/${post.image}')`}
               use:transition={{
-                name: `post-image-wrapper-${post.slug}`,
+                name: `post-image-${post.slug}`,
                 shouldApply({navigation}) {
                   return navigation?.to?.params?.slug === post.slug
                 },
@@ -71,20 +70,7 @@
                   return navigation?.from?.params?.slug === post.slug
                 },
               }}
-            >
-              <div
-                style:background-image={`url('/img/thumbnail/${post.image}')`}
-                use:transition={{
-                  name: `post-image-${post.slug}`,
-                  shouldApply({navigation}) {
-                    return navigation?.to?.params?.slug === post.slug
-                  },
-                  applyImmediately({navigation}) {
-                    return navigation?.from?.params?.slug === post.slug
-                  },
-                }}
-              ></div>
-            </div>
+            ></div>
           {/if}
         </a>
       </li>
@@ -95,18 +81,23 @@
 <style lang="sass">
   @reference '#app.css'
 
-  @keyframes -global-zoom-out
+  @keyframes -global-zoom-out-old
     from
-      transform: scale(1)
-      border-radius: 0
+      opacity: 1
+      height: 50vh
     to
-      transform: scale(2)
-      border-radius: 6px
+      opacity: 0
+      height: 5.5rem
+  @keyframes -global-zoom-out-new
+    from
+      opacity: 0
+      height: 50vh
+    to
+      opacity: 1
+      height: 5.5rem
 
   .list-item
     @apply flex gap-4 before:rounded-xl py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-xl hover-bg-muted
     .img
-      @apply shrink-0 size-22 [view-transition-group:contain]
-      div
-        @apply bg-cover bg-center size-full inner-border after:rounded-sm rounded-sm shadow-xs
+      @apply shrink-0 size-22 bg-cover bg-center inner-border after:rounded-sm rounded-sm shadow-xs
 </style>
