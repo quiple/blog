@@ -171,7 +171,7 @@
   .hero
     @apply inset-0 absolute!
     &.bg
-      @apply w-[calc(100vw-var(--scrollbar-width))]  -z-10 h-[50vh] [view-transition-group:contain]
+      @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-[50vh] [view-transition-group:contain]
       div
         @apply size-full bg-cover bg-center inner-b-border
     &.title
