@@ -23,7 +23,7 @@
     {#each data.posts as post}
       <li>
         <a href={post.relativeURL} class="list-item">
-          <div class="grow">
+          <div class="grow z-1">
             <strong
               class="line-clamp-1 mb-1"
               use:transition={{
@@ -37,7 +37,7 @@
               }}>{post.title}</strong
             >
             <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
-            <small class="text-muted-foreground">
+            <small class="text-muted-foreground" use:transition={`post-metadata-${post.slug}`}>
               {#if post.media}
                 {post.media}&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
                 Date.parse(`${post.origDate}+09:00`),
