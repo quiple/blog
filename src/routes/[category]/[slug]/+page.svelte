@@ -147,7 +147,9 @@
     <h1 class="mb-2!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
     {@render metadata()}
   {/if}
+
   {@html data.contentHtml}
+
   {#if isContainTwitter}
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   {/if}
@@ -163,6 +165,7 @@
     to
       opacity: 0
       height: 50vh
+
   @keyframes -global-zoom-in-new
     from
       opacity: 0
