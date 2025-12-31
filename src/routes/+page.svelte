@@ -1,8 +1,11 @@
 <script lang="ts">
   import {BASE_URL} from '$lib/constants'
+  import {setupViewTransition} from 'sveltekit-view-transition'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()
+
+  const {transition} = setupViewTransition()
 </script>
 
 <svelte:head>
@@ -24,7 +27,18 @@
           class="flex gap-4 before:rounded-xl py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-xl hover-bg-muted"
         >
           <div class="grow">
-            <strong class="line-clamp-1 mb-1">{post.title}</strong>
+            <strong
+              class="line-clamp-1 mb-1"
+              use:transition={{
+                name: `post-title-${post.slug}`,
+                shouldApply({navigation}) {
+                  return navigation?.to?.params?.slug === post.slug
+                },
+                applyImmediately({navigation}) {
+                  return navigation?.from?.params?.slug === post.slug
+                },
+              }}>{post.title}</strong
+            >
             <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
             <small class="text-muted-foreground">
               {#if post.media}
