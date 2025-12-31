@@ -2,25 +2,16 @@
   import '#app.css'
   import '#fonts.sass'
   import 'non.geist'
-  import {onNavigate} from '$app/navigation'
   import favicon32 from '$lib/assets/q-32.png'
   import appleTouchIcon from '$lib/assets/q.png'
   import favicon from '$lib/assets/q.svg'
   import Header from '$lib/components/header.svelte'
   import {ModeWatcher} from 'mode-watcher'
+  import {setupViewTransition} from 'sveltekit-view-transition'
 
   let {children} = $props()
 
-  onNavigate((navigation) => {
-    if (!document.startViewTransition) return
-
-    return new Promise((resolve) => {
-      document.startViewTransition(async () => {
-        resolve()
-        await navigation.complete
-      })
-    })
-  })
+  setupViewTransition()
 </script>
 
 <svelte:head>

@@ -56,6 +56,7 @@
     "strip-markdown": "^6.0.0",
     "svelte": "^5.46.1",
     "svelte-check": "^4.3.5",
+    "sveltekit-view-transition": "^0.5.3",
     "tailwind-merge": "^3.4.0",
     "tailwind-variants": "^3.2.2",
     "tailwindcss": "^4.1.18",
