@@ -19,16 +19,16 @@
       headline: data.title,
       datePublished: `${data.origDate}+09:00`,
       image: image && [`${BASE_URL}${image}`],
-      author: data.origAuthor && [
-        data.origAuthorURL
+      author: data.author && [
+        data.authorURL
           ? {
               '@type': 'Person',
-              name: data.origAuthor,
-              url: data.origAuthorURL,
+              name: data.author,
+              url: data.authorURL,
             }
           : {
               '@type': 'Person',
-              name: data.origAuthor,
+              name: data.author,
             },
       ],
       publisher: data.media && [
@@ -64,8 +64,8 @@
   <meta property="og:title" content={data.title} />
   <meta property="og:description" content={data.description} />
   <meta property="article:published_time" content={`${data.origDate}+09:00`} />
-  {#if data.origAuthor}
-    <meta property="article:author" content={data.origAuthor} />
+  {#if data.author}
+    <meta property="article:author" content={data.author} />
   {/if}
 
   <link rel="canonical" href={data.canonicalURL} />
@@ -89,9 +89,9 @@
       <h1 class="mb-2!" style={`--content: '${data.title}'`}>{data.title}</h1>
       <div
         class="metadata"
-        style={`--content: '${data.media} • ${new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-          Date.parse(`${data.origDate}+09:00`),
-        )}'`}
+        style={`--content: '${data.media} • ${data.author} • ${new Intl.DateTimeFormat('ko-KR', {
+          dateStyle: 'long',
+        }).format(Date.parse(`${data.origDate}+09:00`))}'`}
       >
         {#if data.media}
           <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
