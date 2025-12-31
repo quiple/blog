@@ -108,6 +108,7 @@
           },
         ).format(Date.parse(`${data.origDate}+09:00`))}'`
       : null}
+    use:transition={`post-metadata-${data.slug}`}
   >
     {#if data.media}
       <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
