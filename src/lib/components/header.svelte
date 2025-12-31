@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Menu, Moon, ReplaceAll, Search, Sun} from '@lucide/svelte'
+  import {Menu, Moon, Search, Sun} from '@lucide/svelte'
   import {goto} from '$app/navigation'
   import {page} from '$app/state'
   import menu from '$lib/assets/menu.svg'
