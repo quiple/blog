@@ -50,18 +50,8 @@
           {#if post.image}
             {@html `
               <style>
-                @keyframes zoom-in {
-                  from {
-                    height: 50vh;
-                    border-radius: 0;
-                  }
-                  to {
-                    height: 5.5rem;
-                    border-radius: 6px;
-                  }
-                }
                 ::view-transition-old(post-image-${post.slug}) {
-                  animation-name: zoom-in;
+                  animation-name: zoom-out;
                 }
                 ::view-transition-new(post-image-${post.slug}) {
                   opacity: 0;
@@ -87,3 +77,15 @@
     {/each}
   </ul>
 </div>
+
+<style lang="sass">
+  @reference '#app.css'
+
+  @keyframes -global-zoom-out
+    from
+      height: 50vh
+      border-radius: 0
+    to
+      height: 5.5rem
+      border-radius: 6px
+</style>
