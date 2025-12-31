@@ -107,7 +107,7 @@
           {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${data.origDate}+09:00`))}
         </Tooltip.Trigger>
         <Tooltip.Content>
-          {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'medium'}).format(
+          {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'short'}).format(
             Date.parse(`${data.origDate}+09:00`),
           )}
         </Tooltip.Content>
