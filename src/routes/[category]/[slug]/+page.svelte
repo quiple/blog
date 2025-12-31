@@ -10,6 +10,7 @@
 
   let {data}: PageProps = $props()
 
+  const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
   const image = $derived(data.image ? `/img/article/${data.image}` : '')
   const jsonLd = $derived(
     JSON.stringify({
@@ -102,7 +103,9 @@
     </div>
   {/if}
   {@html data.contentHtml}
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  {#if isContainTwitter}
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+  {/if}
 </article>
 
 <style lang="sass">
