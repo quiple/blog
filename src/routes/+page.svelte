@@ -106,7 +106,7 @@
   .list-item
     @apply flex gap-4 before:rounded-xl py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-xl hover-bg-muted
     .img
-      @apply shrink-0 size-22 shadow-xs [view-transition-group:contain]
+      @apply shrink-0 size-22 [view-transition-group:contain]
       div
-        @apply bg-cover bg-center size-full inner-border after:rounded-sm rounded-sm
+        @apply bg-cover bg-center size-full inner-border after:rounded-sm rounded-sm shadow-xs
 </style>
