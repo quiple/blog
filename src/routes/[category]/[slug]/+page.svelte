@@ -8,9 +8,11 @@
   import 'remark-github-alerts/styles/github-colors-light.css'
   import 'remark-github-alerts/styles/github-colors-dark-class.css'
   import 'remark-github-alerts/styles/github-base.css'
+  import {setupViewTransition} from 'sveltekit-view-transition'
 
   let {data}: PageProps = $props()
 
+  const {transition} = setupViewTransition()
   const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
   const image = $derived(data.image ? `/img/article/${data.image}` : '')
   const jsonLd = $derived(
@@ -120,7 +122,9 @@
   <div class="hero bg" style:background-image={`url('${image}')`}></div>
   <div class={['hero title', data.outline && 'line']}>
     <div>
-      <h1 class="mb-2!" style={`--content: '${data.title}'`}>{data.title}</h1>
+      <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
+        {data.title}
+      </h1>
       {@render metadata(Boolean(data.outline))}
     </div>
   </div>
@@ -128,7 +132,7 @@
 
 <article>
   {#if !image}
-    <h1 class="mb-2!">{data.title}</h1>
+    <h1 class="mb-2!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
     {@render metadata()}
   {/if}
   {@html data.contentHtml}
