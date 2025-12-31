@@ -119,7 +119,7 @@
 {/snippet}
 
 {#if image}
-  <div class="hero bg" style:background-image={`url('${image}')`}></div>
+  <div class="hero bg" style:background-image={`url('${image}')`} use:transition={`post-image-${data.slug}`}></div>
   <div class={['hero title', data.outline && 'line']}>
     <div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
