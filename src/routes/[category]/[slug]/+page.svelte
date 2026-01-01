@@ -135,7 +135,7 @@
   <div class="hero bg" style:background-image={`url('${image}')`} use:transition={`post-image-${data.slug}`}></div>
   <div class={['hero title', data.outline && 'line']}>
     <div>
-      <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
+      <h1 class="mb-2! inline-block" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
         {data.title}
       </h1>
       {@render metadata(Boolean(data.outline))}
@@ -145,7 +145,7 @@
 
 <article>
   {#if !image}
-    <h1 class="mb-2!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
+    <h1 class="mb-2! inline-block" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
     {@render metadata()}
   {/if}
 
@@ -184,7 +184,7 @@
       & > div
         @apply prose-shadcn mx-auto [--tw-prose-headings:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)] [--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-body:var(--hero-foreground)] md:-translate-x-[calc(var(--scrollbar-width)/2)] pr-(--scrollbar-width) md:pr-0
         .metadata
-          @apply text-sm mb-6
+          @apply text-sm mb-5 inline-block
           a
             @apply font-normal text-(--hero-foreground)!
       &.line h1::before
