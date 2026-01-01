@@ -38,7 +38,7 @@
     :global(article)
       @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto [.hero+&]:pt-[calc(50vh-var(--header-height))] md:[.hero+&]:pt-[calc(50vh-1.5rem)]
       :global(.metadata)
-        @apply text-muted-foreground text-sm
+        @apply text-muted-foreground text-sm inline-block
         :global(a)
           @apply text-muted-foreground font-normal
       :global(figure)
