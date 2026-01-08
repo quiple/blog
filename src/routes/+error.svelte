@@ -15,7 +15,7 @@
   @reference '#app.css'
 
   section
-    @apply h-[calc(100vh-var(--header-height))] -my-4 flex items-center justify-center gap-6
+    @apply h-[calc(100vh-3.5rem)] flex items-center justify-center gap-6
     h1
       @apply font-semibold border-r-2 pr-6
 </style>
