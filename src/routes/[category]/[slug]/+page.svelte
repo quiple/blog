@@ -8,6 +8,7 @@
   import 'remark-github-alerts/styles/github-colors-light.css'
   import 'remark-github-alerts/styles/github-colors-dark-class.css'
   import 'remark-github-alerts/styles/github-base.css'
+  import Toc from 'svelte-toc'
   import {setupViewTransition} from 'sveltekit-view-transition'
 
   let {data}: PageProps = $props()
@@ -143,18 +144,27 @@
   </div>
 {/if}
 
-<article>
-  {#if !image}
-    <h1 class="mb-2! inline-block" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
-    {@render metadata()}
-  {/if}
+<section class="flex gap-4 sm:gap-6">
+  <Toc
+    --toc-desktop-sticky-top="var(--header-height)"
+    --toc-padding="0"
+    title="목차"
+    headingSelector="h2:not(.toc-exclude, .sr-only)"
+  />
 
-  {@html data.contentHtml}
+  <article>
+    {#if !image}
+      <h1 class="mb-2! inline-block" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
+      {@render metadata()}
+    {/if}
 
-  {#if isContainTwitter}
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  {/if}
-</article>
+    {@html data.contentHtml}
+
+    {#if isContainTwitter}
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    {/if}
+  </article>
+</section>
 
 <style lang="sass">
   @reference '#app.css'
