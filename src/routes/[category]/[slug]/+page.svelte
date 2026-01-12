@@ -144,7 +144,7 @@
   </div>
 {/if}
 
-<section class="flex xl:gap-6">
+<section class="flex lg:gap-6">
   <div class="flex-1">
     <Toc
       --toc-padding="0"
@@ -155,7 +155,7 @@
       --toc-active-color="currentColor"
       --toc-desktop-aside-margin="20px 0 0 0"
       --toc-desktop-sticky-top="var(--header-height)"
-      breakpoint={1280}
+      breakpoint={1023}
       title="목차"
       headingSelector="h2:not(.toc-exclude, .sr-only)"
     />
