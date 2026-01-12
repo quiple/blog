@@ -125,6 +125,9 @@ importers:
       svelte-check:
         specifier: ^4.3.5
         version: 4.3.5(picomatch@4.0.3)(svelte@5.46.1)(typescript@5.9.3)
+      svelte-toc:
+        specifier: ^0.6.2
+        version: 0.6.2
       sveltekit-view-transition:
         specifier: ^0.5.3
         version: 0.5.3(@sveltejs/kit@2.49.4(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.46.1)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.97.2)))(svelte@5.46.1)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.97.2)))(svelte@5.46.1)
@@ -2461,6 +2464,9 @@ packages:
     peerDependencies:
       svelte: ^4.0.0 || ^5.0.0-next.0
       typescript: '>=5.0.0'
+
+  svelte-toc@0.6.2:
+    resolution: {integrity: sha512-pYnwpBr4R7xYla4YZknNvoO0KGYkqBjgixc4SVd0EAecqfEIU5L6nRfCIr+nrn8jzC2KdY6RR3yb5aB25KAt2g==}
 
   svelte-toolbelt@0.10.6:
     resolution: {integrity: sha512-YWuX+RE+CnWYx09yseAe4ZVMM7e7GRFZM6OYWpBKOb++s+SQ8RBIMMe+Bs/CznBMc0QPLjr+vDBxTAkozXsFXQ==}
@@ -4907,6 +4913,10 @@ snapshots:
       typescript: 5.9.3
     transitivePeerDependencies:
       - picomatch
+
+  svelte-toc@0.6.2:
+    dependencies:
+      svelte: 5.46.1
 
   svelte-toolbelt@0.10.6(@sveltejs/kit@2.49.4(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.46.1)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.97.2)))(svelte@5.46.1)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)(sass@1.97.2)))(svelte@5.46.1):
     dependencies:
