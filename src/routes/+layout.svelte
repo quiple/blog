@@ -43,7 +43,7 @@
         :global(li)
           @apply hover:underline [&.active]:font-bold hover:text-blue-500 dark:hover:text-blue-400 [&.active]:hover:text-current text-sm! mt-2 text-justify
       :global(article)
-        @apply prose-shadcn max-w-xl 2xl:max-w-2xl shrink-0
+        @apply prose-shadcn max-w-xl 2xl:max-w-2xl w-full shrink-0
         :global(.metadata)
           @apply text-muted-foreground text-sm inline-block
           :global(a)
