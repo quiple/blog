@@ -37,21 +37,21 @@
     @apply px-4 sm:px-6 min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-8 [--header-height:68px] sm:[--header-height:84px] md:-mt-(--header-height) md:pt-6
     :global(section)
       @apply [.hero+&]:pt-[calc(50vh-var(--header-height))] md:[.hero+&]:pt-[calc(50vh-1.5rem)]
-    :global(article)
-      @apply prose-shadcn max-w-xl 2xl:max-w-2xl
-      :global(.metadata)
-        @apply text-muted-foreground text-sm inline-block
-        :global(a)
-          @apply text-muted-foreground font-normal
-      :global(figure)
-        @apply mx-auto [blockquote_&]:mx-0 max-w-fit flex flex-col items-start
-        & > :global(div)
-          @apply inner-border after:rounded-md rounded-md shadow-xs
-      :global([target=_blank]:not(.metadata [target=_blank]))
-        @apply after:content-['↗'] after:px-0.5
-      :global(.twitter-tweet)
-        @apply mx-auto my-0!
-      :global(iframe)
-        @apply max-w-full w-xl 2xl:w-2xl
-        color-scheme: initial
+      :global(article)
+        @apply prose-shadcn max-w-xl 2xl:max-w-2xl
+        :global(.metadata)
+          @apply text-muted-foreground text-sm inline-block
+          :global(a)
+            @apply text-muted-foreground font-normal
+        :global(figure)
+          @apply mx-auto [blockquote_&]:mx-0 max-w-fit flex flex-col items-start
+          & > :global(div)
+            @apply inner-border after:rounded-md rounded-md shadow-xs
+        :global([target=_blank]:not(.metadata [target=_blank]))
+          @apply after:content-['↗'] after:px-0.5
+        :global(.twitter-tweet)
+          @apply mx-auto my-0!
+        :global(iframe)
+          @apply max-w-full w-xl 2xl:w-2xl
+          color-scheme: initial
 </style>
