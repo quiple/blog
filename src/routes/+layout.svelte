@@ -34,9 +34,11 @@
   @reference '#app.css'
 
   main
-    @apply container-x min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-8 [--header-height:68px] sm:[--header-height:84px] md:-mt-(--header-height) md:pt-6
+    @apply px-4 sm:px-6 min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-8 [--header-height:68px] sm:[--header-height:84px] md:-mt-(--header-height) md:pt-6
+    :global(section)
+      @apply [.hero+&]:pt-[calc(50vh-var(--header-height))] md:[.hero+&]:pt-[calc(50vh-1.5rem)]
     :global(article)
-      @apply prose-shadcn max-w-xl 2xl:max-w-2xl mx-auto [.hero+&]:pt-[calc(50vh-var(--header-height))] md:[.hero+&]:pt-[calc(50vh-1.5rem)]
+      @apply prose-shadcn max-w-xl 2xl:max-w-2xl
       :global(.metadata)
         @apply text-muted-foreground text-sm inline-block
         :global(a)
