@@ -144,7 +144,7 @@
   </div>
 {/if}
 
-<section class="flex gap-4 sm:gap-6">
+<section class="flex xl:gap-6">
   <div class="flex-1">
     <Toc
       --toc-padding="0"
