@@ -145,12 +145,21 @@
 {/if}
 
 <section class="flex gap-4 sm:gap-6">
-  <Toc
-    --toc-desktop-sticky-top="var(--header-height)"
-    --toc-padding="0"
-    title="목차"
-    headingSelector="h2:not(.toc-exclude, .sr-only)"
-  />
+  <div class="flex-1">
+    <Toc
+      --toc-padding="0"
+      --toc-min-width="0"
+      --toc-li-padding="0"
+      --toc-title-margin=".5rem 0"
+      --toc-active-bg="transparent"
+      --toc-active-color="currentColor"
+      --toc-desktop-aside-margin="20px 0 0 0"
+      --toc-desktop-sticky-top="var(--header-height)"
+      breakpoint={1280}
+      title="목차"
+      headingSelector="h2:not(.toc-exclude, .sr-only)"
+    />
+  </div>
 
   <article>
     {#if !image}
@@ -164,6 +173,7 @@
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     {/if}
   </article>
+  <div class="flex-1"></div>
 </section>
 
 <style lang="sass">
