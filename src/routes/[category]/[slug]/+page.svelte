@@ -112,31 +112,35 @@
     use:transition={`post-metadata-${data.slug}`}
   >
     {#if data.media}
-      <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>{data.media}</a
-      >&#8194;&bullet;&#8194;{/if}{#if data.author}<a
-        target="_blank"
-        rel="nofollow noreferrer noopener"
-        href={data.authorURL}>{data.author}</a
-      >&#8194;&bullet;&#8194;{/if}<Tooltip.Provider>
-      <Tooltip.Root>
-        <Tooltip.Trigger class="cursor-default">
-          <time
-            datetime={typeof data.origDate === 'object'
-              ? data.origDate.toISOString().split('T')[0]
-              : `${data.origDate}+09:00`}
-          >
-            {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-              typeof data.origDate === 'object' ? data.origDate : Date.parse(`${data.origDate}+09:00`),
+      <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>
+        {data.media}
+      </a>&#8194;&bullet;&#8194;
+    {/if}
+    {#if data.author}
+      <a target="_blank" rel="nofollow noreferrer noopener" href={data.authorURL}
+        >{data.author}
+      </a>&#8194;&bullet;&#8194;
+    {/if}
+    {#if typeof data.origDate === 'object'}
+      <time datetime={data.origDate.toISOString().split('T')[0]}>
+        {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(data.origDate)}
+      </time>
+    {:else}
+      <Tooltip.Provider>
+        <Tooltip.Root>
+          <Tooltip.Trigger class="cursor-default">
+            <time datetime={`${data.origDate}+09:00`}>
+              {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${data.origDate}+09:00`))}
+            </time>
+          </Tooltip.Trigger>
+          <Tooltip.Content>
+            {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'short'}).format(
+              Date.parse(`${data.origDate}+09:00`),
             )}
-          </time>
-        </Tooltip.Trigger>
-        <Tooltip.Content>
-          {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'short'}).format(
-            Date.parse(`${data.origDate}+09:00`),
-          )}
-        </Tooltip.Content>
-      </Tooltip.Root>
-    </Tooltip.Provider>
+          </Tooltip.Content>
+        </Tooltip.Root>
+      </Tooltip.Provider>
+    {/if}
   </div>
 {/snippet}
 
