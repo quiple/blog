@@ -125,7 +125,9 @@
               ? data.origDate.toISOString().split('T')[0]
               : `${data.origDate}+09:00`}
           >
-            {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${data.origDate}+09:00`))}
+            {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
+              typeof data.origDate === 'object' ? data.origDate : Date.parse(`${data.origDate}+09:00`),
+            )}
           </time>
         </Tooltip.Trigger>
         <Tooltip.Content>
