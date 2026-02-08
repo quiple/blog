@@ -34,9 +34,10 @@ export const load: PageServerLoad = async () => {
           .process(content)
       )
         .toString()
-        .substring(0, 200)
         .replaceAll('\n', ' ')
         .replaceAll('  ', ' ')
+        .replaceAll(/:::?figure[^:]+:::?/g, '')
+        .substring(0, 200)
         .trim() + '\u2026'
   }
 
