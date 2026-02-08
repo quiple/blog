@@ -29,8 +29,7 @@
             <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
             <small class="text-muted-foreground" use:transition={`post-metadata-${post.slug}`}>
               {#if post.media}
-                {post.media}&#8194;&bullet;&#8194;{/if}
-              {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
+                {post.media}&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
                 typeof post.origDate === 'object' ? post.origDate : Date.parse(`${post.origDate}+09:00`),
               )}
             </small>
