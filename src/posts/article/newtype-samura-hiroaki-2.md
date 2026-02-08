@@ -1,11 +1,11 @@
 ---
-title: 《파도여 들어다오》 원작자 사무라 히로아키 선생님 인터뷰 후편 "라디오를 축으로 그려지는 무궤도한 이야기를 즐겨주길 바랍니다"
+title: 《파도여 들어다오》 원작자 사무라 히로아키 선생님 인터뷰 후편 "라디오를 축으로 그려지는 무궤도한 이야기를 즐겨주길 바란다"
 media: 뉴타입
 source: https://webnewtype.com/report/staff/229167.html
 author: 호소카와 요헤이 (細川洋平)
 authorURL: https://x.com/pomihei
 origDate: 2020-04-03
-pubDate: 2026-02-09T00:48
+pubDate: 2026-02-09T04:22
 ---
 
 :::figure{src="/img/article/1435246.avif" class="w-100"}
