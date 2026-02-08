@@ -23,7 +23,7 @@ export const blogPostMetadataSchema = v.object({
   imageForeground: v.optional(v.pipe(v.string(), v.trim())),
   outline: v.optional(v.pipe(v.string(), v.trim())),
   media: v.optional(v.pipe(v.string(), v.trim())),
-  origDate: v.pipe(v.string(), v.isoDateTime(), v.trim()),
+  origDate: v.union([v.pipe(v.date()), v.pipe(v.string(), v.isoDateTime(), v.trim())]),
   pubDate: v.pipe(v.string(), v.isoDateTime(), v.trim()),
   tags: v.optional(
     v.pipe(
