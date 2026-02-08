@@ -115,13 +115,11 @@
       <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>
         {data.media}
       </a>&#8194;&bullet;&#8194;
-    {/if}
-    {#if data.author}
+    {/if}{#if data.author}
       <a target="_blank" rel="nofollow noreferrer noopener" href={data.authorURL}
         >{data.author}
       </a>&#8194;&bullet;&#8194;
-    {/if}
-    {#if typeof data.origDate === 'object'}
+    {/if}{#if typeof data.origDate === 'object'}
       <time datetime={data.origDate.toISOString().split('T')[0]}>
         {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(data.origDate)}
       </time>
