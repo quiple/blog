@@ -120,7 +120,13 @@
       >&#8194;&bullet;&#8194;{/if}<Tooltip.Provider>
       <Tooltip.Root>
         <Tooltip.Trigger class="cursor-default">
-          {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${data.origDate}+09:00`))}
+          <time
+            datetime={typeof data.origDate === 'object'
+              ? data.origDate.toISOString().split('T')[0]
+              : `${data.origDate}+09:00`}
+          >
+            {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${data.origDate}+09:00`))}
+          </time>
         </Tooltip.Trigger>
         <Tooltip.Content>
           {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'short'}).format(
