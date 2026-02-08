@@ -5,7 +5,7 @@ source: https://webnewtype.com/report/staff/229060.html
 author: 호소카와 요헤이 (細川洋平)
 authorURL: https://x.com/pomihei
 origDate: 2020-04-02
-pubDate: 2026-02-08T12:58
+pubDate: 2026-02-09T00:48
 ---
 
 :::figure{src="/img/article/1434485.avif" class="w-100"}
