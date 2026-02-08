@@ -77,22 +77,22 @@
 
   <!-- {#if image || data.outline} -->
   {@html `
-      <style>
-        ::view-transition-group-children(post-image-wrapper-${data.slug}) {
-          overflow: clip;
-        }
-        ::view-transition-old(post-image-${data.slug}) {
-          animation-name: zoom-in-old;
-        }
-        ::view-transition-new(post-image-${data.slug}) {
-          animation-name: zoom-in-new;
-        }
-        :root {
-          ${image && `--hero-foreground: #${data.imageForeground.toString()};`}
-          ${data.outline ? `--outline-color: #${data.outline.toString()};` : ''}
-        }
-      </style>
-    `}
+    <style>
+      ::view-transition-group-children(post-image-wrapper-${data.slug}) {
+        overflow: clip;
+      }
+      ::view-transition-old(post-image-${data.slug}) {
+        animation-name: zoom-in-old;
+      }
+      ::view-transition-new(post-image-${data.slug}) {
+        animation-name: zoom-in-new;
+      }
+      :root {
+        ${image && `--hero-foreground: #${data.imageForeground.toString()};`}
+        ${data.outline ? `--outline-color: #${data.outline.toString()};` : ''}
+      }
+    </style>
+  `}
   <!-- {/if} -->
 </svelte:head>
 
