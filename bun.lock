@@ -6,8 +6,6 @@
       "name": "blog",
       "devDependencies": {
         "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
-        "@ibm/plex-sans-jp": "^3.0.0",
-        "@ibm/plex-sans-kr": "^1.1.0",
         "@internationalized/date": "^3.11.0",
         "@lucide/svelte": "^0.563.1",
         "@prettier/plugin-oxc": "^0.1.3",
@@ -187,12 +185,6 @@
     "@floating-ui/utils": ["@floating-ui/utils@0.2.10", "", {}, "sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ=="],
 
     "@ianvs/prettier-plugin-sort-imports": ["@ianvs/prettier-plugin-sort-imports@4.7.1", "", { "dependencies": { "@babel/generator": "^7.26.2", "@babel/parser": "^7.26.2", "@babel/traverse": "^7.25.9", "@babel/types": "^7.26.0", "semver": "^7.5.2" }, "peerDependencies": { "@prettier/plugin-oxc": "^0.0.4 || ^0.1.0", "@vue/compiler-sfc": "2.7.x || 3.x", "content-tag": "^4.0.0", "prettier": "2 || 3 || ^4.0.0-0", "prettier-plugin-ember-template-tag": "^2.1.0" }, "optionalPeers": ["@prettier/plugin-oxc", "@vue/compiler-sfc", "content-tag", "prettier-plugin-ember-template-tag"] }, "sha512-jmTNYGlg95tlsoG3JLCcuC4BrFELJtLirLAkQW/71lXSyOhVt/Xj7xWbbGcuVbNq1gwWgSyMrPjJc9Z30hynVw=="],
-
-    "@ibm/plex-sans-jp": ["@ibm/plex-sans-jp@3.0.0", "", { "dependencies": { "@ibm/telemetry-js": "1.10.2" } }, "sha512-/v46f2qWBwOg0U/At3R9yVIWrHZKYHM0ByCz2lnNk60VqTHATcCHUT9djTmYBlRwaepybLzDsvx2DtxpHpIPvA=="],
-
-    "@ibm/plex-sans-kr": ["@ibm/plex-sans-kr@1.1.0", "", { "dependencies": { "@ibm/telemetry-js": "1.10.2" } }, "sha512-oGwlBC7BYvcvOvs7d8SoumXJwNO3rjbplteyeYI7zgQmEWI+4qLdRhI/zBUO4Ioo55YymSMiMtRPqAAPZBrJqA=="],
-
-    "@ibm/telemetry-js": ["@ibm/telemetry-js@1.10.2", "", { "bin": { "ibmtelemetry": "dist/collect.js" } }, "sha512-F8+/NNUwtm8BuFz18O9KPvIFTFDo8GUSoyhPxPjEpk7nEyEzWGfhIiEPhL00B2NdHRLDSljh3AiCfSnL/tutiQ=="],
 
     "@img/colour": ["@img/colour@1.0.0", "", {}, "sha512-A5P/LfWGFSl6nsckYtjw9da+19jB8hkJ6ACTGcDfEJ0aE+l2n2El7dsVM7UVHZQ9s2lmYMWlrS21YLy2IR1LUw=="],
 
