@@ -1,6 +1,6 @@
 ---
 title: "누군가의 '주관'이 되어 보고 싶다: 유아사 마사아키, 영화 《견왕: 이누오》와 애니메이션을 말하다"
-media: 와이어드
+media: 와이어드.jp
 source: https://wired.jp/article/masaaki-yuasa-inuoh-interview/
 author: 미야타 후미히사 (宮田文久)
 authorURL: https://x.com/editdisco

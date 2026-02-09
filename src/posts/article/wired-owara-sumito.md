@@ -1,6 +1,6 @@
 ---
 title: '2050년에 정답 확인을 할 수 있다면 좋겠다: 《영상연에는 손대지 마!》에서 오와라 스미토가 그리는 미래'
-media: 와이어드
+media: 와이어드.jp
 source: https://wired.jp/2020/03/08/eizouken-sumito-owara-interview/
 author: 노구치 리에 (野口理恵)
 authorURL: https://rienoguchi.tumblr.com/
