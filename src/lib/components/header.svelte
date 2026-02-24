@@ -93,7 +93,7 @@
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-8
       .logo
-        @apply flex items-center gap-1 self-center transition relative
+        @apply flex items-center gap-1 self-center transition relative before:mask-size-[54px] p-1 -m-1
       :global(.menu)
         @apply relative before:mask-size-[24px]
       .logo, :global(.menu)
