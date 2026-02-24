@@ -3,7 +3,7 @@
   import {goto} from '$app/navigation'
   import {page} from '$app/state'
   import menu from '$lib/assets/menu.svg'
-  import q from '$lib/assets/q-logo.svg'
+  import qLogo from '$lib/assets/q-logo.svg'
   import Q from '$lib/components/q.svelte'
   import {Button} from '$lib/components/ui/button/index'
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index'
@@ -46,7 +46,7 @@
 <header class={headerClassName} use:transition={'header'}>
   <section>
     <div class="flex gap-2">
-      <a href="/" class="logo" style={`--svg: url("${q}")`}>
+      <a href="/" class="logo" style={`--svg: url("${qLogo}")`}>
         <Q class="w-9" />
       </a>
     </div>
