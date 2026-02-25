@@ -14,6 +14,12 @@ export const blogArticles = import.meta.glob('/src/posts/article/*.md', {
   eager: true,
 })
 
+export const blogFonts = import.meta.glob('/src/posts/font/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+})
+
 // --- Shared schema fields ---
 
 const trimmedString = v.pipe(v.string(), v.trim())
@@ -54,6 +60,10 @@ export const blogArticleMetadataSchema = v.object({
   origDate: v.union([v.pipe(v.date()), v.pipe(v.string(), v.isoDateTime(), v.trim())]),
 })
 
+export const blogFontMetadataSchema = v.object({
+  ...baseMetadataFields,
+})
+
 // --- Generic metadata helpers ---
 
 function getMetadataFromMatter<T extends v.ObjectEntries>(
@@ -75,6 +85,10 @@ export function getPostMetadataFromMatter(category: string, slug: string, data: 
 
 export function getArticleMetadataFromMatter(category: string, slug: string, data: {[key: string]: unknown}) {
   return getMetadataFromMatter(blogArticleMetadataSchema, category, slug, data)
+}
+
+export function getFontMetadataFromMatter(category: string, slug: string, data: {[key: string]: unknown}) {
+  return getMetadataFromMatter(blogFontMetadataSchema, category, slug, data)
 }
 
 export type Post = ReturnType<typeof getPostMetadataFromMatter>
@@ -109,6 +123,10 @@ export function getBlogArticlesMetadata() {
   return getContentMetadata(blogArticles, getArticleMetadataFromMatter)
 }
 
+export function getBlogFontsMetadata() {
+  return getContentMetadata(blogFonts, getFontMetadataFromMatter)
+}
+
 export function getAllBlogContentMetadata() {
   const posts = getBlogPostsMetadata().map((p) => ({
     ...p,
@@ -120,8 +138,13 @@ export function getAllBlogContentMetadata() {
     origDate: a.origDate,
     media: a.media,
   }))
+  const fonts = getBlogPostsMetadata().map((f) => ({
+    ...f,
+    origDate: undefined as undefined,
+    media: undefined as string | undefined,
+  }))
 
-  return [...posts, ...articles].sort(
+  return [...posts, ...articles, ...fonts].sort(
     (a, b) => Date.parse(`${b.pubDate.valueOf()}+09:00`) - Date.parse(`${a.pubDate.valueOf()}+09:00`),
   )
 }
