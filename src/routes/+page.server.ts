@@ -1,4 +1,4 @@
-import {blogPosts, getBlogPostsMetadata, getMetadataFromMatter} from '$lib/content'
+import {blogPosts, getBlogArticlesMetadata} from '$lib/content'
 import matter from 'gray-matter'
 import {remark} from 'remark'
 import remarkCjkFriendly from 'remark-cjk-friendly'
@@ -11,7 +11,7 @@ import type {PageServerLoad} from './$types'
 export const load: PageServerLoad = async () => {
   const title = 'quiple'
   const description = '번역 블로그.'
-  const posts = getBlogPostsMetadata()
+  const posts = getBlogArticlesMetadata()
 
   for (let i = 0; i < posts.length; i++) {
     const matchPath = `/src/posts/${posts[i].category}/${posts[i].slug}.md`
