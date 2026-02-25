@@ -94,7 +94,7 @@ export function getArticleMetadataFromMatter(category: string, slug: string, dat
 export type Post = ReturnType<typeof getPostMetadataFromMatter>
 export type Article = ReturnType<typeof getArticleMetadataFromMatter>
 
-export function getPostsMetadata() {
+export function getBlogPostsMetadata() {
   const posts = Object.entries(blogPosts)
     .map(([filePath, rawContent]) => {
       const {data} = matter(rawContent)
@@ -108,7 +108,7 @@ export function getPostsMetadata() {
   return posts
 }
 
-export function getArticlesMetadata() {
+export function getBlogArticlesMetadata() {
   const articles = Object.entries(blogArticles)
     .map(([filePath, rawContent]) => {
       const {data} = matter(rawContent)
