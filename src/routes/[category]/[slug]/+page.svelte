@@ -15,38 +15,48 @@
 
   const {transition} = setupViewTransition()
   const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
+  const isArticle = $derived(data.category === 'article')
   const image = $derived(data.image ? `/img/article/${data.image}` : '')
+  const publishedDate = $derived(data.origDate ?? data.pubDate)
   const jsonLd = $derived(
     JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: data.title,
-      datePublished: `${data.origDate}+09:00`,
+      datePublished: `${publishedDate}+09:00`,
       image: image && [`${BASE_URL}${image}`],
-      author: data.author && [
-        data.authorURL
-          ? {
-              '@type': 'Person',
-              name: data.author,
-              url: data.authorURL,
-            }
-          : {
-              '@type': 'Person',
-              name: data.author,
-            },
-      ],
-      publisher: data.media && [
-        data.source
-          ? {
-              '@type': 'Organization',
-              name: data.media,
-              url: `${new URL(data.source).protocol}//${new URL(data.source).hostname}`,
-            }
-          : {
-              '@type': 'Organization',
-              name: data.media,
-            },
-      ],
+      ...(data.author
+        ? {
+            author: [
+              data.authorURL
+                ? {
+                    '@type': 'Person',
+                    name: data.author,
+                    url: data.authorURL,
+                  }
+                : {
+                    '@type': 'Person',
+                    name: data.author,
+                  },
+            ],
+          }
+        : {}),
+      ...(data.media
+        ? {
+            publisher: [
+              data.source
+                ? {
+                    '@type': 'Organization',
+                    name: data.media,
+                    url: `${new URL(data.source).protocol}//${new URL(data.source).hostname}`,
+                  }
+                : {
+                    '@type': 'Organization',
+                    name: data.media,
+                  },
+            ],
+          }
+        : {}),
     }),
   )
 
@@ -67,7 +77,7 @@
   <meta property="og:url" content={data.canonicalURL} />
   <meta property="og:title" content={data.title} />
   <meta property="og:description" content={data.description} />
-  <meta property="article:published_time" content={`${data.origDate}+09:00`} />
+  <meta property="article:published_time" content={`${publishedDate}+09:00`} />
   {#if data.author}
     <meta property="article:author" content={data.author} />
   {/if}
@@ -88,7 +98,7 @@
         animation-name: zoom-in-new;
       }
       :root {
-        ${image && `--hero-foreground: #${data.imageForeground.toString()};`}
+        ${image && `--hero-foreground: #${data.imageForeground?.toString()};`}
         ${data.outline ? `--outline-color: #${data.outline.toString()};` : ''}
       }
     </style>
@@ -102,12 +112,12 @@
   <div
     class="metadata"
     style={isOutline
-      ? `--content: '${data.media && `${data.media} • `}${data.author && `${data.author} • `}${new Intl.DateTimeFormat(
+      ? `--content: '${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${new Intl.DateTimeFormat(
           'ko-KR',
           {
             dateStyle: 'long',
           },
-        ).format(Date.parse(`${data.origDate}+09:00`))}'`
+        ).format(Date.parse(`${publishedDate}+09:00`))}'`
       : null}
     use:transition={`post-metadata-${data.slug}`}
   >
@@ -119,21 +129,21 @@
       <a target="_blank" rel="nofollow noreferrer noopener" href={data.authorURL}
         >{data.author}
       </a>&#8194;&bullet;&#8194;
-    {/if}{#if typeof data.origDate === 'object'}
-      <time datetime={data.origDate.toISOString().split('T')[0]}>
-        {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(data.origDate)}
+    {/if}{#if typeof publishedDate === 'object'}
+      <time datetime={(publishedDate as Date).toISOString().split('T')[0]}>
+        {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(publishedDate as Date)}
       </time>
     {:else}
       <Tooltip.Provider>
         <Tooltip.Root>
           <Tooltip.Trigger class="cursor-default">
-            <time datetime={`${data.origDate}+09:00`}>
-              {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${data.origDate}+09:00`))}
+            <time datetime={`${publishedDate}+09:00`}>
+              {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${publishedDate}+09:00`))}
             </time>
           </Tooltip.Trigger>
           <Tooltip.Content>
             {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'short'}).format(
-              Date.parse(`${data.origDate}+09:00`),
+              Date.parse(`${publishedDate}+09:00`),
             )}
           </Tooltip.Content>
         </Tooltip.Root>

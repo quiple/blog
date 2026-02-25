@@ -1,5 +1,5 @@
 import {error} from '@sveltejs/kit'
-import {blogArticles, blogPosts, getArticleMetadataFromMatter} from '$lib/content'
+import {blogArticles, blogPosts, getArticleMetadataFromMatter, getPostMetadataFromMatter} from '$lib/content'
 import {cn} from '$lib/utils'
 import matter from 'gray-matter'
 import type {Root} from 'mdast'
@@ -23,7 +23,10 @@ export const load: PageServerLoad = async ({params}) => {
   if (!rawContent) return error(404)
 
   const {content, data} = matter(rawContent)
-  const postMetaData = getArticleMetadataFromMatter(params.category, params.slug, data)
+  const isArticle = params.category === 'article'
+  const postMetaData = isArticle
+    ? getArticleMetadataFromMatter(params.category, params.slug, data)
+    : getPostMetadataFromMatter(params.category, params.slug, data)
 
   postMetaData.title = (await remark().use(strip).use(smartypants, {dashes: 'oldschool'}).process(postMetaData.title))
     .toString()
@@ -62,9 +65,16 @@ export const load: PageServerLoad = async ({params}) => {
       .process(content)
   ).toString()
 
+  const articleData = isArticle ? (postMetaData as ReturnType<typeof getArticleMetadataFromMatter>) : undefined
+
   return {
     ...postMetaData,
     contentHtml,
+    origDate: articleData?.origDate,
+    media: articleData?.media,
+    source: articleData?.source,
+    author: articleData?.author,
+    authorURL: articleData?.authorURL,
   }
 }
 
