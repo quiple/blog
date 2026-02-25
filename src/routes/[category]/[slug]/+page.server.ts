@@ -1,5 +1,5 @@
 import {error} from '@sveltejs/kit'
-import {blogPosts, getMetadataFromMatter} from '$lib/content'
+import {blogPosts, getArticleMetadataFromMatter} from '$lib/content'
 import {cn} from '$lib/utils'
 import matter from 'gray-matter'
 import type {Root} from 'mdast'
@@ -23,7 +23,7 @@ export const load: PageServerLoad = async ({params}) => {
   if (!rawContent) return error(404)
 
   const {content, data} = matter(rawContent)
-  const postMetaData = getMetadataFromMatter(params.category, params.slug, data)
+  const postMetaData = getArticleMetadataFromMatter(params.category, params.slug, data)
 
   postMetaData.title = (await remark().use(strip).use(smartypants, {dashes: 'oldschool'}).process(postMetaData.title))
     .toString()
