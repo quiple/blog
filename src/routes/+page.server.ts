@@ -37,7 +37,7 @@ export const load: PageServerLoad = async () => {
         .replaceAll('\n', ' ')
         .replaceAll('  ', ' ')
         .replaceAll(/:::figure[^:]+:::/g, '')
-        .replaceAll(/::figure\{[^\}]+\}/g, '')
+        .replaceAll(/::figure\{[^}]+\}/g, '')
         .substring(0, 200)
         .trim() + '\u2026'
   }
