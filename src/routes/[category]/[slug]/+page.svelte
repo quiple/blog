@@ -109,46 +109,48 @@
 <div use:hero={{hasHero: Boolean(image)}}></div>
 
 {#snippet metadata(isOutline: boolean = false)}
-  <div
-    class="metadata"
-    style={isOutline
-      ? `--content: '${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${new Intl.DateTimeFormat(
-          'ko-KR',
-          {
-            dateStyle: 'long',
-          },
-        ).format(Date.parse(`${publishedDate}+09:00`))}'`
-      : null}
-    use:transition={`post-metadata-${data.slug}`}
-  >
-    {#if data.media}
-      <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>
-        {data.media}
-      </a>&#8194;&bullet;&#8194;
-    {/if}{#if data.author}
-      <a target="_blank" rel="nofollow noreferrer noopener" href={data.authorURL}
-        >{data.author}
-      </a>&#8194;&bullet;&#8194;
-    {/if}{#if typeof publishedDate === 'object'}
-      <time datetime={(publishedDate as Date).toISOString().split('T')[0]}>
-        {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(publishedDate as Date)}
-      </time>
-    {:else}
-      <Tooltip.Provider>
-        <Tooltip.Root>
-          <Tooltip.Trigger class="cursor-default">
-            <time datetime={`${publishedDate}+09:00`}>
-              {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${publishedDate}+09:00`))}
-            </time>
-          </Tooltip.Trigger>
-          <Tooltip.Content>
-            {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'short'}).format(
-              Date.parse(`${publishedDate}+09:00`),
-            )}
-          </Tooltip.Content>
-        </Tooltip.Root>
-      </Tooltip.Provider>
-    {/if}
+  <div>
+    <div
+      class="metadata"
+      style={isOutline
+        ? `--content: '${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${new Intl.DateTimeFormat(
+            'ko-KR',
+            {
+              dateStyle: 'long',
+            },
+          ).format(Date.parse(`${publishedDate}+09:00`))}'`
+        : null}
+      use:transition={`post-metadata-${data.slug}`}
+    >
+      {#if data.media}
+        <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>
+          {data.media}
+        </a>&#8194;&bullet;&#8194;
+      {/if}{#if data.author}
+        <a target="_blank" rel="nofollow noreferrer noopener" href={data.authorURL}
+          >{data.author}
+        </a>&#8194;&bullet;&#8194;
+      {/if}{#if typeof publishedDate === 'object'}
+        <time datetime={(publishedDate as Date).toISOString().split('T')[0]}>
+          {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(publishedDate as Date)}
+        </time>
+      {:else}
+        <Tooltip.Provider>
+          <Tooltip.Root>
+            <Tooltip.Trigger class="cursor-default">
+              <time datetime={`${publishedDate}+09:00`}>
+                {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${publishedDate}+09:00`))}
+              </time>
+            </Tooltip.Trigger>
+            <Tooltip.Content>
+              {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'short'}).format(
+                Date.parse(`${publishedDate}+09:00`),
+              )}
+            </Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      {/if}
+    </div>
   </div>
 {/snippet}
 
