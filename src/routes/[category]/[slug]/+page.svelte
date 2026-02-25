@@ -156,7 +156,7 @@
   <div class="hero bg" style:background-image={`url('${image}')`} use:transition={`post-image-${data.slug}`}></div>
   <div class={['hero title', data.outline && 'line']}>
     <div>
-      <h1 class="mb-2! inline-block" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
+      <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
         {data.title}
       </h1>
       {@render metadata(Boolean(data.outline))}
@@ -183,7 +183,7 @@
 
   <article>
     {#if !image}
-      <h1 class="mb-2! inline-block" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
+      <h1 class="mb-2!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
       {@render metadata()}
     {/if}
 
