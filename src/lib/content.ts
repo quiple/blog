@@ -110,3 +110,9 @@ export function getBlogPostsMetadata() {
 export function getBlogArticlesMetadata() {
   return getContentMetadata(blogArticles, getArticleMetadataFromMatter)
 }
+
+export function getAllBlogContentMetadata() {
+  return [...getBlogPostsMetadata(), ...getBlogArticlesMetadata()].sort(
+    (a, b) => Date.parse(`${b.pubDate.valueOf()}+09:00`) - Date.parse(`${a.pubDate.valueOf()}+09:00`),
+  )
+}
