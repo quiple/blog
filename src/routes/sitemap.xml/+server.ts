@@ -1,12 +1,12 @@
 import {BASE_URL} from '$lib/constants'
-import {getBlogPostsMetadata} from '$lib/content'
+import {getAllBlogContentMetadata} from '$lib/content'
 import {XMLBuilder} from 'fast-xml-parser'
 import type {RequestHandler} from './$types'
 
 export const prerender = true
 
 export const GET: RequestHandler = async () => {
-  const posts = getBlogPostsMetadata()
+  const posts = getAllBlogContentMetadata()
   const sitemapObject = {
     urlset: {
       '@_xmlns': 'http://www.sitemaps.org/schemas/sitemap/0.9',

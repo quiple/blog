@@ -2,8 +2,6 @@ import matter from 'gray-matter'
 import * as v from 'valibot'
 import {BASE_URL} from './constants'
 
-export const CONTENT_BASE_PATH = '/src/content/blog'
-
 export const blogPosts = import.meta.glob('/src/posts/post/*.md', {
   query: '?raw',
   import: 'default',
@@ -112,7 +110,18 @@ export function getBlogArticlesMetadata() {
 }
 
 export function getAllBlogContentMetadata() {
-  return [...getBlogPostsMetadata(), ...getBlogArticlesMetadata()].sort(
+  const posts = getBlogPostsMetadata().map((p) => ({
+    ...p,
+    origDate: undefined as undefined,
+    media: undefined as string | undefined,
+  }))
+  const articles = getBlogArticlesMetadata().map((a) => ({
+    ...a,
+    origDate: a.origDate,
+    media: a.media,
+  }))
+
+  return [...posts, ...articles].sort(
     (a, b) => Date.parse(`${b.pubDate.valueOf()}+09:00`) - Date.parse(`${a.pubDate.valueOf()}+09:00`),
   )
 }

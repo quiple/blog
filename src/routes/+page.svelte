@@ -23,16 +23,14 @@
   <ul class="flex flex-col">
     {#each data.posts as post}
       {@const displayDate =
-        'origDate' in post && post.origDate instanceof Date
-          ? post.origDate
-          : new Date(`${'origDate' in post && typeof post.origDate === 'string' ? post.origDate : post.pubDate}+09:00`)}
+        post.origDate instanceof Date ? post.origDate : new Date(`${post.origDate ?? post.pubDate}+09:00`)}
       <li>
         <a href={post.relativeURL} class="list-item">
           <div class="grow z-1">
             <strong class="line-clamp-1 mb-1" use:transition={`post-title-${post.slug}`}>{post.title}</strong>
             <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
             <small class="text-muted-foreground" use:transition={`post-metadata-${post.slug}`}>
-              {#if 'media' in post && post.media}
+              {#if post.media}
                 {post.media}&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
                 displayDate,
               )}

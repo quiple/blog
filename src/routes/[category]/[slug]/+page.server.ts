@@ -1,5 +1,6 @@
 import {error} from '@sveltejs/kit'
 import {blogArticles, blogPosts, getArticleMetadataFromMatter, getPostMetadataFromMatter} from '$lib/content'
+import {generateDescription, processTitle} from '$lib/markdown'
 import {cn} from '$lib/utils'
 import matter from 'gray-matter'
 import type {Root} from 'mdast'
@@ -13,7 +14,6 @@ import remarkGfm from 'remark-gfm'
 import remarkGithubAlerts from 'remark-github-alerts'
 import remarkRehype from 'remark-rehype'
 import smartypants from 'remark-smartypants'
-import strip from 'strip-markdown'
 import {visit} from 'unist-util-visit'
 import type {PageServerLoad} from './$types'
 
@@ -28,26 +28,8 @@ export const load: PageServerLoad = async ({params}) => {
     ? getArticleMetadataFromMatter(params.category, params.slug, data)
     : getPostMetadataFromMatter(params.category, params.slug, data)
 
-  postMetaData.title = (await remark().use(strip).use(smartypants, {dashes: 'oldschool'}).process(postMetaData.title))
-    .toString()
-    .replaceAll('\n', '')
-
-  postMetaData.description =
-    postMetaData.description ??
-    (
-      await remark()
-        .use(remarkGfm)
-        .use(remarkCjkFriendly)
-        .use(remarkCjkFriendlyGfmStrikethrough)
-        .use(strip)
-        .use(smartypants, {dashes: 'oldschool'})
-        .process(content)
-    )
-      .toString()
-      .substring(0, 200)
-      .replaceAll('\n', ' ')
-      .replaceAll('  ', ' ')
-      .trim() + '\u2026'
+  postMetaData.title = await processTitle(postMetaData.title)
+  postMetaData.description = postMetaData.description ?? (await generateDescription(content))
 
   const contentHtml = (
     await remark()

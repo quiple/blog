@@ -1,9 +1,4 @@
-import rehypeStringify from 'rehype-stringify'
-import {remark} from 'remark'
-import remarkCjkFriendly from 'remark-cjk-friendly'
-import remarkGfm from 'remark-gfm'
-import remarkRehype from 'remark-rehype'
-import smartypants from 'remark-smartypants'
+import {simpleHtmlProcessor} from '$lib/markdown'
 import type {PageServerLoad} from './$types'
 
 const content = `
@@ -23,16 +18,8 @@ const content = `
   * [IBM Plex Sans KR](https://github.com/IBM/plex)
 `
 
-export const load: PageServerLoad = async ({params}) => {
-  const contentHTML = (
-    await remark()
-      .use(remarkRehype)
-      .use(rehypeStringify)
-      .use(remarkGfm)
-      .use(remarkCjkFriendly)
-      .use(smartypants, {dashes: 'oldschool'})
-      .process(content)
-  ).toString()
+export const load: PageServerLoad = async () => {
+  const contentHTML = (await simpleHtmlProcessor.process(content)).toString()
 
   return {
     contentHTML,
