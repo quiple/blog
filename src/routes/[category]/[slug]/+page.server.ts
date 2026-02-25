@@ -1,5 +1,5 @@
 import {error} from '@sveltejs/kit'
-import {blogPosts, getArticleMetadataFromMatter} from '$lib/content'
+import {blogArticles, blogPosts, getArticleMetadataFromMatter} from '$lib/content'
 import {cn} from '$lib/utils'
 import matter from 'gray-matter'
 import type {Root} from 'mdast'
@@ -19,7 +19,7 @@ import type {PageServerLoad} from './$types'
 
 export const load: PageServerLoad = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
-  const rawContent = blogPosts[matchPath]
+  const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath]
   if (!rawContent) return error(404)
 
   const {content, data} = matter(rawContent)
