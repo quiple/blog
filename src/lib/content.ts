@@ -30,7 +30,6 @@ const baseMetadataFields = {
   thumbnail: optionalTrimmedString,
   imageForeground: optionalTrimmedString,
   outline: optionalTrimmedString,
-  media: optionalTrimmedString,
   origDate: v.union([v.pipe(v.date()), v.pipe(v.string(), v.isoDateTime(), v.trim())]),
   pubDate: v.pipe(v.string(), v.isoDateTime(), v.trim()),
   tags: v.optional(
@@ -51,6 +50,7 @@ export const blogPostMetadataSchema = v.object({
 
 export const blogArticleMetadataSchema = v.object({
   ...baseMetadataFields,
+  media: optionalTrimmedString,
   source: v.optional(v.pipe(v.string(), v.url(), v.trim())),
   author: optionalTrimmedString,
   authorURL: v.optional(v.pipe(v.string(), v.url(), v.trim())),
