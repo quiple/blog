@@ -93,6 +93,7 @@ export function getFontMetadataFromMatter(category: string, slug: string, data: 
 
 export type Post = ReturnType<typeof getPostMetadataFromMatter>
 export type Article = ReturnType<typeof getArticleMetadataFromMatter>
+export type Font = ReturnType<typeof getFontMetadataFromMatter>
 
 // --- Generic content list builder ---
 
