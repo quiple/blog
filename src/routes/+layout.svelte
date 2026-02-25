@@ -46,7 +46,7 @@
       :global(article)
         @apply prose-shadcn max-w-xl 2xl:max-w-2xl w-full shrink-0
         :global(.metadata)
-          @apply text-muted-foreground text-sm inline-block
+          @apply text-muted-foreground text-sm block
           :global(a)
             @apply text-muted-foreground font-normal
         :global(figure)
