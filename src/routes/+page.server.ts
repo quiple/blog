@@ -24,22 +24,23 @@ export const load: PageServerLoad = async () => {
 
     posts[i].description =
       posts[i].description ??
-      (
-        await remark()
-          .use(remarkGfm)
-          .use(remarkCjkFriendly)
-          .use(remarkCjkFriendlyGfmStrikethrough)
-          .use(strip)
-          .use(smartypants, {dashes: 'oldschool'})
-          .process(content)
+      ((stripped) => (stripped.length > 200 ? stripped.substring(0, 200).trim() + '\u2026' : stripped))(
+        (
+          await remark()
+            .use(remarkGfm)
+            .use(remarkCjkFriendly)
+            .use(remarkCjkFriendlyGfmStrikethrough)
+            .use(strip)
+            .use(smartypants, {dashes: 'oldschool'})
+            .process(content)
+        )
+          .toString()
+          .replaceAll('\n', ' ')
+          .replaceAll('  ', ' ')
+          .replaceAll(/:::figure[^:]+:::/g, '')
+          .replaceAll(/::figure\{[^}]+\}/g, '')
+          .trim(),
       )
-        .toString()
-        .replaceAll('\n', ' ')
-        .replaceAll('  ', ' ')
-        .replaceAll(/:::figure[^:]+:::/g, '')
-        .replaceAll(/::figure\{[^}]+\}/g, '')
-        .substring(0, 200)
-        .trim() + '\u2026'
   }
 
   return {title, description, posts}
