@@ -34,11 +34,11 @@
     }
   }
 
-  // $effect(() => {
-  //   if ($isHero === true) onScroll()
-  //   const q = page.url.searchParams.get('q')
-  //   query = q?.replaceAll('+', ' ') || ''
-  // })
+  $effect(() => {
+    if ($isHero === true) onScroll()
+    const q = page.url.searchParams.get('q')
+    query = q?.replaceAll('+', ' ') || ''
+  })
 </script>
 
 <svelte:window on:keydown={onKeydown} on:scroll={onScroll} />
