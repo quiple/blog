@@ -1,5 +1,12 @@
 import {error} from '@sveltejs/kit'
-import {blogArticles, blogPosts, getArticleMetadataFromMatter, getPostMetadataFromMatter} from '$lib/content'
+import {
+  blogArticles,
+  blogFonts,
+  blogPosts,
+  getArticleMetadataFromMatter,
+  getFontMetadataFromMatter,
+  getPostMetadataFromMatter,
+} from '$lib/content'
 import {generateDescription, processTitle} from '$lib/markdown'
 import {cn} from '$lib/utils'
 import matter from 'gray-matter'
@@ -19,14 +26,17 @@ import type {PageServerLoad} from './$types'
 
 export const load: PageServerLoad = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
-  const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath]
+  const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
   if (!rawContent) return error(404)
 
   const {content, data} = matter(rawContent)
   const isArticle = params.category === 'article'
+  const isFont = params.category === 'font'
   const postMetaData = isArticle
     ? getArticleMetadataFromMatter(params.category, params.slug, data)
-    : getPostMetadataFromMatter(params.category, params.slug, data)
+    : isFont
+      ? getFontMetadataFromMatter(params.category, params.slug, data)
+      : getPostMetadataFromMatter(params.category, params.slug, data)
 
   postMetaData.title = await processTitle(postMetaData.title)
   postMetaData.description = postMetaData.description ?? (await generateDescription(content))
