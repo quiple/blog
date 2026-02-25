@@ -1,4 +1,4 @@
-import {blogPosts, getBlogArticlesMetadata} from '$lib/content'
+import {blogArticles, getBlogArticlesMetadata} from '$lib/content'
 import matter from 'gray-matter'
 import {remark} from 'remark'
 import remarkCjkFriendly from 'remark-cjk-friendly'
@@ -15,7 +15,7 @@ export const load: PageServerLoad = async () => {
 
   for (let i = 0; i < posts.length; i++) {
     const matchPath = `/src/posts/${posts[i].category}/${posts[i].slug}.md`
-    const rawContent = blogPosts[matchPath]
+    const rawContent = blogArticles[matchPath]
     const {content} = matter(rawContent)
 
     posts[i].title = (await remark().use(strip).use(smartypants, {dashes: 'oldschool'}).process(posts[i].title))
