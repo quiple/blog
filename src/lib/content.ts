@@ -30,7 +30,6 @@ const baseMetadataFields = {
   thumbnail: optionalTrimmedString,
   imageForeground: optionalTrimmedString,
   outline: optionalTrimmedString,
-  origDate: v.union([v.pipe(v.date()), v.pipe(v.string(), v.isoDateTime(), v.trim())]),
   pubDate: v.pipe(v.string(), v.isoDateTime(), v.trim()),
   tags: v.optional(
     v.pipe(
@@ -54,6 +53,7 @@ export const blogArticleMetadataSchema = v.object({
   source: v.optional(v.pipe(v.string(), v.url(), v.trim())),
   author: optionalTrimmedString,
   authorURL: v.optional(v.pipe(v.string(), v.url(), v.trim())),
+  origDate: v.union([v.pipe(v.date()), v.pipe(v.string(), v.isoDateTime(), v.trim())]),
 })
 
 // --- Generic metadata helpers ---
