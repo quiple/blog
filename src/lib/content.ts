@@ -138,7 +138,7 @@ export function getAllBlogContentMetadata() {
     origDate: a.origDate,
     media: a.media,
   }))
-  const fonts = getBlogPostsMetadata().map((f) => ({
+  const fonts = getBlogFontsMetadata().map((f) => ({
     ...f,
     origDate: undefined as undefined,
     media: undefined as string | undefined,
