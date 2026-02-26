@@ -1,12 +1,14 @@
 <script lang="ts">
+  import {Shuffle} from '@lucide/svelte'
+  import {Button} from '$lib/components/ui/button/index.js'
   import {Label} from '$lib/components/ui/label/index.js'
   import {Slider} from '$lib/components/ui/slider/index.js'
   import {Textarea} from '$lib/components/ui/textarea/index.js'
 
   let fontSize = $state(24)
 
-  function pickRandom<T>(set: Set<T>): T {
-    const arr = [...set]
+  function pickRandom<T>(set: Set<T>, previous?: T): T {
+    const arr = [...set].filter((item) => item !== previous)
     return arr[Math.floor(Math.random() * arr.length)]
   }
 
@@ -149,14 +151,31 @@
     '安心して, 僕は帰らない, ほらね',
   ])
 
-  exampleText = [pickRandom(pangramEn), pickRandom(pangramKo), pickRandom(pangramJa)].join('\n')
+  let prevEn: string | undefined
+  let prevKo: string | undefined
+  let prevJa: string | undefined
+
+  function shuffle() {
+    const en = pickRandom(pangramEn, prevEn)
+    const ko = pickRandom(pangramKo, prevKo)
+    const ja = pickRandom(pangramJa, prevJa)
+    prevEn = en
+    prevKo = ko
+    prevJa = ja
+    exampleText = [en, ko, ja].join('\n')
+  }
+
+  shuffle()
 </script>
 
-<div class="grid w-full gap-1.5">
+<div class="grid w-full">
   <Label for="tester">사용해 보기</Label>
   <div class="flex gap-1.5 items-center tabular-nums">
     <Label for="font-size" class="text-muted-foreground">{fontSize}px</Label>
     <Slider id="font-size" type="single" bind:value={fontSize} min={12} max={96} step={12} />
+    <Button variant="ghost" size="icon-sm" onclick={shuffle}>
+      <Shuffle />
+    </Button>
   </div>
   <Textarea
     id="tester"
