@@ -5,7 +5,7 @@
 
   let fontSize = $state(24)
   let exampleText = $state(
-    'The quick brown fox jumps over the lazy dog\n정 참판 양반댁 규수 큰 교자 타고 혼례 치른 날\n',
+    'The quick brown fox jumps over the lazy dog\n정 참판 양반댁 규수 큰 교자 타고 혼례 치른 날\n君の好きなことが君にしかできないことだよ',
   )
 </script>
 
