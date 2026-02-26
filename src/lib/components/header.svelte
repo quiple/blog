@@ -92,9 +92,9 @@
       .logo, :global(.menu)
         @apply before:opacity-100
         mask-image: if(
-          style(--hero-foreground: #fff): var(--svgGradeDown) !important;
-          else: none !important;
-        )
+          style(--hero-foreground: #fff): var(--svgGradeDown);
+          else: none;
+        ) !important
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-8
       .logo
