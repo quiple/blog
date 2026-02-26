@@ -204,7 +204,7 @@
     @apply not-italic [&>a]:before:content-['['] [&>a]:after:content-[']'];
   }
   a {
-    @apply scroll-m-(--header-height) text-blue-500 no-underline hover:underline dark:text-blue-400;
+    @apply scroll-m-(--header-height);
   }
   figcaption {
     @apply text-justify;
