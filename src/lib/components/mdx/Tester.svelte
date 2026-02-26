@@ -4,9 +4,13 @@
   import {Textarea} from '$lib/components/ui/textarea/index.js'
 
   let fontSize = $state(24)
-  let exampleText = $state(
-    'The quick brown fox jumps over the lazy dog\n정 참판 양반댁 규수 큰 교자 타고 혼례 치른 날\n君の好きなことが君にしかできないことだよ',
-  )
+
+  function pickRandom<T>(set: Set<T>): T {
+    const arr = [...set]
+    return arr[Math.floor(Math.random() * arr.length)]
+  }
+
+  let exampleText = $state('')
 
   const pangramEn = new Set([
     'The quick brown fox jumps over the lazy dog',
@@ -127,6 +131,8 @@
     // 가쿠마스
     '安心して, 僕は帰らない, ほらね',
   ])
+
+  exampleText = [pickRandom(pangramEn), pickRandom(pangramKo), pickRandom(pangramJa)].join('\n')
 </script>
 
 <div class="grid w-full gap-1.5">
