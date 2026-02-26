@@ -173,7 +173,7 @@
   <div class="flex gap-1.5 items-center tabular-nums">
     <Label for="font-size" class="text-muted-foreground">{fontSize}px</Label>
     <Slider id="font-size" type="single" bind:value={fontSize} min={12} max={96} step={12} />
-    <Button variant="ghost" size="icon-sm" onclick={shuffle}>
+    <Button variant="ghost" size="icon-sm" onclick={shuffle} class="-mx-1">
       <Shuffle />
     </Button>
   </div>
