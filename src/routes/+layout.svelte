@@ -48,7 +48,7 @@
         :global(.metadata)
           @apply text-muted-foreground text-sm inline-block
           :global(a)
-            @apply text-muted-foreground font-normal
+            @apply text-muted-foreground font-normal no-underline hover:underline
         :global(figure)
           @apply mx-auto [blockquote_&]:mx-0 max-w-fit flex flex-col items-start
           & > :global(div)
