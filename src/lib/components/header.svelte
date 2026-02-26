@@ -88,7 +88,7 @@
     &.hero
       @apply text-(--hero-foreground)
       :global(Button):hover
-        @apply text-(--hero-foreground) bg-(--hero-foreground)/10
+        @apply text-(--hero-foreground) bg-(--hero-foreground)/5
       .logo, :global(.menu)
         @apply before:opacity-100
       .logo
