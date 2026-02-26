@@ -46,5 +46,5 @@ export async function generateDescription(content: string): Promise<string> {
     .replaceAll(/::figure\{[^}]+\}/g, '')
     .trim()
 
-  return stripped.length > 200 ? stripped.substring(0, 200).trim() + '\u2026' : stripped
+  return stripped.length > 250 ? stripped.substring(0, 250).trim() + '\u2026' : stripped
 }
