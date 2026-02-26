@@ -8,13 +8,15 @@
 
 <div class="grid w-full gap-1.5">
   <Label for="tester">사용해 보기</Label>
+  <div class="flex gap-2 items-center tabular-nums">
+    {fontSize}px <Slider type="single" bind:value={fontSize} min={12} max={96} step={1} />
+  </div>
   <Textarea
     id="tester"
-    class="font-['x12y12pxMaruMinyaHangul-web']"
+    class="font-['x12y12pxMaruMinyaHangul-web'] leading-none"
     style="font-size: {fontSize}px"
     spellcheck="false"
   />
-  <Slider type="single" bind:value={fontSize} max={96} step={1} />
 </div>
 
 <style lang="sass">
