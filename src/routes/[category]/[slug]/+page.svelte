@@ -16,7 +16,8 @@
   const {transition} = setupViewTransition()
   const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
   const isArticle = $derived(data.category === 'article')
-  const image = $derived(data.image ? `/img/article/${data.image}` : '')
+  const isFont = $derived(data.category === 'font')
+  const image = $derived(data.image ? `/img/${isArticle ? 'article' : isFont && 'font'}/${data.image}` : '')
   const publishedDate = $derived(data.origDate ?? data.pubDate)
   const jsonLd = $derived(
     JSON.stringify({
