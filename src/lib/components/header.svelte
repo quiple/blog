@@ -25,7 +25,10 @@
   }
 
   const onScroll = () => {
-    if ($isHero !== null) {
+    const path = page.url.pathname
+    const isArticlePage = path.startsWith('/post/') || path.startsWith('/article/') || path.startsWith('/font/')
+
+    if ($isHero !== null && isPostPage) {
       if (window.scrollY < window.innerHeight / 2 - 42) isHero.set(true)
       else isHero.set(false)
     }
