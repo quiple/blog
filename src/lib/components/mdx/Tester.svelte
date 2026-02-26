@@ -4,7 +4,9 @@
   import {Textarea} from '$lib/components/ui/textarea/index.js'
 
   let fontSize = $state(24)
-  let exampleText = $state('정 참판 양반댁 규수 큰 교자 타고 혼례 치른 날\nThe Quick Brown Fox Jumps Over The Lazy Dog')
+  let exampleText = $state(
+    'The quick brown fox jumps over the lazy dog\n정 참판 양반댁 규수 큰 교자 타고 혼례 치른 날\n',
+  )
 </script>
 
 <div class="grid w-full gap-1.5">
@@ -29,5 +31,5 @@
       style: normal
       weight: 400
       display: block
-    src: url('https://cdn.jsdelivr.net/gh/quiple/x12y12pxMaruMinyaHangul/fonts/x12y12pxMaruMinyaHangul.woff2') format('woff2')
+    src: url('/fonts/x12y12pxMaruMinyaHangul.woff2') format('woff2')
 </style>
