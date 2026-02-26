@@ -11,6 +11,8 @@ pubDate: 2026-02-26T23:04
 
 <Tester />
 
+[GitHub 리포지터리에서 다운로드](https://github.com/quiple/x12y12pxMaruMinyaHangul/tree/main/fonts)
+
 ## 라이선스
 
 | 범주               | 설명                                                                                                                     |
