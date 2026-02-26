@@ -2,7 +2,7 @@
 title: x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya&#8203;Hangul
 image: x12y12pxMaruMinyaHangul.png
 imageForeground: '000'
-pubDate: 2026-02-26T23:04
+pubDate: 2026-02-27T01:09
 ---
 
 **x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya&#8203;Hangul&#8203;(마루미냐 한글)**은 12&#8203;px 크기의 일본어 픽셀 폰트 '**[x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya&#8203;(マルミーニャ)](https://github.com/hicchicc/x12y12pxMaruMinya)**'를 기반으로 하는 한국어&middot;일본어 픽셀 폰트입니다.
