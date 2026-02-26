@@ -98,5 +98,5 @@
       :global(.menu)
         @apply relative before:mask-size-[24px]
       .logo, :global(.menu)
-        @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:mask-(--svg) before:mask-center before:mask-no-repeat dark:mask-(--svgGradeDown) mask-center mask-[size:36px] mask-no-repeat
+        @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:mask-(--svgOutline) before:mask-center before:mask-no-repeat dark:mask-(--svgGradeDown) mask-center mask-[size:36px] mask-no-repeat
 </style>
