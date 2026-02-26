@@ -8,6 +8,7 @@ import {
   getPostMetadataFromMatter,
 } from '$lib/content'
 import {generateDescription, processTitle} from '$lib/markdown'
+import {mdxHandlers, preprocessMdx} from '$lib/mdx'
 import {cn} from '$lib/utils'
 import matter from 'gray-matter'
 import type {Root} from 'mdast'
@@ -19,6 +20,7 @@ import remarkCjkFriendlyGfmStrikethrough from 'remark-cjk-friendly-gfm-strikethr
 import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
 import remarkGithubAlerts from 'remark-github-alerts'
+import remarkMdx from 'remark-mdx'
 import remarkRehype from 'remark-rehype'
 import smartypants from 'remark-smartypants'
 import {visit} from 'unist-util-visit'
@@ -44,17 +46,18 @@ export const load: PageServerLoad = async ({params}) => {
   const contentHtml = (
     await remark()
       .use(remarkDirective)
+      .use(remarkMdx)
       .use(figure)
       .use(tweet)
       .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(remarkCjkFriendlyGfmStrikethrough)
       .use(remarkGithubAlerts)
-      .use(remarkRehype, {allowDangerousHtml: true})
+      .use(remarkRehype, {allowDangerousHtml: true, handlers: mdxHandlers()})
       .use(smartypants, {dashes: 'oldschool'})
       .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow', 'noreferrer', 'noopener']})
       .use(rehypeStringify, {allowDangerousHtml: true})
-      .process(content)
+      .process(preprocessMdx(content))
   ).toString()
 
   const articleData = isArticle ? (postMetaData as ReturnType<typeof getArticleMetadataFromMatter>) : undefined

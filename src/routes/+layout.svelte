@@ -42,7 +42,7 @@
         :global(h2)
           @apply flex items-center text-sm font-semibold text-muted-foreground before:mask-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyLjc1IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXRhYmxlLW9mLWNvbnRlbnRzLWljb24gbHVjaWRlLXRhYmxlLW9mLWNvbnRlbnRzIj48cGF0aCBkPSJNMTYgNUgzIi8+PHBhdGggZD0iTTE2IDEySDMiLz48cGF0aCBkPSJNMTYgMTlIMyIvPjxwYXRoIGQ9Ik0yMSA1aC4wMSIvPjxwYXRoIGQ9Ik0yMSAxMmguMDEiLz48cGF0aCBkPSJNMjEgMTloLjAxIi8+PC9zdmc+')] before:bg-current before:size-3.5 before:block before:mask-contain before:mr-1
         :global(li)
-          @apply hover:underline [&.active]:!font-bold [--toc-li-hover-color:var(--color-blue-500)] dark:hover:text-blue-400 [&.active]:hover:!text-current text-sm! mt-2 text-justify
+          @apply hover:underline [&.active]:!font-bold dark:hover:text-blue-400 [&.active]:hover:!text-current text-sm! mt-2 text-justify
       :global(article)
         @apply prose-shadcn max-w-xl 2xl:max-w-2xl w-full shrink-0
         :global(.metadata)

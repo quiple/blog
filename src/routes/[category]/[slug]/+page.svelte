@@ -1,6 +1,7 @@
 <script lang="ts">
   import {onMount} from 'svelte'
   import {hero} from '$lib/actions/hero'
+  import MdxContent from '$lib/components/mdx/MdxContent.svelte'
   import * as Tooltip from '$lib/components/ui/tooltip/index.js'
   import {BASE_URL} from '$lib/constants'
   import {mode} from 'mode-watcher'
@@ -188,7 +189,7 @@
       {@render metadata()}
     {/if}
 
-    {@html data.contentHtml}
+    <MdxContent html={data.contentHtml} />
 
     {#if isContainTwitter}
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -227,7 +228,7 @@
         .metadata
           @apply text-sm mb-5 inline-block
           a
-            @apply font-normal text-(--hero-foreground)!
+            @apply font-normal text-(--hero-foreground)! no-underline hover:underline
       &.line h1::before
         @apply content-(--content) absolute -z-1 pr-4 sm:pr-8 md:pr-0
         -webkit-text-stroke: 6px var(--outline-color)
