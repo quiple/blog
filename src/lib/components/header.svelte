@@ -93,7 +93,10 @@
         @apply before:opacity-100
       .logo
         mask-image: if(
-          style(--hero-foreground: #fff): if(style(--outline-color): none;else: var(--svgGradeDown));
+          style(--hero-foreground: #fff): if(
+            style(--outline-color): none;
+            else: var(--svgGradeDown);
+          );
           else: none;
         ) !important
     section
