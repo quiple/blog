@@ -113,7 +113,7 @@
   <div
     class="metadata"
     style={isOutline
-      ? `--content: '${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${new Intl.DateTimeFormat(
+      ? `--content: '${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${new Intl.DateTimeFormat(
           'ko-KR',
           {
             dateStyle: 'long',
