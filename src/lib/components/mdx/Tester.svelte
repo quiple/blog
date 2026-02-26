@@ -4,6 +4,7 @@
   import {Textarea} from '$lib/components/ui/textarea/index.js'
 
   let fontSize = $state(24)
+  let exampleText = $state('정 참판 양반댁 규수 큰 교자 타고 혼례 치른 날\nThe Quick Brown Fox Jumps Over The Lazy Dog')
 </script>
 
 <div class="grid w-full gap-1.5">
@@ -14,10 +15,10 @@
   </div>
   <Textarea
     id="tester"
-    class="font-['x12y12pxMaruMinyaHangul-web'] leading-none pl-[calc(1em/12*4)] pb-[calc(1em/12*3)] pt-[calc(1em/12*2)] pr-[calc(1em/12*3)]"
+    class="font-['x12y12pxMaruMinyaHangul-web'] leading-normal pl-[calc(1em/12*4)] pb-[calc(1em/12)] pt-0 pr-[calc(1em/12*3)]"
     style="font-size: {fontSize}px"
     spellcheck="false"
-    placeholder="Type your message here."
+    bind:value={exampleText}
   />
 </div>
 
@@ -27,6 +28,6 @@
       family: 'x12y12pxMaruMinyaHangul-web'
       style: normal
       weight: 400
-      display: swap
+      display: block
     src: url('https://cdn.jsdelivr.net/gh/quiple/x12y12pxMaruMinyaHangul/fonts/x12y12pxMaruMinyaHangul.woff2') format('woff2')
 </style>
