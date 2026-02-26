@@ -91,6 +91,7 @@
         @apply bg-(--hero-foreground)/10
       .logo, :global(.menu)
         @apply before:opacity-100
+      .logo
         mask-image: if(
           style(--hero-foreground: #fff): var(--svgGradeDown);
           else: none;
@@ -100,7 +101,7 @@
       .logo
         @apply flex items-center gap-1 self-center transition relative before:mask-size-[54px] p-1 -m-1
       :global(.menu)
-        @apply relative before:mask-size-[24px]
+        @apply relative before:mask-size-[24px] text-(--hero-foreground)
       .logo, :global(.menu)
         @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:mask-(--svgOutline) before:mask-center before:mask-no-repeat dark:mask-(--svgGradeDown) mask-center mask-[size:36px] mask-no-repeat
 </style>
