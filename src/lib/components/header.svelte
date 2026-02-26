@@ -86,7 +86,7 @@
       :global(Button):hover
         @apply text-(--hero-foreground) bg-(--hero-foreground)/10
       .logo, :global(.menu)
-        @apply before:opacity-100
+        @apply before:opacity-100 stroke-0!
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-8
       .logo
@@ -94,5 +94,5 @@
       :global(.menu)
         @apply relative before:mask-size-[24px]
       .logo, :global(.menu)
-        @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:[mask-image:var(--svg)] before:mask-center before:mask-no-repeat
+        @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:[mask-image:var(--svg)] before:mask-center before:mask-no-repeat dark:stroke-background dark:stroke-1
 </style>
