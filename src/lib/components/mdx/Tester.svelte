@@ -13,7 +13,7 @@
   <Label for="tester">사용해 보기</Label>
   <div class="flex gap-1.5 items-center tabular-nums">
     <Label for="font-size" class="text-muted-foreground">{fontSize}px</Label>
-    <Slider id="font-size" type="single" bind:value={fontSize} min={12} max={96} step={1} />
+    <Slider id="font-size" type="single" bind:value={fontSize} min={12} max={96} step={12} />
   </div>
   <Textarea
     id="tester"
