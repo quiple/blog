@@ -75,10 +75,5 @@
   "imports": {
     "#app.css": "./src/app.css",
     "#fonts.sass": "./src/fonts.sass"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "remark-github-alerts"
-    ]
   }
 }
