@@ -160,7 +160,7 @@
   </div>
   <Textarea
     id="tester"
-    class="font-['x12y12pxMaruMinyaHangul-web'] leading-normal pl-[calc(1em/12*4)] pb-[calc(1em/12)] pt-0 pr-[calc(1em/12*3)]"
+    class="font-['x12y12pxMaruMinyaHangul-web'] leading-none pl-[calc(1em/12*4)] pb-[calc(1em/12*4)] pt-[calc(1em/12*3)] pr-[calc(1em/12*3)]"
     style="font-size: {fontSize}px"
     spellcheck="false"
     bind:value={exampleText}
