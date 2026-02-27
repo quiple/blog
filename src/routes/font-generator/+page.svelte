@@ -332,8 +332,8 @@
   <!-- ── Sidebar form ─────────────────────────────────────────────── -->
   <aside class="sidebar">
     <Card.Root class="-my-4 w-full max-w-sm">
-      <Card.Content>
-        <form onsubmit={handleSubmit} class="form-wrapper">
+      <form onsubmit={handleSubmit} class="form-wrapper">
+        <Card.Content>
           <div class="flex flex-col gap-6">
             <!-- 폰트 -->
             <div class="grid gap-2">
@@ -542,34 +542,41 @@
               </div>
             </div>
           </div>
-        </form>
-      </Card.Content>
-      <Card.Footer class="flex-col gap-2">
-        <!-- 액션 버튼들 -->
-        <Button type="submit" disabled={drawing} class="w-full" size="lg">
-          {#if drawing}
-            <LoaderCircle class="animate-spin size-4" />
-            만드는 중…
-          {:else}
-            만들기
-          {/if}
-        </Button>
-        <div class="action-row">
-          <Button type="button" variant="outline" disabled={!canvasReady} onclick={handleCopy} class="flex-1" size="lg">
-            {copyLabel}
+        </Card.Content>
+        <Card.Footer class="flex-col gap-2">
+          <!-- 액션 버튼들 -->
+          <Button type="submit" disabled={drawing} class="w-full" size="lg">
+            {#if drawing}
+              <LoaderCircle class="animate-spin size-4" />
+              만드는 중…
+            {:else}
+              만들기
+            {/if}
           </Button>
-          <Button
-            href={canvasReady ? downloadHref : undefined}
-            variant="outline"
-            disabled={!canvasReady}
-            class="flex-1"
-            size="lg"
-            download={downloadName}
-          >
-            다운로드
-          </Button>
-        </div>
-      </Card.Footer>
+          <div class="action-row">
+            <Button
+              type="button"
+              variant="outline"
+              disabled={!canvasReady}
+              onclick={handleCopy}
+              class="flex-1"
+              size="lg"
+            >
+              {copyLabel}
+            </Button>
+            <Button
+              href={canvasReady ? downloadHref : undefined}
+              variant="outline"
+              disabled={!canvasReady}
+              class="flex-1"
+              size="lg"
+              download={downloadName}
+            >
+              다운로드
+            </Button>
+          </div>
+        </Card.Footer>
+      </form>
     </Card.Root>
 
     <!-- 문자 집합 설명 -->
