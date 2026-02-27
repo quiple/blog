@@ -30,7 +30,7 @@ pubDate: 2026-02-27T01:09
 
 마루미냐 한글은 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 [https://&#8203;open&#8203;font&#8203;license&#8203;.&#8203;org](https://openfontlicense.org)에서 FAQ와 함께 확인할 수 있습니다.
 
-<Button variant="outline" href="https://github.com/quiple/x12y12pxMaruMinyaHangul/blob/main/OFL.txt"></Button>
+[라이선스 원문](https://github.com/quiple/x12y12pxMaruMinyaHangul/blob/main/OFL.txt)
 
 ## 제작에 사용된 도구
 
