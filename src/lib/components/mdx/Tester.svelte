@@ -41,13 +41,16 @@
 
     'Tie my tongue or love instead?',
     'My heart beats a rhythm just for you',
+    'Hold your breath now\nIt’s all a simulation',
     'I wish that I could fall a little bit harder',
+    'Beneath the virtual sky\nI can hear you call',
     'So let the Anthropocene watch me going fucking crazy',
     'Don’t you find it all romantic,\nthe way things used to be?',
+
     'Thank you sex',
+    'For I just threw out the love of my dreams',
     'But the moon’s not burning through my skin tonight',
     'I wanna be an ordinary man,\nnot just an ego caught inside a trend',
-    'For I just threw out the love of my dreams',
     'This way is a waterslide away from me\nthat takes her further every day',
   ])
 
