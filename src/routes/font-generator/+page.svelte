@@ -618,7 +618,7 @@
                 rel="noopener noreferrer">JIS X 0208</a
               >의 제1수준 한자.
             </li>
-            <li>JIS 6,355자: JIS X 0208의 제1수준과 제2수준을 합한 모든 한자.</li>
+            <li>JIS 6,355자: JIS X 0208의 제1&middot;제2수준 한자.</li>
           </ul>
         </li>
         <li>
