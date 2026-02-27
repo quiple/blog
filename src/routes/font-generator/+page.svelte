@@ -177,8 +177,15 @@
   let canvasReady = $state(false)
   let copyLabel = $state('복사하기')
   let canvasEl: HTMLCanvasElement | undefined = $state()
+  let previewAreaEl: HTMLDivElement | undefined = $state()
   let downloadHref = $state('#')
   let downloadName = $state('')
+
+  let isDragging = $state(false)
+  let startX = $state(0)
+  let startY = $state(0)
+  let scrollLeft = $state(0)
+  let scrollTop = $state(0)
 
   // Derived: current charset string for preview
   let charsetPreview = $derived(getCharset(charsetKey))
@@ -334,6 +341,30 @@
       )
     })
   }
+
+  function handleMouseDown(e: MouseEvent) {
+    if (!previewAreaEl) return
+    isDragging = true
+    startX = e.pageX - previewAreaEl.offsetLeft
+    startY = e.pageY - previewAreaEl.offsetTop
+    scrollLeft = previewAreaEl.scrollLeft
+    scrollTop = previewAreaEl.scrollTop
+  }
+
+  function handleMouseMove(e: MouseEvent) {
+    if (!isDragging || !previewAreaEl) return
+    e.preventDefault()
+    const x = e.pageX - previewAreaEl.offsetLeft
+    const y = e.pageY - previewAreaEl.offsetTop
+    const walkX = x - startX
+    const walkY = y - startY
+    previewAreaEl.scrollLeft = scrollLeft - walkX
+    previewAreaEl.scrollTop = scrollTop - walkY
+  }
+
+  function handleMouseUp() {
+    isDragging = false
+  }
 </script>
 
 <svelte:head>
@@ -345,7 +376,17 @@
 
 <div class="generator">
   <!-- ── Canvas preview area ──────────────────────────────────────── -->
-  <div class="preview-area">
+  <!-- svelte-ignore a11y_no_static_element_interactions -->
+  <div
+    class="preview-area"
+    class:cursor-grab={!isDragging}
+    class:cursor-grabbing={isDragging}
+    bind:this={previewAreaEl}
+    onmousedown={handleMouseDown}
+    onmousemove={handleMouseMove}
+    onmouseup={handleMouseUp}
+    onmouseleave={handleMouseUp}
+  >
     <canvas bind:this={canvasEl} id="preview" class="preview-canvas" class:hidden={!canvasReady}></canvas>
     {#if drawing}
       <div class="placeholder">
@@ -684,7 +725,7 @@
     @apply flex flex-col lg:flex-row-reverse items-start gap-4
 
   .preview-area
-    @apply flex flex-1 items-center justify-center w-full bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] sticky top-6
+    @apply flex flex-1 items-center justify-center w-full bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] overflow-hidden sticky top-6
 
   .preview-canvas
     @apply m-6
