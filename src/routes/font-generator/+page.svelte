@@ -336,7 +336,7 @@
         <form onsubmit={handleSubmit} class="form-wrapper">
           <div class="flex flex-col gap-6">
             <!-- 폰트 -->
-            <div class="form-row">
+            <div class="grid gap-2">
               <Label for="font">폰트</Label>
               <Select.Root type="single" name="font" bind:value={fontValue}>
                 <Select.Trigger class="w-full">
@@ -358,7 +358,7 @@
             </div>
 
             <!-- 문자 집합 -->
-            <div class="form-row">
+            <div class="grid gap-2">
               <Label for="charset">문자 집합</Label>
               <Select.Root type="single" name="charset" bind:value={charsetKey}>
                 <Select.Trigger class="w-full">{charsetTriggerContent}</Select.Trigger>
@@ -380,7 +380,7 @@
 
             <!-- 문자 집합 미리보기 / 사용자 지정 -->
             {#if charsetKey !== 'custom'}
-              <div class="form-row col">
+              <div class="grid gap-2">
                 <Label for="charset-preview">문자 집합 미리보기</Label>
                 <Textarea
                   id="charset-preview"
@@ -392,7 +392,7 @@
                 />
               </div>
             {:else}
-              <div class="form-row col">
+              <div class="grid gap-2">
                 <Label for="custom-charset">사용자 지정 문자 집합</Label>
                 <Textarea
                   id="custom-charset"
@@ -404,7 +404,7 @@
             {/if}
 
             <!-- 오프셋 -->
-            <div class="form-row">
+            <div class="grid gap-2">
               <Label for="x-offset">오프셋</Label>
               <div class="input-pairs">
                 <div class="input-pair">
@@ -421,7 +421,7 @@
             </div>
 
             <!-- 타일 크기 -->
-            <div class="form-row">
+            <div class="grid gap-2">
               <Label for="tile-width">타일 크기</Label>
               <div class="input-pairs">
                 <div class="input-pair">
@@ -450,7 +450,7 @@
             </div>
 
             <!-- 열 수 -->
-            <div class="form-row">
+            <div class="grid gap-2">
               <Label for="tile-column">열 수</Label>
               <Input
                 id="tile-column"
@@ -462,7 +462,7 @@
             </div>
 
             <!-- 전경색 -->
-            <div class="form-row">
+            <div class="grid gap-2">
               <Label for="foreground">전경색</Label>
               <div class="color-input">
                 <span class="hash">#</span>
@@ -483,7 +483,7 @@
             </div>
 
             <!-- 배경색 -->
-            <div class="form-row">
+            <div class="grid gap-2">
               <Label for="background">
                 <abbr title="비워 두면 투명을 사용합니다.">배경색</abbr>
               </Label>
@@ -506,7 +506,7 @@
             </div>
 
             <!-- 그림자 색 -->
-            <div class="form-row">
+            <div class="grid gap-2">
               <Label for="shadow-color">그림자 색</Label>
               <div class="color-input">
                 <span class="hash">#</span>
@@ -527,7 +527,7 @@
             </div>
 
             <!-- 그림자 위치 -->
-            <div class="form-row">
+            <div class="grid gap-2">
               <Label for="shadow-bottomright">그림자 위치</Label>
               <div class="shadow-grid">
                 <input type="checkbox" id="shadow-topleft" bind:checked={shadowPositions.topleft} />
