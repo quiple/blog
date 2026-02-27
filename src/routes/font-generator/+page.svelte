@@ -327,7 +327,7 @@
         <div class="form-row">
           <Label for="font">폰트</Label>
           <Select.Root type="single" name="font" bind:value={fontValue}>
-            <Select.Trigger class="w-45">
+            <Select.Trigger class="w-full">
               {fontTriggerContent}
             </Select.Trigger>
             <Select.Content>
@@ -348,18 +348,22 @@
         <!-- 문자 집합 -->
         <div class="form-row">
           <Label for="charset">문자 집합</Label>
-          <select id="charset" class="form-select" bind:value={charsetKey}>
-            {#each [...charsetGroups] as [groupName, entries]}
-              <optgroup label={groupName}>
-                {#each entries as entry}
-                  <option value={entry.key}>{entry.label}</option>
-                {/each}
-              </optgroup>
-            {/each}
-            <optgroup>
-              <option value="custom">사용자 지정 문자 집합 입력</option>
-            </optgroup>
-          </select>
+          <Select.Root type="single" name="charset" bind:value={charsetKey}>
+            <Select.Trigger class="w-full">charsetKey</Select.Trigger>
+            <Select.Content>
+              {#each [...charsetGroups] as [groupName, entries]}
+                <Select.Group>
+                  <Select.Label>{groupName}</Select.Label>
+                  {#each entries as entry}
+                    <Select.Item value={entry.key}>
+                      {entry.label}
+                    </Select.Item>
+                  {/each}
+                </Select.Group>
+              {/each}
+              <Select.Item value="custom">사용자 지정 문자 집합 입력</Select.Item>
+            </Select.Content>
+          </Select.Root>
         </div>
 
         <!-- 문자 집합 미리보기 / 사용자 지정 -->
