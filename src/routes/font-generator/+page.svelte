@@ -668,12 +668,12 @@
     @apply flex flex-col lg:flex-row-reverse items-start gap-4
 
   .preview-area
-    @apply flex flex-1 items-center justify-center w-full bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] p-4 overflow-auto sticky top-6
+    @apply flex flex-1 items-center justify-center w-full bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] p-7 overflow-auto sticky top-6
     span
       @apply absolute top-1 left-2 text-muted-foreground text-sm
 
   .preview-canvas
-    @apply max-w-full
+    @apply max-w-full max-h-full
     image-rendering: pixelated
     &.hidden
       @apply hidden
