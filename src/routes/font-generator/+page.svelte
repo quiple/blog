@@ -334,7 +334,7 @@
     <Card.Root class="w-full max-w-sm py-4">
       <form onsubmit={handleSubmit}>
         <Card.Content class="px-4">
-          <div class="flex flex-col gap-6">
+          <div class="flex flex-col gap-4">
             <!-- 폰트 -->
             <div class="grid gap-2">
               <Label for="font">폰트</Label>
@@ -408,13 +408,13 @@
               <Label for="x-offset">오프셋</Label>
               <div class="input-pairs">
                 <div class="input-pair">
-                  <span>x:</span>
-                  <Input id="x-offset" type="number" bind:value={xOffset} class="w-20 tabular-nums text-right" />
+                  <span class="whitespace-nowrap">x:</span>
+                  <Input id="x-offset" type="number" bind:value={xOffset} class="tabular-nums" />
                   <span>px</span>
                 </div>
                 <div class="input-pair">
-                  <span>y:</span>
-                  <Input id="y-offset" type="number" bind:value={yOffset} class="w-20 tabular-nums text-right" />
+                  <span class="whitespace-nowrap">y:</span>
+                  <Input id="y-offset" type="number" bind:value={yOffset} class="tabular-nums" />
                   <span>px</span>
                 </div>
               </div>
@@ -425,25 +425,13 @@
               <Label for="tile-width">타일 크기</Label>
               <div class="input-pairs">
                 <div class="input-pair">
-                  <span>너비:</span>
-                  <Input
-                    id="tile-width"
-                    type="number"
-                    min={1}
-                    bind:value={tileWidth}
-                    class="w-20 tabular-nums text-right"
-                  />
+                  <span class="whitespace-nowrap">너비:</span>
+                  <Input id="tile-width" type="number" min={1} bind:value={tileWidth} class="tabular-nums" />
                   <span>px</span>
                 </div>
                 <div class="input-pair">
-                  <span>높이:</span>
-                  <Input
-                    id="tile-height"
-                    type="number"
-                    min={1}
-                    bind:value={tileHeight}
-                    class="w-20 tabular-nums text-right"
-                  />
+                  <span class="whitespace-nowrap">높이:</span>
+                  <Input id="tile-height" type="number" min={1} bind:value={tileHeight} class="tabular-nums" />
                   <span>px</span>
                 </div>
               </div>
@@ -452,13 +440,7 @@
             <!-- 열 수 -->
             <div class="grid gap-2">
               <Label for="tile-column">열 수</Label>
-              <Input
-                id="tile-column"
-                type="number"
-                min={1}
-                bind:value={tileColumn}
-                class="w-24 tabular-nums text-right"
-              />
+              <Input id="tile-column" type="number" min={1} bind:value={tileColumn} class="tabular-nums" />
             </div>
 
             <!-- 전경색 -->
@@ -672,7 +654,7 @@
     @apply pt-(--header-height)!
 
   .generator
-    @apply flex flex-col lg:flex-row-reverse items-start gap-5
+    @apply flex flex-col lg:flex-row-reverse items-start gap-4
 
   .preview-area
     @apply flex flex-1 items-center justify-center self-stretch bg-secondary/50 rounded-lg min-h-40 p-2 overflow-auto
