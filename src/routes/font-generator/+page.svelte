@@ -537,7 +537,7 @@
 
             <!-- 그림자 위치 -->
             <div class="grid gap-2">
-              <Label for="shadow-bottomright">그림자 위치</Label>
+              <Label>그림자 위치</Label>
               <div class="shadow-grid">
                 <input type="checkbox" id="shadow-topleft" bind:checked={shadowPositions.topleft} />
                 <input type="checkbox" id="shadow-top" bind:checked={shadowPositions.top} />
@@ -569,7 +569,7 @@
               disabled={!canvasReady}
               onclick={handleCopy}
               class="flex-1"
-              size="lg"
+              size="sm"
             >
               {copyLabel}
             </Button>
@@ -578,7 +578,7 @@
               variant="outline"
               disabled={!canvasReady}
               class="flex-1"
-              size="lg"
+              size="sm"
               download={downloadName}
             >
               다운로드
@@ -689,8 +689,6 @@
   .preview-canvas
     @apply m-6
     image-rendering: pixelated
-    &.hidden
-      @apply hidden
 
   .placeholder
     @apply text-sm text-muted-foreground m-4 text-center
