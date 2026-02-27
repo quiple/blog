@@ -233,6 +233,18 @@
       if (active) positions.push(shadowValues[key])
     }
 
+    let xOff = xOffset
+    let yOff = yOffset
+    const includesArr = (data: number[][], arr: number[]) =>
+      data.some((e) => Array.isArray(e) && e.every((o, i) => Object.is(arr[i], o)))
+
+    if (includesArr(positions, [-1, -1]) || includesArr(positions, [-1, 0]) || includesArr(positions, [-1, 1])) {
+      xOff++
+    }
+    if (includesArr(positions, [-1, 1]) || includesArr(positions, [0, 1]) || includesArr(positions, [1, 1])) {
+      yOff++
+    }
+
     let __charset = charsetKey === 'custom' ? customCharset : getCharset(charsetKey)
 
     const cvs = canvasEl!
@@ -258,8 +270,8 @@
     const tWidth = Number(tileWidth)
     const tHeight = Number(tileHeight)
     const tCol = Number(tileColumn)
-    const bbX = -Number(xOffset)
-    const bbY = -(tHeight - __fontSize) + Number(yOffset)
+    const bbX = -Number(xOff)
+    const bbY = -(tHeight - __fontSize) + Number(yOff)
     const bb: [number, number, number, number] = [tWidth, tHeight, bbX, bbY]
 
     const emptyTile = createBitmap(Array.from({length: tHeight}).fill('0'.repeat(tWidth)) as string[])
