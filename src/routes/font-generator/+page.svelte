@@ -358,7 +358,7 @@
 
   <!-- ── Sidebar form ─────────────────────────────────────────────── -->
   <aside class="sidebar">
-    <Card.Root class="w-full lg:max-w-sm py-4">
+    <Card.Root class="w-full py-4">
       <form onsubmit={handleSubmit} class="flex flex-col gap-4">
         <Card.Content class="px-4">
           <div class="flex flex-col gap-4">
@@ -695,7 +695,7 @@
     @apply text-sm text-muted-foreground m-4 text-center
 
   .sidebar
-    @apply sticky top-5 flex flex-col w-full lg:w-96 shrink-0
+    @apply sticky top-5 flex flex-col w-full lg:w-2xs shrink-0
 
   .input-pairs
     @apply flex flex-col gap-2
