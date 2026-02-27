@@ -687,7 +687,7 @@
   .shadow-grid
     @apply grid grid-cols-3 gap-0 w-fit
     input[type='checkbox']
-      @apply size-8 accent-primary cursor-pointer
+      @apply size-4 accent-primary cursor-pointer
       &:disabled
         @apply opacity-30 cursor-not-allowed
 
