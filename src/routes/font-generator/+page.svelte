@@ -262,37 +262,44 @@
     const bbY = -(tHeight - __fontSize) + Number(yOffset)
     const bb: [number, number, number, number] = [tWidth, tHeight, bbX, bbY]
 
+    const emptyTile = createBitmap(Array.from({length: tHeight}).fill('0'.repeat(tWidth)) as string[])
     const cps = Array.from(__charset).map((c) => c.codePointAt(0) || 8203)
-    const targetBitmaps = cps
-      .map((cp) => {
-        let g = font.glyphbycp(cp) || font.glyphbycp(8203)
-        return g ? g.draw(-1, bb) : null
-      })
-      .filter((b) => b !== null)
+    const targetBitmaps = cps.map((cp) => {
+      let g = font.glyphbycp(cp) || font.glyphbycp(8203)
+      return g ? g.draw(-1, bb) : emptyTile
+    })
 
     const lines = []
     for (let i = 0; i < targetBitmaps.length; i += tCol) {
       lines.push(Bitmap.concatall(targetBitmaps.slice(i, i + tCol), {direction: 1, align: 1}))
     }
-    let bitmap = Bitmap.concatall(lines, {direction: 0, align: 1})
+    const combinedBitmap = Bitmap.concatall(lines, {direction: 0, align: 1})
+    const data = combinedBitmap.bindata
 
     if (positions.length > 0 && shadowColor) {
+      ctx.fillStyle = `#${shadowColor}`
       for (const pos of positions) {
-        const bitmapTemp = createBitmap(bitmap.bindata)
-        bitmapTemp.shadow(...pos)
-        bitmapTemp.draw2canvas(ctx as unknown as CanvasCtx, {
-          '0': null,
-          '1': `#${foreground}`,
-          '2': `#${shadowColor}`,
-        })
+        const dx = pos[0]
+        const dy = -pos[1]
+        for (let y = 0; y < data.length; y++) {
+          const row = data[y]
+          for (let x = 0; x < row.length; x++) {
+            if (row[x] === '1') {
+              ctx.fillRect(x + dx, y + dy, 1, 1)
+            }
+          }
+        }
       }
-    } else {
-      bitmap = createBitmap(bitmap.bindata)
-      bitmap.draw2canvas(ctx as unknown as CanvasCtx, {
-        '0': null,
-        '1': `#${foreground}`,
-        '2': `#${shadowColor}`,
-      })
+    }
+
+    ctx.fillStyle = `#${foreground}`
+    for (let y = 0; y < data.length; y++) {
+      const row = data[y]
+      for (let x = 0; x < row.length; x++) {
+        if (row[x] === '1') {
+          ctx.fillRect(x, y, 1, 1)
+        }
+      }
     }
 
     canvasReady = true
