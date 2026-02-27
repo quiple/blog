@@ -122,7 +122,14 @@
   // ── Charset groups (from shared charsets index) ─────────────────────
   const charsetGroups = getCharsetGroups()
 
-  const charsetTriggerContent = $derived()
+  const charsetTriggerContent = $derived.by(() => {
+    if (charsetKey === 'custom') return '사용자 지정 문자 집합 입력'
+    const entry = charsetGroups
+      .values()
+      .flatMap((entries) => entries)
+      .find((e) => e.key === charsetKey)
+    return entry ? `${entry.group} &ndash; ${entry.label}` : '2350자'
+  })
 
   // ── State ───────────────────────────────────────────────────────────
   let fontValue = $state('Galmuri11')
