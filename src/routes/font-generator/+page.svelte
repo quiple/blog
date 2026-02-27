@@ -568,24 +568,24 @@
           한글 음절
           <ul>
             <li>
-              2350자: <a
+              2,350자: <a
                 href="https://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/KSC/KSX1001.TXT"
                 target="_blank"
                 rel="noopener noreferrer">KS X 1001</a
               >의 모든 한글 음절.
             </li>
             <li>
-              2355자: KS X 1001의 모든 한글 음절에
+              2,355자: KS X 1001의 모든 한글 음절에
               <abbr title="KS X 1001에 포함된 뢨, 썅, 쏀, 쓩, 쭁을 입력하기 위한 보충 문자.">뢔, 쌰, 쎼, 쓔, 쬬</abbr>
               5자가 추가된 집합.
             </li>
             <li>
-              2780자: <a href="https://github.com/adobe-type-tools/Adobe-KR" target="_blank" rel="noopener noreferrer"
+              2,780자: <a href="https://github.com/adobe-type-tools/Adobe-KR" target="_blank" rel="noopener noreferrer"
                 >Adobe-KR-0</a
-              >의 모든 한글 음절. KS X 1001의 2350자를 포함합니다.
+              >의 모든 한글 음절. KS X 1001의 2,350자를 포함합니다.
             </li>
             <li>
-              4358자: Adobe-KR-0과 Adobe-KR-1의 모든 한글 음절. KS X 1001,
+              4,358자: Adobe-KR-0과 Adobe-KR-1의 모든 한글 음절. KS X 1001,
               <a href="https://en.wikipedia.org/wiki/KS_X_1002" target="_blank" rel="noopener noreferrer">KS X 1002</a>,
               <a
                 href="https://www.unicode.org/L2/L2018/18011-info-kps9566-2011.pdf"
@@ -598,33 +598,33 @@
                 rel="noopener noreferrer">GB/T 12052</a
               >의 모든 한글 음절을 포함합니다.
             </li>
-            <li>11172자: 현대 한글의 모든 음절.</li>
+            <li>11,172자: 현대 한글의 모든 음절.</li>
           </ul>
         </li>
         <li>
           한자
           <ul>
             <li>
-              KS 4888자: <a
+              KS 4,888자: <a
                 href="https://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/KSC/KSX1001.TXT"
                 target="_blank"
                 rel="noopener noreferrer">KS X 1001</a
               >의 모든 한자.
             </li>
             <li>
-              JIS 2965자: <a
+              JIS 2,965자: <a
                 href="https://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/JIS/JIS0208.TXT"
                 target="_blank"
                 rel="noopener noreferrer">JIS X 0208</a
               >의 제1수준 한자.
             </li>
-            <li>JIS 6355자: JIS X 0208의 제1수준과 제2수준을 합한 모든 한자.</li>
+            <li>JIS 6,355자: JIS X 0208의 제1수준과 제2수준을 합한 모든 한자.</li>
           </ul>
         </li>
         <li>
           EUC-KR
           <ul>
-            <li>EUC-KR: KS X 1001과 KS X 1003을 포함하는 문자 집합. 라틴 문자와 기호, 한자 등을 포함합니다.</li>
+            <li>EUC-KR: KS X 1001과 KS X 1003을 포함하는 문자 집합. 로마자와 기호, 한자 등을 포함합니다.</li>
             <li>한자 제외: EUC-KR에서 한자를 제외한 문자 집합.</li>
           </ul>
         </li>
@@ -636,9 +636,9 @@
                 href="https://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/JIS/JIS0201.TXT"
                 target="_blank"
                 rel="noopener noreferrer">JIS X 0201</a
-              >과 JIS X 0208을 포함하는 문자 집합. 라틴 문자와 기호 등을 포함합니다.
+              >과 JIS X 0208을 포함하는 문자 집합. 로마자와 기호 등을 포함합니다.
             </li>
-            <li>제1수준 한자만 포함: Shift_JIS에서 JIS X 0208의 제2수준 한자 3390자를 제외한 문자 집합.</li>
+            <li>제1수준 한자만 포함: Shift_JIS에서 JIS X 0208의 제2수준 한자 3,390자를 제외한 문자 집합.</li>
           </ul>
         </li>
       </ul>
