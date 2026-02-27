@@ -335,7 +335,7 @@
 
   <!-- ── Sidebar form ─────────────────────────────────────────────── -->
   <aside class="sidebar">
-    <Card.Root class="w-full max-w-sm py-4">
+    <Card.Root class="w-full lg:max-w-sm py-4">
       <form onsubmit={handleSubmit} class="flex flex-col gap-4">
         <Card.Content class="px-4">
           <div class="flex flex-col gap-4">
@@ -655,13 +655,13 @@
   @reference '#app.css'
 
   :global(main)
-    @apply pt-(--header-height)!
+    @apply md:pt-(--header-height)!
 
   .generator
     @apply flex flex-col lg:flex-row-reverse items-start gap-4
 
   .preview-area
-    @apply flex flex-1 items-center justify-center self-stretch bg-secondary/50 rounded-lg min-h-40 p-2 overflow-auto
+    @apply flex flex-1 items-center justify-center w-full bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] p-2 overflow-auto sticky top-6
 
   .preview-canvas
     @apply max-w-full
