@@ -128,7 +128,7 @@
       .values()
       .flatMap((entries) => entries)
       .find((e) => e.key === charsetKey)
-    return entry ? `${entry.group} &ndash; ${entry.label}` : '2350자'
+    return entry ? `${entry.group} – ${entry.label}` : '한글 음절 – 2,350자'
   })
 
   // ── State ───────────────────────────────────────────────────────────
