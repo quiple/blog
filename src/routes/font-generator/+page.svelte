@@ -7,7 +7,7 @@
   import {Label} from '$lib/components/ui/label'
   import * as Select from '$lib/components/ui/select/index.js'
   import {Textarea} from '$lib/components/ui/textarea'
-  import {$Bitmap as createBitmap, $Font as createFont} from 'bdfparser'
+  import {Bitmap, $Bitmap as createBitmap, $Font as createFont} from 'bdfparser'
   import fetchline from 'fetchline'
 
   interface FontDef {
@@ -266,11 +266,27 @@
 
     const url = getFontUrl(fontValue)
     const font = await createFont(fetchline(url))
-    let bitmap = font.draw(__charset, {
-      mode: -1,
-      bb: [tileWidth, tileHeight, -xOff, -(tileHeight - __fontSize) + yOff],
-      linelimit: tileWidth * tileColumn,
-    } as any)
+
+    const tWidth = Number(tileWidth)
+    const tHeight = Number(tileHeight)
+    const tCol = Number(tileColumn)
+    const bbX = -Number(xOff)
+    const bbY = -(tHeight - __fontSize) + Number(yOff)
+    const bb: [number, number, number, number] = [tWidth, tHeight, bbX, bbY]
+
+    const cps = Array.from(__charset).map((c) => c.codePointAt(0) || 8203)
+    const targetBitmaps = cps
+      .map((cp) => {
+        let g = font.glyphbycp(cp) || font.glyphbycp(8203)
+        return g ? g.draw(-1, bb) : null
+      })
+      .filter((b) => b !== null)
+
+    const lines = []
+    for (let i = 0; i < targetBitmaps.length; i += tCol) {
+      lines.push(Bitmap.concatall(targetBitmaps.slice(i, i + tCol), {direction: 1, align: 1}))
+    }
+    let bitmap = Bitmap.concatall(lines, {direction: 0, align: 1})
 
     if (positions.length > 0 && shadowColor) {
       for (const pos of positions) {
