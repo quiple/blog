@@ -4,6 +4,7 @@
   import {Button} from '$lib/components/ui/button'
   import {Input} from '$lib/components/ui/input'
   import {Label} from '$lib/components/ui/label'
+  import * as Select from '$lib/components/ui/select/index.js'
   import {Textarea} from '$lib/components/ui/textarea'
   import {$Bitmap as createBitmap, $Font as createFont} from 'bdfparser'
   import fetchline from 'fetchline'
@@ -57,6 +58,8 @@
       ],
     },
   ]
+
+  const fontTriggerContent = $derived(fontGroups.find((f) => f.value === value)?.label ?? 'Galmuri11 (12px)')
 
   // Height from baseline to ascent
   const fontSizeMap: Record<string, number> = {
@@ -320,15 +323,23 @@
         <!-- 폰트 -->
         <div class="form-row">
           <Label for="font">폰트</Label>
-          <select id="font" class="form-select" bind:value={fontValue}>
-            {#each fontGroups as group}
-              <optgroup label={group.label}>
-                {#each group.fonts as f}
-                  <option value={f.value}>{f.name} ({f.size})</option>
-                {/each}
-              </optgroup>
-            {/each}
-          </select>
+          <Select.Root type="single" name="font" bind:value={fontValue}>
+            <Select.Trigger class="w-45">
+              {fontTriggerContent}
+            </Select.Trigger>
+            <Select.Content>
+              {#each fontGroups as group}
+                <Select.Group>
+                  <Select.Label>{group.label}</Select.Label>
+                  {#each group.fonts as f}
+                    <Select.Item value={f.value}>
+                      {f.name} ({f.size})
+                    </Select.Item>
+                  {/each}
+                </Select.Group>
+              {/each}
+            </Select.Content>
+          </Select.Root>
         </div>
 
         <!-- 문자 집합 -->
@@ -536,7 +547,6 @@
 
     <!-- 문자 집합 설명 -->
     <article class="charset-info prose-shadcn">
-      <h2>문자 집합</h2>
       <ul>
         <li>
           한글 음절
@@ -616,7 +626,7 @@
           </ul>
         </li>
       </ul>
-      <p>© 2024 Lee Minseo. 각 폰트는 해당 소유자, 저작권자 및 사용 허가자의 상표 및 저작권 자산입니다.</p>
+      <small>&copy; 2026 Lee Minseo. 각 폰트는 해당 소유자, 저작권자 및 사용 허가자의 상표 및 저작권 자산입니다.</small>
     </article>
   </aside>
 </div>
@@ -624,8 +634,11 @@
 <style lang="sass">
   @reference '#app.css'
 
+  :global(main)
+    @apply pt-(--header-height)!
+
   .generator
-    @apply flex flex-col-reverse lg:flex-row items-start gap-5 max-w-screen-2xl mx-auto
+    @apply flex flex-col lg:flex-row-reverse items-start gap-5
 
   .preview-area
     @apply flex flex-1 items-center justify-center self-stretch bg-secondary/50 rounded-lg min-h-40 p-2 overflow-auto
@@ -681,14 +694,6 @@
 
   .charset-info
     @apply text-sm
-    :global(h2)
-      @apply text-base! font-semibold mb-2 mt-0 border-0 pb-0
-    :global(ul)
-      @apply pl-4
-    :global(li)
-      @apply mt-1
-    :global(a)
-      @apply underline text-primary
-    :global(p)
-      @apply text-muted-foreground text-xs mt-4
+    small
+      @apply text-muted-foreground
 </style>
