@@ -311,6 +311,7 @@
     const emptyTile = createBitmap(Array.from({length: tHeight}).fill('0'.repeat(tWidth)) as string[])
     const cps = Array.from(__charset).map((c) => c.codePointAt(0) || 8203)
 
+    // Pre-calculate target bitmaps
     const targetBitmaps = []
     for (let i = 0; i < cps.length; i++) {
       let g = font.glyphbycp(cps[i]) || font.glyphbycp(8203)
@@ -319,33 +320,8 @@
       await checkYield()
     }
 
-    if (positions.length > 0 && shadowColor) {
-      ctx.fillStyle = `#${shadowColor}`
-      for (let i = 0; i < targetBitmaps.length; i++) {
-        const tileBmp = targetBitmaps[i]
-        const col = i % tCol
-        const row = Math.floor(i / tCol)
-        const offsetX = col * tWidth
-        const offsetY = row * tHeight
-        const data = tileBmp.bindata
-
-        for (const pos of positions) {
-          const dx = pos[0]
-          const dy = -pos[1]
-          for (let y = 0; y < data.length; y++) {
-            const r = data[y]
-            for (let x = 0; x < r.length; x++) {
-              if (r[x] === '1') {
-                ctx.fillRect(offsetX + x + dx, offsetY + y + dy, 1, 1)
-              }
-            }
-          }
-        }
-        await checkYield()
-      }
-    }
-
-    ctx.fillStyle = `#${foreground}`
+    // Single unified pass: parse the string matrix only once, and paint the contiguous segments
+    // to vastly reduce `fillRect` calls and string index lookups.
     for (let i = 0; i < targetBitmaps.length; i++) {
       const tileBmp = targetBitmaps[i]
       const col = i % tCol
@@ -356,9 +332,33 @@
 
       for (let y = 0; y < data.length; y++) {
         const r = data[y]
-        for (let x = 0; x < r.length; x++) {
-          if (r[x] === '1') {
-            ctx.fillRect(offsetX + x, offsetY + y, 1, 1)
+
+        let inSegment = false
+        let segmentStartX = 0
+
+        for (let x = 0; x <= r.length; x++) {
+          const isFilled = x < r.length && r[x] === '1'
+
+          if (isFilled && !inSegment) {
+            inSegment = true
+            segmentStartX = x
+          } else if (!isFilled && inSegment) {
+            inSegment = false
+            const segmentWidth = x - segmentStartX
+
+            // Draw shadow segments first
+            if (positions.length > 0 && shadowColor) {
+              ctx.fillStyle = `#${shadowColor}`
+              for (const pos of positions) {
+                const dx = pos[0]
+                const dy = -pos[1]
+                ctx.fillRect(offsetX + segmentStartX + dx, offsetY + y + dy, segmentWidth, 1)
+              }
+            }
+
+            // Draw foreground segment
+            ctx.fillStyle = `#${foreground}`
+            ctx.fillRect(offsetX + segmentStartX, offsetY + y, segmentWidth, 1)
           }
         }
       }
