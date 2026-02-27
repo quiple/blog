@@ -48,6 +48,8 @@
     'Don’t you find it all romantic,\nthe way things used to be?',
 
     'Thank you sex',
+    'No event, good life!',
+    'If you want to be happy, be',
     'For I just threw out the love of my dreams',
     'But the moon’s not burning through my skin tonight',
     'I wanna be an ordinary man,\nnot just an ego caught inside a trend',
