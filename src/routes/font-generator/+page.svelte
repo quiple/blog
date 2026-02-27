@@ -208,6 +208,9 @@
   }
 
   // ── Draw ────────────────────────────────────────────────────────────
+  // Cache parsed fonts to prevent repeated slow parsing
+  const fontCache = new Map<string, any>()
+
   async function handleSubmit(e: SubmitEvent) {
     e.preventDefault()
 
@@ -230,6 +233,20 @@
 
     drawing = true
     canvasReady = false
+
+    // Wait for the DOM to update the spinner visibility before starting heavy logic
+    await new Promise((r) => requestAnimationFrame(r))
+    await new Promise((r) => setTimeout(r, 0))
+
+    let lastYield = performance.now()
+    const checkYield = async () => {
+      // Yield to the event loop every 15ms to maintain smooth UI ~60fps animation
+      if (performance.now() - lastYield > 15) {
+        // setTimeout 0 allows the browser to paint
+        await new Promise((r) => setTimeout(r, 0))
+        lastYield = performance.now()
+      }
+    }
 
     const __fontSize = getFontSize(fontValue)
 
@@ -270,8 +287,19 @@
       )
     }
 
-    const url = getFontUrl(fontValue)
-    const font = await createFont(fetchline(url))
+    let font = fontCache.get(fontValue)
+    if (!font) {
+      const url = getFontUrl(fontValue)
+      const linesIter = fetchline(url)
+      async function* yieldyFetchline() {
+        for await (const line of linesIter) {
+          yield line
+          await checkYield()
+        }
+      }
+      font = await createFont(yieldyFetchline())
+      fontCache.set(fontValue, font)
+    }
 
     const tWidth = Number(tileWidth)
     const tHeight = Number(tileHeight)
@@ -282,48 +310,72 @@
 
     const emptyTile = createBitmap(Array.from({length: tHeight}).fill('0'.repeat(tWidth)) as string[])
     const cps = Array.from(__charset).map((c) => c.codePointAt(0) || 8203)
-    const targetBitmaps = cps.map((cp) => {
-      let g = font.glyphbycp(cp) || font.glyphbycp(8203)
-      return g ? g.draw(-1, bb) : emptyTile
-    })
 
-    const lines = []
-    for (let i = 0; i < targetBitmaps.length; i += tCol) {
-      lines.push(Bitmap.concatall(targetBitmaps.slice(i, i + tCol), {direction: 1, align: 1}))
+    const targetBitmaps = []
+    for (let i = 0; i < cps.length; i++) {
+      let g = font.glyphbycp(cps[i]) || font.glyphbycp(8203)
+      targetBitmaps.push(g ? g.draw(-1, bb) : emptyTile)
+      // yield during bitmap creation
+      await checkYield()
     }
-    const combinedBitmap = Bitmap.concatall(lines, {direction: 0, align: 1})
-    const data = combinedBitmap.bindata
 
     if (positions.length > 0 && shadowColor) {
       ctx.fillStyle = `#${shadowColor}`
-      for (const pos of positions) {
-        const dx = pos[0]
-        const dy = -pos[1]
-        for (let y = 0; y < data.length; y++) {
-          const row = data[y]
-          for (let x = 0; x < row.length; x++) {
-            if (row[x] === '1') {
-              ctx.fillRect(x + dx, y + dy, 1, 1)
+      for (let i = 0; i < targetBitmaps.length; i++) {
+        const tileBmp = targetBitmaps[i]
+        const col = i % tCol
+        const row = Math.floor(i / tCol)
+        const offsetX = col * tWidth
+        const offsetY = row * tHeight
+        const data = tileBmp.bindata
+
+        for (const pos of positions) {
+          const dx = pos[0]
+          const dy = -pos[1]
+          for (let y = 0; y < data.length; y++) {
+            const r = data[y]
+            for (let x = 0; x < r.length; x++) {
+              if (r[x] === '1') {
+                ctx.fillRect(offsetX + x + dx, offsetY + y + dy, 1, 1)
+              }
             }
           }
         }
+        await checkYield()
       }
     }
 
     ctx.fillStyle = `#${foreground}`
-    for (let y = 0; y < data.length; y++) {
-      const row = data[y]
-      for (let x = 0; x < row.length; x++) {
-        if (row[x] === '1') {
-          ctx.fillRect(x, y, 1, 1)
+    for (let i = 0; i < targetBitmaps.length; i++) {
+      const tileBmp = targetBitmaps[i]
+      const col = i % tCol
+      const row = Math.floor(i / tCol)
+      const offsetX = col * tWidth
+      const offsetY = row * tHeight
+      const data = tileBmp.bindata
+
+      for (let y = 0; y < data.length; y++) {
+        const r = data[y]
+        for (let x = 0; x < r.length; x++) {
+          if (r[x] === '1') {
+            ctx.fillRect(offsetX + x, offsetY + y, 1, 1)
+          }
         }
       }
+      await checkYield()
     }
 
-    canvasReady = true
-    downloadHref = cvs.toDataURL()
-    downloadName = `${fontValue}_${tileWidth}x${tileHeight}`
-    drawing = false
+    cvs.toBlob((blob) => {
+      if (blob) {
+        if (downloadHref && downloadHref.startsWith('blob:')) {
+          URL.revokeObjectURL(downloadHref)
+        }
+        downloadHref = URL.createObjectURL(blob)
+      }
+      canvasReady = true
+      downloadName = `${fontValue}_${tileWidth}x${tileHeight}`
+      drawing = false
+    })
   }
 
   async function handleCopy() {
