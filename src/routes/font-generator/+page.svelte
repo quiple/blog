@@ -669,7 +669,7 @@
     @apply text-sm text-muted-foreground m-4 text-center
 
   .sidebar
-    @apply sticky top-5 flex flex-col gap-5 w-full lg:w-96 shrink-0
+    @apply sticky top-5 flex flex-col w-full lg:w-96 shrink-0
 
   .input-pairs
     @apply flex flex-col gap-2
