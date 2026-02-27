@@ -146,6 +146,7 @@
   let tileWidth = $state(16)
   let tileHeight = $state(16)
   let tileColumn = $state(64)
+  let imageWidth = $derived('')
 
   let foreground = $state('63cf63')
   let background = $state('000000')
@@ -294,6 +295,7 @@
     downloadHref = cvs.toDataURL()
     downloadName = `${fontValue}_${tileWidth}x${tileHeight}`
     drawing = false
+    imageWidth = `${tileWidth * tileColumn}`
   }
 
   async function handleCopy() {
@@ -323,13 +325,14 @@
 <div class="generator">
   <!-- ── Canvas preview area ──────────────────────────────────────── -->
   <div class="preview-area">
+    <span>{imageWidth}</span>
     <canvas bind:this={canvasEl} id="preview" class="preview-canvas" class:hidden={!canvasReady}></canvas>
     {#if drawing}
       <div class="placeholder">
         <LoaderCircle class="animate-spin size-6 text-muted-foreground" />
       </div>
     {:else if !canvasReady}
-      <span class="placeholder"> 폰트 이미지를 만들려면 조건을 설정하고 만들기 버튼을 누르세요. </span>
+      <div class="placeholder">폰트 이미지를 만들려면 조건을 설정하고 만들기 버튼을 누르세요.</div>
     {/if}
   </div>
 
@@ -662,6 +665,8 @@
 
   .preview-area
     @apply flex flex-1 items-center justify-center w-full bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] p-4 overflow-auto sticky top-6
+    span
+      @apply absolute top-1 left-2 text-muted-foreground text-sm
 
   .preview-canvas
     @apply max-w-full
