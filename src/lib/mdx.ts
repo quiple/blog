@@ -178,7 +178,7 @@ export function mdxHandlers() {
     mdxJsxFlowElement(state: HastState, node: MdxNode) {
       const name = node.name ?? 'div'
 
-      if (HTML_TAGS.has(name.toLowerCase())) {
+      if (HTML_TAGS.has(name)) {
         return {
           type: 'element' as const,
           tagName: name,
@@ -201,7 +201,7 @@ export function mdxHandlers() {
     mdxJsxTextElement(state: HastState, node: MdxNode) {
       const name = node.name ?? 'span'
 
-      if (HTML_TAGS.has(name.toLowerCase())) {
+      if (HTML_TAGS.has(name)) {
         return {
           type: 'element' as const,
           tagName: name,
