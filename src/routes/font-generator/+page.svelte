@@ -691,9 +691,6 @@
       &:disabled
         @apply opacity-30 cursor-not-allowed
 
-  .action-row
-    @apply flex gap-3
-
   .charset-info
     @apply text-xs
     small
