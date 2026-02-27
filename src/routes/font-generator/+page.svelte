@@ -351,7 +351,7 @@
         <div class="form-row">
           <Label for="charset">문자 집합</Label>
           <Select.Root type="single" name="charset" bind:value={charsetKey}>
-            <Select.Trigger class="w-full">charsetKey</Select.Trigger>
+            <Select.Trigger class="w-full">{charsetTriggerContent}</Select.Trigger>
             <Select.Content>
               {#each [...charsetGroups] as [groupName, entries]}
                 <Select.Group>
