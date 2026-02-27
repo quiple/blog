@@ -331,9 +331,9 @@
 
   <!-- ── Sidebar form ─────────────────────────────────────────────── -->
   <aside class="sidebar">
-    <Card.Root class="-my-4 w-full max-w-sm">
-      <form onsubmit={handleSubmit} class="form-wrapper">
-        <Card.Content>
+    <Card.Root class="w-full max-w-sm py-4">
+      <form onsubmit={handleSubmit}>
+        <Card.Content class="px-4">
           <div class="flex flex-col gap-6">
             <!-- 폰트 -->
             <div class="grid gap-2">
@@ -688,20 +688,6 @@
 
   .sidebar
     @apply sticky top-5 flex flex-col gap-5 w-full lg:w-96 shrink-0
-
-  .form-wrapper
-    @apply flex flex-col gap-3
-
-  .form-card
-    @apply flex flex-col gap-4 rounded-lg border bg-card p-4 shadow-xs
-
-  .form-row
-    @apply flex flex-col gap-2
-    &.col
-      @apply flex-col items-stretch
-
-  .form-select
-    @apply border-input bg-background dark:bg-input/30 flex h-9 w-full rounded-md border px-3 py-1 text-base shadow-xs outline-none md:text-sm transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]
 
   .input-pairs
     @apply flex flex-col gap-2
