@@ -731,6 +731,8 @@
 
   .canvas-wrapper
     @apply flex items-center justify-center min-w-full min-h-full w-max h-max p-6
+    &.hidden
+      @apply hidden
 
   .preview-canvas
     image-rendering: pixelated
