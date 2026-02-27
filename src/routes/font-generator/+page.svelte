@@ -59,7 +59,10 @@
     },
   ]
 
-  const fontTriggerContent = $derived(fontGroups.find((f) => f.value === value)?.label ?? 'Galmuri11 (12px)')
+  const fontTriggerContent = $derived.by(() => {
+    const font = fontGroups.flatMap((g) => g.fonts).find((f) => f.value === fontValue)
+    return font ? `${font.name} (${font.size})` : 'Galmuri11 (12px)'
+  })
 
   // Height from baseline to ascent
   const fontSizeMap: Record<string, number> = {
