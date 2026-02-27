@@ -122,7 +122,7 @@
   // ── Charset groups (from shared charsets index) ─────────────────────
   const charsetGroups = getCharsetGroups()
 
-  const charsetTriggerContent = $derived.by(() => {})
+  const charsetTriggerContent = $derived()
 
   // ── State ───────────────────────────────────────────────────────────
   let fontValue = $state('Galmuri11')
