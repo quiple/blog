@@ -679,7 +679,7 @@
     @apply flex flex-col gap-2
 
   .input-pair
-    @apply flex items-center gap-2 text-sm text-muted-foreground
+    @apply flex items-center gap-2 text-sm [&_span]:text-muted-foreground
 
   .color-input
     @apply relative
