@@ -387,7 +387,9 @@
     onmouseup={handleMouseUp}
     onmouseleave={handleMouseUp}
   >
-    <canvas bind:this={canvasEl} id="preview" class="preview-canvas" class:hidden={!canvasReady}></canvas>
+    <div class="canvas-wrapper" class:hidden={!canvasReady}>
+      <canvas bind:this={canvasEl} id="preview" class="preview-canvas"></canvas>
+    </div>
     {#if drawing}
       <div class="placeholder">
         <LoaderCircle class="animate-spin size-6 text-muted-foreground" />
@@ -725,14 +727,18 @@
     @apply flex flex-col lg:flex-row-reverse items-start gap-4
 
   .preview-area
-    @apply flex flex-1 items-center justify-center w-full bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] overflow-hidden sticky top-6
+    @apply block flex-1 w-full bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] overflow-hidden sticky top-6
+
+  .canvas-wrapper
+    @apply flex items-center justify-center min-w-full min-h-full w-max h-max p-6
+    &.hidden
+      @apply hidden
 
   .preview-canvas
-    @apply m-6
     image-rendering: pixelated
 
   .placeholder
-    @apply text-sm text-muted-foreground m-4 text-center
+    @apply absolute inset-0 text-sm text-muted-foreground p-4 flex flex-col items-center justify-center text-center pointer-events-none
 
   .sidebar
     @apply sticky top-5 flex flex-col w-full lg:w-2xs shrink-0
