@@ -332,7 +332,7 @@
   <!-- ── Sidebar form ─────────────────────────────────────────────── -->
   <aside class="sidebar">
     <Card.Root class="w-full max-w-sm py-4">
-      <form onsubmit={handleSubmit}>
+      <form onsubmit={handleSubmit} class="flex flex-col gap-4">
         <Card.Content class="px-4">
           <div class="flex flex-col gap-4">
             <!-- 폰트 -->
@@ -525,17 +525,17 @@
             </div>
           </div>
         </Card.Content>
-        <Card.Footer class="flex-col gap-2">
+        <Card.Footer class="flex-col gap-2 px-4">
           <!-- 액션 버튼들 -->
           <Button type="submit" disabled={drawing} class="w-full" size="lg">
             {#if drawing}
               <LoaderCircle class="animate-spin size-4" />
-              만드는 중…
+              만드는 중...
             {:else}
               만들기
             {/if}
           </Button>
-          <div class="action-row">
+          <div class="w-full flex gap-2">
             <Button
               type="button"
               variant="outline"
