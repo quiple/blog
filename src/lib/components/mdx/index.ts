@@ -1,4 +1,5 @@
 import type {Component} from 'svelte'
+import Button from './Button.svelte'
 import Tester from './Tester.svelte'
 
 /**
@@ -12,6 +13,7 @@ import Tester from './Tester.svelte'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const components: Record<string, Component<any>> = {
+  Button,
   Tester,
 }
 
