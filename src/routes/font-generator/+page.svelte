@@ -384,7 +384,7 @@
               value={charsetPreview}
               lang={charsetLang}
               readonly
-              class="min-h-20 break-all text-xs"
+              class="min-h-20 h-20 break-all text-xs!"
               onclick={(e: MouseEvent) => (e.currentTarget as HTMLTextAreaElement).select()}
             />
           </div>
@@ -394,7 +394,7 @@
             <Textarea
               id="custom-charset"
               bind:value={customCharset}
-              class="min-h-20"
+              class="min-h-20 h-20 break-all text-xs"
               placeholder="사용자 지정 문자 집합을 입력하세요."
             />
           </div>
@@ -709,7 +709,7 @@
     @apply flex gap-3
 
   .charset-info
-    @apply text-sm
+    @apply text-xs
     small
-      @apply text-muted-foreground
+      @apply text-xs text-muted-foreground
 </style>
