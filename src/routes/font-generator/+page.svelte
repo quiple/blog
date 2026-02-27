@@ -754,7 +754,7 @@
     .hash
       @apply absolute left-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground z-1 pointer-events-none
     .color-swatch
-      @apply absolute right-3 top-1/2 -translate-y-1/2 size-4 rounded-sm border border-border
+      @apply absolute right-2 top-1/2 -translate-y-1/2 size-5 rounded inner-border after:rounded
 
   .shadow-grid
     @apply grid grid-cols-3 gap-0 w-fit
