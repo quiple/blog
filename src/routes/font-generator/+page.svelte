@@ -88,7 +88,7 @@
     'hbios-sys': 13,
     unifont: 14,
     unifont_jp: 14,
-    maruminyahangul: 12,
+    maruminyahangul: 11,
     zpix: 9,
   }
   const getFontSize = (font: string): number => fontSizeMap[font] ?? 16
