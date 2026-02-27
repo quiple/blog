@@ -75,5 +75,9 @@
   "imports": {
     "#app.css": "./src/app.css",
     "#fonts.sass": "./src/fonts.sass"
+  },
+  "dependencies": {
+    "bdfparser": "^2.2.5",
+    "fetchline": "^1.0.1"
   }
 }
