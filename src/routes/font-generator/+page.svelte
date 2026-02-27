@@ -2,6 +2,7 @@
   import {LoaderCircle} from '@lucide/svelte'
   import {getCharset, getCharsetGroups} from '$lib/charsets'
   import {Button} from '$lib/components/ui/button'
+  import * as Card from '$lib/components/ui/card/index.js'
   import {Input} from '$lib/components/ui/input'
   import {Label} from '$lib/components/ui/label'
   import * as Select from '$lib/components/ui/select/index.js'
@@ -330,236 +331,246 @@
 
   <!-- ── Sidebar form ─────────────────────────────────────────────── -->
   <aside class="sidebar">
-    <form onsubmit={handleSubmit} class="form-wrapper">
-      <div class="form-card">
-        <!-- 폰트 -->
-        <div class="form-row">
-          <Label for="font">폰트</Label>
-          <Select.Root type="single" name="font" bind:value={fontValue}>
-            <Select.Trigger class="w-full">
-              {fontTriggerContent}
-            </Select.Trigger>
-            <Select.Content>
-              {#each fontGroups as group}
-                <Select.Group>
-                  <Select.Label>{group.label}</Select.Label>
-                  {#each group.fonts as f}
-                    <Select.Item value={f.value}>
-                      {f.name} ({f.size})
-                    </Select.Item>
+    <Card.Root class="-my-4 w-full max-w-sm">
+      <Card.Content>
+        <form onsubmit={handleSubmit} class="form-wrapper">
+          <div class="flex flex-col gap-6">
+            <!-- 폰트 -->
+            <div class="form-row">
+              <Label for="font">폰트</Label>
+              <Select.Root type="single" name="font" bind:value={fontValue}>
+                <Select.Trigger class="w-full">
+                  {fontTriggerContent}
+                </Select.Trigger>
+                <Select.Content>
+                  {#each fontGroups as group}
+                    <Select.Group>
+                      <Select.Label>{group.label}</Select.Label>
+                      {#each group.fonts as f}
+                        <Select.Item value={f.value}>
+                          {f.name} ({f.size})
+                        </Select.Item>
+                      {/each}
+                    </Select.Group>
                   {/each}
-                </Select.Group>
-              {/each}
-            </Select.Content>
-          </Select.Root>
-        </div>
+                </Select.Content>
+              </Select.Root>
+            </div>
 
-        <!-- 문자 집합 -->
-        <div class="form-row">
-          <Label for="charset">문자 집합</Label>
-          <Select.Root type="single" name="charset" bind:value={charsetKey}>
-            <Select.Trigger class="w-full">{charsetTriggerContent}</Select.Trigger>
-            <Select.Content>
-              {#each [...charsetGroups] as [groupName, entries]}
-                <Select.Group>
-                  <Select.Label>{groupName}</Select.Label>
-                  {#each entries as entry}
-                    <Select.Item value={entry.key}>
-                      {entry.label}
-                    </Select.Item>
+            <!-- 문자 집합 -->
+            <div class="form-row">
+              <Label for="charset">문자 집합</Label>
+              <Select.Root type="single" name="charset" bind:value={charsetKey}>
+                <Select.Trigger class="w-full">{charsetTriggerContent}</Select.Trigger>
+                <Select.Content>
+                  {#each [...charsetGroups] as [groupName, entries]}
+                    <Select.Group>
+                      <Select.Label>{groupName}</Select.Label>
+                      {#each entries as entry}
+                        <Select.Item value={entry.key}>
+                          {entry.label}
+                        </Select.Item>
+                      {/each}
+                    </Select.Group>
                   {/each}
-                </Select.Group>
-              {/each}
-              <Select.Item value="custom">사용자 지정 문자 집합 입력</Select.Item>
-            </Select.Content>
-          </Select.Root>
-        </div>
-
-        <!-- 문자 집합 미리보기 / 사용자 지정 -->
-        {#if charsetKey !== 'custom'}
-          <div class="form-row col">
-            <Label for="charset-preview">문자 집합 미리보기</Label>
-            <Textarea
-              id="charset-preview"
-              value={charsetPreview}
-              lang={charsetLang}
-              readonly
-              class="min-h-20 h-20 break-all text-xs!"
-              onclick={(e: MouseEvent) => (e.currentTarget as HTMLTextAreaElement).select()}
-            />
-          </div>
-        {:else}
-          <div class="form-row col">
-            <Label for="custom-charset">사용자 지정 문자 집합</Label>
-            <Textarea
-              id="custom-charset"
-              bind:value={customCharset}
-              class="min-h-20 h-20 break-all text-xs"
-              placeholder="사용자 지정 문자 집합을 입력하세요."
-            />
-          </div>
-        {/if}
-
-        <!-- 오프셋 -->
-        <div class="form-row">
-          <Label for="x-offset">오프셋</Label>
-          <div class="input-pairs">
-            <div class="input-pair">
-              <span>x:</span>
-              <Input id="x-offset" type="number" bind:value={xOffset} class="w-20 tabular-nums text-right" />
-              <span>px</span>
+                  <Select.Item value="custom">사용자 지정 문자 집합 입력</Select.Item>
+                </Select.Content>
+              </Select.Root>
             </div>
-            <div class="input-pair">
-              <span>y:</span>
-              <Input id="y-offset" type="number" bind:value={yOffset} class="w-20 tabular-nums text-right" />
-              <span>px</span>
-            </div>
-          </div>
-        </div>
 
-        <!-- 타일 크기 -->
-        <div class="form-row">
-          <Label for="tile-width">타일 크기</Label>
-          <div class="input-pairs">
-            <div class="input-pair">
-              <span>너비:</span>
+            <!-- 문자 집합 미리보기 / 사용자 지정 -->
+            {#if charsetKey !== 'custom'}
+              <div class="form-row col">
+                <Label for="charset-preview">문자 집합 미리보기</Label>
+                <Textarea
+                  id="charset-preview"
+                  value={charsetPreview}
+                  lang={charsetLang}
+                  readonly
+                  class="min-h-20 h-20 break-all text-xs!"
+                  onclick={(e: MouseEvent) => (e.currentTarget as HTMLTextAreaElement).select()}
+                />
+              </div>
+            {:else}
+              <div class="form-row col">
+                <Label for="custom-charset">사용자 지정 문자 집합</Label>
+                <Textarea
+                  id="custom-charset"
+                  bind:value={customCharset}
+                  class="min-h-20 h-20 break-all text-xs"
+                  placeholder="사용자 지정 문자 집합을 입력하세요."
+                />
+              </div>
+            {/if}
+
+            <!-- 오프셋 -->
+            <div class="form-row">
+              <Label for="x-offset">오프셋</Label>
+              <div class="input-pairs">
+                <div class="input-pair">
+                  <span>x:</span>
+                  <Input id="x-offset" type="number" bind:value={xOffset} class="w-20 tabular-nums text-right" />
+                  <span>px</span>
+                </div>
+                <div class="input-pair">
+                  <span>y:</span>
+                  <Input id="y-offset" type="number" bind:value={yOffset} class="w-20 tabular-nums text-right" />
+                  <span>px</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 타일 크기 -->
+            <div class="form-row">
+              <Label for="tile-width">타일 크기</Label>
+              <div class="input-pairs">
+                <div class="input-pair">
+                  <span>너비:</span>
+                  <Input
+                    id="tile-width"
+                    type="number"
+                    min={1}
+                    bind:value={tileWidth}
+                    class="w-20 tabular-nums text-right"
+                  />
+                  <span>px</span>
+                </div>
+                <div class="input-pair">
+                  <span>높이:</span>
+                  <Input
+                    id="tile-height"
+                    type="number"
+                    min={1}
+                    bind:value={tileHeight}
+                    class="w-20 tabular-nums text-right"
+                  />
+                  <span>px</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 열 수 -->
+            <div class="form-row">
+              <Label for="tile-column">열 수</Label>
               <Input
-                id="tile-width"
+                id="tile-column"
                 type="number"
                 min={1}
-                bind:value={tileWidth}
-                class="w-20 tabular-nums text-right"
+                bind:value={tileColumn}
+                class="w-24 tabular-nums text-right"
               />
-              <span>px</span>
             </div>
-            <div class="input-pair">
-              <span>높이:</span>
-              <Input
-                id="tile-height"
-                type="number"
-                min={1}
-                bind:value={tileHeight}
-                class="w-20 tabular-nums text-right"
-              />
-              <span>px</span>
+
+            <!-- 전경색 -->
+            <div class="form-row">
+              <Label for="foreground">전경색</Label>
+              <div class="color-input">
+                <span class="hash">#</span>
+                <Input
+                  id="foreground"
+                  type="text"
+                  spellcheck={false}
+                  value={foreground}
+                  oninput={(e: Event) => {
+                    const t = e.currentTarget as HTMLInputElement
+                    foreground = sanitizeHex(t.value)
+                    t.value = foreground
+                  }}
+                  class="tabular-nums pl-6"
+                />
+                <span class="color-swatch" style="background: #{foreground}"></span>
+              </div>
+            </div>
+
+            <!-- 배경색 -->
+            <div class="form-row">
+              <Label for="background">
+                <abbr title="비워 두면 투명을 사용합니다.">배경색</abbr>
+              </Label>
+              <div class="color-input">
+                <span class="hash">#</span>
+                <Input
+                  id="background"
+                  type="text"
+                  spellcheck={false}
+                  value={background}
+                  oninput={(e: Event) => {
+                    const t = e.currentTarget as HTMLInputElement
+                    background = sanitizeHex(t.value)
+                    t.value = background
+                  }}
+                  class="tabular-nums pl-6"
+                />
+                <span class="color-swatch" style="background: #{background}"></span>
+              </div>
+            </div>
+
+            <!-- 그림자 색 -->
+            <div class="form-row">
+              <Label for="shadow-color">그림자 색</Label>
+              <div class="color-input">
+                <span class="hash">#</span>
+                <Input
+                  id="shadow-color"
+                  type="text"
+                  spellcheck={false}
+                  value={shadowColor}
+                  oninput={(e: Event) => {
+                    const t = e.currentTarget as HTMLInputElement
+                    shadowColor = sanitizeHex(t.value)
+                    t.value = shadowColor
+                  }}
+                  class="tabular-nums pl-6"
+                />
+                <span class="color-swatch" style="background: #{shadowColor}"></span>
+              </div>
+            </div>
+
+            <!-- 그림자 위치 -->
+            <div class="form-row">
+              <Label for="shadow-bottomright">그림자 위치</Label>
+              <div class="shadow-grid">
+                <input type="checkbox" id="shadow-topleft" bind:checked={shadowPositions.topleft} />
+                <input type="checkbox" id="shadow-top" bind:checked={shadowPositions.top} />
+                <input type="checkbox" id="shadow-topright" bind:checked={shadowPositions.topright} />
+                <input type="checkbox" id="shadow-left" bind:checked={shadowPositions.left} />
+                <input type="checkbox" disabled />
+                <input type="checkbox" id="shadow-right" bind:checked={shadowPositions.right} />
+                <input type="checkbox" id="shadow-bottomleft" bind:checked={shadowPositions.bottomleft} />
+                <input type="checkbox" id="shadow-bottom" bind:checked={shadowPositions.bottom} />
+                <input type="checkbox" id="shadow-bottomright" bind:checked={shadowPositions.bottomright} />
+              </div>
             </div>
           </div>
-        </div>
-
-        <!-- 열 수 -->
-        <div class="form-row">
-          <Label for="tile-column">열 수</Label>
-          <Input id="tile-column" type="number" min={1} bind:value={tileColumn} class="w-24 tabular-nums text-right" />
-        </div>
-
-        <!-- 전경색 -->
-        <div class="form-row">
-          <Label for="foreground">전경색</Label>
-          <div class="color-input">
-            <span class="hash">#</span>
-            <Input
-              id="foreground"
-              type="text"
-              spellcheck={false}
-              value={foreground}
-              oninput={(e: Event) => {
-                const t = e.currentTarget as HTMLInputElement
-                foreground = sanitizeHex(t.value)
-                t.value = foreground
-              }}
-              class="tabular-nums pl-6"
-            />
-            <span class="color-swatch" style="background: #{foreground}"></span>
-          </div>
-        </div>
-
-        <!-- 배경색 -->
-        <div class="form-row">
-          <Label for="background">
-            <abbr title="비워 두면 투명을 사용합니다.">배경색</abbr>
-          </Label>
-          <div class="color-input">
-            <span class="hash">#</span>
-            <Input
-              id="background"
-              type="text"
-              spellcheck={false}
-              value={background}
-              oninput={(e: Event) => {
-                const t = e.currentTarget as HTMLInputElement
-                background = sanitizeHex(t.value)
-                t.value = background
-              }}
-              class="tabular-nums pl-6"
-            />
-            <span class="color-swatch" style="background: #{background}"></span>
-          </div>
-        </div>
-
-        <!-- 그림자 색 -->
-        <div class="form-row">
-          <Label for="shadow-color">그림자 색</Label>
-          <div class="color-input">
-            <span class="hash">#</span>
-            <Input
-              id="shadow-color"
-              type="text"
-              spellcheck={false}
-              value={shadowColor}
-              oninput={(e: Event) => {
-                const t = e.currentTarget as HTMLInputElement
-                shadowColor = sanitizeHex(t.value)
-                t.value = shadowColor
-              }}
-              class="tabular-nums pl-6"
-            />
-            <span class="color-swatch" style="background: #{shadowColor}"></span>
-          </div>
-        </div>
-
-        <!-- 그림자 위치 -->
-        <div class="form-row">
-          <Label for="shadow-bottomright">그림자 위치</Label>
-          <div class="shadow-grid">
-            <input type="checkbox" id="shadow-topleft" bind:checked={shadowPositions.topleft} />
-            <input type="checkbox" id="shadow-top" bind:checked={shadowPositions.top} />
-            <input type="checkbox" id="shadow-topright" bind:checked={shadowPositions.topright} />
-            <input type="checkbox" id="shadow-left" bind:checked={shadowPositions.left} />
-            <input type="checkbox" disabled />
-            <input type="checkbox" id="shadow-right" bind:checked={shadowPositions.right} />
-            <input type="checkbox" id="shadow-bottomleft" bind:checked={shadowPositions.bottomleft} />
-            <input type="checkbox" id="shadow-bottom" bind:checked={shadowPositions.bottom} />
-            <input type="checkbox" id="shadow-bottomright" bind:checked={shadowPositions.bottomright} />
-          </div>
-        </div>
-      </div>
-
-      <!-- 액션 버튼들 -->
-      <Button type="submit" disabled={drawing} class="w-full" size="lg">
-        {#if drawing}
-          <LoaderCircle class="animate-spin size-4" />
-          만드는 중…
-        {:else}
-          만들기
-        {/if}
-      </Button>
-
-      <div class="action-row">
-        <Button type="button" variant="outline" disabled={!canvasReady} onclick={handleCopy} class="flex-1" size="lg">
-          {copyLabel}
+        </form>
+      </Card.Content>
+      <Card.Footer class="flex-col gap-2">
+        <!-- 액션 버튼들 -->
+        <Button type="submit" disabled={drawing} class="w-full" size="lg">
+          {#if drawing}
+            <LoaderCircle class="animate-spin size-4" />
+            만드는 중…
+          {:else}
+            만들기
+          {/if}
         </Button>
-        <Button
-          href={canvasReady ? downloadHref : undefined}
-          variant="outline"
-          disabled={!canvasReady}
-          class="flex-1"
-          size="lg"
-          download={downloadName}
-        >
-          다운로드
-        </Button>
-      </div>
-    </form>
+        <div class="action-row">
+          <Button type="button" variant="outline" disabled={!canvasReady} onclick={handleCopy} class="flex-1" size="lg">
+            {copyLabel}
+          </Button>
+          <Button
+            href={canvasReady ? downloadHref : undefined}
+            variant="outline"
+            disabled={!canvasReady}
+            class="flex-1"
+            size="lg"
+            download={downloadName}
+          >
+            다운로드
+          </Button>
+        </div>
+      </Card.Footer>
+    </Card.Root>
 
     <!-- 문자 집합 설명 -->
     <article class="charset-info prose-shadcn">
