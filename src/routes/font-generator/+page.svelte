@@ -21,8 +21,9 @@
   }
   const fontGroups: FontGroup[] = [
     {
-      label: 'Galmuri',
+      label: 'quiple',
       fonts: [
+        {name: 'MaruMinyaHangul', value: 'maruminyahangul', size: '12px'},
         {name: 'Galmuri14', value: 'Galmuri14', size: '15px'},
         {name: 'Galmuri11', value: 'Galmuri11', size: '12px'},
         {name: 'Galmuri11 Bold', value: 'Galmuri11-Bold', size: '12px'},
@@ -54,7 +55,6 @@
         {name: 'HBIOS-SYS', value: 'hbios-sys', size: '16px'},
         {name: 'Unifont', value: 'unifont', size: '16px'},
         {name: 'Unifont JP', value: 'unifont_jp', size: '16px'},
-        {name: 'MaruMinyaHangul', value: 'maruminyahangul', size: '12px'},
         {name: 'Zpix', value: 'zpix', size: '12px'},
       ],
     },
@@ -62,7 +62,7 @@
 
   const fontTriggerContent = $derived.by(() => {
     const font = fontGroups.flatMap((g) => g.fonts).find((f) => f.value === fontValue)
-    return font ? `${font.name} (${font.size})` : 'Galmuri11 (12px)'
+    return font ? `${font.name} (${font.size})` : 'MaruMinyaHangul (12px)'
   })
 
   // Height from baseline to ascent
@@ -137,7 +137,7 @@
   })
 
   // ── State ───────────────────────────────────────────────────────────
-  let fontValue = $state('Galmuri11')
+  let fontValue = $state('maruminyahangul')
   let charsetKey = $state('set2350')
   let customCharset = $state('')
 
@@ -813,26 +813,20 @@
 
   .preview-area
     @apply block flex-1 w-full min-h-40 bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] overflow-hidden lg:sticky top-6
-
-  .canvas-wrapper
-    @apply flex items-center justify-center min-w-full min-h-full w-max h-max p-6
-    &.hidden
-      @apply hidden
-
-  .preview-canvas
-    image-rendering: pixelated
-
-  .placeholder
-    @apply absolute inset-0 text-sm text-muted-foreground p-6 flex items-center justify-center text-center pointer-events-none
+    .placeholder
+      @apply absolute inset-0 text-sm text-muted-foreground p-6 flex items-center justify-center text-center pointer-events-none
+    .canvas-wrapper
+      @apply flex items-center justify-center min-w-full min-h-full w-max h-max p-6 [&.hidden]:hidden
+      .preview-canvas
+        image-rendering: pixelated
 
   .sidebar
     @apply sticky top-5 flex flex-col w-full lg:w-2xs shrink-0
 
   .input-pairs
     @apply flex flex-col gap-2
-
-  .input-pair
-    @apply flex items-center gap-2 text-sm [&_span]:text-muted-foreground
+    .input-pair
+      @apply flex items-center gap-2 text-sm [&_span]:text-muted-foreground
 
   .color-input
     @apply relative
