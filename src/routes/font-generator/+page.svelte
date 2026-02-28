@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {LoaderCircle} from '@lucide/svelte'
+  import {Copy, Download, LoaderCircle} from '@lucide/svelte'
   import {getCharset, getCharsetGroups} from '$lib/charsets'
   import {Button} from '$lib/components/ui/button'
   import * as Card from '$lib/components/ui/card/index.js'
@@ -462,8 +462,8 @@
   <!-- svelte-ignore a11y_no_static_element_interactions -->
   <div
     class="preview-area"
-    class:cursor-grab={!isDragging}
-    class:cursor-grabbing={isDragging}
+    class:cursor-grab={canvasReady && !isDragging}
+    class:cursor-grabbing={canvasReady && isDragging}
     bind:this={previewAreaEl}
     onmousedown={handleMouseDown}
     onmousemove={handleMouseMove}
@@ -697,6 +697,7 @@
               class="flex-1"
               size="sm"
             >
+              <Copy />
               {copyLabel}
             </Button>
             <Button
@@ -707,6 +708,7 @@
               size="sm"
               download={downloadName}
             >
+              <Download />
               다운로드
             </Button>
           </div>
@@ -803,7 +805,7 @@
 <style lang="sass">
   @reference '#app.css'
 
-  :global(main:has(.generator))
+  :global(main:has(> .generator))
     @apply pt-4 sm:pt-6 -mt-(--header-height)
 
   .generator
