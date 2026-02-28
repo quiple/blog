@@ -24,6 +24,7 @@
       label: 'quiple',
       fonts: [
         {name: 'MaruMinyaHangul', value: 'maruminyahangul', size: '12px'},
+        {name: 'HBIOS-SYS', value: 'hbios-sys', size: '16px'},
         {name: 'Galmuri14', value: 'Galmuri14', size: '15px'},
         {name: 'Galmuri11', value: 'Galmuri11', size: '12px'},
         {name: 'Galmuri11 Bold', value: 'Galmuri11-Bold', size: '12px'},
@@ -52,7 +53,6 @@
     {
       label: '기타',
       fonts: [
-        {name: 'HBIOS-SYS', value: 'hbios-sys', size: '16px'},
         {name: 'Unifont', value: 'unifont', size: '16px'},
         {name: 'Unifont JP', value: 'unifont_jp', size: '16px'},
         {name: 'Zpix', value: 'zpix', size: '12px'},
@@ -200,11 +200,6 @@
   // ── Helpers ─────────────────────────────────────────────────────────
   function sanitizeHex(value: string): string {
     return value.replaceAll(/[^\dabcdefABCDEF]/g, '')
-  }
-
-  interface CanvasCtx {
-    fillStyle: string
-    fillRect(x: number, y: number, w: number, h: number): void
   }
 
   // ── Draw ────────────────────────────────────────────────────────────
