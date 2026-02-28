@@ -69,7 +69,7 @@
           {/snippet}
         </DropdownMenu.Trigger>
         <DropdownMenu.Content align="end">
-          <DropdownMenu.Item>비트맵 폰트 이미지 생성기</DropdownMenu.Item>
+          <DropdownMenu.Item onclick={() => goto('/font-generator')}>비트맵 폰트 이미지 생성기</DropdownMenu.Item>
           <DropdownMenu.Separator />
           <DropdownMenu.Item onclick={toggleMode}>
             {#if mode.current === 'dark'}<Sun /> 라이트 테마
