@@ -415,7 +415,7 @@
       copyLabel = '복사됨!'
       setTimeout(() => {
         copyLabel = '복사하기'
-      }, 3000)
+      }, 2000)
     } catch (err) {
       alert('이미지를 복사하지 못했습니다.')
     }
