@@ -289,7 +289,7 @@
 
     let font = fontCache.get(fontValue)
     if (!font) {
-      const url = getFontUrl(fontValue)
+      const url = getFontPath(fontValue)
       const linesIter = fetchline(url)
       async function* yieldyFetchline() {
         for await (const line of linesIter) {
