@@ -799,7 +799,7 @@
 <style lang="sass">
   @reference '#app.css'
 
-  :global(main)
+  :global(main:has(.generator))
     @apply md:pt-(--header-height)!
 
   .generator
