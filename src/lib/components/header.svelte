@@ -89,8 +89,8 @@
     @apply relative md:sticky top-0 py-4 sm:py-6 z-1
     &.hero
       @apply text-(--hero-foreground)
-      :global(Button):hover
-        @apply text-(--hero-foreground) bg-(--hero-foreground)/5
+      :global(Button)
+        @apply hover:text-(--hero-foreground) hover:bg-(--hero-foreground)/5
       .logo, :global(.menu)
         @apply before:opacity-100
       .logo
