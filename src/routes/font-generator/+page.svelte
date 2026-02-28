@@ -797,7 +797,7 @@
           </ul>
         </li>
       </ul>
-      <small>&copy; 2026 Lee Minseo. 각 폰트는 해당 저작자, 저작권자 및 사용 허가자의 상표 및 저작권 자산입니다.</small>
+      <small>&copy; 2026 Lee Minseo. 각 폰트는 해당 소유자, 저작권자 및 사용 허가자의 상표 및 저작권 자산입니다.</small>
     </article>
   </aside>
 </div>
