@@ -448,9 +448,9 @@
 
 <svelte:head>
   <title>비트맵 폰트 이미지 생성기</title>
-  <meta name="description" content="BDF 폰트를 사용하여 폰트 이미지를 만드는 도구." />
   <meta property="og:title" content="비트맵 폰트 이미지 생성기" />
-  <meta property="og:description" content="BDF 폰트를 사용하여 폰트 이미지를 만드는 도구." />
+  <meta name="description" content="비트맵 폰트 이미지를 만드는 도구." />
+  <meta property="og:description" content="비트맵 폰트 이미지를 만드는 도구." />
 </svelte:head>
 
 <div class="generator">
