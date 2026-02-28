@@ -401,18 +401,24 @@
 
   async function handleCopy() {
     if (!canvasEl) return
-    canvasEl.toBlob((blob) => {
-      if (!blob) return
-      navigator.clipboard.write([new ClipboardItem({'image/png': blob})]).then(
-        () => {
-          copyLabel = '복사됨!'
-          setTimeout(() => {
-            copyLabel = '복사하기'
-          }, 3000)
-        },
-        () => alert('이미지를 복사하지 못했습니다.'),
-      )
-    })
+    try {
+      const blobPromise = new Promise<Blob>((resolve, reject) => {
+        canvasEl!.toBlob((blob) => {
+          if (blob) resolve(blob)
+          else reject(new Error('Canvas to Blob failed'))
+        })
+      })
+
+      const item = new ClipboardItem({'image/png': blobPromise})
+      await navigator.clipboard.write([item])
+
+      copyLabel = '복사됨!'
+      setTimeout(() => {
+        copyLabel = '복사하기'
+      }, 3000)
+    } catch (err) {
+      alert('이미지를 복사하지 못했습니다.')
+    }
   }
 
   function handleMouseDown(e: MouseEvent) {
