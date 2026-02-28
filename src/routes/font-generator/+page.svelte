@@ -93,32 +93,32 @@
   }
   const getFontSize = (font: string): number => fontSizeMap[font] ?? 16
 
-  const fontUrlMap: Record<string, string> = {
-    Galmuri14: 'npm/galmuri/dist/Galmuri14.bdf',
-    Galmuri11: 'npm/galmuri/dist/Galmuri11.bdf',
-    'Galmuri11-Bold': 'npm/galmuri/dist/Galmuri11-Bold.bdf',
-    'Galmuri11-Condensed': 'npm/galmuri/dist/Galmuri11-Condensed.bdf',
-    Galmuri9: 'npm/galmuri/dist/Galmuri9.bdf',
-    Galmuri7: 'npm/galmuri/dist/Galmuri7.bdf',
-    GalmuriMono11: 'npm/galmuri/dist/GalmuriMono11.bdf',
-    GalmuriMono9: 'npm/galmuri/dist/GalmuriMono9.bdf',
-    GalmuriMono7: 'npm/galmuri/dist/GalmuriMono7.bdf',
-    'k6x8-gothic': 'gh/quiple/fonts/k6x8/k6x8_gothic.bdf',
-    'k6x8-mincho': 'gh/quiple/fonts/k6x8/k6x8_mincho.bdf',
-    'misaki-gothic': 'gh/quiple/fonts/misaki/misaki_gothic.bdf',
-    'misaki-gothic-2nd': 'gh/quiple/fonts/misaki/misaki_gothic_2nd.bdf',
-    'misaki-mincho': 'gh/quiple/fonts/misaki/misaki_mincho.bdf',
-    k8x12: 'gh/quiple/fonts/k8x12/k8x12.bdf',
-    k8x12l: 'gh/quiple/fonts/k8x12/k8x12L.bdf',
-    k8x12s: 'gh/quiple/fonts/k8x12/k8x12S.bdf',
-    k12x8: 'gh/quiple/fonts/k12x8/k12x8.bdf',
-    'hbios-sys': 'gh/quiple/hbios-sys/hbios-sys.bdf',
-    unifont: 'gh/quiple/fonts/unifont/unifont.bdf',
-    unifont_jp: 'gh/quiple/fonts/unifont/unifont_jp.bdf',
-    maruminyahangul: 'gh/quiple/x12y12pxMaruMinyaHangul/fonts/x12y12pxMaruMinyaHangul.bdf',
-    zpix: 'gh/SolidZORO/zpix-pixel-font/dist/zpix.bdf',
+  const fontFilenameMap: Record<string, string> = {
+    maruminyahangul: 'x12y12pxMaruMinyaHangul',
+    Galmuri14: 'Galmuri14',
+    Galmuri11: 'Galmuri11',
+    'Galmuri11-Bold': 'Galmuri11-Bold',
+    'Galmuri11-Condensed': 'Galmuri11-Condensed',
+    Galmuri9: 'Galmuri9',
+    Galmuri7: 'Galmuri7',
+    GalmuriMono11: 'GalmuriMono11',
+    GalmuriMono9: 'GalmuriMono9',
+    GalmuriMono7: 'GalmuriMono7',
+    'k6x8-gothic': 'k6x8_gothic',
+    'k6x8-mincho': 'k6x8_mincho',
+    'misaki-gothic': 'misaki_gothic',
+    'misaki-gothic-2nd': 'misaki_gothic_2nd',
+    'misaki-mincho': 'misaki_mincho',
+    k8x12: 'k8x12',
+    k8x12l: 'k8x12L',
+    k8x12s: 'k8x12S',
+    k12x8: 'k12x8',
+    'hbios-sys': 'hbios-sys',
+    unifont: 'unifont',
+    unifont_jp: 'unifont_jp',
+    zpix: 'zpix',
   }
-  const getFontUrl = (font: string): string => `https://cdn.jsdelivr.net/${fontUrlMap[font]}`
+  const getFontPath = (font: string): string => `/fonts/bdfs/${fontFilenameMap[font]}.bdf`
 
   // ── Charset groups (from shared charsets index) ─────────────────────
   const charsetGroups = getCharsetGroups()
