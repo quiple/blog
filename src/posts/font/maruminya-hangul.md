@@ -11,7 +11,8 @@ pubDate: 2026-02-27T01:09
 
 <Tester />
 
-[GitHub 리포지터리에서 다운로드](https://github.com/quiple/x12y12pxMaruMinyaHangul/tree/main/fonts)
+- [GitHub 리포지터리에서 다운로드](https://github.com/quiple/x12y12pxMaruMinyaHangul/tree/main/fonts)
+- [비트맵 폰트 이미지 만들기](/font-generator)
 
 ## 라이선스
 
