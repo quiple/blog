@@ -453,6 +453,10 @@
   <meta property="og:description" content="비트맵 폰트 이미지를 만드는 도구." />
 </svelte:head>
 
+<h1 class="mb-4 px-12 sm:mb-6 h-9 leading-9 text-center line-clamp-1 font-semibold text-lg">
+  비트맵 폰트 이미지 생성기
+</h1>
+
 <div class="generator">
   <!-- ── Canvas preview area ──────────────────────────────────────── -->
   <!-- svelte-ignore a11y_no_static_element_interactions -->
@@ -800,7 +804,7 @@
   @reference '#app.css'
 
   :global(main:has(.generator))
-    @apply md:pt-(--header-height)!
+    @apply pt-4 sm:pt-6 -mt-(--header-height)
 
   .generator
     @apply flex flex-col lg:flex-row-reverse items-start gap-4
