@@ -218,7 +218,7 @@
       height: 50vh
 
   .hero
-    @apply inset-0 absolute!
+    @apply inset-0 absolute! [print-color-adjust:exact]
     &.bg
       @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-[50vh] print:h-[56.25vw] bg-cover bg-center inner-b-border
     &.title
