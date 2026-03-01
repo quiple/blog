@@ -118,6 +118,11 @@
 }
 
 @layer base {
+  @media print {
+    @page {
+      margin: 0;
+    }
+  }
   ::selection {
     @apply bg-[#007aff4d];
   }
