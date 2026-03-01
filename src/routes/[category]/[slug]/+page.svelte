@@ -90,6 +90,10 @@
   <!-- {#if image || data.outline} -->
   {@html `
     <style>
+      ::view-transition-group(post-title-${data.slug}),
+      ::view-transition-group(post-metadata-${data.slug}) {
+        z-index: 10;
+      }
       ::view-transition-group-children(post-image-wrapper-${data.slug}) {
         overflow: clip;
       }

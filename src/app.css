@@ -228,3 +228,7 @@
     @apply text-justify;
   }
 }
+
+::view-transition-group(header) {
+  z-index: 20;
+}

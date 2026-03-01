@@ -38,6 +38,10 @@
           {#if post.image}
             {@html `
               <style>
+                ::view-transition-group(post-title-${post.slug}),
+                ::view-transition-group(post-metadata-${post.slug}) {
+                  z-index: 10;
+                }
                 ::view-transition-group-children(post-image-wrapper-${post.slug}) {
                   overflow: clip;
                 }
