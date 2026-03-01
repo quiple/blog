@@ -19,7 +19,6 @@
 </svelte:head>
 
 <div class="max-w-xl 2xl:max-w-2xl mx-auto">
-  <h1 class="text-2xl leading-tight font-bold tracking-tight md:text-3xl lg:text-4xl mb-2 md:mb-4">전체 글</h1>
   <ul class="flex flex-col z-10 relative">
     {#each data.posts as post}
       {@const displayDate =
