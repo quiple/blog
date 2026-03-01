@@ -160,6 +160,7 @@
   }
   @page {
     margin-inline: 0;
+    margin-block: 6rem;
   }
   @page :first {
     margin-top: 0;
