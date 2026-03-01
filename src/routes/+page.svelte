@@ -20,13 +20,13 @@
 
 <div class="max-w-xl 2xl:max-w-2xl mx-auto">
   <h1 class="text-2xl leading-tight font-bold tracking-tight md:text-3xl lg:text-4xl mb-2 md:mb-4">전체 글</h1>
-  <ul class="flex flex-col">
+  <ul class="flex flex-col z-10 relative">
     {#each data.posts as post}
       {@const displayDate =
         post.origDate instanceof Date ? post.origDate : new Date(`${post.origDate ?? post.pubDate}+09:00`)}
       <li>
         <a href={post.relativeURL} class="list-item">
-          <div class="grow z-1">
+          <div class="grow">
             <strong class="line-clamp-1 mb-1" use:transition={`post-title-${post.slug}`}>{post.title}</strong>
             <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
             <small class="text-muted-foreground" use:transition={`post-metadata-${post.slug}`}>
