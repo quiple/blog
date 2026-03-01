@@ -126,11 +126,6 @@
 }
 
 @layer base {
-  @media print {
-    @page {
-      margin: 0;
-    }
-  }
   ::selection {
     @apply bg-[#007aff4d];
   }
@@ -156,6 +151,18 @@
     @apply absolute -m-px size-px overflow-hidden border-0 border-none p-0;
     clip: rect(0, 0, 0, 0);
     clip-path: polygon(0 0, 0 0, 0 0);
+  }
+}
+
+@media print {
+  * {
+    color-scheme: light !important;
+  }
+  @page {
+    margin-inline: 0;
+  }
+  @page :first {
+    margin-top: 0;
   }
 }
 
