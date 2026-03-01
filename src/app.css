@@ -1,7 +1,13 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 @import 'tw-animate-css';
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark {
+  @media not print {
+    &:is(.dark *) {
+      @slot;
+    }
+  }
+}
 
 :root {
   --font-sans: Geist-Variable, IBMPlexSansJP-web, IBMPlexSansKR-web, Noto Sans KR, ui-sans-serif, system-ui, sans-serif;
