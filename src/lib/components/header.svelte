@@ -85,8 +85,18 @@
 <style lang="sass">
   @reference '#app.css'
 
+  @media print
+    header .logo
+      mask-image: if(
+        style(--hero-foreground: #fff): if(
+          style(--outline-color): none;
+          else: var(--svgGradeDown);
+        );
+        else: none;
+      ) !important
+
   header
-    @apply relative md:sticky top-0 py-4 sm:py-6 z-1 [print-color-adjust:exact]
+    @apply relative md:sticky top-0 py-4 sm:py-6 z-1 [print-color-adjust:exact] print:text-(--hero-foreground)
     &.hero
       @apply text-(--hero-foreground)
       :global(Button)
