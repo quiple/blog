@@ -183,9 +183,9 @@
   shuffle()
 </script>
 
-<div class="grid w-full">
+<div class="grid w-full print:gap-1.5">
   <Label for="tester">사용해 보기</Label>
-  <div class="flex gap-1.5 items-center tabular-nums">
+  <div class="flex gap-1.5 items-center tabular-nums print:hidden">
     <Label for="font-size" class="text-muted-foreground">{fontSize}px</Label>
     <Slider id="font-size" type="single" bind:value={fontSize} min={12} max={96} step={12} />
     <Button variant="ghost" size="icon-sm" onclick={shuffle} class="-mx-1.5">
