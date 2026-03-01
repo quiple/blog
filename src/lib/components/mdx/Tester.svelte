@@ -53,7 +53,7 @@
     'For I just threw out the love of my dreams',
     'But the moon’s not burning through my skin tonight',
     'I wanna be an ordinary man,\nnot just an ego caught inside a trend',
-    'This way is a waterslide away from me\nthat takes her further every day',
+    'This way is a waterslide away from me\nthat takes you further every day',
   ])
 
   const pangramKo = new Set([
