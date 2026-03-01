@@ -15,6 +15,7 @@
   let {data}: PageProps = $props()
 
   const {transition} = setupViewTransition()
+  let scrollY = $state(0)
   const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
   const isArticle = $derived(data.category === 'article')
   const isFont = $derived(data.category === 'font')
@@ -112,6 +113,8 @@
   <!-- {/if} -->
 </svelte:head>
 
+<svelte:window bind:scrollY />
+
 <div use:hero={{hasHero: Boolean(image)}}></div>
 
 {#snippet metadata(isOutline: boolean = false)}
@@ -159,7 +162,12 @@
 {/snippet}
 
 {#if image}
-  <div class="hero bg" style:background-image={`url('${image}')`} use:transition={`post-image-${data.slug}`}></div>
+  <div
+    class="hero bg"
+    style:background-image={`url('${image}')`}
+    style:background-position={`center calc(50% + ${scrollY * 0.5}px)`}
+    use:transition={`post-image-${data.slug}`}
+  ></div>
   <div class={['hero title', data.outline && 'line']}>
     <div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
@@ -224,7 +232,7 @@
   .hero
     @apply inset-0 absolute! [print-color-adjust:exact]
     &.bg
-      @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-[50vh] print:h-[56.25vw] bg-cover bg-center inner-b-border
+      @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-[50vh] print:h-[56.25vw] bg-cover inner-b-border
     &.title
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] print:h-[calc(56.25vw-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-[50vh] print:md:h-[56.25vw] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
       & > div
