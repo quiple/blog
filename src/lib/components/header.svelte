@@ -86,7 +86,7 @@
   @reference '#app.css'
 
   header
-    @apply relative md:sticky top-0 py-4 sm:py-6 z-1
+    @apply relative md:sticky top-0 py-4 sm:py-6 z-1 [print-color-adjust:exact]
     &.hero
       @apply text-(--hero-foreground)
       :global(Button)
