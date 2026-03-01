@@ -36,7 +36,7 @@
   main
     @apply px-4 sm:px-6 min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-6 [--header-height:68px] sm:[--header-height:84px] md:-mt-(--header-height) md:pt-6
     :global(section)
-      @apply [.hero+&]:pt-[calc(50vh-var(--header-height))] md:[.hero+&]:pt-[calc(50vh-1.5rem)]
+      @apply [.hero+&]:pt-[calc(50vh-var(--header-height))] md:[.hero+&]:pt-[calc(50vh-1.5rem)] print:[.hero+&]:pt-[calc(56.25vw-var(--header-height))] print:md:[.hero+&]:pt-[calc(56.25vw-1.5rem)]
       :global(.toc)
         @apply hidden lg:block
         :global(h2)
