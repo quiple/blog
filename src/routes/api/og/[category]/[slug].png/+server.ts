@@ -1,3 +1,4 @@
+import type {ComponentProps} from 'svelte'
 import {ImageResponse} from '@ethercorps/sveltekit-og'
 import {CustomFont, resolveFonts} from '@ethercorps/sveltekit-og/fonts'
 import {error} from '@sveltejs/kit'
@@ -40,9 +41,12 @@ export const GET: RequestHandler = async ({params}) => {
   if (!rawContent) return error(404)
 
   const {data} = matter(rawContent)
-  const title = await processTitle(data.title as string)
-  const image = data.image as string | undefined
-  const imageForeground = data.imageForeground as string | undefined
+
+  const props: ComponentProps<typeof OgImage> = {
+    title: await processTitle(data.title as string),
+    image: data.image as string | undefined,
+    imageForeground: data.imageForeground as string | undefined,
+  }
 
   return new ImageResponse(
     OgImage,
@@ -51,6 +55,6 @@ export const GET: RequestHandler = async ({params}) => {
       height: 600,
       fonts: resolvedFontOptions,
     },
-    {title, image, imageForeground},
+    props,
   )
 }
