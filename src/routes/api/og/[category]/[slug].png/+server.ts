@@ -23,6 +23,7 @@ export const GET: RequestHandler = async ({params}) => {
   const {data} = matter(rawContent)
   const title = await processTitle(data.title as string)
   const image = (data.thumbnail || data.image) as string | undefined
+  const imageForeground = data.imageForeground as string | undefined
 
   return new ImageResponse(
     OgImage,
@@ -30,6 +31,6 @@ export const GET: RequestHandler = async ({params}) => {
       width: 1200,
       height: 630,
     },
-    {title, image},
+    {title, image, imageForeground},
   )
 }
