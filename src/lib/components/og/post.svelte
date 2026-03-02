@@ -1,8 +1,8 @@
 <script lang="ts">
   import Q from '$lib/components/q.svelte'
 
-  export let title: string = ''
-  export let image: string | undefined = undefined
+  let title: string = ''
+  let image: string | undefined = undefined
 </script>
 
 <main
