@@ -20,15 +20,15 @@ export const entries: EntryGenerator = () => {
   }))
 }
 
-const geistBold = new CustomFont('My Custom Font', () => read(geistBoldFontPath).arrayBuffer(), {
+const geistBold = new CustomFont('Geist', () => read(geistBoldFontPath).arrayBuffer(), {
   weight: 700,
 })
 
-const plexSansKRBold = new CustomFont('My Custom Font', () => read(plexSansKRBoldFontPath).arrayBuffer(), {
+const plexSansKRBold = new CustomFont('IBM Plex Sans KR', () => read(plexSansKRBoldFontPath).arrayBuffer(), {
   weight: 700,
 })
 
-const plexSansJPBold = new CustomFont('My Custom Font', () => read(plexSansJPBoldFontPath).arrayBuffer(), {
+const plexSansJPBold = new CustomFont('IBM Plex Sans JP', () => read(plexSansJPBoldFontPath).arrayBuffer(), {
   weight: 700,
 })
 
