@@ -48,7 +48,7 @@ export const GET: RequestHandler = async ({params}) => {
     OgImage,
     {
       width: 1200,
-      height: 630,
+      height: 600,
       fonts: resolvedFontOptions,
     },
     {title, image, imageForeground},
