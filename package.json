@@ -17,6 +17,7 @@
     "thumb": "sharp -i ./src/lib/assets/thumbnail/*.* -o ./static/img/thumbnail resize --height 240 -f avif -q 50"
   },
   "devDependencies": {
+    "@ethercorps/sveltekit-og": "^4.2.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@internationalized/date": "^3.11.0",
     "@lucide/svelte": "^0.561.0",
