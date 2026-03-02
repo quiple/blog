@@ -41,7 +41,7 @@ export const GET: RequestHandler = async ({params}) => {
 
   const {data} = matter(rawContent)
   const title = await processTitle(data.title as string)
-  const image = (data.thumbnail || data.image) as string | undefined
+  const image = data.image as string | undefined
   const imageForeground = data.imageForeground as string | undefined
 
   return new ImageResponse(
