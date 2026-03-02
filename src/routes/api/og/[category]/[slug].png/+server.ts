@@ -5,15 +5,23 @@ import {
   blogArticles,
   blogFonts,
   blogPosts,
+  getAllBlogContentMetadata,
   getArticleMetadataFromMatter,
   getFontMetadataFromMatter,
   getPostMetadataFromMatter,
 } from '$lib/content'
 import {generateDescription, processTitle} from '$lib/markdown'
 import matter from 'gray-matter'
-import type {RequestHandler} from './$types'
+import type {EntryGenerator, RequestHandler} from './$types'
 
 export const prerender = true
+
+export const entries: EntryGenerator = () => {
+  return getAllBlogContentMetadata().map((content) => ({
+    category: content.category,
+    slug: content.slug,
+  }))
+}
 
 export const GET: RequestHandler = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
