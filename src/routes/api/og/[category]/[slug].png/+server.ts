@@ -7,19 +7,12 @@ import geistBoldFontPath from '$lib/assets/fonts/Geist-Bold.otf?url'
 import plexSansJPBoldFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
 import plexSansKRBoldFontPath from '$lib/assets/fonts/IBMPlexSansKR-Bold.otf?url'
 import OgImage from '$lib/components/og/post.svelte'
-import {blogArticles, blogFonts, blogPosts, getAllBlogContentMetadata} from '$lib/content'
+import {blogArticles, blogFonts, blogPosts} from '$lib/content'
 import {processTitle} from '$lib/markdown'
 import matter from 'gray-matter'
-import type {EntryGenerator, RequestHandler} from './$types'
+import type {RequestHandler} from './$types'
 
 export const prerender = true
-
-export const entries: EntryGenerator = () => {
-  return getAllBlogContentMetadata().map((content) => ({
-    category: content.category,
-    slug: content.slug,
-  }))
-}
 
 const geistBold = new CustomFont('Geist', () => read(geistBoldFontPath).arrayBuffer(), {
   weight: 700,
