@@ -186,10 +186,10 @@
 @utility prose-shadcn {
   @apply prose max-w-none prose-zinc dark:prose-invert;
   h1 {
-    @apply scroll-m-(--header-height) text-2xl leading-tight font-bold tracking-tight md:text-3xl lg:text-4xl;
+    @apply scroll-m-(--header-height) text-2xl leading-tight font-bold tracking-tight text-pretty break-keep md:text-3xl lg:text-4xl;
   }
   h2 {
-    @apply scroll-m-(--header-height) border-b pb-3 text-xl leading-snug font-semibold tracking-tight transition-colors first:mt-0 md:text-2xl lg:text-3xl;
+    @apply scroll-m-(--header-height) border-b pb-3 text-xl leading-snug font-semibold tracking-tight text-pretty break-keep transition-colors first:mt-0 md:text-2xl lg:text-3xl;
   }
   h3 {
     @apply scroll-m-(--header-height) text-lg font-semibold tracking-tight md:text-xl lg:text-2xl;
