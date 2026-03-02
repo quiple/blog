@@ -3,7 +3,13 @@
 <script lang="ts">
   import Q from '$lib/components/q.svelte'
 
-  let {title, image, imageForeground}: {title: string; image?: string; imageForeground?: string} = $props()
+  type Props = {
+    title: string
+    image?: string
+    imageForeground?: string
+  }
+
+  let {title, image, imageForeground}: Props = $props()
 </script>
 
 <main class="flex flex-col justify-between items-start bg-white h-full w-full p-12 overflow-hidden relative">
