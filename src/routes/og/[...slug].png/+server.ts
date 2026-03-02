@@ -11,7 +11,7 @@ import {
 } from '$lib/content'
 import {generateDescription, processTitle} from '$lib/markdown'
 import matter from 'gray-matter'
-import type {RequestHandler} from '../../[category]/[slug]/og.png/$types'
+import type {RequestHandler} from '.$types'
 
 export const prerender = true
 
