@@ -48,7 +48,7 @@
   <section>
     <div class="flex gap-2">
       <a href="/" class="logo" style={`--svgOutline: url("${svgOutline}"); --svgGradeDown: url("${svgGradeDown}")`}>
-        <Q class="w-9" />
+        <Q class="size-9" />
       </a>
     </div>
 
