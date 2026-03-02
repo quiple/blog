@@ -1,4 +1,5 @@
-import path from 'path'
+// @ts-expect-error missing @types/node
+import path from 'node:path'
 import {sveltekitOG} from '@ethercorps/sveltekit-og/plugin'
 import {sveltekit} from '@sveltejs/kit/vite'
 import tailwindcss from '@tailwindcss/vite'
