@@ -15,7 +15,7 @@ import type {RequestHandler} from '.$types'
 
 export const prerender = true
 
-export const get: RequestHandler = async ({params}) => {
+export const GET: RequestHandler = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
   if (!rawContent) return error(404)
