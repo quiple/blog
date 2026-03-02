@@ -11,7 +11,7 @@ import {
 } from '$lib/content'
 import {generateDescription, processTitle} from '$lib/markdown'
 import matter from 'gray-matter'
-import type {RequestHandler} from '.$types'
+import type {RequestHandler} from './$types'
 
 export const prerender = true
 
@@ -34,7 +34,7 @@ export const GET: RequestHandler = async ({params}) => {
 
   const articleData = isArticle ? (postMetaData as ReturnType<typeof getArticleMetadataFromMatter>) : undefined
 
-  return {
+  const props = {
     ...postMetaData,
     origDate: articleData?.origDate,
     media: articleData?.media,
@@ -43,8 +43,15 @@ export const GET: RequestHandler = async ({params}) => {
     authorURL: articleData?.authorURL,
   }
 
-  return new ImageResponse(OgImage, {
-    width: 1200,
-    height: 630,
-  })
+  return new ImageResponse(
+    OgImage,
+    {
+      width: 1200,
+      height: 630,
+      // headers: {
+      //   'Cache-Control': 'public, immutable, max-age=31536000',
+      // },
+    },
+    props,
+  )
 }
