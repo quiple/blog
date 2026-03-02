@@ -34,7 +34,7 @@ export const GET: RequestHandler = async ({params}) => {
 
   const articleData = isArticle ? (postMetaData as ReturnType<typeof getArticleMetadataFromMatter>) : undefined
 
-  const props = {
+  const props: any = {
     ...postMetaData,
     origDate: articleData?.origDate,
     media: articleData?.media,
