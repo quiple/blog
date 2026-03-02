@@ -1,3 +1,5 @@
+<svelte:options css="injected" />
+
 <script lang="ts">
   import Q from '$lib/components/q.svelte'
 
@@ -5,9 +7,6 @@
 </script>
 
 <main class="flex flex-col justify-between items-start bg-white h-full w-full p-12 overflow-hidden relative">
-  {#if image}
-    <img src={image} alt="Background" class="absolute w-full h-full object-cover inset-0 -z-10" />
-  {/if}
   <Q class="w-20 h-20" />
   <h1 class="font-bold text-6xl leading-tight -mb-3">{title}</h1>
 </main>
