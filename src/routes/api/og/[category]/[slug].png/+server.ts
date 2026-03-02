@@ -1,7 +1,3 @@
-// @ts-expect-error missing @types/node
-import fs from 'node:fs'
-// @ts-expect-error missing @types/node
-import path from 'node:path'
 import {ImageResponse} from '@ethercorps/sveltekit-og'
 import {CustomFont, resolveFonts} from '@ethercorps/sveltekit-og/fonts'
 import {error} from '@sveltejs/kit'
@@ -37,61 +33,24 @@ const plexSansJPBold = new CustomFont('IBM Plex Sans JP', () => read(plexSansJPB
 })
 
 export const GET: RequestHandler = async ({params}) => {
-  console.log('Resolving fonts...')
-  try {
-    const resolvedFontOptions = await resolveFonts([geistBold, plexSansKRBold, plexSansJPBold])
-    console.log('Fonts resolved')
+  const resolvedFontOptions = await resolveFonts([geistBold, plexSansKRBold, plexSansJPBold])
 
-    const matchPath = `/src/posts/${params.category}/${params.slug}.md`
-    const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
-    if (!rawContent) return error(404)
+  const matchPath = `/src/posts/${params.category}/${params.slug}.md`
+  const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
+  if (!rawContent) return error(404)
 
-    const {data} = matter(rawContent)
-    const title = await processTitle(data.title as string)
-    let image = data.image as string | undefined
-    const imageForeground = data.imageForeground as string | undefined
+  const {data} = matter(rawContent)
+  const title = await processTitle(data.title as string)
+  const image = data.image as string | undefined
+  const imageForeground = data.imageForeground as string | undefined
 
-    if (image) {
-      const extensionLess = image.replace(/\.avif$/, '')
-      // @ts-expect-error missing @types/node
-      const assetDir = path.join(process.cwd(), 'src', 'lib', 'assets', params.category)
-      const pngPath = path.join(assetDir, `${extensionLess}.png`)
-      const jpgPath = path.join(assetDir, `${extensionLess}.jpg`)
-
-      // @ts-expect-error missing @types/node
-      let buf: Buffer | undefined
-      let ext = 'png'
-
-      if (fs.existsSync(pngPath)) {
-        buf = fs.readFileSync(pngPath)
-      } else if (fs.existsSync(jpgPath)) {
-        buf = fs.readFileSync(jpgPath)
-        ext = 'jpeg'
-      }
-
-      if (buf) {
-        // We use base64 purely because Node's fetch (used by Satori) does not support file:/// URIs
-        // and using absolute dev server URLs causes Vite SSR deadlock. This is much faster and cleaner!
-        image = `data:image/${ext};base64,${buf.toString('base64')}`
-      } else {
-        image = undefined
-      }
-    }
-
-    console.log({title, hasImage: !!image, image, imageForeground})
-
-    console.log('Constructing ImageResponse...')
-    return new ImageResponse(
-      OgImage,
-      {
-        width: 1200,
-        height: 600,
-        fonts: resolvedFontOptions,
-      },
-      {title, image, imageForeground},
-    )
-  } catch (err) {
-    console.error('Error in og GET:', err)
-    throw err
-  }
+  return new ImageResponse(
+    OgImage,
+    {
+      width: 1200,
+      height: 630,
+      fonts: resolvedFontOptions,
+    },
+    {title, image, imageForeground},
+  )
 }
