@@ -1,7 +1,7 @@
 <script lang="ts">
   import Q from '$lib/components/q.svelte'
 
-  let {title = '', image = undefined}: {title?: string; image?: string} = $props()
+  let {title = '', image, imageForeground}: {title?: string; image?: string; imageForeground?: string} = $props()
 </script>
 
 <main
