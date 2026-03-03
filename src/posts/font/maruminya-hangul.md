@@ -1,7 +1,7 @@
 ---
 title: x12y12pxMaruMinyaHangul
 image: x12y12pxMaruMinyaHangul.png
-imageForeground: '000'
+imageForeground: 09090b
 pubDate: 2026-02-27T01:09
 ---
 

@@ -38,7 +38,7 @@ export const GET: RequestHandler = async ({params}) => {
   const props: ComponentProps<typeof OgImage> = {
     title: await processTitle(data.title as string),
     category: params.category as string,
-    image: data.image as string,
+    image: (data.originalImage as string) ?? (data.image as string),
     imageForeground: data.imageForeground as string,
   }
 
