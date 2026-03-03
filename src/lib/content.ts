@@ -31,6 +31,7 @@ const baseMetadataFields = {
   title: trimmedString,
   description: optionalTrimmedString,
   image: optionalTrimmedString,
+  originalImage: optionalTrimmedString,
   thumbnail: optionalTrimmedString,
   imageForeground: optionalTrimmedString,
   outline: optionalTrimmedString,

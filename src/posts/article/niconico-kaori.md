@@ -5,6 +5,7 @@ source: https://originalnews.nico/15200
 author: 타카세 코지 (高瀬康司)
 authorURL: https://x.com/takase_merca
 image: yuyushiki_pc-修正.avif
+originalImage: yuyushiki_pc-修正.png
 imageForeground: fff
 outline: '001af4'
 origDate: 2017-03-16T17:00

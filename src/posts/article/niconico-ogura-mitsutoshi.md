@@ -5,6 +5,7 @@ source: https://originalnews.nico/19387
 author: 타카세 코지 (高瀬康司)
 authorURL: https://x.com/takase_merca
 image: yuyushiki_interview02.2_pc.avif
+originalImage: yuyushiki_interview02.2_pc.png
 imageForeground: fff
 outline: '001af4'
 origDate: 2017-05-08T11:00
