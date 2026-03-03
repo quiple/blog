@@ -29,10 +29,7 @@
   {/if}
   <div class="flex flex-col justify-between items-start h-full w-full p-12">
     <Q class="w-20 h-20" fill={`#${imageForeground}`} />
-    <h1
-      class="font-bold text-6xl leading-tight -mb-3"
-      style="white-space: normal; word-break: keep-all; word-wrap: break-word; text-wrap: pretty"
-    >
+    <h1 class="font-bold text-6xl leading-tight -mb-3" style="word-break: keep-all">
       {title}
     </h1>
   </div>
