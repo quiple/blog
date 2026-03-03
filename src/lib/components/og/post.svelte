@@ -15,18 +15,24 @@
 </script>
 
 <main
-  class="flex flex-col justify-between items-start bg-white h-full w-full p-12"
+  class="bg-white h-full w-full"
   style:color={`#${imageForeground}`}
   style:font-family="Geist, 'IBM Plex Sans JP', 'IBM Plex Sans KR', sans-serif"
 >
   {#if image}
-    <img src={`${BASE_URL}/img/${category}/${image}`} alt={title} style="position: absolute;" />
+    <img
+      src={`${BASE_URL}/img/${category}/${image}`}
+      alt={title}
+      style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)"
+    />
   {/if}
-  <Q class="w-20 h-20" fill={`#${imageForeground}`} />
-  <h1
-    class="font-bold text-6xl leading-tight -mb-3"
-    style="white-space: normal; word-break: keep-all; word-wrap: break-word; text-wrap: pretty"
-  >
-    {title}
-  </h1>
+  <div class="flex flex-col justify-between items-start h-full w-full p-12">
+    <Q class="w-20 h-20" fill={`#${imageForeground}`} />
+    <h1
+      class="font-bold text-6xl leading-tight -mb-3"
+      style="white-space: normal; word-break: keep-all; word-wrap: break-word; text-wrap: pretty"
+    >
+      {title}
+    </h1>
+  </div>
 </main>
