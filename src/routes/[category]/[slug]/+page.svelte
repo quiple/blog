@@ -19,7 +19,7 @@
   const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
   const isArticle = $derived(data.category === 'article')
   const isFont = $derived(data.category === 'font')
-  const image = $derived(data.image ? `/img/${isArticle ? 'article' : isFont && 'font'}/${data.image}` : '')
+  const image = $derived(data.image ? `/img/${data.category}/${data.image}` : '')
   const publishedDate = $derived(data.origDate ?? data.pubDate)
   const jsonLd = $derived(
     JSON.stringify({
@@ -80,6 +80,17 @@
   <meta property="og:url" content={data.canonicalURL} />
   <meta property="og:title" content={data.title} />
   <meta property="og:description" content={data.description} />
+  <meta name="twitter:title" content={data.title} />
+  <meta name="twitter:description" content={data.description} />
+
+  {#if image}
+    <meta property="og:image" content={`${BASE_URL}/api/og/${data.category}.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:image" content={`${BASE_URL}/api/og/${data.category}.png`} />
+    <meta name="twitter:card" content="summary_large_image" />
+  {/if}
+
   <meta property="article:published_time" content={`${publishedDate}+09:00`} />
   {#if data.author}
     <meta property="article:author" content={data.author} />
