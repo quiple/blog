@@ -19,7 +19,7 @@
 >
   <Q class="w-20 h-20" style="fill: #09090b" />
   {#if image}
-    <img src={`/img/${category}/${image}`} alt={title} />
+    <img src={image} alt={title} />
   {/if}
   <h1
     class="font-bold text-6xl leading-tight -mb-3"
