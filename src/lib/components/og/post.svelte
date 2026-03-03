@@ -16,9 +16,9 @@
 
 <main
   class="flex flex-col justify-between items-start bg-white h-full w-full p-12"
-  style="background-size: cover"
   style:background-image={image && `url(${BASE_URL}/img/${category}/${image})`}
   style:color={imageForeground ? `#${imageForeground}` : '#09090b'}
+  style:font-family="Geist, 'IBM Plex Sans JP', 'IBM Plex Sans KR', sans-serif"
 >
   <Q class="w-20 h-20" fill={imageForeground ? `#${imageForeground}` : '#09090b'} />
   <h1
