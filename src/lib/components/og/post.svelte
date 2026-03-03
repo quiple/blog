@@ -23,7 +23,8 @@
     <img
       src={`${BASE_URL}/img/${category}/${image}`}
       alt={title}
-      style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%)"
+      class="h-full w-full"
+      style="position: absolute; object-fit: cover; object-position: center"
     />
   {/if}
   <div class="flex flex-col justify-between items-start h-full w-full p-12">
