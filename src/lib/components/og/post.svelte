@@ -18,7 +18,9 @@
   style="color: #09090b"
 >
   <Q class="w-20 h-20" style="fill: #09090b" />
-  <!-- <img src="/img/font/x12y12pxMaruMinyaHangul.png" alt={title} /> -->
+  {#if image}
+    <img src={image} alt={title} />
+  {/if}
   <h1
     class="font-bold text-6xl leading-tight -mb-3"
     style="white-space: normal; word-break: keep-all; word-wrap: break-word; text-wrap: pretty"
