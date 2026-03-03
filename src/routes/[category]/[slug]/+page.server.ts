@@ -19,6 +19,7 @@ import remarkCjkFriendly from 'remark-cjk-friendly'
 import remarkCjkFriendlyGfmStrikethrough from 'remark-cjk-friendly-gfm-strikethrough'
 import remarkDirective from 'remark-directive'
 import remarkGfm from 'remark-gfm'
+// @ts-ignore
 import remarkGithubAlerts from 'remark-github-alerts'
 import remarkMdx from 'remark-mdx'
 import remarkRehype from 'remark-rehype'

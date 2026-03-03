@@ -73,7 +73,8 @@ function getMetadataFromMatter<T extends v.ObjectEntries>(
   slug: string,
   data: {[key: string]: unknown},
 ) {
-  const parsed = v.parse(schema, {category, slug, ...data})
+  const cleanData = Object.fromEntries(Object.entries(data).filter(([_, v]) => v !== null))
+  const parsed = v.parse(schema, {category, slug, ...cleanData})
   const canonicalURL = new URL(`/${parsed.category}/${parsed.slug}`, BASE_URL).toString()
   const relativeURL = `/${parsed.category}/${parsed.slug}`
 
