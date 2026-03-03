@@ -1,7 +1,6 @@
 import type {ComponentProps} from 'svelte'
 import {ImageResponse} from '@ethercorps/sveltekit-og'
 import {CustomFont, resolveFonts} from '@ethercorps/sveltekit-og/fonts'
-import {error} from '@sveltejs/kit'
 import {read} from '$app/server'
 import geistBoldFontPath from '$lib/assets/fonts/Geist-Bold.otf?url'
 import plexSansJPBoldFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
