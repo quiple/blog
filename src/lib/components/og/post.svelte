@@ -20,12 +20,12 @@
   style:font-family="Geist, 'IBM Plex Sans JP', 'IBM Plex Sans KR', sans-serif"
 >
   {#if image}
-    <!-- <img
+    <img
       src={`${BASE_URL}/img/${category}/${image}`}
       alt={title}
       class="h-full w-full"
       style="position: absolute; object-fit: cover; object-position: center"
-    /> -->
+    />
   {/if}
   <div class="flex flex-col justify-between items-start h-full w-full p-12">
     <Q class="w-20 h-20" fill={`#${imageForeground}`} />
