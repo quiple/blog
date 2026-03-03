@@ -4,7 +4,7 @@ media: 페브리
 source: https://febri.jp/topics/girls-band-cry_int_02_01/
 author: 마에다 히사시 (前田久)
 authorURL: https://mae-9.hatenablog.com
-image: ep01_s001c199_comp_v03_2400.avif
+image: ep01_s001c199_comp_v03_2400.png
 imageForeground: fff
 origDate: 2024-09-30T12:00
 pubDate: 2025-12-29T22:57
