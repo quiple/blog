@@ -38,8 +38,8 @@ export const GET: RequestHandler = async ({params}) => {
   const props: ComponentProps<typeof OgImage> = {
     title: await processTitle(data.title as string),
     category: data.category as string,
-    image: data.image as string | undefined,
-    imageForeground: data.imageForeground as string | undefined,
+    image: data.image as string,
+    imageForeground: data.imageForeground as string,
   }
 
   return new ImageResponse(
