@@ -2,6 +2,7 @@
 
 <script lang="ts">
   import Q from '$lib/components/q.svelte'
+  import BASE_URL from '$lib/constants'
 
   type Props = {
     title: string
@@ -19,7 +20,7 @@
 >
   <Q class="w-20 h-20" style="fill: #09090b" />
   {#if image}
-    <img src={`https://blog.quiple.dev/img/${category}/${image}`} alt={title} />
+    <img src={`${BASE_URL}/img/${category}/${image}`} alt={title} />
   {/if}
   <h1
     class="font-bold text-6xl leading-tight -mb-3"
