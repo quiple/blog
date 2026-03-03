@@ -12,11 +12,14 @@ import matter from 'gray-matter'
 import type {EntryGenerator, RequestHandler} from './$types'
 
 export const entries: EntryGenerator = () => {
-  const slugs = docFiles.map((doc) => doc.slug)
+  const allFiles = [...Object.keys(blogPosts), ...Object.keys(blogArticles), ...Object.keys(blogFonts)]
 
-  return slugs.map((slug) => ({
-    slug: slug.slice(1).split('/'),
-  }))
+  return allFiles.map((filePath) => {
+    const category = filePath.split('/').at(-2) as string
+    const slug = filePath.split('/').at(-1)?.split('.')[0] as string
+
+    return {category, slug}
+  })
 }
 
 export const prerender = true
