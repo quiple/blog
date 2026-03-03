@@ -19,5 +19,10 @@
 >
   <Q class="w-20 h-20" style="fill: #09090b" />
   <!-- <img src="/img/font/x12y12pxMaruMinyaHangul.png" alt={title} /> -->
-  <h1 class="font-bold text-6xl leading-tight -mb-3" style="word-break: keep-all; text-wrap: pretty">{title}</h1>
+  <h1
+    class="font-bold text-6xl leading-tight -mb-3"
+    style="white-space: normal; word-break: keep-all; word-wrap: break-word; text-wrap: pretty"
+  >
+    {title}
+  </h1>
 </main>
