@@ -31,7 +31,7 @@ export const GET: RequestHandler = async ({params}) => {
 
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
-  if (!rawContent) return error(404)
+  if (!rawContent) return new Response(null, {status: 404})
 
   const {data} = matter(rawContent)
 
@@ -48,6 +48,10 @@ export const GET: RequestHandler = async ({params}) => {
       width: 1200,
       height: 630,
       fonts: resolvedFontOptions,
+      // Caching for long-term storage since it's pre-rendered
+      headers: {
+        'Cache-Control': 'public, immutable, max-age=31536000',
+      },
     },
     props,
   )
