@@ -10,7 +10,15 @@ import OgImage from '$lib/components/og/post.svelte'
 import {blogArticles, blogFonts, blogPosts} from '$lib/content'
 import {processTitle} from '$lib/markdown'
 import matter from 'gray-matter'
-import type {RequestHandler} from './$types'
+import type {EntryGenerator, RequestHandler} from './$types'
+
+export const entries: EntryGenerator = () => {
+  const slugs = docFiles.map((doc) => doc.slug)
+
+  return slugs.map((slug) => ({
+    slug: slug.slice(1).split('/'),
+  }))
+}
 
 export const prerender = true
 
