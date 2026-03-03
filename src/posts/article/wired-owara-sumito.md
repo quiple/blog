@@ -3,7 +3,9 @@ title: '2050년에 정답 확인을 할 수 있다면 좋겠다: 《영상연에
 media: 와이어드.jp
 source: https://wired.jp/2020/03/08/eizouken-sumito-owara-interview/
 author: 노구치 리에 (野口理恵)
-authorURL: https://rienoguchi.tumblr.com/
+authorURL: https://rienoguchi.tumblr.com
+image: ab9ce9b22fd0bc5605737a6431553959.webp
+imageForeground: fff
 origDate: 2020-03-08T18:00
 pubDate: 2026-02-09T19:10
 ---

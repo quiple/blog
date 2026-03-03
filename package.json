@@ -13,8 +13,8 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write .",
     "lint": "oxlint --type-aware",
-    "img": "sharp -i ./src/lib/assets/article/*.* -o ./static/img/article -f avif -q 50",
-    "thumb": "sharp -i ./src/lib/assets/thumbnail/*.* -o ./static/img/thumbnail resize --height 240 -f avif -q 50"
+    "img": "sharp -i ./static/img/article/*.{jpg,jpeg,png} -o ./static/img/article -f avif -q 50",
+    "thumb": "sharp -i ./static/img/thumbnail/*.{jpg,jpeg,png,webp} -o ./static/img/thumbnail resize --height 240 -f avif -q 50"
   },
   "devDependencies": {
     "@ethercorps/sveltekit-og": "^4.2.1",

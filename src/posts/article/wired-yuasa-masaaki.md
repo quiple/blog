@@ -4,15 +4,13 @@ media: 와이어드.jp
 source: https://wired.jp/article/masaaki-yuasa-inuoh-interview/
 author: 미야타 후미히사 (宮田文久)
 authorURL: https://x.com/editdisco
+image: _W8A2377.webp
+imageForeground: fff
 origDate: 2022-05-28T18:00
 pubDate: 2026-02-09T19:38
 ---
 
 > 생명력이 넘치고 상식의 틀을 벗어나는 듯한 애니메이션을 다루어 온 유아사 마사아키(湯浅政明). 대망의 신작 영화 《견왕: 이누오(犬王)》는 무로마치 시대의 노가쿠사(能楽師)와 비파 법사 두 사람을 주인공으로 하는 뮤지컬 애니메이션이다. 인터뷰에서 밝힌 유아사의 상상력---사람과 역사, 세계를 이해하려는 정신 또한 영화와 마찬가지로 자극으로 가득했다.
-
-:::figure{src="/img/article/\_W8A2377.webp"}
-Photograph: Shintaro Yoshimatsu
-:::
 
 스크린 가득 펼쳐지는 상상력의 분류(奔流)가 관객을 흔들고 소용돌이 속으로 휘말리게 한다. 영화 《새벽을 알리는 루의 노래(夜明け告げるルーのうた)》(2017년), TV 애니메이션 《영상연에는 손대지 마!(映像研には手を出すな!)》(2020년) 등, 유아사 마사아키가 다룬 역동적인 애니메이션은 지금까지 국내외에서 높은 평가를 받아왔다.
 
