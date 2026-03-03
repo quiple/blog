@@ -2,7 +2,7 @@
 
 <script lang="ts">
   import Q from '$lib/components/q.svelte'
-  import BASE_URL from '$lib/constants'
+  import {BASE_URL} from '$lib/constants'
 
   type Props = {
     title: string
