@@ -105,7 +105,7 @@
         animation-name: zoom-in-new;
       }
       :root {
-        ${image && `--hero-foreground: #${data.imageForeground?.toString()};`}
+        ${image && `--hero-foreground: #${data.imageForeground?.toString() ?? '09090b'};`}
         ${data.outline ? `--outline-color: #${data.outline.toString()};` : ''}
       }
     </style>
