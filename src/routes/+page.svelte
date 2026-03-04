@@ -55,7 +55,7 @@
             `}
             <div
               class="img"
-              style:background-image={`url('/img/thumbnail/${post.image}')`}
+              style:background-image={`url('/img/thumbnail/${post.image.substring(0, post.image.lastIndexOf('.'))}.avif')`}
               use:transition={{
                 name: `post-image-${post.slug}`,
                 shouldApply({navigation}) {
