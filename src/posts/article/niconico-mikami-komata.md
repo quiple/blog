@@ -6,6 +6,7 @@ author: 타카세 코지 (高瀬康司)
 authorURL: https://x.com/takase_merca
 image: yuyushiki_interview03_pc.avif
 originalImage: yuyushiki_interview03_pc.png
+imageVerticalAlign: 0
 imageForeground: fff
 outline: '001af4'
 origDate: 2017-06-19T11:00

@@ -176,7 +176,7 @@
   <div
     class="hero bg"
     style:background-image={`url('${image}')`}
-    style:background-position={`center calc(50% + ${scrollY * 0.5}px)`}
+    style:background-position={`center calc(${data.imageVerticalAlign ?? 50}% + ${scrollY * 0.5}px)`}
     use:transition={`post-image-${data.slug}`}
   ></div>
   <div class={['hero title', data.outline && 'line']}>

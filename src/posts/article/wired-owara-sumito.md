@@ -5,6 +5,7 @@ source: https://wired.jp/2020/03/08/eizouken-sumito-owara-interview/
 author: 노구치 리에 (野口理恵)
 authorURL: https://rienoguchi.tumblr.com
 image: ab9ce9b22fd0bc5605737a6431553959.webp
+imageVerticalAlign: 30
 imageForeground: fff
 origDate: 2020-03-08T18:00
 pubDate: 2026-02-09T19:10

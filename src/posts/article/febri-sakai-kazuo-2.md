@@ -6,6 +6,7 @@ author: 마에다 히사시 (前田久)
 authorURL: https://mae-9.hatenablog.com
 image: ep11_s011c185B_comp_v02_2400.avif
 originalImage: ep11_s011c185B_comp_v02_2400.png
+imageVerticalAlign: 40
 imageForeground: fff
 origDate: 2024-10-01T12:00
 pubDate: 2025-12-29T23:10

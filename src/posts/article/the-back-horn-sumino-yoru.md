@@ -6,6 +6,7 @@ author: 요시다 다이스케 (吉田大助)
 authorURL: https://x.com/readabookreview
 image: pic_discus_01.avif
 originalImage: pic_discus_01.png
+imageVerticalAlign: 0
 imageForeground: fff
 origDate: 2020-09-09
 pubDate: 2026-03-07T17:22

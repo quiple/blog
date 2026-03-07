@@ -5,6 +5,7 @@ source: https://wired.jp/article/masaaki-yuasa-inuoh-interview/
 author: 미야타 후미히사 (宮田文久)
 authorURL: https://x.com/editdisco
 image: _W8A2377.webp
+imageVerticalAlign: 60
 imageForeground: fff
 origDate: 2022-05-28T18:00
 pubDate: 2026-02-09T19:38
