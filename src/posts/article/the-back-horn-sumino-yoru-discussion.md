@@ -1,5 +1,5 @@
 ---
-title: 더백혼이 말하는 스미노 요루의 매력
+title: 더백혼이 이야기하는 스미노 요루의 매력
 media: 신초샤
 source: https://www.thebackhornsuminoyoru.com/about.html
 origDate: 2018-09-20
