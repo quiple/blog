@@ -1,7 +1,7 @@
 ---
 title: '"이 경계선을 넘어 너에게 닿고 싶어"'
 media: 신초샤
-source: https://www.thebackhornsuminoyoru.com/about.html
+source: https://www.thebackhornsuminoyoru.com/interview.html
 image: pic_main.avif
 originalImage: pic_main.png
 imageVerticalAlign: 40
