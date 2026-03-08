@@ -3,7 +3,7 @@ title: 더백혼이 이야기하는 스미노 요루의 매력
 media: 신초샤
 source: https://www.thebackhornsuminoyoru.com/about.html
 origDate: 2018-09-20
-pubDate: 2026-03-08T16:01
+pubDate: 2026-03-08T16:47
 ---
 
 컬래버레이션 프로젝트 시동에 따라, 서로의 작품이나 좋아하는 것에 대해 깊게 파고든 좌담회가 실현. 더백혼(THE BACK HORN)의 멤버들이 스미노 요루 작품에 이끌린 부분은...?
