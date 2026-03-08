@@ -7,7 +7,7 @@ originalImage: pic_main.png
 imageVerticalAlign: 40
 outline: fff
 origDate: 2018-09-06
-pubDate: 2026-03-08T17:22
+pubDate: 2026-03-08T16:01
 ---
 
 > 이 콜라보 기획이 탄생한 계기를 여쭤봐도 될까요?
