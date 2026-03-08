@@ -1,7 +1,7 @@
 ---
 title: 더백혼이 이야기하는 스미노 요루의 매력
 media: 신초샤
-source: https://www.thebackhornsuminoyoru.com/about.html
+source: https://www.thebackhornsuminoyoru.com/discussion01.html
 origDate: 2018-09-20
 pubDate: 2026-03-08T16:47
 ---
