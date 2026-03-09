@@ -57,7 +57,7 @@
     "sharp-cli": "^5.2.0",
     "strip-markdown": "^6.0.0",
     "svelte": "^5.53.7",
-    "svelte-check": "^4.4.4",
+    "svelte-check": "^4.4.5",
     "svelte-toc": "^0.6.3",
     "sveltekit-view-transition": "^0.5.3",
     "tailwind-merge": "^3.5.0",
