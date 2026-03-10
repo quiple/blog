@@ -10,6 +10,7 @@
 }
 
 :root {
+  --font-weight-bold: 675;
   --font-sans: Geist-web, IBMPlexSansJP-web, Asta Sans, Noto Sans KR, ui-sans-serif, system-ui, sans-serif;
   --font-ja:
     Geist-web, IBMPlexSansJP-web, Asta Sans, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo,
@@ -133,7 +134,7 @@
     @apply border-border text-wrap underline-offset-[.25em] outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-[375] text-foreground;
   }
   [lang^='ja'] {
     font-family: var(--font-ja);
