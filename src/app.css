@@ -10,12 +10,12 @@
 }
 
 :root {
-  --font-sans: Geist-Variable, IBMPlexSansJP-web, IBMPlexSansKR-web, Noto Sans KR, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: Geist-web, IBMPlexSansJP-web, Asta Sans, Noto Sans KR, ui-sans-serif, system-ui, sans-serif;
   --font-ja:
-    Geist-Variable, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo, ui-sans-serif,
-    system-ui, sans-serif;
-  --font-zhHans: Geist-Variable, PingFang SC, Noto Sans SC, Microsoft YaHei UI, ui-sans-serif, system-ui, sans-serif;
-  --font-zhHant: Geist-Variable, PingFang TC, Noto Sans TC, Microsoft JhengHei UI, ui-sans-serif, system-ui, sans-serif;
+    Geist-web, IBMPlexSansJP-web, Asta Sans, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo,
+    ui-sans-serif, system-ui, sans-serif;
+  --font-zhHans: Geist-web, PingFang SC, Noto Sans SC, Microsoft YaHei UI, ui-sans-serif, system-ui, sans-serif;
+  --font-zhHant: Geist-web, PingFang TC, Noto Sans TC, Microsoft JhengHei UI, ui-sans-serif, system-ui, sans-serif;
   --default-font-feature-settings: 'palt' 1, 'ss01' 1, 'ss03' 1;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -186,16 +186,16 @@
 @utility prose-shadcn {
   @apply prose max-w-none prose-zinc dark:prose-invert;
   h1 {
-    @apply scroll-m-(--header-height) text-2xl leading-tight font-bold tracking-tight text-pretty break-keep md:text-3xl lg:text-4xl;
+    @apply scroll-m-(--header-height) text-2xl leading-tight font-extrabold tracking-tight text-pretty break-keep md:text-3xl lg:text-4xl;
   }
   h2 {
-    @apply scroll-m-(--header-height) border-b pb-3 text-xl leading-snug font-semibold tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
+    @apply scroll-m-(--header-height) border-b pb-3 text-xl leading-snug font-bold tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
   }
   h3 {
-    @apply scroll-m-(--header-height) text-lg font-semibold tracking-tight md:text-xl lg:text-2xl;
+    @apply scroll-m-(--header-height) text-lg font-bold tracking-tight md:text-xl lg:text-2xl;
   }
   h4 {
-    @apply scroll-m-(--header-height) text-base font-semibold tracking-tight md:text-lg lg:text-xl;
+    @apply scroll-m-(--header-height) text-base font-bold tracking-tight md:text-lg lg:text-xl;
   }
   p {
     @apply text-justify leading-6 sm:leading-7;
@@ -222,7 +222,7 @@
     @apply text-sm leading-none;
   }
   a {
-    @apply scroll-m-(--header-height) decoration-[.1rem] transition-[text-decoration-thickness] hover:decoration-[.2rem];
+    @apply scroll-m-(--header-height) decoration-[1.5px] transition-[text-decoration-thickness] hover:decoration-2;
   }
   figcaption {
     @apply text-justify;

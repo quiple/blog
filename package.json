@@ -36,7 +36,6 @@
     "gray-matter": "^4.0.3",
     "husky": "^9.1.7",
     "mode-watcher": "^1.1.0",
-    "non.geist": "github:quiple/non.geist",
     "oxlint": "^1.52.0",
     "oxlint-tsgolint": "^0.16.0",
     "prettier": "^3.8.1",

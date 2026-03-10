@@ -1,7 +1,6 @@
 <script lang="ts">
   import '#app.css'
   import '#fonts.sass'
-  import 'non.geist'
   import appleTouchIcon from '$lib/assets/apple-touch-icon.png'
   import favicon32 from '$lib/assets/favicon.png'
   import favicon from '$lib/assets/favicon.svg'
