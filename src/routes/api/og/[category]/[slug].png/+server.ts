@@ -2,9 +2,9 @@ import type {ComponentProps} from 'svelte'
 import {ImageResponse} from '@ethercorps/sveltekit-og'
 import {CustomFont, resolveFonts} from '@ethercorps/sveltekit-og/fonts'
 import {read} from '$app/server'
-import geistBoldFontPath from '$lib/assets/fonts/Geist-Bold.otf?url'
-import plexSansJPBoldFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
-import plexSansKRBoldFontPath from '$lib/assets/fonts/IBMPlexSansKR-Bold.otf?url'
+import astaSansFontPath from '$lib/assets/fonts/AstaSans-ExtraBold.ttf?url'
+import geistFontPath from '$lib/assets/fonts/Geist-SemiBold.otf?url'
+import plexSansJPFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
 import OgImage from '$lib/components/og/post.svelte'
 import {blogArticles, blogFonts, blogPosts} from '$lib/content'
 import {processTitle} from '$lib/markdown'
@@ -24,20 +24,20 @@ export const entries: EntryGenerator = () => {
 
 export const prerender = true
 
-const geistBold = new CustomFont('Geist', () => read(geistBoldFontPath).arrayBuffer(), {
-  weight: 700,
+const geist = new CustomFont('Geist', () => read(geistFontPath).arrayBuffer(), {
+  weight: 800,
 })
 
-const plexSansKRBold = new CustomFont('IBM Plex Sans KR', () => read(plexSansKRBoldFontPath).arrayBuffer(), {
-  weight: 700,
+const astaSans = new CustomFont('IBM Plex Sans KR', () => read(astaSansFontPath).arrayBuffer(), {
+  weight: 800,
 })
 
-const plexSansJPBold = new CustomFont('IBM Plex Sans JP', () => read(plexSansJPBoldFontPath).arrayBuffer(), {
-  weight: 700,
+const plexSansJP = new CustomFont('IBM Plex Sans JP', () => read(plexSansJPFontPath).arrayBuffer(), {
+  weight: 800,
 })
 
 export const GET: RequestHandler = async ({params}) => {
-  const resolvedFontOptions = await resolveFonts([geistBold, plexSansKRBold, plexSansJPBold])
+  const resolvedFontOptions = await resolveFonts([geist, astaSans, plexSansJP])
 
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
