@@ -137,7 +137,7 @@
           {
             dateStyle: 'long',
           },
-        ).format(Date.parse(`${publishedDate}+09:00`))}'`
+        ).format(typeof publishedDate === 'object' ? (publishedDate as Date) : Date.parse(`${publishedDate}+09:00`))}'`
       : null}
     use:transition={`post-metadata-${data.slug}`}
   >
