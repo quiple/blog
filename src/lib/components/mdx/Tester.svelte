@@ -5,6 +5,7 @@
   import {Slider} from '$lib/components/ui/slider/index.js'
   import {Textarea} from '$lib/components/ui/textarea/index.js'
 
+  let {font}: {font?: string} = $props()
   let fontSize = $state(24)
 
   function pickRandom<T>(set: Set<T>, previous?: T): T {
@@ -194,8 +195,8 @@
   </div>
   <Textarea
     id="tester"
-    class="font-['x12y12pxMaruMinyaHangul-web'] leading-none pl-[calc(1em/12*4)] pb-[calc(1em/12*4)] pt-[calc(1em/12*3)] pr-[calc(1em/12*3)]"
-    style="font-size: {fontSize}px"
+    class="leading-none pl-[calc(1em/12*4)] pb-[calc(1em/12*4)] pt-[calc(1em/12*3)] pr-[calc(1em/12*3)]"
+    style="font-size: {fontSize}px; font-family: {font === 'maruminya' ? 'x12y12pxMaruMinyaHangul-web' : ''}"
     spellcheck="false"
     bind:value={exampleText}
   />
@@ -204,7 +205,7 @@
 <style lang="sass">
   @font-face
     font:
-      family: 'x12y12pxMaruMinyaHangul-web'
+      family: x12y12pxMaruMinyaHangul-web
       style: normal
       weight: 400
       display: block
