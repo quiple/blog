@@ -7,9 +7,25 @@
   import {Textarea} from '$lib/components/ui/textarea/index.js'
 
   let {font}: {font?: string} = $props()
-  let fontSize = $state(12)
   let selectedFontValue = $state('g11')
-  let previewFontSize = $derived(fontSize * 2)
+  const fontSize = $derived.by(() => {
+    switch (selectedFontValue) {
+      case 'g14':
+        return 15
+      case 'g9':
+      case 'gm9':
+        return 10
+      case 'g7':
+      case 'gm7':
+        return 8
+      default:
+        return 12
+    }
+  })
+  let previewFontSize = $state(24)
+  $effect(() => {
+    previewFontSize = fontSize * 2
+  })
 
   const galmuris = [
     {value: 'g14', label: 'Galmuri14'},
