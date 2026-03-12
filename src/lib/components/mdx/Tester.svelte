@@ -2,11 +2,70 @@
   import {Shuffle} from '@lucide/svelte'
   import {Button} from '$lib/components/ui/button/index.js'
   import {Label} from '$lib/components/ui/label/index.js'
+  import * as Select from '$lib/components/ui/select/index.js'
   import {Slider} from '$lib/components/ui/slider/index.js'
   import {Textarea} from '$lib/components/ui/textarea/index.js'
 
   let {font}: {font?: string} = $props()
-  let fontSize = $state(24)
+  let fontSize = $state(12)
+  let selectedFontValue = $state('g11')
+  let previewFontSize = $derived(fontSize * 2)
+  let previewFontFamily = $derived(font === 'maruminya' ? 'x12y12pxMaruMinyaHangul-web' : 'Galmuri11-web')
+  let previewFontWeight = $state(400)
+  let previewFontWidth = $state('normal')
+
+  const galmuris = [
+    {value: 'g14', label: 'Galmuri14'},
+    {value: 'g11', label: 'Galmuri11'},
+    {value: 'g11b', label: 'Galmuri11 Bold'},
+    {value: 'g11c', label: 'Galmuri11 Condensed'},
+    {value: 'g9', label: 'Galmuri9'},
+    {value: 'g7', label: 'Galmuri7'},
+    {value: 'gm11', label: 'GalmuriMono11'},
+    {value: 'gm9', label: 'GalmuriMono9'},
+    {value: 'gm7', label: 'GalmuriMono7'},
+  ]
+
+  switch (selectedFontValue) {
+    case 'g14':
+      previewFontFamily = 'Galmuri14-web'
+      previewFontWeight = 400
+      previewFontWidth = 'normal'
+    case 'g11':
+      previewFontFamily = 'Galmuri11-web'
+      previewFontWeight = 400
+      previewFontWidth = 'normal'
+    case 'g11b':
+      previewFontFamily = 'Galmuri11-web'
+      previewFontWeight = 700
+      previewFontWidth = 'normal'
+    case 'g11c':
+      previewFontFamily = 'Galmuri11-web'
+      previewFontWeight = 400
+      previewFontWidth = 'condensed'
+    case 'g9':
+      previewFontFamily = 'Galmuri9-web'
+      previewFontWeight = 400
+      previewFontWidth = 'normal'
+    case 'g7':
+      previewFontFamily = 'Galmuri7-web'
+      previewFontWeight = 400
+      previewFontWidth = 'normal'
+    case 'gm11':
+      previewFontFamily = 'GalmuriMono11-web'
+      previewFontWeight = 400
+      previewFontWidth = 'normal'
+    case 'gm9':
+      previewFontFamily = 'GalmuriMono9-web'
+      previewFontWeight = 400
+      previewFontWidth = 'normal'
+    case 'gm7':
+      previewFontFamily = 'GalmuriMono7-web'
+      previewFontWeight = 400
+      previewFontWidth = 'normal'
+  }
+
+  const triggerContent = $derived(galmuris.find((f) => f.value === selectedFontValue)?.label ?? '폰트 선택')
 
   function pickRandom<T>(set: Set<T>, previous?: T): T {
     const arr = [...set].filter((item) => item !== previous)
@@ -185,10 +244,26 @@
 </script>
 
 <div class="grid w-full print:gap-1.5">
-  <Label for="tester">사용해 보기</Label>
+  <div class="flex gap-2">
+    <Label for="tester">사용해 보기</Label>
+    {#if font === 'galmuri'}
+      <Select.Root type="single" name="favoriteFruit" bind:value={selectedFontValue}>
+        <Select.Trigger size="sm">
+          {triggerContent}
+        </Select.Trigger>
+        <Select.Content>
+          {#each galmuris as font (font.value)}
+            <Select.Item value={font.value} label={font.label}>
+              {font.label}
+            </Select.Item>
+          {/each}
+        </Select.Content>
+      </Select.Root>
+    {/if}
+  </div>
   <div class="flex gap-1.5 items-center tabular-nums print:hidden">
-    <Label for="font-size" class="text-muted-foreground">{fontSize}px</Label>
-    <Slider id="font-size" type="single" bind:value={fontSize} min={12} max={96} step={12} />
+    <Label for="font-size" class="text-muted-foreground">{previewFontSize}px</Label>
+    <Slider id="font-size" type="single" bind:value={previewFontSize} min={fontSize} max={96} step={fontSize} />
     <Button variant="ghost" size="icon-sm" onclick={shuffle} class="-mx-1.5">
       <Shuffle />
     </Button>
@@ -196,7 +271,7 @@
   <Textarea
     id="tester"
     class="leading-none pl-[calc(1em/12*4)] pb-[calc(1em/12*4)] pt-[calc(1em/12*3)] pr-[calc(1em/12*3)]"
-    style="font-size: {fontSize}px; font-family: {font === 'maruminya' ? 'x12y12pxMaruMinyaHangul-web' : ''}"
+    style="font-size: {previewFontSize}px; font-family: {previewFontFamily}; font-weight: {previewFontWeight}; font-width: {previewFontWidth}"
     spellcheck="false"
     bind:value={exampleText}
   />
