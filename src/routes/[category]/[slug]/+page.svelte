@@ -4,6 +4,7 @@
   import MdxContent from '$lib/components/mdx/MdxContent.svelte'
   import * as Tooltip from '$lib/components/ui/tooltip/index.js'
   import {BASE_URL} from '$lib/constants'
+  import {heroColors} from '$lib/stores/header'
   import {mode} from 'mode-watcher'
   import type {PageProps} from './$types'
   import 'remark-github-alerts/styles/github-colors-light.css'
@@ -63,6 +64,18 @@
     }),
   )
 
+  $effect(() => {
+    heroColors.set({
+      foreground: image ? `#${data.imageForeground?.toString() ?? '09090b'}` : null,
+      outline: data.outline ? `#${data.outline.toString()}` : null,
+    })
+    return () =>
+      heroColors.set({
+        foreground: null,
+        outline: null,
+      })
+  })
+
   onMount(() => {
     const tweets = document.querySelectorAll('.twitter-tweet')
 
@@ -99,7 +112,6 @@
   <link rel="canonical" href={data.canonicalURL} />
   {@html `<script type="application/ld+json">${jsonLd}</script>`}
 
-  <!-- {#if image || data.outline} -->
   {@html `
     <style>
       ::view-transition-group(post-title-${data.slug}),
@@ -115,13 +127,8 @@
       ::view-transition-new(post-image-${data.slug}) {
         animation-name: zoom-in-new;
       }
-      :root {
-        ${image && `--hero-foreground: #${data.imageForeground?.toString() ?? '09090b'};`}
-        ${data.outline ? `--outline-color: #${data.outline.toString()};` : ''}
-      }
     </style>
   `}
-  <!-- {/if} -->
 </svelte:head>
 
 <svelte:window bind:scrollY />
@@ -179,7 +186,11 @@
     style:background-position={`center calc(${data.imageVerticalAlign ?? 50}% + ${scrollY * 0.5}px)`}
     use:transition={`post-image-${data.slug}`}
   ></div>
-  <div class={['hero title', data.outline && 'line']}>
+  <div
+    class={['hero title', data.outline && 'line']}
+    style:--hero-foreground={`#${data.imageForeground?.toString() ?? '09090b'}`}
+    style:--outline-color={data.outline ? `#${data.outline.toString()}` : undefined}
+  >
     <div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
         {data.title}
