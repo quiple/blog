@@ -10,9 +10,6 @@
   let fontSize = $state(12)
   let selectedFontValue = $state('g11')
   let previewFontSize = $derived(fontSize * 2)
-  let previewFontFamily = $derived(font === 'maruminya' ? 'x12y12pxMaruMinyaHangul-web' : 'Galmuri11-web')
-  let previewFontWeight = $state(400)
-  let previewFontWidth = $state('normal')
 
   const galmuris = [
     {value: 'g14', label: 'Galmuri14'},
@@ -26,44 +23,31 @@
     {value: 'gm7', label: 'GalmuriMono7'},
   ]
 
-  switch (selectedFontValue) {
-    case 'g14':
-      previewFontFamily = 'Galmuri14-web'
-      previewFontWeight = 400
-      previewFontWidth = 'normal'
-    case 'g11':
-      previewFontFamily = 'Galmuri11-web'
-      previewFontWeight = 400
-      previewFontWidth = 'normal'
-    case 'g11b':
-      previewFontFamily = 'Galmuri11-web'
-      previewFontWeight = 700
-      previewFontWidth = 'normal'
-    case 'g11c':
-      previewFontFamily = 'Galmuri11-web'
-      previewFontWeight = 400
-      previewFontWidth = 'condensed'
-    case 'g9':
-      previewFontFamily = 'Galmuri9-web'
-      previewFontWeight = 400
-      previewFontWidth = 'normal'
-    case 'g7':
-      previewFontFamily = 'Galmuri7-web'
-      previewFontWeight = 400
-      previewFontWidth = 'normal'
-    case 'gm11':
-      previewFontFamily = 'GalmuriMono11-web'
-      previewFontWeight = 400
-      previewFontWidth = 'normal'
-    case 'gm9':
-      previewFontFamily = 'GalmuriMono9-web'
-      previewFontWeight = 400
-      previewFontWidth = 'normal'
-    case 'gm7':
-      previewFontFamily = 'GalmuriMono7-web'
-      previewFontWeight = 400
-      previewFontWidth = 'normal'
-  }
+  const fontProps = $derived.by(() => {
+    if (font === 'maruminya') {
+      return {family: 'x12y12pxMaruMinyaHangul-web', weight: 400, width: 'normal'}
+    }
+    switch (selectedFontValue) {
+      case 'g14':
+        return {family: 'Galmuri14-web', weight: 400, width: 'normal'}
+      case 'g11b':
+        return {family: 'Galmuri11-web', weight: 700, width: 'normal'}
+      case 'g11c':
+        return {family: 'Galmuri11-web', weight: 400, width: 'condensed'}
+      case 'g9':
+        return {family: 'Galmuri9-web', weight: 400, width: 'normal'}
+      case 'g7':
+        return {family: 'Galmuri7-web', weight: 400, width: 'normal'}
+      case 'gm11':
+        return {family: 'GalmuriMono11-web', weight: 400, width: 'normal'}
+      case 'gm9':
+        return {family: 'GalmuriMono9-web', weight: 400, width: 'normal'}
+      case 'gm7':
+        return {family: 'GalmuriMono7-web', weight: 400, width: 'normal'}
+      default:
+        return {family: 'Galmuri11-web', weight: 400, width: 'normal'}
+    }
+  })
 
   const triggerContent = $derived(galmuris.find((f) => f.value === selectedFontValue)?.label ?? '폰트 선택')
 
@@ -271,7 +255,7 @@
   <Textarea
     id="tester"
     class="leading-none pl-[calc(1em/12*4)] pb-[calc(1em/12*4)] pt-[calc(1em/12*3)] pr-[calc(1em/12*3)]"
-    style="font-size: {previewFontSize}px; font-family: {previewFontFamily}; font-weight: {previewFontWeight}; font-width: {previewFontWidth}"
+    style="font-size: {previewFontSize}px; font-family: {fontProps.family}; font-weight: {fontProps.weight}; font-width: {fontProps.width}"
     spellcheck="false"
     bind:value={exampleText}
   />
