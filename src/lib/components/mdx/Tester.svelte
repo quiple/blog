@@ -23,8 +23,10 @@
     }
   })
   let previewFontSize = $state(24)
+  let previewFontSizeMax = $state(96)
   $effect(() => {
     previewFontSize = fontSize * 2
+    previewFontSizeMax = fontSize * 8
   })
 
   const galmuris = [
@@ -263,7 +265,14 @@
   </div>
   <div class="flex gap-1.5 items-center tabular-nums print:hidden">
     <Label for="font-size" class="text-muted-foreground">{previewFontSize}px</Label>
-    <Slider id="font-size" type="single" bind:value={previewFontSize} min={fontSize} max={96} step={fontSize} />
+    <Slider
+      id="font-size"
+      type="single"
+      bind:value={previewFontSize}
+      min={fontSize}
+      max={previewFontSizeMax}
+      step={fontSize}
+    />
     <Button variant="ghost" size="icon-sm" onclick={shuffle} class="-mx-1.5">
       <Shuffle />
     </Button>
