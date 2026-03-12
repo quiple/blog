@@ -62,11 +62,12 @@ export const load: PageServerLoad = async ({params}) => {
   ).toString()
 
   const articleData = isArticle ? (postMetaData as ReturnType<typeof getArticleMetadataFromMatter>) : undefined
+  const fontData = isFont ? (postMetaData as ReturnType<typeof getFontMetadataFromMatter>) : undefined
 
   return {
     ...postMetaData,
     contentHtml,
-    origDate: articleData?.origDate,
+    origDate: articleData?.origDate ?? fontData?.origDate,
     media: articleData?.media,
     source: articleData?.source,
     author: articleData?.author,
