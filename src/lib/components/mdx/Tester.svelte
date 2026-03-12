@@ -25,27 +25,27 @@
 
   const fontProps = $derived.by(() => {
     if (font === 'maruminya') {
-      return {family: 'x12y12pxMaruMinyaHangul-web', weight: 400, width: 'normal'}
+      return {family: 'x12y12pxMaruMinyaHangul-web', weight: 400, stretch: 'normal'}
     }
     switch (selectedFontValue) {
       case 'g14':
-        return {family: 'Galmuri14-web', weight: 400, width: 'normal'}
+        return {family: 'Galmuri14-web', weight: 400, stretch: 'normal'}
       case 'g11b':
-        return {family: 'Galmuri11-web', weight: 700, width: 'normal'}
+        return {family: 'Galmuri11-web', weight: 700, stretch: 'normal'}
       case 'g11c':
-        return {family: 'Galmuri11-web', weight: 400, width: 'condensed'}
+        return {family: 'Galmuri11-web', weight: 400, stretch: 'condensed'}
       case 'g9':
-        return {family: 'Galmuri9-web', weight: 400, width: 'normal'}
+        return {family: 'Galmuri9-web', weight: 400, stretch: 'normal'}
       case 'g7':
-        return {family: 'Galmuri7-web', weight: 400, width: 'normal'}
+        return {family: 'Galmuri7-web', weight: 400, stretch: 'normal'}
       case 'gm11':
-        return {family: 'GalmuriMono11-web', weight: 400, width: 'normal'}
+        return {family: 'GalmuriMono11-web', weight: 400, stretch: 'normal'}
       case 'gm9':
-        return {family: 'GalmuriMono9-web', weight: 400, width: 'normal'}
+        return {family: 'GalmuriMono9-web', weight: 400, stretch: 'normal'}
       case 'gm7':
-        return {family: 'GalmuriMono7-web', weight: 400, width: 'normal'}
+        return {family: 'GalmuriMono7-web', weight: 400, stretch: 'normal'}
       default:
-        return {family: 'Galmuri11-web', weight: 400, width: 'normal'}
+        return {family: 'Galmuri11-web', weight: 400, stretch: 'normal'}
     }
   })
 
@@ -255,13 +255,16 @@
   <Textarea
     id="tester"
     class="leading-none pl-[calc(1em/12*4)] pb-[calc(1em/12*4)] pt-[calc(1em/12*3)] pr-[calc(1em/12*3)]"
-    style="font-size: {previewFontSize}px; font-family: {fontProps.family}; font-weight: {fontProps.weight}; font-width: {fontProps.width}"
+    style="font-size: {previewFontSize}px; font-family: {fontProps.family}; font-weight: {fontProps.weight}; font-stretch: {fontProps.stretch}"
     spellcheck="false"
     bind:value={exampleText}
   />
 </div>
 
 <style lang="sass">
+  $fonts: 14 14, 11 11, 11 11-Bold, 11 11-Condensed, 9 9, 7 7, Mono11 Mono11, Mono9 Mono9, Mono7 Mono7
+  $path: 'fonts/galmuri'
+
   @font-face
     font:
       family: x12y12pxMaruMinyaHangul-web
@@ -269,4 +272,20 @@
       weight: 400
       display: block
     src: url('/fonts/x12y12pxMaruMinyaHangul.woff2') format('woff2')
+
+  @each $family, $file in $fonts
+    @font-face
+      font:
+        family: Galmuri#{$family}-web
+        style: normal
+        @if $file == 11-Condensed
+          stretch: condensed
+        @else
+          stretch: normal
+        @if $file == 11-Bold
+          weight: 700
+        @else
+          weight: 400
+        display: block
+      src: url('/#{$path}/Galmuri#{$file}.woff2') format('woff2')
 </style>
