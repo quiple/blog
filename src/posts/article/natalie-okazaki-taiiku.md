@@ -9,7 +9,7 @@ originalImage: header-bg1.png
 imageVerticalAlign: 30
 imageForeground: fff
 origDate: 2016-05-18
-pubDate: 2026-03-12T23:00
+pubDate: 2026-03-12T11:41
 ---
 
 최근 유튜브에서 공개되어, 뮤직비디오의 '클리셰'를 표현한 신곡 〈MUSIC VIDEO〉의 MV가 화제를 모으고 있는 오카자키 타이이쿠(岡崎体育). 그는 자신이 만드는 음악을 '분지 테크노(盆地テクノ)'라고 정의하고, 그 전도사로서 2012년부터 간사이 지역을 중심으로 활동하고 있다.
