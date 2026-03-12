@@ -9,7 +9,7 @@
   import {Button} from '$lib/components/ui/button/index'
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index'
   import {Input} from '$lib/components/ui/input/index'
-  import {isHero} from '$lib/stores/header'
+  import {heroColors, isHero} from '$lib/stores/header'
   import {mode, toggleMode} from 'mode-watcher'
   import {setupViewTransition} from 'sveltekit-view-transition'
 
@@ -44,7 +44,12 @@
 
 <svelte:window on:keydown={onKeydown} on:scroll={onScroll} />
 
-<header class={headerClassName} use:transition={'header'}>
+<header
+  class={headerClassName}
+  use:transition={'header'}
+  style:--hero-foreground={$heroColors.foreground ?? undefined}
+  style:--outline-color={$heroColors.outline ?? undefined}
+>
   <section>
     <div class="flex gap-2">
       <a href="/" class="logo" style={`--svgOutline: url("${svgOutline}"); --svgGradeDown: url("${svgGradeDown}")`}>
