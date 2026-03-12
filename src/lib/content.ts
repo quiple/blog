@@ -64,6 +64,7 @@ export const blogArticleMetadataSchema = v.object({
 
 export const blogFontMetadataSchema = v.object({
   ...baseMetadataFields,
+  origDate: v.optional(v.union([v.pipe(v.date()), v.pipe(v.string(), v.isoDateTime(), v.trim())])),
 })
 
 // --- Generic metadata helpers ---
