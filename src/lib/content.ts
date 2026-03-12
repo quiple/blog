@@ -144,7 +144,7 @@ export function getAllBlogContentMetadata() {
   }))
   const fonts = getBlogFontsMetadata().map((f) => ({
     ...f,
-    origDate: undefined as undefined,
+    origDate: f.origDate,
     media: undefined as string | undefined,
   }))
 
