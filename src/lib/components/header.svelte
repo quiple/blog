@@ -16,6 +16,9 @@
   let query = $state('')
   let inputElement = $state<HTMLInputElement | null>(null)
   let headerClassName = $derived($isHero === true ? 'hero' : '')
+  let logoMaskImage = $derived(
+    $heroColors.foreground === '#fff' ? ($heroColors.outline ? 'none' : 'var(--svg-grade-down)') : 'none',
+  )
 
   const {transition} = setupViewTransition()
 
@@ -49,6 +52,7 @@
   use:transition={'header'}
   style:--hero-foreground={$heroColors.foreground ?? undefined}
   style:--outline-color={$heroColors.outline ?? undefined}
+  style:--logo-mask-image={logoMaskImage}
 >
   <section>
     <div class="flex gap-2">
@@ -92,13 +96,7 @@
 
   @media print
     header .logo
-      mask-image: if(
-        style(--hero-foreground: #fff): if(
-          style(--outline-color): none;
-          else: var(--svg-grade-down);
-        );
-        else: none;
-      ) !important
+      mask-image: var(--logo-mask-image) !important
 
   header
     @apply relative md:sticky top-0 py-4 sm:py-6 z-1 [print-color-adjust:exact] print:text-(--hero-foreground)
@@ -109,13 +107,7 @@
       .logo, :global(.menu)
         @apply before:opacity-100
       .logo
-        mask-image: if(
-          style(--hero-foreground: #fff): if(
-            style(--outline-color): none;
-            else: var(--svg-grade-down);
-          );
-          else: none;
-        ) !important
+        mask-image: var(--logo-mask-image) !important
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-8
       .logo
