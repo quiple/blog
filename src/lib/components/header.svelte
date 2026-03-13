@@ -17,7 +17,7 @@
   let inputElement = $state<HTMLInputElement | null>(null)
   let headerClassName = $derived($isHero === true ? 'hero' : '')
   let logoMaskImage = $derived(
-    $heroColors.foreground === '#fff' ? ($heroColors.outline ? 'none' : 'var(--svg-grade-down)') : 'none',
+    $heroColors.foreground === '#fff' ? ($heroColors.outline ? 'none' : `url("${svgGradeDown}")`) : 'none',
   )
 
   const {transition} = setupViewTransition()
