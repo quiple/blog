@@ -52,7 +52,7 @@
 >
   <section>
     <div class="flex gap-2">
-      <a href="/" class="logo" style={`--svgOutline: url("${svgOutline}"); --svgGradeDown: url("${svgGradeDown}")`}>
+      <a href="/" class="logo" style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}")`}>
         <Q class="size-9" />
       </a>
     </div>
@@ -67,7 +67,7 @@
               size="icon"
               variant="ghost"
               aria-label="메뉴"
-              style={`--svgOutline: url("${menu}")`}
+              style={`--svg-outline: url("${menu}")`}
             >
               <Menu class="size-6" />
             </Button>
@@ -95,7 +95,7 @@
       mask-image: if(
         style(--hero-foreground: #fff): if(
           style(--outline-color): none;
-          else: var(--svgGradeDown);
+          else: var(--svg-grade-down);
         );
         else: none;
       ) !important
@@ -112,7 +112,7 @@
         mask-image: if(
           style(--hero-foreground: #fff): if(
             style(--outline-color): none;
-            else: var(--svgGradeDown);
+            else: var(--svg-grade-down);
           );
           else: none;
         ) !important
@@ -123,5 +123,5 @@
       :global(.menu)
         @apply relative before:mask-size-[24px] print:hidden
       .logo, :global(.menu)
-        @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:mask-(--svgOutline) before:mask-center before:mask-no-repeat dark:mask-(--svgGradeDown) mask-center mask-[size:36px] mask-no-repeat
+        @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:mask-(--svg-outline) before:mask-center before:mask-no-repeat dark:mask-(--svg-grade-down) mask-center mask-[size:36px] mask-no-repeat
 </style>
