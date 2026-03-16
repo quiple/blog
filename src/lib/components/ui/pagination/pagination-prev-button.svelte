@@ -9,7 +9,7 @@
 
 {#snippet Fallback()}
   <ChevronLeftIcon class="size-4" />
-  <span>Previous</span>
+  <span>이전</span>
 {/snippet}
 
 <PaginationPrimitive.PrevButton
