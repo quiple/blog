@@ -119,7 +119,7 @@
       count={data.totalPages * 15}
       perPage={15}
       page={data.currentPage}
-      onPageChange={(page) => goto(`?page=${page}`)}
+      onPageChange={(page) => goto(`?p=${page}`)}
       class="my-4"
     >
       {#snippet children({pages, currentPage})}
