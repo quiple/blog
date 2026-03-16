@@ -3,19 +3,28 @@ import {generateDescription, processTitle} from '$lib/markdown'
 import matter from 'gray-matter'
 import type {PageServerLoad} from './$types'
 
-export const load: PageServerLoad = async () => {
+const PER_PAGE = 15
+
+export const load: PageServerLoad = async ({url}) => {
   const title = 'quiple'
   const description = '번역 블로그.'
-  const posts = getAllBlogContentMetadata()
+  const allPosts = getAllBlogContentMetadata()
 
-  for (let i = 0; i < posts.length; i++) {
-    const matchPath = `/src/posts/${posts[i].category}/${posts[i].slug}.md`
+  for (let i = 0; i < allPosts.length; i++) {
+    const matchPath = `/src/posts/${allPosts[i].category}/${allPosts[i].slug}.md`
     const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
     const {content} = matter(rawContent as string)
 
-    posts[i].title = await processTitle(posts[i].title)
-    posts[i].description = posts[i].description ?? (await generateDescription(content))
+    allPosts[i].title = await processTitle(allPosts[i].title)
+    allPosts[i].description = allPosts[i].description ?? (await generateDescription(content))
   }
 
-  return {title, description, posts}
+  const totalPages = Math.max(1, Math.ceil(allPosts.length / PER_PAGE))
+  let currentPage = Number(url.searchParams.get('page')) || 1
+  currentPage = Math.max(1, Math.min(currentPage, totalPages))
+
+  const start = (currentPage - 1) * PER_PAGE
+  const posts = allPosts.slice(start, start + PER_PAGE)
+
+  return {title, description, posts, currentPage, totalPages}
 }
