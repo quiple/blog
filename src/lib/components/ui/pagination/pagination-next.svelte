@@ -20,6 +20,6 @@
   )}
   {...restProps}
 >
-  <span class="hidden sm:block">Next</span>
+  <span class="hidden sm:block">다음</span>
   <ChevronRightIcon /></PaginationPrimitive.NextButton
 >
