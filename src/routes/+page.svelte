@@ -7,7 +7,25 @@
 
   let {data}: PageProps = $props()
 
-  const {transition} = setupViewTransition()
+  const {transition, classes} = setupViewTransition()
+
+  function isPagination(navigation: {
+    from?: {route: {id: string | null}} | null
+    to?: {route: {id: string | null}} | null
+  }) {
+    return navigation?.from?.route?.id === '/' && navigation?.to?.route?.id === '/'
+  }
+
+  function isGoingForward(navigation: {from?: {url?: URL | null} | null; to?: {url?: URL | null} | null}) {
+    const fromPage = Number(navigation?.from?.url?.searchParams?.get('page')) || 1
+    const toPage = Number(navigation?.to?.url?.searchParams?.get('page')) || 1
+    return toPage > fromPage
+  }
+
+  classes(({navigation}) => {
+    if (!isPagination(navigation)) return
+    return isGoingForward(navigation) ? ['paginate-forward'] : ['paginate-backward']
+  })
 </script>
 
 <svelte:head>
@@ -21,18 +39,40 @@
 </svelte:head>
 
 <div class="max-w-xl 2xl:max-w-2xl mx-auto">
-  <ul class="flex flex-col z-10 relative">
+  <ul class="flex flex-col z-10 relative" use:transition={'post-list'}>
     {#each data.posts as post}
       {@const displayDate =
         post.origDate instanceof Date ? post.origDate : new Date(`${post.origDate ?? post.pubDate}+09:00`)}
       <li>
         <a href={post.relativeURL} class="list-item">
           <div class="grow">
-            <strong class="line-clamp-1 mb-1" use:transition={`post-title-${post.slug}`}>{post.title}</strong>
+            <strong
+              class="line-clamp-1 mb-1"
+              use:transition={{
+                name: `post-title-${post.slug}`,
+                shouldApply({navigation}) {
+                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
+                },
+                applyImmediately({navigation}) {
+                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
+                },
+              }}>{post.title}</strong
+            >
             <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
-            <small class="text-muted-foreground" use:transition={`post-metadata-${post.slug}`}>
+            <small
+              class="text-muted-foreground"
+              use:transition={{
+                name: `post-metadata-${post.slug}`,
+                shouldApply({navigation}) {
+                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
+                },
+                applyImmediately({navigation}) {
+                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
+                },
+              }}
+            >
               {#if post.media}
-                {post.media}&#8194;&bullet;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
+                {post.media}&#8194;&#8226;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
                 displayDate,
               )}
             </small>
@@ -61,10 +101,10 @@
               use:transition={{
                 name: `post-image-${post.slug}`,
                 shouldApply({navigation}) {
-                  return navigation?.to?.params?.slug === post.slug
+                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
                 },
                 applyImmediately({navigation}) {
-                  return navigation?.from?.params?.slug === post.slug
+                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
                 },
               }}
             ></div>
@@ -109,6 +149,23 @@
   {/if}
 </div>
 
+{@html `
+  <style>
+    .paginate-forward::view-transition-old(post-list) {
+      animation: paginate-slide-to-left-old 0.25s ease both;
+    }
+    .paginate-forward::view-transition-new(post-list) {
+      animation: paginate-slide-to-left-new 0.25s ease both;
+    }
+    .paginate-backward::view-transition-old(post-list) {
+      animation: paginate-slide-to-right-old 0.25s ease both;
+    }
+    .paginate-backward::view-transition-new(post-list) {
+      animation: paginate-slide-to-right-new 0.25s ease both;
+    }
+  </style>
+`}
+
 <style lang="sass">
   @reference '#app.css'
 
@@ -127,6 +184,38 @@
     to
       opacity: 1
       height: 5.5rem
+
+  @keyframes -global-paginate-slide-to-left-old
+    from
+      opacity: 1
+      transform: translateX(0)
+    to
+      opacity: 0
+      transform: translateX(-60px)
+
+  @keyframes -global-paginate-slide-to-left-new
+    from
+      opacity: 0
+      transform: translateX(60px)
+    to
+      opacity: 1
+      transform: translateX(0)
+
+  @keyframes -global-paginate-slide-to-right-old
+    from
+      opacity: 1
+      transform: translateX(0)
+    to
+      opacity: 0
+      transform: translateX(60px)
+
+  @keyframes -global-paginate-slide-to-right-new
+    from
+      opacity: 0
+      transform: translateX(-60px)
+    to
+      opacity: 1
+      transform: translateX(0)
 
   .list-item
     @apply flex gap-4 before:rounded-xl py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-xl hover-bg-muted
