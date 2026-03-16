@@ -8,7 +8,7 @@
 </script>
 
 {#snippet Fallback()}
-  <span>Next</span>
+  <span>다음</span>
   <ChevronRightIcon class="size-4" />
 {/snippet}
 
