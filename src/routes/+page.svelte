@@ -120,7 +120,7 @@
       perPage={15}
       page={data.currentPage}
       onPageChange={(page) => goto(`?page=${page}`)}
-      class="mt-6 mb-2"
+      class="my-4"
     >
       {#snippet children({pages, currentPage})}
         <Pagination.Content>
