@@ -17,8 +17,8 @@
   }
 
   function isGoingForward(navigation: {from?: {url?: URL | null} | null; to?: {url?: URL | null} | null}) {
-    const fromPage = Number(navigation?.from?.url?.searchParams?.get('page')) || 1
-    const toPage = Number(navigation?.to?.url?.searchParams?.get('page')) || 1
+    const fromPage = Number(navigation?.from?.url?.searchParams?.get('p')) || 1
+    const toPage = Number(navigation?.to?.url?.searchParams?.get('p')) || 1
     return toPage > fromPage
   }
 
