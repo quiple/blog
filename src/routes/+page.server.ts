@@ -20,7 +20,7 @@ export const load: PageServerLoad = async ({url}) => {
   }
 
   const totalPages = Math.max(1, Math.ceil(allPosts.length / PER_PAGE))
-  let currentPage = Number(url.searchParams.get('page')) || 1
+  let currentPage = Number(url.searchParams.get('p')) || 1
   currentPage = Math.max(1, Math.min(currentPage, totalPages))
 
   const start = (currentPage - 1) * PER_PAGE
