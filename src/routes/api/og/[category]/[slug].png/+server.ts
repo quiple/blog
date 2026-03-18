@@ -3,7 +3,7 @@ import {ImageResponse} from '@ethercorps/sveltekit-og'
 import {CustomFont, resolveFonts} from '@ethercorps/sveltekit-og/fonts'
 import {read} from '$app/server'
 import astaSansFontPath from '$lib/assets/fonts/AstaSans-ExtraBold.ttf?url'
-import geistFontPath from '$lib/assets/fonts/Geist-SemiBold.otf?url'
+import geistaFontPath from '$lib/assets/fonts/Geista-SemiBold.otf?url'
 import plexSansJPFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
 import OgImage from '$lib/components/og/post.svelte'
 import {blogArticles, blogFonts, blogPosts} from '$lib/content'
@@ -24,7 +24,7 @@ export const entries: EntryGenerator = () => {
 
 export const prerender = true
 
-const geist = new CustomFont('Geist', () => read(geistFontPath).arrayBuffer(), {
+const geista = new CustomFont('Geista', () => read(geistaFontPath).arrayBuffer(), {
   weight: 800,
 })
 
@@ -37,7 +37,7 @@ const plexSansJP = new CustomFont('IBM Plex Sans JP', () => read(plexSansJPFontP
 })
 
 export const GET: RequestHandler = async ({params}) => {
-  const resolvedFontOptions = await resolveFonts([geist, astaSans, plexSansJP])
+  const resolvedFontOptions = await resolveFonts([geista, astaSans, plexSansJP])
 
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]

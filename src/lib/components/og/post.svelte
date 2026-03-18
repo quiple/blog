@@ -17,7 +17,7 @@
 <main
   class="bg-white h-full w-full"
   style:color={`#${imageForeground}`}
-  style:font-family="Geist, 'IBM Plex Sans JP', 'IBM Plex Sans KR', sans-serif"
+  style:font-family="Geista, 'IBM Plex Sans JP', 'IBM Plex Sans KR', sans-serif"
 >
   {#if image}
     <img

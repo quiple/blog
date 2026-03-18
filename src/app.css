@@ -11,12 +11,12 @@
 
 :root {
   --font-weight-bold: 675;
-  --font-sans: Geist-web, IBMPlexSansJP-web, Asta Sans, Noto Sans KR, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: Geista-web, IBMPlexSansJP-web, Asta Sans, Noto Sans KR, ui-sans-serif, system-ui, sans-serif;
   --font-ja:
-    Geist-web, IBMPlexSansJP-web, Asta Sans, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo,
+    Geista-web, IBMPlexSansJP-web, Asta Sans, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo,
     ui-sans-serif, system-ui, sans-serif;
-  --font-zhHans: Geist-web, PingFang SC, Noto Sans SC, Microsoft YaHei UI, ui-sans-serif, system-ui, sans-serif;
-  --font-zhHant: Geist-web, PingFang TC, Noto Sans TC, Microsoft JhengHei UI, ui-sans-serif, system-ui, sans-serif;
+  --font-zhHans: Geista-web, PingFang SC, Noto Sans SC, Microsoft YaHei UI, ui-sans-serif, system-ui, sans-serif;
+  --font-zhHant: Geista-web, PingFang TC, Noto Sans TC, Microsoft JhengHei UI, ui-sans-serif, system-ui, sans-serif;
   --default-font-feature-settings: 'palt' 1, 'ss01' 1, 'ss03' 1;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
