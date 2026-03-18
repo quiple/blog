@@ -17,7 +17,7 @@
     ui-sans-serif, system-ui, sans-serif;
   --font-zhHans: Geista-web, PingFang SC, Noto Sans SC, Microsoft YaHei UI, ui-sans-serif, system-ui, sans-serif;
   --font-zhHant: Geista-web, PingFang TC, Noto Sans TC, Microsoft JhengHei UI, ui-sans-serif, system-ui, sans-serif;
-  --default-font-feature-settings: 'palt' 1, 'ss01' 1, 'ss03' 1;
+  --default-font-feature-settings: 'palt' 1;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
