@@ -1,6 +1,8 @@
 <script lang="ts">
+  import {Search} from '@lucide/svelte'
   import {goto} from '$app/navigation'
   import {page} from '$app/stores'
+  import {Input} from '$lib/components/ui/input/index'
   import * as Pagination from '$lib/components/ui/pagination/index.js'
   import type {PageProps} from './$types'
 
@@ -42,49 +44,17 @@
 </svelte:head>
 
 <div class="max-w-xl 2xl:max-w-2xl mx-auto z-10 relative">
-  <div class="search-bar">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="search-icon"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg
-    >
-    <input
+  <div class="relative mb-4">
+    <Search class="absolute top-3 left-3 size-6" />
+    <Input
       type="search"
       placeholder="검색어를 입력하세요"
       bind:value={searchInput}
       oninput={handleSearch}
       onkeydown={handleKeydown}
+      class="z-50 pl-10 h-12 md:text-xl"
       autofocus
     />
-    {#if searchInput}
-      <button
-        class="clear-btn"
-        onclick={() => {
-          searchInput = ''
-          goto('/search', {keepFocus: true})
-        }}
-        aria-label="검색어 지우기"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"><path d="M18 6 6 18" /><path d="m6 6 12 12" /></svg
-        >
-      </button>
-    {/if}
   </div>
 
   {#if !data.searchQuery}
