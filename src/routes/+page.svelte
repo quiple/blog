@@ -117,6 +117,7 @@
   {#if data.totalPages > 1}
     <Pagination.Root
       count={data.totalPages * 15}
+      siblingCount={2}
       perPage={15}
       page={data.currentPage}
       onPageChange={(page) => goto(`?p=${page}`)}
@@ -148,6 +149,8 @@
         </Pagination.Content>
       {/snippet}
     </Pagination.Root>
+  {:else}
+    검색 결과가 없습니다.
   {/if}
 </div>
 
