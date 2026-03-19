@@ -38,8 +38,8 @@
   <meta property="og:description" content={data.description} />
 </svelte:head>
 
-<div class="max-w-xl 2xl:max-w-2xl mx-auto">
-  <ul class="flex flex-col z-10 relative" use:transition={'post-list'}>
+<div class="max-w-xl 2xl:max-w-2xl mx-auto z-10 relative">
+  <ul class="flex flex-col" use:transition={'post-list'}>
     {#each data.posts as post}
       {@const displayDate =
         post.origDate instanceof Date ? post.origDate : new Date(`${post.origDate ?? post.pubDate}+09:00`)}
