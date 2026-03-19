@@ -118,7 +118,7 @@
     <Pagination.Root
       count={data.totalPages * 15}
       siblingCount={2}
-      perPage={15}
+      perPage={data.perPage}
       page={data.currentPage}
       onPageChange={(page) => goto(`?p=${page}`)}
       class="my-4"
