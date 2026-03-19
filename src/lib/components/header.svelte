@@ -81,7 +81,7 @@
           <div class="relative m-1.5">
             <Search class="absolute top-2.5 left-2.5 h-4 w-4" />
             <Input
-              type="text"
+              type="search"
               name="search"
               class="z-50 pl-8"
               bind:value={query}
