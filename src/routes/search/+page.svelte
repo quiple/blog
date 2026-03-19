@@ -41,7 +41,7 @@
   {/if}
 </svelte:head>
 
-<div class="max-w-xl 2xl:max-w-2xl mx-auto">
+<div class="max-w-xl 2xl:max-w-2xl mx-auto z-10 relative">
   <div class="search-bar">
     <svg
       xmlns="http://www.w3.org/2000/svg"
