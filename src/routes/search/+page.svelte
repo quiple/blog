@@ -1,14 +1,13 @@
 <script lang="ts">
   import {Search} from '@lucide/svelte'
   import {goto} from '$app/navigation'
-  import {page} from '$app/stores'
   import {Input} from '$lib/components/ui/input/index'
   import * as Pagination from '$lib/components/ui/pagination/index.js'
   import {setupViewTransition} from 'sveltekit-view-transition'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()
-  let searchInput = $state(data.searchQuery ?? '')
+  let searchInput = $derived(data.searchQuery ?? '')
   let debounceTimer: ReturnType<typeof setTimeout>
 
   const {transition} = setupViewTransition()
