@@ -54,7 +54,7 @@
       bind:value={searchInput}
       oninput={handleSearch}
       onkeydown={handleKeydown}
-      class="z-50 pl-10 h-12 md:text-xl"
+      class="z-50 pl-11 h-12 md:text-xl"
       autofocus
     />
   </div>
