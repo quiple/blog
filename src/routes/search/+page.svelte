@@ -62,18 +62,3 @@
 {:else}
   검색 결과가 없습니다.
 {/if}
-
-<style lang="sass">
-  @reference '#app.css'
-
-  .match
-    @apply w-full justify-start h-auto p-1 xl:p-2 gap-2
-    .icon
-      @apply flex shrink-0 text-center justify-center items-center text-xl !leading-0 bg-background aspect-square rounded overflow-hidden w-10 h-10 font-normal
-    .right
-      @apply flex flex-col grow overflow-hidden
-      mask: linear-gradient(to right, #000 90%, transparent)
-      small
-        @apply font-semibold text-muted-foreground
-        font-feature-settings: 'cv02' 1, 'cv03' 1, 'cv04' 1, 'cv09' 1
-</style>
