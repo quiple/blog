@@ -128,17 +128,19 @@
             <Pagination.Previous />
           </Pagination.Item>
           {#each pages as page (page.key)}
-            {#if page.type === 'ellipsis'}
-              <Pagination.Item>
+            <Pagination.Item>
+              {#if page.type === 'ellipsis'}
                 <Pagination.Ellipsis />
-              </Pagination.Item>
-            {:else}
-              <Pagination.Item>
-                <Pagination.Link {page} isActive={currentPage === page.value}>
+              {:else}
+                <Pagination.Link
+                  class={currentPage === page.value ? 'pointer-events-none' : undefined}
+                  {page}
+                  isActive={currentPage === page.value}
+                >
                   {page.value}
                 </Pagination.Link>
-              </Pagination.Item>
-            {/if}
+              {/if}
+            </Pagination.Item>
           {/each}
           <Pagination.Item>
             <Pagination.Next />
