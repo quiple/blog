@@ -37,7 +37,7 @@
   {#if !data.searchQuery}
     <title>검색</title>
   {:else}
-    <title>'{data.searchQuery}' 검색 결과</title>
+    <title>‘{data.searchQuery}’ 검색 결과</title>
   {/if}
 </svelte:head>
 
