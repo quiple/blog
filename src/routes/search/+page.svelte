@@ -4,11 +4,14 @@
   import {page} from '$app/stores'
   import {Input} from '$lib/components/ui/input/index'
   import * as Pagination from '$lib/components/ui/pagination/index.js'
+  import {setupViewTransition} from 'sveltekit-view-transition'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()
   let searchInput = $state(data.searchQuery ?? '')
   let debounceTimer: ReturnType<typeof setTimeout>
+
+  const {transition} = setupViewTransition()
 
   function handleSearch() {
     clearTimeout(debounceTimer)
@@ -69,9 +72,31 @@
         <li>
           <a href={match.relativeURL} class="list-item">
             <div class="grow">
-              <strong class="line-clamp-1 mb-1">{match.title}</strong>
+              <strong
+                class="line-clamp-1 mb-1"
+                use:transition={{
+                  name: `post-title-${match.slug}`,
+                  shouldApply({navigation}) {
+                    return navigation?.to?.params?.slug === match.slug
+                  },
+                  applyImmediately({navigation}) {
+                    return navigation?.from?.params?.slug === match.slug
+                  },
+                }}>{match.title}</strong
+              >
               <p class="text-sm line-clamp-3 mb-1 text-justify">{match.description}</p>
-              <small class="text-muted-foreground">
+              <small
+                class="text-muted-foreground"
+                use:transition={{
+                  name: `post-metadata-${match.slug}`,
+                  shouldApply({navigation}) {
+                    return navigation?.to?.params?.slug === match.slug
+                  },
+                  applyImmediately({navigation}) {
+                    return navigation?.from?.params?.slug === match.slug
+                  },
+                }}
+              >
                 {#if match.media}
                   {match.media}&#8194;&#8226;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
                   displayDate,
@@ -79,9 +104,35 @@
               </small>
             </div>
             {#if match.image}
+              {@html `
+                <style>
+                  ::view-transition-group(post-title-${match.slug}),
+                  ::view-transition-group(post-metadata-${match.slug}) {
+                    z-index: 10;
+                  }
+                  ::view-transition-group-children(post-image-wrapper-${match.slug}) {
+                    overflow: clip;
+                  }
+                  ::view-transition-old(post-image-${match.slug}) {
+                    animation-name: zoom-out-old;
+                  }
+                  ::view-transition-new(post-image-${match.slug}) {
+                    animation-name: zoom-out-new;
+                  }
+                </style>
+              `}
               <div
                 class="img"
                 style:background-image={`url('/img/thumbnail/${match.image.substring(0, match.image.lastIndexOf('.'))}.avif')`}
+                use:transition={{
+                  name: `post-image-${match.slug}`,
+                  shouldApply({navigation}) {
+                    return navigation?.to?.params?.slug === match.slug
+                  },
+                  applyImmediately({navigation}) {
+                    return navigation?.from?.params?.slug === match.slug
+                  },
+                }}
               ></div>
             {/if}
           </a>
@@ -133,19 +184,21 @@
 <style lang="sass">
   @reference '#app.css'
 
-  .search-bar
-    @apply flex items-center gap-3 px-4 py-3 mb-4 rounded-xl border border-border bg-card transition-colors
-    &:focus-within
-      @apply border-primary/50
+  @keyframes -global-zoom-out-old
+    from
+      opacity: 1
+      height: 50vh
+    to
+      opacity: 0
+      height: 5.5rem
 
-    .search-icon
-      @apply text-muted-foreground shrink-0
-
-    input
-      @apply bg-transparent outline-none w-full text-foreground placeholder:text-muted-foreground
-
-    .clear-btn
-      @apply text-muted-foreground hover:text-foreground transition-colors shrink-0 cursor-pointer
+  @keyframes -global-zoom-out-new
+    from
+      opacity: 0
+      height: 50vh
+    to
+      opacity: 1
+      height: 5.5rem
 
   .empty-state
     @apply text-muted-foreground text-center py-16
