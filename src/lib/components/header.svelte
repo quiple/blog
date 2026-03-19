@@ -78,17 +78,19 @@
           {/snippet}
         </DropdownMenu.Trigger>
         <DropdownMenu.Content align="end">
-          <div class="relative m-1.5">
-            <Search class="absolute top-2.5 left-2.5 size-4" />
-            <Input
-              type="search"
-              name="search"
-              class="z-50 pl-8"
-              bind:value={query}
-              bind:ref={inputElement}
-              placeholder="검색"
-            />
-          </div>
+          {#if page.url.pathname !== '/search'}
+            <div class="relative m-1.5">
+              <Search class="absolute top-2.5 left-2.5 size-4" />
+              <Input
+                type="search"
+                name="search"
+                class="z-50 pl-8"
+                bind:value={query}
+                bind:ref={inputElement}
+                placeholder="검색"
+              />
+            </div>
+          {/if}
           <DropdownMenu.Item onclick={() => goto('/font-generator')}>비트맵 폰트 이미지 생성기</DropdownMenu.Item>
           <DropdownMenu.Separator />
           <DropdownMenu.Item onclick={toggleMode}>
