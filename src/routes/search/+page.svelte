@@ -50,7 +50,7 @@
     <Search class="absolute top-3 left-3 size-6" />
     <Input
       type="search"
-      placeholder="검색어를 입력하세요"
+      placeholder="검색"
       bind:value={searchInput}
       oninput={handleSearch}
       onkeydown={handleKeydown}
