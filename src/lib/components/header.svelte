@@ -79,7 +79,7 @@
         </DropdownMenu.Trigger>
         <DropdownMenu.Content align="end">
           <div class="relative m-1.5">
-            <Search class="absolute top-2.5 left-2.5 h-4 w-4" />
+            <Search class="absolute top-2.5 left-2.5 size-4" />
             <Input
               type="search"
               name="search"
