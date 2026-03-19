@@ -10,6 +10,7 @@
 }
 
 :root {
+  --font-weight-normal: 375;
   --font-weight-bold: 675;
   --font-sans: Geista-web, IBMPlexSansJP-web, Asta Sans, Noto Sans KR, ui-sans-serif, system-ui, sans-serif;
   --font-ja:
