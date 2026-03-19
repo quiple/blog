@@ -78,6 +78,17 @@
           {/snippet}
         </DropdownMenu.Trigger>
         <DropdownMenu.Content align="end">
+          <DropdownMenu.Item class="relative">
+            <Search class="absolute top-2.5 left-2.5 h-4 w-4" />
+            <Input
+              type="text"
+              name="search"
+              class="z-50 pl-8"
+              bind:value={query}
+              bind:ref={inputElement}
+              placeholder="유니코드 문자 검색"
+            />
+          </DropdownMenu.Item>
           <DropdownMenu.Item onclick={() => goto('/font-generator')}>비트맵 폰트 이미지 생성기</DropdownMenu.Item>
           <DropdownMenu.Separator />
           <DropdownMenu.Item onclick={toggleMode}>
