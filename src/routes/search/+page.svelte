@@ -10,7 +10,25 @@
   let searchInput = $derived(data.searchQuery ?? '')
   let debounceTimer: ReturnType<typeof setTimeout>
 
-  const {transition} = setupViewTransition()
+  const {transition, classes} = setupViewTransition()
+
+  function isPagination(navigation: {
+    from?: {route: {id: string | null}} | null
+    to?: {route: {id: string | null}} | null
+  }) {
+    return navigation?.from?.route?.id === '/search' && navigation?.to?.route?.id === '/search'
+  }
+
+  function isGoingForward(navigation: {from?: {url?: URL | null} | null; to?: {url?: URL | null} | null}) {
+    const fromPage = Number(navigation?.from?.url?.searchParams?.get('page')) || 1
+    const toPage = Number(navigation?.to?.url?.searchParams?.get('page')) || 1
+    return toPage > fromPage
+  }
+
+  classes(({navigation}) => {
+    if (!isPagination(navigation)) return
+    return isGoingForward(navigation) ? ['paginate-forward'] : ['paginate-backward']
+  })
 
   function handleSearch() {
     clearTimeout(debounceTimer)
@@ -64,7 +82,7 @@
   {:else if data.matches && data.matches.length > 0}
     <p class="result-count">{data.totalCount}개의 검색 결과</p>
 
-    <ul class="flex flex-col z-10 relative">
+    <ul class="flex flex-col z-10 relative" use:transition={'post-list'}>
       {#each data.matches as match}
         {@const displayDate =
           match.origDate instanceof Date ? match.origDate : new Date(`${match.origDate ?? match.pubDate}+09:00`)}
@@ -76,10 +94,10 @@
                 use:transition={{
                   name: `post-title-${match.slug}`,
                   shouldApply({navigation}) {
-                    return navigation?.to?.params?.slug === match.slug
+                    return !isPagination(navigation) && navigation?.to?.params?.slug === match.slug
                   },
                   applyImmediately({navigation}) {
-                    return navigation?.from?.params?.slug === match.slug
+                    return !isPagination(navigation) && navigation?.from?.params?.slug === match.slug
                   },
                 }}>{match.title}</strong
               >
@@ -89,10 +107,10 @@
                 use:transition={{
                   name: `post-metadata-${match.slug}`,
                   shouldApply({navigation}) {
-                    return navigation?.to?.params?.slug === match.slug
+                    return !isPagination(navigation) && navigation?.to?.params?.slug === match.slug
                   },
                   applyImmediately({navigation}) {
-                    return navigation?.from?.params?.slug === match.slug
+                    return !isPagination(navigation) && navigation?.from?.params?.slug === match.slug
                   },
                 }}
               >
@@ -126,10 +144,10 @@
                 use:transition={{
                   name: `post-image-${match.slug}`,
                   shouldApply({navigation}) {
-                    return navigation?.to?.params?.slug === match.slug
+                    return !isPagination(navigation) && navigation?.to?.params?.slug === match.slug
                   },
                   applyImmediately({navigation}) {
-                    return navigation?.from?.params?.slug === match.slug
+                    return !isPagination(navigation) && navigation?.from?.params?.slug === match.slug
                   },
                 }}
               ></div>
@@ -180,6 +198,23 @@
   {/if}
 </div>
 
+{@html `
+  <style>
+    .paginate-forward::view-transition-old(post-list) {
+      animation: paginate-slide-to-left-old 0.25s ease both;
+    }
+    .paginate-forward::view-transition-new(post-list) {
+      animation: paginate-slide-to-left-new 0.25s ease both;
+    }
+    .paginate-backward::view-transition-old(post-list) {
+      animation: paginate-slide-to-right-old 0.25s ease both;
+    }
+    .paginate-backward::view-transition-new(post-list) {
+      animation: paginate-slide-to-right-new 0.25s ease both;
+    }
+  </style>
+`}
+
 <style lang="sass">
   @reference '#app.css'
 
@@ -198,6 +233,38 @@
     to
       opacity: 1
       height: 5.5rem
+
+  @keyframes -global-paginate-slide-to-left-old
+    from
+      opacity: 1
+      transform: translateX(0)
+    to
+      opacity: 0
+      transform: translateX(-60px)
+
+  @keyframes -global-paginate-slide-to-left-new
+    from
+      opacity: 0
+      transform: translateX(60px)
+    to
+      opacity: 1
+      transform: translateX(0)
+
+  @keyframes -global-paginate-slide-to-right-old
+    from
+      opacity: 1
+      transform: translateX(0)
+    to
+      opacity: 0
+      transform: translateX(60px)
+
+  @keyframes -global-paginate-slide-to-right-new
+    from
+      opacity: 0
+      transform: translateX(-60px)
+    to
+      opacity: 1
+      transform: translateX(0)
 
   .empty-state
     @apply text-muted-foreground text-center py-16
