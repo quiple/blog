@@ -25,7 +25,6 @@
 
   const onKeydown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && inputElement && document.activeElement === inputElement) {
-      menuOpen = false
       goto(`/search?q=${query.trim().replaceAll(' ', '+')}`)
     }
   }
