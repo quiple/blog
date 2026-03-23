@@ -15,6 +15,7 @@
 
   let query = $state('')
   let inputElement = $state<HTMLInputElement | null>(null)
+  let menuOpen = $state(false)
   let headerClassName = $derived($isHero === true ? 'hero' : '')
   let logoMaskImage = $derived(
     $heroColors.foreground === '#fff' ? ($heroColors.outline ? 'none' : `url("${svgGradeDown}")`) : 'none',
@@ -24,6 +25,7 @@
 
   const onKeydown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && inputElement && document.activeElement === inputElement) {
+      menuOpen = false
       goto(`/search?q=${query.trim().replaceAll(' ', '+')}`)
     }
   }
@@ -62,7 +64,7 @@
     </div>
 
     <div class="flex gap-2">
-      <DropdownMenu.Root>
+      <DropdownMenu.Root bind:open={menuOpen}>
         <DropdownMenu.Trigger>
           {#snippet child({props})}
             <Button
