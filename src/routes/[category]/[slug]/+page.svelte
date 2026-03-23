@@ -182,7 +182,7 @@
 {#if image}
   <div
     class="hero bg"
-    style:background-image={`url('${image}')`}
+    style:background-image={`url('${image}'), url('/img/thumbnail/${data.image.substring(0, data.image.lastIndexOf('.'))}.avif')`}
     style:background-position={`center calc(${data.imageVerticalAlign ?? 50}% + ${scrollY * 0.5}px)`}
     use:transition={`post-image-${data.slug}`}
   ></div>
