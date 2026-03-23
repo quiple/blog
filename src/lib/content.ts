@@ -20,6 +20,15 @@ export const blogFonts = import.meta.glob('/src/posts/font/*.md', {
   eager: true,
 })
 
+const matterCache = new Map<string, matter.GrayMatterFile<string>>()
+
+export function parseMatter(rawContent: string) {
+  if (!matterCache.has(rawContent)) {
+    matterCache.set(rawContent, matter(rawContent))
+  }
+  return matterCache.get(rawContent)!
+}
+
 // --- Shared schema fields ---
 
 const trimmedString = v.pipe(v.string(), v.trim())
@@ -106,7 +115,7 @@ function getContentMetadata<T>(
 ) {
   return Object.entries(globEntries)
     .map(([filePath, rawContent]) => {
-      const {data} = matter(rawContent)
+      const {data} = parseMatter(rawContent as string)
       const category = filePath.split('/').at(-2) as string
       const slug = filePath.split('/').at(-1)?.split('.')[0] as string
 

@@ -1,6 +1,4 @@
-import {blogArticles, blogFonts, blogPosts, getAllBlogContentMetadata} from '$lib/content'
-import {generateDescription, processTitle} from '$lib/markdown'
-import matter from 'gray-matter'
+import {getCachedProcessedMetadata} from '$lib/server/cache'
 import type {PageServerLoad} from './$types'
 
 const PER_PAGE = 15
@@ -13,7 +11,7 @@ export const load: PageServerLoad = async ({url}) => {
     return {searchQuery: '', matches: [], totalCount: 0, totalPages: 0, currentPage: 1, perPage: PER_PAGE}
   }
 
-  const allPosts = getAllBlogContentMetadata()
+  const allPosts = await getCachedProcessedMetadata()
   const keywords = searchQuery
     .toLowerCase()
     .split(/\s+/)
@@ -23,16 +21,8 @@ export const load: PageServerLoad = async ({url}) => {
 
   for (let i = 0; i < allPosts.length; i++) {
     const post = allPosts[i]
-    const matchPath = `/src/posts/${post.category}/${post.slug}.md`
-    const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
-    const {content} = matter(rawContent as string)
-
-    const searchableText = [post.title, post.description, content].join(' ').toLowerCase()
-
-    const isMatch = keywords.every((keyword) => searchableText.includes(keyword))
-
-    if (isMatch) {
-      matches.push({post, content})
+    if (keywords.every((keyword) => post.searchableText.includes(keyword))) {
+      matches.push(post)
     }
   }
 
@@ -41,14 +31,7 @@ export const load: PageServerLoad = async ({url}) => {
   const safePage = Math.max(1, Math.min(currentPage, totalPages))
 
   const start = (safePage - 1) * PER_PAGE
-  const paginatedMatchesRaw = matches.slice(start, start + PER_PAGE)
-  const paginatedMatches = []
-
-  for (const {post, content} of paginatedMatchesRaw) {
-    post.title = await processTitle(post.title)
-    post.description = post.description ?? (await generateDescription(content))
-    paginatedMatches.push(post)
-  }
+  const paginatedMatches = matches.slice(start, start + PER_PAGE)
 
   return {
     searchQuery,
