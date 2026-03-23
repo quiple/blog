@@ -1,6 +1,6 @@
 <script lang="ts">
   import {Menu, Moon, Search, Sun} from '@lucide/svelte'
-  import {goto} from '$app/navigation'
+  import {afterNavigate, goto} from '$app/navigation'
   import {page} from '$app/state'
   import svgGradeDown from '$lib/assets/logo-grade-down.svg'
   import svgOutline from '$lib/assets/logo-outline.svg'
@@ -44,6 +44,10 @@
     if ($isHero === true) onScroll()
     const q = page.url.searchParams.get('q')
     query = q?.replaceAll('+', ' ') || ''
+  })
+
+  afterNavigate(() => {
+    menuOpen = false
   })
 </script>
 
