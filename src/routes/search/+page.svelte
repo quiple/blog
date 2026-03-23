@@ -1,6 +1,7 @@
 <script lang="ts">
   import {Search} from '@lucide/svelte'
   import {goto} from '$app/navigation'
+  import PostList from '$lib/components/post-list.svelte'
   import {Input} from '$lib/components/ui/input/index'
   import * as Pagination from '$lib/components/ui/pagination/index.js'
   import {setupViewTransition} from 'sveltekit-view-transition'
@@ -82,80 +83,7 @@
   {:else if data.matches && data.matches.length > 0}
     <p class="result-count">{data.totalCount}개의 검색 결과</p>
 
-    <ul class="flex flex-col z-10 relative" use:transition={'post-list'}>
-      {#each data.matches as match}
-        {@const displayDate =
-          match.origDate instanceof Date ? match.origDate : new Date(`${match.origDate ?? match.pubDate}+09:00`)}
-        <li>
-          <a href={match.relativeURL} class="list-item">
-            <div class="grow">
-              <strong
-                class="line-clamp-1 mb-1"
-                use:transition={{
-                  name: `post-title-${match.slug}`,
-                  shouldApply({navigation}) {
-                    return !isPagination(navigation) && navigation?.to?.params?.slug === match.slug
-                  },
-                  applyImmediately({navigation}) {
-                    return !isPagination(navigation) && navigation?.from?.params?.slug === match.slug
-                  },
-                }}>{match.title}</strong
-              >
-              <p class="text-sm line-clamp-3 mb-1 text-justify">{match.description}</p>
-              <small
-                class="text-muted-foreground"
-                use:transition={{
-                  name: `post-metadata-${match.slug}`,
-                  shouldApply({navigation}) {
-                    return !isPagination(navigation) && navigation?.to?.params?.slug === match.slug
-                  },
-                  applyImmediately({navigation}) {
-                    return !isPagination(navigation) && navigation?.from?.params?.slug === match.slug
-                  },
-                }}
-              >
-                {#if match.media}
-                  {match.media}&#8194;&#8226;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-                  displayDate,
-                )}
-              </small>
-            </div>
-            {#if match.image}
-              {@html `
-                <style>
-                  ::view-transition-group(post-title-${match.slug}),
-                  ::view-transition-group(post-metadata-${match.slug}) {
-                    z-index: 10;
-                  }
-                  ::view-transition-group-children(post-image-wrapper-${match.slug}) {
-                    overflow: clip;
-                  }
-                  ::view-transition-old(post-image-${match.slug}) {
-                    animation-name: zoom-out-old;
-                  }
-                  ::view-transition-new(post-image-${match.slug}) {
-                    animation-name: zoom-out-new;
-                  }
-                </style>
-              `}
-              <div
-                class="img"
-                style:background-image={`url('/img/thumbnail/${match.image.substring(0, match.image.lastIndexOf('.'))}.avif')`}
-                use:transition={{
-                  name: `post-image-${match.slug}`,
-                  shouldApply({navigation}) {
-                    return !isPagination(navigation) && navigation?.to?.params?.slug === match.slug
-                  },
-                  applyImmediately({navigation}) {
-                    return !isPagination(navigation) && navigation?.from?.params?.slug === match.slug
-                  },
-                }}
-              ></div>
-            {/if}
-          </a>
-        </li>
-      {/each}
-    </ul>
+    <PostList posts={data.matches} {isPagination} {transition} />
 
     {#if data.totalPages > 1}
       <Pagination.Root
@@ -271,9 +199,4 @@
 
   .result-count
     @apply text-sm text-muted-foreground mb-2
-
-  .list-item
-    @apply flex gap-4 before:rounded-xl py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-xl hover-bg-muted
-    .img
-      @apply shrink-0 size-22 bg-cover bg-center inner-border after:rounded-sm rounded-sm shadow-xs
 </style>

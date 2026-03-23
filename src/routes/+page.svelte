@@ -1,5 +1,6 @@
 <script lang="ts">
   import {goto} from '$app/navigation'
+  import PostList from '$lib/components/post-list.svelte'
   import * as Pagination from '$lib/components/ui/pagination/index.js'
   import {BASE_URL} from '$lib/constants'
   import {setupViewTransition} from 'sveltekit-view-transition'
@@ -39,80 +40,7 @@
 </svelte:head>
 
 <div class="max-w-xl 2xl:max-w-2xl mx-auto z-10 relative">
-  <ul class="flex flex-col" use:transition={'post-list'}>
-    {#each data.posts as post}
-      {@const displayDate =
-        post.origDate instanceof Date ? post.origDate : new Date(`${post.origDate ?? post.pubDate}+09:00`)}
-      <li>
-        <a href={post.relativeURL} class="list-item">
-          <div class="grow">
-            <strong
-              class="line-clamp-1 mb-1"
-              use:transition={{
-                name: `post-title-${post.slug}`,
-                shouldApply({navigation}) {
-                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-                },
-                applyImmediately({navigation}) {
-                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-                },
-              }}>{post.title}</strong
-            >
-            <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
-            <small
-              class="text-muted-foreground"
-              use:transition={{
-                name: `post-metadata-${post.slug}`,
-                shouldApply({navigation}) {
-                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-                },
-                applyImmediately({navigation}) {
-                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-                },
-              }}
-            >
-              {#if post.media}
-                {post.media}&#8194;&#8226;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-                displayDate,
-              )}
-            </small>
-          </div>
-          {#if post.image}
-            {@html `
-              <style>
-                ::view-transition-group(post-title-${post.slug}),
-                ::view-transition-group(post-metadata-${post.slug}) {
-                  z-index: 10;
-                }
-                ::view-transition-group-children(post-image-wrapper-${post.slug}) {
-                  overflow: clip;
-                }
-                ::view-transition-old(post-image-${post.slug}) {
-                  animation-name: zoom-out-old;
-                }
-                ::view-transition-new(post-image-${post.slug}) {
-                  animation-name: zoom-out-new;
-                }
-              </style>
-            `}
-            <div
-              class="img"
-              style:background-image={`url('/img/thumbnail/${post.image.substring(0, post.image.lastIndexOf('.'))}.avif')`}
-              use:transition={{
-                name: `post-image-${post.slug}`,
-                shouldApply({navigation}) {
-                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-                },
-                applyImmediately({navigation}) {
-                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-                },
-              }}
-            ></div>
-          {/if}
-        </a>
-      </li>
-    {/each}
-  </ul>
+  <PostList posts={data.posts} {isPagination} {transition} />
 
   {#if data.totalPages > 1}
     <Pagination.Root
@@ -221,9 +149,4 @@
     to
       opacity: 1
       transform: translateX(0)
-
-  .list-item
-    @apply flex gap-4 before:rounded-xl py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-xl hover-bg-muted
-    .img
-      @apply shrink-0 size-22 bg-cover bg-center inner-border after:rounded-sm rounded-sm shadow-xs
 </style>

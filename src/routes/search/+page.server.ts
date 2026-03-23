@@ -27,15 +27,12 @@ export const load: PageServerLoad = async ({url}) => {
     const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
     const {content} = matter(rawContent as string)
 
-    post.title = await processTitle(post.title)
-    post.description = post.description ?? (await generateDescription(content))
-
     const searchableText = [post.title, post.description, content].join(' ').toLowerCase()
 
     const isMatch = keywords.every((keyword) => searchableText.includes(keyword))
 
     if (isMatch) {
-      matches.push(post)
+      matches.push({post, content})
     }
   }
 
@@ -44,7 +41,14 @@ export const load: PageServerLoad = async ({url}) => {
   const safePage = Math.max(1, Math.min(currentPage, totalPages))
 
   const start = (safePage - 1) * PER_PAGE
-  const paginatedMatches = matches.slice(start, start + PER_PAGE)
+  const paginatedMatchesRaw = matches.slice(start, start + PER_PAGE)
+  const paginatedMatches = []
+
+  for (const {post, content} of paginatedMatchesRaw) {
+    post.title = await processTitle(post.title)
+    post.description = post.description ?? (await generateDescription(content))
+    paginatedMatches.push(post)
+  }
 
   return {
     searchQuery,
