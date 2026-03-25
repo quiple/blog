@@ -13,6 +13,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write .",
     "lint": "oxlint --type-aware",
+    "lint:fix": "oxlint --type-aware --fix",
     "img": "sharp -i ./static/img/article/*.{jpg,jpeg,png} -o ./static/img/article -f avif -q 50",
     "thumb": "sharp -i ./static/img/thumbnail/*.{jpg,jpeg,png,webp} -o ./static/img/thumbnail resize --height 240 -f avif -q 50"
   },
@@ -70,7 +71,8 @@
     "wrangler": "^4.76.0"
   },
   "lint-staged": {
-    "**/*": "prettier --write . --ignore-unknown"
+    "*.{js,jsx,ts,tsx,mjs,cjs}": "bun lint",
+    "*": "prettier --write . --ignore-unknown"
   },
   "imports": {
     "#app.css": "./src/app.css",
