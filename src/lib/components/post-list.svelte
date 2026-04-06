@@ -18,6 +18,44 @@
 
   const isProd = import.meta.env.PROD
   const baseUrl = isProd ? 'https://quiple.dev' : ''
+
+  const lazyBackground: Action<HTMLElement, string> = (node, src) => {
+    let img: HTMLImageElement | null = null
+
+    function load(url: string) {
+      if (img) img.onload = null
+      node.style.backgroundImage = 'none'
+      node.classList.add('bg-muted', 'animate-pulse')
+
+      img = new Image()
+      img.src = url
+
+      const handleLoad = () => {
+        node.style.backgroundImage = `url('${url}')`
+        node.classList.remove('bg-muted', 'animate-pulse')
+      }
+
+      if (img.complete) {
+        handleLoad()
+      } else {
+        img.onload = handleLoad
+      }
+    }
+
+    load(src)
+
+    return {
+      update(newSrc) {
+        if (newSrc !== src) {
+          src = newSrc
+          load(src)
+        }
+      },
+      destroy() {
+        if (img) img.onload = null
+      },
+    }
+  }
 </script>
 
 <ul class="flex flex-col z-10 relative" use:transition={'post-list'}>
@@ -96,8 +134,8 @@
             {@const rawSrc = `${baseUrl}/img/${post.category}/${post.image}`}
             {@const src = isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc}
             <div
-              class="img"
-              style:background-image={`url('${src}')`}
+              class="img bg-muted animate-pulse"
+              use:lazyBackground={src}
               use:transition={{
                 name: `post-image-${post.slug}`,
                 shouldApply({navigation}: {navigation: any}) {
