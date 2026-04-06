@@ -13,9 +13,7 @@
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "format": "prettier --write .",
     "lint": "oxlint --type-aware",
-    "lint:fix": "oxlint --type-aware --fix",
-    "img": "sharp -i ./static/img/article/*.{jpg,jpeg,png} -o ./static/img/article -f avif -q 50",
-    "thumb": "sharp -i ./static/img/thumbnail/*.{jpg,jpeg,png,webp} -o ./static/img/thumbnail resize --height 240 -f avif -q 50"
+    "lint:fix": "oxlint --type-aware --fix"
   },
   "devDependencies": {
     "@ethercorps/sveltekit-og": "github:quiple/sveltekit-og",
