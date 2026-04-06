@@ -25,7 +25,9 @@
   const isFont = $derived(data.category === 'font')
 
   const rawSrc = $derived(`${baseUrl}/img/${data.category}/${data.image}`)
-  const image = $derived(isProd ? `/cdn-cgi/image/width=3840,format=avif,quality=75/${rawSrc}` : rawSrc)
+  const image = $derived(
+    data.image ? (isProd ? `/cdn-cgi/image/width=3840,format=avif,quality=75/${rawSrc}` : rawSrc) : '',
+  )
   const thumbnailImage = $derived(
     isProd ? `/cdn-cgi/image/width=180,height=180,format=avif,quality=75,fit=crop/${rawSrc}` : rawSrc,
   )
