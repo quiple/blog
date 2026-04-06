@@ -21,7 +21,7 @@ pubDate: 2026-03-08T16:01
 
 **오카미네**　아바즈레(アバズレ, 헤픈 여자)라는 이름의 등장인물이 나와서 깜짝 놀랐습니다.
 
-:::figure{src="article/pic_sumino.avif" class="w-100"}
+:::figure{src="article/pic_sumino.png" class="w-100"}
 스미노 요루(住野よる)의 화신, 통칭 '본체 씨'.
 :::
 
@@ -53,7 +53,7 @@ pubDate: 2026-03-08T16:01
 
 **마츠다**　좀 더 다른 이미지로 생각하고 계셨나요?
 
-:::figure{src="article/pic_matsuda.avif" class="w-100"}
+:::figure{src="article/pic_matsuda.png" class="w-100"}
 마츠다 신지(松田晋二, Dr).
 :::
 
@@ -95,7 +95,7 @@ pubDate: 2026-03-08T16:01
 
 **스미노**　감사합니다. 정말 기뻐요. 주인공 카야가 히로인에게 향하는 감정은 제가 더백혼분들을 포함해, 좋아하는 소설가분이나 좋아하는 밴드맨 여러분들께 품어온 마음을 듬뿍 담았습니다. 그러고 보니 창작 중의 싱크로 때문인지 모르겠는데, 최근 성장해서 어른이 된 카야를 상상하면 외견이 점점 야마다 씨처럼 보이기 시작했어요. 〈하나레바나레〉뿐만 아니라 야마다 씨는 어떤 식으로 마음을 다잡고 노래하시나요?
 
-:::figure{src="article/pic_yamada.avif" class="w-100"}
+:::figure{src="article/pic_yamada.png" class="w-100"}
 야마다 마사시(山田将司, Vo).
 :::
 
@@ -109,7 +109,7 @@ pubDate: 2026-03-08T16:01
 
 **오카미네**　보통 베이스는 전체를 지탱하는 느낌으로 아래쪽에서 묵직하게 연주하는 편인데, 이번에는 곡이 롤러코스터처럼 힘차게 나아가기 때문에 스릴이 느껴지도록 움직임을 주어 보았습니다.
 
-:::figure{src="article/pic_okamine.avif" class="w-100"}
+:::figure{src="article/pic_okamine.png" class="w-100"}
 오카미네 코슈(岡峰光舟, Ba).
 :::
 
@@ -133,7 +133,7 @@ pubDate: 2026-03-08T16:01
 
 **마츠다**　무엇이든 스미노 씨가 받아들여 주셨다면 그것만으로도 기쁘지만, 거기서 또 스미노 씨의 작품을 통해 수많은 젊은 분들께 닿고 영향을 주고 있다는 건 정말 대단하다고 생각합니다.
 
-:::figure{src="article/pic_suganami.avif" class="w-100"}
+:::figure{src="article/pic_suganami.png" class="w-100"}
 스가나미 에이준(菅波栄純, Gt).
 :::
 
