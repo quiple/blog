@@ -1,6 +1,8 @@
 <script lang="ts">
   import '#app.css'
   import '#fonts.sass'
+  import {browser} from '$app/environment'
+  import {onNavigate} from '$app/navigation'
   import appleTouchIcon from '$lib/assets/apple-touch-icon.png'
   import favicon32 from '$lib/assets/favicon.png'
   import favicon from '$lib/assets/favicon.svg'
@@ -9,6 +11,23 @@
   import {setupViewTransition} from 'sveltekit-view-transition'
 
   let {children} = $props()
+
+  if (browser) {
+    onNavigate((navigation) => {
+      if (navigation.type === 'popstate') {
+        const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent)
+        if (isIOS) {
+          const original = document.startViewTransition
+          // @ts-ignore
+          document.startViewTransition = undefined
+          setTimeout(() => {
+            // @ts-ignore
+            document.startViewTransition = original
+          }, 0)
+        }
+      }
+    })
+  }
 
   setupViewTransition()
 </script>
