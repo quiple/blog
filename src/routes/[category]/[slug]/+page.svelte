@@ -26,6 +26,9 @@
 
   const rawSrc = $derived(`${baseUrl}/img/${data.category}/${data.image}`)
   const image = $derived(isProd ? `/cdn-cgi/image/width=3840,format=avif,quality=75/${rawSrc}` : rawSrc)
+  const thumbnailImage = $derived(
+    isProd ? `/cdn-cgi/image/width=180,height=180,format=avif,quality=75,fit=crop/${rawSrc}` : rawSrc,
+  )
   const publishedDate = $derived(data.origDate ?? data.pubDate)
   const jsonLd = $derived(
     JSON.stringify({
@@ -187,7 +190,7 @@
 {#if image}
   <div
     class="hero bg"
-    style:background-image={`url('${image}'), url('/img/thumbnail/${data.image!.substring(0, data.image!.lastIndexOf('.'))}.avif')`}
+    style:background-image={`url('${image}'), url('${thumbnailImage}')`}
     style:background-position={`center calc(${data.imageVerticalAlign ?? 50}% + ${scrollY * 0.5}px)`}
     use:transition={`post-image-${data.slug}`}
   ></div>
