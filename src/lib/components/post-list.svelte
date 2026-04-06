@@ -1,6 +1,7 @@
 <script lang="ts">
   import {navigating} from '$app/state'
   import {Skeleton} from '$lib/components/ui/skeleton/index.js'
+  import {getCategoryName} from '$lib/utils'
   import type {Action} from 'svelte/action'
 
   let {
@@ -63,6 +64,24 @@
 </script>
 
 <ul class="flex flex-col gap-1 z-10 relative" use:transition={'post-list'}>
+  {#if !isProd}
+    {#each Array(2) as _}
+      <li>
+        <div class="list-item pointer-events-none! py-2">
+          <div class="grow">
+            <Skeleton class="h-4 w-2/3 mt-1 mb-2" />
+            <div class="space-y-1.5 pb-1.75 pt-0.75">
+              <Skeleton class="h-3.5 w-full" />
+              <Skeleton class="h-3.5 w-full" />
+              <Skeleton class="h-3.5 w-5/6" />
+            </div>
+            <Skeleton class="h-[12.8px] w-1/4 mt-1.75 mb-[4.2px]" />
+          </div>
+          <Skeleton class="img size-22" />
+        </div>
+      </li>
+    {/each}
+  {/if}
   {#if navigating && isPagination(navigating)}
     {#each Array(15) as _}
       <li>
@@ -163,7 +182,7 @@
               )}
             </small>
             <small class="text-muted-foreground">
-              {post.category}
+              {getCategoryName(post.category)}
             </small>
           </div>
         </a>
@@ -176,7 +195,7 @@
   @reference '#app.css'
 
   .list-item
-    @apply flex flex-col before:rounded-xl py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-xl hover-bg-muted
+    @apply flex flex-col before:rounded-[14px] py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-[14px] hover-bg-muted
     .img
-      @apply shrink-0 size-22 bg-cover bg-center inner-border after:rounded-sm rounded-sm shadow-xs
+      @apply shrink-0 size-22 bg-cover bg-center inner-border after:rounded-md rounded-md shadow-xs
 </style>
