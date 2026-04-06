@@ -27,6 +27,8 @@ import smartypants from 'remark-smartypants'
 import {visit} from 'unist-util-visit'
 import type {PageServerLoad} from './$types'
 
+const isProd = import.meta.env.PROD
+
 export const load: PageServerLoad = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
@@ -54,6 +56,7 @@ export const load: PageServerLoad = async ({params}) => {
       .use(remarkCjkFriendly)
       .use(remarkCjkFriendlyGfmStrikethrough)
       .use(remarkGithubAlerts)
+      // @ts-expect-error Types of handlers don't perfectly match remark-rehype's expected types
       .use(remarkRehype, {allowDangerousHtml: true, handlers: mdxHandlers()})
       .use(smartypants, {dashes: 'oldschool'})
       .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow', 'noreferrer', 'noopener']})
@@ -81,9 +84,12 @@ function figure() {
       if (node.type === 'containerDirective' || node.type === 'leafDirective') {
         if (node.name !== 'figure' && node.name !== 'youtube' && node.name !== 'spotify') return
 
+        const baseUrl = isProd ? 'https://quiple.dev' : ''
+
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
-        const src = attributes.src
+        const rawSrc = `${baseUrl}/assets/album/${attributes.src}`
+        const src = isProd ? `/cdn-cgi/image/width=480,format=avif,quality=85/${rawSrc}` : rawSrc
         const id = attributes.id
         const className = attributes.class ?? ''
         const img = `<img class="${cn('not-prose', className)}" src="${src}" />`
