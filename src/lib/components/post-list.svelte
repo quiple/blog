@@ -19,40 +19,44 @@
   const isProd = import.meta.env.PROD
   const baseUrl = isProd ? 'https://quiple.dev' : ''
 
-  const lazyBackground: Action<HTMLElement, string> = (node, src) => {
-    let img: HTMLImageElement | null = null
+  const lazyImage: Action<HTMLImageElement, string> = (node, src) => {
+    let timeoutId: ReturnType<typeof setTimeout>
 
-    function load(url: string) {
-      if (img) img.onload = null
-      node.style.backgroundImage = 'none'
-      node.classList.add('bg-muted', 'animate-pulse')
+    function handleLoad() {
+      node.classList.remove('opacity-0')
+      node.parentElement?.classList.remove('animate-pulse')
 
-      img = new Image()
-      img.src = url
+      // Remove bg-muted after transition completes to prevent color mixing if image has transparency
+      timeoutId = setTimeout(() => {
+        node.parentElement?.classList.remove('bg-muted')
+      }, 500)
+    }
 
-      const handleLoad = () => {
-        node.style.backgroundImage = `url('${url}')`
-        node.classList.remove('bg-muted', 'animate-pulse')
-      }
-
-      if (img.complete) {
+    function initLoad(url: string) {
+      clearTimeout(timeoutId)
+      node.src = url
+      // If already cached and loaded
+      if (node.complete && node.naturalWidth !== 0) {
         handleLoad()
       } else {
-        img.onload = handleLoad
+        node.onload = handleLoad
       }
     }
 
-    load(src)
+    initLoad(src)
 
     return {
       update(newSrc) {
         if (newSrc !== src) {
           src = newSrc
-          load(src)
+          node.classList.add('opacity-0')
+          node.parentElement?.classList.add('animate-pulse', 'bg-muted')
+          initLoad(src)
         }
       },
       destroy() {
-        if (img) img.onload = null
+        clearTimeout(timeoutId)
+        node.onload = null
       },
     }
   }
@@ -135,7 +139,6 @@
             {@const src = isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc}
             <div
               class="img bg-muted animate-pulse"
-              use:lazyBackground={src}
               use:transition={{
                 name: `post-image-${post.slug}`,
                 shouldApply({navigation}: {navigation: any}) {
@@ -145,7 +148,15 @@
                   return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
                 },
               }}
-            ></div>
+            >
+              <img
+                alt=""
+                class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-500"
+                use:lazyImage={src}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
           {/if}
         </a>
       </li>
