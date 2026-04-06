@@ -48,7 +48,10 @@
       siblingCount={2}
       perPage={data.perPage}
       page={data.currentPage}
-      onPageChange={(page) => goto(`?p=${page}`)}
+      onPageChange={(page) => {
+        window.scrollTo(0, 0)
+        goto(`?p=${page}`)
+      }}
       class="my-4"
     >
       {#snippet children({pages, currentPage})}

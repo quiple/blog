@@ -91,7 +91,10 @@
         siblingCount={2}
         perPage={data.perPage}
         page={data.currentPage}
-        onPageChange={(p) => goto(`/search?q=${encodeURIComponent(data.searchQuery)}&page=${p}`)}
+        onPageChange={(p) => {
+          window.scrollTo(0, 0)
+          goto(`/search?q=${encodeURIComponent(data.searchQuery)}&page=${p}`)
+        }}
         class="my-4"
       >
         {#snippet children({pages, currentPage})}
