@@ -5,6 +5,7 @@
   import * as Tooltip from '$lib/components/ui/tooltip/index.js'
   import {BASE_URL} from '$lib/constants'
   import {heroColors} from '$lib/stores/header'
+  import {getCategoryName} from '$lib/utils'
   import {mode} from 'mode-watcher'
   import type {PageProps} from './$types'
   import 'remark-github-alerts/styles/github-colors-light.css'
@@ -145,7 +146,7 @@
   <div
     class="metadata"
     style={isOutline
-      ? `--content: '${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${new Intl.DateTimeFormat(
+      ? `--content: '${getCategoryName(data.category)} • ${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${new Intl.DateTimeFormat(
           'ko-KR',
           {
             dateStyle: 'long',
@@ -154,6 +155,7 @@
       : null}
     use:transition={`post-metadata-${data.slug}`}
   >
+    {getCategoryName(data.category)}&#8194;&bullet;&#8194;
     {#if data.media}
       <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>
         {data.media}
