@@ -75,7 +75,7 @@
             </div>
             <Skeleton class="h-3 w-1/4 mt-1.5" />
           </div>
-          <Skeleton class="img max-w-[88px]" />
+          <Skeleton class="img max-w-22" />
         </div>
       </li>
     {/each}
@@ -119,22 +119,22 @@
           </div>
           {#if post.image}
             {@html `
-            <style>
-              ::view-transition-group(post-title-${post.slug}),
-              ::view-transition-group(post-metadata-${post.slug}) {
-                z-index: 10;
-              }
-              ::view-transition-group-children(post-image-wrapper-${post.slug}) {
-                overflow: clip;
-              }
-              ::view-transition-old(post-image-${post.slug}) {
-                animation-name: zoom-out-old;
-              }
-              ::view-transition-new(post-image-${post.slug}) {
-                animation-name: zoom-out-new;
-              }
-            </style>
-          `}
+              <style>
+                ::view-transition-group(post-title-${post.slug}),
+                ::view-transition-group(post-metadata-${post.slug}) {
+                  z-index: 10;
+                }
+                ::view-transition-group-children(post-image-wrapper-${post.slug}) {
+                  overflow: clip;
+                }
+                ::view-transition-old(post-image-${post.slug}) {
+                  animation-name: zoom-out-old;
+                }
+                ::view-transition-new(post-image-${post.slug}) {
+                  animation-name: zoom-out-new;
+                }
+              </style>
+            `}
             {@const rawSrc = `${baseUrl}/img/${post.category}/${post.image}`}
             {@const src = isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc}
             <div
