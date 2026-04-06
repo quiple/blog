@@ -1,4 +1,6 @@
 <script lang="ts">
+  import {navigating} from '$app/stores'
+  import {Skeleton} from '$lib/components/ui/skeleton/index.js'
   import type {Action} from 'svelte/action'
 
   let {
@@ -19,45 +21,62 @@
 </script>
 
 <ul class="flex flex-col z-10 relative" use:transition={'post-list'}>
-  {#each posts as post}
-    {@const displayDate =
-      post.origDate instanceof Date ? post.origDate : new Date(`${post.origDate ?? post.pubDate}+09:00`)}
-    <li>
-      <a href={post.relativeURL} class="list-item">
-        <div class="grow">
-          <strong
-            class="line-clamp-1 mb-1"
-            use:transition={{
-              name: `post-title-${post.slug}`,
-              shouldApply({navigation}: {navigation: any}) {
-                return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-              },
-              applyImmediately({navigation}: {navigation: any}) {
-                return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-              },
-            }}>{post.title}</strong
-          >
-          <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
-          <small
-            class="text-muted-foreground"
-            use:transition={{
-              name: `post-metadata-${post.slug}`,
-              shouldApply({navigation}: {navigation: any}) {
-                return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-              },
-              applyImmediately({navigation}: {navigation: any}) {
-                return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-              },
-            }}
-          >
-            {#if post.media}
-              {post.media}&#8194;&#8226;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-              displayDate,
-            )}
-          </small>
+  {#if $navigating && isPagination($navigating)}
+    {#each Array(15) as _}
+      <li>
+        <div class="list-item pointer-events-none!">
+          <div class="grow py-1">
+            <Skeleton class="h-4.5 w-2/3 mb-2" />
+            <div class="space-y-1.5 mb-2.5 mt-1.5">
+              <Skeleton class="h-3.5 w-full" />
+              <Skeleton class="h-3.5 w-5/6" />
+            </div>
+            <Skeleton class="h-3 w-1/4 mt-1.5" />
+          </div>
+          <Skeleton class="img max-w-[88px]" />
         </div>
-        {#if post.image}
-          {@html `
+      </li>
+    {/each}
+  {:else}
+    {#each posts as post}
+      {@const displayDate =
+        post.origDate instanceof Date ? post.origDate : new Date(`${post.origDate ?? post.pubDate}+09:00`)}
+      <li>
+        <a href={post.relativeURL} class="list-item">
+          <div class="grow">
+            <strong
+              class="line-clamp-1 mb-1"
+              use:transition={{
+                name: `post-title-${post.slug}`,
+                shouldApply({navigation}: {navigation: any}) {
+                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
+                },
+                applyImmediately({navigation}: {navigation: any}) {
+                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
+                },
+              }}>{post.title}</strong
+            >
+            <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
+            <small
+              class="text-muted-foreground"
+              use:transition={{
+                name: `post-metadata-${post.slug}`,
+                shouldApply({navigation}: {navigation: any}) {
+                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
+                },
+                applyImmediately({navigation}: {navigation: any}) {
+                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
+                },
+              }}
+            >
+              {#if post.media}
+                {post.media}&#8194;&#8226;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
+                displayDate,
+              )}
+            </small>
+          </div>
+          {#if post.image}
+            {@html `
             <style>
               ::view-transition-group(post-title-${post.slug}),
               ::view-transition-group(post-metadata-${post.slug}) {
@@ -74,25 +93,26 @@
               }
             </style>
           `}
-          {@const rawSrc = `${baseUrl}/img/${post.category}/${post.image}`}
-          {@const src = isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc}
-          <div
-            class="img"
-            style:background-image={`url('${src}')`}
-            use:transition={{
-              name: `post-image-${post.slug}`,
-              shouldApply({navigation}: {navigation: any}) {
-                return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-              },
-              applyImmediately({navigation}: {navigation: any}) {
-                return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-              },
-            }}
-          ></div>
-        {/if}
-      </a>
-    </li>
-  {/each}
+            {@const rawSrc = `${baseUrl}/img/${post.category}/${post.image}`}
+            {@const src = isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc}
+            <div
+              class="img"
+              style:background-image={`url('${src}')`}
+              use:transition={{
+                name: `post-image-${post.slug}`,
+                shouldApply({navigation}: {navigation: any}) {
+                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
+                },
+                applyImmediately({navigation}: {navigation: any}) {
+                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
+                },
+              }}
+            ></div>
+          {/if}
+        </a>
+      </li>
+    {/each}
+  {/if}
 </ul>
 
 <style lang="sass">
