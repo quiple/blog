@@ -63,41 +63,30 @@
   }
 </script>
 
+{#snippet skeletonItem()}
+  <li>
+    <div class="list-item pointer-events-none! py-2">
+      <div class="grow">
+        <Skeleton class="h-4 w-2/3 mt-1 mb-2" />
+        <div class="space-y-1.5 pb-1.75 pt-0.75">
+          <Skeleton class="h-3.5 w-full" />
+          <Skeleton class="h-3.5 w-full" />
+          <Skeleton class="h-3.5 w-5/6" />
+        </div>
+        <Skeleton class="h-[12.8px] w-1/4 mt-1.75 mb-[4.2px]" />
+      </div>
+      <Skeleton class="img size-22" />
+    </div>
+  </li>
+{/snippet}
+
 <ul class="flex flex-col gap-1 z-10 relative" use:transition={'post-list'}>
   {#if !isProd}
-    {#each Array(2) as _}
-      <li>
-        <div class="list-item pointer-events-none! py-2">
-          <div class="grow">
-            <Skeleton class="h-4 w-2/3 mt-1 mb-2" />
-            <div class="space-y-1.5 pb-1.75 pt-0.75">
-              <Skeleton class="h-3.5 w-full" />
-              <Skeleton class="h-3.5 w-full" />
-              <Skeleton class="h-3.5 w-5/6" />
-            </div>
-            <Skeleton class="h-[12.8px] w-1/4 mt-1.75 mb-[4.2px]" />
-          </div>
-          <Skeleton class="img size-22" />
-        </div>
-      </li>
-    {/each}
+    {skeletonItem()}
   {/if}
   {#if navigating && isPagination(navigating)}
     {#each Array(15) as _}
-      <li>
-        <div class="list-item pointer-events-none! py-2">
-          <div class="grow">
-            <Skeleton class="h-4 w-2/3 mt-1 mb-2" />
-            <div class="space-y-1.5 pb-1.75 pt-0.75">
-              <Skeleton class="h-3.5 w-full" />
-              <Skeleton class="h-3.5 w-full" />
-              <Skeleton class="h-3.5 w-5/6" />
-            </div>
-            <Skeleton class="h-[12.8px] w-1/4 mt-1.75 mb-[4.2px]" />
-          </div>
-          <Skeleton class="img size-22 rounded-sm" />
-        </div>
-      </li>
+      {skeletonItem()}
     {/each}
   {:else}
     {#each posts as post}
