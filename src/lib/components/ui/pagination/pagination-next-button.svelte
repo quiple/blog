@@ -8,13 +8,13 @@
 </script>
 
 {#snippet Fallback()}
-  <span>Next</span>
+  <span>다음</span>
   <ChevronRightIcon class="size-4" />
 {/snippet}
 
 <PaginationPrimitive.NextButton
   bind:ref
-  aria-label="Go to next page"
+  aria-label="다음 페이지로 이동"
   class={cn(buttonVariants({variant: 'ghost'}), 'pr-1.5!', className)}
   {...restProps}
 >
