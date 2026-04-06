@@ -82,11 +82,13 @@
 
 <ul class="flex flex-col gap-1 z-10 relative" use:transition={'post-list'}>
   {#if !isProd}
-    {skeletonItem()}
+    {#each Array(2) as _}
+      {@render skeletonItem()}
+    {/each}
   {/if}
   {#if navigating && isPagination(navigating)}
     {#each Array(15) as _}
-      {skeletonItem()}
+      {@render skeletonItem()}
     {/each}
   {:else}
     {#each posts as post}
