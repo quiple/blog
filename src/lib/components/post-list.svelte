@@ -66,16 +66,17 @@
   {#if $navigating && isPagination($navigating)}
     {#each Array(15) as _}
       <li>
-        <div class="list-item pointer-events-none!">
-          <div class="grow py-1">
-            <Skeleton class="h-4.5 w-2/3 mb-2" />
-            <div class="space-y-1.5 mb-2.5 mt-1.5">
+        <div class="list-item pointer-events-none! py-2">
+          <div class="grow">
+            <Skeleton class="h-4 w-2/3 mt-1 mb-2" />
+            <div class="space-y-1.5 pb-1.75 pt-0.75">
+              <Skeleton class="h-3.5 w-full" />
               <Skeleton class="h-3.5 w-full" />
               <Skeleton class="h-3.5 w-5/6" />
             </div>
-            <Skeleton class="h-3 w-1/4 mt-1.5" />
+            <Skeleton class="h-[12.8px] w-1/4 mt-1.75 mb-[4.2px]" />
           </div>
-          <Skeleton class="img max-w-22" />
+          <Skeleton class="img size-22 rounded-sm" />
         </div>
       </li>
     {/each}
