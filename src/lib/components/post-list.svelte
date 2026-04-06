@@ -75,7 +75,9 @@
             </style>
           `}
           {@const rawSrc = `${baseUrl}/img/${post.category}/${post.image}`}
-          {@const src = isProd ? `/cdn-cgi/image/width=180,format=avif,quality=50/${rawSrc}` : rawSrc}
+          {@const src = isProd
+            ? `/cdn-cgi/image/width=180,height=180,format=avif,quality=50,fit=crop/${rawSrc}`
+            : rawSrc}
           <div
             class="img"
             style:background-image={`url('${src}')`}
