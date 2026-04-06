@@ -114,22 +114,22 @@
             </div>
             {#if post.image}
               {@html `
-              <style>
-                ::view-transition-group(post-title-${post.slug}),
-                ::view-transition-group(post-metadata-${post.slug}) {
-                  z-index: 10;
-                }
-                ::view-transition-group-children(post-image-wrapper-${post.slug}) {
-                  overflow: clip;
-                }
-                ::view-transition-old(post-image-${post.slug}) {
-                  animation-name: zoom-out-old;
-                }
-                ::view-transition-new(post-image-${post.slug}) {
-                  animation-name: zoom-out-new;
-                }
-              </style>
-            `}
+                <style>
+                  ::view-transition-group(post-title-${post.slug}),
+                  ::view-transition-group(post-metadata-${post.slug}) {
+                    z-index: 10;
+                  }
+                  ::view-transition-group-children(post-image-wrapper-${post.slug}) {
+                    overflow: clip;
+                  }
+                  ::view-transition-old(post-image-${post.slug}) {
+                    animation-name: zoom-out-old;
+                  }
+                  ::view-transition-new(post-image-${post.slug}) {
+                    animation-name: zoom-out-new;
+                  }
+                </style>
+              `}
               {@const rawSrc = `${baseUrl}/img/${post.category}/${post.image}`}
               {@const src = isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc}
               <div
