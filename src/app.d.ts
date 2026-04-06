@@ -6,7 +6,15 @@ declare global {
     // interface Locals {}
     // interface PageData {}
     // interface PageState {}
-    // interface Platform {}
+    interface Platform {
+      env: {
+        R2: R2Bucket
+      }
+      context: {
+        waitUntil(promise: Promise<unknown>): void
+      }
+      caches: CacheStorage & {default: Cache}
+    }
   }
 }
 
