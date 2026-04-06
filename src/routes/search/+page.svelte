@@ -73,7 +73,7 @@
       bind:value={searchInput}
       oninput={handleSearch}
       onkeydown={handleKeydown}
-      class="z-50 pl-11 h-12 text-lg md:text-xl"
+      class="z-50 pl-11 h-12 text-lg md:text-xl dark:bg-background"
       autofocus
     />
   </div>
@@ -129,23 +129,6 @@
   {/if}
 </div>
 
-{@html `
-  <style>
-    .paginate-forward::view-transition-old(post-list) {
-      animation: paginate-slide-to-left-old 0.25s ease both;
-    }
-    .paginate-forward::view-transition-new(post-list) {
-      animation: paginate-slide-to-left-new 0.25s ease both;
-    }
-    .paginate-backward::view-transition-old(post-list) {
-      animation: paginate-slide-to-right-old 0.25s ease both;
-    }
-    .paginate-backward::view-transition-new(post-list) {
-      animation: paginate-slide-to-right-new 0.25s ease both;
-    }
-  </style>
-`}
-
 <style lang="sass">
   @reference '#app.css'
 
@@ -164,38 +147,6 @@
     to
       opacity: 1
       height: 5.5rem
-
-  @keyframes -global-paginate-slide-to-left-old
-    from
-      opacity: 1
-      transform: translateX(0)
-    to
-      opacity: 0
-      transform: translateX(-60px)
-
-  @keyframes -global-paginate-slide-to-left-new
-    from
-      opacity: 0
-      transform: translateX(60px)
-    to
-      opacity: 1
-      transform: translateX(0)
-
-  @keyframes -global-paginate-slide-to-right-old
-    from
-      opacity: 1
-      transform: translateX(0)
-    to
-      opacity: 0
-      transform: translateX(60px)
-
-  @keyframes -global-paginate-slide-to-right-new
-    from
-      opacity: 0
-      transform: translateX(-60px)
-    to
-      opacity: 1
-      transform: translateX(0)
 
   .empty-state
     @apply text-muted-foreground text-center py-16
