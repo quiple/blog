@@ -15,12 +15,17 @@
 
   let {data}: PageProps = $props()
 
+  const isProd = import.meta.env.PROD
+  const baseUrl = isProd ? 'https://quiple.dev' : ''
+
   const {transition} = setupViewTransition()
   let scrollY = $state(0)
   const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
   const isArticle = $derived(data.category === 'article')
   const isFont = $derived(data.category === 'font')
-  const image = $derived(data.image ? `/img/${data.category}/${data.image}` : '')
+
+  const rawSrc = $derived(`${baseUrl}/img/${data.category}/${data.image}`)
+  const image = $derived(isProd ? `/cdn-cgi/image/width=3840,format=avif,quality=50/${rawSrc}` : rawSrc)
   const publishedDate = $derived(data.origDate ?? data.pubDate)
   const jsonLd = $derived(
     JSON.stringify({
