@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {navigating} from '$app/stores'
+  import {navigating} from '$app/state'
   import {Skeleton} from '$lib/components/ui/skeleton/index.js'
   import type {Action} from 'svelte/action'
 
@@ -63,7 +63,7 @@
 </script>
 
 <ul class="flex flex-col z-10 relative" use:transition={'post-list'}>
-  {#if $navigating && isPagination($navigating)}
+  {#if navigating && isPagination(navigating)}
     {#each Array(15) as _}
       <li>
         <div class="list-item pointer-events-none! py-2">
