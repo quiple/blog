@@ -100,7 +100,7 @@
         {#snippet children({pages, currentPage})}
           <Pagination.Content>
             <Pagination.Item>
-              <Pagination.Previous />
+              <Pagination.PrevButton />
             </Pagination.Item>
             {#each pages as p (p.key)}
               <Pagination.Item>
@@ -118,7 +118,7 @@
               </Pagination.Item>
             {/each}
             <Pagination.Item>
-              <Pagination.Next />
+              <Pagination.NextButton />
             </Pagination.Item>
           </Pagination.Content>
         {/snippet}
