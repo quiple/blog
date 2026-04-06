@@ -186,7 +186,7 @@
   @reference '#app.css'
 
   .list-item
-    @apply flex flex-col before:rounded-[14px] py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-[14px] hover-bg-muted
+    @apply flex flex-col before:rounded-[1rem] py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-[1rem] hover-bg-muted
     .img
       @apply shrink-0 size-22 bg-cover bg-center inner-border after:rounded-md rounded-md shadow-xs
 </style>
