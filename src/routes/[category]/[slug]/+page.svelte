@@ -25,7 +25,7 @@
   const isFont = $derived(data.category === 'font')
 
   const rawSrc = $derived(`${baseUrl}/img/${data.category}/${data.image}`)
-  const image = $derived(isProd ? `/cdn-cgi/image/width=3840,format=avif,quality=50/${rawSrc}` : rawSrc)
+  const image = $derived(isProd ? `/cdn-cgi/image/width=3840,format=avif,quality=75/${rawSrc}` : rawSrc)
   const publishedDate = $derived(data.origDate ?? data.pubDate)
   const jsonLd = $derived(
     JSON.stringify({
