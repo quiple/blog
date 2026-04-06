@@ -4,8 +4,7 @@ media: 니코니코 뉴스 오리지널
 source: https://originalnews.nico/27573
 author: 타카세 코지 (高瀬康司)
 authorURL: https://x.com/takase_merca
-image: yuyushiki_interview03_pc.avif
-originalImage: yuyushiki_interview03_pc.png
+image: yuyushiki_interview03_pc.png
 imageVerticalAlign: 0
 imageForeground: fff
 outline: '001af4'

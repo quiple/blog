@@ -13,6 +13,9 @@
     }) => boolean
     transition: Action<HTMLElement, any>
   } = $props()
+
+  const isProd = import.meta.env.PROD
+  const baseUrl = isProd ? 'https://quiple.dev' : ''
 </script>
 
 <ul class="flex flex-col z-10 relative" use:transition={'post-list'}>
@@ -71,9 +74,11 @@
               }
             </style>
           `}
+          {@const rawSrc = `${baseUrl}/img/${post.category}/${post.image}`}
+          {@const src = isProd ? `/cdn-cgi/image/width=180,format=avif,quality=50/${rawSrc}` : rawSrc}
           <div
             class="img"
-            style:background-image={`url('/img/thumbnail/${post.image.substring(0, post.image.lastIndexOf('.'))}.avif')`}
+            style:background-image={`url('${src}')`}
             use:transition={{
               name: `post-image-${post.slug}`,
               shouldApply({navigation}: {navigation: any}) {
