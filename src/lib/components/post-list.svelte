@@ -151,7 +151,7 @@
             >
               <img
                 alt=""
-                class="absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-500"
+                class="absolute inset-0 size-full object-cover opacity-0 transition-opacity"
                 use:lazyImage={src}
                 loading="lazy"
                 decoding="async"
