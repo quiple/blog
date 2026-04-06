@@ -154,7 +154,7 @@
               </div>
             {/if}
           </div>
-          <div class="flex justify-between gap-2">
+          <div class="flex justify-between gap-2 mt-0.5">
             <small
               class="text-muted-foreground"
               use:transition={{
