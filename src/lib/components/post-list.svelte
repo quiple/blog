@@ -62,7 +62,7 @@
   }
 </script>
 
-<ul class="flex flex-col z-10 relative" use:transition={'post-list'}>
+<ul class="flex flex-col gap-1 z-10 relative" use:transition={'post-list'}>
   {#if navigating && isPagination(navigating)}
     {#each Array(15) as _}
       <li>
@@ -86,20 +86,65 @@
         post.origDate instanceof Date ? post.origDate : new Date(`${post.origDate ?? post.pubDate}+09:00`)}
       <li>
         <a href={post.relativeURL} class="list-item">
-          <div class="grow">
-            <strong
-              class="line-clamp-1 mb-1"
-              use:transition={{
-                name: `post-title-${post.slug}`,
-                shouldApply({navigation}: {navigation: any}) {
-                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-                },
-                applyImmediately({navigation}: {navigation: any}) {
-                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-                },
-              }}>{post.title}</strong
-            >
-            <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
+          <div class="flex gap-4">
+            <div class="grow">
+              <strong
+                class="line-clamp-1 mb-1"
+                use:transition={{
+                  name: `post-title-${post.slug}`,
+                  shouldApply({navigation}: {navigation: any}) {
+                    return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
+                  },
+                  applyImmediately({navigation}: {navigation: any}) {
+                    return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
+                  },
+                }}>{post.title}</strong
+              >
+              <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
+            </div>
+            {#if post.image}
+              {@html `
+              <style>
+                ::view-transition-group(post-title-${post.slug}),
+                ::view-transition-group(post-metadata-${post.slug}) {
+                  z-index: 10;
+                }
+                ::view-transition-group-children(post-image-wrapper-${post.slug}) {
+                  overflow: clip;
+                }
+                ::view-transition-old(post-image-${post.slug}) {
+                  animation-name: zoom-out-old;
+                }
+                ::view-transition-new(post-image-${post.slug}) {
+                  animation-name: zoom-out-new;
+                }
+              </style>
+            `}
+              {@const rawSrc = `${baseUrl}/img/${post.category}/${post.image}`}
+              {@const src = isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc}
+              <div
+                class="img bg-muted animate-pulse"
+                use:transition={{
+                  name: `post-image-${post.slug}`,
+                  shouldApply({navigation}: {navigation: any}) {
+                    return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
+                  },
+                  applyImmediately({navigation}: {navigation: any}) {
+                    return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
+                  },
+                }}
+              >
+                <img
+                  alt=""
+                  class="absolute inset-0 size-full object-cover opacity-0 transition-opacity"
+                  use:lazyImage={src}
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            {/if}
+          </div>
+          <div class="flex justify-between gap-2">
             <small
               class="text-muted-foreground"
               use:transition={{
@@ -117,48 +162,10 @@
                 displayDate,
               )}
             </small>
+            <small class="text-muted-foreground">
+              {post.category}
+            </small>
           </div>
-          {#if post.image}
-            {@html `
-              <style>
-                ::view-transition-group(post-title-${post.slug}),
-                ::view-transition-group(post-metadata-${post.slug}) {
-                  z-index: 10;
-                }
-                ::view-transition-group-children(post-image-wrapper-${post.slug}) {
-                  overflow: clip;
-                }
-                ::view-transition-old(post-image-${post.slug}) {
-                  animation-name: zoom-out-old;
-                }
-                ::view-transition-new(post-image-${post.slug}) {
-                  animation-name: zoom-out-new;
-                }
-              </style>
-            `}
-            {@const rawSrc = `${baseUrl}/img/${post.category}/${post.image}`}
-            {@const src = isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc}
-            <div
-              class="img bg-muted animate-pulse"
-              use:transition={{
-                name: `post-image-${post.slug}`,
-                shouldApply({navigation}: {navigation: any}) {
-                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-                },
-                applyImmediately({navigation}: {navigation: any}) {
-                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-                },
-              }}
-            >
-              <img
-                alt=""
-                class="absolute inset-0 size-full object-cover opacity-0 transition-opacity"
-                use:lazyImage={src}
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          {/if}
         </a>
       </li>
     {/each}
@@ -169,7 +176,7 @@
   @reference '#app.css'
 
   .list-item
-    @apply flex gap-4 before:rounded-xl py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-xl hover-bg-muted
+    @apply flex flex-col before:rounded-xl py-2 pl-3 -ml-3 pr-2 -mr-2 rounded-xl hover-bg-muted
     .img
       @apply shrink-0 size-22 bg-cover bg-center inner-border after:rounded-sm rounded-sm shadow-xs
 </style>
