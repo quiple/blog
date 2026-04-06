@@ -15,7 +15,7 @@ export type WithElementRef<T, U extends HTMLElement = HTMLElement> = T & {ref?: 
 export function getCategoryName(category: string) {
   switch (category) {
     case 'article':
-      return '기사'
+      return '번역 기사'
     case 'font':
       return '폰트'
     default:
