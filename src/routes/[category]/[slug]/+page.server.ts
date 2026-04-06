@@ -88,7 +88,7 @@ function figure() {
 
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
-        const rawSrc = `${baseUrl}/assets/album/${attributes.src}`
+        const rawSrc = `${baseUrl}/img/${attributes.src}`
         const src = isProd ? `/cdn-cgi/image/width=480,format=avif,quality=85/${rawSrc}` : rawSrc
         const id = attributes.id
         const className = attributes.class ?? ''
