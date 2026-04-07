@@ -2,6 +2,7 @@
   import {onMount} from 'svelte'
   import {hero} from '$lib/actions/hero'
   import MdxContent from '$lib/components/mdx/MdxContent.svelte'
+  import {Badge} from '$lib/components/ui/badge/index.js'
   import * as Tooltip from '$lib/components/ui/tooltip/index.js'
   import {BASE_URL} from '$lib/constants'
   import {heroColors} from '$lib/stores/header'
@@ -199,6 +200,7 @@
     style:--outline-color={data.outline ? `#${data.outline.toString()}` : undefined}
   >
     <div>
+      <Badge class="-ml-px mb-3.5" variant="secondary">{getCategoryName(data.category)}</Badge>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
         {data.title}
       </h1>
