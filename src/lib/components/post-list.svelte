@@ -104,7 +104,19 @@
           <div class="flex gap-4">
             <div class="grow">
               <div class="flex items-center mb-1 gap-1">
-                <Badge class="-ml-px" variant="secondary">{getCategoryName(post.category)}</Badge>
+                <div
+                  use:transition={{
+                    name: `post-category-${post.slug}`,
+                    shouldApply({navigation}: {navigation: any}) {
+                      return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
+                    },
+                    applyImmediately({navigation}: {navigation: any}) {
+                      return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
+                    },
+                  }}
+                >
+                  <Badge class="-ml-px" variant="secondary">{getCategoryName(post.category)}</Badge>
+                </div>
                 <strong
                   class="line-clamp-1 grow"
                   use:transition={{
@@ -124,6 +136,7 @@
               {@html `
                 <style>
                   ::view-transition-group(post-title-${post.slug}),
+                  ::view-transition-group(post-category-${post.slug}),
                   ::view-transition-group(post-metadata-${post.slug}) {
                     z-index: 10;
                   }
