@@ -84,8 +84,8 @@
         </DropdownMenu.Trigger>
         <DropdownMenu.Content align="end" class="[--bits-floating-anchor-width:auto]">
           {#if page.url.pathname !== '/search'}
-            <div class="relative m-1.5">
-              <Search class="absolute top-2.5 left-2.5 size-4" />
+            <div class="relative m-1.5 flex items-center">
+              <Search class="absolute left-2.5 size-4" />
               <Input
                 type="search"
                 name="search"
@@ -131,7 +131,7 @@
       .logo
         @apply flex items-center gap-1 self-center transition relative before:mask-size-[54px] p-1 -m-1
       :global(.menu)
-        @apply relative before:mask-size-[24px] print:hidden
+        @apply relative before:mask-size-[24px] print:hidden size-9
       .logo, :global(.menu)
         @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:mask-(--svg-outline) before:mask-center before:mask-no-repeat dark:mask-(--svg-grade-down) mask-center mask-[size:36px] mask-no-repeat
 </style>
