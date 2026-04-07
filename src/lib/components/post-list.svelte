@@ -116,7 +116,7 @@
                     },
                   }}
                 >
-                  <Badge variant="secondary">{getCategoryName(post.category)}</Badge>
+                  <Badge variant="secondary" class="badge-item">{getCategoryName(post.category)}</Badge>
                 </div>
                 <strong
                   class="line-clamp-1 grow"
@@ -205,7 +205,7 @@
   @reference '#app.css'
 
   .list-item
-    @apply flex flex-col before:rounded-[1rem] py-2 pl-3.25 -ml-3.25 pr-2 -mr-2 rounded-[1rem] hover-bg-muted
+    @apply flex flex-col before:rounded-[1rem] py-2 pl-3.25 -ml-3.25 pr-2 -mr-2 rounded-[1rem] hover-bg-muted hover:[&_.badge-item]:border-border
     .img
       @apply shrink-0 size-22 bg-cover bg-center inner-border after:rounded-md rounded-md shadow-xs
 </style>
