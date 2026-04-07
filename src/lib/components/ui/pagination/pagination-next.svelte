@@ -10,6 +10,6 @@
 </script>
 
 <PaginationLink aria-label="Go to next page" size="default" class={cn('pr-1.5!', className)} {...restProps}>
-  <span class="cn-pagination-next-text hidden sm:block">Next</span>
+  <span class="cn-pagination-next-text hidden sm:block">다음</span>
   <ChevronRightIcon data-icon="inline-end" />
 </PaginationLink>
