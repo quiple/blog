@@ -123,6 +123,7 @@
   {@html `
     <style>
       ::view-transition-group(post-title-${data.slug}),
+      ::view-transition-group(post-category-${data.slug}),
       ::view-transition-group(post-metadata-${data.slug}) {
         z-index: 10;
       }
@@ -200,7 +201,9 @@
     style:--outline-color={data.outline ? `#${data.outline.toString()}` : undefined}
   >
     <div>
-      <Badge class="-ml-px mb-3.5" variant="secondary">{getCategoryName(data.category)}</Badge>
+      <div use:transition={`post-category-${data.slug}`}>
+        <Badge class="-ml-px mb-3.5" variant="secondary">{getCategoryName(data.category)}</Badge>
+      </div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
         {data.title}
       </h1>
