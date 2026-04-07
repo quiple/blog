@@ -1,5 +1,6 @@
 <script lang="ts">
   import {navigating} from '$app/state'
+  import {Badge} from '$lib/components/ui/badge/index.js'
   import {Skeleton} from '$lib/components/ui/skeleton/index.js'
   import {getCategoryName} from '$lib/utils'
   import type {Action} from 'svelte/action'
@@ -77,9 +78,9 @@
         </div>
         <Skeleton class="img size-22" />
       </div>
-      <div class="flex justify-between gap-2 mt-px">
+      <div class="flex justify-between items-start gap-2 mt-px">
         <Skeleton class="h-[12.8px] w-1/4 my-[3.2px]" />
-        <Skeleton class="h-[12.8px] w-1/12 my-[3.2px]" />
+        <Skeleton class="h-5 rounded-full w-1/10" />
       </div>
     </div>
   </li>
@@ -159,7 +160,7 @@
               </div>
             {/if}
           </div>
-          <div class="flex justify-between gap-2 mt-px">
+          <div class="flex justify-between items-start gap-2 mt-px">
             <small
               class="text-muted-foreground"
               use:transition={{
@@ -177,9 +178,7 @@
                 displayDate,
               )}
             </small>
-            <small class="text-muted-foreground">
-              {getCategoryName(post.category)}
-            </small>
+            <Badge variant="secondary">{getCategoryName(post.category)}</Badge>
           </div>
         </a>
       </li>
