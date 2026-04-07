@@ -66,16 +66,20 @@
 {#snippet skeletonItem()}
   <li>
     <div class="list-item pointer-events-none! py-2">
-      <div class="grow">
-        <Skeleton class="h-4 w-2/3 mt-1 mb-2" />
-        <div class="space-y-1.5 pb-1.75 pt-0.75">
-          <Skeleton class="h-3.5 w-full" />
-          <Skeleton class="h-3.5 w-full" />
-          <Skeleton class="h-3.5 w-5/6" />
+      <div class="flex gap-4">
+        <div class="grow">
+          <Skeleton class="h-4 w-2/3 mt-1 mb-2" />
+          <div class="space-y-1.5 pb-1.75 pt-0.75">
+            <Skeleton class="h-3.5 w-full" />
+            <Skeleton class="h-3.5 w-full" />
+            <Skeleton class="h-3.5 w-5/6" />
+          </div>
         </div>
+        <Skeleton class="img size-22" />
+      </div>
+      <div class="flex justify-between gap-2 mt-px">
         <Skeleton class="h-[12.8px] w-1/4 mt-1.75 mb-[4.2px]" />
       </div>
-      <Skeleton class="img size-22" />
     </div>
   </li>
 {/snippet}
