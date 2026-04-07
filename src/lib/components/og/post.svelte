@@ -2,7 +2,9 @@
 
 <script lang="ts">
   import Q from '$lib/components/q.svelte'
+  import {Badge} from '$lib/components/ui/badge/index.js'
   import {BASE_URL} from '$lib/constants'
+  import {getCategoryName} from '$lib/utils'
 
   type Props = {
     title: string
@@ -29,8 +31,11 @@
   {/if}
   <div class="flex flex-col justify-between items-start h-full w-full p-12">
     <Q class="w-20 h-20" fill={`#${imageForeground}`} />
-    <h1 class="font-bold text-6xl leading-tight -mb-3" style="word-break: keep-all">
-      {title}
-    </h1>
+    <div>
+      <Badge variant="secondary">{getCategoryName(category)}</Badge>
+      <h1 class="font-bold text-6xl leading-tight -mb-3" style="word-break: keep-all">
+        {title}
+      </h1>
+    </div>
   </div>
 </main>
