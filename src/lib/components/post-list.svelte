@@ -105,6 +105,7 @@
             <div class="grow">
               <div class="flex items-center mb-1 gap-1">
                 <div
+                  class="-ml-px"
                   use:transition={{
                     name: `post-category-${post.slug}`,
                     shouldApply({navigation}: {navigation: any}) {
@@ -115,7 +116,7 @@
                     },
                   }}
                 >
-                  <Badge class="-ml-px" variant="secondary">{getCategoryName(post.category)}</Badge>
+                  <Badge variant="secondary">{getCategoryName(post.category)}</Badge>
                 </div>
                 <strong
                   class="line-clamp-1 grow"
