@@ -521,7 +521,9 @@
                       {/each}
                     </Select.Group>
                   {/each}
-                  <Select.Item value="custom">사용자 지정 문자 집합 입력</Select.Item>
+                  <Select.Group>
+                    <Select.Item value="custom">사용자 지정 문자 집합 입력</Select.Item>
+                  </Select.Group>
                 </Select.Content>
               </Select.Root>
             </div>
