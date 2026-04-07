@@ -104,18 +104,21 @@
         <a href={post.relativeURL} class="list-item">
           <div class="flex gap-4">
             <div class="grow">
-              <strong
-                class="line-clamp-1 mb-1"
-                use:transition={{
-                  name: `post-title-${post.slug}`,
-                  shouldApply({navigation}: {navigation: any}) {
-                    return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-                  },
-                  applyImmediately({navigation}: {navigation: any}) {
-                    return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-                  },
-                }}>{post.title}</strong
-              >
+              <div class="flex items-center mb-1 gap-1">
+                <Badge class="-ml-px" variant="secondary">{getCategoryName(post.category)}</Badge>
+                <strong
+                  class="line-clamp-1 grow"
+                  use:transition={{
+                    name: `post-title-${post.slug}`,
+                    shouldApply({navigation}: {navigation: any}) {
+                      return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
+                    },
+                    applyImmediately({navigation}: {navigation: any}) {
+                      return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
+                    },
+                  }}>{post.title}</strong
+                >
+              </div>
               <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
             </div>
             {#if post.image}
@@ -178,7 +181,6 @@
                 displayDate,
               )}
             </small>
-            <Badge variant="secondary">{getCategoryName(post.category)}</Badge>
           </div>
         </a>
       </li>
