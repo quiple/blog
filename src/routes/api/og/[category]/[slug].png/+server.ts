@@ -2,8 +2,10 @@ import type {ComponentProps} from 'svelte'
 import {ImageResponse} from '@ethercorps/sveltekit-og'
 import {CustomFont, resolveFonts} from '@ethercorps/sveltekit-og/fonts'
 import {read} from '$app/server'
-import astaSansFontPath from '$lib/assets/fonts/AstaSans-ExtraBold.ttf?url'
-import geistaFontPath from '$lib/assets/fonts/Geista-SemiBold.otf?url'
+import astaSans800FontPath from '$lib/assets/fonts/AstaSans-ExtraBold.ttf?url'
+import astaSans500FontPath from '$lib/assets/fonts/AstaSans-Medium.ttf?url'
+import geista500FontPath from '$lib/assets/fonts/Geista-Regular.otf?url'
+import geista800FontPath from '$lib/assets/fonts/Geista-SemiBold.otf?url'
 import plexSansJPFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
 import OgImage from '$lib/components/og/post.svelte'
 import {blogArticles, blogFonts, blogPosts} from '$lib/content'
@@ -24,11 +26,17 @@ export const entries: EntryGenerator = () => {
 
 export const prerender = true
 
-const geista = new CustomFont('Geista', () => read(geistaFontPath).arrayBuffer(), {
+const geista500 = new CustomFont('Geista', () => read(geista500FontPath).arrayBuffer(), {
+  weight: 500,
+})
+const geista800 = new CustomFont('Geista', () => read(geista800FontPath).arrayBuffer(), {
   weight: 800,
 })
 
-const astaSans = new CustomFont('IBM Plex Sans KR', () => read(astaSansFontPath).arrayBuffer(), {
+const astaSans500 = new CustomFont('IBM Plex Sans KR', () => read(astaSans500FontPath).arrayBuffer(), {
+  weight: 500,
+})
+const astaSans800 = new CustomFont('IBM Plex Sans KR', () => read(astaSans800FontPath).arrayBuffer(), {
   weight: 800,
 })
 
@@ -37,7 +45,7 @@ const plexSansJP = new CustomFont('IBM Plex Sans JP', () => read(plexSansJPFontP
 })
 
 export const GET: RequestHandler = async ({params}) => {
-  const resolvedFontOptions = await resolveFonts([geista, astaSans, plexSansJP])
+  const resolvedFontOptions = await resolveFonts([geista500, geista800, astaSans500, astaSans800, plexSansJP])
 
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
