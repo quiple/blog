@@ -231,6 +231,9 @@
 
   <article>
     {#if !image}
+      <div use:transition={`post-category-${data.slug}`}>
+        <Badge class="-ml-px mb-3.5" variant="secondary">{getCategoryName(data.category)}</Badge>
+      </div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
       {@render metadata()}
     {/if}
