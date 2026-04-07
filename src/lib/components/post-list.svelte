@@ -78,7 +78,7 @@
         <Skeleton class="img size-22" />
       </div>
       <div class="flex justify-between gap-2 mt-px">
-        <Skeleton class="h-[12.8px] w-1/4 mt-1.75 mb-[4.2px]" />
+        <Skeleton class="h-[12.8px] w-1/4 my-[3.2px]" />
       </div>
     </div>
   </li>
