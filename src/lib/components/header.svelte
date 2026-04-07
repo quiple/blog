@@ -82,7 +82,7 @@
             </Button>
           {/snippet}
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content align="end">
+        <DropdownMenu.Content align="end" class="[--bits-floating-anchor-width:auto]">
           {#if page.url.pathname !== '/search'}
             <div class="relative m-1.5">
               <Search class="absolute top-2.5 left-2.5 size-4" />
