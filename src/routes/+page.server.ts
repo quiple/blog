@@ -5,7 +5,7 @@ const PER_PAGE = 15
 
 export const load: PageServerLoad = async ({url}) => {
   const title = 'quiple'
-  const description = '번역 블로그.'
+  const description = '이것저것 블로그.'
   const allPosts = await getCachedProcessedMetadata()
 
   const totalPages = Math.max(1, Math.ceil(allPosts.length / PER_PAGE))
