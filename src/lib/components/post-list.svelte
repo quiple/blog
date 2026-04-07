@@ -68,7 +68,7 @@
     <div class="list-item pointer-events-none! py-2">
       <div class="flex gap-4">
         <div class="grow">
-          <Skeleton class="h-4 w-2/3 mt-1 mb-2" />
+          <Skeleton class="h-4 w-3/5 mt-1 mb-2" />
           <div class="space-y-1.5 pb-1.75 pt-0.75">
             <Skeleton class="h-3.5 w-full" />
             <Skeleton class="h-3.5 w-full" />
@@ -79,6 +79,7 @@
       </div>
       <div class="flex justify-between gap-2 mt-px">
         <Skeleton class="h-[12.8px] w-1/4 my-[3.2px]" />
+        <Skeleton class="h-[12.8px] w-1/12 my-[3.2px]" />
       </div>
     </div>
   </li>
