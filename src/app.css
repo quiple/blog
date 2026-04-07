@@ -211,7 +211,7 @@
     @apply scroll-m-(--header-height) text-base font-bold tracking-tight md:text-lg lg:text-xl;
   }
   p {
-    @apply text-justify leading-6 sm:leading-7;
+    @apply my-3 text-justify leading-6 sm:my-4 sm:leading-7;
   }
   p.lead {
     @apply text-xl text-muted-foreground;
