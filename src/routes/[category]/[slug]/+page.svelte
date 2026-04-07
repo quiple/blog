@@ -155,8 +155,7 @@
       : null}
     use:transition={`post-metadata-${data.slug}`}
   >
-    {getCategoryName(data.category)}&#8194;&bullet;&#8194;
-    {#if data.media}
+    {getCategoryName(data.category)}&#8194;&bullet;&#8194;{#if data.media}
       <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>
         {data.media}
       </a>&#8194;&bullet;&#8194;
