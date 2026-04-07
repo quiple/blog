@@ -146,7 +146,7 @@
   <div
     class="metadata"
     style={isOutline
-      ? `--content: '${getCategoryName(data.category)} • ${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${new Intl.DateTimeFormat(
+      ? `--content: '${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${new Intl.DateTimeFormat(
           'ko-KR',
           {
             dateStyle: 'long',
@@ -155,7 +155,7 @@
       : null}
     use:transition={`post-metadata-${data.slug}`}
   >
-    {getCategoryName(data.category)}&#8194;&bullet;&#8194;{#if data.media}
+    {#if data.media}
       <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>
         {data.media}
       </a>&#8194;&bullet;&#8194;
