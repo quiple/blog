@@ -254,11 +254,13 @@
           {triggerContent}
         </Select.Trigger>
         <Select.Content>
-          {#each galmuris as font (font.value)}
-            <Select.Item value={font.value} label={font.label}>
-              {font.label}
-            </Select.Item>
-          {/each}
+          <Select.Group>
+            {#each galmuris as font (font.value)}
+              <Select.Item value={font.value} label={font.label}>
+                {font.label}
+              </Select.Item>
+            {/each}
+          </Select.Group>
         </Select.Content>
       </Select.Root>
     {/if}
