@@ -103,15 +103,11 @@
   <meta property="og:description" content={data.description} />
   <meta name="twitter:title" content={data.title} />
   <meta name="twitter:description" content={data.description} />
-
-  {#if image}
-    <meta property="og:image" content={`${BASE_URL}/api/og/${data.category}/${data.slug}.png`} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:image" content={`${BASE_URL}/api/og/${data.category}/${data.slug}.png`} />
-    <meta name="twitter:card" content="summary_large_image" />
-  {/if}
-
+  <meta property="og:image" content={`${BASE_URL}/api/og/${data.category}/${data.slug}.png`} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:image" content={`${BASE_URL}/api/og/${data.category}/${data.slug}.png`} />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta property="article:published_time" content={`${publishedDate}+09:00`} />
   {#if data.author}
     <meta property="article:author" content={data.author} />
