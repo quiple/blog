@@ -201,7 +201,7 @@
     style:--outline-color={data.outline ? `#${data.outline.toString()}` : undefined}
   >
     <div>
-      <div class="inline-block mb-2" use:transition={`post-category-${data.slug}`}>
+      <div class="inline-block mb-1" use:transition={`post-category-${data.slug}`}>
         <Badge variant="secondary">{getCategoryName(data.category)}</Badge>
       </div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
@@ -231,7 +231,7 @@
 
   <article>
     {#if !image}
-      <div class="inline-block mb-2" use:transition={`post-category-${data.slug}`}>
+      <div class="inline-block mb-1" use:transition={`post-category-${data.slug}`}>
         <Badge variant="secondary">{getCategoryName(data.category)}</Badge>
       </div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
