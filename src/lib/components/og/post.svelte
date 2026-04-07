@@ -31,7 +31,7 @@
   <div class="flex flex-col justify-between items-start h-full w-full p-12">
     <Q class="w-20 h-20" fill={`#${imageForeground}`} />
     <div class="flex flex-col items-start w-full">
-      <span class="px-3 py-0.5 bg-black text-white rounded-full text-2xl">{getCategoryName(category)}</span>
+      <span class="px-3 py-0.5 bg-black text-white rounded-full text-2xl -mb-2.5">{getCategoryName(category)}</span>
       <h1 class="font-bold text-6xl leading-tight -mb-3" style="word-break: keep-all">
         {title}
       </h1>
