@@ -78,4 +78,8 @@
         :global(iframe)
           @apply max-w-full w-xl 2xl:w-2xl
           color-scheme: initial
+        :global(.footnotes)
+          @apply text-sm
+          :global(p)
+            @apply leading-5 sm:leading-6 my-2
 </style>
