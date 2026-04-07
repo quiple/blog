@@ -80,7 +80,6 @@
       </div>
       <div class="flex justify-between items-start gap-2 mt-px">
         <Skeleton class="h-[12.8px] w-1/4 my-[3.2px]" />
-        <Skeleton class="h-5 rounded-full w-1/10" />
       </div>
     </div>
   </li>
