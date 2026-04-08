@@ -72,6 +72,26 @@
     }),
   )
 
+  const jsonLdScript = $derived(`<script type="application/ld+json">${jsonLd}</sc` + `ript>`)
+  const viewTransitionStyle = $derived(`
+    <style>
+      ::view-transition-group(post-title-${data.slug}),
+      ::view-transition-group(post-category-${data.slug}),
+      ::view-transition-group(post-metadata-${data.slug}) {
+        z-index: 10;
+      }
+      ::view-transition-group-children(post-image-wrapper-${data.slug}) {
+        overflow: clip;
+      }
+      ::view-transition-old(post-image-${data.slug}) {
+        animation-name: zoom-in-old;
+      }
+      ::view-transition-new(post-image-${data.slug}) {
+        animation-name: zoom-in-new;
+      }
+    </style>
+  `)
+
   $effect(() => {
     heroColors.set({
       foreground: image ? `#${data.imageForeground?.toString() ?? '09090b'}` : null,
@@ -114,26 +134,8 @@
   {/if}
 
   <link rel="canonical" href={data.canonicalURL} />
-  {@html `<script type="application/ld+json">${jsonLd}</script>`}
-
-  {@html `
-    <style>
-      ::view-transition-group(post-title-${data.slug}),
-      ::view-transition-group(post-category-${data.slug}),
-      ::view-transition-group(post-metadata-${data.slug}) {
-        z-index: 10;
-      }
-      ::view-transition-group-children(post-image-wrapper-${data.slug}) {
-        overflow: clip;
-      }
-      ::view-transition-old(post-image-${data.slug}) {
-        animation-name: zoom-in-old;
-      }
-      ::view-transition-new(post-image-${data.slug}) {
-        animation-name: zoom-in-new;
-      }
-    </style>
-  `}
+  {@html jsonLdScript}
+  {@html viewTransitionStyle}
 </svelte:head>
 
 <svelte:window bind:scrollY />
