@@ -42,8 +42,7 @@ export const GET: RequestHandler = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
   if (!rawContent) return new Response(null, {status: 404})
-
-  const {data} = matter(rawContent)
+  const {data} = matter(rawContent as string)
 
   const props: ComponentProps<typeof OgImage> = {
     title: await processTitle(data.title as string),
