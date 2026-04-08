@@ -21,8 +21,8 @@
   }
 
   function isGoingForward(navigation: {from?: {url?: URL | null} | null; to?: {url?: URL | null} | null}) {
-    const fromPage = Number(navigation?.from?.url?.searchParams?.get('page')) || 1
-    const toPage = Number(navigation?.to?.url?.searchParams?.get('page')) || 1
+    const fromPage = Number(navigation?.from?.url?.searchParams?.get('p')) || 1
+    const toPage = Number(navigation?.to?.url?.searchParams?.get('p')) || 1
     return toPage > fromPage
   }
 
@@ -93,7 +93,7 @@
         page={data.currentPage}
         onPageChange={(p) => {
           window.scrollTo(0, 0)
-          goto(`/search?q=${encodeURIComponent(data.searchQuery)}&page=${p}`)
+          goto(`/search?q=${encodeURIComponent(data.searchQuery)}&p=${p}`)
         }}
         class="my-4"
       >
