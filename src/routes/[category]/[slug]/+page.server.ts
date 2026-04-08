@@ -88,7 +88,7 @@ function figure() {
 
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
-        const rawSrc = `${baseUrl}/img/${attributes.src}`
+        const rawSrc = `${baseUrl}/img/${attributes.src?.replace('\\_', '_')}`
         const src = isProd ? `/cdn-cgi/image/width=1280,format=avif,quality=75/${rawSrc}` : rawSrc
         const id = attributes.id
         const className = attributes.class ?? ''
