@@ -3,9 +3,10 @@
   import components from './index'
 
   let {html}: {html: string} = $props()
-  let container: HTMLElement
+  let container: HTMLElement | undefined = $state()
 
   onMount(() => {
+    if (!container) return
     const mountedComponents: ReturnType<typeof mount>[] = []
     const placeholders = container.querySelectorAll<HTMLElement>('[data-mdx-component]')
 
