@@ -5,7 +5,7 @@ const PER_PAGE = 15
 
 export const load: PageServerLoad = async ({url}) => {
   const searchQuery = url.searchParams.get('q')?.trim() || ''
-  const currentPage = Number(url.searchParams.get('page')) || 1
+  const currentPage = Number(url.searchParams.get('p')) || 1
 
   if (!searchQuery) {
     return {searchQuery: '', matches: [], totalCount: 0, totalPages: 0, currentPage: 1, perPage: PER_PAGE}
