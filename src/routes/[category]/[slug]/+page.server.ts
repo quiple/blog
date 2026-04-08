@@ -33,8 +33,7 @@ export const load: PageServerLoad = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
   if (!rawContent) return error(404)
-
-  const {content, data} = matter(rawContent)
+  const {content, data} = matter(rawContent as string)
   const isArticle = params.category === 'article'
   const isFont = params.category === 'font'
   const postMetaData = isArticle
