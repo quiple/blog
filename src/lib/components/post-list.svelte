@@ -105,7 +105,7 @@
             <div class="grow">
               <div class="flex items-center mb-1 gap-1">
                 <div
-                  class="-ml-px flex items-center"
+                  class="-ml-px flex items-center shrink-0"
                   use:transition={{
                     name: `post-category-${post.slug}`,
                     shouldApply({navigation}: {navigation: any}) {
