@@ -222,14 +222,10 @@
   blockquote {
     @apply my-5 border-s-2 ps-4 not-italic sm:my-6 sm:ps-6 [&>p]:before:content-none [&>p]:after:content-none;
   }
-  figure {
-    @apply my-5 sm:my-6;
-  }
-  .markdown-alert {
-    @apply my-5 sm:my-6;
-  }
+  figure,
+  .markdown-alert,
   & > ul {
-    @apply my-6;
+    @apply my-5 sm:my-6;
   }
   ul {
     @apply list-disc [&>li]:mt-2;
