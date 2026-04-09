@@ -22,8 +22,8 @@
     $heroColors.foreground === '#fff' ? ($heroColors.outline ? 'none' : `url("${svgGradeDown}")`) : 'none',
   )
 
+  const isProd = import.meta.env.PROD
   const {transition} = setupViewTransition()
-
   const onKeydown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && inputElement && document.activeElement === inputElement) {
       goto(`/search?q=${query.trim().replaceAll(' ', '+')}`)
@@ -98,7 +98,9 @@
             </div>
           {/if}
           <DropdownMenu.Item onclick={() => goto('/font-generator')}>비트맵 폰트 이미지 생성기</DropdownMenu.Item>
-          <DropdownMenu.Item onclick={() => goto('/frame-maker')}>프레임 생성기</DropdownMenu.Item>
+          {#if !isProd}
+            <DropdownMenu.Item onclick={() => goto('/frame-maker')}>프레임 생성기</DropdownMenu.Item>
+          {/if}
           <DropdownMenu.Separator />
           <div class="flex px-1.5 py-1 items-center justify-between text-sm">
             색상 테마
