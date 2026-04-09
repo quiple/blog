@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Menu, Moon, Search, Sun} from '@lucide/svelte'
+  import {Menu, Monitor, Moon, Search, Sun} from '@lucide/svelte'
   import {afterNavigate, goto} from '$app/navigation'
   import {page} from '$app/state'
   import svgGradeDown from '$lib/assets/logo-grade-down.svg'
@@ -9,8 +9,9 @@
   import {Button} from '$lib/components/ui/button/index'
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index'
   import {Input} from '$lib/components/ui/input/index'
+  import * as Tabs from '$lib/components/ui/tabs/index.js'
   import {heroColors, isHero} from '$lib/stores/header'
-  import {mode, toggleMode} from 'mode-watcher'
+  import {mode, setMode} from 'mode-watcher'
   import {setupViewTransition} from 'sveltekit-view-transition'
 
   let query = $state('')
@@ -98,11 +99,13 @@
           {/if}
           <DropdownMenu.Item onclick={() => goto('/font-generator')}>비트맵 폰트 이미지 생성기</DropdownMenu.Item>
           <DropdownMenu.Separator />
-          <DropdownMenu.Item onclick={toggleMode}>
-            {#if mode.current === 'dark'}<Sun /> 밝은 테마
-            {:else}<Moon /> 어두운 테마
-            {/if}
-          </DropdownMenu.Item>
+          <Tabs.Root value={mode.current}>
+            <Tabs.List>
+              <Tabs.Trigger value="system" onclick={() => setMode('system')}><Monitor /></Tabs.Trigger>
+              <Tabs.Trigger value="light" onclick={() => setMode('light')}><Sun /></Tabs.Trigger>
+              <Tabs.Trigger value="dark" onclick={() => setMode('dark')}><Moon /></Tabs.Trigger>
+            </Tabs.List>
+          </Tabs.Root>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
     </div>
