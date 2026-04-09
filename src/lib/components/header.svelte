@@ -99,13 +99,16 @@
           {/if}
           <DropdownMenu.Item onclick={() => goto('/font-generator')}>비트맵 폰트 이미지 생성기</DropdownMenu.Item>
           <DropdownMenu.Separator />
-          <Tabs.Root value={mode.current}>
-            <Tabs.List>
-              <Tabs.Trigger value="system" onclick={() => setMode('system')}><Monitor /></Tabs.Trigger>
-              <Tabs.Trigger value="light" onclick={() => setMode('light')}><Sun /></Tabs.Trigger>
-              <Tabs.Trigger value="dark" onclick={() => setMode('dark')}><Moon /></Tabs.Trigger>
-            </Tabs.List>
-          </Tabs.Root>
+          <div class="flex px-1.5 py-1 items-center justify-between text-sm">
+            색상 테마
+            <Tabs.Root value={mode.current}>
+              <Tabs.List>
+                <Tabs.Trigger value="system" onclick={() => setMode('system')}><Monitor /></Tabs.Trigger>
+                <Tabs.Trigger value="light" onclick={() => setMode('light')}><Sun /></Tabs.Trigger>
+                <Tabs.Trigger value="dark" onclick={() => setMode('dark')}><Moon /></Tabs.Trigger>
+              </Tabs.List>
+            </Tabs.Root>
+          </div>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
     </div>
