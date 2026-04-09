@@ -538,6 +538,7 @@
                   lang={charsetLang}
                   readonly
                   class="min-h-20 h-20 break-all text-xs!"
+                  spellcheck="false"
                   onclick={(e: MouseEvent) => (e.currentTarget as HTMLTextAreaElement).select()}
                 />
               </div>
