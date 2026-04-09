@@ -101,7 +101,7 @@
           <DropdownMenu.Separator />
           <div class="flex px-1.5 py-1 items-center justify-between text-sm">
             색상 테마
-            <Tabs.Root value={mode.current}>
+            <Tabs.Root value={mode.current ?? 'system'}>
               <Tabs.List>
                 <Tabs.Trigger class="px-1" value="system" onclick={() => setMode('system')}><Monitor /></Tabs.Trigger>
                 <Tabs.Trigger class="px-1" value="light" onclick={() => setMode('light')}><Sun /></Tabs.Trigger>
