@@ -86,11 +86,11 @@
         <DropdownMenu.Content align="end" class="[--bits-floating-anchor-width:auto]">
           {#if page.url.pathname !== '/search'}
             <div class="relative m-1.5 flex items-center">
-              <Search class="absolute left-2.5 size-4" />
+              <Search class="absolute left-2 size-4" />
               <Input
                 type="search"
                 name="search"
-                class="z-50 pl-8"
+                class="z-50 pl-7"
                 bind:value={query}
                 bind:ref={inputElement}
                 placeholder="검색"
