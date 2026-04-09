@@ -806,7 +806,7 @@
     @apply pt-4 sm:pt-6 -mt-(--header-height)
 
   .generator
-    @apply flex flex-col lg:flex-row-reverse items-start gap-4
+    @apply flex flex-col lg:flex-row items-start gap-4
 
   .preview-area
     @apply block flex-1 w-full min-h-40 bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] overflow-hidden lg:sticky top-6
