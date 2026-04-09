@@ -11,7 +11,7 @@
   import {Input} from '$lib/components/ui/input/index'
   import * as Tabs from '$lib/components/ui/tabs/index.js'
   import {heroColors, isHero} from '$lib/stores/header'
-  import {mode, setMode} from 'mode-watcher'
+  import {setMode, userPrefersMode} from 'mode-watcher'
   import {setupViewTransition} from 'sveltekit-view-transition'
 
   let query = $state('')
@@ -101,7 +101,7 @@
           <DropdownMenu.Separator />
           <div class="flex px-1.5 py-1 items-center justify-between text-sm">
             색상 테마
-            <Tabs.Root value={mode.current ?? 'system'}>
+            <Tabs.Root value={userPrefersMode.current ?? 'system'}>
               <Tabs.List>
                 <Tabs.Trigger class="px-1" value="system" onclick={() => setMode('system')}><Monitor /></Tabs.Trigger>
                 <Tabs.Trigger class="px-1" value="light" onclick={() => setMode('light')}><Sun /></Tabs.Trigger>
