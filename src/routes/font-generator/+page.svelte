@@ -549,6 +549,7 @@
                   id="custom-charset"
                   bind:value={customCharset}
                   class="min-h-20 h-20 break-all text-xs"
+                  spellcheck="false"
                   placeholder="사용자 지정 문자 집합을 입력하세요."
                 />
               </div>
