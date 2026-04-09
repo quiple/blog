@@ -448,9 +448,7 @@
   <meta property="og:description" content="비트맵 폰트 이미지를 만드는 도구." />
 </svelte:head>
 
-<h1 class="mb-4 px-12 sm:mb-6 h-9 leading-9 text-center line-clamp-1 font-semibold text-lg">
-  비트맵 폰트 이미지 생성기
-</h1>
+<h1 class="page-title">비트맵 폰트 이미지 생성기</h1>
 
 <div class="generator">
   <!-- ── Canvas preview area ──────────────────────────────────────── -->
