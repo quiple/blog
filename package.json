@@ -80,6 +80,7 @@
   },
   "dependencies": {
     "bdfparser": "^2.2.5",
-    "fetchline": "^1.0.1"
+    "fetchline": "^1.0.1",
+    "skia-canvas": "^3.0.8"
   }
 }
