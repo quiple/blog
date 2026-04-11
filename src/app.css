@@ -243,6 +243,12 @@
   figcaption {
     @apply text-justify;
   }
+  thead {
+    @apply border-b-2 border-border;
+  }
+  tbody tr {
+    @apply border-border;
+  }
 }
 
 ::view-transition-group(header) {
