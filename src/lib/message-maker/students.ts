@@ -74,23 +74,23 @@ export default [
   },
   {
     name: {en: 'Cherino', ko: '체리노', ja: 'チェリノ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Cherino_Collection', 'Student_Portrait_CH0164_Collection'],
   },
   {
     name: {en: 'Chiaki', ko: '치아키', ja: 'チアキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0238_Collection'],
   },
   {
     name: {en: 'Chihiro', ko: '치히로', ja: 'チヒロ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0160_Collection'],
   },
   {
     name: {en: 'Chinatsu', ko: '치나츠', ja: 'チナツ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Chinatsu_Collection', 'Student_Portrait_CH0163_Collection'],
   },
   {
     name: {en: 'Chise', ko: '치세', ja: 'チセ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Chise_Collection', 'Student_Portrait_CH0178_Collection'],
   },
   {
     name: {en: 'Eimi', ko: '에이미', ja: 'エイミ'},
@@ -102,71 +102,84 @@ export default [
   },
   {
     name: {en: 'Fubuki', ko: '후부키', ja: 'フブキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0141_Collection', 'Student_Portrait_CH0261_Collection'],
   },
   {
     name: {en: 'Fuuka', ko: '후우카', ja: 'フウカ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Fuuka_Collection', 'Student_Portrait_CH0177_Collection'],
   },
   {
     name: {en: 'Fuyu', ko: '후유', ja: 'フユ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0318_Collection'],
   },
   {
     name: {en: 'Hanae', ko: '하나에', ja: 'ハナエ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Hanae_Collection', 'Student_Portrait_CH0195_Collection'],
   },
   {
     name: {en: 'Hanako', ko: '하나코', ja: 'ハナコ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Hanako_Collection', 'Student_Portrait_CH0209_Collection'],
   },
   {
     name: {en: 'Hare', ko: '하레', ja: 'ハレ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Hare_Collection', 'Student_Portrait_CH0233_Collection'],
   },
   {
     name: {en: 'Haruka', ko: '하루카', ja: 'ハルカ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Haruka_Collection', 'Student_Portrait_CH0087_Collection'],
   },
   {
     name: {en: 'Haruna', ko: '하루나', ja: 'ハルナ'},
-    portrait: [''],
+    portrait: [
+      'Student_Portrait_Haruna_Collection',
+      'Student_Portrait_CH0191_Collection',
+      'Student_Portrait_CH0193_Collection',
+    ],
   },
   {
     name: {en: 'Hasumi', ko: '하스미', ja: 'ハスミ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Hasumi_Collection', 'Student_Portrait_CH0291_Collection'],
   },
   {
     name: {en: 'Hibiki', ko: '히비키', ja: 'ヒビキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Hibiki_Collection', 'Student_Portrait_CH0181_Collection'],
   },
   {
     name: {en: 'Hifumi', ko: '히후미', ja: 'ヒフミ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Hihumi_Collection', 'Student_Portrait_CH0058_Collection'],
   },
   {
     name: {en: 'Hikari', ko: '히카리', ja: 'ヒカリ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0242_Collection'],
   },
   {
     name: {en: 'Himari', ko: '히마리', ja: 'ヒマリ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0159_Collection'],
   },
   {
     name: {en: 'Hina', ko: '히나', ja: 'ヒナ'},
-    portrait: [''],
+    portrait: [
+      'Student_Portrait_Hina_Collection',
+      'Student_Portrait_CH0063_Collection',
+      'Student_Portrait_CH0230_Collection',
+    ],
   },
   {
     name: {en: 'Hinata', ko: '히나타', ja: 'ヒナタ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Hinata_Collection', 'Student_Portrait_CH0210_Collection'],
   },
   {
     name: {en: 'Hiyori', ko: '히요리', ja: 'ヒヨリ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Hiyori_Collection', 'Student_Portrait_CH0269_Collection'],
   },
   {
     name: {en: 'Hoshino', ko: '호시노', ja: 'ホシノ'},
-    portrait: [''],
+    portrait: [
+      'Student_Portrait_Hoshino_Collection',
+      'Student_Portrait_Hoshino_Swimsuit_Collection',
+      'Student_Portrait_CH0258_Collection',
+      'Student_Portrait_CH0258_01_Collection',
+    ],
   },
   {
     name: {en: 'Ibuki', ko: '이부키', ja: 'イブキ'},
@@ -198,11 +211,11 @@ export default [
   },
   {
     name: {en: 'Junko', ko: '준코', ja: 'ジュンコ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Zunko_Collection', 'Student_Portrait_CH0192_Collection'],
   },
   {
     name: {en: 'Juri', ko: '주리', ja: 'ジュリ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Juri_Collection', 'Student_Portrait_CH0286_Collection'],
   },
   {
     name: {en: 'Kaede', ko: '카에데', ja: 'カエデ'},
@@ -262,155 +275,159 @@ export default [
   },
   {
     name: {en: 'Koharu', ko: '코하루', ja: 'コハル'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Koharu_Collection', 'Student_Portrait_CH0205_Collection'],
   },
   {
     name: {en: 'Kokona', ko: '코코나', ja: 'ココナ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0137_Collection'],
   },
   {
     name: {en: 'Kotama', ko: '코타마', ja: 'コタマ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Kotama_Collection', 'Student_Portrait_CH0232_Collection'],
   },
   {
     name: {en: 'Kotori', ko: '코토리', ja: 'コトリ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Kotori_Collection', 'Student_Portrait_CH0185_Collection'],
   },
   {
     name: {en: 'Koyuki', ko: '코유키', ja: 'コユキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0198_Collection'],
   },
   {
     name: {en: 'Maki', ko: '마키', ja: 'マキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Maki_Collection', 'Student_Portrait_CH0235_Collection'],
   },
   {
     name: {en: 'Makoto', ko: '마코토', ja: 'マコト'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0079_Collection'],
   },
   {
     name: {en: 'Mari', ko: '마리', ja: 'マリ'},
-    portrait: [''],
+    portrait: [
+      'Student_Portrait_Mari_Collection',
+      'Student_Portrait_CH0186_Collection',
+      'Student_Portrait_CH0273_Collection',
+    ],
   },
   {
     name: {en: 'Marina', ko: '마리나', ja: 'マリナ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Marina_Collection', 'Student_Portrait_CH0270_Collection'],
   },
   {
     name: {en: 'Mashiro', ko: '마시로', ja: 'マシロ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Mashiro_Collection', 'Student_Portrait_Mashiro_Swimsuit_Collection'],
   },
   {
     name: {en: 'Megu', ko: '메구', ja: 'メグ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0088_Collection'],
   },
   {
     name: {en: 'Meru', ko: '메루', ja: 'メル'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0124_Collection'],
   },
   {
     name: {en: 'Michiru', ko: '미치루', ja: 'ミチル'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0113_Collection', 'Student_Portrait_CH0296_Collection'],
   },
   {
     name: {en: 'Midori', ko: '미도리', ja: 'ミドリ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Midori_Collection', 'Student_Portrait_CH0202_Collection'],
   },
   {
     name: {en: 'Mika', ko: '미카', ja: 'ミカ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0069_Collection', 'Student_Portrait_CH0294_Collection'],
   },
   {
     name: {en: 'Mimori', ko: '미모리', ja: 'ミモリ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Mimori_Collection', 'Student_Portrait_CH0183_Collection'],
   },
   {
     name: {en: 'Mina', ko: '미나', ja: 'ミナ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0138_Collection'],
   },
   {
     name: {en: 'Mine', ko: '미네', ja: 'ミネ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0152_Collection', 'Student_Portrait_CH0275_Collection'],
   },
   {
     name: {en: 'Minori', ko: '미노리', ja: 'ミノリ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0214_Collection'],
   },
   {
     name: {en: 'Misaki', ko: '미사키', ja: 'ミサキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Misaki_Collection', 'Student_Portrait_CH0268_Collection'],
   },
   {
     name: {en: 'Miyako', ko: '미야코', ja: 'ミヤコ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Miyako_Collection', 'Student_Portrait_CH0215_Collection'],
   },
   {
     name: {en: 'Miyo', ko: '미요', ja: 'ミヨ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0317_Collection'],
   },
   {
     name: {en: 'Miyu', ko: '미유', ja: 'ミユ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0145_Collection', 'Student_Portrait_CH0218_Collection'],
   },
   {
     name: {en: 'Moe', ko: '모에', ja: 'モエ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Moe_Collection', 'Student_Portrait_CH0216_Collection'],
   },
   {
     name: {en: 'Momiji', ko: '모미지', ja: 'モミジ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Momiji_Collection'],
   },
   {
     name: {en: 'Momoi', ko: '모모이', ja: 'モモイ'},
-    portrait: [''],
-  },
-  {
-    name: {en: 'Momoka', ko: '모모카', ja: 'モモカ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Momoi_Collection', 'Student_Portrait_CH0201_Collection'],
   },
   {
     name: {en: 'Mutsuki', ko: '무츠키', ja: 'ムツキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Mutsuki_Collection', 'Student_Portrait_Mutsuki_Newyear_Collection'],
   },
   {
     name: {en: 'Nagisa', ko: '나기사', ja: 'ナギサ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Nagisa_Collection', 'Student_Portrait_CH0293_Collection'],
   },
   {
     name: {en: 'Nagusa', ko: '나구사', ja: 'ナグサ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0222_Collection'],
   },
   {
     name: {en: 'Natsu', ko: '나츠', ja: 'ナツ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0155_Collection', 'Student_Portrait_CH0221_Collection'],
   },
   {
     name: {en: 'Neru', ko: '네루', ja: 'ネル'},
-    portrait: [''],
+    portrait: [
+      'Student_Portrait_Neru_Collection',
+      'Student_Portrait_CH0101_Collection',
+      'Student_Portrait_CH0280_Collection',
+    ],
   },
   {
     name: {en: 'Niya', ko: '니야', ja: 'ニヤ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0109_Collection'],
   },
   {
     name: {en: 'Noa', ko: '노아', ja: 'ノア'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0095_Collection', 'Student_Portrait_CH0285_Collection'],
   },
   {
     name: {en: 'Nodoka', ko: '노도카', ja: 'ノドカ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Nodoka_Collection', 'Student_Portrait_CH0165_Collection'],
   },
   {
     name: {en: 'Nonomi', ko: '노노미', ja: 'ノノミ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Nonomi_Collection', 'Student_Portrait_CH0092_Collection'],
   },
   {
     name: {en: 'Nozomi', ko: '노조미', ja: 'ノゾミ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0243_Collection'],
   },
   {
     name: {en: 'Pina', ko: '피나', ja: 'ピナ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Pina_Collection', 'Student_Portrait_CH0257_Collection'],
   },
   {
     name: {en: 'Plana', ko: '프라나', ja: 'プラナ'},
@@ -418,23 +435,23 @@ export default [
   },
   {
     name: {en: 'Rabu', ko: '라브', ja: 'ラブ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0166_Collection'],
   },
   {
     name: {en: 'Rei', ko: '레이', ja: 'レイ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0245_Collection'],
   },
   {
     name: {en: 'Reijo', ko: '레이죠', ja: 'レイジョ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Reizyo_Collection'],
   },
   {
     name: {en: 'Reisa', ko: '레이사', ja: 'レイサ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0167_Collection', 'Student_Portrait_CH0326_Collection'],
   },
   {
     name: {en: 'Renge', ko: '렌게', ja: 'レンゲ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0224_Collection', 'Student_Portrait_CH0302_Collection'],
   },
   {
     name: {en: 'Rin', ko: '린', ja: 'リン'},
@@ -442,71 +459,84 @@ export default [
   },
   {
     name: {en: 'Rio', ko: '리오', ja: 'リオ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0158_Collection', 'Student_Portrait_CH0190_Collection'],
   },
   {
     name: {en: 'Ritsu', ko: '리츠', ja: 'リツ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0319_Collection'],
   },
   {
     name: {en: 'Rumi', ko: '루미', ja: 'ルミ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0135_Collection'],
   },
   {
     name: {en: 'Saki', ko: '사키', ja: 'サキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0144_Collection', 'Student_Portrait_CH0217_Collection'],
   },
   {
     name: {en: 'Sakurako', ko: '사쿠라코', ja: 'サクラコ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Sakurako_Collection', 'Student_Portrait_CH0274_Collection'],
   },
   {
     name: {en: 'Saori', ko: '사오리', ja: 'サオリ'},
-    portrait: [''],
+    portrait: [
+      'Student_Portrait_Saori_Collection',
+      'Student_Portrait_CH0259_Collection',
+      'Student_Portrait_CH0266_Collection',
+    ],
   },
   {
     name: {en: 'Satsuki', ko: '사츠키', ja: 'サツキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0080_Collection'],
   },
   {
     name: {en: 'Saya', ko: '사야', ja: 'サヤ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Saya_Collection', 'Student_Portrait_Saya_casual_Collection'],
   },
   {
     name: {en: 'Seia', ko: '세이아', ja: 'セイア'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0070_Collection', 'Student_Portrait_CH0295_Collection'],
   },
   {
     name: {en: 'Sena', ko: '세나', ja: 'セナ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Sena_Collection', 'Student_Portrait_CH0082_Collection'],
   },
   {
     name: {en: 'Serika', ko: '세리카', ja: 'セリカ'},
-    portrait: [''],
+    portrait: [
+      'Student_Portrait_Serika_Collection',
+      'Student_Portrait_Serika_Newyear_Collection',
+      'Student_Portrait_CH0189_Collection',
+    ],
   },
   {
     name: {en: 'Serina', ko: '세리나', ja: 'セリナ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Serina_Collection', 'Student_Portrait_CH0194_Collection'],
   },
   {
     name: {en: 'Shigure', ko: '시구레', ja: 'シグレ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Shigure_Collection', 'Student_Portrait_CH0123_Collection'],
   },
   {
     name: {en: 'Shimiko', ko: '시미코', ja: 'シミコ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Shimiko_Collection'],
   },
   {
     name: {en: 'Shiroko', ko: '시로코', ja: 'シロコ'},
-    portrait: [''],
+    portrait: [
+      'Student_Portrait_Shiroko_Collection',
+      'Student_Portrait_Shiroko_ridingsuit_Collection',
+      'Student_Portrait_CH0188_Collection',
+      'Student_Portrait_CH0263_Collection',
+    ],
   },
   {
     name: {en: 'Shizuko', ko: '시즈코', ja: 'シズコ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Shizuko_Collection', 'Student_Portrait_CH0180_Collection'],
   },
   {
     name: {en: 'Shun', ko: '슌', ja: 'シュン'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Shun_Collection', 'Student_Portrait_CH0066_Collection'],
   },
   {
     name: {en: 'Sora', ko: '소라', ja: 'ソラ'},
@@ -514,35 +544,39 @@ export default [
   },
   {
     name: {en: 'Subaru', ko: '스바루', ja: 'スバル'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0309_Collection'],
   },
   {
     name: {en: 'Sumire', ko: '스미레', ja: 'スミレ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Sumire_Collection', 'Student_Portrait_CH0287_Collection'],
   },
   {
     name: {en: 'Suzumi', ko: '스즈미', ja: 'スズミ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Suzumi_Collection', 'Student_Portrait_CH0325_Collection'],
+  },
+  {
+    name: {en: 'Takane', ko: '타카네', ja: 'タカネ'},
+    portrait: ['Student_Portrait_CH0229_Collection'],
   },
   {
     name: {en: 'Toki', ko: '토키', ja: 'トキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0187_Collection', 'Student_Portrait_CH0211_Collection'],
   },
   {
     name: {en: 'Tomoe', ko: '토모에', ja: 'トモエ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Tomoe_Collection', 'Student_Portrait_CH0271_Collection'],
   },
   {
     name: {en: 'Tsubaki', ko: '츠바키', ja: 'ツバキ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Tsubaki_Collection', 'Student_Portrait_CH0255_Collection'],
   },
   {
     name: {en: 'Tsukuyo', ko: '츠쿠요', ja: 'ツクヨ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0114_Collection', 'Student_Portrait_CH0297_Collection'],
   },
   {
     name: {en: 'Tsurugi', ko: '츠루기', ja: 'ツルギ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Tsurugi_Collection', 'Student_Portrait_CH0060_Collection'],
   },
   {
     name: {en: 'Ui', ko: '우이', ja: 'ウイ'},
@@ -554,19 +588,27 @@ export default [
   },
   {
     name: {en: 'Utaha', ko: '우타하', ja: 'ウタハ'},
-    portrait: ['Student_Portrait_Utaha_Collection', 'Student_Portrait_CH0182_Collection'],
+    portrait: [
+      'Student_Portrait_Utaha_Collection',
+      'Student_Portrait_Utaha_Collection',
+      'Student_Portrait_CH0182_Collection',
+    ],
   },
   {
     name: {en: 'Wakamo', ko: '와카모', ja: 'ワカモ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Wakamo_Collection', 'Student_Portrait_CH0175_Collection'],
+  },
+  {
+    name: {en: 'Yakumo', ko: '야쿠모', ja: 'ヤクモ'},
+    portrait: ['Student_Portrait_CH0228_Collection'],
   },
   {
     name: {en: 'Yoshimi', ko: '요시미', ja: 'ヨシミ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Yoshimi_Collection', 'Student_Portrait_CH0220_Collection'],
   },
   {
     name: {en: 'Yukari', ko: '유카리', ja: 'ユカリ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_CH0161_Collection', 'Student_Portrait_CH0301_Collection'],
   },
   {
     name: {en: 'Yuuka', ko: '유우카', ja: 'ユウカ'},
@@ -578,6 +620,6 @@ export default [
   },
   {
     name: {en: 'Yuzu', ko: '유즈', ja: 'ユズ'},
-    portrait: [''],
+    portrait: ['Student_Portrait_Yuzu_Collection', 'Student_Portrait_CH0203_Collection'],
   },
 ] satisfies Student[]
