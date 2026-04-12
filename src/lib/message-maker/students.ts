@@ -33,6 +33,10 @@ export default [
     portrait: ['Student_Portrait_Aris_Collection', 'Student_Portrait_CH0200_Collection'],
   },
   {
+    name: {en: 'Arona', ko: '아로나', ja: 'アロナ'},
+    portrait: [''],
+  },
+  {
     name: {en: 'Aru', ko: '아루', ja: 'アル'},
     portrait: [
       'Student_Portrait_Aru_Collection',
@@ -397,6 +401,10 @@ export default [
     portrait: [''],
   },
   {
+    name: {en: 'Plana', ko: '프라나', ja: 'プラナ'},
+    portrait: [''],
+  },
+  {
     name: {en: 'Rabu', ko: '라브', ja: 'ラブ'},
     portrait: [''],
   },
@@ -414,6 +422,10 @@ export default [
   },
   {
     name: {en: 'Renge', ko: '렌게', ja: 'レンゲ'},
+    portrait: [''],
+  },
+  {
+    name: {en: 'Rin', ko: '린', ja: 'リン'},
     portrait: [''],
   },
   {
@@ -482,6 +494,10 @@ export default [
   },
   {
     name: {en: 'Shun', ko: '슌', ja: 'シュン'},
+    portrait: [''],
+  },
+  {
+    name: {en: 'Sora', ko: '소라', ja: 'ソラ'},
     portrait: [''],
   },
   {
