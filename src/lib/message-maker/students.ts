@@ -592,11 +592,7 @@ export default [
   },
   {
     name: {en: 'Utaha', ko: '우타하', ja: 'ウタハ'},
-    portrait: [
-      'Student_Portrait_Utaha_Collection',
-      'Student_Portrait_Utaha_Collection',
-      'Student_Portrait_CH0182_Collection',
-    ],
+    portrait: ['Student_Portrait_Utaha_Collection', 'Student_Portrait_CH0182_Collection'],
   },
   {
     name: {en: 'Wakamo', ko: '와카모', ja: 'ワカモ'},
