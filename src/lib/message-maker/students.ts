@@ -29,6 +29,10 @@ export default [
     portrait: ['Student_Portrait_CH0288_Collection'],
   },
   {
+    name: {en: 'Aoi', ko: '아오이', ja: 'アオイ'},
+    portrait: [''],
+  },
+  {
     name: {en: 'Arisu', ko: '아리스', ja: 'アリス'},
     portrait: ['Student_Portrait_Aris_Collection', 'Student_Portrait_CH0200_Collection'],
   },
@@ -59,6 +63,10 @@ export default [
   {
     name: {en: 'Ayane', ko: '아야네', ja: 'アヤネ'},
     portrait: ['Student_Portrait_Ayane_Collection', 'Student_Portrait_CH0176_Collection'],
+  },
+  {
+    name: {en: 'Ayumu', ko: '아유무', ja: 'アユム'},
+    portrait: [''],
   },
   {
     name: {en: 'Azusa', ko: '아즈사', ja: 'アズサ'},
@@ -354,6 +362,10 @@ export default [
   },
   {
     name: {en: 'Momoi', ko: '모모이', ja: 'モモイ'},
+    portrait: [''],
+  },
+  {
+    name: {en: 'Momoka', ko: '모모카', ja: 'モモカ'},
     portrait: [''],
   },
   {
