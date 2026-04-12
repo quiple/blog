@@ -30,7 +30,7 @@ export default [
   },
   {
     name: {en: 'Aoi', ko: '아오이', ja: 'アオイ'},
-    portrait: [''],
+    portrait: ['NPC_Portrait_NP0032_Collection'],
   },
   {
     name: {en: 'Arisu', ko: '아리스', ja: 'アリス'},
@@ -38,7 +38,7 @@ export default [
   },
   {
     name: {en: 'Arona', ko: '아로나', ja: 'アロナ'},
-    portrait: [''],
+    portrait: ['NPC_Portrait_Arona_Collection'],
   },
   {
     name: {en: 'Aru', ko: '아루', ja: 'アル'},
@@ -66,7 +66,7 @@ export default [
   },
   {
     name: {en: 'Ayumu', ko: '아유무', ja: 'アユム'},
-    portrait: [''],
+    portrait: ['NPC_Portrait_NP0013_Collection'],
   },
   {
     name: {en: 'Azusa', ko: '아즈사', ja: 'アズサ'},
@@ -414,7 +414,7 @@ export default [
   },
   {
     name: {en: 'Plana', ko: '프라나', ja: 'プラナ'},
-    portrait: [''],
+    portrait: ['NPC_Portrait_NP0035_Collection'],
   },
   {
     name: {en: 'Rabu', ko: '라브', ja: 'ラブ'},
@@ -438,7 +438,7 @@ export default [
   },
   {
     name: {en: 'Rin', ko: '린', ja: 'リン'},
-    portrait: [''],
+    portrait: ['NPC_Portrait_Rin_Collection'],
   },
   {
     name: {en: 'Rio', ko: '리오', ja: 'リオ'},
@@ -510,7 +510,7 @@ export default [
   },
   {
     name: {en: 'Sora', ko: '소라', ja: 'ソラ'},
-    portrait: [''],
+    portrait: ['NPC_Portrait_Sora_Collection'],
   },
   {
     name: {en: 'Subaru', ko: '스바루', ja: 'スバル'},
