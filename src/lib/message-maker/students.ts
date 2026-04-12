@@ -382,6 +382,10 @@ export default [
     portrait: ['Student_Portrait_Momoi_Collection', 'Student_Portrait_CH0201_Collection'],
   },
   {
+    name: {en: 'Momoka', ko: '모모카', ja: 'モモカ'},
+    portrait: ['NPC_Portrait_Momoka_Collection'],
+  },
+  {
     name: {en: 'Mutsuki', ko: '무츠키', ja: 'ムツキ'},
     portrait: ['Student_Portrait_Mutsuki_Collection', 'Student_Portrait_Mutsuki_Newyear_Collection'],
   },
