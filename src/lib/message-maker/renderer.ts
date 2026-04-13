@@ -283,6 +283,9 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
   return Math.max(totalHeight, config.header.height + 100)
 }
 
+/** 마지막 렌더링 ID (중복 실행 방지용) */
+let lastRenderId = 0
+
 /**
  * 메인 렌더링 함수
  */
@@ -292,6 +295,7 @@ export async function renderCanvas(
   themeName: ThemeName,
   _lang: Language,
 ): Promise<void> {
+  const renderId = ++lastRenderId
   const config = themes[themeName]
 
   // 폰트 준비
@@ -299,13 +303,16 @@ export async function renderCanvas(
     await Promise.all([ensureJalnan2Font(), ensureGyeonggiFont()])
   }
 
+  // 최신 렌더링 요청인지 확인
+  if (renderId !== lastRenderId) return
+
   const height = calculateCanvasHeight(messages, config)
 
   canvas.width = config.canvasWidth
   canvas.height = height
 
   const ctx = canvas.getContext('2d')!
-  await renderToContext(ctx, messages, themeName, 1)
+  await renderToContext(ctx, messages, themeName, 1, renderId)
 }
 
 /**
@@ -316,10 +323,13 @@ async function renderToContext(
   messages: MessageItem[],
   themeName: ThemeName,
   scale: number,
+  renderId: number = 0,
 ): Promise<void> {
   const config = themes[themeName]
   const width = config.canvasWidth
   const height = calculateCanvasHeight(messages, config)
+
+  const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
 
   ctx.save()
   if (scale !== 1) {
@@ -353,6 +363,7 @@ async function renderToContext(
   if (themeName === 'momotalk') {
     try {
       const momotalkLogo = await getIcon('momotalk', config.header.logoSize)
+      if (isObsolete()) return
       const titleText = 'MomoTalk'
       ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
       const titleWidth = ctx.measureText(titleText).width * config.header.titleScaleX
@@ -378,6 +389,7 @@ async function renderToContext(
 
       if (config.header.helpIconSize > 0) {
         const helpIcon = await getIcon('help', config.header.helpIconSize)
+        if (isObsolete()) return
         ctx.drawImage(
           helpIcon,
           startX + config.header.logoSize + config.header.logoGap + titleWidth + config.header.helpIconGap,
@@ -432,6 +444,7 @@ async function renderToContext(
     if (config.sidebar.studentIconSize > 0) {
       try {
         const studentIcon = await getIcon('student', config.sidebar.studentIconSize)
+        if (isObsolete()) return
         ctx.save()
         ctx.globalAlpha = config.sidebar.studentIconOpacity
         ctx.drawImage(
@@ -462,6 +475,7 @@ async function renderToContext(
         }
 
         const chatIcon = await getIcon('chat', config.sidebar.chatIconSize)
+        if (isObsolete()) return
         const chatX = sidebarCenterX - config.sidebar.chatIconSize / 2
         ctx.drawImage(chatIcon, chatX, sidebarY, config.sidebar.chatIconSize, config.sidebar.chatIconSize)
       } catch {
@@ -490,6 +504,7 @@ async function renderToContext(
       if (config.profile.size > 0 && msg.portrait) {
         try {
           const profileImg = await getCachedImage(msg.portrait)
+          if (isObsolete()) return
           ctx.save()
           if (config.profile.circular) {
             ctx.beginPath()
