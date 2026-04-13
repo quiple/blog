@@ -402,7 +402,7 @@
                   </div>
                 {/if}
                 <span class="msg-student-name">{msg.name || '학생 미선택'}</span>
-                <button class="btn btn-xs" onclick={() => openStudentDialog(i)}> 학생 선택 </button>
+                <Button variant="outline" size="xs" class="ml-1" onclick={() => openStudentDialog(i)}>학생 선택</Button>
               </div>
             {/if}
             <div class="flex items-center justify-end grow">
