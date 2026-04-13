@@ -67,6 +67,9 @@
   // 포커스할 입력 인덱스
   let focusIndex = $state(-1)
 
+  // 복사 상태 피드백
+  let isCopied = $state(false)
+
   // 학생 목록 필터링
   let filteredStudents = $derived.by(() => {
     if (!studentSearchQuery) return students
@@ -255,7 +258,10 @@
     if (!canvasEl) return
     try {
       await copyCanvasToClipboard(canvasEl)
-      alert('이미지가 클립보드에 복사되었습니다.')
+      isCopied = true
+      setTimeout(() => {
+        isCopied = false
+      }, 2000)
     } catch {
       alert('클립보드 복사에 실패했습니다.')
     }
@@ -616,11 +622,15 @@
             stroke-width="2"
             stroke-linecap="round"
             stroke-linejoin="round"
-            ><rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path
-              d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-            /></svg
+            >{#if isCopied}
+              <polyline points="20 6 9 17 4 12" />
+            {:else}
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path
+                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+              />
+            {/if}</svg
           >
-          이미지 복사
+          {isCopied ? '복사됨!' : '이미지 복사'}
         </button>
         <button class="btn btn-export btn-svg" onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}>
           <svg
