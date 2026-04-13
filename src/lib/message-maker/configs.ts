@@ -187,7 +187,7 @@ export const momotalk: ThemeConfig = {
     borderColor: '#ffffff',
   },
   name: {
-    font: 'Noto Sans KR, sans-serif',
+    font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
     fontSize: 18,
     fontWeight: 'bold',
     color: '#3F444A',
@@ -197,7 +197,7 @@ export const momotalk: ThemeConfig = {
   bubbleLeft: {
     backgroundColor: '#4C5B6F',
     textColor: '#ffffff',
-    font: 'Noto Sans KR, sans-serif',
+    font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
     fontSize: 20,
     fontWeight: 'normal',
     lineHeight: 1.5,
@@ -210,7 +210,7 @@ export const momotalk: ThemeConfig = {
   bubbleRight: {
     backgroundColor: '#4A8ACB',
     textColor: '#ffffff',
-    font: 'Noto Sans KR, sans-serif',
+    font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
     fontSize: 20,
     fontWeight: 'normal',
     lineHeight: 1.5,

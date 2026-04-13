@@ -3,16 +3,16 @@ import {themes} from './configs'
 
 /** Jalnan2 폰트 로드 상태 */
 let jalnan2Loaded = false
+/** GyeonggiTitle 폰트 로드 상태 */
+let gyeonggiLoaded = false
 
 /**
  * Jalnan2 폰트를 FontFace API로 등록 (lazy load)
- * base64 데이터로 인라인되어 네트워크 요청에 노출되지 않음
  */
 async function ensureJalnan2Font(): Promise<void> {
   if (jalnan2Loaded) return
   if (typeof document === 'undefined') return
 
-  // 이미 등록되어 있는지 확인
   for (const face of document.fonts) {
     if (face.family === 'Jalnan2') {
       jalnan2Loaded = true
@@ -20,12 +20,32 @@ async function ensureJalnan2Font(): Promise<void> {
     }
   }
 
-  // 동적 import로 폰트 데이터 로드 (코드 스플리팅)
   const {default: fontDataUrl} = await import('./font-data')
   const font = new FontFace('Jalnan2', `url(${fontDataUrl})`)
   await font.load()
   document.fonts.add(font)
   jalnan2Loaded = true
+}
+
+/**
+ * GyeonggiTitle 폰트를 FontFace API로 등록 (lazy load)
+ */
+async function ensureGyeonggiFont(): Promise<void> {
+  if (gyeonggiLoaded) return
+  if (typeof document === 'undefined') return
+
+  for (const face of document.fonts) {
+    if (face.family === 'GyeonggiTitle') {
+      gyeonggiLoaded = true
+      return
+    }
+  }
+
+  const {default: fontDataUrl} = await import('./font-data-gyeonggi')
+  const font = new FontFace('GyeonggiTitle', `url(${fontDataUrl})`)
+  await font.load()
+  document.fonts.add(font)
+  gyeonggiLoaded = true
 }
 
 export interface MessageItem {
@@ -242,6 +262,12 @@ export async function renderCanvas(
   _lang: Language,
 ): Promise<void> {
   const config = themes[themeName]
+
+  // 폰트 준비
+  if (themeName === 'momotalk') {
+    await Promise.all([ensureJalnan2Font(), ensureGyeonggiFont()])
+  }
+
   const height = calculateCanvasHeight(messages, config)
 
   canvas.width = config.canvasWidth
@@ -274,7 +300,6 @@ export async function renderCanvas(
   // 헤더 내용
   if (themeName === 'momotalk') {
     try {
-      await ensureJalnan2Font()
       const momotalkLogo = await getIcon('momotalk', config.header.logoSize)
       const titleText = 'MomoTalk'
       ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
