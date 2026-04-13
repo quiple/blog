@@ -123,10 +123,10 @@ export interface ThemeConfig {
 }
 
 export const momotalk: ThemeConfig = {
-  canvasWidth: 1024,
-  backgroundColor: '#f0f4fa',
+  canvasWidth: 1282,
+  backgroundColor: '#ffffff',
   header: {
-    height: 72,
+    height: 132,
     backgroundColor: '#ff8fa0',
     backgroundGradient: 'linear-gradient(180deg, #FD889D 0%, #F79AAB 100%)',
     titleColor: '#ffffff',
@@ -139,7 +139,7 @@ export const momotalk: ThemeConfig = {
     helpIconRight: 20,
   },
   sidebar: {
-    width: 84,
+    width: 201,
     backgroundColor: '#4C5B6F',
     studentIconSize: 52,
     chatIconSize: 52,
@@ -169,12 +169,12 @@ export const momotalk: ThemeConfig = {
     font: 'Noto Sans KR, sans-serif',
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#4a5568',
+    color: '#3F444A',
     marginBottom: 6,
     marginLeft: 12,
   },
   bubbleLeft: {
-    backgroundColor: '#4a5568',
+    backgroundColor: '#4C5B6F',
     textColor: '#ffffff',
     font: 'Noto Sans KR, sans-serif',
     fontSize: 20,
@@ -187,7 +187,7 @@ export const momotalk: ThemeConfig = {
     marginLeft: 12,
   },
   bubbleRight: {
-    backgroundColor: '#4a9df8',
+    backgroundColor: '#4A8ACB',
     textColor: '#ffffff',
     font: 'Noto Sans KR, sans-serif',
     fontSize: 20,
