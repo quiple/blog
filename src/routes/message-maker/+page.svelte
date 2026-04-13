@@ -276,10 +276,6 @@
     }
   }
 
-  function handleInputBlur() {
-    requestRedraw()
-  }
-
   // 초기 렌더링 및 감시
   $effect(() => {
     if (browser && canvasEl) {
@@ -471,7 +467,7 @@
                   class="msg-textarea"
                   placeholder={msg.type === 'student' ? '학생 메시지 입력...' : '선생 메시지 입력...'}
                   bind:value={msg.text[bi]}
-                  onblur={handleInputBlur}
+                  onkeyup={requestRedraw}
                   rows="2"
                 ></textarea>
                 {#if msg.text.length > 1}
