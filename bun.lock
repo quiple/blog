@@ -5,8 +5,10 @@
     "": {
       "name": "blog",
       "dependencies": {
+        "@types/opentype.js": "^1.3.9",
         "bdfparser": "^2.2.5",
         "fetchline": "^1.0.1",
+        "opentype.js": "^1.3.4",
         "skia-canvas": "^3.0.8",
       },
       "devDependencies": {
@@ -469,6 +471,8 @@
 
     "@types/node": ["@types/node@25.6.0", "", { "dependencies": { "undici-types": "~7.19.0" } }, "sha512-+qIYRKdNYJwY3vRCZMdJbPLJAtGjQBudzZzdzwQYkEPQd+PJGixUL5QfvCLDaULoLv+RhT3LDkwEfKaAkgSmNQ=="],
 
+    "@types/opentype.js": ["@types/opentype.js@1.3.9", "", {}, "sha512-KOGywvDPncA4/tTWV5xKNhjpsoSSAHIx3mHOhL5l3XX+c6Xu2dQnHvGs7mRNQsQRte1EqmQ0cPQQ8Z14lkv+yw=="],
+
     "@types/trusted-types": ["@types/trusted-types@2.0.7", "", {}, "sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw=="],
 
     "@types/unist": ["@types/unist@3.0.3", "", {}, "sha512-ko/gIFJRv177XgZsZcBwnqJN5x/Gien8qNOn0D5bQU/zAzVf9Zt3BlcUiLqhV9y4ARk0GbT3tnUiPNgnTXzc/Q=="],
@@ -890,6 +894,8 @@
     "obug": ["obug@2.1.1", "", {}, "sha512-uTqF9MuPraAQ+IsnPf366RG4cP9RtUi7MLO1N3KEc+wb0a6yKpeL0lmk2IB1jY5KHPAlTc6T/JRdC/YqxHNwkQ=="],
 
     "once": ["once@1.4.0", "", { "dependencies": { "wrappy": "1.0.2" } }, "sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w=="],
+
+    "opentype.js": ["opentype.js@1.3.4", "", { "dependencies": { "string.prototype.codepointat": "^0.2.1", "tiny-inflate": "^1.0.3" }, "bin": { "ot": "bin/ot" } }, "sha512-d2JE9RP/6uagpQAVtJoF0pJJA/fgai89Cc50Yp0EJHk+eLp6QQ7gBoblsnubRULNY132I0J1QKMJ+JTbMqz4sw=="],
 
     "oxc-parser": ["oxc-parser@0.99.0", "", { "dependencies": { "@oxc-project/types": "0.99.0" }, "optionalDependencies": { "@oxc-parser/binding-android-arm64": "0.99.0", "@oxc-parser/binding-darwin-arm64": "0.99.0", "@oxc-parser/binding-darwin-x64": "0.99.0", "@oxc-parser/binding-freebsd-x64": "0.99.0", "@oxc-parser/binding-linux-arm-gnueabihf": "0.99.0", "@oxc-parser/binding-linux-arm-musleabihf": "0.99.0", "@oxc-parser/binding-linux-arm64-gnu": "0.99.0", "@oxc-parser/binding-linux-arm64-musl": "0.99.0", "@oxc-parser/binding-linux-riscv64-gnu": "0.99.0", "@oxc-parser/binding-linux-s390x-gnu": "0.99.0", "@oxc-parser/binding-linux-x64-gnu": "0.99.0", "@oxc-parser/binding-linux-x64-musl": "0.99.0", "@oxc-parser/binding-wasm32-wasi": "0.99.0", "@oxc-parser/binding-win32-arm64-msvc": "0.99.0", "@oxc-parser/binding-win32-x64-msvc": "0.99.0" } }, "sha512-MpS1lbd2vR0NZn1v0drpgu7RUFu3x9Rd0kxExObZc2+F+DIrV0BOMval/RO3BYGwssIOerII6iS8EbbpCCZQpQ=="],
 

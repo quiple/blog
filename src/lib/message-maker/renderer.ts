@@ -1,3 +1,4 @@
+import opentype from 'opentype.js'
 import type {Language, ThemeConfig, ThemeName} from './configs'
 import {themes} from './configs'
 
@@ -732,6 +733,30 @@ async function getSvgSource(name: string): Promise<string> {
   return svgText
 }
 
+const opentypeCache = new Map<string, opentype.Font>()
+
+function dataUrlToArrayBuffer(dataUrl: string): ArrayBuffer {
+  const base64 = dataUrl.split(',')[1]
+  const binaryString = window.atob(base64)
+  const len = binaryString.length
+  const bytes = new Uint8Array(len)
+  for (let i = 0; i < len; i++) {
+    bytes[i] = binaryString.charCodeAt(i)
+  }
+  return bytes.buffer
+}
+
+async function loadOpentypeFont(familyName: string, modulePromise: Promise<{default: string}>): Promise<opentype.Font> {
+  if (opentypeCache.has(familyName)) {
+    return opentypeCache.get(familyName)!
+  }
+  const {default: dataUrl} = await modulePromise
+  const buffer = dataUrlToArrayBuffer(dataUrl)
+  const font = opentype.parse(buffer)
+  opentypeCache.set(familyName, font)
+  return font
+}
+
 /**
  * 캔버스 로직을 미러링하여 실제 벡터 SVG 문자열 생성
  */
@@ -740,13 +765,20 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   const height = calculateCanvasHeight(messages, config)
   const width = config.canvasWidth
 
+  let jalnanFont: opentype.Font | undefined
+  let gyeonggiFont: opentype.Font | undefined
+
   // 폰트 데이터 가져오기 (인라인 포함)
   let fontStyles = ''
   if (themeName === 'momotalk') {
-    const [{default: jalnan2}, {default: gyeonggi}] = await Promise.all([
-      import('./font-data'),
-      import('./font-data-gyeonggi'),
-    ])
+    const jalnanPromise = import('./font-data')
+    const gyeonggiPromise = import('./font-data-gyeonggi')
+
+    jalnanFont = await loadOpentypeFont('Jalnan2', jalnanPromise)
+    gyeonggiFont = await loadOpentypeFont('GyeonggiTitle', gyeonggiPromise)
+
+    const jalnan2 = (await jalnanPromise).default
+    const gyeonggi = (await gyeonggiPromise).default
     fontStyles = `
   <style>
     @font-face {
@@ -758,6 +790,44 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       src: url('${gyeonggi}') format('opentype');
     }
   </style>`
+  }
+
+  function renderSvgText(
+    text: string,
+    x: number,
+    y: number,
+    fontFamily: string,
+    fontSize: number,
+    color: string,
+    align: 'start' | 'center' | 'middle' = 'start',
+    baseline: 'top' | 'hanging' | 'middle' = 'hanging',
+    fontWeight: string = 'normal',
+  ) {
+    let font: opentype.Font | undefined
+    if (fontFamily.includes('Jalnan2')) font = jalnanFont
+    else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
+
+    if (font) {
+      let drawX = x
+      if (align === 'center' || align === 'middle') {
+        const w = font.getAdvanceWidth(text, fontSize)
+        drawX -= w / 2
+      }
+
+      let drawY = y
+      if (baseline === 'hanging' || baseline === 'top') {
+        drawY += (font.ascender / font.unitsPerEm) * fontSize
+      } else if (baseline === 'middle') {
+        drawY += (font.ascender / font.unitsPerEm) * fontSize - fontSize / 2
+      }
+
+      const path = font.getPath(text, drawX, drawY, fontSize)
+      path.fill = color
+      return path.toSVG(2)
+    } else {
+      const anchor = align === 'center' || align === 'middle' ? 'middle' : 'start'
+      return `<text x="${x}" y="${y}" fill="${color}" font-family="${fontFamily}" font-size="${fontSize}" font-weight="${fontWeight}" text-anchor="${anchor}" dominant-baseline="${baseline}">${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`
+    }
   }
 
   let svgParts: string[] = []
@@ -798,7 +868,17 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     const titleX = config.header.paddingLeft + config.header.logoSize + config.header.logoGap
     const titleY = centerY + config.header.titleOffsetY
     svgParts.push(
-      `<text x="${titleX}" y="${titleY}" fill="${config.header.titleColor}" font-family="${config.header.titleFont}" font-size="${config.header.titleFontSize}" dominant-baseline="middle">MomoTalk</text>`,
+      renderSvgText(
+        'MomoTalk',
+        titleX,
+        titleY,
+        config.header.titleFont,
+        config.header.titleFontSize,
+        config.header.titleColor,
+        'start',
+        'middle',
+        'bold',
+      ),
     )
 
     if (config.header.helpIconSize > 0) {
@@ -852,7 +932,17 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           `<circle cx="${badgeX}" cy="${badgeY}" r="${config.sidebar.badgeSize / 2}" fill="${config.sidebar.badgeColor}" />`,
         )
         svgParts.push(
-          `<text x="${badgeX}" y="${badgeY}" fill="${config.sidebar.badgeTextColor}" font-size="${config.sidebar.badgeFontSize}" font-family="${config.sidebar.badgeFont}" font-weight="bold" text-anchor="middle" dominant-baseline="middle">1</text>`,
+          renderSvgText(
+            '1',
+            badgeX,
+            badgeY,
+            config.sidebar.badgeFont,
+            config.sidebar.badgeFontSize,
+            config.sidebar.badgeTextColor,
+            'middle',
+            'middle',
+            'bold',
+          ),
         )
       }
     }
@@ -896,7 +986,17 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       const nameX = profileX + (config.profile.size > 0 ? config.profile.size : 0) + config.name.marginLeft
       const nameY = cursorY + config.name.marginTop
       svgParts.push(
-        `<text x="${nameX}" y="${nameY}" fill="${config.name.color}" font-family="${config.name.font}" font-size="${config.name.fontSize}" font-weight="${config.name.fontWeight}" dominant-baseline="hanging">${msg.studentName}</text>`,
+        renderSvgText(
+          msg.studentName,
+          nameX,
+          nameY,
+          config.name.font,
+          config.name.fontSize,
+          config.name.color,
+          'start',
+          'hanging',
+          config.name.fontWeight,
+        ),
       )
       cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
 
@@ -924,8 +1024,19 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           )
         }
         for (let li = 0; li < lines.length; li++) {
+          const textY = cursorY + config.bubbleLeft.paddingTop + li * lineH
           svgParts.push(
-            `<text x="${bubbleStartX + config.bubbleLeft.paddingLeft}" y="${cursorY + config.bubbleLeft.paddingTop + li * lineH}" fill="${config.bubbleLeft.textColor}" font-family="${config.bubbleLeft.font}" font-size="${config.bubbleLeft.fontSize}" font-weight="${config.bubbleLeft.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
+            renderSvgText(
+              lines[li],
+              bubbleStartX + config.bubbleLeft.paddingLeft,
+              textY,
+              config.bubbleLeft.font,
+              config.bubbleLeft.fontSize,
+              config.bubbleLeft.textColor,
+              'start',
+              'hanging',
+              config.bubbleLeft.fontWeight,
+            ),
           )
         }
         cursorY += bubbleH
@@ -954,8 +1065,19 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           )
         }
         for (let li = 0; li < lines.length; li++) {
+          const textY = cursorY + config.bubbleRight.paddingTop + li * lineH
           svgParts.push(
-            `<text x="${bubbleX + config.bubbleRight.paddingLeft}" y="${cursorY + config.bubbleRight.paddingTop + li * lineH}" fill="${config.bubbleRight.textColor}" font-family="${config.bubbleRight.font}" font-size="${config.bubbleRight.fontSize}" font-weight="${config.bubbleRight.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
+            renderSvgText(
+              lines[li],
+              bubbleX + config.bubbleRight.paddingLeft,
+              textY,
+              config.bubbleRight.font,
+              config.bubbleRight.fontSize,
+              config.bubbleRight.textColor,
+              'start',
+              'hanging',
+              config.bubbleRight.fontWeight,
+            ),
           )
         }
         cursorY += bubbleH

@@ -79,8 +79,10 @@
     "#fonts.sass": "./src/fonts.sass"
   },
   "dependencies": {
+    "@types/opentype.js": "^1.3.9",
     "bdfparser": "^2.2.5",
     "fetchline": "^1.0.1",
+    "opentype.js": "^1.3.4",
     "skia-canvas": "^3.0.8"
   }
 }
