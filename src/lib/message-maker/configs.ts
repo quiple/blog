@@ -152,7 +152,7 @@ export const momotalk: ThemeConfig = {
     helpIconSize: 100,
     helpIconRight: 0,
     titleOffsetY: 9,
-    logoOffsetY: 3,
+    logoOffsetY: 0,
     helpIconOffsetY: 9,
   },
   sidebar: {
