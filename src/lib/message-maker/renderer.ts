@@ -572,9 +572,10 @@ async function renderToContext(
         // 첫 번째 말풍선에 꼬리 추가
         if (bi === 0 && config.bubbleLeft.tailWidth > 0) {
           ctx.beginPath()
-          ctx.moveTo(bubbleStartX, cursorY)
-          ctx.lineTo(bubbleStartX - config.bubbleLeft.tailWidth, cursorY)
-          ctx.lineTo(bubbleStartX, cursorY + config.bubbleLeft.tailHeight)
+          const tailY = cursorY + config.bubbleLeft.tailOffsetY
+          ctx.moveTo(bubbleStartX, tailY)
+          ctx.lineTo(bubbleStartX - config.bubbleLeft.tailWidth, tailY)
+          ctx.lineTo(bubbleStartX, tailY + config.bubbleLeft.tailHeight)
           ctx.fill()
         }
 
@@ -616,9 +617,10 @@ async function renderToContext(
         // 첫 번째 말풍선에 꼬리 추가
         if (bi === 0 && config.bubbleRight.tailWidth > 0) {
           ctx.beginPath()
-          ctx.moveTo(bubbleX + bubbleW, cursorY)
-          ctx.lineTo(bubbleX + bubbleW + config.bubbleRight.tailWidth, cursorY)
-          ctx.lineTo(bubbleX + bubbleW, cursorY + config.bubbleRight.tailHeight)
+          const tailY = cursorY + config.bubbleRight.tailOffsetY
+          ctx.moveTo(bubbleX + bubbleW, tailY)
+          ctx.lineTo(bubbleX + bubbleW + config.bubbleRight.tailWidth, tailY)
+          ctx.lineTo(bubbleX + bubbleW, tailY + config.bubbleRight.tailHeight)
           ctx.fill()
         }
 
@@ -897,8 +899,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           `<rect x="${nameX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleLeft.borderRadius}" fill="${config.bubbleLeft.backgroundColor}" />`,
         )
         if (bi === 0 && config.bubbleLeft.tailWidth > 0) {
+          const tailY = cursorY + config.bubbleLeft.tailOffsetY
           svgParts.push(
-            `<path d="M${nameX},${cursorY} L${nameX - config.bubbleLeft.tailWidth},${cursorY} L${nameX},${cursorY + config.bubbleLeft.tailHeight} Z" fill="${config.bubbleLeft.backgroundColor}" />`,
+            `<path d="M${nameX},${tailY} L${nameX - config.bubbleLeft.tailWidth},${tailY} L${nameX},${tailY + config.bubbleLeft.tailHeight} Z" fill="${config.bubbleLeft.backgroundColor}" />`,
           )
         }
         for (let li = 0; li < lines.length; li++) {
@@ -926,8 +929,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           `<rect x="${bubbleX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleRight.borderRadius}" fill="${config.bubbleRight.backgroundColor}" />`,
         )
         if (bi === 0 && config.bubbleRight.tailWidth > 0) {
+          const tailY = cursorY + config.bubbleRight.tailOffsetY
           svgParts.push(
-            `<path d="M${bubbleX + bubbleW},${cursorY} L${bubbleX + bubbleW + config.bubbleRight.tailWidth},${cursorY} L${bubbleX + bubbleW},${cursorY + config.bubbleRight.tailHeight} Z" fill="${config.bubbleRight.backgroundColor}" />`,
+            `<path d="M${bubbleX + bubbleW},${tailY} L${bubbleX + bubbleW + config.bubbleRight.tailWidth},${tailY} L${bubbleX + bubbleW},${tailY + config.bubbleRight.tailHeight} Z" fill="${config.bubbleRight.backgroundColor}" />`,
           )
         }
         for (let li = 0; li < lines.length; li++) {
