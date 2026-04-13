@@ -454,7 +454,7 @@
                   <Button
                     variant="ghost"
                     size="icon-xs"
-                    class="-ml-1.5"
+                    class="-mx-1.5"
                     onclick={() => removeBubble(i, bi)}
                     title="말풍선 삭제"
                   >
