@@ -98,6 +98,8 @@ export interface ThemeConfig {
     color: string
     /** 이름과 메시지 사이 간격 */
     marginBottom: number
+    /** 이름 텍스트 위쪽 간격 */
+    marginTop: number
     /** 프로필 이미지와 이름 사이 가로 간격 */
     marginLeft: number
   }
@@ -211,6 +213,7 @@ export const momotalk: ThemeConfig = {
     fontWeight: 'normal',
     color: '#3F444A',
     marginBottom: 8,
+    marginTop: 0,
     marginLeft: 32,
   },
   bubbleLeft: {
@@ -307,6 +310,7 @@ export const imessage: ThemeConfig = {
     fontWeight: 'bold',
     color: '#8e8e93',
     marginBottom: 4,
+    marginTop: 0,
     marginLeft: 16,
   },
   bubbleLeft: {
@@ -401,6 +405,7 @@ export const line: ThemeConfig = {
     fontWeight: 'normal',
     color: '#213a4f',
     marginBottom: 4,
+    marginTop: 0,
     marginLeft: 12,
   },
   bubbleLeft: {
@@ -495,6 +500,7 @@ export const kakaotalk: ThemeConfig = {
     fontWeight: 'normal',
     color: '#333333',
     marginBottom: 4,
+    marginTop: 0,
     marginLeft: 12,
   },
   bubbleLeft: {

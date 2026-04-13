@@ -224,7 +224,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
 
     if (msg.type === 'student') {
       // 이름 높이
-      totalHeight += config.name.fontSize + config.name.marginBottom
+      totalHeight += config.name.marginTop + config.name.fontSize + config.name.marginBottom
 
       const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
       const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingX * 2
@@ -546,11 +546,12 @@ async function renderToContext(
 
       // 이름
       const nameX = profileX + (config.profile.size > 0 ? config.profile.size : 0) + config.name.marginLeft
+      const nameY = cursorY + config.name.marginTop
       ctx.fillStyle = config.name.color
       ctx.font = `${config.name.fontWeight} ${config.name.fontSize}px ${config.name.font}`
       ctx.textBaseline = 'top'
-      ctx.fillText(msg.studentName, nameX, cursorY)
-      cursorY += config.name.fontSize + config.name.marginBottom
+      ctx.fillText(msg.studentName, nameX, nameY)
+      cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
 
       // 말풍선들
       const profileSize = config.profile.size > 0 ? config.profile.size : 0
@@ -883,10 +884,11 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       }
 
       const nameX = profileX + (config.profile.size > 0 ? config.profile.size : 0) + config.name.marginLeft
+      const nameY = cursorY + config.name.marginTop
       svgParts.push(
-        `<text x="${nameX}" y="${cursorY}" fill="${config.name.color}" font-family="${config.name.font}" font-size="${config.name.fontSize}" font-weight="${config.name.fontWeight}" dominant-baseline="hanging">${msg.studentName}</text>`,
+        `<text x="${nameX}" y="${nameY}" fill="${config.name.color}" font-family="${config.name.font}" font-size="${config.name.fontSize}" font-weight="${config.name.fontWeight}" dominant-baseline="hanging">${msg.studentName}</text>`,
       )
-      cursorY += config.name.fontSize + config.name.marginBottom
+      cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
 
       const profileSize = config.profile.size > 0 ? config.profile.size : 0
       const bubbleStartX = profileX + profileSize + config.bubbleLeft.marginLeft
