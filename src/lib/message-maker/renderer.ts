@@ -180,10 +180,16 @@ async function getIcon(name: string, size: number): Promise<HTMLImageElement> {
 
   const modules = import.meta.glob('$lib/assets/message-maker/*.svg', {eager: true, query: '?raw', import: 'default'})
   const path = `/src/lib/assets/message-maker/${name}.svg`
-  const svgText = modules[path] as string
+  let svgText = modules[path] as string
   if (!svgText) {
     throw new Error(`SVG icon not found: ${name}`)
   }
+
+  // PNG/Canvas 전용 보정: 도움말 아이콘의 그림자가 캔버스에서 너무 짙게 나오는 현상 방지
+  if (name === 'help') {
+    svgText = svgText.replace('0.26', '0.15')
+  }
+
   const img = await loadSvgAsImage(svgText, size, size)
   iconCache.set(key, img)
   return img
