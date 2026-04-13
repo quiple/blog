@@ -206,7 +206,7 @@ export const momotalk: ThemeConfig = {
     fontSize: 44,
     fontWeight: 'normal',
     color: '#3F444A',
-    marginBottom: 6,
+    marginBottom: 8,
     marginLeft: 32,
   },
   bubbleLeft: {
@@ -223,7 +223,7 @@ export const momotalk: ThemeConfig = {
     marginLeft: 30,
     tailWidth: 12,
     tailHeight: 16,
-    tailOffsetY: 26,
+    tailOffsetY: 25,
   },
   bubbleRight: {
     backgroundColor: '#4A8ACB',
@@ -239,7 +239,7 @@ export const momotalk: ThemeConfig = {
     marginRight: 0,
     tailWidth: 12,
     tailHeight: 16,
-    tailOffsetY: 26,
+    tailOffsetY: 25,
   },
 }
 
