@@ -190,7 +190,7 @@ export const momotalk: ThemeConfig = {
     badgeTextColor: '#ffffff',
     badgeFont: 'GyeonggiTitleBold, sans-serif',
     badgeFontSize: 40,
-    badgeBorderRadius: 24,
+    badgeBorderRadius: 12,
     iconGap: 103,
     paddingTop: 50,
     studentIconOpacity: 0.25,
