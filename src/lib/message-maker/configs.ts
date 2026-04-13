@@ -207,7 +207,7 @@ export const momotalk: ThemeConfig = {
   },
   name: {
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
-    fontSize: 44,
+    fontSize: 43,
     fontWeight: 'normal',
     color: '#3F444A',
     marginBottom: 8,
