@@ -4,6 +4,7 @@
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js'
   import {Button} from '$lib/components/ui/button/index.js'
   import * as Card from '$lib/components/ui/card/index.js'
+  import * as Select from '$lib/components/ui/select/index.js'
   import {Textarea} from '$lib/components/ui/textarea/index.js'
   import type {Language, ThemeName} from '$lib/message-maker/configs'
   import {themes} from '$lib/message-maker/configs'
@@ -489,9 +490,9 @@
       <span class="settings-title">설정</span>
     </div>
 
-    <div class="settings-scroll">
+    <div class="flex flex-col gap-4 p-4">
       {#if !isProd}
-        <div class="setting-group">
+        <div class="grid gap-2">
           <label class="setting-label" for="setting-theme">테마</label>
           <select id="setting-theme" class="setting-select" bind:value={themeName}>
             <option value="momotalk">MomoTalk</option>
@@ -502,7 +503,7 @@
         </div>
       {/if}
 
-      <div class="setting-group">
+      <div class="grid gap-2">
         <label class="setting-label" for="setting-lang">언어</label>
         <select id="setting-lang" class="setting-select" bind:value={lang}>
           <option value="ko">한국어</option>
@@ -511,7 +512,7 @@
         </select>
       </div>
 
-      <div class="setting-group">
+      <div class="grid gap-2">
         <label class="setting-label" for="setting-density">PNG 배율</label>
         <select
           id="setting-density"
@@ -525,9 +526,7 @@
         </select>
       </div>
 
-      <hr class="setting-divider" />
-
-      <div class="export-buttons">
+      <ButtonGroup.Root>
         <Button onclick={() => canvasEl && exportAsPng(canvasEl, density, messages, themeName, lang)}>
           <Image />
           PNG로 내보내기
@@ -540,11 +539,11 @@
           {/if}
           {isCopied ? '복사됨!' : 'PNG로 복사하기'}
         </Button>
-        <Button onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}>
-          <Spline />
-          SVG로 내보내기
-        </Button>
-      </div>
+      </ButtonGroup.Root>
+      <Button onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}>
+        <Spline />
+        SVG로 내보내기
+      </Button>
     </div>
   </div>
 </div>
