@@ -373,7 +373,7 @@ async function renderToContext(
         const helpIcon = await getIcon('help', config.header.helpIconSize)
         ctx.drawImage(
           helpIcon,
-          startX + config.header.logoSize + config.header.logoGap + titleWidth + 12,
+          startX + config.header.logoSize + config.header.logoGap + titleWidth + config.header.helpIconGap,
           centerY - config.header.helpIconSize / 2 + config.header.helpIconOffsetY,
           config.header.helpIconSize,
           config.header.helpIconSize,
@@ -914,7 +914,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       const titleWidth = tempCtx.measureText('MomoTalk').width * (config.header.titleScaleX || 1.0)
 
       svgParts.push(
-        `<image x="${titleX + titleWidth + 12}" y="${centerY - config.header.helpIconSize / 2 + config.header.helpIconOffsetY}" width="${config.header.helpIconSize}" height="${config.header.helpIconSize}" href="${helpB64}" />`,
+        `<image x="${titleX + titleWidth + config.header.helpIconGap}" y="${centerY - config.header.helpIconSize / 2 + config.header.helpIconOffsetY}" width="${config.header.helpIconSize}" height="${config.header.helpIconSize}" href="${helpB64}" />`,
       )
     }
   }
