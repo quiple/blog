@@ -195,7 +195,7 @@ export const momotalk: ThemeConfig = {
     circular: true,
     borderWidth: 0,
     borderColor: '#ffffff',
-    zoom: 1.2,
+    zoom: 2,
   },
   name: {
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
