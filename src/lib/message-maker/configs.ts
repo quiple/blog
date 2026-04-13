@@ -130,7 +130,7 @@ export const momotalk: ThemeConfig = {
     backgroundColor: '#ff8fa0',
     backgroundGradient: 'linear-gradient(180deg, #FD889D 0%, #F79AAB 100%)',
     titleColor: '#ffffff',
-    titleFont: 'M PLUS Rounded 1c, sans-serif',
+    titleFont: 'Jalnan2, M PLUS Rounded 1c, sans-serif',
     titleFontSize: 34,
     logoSize: 40,
     logoGap: 10,

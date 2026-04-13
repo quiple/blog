@@ -1,6 +1,33 @@
 import type {Language, ThemeConfig, ThemeName} from './configs'
 import {themes} from './configs'
 
+/** Jalnan2 폰트 로드 상태 */
+let jalnan2Loaded = false
+
+/**
+ * Jalnan2 폰트를 FontFace API로 등록 (lazy load)
+ * base64 데이터로 인라인되어 네트워크 요청에 노출되지 않음
+ */
+async function ensureJalnan2Font(): Promise<void> {
+  if (jalnan2Loaded) return
+  if (typeof document === 'undefined') return
+
+  // 이미 등록되어 있는지 확인
+  for (const face of document.fonts) {
+    if (face.family === 'Jalnan2') {
+      jalnan2Loaded = true
+      return
+    }
+  }
+
+  // 동적 import로 폰트 데이터 로드 (코드 스플리팅)
+  const {default: fontDataUrl} = await import('./font-data')
+  const font = new FontFace('Jalnan2', `url(${fontDataUrl})`)
+  await font.load()
+  document.fonts.add(font)
+  jalnan2Loaded = true
+}
+
 export interface MessageItem {
   /** 'student' = 왼쪽(학생), 'sensei' = 오른쪽(선생) */
   type: 'student' | 'sensei'
@@ -247,9 +274,10 @@ export async function renderCanvas(
   // 헤더 내용
   if (themeName === 'momotalk') {
     try {
+      await ensureJalnan2Font()
       const momotalkLogo = await getIcon('momotalk', config.header.logoSize)
       const titleText = 'MomoTalk'
-      ctx.font = `bold ${config.header.titleFontSize}px ${config.header.titleFont}`
+      ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
       const titleWidth = ctx.measureText(titleText).width
       const startX = config.header.paddingLeft
       const centerY = config.header.height / 2
@@ -263,7 +291,7 @@ export async function renderCanvas(
       )
 
       ctx.fillStyle = config.header.titleColor
-      ctx.font = `bold ${config.header.titleFontSize}px ${config.header.titleFont}`
+      ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
       ctx.textBaseline = 'middle'
       ctx.fillText(titleText, startX + config.header.logoSize + config.header.logoGap, centerY)
 
@@ -279,7 +307,7 @@ export async function renderCanvas(
       }
     } catch {
       ctx.fillStyle = config.header.titleColor
-      ctx.font = `bold ${config.header.titleFontSize}px ${config.header.titleFont}`
+      ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
       ctx.textBaseline = 'middle'
       ctx.fillText('MomoTalk', config.header.paddingLeft, config.header.height / 2)
     }
