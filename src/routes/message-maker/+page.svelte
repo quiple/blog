@@ -597,152 +597,148 @@
 </div>
 
 <!-- ━━━ 학생 선택 대화 상자 ━━━ -->
-{#if showStudentDialog}
-  <div
-    class="dialog-overlay"
-    onclick={() => {
+<Dialog.Root
+  open={showStudentDialog}
+  onOpenChange={(open) => {
+    if (!open) {
       showStudentDialog = false
       showCustomInput = false
       studentSearchQuery = ''
-    }}
-    onkeydown={(e) => {
-      if (e.key === 'Escape') {
-        showStudentDialog = false
-        showCustomInput = false
-        studentSearchQuery = ''
-      }
-    }}
-    role="presentation"
-  >
-    <div
-      class="dialog"
-      onclick={(e) => e.stopPropagation()}
-      onkeydown={() => {}}
-      role="dialog"
-      aria-label="학생 선택"
-      tabindex="-1"
-    >
-      <div class="dialog-header">
-        <h2 class="dialog-title">학생 선택</h2>
-        <button
-          class="btn-icon"
-          aria-label="닫기"
-          onclick={() => {
-            showStudentDialog = false
-            showCustomInput = false
-            studentSearchQuery = ''
-          }}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg
-          >
-        </button>
+    }
+  }}
+>
+  <Dialog.Content class="max-w-2xl max-h-[90vh] flex flex-col p-0 overflow-hidden">
+    <Dialog.Header class="px-5 py-3.5 border-b shrink-0 flex flex-row items-center justify-between space-y-0">
+      <Dialog.Title class="text-base font-semibold">학생 선택</Dialog.Title>
+    </Dialog.Header>
+
+    {#if !showCustomInput}
+      <div class="px-4 pt-3 pb-2 shrink-0">
+        <input
+          type="text"
+          class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-ring focus:ring-1 focus:ring-ring"
+          placeholder="학생 이름 검색..."
+          bind:value={studentSearchQuery}
+        />
       </div>
 
-      {#if !showCustomInput}
-        <div class="dialog-search">
-          <input type="text" class="search-input" placeholder="학생 이름 검색..." bind:value={studentSearchQuery} />
-        </div>
-
-        <div class="dialog-body">
-          <div class="student-grid">
-            {#each filteredStudents as student, si (student.name.en)}
-              <div class="student-card-wrapper">
-                <button
-                  class="student-card"
-                  onclick={() => {
-                    if (student.portrait.length > 1) {
-                      toggleStudentExpand(si)
-                    } else {
-                      selectStudent(student, 0)
-                    }
-                  }}
-                >
+      <div class="flex-1 overflow-y-auto px-4 py-3">
+        <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-2">
+          {#each filteredStudents as student, si (student.name.en)}
+            <div class="flex flex-col">
+              <button
+                class="flex flex-col items-center gap-1 rounded-lg p-2 transition-colors hover:bg-accent cursor-pointer border border-transparent hover:border-border relative group"
+                onclick={() => {
+                  if (student.portrait.length > 1) {
+                    toggleStudentExpand(si)
+                  } else {
+                    selectStudent(student, 0)
+                  }
+                }}
+              >
+                <div class="size-14 rounded-full overflow-hidden border bg-muted">
                   <img
-                    class="student-portrait"
+                    class="size-full object-cover transition-transform group-hover:scale-110"
                     src="/img/blue-archive/{student.portrait[0]}.png"
                     alt={student.name[lang]}
                     loading="lazy"
                   />
-                  <span class="student-name">{student.name[lang]}</span>
-                  {#if student.portrait.length > 1}
-                    <span class="portrait-count">{student.portrait.length}</span>
-                  {/if}
-                </button>
-
-                {#if expandedStudentIndex === si && student.portrait.length > 1}
-                  <div class="portrait-variants">
-                    {#each student.portrait as p, pi}
-                      <button class="variant-btn" onclick={() => selectStudent(student, pi)}>
-                        <img
-                          class="variant-img"
-                          src="/img/blue-archive/{p}.png"
-                          alt="{student.name[lang]} 변형 {pi + 1}"
-                          loading="lazy"
-                        />
-                      </button>
-                    {/each}
-                  </div>
+                </div>
+                <span class="text-[11px] text-center font-medium line-clamp-1">{student.name[lang]}</span>
+                {#if student.portrait.length > 1}
+                  <span
+                    class="absolute top-1 right-1 bg-primary text-primary-foreground text-[10px] size-4 rounded-full flex items-center justify-center font-bold"
+                    >{student.portrait.length}</span
+                  >
                 {/if}
-              </div>
-            {/each}
-          </div>
-        </div>
+              </button>
 
-        <div class="dialog-footer">
-          <button class="btn btn-custom" onclick={selectCustomStudent}> 사용자 지정 </button>
-        </div>
-      {:else}
-        <div class="dialog-body custom-body">
-          <div class="custom-form">
-            <div class="custom-field">
-              <label class="custom-label" for="custom-name-input">이름</label>
-              <input
-                id="custom-name-input"
-                type="text"
-                class="custom-input"
-                placeholder="이름 입력..."
-                bind:value={customName}
-              />
-            </div>
-            <div class="custom-field">
-              <label class="custom-label" for="custom-portrait-upload">프로필 사진</label>
-              {#if customPortraitUrl}
-                <img class="custom-preview" src={customPortraitUrl} alt="미리보기" />
+              {#if expandedStudentIndex === si && student.portrait.length > 1}
+                <div
+                  class="flex gap-1 p-1 bg-muted rounded-lg mt-1 flex-wrap justify-center border animate-in fade-in zoom-in-95 duration-200"
+                >
+                  {#each student.portrait as p, pi}
+                    <button
+                      class="rounded-md overflow-hidden border-2 border-transparent hover:border-primary transition-all p-0"
+                      onclick={() => selectStudent(student, pi)}
+                    >
+                      <img
+                        class="size-10 object-cover"
+                        src="/img/blue-archive/{p}.png"
+                        alt="{student.name[lang]} 변형 {pi + 1}"
+                        loading="lazy"
+                      />
+                    </button>
+                  {/each}
+                </div>
               {/if}
-              <input
-                id="custom-portrait-upload"
-                type="file"
-                accept="image/*"
-                onchange={handleCustomPortraitUpload}
-                class="custom-file-input"
-              />
+            </div>
+          {/each}
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between gap-2 px-4 py-3 border-t bg-muted/30">
+        <Button variant="ghost" size="sm" onclick={selectCustomStudent}>사용자 지정 이미지 사용...</Button>
+        <Button variant="outline" size="sm" onclick={() => (showStudentDialog = false)}>취소</Button>
+      </div>
+    {:else}
+      <div class="p-6 overflow-y-auto">
+        <div class="flex flex-col gap-6 max-w-md mx-auto">
+          <div class="grid gap-2">
+            <label class="text-sm font-medium" for="custom-name-input">이름</label>
+            <input
+              id="custom-name-input"
+              type="text"
+              class="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-ring focus:ring-1 focus:ring-ring"
+              placeholder="이름 입력..."
+              bind:value={customName}
+            />
+          </div>
+          <div class="grid gap-4">
+            <label class="text-sm font-medium" for="custom-portrait-upload">프로필 사진</label>
+            <div class="flex items-center gap-4">
+              {#if customPortraitUrl}
+                <img
+                  class="size-20 rounded-full object-cover border-2 border-primary p-0.5"
+                  src={customPortraitUrl}
+                  alt="미리보기"
+                />
+              {:else}
+                <div
+                  class="size-20 rounded-full bg-muted flex items-center justify-center text-muted-foreground border"
+                >
+                  <User class="size-10" />
+                </div>
+              {/if}
+              <div class="flex flex-col gap-2 grow">
+                <input
+                  id="custom-portrait-upload"
+                  type="file"
+                  accept="image/*"
+                  onchange={handleCustomPortraitUpload}
+                  class="text-xs file:mr-4 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-medium file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
+                />
+                <p class="text-[10px] text-muted-foreground">권장 사이즈: 256x256 이상 (정사각형)</p>
+              </div>
             </div>
           </div>
         </div>
-        <div class="dialog-footer">
-          <button
-            class="btn btn-sm"
-            onclick={() => {
-              showCustomInput = false
-            }}
-          >
-            뒤로
-          </button>
-          <button class="btn btn-primary btn-sm" onclick={confirmCustomStudent}> 확인 </button>
-        </div>
-      {/if}
-    </div>
-  </div>
-{/if}
+      </div>
+      <div class="flex items-center justify-end gap-2 px-4 py-3 border-t bg-muted/30">
+        <Button
+          variant="ghost"
+          size="sm"
+          onclick={() => {
+            showCustomInput = false
+          }}
+        >
+          뒤로
+        </Button>
+        <Button size="sm" onclick={confirmCustomStudent}>적용하기</Button>
+      </div>
+    {/if}
+  </Dialog.Content>
+</Dialog.Root>
 
 <style lang="sass">
   @reference '#app.css'
