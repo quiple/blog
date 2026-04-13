@@ -349,7 +349,7 @@ async function renderToContext(
       const momotalkLogo = await getIcon('momotalk', config.header.logoSize)
       const titleText = 'MomoTalk'
       ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
-      const titleWidth = ctx.measureText(titleText).width
+      const titleWidth = ctx.measureText(titleText).width * config.header.titleScaleX
       const startX = config.header.paddingLeft
       const centerY = config.header.height / 2
 
@@ -363,12 +363,11 @@ async function renderToContext(
 
       ctx.fillStyle = config.header.titleColor
       ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
-      ctx.textBaseline = 'middle'
-      ctx.fillText(
-        titleText,
-        startX + config.header.logoSize + config.header.logoGap,
-        centerY + config.header.titleOffsetY,
-      )
+      const titleX = startX + config.header.logoSize + config.header.logoGap
+      ctx.save()
+      ctx.scale(config.header.titleScaleX, 1)
+      ctx.fillText(titleText, titleX / config.header.titleScaleX, centerY + config.header.titleOffsetY)
+      ctx.restore()
 
       if (config.header.helpIconSize > 0) {
         const helpIcon = await getIcon('help', config.header.helpIconSize)
@@ -384,7 +383,14 @@ async function renderToContext(
       ctx.fillStyle = config.header.titleColor
       ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
       ctx.textBaseline = 'middle'
-      ctx.fillText('MomoTalk', config.header.paddingLeft, config.header.height / 2 + config.header.titleOffsetY)
+      ctx.save()
+      ctx.scale(config.header.titleScaleX, 1)
+      ctx.fillText(
+        'MomoTalk',
+        config.header.paddingLeft / config.header.titleScaleX,
+        config.header.height / 2 + config.header.titleOffsetY,
+      )
+      ctx.restore()
     }
   } else {
     const titleMap: Record<ThemeName, string> = {
@@ -397,7 +403,14 @@ async function renderToContext(
     ctx.font = `bold ${config.header.titleFontSize}px ${config.header.titleFont}`
     ctx.textBaseline = 'middle'
     ctx.textAlign = 'center'
-    ctx.fillText(titleMap[themeName], width / 2, config.header.height / 2 + config.header.titleOffsetY)
+    ctx.save()
+    ctx.scale(config.header.titleScaleX, 1)
+    ctx.fillText(
+      titleMap[themeName],
+      width / 2 / config.header.titleScaleX,
+      config.header.height / 2 + config.header.titleOffsetY,
+    )
+    ctx.restore()
     ctx.textAlign = 'start'
   }
 
@@ -802,6 +815,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     align: 'start' | 'center' | 'middle' = 'start',
     baseline: 'top' | 'hanging' | 'middle' = 'hanging',
     fontWeight: string = 'normal',
+    scaleX: number = 1.0,
   ) {
     let font: opentype.Font | undefined
     if (fontFamily.includes('Jalnan2')) font = jalnanFont
@@ -811,7 +825,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       let drawX = x
       if (align === 'center' || align === 'middle') {
         const w = font.getAdvanceWidth(text, fontSize)
-        drawX -= w / 2
+        drawX -= (w / 2) * scaleX
       }
 
       let drawY = y
@@ -821,12 +835,20 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         drawY += (font.ascender / font.unitsPerEm) * fontSize - fontSize / 2
       }
 
-      const path = font.getPath(text, drawX, drawY, fontSize)
+      const path = font.getPath(text, 0, 0, fontSize)
       path.fill = color
-      return path.toSVG(2)
+      const svgPath = path.toSVG(2)
+
+      if (scaleX !== 1.0) {
+        return svgPath.replace('<path ', `<path transform="translate(${drawX}, ${drawY}) scale(${scaleX}, 1)" `)
+      } else {
+        return svgPath.replace('<path ', `<path transform="translate(${drawX}, ${drawY})" `)
+      }
     } else {
       const anchor = align === 'center' || align === 'middle' ? 'middle' : 'start'
-      return `<text x="${x}" y="${y}" fill="${color}" font-family="${fontFamily}" font-size="${fontSize}" font-weight="${fontWeight}" text-anchor="${anchor}" dominant-baseline="${baseline}">${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`
+      const transformAttr =
+        scaleX !== 1.0 ? ` transform="translate(${x}, ${y}) scale(${scaleX}, 1) translate(${-x}, ${-y})"` : ''
+      return `<text x="${x}" y="${y}" fill="${color}" font-family="${fontFamily}" font-size="${fontSize}" font-weight="${fontWeight}" text-anchor="${anchor}" dominant-baseline="${baseline}"${transformAttr}>${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`
     }
   }
 
@@ -878,6 +900,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         'start',
         'middle',
         'bold',
+        config.header.titleScaleX,
       ),
     )
 
@@ -888,7 +911,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       const tempCanvas = document.createElement('canvas')
       const tempCtx = tempCanvas.getContext('2d')!
       tempCtx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
-      const titleWidth = tempCtx.measureText('MomoTalk').width
+      const titleWidth = tempCtx.measureText('MomoTalk').width * (config.header.titleScaleX || 1.0)
 
       svgParts.push(
         `<image x="${titleX + titleWidth + 12}" y="${centerY - config.header.helpIconSize / 2 + config.header.helpIconOffsetY}" width="${config.header.helpIconSize}" height="${config.header.helpIconSize}" href="${helpB64}" />`,
