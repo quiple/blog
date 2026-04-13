@@ -141,15 +141,15 @@ export const momotalk: ThemeConfig = {
   sidebar: {
     width: 201,
     backgroundColor: '#4C5B6F',
-    studentIconSize: 52,
-    chatIconSize: 52,
+    studentIconSize: 100,
+    chatIconSize: 100,
     badgeSize: 22,
     badgeColor: '#ff3b30',
     badgeTextColor: '#ffffff',
     badgeFont: 'sans-serif',
     badgeFontSize: 13,
-    iconGap: 14,
-    paddingTop: 20,
+    iconGap: 103,
+    paddingTop: 50,
   },
   chat: {
     paddingLeft: 20,
@@ -162,8 +162,8 @@ export const momotalk: ThemeConfig = {
   profile: {
     size: 68,
     circular: true,
-    borderWidth: 3,
-    borderColor: '#c8cfe0',
+    borderWidth: 0,
+    borderColor: '#ffffff',
   },
   name: {
     font: 'Noto Sans KR, sans-serif',
