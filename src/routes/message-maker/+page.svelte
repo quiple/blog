@@ -477,7 +477,7 @@
                 {/if}
               </div>
             {/each}
-            <Button variant="outline" size="sm" onclick={() => addBubble(i)}>
+            <Button variant="outline" size="xs" onclick={() => addBubble(i)}>
               <Plus /> 말풍선 추가
             </Button>
           </Card.Content>
