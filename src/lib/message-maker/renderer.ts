@@ -136,7 +136,7 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
   // 먼저 명시적 줄바꿈 분리
   const paragraphs = text.split('\n')
   for (const paragraph of paragraphs) {
-    if (paragraph === '') {
+    if (paragraph.trim() === '') {
       lines.push('')
       continue
     }
@@ -144,17 +144,27 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
     // 한 글자씩 처리 (한국어에는 공백 기반 단어 분리가 적합하지 않음)
     for (let i = 0; i < paragraph.length; i++) {
       const char = paragraph[i]
+
+      // 줄의 시작 부분에 나오는 공백은 포함하지 않음
+      if (currentLine.length === 0 && char.trim() === '') {
+        continue
+      }
+
       const testLine = currentLine + char
       const metrics = ctx.measureText(testLine)
+
       if (metrics.width > maxWidth && currentLine.length > 0) {
-        lines.push(currentLine)
-        currentLine = char
+        // 최대 너비를 초과하면 현재까지의 문자열을 한 줄로 확정 (우측 공백 제거)
+        lines.push(currentLine.trimEnd())
+        // 현재 문자가 공백이면 다음 줄도 공백으로 시작하지 않게 빈 문자열 처리
+        currentLine = char.trim() === '' ? '' : char
       } else {
         currentLine = testLine
       }
     }
-    if (currentLine) {
-      lines.push(currentLine)
+    // 남은 글자가 있다면 추가 (우측 공백 제거)
+    if (currentLine.trimEnd().length > 0) {
+      lines.push(currentLine.trimEnd())
     }
   }
   return lines
