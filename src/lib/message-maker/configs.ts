@@ -168,9 +168,9 @@ export const momotalk: ThemeConfig = {
     paddingLeft: 38,
     helpIconSize: 100,
     helpIconGap: 2,
-    titleOffsetY: 0,
+    titleOffsetY: 10,
     logoOffsetY: 0,
-    helpIconOffsetY: 0,
+    helpIconOffsetY: 9,
   },
   sidebar: {
     width: 201,
