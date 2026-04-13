@@ -36,6 +36,18 @@
       portrait: '',
       text: '아아. 당연하지.',
     },
+    {
+      type: 'student',
+      studentName: '유우카',
+      portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
+      text: '뭐, 그럼 다행이구요.',
+    },
+    {
+      type: 'student',
+      studentName: '유우카',
+      portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
+      text: '선생님의 연락처를 받아두길 잘했네요.',
+    },
   ])
 
   // 학생 선택 대화 상자
