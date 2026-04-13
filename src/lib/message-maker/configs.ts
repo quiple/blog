@@ -16,6 +16,8 @@ export interface ThemeConfig {
     titleColor: string
     titleFont: string
     titleFontSize: number
+    /** 제목 글자 장평 (가로 비율) */
+    titleScaleX: number
     /** 로고 아이콘 크기 */
     logoSize: number
     /** 로고와 제목 사이 간격 */
@@ -166,12 +168,13 @@ export const momotalk: ThemeConfig = {
     titleColor: '#ffffff',
     titleFont: 'Jalnan2, sans-serif',
     titleFontSize: 54,
+    titleScaleX: 1.1,
     logoSize: 57,
-    logoGap: 10,
+    logoGap: 12,
     paddingLeft: 38,
     helpIconSize: 100,
     helpIconRight: 0,
-    titleOffsetY: 9,
+    titleOffsetY: 24,
     logoOffsetY: 0,
     helpIconOffsetY: 9,
   },
@@ -263,6 +266,7 @@ export const imessage: ThemeConfig = {
     titleColor: '#000000',
     titleFont: 'SF Pro Display, -apple-system, sans-serif',
     titleFontSize: 28,
+    titleScaleX: 1.0,
     logoSize: 0,
     logoGap: 0,
     paddingLeft: 24,
@@ -360,6 +364,7 @@ export const line: ThemeConfig = {
     titleColor: '#ffffff',
     titleFont: 'Noto Sans KR, sans-serif',
     titleFontSize: 26,
+    titleScaleX: 1.0,
     logoSize: 0,
     logoGap: 0,
     paddingLeft: 24,
@@ -455,6 +460,7 @@ export const kakaotalk: ThemeConfig = {
     titleColor: '#ffffff',
     titleFont: 'Noto Sans KR, sans-serif',
     titleFontSize: 24,
+    titleScaleX: 1.0,
     logoSize: 0,
     logoGap: 0,
     paddingLeft: 24,
