@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Copy, Download, LoaderCircle} from '@lucide/svelte'
+  import {Check, Copy, Download, LoaderCircle} from '@lucide/svelte'
   import {getCharset, getCharsetGroups} from '$lib/charsets'
   import {Button} from '$lib/components/ui/button'
   import * as Card from '$lib/components/ui/card/index.js'
@@ -694,7 +694,11 @@
               class="flex-1"
               size="sm"
             >
-              <Copy />
+              {#if copyLabel === '복사됨!'}
+                <Check />
+              {:else}
+                <Copy />
+              {/if}
               {copyLabel}
             </Button>
             <Button
