@@ -8,8 +8,8 @@ export interface MessageItem {
   studentName: string
   /** 프로필 사진 URL (type === 'student' 일 때만 사용) */
   portrait: string
-  /** 메시지 내용 */
-  text: string
+  /** 말풍선 목록. 첫 번째는 프로필+이름과 함께, 나머지는 프로필 없이 아래에 딸림 */
+  text: string[]
 }
 
 export interface ConversationData {
@@ -24,7 +24,6 @@ export interface ConversationData {
 function loadSvgAsImage(svgText: string, width: number, height: number): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image()
-    // SVG에 width/height가 없으면 viewBox 비율에 맞게 조정
     const blob = new Blob([svgText], {type: 'image/svg+xml;charset=utf-8'})
     const url = URL.createObjectURL(blob)
     img.onload = () => {
@@ -103,40 +102,6 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
   return lines
 }
 
-/** 메시지 그룹: 같은 학생의 연속 메시지를 하나로 묶음 */
-interface MessageGroup {
-  type: 'student' | 'sensei'
-  studentName: string
-  portrait: string
-  messages: string[]
-}
-
-function groupMessages(items: MessageItem[]): MessageGroup[] {
-  const groups: MessageGroup[] = []
-  for (const item of items) {
-    const lastGroup = groups[groups.length - 1]
-    if (
-      lastGroup &&
-      lastGroup.type === item.type &&
-      lastGroup.type === 'student' &&
-      lastGroup.studentName === item.studentName &&
-      lastGroup.portrait === item.portrait
-    ) {
-      lastGroup.messages.push(item.text)
-    } else if (lastGroup && lastGroup.type === item.type && lastGroup.type === 'sensei') {
-      lastGroup.messages.push(item.text)
-    } else {
-      groups.push({
-        type: item.type,
-        studentName: item.studentName,
-        portrait: item.portrait,
-        messages: [item.text],
-      })
-    }
-  }
-  return groups
-}
-
 /** SVG 아이콘들을 미리 캐시 */
 const iconCache = new Map<string, HTMLImageElement>()
 
@@ -166,48 +131,72 @@ async function getCachedImage(url: string): Promise<HTMLImageElement> {
 }
 
 /**
+ * 말풍선 하나의 높이를 계산하는 헬퍼
+ */
+function measureBubbleHeight(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  maxTextWidth: number,
+  fontSize: number,
+  lineHeight: number,
+  paddingY: number,
+): number {
+  const lines = wrapText(ctx, text, maxTextWidth)
+  const textHeight = lines.length * fontSize * lineHeight
+  return textHeight + paddingY * 2
+}
+
+/**
  * 캔버스 높이를 계산
  */
 export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConfig): number {
-  // 임시 캔버스로 텍스트 측정
   const tempCanvas = document.createElement('canvas')
   tempCanvas.width = config.canvasWidth
   tempCanvas.height = 100
   const tempCtx = tempCanvas.getContext('2d')!
 
-  const groups = groupMessages(messages)
   const chatAreaWidth = config.canvasWidth - config.sidebar.width - config.chat.paddingLeft - config.chat.paddingRight
 
   let totalHeight = config.header.height + config.chat.paddingTop
 
-  for (let gi = 0; gi < groups.length; gi++) {
-    const group = groups[gi]
-    if (gi > 0) totalHeight += config.chat.groupGap
+  for (let i = 0; i < messages.length; i++) {
+    const msg = messages[i]
+    if (i > 0) totalHeight += config.chat.groupGap
 
-    if (group.type === 'student') {
+    if (msg.type === 'student') {
       // 이름 높이
       totalHeight += config.name.fontSize + config.name.marginBottom
 
-      for (let mi = 0; mi < group.messages.length; mi++) {
-        if (mi > 0) totalHeight += config.chat.messageGap
+      const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
+      const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingX * 2
+      tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
 
-        const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
-        const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingX * 2
-        tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
-        const lines = wrapText(tempCtx, group.messages[mi], maxTextWidth)
-        const textHeight = lines.length * config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
-        totalHeight += textHeight + config.bubbleLeft.paddingY * 2
+      for (let bi = 0; bi < msg.text.length; bi++) {
+        if (bi > 0) totalHeight += config.chat.messageGap
+        totalHeight += measureBubbleHeight(
+          tempCtx,
+          msg.text[bi],
+          maxTextWidth,
+          config.bubbleLeft.fontSize,
+          config.bubbleLeft.lineHeight,
+          config.bubbleLeft.paddingY,
+        )
       }
     } else {
-      for (let mi = 0; mi < group.messages.length; mi++) {
-        if (mi > 0) totalHeight += config.chat.messageGap
+      const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
+      const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingX * 2
+      tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
 
-        const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
-        const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingX * 2
-        tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
-        const lines = wrapText(tempCtx, group.messages[mi], maxTextWidth)
-        const textHeight = lines.length * config.bubbleRight.fontSize * config.bubbleRight.lineHeight
-        totalHeight += textHeight + config.bubbleRight.paddingY * 2
+      for (let bi = 0; bi < msg.text.length; bi++) {
+        if (bi > 0) totalHeight += config.chat.messageGap
+        totalHeight += measureBubbleHeight(
+          tempCtx,
+          msg.text[bi],
+          maxTextWidth,
+          config.bubbleRight.fontSize,
+          config.bubbleRight.lineHeight,
+          config.bubbleRight.paddingY,
+        )
       }
     }
   }
@@ -223,7 +212,7 @@ export async function renderCanvas(
   canvas: HTMLCanvasElement,
   messages: MessageItem[],
   themeName: ThemeName,
-  lang: Language,
+  _lang: Language,
 ): Promise<void> {
   const config = themes[themeName]
   const height = calculateCanvasHeight(messages, config)
@@ -240,9 +229,7 @@ export async function renderCanvas(
 
   // ── 헤더 ──
   if (config.header.backgroundGradient) {
-    // 파싱된 그라데이션 적용
     const grad = ctx.createLinearGradient(0, 0, 0, config.header.height)
-    // 기본적으로 시작/끝 색상 추출 (간단한 파서)
     const colorMatches = config.header.backgroundGradient.match(/#[0-9a-fA-F]{6}/g)
     if (colorMatches && colorMatches.length >= 2) {
       grad.addColorStop(0, colorMatches[0])
@@ -257,14 +244,13 @@ export async function renderCanvas(
   }
   ctx.fillRect(0, 0, canvas.width, config.header.height)
 
-  // 헤더 내용 (MomoTalk 테마만 로고 + 제목)
+  // 헤더 내용
   if (themeName === 'momotalk') {
     try {
       const momotalkLogo = await getIcon('momotalk', config.header.logoSize)
       const titleText = 'MomoTalk'
       ctx.font = `bold ${config.header.titleFontSize}px ${config.header.titleFont}`
       const titleWidth = ctx.measureText(titleText).width
-      const totalWidth = config.header.logoSize + config.header.logoGap + titleWidth
       const startX = config.header.paddingLeft
       const centerY = config.header.height / 2
 
@@ -281,7 +267,6 @@ export async function renderCanvas(
       ctx.textBaseline = 'middle'
       ctx.fillText(titleText, startX + config.header.logoSize + config.header.logoGap, centerY)
 
-      // 물음표 아이콘
       if (config.header.helpIconSize > 0) {
         const helpIcon = await getIcon('help', config.header.helpIconSize)
         ctx.drawImage(
@@ -293,14 +278,12 @@ export async function renderCanvas(
         )
       }
     } catch {
-      // 아이콘 로드 실패 시 텍스트만 표시
       ctx.fillStyle = config.header.titleColor
       ctx.font = `bold ${config.header.titleFontSize}px ${config.header.titleFont}`
       ctx.textBaseline = 'middle'
       ctx.fillText('MomoTalk', config.header.paddingLeft, config.header.height / 2)
     }
   } else {
-    // 다른 테마는 이름만 표시
     const titleMap: Record<ThemeName, string> = {
       momotalk: 'MomoTalk',
       imessage: 'Messages',
@@ -323,7 +306,6 @@ export async function renderCanvas(
     const sidebarCenterX = config.sidebar.width / 2
     let sidebarY = config.header.height + config.sidebar.paddingTop
 
-    // 학생 아이콘
     if (config.sidebar.studentIconSize > 0) {
       try {
         const studentIcon = await getIcon('student', config.sidebar.studentIconSize)
@@ -340,14 +322,12 @@ export async function renderCanvas(
       sidebarY += config.sidebar.studentIconSize + config.sidebar.iconGap
     }
 
-    // 채팅 아이콘 + 뱃지
     if (config.sidebar.chatIconSize > 0) {
       try {
         const chatIcon = await getIcon('chat', config.sidebar.chatIconSize)
         const chatX = sidebarCenterX - config.sidebar.chatIconSize / 2
         ctx.drawImage(chatIcon, chatX, sidebarY, config.sidebar.chatIconSize, config.sidebar.chatIconSize)
 
-        // 빨간 뱃지
         if (config.sidebar.badgeSize > 0) {
           const badgeX = chatX + config.sidebar.chatIconSize - 4
           const badgeY = sidebarY - 2
@@ -369,26 +349,25 @@ export async function renderCanvas(
   }
 
   // ── 대화 영역 ──
-  const groups = groupMessages(messages)
   const chatLeft = config.sidebar.width + config.chat.paddingLeft
   const chatRight = canvas.width - config.chat.paddingRight
   const chatAreaWidth = chatRight - chatLeft
 
   let cursorY = config.header.height + config.chat.paddingTop
 
-  for (let gi = 0; gi < groups.length; gi++) {
-    const group = groups[gi]
-    if (gi > 0) cursorY += config.chat.groupGap
+  for (let i = 0; i < messages.length; i++) {
+    const msg = messages[i]
+    if (i > 0) cursorY += config.chat.groupGap
 
-    if (group.type === 'student') {
+    if (msg.type === 'student') {
       // ── 학생 메시지 (왼쪽) ──
       const profileX = chatLeft
       const profileY = cursorY
 
       // 프로필 이미지
-      if (config.profile.size > 0 && group.portrait) {
+      if (config.profile.size > 0 && msg.portrait) {
         try {
-          const profileImg = await getCachedImage(group.portrait)
+          const profileImg = await getCachedImage(msg.portrait)
           ctx.save()
           if (config.profile.circular) {
             ctx.beginPath()
@@ -451,31 +430,29 @@ export async function renderCanvas(
       ctx.fillStyle = config.name.color
       ctx.font = `${config.name.fontWeight} ${config.name.fontSize}px ${config.name.font}`
       ctx.textBaseline = 'top'
-      ctx.fillText(group.studentName, nameX, cursorY)
+      ctx.fillText(msg.studentName, nameX, cursorY)
       cursorY += config.name.fontSize + config.name.marginBottom
 
-      // 메시지들
+      // 말풍선들
       const bubbleStartX = nameX
-      for (let mi = 0; mi < group.messages.length; mi++) {
-        if (mi > 0) cursorY += config.chat.messageGap
+      for (let bi = 0; bi < msg.text.length; bi++) {
+        if (bi > 0) cursorY += config.chat.messageGap
 
         const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingX * 2
 
         ctx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
-        const lines = wrapText(ctx, group.messages[mi], maxTextWidth)
+        const lines = wrapText(ctx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
         const textBlockHeight = lines.length * lineH
         const textBlockWidth = Math.max(...lines.map((l) => ctx.measureText(l).width))
         const bubbleW = textBlockWidth + config.bubbleLeft.paddingX * 2
         const bubbleH = textBlockHeight + config.bubbleLeft.paddingY * 2
 
-        // 말풍선 배경
         ctx.fillStyle = config.bubbleLeft.backgroundColor
         roundRect(ctx, bubbleStartX, cursorY, bubbleW, bubbleH, config.bubbleLeft.borderRadius)
         ctx.fill()
 
-        // 텍스트
         ctx.fillStyle = config.bubbleLeft.textColor
         ctx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
         ctx.textBaseline = 'top'
@@ -491,14 +468,14 @@ export async function renderCanvas(
       }
     } else {
       // ── 선생님 메시지 (오른쪽) ──
-      for (let mi = 0; mi < group.messages.length; mi++) {
-        if (mi > 0) cursorY += config.chat.messageGap
+      for (let bi = 0; bi < msg.text.length; bi++) {
+        if (bi > 0) cursorY += config.chat.messageGap
 
         const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingX * 2
 
         ctx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
-        const lines = wrapText(ctx, group.messages[mi], maxTextWidth)
+        const lines = wrapText(ctx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
         const textBlockHeight = lines.length * lineH
         const textBlockWidth = Math.max(...lines.map((l) => ctx.measureText(l).width))
@@ -507,12 +484,10 @@ export async function renderCanvas(
 
         const bubbleX = chatRight - bubbleW - config.bubbleRight.marginRight
 
-        // 말풍선 배경
         ctx.fillStyle = config.bubbleRight.backgroundColor
         roundRect(ctx, bubbleX, cursorY, bubbleW, bubbleH, config.bubbleRight.borderRadius)
         ctx.fill()
 
-        // 텍스트
         ctx.fillStyle = config.bubbleRight.textColor
         ctx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
         ctx.textBaseline = 'top'
@@ -539,7 +514,7 @@ export async function exportAsPng(
   density: number,
   messages: MessageItem[],
   themeName: ThemeName,
-  lang: Language,
+  _lang: Language,
 ): Promise<void> {
   if (density <= 1) {
     const link = document.createElement('a')

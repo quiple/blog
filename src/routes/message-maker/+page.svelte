@@ -22,31 +22,35 @@
       type: 'student',
       studentName: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
-      text: '안녕하세요, 선생님. 유우카입니다.',
+      text: ['안녕하세요, 선생님. 유우카입니다.'],
     },
     {
       type: 'student',
       studentName: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
-      text: '저 기억하고 계시죠?',
+      text: ['저 기억하고 계시죠?'],
     },
     {
       type: 'sensei',
       studentName: '',
       portrait: '',
-      text: '아아. 당연하지.',
+      text: ['아아. 당연하지.'],
     },
     {
       type: 'student',
       studentName: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
-      text: '뭐, 그럼 다행이구요.',
+      text: ['뭐, 그럼 다행이구요.'],
     },
     {
       type: 'student',
       studentName: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
-      text: '선생님의 연락처를 받아두길 잘했네요.',
+      text: [
+        '선생님의 연락처를 받아두길 잘했네요.',
+        '모모톡으로 연락드린 건 다름이 아니라…….',
+        '지난번 살레 탈환 당시 사용했던 탄환의 경비 처리가 늦어지고 있어서요.',
+      ],
     },
   ])
 
@@ -112,14 +116,35 @@
   // 메시지 추가
   function addMessage(type: 'student' | 'sensei') {
     if (type === 'sensei') {
-      messages = [...messages, {type: 'sensei', studentName: '', portrait: '', text: ''}]
+      messages = [...messages, {type: 'sensei', studentName: '', portrait: '', text: ['']}]
       focusIndex = messages.length - 1
     } else {
-      messages = [...messages, {type: 'student', studentName: '', portrait: '', text: ''}]
+      messages = [...messages, {type: 'student', studentName: '', portrait: '', text: ['']}]
       // 학생 선택 대화 상자 표시
       dialogTargetIndex = messages.length - 1
       showStudentDialog = true
     }
+  }
+
+  // 말풍선 추가 (해당 메시지에 프로필 없이 딸림 말풍선 추가)
+  function addBubble(msgIndex: number) {
+    messages[msgIndex].text = [...messages[msgIndex].text, '']
+    messages = [...messages]
+    // 새로 추가된 말풍선에 포커스
+    setTimeout(() => {
+      const input = document.getElementById(
+        `msg-input-${msgIndex}-${messages[msgIndex].text.length - 1}`,
+      ) as HTMLTextAreaElement
+      input?.focus()
+    }, 50)
+  }
+
+  // 말풍선 삭제 (최소 1개는 유지)
+  function removeBubble(msgIndex: number, bubbleIndex: number) {
+    if (messages[msgIndex].text.length <= 1) return
+    messages[msgIndex].text = messages[msgIndex].text.filter((_, i) => i !== bubbleIndex)
+    messages = [...messages]
+    requestRedraw()
   }
 
   // 메시지 삭제
@@ -251,7 +276,7 @@
       const idx = focusIndex
       focusIndex = -1
       setTimeout(() => {
-        const input = document.getElementById(`msg-input-${idx}`) as HTMLInputElement
+        const input = document.getElementById(`msg-input-${idx}-0`) as HTMLTextAreaElement
         input?.focus()
       }, 50)
     }
@@ -412,15 +437,55 @@
             </div>
           {/if}
 
-          <div class="msg-input-row">
-            <textarea
-              id="msg-input-{i}"
-              class="msg-textarea"
-              placeholder={msg.type === 'student' ? '학생 메시지 입력...' : '선생 메시지 입력...'}
-              bind:value={msg.text}
-              onblur={handleInputBlur}
-              rows="2"
-            ></textarea>
+          <div class="msg-bubbles">
+            {#each msg.text as bubble, bi (bi)}
+              <div class="bubble-row">
+                <span class="bubble-index">{bi + 1}</span>
+                <textarea
+                  id="msg-input-{i}-{bi}"
+                  class="msg-textarea"
+                  placeholder={msg.type === 'student' ? '학생 메시지 입력...' : '선생 메시지 입력...'}
+                  bind:value={msg.text[bi]}
+                  onblur={handleInputBlur}
+                  rows="2"
+                ></textarea>
+                {#if msg.text.length > 1}
+                  <button
+                    class="btn-icon btn-danger bubble-remove"
+                    onclick={() => removeBubble(i, bi)}
+                    title="말풍선 삭제"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg
+                    >
+                  </button>
+                {/if}
+              </div>
+            {/each}
+            <button class="btn btn-xs btn-add-bubble" onclick={() => addBubble(i)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg
+              >
+              말풍선 추가
+            </button>
           </div>
         </div>
       {/each}
@@ -770,7 +835,22 @@
     @apply text-sm font-medium flex-1 truncate
 
   .msg-textarea
-    @apply w-full resize-none rounded-md border border-input bg-background px-3 py-2 text-sm outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring
+    @apply w-full resize-none rounded-md border border-input bg-background px-3 py-2 text-sm outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring flex-1
+
+  .msg-bubbles
+    @apply flex flex-col gap-1.5
+
+  .bubble-row
+    @apply flex items-start gap-1.5
+
+  .bubble-index
+    @apply text-[10px] font-mono text-muted-foreground mt-2.5 w-3 text-right shrink-0
+
+  .bubble-remove
+    @apply mt-1.5 shrink-0 size-6
+
+  .btn-add-bubble
+    @apply self-start text-muted-foreground border-dashed mt-0.5
 
   // ── 버튼 ──
   .btn
