@@ -191,11 +191,11 @@ export const momotalk: ThemeConfig = {
     messageGap: 6,
   },
   profile: {
-    size: 141,
+    size: 140,
     circular: true,
     borderWidth: 0,
     borderColor: '#ffffff',
-    zoom: 2,
+    zoom: 1.1,
   },
   name: {
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
