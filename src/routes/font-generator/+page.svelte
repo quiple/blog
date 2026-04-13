@@ -813,7 +813,7 @@
     @apply flex flex-col lg:flex-row items-start gap-4
 
   .preview-area
-    @apply block flex-1 w-full min-h-40 bg-secondary/50 rounded-lg h-[calc(100vh-3rem)] overflow-hidden lg:sticky top-6
+    @apply block flex-1 w-full min-h-40 bg-muted/50 rounded-lg h-[calc(100vh-3rem)] overflow-hidden lg:sticky top-6
     .placeholder
       @apply absolute inset-0 text-sm text-muted-foreground p-6 flex items-center justify-center text-center pointer-events-none
     .canvas-wrapper
