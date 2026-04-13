@@ -593,7 +593,7 @@
   <!-- ━━━ 3열: 이미지 설정 ━━━ -->
   <div class="col col-settings">
     <div class="settings-header">
-      <span class="settings-title">이미지 설정</span>
+      <span class="settings-title">설정</span>
     </div>
 
     <div class="settings-scroll">
