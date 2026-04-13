@@ -350,15 +350,15 @@
     }
   })
   const themeLabels: Record<string, string> = {
-    momotalk: 'MomoTalk',
+    momotalk: '모모톡',
     imessage: 'iMessage',
     line: 'LINE',
-    kakaotalk: 'KakaoTalk',
+    kakaotalk: '카카오톡',
   }
   const langLabels: Record<string, string> = {
     ko: '한국어',
-    en: 'English',
     ja: '日本語',
+    en: 'English',
   }
 </script>
 
