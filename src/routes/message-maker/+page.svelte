@@ -384,7 +384,7 @@
       </ButtonGroup.Root>
     </div>
 
-    <div class="editor-scroll">
+    <div class="flex-1 overflow-y-auto p-3 flex flex-col gap-2">
       {#each messages as msg, i (i)}
         <Card.Root
           class={['overflow-visible p-2 pt-1 gap-1', msg.type === 'left' && 'mr-6', msg.type === 'right' && 'ml-6']}
