@@ -823,15 +823,11 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
       let drawY = y
       if (baseline === 'hanging' || baseline === 'top') {
-        // baseline + y1 = y => baseline = y - y1
-        drawY = y - bbox.y1
+        // 'top' 기준선은 폰트의 ascender만큼 내림 (Canvas의 top 동작과 유사)
+        drawY = y + (font.ascender / font.unitsPerEm) * fontSize
       } else if (baseline === 'middle') {
-        // 'middle' 기준선은 보통 폰트의 Cap Height 절반 지점을 y에 맞춤.
-        // Bbox는 소문자나 하단 돌출부(descender)에 영향을 받으므로 대문자 'H' 기준으로 측정.
-        const hPath = font.getPath('H', 0, 0, fontSize)
-        const hBbox = hPath.getBoundingBox()
-        const capHeight = -hBbox.y1
-        drawY = y + capHeight / 2
+        // 'middle' 기준선은 ascender와 descender의 중간 지점을 y에 맞춤
+        drawY = y + ((font.ascender + font.descender) / (2 * font.unitsPerEm)) * fontSize
       }
 
       const svgPath = path.toSVG(2)
