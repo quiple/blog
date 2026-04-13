@@ -50,12 +50,12 @@ async function ensureGyeonggiFont(): Promise<void> {
 }
 
 export interface MessageItem {
-  /** 'student' = 왼쪽(학생), 'sensei' = 오른쪽(선생) */
-  type: 'student' | 'sensei'
-  /** 학생 이름 (type === 'student' 일 때만 사용) */
-  studentName: string
-  /** 프로필 사진 URL (type === 'student' 일 때만 사용) */
-  portrait: string
+  /** 'left' = 왼쪽(학생), 'right' = 오른쪽(선생) */
+  type: 'left' | 'right'
+  /** 학생 이름 (type === 'left' 일 때만 사용) */
+  name?: string
+  /** 프로필 사진 URL (type === 'left' 일 때만 사용) */
+  portrait?: string
   /** 말풍선 목록. 첫 번째는 프로필+이름과 함께, 나머지는 프로필 없이 아래에 딸림 */
   text: string[]
 }
