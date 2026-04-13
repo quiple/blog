@@ -807,6 +807,11 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
 
     if (font) {
+      const path = font.getPath(text, 0, 0, fontSize)
+      const bbox = path.getBoundingBox()
+      // opentype.js getPath uses y-down internally for canvas compatibility,
+      // so bbox.y1 is top (usually negative) and bbox.y2 is bottom.
+
       let drawX = x
       if (align === 'center' || align === 'middle') {
         const w = font.getAdvanceWidth(text, fontSize)
@@ -815,19 +820,21 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
       let drawY = y
       if (baseline === 'hanging' || baseline === 'top') {
-        drawY += (font.ascender / font.unitsPerEm) * fontSize
+        // baseline + y1 = y => baseline = y - y1
+        drawY = y - bbox.y1
       } else if (baseline === 'middle') {
-        drawY += (font.ascender / font.unitsPerEm) * fontSize - fontSize / 2
+        // baseline + (y1+y2)/2 = y => baseline = y - (y1+y2)/2
+        drawY = y - (bbox.y1 + bbox.y2) / 2
       }
 
-      const path = font.getPath(text, 0, 0, fontSize)
-      path.fill = color
       const svgPath = path.toSVG(2)
-
       if (scaleX !== 1.0) {
-        return svgPath.replace('<path ', `<path transform="translate(${drawX}, ${drawY}) scale(${scaleX}, 1)" `)
+        return svgPath.replace(
+          '<path ',
+          `<path fill="${color}" transform="translate(${drawX}, ${drawY}) scale(${scaleX}, 1)" `,
+        )
       } else {
-        return svgPath.replace('<path ', `<path transform="translate(${drawX}, ${drawY})" `)
+        return svgPath.replace('<path ', `<path fill="${color}" transform="translate(${drawX}, ${drawY})" `)
       }
     } else {
       const anchor = align === 'center' || align === 'middle' ? 'middle' : 'start'
