@@ -822,8 +822,8 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         // 'top' 기준선은 폰트의 ascender만큼 내림 (Canvas의 top 동작과 유사)
         drawY = y + (font.ascender / font.unitsPerEm) * fontSize
       } else if (baseline === 'middle') {
-        // 'middle' 기준선은 ascender와 descender의 중간 지점을 y에 맞춤
-        drawY = y + ((font.ascender + font.descender) / (2 * font.unitsPerEm)) * fontSize
+        // 'middle' 기준선은 ascender와 descender의 중간 지점을 y에 맞춤 (2.5px 수동 보정으로 PNG와 일치시킴)
+        drawY = y + ((font.ascender + font.descender) / (2 * font.unitsPerEm)) * fontSize - 2.5
       }
 
       const svgPath = path.toSVG(2)
