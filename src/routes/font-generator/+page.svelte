@@ -710,7 +710,7 @@
               download={downloadName}
             >
               <Download />
-              다운로드
+              내보내기
             </Button>
           </div>
         </Card.Footer>
