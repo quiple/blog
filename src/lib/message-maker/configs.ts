@@ -86,6 +86,8 @@ export interface ThemeConfig {
     /** 테두리 두께 */
     borderWidth: number
     borderColor: string
+    /** 확대 배율 (1.0 = 원본) */
+    zoom: number
   }
 
   /** 이름 표시 */
@@ -117,6 +119,10 @@ export interface ThemeConfig {
     maxWidthRatio: number
     /** 프로필 이미지와 말풍선 사이 가로 간격 */
     marginLeft: number
+    /** 삼각형 꼬리 너비 */
+    tailWidth: number
+    /** 삼각형 꼬리 높이 */
+    tailHeight: number
   }
 
   /** 내(선생님) 메시지 말풍선 */
@@ -133,6 +139,10 @@ export interface ThemeConfig {
     maxWidthRatio: number
     /** 우측 여백 */
     marginRight: number
+    /** 삼각형 꼬리 너비 */
+    tailWidth: number
+    /** 삼각형 꼬리 높이 */
+    tailHeight: number
   }
 }
 
@@ -185,6 +195,7 @@ export const momotalk: ThemeConfig = {
     circular: true,
     borderWidth: 0,
     borderColor: '#ffffff',
+    zoom: 1.2,
   },
   name: {
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
@@ -206,6 +217,8 @@ export const momotalk: ThemeConfig = {
     borderRadius: 16,
     maxWidthRatio: 0.65,
     marginLeft: 12,
+    tailWidth: 10,
+    tailHeight: 18,
   },
   bubbleRight: {
     backgroundColor: '#4A8ACB',
@@ -219,6 +232,8 @@ export const momotalk: ThemeConfig = {
     borderRadius: 16,
     maxWidthRatio: 0.55,
     marginRight: 0,
+    tailWidth: 10,
+    tailHeight: 18,
   },
 }
 
@@ -270,6 +285,7 @@ export const imessage: ThemeConfig = {
     circular: true,
     borderWidth: 0,
     borderColor: 'transparent',
+    zoom: 1.0,
   },
   name: {
     font: 'SF Pro Display, -apple-system, sans-serif',
@@ -291,6 +307,8 @@ export const imessage: ThemeConfig = {
     borderRadius: 20,
     maxWidthRatio: 0.7,
     marginLeft: 0,
+    tailWidth: 0,
+    tailHeight: 0,
   },
   bubbleRight: {
     backgroundColor: '#007aff',
@@ -304,6 +322,8 @@ export const imessage: ThemeConfig = {
     borderRadius: 20,
     maxWidthRatio: 0.7,
     marginRight: 0,
+    tailWidth: 0,
+    tailHeight: 0,
   },
 }
 
