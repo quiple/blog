@@ -770,12 +770,6 @@
   .col-editor
     @apply overflow-hidden
 
-  .inner-border
-    @apply relative border border-white/40 shadow-sm
-    &::after
-      content: ''
-      @apply absolute inset-0 border border-black/10 pointer-events-none
-
   .msg-student-name
     @apply text-sm font-medium flex-1 truncate
 
