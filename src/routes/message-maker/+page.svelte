@@ -398,7 +398,7 @@
     <div class="flex-1 overflow-y-auto p-3 flex flex-col gap-2">
       {#each messages as msg, i (i)}
         <Card.Root
-          class={['overflow-visible p-2 pt-1 gap-1', msg.type === 'left' && 'mr-6', msg.type === 'right' && 'ml-6']}
+          class={['overflow-visible p-2 pt-1 gap-1', msg.type === 'left' && 'mr-8', msg.type === 'right' && 'ml-8']}
         >
           <Card.Header class="flex items-center p-0">
             <span class="font-medium text-muted-foreground shrink-0 text-right tabular-nums text-xs min-w-4"
