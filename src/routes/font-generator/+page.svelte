@@ -485,7 +485,7 @@
             <div class="grid gap-2">
               <Label for="font">폰트</Label>
               <Select.Root type="single" name="font" bind:value={fontValue}>
-                <Select.Trigger class="w-full">
+                <Select.Trigger class="w-full" id="font">
                   {fontTriggerContent}
                 </Select.Trigger>
                 <Select.Content>
@@ -507,7 +507,7 @@
             <div class="grid gap-2">
               <Label for="charset">문자 집합</Label>
               <Select.Root type="single" name="charset" bind:value={charsetKey}>
-                <Select.Trigger class="w-full">{charsetTriggerContent}</Select.Trigger>
+                <Select.Trigger class="w-full" id="charset">{charsetTriggerContent}</Select.Trigger>
                 <Select.Content>
                   {#each [...charsetGroups] as [groupName, entries]}
                     <Select.Group>
