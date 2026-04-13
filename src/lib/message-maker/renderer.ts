@@ -486,7 +486,29 @@ async function renderToContext(
             roundRect(ctx, profileX, profileY, config.profile.size, config.profile.size, 12)
             ctx.clip()
           }
-          ctx.drawImage(profileImg, profileX, profileY, config.profile.size, config.profile.size)
+          const zoom = config.profile.zoom || 1.0
+          const size = config.profile.size
+          const imgW = profileImg.naturalWidth
+          const imgH = profileImg.naturalHeight
+          const imgAspect = imgW / imgH
+
+          // 소스 영역 계산 (중앙 유지하면서 zoom 적용)
+          let sw, sh, sx, sy
+          if (imgAspect > 1) {
+            // 가로가 더 김
+            sh = imgH / zoom
+            sw = sh
+            sy = 0
+            sx = (imgW - sw) / 2
+          } else {
+            // 세로가 더 길거나 같음
+            sw = imgW / zoom
+            sh = sw
+            sx = 0
+            sy = (imgH - sh) / 2
+          }
+
+          ctx.drawImage(profileImg, sx, sy, sw, sh, profileX, profileY, size, size)
           ctx.restore()
 
           // 테두리
@@ -556,6 +578,15 @@ async function renderToContext(
         roundRect(ctx, bubbleStartX, cursorY, bubbleW, bubbleH, config.bubbleLeft.borderRadius)
         ctx.fill()
 
+        // 첫 번째 말풍선에 꼬리 추가
+        if (bi === 0 && config.bubbleLeft.tailWidth > 0) {
+          ctx.beginPath()
+          ctx.moveTo(bubbleStartX, cursorY)
+          ctx.lineTo(bubbleStartX - config.bubbleLeft.tailWidth, cursorY)
+          ctx.lineTo(bubbleStartX, cursorY + config.bubbleLeft.tailHeight)
+          ctx.fill()
+        }
+
         ctx.fillStyle = config.bubbleLeft.textColor
         ctx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
         ctx.textBaseline = 'top'
@@ -590,6 +621,15 @@ async function renderToContext(
         ctx.fillStyle = config.bubbleRight.backgroundColor
         roundRect(ctx, bubbleX, cursorY, bubbleW, bubbleH, config.bubbleRight.borderRadius)
         ctx.fill()
+
+        // 첫 번째 말풍선에 꼬리 추가
+        if (bi === 0 && config.bubbleRight.tailWidth > 0) {
+          ctx.beginPath()
+          ctx.moveTo(bubbleX + bubbleW, cursorY)
+          ctx.lineTo(bubbleX + bubbleW + config.bubbleRight.tailWidth, cursorY)
+          ctx.lineTo(bubbleX + bubbleW, cursorY + config.bubbleRight.tailHeight)
+          ctx.fill()
+        }
 
         ctx.fillStyle = config.bubbleRight.textColor
         ctx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
@@ -826,19 +866,21 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     if (msg.type === 'student') {
       const profileX = chatLeft
       if (config.profile.size > 0 && msg.portrait) {
+        const zoom = config.profile.zoom || 1.0
+        const size = config.profile.size
         const portraitDataUrl = await getImageAsDataUrl(msg.portrait)
         if (config.profile.circular) {
           svgParts.push(`
   <clipPath id="circleView${i}">
-    <circle cx="${profileX + config.profile.size / 2}" cy="${cursorY + config.profile.size / 2}" r="${config.profile.size / 2}" />
+    <circle cx="${profileX + size / 2}" cy="${cursorY + size / 2}" r="${size / 2}" />
   </clipPath>
-  <image x="${profileX}" y="${cursorY}" width="${config.profile.size}" height="${config.profile.size}" href="${msg.portrait}" clip-path="url(#circleView${i})" />`)
+  <g clip-path="url(#circleView${i})">
+    <image x="${profileX - (size * (zoom - 1)) / 2}" y="${cursorY - (size * (zoom - 1)) / 2}" width="${size * zoom}" height="${size * zoom}" href="${portraitDataUrl}" preserveAspectRatio="xMidYMid slice" />
+  </g>`)
         } else {
+          svgParts.push(`<rect x="${profileX}" y="${cursorY}" width="${size}" height="${size}" rx="12" fill="#ddd" />`)
           svgParts.push(
-            `<rect x="${profileX}" y="${cursorY}" width="${config.profile.size}" height="${config.profile.size}" rx="12" fill="#ddd" />`,
-          )
-          svgParts.push(
-            `<image x="${profileX}" y="${cursorY}" width="${config.profile.size}" height="${config.profile.size}" href="${msg.portrait}" />`,
+            `<image x="${profileX - (size * (zoom - 1)) / 2}" y="${cursorY - (size * (zoom - 1)) / 2}" width="${size * zoom}" height="${size * zoom}" href="${portraitDataUrl}" preserveAspectRatio="xMidYMid slice" />`,
           )
         }
       }
@@ -863,6 +905,11 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         svgParts.push(
           `<rect x="${nameX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleLeft.borderRadius}" fill="${config.bubbleLeft.backgroundColor}" />`,
         )
+        if (bi === 0 && config.bubbleLeft.tailWidth > 0) {
+          svgParts.push(
+            `<path d="M${nameX},${cursorY} L${nameX - config.bubbleLeft.tailWidth},${cursorY} L${nameX},${cursorY + config.bubbleLeft.tailHeight} Z" fill="${config.bubbleLeft.backgroundColor}" />`,
+          )
+        }
         for (let li = 0; li < lines.length; li++) {
           svgParts.push(
             `<text x="${nameX + config.bubbleLeft.paddingX}" y="${cursorY + config.bubbleLeft.paddingY + li * lineH}" fill="${config.bubbleLeft.textColor}" font-family="${config.bubbleLeft.font}" font-size="${config.bubbleLeft.fontSize}" font-weight="${config.bubbleLeft.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
@@ -887,6 +934,11 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         svgParts.push(
           `<rect x="${bubbleX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleRight.borderRadius}" fill="${config.bubbleRight.backgroundColor}" />`,
         )
+        if (bi === 0 && config.bubbleRight.tailWidth > 0) {
+          svgParts.push(
+            `<path d="M${bubbleX + bubbleW},${cursorY} L${bubbleX + bubbleW + config.bubbleRight.tailWidth},${cursorY} L${bubbleX + bubbleW},${cursorY + config.bubbleRight.tailHeight} Z" fill="${config.bubbleRight.backgroundColor}" />`,
+          )
+        }
         for (let li = 0; li < lines.length; li++) {
           svgParts.push(
             `<text x="${bubbleX + config.bubbleRight.paddingX}" y="${cursorY + config.bubbleRight.paddingY + li * lineH}" fill="${config.bubbleRight.textColor}" font-family="${config.bubbleRight.font}" font-size="${config.bubbleRight.fontSize}" font-weight="${config.bubbleRight.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
