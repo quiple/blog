@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {ChevronDown, ChevronUp, Download, Plus, Upload, User, X} from '@lucide/svelte'
+  import {Check, ChevronDown, ChevronUp, Copy, Download, Image, Plus, Spline, Upload, User, X} from '@lucide/svelte'
   import {browser} from '$app/environment'
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js'
   import {Button} from '$lib/components/ui/button/index.js'
@@ -528,61 +528,22 @@
       <hr class="setting-divider" />
 
       <div class="export-buttons">
-        <button
-          class="btn btn-export btn-png"
-          onclick={() => canvasEl && exportAsPng(canvasEl, density, messages, themeName, lang)}
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><circle cx="8.5" cy="8.5" r="1.5" /><polyline
-              points="21 15 16 10 5 21"
-            /></svg
-          >
-          PNG 내보내기
-        </button>
-        <button class="btn btn-export btn-copy" onclick={handleCopyPng}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            >{#if isCopied}
-              <polyline points="20 6 9 17 4 12" />
-            {:else}
-              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path
-                d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
-              />
-            {/if}</svg
-          >
-          {isCopied ? '복사됨!' : '이미지 복사'}
-        </button>
-        <button class="btn btn-export btn-svg" onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg
-          >
-          SVG 내보내기
-        </button>
+        <Button onclick={() => canvasEl && exportAsPng(canvasEl, density, messages, themeName, lang)}>
+          <Image />
+          PNG로 내보내기
+        </Button>
+        <Button onclick={handleCopyPng}>
+          {#if isCopied}
+            <Check />
+          {:else}
+            <Copy />
+          {/if}
+          {isCopied ? '복사됨!' : 'PNG로 복사하기'}
+        </Button>
+        <Button onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}>
+          <Spline />
+          SVG로 내보내기
+        </Button>
       </div>
     </div>
   </div>
