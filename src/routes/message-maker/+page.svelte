@@ -776,12 +776,6 @@
   .col-settings
     @apply overflow-hidden
 
-  .setting-group
-    @apply flex flex-col gap-1.5
-
   .setting-label
     @apply text-sm font-medium text-foreground
-
-  .export-buttons
-    @apply flex flex-col gap-2.5
 </style>
