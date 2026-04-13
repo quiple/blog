@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {ChevronDown, ChevronUp, Download, Plus, Upload, X} from '@lucide/svelte'
+  import {ChevronDown, ChevronUp, Download, Plus, Upload, User, X} from '@lucide/svelte'
   import {browser} from '$app/environment'
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js'
   import {Button} from '$lib/components/ui/button/index.js'
@@ -397,19 +397,8 @@
                     <img class="size-6 object-cover scale-110" src={msg.portrait} alt={msg.name} />
                   </div>
                 {:else}
-                  <div class="msg-portrait-placeholder">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg
-                    >
+                  <div class="rounded-full size-6 bg-muted flex items-center justify-center text-muted-foreground">
+                    <User class="size-4" />
                   </div>
                 {/if}
                 <span class="msg-student-name">{msg.name || '학생 미선택'}</span>
