@@ -493,20 +493,11 @@ async function renderToContext(
           const imgAspect = imgW / imgH
 
           // 소스 영역 계산 (중앙 유지하면서 zoom 적용)
-          let sw, sh, sx, sy
-          if (imgAspect > 1) {
-            // 가로가 더 김
-            sh = imgH / zoom
-            sw = sh
-            sy = 0
-            sx = (imgW - sw) / 2
-          } else {
-            // 세로가 더 길거나 같음
-            sw = imgW / zoom
-            sh = sw
-            sx = 0
-            sy = (imgH - sh) / 2
-          }
+          const minDim = Math.min(imgW, imgH)
+          const sw = minDim / zoom
+          const sh = minDim / zoom
+          const sx = (imgW - sw) / 2
+          const sy = (imgH - sh) / 2
 
           ctx.drawImage(profileImg, sx, sy, sw, sh, profileX, profileY, size, size)
           ctx.restore()
