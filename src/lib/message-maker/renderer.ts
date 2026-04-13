@@ -285,7 +285,7 @@ export async function renderCanvas(
       ctx.drawImage(
         momotalkLogo,
         startX,
-        centerY - config.header.logoSize / 2,
+        centerY - config.header.logoSize / 2 + config.header.logoOffsetY,
         config.header.logoSize,
         config.header.logoSize,
       )
@@ -293,14 +293,18 @@ export async function renderCanvas(
       ctx.fillStyle = config.header.titleColor
       ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
       ctx.textBaseline = 'middle'
-      ctx.fillText(titleText, startX + config.header.logoSize + config.header.logoGap, centerY)
+      ctx.fillText(
+        titleText,
+        startX + config.header.logoSize + config.header.logoGap,
+        centerY + config.header.titleOffsetY,
+      )
 
       if (config.header.helpIconSize > 0) {
         const helpIcon = await getIcon('help', config.header.helpIconSize)
         ctx.drawImage(
           helpIcon,
           startX + config.header.logoSize + config.header.logoGap + titleWidth + 12,
-          centerY - config.header.helpIconSize / 2,
+          centerY - config.header.helpIconSize / 2 + config.header.helpIconOffsetY,
           config.header.helpIconSize,
           config.header.helpIconSize,
         )
@@ -309,7 +313,7 @@ export async function renderCanvas(
       ctx.fillStyle = config.header.titleColor
       ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
       ctx.textBaseline = 'middle'
-      ctx.fillText('MomoTalk', config.header.paddingLeft, config.header.height / 2)
+      ctx.fillText('MomoTalk', config.header.paddingLeft, config.header.height / 2 + config.header.titleOffsetY)
     }
   } else {
     const titleMap: Record<ThemeName, string> = {
@@ -322,7 +326,7 @@ export async function renderCanvas(
     ctx.font = `bold ${config.header.titleFontSize}px ${config.header.titleFont}`
     ctx.textBaseline = 'middle'
     ctx.textAlign = 'center'
-    ctx.fillText(titleMap[themeName], canvas.width / 2, config.header.height / 2)
+    ctx.fillText(titleMap[themeName], canvas.width / 2, config.header.height / 2 + config.header.titleOffsetY)
     ctx.textAlign = 'start'
   }
 
@@ -337,6 +341,8 @@ export async function renderCanvas(
     if (config.sidebar.studentIconSize > 0) {
       try {
         const studentIcon = await getIcon('student', config.sidebar.studentIconSize)
+        ctx.save()
+        ctx.globalAlpha = config.sidebar.studentIconOpacity
         ctx.drawImage(
           studentIcon,
           sidebarCenterX - config.sidebar.studentIconSize / 2,
@@ -344,6 +350,7 @@ export async function renderCanvas(
           config.sidebar.studentIconSize,
           config.sidebar.studentIconSize,
         )
+        ctx.restore()
       } catch {
         // fallback
       }
@@ -352,6 +359,17 @@ export async function renderCanvas(
 
     if (config.sidebar.chatIconSize > 0) {
       try {
+        // 배경색 (활성화 상태)
+        if (config.sidebar.activeChatBackgroundColor && config.sidebar.activeChatBackgroundColor !== 'transparent') {
+          ctx.fillStyle = config.sidebar.activeChatBackgroundColor
+          ctx.fillRect(
+            0,
+            sidebarY + config.sidebar.activeChatBackgroundOffsetY,
+            config.sidebar.width,
+            config.sidebar.activeChatBackgroundHeight,
+          )
+        }
+
         const chatIcon = await getIcon('chat', config.sidebar.chatIconSize)
         const chatX = sidebarCenterX - config.sidebar.chatIconSize / 2
         ctx.drawImage(chatIcon, chatX, sidebarY, config.sidebar.chatIconSize, config.sidebar.chatIconSize)

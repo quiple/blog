@@ -26,6 +26,12 @@ export interface ThemeConfig {
     helpIconSize: number
     /** 물음표 아이콘 우측 여백 */
     helpIconRight: number
+    /** 제목 y축 오프셋 */
+    titleOffsetY: number
+    /** 로고 y축 오프셋 */
+    logoOffsetY: number
+    /** 물음표 아이콘 y축 오프셋 */
+    helpIconOffsetY: number
   }
 
   /** 왼쪽 사이드바 */
@@ -46,6 +52,14 @@ export interface ThemeConfig {
     iconGap: number
     /** 사이드바 상단 패딩 */
     paddingTop: number
+    /** 학생 아이콘 투명도 (0~1) */
+    studentIconOpacity: number
+    /** 활성화된 채팅 배경색 */
+    activeChatBackgroundColor: string
+    /** 활성화된 채팅 배경 y축 오프셋 */
+    activeChatBackgroundOffsetY: number
+    /** 활성화된 채팅 배경 높이 */
+    activeChatBackgroundHeight: number
   }
 
   /** 대화 영역 */
@@ -137,6 +151,9 @@ export const momotalk: ThemeConfig = {
     paddingLeft: 38,
     helpIconSize: 100,
     helpIconRight: 0,
+    titleOffsetY: 9,
+    logoOffsetY: 3,
+    helpIconOffsetY: 9,
   },
   sidebar: {
     width: 201,
@@ -150,6 +167,10 @@ export const momotalk: ThemeConfig = {
     badgeFontSize: 13,
     iconGap: 103,
     paddingTop: 50,
+    studentIconOpacity: 0.25,
+    activeChatBackgroundColor: '#67788D',
+    activeChatBackgroundOffsetY: -52,
+    activeChatBackgroundHeight: 200,
   },
   chat: {
     paddingLeft: 20,
@@ -215,6 +236,9 @@ export const imessage: ThemeConfig = {
     paddingLeft: 24,
     helpIconSize: 0,
     helpIconRight: 0,
+    titleOffsetY: 0,
+    logoOffsetY: 0,
+    helpIconOffsetY: 0,
   },
   sidebar: {
     width: 0,
@@ -228,6 +252,10 @@ export const imessage: ThemeConfig = {
     badgeFontSize: 0,
     iconGap: 0,
     paddingTop: 0,
+    studentIconOpacity: 1,
+    activeChatBackgroundColor: 'transparent',
+    activeChatBackgroundOffsetY: 0,
+    activeChatBackgroundHeight: 0,
   },
   chat: {
     paddingLeft: 24,
@@ -293,6 +321,7 @@ export const line: ThemeConfig = {
     paddingLeft: 24,
     helpIconSize: 0,
     helpIconRight: 0,
+    titleOffsetY: 0,
   },
   sidebar: {
     width: 0,
@@ -306,6 +335,8 @@ export const line: ThemeConfig = {
     badgeFontSize: 0,
     iconGap: 0,
     paddingTop: 0,
+    studentIconOpacity: 1,
+    activeChatBackgroundColor: 'transparent',
   },
   chat: {
     paddingLeft: 20,
@@ -371,6 +402,7 @@ export const kakaotalk: ThemeConfig = {
     paddingLeft: 24,
     helpIconSize: 0,
     helpIconRight: 0,
+    titleOffsetY: 0,
   },
   sidebar: {
     width: 0,
@@ -384,6 +416,8 @@ export const kakaotalk: ThemeConfig = {
     badgeFontSize: 0,
     iconGap: 0,
     paddingTop: 0,
+    studentIconOpacity: 1,
+    activeChatBackgroundColor: 'transparent',
   },
   chat: {
     paddingLeft: 20,
