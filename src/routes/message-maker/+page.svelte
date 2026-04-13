@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Download, Plus, Upload, X} from '@lucide/svelte'
+  import {ChevronDown, ChevronUp, Download, Plus, Upload, X} from '@lucide/svelte'
   import {browser} from '$app/environment'
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js'
   import {Button} from '$lib/components/ui/button/index.js'
@@ -385,13 +385,17 @@
 
     <div class="editor-scroll">
       {#each messages as msg, i (i)}
-        <Card.Root class="overflow-visible p-2 gap-2">
-          <Card.Header class="flex items-center px-0">
-            <span class="msg-index">#{i + 1}</span>
+        <Card.Root class="overflow-visible p-2 pt-1 gap-1">
+          <Card.Header class="flex items-center p-0">
+            <span class="font-medium text-muted-foreground shrink-0 text-right tabular-nums text-xs min-w-4"
+              >#{i + 1}</span
+            >
             {#if msg.type === 'left'}
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1">
                 {#if msg.portrait}
-                  <img class="msg-portrait-thumb" src={msg.portrait} alt={msg.name} />
+                  <div class="inner-border rounded-full after:rounded-full">
+                    <img class="size-6 object-cover scale-110" src={msg.portrait} alt={msg.name} />
+                  </div>
                 {:else}
                   <div class="msg-portrait-placeholder">
                     <svg
@@ -412,59 +416,41 @@
                 <button class="btn btn-xs" onclick={() => openStudentDialog(i)}> 학생 선택 </button>
               </div>
             {/if}
-            <div class="msg-card-actions">
-              <button class="btn-icon" onclick={() => moveMessage(i, -1)} disabled={i === 0} title="위로 이동">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"><polyline points="18 15 12 9 6 15" /></svg
-                >
-              </button>
-              <button
-                class="btn-icon"
-                onclick={() => moveMessage(i, 1)}
-                disabled={i === messages.length - 1}
-                title="아래로 이동"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"><polyline points="6 9 12 15 18 9" /></svg
-                >
-              </button>
-              <button class="btn-icon btn-danger" onclick={() => removeMessage(i)} title="삭제">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  ><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg
-                >
-              </button>
+            <div class="flex items-center justify-end grow">
+              <ButtonGroup.Root class="gap-0! -mr-1">
+                <ButtonGroup.Root>
+                  <Button
+                    size="icon-sm"
+                    variant="ghost"
+                    onclick={() => moveMessage(i, -1)}
+                    disabled={i === 0}
+                    title="위로 이동"
+                  >
+                    <ChevronUp />
+                  </Button>
+                  <Button
+                    size="icon-sm"
+                    variant="ghost"
+                    onclick={() => moveMessage(i, 1)}
+                    disabled={i === messages.length - 1}
+                    title="아래로 이동"
+                  >
+                    <ChevronDown />
+                  </Button>
+                </ButtonGroup.Root>
+                <ButtonGroup.Root>
+                  <Button variant="ghost" size="icon-sm" onclick={() => removeMessage(i)} title="삭제">
+                    <X />
+                  </Button>
+                </ButtonGroup.Root>
+              </ButtonGroup.Root>
             </div>
           </Card.Header>
 
-          <Card.Content class="flex flex-col gap-1.5 items-end px-0">
+          <Card.Content class="flex flex-col gap-1.5 items-end p-0">
             {#each msg.text as bubble, bi (bi)}
               <div class="flex items-start gap-1.5 w-full">
-                <span class="font-medium text-muted-foreground mt-2.75 shrink-0 text-right tabular-nums text-xs w-4"
+                <span class="font-medium text-muted-foreground mt-2.75 shrink-0 text-right tabular-nums text-xs min-w-4"
                   >{bi + 1}</span
                 >
                 <Textarea
