@@ -1,5 +1,10 @@
 <script lang="ts">
+  import {Download, Plus, Upload, X} from '@lucide/svelte'
   import {browser} from '$app/environment'
+  import * as ButtonGroup from '$lib/components/ui/button-group/index.js'
+  import {Button} from '$lib/components/ui/button/index.js'
+  import * as Card from '$lib/components/ui/card/index.js'
+  import {Textarea} from '$lib/components/ui/textarea/index.js'
   import type {Language, ThemeName} from '$lib/message-maker/configs'
   import {themes} from '$lib/message-maker/configs'
   import {
@@ -12,6 +17,8 @@
   } from '$lib/message-maker/renderer'
   import students, {type Student} from '$lib/message-maker/students'
 
+  const isProd = import.meta.env.PROD
+
   // ── 상태 ──
   let themeName: ThemeName = $state('momotalk')
   let lang: Language = $state('ko')
@@ -20,32 +27,30 @@
   let previewContainer: HTMLDivElement | undefined = $state()
   let messages: MessageItem[] = $state([
     {
-      type: 'student',
-      studentName: '유우카',
+      type: 'left',
+      name: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
       text: ['안녕하세요, 선생님. 유우카입니다.'],
     },
     {
-      type: 'student',
-      studentName: '유우카',
+      type: 'left',
+      name: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
       text: ['저 기억하고 계시죠?'],
     },
     {
-      type: 'sensei',
-      studentName: '',
-      portrait: '',
+      type: 'right',
       text: ['아아. 당연하지.'],
     },
     {
-      type: 'student',
-      studentName: '유우카',
+      type: 'left',
+      name: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
       text: ['뭐, 그럼 다행이구요.'],
     },
     {
-      type: 'student',
-      studentName: '유우카',
+      type: 'left',
+      name: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
       text: [
         '선생님의 연락처를 받아두길 잘했네요.',
@@ -54,20 +59,18 @@
       ],
     },
     {
-      type: 'student',
-      studentName: '유우카',
+      type: 'left',
+      name: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
       text: ['경비는 언제쯤 청구받을 수 있을까요?'],
     },
     {
-      type: 'sensei',
-      studentName: '',
-      portrait: '',
+      type: 'right',
       text: ['이쪽에서 처리해야 하는 거였어……?'],
     },
     {
-      type: 'student',
-      studentName: '유우카',
+      type: 'left',
+      name: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
       text: [
         '물론이죠. 탄환도 공짜는 아니니까요.',
@@ -76,26 +79,22 @@
       ],
     },
     {
-      type: 'sensei',
-      studentName: '',
-      portrait: '',
+      type: 'right',
       text: ['청구서는 어떻게 써야 하지…….'],
     },
     {
-      type: 'student',
-      studentName: '유우카',
+      type: 'left',
+      name: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
       text: ['청구서 양식이라면 밀레니엄 학원에서 쓰는 것이 있어요.', '다음에 샬레를 방문할 때 가져다드릴게요.'],
     },
     {
-      type: 'sensei',
-      studentName: '',
-      portrait: '',
+      type: 'right',
       text: ['도와줘서 고마워.'],
     },
     {
-      type: 'student',
-      studentName: '유우카',
+      type: 'left',
+      name: '유우카',
       portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
       text: ['어려운 일도 아닌걸요.', '그럼 좋은 하루 되세요.'],
     },
@@ -172,12 +171,12 @@
   }
 
   // 메시지 추가
-  function addMessage(type: 'student' | 'sensei') {
-    if (type === 'sensei') {
-      messages = [...messages, {type: 'sensei', studentName: '', portrait: '', text: ['']}]
+  function addMessage(type: 'left' | 'right') {
+    if (type === 'right') {
+      messages = [...messages, {type: 'right', name: '', portrait: '', text: ['']}]
       focusIndex = messages.length - 1
     } else {
-      messages = [...messages, {type: 'student', studentName: '', portrait: '', text: ['']}]
+      messages = [...messages, {type: 'left', name: '', portrait: '', text: ['']}]
       // 학생 선택 대화 상자 표시
       dialogTargetIndex = messages.length - 1
       showStudentDialog = true
@@ -227,7 +226,7 @@
     const portraitFile = student.portrait[portraitIndex]
     messages[dialogTargetIndex] = {
       ...messages[dialogTargetIndex],
-      studentName: student.name[lang],
+      name: student.name[lang],
       portrait: `/img/blue-archive/${portraitFile}.png`,
     }
     messages = [...messages]
@@ -259,7 +258,7 @@
     }
     messages[dialogTargetIndex] = {
       ...messages[dialogTargetIndex],
-      studentName: customName || '사용자 지정',
+      name: customName || '사용자 지정',
       portrait: portrait,
     }
     messages = [...messages]
@@ -374,62 +373,45 @@
   <div class="col col-editor">
     <div class="editor-header">
       <span class="editor-title">대화 편집</span>
-      <div class="editor-actions">
-        <button class="btn btn-sm" onclick={importJson} title="JSON 가져오기">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="7 10 12 15 17 10" /><line
-              x1="12"
-              y1="15"
-              x2="12"
-              y2="3"
-            /></svg
-          >
-          가져오기
-        </button>
-        <button class="btn btn-sm" onclick={exportJson} title="JSON 내보내기">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            ><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" /><polyline points="17 8 12 3 7 8" /><line
-              x1="12"
-              y1="3"
-              x2="12"
-              y2="15"
-            /></svg
-          >
-          내보내기
-        </button>
-      </div>
+      <ButtonGroup.Root>
+        <Button variant="outline" size="sm" onclick={importJson} title="JSON 가져오기">
+          <Upload /> 가져오기
+        </Button>
+        <Button variant="outline" size="sm" onclick={exportJson} title="JSON 내보내기">
+          <Download /> 내보내기
+        </Button>
+      </ButtonGroup.Root>
     </div>
 
     <div class="editor-scroll">
       {#each messages as msg, i (i)}
-        <div class="msg-card" class:msg-sensei={msg.type === 'sensei'}>
-          <div class="msg-card-header">
+        <Card.Root class="overflow-visible p-2 gap-2">
+          <Card.Header class="flex items-center px-0">
             <span class="msg-index">#{i + 1}</span>
-            <span
-              class="msg-type-badge"
-              class:badge-student={msg.type === 'student'}
-              class:badge-sensei={msg.type === 'sensei'}
-            >
-              {msg.type === 'student' ? '학생' : '선생'}
-            </span>
+            {#if msg.type === 'left'}
+              <div class="flex items-center gap-1.5">
+                {#if msg.portrait}
+                  <img class="msg-portrait-thumb" src={msg.portrait} alt={msg.name} />
+                {:else}
+                  <div class="msg-portrait-placeholder">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg
+                    >
+                  </div>
+                {/if}
+                <span class="msg-student-name">{msg.name || '학생 미선택'}</span>
+                <button class="btn btn-xs" onclick={() => openStudentDialog(i)}> 학생 선택 </button>
+              </div>
+            {/if}
             <div class="msg-card-actions">
               <button class="btn-icon" onclick={() => moveMessage(i, -1)} disabled={i === 0} title="위로 이동">
                 <svg
@@ -477,115 +459,49 @@
                 >
               </button>
             </div>
-          </div>
+          </Card.Header>
 
-          {#if msg.type === 'student'}
-            <div class="msg-student-info">
-              {#if msg.portrait}
-                <img class="msg-portrait-thumb" src={msg.portrait} alt={msg.studentName} />
-              {:else}
-                <div class="msg-portrait-placeholder">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    ><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg
-                  >
-                </div>
-              {/if}
-              <span class="msg-student-name">{msg.studentName || '학생 미선택'}</span>
-              <button class="btn btn-xs" onclick={() => openStudentDialog(i)}> 학생 선택 </button>
-            </div>
-          {/if}
-
-          <div class="msg-bubbles">
+          <Card.Content class="flex flex-col gap-1.5 items-end px-0">
             {#each msg.text as bubble, bi (bi)}
-              <div class="bubble-row">
-                <span class="bubble-index">{bi + 1}</span>
-                <textarea
+              <div class="flex items-start gap-1.5 w-full">
+                <span class="font-medium text-muted-foreground mt-2.75 shrink-0 text-right tabular-nums text-xs w-4"
+                  >{bi + 1}</span
+                >
+                <Textarea
                   id="msg-input-{i}-{bi}"
-                  class="msg-textarea"
-                  placeholder={msg.type === 'student' ? '학생 메시지 입력...' : '선생 메시지 입력...'}
+                  class="grow"
+                  placeholder={msg.type === 'left' ? '왼쪽 메시지 입력...' : '오른쪽 메시지 입력...'}
                   bind:value={msg.text[bi]}
                   onkeyup={requestRedraw}
-                  rows="2"
-                ></textarea>
+                  rows={2}
+                />
                 {#if msg.text.length > 1}
-                  <button
-                    class="btn-icon btn-danger bubble-remove"
+                  <Button
+                    variant="ghost"
+                    size="icon-xs"
+                    class="-ml-1.5"
                     onclick={() => removeBubble(i, bi)}
                     title="말풍선 삭제"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      ><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg
-                    >
-                  </button>
+                    <X />
+                  </Button>
                 {/if}
               </div>
             {/each}
-            <button class="btn btn-xs btn-add-bubble" onclick={() => addBubble(i)}>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                ><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg
-              >
-              말풍선 추가
-            </button>
-          </div>
-        </div>
+            <Button variant="outline" size="sm" onclick={() => addBubble(i)}>
+              <Plus /> 말풍선 추가
+            </Button>
+          </Card.Content>
+        </Card.Root>
       {/each}
 
-      <div class="add-buttons">
-        <button class="btn btn-add btn-add-student" onclick={() => addMessage('student')}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg
-          >
-          학생 메시지 추가
-        </button>
-        <button class="btn btn-add btn-add-sensei" onclick={() => addMessage('sensei')}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" /></svg
-          >
-          선생 메시지 추가
-        </button>
+      <div class="flex gap-2">
+        <Button class="grow flex-1" size="lg" variant="outline" onclick={() => addMessage('left')}>
+          <Plus /> 왼쪽 메시지 추가
+        </Button>
+        <Button class="grow flex-1" size="lg" variant="outline" onclick={() => addMessage('right')}>
+          <Plus /> 오른쪽 메시지 추가
+        </Button>
       </div>
     </div>
   </div>
@@ -597,15 +513,17 @@
     </div>
 
     <div class="settings-scroll">
-      <div class="setting-group">
-        <label class="setting-label" for="setting-theme">테마</label>
-        <select id="setting-theme" class="setting-select" bind:value={themeName}>
-          <option value="momotalk">MomoTalk</option>
-          <option value="imessage">iMessage</option>
-          <option value="line">LINE</option>
-          <option value="kakaotalk">KakaoTalk</option>
-        </select>
-      </div>
+      {#if !isProd}
+        <div class="setting-group">
+          <label class="setting-label" for="setting-theme">테마</label>
+          <select id="setting-theme" class="setting-select" bind:value={themeName}>
+            <option value="momotalk">MomoTalk</option>
+            <option value="imessage">iMessage</option>
+            <option value="line">LINE</option>
+            <option value="kakaotalk">KakaoTalk</option>
+          </select>
+        </div>
+      {/if}
 
       <div class="setting-group">
         <label class="setting-label" for="setting-lang">언어</label>
