@@ -526,24 +526,34 @@
         </select>
       </div>
 
-      <ButtonGroup.Root>
-        <Button onclick={() => canvasEl && exportAsPng(canvasEl, density, messages, themeName, lang)}>
-          <Image />
-          PNG로 내보내기
-        </Button>
-        <Button onclick={handleCopyPng}>
-          {#if isCopied}
-            <Check />
-          {:else}
-            <Copy />
-          {/if}
-          {isCopied ? '복사됨!' : 'PNG로 복사하기'}
-        </Button>
-      </ButtonGroup.Root>
-      <Button onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}>
-        <Spline />
-        SVG로 내보내기
-      </Button>
+      <div class="gap-2 flex flex-col">
+        <ButtonGroup.Root class="w-full">
+          <ButtonGroup.Root class="grow">
+            <Button
+              class="grow"
+              variant="outline"
+              onclick={() => canvasEl && exportAsPng(canvasEl, density, messages, themeName, lang)}
+            >
+              <Image />
+              PNG로 내보내기
+            </Button>
+            <Button class="grow" variant="outline" onclick={handleCopyPng}>
+              {#if isCopied}
+                <Check />
+              {:else}
+                <Copy />
+              {/if}
+              {isCopied ? '복사됨!' : 'PNG로 복사하기'}
+            </Button>
+          </ButtonGroup.Root>
+          <ButtonGroup.Root class="grow">
+            <Button class="grow" variant="outline" onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}>
+              <Spline />
+              SVG로 내보내기
+            </Button>
+          </ButtonGroup.Root>
+        </ButtonGroup.Root>
+      </div>
     </div>
   </div>
 </div>
