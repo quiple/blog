@@ -123,6 +123,8 @@ export interface ThemeConfig {
     tailWidth: number
     /** 삼각형 꼬리 높이 */
     tailHeight: number
+    /** 삼각형 꼬리 세로 위치 오프셋 (말풍선 상단 기준) */
+    tailOffsetY: number
   }
 
   /** 내(선생님) 메시지 말풍선 */
@@ -143,6 +145,8 @@ export interface ThemeConfig {
     tailWidth: number
     /** 삼각형 꼬리 높이 */
     tailHeight: number
+    /** 삼각형 꼬리 세로 위치 오프셋 (말풍선 상단 기준) */
+    tailOffsetY: number
   }
 }
 
@@ -219,6 +223,7 @@ export const momotalk: ThemeConfig = {
     marginLeft: 12,
     tailWidth: 10,
     tailHeight: 18,
+    tailOffsetY: 10,
   },
   bubbleRight: {
     backgroundColor: '#4A8ACB',
@@ -234,6 +239,7 @@ export const momotalk: ThemeConfig = {
     marginRight: 0,
     tailWidth: 10,
     tailHeight: 18,
+    tailOffsetY: 10,
   },
 }
 
@@ -309,6 +315,7 @@ export const imessage: ThemeConfig = {
     marginLeft: 0,
     tailWidth: 0,
     tailHeight: 0,
+    tailOffsetY: 0,
   },
   bubbleRight: {
     backgroundColor: '#007aff',
@@ -324,6 +331,7 @@ export const imessage: ThemeConfig = {
     marginRight: 0,
     tailWidth: 0,
     tailHeight: 0,
+    tailOffsetY: 0,
   },
 }
 
