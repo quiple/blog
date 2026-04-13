@@ -173,9 +173,9 @@ export const momotalk: ThemeConfig = {
     activeChatBackgroundHeight: 200,
   },
   chat: {
-    paddingLeft: 20,
+    paddingLeft: 31,
     paddingRight: 24,
-    paddingTop: 24,
+    paddingTop: 39,
     paddingBottom: 32,
     groupGap: 28,
     messageGap: 6,
