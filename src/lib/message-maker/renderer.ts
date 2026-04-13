@@ -363,6 +363,7 @@ async function renderToContext(
 
       ctx.fillStyle = config.header.titleColor
       ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
+      ctx.textBaseline = 'middle'
       const titleX = startX + config.header.logoSize + config.header.logoGap
       ctx.save()
       ctx.scale(config.header.titleScaleX, 1)
