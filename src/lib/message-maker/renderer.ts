@@ -810,8 +810,6 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     if (font) {
       const path = font.getPath(text, 0, 0, fontSize)
       const bbox = path.getBoundingBox()
-      // opentype.js getPath uses y-down internally for canvas compatibility,
-      // so bbox.y1 is top (usually negative) and bbox.y2 is bottom.
 
       let drawX = x
       if (align === 'center' || align === 'middle') {
@@ -824,8 +822,12 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         // baseline + y1 = y => baseline = y - y1
         drawY = y - bbox.y1
       } else if (baseline === 'middle') {
-        // baseline + (y1+y2)/2 = y => baseline = y - (y1+y2)/2
-        drawY = y - (bbox.y1 + bbox.y2) / 2
+        // 'middle' 기준선은 보통 폰트의 Cap Height 절반 지점을 y에 맞춤.
+        // Bbox는 소문자나 하단 돌출부(descender)에 영향을 받으므로 대문자 'H' 기준으로 측정.
+        const hPath = font.getPath('H', 0, 0, fontSize)
+        const hBbox = hPath.getBoundingBox()
+        const capHeight = -hBbox.y1
+        drawY = y + capHeight / 2
       }
 
       const svgPath = path.toSVG(2)
