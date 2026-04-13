@@ -51,8 +51,10 @@
 <style lang="sass">
   @reference '#app.css'
 
+  :root
+    @apply [--header-height:68px] sm:[--header-height:84px]
   main
-    @apply px-4 sm:px-6 min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-6 [--header-height:68px] sm:[--header-height:84px] md:-mt-(--header-height) md:pt-6
+    @apply px-4 sm:px-6 min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-6 md:-mt-(--header-height) md:pt-6
     :global(.page-title)
       @apply mb-4 px-12 sm:mb-6 h-9 leading-9 text-center line-clamp-1 font-semibold text-lg
     :global(section)
