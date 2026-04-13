@@ -88,7 +88,7 @@ function loadSvgAsImage(svgText: string, width: number, height: number): Promise
 }
 
 /**
- * URL에서 Image를 로드
+ * URL에서 Image를 로드하고 가끔 필요할 때 Data URL로 변환
  */
 function loadImage(url: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
@@ -98,6 +98,17 @@ function loadImage(url: string): Promise<HTMLImageElement> {
     img.onerror = (e) => reject(e)
     img.src = url
   })
+}
+
+async function getImageAsDataUrl(url: string): Promise<string> {
+  const img = await getCachedImage(url)
+  const canvas = document.createElement('canvas')
+  canvas.width = img.naturalWidth
+  canvas.height = img.naturalHeight
+  const ctx = canvas.getContext('2d')
+  if (!ctx) return url
+  ctx.drawImage(img, 0, 0)
+  return canvas.toDataURL('image/png')
 }
 
 /**
@@ -274,11 +285,32 @@ export async function renderCanvas(
   canvas.height = height
 
   const ctx = canvas.getContext('2d')!
-  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  await renderToContext(ctx, messages, themeName, 1)
+}
+
+/**
+ * 특정 컨텍스트에 렌더링 (배율 지원)
+ */
+async function renderToContext(
+  ctx: CanvasRenderingContext2D,
+  messages: MessageItem[],
+  themeName: ThemeName,
+  scale: number,
+): Promise<void> {
+  const config = themes[themeName]
+  const width = config.canvasWidth
+  const height = calculateCanvasHeight(messages, config)
+
+  ctx.save()
+  if (scale !== 1) {
+    ctx.scale(scale, scale)
+  }
+
+  ctx.clearRect(0, 0, width, height)
 
   // 배경
   ctx.fillStyle = config.backgroundColor
-  ctx.fillRect(0, 0, canvas.width, canvas.height)
+  ctx.fillRect(0, 0, width, height)
 
   // ── 헤더 ──
   if (config.header.backgroundGradient) {
@@ -295,7 +327,7 @@ export async function renderCanvas(
   } else {
     ctx.fillStyle = config.header.backgroundColor
   }
-  ctx.fillRect(0, 0, canvas.width, config.header.height)
+  ctx.fillRect(0, 0, width, config.header.height)
 
   // 헤더 내용
   if (themeName === 'momotalk') {
@@ -351,14 +383,14 @@ export async function renderCanvas(
     ctx.font = `bold ${config.header.titleFontSize}px ${config.header.titleFont}`
     ctx.textBaseline = 'middle'
     ctx.textAlign = 'center'
-    ctx.fillText(titleMap[themeName], canvas.width / 2, config.header.height / 2 + config.header.titleOffsetY)
+    ctx.fillText(titleMap[themeName], width / 2, config.header.height / 2 + config.header.titleOffsetY)
     ctx.textAlign = 'start'
   }
 
   // ── 사이드바 (MomoTalk 전용) ──
   if (config.sidebar.width > 0) {
     ctx.fillStyle = config.sidebar.backgroundColor
-    ctx.fillRect(0, config.header.height, config.sidebar.width, canvas.height - config.header.height)
+    ctx.fillRect(0, config.header.height, config.sidebar.width, height - config.header.height)
 
     const sidebarCenterX = config.sidebar.width / 2
     let sidebarY = config.header.height + config.sidebar.paddingTop
@@ -421,7 +453,7 @@ export async function renderCanvas(
 
   // ── 대화 영역 ──
   const chatLeft = config.sidebar.width + config.chat.paddingLeft
-  const chatRight = canvas.width - config.chat.paddingRight
+  const chatRight = width - config.chat.paddingRight
   const chatAreaWidth = chatRight - chatLeft
 
   let cursorY = config.header.height + config.chat.paddingTop
@@ -574,56 +606,61 @@ export async function renderCanvas(
       }
     }
   }
+  ctx.restore()
 }
 
 /**
  * PNG로 내보내기
- * density > 1이면 원본 캔버스를 기반으로 고해상도 이미지를 생성
+ * density > 1이면 고해상도로 새로 렌더링
  */
 export async function exportAsPng(
-  canvas: HTMLCanvasElement,
+  _canvas: HTMLCanvasElement,
   density: number,
   messages: MessageItem[],
   themeName: ThemeName,
   _lang: Language,
 ): Promise<void> {
-  if (density <= 1) {
-    const link = document.createElement('a')
-    link.download = 'message.png'
-    link.href = canvas.toDataURL('image/png')
-    link.click()
-    return
-  }
-
-  // 고밀도 내보내기: 새 캔버스에 density 배율로 다시 렌더링
   const config = themes[themeName]
   const height = calculateCanvasHeight(messages, config)
+  const width = config.canvasWidth
 
   const hiDpiCanvas = document.createElement('canvas')
-  hiDpiCanvas.width = config.canvasWidth * density
+  hiDpiCanvas.width = width * density
   hiDpiCanvas.height = height * density
-  const hiCtx = hiDpiCanvas.getContext('2d')!
-  hiCtx.scale(density, density)
+  const hiCtx = hiDpiCanvas.getContext('2d', {alpha: false})!
 
-  // 원본 캔버스의 렌더링 결과를 재사용 (이미 렌더링된 이미지를 스케일)
-  hiCtx.drawImage(canvas, 0, 0, config.canvasWidth, height)
+  // 고밀도 렌더링
+  await renderToContext(hiCtx, messages, themeName, density)
 
+  const dataUrl = hiDpiCanvas.toDataURL('image/png')
   const link = document.createElement('a')
-  link.download = `message@${density}x.png`
-  link.href = hiDpiCanvas.toDataURL('image/png')
+  link.download = `message_${themeName}_${density}x.png`
+  link.href = dataUrl
+  document.body.appendChild(link)
   link.click()
+  document.body.removeChild(link)
 }
 
 /**
  * 캔버스 내용을 클립보드에 PNG로 복사
+ * Safari 호환성을 위해 Promise를 직접 ClipboardItem에 전달
  */
 export async function copyCanvasToClipboard(canvas: HTMLCanvasElement): Promise<void> {
   try {
-    const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png'))
-    if (!blob) throw new Error('Failed to create blob')
+    if (!navigator.clipboard || !window.ClipboardItem) {
+      throw new Error('Clipboard API not supported')
+    }
 
-    const data = [new ClipboardItem({'image/png': blob})]
-    await navigator.clipboard.write(data)
+    const item = new ClipboardItem({
+      'image/png': new Promise<Blob>((resolve, reject) => {
+        canvas.toBlob((blob) => {
+          if (blob) resolve(blob)
+          else reject(new Error('Failed to create blob'))
+        }, 'image/png')
+      }),
+    })
+
+    await navigator.clipboard.write([item])
   } catch (err) {
     console.error('Failed to copy image to clipboard:', err)
     throw err
@@ -789,6 +826,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     if (msg.type === 'student') {
       const profileX = chatLeft
       if (config.profile.size > 0 && msg.portrait) {
+        const portraitDataUrl = await getImageAsDataUrl(msg.portrait)
         if (config.profile.circular) {
           svgParts.push(`
   <clipPath id="circleView${i}">
@@ -870,6 +908,8 @@ ${svgParts.join('\n')}
   const link = document.createElement('a')
   link.download = `message_${themeName}_vector.svg`
   link.href = url
+  document.body.appendChild(link)
   link.click()
+  document.body.removeChild(link)
   URL.revokeObjectURL(url)
 }
