@@ -506,7 +506,7 @@
         <div class="grid gap-2">
           <label class="setting-label" for="setting-theme">테마</label>
           <Select.Root type="single" bind:value={themeName}>
-            <Select.Trigger id="setting-theme">
+            <Select.Trigger class="w-full" id="setting-theme">
               {themeLabels[themeName]}
             </Select.Trigger>
             <Select.Content>
@@ -524,7 +524,7 @@
       <div class="grid gap-2">
         <label class="setting-label" for="setting-lang">언어</label>
         <Select.Root type="single" bind:value={lang}>
-          <Select.Trigger id="setting-lang">
+          <Select.Trigger class="w-full" id="setting-lang">
             {langLabels[lang]}
           </Select.Trigger>
           <Select.Content>
@@ -549,7 +549,7 @@
             }
           }}
         >
-          <Select.Trigger id="setting-density">
+          <Select.Trigger class="w-full" id="setting-density">
             {density}x
           </Select.Trigger>
           <Select.Content>
