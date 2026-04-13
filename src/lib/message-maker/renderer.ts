@@ -227,7 +227,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
       totalHeight += config.name.marginTop + config.name.fontSize + config.name.marginBottom
 
       const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
-      const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingX * 2
+      const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
       tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
 
       for (let bi = 0; bi < msg.text.length; bi++) {
@@ -244,7 +244,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
       }
     } else {
       const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
-      const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingX * 2
+      const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
       tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
 
       for (let bi = 0; bi < msg.text.length; bi++) {
