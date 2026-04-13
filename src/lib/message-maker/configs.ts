@@ -367,6 +367,8 @@ export const line: ThemeConfig = {
     paddingTop: 0,
     studentIconOpacity: 1,
     activeChatBackgroundColor: 'transparent',
+    activeChatBackgroundOffsetY: 0,
+    activeChatBackgroundHeight: 0,
   },
   chat: {
     paddingLeft: 20,
@@ -458,6 +460,8 @@ export const kakaotalk: ThemeConfig = {
     paddingTop: 0,
     studentIconOpacity: 1,
     activeChatBackgroundColor: 'transparent',
+    activeChatBackgroundOffsetY: 0,
+    activeChatBackgroundHeight: 0,
   },
   chat: {
     paddingLeft: 20,
