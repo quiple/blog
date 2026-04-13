@@ -197,11 +197,12 @@ function measureBubbleHeight(
   maxTextWidth: number,
   fontSize: number,
   lineHeight: number,
-  paddingY: number,
+  paddingTop: number,
+  paddingBottom: number,
 ): number {
   const lines = wrapText(ctx, text, maxTextWidth)
   const textHeight = lines.length * fontSize * lineHeight
-  return textHeight + paddingY * 2
+  return textHeight + paddingTop + paddingBottom
 }
 
 /**
@@ -237,7 +238,8 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
           maxTextWidth,
           config.bubbleLeft.fontSize,
           config.bubbleLeft.lineHeight,
-          config.bubbleLeft.paddingY,
+          config.bubbleLeft.paddingTop,
+          config.bubbleLeft.paddingBottom,
         )
       }
     } else {
@@ -253,7 +255,8 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
           maxTextWidth,
           config.bubbleRight.fontSize,
           config.bubbleRight.lineHeight,
-          config.bubbleRight.paddingY,
+          config.bubbleRight.paddingTop,
+          config.bubbleRight.paddingBottom,
         )
       }
     }
@@ -556,15 +559,15 @@ async function renderToContext(
         if (bi > 0) cursorY += config.chat.messageGap
 
         const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
-        const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingX * 2
+        const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
 
         ctx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
         const lines = wrapText(ctx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
         const textBlockHeight = lines.length * lineH
         const textBlockWidth = Math.max(...lines.map((l) => ctx.measureText(l).width))
-        const bubbleW = textBlockWidth + config.bubbleLeft.paddingX * 2
-        const bubbleH = textBlockHeight + config.bubbleLeft.paddingY * 2
+        const bubbleW = textBlockWidth + config.bubbleLeft.paddingLeft + config.bubbleLeft.paddingRight
+        const bubbleH = textBlockHeight + config.bubbleLeft.paddingTop + config.bubbleLeft.paddingBottom
 
         ctx.fillStyle = config.bubbleLeft.backgroundColor
         roundRect(ctx, bubbleStartX, cursorY, bubbleW, bubbleH, config.bubbleLeft.borderRadius)
@@ -586,8 +589,8 @@ async function renderToContext(
         for (let li = 0; li < lines.length; li++) {
           ctx.fillText(
             lines[li],
-            bubbleStartX + config.bubbleLeft.paddingX,
-            cursorY + config.bubbleLeft.paddingY + li * lineH,
+            bubbleStartX + config.bubbleLeft.paddingLeft,
+            cursorY + config.bubbleLeft.paddingTop + li * lineH,
           )
         }
 
@@ -599,15 +602,15 @@ async function renderToContext(
         if (bi > 0) cursorY += config.chat.messageGap
 
         const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
-        const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingX * 2
+        const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
 
         ctx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
         const lines = wrapText(ctx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
         const textBlockHeight = lines.length * lineH
         const textBlockWidth = Math.max(...lines.map((l) => ctx.measureText(l).width))
-        const bubbleW = textBlockWidth + config.bubbleRight.paddingX * 2
-        const bubbleH = textBlockHeight + config.bubbleRight.paddingY * 2
+        const bubbleW = textBlockWidth + config.bubbleRight.paddingLeft + config.bubbleRight.paddingRight
+        const bubbleH = textBlockHeight + config.bubbleRight.paddingTop + config.bubbleRight.paddingBottom
 
         const bubbleX = chatRight - bubbleW - config.bubbleRight.marginRight
 
@@ -631,8 +634,8 @@ async function renderToContext(
         for (let li = 0; li < lines.length; li++) {
           ctx.fillText(
             lines[li],
-            bubbleX + config.bubbleRight.paddingX,
-            cursorY + config.bubbleRight.paddingY + li * lineH,
+            bubbleX + config.bubbleRight.paddingLeft,
+            cursorY + config.bubbleRight.paddingTop + li * lineH,
           )
         }
 
@@ -891,13 +894,13 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) cursorY += config.chat.messageGap
         const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
-        const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingX * 2
+        const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
         tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
         const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
         const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
-        const bubbleW = textBlockWidth + config.bubbleLeft.paddingX * 2
-        const bubbleH = lines.length * lineH + config.bubbleLeft.paddingY * 2
+        const bubbleW = textBlockWidth + config.bubbleLeft.paddingLeft + config.bubbleLeft.paddingRight
+        const bubbleH = lines.length * lineH + config.bubbleLeft.paddingTop + config.bubbleLeft.paddingBottom
 
         svgParts.push(
           `<rect x="${bubbleStartX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleLeft.borderRadius}" fill="${config.bubbleLeft.backgroundColor}" />`,
@@ -910,7 +913,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         }
         for (let li = 0; li < lines.length; li++) {
           svgParts.push(
-            `<text x="${bubbleStartX + config.bubbleLeft.paddingX}" y="${cursorY + config.bubbleLeft.paddingY + li * lineH}" fill="${config.bubbleLeft.textColor}" font-family="${config.bubbleLeft.font}" font-size="${config.bubbleLeft.fontSize}" font-weight="${config.bubbleLeft.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
+            `<text x="${bubbleStartX + config.bubbleLeft.paddingLeft}" y="${cursorY + config.bubbleLeft.paddingTop + li * lineH}" fill="${config.bubbleLeft.textColor}" font-family="${config.bubbleLeft.font}" font-size="${config.bubbleLeft.fontSize}" font-weight="${config.bubbleLeft.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
           )
         }
         cursorY += bubbleH
@@ -920,13 +923,13 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) cursorY += config.chat.messageGap
         const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
-        const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingX * 2
+        const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
         tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
         const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
         const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
-        const bubbleW = textBlockWidth + config.bubbleRight.paddingX * 2
-        const bubbleH = lines.length * lineH + config.bubbleRight.paddingY * 2
+        const bubbleW = textBlockWidth + config.bubbleRight.paddingLeft + config.bubbleRight.paddingRight
+        const bubbleH = lines.length * lineH + config.bubbleRight.paddingTop + config.bubbleRight.paddingBottom
         const bubbleX = chatRight - bubbleW - config.bubbleRight.marginRight
 
         svgParts.push(
@@ -940,7 +943,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         }
         for (let li = 0; li < lines.length; li++) {
           svgParts.push(
-            `<text x="${bubbleX + config.bubbleRight.paddingX}" y="${cursorY + config.bubbleRight.paddingY + li * lineH}" fill="${config.bubbleRight.textColor}" font-family="${config.bubbleRight.font}" font-size="${config.bubbleRight.fontSize}" font-weight="${config.bubbleRight.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
+            `<text x="${bubbleX + config.bubbleRight.paddingLeft}" y="${cursorY + config.bubbleRight.paddingTop + li * lineH}" fill="${config.bubbleRight.textColor}" font-family="${config.bubbleRight.font}" font-size="${config.bubbleRight.fontSize}" font-weight="${config.bubbleRight.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
           )
         }
         cursorY += bubbleH

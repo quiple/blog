@@ -111,8 +111,10 @@ export interface ThemeConfig {
     fontWeight: string
     lineHeight: number
     /** 말풍선 내부 여백 */
-    paddingX: number
-    paddingY: number
+    paddingTop: number
+    paddingRight: number
+    paddingBottom: number
+    paddingLeft: number
     /** 말풍선 모서리 반경 */
     borderRadius: number
     /** 말풍선 최대 너비 비율 (대화 영역 대비) */
@@ -135,8 +137,10 @@ export interface ThemeConfig {
     fontSize: number
     fontWeight: string
     lineHeight: number
-    paddingX: number
-    paddingY: number
+    paddingTop: number
+    paddingRight: number
+    paddingBottom: number
+    paddingLeft: number
     borderRadius: number
     maxWidthRatio: number
     /** 우측 여백 */
@@ -216,8 +220,10 @@ export const momotalk: ThemeConfig = {
     fontSize: 45,
     fontWeight: 'normal',
     lineHeight: 1.5,
-    paddingX: 18,
-    paddingY: 12,
+    paddingTop: 12,
+    paddingRight: 18,
+    paddingBottom: 12,
+    paddingLeft: 18,
     borderRadius: 24,
     maxWidthRatio: 0.65,
     marginLeft: 30,
@@ -232,8 +238,10 @@ export const momotalk: ThemeConfig = {
     fontSize: 45,
     fontWeight: 'normal',
     lineHeight: 1.5,
-    paddingX: 18,
-    paddingY: 12,
+    paddingTop: 12,
+    paddingRight: 18,
+    paddingBottom: 12,
+    paddingLeft: 18,
     borderRadius: 24,
     maxWidthRatio: 0.55,
     marginRight: 0,
@@ -308,8 +316,10 @@ export const imessage: ThemeConfig = {
     fontSize: 20,
     fontWeight: 'normal',
     lineHeight: 1.45,
-    paddingX: 16,
-    paddingY: 10,
+    paddingTop: 10,
+    paddingRight: 16,
+    paddingBottom: 10,
+    paddingLeft: 16,
     borderRadius: 20,
     maxWidthRatio: 0.7,
     marginLeft: 0,
@@ -324,8 +334,10 @@ export const imessage: ThemeConfig = {
     fontSize: 20,
     fontWeight: 'normal',
     lineHeight: 1.45,
-    paddingX: 16,
-    paddingY: 10,
+    paddingTop: 10,
+    paddingRight: 16,
+    paddingBottom: 10,
+    paddingLeft: 16,
     borderRadius: 20,
     maxWidthRatio: 0.7,
     marginRight: 0,
@@ -350,6 +362,8 @@ export const line: ThemeConfig = {
     helpIconSize: 0,
     helpIconRight: 0,
     titleOffsetY: 0,
+    logoOffsetY: 0,
+    helpIconOffsetY: 0,
   },
   sidebar: {
     width: 0,
@@ -379,6 +393,7 @@ export const line: ThemeConfig = {
     circular: false,
     borderWidth: 0,
     borderColor: 'transparent',
+    zoom: 1.0,
   },
   name: {
     font: 'Noto Sans KR, sans-serif',
@@ -395,11 +410,16 @@ export const line: ThemeConfig = {
     fontSize: 19,
     fontWeight: 'normal',
     lineHeight: 1.45,
-    paddingX: 14,
-    paddingY: 10,
+    paddingTop: 10,
+    paddingRight: 14,
+    paddingBottom: 10,
+    paddingLeft: 14,
     borderRadius: 14,
     maxWidthRatio: 0.65,
     marginLeft: 12,
+    tailWidth: 0,
+    tailHeight: 0,
+    tailOffsetY: 0,
   },
   bubbleRight: {
     backgroundColor: '#a3dd6e',
@@ -408,11 +428,16 @@ export const line: ThemeConfig = {
     fontSize: 19,
     fontWeight: 'normal',
     lineHeight: 1.45,
-    paddingX: 14,
-    paddingY: 10,
+    paddingTop: 10,
+    paddingRight: 14,
+    paddingBottom: 10,
+    paddingLeft: 14,
     borderRadius: 14,
     maxWidthRatio: 0.55,
     marginRight: 0,
+    tailWidth: 0,
+    tailHeight: 0,
+    tailOffsetY: 0,
   },
 }
 
@@ -431,6 +456,8 @@ export const kakaotalk: ThemeConfig = {
     helpIconSize: 0,
     helpIconRight: 0,
     titleOffsetY: 0,
+    logoOffsetY: 0,
+    helpIconOffsetY: 0,
   },
   sidebar: {
     width: 0,
@@ -460,6 +487,7 @@ export const kakaotalk: ThemeConfig = {
     circular: false,
     borderWidth: 0,
     borderColor: 'transparent',
+    zoom: 1.0,
   },
   name: {
     font: 'Noto Sans KR, sans-serif',
@@ -476,11 +504,16 @@ export const kakaotalk: ThemeConfig = {
     fontSize: 19,
     fontWeight: 'normal',
     lineHeight: 1.45,
-    paddingX: 14,
-    paddingY: 10,
+    paddingTop: 10,
+    paddingRight: 14,
+    paddingBottom: 10,
+    paddingLeft: 14,
     borderRadius: 14,
     maxWidthRatio: 0.65,
     marginLeft: 12,
+    tailWidth: 0,
+    tailHeight: 0,
+    tailOffsetY: 0,
   },
   bubbleRight: {
     backgroundColor: '#fef01b',
@@ -489,11 +522,16 @@ export const kakaotalk: ThemeConfig = {
     fontSize: 19,
     fontWeight: 'normal',
     lineHeight: 1.45,
-    paddingX: 14,
-    paddingY: 10,
+    paddingTop: 10,
+    paddingRight: 14,
+    paddingBottom: 10,
+    paddingLeft: 14,
     borderRadius: 14,
     maxWidthRatio: 0.55,
     marginRight: 0,
+    tailWidth: 0,
+    tailHeight: 0,
+    tailOffsetY: 0,
   },
 }
 
