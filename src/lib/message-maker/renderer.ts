@@ -6,6 +6,8 @@ import {themes} from './configs'
 let jalnan2Loaded = false
 /** GyeonggiTitle 폰트 로드 상태 */
 let gyeonggiLoaded = false
+/** GyeonggiTitleBold 폰트 로드 상태 */
+let gyeonggiBoldLoaded = false
 
 /**
  * Jalnan2 폰트를 FontFace API로 등록 (lazy load)
@@ -47,6 +49,27 @@ async function ensureGyeonggiFont(): Promise<void> {
   await font.load()
   document.fonts.add(font)
   gyeonggiLoaded = true
+}
+
+/**
+ * GyeonggiTitleBold 폰트를 FontFace API로 등록 (lazy load)
+ */
+async function ensureGyeonggiBoldFont(): Promise<void> {
+  if (gyeonggiBoldLoaded) return
+  if (typeof document === 'undefined') return
+
+  for (const face of document.fonts) {
+    if (face.family === 'GyeonggiTitleBold') {
+      gyeonggiBoldLoaded = true
+      return
+    }
+  }
+
+  const {default: fontDataUrl} = await import('./font-data-gyeonggi-bold')
+  const font = new FontFace('GyeonggiTitleBold', `url(${fontDataUrl})`)
+  await font.load()
+  document.fonts.add(font)
+  gyeonggiBoldLoaded = true
 }
 
 export interface MessageItem {
@@ -290,7 +313,7 @@ export async function renderCanvas(
 
   // 폰트 준비
   if (themeName === 'momotalk') {
-    await Promise.all([ensureJalnan2Font(), ensureGyeonggiFont()])
+    await Promise.all([ensureJalnan2Font(), ensureGyeonggiFont(), ensureGyeonggiBoldFont()])
   }
 
   const height = calculateCanvasHeight(messages, config)
@@ -462,14 +485,16 @@ async function renderToContext(
           const badgeX = chatX + config.sidebar.chatIconSize - 4
           const badgeY = sidebarY - 2
           ctx.fillStyle = config.sidebar.badgeColor
-          ctx.beginPath()
-          ctx.arc(badgeX, badgeY + config.sidebar.badgeSize / 2, config.sidebar.badgeSize / 2, 0, Math.PI * 2)
+          const badgeSize = config.sidebar.badgeSize
+          const badgeDrawX = badgeX - badgeSize / 2
+          const badgeDrawY = badgeY
+          roundRect(ctx, badgeDrawX, badgeDrawY, badgeSize, badgeSize, config.sidebar.badgeBorderRadius)
           ctx.fill()
           ctx.fillStyle = config.sidebar.badgeTextColor
-          ctx.font = `bold ${config.sidebar.badgeFontSize}px ${config.sidebar.badgeFont}`
+          ctx.font = `${config.sidebar.badgeFontSize}px ${config.sidebar.badgeFont}`
           ctx.textAlign = 'center'
           ctx.textBaseline = 'middle'
-          ctx.fillText('1', badgeX, badgeY + config.sidebar.badgeSize / 2)
+          ctx.fillText('1', badgeX, badgeY + badgeSize / 2)
           ctx.textAlign = 'start'
         }
       } catch {
@@ -780,18 +805,22 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
   let jalnanFont: opentype.Font | undefined
   let gyeonggiFont: opentype.Font | undefined
+  let gyeonggiBoldFont: opentype.Font | undefined
 
   // 폰트 데이터 가져오기 (인라인 포함)
   let fontStyles = ''
   if (themeName === 'momotalk') {
     const jalnanPromise = import('./font-data')
     const gyeonggiPromise = import('./font-data-gyeonggi')
+    const gyeonggiBoldPromise = import('./font-data-gyeonggi-bold')
 
     jalnanFont = await loadOpentypeFont('Jalnan2', jalnanPromise)
     gyeonggiFont = await loadOpentypeFont('GyeonggiTitle', gyeonggiPromise)
+    gyeonggiBoldFont = await loadOpentypeFont('GyeonggiTitleBold', gyeonggiBoldPromise)
 
     const jalnan2 = (await jalnanPromise).default
     const gyeonggi = (await gyeonggiPromise).default
+    const gyeonggiBold = (await gyeonggiBoldPromise).default
     fontStyles = `
   <style>
     @font-face {
@@ -801,6 +830,10 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     @font-face {
       font-family: 'GyeonggiTitle';
       src: url('${gyeonggi}') format('opentype');
+    }
+    @font-face {
+      font-family: 'GyeonggiTitleBold';
+      src: url('${gyeonggiBold}') format('opentype');
     }
   </style>`
   }
@@ -819,6 +852,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   ) {
     let font: opentype.Font | undefined
     if (fontFamily.includes('Jalnan2')) font = jalnanFont
+    else if (fontFamily.includes('GyeonggiTitleBold')) font = gyeonggiBoldFont
     else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
 
     if (font) {
@@ -950,21 +984,24 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
       if (config.sidebar.badgeSize > 0) {
         const badgeX = chatX + config.sidebar.chatIconSize - 4
-        const badgeY = sidebarY - 2 + config.sidebar.badgeSize / 2
+        const badgeSize = config.sidebar.badgeSize
+        const badgeDrawX = badgeX - badgeSize / 2
+        const badgeDrawY = sidebarY - 2
+        const br = config.sidebar.badgeBorderRadius
         svgParts.push(
-          `<circle cx="${badgeX}" cy="${badgeY}" r="${config.sidebar.badgeSize / 2}" fill="${config.sidebar.badgeColor}" />`,
+          `<rect x="${badgeDrawX}" y="${badgeDrawY}" width="${badgeSize}" height="${badgeSize}" rx="${br}" ry="${br}" fill="${config.sidebar.badgeColor}" />`,
         )
         svgParts.push(
           renderSvgText(
             '1',
             badgeX,
-            badgeY,
+            badgeDrawY + badgeSize / 2,
             config.sidebar.badgeFont,
             config.sidebar.badgeFontSize,
             config.sidebar.badgeTextColor,
             'middle',
             'middle',
-            'bold',
+            'normal',
           ),
         )
       }

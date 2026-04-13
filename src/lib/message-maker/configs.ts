@@ -50,6 +50,8 @@ export interface ThemeConfig {
     badgeTextColor: string
     badgeFont: string
     badgeFontSize: number
+    /** 알림 뱃지 border radius */
+    badgeBorderRadius: number
     /** 아이콘 간 세로 간격 */
     iconGap: number
     /** 사이드바 상단 패딩 */
@@ -186,8 +188,9 @@ export const momotalk: ThemeConfig = {
     badgeSize: 48,
     badgeColor: '#FB4719',
     badgeTextColor: '#ffffff',
-    badgeFont: 'sans-serif',
+    badgeFont: 'GyeonggiTitleBold, sans-serif',
     badgeFontSize: 40,
+    badgeBorderRadius: 24,
     iconGap: 103,
     paddingTop: 50,
     studentIconOpacity: 0.25,
@@ -286,6 +289,7 @@ export const imessage: ThemeConfig = {
     badgeTextColor: 'transparent',
     badgeFont: 'sans-serif',
     badgeFontSize: 0,
+    badgeBorderRadius: 0,
     iconGap: 0,
     paddingTop: 0,
     studentIconOpacity: 1,
@@ -384,6 +388,7 @@ export const line: ThemeConfig = {
     badgeTextColor: 'transparent',
     badgeFont: 'sans-serif',
     badgeFontSize: 0,
+    badgeBorderRadius: 0,
     iconGap: 0,
     paddingTop: 0,
     studentIconOpacity: 1,
@@ -480,6 +485,7 @@ export const kakaotalk: ThemeConfig = {
     badgeTextColor: 'transparent',
     badgeFont: 'sans-serif',
     badgeFontSize: 0,
+    badgeBorderRadius: 0,
     iconGap: 0,
     paddingTop: 0,
     studentIconOpacity: 1,
