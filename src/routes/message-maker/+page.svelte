@@ -348,6 +348,17 @@
       }, 50)
     }
   })
+  const themeLabels: Record<string, string> = {
+    momotalk: 'MomoTalk',
+    imessage: 'iMessage',
+    line: 'LINE',
+    kakaotalk: 'KakaoTalk',
+  }
+  const langLabels: Record<string, string> = {
+    ko: '한국어',
+    en: 'English',
+    ja: '日本語',
+  }
 </script>
 
 <svelte:head>
@@ -494,36 +505,56 @@
       {#if !isProd}
         <div class="grid gap-2">
           <label class="setting-label" for="setting-theme">테마</label>
-          <select id="setting-theme" class="setting-select" bind:value={themeName}>
-            <option value="momotalk">MomoTalk</option>
-            <option value="imessage">iMessage</option>
-            <option value="line">LINE</option>
-            <option value="kakaotalk">KakaoTalk</option>
-          </select>
+          <Select.Root type="single" bind:value={themeName}>
+            <Select.Trigger id="setting-theme">
+              {themeLabels[themeName]}
+            </Select.Trigger>
+            <Select.Content>
+              <Select.Item value="momotalk">MomoTalk</Select.Item>
+              <Select.Item value="imessage">iMessage</Select.Item>
+              <Select.Item value="line">LINE</Select.Item>
+              <Select.Item value="kakaotalk">KakaoTalk</Select.Item>
+            </Select.Content>
+          </Select.Root>
         </div>
       {/if}
 
       <div class="grid gap-2">
         <label class="setting-label" for="setting-lang">언어</label>
-        <select id="setting-lang" class="setting-select" bind:value={lang}>
-          <option value="ko">한국어</option>
-          <option value="en">English</option>
-          <option value="ja">日本語</option>
-        </select>
+        <Select.Root type="single" bind:value={lang}>
+          <Select.Trigger id="setting-lang">
+            {langLabels[lang]}
+          </Select.Trigger>
+          <Select.Content>
+            <Select.Item value="ko">한국어</Select.Item>
+            <Select.Item value="en">English</Select.Item>
+            <Select.Item value="ja">日本語</Select.Item>
+          </Select.Content>
+        </Select.Root>
       </div>
 
       <div class="grid gap-2">
         <label class="setting-label" for="setting-density">PNG 배율</label>
-        <select
-          id="setting-density"
-          class="setting-select"
-          onchange={(e) => (density = Number((e.target as HTMLSelectElement).value))}
+        <Select.Root
+          type="single"
+          value={String(density)}
+          onValueChange={(v) => {
+            if (v) {
+              density = Number(v)
+              requestRedraw()
+            }
+          }}
         >
-          <option value="1" selected={density === 1}>1x</option>
-          <option value="2" selected={density === 2}>2x</option>
-          <option value="3" selected={density === 3}>3x</option>
-          <option value="4" selected={density === 4}>4x</option>
-        </select>
+          <Select.Trigger id="setting-density">
+            {density}x
+          </Select.Trigger>
+          <Select.Content>
+            <Select.Item value="1">1x</Select.Item>
+            <Select.Item value="2">2x</Select.Item>
+            <Select.Item value="3">3x</Select.Item>
+            <Select.Item value="4">4x</Select.Item>
+          </Select.Content>
+        </Select.Root>
       </div>
 
       <div class="gap-2 flex flex-col">
