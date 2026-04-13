@@ -550,7 +550,8 @@ async function renderToContext(
       cursorY += config.name.fontSize + config.name.marginBottom
 
       // 말풍선들
-      const bubbleStartX = nameX
+      const profileSize = config.profile.size > 0 ? config.profile.size : 0
+      const bubbleStartX = profileX + profileSize + config.bubbleLeft.marginLeft
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) cursorY += config.chat.messageGap
 
@@ -884,6 +885,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       )
       cursorY += config.name.fontSize + config.name.marginBottom
 
+      const profileSize = config.profile.size > 0 ? config.profile.size : 0
+      const bubbleStartX = profileX + profileSize + config.bubbleLeft.marginLeft
+
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) cursorY += config.chat.messageGap
         const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
@@ -896,17 +900,17 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         const bubbleH = lines.length * lineH + config.bubbleLeft.paddingY * 2
 
         svgParts.push(
-          `<rect x="${nameX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleLeft.borderRadius}" fill="${config.bubbleLeft.backgroundColor}" />`,
+          `<rect x="${bubbleStartX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleLeft.borderRadius}" fill="${config.bubbleLeft.backgroundColor}" />`,
         )
         if (bi === 0 && config.bubbleLeft.tailWidth > 0) {
           const tailY = cursorY + config.bubbleLeft.tailOffsetY
           svgParts.push(
-            `<path d="M${nameX},${tailY} L${nameX - config.bubbleLeft.tailWidth},${tailY + config.bubbleLeft.tailHeight / 2} L${nameX},${tailY + config.bubbleLeft.tailHeight} Z" fill="${config.bubbleLeft.backgroundColor}" />`,
+            `<path d="M${bubbleStartX},${tailY} L${bubbleStartX - config.bubbleLeft.tailWidth},${tailY + config.bubbleLeft.tailHeight / 2} L${bubbleStartX},${tailY + config.bubbleLeft.tailHeight} Z" fill="${config.bubbleLeft.backgroundColor}" />`,
           )
         }
         for (let li = 0; li < lines.length; li++) {
           svgParts.push(
-            `<text x="${nameX + config.bubbleLeft.paddingX}" y="${cursorY + config.bubbleLeft.paddingY + li * lineH}" fill="${config.bubbleLeft.textColor}" font-family="${config.bubbleLeft.font}" font-size="${config.bubbleLeft.fontSize}" font-weight="${config.bubbleLeft.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
+            `<text x="${bubbleStartX + config.bubbleLeft.paddingX}" y="${cursorY + config.bubbleLeft.paddingY + li * lineH}" fill="${config.bubbleLeft.textColor}" font-family="${config.bubbleLeft.font}" font-size="${config.bubbleLeft.fontSize}" font-weight="${config.bubbleLeft.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
           )
         }
         cursorY += bubbleH
