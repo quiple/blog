@@ -519,23 +519,23 @@
             </Select.Content>
           </Select.Root>
         </div>
-      {/if}
 
-      <div class="grid gap-2">
-        <label class="setting-label" for="setting-lang">언어 (Language)</label>
-        <Select.Root type="single" bind:value={lang}>
-          <Select.Trigger class="w-full" id="setting-lang">
-            {langLabels[lang]}
-          </Select.Trigger>
-          <Select.Content>
-            <Select.Group>
-              <Select.Item value="ko">한국어</Select.Item>
-              <Select.Item value="ja">日本語</Select.Item>
-              <Select.Item value="en">English</Select.Item>
-            </Select.Group>
-          </Select.Content>
-        </Select.Root>
-      </div>
+        <div class="grid gap-2">
+          <label class="setting-label" for="setting-lang">언어 (Language)</label>
+          <Select.Root type="single" bind:value={lang}>
+            <Select.Trigger class="w-full" id="setting-lang">
+              {langLabels[lang]}
+            </Select.Trigger>
+            <Select.Content>
+              <Select.Group>
+                <Select.Item value="ko">한국어</Select.Item>
+                <Select.Item value="ja">日本語</Select.Item>
+                <Select.Item value="en">English</Select.Item>
+              </Select.Group>
+            </Select.Content>
+          </Select.Root>
+        </div>
+      {/if}
 
       <div class="grid gap-2">
         <label class="setting-label" for="setting-density">PNG 배율</label>
