@@ -128,7 +128,7 @@ export const momotalk: ThemeConfig = {
   header: {
     height: 72,
     backgroundColor: '#ff8fa0',
-    backgroundGradient: 'linear-gradient(180deg, #ff8fa0 0%, #ff7a8e 100%)',
+    backgroundGradient: 'linear-gradient(180deg, #FD889D 0%, #F79AAB 100%)',
     titleColor: '#ffffff',
     titleFont: 'M PLUS Rounded 1c, sans-serif',
     titleFontSize: 34,
@@ -140,7 +140,7 @@ export const momotalk: ThemeConfig = {
   },
   sidebar: {
     width: 84,
-    backgroundColor: '#e2e8f4',
+    backgroundColor: '#4C5B6F',
     studentIconSize: 52,
     chatIconSize: 52,
     badgeSize: 22,
