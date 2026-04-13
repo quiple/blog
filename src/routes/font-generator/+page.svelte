@@ -488,7 +488,7 @@
                 <Select.Trigger class="w-full" id="font">
                   {fontTriggerContent}
                 </Select.Trigger>
-                <Select.Content>
+                <Select.Content class="max-h-[calc(100vh-var(--header-height)-5rem)]">
                   {#each fontGroups as group}
                     <Select.Group>
                       <Select.Label>{group.label}</Select.Label>
@@ -508,7 +508,7 @@
               <Label for="charset">문자 집합</Label>
               <Select.Root type="single" name="charset" bind:value={charsetKey}>
                 <Select.Trigger class="w-full" id="charset">{charsetTriggerContent}</Select.Trigger>
-                <Select.Content>
+                <Select.Content class="max-h-[calc(100vh-var(--header-height)-9.25rem)]">
                   {#each [...charsetGroups] as [groupName, entries]}
                     <Select.Group>
                       <Select.Label>{groupName}</Select.Label>
