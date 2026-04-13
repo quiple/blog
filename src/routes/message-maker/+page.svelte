@@ -3,8 +3,9 @@
   import type {Language, ThemeName} from '$lib/message-maker/configs'
   import {themes} from '$lib/message-maker/configs'
   import {
+    copyCanvasToClipboard,
     exportAsPng,
-    exportAsSvg,
+    exportAsVectorSvg,
     renderCanvas,
     type ConversationData,
     type MessageItem,
@@ -246,6 +247,16 @@
     drawTimer = setTimeout(() => {
       doRedraw()
     }, 100)
+  }
+
+  async function handleCopyPng() {
+    if (!canvasEl) return
+    try {
+      await copyCanvasToClipboard(canvasEl)
+      alert('이미지가 클립보드에 복사되었습니다.')
+    } catch {
+      alert('클립보드 복사에 실패했습니다.')
+    }
   }
 
   async function doRedraw() {
@@ -592,7 +603,24 @@
           >
           PNG 내보내기
         </button>
-        <button class="btn btn-export btn-svg" onclick={() => canvasEl && exportAsSvg(canvasEl)}>
+        <button class="btn btn-export btn-copy" onclick={handleCopyPng}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect x="9" y="9" width="13" height="13" rx="2" ry="2" /><path
+              d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+            /></svg
+          >
+          이미지 복사
+        </button>
+        <button class="btn btn-export btn-svg" onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="18"
@@ -922,6 +950,9 @@
 
   .btn-png
     @apply bg-emerald-600 text-white border-emerald-600 hover:bg-emerald-700
+
+  .btn-copy
+    @apply bg-indigo-600 text-white border-indigo-600 hover:bg-indigo-700
 
   .btn-svg
     @apply bg-violet-600 text-white border-violet-600 hover:bg-violet-700

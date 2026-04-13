@@ -615,19 +615,260 @@ export async function exportAsPng(
 }
 
 /**
- * SVG로 내보내기 (캔버스 내용을 SVG 내 embedded image로 감싸기)
+ * 캔버스 내용을 클립보드에 PNG로 복사
  */
-export function exportAsSvg(canvas: HTMLCanvasElement): void {
-  const dataUrl = canvas.toDataURL('image/png')
-  const svgContent = `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="${canvas.width}" height="${canvas.height}" viewBox="0 0 ${canvas.width} ${canvas.height}">
-  <image width="${canvas.width}" height="${canvas.height}" xlink:href="${dataUrl}"/>
+export async function copyCanvasToClipboard(canvas: HTMLCanvasElement): Promise<void> {
+  try {
+    const blob = await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, 'image/png'))
+    if (!blob) throw new Error('Failed to create blob')
+
+    const data = [new ClipboardItem({'image/png': blob})]
+    await navigator.clipboard.write(data)
+  } catch (err) {
+    console.error('Failed to copy image to clipboard:', err)
+    throw err
+  }
+}
+
+/**
+ * 전역 SVG 아이콘 텍스트 캐시 (원시 SVG 코드)
+ */
+const svgSourceCache = new Map<string, string>()
+
+async function getSvgSource(name: string): Promise<string> {
+  if (svgSourceCache.has(name)) return svgSourceCache.get(name)!
+
+  const modules = import.meta.glob('$lib/assets/message-maker/*.svg', {eager: true, query: '?raw', import: 'default'})
+  const path = `/src/lib/assets/message-maker/${name}.svg`
+  const svgText = modules[path] as string
+  if (!svgText) throw new Error(`SVG source not found: ${name}`)
+
+  svgSourceCache.set(name, svgText)
+  return svgText
+}
+
+/**
+ * 캔버스 로직을 미러링하여 실제 벡터 SVG 문자열 생성
+ */
+export async function exportAsVectorSvg(messages: MessageItem[], themeName: ThemeName): Promise<void> {
+  const config = themes[themeName]
+  const height = calculateCanvasHeight(messages, config)
+  const width = config.canvasWidth
+
+  // 폰트 데이터 가져오기 (인라인 포함)
+  let fontStyles = ''
+  if (themeName === 'momotalk') {
+    const [{default: jalnan2}, {default: gyeonggi}] = await Promise.all([
+      import('./font-data'),
+      import('./font-data-gyeonggi'),
+    ])
+    fontStyles = `
+  <style>
+    @font-face {
+      font-family: 'Jalnan2';
+      src: url('${jalnan2}') format('opentype');
+    }
+    @font-face {
+      font-family: 'GyeonggiTitle';
+      src: url('${gyeonggi}') format('opentype');
+    }
+  </style>`
+  }
+
+  let svgParts: string[] = []
+
+  // 배경
+  svgParts.push(`<rect width="${width}" height="${height}" fill="${config.backgroundColor}" />`)
+
+  // 헤더
+  if (config.header.backgroundGradient) {
+    const colorMatches = config.header.backgroundGradient.match(/#[0-9a-fA-F]{6}/g) || [
+      config.header.backgroundColor,
+      config.header.backgroundColor,
+    ]
+    svgParts.push(`
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:${colorMatches[0]};stop-opacity:1" />
+      <stop offset="100%" style="stop-color:${colorMatches[1]};stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="${width}" height="${config.header.height}" fill="url(#headerGrad)" />`)
+  } else {
+    svgParts.push(`<rect width="${width}" height="${config.header.height}" fill="${config.header.backgroundColor}" />`)
+  }
+
+  // 헤더 아이콘 & 텍스트
+  if (themeName === 'momotalk') {
+    const logoSvg = await getSvgSource('momotalk')
+    const centerY = config.header.height / 2
+
+    // 로고 (간단하게 <g>로 삽입하거나 <image>로 삽입. 원본 소스가 있으니 <svg> 내부 삽입 시도)
+    // 여기선 호환성을 위해 base64 image로 처리하거나 svg injection
+    const logoB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(logoSvg)))}`
+    svgParts.push(
+      `<image x="${config.header.paddingLeft}" y="${centerY - config.header.logoSize / 2 + config.header.logoOffsetY}" width="${config.header.logoSize}" height="${config.header.logoSize}" href="${logoB64}" />`,
+    )
+
+    const titleX = config.header.paddingLeft + config.header.logoSize + config.header.logoGap
+    const titleY = centerY + config.header.titleOffsetY
+    svgParts.push(
+      `<text x="${titleX}" y="${titleY}" fill="${config.header.titleColor}" font-family="${config.header.titleFont}" font-size="${config.header.titleFontSize}" dominant-baseline="middle">MomoTalk</text>`,
+    )
+
+    if (config.header.helpIconSize > 0) {
+      const helpSvg = await getSvgSource('help')
+      const helpB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(helpSvg)))}`
+      // 대략적인 텍스트 너비 (Canvas API 빌려씀)
+      const tempCanvas = document.createElement('canvas')
+      const tempCtx = tempCanvas.getContext('2d')!
+      tempCtx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
+      const titleWidth = tempCtx.measureText('MomoTalk').width
+
+      svgParts.push(
+        `<image x="${titleX + titleWidth + 12}" y="${centerY - config.header.helpIconSize / 2 + config.header.helpIconOffsetY}" width="${config.header.helpIconSize}" height="${config.header.helpIconSize}" href="${helpB64}" />`,
+      )
+    }
+  }
+
+  // 사이드바
+  if (config.sidebar.width > 0) {
+    svgParts.push(
+      `<rect x="0" y="${config.header.height}" width="${config.sidebar.width}" height="${height - config.header.height}" fill="${config.sidebar.sidebarBackgroundColor || config.sidebar.backgroundColor}" />`,
+    )
+
+    let sidebarY = config.header.height + config.sidebar.paddingTop
+    if (config.sidebar.studentIconSize > 0) {
+      const studentSvg = await getSvgSource('student')
+      const studentB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(studentSvg)))}`
+      svgParts.push(
+        `<image x="${config.sidebar.width / 2 - config.sidebar.studentIconSize / 2}" y="${sidebarY}" width="${config.sidebar.studentIconSize}" height="${config.sidebar.studentIconSize}" href="${studentB64}" opacity="${config.sidebar.studentIconOpacity}" />`,
+      )
+      sidebarY += config.sidebar.studentIconSize + config.sidebar.iconGap
+    }
+
+    if (config.sidebar.chatIconSize > 0) {
+      if (config.sidebar.activeChatBackgroundColor && config.sidebar.activeChatBackgroundColor !== 'transparent') {
+        svgParts.push(
+          `<rect x="0" y="${sidebarY + config.sidebar.activeChatBackgroundOffsetY}" width="${config.sidebar.width}" height="${config.sidebar.activeChatBackgroundHeight}" fill="${config.sidebar.activeChatBackgroundColor}" />`,
+        )
+      }
+      const chatSvg = await getSvgSource('chat')
+      const chatB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(chatSvg)))}`
+      const chatX = config.sidebar.width / 2 - config.sidebar.chatIconSize / 2
+      svgParts.push(
+        `<image x="${chatX}" y="${sidebarY}" width="${config.sidebar.chatIconSize}" height="${config.sidebar.chatIconSize}" href="${chatB64}" />`,
+      )
+
+      if (config.sidebar.badgeSize > 0) {
+        const badgeX = chatX + config.sidebar.chatIconSize - 4
+        const badgeY = sidebarY - 2 + config.sidebar.badgeSize / 2
+        svgParts.push(
+          `<circle cx="${badgeX}" cy="${badgeY}" r="${config.sidebar.badgeSize / 2}" fill="${config.sidebar.badgeColor}" />`,
+        )
+        svgParts.push(
+          `<text x="${badgeX}" y="${badgeY}" fill="${config.sidebar.badgeTextColor}" font-size="${config.sidebar.badgeFontSize}" font-family="${config.sidebar.badgeFont}" font-weight="bold" text-anchor="middle" dominant-baseline="middle">1</text>`,
+        )
+      }
+    }
+  }
+
+  // 대화 영역
+  const chatLeft = config.sidebar.width + config.chat.paddingLeft
+  const chatRight = width - config.chat.paddingRight
+  const chatAreaWidth = chatRight - chatLeft
+  let cursorY = config.header.height + config.chat.paddingTop
+
+  const tempCanvas = document.createElement('canvas')
+  const tempCtx = tempCanvas.getContext('2d')!
+
+  for (let i = 0; i < messages.length; i++) {
+    const msg = messages[i]
+    if (i > 0) cursorY += config.chat.groupGap
+
+    if (msg.type === 'student') {
+      const profileX = chatLeft
+      if (config.profile.size > 0 && msg.portrait) {
+        if (config.profile.circular) {
+          svgParts.push(`
+  <clipPath id="circleView${i}">
+    <circle cx="${profileX + config.profile.size / 2}" cy="${cursorY + config.profile.size / 2}" r="${config.profile.size / 2}" />
+  </clipPath>
+  <image x="${profileX}" y="${cursorY}" width="${config.profile.size}" height="${config.profile.size}" href="${msg.portrait}" clip-path="url(#circleView${i})" />`)
+        } else {
+          svgParts.push(
+            `<rect x="${profileX}" y="${cursorY}" width="${config.profile.size}" height="${config.profile.size}" rx="12" fill="#ddd" />`,
+          )
+          svgParts.push(
+            `<image x="${profileX}" y="${cursorY}" width="${config.profile.size}" height="${config.profile.size}" href="${msg.portrait}" />`,
+          )
+        }
+      }
+
+      const nameX = profileX + (config.profile.size > 0 ? config.profile.size : 0) + config.name.marginLeft
+      svgParts.push(
+        `<text x="${nameX}" y="${cursorY}" fill="${config.name.color}" font-family="${config.name.font}" font-size="${config.name.fontSize}" font-weight="${config.name.fontWeight}" dominant-baseline="hanging">${msg.studentName}</text>`,
+      )
+      cursorY += config.name.fontSize + config.name.marginBottom
+
+      for (let bi = 0; bi < msg.text.length; bi++) {
+        if (bi > 0) cursorY += config.chat.messageGap
+        const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
+        const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingX * 2
+        tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
+        const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
+        const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
+        const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
+        const bubbleW = textBlockWidth + config.bubbleLeft.paddingX * 2
+        const bubbleH = lines.length * lineH + config.bubbleLeft.paddingY * 2
+
+        svgParts.push(
+          `<rect x="${nameX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleLeft.borderRadius}" fill="${config.bubbleLeft.backgroundColor}" />`,
+        )
+        for (let li = 0; li < lines.length; li++) {
+          svgParts.push(
+            `<text x="${nameX + config.bubbleLeft.paddingX}" y="${cursorY + config.bubbleLeft.paddingY + li * lineH}" fill="${config.bubbleLeft.textColor}" font-family="${config.bubbleLeft.font}" font-size="${config.bubbleLeft.fontSize}" font-weight="${config.bubbleLeft.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
+          )
+        }
+        cursorY += bubbleH
+      }
+    } else {
+      // 선생님
+      for (let bi = 0; bi < msg.text.length; bi++) {
+        if (bi > 0) cursorY += config.chat.messageGap
+        const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
+        const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingX * 2
+        tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
+        const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
+        const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
+        const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
+        const bubbleW = textBlockWidth + config.bubbleRight.paddingX * 2
+        const bubbleH = lines.length * lineH + config.bubbleRight.paddingY * 2
+        const bubbleX = chatRight - bubbleW - config.bubbleRight.marginRight
+
+        svgParts.push(
+          `<rect x="${bubbleX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleRight.borderRadius}" fill="${config.bubbleRight.backgroundColor}" />`,
+        )
+        for (let li = 0; li < lines.length; li++) {
+          svgParts.push(
+            `<text x="${bubbleX + config.bubbleRight.paddingX}" y="${cursorY + config.bubbleRight.paddingY + li * lineH}" fill="${config.bubbleRight.textColor}" font-family="${config.bubbleRight.font}" font-size="${config.bubbleRight.fontSize}" font-weight="${config.bubbleRight.fontWeight}" dominant-baseline="hanging">${lines[li].replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`,
+          )
+        }
+        cursorY += bubbleH
+      }
+    }
+  }
+
+  const finalSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+${fontStyles}
+${svgParts.join('\n')}
 </svg>`
-  const blob = new Blob([svgContent], {type: 'image/svg+xml'})
+
+  const blob = new Blob([finalSvg], {type: 'image/svg+xml;charset=utf-8'})
   const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
-  link.download = 'message.svg'
+  link.download = `message_${themeName}_vector.svg`
   link.href = url
   link.click()
   URL.revokeObjectURL(url)
