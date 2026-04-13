@@ -26,8 +26,8 @@ export interface ThemeConfig {
     paddingLeft: number
     /** 물음표 아이콘 크기 */
     helpIconSize: number
-    /** 물음표 아이콘 우측 여백 */
-    helpIconRight: number
+    /** 제목과 물음표 아이콘 사이 간격 */
+    helpIconGap: number
     /** 제목 y축 오프셋 */
     titleOffsetY: number
     /** 로고 y축 오프셋 */
@@ -173,7 +173,7 @@ export const momotalk: ThemeConfig = {
     logoGap: 12,
     paddingLeft: 38,
     helpIconSize: 100,
-    helpIconRight: 0,
+    helpIconGap: 2,
     titleOffsetY: 24,
     logoOffsetY: 0,
     helpIconOffsetY: 9,
@@ -271,7 +271,7 @@ export const imessage: ThemeConfig = {
     logoGap: 0,
     paddingLeft: 24,
     helpIconSize: 0,
-    helpIconRight: 0,
+    helpIconGap: 0,
     titleOffsetY: 0,
     logoOffsetY: 0,
     helpIconOffsetY: 0,
@@ -369,7 +369,7 @@ export const line: ThemeConfig = {
     logoGap: 0,
     paddingLeft: 24,
     helpIconSize: 0,
-    helpIconRight: 0,
+    helpIconGap: 0,
     titleOffsetY: 0,
     logoOffsetY: 0,
     helpIconOffsetY: 0,
@@ -465,7 +465,7 @@ export const kakaotalk: ThemeConfig = {
     logoGap: 0,
     paddingLeft: 24,
     helpIconSize: 0,
-    helpIconRight: 0,
+    helpIconGap: 0,
     titleOffsetY: 0,
     logoOffsetY: 0,
     helpIconOffsetY: 0,
