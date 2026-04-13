@@ -102,7 +102,13 @@
       const text = await file.text()
       try {
         const data = JSON.parse(text) as ConversationData
-        if (data.messages) messages = data.messages
+        if (data.messages) {
+          // 하위 호환성: text가 string인 경우 string[]으로 변환
+          messages = data.messages.map((m) => ({
+            ...m,
+            text: Array.isArray(m.text) ? m.text : [m.text as unknown as string],
+          }))
+        }
         if (data.theme) themeName = data.theme
         if (data.lang) lang = data.lang
         requestRedraw()
