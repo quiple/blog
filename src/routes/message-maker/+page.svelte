@@ -770,118 +770,18 @@
   .col-editor
     @apply overflow-hidden
 
-  .editor-actions
-    @apply flex gap-1.5
-
-  .editor-scroll
-    @apply flex-1 overflow-y-auto p-3 flex flex-col gap-2.5
-
-  .msg-card
-    @apply bg-card rounded-lg border p-3 transition-shadow hover:shadow-sm
-
-  .msg-card.msg-sensei
-    @apply border-blue-300/40 bg-blue-50/30
-
-  :global(.dark) .msg-card.msg-sensei
-    @apply border-blue-800/30 bg-blue-950/20
-
-  .msg-card-header
-    @apply flex items-center gap-2 mb-2
-
-  .msg-index
-    @apply text-xs font-mono text-muted-foreground
-
-  .msg-type-badge
-    @apply text-xs px-1.5 py-0.5 rounded-full font-medium
-
-  .badge-student
-    @apply bg-pink-100 text-pink-700
-
-  :global(.dark) .badge-student
-    @apply bg-pink-950/40 text-pink-300
-
-  .badge-sensei
-    @apply bg-blue-100 text-blue-700
-
-  :global(.dark) .badge-sensei
-    @apply bg-blue-950/40 text-blue-300
-
-  .msg-card-actions
-    @apply ml-auto flex gap-0.5
-
-  .msg-student-info
-    @apply flex items-center gap-2 mb-2
-
-  .msg-portrait-thumb
-    @apply size-8 rounded-full object-cover border
-
-  .msg-portrait-placeholder
-    @apply size-8 rounded-full bg-muted flex items-center justify-center text-muted-foreground
+  .inner-border
+    @apply relative border border-white/40 shadow-sm
+    &::after
+      content: ''
+      @apply absolute inset-0 border border-black/10 pointer-events-none
 
   .msg-student-name
     @apply text-sm font-medium flex-1 truncate
 
-  .msg-textarea
-    @apply w-full resize-none rounded-md border border-input bg-background px-3 py-2 text-sm outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring flex-1
-
-  .msg-bubbles
-    @apply flex flex-col gap-1.5
-
-  .bubble-row
-    @apply flex items-start gap-1.5
-
-  .bubble-index
-    @apply text-[10px] font-mono text-muted-foreground mt-2.5 w-3 text-right shrink-0
-
-  .bubble-remove
-    @apply mt-1.5 shrink-0 size-6
-
-  .btn-add-bubble
-    @apply self-start text-muted-foreground border-dashed mt-0.5
-
-  // ── 버튼 ──
-  .btn
-    @apply inline-flex items-center gap-1.5 rounded-md border border-input bg-background px-3 py-1.5 text-sm font-medium text-foreground shadow-xs transition-colors hover:bg-accent hover:text-accent-foreground
-
-  .btn-sm
-    @apply text-xs px-2 py-1
-
-  .btn-xs
-    @apply text-xs px-1.5 py-0.5
-
-  .btn-primary
-    @apply bg-primary text-primary-foreground border-primary hover:bg-primary/90
-
-  .btn-icon
-    @apply inline-flex items-center justify-center size-7 rounded-md transition-colors hover:bg-accent text-muted-foreground hover:text-foreground
-
-  .btn-danger
-    @apply hover:bg-destructive/10 hover:text-destructive
-
-  .add-buttons
-    @apply flex gap-2 pt-2
-
-  .btn-add
-    @apply flex-1 justify-center py-2 border-dashed
-
-  .btn-add-student
-    @apply border-pink-300 text-pink-600 hover:bg-pink-50
-
-  :global(.dark) .btn-add-student
-    @apply border-pink-800 text-pink-400 hover:bg-pink-950/30
-
-  .btn-add-sensei
-    @apply border-blue-300 text-blue-600 hover:bg-blue-50
-
-  :global(.dark) .btn-add-sensei
-    @apply border-blue-800 text-blue-400 hover:bg-blue-950/30
-
   // ── 3열: 설정 ──
   .col-settings
     @apply overflow-hidden
-
-  .settings-scroll
-    @apply flex-1 overflow-y-auto p-4 flex flex-col gap-4
 
   .setting-group
     @apply flex flex-col gap-1.5
@@ -889,99 +789,6 @@
   .setting-label
     @apply text-sm font-medium text-foreground
 
-  .setting-select
-    @apply w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring
-
   .export-buttons
     @apply flex flex-col gap-2.5
-
-  .btn-export
-    @apply justify-center py-2.5 text-sm font-semibold
-
-  .btn-png
-    @apply bg-emerald-600 text-white border-emerald-600 hover:bg-emerald-700
-
-  .btn-copy
-    @apply bg-indigo-600 text-white border-indigo-600 hover:bg-indigo-700
-
-  .btn-svg
-    @apply bg-violet-600 text-white border-violet-600 hover:bg-violet-700
-
-  // ── 대화 상자 ──
-  .dialog-overlay
-    @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm
-
-  .dialog
-    @apply bg-card rounded-xl shadow-2xl border w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden
-
-  .dialog-header
-    @apply flex items-center justify-between px-5 py-3.5 border-b
-
-  .dialog-title
-    @apply text-base font-semibold
-
-  .dialog-search
-    @apply px-4 pt-3 pb-2
-
-  .search-input
-    @apply w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-ring focus:ring-1 focus:ring-ring
-
-  .dialog-body
-    @apply flex-1 overflow-y-auto px-4 py-3
-
-  .dialog-footer
-    @apply flex items-center justify-end gap-2 px-4 py-3 border-t
-
-  // 학생 그리드
-  .student-grid
-    @apply grid grid-cols-4 gap-2
-
-  .student-card-wrapper
-    @apply flex flex-col
-
-  .student-card
-    @apply flex flex-col items-center gap-1 rounded-lg p-2 transition-colors hover:bg-accent cursor-pointer border border-transparent hover:border-border relative
-
-  .student-portrait
-    @apply size-14 rounded-full object-cover
-
-  .student-name
-    @apply text-xs text-center font-medium line-clamp-1
-
-  .portrait-count
-    @apply absolute top-1 right-1 bg-muted text-muted-foreground text-[10px] size-4 rounded-full flex items-center justify-center font-bold
-
-  .portrait-variants
-    @apply flex gap-1 p-1.5 bg-muted rounded-lg mt-1 flex-wrap justify-center
-
-  .variant-btn
-    @apply rounded-md overflow-hidden transition-transform hover:scale-105 border-2 border-transparent hover:border-primary
-
-  .variant-img
-    @apply size-12 object-cover rounded-md
-
-  .btn-custom
-    @apply mr-auto
-
-  // 사용자 지정 입력
-  .custom-body
-    @apply p-6
-
-  .custom-form
-    @apply flex flex-col gap-4
-
-  .custom-field
-    @apply flex flex-col gap-1.5
-
-  .custom-label
-    @apply text-sm font-medium
-  ∂ç
-  .custom-input
-    @apply rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-ring focus:ring-1 focus:ring-ring
-
-  .custom-preview
-    @apply size-16 rounded-full object-cover border
-
-  .custom-file-input
-    @apply text-sm
 </style>
