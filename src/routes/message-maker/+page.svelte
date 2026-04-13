@@ -510,10 +510,12 @@
               {themeLabels[themeName]}
             </Select.Trigger>
             <Select.Content>
-              <Select.Item value="momotalk">MomoTalk</Select.Item>
-              <Select.Item value="imessage">iMessage</Select.Item>
-              <Select.Item value="line">LINE</Select.Item>
-              <Select.Item value="kakaotalk">KakaoTalk</Select.Item>
+              <Select.Group>
+                <Select.Item value="momotalk">모모톡</Select.Item>
+                <Select.Item value="imessage">iMessage</Select.Item>
+                <Select.Item value="line">LINE</Select.Item>
+                <Select.Item value="kakaotalk">카카오톡</Select.Item>
+              </Select.Group>
             </Select.Content>
           </Select.Root>
         </div>
@@ -526,9 +528,11 @@
             {langLabels[lang]}
           </Select.Trigger>
           <Select.Content>
-            <Select.Item value="ko">한국어</Select.Item>
-            <Select.Item value="en">English</Select.Item>
-            <Select.Item value="ja">日本語</Select.Item>
+            <Select.Group>
+              <Select.Item value="ko">한국어</Select.Item>
+              <Select.Item value="en">English</Select.Item>
+              <Select.Item value="ja">日本語</Select.Item>
+            </Select.Group>
           </Select.Content>
         </Select.Root>
       </div>
@@ -549,10 +553,12 @@
             {density}x
           </Select.Trigger>
           <Select.Content>
-            <Select.Item value="1">1x</Select.Item>
-            <Select.Item value="2">2x</Select.Item>
-            <Select.Item value="3">3x</Select.Item>
-            <Select.Item value="4">4x</Select.Item>
+            <Select.Group>
+              <Select.Item value="1">1x</Select.Item>
+              <Select.Item value="2">2x</Select.Item>
+              <Select.Item value="3">3x</Select.Item>
+              <Select.Item value="4">4x</Select.Item>
+            </Select.Group>
           </Select.Content>
         </Select.Root>
       </div>
