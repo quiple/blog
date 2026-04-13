@@ -221,9 +221,9 @@ export const momotalk: ThemeConfig = {
     borderRadius: 20,
     maxWidthRatio: 0.65,
     marginLeft: 30,
-    tailWidth: 10,
-    tailHeight: 18,
-    tailOffsetY: 10,
+    tailWidth: 12,
+    tailHeight: 16,
+    tailOffsetY: 26,
   },
   bubbleRight: {
     backgroundColor: '#4A8ACB',
@@ -237,9 +237,9 @@ export const momotalk: ThemeConfig = {
     borderRadius: 20,
     maxWidthRatio: 0.55,
     marginRight: 0,
-    tailWidth: 10,
-    tailHeight: 18,
-    tailOffsetY: 10,
+    tailWidth: 12,
+    tailHeight: 16,
+    tailOffsetY: 26,
   },
 }
 
