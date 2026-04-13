@@ -239,7 +239,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
     const msg = messages[i]
     if (i > 0) totalHeight += config.chat.groupGap
 
-    if (msg.type === 'student') {
+    if (msg.type === 'left') {
       // 이름 높이
       totalHeight += config.name.marginTop + config.name.fontSize + config.name.marginBottom
 
@@ -481,7 +481,7 @@ async function renderToContext(
     const msg = messages[i]
     if (i > 0) cursorY += config.chat.groupGap
 
-    if (msg.type === 'student') {
+    if (msg.type === 'left') {
       // ── 학생 메시지 (왼쪽) ──
       const profileX = chatLeft
       const profileY = cursorY
@@ -566,7 +566,7 @@ async function renderToContext(
       ctx.fillStyle = config.name.color
       ctx.font = `${config.name.fontWeight} ${config.name.fontSize}px ${config.name.font}`
       ctx.textBaseline = 'top'
-      ctx.fillText(msg.studentName, nameX, nameY)
+      ctx.fillText(msg.name, nameX, nameY)
       cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
 
       // 말풍선들
@@ -919,7 +919,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   // 사이드바
   if (config.sidebar.width > 0) {
     svgParts.push(
-      `<rect x="0" y="${config.header.height}" width="${config.sidebar.width}" height="${height - config.header.height}" fill="${config.sidebar.sidebarBackgroundColor || config.sidebar.backgroundColor}" />`,
+      `<rect x="0" y="${config.header.height}" width="${config.sidebar.width}" height="${height - config.header.height}" fill="${config.sidebar.backgroundColor}" />`,
     )
 
     let sidebarY = config.header.height + config.sidebar.paddingTop
@@ -960,7 +960,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     const msg = messages[i]
     if (i > 0) cursorY += config.chat.groupGap
 
-    if (msg.type === 'student') {
+    if (msg.type === 'left') {
       const profileX = chatLeft
       if (config.profile.size > 0 && msg.portrait) {
         const zoom = config.profile.zoom || 1.0
@@ -986,7 +986,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       const nameY = cursorY + config.name.marginTop
       svgParts.push(
         renderSvgText(
-          msg.studentName,
+          msg.name,
           nameX,
           nameY,
           config.name.font,
