@@ -566,7 +566,7 @@ async function renderToContext(
       ctx.fillStyle = config.name.color
       ctx.font = `${config.name.fontWeight} ${config.name.fontSize}px ${config.name.font}`
       ctx.textBaseline = 'top'
-      ctx.fillText(msg.name, nameX, nameY)
+      ctx.fillText(msg.name || '', nameX, nameY)
       cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
 
       // 말풍선들
@@ -986,7 +986,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       const nameY = cursorY + config.name.marginTop
       svgParts.push(
         renderSvgText(
-          msg.name,
+          msg.name || '',
           nameX,
           nameY,
           config.name.font,
