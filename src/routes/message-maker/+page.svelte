@@ -2,7 +2,7 @@
   import {Check, ChevronDown, ChevronUp, Copy, Download, Image, Plus, Spline, Upload, User, X} from '@lucide/svelte'
   import {browser} from '$app/environment'
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js'
-  import {Button} from '$lib/components/ui/button/index.js'
+  import {Button, buttonVariants} from '$lib/components/ui/button/index.js'
   import * as Card from '$lib/components/ui/card/index.js'
   import * as Dialog from '$lib/components/ui/dialog/index.js'
   import * as Select from '$lib/components/ui/select/index.js'
@@ -607,9 +607,9 @@
     }
   }}
 >
-  <Dialog.Content class="max-w-2xl max-h-[90vh] flex flex-col p-0 overflow-hidden">
-    <Dialog.Header class="px-5 py-3.5 border-b shrink-0 flex flex-row items-center justify-between space-y-0">
-      <Dialog.Title class="text-base font-semibold">학생 선택</Dialog.Title>
+  <Dialog.Content class="sm:max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
+    <Dialog.Header>
+      <Dialog.Title>학생 선택</Dialog.Title>
     </Dialog.Header>
 
     {#if !showCustomInput}
@@ -677,10 +677,10 @@
         </div>
       </div>
 
-      <div class="flex items-center justify-between gap-2 px-4 py-3 border-t bg-muted/30">
-        <Button variant="ghost" size="sm" onclick={selectCustomStudent}>사용자 지정 이미지 사용...</Button>
-        <Button variant="outline" size="sm" onclick={() => (showStudentDialog = false)}>취소</Button>
-      </div>
+      <Dialog.Footer>
+        <Button variant="outline" onclick={selectCustomStudent}>사용자 지정 이미지 사용...</Button>
+        <Dialog.Close type="button" class={buttonVariants({variant: 'outline'})}>취소</Dialog.Close>
+      </Dialog.Footer>
     {:else}
       <div class="p-6 overflow-y-auto">
         <div class="flex flex-col gap-6 max-w-md mx-auto">
@@ -724,18 +724,17 @@
           </div>
         </div>
       </div>
-      <div class="flex items-center justify-end gap-2 px-4 py-3 border-t bg-muted/30">
+      <Dialog.Footer>
         <Button
-          variant="ghost"
-          size="sm"
+          variant="outline"
           onclick={() => {
             showCustomInput = false
           }}
         >
           뒤로
         </Button>
-        <Button size="sm" onclick={confirmCustomStudent}>적용하기</Button>
-      </div>
+        <Button onclick={confirmCustomStudent}>적용하기</Button>
+      </Dialog.Footer>
     {/if}
   </Dialog.Content>
 </Dialog.Root>
