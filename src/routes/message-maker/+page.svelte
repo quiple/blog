@@ -4,6 +4,7 @@
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js'
   import {Button} from '$lib/components/ui/button/index.js'
   import * as Card from '$lib/components/ui/card/index.js'
+  import * as Dialog from '$lib/components/ui/dialog/index.js'
   import * as Select from '$lib/components/ui/select/index.js'
   import {Textarea} from '$lib/components/ui/textarea/index.js'
   import type {Language, ThemeName} from '$lib/message-maker/configs'
@@ -370,7 +371,7 @@
 
 <h1 class="page-title">메시지 만들기</h1>
 
-<div class="maker-layout">
+<div class="grid grid-cols-3 gap-0 h-[calc(100vh-var(--header-height))] -mx-4 sm:-mx-6 border-t">
   <!-- ━━━ 1열: 캔버스 미리보기 ━━━ -->
   <div class="col col-preview" bind:this={previewContainer}>
     <div class="preview-header">
@@ -749,15 +750,12 @@
   :global(main)
     @apply pb-0!
 
-  .maker-layout
-    @apply grid grid-cols-3 gap-0 h-[calc(100vh-var(--header-height))] -mx-4 sm:-mx-6
-
   .col
-    @apply flex flex-col border-r border-border last:border-r-0
+    @apply flex flex-col border-r last:border-r-0
 
   // ── 열 헤더 공통 ──
   .preview-header, .editor-header, .settings-header
-    @apply flex items-center justify-between h-11 px-4 border-b border-border bg-muted/50 shrink-0
+    @apply flex items-center justify-between h-11 px-4 border-b bg-muted/50 shrink-0
 
   .preview-label, .editor-title, .settings-title
     @apply text-sm font-semibold text-muted-foreground
@@ -783,7 +781,7 @@
     @apply flex-1 overflow-y-auto p-3 flex flex-col gap-2.5
 
   .msg-card
-    @apply bg-card rounded-lg border border-border p-3 transition-shadow hover:shadow-sm
+    @apply bg-card rounded-lg border p-3 transition-shadow hover:shadow-sm
 
   .msg-card.msg-sensei
     @apply border-blue-300/40 bg-blue-50/30
@@ -819,7 +817,7 @@
     @apply flex items-center gap-2 mb-2
 
   .msg-portrait-thumb
-    @apply size-8 rounded-full object-cover border border-border
+    @apply size-8 rounded-full object-cover border
 
   .msg-portrait-placeholder
     @apply size-8 rounded-full bg-muted flex items-center justify-center text-muted-foreground
@@ -898,9 +896,6 @@
   .setting-select
     @apply w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none transition-colors focus:border-ring focus:ring-1 focus:ring-ring
 
-  .setting-divider
-    @apply border-border
-
   .export-buttons
     @apply flex flex-col gap-2.5
 
@@ -921,10 +916,10 @@
     @apply fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm
 
   .dialog
-    @apply bg-card rounded-xl shadow-2xl border border-border w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden
+    @apply bg-card rounded-xl shadow-2xl border w-full max-w-2xl max-h-[80vh] flex flex-col overflow-hidden
 
   .dialog-header
-    @apply flex items-center justify-between px-5 py-3.5 border-b border-border
+    @apply flex items-center justify-between px-5 py-3.5 border-b
 
   .dialog-title
     @apply text-base font-semibold
@@ -939,7 +934,7 @@
     @apply flex-1 overflow-y-auto px-4 py-3
 
   .dialog-footer
-    @apply flex items-center justify-end gap-2 px-4 py-3 border-t border-border
+    @apply flex items-center justify-end gap-2 px-4 py-3 border-t
 
   // 학생 그리드
   .student-grid
@@ -984,12 +979,12 @@
 
   .custom-label
     @apply text-sm font-medium
-
+  ∂ç
   .custom-input
     @apply rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-ring focus:ring-1 focus:ring-ring
 
   .custom-preview
-    @apply size-16 rounded-full object-cover border border-border
+    @apply size-16 rounded-full object-cover border
 
   .custom-file-input
     @apply text-sm
