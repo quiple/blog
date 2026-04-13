@@ -44,14 +44,6 @@ export interface ThemeConfig {
     studentIconSize: number
     /** 채팅 아이콘 크기 */
     chatIconSize: number
-    /** 알림 뱃지 크기 */
-    badgeSize: number
-    badgeColor: string
-    badgeTextColor: string
-    badgeFont: string
-    badgeFontSize: number
-    /** 알림 뱃지 border radius */
-    badgeBorderRadius: number
     /** 아이콘 간 세로 간격 */
     iconGap: number
     /** 사이드바 상단 패딩 */
@@ -185,12 +177,6 @@ export const momotalk: ThemeConfig = {
     backgroundColor: '#4C5B6F',
     studentIconSize: 100,
     chatIconSize: 100,
-    badgeSize: 48,
-    badgeColor: '#FB4719',
-    badgeTextColor: '#ffffff',
-    badgeFont: 'GyeonggiTitleBold, sans-serif',
-    badgeFontSize: 40,
-    badgeBorderRadius: 12,
     iconGap: 103,
     paddingTop: 50,
     studentIconOpacity: 0.25,
@@ -284,12 +270,6 @@ export const imessage: ThemeConfig = {
     backgroundColor: 'transparent',
     studentIconSize: 0,
     chatIconSize: 0,
-    badgeSize: 0,
-    badgeColor: 'transparent',
-    badgeTextColor: 'transparent',
-    badgeFont: 'sans-serif',
-    badgeFontSize: 0,
-    badgeBorderRadius: 0,
     iconGap: 0,
     paddingTop: 0,
     studentIconOpacity: 1,
@@ -383,12 +363,6 @@ export const line: ThemeConfig = {
     backgroundColor: 'transparent',
     studentIconSize: 0,
     chatIconSize: 0,
-    badgeSize: 0,
-    badgeColor: 'transparent',
-    badgeTextColor: 'transparent',
-    badgeFont: 'sans-serif',
-    badgeFontSize: 0,
-    badgeBorderRadius: 0,
     iconGap: 0,
     paddingTop: 0,
     studentIconOpacity: 1,
@@ -480,12 +454,6 @@ export const kakaotalk: ThemeConfig = {
     backgroundColor: 'transparent',
     studentIconSize: 0,
     chatIconSize: 0,
-    badgeSize: 0,
-    badgeColor: 'transparent',
-    badgeTextColor: 'transparent',
-    badgeFont: 'sans-serif',
-    badgeFontSize: 0,
-    badgeBorderRadius: 0,
     iconGap: 0,
     paddingTop: 0,
     studentIconOpacity: 1,
