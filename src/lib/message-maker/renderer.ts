@@ -363,15 +363,11 @@ async function renderToContext(
 
       ctx.fillStyle = config.header.titleColor
       ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
-      ctx.textBaseline = 'top'
+      ctx.textBaseline = 'middle'
       const titleX = startX + config.header.logoSize + config.header.logoGap
       ctx.save()
       ctx.scale(config.header.titleScaleX, 1)
-      ctx.fillText(
-        titleText,
-        titleX / config.header.titleScaleX,
-        centerY - config.header.titleFontSize / 2 + config.header.titleOffsetY,
-      )
+      ctx.fillText(titleText, titleX / config.header.titleScaleX, centerY + config.header.titleOffsetY)
       ctx.restore()
 
       if (config.header.helpIconSize > 0) {
@@ -883,7 +879,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     )
 
     const titleX = config.header.paddingLeft + config.header.logoSize + config.header.logoGap
-    const titleY = centerY - config.header.titleFontSize / 2 + config.header.titleOffsetY
+    const titleY = centerY + config.header.titleOffsetY
     svgParts.push(
       renderSvgText(
         'MomoTalk',
@@ -893,7 +889,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         config.header.titleFontSize,
         config.header.titleColor,
         'start',
-        'top',
+        'middle',
         'bold',
         config.header.titleScaleX,
       ),
