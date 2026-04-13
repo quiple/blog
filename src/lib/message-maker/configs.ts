@@ -197,7 +197,7 @@ export const momotalk: ThemeConfig = {
     paddingRight: 46,
     paddingTop: 39,
     paddingBottom: 28.5,
-    groupGap: 38,
+    groupGap: 38.5,
     messageGap: 15.5,
   },
   profile: {
