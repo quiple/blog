@@ -802,8 +802,11 @@
 <style lang="sass">
   @reference '#app.css'
 
+  :global(main)
+    @apply pb-0!
+
   .maker-layout
-    @apply grid grid-cols-3 gap-0 h-[calc(100vh-var(--header-height)-68px)] -mx-4 sm:-mx-6
+    @apply grid grid-cols-3 gap-0 h-[calc(100vh-var(--header-height))] -mx-4 sm:-mx-6
 
   .col
     @apply flex flex-col border-r border-border last:border-r-0
