@@ -826,7 +826,11 @@
                 {#if expandedStudentIndex === globalIndex && student.portrait.length > 1}
                   {@const isRightmost = globalIndex % vsColumns === vsColumns - 1}
                   {@const isSecondFromRight = globalIndex % vsColumns === vsColumns - 2}
-                  {@const shouldAlignRight = isRightmost || (isSecondFromRight && student.portrait.length >= 3)}
+                  {@const isThirdFromRight = globalIndex % vsColumns === vsColumns - 3}
+                  {@const shouldAlignRight =
+                    isRightmost ||
+                    (isSecondFromRight && student.portrait.length >= 3) ||
+                    (isThirdFromRight && student.portrait.length >= 4)}
                   <div
                     class={[
                       'w-fit flex gap-1.5 p-2 bg-muted my-1 animate-in fade-in zoom-in-95 duration-200',
