@@ -171,6 +171,13 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
   return lines
 }
 
+/** SVG 모듈 (한 번만 평가) */
+const svgModules = import.meta.glob('$lib/assets/message-maker/*.svg', {
+  eager: true,
+  query: '?raw',
+  import: 'default',
+}) as Record<string, string>
+
 /** SVG 아이콘들을 미리 캐시 */
 const iconCache = new Map<string, HTMLImageElement>()
 
@@ -178,9 +185,8 @@ async function getIcon(name: string, size: number): Promise<HTMLImageElement> {
   const key = `${name}-${size}`
   if (iconCache.has(key)) return iconCache.get(key)!
 
-  const modules = import.meta.glob('$lib/assets/message-maker/*.svg', {eager: true, query: '?raw', import: 'default'})
   const path = `/src/lib/assets/message-maker/${name}.svg`
-  let svgText = modules[path] as string
+  let svgText = svgModules[path]
   if (!svgText) {
     throw new Error(`SVG icon not found: ${name}`)
   }
@@ -222,14 +228,27 @@ function measureBubbleHeight(
   return textHeight + paddingTop + paddingBottom
 }
 
+/** 텍스트 측정용 재사용 캔버스 (DOM 생성 비용 절감) */
+let sharedMeasureCanvas: HTMLCanvasElement | null = null
+let sharedMeasureCtx: CanvasRenderingContext2D | null = null
+
+function getMeasureCtx(width: number): CanvasRenderingContext2D {
+  if (!sharedMeasureCanvas) {
+    sharedMeasureCanvas = document.createElement('canvas')
+    sharedMeasureCanvas.height = 100
+    sharedMeasureCtx = sharedMeasureCanvas.getContext('2d')!
+  }
+  if (sharedMeasureCanvas.width !== width) {
+    sharedMeasureCanvas.width = width
+  }
+  return sharedMeasureCtx!
+}
+
 /**
  * 캔버스 높이를 계산
  */
 export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConfig): number {
-  const tempCanvas = document.createElement('canvas')
-  tempCanvas.width = config.canvasWidth
-  tempCanvas.height = 100
-  const tempCtx = tempCanvas.getContext('2d')!
+  const tempCtx = getMeasureCtx(config.canvasWidth)
 
   const chatAreaWidth = config.canvasWidth - config.sidebar.width - config.chat.paddingLeft - config.chat.paddingRight
 
@@ -312,7 +331,8 @@ export async function renderCanvas(
   canvas.height = height
 
   const ctx = canvas.getContext('2d')!
-  await renderToContext(ctx, messages, themeName, 1, renderId)
+  // 미리 계산한 height를 전달하여 renderToContext 내부의 중복 계산 방지
+  await renderToContext(ctx, messages, themeName, 1, renderId, height)
 }
 
 /**
@@ -324,10 +344,11 @@ async function renderToContext(
   themeName: ThemeName,
   scale: number,
   renderId: number = 0,
+  precomputedHeight?: number,
 ): Promise<void> {
   const config = themes[themeName]
   const width = config.canvasWidth
-  const height = calculateCanvasHeight(messages, config)
+  const height = precomputedHeight ?? calculateCanvasHeight(messages, config)
 
   const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
 
@@ -738,15 +759,15 @@ export async function copyCanvasToClipboard(canvas: HTMLCanvasElement): Promise<
 
 /**
  * 전역 SVG 아이콘 텍스트 캐시 (원시 SVG 코드)
+ * svgModules는 이미 모듈 레벨에서 한 번 평가됨
  */
 const svgSourceCache = new Map<string, string>()
 
 async function getSvgSource(name: string): Promise<string> {
   if (svgSourceCache.has(name)) return svgSourceCache.get(name)!
 
-  const modules = import.meta.glob('$lib/assets/message-maker/*.svg', {eager: true, query: '?raw', import: 'default'})
   const path = `/src/lib/assets/message-maker/${name}.svg`
-  const svgText = modules[path] as string
+  const svgText = svgModules[path]
   if (!svgText) throw new Error(`SVG source not found: ${name}`)
 
   svgSourceCache.set(name, svgText)
@@ -968,8 +989,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   const chatAreaWidth = chatRight - chatLeft
   let cursorY = config.header.height + config.chat.paddingTop
 
-  const tempCanvas = document.createElement('canvas')
-  const tempCtx = tempCanvas.getContext('2d')!
+  const tempCtx = getMeasureCtx(width)
 
   for (let i = 0; i < messages.length; i++) {
     const msg = messages[i]
