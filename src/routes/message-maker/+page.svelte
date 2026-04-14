@@ -133,21 +133,22 @@
   })
 
   // ── 가상 스크롤 ──
-  const ITEM_ROW_HEIGHT = 100 // 각 행의 높이 (px) — 프로필 56px + 텍스트 20px + 여백
   const VIRTUAL_BUFFER = 1 // 위아래로 추가 렌더링할 행 수
   let studentScrollEl: HTMLDivElement | undefined = $state()
+  let vsGridEl: HTMLDivElement | undefined = $state()
   let vsScrollTop = $state(0)
   let vsContainerHeight = $state(400)
+  let vsRowHeight = $state(96) // 동적 측정 전 초기값
 
   // 현재 열 수 (반응형 — 기본 4, sm: 6, md: 8)
   let vsColumns = $state(4)
 
   // 전체 행 수와 보이는 행 범위
   let vsTotalRows = $derived(Math.ceil(filteredStudents.length / vsColumns))
-  let vsTotalHeight = $derived(vsTotalRows * ITEM_ROW_HEIGHT)
-  let vsStartRow = $derived(Math.max(0, Math.floor(vsScrollTop / ITEM_ROW_HEIGHT) - VIRTUAL_BUFFER))
+  let vsTotalHeight = $derived(vsTotalRows * vsRowHeight)
+  let vsStartRow = $derived(Math.max(0, Math.floor(vsScrollTop / vsRowHeight) - VIRTUAL_BUFFER))
   let vsEndRow = $derived(
-    Math.min(vsTotalRows, Math.ceil((vsScrollTop + vsContainerHeight) / ITEM_ROW_HEIGHT) + VIRTUAL_BUFFER),
+    Math.min(vsTotalRows, Math.ceil((vsScrollTop + vsContainerHeight) / vsRowHeight) + VIRTUAL_BUFFER),
   )
 
   // 보이는 학생 슬라이스
@@ -165,6 +166,15 @@
     vsScrollTop = el.scrollTop
   }
 
+  // 그리드에서 실제 행 높이 측정
+  function measureRowHeight() {
+    if (!vsGridEl) return
+    const firstItem = vsGridEl.firstElementChild as HTMLElement | null
+    if (!firstItem) return
+    const gap = parseFloat(getComputedStyle(vsGridEl).rowGap) || 0
+    vsRowHeight = firstItem.offsetHeight + gap
+  }
+
   // 열 수 업데이트 (ResizeObserver)
   function updateColumns() {
     if (!studentScrollEl) return
@@ -174,14 +184,18 @@
     else if (w >= 480) vsColumns = 6
     else vsColumns = 4
     vsContainerHeight = studentScrollEl.clientHeight
+    measureRowHeight()
   }
 
   // 대화상자 열릴 때 열 수 측정
   $effect(() => {
     if (showStudentDialog && studentScrollEl) {
-      updateColumns()
-      vsScrollTop = 0
-      studentScrollEl.scrollTop = 0
+      // 다음 프레임에 측정 (DOM 렌더링 후)
+      requestAnimationFrame(() => {
+        updateColumns()
+        vsScrollTop = 0
+        if (studentScrollEl) studentScrollEl.scrollTop = 0
+      })
     }
   })
 
@@ -764,8 +778,9 @@
       <div class="flex-1 overflow-y-auto -m-4 p-4" bind:this={studentScrollEl} onscroll={handleStudentScroll}>
         <div style="height: {vsTotalHeight}px; position: relative;">
           <div
+            bind:this={vsGridEl}
             class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-1"
-            style="position: absolute; top: {vsStartRow * ITEM_ROW_HEIGHT}px; left: 0; right: 0;"
+            style="position: absolute; top: {vsStartRow * vsRowHeight}px; left: 0; right: 0;"
           >
             {#each vsVisibleStudents as { student, globalIndex } (student.name.en)}
               <div class="flex flex-col">
