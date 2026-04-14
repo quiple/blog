@@ -790,7 +790,7 @@
               <div class="flex flex-col">
                 <Button
                   variant="ghost"
-                  class="flex-col h-auto py-1 gap-1 group"
+                  class={['flex-col h-auto py-1 gap-1 group', expandedStudentIndex === globalIndex && 'bg-muted']}
                   onclick={() => {
                     if (student.portrait.length > 1) {
                       toggleStudentExpand(globalIndex)
@@ -821,7 +821,7 @@
 
                 {#if expandedStudentIndex === globalIndex && student.portrait.length > 1}
                   <div
-                    class="w-fit flex gap-1.5 p-2 rounded-tl-lg bg-muted rounded-tr-full rounded-b-full my-1 justify-center animate-in fade-in zoom-in-95 duration-200"
+                    class="w-fit flex gap-1.5 p-2 rounded-tl-lg bg-muted rounded-tr-[40px] rounded-b-[40px] my-1 justify-center animate-in fade-in zoom-in-95 duration-200"
                   >
                     {#each student.portrait as p, pi}
                       <button
