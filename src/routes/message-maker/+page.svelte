@@ -609,7 +609,7 @@
     }
   }}
 >
-  <Dialog.Content class="sm:max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
+  <Dialog.Content class="sm:max-w-3xl max-h-[90vh] flex flex-col overflow-hidden">
     <Dialog.Header>
       <Dialog.Title lang={lang !== 'ko' ? lang : undefined}>
         {#if lang === 'ja'}生徒の選択
@@ -631,12 +631,12 @@
       </div>
 
       <div class="flex-1 overflow-y-auto -m-4 p-4">
-        <div class="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 gap-2">
+        <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-1">
           {#each filteredStudents as student, si (student.name.en)}
             <div class="flex flex-col">
               <Button
                 variant="ghost"
-                class="flex-col h-auto py-2 relative"
+                class="flex-col h-auto py-1 relative gap-1"
                 onclick={() => {
                   if (student.portrait.length > 1) {
                     toggleStudentExpand(si)
