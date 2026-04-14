@@ -493,7 +493,11 @@
     <div class="flex-1 overflow-y-auto p-3 flex flex-col gap-2">
       {#each messages as msg, i (i)}
         <Card.Root
-          class={['overflow-visible p-2 pt-1 gap-1', msg.type === 'left' && 'mr-8', msg.type === 'right' && 'ml-8']}
+          class={[
+            'overflow-visible pl-2 pr-2 pb-2 pt-1 gap-1',
+            msg.type === 'left' && 'mr-8',
+            msg.type === 'right' && 'ml-8',
+          ]}
         >
           <Card.Header class="flex items-center p-0">
             <span class="font-medium text-muted-foreground shrink-0 text-right tabular-nums text-xs min-w-4"
@@ -817,7 +821,7 @@
 
                 {#if expandedStudentIndex === globalIndex && student.portrait.length > 1}
                   <div
-                    class="w-fit flex gap-1 p-2 rounded-tl-lg bg-muted rounded-full my-1 justify-center animate-in fade-in zoom-in-95 duration-200"
+                    class="w-fit flex gap-1.5 p-2 rounded-tl-lg bg-muted rounded-tr-full rounded-b-full my-1 justify-center animate-in fade-in zoom-in-95 duration-200"
                   >
                     {#each student.portrait as p, pi}
                       <button
