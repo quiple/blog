@@ -611,9 +611,12 @@
 >
   <Dialog.Content class="sm:max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
     <Dialog.Header>
-      <Dialog.Title
-        >{#if lang === 'ja'}生徒の選択{:else if lang === 'en'}Select a Student{:else}학생 선택{/if}</Dialog.Title
-      >
+      <Dialog.Title>
+        {#if lang === 'ja'}生徒の選択
+        {:else if lang === 'en'}Select a Student
+        {:else}학생 선택
+        {/if}
+      </Dialog.Title>
     </Dialog.Header>
 
     {#if !showCustomInput}
