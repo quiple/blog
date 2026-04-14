@@ -904,7 +904,7 @@
       <Dialog.Title>
         {#if lang === 'ja'}名前・プロフィール編集
         {:else if lang === 'ko'}이름/프로필 편집
-        {:else}Edit Name / Portrait
+        {:else}Edit Name and Profile Image
         {/if}
       </Dialog.Title>
     </Dialog.Header>
