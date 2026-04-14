@@ -515,10 +515,18 @@
 
       <div class="flex gap-2">
         <Button class="grow flex-1" size="lg" variant="outline" onclick={() => addMessage('left')}>
-          <Plus /> 왼쪽 메시지 추가
+          <Plus />
+          {#if lang === 'ja'}左のメッセージを追加
+          {:else if lang === 'ko'}왼쪽 메시지 추가
+          {:else}Add message on the left
+          {/if}
         </Button>
         <Button class="grow flex-1" size="lg" variant="outline" onclick={() => addMessage('right')}>
-          <Plus /> 오른쪽 메시지 추가
+          <Plus />
+          {#if lang === 'ja'}右のメッセージを追加
+          {:else if lang === 'ko'}오른쪽 메시지 추가
+          {:else}Add message on the right
+          {/if}
         </Button>
       </div>
     </div>
