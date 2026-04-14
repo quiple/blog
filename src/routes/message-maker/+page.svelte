@@ -389,10 +389,10 @@
     <div class="editor-header">
       <span class="editor-title">대화 편집</span>
       <ButtonGroup.Root>
-        <Button variant="outline" size="sm" onclick={importJson} title="JSON 가져오기">
+        <Button variant="outline" size="sm" onclick={importJson} title="JSON으로 가져오기">
           <Upload /> 가져오기
         </Button>
-        <Button variant="outline" size="sm" onclick={exportJson} title="JSON 내보내기">
+        <Button variant="outline" size="sm" onclick={exportJson} title="JSON으로 내보내기">
           <Download /> 내보내기
         </Button>
       </ButtonGroup.Root>
