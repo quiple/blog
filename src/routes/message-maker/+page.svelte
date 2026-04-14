@@ -944,7 +944,7 @@
               <img class="size-20 object-cover" src={editPreviewSrc} alt="미리보기" />
             </div>
           {:else}
-            <div class="size-20 rounded-full bg-muted flex items-center justify-center text-muted-foreground border">
+            <div class="size-20 rounded-full bg-muted flex items-center justify-center text-muted-foreground">
               <User class="size-10" />
             </div>
           {/if}
