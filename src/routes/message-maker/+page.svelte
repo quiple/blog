@@ -445,7 +445,12 @@
                   </div>
                 {/if}
                 <span class="msg-student-name">{msg.name || '학생 미선택'}</span>
-                <Button variant="outline" size="xs" class="ml-1" onclick={() => openStudentDialog(i)}>학생 선택</Button>
+                <Button variant="outline" size="xs" class="ml-1" onclick={() => openStudentDialog(i)}>
+                  {#if lang === 'ja'}生徒の選択
+                  {:else if lang === 'ko'}학생 선택
+                  {:else}Select a Student
+                  {/if}
+                </Button>
               </div>
             {/if}
             <div class="flex items-center justify-end grow">
@@ -507,7 +512,11 @@
               </div>
             {/each}
             <Button variant="outline" size="xs" onclick={() => addBubble(i)}>
-              <Plus /> 말풍선 추가
+              <Plus />
+              {#if lang === 'ja'}吹き出しを追加
+              {:else if lang === 'ko'}말풍선 추가
+              {:else}Add Bubble
+              {/if}
             </Button>
           </Card.Content>
         </Card.Root>
