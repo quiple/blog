@@ -507,14 +507,24 @@
     <div class="flex flex-col gap-4 p-4">
       {#if !isProd}
         <div class="grid gap-2">
-          <label class="setting-label" for="setting-theme">테마</label>
+          <label class="setting-label" for="setting-theme">
+            {#if lang === 'ja'}テーマ
+            {:else if lang === 'ko'}테마
+            {:else}Theme
+            {/if}
+          </label>
           <Select.Root type="single" bind:value={themeName}>
             <Select.Trigger class="w-full" id="setting-theme">
               {themeLabels[themeName]}
             </Select.Trigger>
             <Select.Content>
               <Select.Group>
-                <Select.Item value="momotalk">모모톡</Select.Item>
+                <Select.Item value="momotalk">
+                  {#if lang === 'ja'}モモトーク
+                  {:else if lang === 'ko'}모모톡
+                  {:else}MomoTalk
+                  {/if}
+                </Select.Item>
                 <Select.Item value="imessage">iMessage</Select.Item>
                 <Select.Item value="line">LINE</Select.Item>
                 <Select.Item value="kakaotalk">카카오톡</Select.Item>
@@ -524,7 +534,12 @@
         </div>
 
         <div class="grid gap-2">
-          <label class="setting-label" for="setting-lang">언어 (Language)</label>
+          <label class="setting-label" for="setting-lang">
+            {#if lang === 'ja'}言語 (Language)
+            {:else if lang === 'ko'}언어 (Language)
+            {:else}Language
+            {/if}
+          </label>
           <Select.Root type="single" bind:value={lang}>
             <Select.Trigger class="w-full" id="setting-lang">
               {langLabels[lang]}
@@ -575,7 +590,10 @@
               onclick={() => canvasEl && exportAsPng(canvasEl, density, messages, themeName, lang)}
             >
               <Image />
-              PNG로 내보내기
+              {#if lang === 'ja'}PNGにエクスポート
+              {:else if lang === 'ko'}PNG로 내보내기
+              {:else}Export as PNG
+              {/if}
             </Button>
             <Button class="grow" variant="outline" onclick={handleCopyPng}>
               {#if isCopied}
@@ -583,13 +601,19 @@
               {:else}
                 <Copy />
               {/if}
-              {isCopied ? '복사됨!' : 'PNG로 복사하기'}
+              {#if lang === 'ja'}{isCopied ? 'コピー済み!' : 'PNGにコピー'}
+              {:else if lang === 'ko'}{isCopied ? '복사됨!' : 'PNG로 복사하기'}
+              {:else}{isCopied ? 'Copied!' : 'Copy as PNG'}
+              {/if}
             </Button>
           </ButtonGroup.Root>
           <ButtonGroup.Root class="grow">
             <Button class="grow" variant="outline" onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}>
               <Spline />
-              SVG로 내보내기
+              {#if lang === 'ja'}SVGにエクスポート
+              {:else if lang === 'ko'}SVG로 내보내기
+              {:else}Export as SVG
+              {/if}
             </Button>
           </ButtonGroup.Root>
         </ButtonGroup.Root>
