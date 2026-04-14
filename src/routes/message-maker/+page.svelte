@@ -22,6 +22,7 @@
   import students, {type Student} from '$lib/message-maker/students'
 
   const isProd = import.meta.env.PROD
+  const baseUrl = isProd ? 'https://quiple.dev' : ''
 
   // ── 상태 ──
   let themeName: ThemeName = $state('momotalk')
@@ -786,6 +787,8 @@
             style="position: absolute; top: {vsStartRow * vsRowHeight}px; left: 0; right: 0;"
           >
             {#each vsVisibleStudents as { student, globalIndex } (student.name.en)}
+              {@const rawSrc = `${baseUrl}/img/blue-archive/${student.portrait[0]}.png`}
+              {@const src = isProd ? `/cdn-cgi/image/h=128,f=avif,q=75/${rawSrc}` : rawSrc}
               <div class="flex flex-col">
                 <Button
                   variant="ghost"
@@ -802,7 +805,7 @@
                     <div class="inner-border rounded-full after:rounded-full size-16">
                       <img
                         class="size-full object-cover transition-transform group-hover:scale-110"
-                        src="/img/blue-archive/{student.portrait[0]}.png"
+                        {src}
                         alt={student.name[lang]}
                         loading="lazy"
                       />
