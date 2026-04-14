@@ -132,6 +132,67 @@
     )
   })
 
+  // ── 가상 스크롤 ──
+  const ITEM_ROW_HEIGHT = 100 // 각 행의 높이 (px) — 프로필 56px + 텍스트 20px + 여백
+  const VIRTUAL_BUFFER = 1 // 위아래로 추가 렌더링할 행 수
+  let studentScrollEl: HTMLDivElement | undefined = $state()
+  let vsScrollTop = $state(0)
+  let vsContainerHeight = $state(400)
+
+  // 현재 열 수 (반응형 — 기본 4, sm: 6, md: 8)
+  let vsColumns = $state(4)
+
+  // 전체 행 수와 보이는 행 범위
+  let vsTotalRows = $derived(Math.ceil(filteredStudents.length / vsColumns))
+  let vsTotalHeight = $derived(vsTotalRows * ITEM_ROW_HEIGHT)
+  let vsStartRow = $derived(Math.max(0, Math.floor(vsScrollTop / ITEM_ROW_HEIGHT) - VIRTUAL_BUFFER))
+  let vsEndRow = $derived(
+    Math.min(vsTotalRows, Math.ceil((vsScrollTop + vsContainerHeight) / ITEM_ROW_HEIGHT) + VIRTUAL_BUFFER),
+  )
+
+  // 보이는 학생 슬라이스
+  let vsVisibleStudents = $derived.by(() => {
+    const startIdx = vsStartRow * vsColumns
+    const endIdx = vsEndRow * vsColumns
+    return filteredStudents.slice(startIdx, endIdx).map((student, i) => ({
+      student,
+      globalIndex: startIdx + i,
+    }))
+  })
+
+  function handleStudentScroll(e: Event) {
+    const el = e.target as HTMLDivElement
+    vsScrollTop = el.scrollTop
+  }
+
+  // 열 수 업데이트 (ResizeObserver)
+  function updateColumns() {
+    if (!studentScrollEl) return
+    const w = studentScrollEl.clientWidth
+    // Tailwind breakpoints 기준: md(768) → 8열, sm(640) → 6열, 기본 → 4열
+    if (w >= 680) vsColumns = 8
+    else if (w >= 480) vsColumns = 6
+    else vsColumns = 4
+    vsContainerHeight = studentScrollEl.clientHeight
+  }
+
+  // 대화상자 열릴 때 열 수 측정
+  $effect(() => {
+    if (showStudentDialog && studentScrollEl) {
+      updateColumns()
+      vsScrollTop = 0
+      studentScrollEl.scrollTop = 0
+    }
+  })
+
+  // ResizeObserver로 열 수 실시간 추적
+  $effect(() => {
+    if (!studentScrollEl) return
+    const observer = new ResizeObserver(() => updateColumns())
+    observer.observe(studentScrollEl)
+    return () => observer.disconnect()
+  })
+
   // 대화 JSON 내보내기
   function exportJson() {
     const data: ConversationData = {messages, theme: themeName, lang}
@@ -700,62 +761,67 @@
         />
       </div>
 
-      <div class="flex-1 overflow-y-auto -m-4 p-4">
-        <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-1">
-          {#each filteredStudents as student, si (student.name.en)}
-            <div class="flex flex-col">
-              <Button
-                variant="ghost"
-                class="flex-col h-auto py-1 gap-1 group"
-                onclick={() => {
-                  if (student.portrait.length > 1) {
-                    toggleStudentExpand(si)
-                  } else {
-                    selectStudent(student, 0)
-                  }
-                }}
-              >
-                <div class="relative">
-                  <div class="inner-border rounded-full after:rounded-full size-14">
-                    <img
-                      class="size-full object-cover transition-transform group-hover:scale-110"
-                      src="/img/blue-archive/{student.portrait[0]}.png"
-                      alt={student.name[lang]}
-                      loading="lazy"
-                    />
-                  </div>
-                  {#if student.portrait.length > 1}
-                    <Badge class="absolute top-0 -right-1 px-1.5">
-                      {student.portrait.length}
-                    </Badge>
-                  {/if}
-                </div>
-                <span class="text-sm text-center font-medium line-clamp-1" lang={lang !== 'ko' ? lang : undefined}
-                  >{student.name[lang]}</span
+      <div class="flex-1 overflow-y-auto -m-4 p-4" bind:this={studentScrollEl} onscroll={handleStudentScroll}>
+        <div style="height: {vsTotalHeight}px; position: relative;">
+          <div
+            class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-1"
+            style="position: absolute; top: {vsStartRow * ITEM_ROW_HEIGHT}px; left: 0; right: 0;"
+          >
+            {#each vsVisibleStudents as { student, globalIndex } (student.name.en)}
+              <div class="flex flex-col">
+                <Button
+                  variant="ghost"
+                  class="flex-col h-auto py-1 gap-1 group"
+                  onclick={() => {
+                    if (student.portrait.length > 1) {
+                      toggleStudentExpand(globalIndex)
+                    } else {
+                      selectStudent(student, 0)
+                    }
+                  }}
                 >
-              </Button>
-
-              {#if expandedStudentIndex === si && student.portrait.length > 1}
-                <div
-                  class="flex gap-1 p-1 bg-muted rounded-lg mt-1 flex-wrap justify-center border animate-in fade-in zoom-in-95 duration-200"
-                >
-                  {#each student.portrait as p, pi}
-                    <button
-                      class="rounded-full overflow-hidden border-2 border-transparent hover:border-primary transition-all p-0"
-                      onclick={() => selectStudent(student, pi)}
-                    >
+                  <div class="relative">
+                    <div class="inner-border rounded-full after:rounded-full size-14">
                       <img
-                        class="size-10 object-cover"
-                        src="/img/blue-archive/{p}.png"
-                        alt="{student.name[lang]} 변형 {pi + 1}"
+                        class="size-full object-cover transition-transform group-hover:scale-110"
+                        src="/img/blue-archive/{student.portrait[0]}.png"
+                        alt={student.name[lang]}
                         loading="lazy"
                       />
-                    </button>
-                  {/each}
-                </div>
-              {/if}
-            </div>
-          {/each}
+                    </div>
+                    {#if student.portrait.length > 1}
+                      <Badge class="absolute top-0 -right-1 px-1.5">
+                        {student.portrait.length}
+                      </Badge>
+                    {/if}
+                  </div>
+                  <span class="text-sm text-center font-medium line-clamp-1" lang={lang !== 'ko' ? lang : undefined}
+                    >{student.name[lang]}</span
+                  >
+                </Button>
+
+                {#if expandedStudentIndex === globalIndex && student.portrait.length > 1}
+                  <div
+                    class="flex gap-1 p-1 bg-muted rounded-lg mt-1 flex-wrap justify-center border animate-in fade-in zoom-in-95 duration-200"
+                  >
+                    {#each student.portrait as p, pi}
+                      <button
+                        class="rounded-full overflow-hidden border-2 border-transparent hover:border-primary transition-all p-0"
+                        onclick={() => selectStudent(student, pi)}
+                      >
+                        <img
+                          class="size-10 object-cover"
+                          src="/img/blue-archive/{p}.png"
+                          alt="{student.name[lang]} 변형 {pi + 1}"
+                          loading="lazy"
+                        />
+                      </button>
+                    {/each}
+                  </div>
+                {/if}
+              </div>
+            {/each}
+          </div>
         </div>
       </div>
 
