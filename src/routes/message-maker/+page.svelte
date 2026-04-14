@@ -825,11 +825,11 @@
                   >
                     {#each student.portrait as p, pi}
                       <button
-                        class="size-16 rounded-full after:rounded-full p-0 inner-border"
+                        class="size-16 rounded-full after:rounded-full p-0 inner-border group"
                         onclick={() => selectStudent(student, pi)}
                       >
                         <img
-                          class="size-full object-cover"
+                          class="size-full object-cover transition-transform group-hover:scale-110"
                           src="/img/blue-archive/{p}.png"
                           alt="{student.name[lang]} 변형 {pi + 1}"
                           loading="lazy"
