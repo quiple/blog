@@ -388,7 +388,12 @@
 <div class="grid grid-cols-3 gap-0 h-[calc(100vh-var(--header-height))] -mx-4 sm:-mx-6 border-t">
   <!-- ━━━ 1열: 캔버스 미리보기 ━━━ -->
   <div class="col col-preview" bind:this={previewContainer}>
-    <div class="col-header">미리보기</div>
+    <div class="col-header">
+      {#if lang === 'ja'}プレビュー
+      {:else if lang === 'ko'}미리보기
+      {:else}Preview
+      {/if}
+    </div>
     <div class="preview-scroll">
       <canvas bind:this={canvasEl} class="preview-canvas"></canvas>
     </div>
@@ -397,13 +402,24 @@
   <!-- ━━━ 2열: 대화 편집 ━━━ -->
   <div class="col col-editor">
     <div class="col-header">
-      대화 편집
+      {#if lang === 'ja'}チャットの編集
+      {:else if lang === 'ko'}대화 편집
+      {:else}Edit Chats
+      {/if}
       <ButtonGroup.Root>
         <Button variant="outline" size="sm" onclick={importJson} title="JSON으로 가져오기">
-          <Upload /> 가져오기
+          <Upload />
+          {#if lang === 'ja'}インポート
+          {:else if lang === 'ko'}가져오기
+          {:else}Import
+          {/if}
         </Button>
         <Button variant="outline" size="sm" onclick={exportJson} title="JSON으로 내보내기">
-          <Download /> 내보내기
+          <Download />
+          {#if lang === 'ja'}エクスポート
+          {:else if lang === 'ko'}내보내기
+          {:else}Export
+          {/if}
         </Button>
       </ButtonGroup.Root>
     </div>
@@ -510,7 +526,12 @@
 
   <!-- ━━━ 3열: 이미지 설정 ━━━ -->
   <div class="col col-settings">
-    <div class="col-header">설정</div>
+    <div class="col-header">
+      {#if lang === 'ja'}設定
+      {:else if lang === 'ko'}설정
+      {:else}Settings
+      {/if}
+    </div>
 
     <div class="flex flex-col gap-4 p-4">
       {#if !isProd}
