@@ -625,6 +625,7 @@
         <ButtonGroup.Root class="w-full">
           <ButtonGroup.Root class="grow">
             <Button
+              size="lg"
               class="grow"
               variant="outline"
               onclick={() => canvasEl && exportAsPng(canvasEl, density, messages, themeName, lang)}
@@ -635,7 +636,7 @@
               {:else}Export as PNG
               {/if}
             </Button>
-            <Button class="grow" variant="outline" onclick={handleCopyPng}>
+            <Button size="lg" class="grow" variant="outline" onclick={handleCopyPng}>
               {#if isCopied}
                 <Check />
               {:else}
@@ -648,7 +649,12 @@
             </Button>
           </ButtonGroup.Root>
           <ButtonGroup.Root class="grow">
-            <Button class="grow" variant="outline" onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}>
+            <Button
+              size="lg"
+              class="grow"
+              variant="outline"
+              onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}
+            >
               <Spline />
               {#if lang === 'ja'}SVGにエクスポート
               {:else if lang === 'ko'}SVG로 내보내기
