@@ -834,13 +834,15 @@
                     ]}
                   >
                     {#each student.portrait as p, pi}
+                      {@const altRawSrc = `${baseUrl}/img/blue-archive/${p}.png`}
+                      {@const altSrc = isProd ? `/cdn-cgi/image/h=128,f=avif,q=75/${altRawSrc}` : altRawSrc}
                       <button
                         class="size-16 rounded-full after:rounded-full p-0 inner-border group"
                         onclick={() => selectStudent(student, pi)}
                       >
                         <img
                           class="size-full object-cover transition-transform group-hover:scale-110"
-                          src="/img/blue-archive/{p}.png"
+                          src={altSrc}
                           alt="{student.name[lang]} 변형 {pi + 1}"
                           loading="lazy"
                         />
