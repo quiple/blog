@@ -21,7 +21,3 @@ Thumbs.db
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
-# Generated
-src/lib/message-maker/font-data.ts
-src/lib/message-maker/font-data-gyeonggi.ts

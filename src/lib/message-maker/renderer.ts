@@ -21,7 +21,7 @@ async function ensureJalnan2Font(): Promise<void> {
     }
   }
 
-  const {default: fontDataUrl} = await import('./font-data')
+  const {default: fontDataUrl} = await import('./font-data-jalnan')
   const font = new FontFace('Jalnan2', `url(${fontDataUrl})`)
   await font.load()
   document.fonts.add(font)
@@ -812,7 +812,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   // 폰트 데이터 가져오기 (인라인 포함)
   let fontStyles = ''
   if (themeName === 'momotalk') {
-    const jalnanPromise = import('./font-data')
+    const jalnanPromise = import('./font-data-jalnan')
     const gyeonggiPromise = import('./font-data-gyeonggi')
 
     jalnanFont = await loadOpentypeFont('Jalnan2', jalnanPromise)
