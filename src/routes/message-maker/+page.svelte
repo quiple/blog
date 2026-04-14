@@ -819,8 +819,16 @@
                 </Button>
 
                 {#if expandedStudentIndex === globalIndex && student.portrait.length > 1}
+                  {@const isRightmost = globalIndex % vsColumns === vsColumns - 1}
+                  {@const isSecondFromRight = globalIndex % vsColumns === vsColumns - 2}
+                  {@const shouldAlignRight = isRightmost || (isSecondFromRight && student.portrait.length >= 3)}
                   <div
-                    class="w-fit flex gap-1.5 p-2 rounded-tl-lg bg-muted rounded-tr-[40px] rounded-b-[40px] my-1 justify-center animate-in fade-in zoom-in-95 duration-200"
+                    class={[
+                      'w-fit flex gap-1.5 p-2 bg-muted my-1 animate-in fade-in zoom-in-95 duration-200',
+                      shouldAlignRight
+                        ? 'self-end rounded-tr-lg rounded-tl-[40px] rounded-b-[40px]'
+                        : 'rounded-tl-lg rounded-tr-[40px] rounded-b-[40px]',
+                    ]}
                   >
                     {#each student.portrait as p, pi}
                       <button
