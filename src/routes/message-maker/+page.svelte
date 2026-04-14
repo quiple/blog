@@ -119,8 +119,9 @@
   // 복사 상태 피드백
   let isCopied = $state(false)
 
-  // 학생 목록 필터링
+  // 학생 목록 필터링 (대화상자가 열려 있을 때만 계산)
   let filteredStudents = $derived.by(() => {
+    if (!showStudentDialog) return students
     if (!studentSearchQuery) return students
     const q = studentSearchQuery.toLowerCase()
     return students.filter(
@@ -189,8 +190,7 @@
 
   // 말풍선 추가 (해당 메시지에 프로필 없이 딸림 말풍선 추가)
   function addBubble(msgIndex: number) {
-    messages[msgIndex].text = [...messages[msgIndex].text, '']
-    messages = [...messages]
+    messages[msgIndex].text.push('')
     // 새로 추가된 말풍선에 포커스
     setTimeout(() => {
       const input = document.getElementById(
@@ -203,8 +203,7 @@
   // 말풍선 삭제 (최소 1개는 유지)
   function removeBubble(msgIndex: number, bubbleIndex: number) {
     if (messages[msgIndex].text.length <= 1) return
-    messages[msgIndex].text = messages[msgIndex].text.filter((_, i) => i !== bubbleIndex)
-    messages = [...messages]
+    messages[msgIndex].text.splice(bubbleIndex, 1)
     requestRedraw()
   }
 
@@ -228,12 +227,8 @@
   function selectStudent(student: Student, portraitIndex: number = 0) {
     if (dialogTargetIndex < 0 || dialogTargetIndex >= messages.length) return
     const portraitFile = student.portrait[portraitIndex]
-    messages[dialogTargetIndex] = {
-      ...messages[dialogTargetIndex],
-      name: student.name[lang],
-      portrait: `/img/blue-archive/${portraitFile}.png`,
-    }
-    messages = [...messages]
+    messages[dialogTargetIndex].name = student.name[lang]
+    messages[dialogTargetIndex].portrait = `/img/blue-archive/${portraitFile}.png`
     showStudentDialog = false
     showCustomInput = false
     studentSearchQuery = ''
@@ -260,12 +255,8 @@
     if (customPortraitFile) {
       portrait = URL.createObjectURL(customPortraitFile)
     }
-    messages[dialogTargetIndex] = {
-      ...messages[dialogTargetIndex],
-      name: customName || '사용자 지정',
-      portrait: portrait,
-    }
-    messages = [...messages]
+    messages[dialogTargetIndex].name = customName || '사용자 지정'
+    messages[dialogTargetIndex].portrait = portrait
     showStudentDialog = false
     showCustomInput = false
     customName = ''
@@ -300,7 +291,7 @@
     if (drawTimer) clearTimeout(drawTimer)
     drawTimer = setTimeout(() => {
       doRedraw()
-    }, 100)
+    }, 200)
   }
 
   async function handleCopyPng() {
@@ -495,7 +486,7 @@
                   class="grow"
                   placeholder={msg.type === 'left' ? '왼쪽 메시지 입력...' : '오른쪽 메시지 입력...'}
                   bind:value={msg.text[bi]}
-                  onkeyup={requestRedraw}
+                  oninput={requestRedraw}
                   rows={2}
                 />
                 {#if msg.text.length > 1}
