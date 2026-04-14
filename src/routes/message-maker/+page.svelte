@@ -357,6 +357,18 @@
     line: 'LINE',
     kakaotalk: '카카오톡',
   }
+  const themeLabelsJa: Record<string, string> = {
+    momotalk: 'モモトーク',
+    imessage: 'iMessage',
+    line: 'LINE',
+    kakaotalk: 'カカオトーク',
+  }
+  const themeLabelsEn: Record<string, string> = {
+    momotalk: 'MomoTalk',
+    imessage: 'iMessage',
+    line: 'LINE',
+    kakaotalk: 'KakaoTalk',
+  }
   const langLabels: Record<string, string> = {
     ko: '한국어',
     ja: '日本語',
@@ -376,9 +388,7 @@
 <div class="grid grid-cols-3 gap-0 h-[calc(100vh-var(--header-height))] -mx-4 sm:-mx-6 border-t">
   <!-- ━━━ 1열: 캔버스 미리보기 ━━━ -->
   <div class="col col-preview" bind:this={previewContainer}>
-    <div class="preview-header">
-      <span class="preview-label">미리보기</span>
-    </div>
+    <div class="col-header">미리보기</div>
     <div class="preview-scroll">
       <canvas bind:this={canvasEl} class="preview-canvas"></canvas>
     </div>
@@ -386,8 +396,8 @@
 
   <!-- ━━━ 2열: 대화 편집 ━━━ -->
   <div class="col col-editor">
-    <div class="editor-header">
-      <span class="editor-title">대화 편집</span>
+    <div class="col-header">
+      대화 편집
       <ButtonGroup.Root>
         <Button variant="outline" size="sm" onclick={importJson} title="JSON으로 가져오기">
           <Upload /> 가져오기
@@ -500,9 +510,7 @@
 
   <!-- ━━━ 3열: 이미지 설정 ━━━ -->
   <div class="col col-settings">
-    <div class="settings-header">
-      <span class="settings-title">설정</span>
-    </div>
+    <div class="col-header">설정</div>
 
     <div class="flex flex-col gap-4 p-4">
       {#if !isProd}
@@ -515,7 +523,10 @@
           </label>
           <Select.Root type="single" bind:value={themeName}>
             <Select.Trigger class="w-full" id="setting-theme">
-              {themeLabels[themeName]}
+              {#if lang === 'ja'}{themeLabelsJa[themeName]}
+              {:else if lang === 'ko'}{themeLabels[themeName]}
+              {:else}{themeLabelsEn[themeName]}
+              {/if}
             </Select.Trigger>
             <Select.Content>
               <Select.Group>
@@ -783,11 +794,8 @@
     @apply flex flex-col border-r last:border-r-0
 
   // ── 열 헤더 공통 ──
-  .preview-header, .editor-header, .settings-header
-    @apply flex items-center justify-between h-11 px-4 border-b bg-muted/50 shrink-0
-
-  .preview-label, .editor-title, .settings-title
-    @apply text-sm font-semibold text-muted-foreground
+  .col-header
+    @apply flex items-center justify-between h-11 px-4 border-b bg-muted/50 shrink-0 text-sm font-semibold text-muted-foreground
 
   // ── 1열: 미리보기 ──
   .col-preview
