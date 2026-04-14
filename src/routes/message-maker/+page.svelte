@@ -796,7 +796,7 @@
                   }}
                 >
                   <div class="relative">
-                    <div class="inner-border rounded-full after:rounded-full size-14">
+                    <div class="inner-border rounded-full after:rounded-full size-16">
                       <img
                         class="size-full object-cover transition-transform group-hover:scale-110"
                         src="/img/blue-archive/{student.portrait[0]}.png"
@@ -817,15 +817,15 @@
 
                 {#if expandedStudentIndex === globalIndex && student.portrait.length > 1}
                   <div
-                    class="flex gap-1 p-1 bg-muted rounded-full mt-1 justify-center animate-in fade-in zoom-in-95 duration-200"
+                    class="w-fit flex gap-1 p-2 rounded-tl-lg bg-muted rounded-full my-1 justify-center animate-in fade-in zoom-in-95 duration-200"
                   >
                     {#each student.portrait as p, pi}
                       <button
-                        class="rounded-full after:rounded-full p-0 inner-border"
+                        class="size-16 rounded-full after:rounded-full p-0 inner-border"
                         onclick={() => selectStudent(student, pi)}
                       >
                         <img
-                          class="size-10 object-cover"
+                          class="size-full object-cover"
                           src="/img/blue-archive/{p}.png"
                           alt="{student.name[lang]} 변형 {pi + 1}"
                           loading="lazy"
