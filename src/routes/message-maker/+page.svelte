@@ -507,8 +507,10 @@
             {#if msg.type === 'left'}
               <div class="flex items-center gap-1">
                 {#if msg.portrait}
+                  {@const rawSrc = `${baseUrl}${msg.portrait}`}
+                  {@const src = isProd ? `/cdn-cgi/image/h=48,f=avif,q=75/${rawSrc}` : rawSrc}
                   <div class="inner-border rounded-full after:rounded-full">
-                    <img class="size-6 object-cover scale-110" src={msg.portrait} alt={msg.name} />
+                    <img class="size-6 object-cover scale-110" {src} alt={msg.name} />
                   </div>
                 {:else}
                   <div class="rounded-full size-6 bg-muted flex items-center justify-center text-muted-foreground">
