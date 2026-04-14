@@ -323,6 +323,7 @@
     messages[dialogTargetIndex].portrait = `/img/blue-archive/${portraitFile}.png`
     showStudentDialog = false
     studentSearchQuery = ''
+    expandedStudentIndex = -1
     focusIndex = dialogTargetIndex
     requestRedraw()
   }
