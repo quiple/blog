@@ -448,7 +448,7 @@
                 <Button variant="outline" size="xs" class="ml-1" onclick={() => openStudentDialog(i)}>
                   {#if lang === 'ja'}生徒の選択
                   {:else if lang === 'ko'}학생 선택
-                  {:else}Select a Student
+                  {:else}Select Student
                   {/if}
                 </Button>
               </div>
