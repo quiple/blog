@@ -917,15 +917,14 @@
           {:else}Name
           {/if}
         </label>
-        <input
+        <Input
           id="edit-name-input"
           type="text"
-          class="rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-ring focus:ring-1 focus:ring-ring"
           placeholder={lang === 'ja' ? '名前を入力...' : lang === 'ko' ? '이름 입력...' : 'Enter name...'}
           bind:value={editName}
         />
       </div>
-      <div class="grid gap-4">
+      <div class="grid gap-2">
         <label class="text-sm font-medium" for="edit-portrait-upload">
           {#if lang === 'ja'}プロフィール画像
           {:else if lang === 'ko'}프로필 사진
@@ -941,30 +940,16 @@
               isProd && editPortraitUrl.startsWith('/img/')
                 ? `/cdn-cgi/image/h=160,f=avif,q=75/${editPreviewRawSrc}`
                 : editPreviewRawSrc}
-            <img
-              class="size-20 rounded-full object-cover border-2 border-primary p-0.5"
-              src={editPreviewSrc}
-              alt="미리보기"
-            />
+            <div class="shrink-0 inner-border rounded-full after:rounded-full">
+              <img class="size-20 object-cover" src={editPreviewSrc} alt="미리보기" />
+            </div>
           {:else}
             <div class="size-20 rounded-full bg-muted flex items-center justify-center text-muted-foreground border">
               <User class="size-10" />
             </div>
           {/if}
           <div class="flex flex-col gap-2 grow">
-            <input
-              id="edit-portrait-upload"
-              type="file"
-              accept="image/*"
-              onchange={handleEditPortraitUpload}
-              class="text-xs file:mr-4 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:text-xs file:font-medium file:bg-primary file:text-primary-foreground hover:file:bg-primary/90"
-            />
-            <p class="text-[10px] text-muted-foreground">
-              {#if lang === 'ja'}推奨サイズ: 256×256以上（正方形）
-              {:else if lang === 'ko'}권장 사이즈: 256×256 이상 (정사각형)
-              {:else}Recommended: 256×256 or larger (square)
-              {/if}
-            </p>
+            <Input id="edit-portrait-upload" type="file" accept="image/*" onchange={handleEditPortraitUpload} />
           </div>
         </div>
       </div>
