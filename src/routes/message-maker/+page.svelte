@@ -706,7 +706,7 @@
             <div class="flex flex-col">
               <Button
                 variant="ghost"
-                class="flex-col h-auto py-1 relative gap-1"
+                class="flex-col h-auto py-1 gap-1"
                 onclick={() => {
                   if (student.portrait.length > 1) {
                     toggleStudentExpand(si)
@@ -715,22 +715,24 @@
                   }
                 }}
               >
-                <div class="inner-border rounded-full after:rounded-full size-14">
-                  <img
-                    class="size-full object-cover"
-                    src="/img/blue-archive/{student.portrait[0]}.png"
-                    alt={student.name[lang]}
-                    loading="lazy"
-                  />
+                <div class="relative">
+                  <div class="inner-border rounded-full after:rounded-full size-14">
+                    <img
+                      class="size-full object-cover"
+                      src="/img/blue-archive/{student.portrait[0]}.png"
+                      alt={student.name[lang]}
+                      loading="lazy"
+                    />
+                  </div>
+                  {#if student.portrait.length > 1}
+                    <Badge class="absolute top-0 -right-1 px-1.5">
+                      {student.portrait.length}
+                    </Badge>
+                  {/if}
                 </div>
                 <span class="text-sm text-center font-medium line-clamp-1" lang={lang !== 'ko' ? lang : undefined}
                   >{student.name[lang]}</span
                 >
-                {#if student.portrait.length > 1}
-                  <Badge variant="secondary" class="absolute top-2 right-2 px-1.5">
-                    {student.portrait.length}
-                  </Badge>
-                {/if}
               </Button>
 
               {#if expandedStudentIndex === si && student.portrait.length > 1}
