@@ -299,7 +299,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
   }
 
   totalHeight += config.chat.paddingBottom
-  return Math.max(totalHeight, config.header.height + 100)
+  return Math.max(totalHeight, config.canvasWidth)
 }
 
 /** 마지막 렌더링 ID (중복 실행 방지용) */
