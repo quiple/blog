@@ -1,5 +1,18 @@
 <script lang="ts">
-  import {Check, ChevronDown, ChevronUp, Copy, Download, Image, Plus, Spline, Upload, User, X} from '@lucide/svelte'
+  import {
+    Check,
+    ChevronDown,
+    ChevronUp,
+    Copy,
+    Download,
+    Image,
+    Pencil,
+    Plus,
+    Spline,
+    Upload,
+    User,
+    X,
+  } from '@lucide/svelte'
   import {browser} from '$app/environment'
   import {Badge} from '$lib/components/ui/badge/index.js'
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js'
@@ -517,7 +530,12 @@
                     <User class="size-4" />
                   </div>
                 {/if}
-                <span class="msg-student-name">{msg.name || '학생 미선택'}</span>
+                <div class="flex items-center gap-0">
+                  <span class="msg-student-name">{msg.name || '학생 미선택'}</span>
+                  <Button size="icon-xs" variant="ghost">
+                    <Pencil />
+                  </Button>
+                </div>
                 <Button variant="outline" size="xs" class="ml-1" onclick={() => openStudentDialog(i)}>
                   {#if lang === 'ja'}生徒の選択
                   {:else if lang === 'ko'}학생 선택
