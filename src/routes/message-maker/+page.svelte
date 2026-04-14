@@ -611,7 +611,7 @@
 >
   <Dialog.Content class="sm:max-w-2xl max-h-[90vh] flex flex-col overflow-hidden">
     <Dialog.Header>
-      <Dialog.Title>
+      <Dialog.Title lang={lang !== 'ko' ? lang : undefined}>
         {#if lang === 'ja'}生徒の選択
         {:else if lang === 'ko'}학생 선택
         {:else}Select a Student
@@ -622,6 +622,7 @@
     {#if !showCustomInput}
       <div class="shrink-0">
         <Input
+          lang={lang !== 'ko' ? lang : undefined}
           type="text"
           class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-ring focus:ring-1 focus:ring-ring"
           placeholder={lang === 'ja' ? '検索...' : lang === 'ko' ? '검색...' : 'Search...'}
