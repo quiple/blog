@@ -805,7 +805,7 @@
                       />
                     </div>
                     {#if student.portrait.length > 1}
-                      <Badge class="absolute top-0 -right-1 px-1.5">
+                      <Badge class="absolute top-0 -right-1 px-1.25">
                         {student.portrait.length}
                       </Badge>
                     {/if}
@@ -817,11 +817,11 @@
 
                 {#if expandedStudentIndex === globalIndex && student.portrait.length > 1}
                   <div
-                    class="flex gap-1 p-1 bg-muted rounded-lg mt-1 flex-wrap justify-center border animate-in fade-in zoom-in-95 duration-200"
+                    class="flex gap-1 p-1 bg-muted rounded-full mt-1 justify-center animate-in fade-in zoom-in-95 duration-200"
                   >
                     {#each student.portrait as p, pi}
                       <button
-                        class="rounded-full overflow-hidden border-2 border-transparent hover:border-primary transition-all p-0"
+                        class="rounded-full after:rounded-full p-0 inner-border"
                         onclick={() => selectStudent(student, pi)}
                       >
                         <img
