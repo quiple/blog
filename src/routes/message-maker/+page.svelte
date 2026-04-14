@@ -706,7 +706,7 @@
             <div class="flex flex-col">
               <Button
                 variant="ghost"
-                class="flex-col h-auto py-1 gap-1"
+                class="flex-col h-auto py-1 gap-1 group"
                 onclick={() => {
                   if (student.portrait.length > 1) {
                     toggleStudentExpand(si)
@@ -718,7 +718,7 @@
                 <div class="relative">
                   <div class="inner-border rounded-full after:rounded-full size-14">
                     <img
-                      class="size-full object-cover"
+                      class="size-full object-cover transition-transform group-hover:scale-110"
                       src="/img/blue-archive/{student.portrait[0]}.png"
                       alt={student.name[lang]}
                       loading="lazy"
