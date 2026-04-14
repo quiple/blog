@@ -613,8 +613,8 @@
     <Dialog.Header>
       <Dialog.Title>
         {#if lang === 'ja'}生徒の選択
-        {:else if lang === 'en'}Select a Student
-        {:else}학생 선택
+        {:else if lang === 'ko'}학생 선택
+        {:else}Select a Student
         {/if}
       </Dialog.Title>
     </Dialog.Header>
@@ -624,7 +624,7 @@
         <Input
           type="text"
           class="w-full rounded-md border border-input bg-background px-3 py-2 text-sm outline-none focus:border-ring focus:ring-1 focus:ring-ring"
-          placeholder={lang === 'ja' ? '検索...' : lang === 'en' ? 'Search...' : '검색...'}
+          placeholder={lang === 'ja' ? '検索...' : lang === 'ko' ? '검색...' : 'Search...'}
           bind:value={studentSearchQuery}
         />
       </div>
