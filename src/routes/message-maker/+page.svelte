@@ -775,6 +775,7 @@
     if (!open) {
       showStudentDialog = false
       studentSearchQuery = ''
+      expandedStudentIndex = -1
     }
   }}
 >
