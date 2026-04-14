@@ -562,11 +562,10 @@
                 >
                 <Textarea
                   id="msg-input-{i}-{bi}"
-                  class="grow"
+                  class="grow min-h-auto"
                   placeholder={msg.type === 'left' ? '왼쪽 메시지 입력...' : '오른쪽 메시지 입력...'}
                   bind:value={msg.text[bi]}
                   oninput={requestRedraw}
-                  rows={2}
                 />
                 {#if msg.text.length > 1}
                   <Button
