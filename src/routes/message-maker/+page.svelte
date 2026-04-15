@@ -496,7 +496,7 @@
         {:else}Edit Chats
         {/if}
       </h2>
-      <ButtonGroup.Root>
+      <ButtonGroup.Root class="-mr-2">
         <Button variant="outline" size="sm" onclick={importJson} title="JSON으로 가져오기">
           <Upload />
           {#if lang === 'ja'}インポート
