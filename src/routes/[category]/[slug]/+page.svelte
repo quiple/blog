@@ -234,6 +234,7 @@
       --toc-li-padding="0"
       --toc-title-margin=".5rem 0"
       --toc-active-bg="transparent"
+      --toc-active-color="var(--color-blue-700)"
       --toc-desktop-aside-margin="20px 0 0 0"
       --toc-desktop-sticky-top="var(--header-height)"
       breakpoint={1023}
