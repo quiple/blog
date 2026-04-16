@@ -1,6 +1,7 @@
 <script lang="ts">
-  import {onMount, tick} from 'svelte'
+  import {tick} from 'svelte'
   import {TextAlignStart} from '@lucide/svelte'
+  import {afterNavigate} from '$app/navigation'
 
   let {selector = 'article', title = '목차'} = $props<{selector?: string; title?: string}>()
 
@@ -18,34 +19,36 @@
   let headingPositions: {id: string; top: number; layoutTop: number; layoutBottom: number}[] = []
   let scrollTicking = false
 
-  onMount(() => {
-    const updateHeadings = () => {
-      const article = document.querySelector(selector)
-      if (!article) return
-
-      const elements = Array.from(
-        article.querySelectorAll('h2:not(.toc-exclude):not(.sr-only), h3:not(.toc-exclude):not(.sr-only)'),
-      ) as HTMLElement[]
-
-      headings = elements.map((el, i) => {
-        if (!el.id) {
-          const safeId = el.innerText
-            .toLowerCase()
-            .replace(/\s+/g, '-')
-            .replace(/[^a-z0-9가-힣-]/g, '')
-            .replace(/^-+|-+$/g, '')
-          el.id = safeId || `heading-${i}`
-        }
-        return {
-          id: el.id,
-          text: el.innerText,
-          level: parseInt(el.tagName[1]),
-        }
-      })
+  const updateHeadings = () => {
+    const article = document.querySelector(selector)
+    if (!article) {
+      headings = []
+      return
     }
 
-    updateHeadings()
+    const elements = Array.from(
+      article.querySelectorAll('h2:not(.toc-exclude):not(.sr-only), h3:not(.toc-exclude):not(.sr-only)'),
+    ) as HTMLElement[]
 
+    headings = elements.map((el, i) => {
+      if (!el.id) {
+        const safeId = el.innerText
+          .toLowerCase()
+          .replace(/\s+/g, '-')
+          .replace(/[^a-z0-9가-힣-]/g, '')
+          .replace(/^-+|-+$/g, '')
+        el.id = safeId || `heading-${i}`
+      }
+      return {
+        id: el.id,
+        text: el.innerText,
+        level: parseInt(el.tagName[1]),
+      }
+    })
+  }
+
+  afterNavigate(() => {
+    updateHeadings()
     tick().then(updateHeadings)
   })
 
