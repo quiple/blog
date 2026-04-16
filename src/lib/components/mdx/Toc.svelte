@@ -49,7 +49,6 @@
 
   afterNavigate(() => {
     updateHeadings()
-    tick().then(updateHeadings)
   })
 
   // Unified layout, scroll, and resize observer
