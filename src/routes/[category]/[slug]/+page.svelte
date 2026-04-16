@@ -12,7 +12,7 @@
   import 'remark-github-alerts/styles/github-colors-light.css'
   import 'remark-github-alerts/styles/github-colors-dark-class.css'
   import 'remark-github-alerts/styles/github-base.css'
-  import Toc from 'svelte-toc'
+  import Toc from '$lib/components/mdx/Toc.svelte'
   import {setupViewTransition} from 'sveltekit-view-transition'
 
   let {data}: PageProps = $props()
@@ -228,20 +228,7 @@
     {/if}
   </article>
   <div class="flex-1">
-    <Toc
-      --toc-padding="0"
-      --toc-min-width="0"
-      --toc-li-padding="0"
-      --toc-li-color="var(--color-muted-foreground)"
-      --toc-title-margin=".5rem 0"
-      --toc-active-bg="transparent"
-      --toc-active-color="var(--color-blue-700)"
-      --toc-desktop-aside-margin="20px 0 0 0"
-      --toc-desktop-sticky-top="var(--header-height)"
-      breakpoint={1023}
-      title="목차"
-      headingSelector="h2:not(.toc-exclude, .sr-only)"
-    />
+    <Toc title="목차" selector="article" />
   </div>
 </section>
 
