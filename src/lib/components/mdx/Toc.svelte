@@ -230,6 +230,15 @@
                 {activeIds.includes(heading.id)
                 ? 'text-blue-700 hover:text-foreground'
                 : 'text-muted-foreground hover:text-foreground'}"
+              onclick={(e) => {
+                e.preventDefault()
+                const target = document.getElementById(heading.id)
+                if (target) {
+                  history.pushState(null, '', `#${heading.id}`)
+                  const y = target.getBoundingClientRect().top + window.scrollY - 100
+                  window.scrollTo({top: y, behavior: 'smooth'})
+                }
+              }}
             >
               {heading.text}
             </a>
