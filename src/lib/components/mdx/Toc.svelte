@@ -162,22 +162,29 @@
       })
     }
 
+    let resizeTimeout: ReturnType<typeof setTimeout>
+    const debouncedLayout = () => {
+      clearTimeout(resizeTimeout)
+      resizeTimeout = setTimeout(calculateLayout, 100)
+    }
+
     const timer = setTimeout(calculateLayout, 50)
-    window.addEventListener('resize', calculateLayout, {passive: true})
+    window.addEventListener('resize', debouncedLayout, {passive: true})
     window.addEventListener('scroll', onScroll, {passive: true})
 
     let resizeObserver: ResizeObserver | null = null
     const articleNode = document.querySelector(selector)
     if (articleNode) {
       resizeObserver = new ResizeObserver(() => {
-        calculateLayout()
+        debouncedLayout()
       })
       resizeObserver.observe(articleNode)
     }
 
     return () => {
       clearTimeout(timer)
-      window.removeEventListener('resize', calculateLayout)
+      clearTimeout(resizeTimeout)
+      window.removeEventListener('resize', debouncedLayout)
       window.removeEventListener('scroll', onScroll)
       if (resizeObserver) resizeObserver.disconnect()
     }
