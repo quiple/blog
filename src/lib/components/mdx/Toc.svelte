@@ -210,7 +210,7 @@
           d={pathD}
           fill="none"
           stroke="currentColor"
-          class="text-blue-600 dark:text-blue-500 {isReady ? 'transition-all duration-300 ease-out' : ''}"
+          class="text-blue-700 dark:text-blue-300 {isReady ? 'transition-all duration-300 ease-out' : ''}"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -228,7 +228,7 @@
                 {heading.level - minLevel === 1 ? 'pl-8' : ''}
                 {heading.level - minLevel === 2 ? 'pl-12' : ''}
                 {activeIds.includes(heading.id)
-                ? 'text-foreground font-medium'
+                ? 'text-blue-700 hover:text-foreground'
                 : 'text-muted-foreground hover:text-foreground'}"
             >
               {heading.text}
@@ -239,3 +239,10 @@
     </div>
   </div>
 {/if}
+
+<style lang="sass">
+  @reference '#app.css'
+
+  li
+    @apply font-medium
+</style>
