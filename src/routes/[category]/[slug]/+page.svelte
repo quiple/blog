@@ -210,7 +210,7 @@
   </div>
 {/if}
 
-<section class="flex lg:gap-6">
+<section class="flex lg:gap-6 xl:gap-12 2xl:gap-18">
   <div class="flex-1"></div>
   <article>
     {#if !image}
