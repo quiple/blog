@@ -1,5 +1,4 @@
 <script lang="ts">
-  import {tick} from 'svelte'
   import {TextAlignStart} from '@lucide/svelte'
   import {afterNavigate} from '$app/navigation'
 
