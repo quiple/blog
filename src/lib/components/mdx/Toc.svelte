@@ -4,7 +4,6 @@
   let {selector = 'article', title = '목차'} = $props<{selector?: string; title?: string}>()
 
   type Heading = {id: string; text: string; level: number}
-
   let headings = $state<Heading[]>([])
   let activeIds = $state<string[]>([])
 
@@ -13,6 +12,10 @@
   let isReady = $state(false)
   let pathD = $state('')
   let clipPath = $state('polygon(0px 0px, 100% 0px, 100% 0px, 0px 0px)')
+
+  // Optimize scroll by avoiding layout reads and proxies
+  let headingPositions: {id: string; top: number; layoutTop: number; layoutBottom: number}[] = []
+  let scrollTicking = false
 
   onMount(() => {
     const updateHeadings = () => {
@@ -45,49 +48,7 @@
     tick().then(updateHeadings)
   })
 
-  $effect(() => {
-    if (headings.length === 0) return
-
-    const onScroll = () => {
-      const newActiveIds: string[] = []
-      const offset = 100
-      const innerHeight = window.innerHeight
-
-      for (let i = 0; i < headings.length; i++) {
-        const h = headings[i]
-        const nextH = headings[i + 1]
-
-        const el = document.getElementById(h.id)
-        const nextEl = nextH ? document.getElementById(nextH.id) : null
-
-        if (!el) {
-          // Fallback if ID doesn't exist or isn't placed yet
-          continue
-        }
-
-        const top = el.getBoundingClientRect().top
-        const bottom = nextEl ? nextEl.getBoundingClientRect().top : innerHeight + 1000
-
-        if (top < innerHeight && bottom > offset) {
-          newActiveIds.push(h.id)
-        }
-      }
-      activeIds = newActiveIds
-    }
-
-    window.addEventListener('scroll', onScroll, {passive: true})
-    window.addEventListener('resize', onScroll)
-    onScroll()
-
-    return () => {
-      window.removeEventListener('scroll', onScroll)
-      window.removeEventListener('resize', onScroll)
-    }
-  })
-
-  type LayoutItem = {top: number; bottom: number; height: number; centerY: number; x: number; id: string}
-  let layoutItems = $state<LayoutItem[]>([])
-
+  // Unified layout, scroll, and resize observer
   $effect(() => {
     if (headings.length === 0 || !tocContainer) return
 
@@ -100,92 +61,115 @@
       const containerRect = tocContainer.getBoundingClientRect()
       const minLevel = Math.min(...headings.map((h) => h.level))
 
-      layoutItems = headings
+      const items = headings
         .map((h, i) => {
           const node = liNodes[i]
           if (!node) return null
-
           const rect = node.getBoundingClientRect()
           const top = rect.top - containerRect.top
           const bottom = rect.bottom - containerRect.top
-          const height = rect.height
-          const centerY = top + height / 2
-
-          const normalizedLevel = h.level - minLevel
-          const x = 1 + normalizedLevel * 14
-
-          return {top, bottom, height, centerY, x, id: h.id}
+          return {
+            top,
+            bottom,
+            centerY: top + rect.height / 2,
+            x: 1 + (h.level - minLevel) * 14,
+            id: h.id,
+          }
         })
-        .filter((x) => x !== null) as LayoutItem[]
+        .filter((x) => x !== null) as {top: number; bottom: number; centerY: number; x: number; id: string}[]
 
       let d = ''
       const corner = 6
-
-      if (layoutItems.length > 0) {
-        d += `M ${layoutItems[0].x} ${layoutItems[0].top}`
-
-        for (let i = 0; i < layoutItems.length - 1; i++) {
-          const curr = layoutItems[i]
-          const next = layoutItems[i + 1]
-
+      if (items.length > 0) {
+        d += `M ${items[0].x} ${items[0].top}`
+        for (let i = 0; i < items.length - 1; i++) {
+          const curr = items[i]
+          const next = items[i + 1]
           if (curr.x !== next.x) {
             const midY = (curr.bottom + next.top) / 2
-
             d += ` L ${curr.x} ${midY - corner}`
-
             if (next.x > curr.x) {
-              d += ` Q ${curr.x} ${midY} ${curr.x + corner} ${midY}`
-              d += ` L ${next.x - corner} ${midY}`
-              d += ` Q ${next.x} ${midY} ${next.x} ${midY + corner}`
+              d += ` Q ${curr.x} ${midY} ${curr.x + corner} ${midY} L ${next.x - corner} ${midY} Q ${next.x} ${midY} ${next.x} ${midY + corner}`
             } else {
-              d += ` Q ${curr.x} ${midY} ${curr.x - corner} ${midY}`
-              d += ` L ${next.x + corner} ${midY}`
-              d += ` Q ${next.x} ${midY} ${next.x} ${midY + corner}`
+              d += ` Q ${curr.x} ${midY} ${curr.x - corner} ${midY} L ${next.x + corner} ${midY} Q ${next.x} ${midY} ${next.x} ${midY + corner}`
             }
           }
         }
-        const last = layoutItems[layoutItems.length - 1]
-        d += ` L ${last.x} ${last.bottom}`
+        d += ` L ${items[items.length - 1].x} ${items[items.length - 1].bottom}`
       }
       pathD = d
+
+      const windowScrollY = window.scrollY
+      headingPositions = items.map((item) => {
+        const el = document.getElementById(item.id)
+        return {
+          id: item.id,
+          top: el ? el.getBoundingClientRect().top + windowScrollY : 0,
+          layoutTop: item.top,
+          layoutBottom: item.bottom,
+        }
+      })
+      onScroll()
     }
 
-    // Trigger layout calc after initial DOM flush
-    setTimeout(() => {
-      calculateLayout()
-      window.addEventListener('resize', calculateLayout)
-    }, 50)
+    const onScroll = () => {
+      if (scrollTicking) return
+      scrollTicking = true
+
+      requestAnimationFrame(() => {
+        const y = window.scrollY
+        const innerHeight = window.innerHeight
+        const topViewport = y + 100
+        const bottomViewport = y + innerHeight
+
+        let nextActiveIds: string[] = []
+        for (let i = 0; i < headingPositions.length; i++) {
+          const curr = headingPositions[i]
+          const next = headingPositions[i + 1]
+
+          const top = curr.top
+          const bottom = next ? next.top : document.documentElement.scrollHeight
+
+          if (top < bottomViewport && bottom > topViewport) {
+            nextActiveIds.push(curr.id)
+          }
+        }
+
+        let isChanged = nextActiveIds.length !== activeIds.length
+        if (!isChanged) {
+          for (let i = 0; i < nextActiveIds.length; i++) {
+            if (nextActiveIds[i] !== activeIds[i]) {
+              isChanged = true
+              break
+            }
+          }
+        }
+
+        if (isChanged) {
+          activeIds = nextActiveIds
+          if (nextActiveIds.length > 0) {
+            const first = headingPositions.find((x) => x.id === nextActiveIds[0])
+            const last = headingPositions.find((x) => x.id === nextActiveIds[nextActiveIds.length - 1])
+            if (first && last) {
+              clipPath = `polygon(-10px ${first.layoutTop}px, 200% ${first.layoutTop}px, 200% ${last.layoutBottom}px, -10px ${last.layoutBottom}px)`
+            }
+          } else {
+            clipPath = `polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)`
+          }
+          if (!isReady) isReady = true
+        }
+        scrollTicking = false
+      })
+    }
+
+    const timer = setTimeout(calculateLayout, 50)
+    window.addEventListener('resize', calculateLayout, {passive: true})
+    window.addEventListener('scroll', onScroll, {passive: true})
 
     return () => {
+      clearTimeout(timer)
       window.removeEventListener('resize', calculateLayout)
-    }
-  })
-
-  $effect(() => {
-    const currentActiveIds = activeIds
-    const currentLayoutItems = layoutItems
-
-    if (currentLayoutItems.length === 0) return
-
-    if (currentActiveIds.length > 0) {
-      const firstActiveIdx = currentLayoutItems.findIndex((item) => item.id === currentActiveIds[0])
-      const lastActiveIdx = currentLayoutItems.findIndex(
-        (item) => item.id === currentActiveIds[currentActiveIds.length - 1],
-      )
-
-      if (firstActiveIdx !== -1 && lastActiveIdx !== -1) {
-        const startY = currentLayoutItems[firstActiveIdx].top
-        const endY = currentLayoutItems[lastActiveIdx].bottom
-        clipPath = `polygon(-10px ${startY}px, 200% ${startY}px, 200% ${endY}px, -10px ${endY}px)`
-      } else {
-        clipPath = `polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)`
-      }
-    } else {
-      clipPath = `polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)`
-    }
-
-    if (!isReady) {
-      setTimeout(() => (isReady = true), 50)
+      window.removeEventListener('scroll', onScroll)
     }
   })
 
