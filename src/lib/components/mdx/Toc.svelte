@@ -3,7 +3,7 @@
 
   let {selector = 'article', title = '목차'} = $props<{selector?: string; title?: string}>()
 
-  type Heading = {id: string; text: string; level: number; element: HTMLElement}
+  type Heading = {id: string; text: string; level: number}
 
   let headings = $state<Heading[]>([])
   let activeIds = $state<string[]>([])
@@ -36,7 +36,6 @@
           id: el.id,
           text: el.innerText,
           level: parseInt(el.tagName[1]),
-          element: el,
         }
       })
     }
@@ -58,8 +57,16 @@
         const h = headings[i]
         const nextH = headings[i + 1]
 
-        const top = h.element.getBoundingClientRect().top
-        const bottom = nextH ? nextH.element.getBoundingClientRect().top : innerHeight + 1000
+        const el = document.getElementById(h.id)
+        const nextEl = nextH ? document.getElementById(nextH.id) : null
+
+        if (!el) {
+          // Fallback if ID doesn't exist or isn't placed yet
+          continue
+        }
+
+        const top = el.getBoundingClientRect().top
+        const bottom = nextEl ? nextEl.getBoundingClientRect().top : innerHeight + 1000
 
         if (top < innerHeight && bottom > offset) {
           newActiveIds.push(h.id)
@@ -78,21 +85,22 @@
     }
   })
 
+  type LayoutItem = {top: number; bottom: number; height: number; centerY: number; x: number; id: string}
+  let layoutItems = $state<LayoutItem[]>([])
+
   $effect(() => {
     if (headings.length === 0 || !tocContainer) return
 
-    const handleLayout = () => {
+    const calculateLayout = () => {
       if (!tocContainer) return
 
       const liNodes = Array.from(tocContainer.querySelectorAll('li'))
       if (liNodes.length !== headings.length) return
 
       const containerRect = tocContainer.getBoundingClientRect()
-      const H = containerRect.height
-
       const minLevel = Math.min(...headings.map((h) => h.level))
 
-      const items = headings
+      layoutItems = headings
         .map((h, i) => {
           const node = liNodes[i]
           if (!node) return null
@@ -108,24 +116,17 @@
 
           return {top, bottom, height, centerY, x, id: h.id}
         })
-        .filter((x) => x !== null) as {
-        top: number
-        bottom: number
-        height: number
-        centerY: number
-        x: number
-        id: string
-      }[]
+        .filter((x) => x !== null) as LayoutItem[]
 
       let d = ''
       const corner = 6
 
-      if (items.length > 0) {
-        d += `M ${items[0].x} ${items[0].top}`
+      if (layoutItems.length > 0) {
+        d += `M ${layoutItems[0].x} ${layoutItems[0].top}`
 
-        for (let i = 0; i < items.length - 1; i++) {
-          const curr = items[i]
-          const next = items[i + 1]
+        for (let i = 0; i < layoutItems.length - 1; i++) {
+          const curr = layoutItems[i]
+          const next = layoutItems[i + 1]
 
           if (curr.x !== next.x) {
             const midY = (curr.bottom + next.top) / 2
@@ -143,33 +144,49 @@
             }
           }
         }
-        const last = items[items.length - 1]
+        const last = layoutItems[layoutItems.length - 1]
         d += ` L ${last.x} ${last.bottom}`
       }
       pathD = d
+    }
 
-      if (activeIds.length > 0) {
-        const firstActiveIdx = items.findIndex((item) => item.id === activeIds[0])
-        const lastActiveIdx = items.findIndex((item) => item.id === activeIds[activeIds.length - 1])
+    // Trigger layout calc after initial DOM flush
+    setTimeout(() => {
+      calculateLayout()
+      window.addEventListener('resize', calculateLayout)
+    }, 50)
 
-        if (firstActiveIdx !== -1 && lastActiveIdx !== -1) {
-          const startY = items[firstActiveIdx].top
-          const endY = items[lastActiveIdx].bottom
-          clipPath = `polygon(-10px ${startY}px, 200% ${startY}px, 200% ${endY}px, -10px ${endY}px)`
-        } else {
-          clipPath = `polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)`
-        }
+    return () => {
+      window.removeEventListener('resize', calculateLayout)
+    }
+  })
+
+  $effect(() => {
+    const currentActiveIds = activeIds
+    const currentLayoutItems = layoutItems
+
+    if (currentLayoutItems.length === 0) return
+
+    if (currentActiveIds.length > 0) {
+      const firstActiveIdx = currentLayoutItems.findIndex((item) => item.id === currentActiveIds[0])
+      const lastActiveIdx = currentLayoutItems.findIndex(
+        (item) => item.id === currentActiveIds[currentActiveIds.length - 1],
+      )
+
+      if (firstActiveIdx !== -1 && lastActiveIdx !== -1) {
+        const startY = currentLayoutItems[firstActiveIdx].top
+        const endY = currentLayoutItems[lastActiveIdx].bottom
+        clipPath = `polygon(-10px ${startY}px, 200% ${startY}px, 200% ${endY}px, -10px ${endY}px)`
       } else {
         clipPath = `polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)`
       }
-
-      if (!isReady) {
-        setTimeout(() => (isReady = true), 50)
-      }
+    } else {
+      clipPath = `polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)`
     }
 
-    const timer = setTimeout(handleLayout, 50)
-    return () => clearTimeout(timer)
+    if (!isReady) {
+      setTimeout(() => (isReady = true), 50)
+    }
   })
 
   const minLevel = $derived(headings.length > 0 ? Math.min(...headings.map((h) => h.level)) : 2)
@@ -180,7 +197,7 @@
     <div class="text-sm font-semibold mb-4 text-muted-foreground">{title}</div>
     <div class="relative" bind:this={tocContainer}>
       <!-- Background SVG Lines -->
-      <svg class="absolute left-0 top-0 w-full h-full pointer-events-none" style="z-index: 0" overflow="visible">
+      <svg class="absolute left-0 top-0 w-full h-full pointer-events-none" style="z-index: 0">
         <path
           d={pathD}
           fill="none"
