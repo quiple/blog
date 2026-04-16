@@ -201,7 +201,8 @@
         <path
           d={pathD}
           fill="none"
-          stroke="hsl(var(--border))"
+          class="stroke-border"
+          style="stroke: var(--color-border, var(--border, #e5e7eb)); opacity: 0.5;"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
