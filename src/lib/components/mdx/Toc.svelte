@@ -235,8 +235,7 @@
                 const target = document.getElementById(heading.id)
                 if (target) {
                   history.pushState(null, '', `#${heading.id}`)
-                  const y = target.getBoundingClientRect().top + window.scrollY - 100
-                  window.scrollTo({top: y, behavior: 'smooth'})
+                  target.scrollIntoView({behavior: 'smooth'})
                 }
               }}
             >
