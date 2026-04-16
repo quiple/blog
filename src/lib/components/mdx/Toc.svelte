@@ -9,10 +9,10 @@
   let activeIds = $state<string[]>([])
 
   let tocContainer = $state<HTMLElement | null>(null)
-  let itemNodes = $state<HTMLElement[]>([])
 
+  let isReady = $state(false)
   let pathD = $state('')
-  let clipPath = $state('inset(100% -2px 0 -2px)')
+  let clipPath = $state('polygon(0px 0px, 100% 0px, 100% 0px, 0px 0px)')
 
   onMount(() => {
     const updateHeadings = () => {
@@ -79,11 +79,14 @@
   })
 
   $effect(() => {
-    if (headings.length === 0 || itemNodes.length !== headings.length || !tocContainer) return
+    if (headings.length === 0 || !tocContainer) return
 
-    // Use requestAnimationFrame to ensure DOM bounding rects are perfectly stable and correct
     const handleLayout = () => {
       if (!tocContainer) return
+
+      const liNodes = Array.from(tocContainer.querySelectorAll('li'))
+      if (liNodes.length !== headings.length) return
+
       const containerRect = tocContainer.getBoundingClientRect()
       const H = containerRect.height
 
@@ -91,7 +94,7 @@
 
       const items = headings
         .map((h, i) => {
-          const node = itemNodes[i]
+          const node = liNodes[i]
           if (!node) return null
 
           const rect = node.getBoundingClientRect()
@@ -124,10 +127,9 @@
           const curr = items[i]
           const next = items[i + 1]
 
-          if (curr.x === next.x) {
-            d += ` L ${curr.x} ${next.centerY - corner}`
-          } else {
+          if (curr.x !== next.x) {
             const midY = (curr.bottom + next.top) / 2
+
             d += ` L ${curr.x} ${midY - corner}`
 
             if (next.x > curr.x) {
@@ -153,12 +155,16 @@
         if (firstActiveIdx !== -1 && lastActiveIdx !== -1) {
           const startY = items[firstActiveIdx].top
           const endY = items[lastActiveIdx].bottom
-          clipPath = `inset(${startY}px -2px ${H - endY}px -2px)`
+          clipPath = `polygon(-10px ${startY}px, 200% ${startY}px, 200% ${endY}px, -10px ${endY}px)`
         } else {
-          clipPath = `inset(100% -2px 0 -2px)`
+          clipPath = `polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)`
         }
       } else {
-        clipPath = `inset(100% -2px 0 -2px)`
+        clipPath = `polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)`
+      }
+
+      if (!isReady) {
+        setTimeout(() => (isReady = true), 50)
       }
     }
 
@@ -187,7 +193,7 @@
           d={pathD}
           fill="none"
           stroke="currentColor"
-          class="text-blue-600 dark:text-blue-500 transition-all duration-300 ease-out"
+          class="text-blue-600 dark:text-blue-500 {isReady ? 'transition-all duration-300 ease-out' : ''}"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -196,8 +202,8 @@
       </svg>
 
       <ul class="flex flex-col m-0 p-0 list-none text-sm relative z-10 w-full">
-        {#each headings as heading, i}
-          <li class="m-0 p-0 relative w-full" bind:this={itemNodes[i]}>
+        {#each headings as heading}
+          <li class="m-0 p-0 relative w-full">
             <a
               href="#{heading.id}"
               class="block py-1.5 transition-colors no-underline
