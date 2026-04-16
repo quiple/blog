@@ -232,6 +232,7 @@
       --toc-padding="0"
       --toc-min-width="0"
       --toc-li-padding="0"
+      --toc-li-color="var(--color-muted-foreground)"
       --toc-title-margin=".5rem 0"
       --toc-active-bg="transparent"
       --toc-active-color="var(--color-blue-700)"
