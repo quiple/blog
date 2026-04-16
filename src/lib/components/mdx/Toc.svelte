@@ -23,14 +23,22 @@
         article.querySelectorAll('h2:not(.toc-exclude):not(.sr-only), h3:not(.toc-exclude):not(.sr-only)'),
       ) as HTMLElement[]
 
-      headings = elements
-        .map((el) => ({
+      headings = elements.map((el, i) => {
+        if (!el.id) {
+          const safeId = el.innerText
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[^a-z0-9가-힣-]/g, '')
+            .replace(/^-+|-+$/g, '')
+          el.id = safeId || `heading-${i}`
+        }
+        return {
           id: el.id,
           text: el.innerText,
           level: parseInt(el.tagName[1]),
           element: el,
-        }))
-        .filter((h) => h.id)
+        }
+      })
     }
 
     updateHeadings()
@@ -162,7 +170,7 @@
 </script>
 
 {#if headings.length > 0}
-  <div class="toc-wrapper hidden lg:block sticky pt-2 mt-5" style="top: var(--header-height, 4rem);">
+  <div class="toc-wrapper sticky pt-2 mt-5" style="top: var(--header-height, 4rem);">
     <div class="text-sm font-semibold mb-4 text-muted-foreground">{title}</div>
     <div class="relative" bind:this={tocContainer}>
       <!-- Background SVG Lines -->
