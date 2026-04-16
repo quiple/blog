@@ -211,22 +211,7 @@
 {/if}
 
 <section class="flex lg:gap-6">
-  <div class="flex-1">
-    <Toc
-      --toc-padding="0"
-      --toc-min-width="0"
-      --toc-li-padding="0"
-      --toc-title-margin=".5rem 0"
-      --toc-active-bg="transparent"
-      --toc-active-color="currentColor"
-      --toc-desktop-aside-margin="20px 0 0 0"
-      --toc-desktop-sticky-top="var(--header-height)"
-      breakpoint={1023}
-      title="목차"
-      headingSelector="h2:not(.toc-exclude, .sr-only)"
-    />
-  </div>
-
+  <div class="flex-1"></div>
   <article>
     {#if !image}
       <div class="inline-block mb-1.25" use:transition={`post-category-${data.slug}`}>
@@ -242,7 +227,20 @@
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     {/if}
   </article>
-  <div class="flex-1"></div>
+  <div class="flex-1">
+    <Toc
+      --toc-padding="0"
+      --toc-min-width="0"
+      --toc-li-padding="0"
+      --toc-title-margin=".5rem 0"
+      --toc-active-bg="transparent"
+      --toc-desktop-aside-margin="20px 0 0 0"
+      --toc-desktop-sticky-top="var(--header-height)"
+      breakpoint={1023}
+      title="목차"
+      headingSelector="h2:not(.toc-exclude, .sr-only)"
+    />
+  </div>
 </section>
 
 <style lang="sass">
