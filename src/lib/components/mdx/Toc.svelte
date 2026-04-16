@@ -166,10 +166,20 @@
     window.addEventListener('resize', calculateLayout, {passive: true})
     window.addEventListener('scroll', onScroll, {passive: true})
 
+    let resizeObserver: ResizeObserver | null = null
+    const articleNode = document.querySelector(selector)
+    if (articleNode) {
+      resizeObserver = new ResizeObserver(() => {
+        calculateLayout()
+      })
+      resizeObserver.observe(articleNode)
+    }
+
     return () => {
       clearTimeout(timer)
       window.removeEventListener('resize', calculateLayout)
       window.removeEventListener('scroll', onScroll)
+      if (resizeObserver) resizeObserver.disconnect()
     }
   })
 
