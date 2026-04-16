@@ -193,7 +193,7 @@
 </script>
 
 {#if headings.length > 0}
-  <div class="toc sticky pt-2 mt-5" style="top: var(--header-height, 4rem);">
+  <div class="toc" style="top: var(--header-height, 4rem);">
     <div class="text-sm font-semibold mb-4 text-muted-foreground">{title}</div>
     <div class="relative" bind:this={tocContainer}>
       <!-- Background SVG Lines -->
@@ -244,7 +244,5 @@
   @reference '#app.css'
 
   .toc
-    @apply hidden lg:block noscript:hidden
-  li
-    @apply font-medium text-pretty break-keep
+    @apply hidden lg:block noscript:hidden font-medium text-pretty break-keep sticky pt-2 mt-5
 </style>
