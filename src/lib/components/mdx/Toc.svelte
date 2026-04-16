@@ -240,7 +240,7 @@
                 e.preventDefault()
                 const target = document.getElementById(heading.id)
                 if (target) {
-                  history.pushState(null, '', `#${heading.id}`)
+                  history.replaceState(null, '', `#${heading.id}`)
                   target.scrollIntoView({behavior: 'smooth'})
                 }
               }}
