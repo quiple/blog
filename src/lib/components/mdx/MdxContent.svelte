@@ -5,7 +5,7 @@
   let {html}: {html: string} = $props()
   let container: HTMLElement | undefined = $state()
 
-  onMount(() => {
+  $effect(() => {
     if (!container) return
     const mountedComponents: ReturnType<typeof mount>[] = []
     const placeholders = container.querySelectorAll<HTMLElement>('[data-mdx-component]')
