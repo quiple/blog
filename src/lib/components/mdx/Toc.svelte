@@ -1,6 +1,6 @@
 <script lang="ts">
   import {TextAlignStart} from '@lucide/svelte'
-  import {afterNavigate} from '$app/navigation'
+  import {afterNavigate, goto} from '$app/navigation'
 
   let {selector = 'article', title = '목차'} = $props<{selector?: string; title?: string}>()
 
@@ -240,8 +240,9 @@
                 e.preventDefault()
                 const target = document.getElementById(heading.id)
                 if (target) {
-                  history.pushState(null, '', `#${heading.id}`)
-                  target.scrollIntoView({behavior: 'smooth'})
+                  goto(`#${heading.id}`, {noScroll: true, keepFocus: true}).then(() => {
+                    target.scrollIntoView({behavior: 'smooth'})
+                  })
                 }
               }}
             >
