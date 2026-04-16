@@ -30,6 +30,14 @@
   const image = $derived(data.image ? (isProd ? `/cdn-cgi/image/w=3840,f=avif,q=75/${rawSrc}` : rawSrc) : '')
   const thumbnailImage = $derived(isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc)
   const publishedDate = $derived(data.origDate ?? data.pubDate)
+  const publishedDateObj = $derived(
+    typeof publishedDate === 'object' ? (publishedDate as Date) : new Date(`${publishedDate}+09:00`),
+  )
+
+  const formattedDate = $derived(new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(publishedDateObj))
+  const formattedDateTime = $derived(
+    new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'short'}).format(publishedDateObj),
+  )
   const jsonLd = $derived(
     JSON.stringify({
       '@context': 'https://schema.org',
@@ -146,12 +154,7 @@
   <div
     class="metadata"
     style={isOutline
-      ? `--content: '${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${new Intl.DateTimeFormat(
-          'ko-KR',
-          {
-            dateStyle: 'long',
-          },
-        ).format(typeof publishedDate === 'object' ? (publishedDate as Date) : Date.parse(`${publishedDate}+09:00`))}'`
+      ? `--content: '${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${formattedDate}'`
       : null}
     use:transition={`post-metadata-${data.slug}`}
   >
@@ -165,20 +168,18 @@
       </a>&#8194;&bullet;&#8194;
     {/if}{#if typeof publishedDate === 'object'}
       <time datetime={(publishedDate as Date).toISOString().split('T')[0]}>
-        {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(publishedDate as Date)}
+        {formattedDate}
       </time>
     {:else}
       <Tooltip.Provider>
         <Tooltip.Root>
           <Tooltip.Trigger class="cursor-default">
             <time datetime={`${publishedDate}+09:00`}>
-              {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(Date.parse(`${publishedDate}+09:00`))}
+              {formattedDate}
             </time>
           </Tooltip.Trigger>
           <Tooltip.Content>
-            {new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'short'}).format(
-              Date.parse(`${publishedDate}+09:00`),
-            )}
+            {formattedDateTime}
           </Tooltip.Content>
         </Tooltip.Root>
       </Tooltip.Provider>
