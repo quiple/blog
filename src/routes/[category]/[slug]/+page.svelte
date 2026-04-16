@@ -112,9 +112,7 @@
       })
   })
 
-  $effect(() => {
-    // SvelteKit client-side routing means onMount won't run again if only the slug changes.
-    // Using $effect ensures tweets get properly themed even across route navigations or dark mode toggles.
+  onMount(() => {
     const tweets = document.querySelectorAll('.twitter-tweet')
 
     for (let i = 0; i < tweets.length; i++) {
