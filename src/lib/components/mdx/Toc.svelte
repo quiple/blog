@@ -1,5 +1,6 @@
 <script lang="ts">
   import {onMount, tick} from 'svelte'
+  import {TextAlignStart} from '@lucide/svelte'
 
   let {selector = 'article', title = '목차'} = $props<{selector?: string; title?: string}>()
 
@@ -195,7 +196,10 @@
 
 {#if headings.length > 0}
   <div class="toc" style="top: var(--header-height, 4rem);">
-    <div class="text-sm font-semibold mb-4 text-muted-foreground">{title}</div>
+    <div class="text-sm font-semibold mb-4 text-muted-foreground flex flex-wrap items-center">
+      <TextAlignStart class="size-4 inline-block mr-1.5" />
+      {title}
+    </div>
     <div class="relative" bind:this={tocContainer}>
       <!-- Background SVG Lines -->
       <svg class="absolute left-0 top-0 w-full h-full pointer-events-none" style="z-index: 0">
@@ -229,7 +233,7 @@
                 {heading.level - minLevel === 1 ? 'pl-8' : ''}
                 {heading.level - minLevel === 2 ? 'pl-12' : ''}
                 {activeIds.includes(heading.id)
-                ? 'text-blue-700 hover:text-foreground'
+                ? 'text-blue-700 dark:text-blue-300 hover:text-foreground'
                 : 'text-muted-foreground hover:text-foreground'}"
               onclick={(e) => {
                 e.preventDefault()
