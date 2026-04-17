@@ -1,6 +1,7 @@
 <script lang="ts">
   import {onMount} from 'svelte'
   import {hero} from '$lib/actions/hero'
+  import Giscus from '$lib/components/giscus.svelte'
   import MdxContent from '$lib/components/mdx/MdxContent.svelte'
   import {Badge} from '$lib/components/ui/badge/index.js'
   import * as Tooltip from '$lib/components/ui/tooltip/index.js'
@@ -227,6 +228,7 @@
     {#if isContainTwitter}
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     {/if}
+    <Giscus />
   </article>
   <div class="flex-1">
     <Toc title="목차" selector="article" />
