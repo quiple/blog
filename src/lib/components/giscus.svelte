@@ -13,7 +13,7 @@
   reactionsEnabled="0"
   emitMetadata="0"
   inputPosition="bottom"
-  theme="preferred_color_scheme"
+  theme="https://quiple.dev/giscus/dark.css"
   lang="ko"
   loading="lazy"
 />
