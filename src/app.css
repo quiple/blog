@@ -223,10 +223,12 @@
     @apply border-s-2 ps-4 not-italic sm:ps-6 [&>p]:before:content-none [&>p]:after:content-none;
   }
   blockquote,
-  figure,
   .markdown-alert,
   & > ul {
     @apply my-5 sm:my-6;
+  }
+  figure {
+    @apply my-7 sm:my-8;
   }
   ul {
     @apply list-disc [&>li]:mt-2;
