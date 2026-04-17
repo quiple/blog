@@ -63,22 +63,24 @@
       const containerRect = tocContainer.getBoundingClientRect()
       const minLevel = Math.min(...headings.map((h) => h.level))
 
-      const items = headings
-        .map((h, i) => {
-          const node = liNodes[i]
-          if (!node) return null
-          const rect = node.getBoundingClientRect()
-          const top = rect.top - containerRect.top
-          const bottom = rect.bottom - containerRect.top
-          return {
-            top,
-            bottom,
-            centerY: top + rect.height / 2,
-            x: 1 + (h.level - minLevel) * 14,
-            id: h.id,
-          }
+      type LayoutItem = {top: number; bottom: number; centerY: number; x: number; id: string}
+      const items: LayoutItem[] = []
+
+      for (let i = 0; i < headings.length; i++) {
+        const h = headings[i]
+        const node = liNodes[i]
+        if (!node) continue
+
+        const rect = node.getBoundingClientRect()
+        const top = rect.top - containerRect.top
+        items.push({
+          top,
+          bottom: rect.bottom - containerRect.top,
+          centerY: top + rect.height / 2,
+          x: 1 + (h.level - minLevel) * 14,
+          id: h.id,
         })
-        .filter((x) => x !== null) as {top: number; bottom: number; centerY: number; x: number; id: string}[]
+      }
 
       let d = ''
       const corner = 6
@@ -114,6 +116,8 @@
       onScroll()
     }
 
+    const _nextActiveIds: string[] = []
+
     const onScroll = () => {
       if (scrollTicking) return
       scrollTicking = true
@@ -124,7 +128,7 @@
         const topViewport = y + 100
         const bottomViewport = y + innerHeight
 
-        let nextActiveIds: string[] = []
+        _nextActiveIds.length = 0
         for (let i = 0; i < headingPositions.length; i++) {
           const curr = headingPositions[i]
           const next = headingPositions[i + 1]
@@ -133,14 +137,14 @@
           const bottom = next ? next.top : document.documentElement.scrollHeight
 
           if (top < bottomViewport && bottom > topViewport) {
-            nextActiveIds.push(curr.id)
+            _nextActiveIds.push(curr.id)
           }
         }
 
-        let isChanged = nextActiveIds.length !== activeIds.length
+        let isChanged = _nextActiveIds.length !== activeIds.length
         if (!isChanged) {
-          for (let i = 0; i < nextActiveIds.length; i++) {
-            if (nextActiveIds[i] !== activeIds[i]) {
+          for (let i = 0; i < _nextActiveIds.length; i++) {
+            if (_nextActiveIds[i] !== activeIds[i]) {
               isChanged = true
               break
             }
@@ -148,10 +152,10 @@
         }
 
         if (isChanged) {
-          activeIds = nextActiveIds
-          if (nextActiveIds.length > 0) {
-            const first = headingPositions.find((x) => x.id === nextActiveIds[0])
-            const last = headingPositions.find((x) => x.id === nextActiveIds[nextActiveIds.length - 1])
+          activeIds = [..._nextActiveIds]
+          if (_nextActiveIds.length > 0) {
+            const first = headingPositions.find((x) => x.id === _nextActiveIds[0])
+            const last = headingPositions.find((x) => x.id === _nextActiveIds[_nextActiveIds.length - 1])
             if (first && last) {
               clipPath = `polygon(-10px ${first.layoutTop}px, 200% ${first.layoutTop}px, 200% ${last.layoutBottom}px, -10px ${last.layoutBottom}px)`
             }
