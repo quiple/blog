@@ -170,6 +170,7 @@ button, .btn {
   border-radius: 8px !important;
   font-weight: 500;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: .25rem;
   svg.mr-2 {
