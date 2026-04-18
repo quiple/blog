@@ -35,11 +35,13 @@ body {
   padding: 0;
 }
 
-.gsc-comment-content {
+.gsc-comment-content,
+.gsc-reply {
   padding: 0 0 0 38px;
 }
 
-.gsc-comment-footer {
+.gsc-comment-footer,
+.gsc-reply-footer {
   display: none;
 }
 
@@ -61,6 +63,8 @@ body {
   margin: 0;
 }
 
+.gsc-replies,
+.gsc-reply-box,
 #__next .border {
   border: none;
 }
