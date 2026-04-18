@@ -110,7 +110,7 @@ body {
 
 .gsc-comment-box {
   border: none;
-  border-radius: var(--radius) !important;
+  border-radius: 1rem !important;
   background-color: var(--secondary);
   color: var(--secondary-foreground);
   width: auto;
@@ -122,6 +122,19 @@ body {
   .gsc-comment-box-tabs {
     border: none;
     border-radius: 0;
+    padding: .5rem;
+
+    .color-text-primary {
+      background-color: var(--background);
+      color: var(--foreground);
+      margin: 0 !important;
+    }
+    .color-text-secondary {
+      margin: 0 !important;
+    }
+    .gsc-comment-box-md-toolbar {
+      margin: 0;
+    }
   }
 
   .gsc-comment-box-main {
@@ -136,33 +149,44 @@ body {
     .gsc-comment-box-preview {
       border: none;
       padding: 0 10px;
+      min-height: 100px;
     }
   }
 
   .gsc-comment-box-bottom {
     margin: 0;
     padding: .5rem;
-
-    button, .btn {
-      padding: 0 10px;
-      height: 32px;
-      border-radius: 8px !important;
-      font-weight: 500;
-      svg.mr-2 {
-        margin-right: .25rem !important;
-      }
-    }
-    button[type=submit], btn-primary {
-      background-color: var(--primary);
-      color: var(--primary-foreground);
-    }
-    button.link-secondary {
-      background-color: var(--background);
-      text-decoration: none;
-    }
   }
 }
 
+button, .btn {
+  padding: 0 10px !important;
+  height: 32px;
+  border-radius: 8px !important;
+  font-weight: 500;
+  svg.mr-2 {
+    margin-right: .25rem !important;
+  }
+}
+button[type=submit], .btn-primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground);
+  &:disabled {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    opacity: .5;
+    pointer-events: none;
+  }
+  &:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+}
+button.link-secondary {
+  background-color: var(--background);
+  color: var(--foreground);
+  text-decoration: none;
+}
 
 .gsc-comment-box-textarea-extras {
   display: none;
