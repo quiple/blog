@@ -169,8 +169,11 @@ button, .btn {
   height: 32px;
   border-radius: 8px !important;
   font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
   svg.mr-2 {
-    margin-right: .25rem !important;
+    margin-right: 0 !important;
   }
 }
 button[type=submit], .btn-primary {
