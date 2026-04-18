@@ -27,5 +27,5 @@
   @reference '#app.css'
 
   :global(#comments)
-    @apply block mt-8
+    @apply block mt-8 border-t pt-4
 </style>

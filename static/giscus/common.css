@@ -27,11 +27,6 @@ body {
   gap: 1rem;
 }
 
-.gsc-header {
-  border-top: 1px solid var(--border);
-  padding-top: 1rem;
-}
-
 .gsc-comments-count {
   font-weight: 500;
 }
