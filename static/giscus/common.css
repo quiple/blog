@@ -25,4 +25,5 @@ body {
 
 .gsc-header {
   border-top: 1px solid var(--border);
+  padding-top: 1rem;
 }
