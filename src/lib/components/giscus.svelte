@@ -22,3 +22,10 @@
   lang="ko"
   loading="lazy"
 />
+
+<style lang="sass">
+  @reference '#app.css'
+
+  #comments
+    @apply mt-4
+</style>
