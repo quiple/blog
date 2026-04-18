@@ -27,5 +27,5 @@
   @reference '#app.css'
 
   :global(#comments)
-    @apply block mt-6
+    @apply block mt-8
 </style>
