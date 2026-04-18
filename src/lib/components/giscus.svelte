@@ -1,5 +1,10 @@
 <script lang="ts">
   import Giscus from '@giscus/svelte'
+  import {mode} from 'mode-watcher'
+
+  const theme = $derived(
+    mode.current === 'dark' ? 'https://quiple.dev/giscus/dark.css' : 'https://quiple.dev/giscus/light.css',
+  )
 </script>
 
 <Giscus
@@ -13,7 +18,7 @@
   reactionsEnabled="0"
   emitMetadata="0"
   inputPosition="bottom"
-  theme="https://quiple.dev/giscus/dark.css"
+  {theme}
   lang="ko"
   loading="lazy"
 />
