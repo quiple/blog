@@ -31,3 +31,15 @@ body {
   border-top: 1px solid var(--border);
   padding-top: 1rem;
 }
+
+.gsc-comments-count {
+  font-weight: 500;
+}
+
+.gsc-comment-box-main,
+.gsc-comment-box-bottom,
+#__next .mt-2,
+#__next .mx-2,
+#__next .mb-\[-1px\] {
+  margin: 0;
+}
