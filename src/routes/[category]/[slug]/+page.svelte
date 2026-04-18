@@ -228,9 +228,7 @@
     {#if isContainTwitter}
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     {/if}
-    {#if !isProd}
-      <Giscus />
-    {/if}
+    <Giscus />
   </article>
   <div class="flex-1">
     <Toc title="목차" selector="article" />
