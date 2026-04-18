@@ -26,6 +26,6 @@
 <style lang="sass">
   @reference '#app.css'
 
-  #comments
+  :global(#comments)
     @apply mt-4
 </style>
