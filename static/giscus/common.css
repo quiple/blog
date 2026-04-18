@@ -13,6 +13,16 @@
   --radius: 0.625rem;
 }
 
-html {
+* {
   font-family: var(--font-sans);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-weight: var(--font-weight-normal);
+}
+
+.gsc-header {
+  border-top: 1px solid var(--border);
 }
