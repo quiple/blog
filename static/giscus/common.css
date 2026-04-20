@@ -173,6 +173,7 @@ button, .btn {
   justify-content: center;
   align-items: center;
   gap: .25rem;
+  transition: .15s cubic-bezier(.4, 0, .2, 1);
   svg.mr-2 {
     margin-right: 0 !important;
   }
