@@ -20,7 +20,6 @@
   inputPosition="bottom"
   {theme}
   lang="ko"
-  loading="lazy"
 />
 
 <style lang="sass">
