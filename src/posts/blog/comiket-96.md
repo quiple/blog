@@ -1,5 +1,5 @@
 ---
-title: 코믹마켓96
+title: 코믹마켓 96
 image: photo/IMG_0135_Original.HEIC
 imageForeground: fff
 origDate: 2019-08-12
