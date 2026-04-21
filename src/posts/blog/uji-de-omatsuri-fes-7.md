@@ -113,7 +113,9 @@ pubDate: 2026-04-22T01:45
 
 ::figure{src="photo/IMG_1262.HEIC" class="max-h-200"}
 
-::figure{src="photo/IMG_1275.HEIC"}
+:::figure{src="photo/IMG_1275.HEIC"}
+토요코인 아베노텐노지(東横INNあべの天王寺) 객실에서 본 창밖 풍경.
+:::
 
 :::figure{src="photo/IMG_1279.HEIC" class="max-h-200"}
 닌텐도 교토(Nintendo KYOTO).
