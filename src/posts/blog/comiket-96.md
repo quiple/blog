@@ -3,7 +3,7 @@ title: 코믹마켓96
 image: photo/IMG_0135_Original.HEIC
 imageForeground: fff
 origDate: 2019-08-12
-pubDate: 2026-04-22T00:50
+pubDate: 2026-04-22T01:05
 ---
 
 ::figure{src="photo/IMG_0094_Original.HEIC"}
