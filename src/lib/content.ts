@@ -2,7 +2,7 @@ import matter from 'gray-matter'
 import * as v from 'valibot'
 import {BASE_URL} from './constants'
 
-export const blogPosts = import.meta.glob('/src/posts/post/*.md', {
+export const blogPosts = import.meta.glob('/src/posts/blog/*.md', {
   query: '?raw',
   import: 'default',
   eager: true,
@@ -60,6 +60,7 @@ const baseMetadataFields = {
 
 export const blogPostMetadataSchema = v.object({
   ...baseMetadataFields,
+  origDate: v.optional(v.union([v.pipe(v.date()), v.pipe(v.string(), v.isoDateTime(), v.trim())])),
 })
 
 export const blogArticleMetadataSchema = v.object({
