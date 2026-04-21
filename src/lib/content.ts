@@ -60,7 +60,7 @@ const baseMetadataFields = {
 
 export const blogPostMetadataSchema = v.object({
   ...baseMetadataFields,
-  origDate: v.optional(v.union([v.pipe(v.date()), v.pipe(v.string(), v.isoDateTime(), v.trim())])),
+  origDate: v.optional(v.union([v.pipe(v.date()), v.pipe(v.string(), v.trim())])),
 })
 
 export const blogArticleMetadataSchema = v.object({
@@ -69,12 +69,12 @@ export const blogArticleMetadataSchema = v.object({
   source: v.optional(v.pipe(v.string(), v.url(), v.trim())),
   author: optionalTrimmedString,
   authorURL: v.optional(v.pipe(v.string(), v.url(), v.trim())),
-  origDate: v.union([v.pipe(v.date()), v.pipe(v.string(), v.isoDateTime(), v.trim())]),
+  origDate: v.union([v.pipe(v.date()), v.pipe(v.string(), v.trim())]),
 })
 
 export const blogFontMetadataSchema = v.object({
   ...baseMetadataFields,
-  origDate: v.optional(v.union([v.pipe(v.date()), v.pipe(v.string(), v.isoDateTime(), v.trim())])),
+  origDate: v.optional(v.union([v.pipe(v.date()), v.pipe(v.string(), v.trim())])),
 })
 
 // --- Generic metadata helpers ---
@@ -144,7 +144,7 @@ export function getBlogFontsMetadata() {
 export function getAllBlogContentMetadata() {
   const posts = getBlogPostsMetadata().map((p) => ({
     ...p,
-    origDate: undefined as undefined,
+    origDate: p.origDate,
     media: undefined as string | undefined,
   }))
   const articles = getBlogArticlesMetadata().map((a) => ({
