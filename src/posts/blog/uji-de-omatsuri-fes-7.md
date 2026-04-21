@@ -119,4 +119,6 @@ pubDate: 2026-04-22T01:45
 
 ::figure{src="photo/IMG_1283.HEIC"}
 
-::figure{src="photo/IMG_1284.HEIC"}
+:::figure{src="photo/IMG_1284.HEIC"}
+멀어지는 간사이 국제공항.
+:::
