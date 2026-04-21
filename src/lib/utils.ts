@@ -18,6 +18,8 @@ export function getCategoryName(category: string) {
       return '기사 번역'
     case 'font':
       return '폰트'
+    case 'blog':
+      return '블로그'
     default:
       return category
   }
