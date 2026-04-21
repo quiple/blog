@@ -4,7 +4,7 @@ media: 신초샤
 source: https://www.thebackhornsuminoyoru.com/discussion.html
 author: 요시다 다이스케 (吉田大助)
 authorURL: https://x.com/readabookreview
-image: pic_discus_01.png
+image: article/pic_discus_01.png
 imageVerticalAlign: 10
 imageForeground: fff
 origDate: 2020-09-09

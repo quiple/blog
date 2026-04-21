@@ -4,7 +4,7 @@ media: 음악 나탈리
 source: https://natalie.mu/music/pp/okazakitaiiku
 author: 나카노 메이코 (中野明子)
 authorURL: https://x.com/nmeiko
-image: header-bg1.png
+image: article/header-bg1.png
 imageVerticalAlign: 30
 imageForeground: fff
 origDate: 2016-05-18

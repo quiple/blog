@@ -152,7 +152,7 @@
                   }
                 </style>
               `}
-              {@const rawSrc = `${baseUrl}/img/${post.category}/${post.image}`}
+              {@const rawSrc = `${baseUrl}/img/${post.image}`}
               {@const src = isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc}
               <div
                 class="img bg-muted animate-pulse"

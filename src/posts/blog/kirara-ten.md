@@ -1,5 +1,6 @@
 ---
 title: 망가타임 키라라전
+image: photo/DSC_0193_Original.JPG
 origDate: 2018-11-21
 pubDate: 2026-04-21T23:59
 ---

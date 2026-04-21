@@ -4,7 +4,7 @@ media: 리얼사운드
 source: https://realsound.jp/movie/2024/08/post-1747342.html
 author: 스기모토 호타카 (杉本穂高)
 authorURL: https://x.com/Hotakasugi
-image: 20240813-girlsbandcry-5.png
+image: article/20240813-girlsbandcry-5.png
 imageForeground: fff
 origDate: 2024-08-14T18:00
 pubDate: 2025-12-29T16:00

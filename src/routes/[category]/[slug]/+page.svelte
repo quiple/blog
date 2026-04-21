@@ -27,7 +27,7 @@
   const isArticle = $derived(data.category === 'article')
   const isFont = $derived(data.category === 'font')
 
-  const rawSrc = $derived(`${baseUrl}/img/${data.category}/${data.image}`)
+  const rawSrc = $derived(`${baseUrl}/img/${data.image}`)
   const image = $derived(data.image ? (isProd ? `/cdn-cgi/image/w=3840,f=avif,q=75/${rawSrc}` : rawSrc) : '')
   const thumbnailImage = $derived(isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc)
   const publishedDate = $derived(data.origDate ?? data.pubDate)
