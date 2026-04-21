@@ -23,6 +23,8 @@ pubDate: 2026-04-21T23:59
 
 ::figure{src="photo/DSC_0206_Original.JPG"}
 
+::figure{src="photo/DSC_0211_Original.JPG" class="max-h-200"}
+
 ::figure{src="photo/DSC_0221_Original.JPG"}
 
 ::figure{src="photo/DSC_0222_Original.JPG" class="max-h-200"}
