@@ -31,9 +31,9 @@ pubDate: 2026-04-22T01:45
 
 ::figure{src="photo/IMG_1195.HEIC"}
 
-:::figure{src="photo/IMG_1197.HEIC"}
+::figure{src="photo/IMG_1197.HEIC"}
+
 종료 직전이라 그런지 손님이 나밖에 없다.
-:::
 
 ::figure{src="photo/IMG_1200.HEIC"}
 
