@@ -25,9 +25,9 @@ pubDate: 2026-04-22T01:45
 
 ::figure{src="photo/IMG_1194.HEIC"}
 
-:::figure{src="photo/IMG_1196.HEIC"}
-복스 오사카 쇼룸(ボークス大阪ショールーム) 4층에서 열린 유유시키 팝업 샵.
-:::
+먼저 복스 오사카 쇼룸(ボークス大阪ショールーム) 4층에서 열린 유유시키 팝업 샵에 방문했다.
+
+::figure{src="photo/IMG_1196.HEIC"}
 
 ::figure{src="photo/IMG_1195.HEIC"}
 
@@ -39,7 +39,9 @@ pubDate: 2026-04-22T01:45
 
 ::figure{src="photo/IMG_1202.HEIC" class="max-h-200"}
 
-::figure{src="photo/IMG_1203.HEIC"}
+:::figure{src="photo/IMG_1203.HEIC"}
+짱룡.
+:::
 
 :::figure{src="photo/IMG_1220.PNG" class="max-h-200"}
 내 위치 -> 우지시 문화회관: 13분 (800미터) --- 대부분 평지.
