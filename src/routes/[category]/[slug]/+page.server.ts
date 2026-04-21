@@ -34,6 +34,7 @@ export const load: PageServerLoad = async ({params}) => {
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
   if (!rawContent) return error(404)
   const {content, data} = matter(rawContent as string)
+  const isBlog = params.category === 'blog'
   const isArticle = params.category === 'article'
   const isFont = params.category === 'font'
   const postMetaData = isArticle
@@ -63,13 +64,14 @@ export const load: PageServerLoad = async ({params}) => {
       .process(preprocessMdx(content))
   ).toString()
 
+  const blogData = isBlog ? (postMetaData as ReturnType<typeof getPostMetadataFromMatter>) : undefined
   const articleData = isArticle ? (postMetaData as ReturnType<typeof getArticleMetadataFromMatter>) : undefined
   const fontData = isFont ? (postMetaData as ReturnType<typeof getFontMetadataFromMatter>) : undefined
 
   return {
     ...postMetaData,
     contentHtml,
-    origDate: articleData?.origDate ?? fontData?.origDate,
+    origDate: articleData?.origDate ?? fontData?.origDate ?? blogData?.origDate,
     media: articleData?.media,
     source: articleData?.source,
     author: articleData?.author,
