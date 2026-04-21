@@ -13,6 +13,9 @@
   }
 
   let {title, category, image, imageForeground}: Props = $props()
+
+  const isProd = import.meta.env.PROD
+  const baseUrl = isProd ? 'https://quiple.dev' : ''
 </script>
 
 <main
@@ -21,6 +24,8 @@
   style:font-family="Geista, 'IBM Plex Sans JP', 'IBM Plex Sans KR', sans-serif"
 >
   {#if image}
+    {@const rawSrc = `${baseUrl}/img/${image}`}
+    {@const src = isProd ? `/cdn-cgi/image/h=630,f=png/${rawSrc}` : rawSrc}
     <img
       src={`${BASE_URL}/img/${image}`}
       alt={title}
