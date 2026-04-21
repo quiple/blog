@@ -51,9 +51,9 @@ pubDate: 2026-04-22T01:23
     2. 心臓が止まるまでは
     3. さらば､あの日
 
-:::figure{src="photo/IMG_0154_Original.HEIC"}
-스튜디오 코스트. 2022년 1월 30일을 끝으로 폐관해 이제는 볼 수 없다.
-:::
+::figure{src="photo/IMG_0154_Original.HEIC"}
+
+스튜디오 코스트는 2022년 1월 30일을 끝으로 폐관해 이제는 볼 수 없다.
 
 ::figure{src="photo/IMG_0156_Original.HEIC"}
 
