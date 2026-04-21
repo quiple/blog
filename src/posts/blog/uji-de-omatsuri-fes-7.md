@@ -35,9 +35,11 @@ pubDate: 2026-04-22T01:45
 
 ::figure{src="photo/IMG_1203.HEIC"}
 
-::figure{src="photo/IMG_1219.HEIC"}
+:::figure{src="photo/IMG_1220.PNG" class="max-h-200"}
+내 위치 -> 우지시 문화회관: 13분 (800미터) --- 대부분 평지.
+:::
 
-::figure{src="photo/IMG_1220.PNG" class="max-h-200"}
+::figure{src="photo/IMG_1219.HEIC"}
 
 ::figure{src="photo/IMG_1221.HEIC"}
 
