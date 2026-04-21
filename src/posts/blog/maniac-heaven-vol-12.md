@@ -6,7 +6,9 @@ origDate: 2019-08-12
 pubDate: 2026-04-22T01:23
 ---
 
-::figure{src="photo/IMG_0145_Original.HEIC"}
+:::figure{src="photo/IMG_0145_Original.HEIC"}
+스루가야 신주쿠 마루이 아넥스점(駿河屋新宿マルイアネックス店)에서 공연하던 이름 모를 아티스트.
+:::
 
 ::figure{src="photo/IMG_0148_Original.HEIC"}
 
