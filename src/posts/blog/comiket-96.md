@@ -1,5 +1,5 @@
 ---
-title: 코믹 마켓 96
+title: 코믹마켓96
 image: photo/IMG_0135_Original.HEIC
 imageForeground: fff
 origDate: 2019-08-12
@@ -87,6 +87,8 @@ pubDate: 2026-04-22T01:05
 ::figure{src="photo/IMG_0138_Original.HEIC"}
 
 ::figure{src="photo/IMG_0135_Original.HEIC"}
+
+코믹마켓은 이번 개최부터 입장료를 받기 시작했다.
 
 ::figure{src="photo/IMG_0139_Original.HEIC"}
 
