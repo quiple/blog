@@ -25,9 +25,9 @@
 >
   {#if image}
     {@const rawSrc = `${baseUrl}/img/${image}`}
-    {@const src = isProd ? `/cdn-cgi/image/h=630,f=png/${rawSrc}` : rawSrc}
+    {@const src = isProd ? `${baseUrl}/cdn-cgi/image/h=630,f=png/${rawSrc}` : rawSrc}
     <img
-      src={`${BASE_URL}/img/${image}`}
+      {src}
       alt={title}
       class="h-full w-full"
       style="position: absolute; object-fit: cover; object-position: center"
