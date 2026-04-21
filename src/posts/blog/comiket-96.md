@@ -10,7 +10,7 @@ pubDate: 2026-04-22T01:05
 
 ::figure{src="photo/IMG_0096_Original.HEIC"}
 
-::figure{src="photo/IMG_0099_Original.HEIC"}
+::figure{src="photo/IMG_0099_Original.HEIC" class="max-h-200"}
 
 ::figure{src="photo/IMG_0104_Original.HEIC"}
 
@@ -38,15 +38,15 @@ pubDate: 2026-04-22T01:05
 
 ::figure{src="photo/IMG_0117_Original.HEIC"}
 
-::figure{src="photo/IMG_0119_Original.HEIC"}
+::figure{src="photo/IMG_0119_Original.HEIC" class="max-h-200"}
 
-::figure{src="photo/IMG_0120_Original.HEIC"}
+::figure{src="photo/IMG_0120_Original.HEIC" class="max-h-200"}
 
 ::figure{src="photo/IMG_0121_Original.JPG"}
 
-::figure{src="photo/IMG_0127_Original.HEIC"}
+::figure{src="photo/IMG_0127_Original.HEIC" class="max-h-200"}
 
-::figure{src="photo/IMG_0128_Original.HEIC"}
+::figure{src="photo/IMG_0128_Original.HEIC" class="max-h-200"}
 
 ::figure{src="photo/IMG_0129_Original.HEIC"}
 
