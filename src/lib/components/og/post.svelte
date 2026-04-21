@@ -22,7 +22,7 @@
 >
   {#if image}
     <img
-      src={`${BASE_URL}/img/${category}/${image}`}
+      src={`${BASE_URL}/img/${image}`}
       alt={title}
       class="h-full w-full"
       style="position: absolute; object-fit: cover; object-position: center"
