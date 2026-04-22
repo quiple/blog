@@ -1,0 +1,46 @@
+import {error} from '@sveltejs/kit'
+import type {RequestHandler} from './$types'
+
+export const GET: RequestHandler = async ({params, url, fetch}) => {
+  const {path} = params
+  if (!path) throw error(400, 'Missing path')
+
+  let decodedPath: string
+  try {
+    // Decode URL-safe base64 path
+    let base64 = path.replace(/-/g, '+').replace(/_/g, '/')
+    while (base64.length % 4) base64 += '='
+    decodedPath = atob(base64)
+  } catch (e) {
+    // Fallback if not base64
+    decodedPath = path
+  }
+
+  // Ensure decodedPath doesn't start with /
+  decodedPath = decodedPath.replace(/^\//, '')
+
+  // Internal URL to the original image
+  // Using relative path to the same origin is preferred in Cloudflare
+  const imageUrl = `/img/${decodedPath}`
+
+  // Resizing options from query parameters
+  const width = url.searchParams.get('w')
+  const height = url.searchParams.get('h')
+  const quality = url.searchParams.get('q') || '75'
+  const format = url.searchParams.get('f') || 'avif'
+
+  // If width or height is provided, use Cloudflare Image Resizing
+  // Otherwise just fetch the original (but maybe still through cf for caching)
+  const options: any = {
+    quality: parseInt(quality),
+    format,
+  }
+  if (width) options.width = parseInt(width)
+  if (height) options.height = parseInt(height)
+
+  return fetch(imageUrl, {
+    cf: {
+      image: options,
+    },
+  })
+}

@@ -10,7 +10,7 @@ import {
 import imageSizes from '$lib/image-sizes.json'
 import {generateDescription, processTitle} from '$lib/markdown'
 import {mdxHandlers, preprocessMdx} from '$lib/mdx'
-import {cn} from '$lib/utils'
+import {cn, getImageUrl} from '$lib/utils'
 import matter from 'gray-matter'
 import type {Root} from 'mdast'
 import rehypeExternalLinks from 'rehype-external-links'
@@ -135,16 +135,13 @@ function figure() {
       if (node.type === 'containerDirective' || node.type === 'leafDirective') {
         if (node.name !== 'figure' && node.name !== 'youtube' && node.name !== 'spotify') return
 
-        const baseUrl = isProd ? 'https://quiple.dev' : ''
-
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
-        const rawSrc = `${baseUrl}/img/${attributes.src?.replace('\\_', '_')}`
-        const src = isProd ? `/cdn-cgi/image/width=1280,format=avif,quality=75/${rawSrc}` : rawSrc
+        const srcClean = attributes.src?.replace('\\_', '_') || ''
+        const src = getImageUrl(srcClean, {w: 1280}, isProd)
         const id = attributes.id
         const className = attributes.class ?? ''
 
-        const srcClean = attributes.src?.replace('\\_', '_') || ''
         const sizeInfo = (imageSizes as Record<string, {width: number; height: number}>)[srcClean]
         const widthVal = attributes.width || sizeInfo?.width || ''
         const heightVal = attributes.height || sizeInfo?.height || ''

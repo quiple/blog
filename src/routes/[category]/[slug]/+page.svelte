@@ -7,7 +7,7 @@
   import * as Tooltip from '$lib/components/ui/tooltip/index.js'
   import {BASE_URL} from '$lib/constants'
   import {heroColors} from '$lib/stores/header'
-  import {getCategoryName} from '$lib/utils'
+  import {getCategoryName, getImageUrl} from '$lib/utils'
   import {mode} from 'mode-watcher'
   import type {PageProps} from './$types'
   import 'remark-github-alerts/styles/github-colors-light.css'
@@ -27,9 +27,8 @@
   const isArticle = $derived(data.category === 'article')
   const isFont = $derived(data.category === 'font')
 
-  const rawSrc = $derived(`${baseUrl}/img/${data.image}`)
-  const image = $derived(data.image ? (isProd ? `/cdn-cgi/image/w=3840,f=avif,q=75/${rawSrc}` : rawSrc) : '')
-  const thumbnailImage = $derived(isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc)
+  const image = $derived(data.image ? getImageUrl(data.image, {w: 3840}, isProd) : '')
+  const thumbnailImage = $derived(data.image ? getImageUrl(data.image, {h: 180}, isProd) : '')
   const publishedDate = $derived(data.origDate ?? data.pubDate)
   const publishedDateObj = $derived(
     typeof publishedDate === 'object' ? (publishedDate as Date) : new Date(`${publishedDate}+09:00`),

@@ -33,6 +33,7 @@
     type MessageItem,
   } from '$lib/message-maker/renderer'
   import students, {type Student} from '$lib/message-maker/students'
+  import {getImageUrl} from '$lib/utils'
 
   const isProd = import.meta.env.PROD
   const baseUrl = isProd ? 'https://quiple.dev' : ''
@@ -530,8 +531,7 @@
             {#if msg.type === 'left'}
               <div class="flex items-center gap-1">
                 {#if msg.portrait}
-                  {@const rawSrc = `${baseUrl}${msg.portrait}`}
-                  {@const src = isProd ? `/cdn-cgi/image/h=48,f=avif,q=75/${rawSrc}` : rawSrc}
+                  {@const src = getImageUrl(msg.portrait.replace('/img/', ''), {h: 48}, isProd)}
                   <div class="inner-border rounded-full after:rounded-full">
                     <img class="size-6 object-cover scale-110" {src} alt={msg.name} />
                   </div>
@@ -818,8 +818,7 @@
           style="position: absolute; top: {vsStartRow * vsRowHeight}px; left: 0; right: 0;"
         >
           {#each vsVisibleStudents as { student, globalIndex } (student.name.en)}
-            {@const rawSrc = `${baseUrl}/img/blue-archive/${student.portrait[0]}.png`}
-            {@const src = isProd ? `/cdn-cgi/image/h=128,f=avif,q=75/${rawSrc}` : rawSrc}
+            {@const src = getImageUrl(student.portrait[0], {h: 128}, isProd)}
             <div class="flex flex-col">
               <Button
                 variant="ghost"
@@ -869,8 +868,7 @@
                   ]}
                 >
                   {#each student.portrait as p, pi}
-                    {@const altRawSrc = `${baseUrl}/img/blue-archive/${p}.png`}
-                    {@const altSrc = isProd ? `/cdn-cgi/image/h=128,f=avif,q=75/${altRawSrc}` : altRawSrc}
+                    {@const altSrc = getImageUrl(p, {h: 128}, isProd)}
                     <button
                       class="size-16 rounded-full after:rounded-full p-0 inner-border group"
                       onclick={() => selectStudent(student, pi)}
@@ -948,7 +946,7 @@
               : editPortraitUrl}
             {@const editPreviewSrc =
               isProd && editPortraitUrl.startsWith('/img/')
-                ? `/cdn-cgi/image/h=160,f=avif,q=75/${editPreviewRawSrc}`
+                ? getImageUrl(editPortraitUrl.replace('/img/', ''), {h: 160}, isProd)
                 : editPreviewRawSrc}
             <div class="shrink-0 inner-border rounded-full after:rounded-full">
               <img class="size-20 object-cover" src={editPreviewSrc} alt="미리보기" />

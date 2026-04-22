@@ -2,7 +2,7 @@
   import {navigating} from '$app/state'
   import {Badge} from '$lib/components/ui/badge/index.js'
   import {Skeleton} from '$lib/components/ui/skeleton/index.js'
-  import {getCategoryName} from '$lib/utils'
+  import {getCategoryName, getImageUrl} from '$lib/utils'
   import type {Action} from 'svelte/action'
 
   let {
@@ -152,8 +152,7 @@
                   }
                 </style>
               `}
-              {@const rawSrc = `${baseUrl}/img/${post.image}`}
-              {@const src = isProd ? `/cdn-cgi/image/h=180,f=avif,q=75/${rawSrc}` : rawSrc}
+              {@const src = getImageUrl(post.image, {h: 180}, isProd)}
               <div
                 class="img bg-muted animate-pulse"
                 use:transition={{

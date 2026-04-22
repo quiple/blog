@@ -3,7 +3,7 @@
 <script lang="ts">
   import Q from '$lib/components/q.svelte'
   import {BASE_URL} from '$lib/constants'
-  import {getCategoryName} from '$lib/utils'
+  import {getCategoryName, getImageUrl} from '$lib/utils'
 
   type Props = {
     title: string
@@ -24,8 +24,7 @@
   style:font-family="Geista, 'IBM Plex Sans JP', 'IBM Plex Sans KR', sans-serif"
 >
   {#if image}
-    {@const rawSrc = `${baseUrl}/img/${image}`}
-    {@const src = isProd ? `${baseUrl}/cdn-cgi/image/h=630,f=png/${rawSrc}` : rawSrc}
+    {@const src = getImageUrl(image, {h: 630, f: 'png'}, isProd)}
     <img
       {src}
       alt={title}

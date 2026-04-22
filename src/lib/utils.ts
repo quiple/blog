@@ -24,3 +24,23 @@ export function getCategoryName(category: string) {
       return category
   }
 }
+
+export function getImageUrl(
+  path: string,
+  options: {w?: number; h?: number; q?: number; f?: string} = {},
+  isProd = false,
+) {
+  if (!isProd) return `/img/${path}`
+
+  // Base64 encode and make it URL safe
+  const b64 = typeof btoa !== 'undefined' ? btoa(path) : Buffer.from(path).toString('base64')
+  const encodedPath = b64.replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '')
+  const params = new URLSearchParams()
+  if (options.w) params.set('w', options.w.toString())
+  if (options.h) params.set('h', options.h.toString())
+  if (options.q) params.set('q', options.q.toString())
+  if (options.f) params.set('f', options.f.toString())
+
+  const queryString = params.toString()
+  return `/api/img/${encodedPath}${queryString ? `?${queryString}` : ''}`
+}
