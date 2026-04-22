@@ -24,7 +24,7 @@
   style:font-family="Geista, 'IBM Plex Sans JP', 'IBM Plex Sans KR', sans-serif"
 >
   {#if image}
-    {@const src = getImageUrl(image, {h: 630, f: 'png'}, isProd)}
+    {@const src = getImageUrl(image, {h: 630, f: 'png', absolute: true}, isProd)}
     <img
       {src}
       alt={title}
