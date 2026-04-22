@@ -39,6 +39,10 @@ export const GET: RequestHandler = async ({params, url, fetch}) => {
   if (height) options.height = parseInt(height)
 
   return fetch(imageUrl, {
+    headers: {
+      // 이 키는 Cloudflare WAF 설정과 일치해야 합니다.
+      'X-Internal-Secret': 'fb5328098e2fab0277635ff61df13870',
+    },
     cf: {
       image: options,
     },
