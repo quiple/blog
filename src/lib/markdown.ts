@@ -42,7 +42,7 @@ export async function generateDescription(content: string): Promise<string> {
     .toString()
     .replaceAll('\n', ' ')
     .replaceAll('  ', ' ')
-    .replaceAll(/:::figure[\s\S]*?:::/g, '')
+    .replaceAll(/:::figure\{[\s\S]*?\}\n?([\s\S]*?)\n?:::/g, '$1')
     .replaceAll(/::figure\{[\s\S]*?\}/g, '')
     .trim()
 
