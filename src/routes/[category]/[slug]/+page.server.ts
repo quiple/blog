@@ -59,6 +59,7 @@ export const load: PageServerLoad = async ({params}) => {
       .use(remarkGithubAlerts)
       // @ts-expect-error Types of handlers don't perfectly match remark-rehype's expected types
       .use(remarkRehype, {allowDangerousHtml: true, handlers: mdxHandlers()})
+      .use(rehypeImageSizes)
       .use(smartypants, {dashes: 'oldschool'})
       .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow', 'noreferrer', 'noopener']})
       .use(rehypeStringify, {allowDangerousHtml: true})
@@ -77,6 +78,54 @@ export const load: PageServerLoad = async ({params}) => {
     source: articleData?.source,
     author: articleData?.author,
     authorURL: articleData?.authorURL,
+  }
+}
+
+function rehypeImageSizes() {
+  return (tree: any) => {
+    visit(tree, 'element', (node) => {
+      if (node.tagName === 'img') {
+        const src = node.properties.src
+        if (!src) return
+
+        let srcClean = src
+        const baseUrl = isProd ? 'https://quiple.dev' : ''
+
+        // Handle Cloudflare Image Resizing and other prefixes
+        if (src.includes('/img/')) {
+          srcClean = src.split('/img/').pop() || ''
+        } else if (src.startsWith(baseUrl)) {
+          srcClean = src.replace(baseUrl, '')
+        }
+
+        // Remove any remaining leading slashes
+        srcClean = srcClean.replace(/^\//, '')
+
+        const sizeInfo = (imageSizes as Record<string, {width: number; height: number}>)[srcClean]
+        if (sizeInfo) {
+          node.properties.width = node.properties.width || sizeInfo.width
+          node.properties.height = node.properties.height || sizeInfo.height
+          node.properties.loading = node.properties.loading || 'lazy'
+          node.properties.decoding = node.properties.decoding || 'async'
+
+          const ratio = `${sizeInfo.width} / ${sizeInfo.height}`
+          const existingStyle = node.properties.style || ''
+          if (!existingStyle.includes('aspect-ratio')) {
+            node.properties.style = `${existingStyle}${existingStyle ? ';' : ''} aspect-ratio: ${ratio};`.trim()
+          }
+        }
+      } else if (
+        node.tagName === 'iframe' &&
+        (node.properties.src?.includes('youtube.com') || node.properties.className?.includes('aspect-video'))
+      ) {
+        // Ensure iframes have aspect-ratio even if missing attributes
+        const existingStyle = node.properties.style || ''
+        if (!existingStyle.includes('aspect-ratio')) {
+          node.properties.style =
+            `${existingStyle}${existingStyle ? ';' : ''} aspect-ratio: 16 / 9; width: 100%; height: auto;`.trim()
+        }
+      }
+    })
   }
 }
 
@@ -110,9 +159,9 @@ function figure() {
         if (node.name === 'figure') {
           wrapperClass = cn(wrapperClass, className)
           if (widthVal && heightVal) {
-            wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${widthVal}px; width: 100%;"`
+            wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: min(100%, ${widthVal}px); width: fit-content;"`
           }
-          content = `<img class="not-prose w-full h-auto block" src="${src}" ${widthAttr} ${heightAttr} loading="lazy" decoding="async" />`
+          content = `<img class="not-prose w-full h-full block" src="${src}" ${widthAttr} ${heightAttr} loading="lazy" decoding="async" />`
         } else if (node.name === 'youtube') {
           content = `<iframe class="${cn('aspect-video w-full', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
         } else if (node.name === 'spotify') {
