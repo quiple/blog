@@ -117,7 +117,9 @@ pubDate: 2026-04-23T01:03
 
 ::figure{src="photo/IMG_3046.HEIC"}
 
-::figure{src="photo/IMG_3048.HEIC"}
+:::figure{src="photo/IMG_3048.HEIC"}
+신권 지폐를 안 먹는 까탈스러운 자판기.
+:::
 
 ::figure{src="photo/IMG_3050.HEIC" class="max-h-200"}
 
