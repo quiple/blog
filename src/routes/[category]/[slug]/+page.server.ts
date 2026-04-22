@@ -7,6 +7,7 @@ import {
   getFontMetadataFromMatter,
   getPostMetadataFromMatter,
 } from '$lib/content'
+import imageSizes from '$lib/image-sizes.json'
 import {generateDescription, processTitle} from '$lib/markdown'
 import {mdxHandlers, preprocessMdx} from '$lib/mdx'
 import {cn} from '$lib/utils'
@@ -93,7 +94,15 @@ function figure() {
         const src = isProd ? `/cdn-cgi/image/width=1280,format=avif,quality=75/${rawSrc}` : rawSrc
         const id = attributes.id
         const className = attributes.class ?? ''
-        const img = `<img class="${cn('not-prose', className)}" src="${src}" loading="lazy" decoding="async" />`
+
+        const srcClean = attributes.src?.replace('\\_', '_') || ''
+        const sizeInfo = (imageSizes as Record<string, {width: number; height: number}>)[srcClean]
+        const widthVal = attributes.width || sizeInfo?.width || ''
+        const heightVal = attributes.height || sizeInfo?.height || ''
+
+        const width = widthVal ? `width="${widthVal}"` : ''
+        const height = heightVal ? `height="${heightVal}"` : ''
+        const img = `<img class="${cn('not-prose', className)}" src="${src}" ${width} ${height} loading="lazy" decoding="async" />`
         const youtube = `<iframe class="${cn('aspect-video', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
         const spotify = `<iframe class="${className}" data-testid="embed-iframe" src="https://open.spotify.com/embed/${id?.replace(':', '/')}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" decoding="async"></iframe>`
 

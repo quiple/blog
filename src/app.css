@@ -252,6 +252,7 @@
     @apply border-border;
   }
   img {
+    @apply h-auto w-auto max-w-full;
     content-visibility: auto;
   }
 }
