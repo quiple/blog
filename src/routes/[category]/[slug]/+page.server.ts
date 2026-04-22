@@ -100,16 +100,24 @@ function figure() {
         const widthVal = attributes.width || sizeInfo?.width || ''
         const heightVal = attributes.height || sizeInfo?.height || ''
 
-        const width = widthVal ? `width="${widthVal}"` : ''
-        const height = heightVal ? `height="${heightVal}"` : ''
-        const style = widthVal && heightVal ? `style="aspect-ratio: ${widthVal} / ${heightVal}"` : ''
-        const img = `<img class="${cn('not-prose', className)}" src="${src}" ${width} ${height} ${style} loading="lazy" decoding="async" />`
-        const youtube = `<iframe class="${cn('aspect-video', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
-        const spotify = `<iframe class="${className}" data-testid="embed-iframe" src="https://open.spotify.com/embed/${id?.replace(':', '/')}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" decoding="async"></iframe>`
+        const widthAttr = widthVal ? `width="${widthVal}"` : ''
+        const heightAttr = heightVal ? `height="${heightVal}"` : ''
 
-        let content = img
-        if (node.name === 'youtube') content = youtube
-        if (node.name === 'spotify') content = spotify
+        let content = ''
+        let wrapperStyle = ''
+        let wrapperClass = cn('mx-auto self-center', node.name !== 'figure' && 'after:hidden')
+
+        if (node.name === 'figure') {
+          wrapperClass = cn(wrapperClass, className)
+          if (widthVal && heightVal) {
+            wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${widthVal}px; width: 100%;"`
+          }
+          content = `<img class="not-prose w-full h-auto block" src="${src}" ${widthAttr} ${heightAttr} loading="lazy" decoding="async" />`
+        } else if (node.name === 'youtube') {
+          content = `<iframe class="${cn('aspect-video w-full', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
+        } else if (node.name === 'spotify') {
+          content = `<iframe class="${cn('w-full', className)}" data-testid="embed-iframe" src="https://open.spotify.com/embed/${id?.replace(':', '/')}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" decoding="async"></iframe>`
+        }
 
         data.hName = 'figure'
         node.children =
@@ -117,13 +125,13 @@ function figure() {
             ? [
                 {
                   type: 'html',
-                  value: `<div class="self-center ${node.name !== 'figure' && 'after:hidden'}">${content}</div>`,
+                  value: `<div class="${wrapperClass}" ${wrapperStyle}>${content}</div>`,
                 },
               ]
             : [
                 {
                   type: 'html',
-                  value: `<div class="self-center ${node.name !== 'figure' && 'after:hidden'}">${content}</div><figcaption>`,
+                  value: `<div class="${wrapperClass}" ${wrapperStyle}>${content}</div><figcaption>`,
                 },
                 // @ts-ignore
                 ...node.children[0].children,
