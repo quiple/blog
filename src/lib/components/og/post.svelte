@@ -24,7 +24,8 @@
   style:font-family="Geista, 'IBM Plex Sans JP', 'IBM Plex Sans KR', sans-serif"
 >
   {#if image}
-    {@const src = getImageUrl(image, {h: 630, f: 'png', absolute: true}, isProd)}
+    {@const rawSrc = `https://quiple.dev/img/${image}`}
+    {@const src = isProd ? `https://quiple.dev/cdn-cgi/image/h=630,f=png/${rawSrc}` : rawSrc}
     <img
       {src}
       alt={title}
