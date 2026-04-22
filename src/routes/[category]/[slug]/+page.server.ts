@@ -93,7 +93,7 @@ function figure() {
         const src = isProd ? `/cdn-cgi/image/width=1280,format=avif,quality=75/${rawSrc}` : rawSrc
         const id = attributes.id
         const className = attributes.class ?? ''
-        const img = `<img class="${cn('not-prose', className)}" src="${src}" />`
+        const img = `<img class="${cn('not-prose', className)}" src="${src}" loading="lazy" />`
         const youtube = `<iframe class="${cn('aspect-video', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>`
         const spotify = `<iframe class="${className}" data-testid="embed-iframe" src="https://open.spotify.com/embed/${id?.replace(':', '/')}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>`
 
