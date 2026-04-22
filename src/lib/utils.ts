@@ -27,10 +27,12 @@ export function getCategoryName(category: string) {
 
 export function getImageUrl(
   path: string,
-  options: {w?: number; h?: number; q?: number; f?: string} = {},
+  options: {w?: number; h?: number; q?: number; f?: string; absolute?: boolean} = {},
   isProd = false,
 ) {
-  if (!isProd) return `/img/${path}`
+  const baseUrl = options.absolute ? 'https://quiple.dev' : ''
+
+  if (!isProd) return `${baseUrl}/img/${path}`
 
   // Base64 encode and make it URL safe
   const b64 = typeof btoa !== 'undefined' ? btoa(path) : Buffer.from(path).toString('base64')
@@ -42,5 +44,5 @@ export function getImageUrl(
   if (options.f) params.set('f', options.f.toString())
 
   const queryString = params.toString()
-  return `/api/img/${encodedPath}${queryString ? `?${queryString}` : ''}`
+  return `${baseUrl}/api/img/${encodedPath}${queryString ? `?${queryString}` : ''}`
 }
