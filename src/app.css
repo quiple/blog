@@ -252,7 +252,7 @@
     @apply border-border;
   }
   img {
-    @apply max-w-full;
+    @apply h-auto max-w-full;
   }
 }
 
