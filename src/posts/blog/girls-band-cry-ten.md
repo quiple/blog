@@ -151,11 +151,11 @@ pubDate: 2026-04-22T14:22
 
 ::figure{src="photo/IMG_2472.HEIC" class="max-h-200"}
 
-:::figure{src="photo/IMG_2476.HEIC"}
+::figure{src="photo/IMG_2476.HEIC"}
+
+:::figure{src="photo/IMG_2477.HEIC"}
 니나가 난폭하게 전등을 휘둘렀던 그 장소.
 :::
-
-::figure{src="photo/IMG_2477.HEIC"}
 
 :::figure{src="photo/IMG_2479.HEIC"}
 도쿄 가와사키에 위치한 신메이 신사(神明神社).
