@@ -251,6 +251,9 @@
   tbody tr {
     @apply border-border;
   }
+  img {
+    content-visibility: auto;
+  }
 }
 
 ::view-transition-group(header) {
