@@ -9,11 +9,15 @@ pubDate: 2026-04-22T14:22
 
 ::figure{src="photo/IMG_2392.HEIC"}
 
-::figure{src="photo/IMG_2393.HEIC"}
+:::figure{src="photo/IMG_2393.HEIC"}
+인천국제공항에 주기한 티웨이항공 TW241편 HL8306기. 포켓몬스터 컬래버레이션 '피카츄제트 TW' 도장이다.
+:::
 
 ::figure{src="photo/IMG_2396.HEIC"}
 
 ::figure{src="photo/IMG_2397.HEIC" class="max-h-200"}
+
+걸즈 밴드 크라이전은 도쿄 이케부쿠로 선샤인시티 전시홀 A에서 개최되었다. 작년 망가타임 키라라전 파이널이 개최되었던 바로 그 위치이다.
 
 ::figure{src="photo/IMG_2399.HEIC"}
 
@@ -159,9 +163,13 @@ pubDate: 2026-04-22T14:22
 
 ::figure{src="photo/IMG_2483.HEIC" class="max-h-200"}
 
-::figure{src="photo/IMG_2486.HEIC"}
+:::figure{src="photo/IMG_2486.HEIC"}
+야코역.
+:::
 
 ::figure{src="photo/IMG_2490.HEIC" class="max-h-200"}
+
+걸즈 밴드 크라이 작중 등장하는 카페 에쿠푸리(えくぷり).
 
 ::figure{src="photo/IMG_2491.HEIC" class="max-h-200"}
 
@@ -180,6 +188,8 @@ pubDate: 2026-04-22T14:22
 ::figure{src="photo/IMG_2502.HEIC"}
 
 ::figure{src="photo/IMG_2540.heic"}
+
+스티커를 받았다.
 
 ::figure{src="photo/IMG_2503.HEIC" class="max-h-200"}
 
