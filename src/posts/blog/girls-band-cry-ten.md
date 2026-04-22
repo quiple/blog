@@ -152,7 +152,7 @@ pubDate: 2026-04-22T14:22
 ::figure{src="photo/IMG_2472.HEIC" class="max-h-200"}
 
 :::figure{src="photo/IMG_2476.HEIC"}
-니나가 전등을 난폭하게 휘둘렀던 그 장소.
+니나가 난폭하게 전등을 휘둘렀던 그 장소.
 :::
 
 ::figure{src="photo/IMG_2477.HEIC"}
