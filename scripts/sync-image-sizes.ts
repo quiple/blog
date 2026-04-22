@@ -1,6 +1,9 @@
 import fs from 'fs/promises'
 import path from 'path'
 import probe from 'probe-image-size'
+import {remark} from 'remark'
+import remarkDirective from 'remark-directive'
+import {visit} from 'unist-util-visit'
 
 const POSTS_DIR = path.resolve('src/posts')
 const SIZES_FILE = path.resolve('src/lib/image-sizes.json')
@@ -30,32 +33,51 @@ async function run() {
   }
 
   const files = await getMarkdownFiles(POSTS_DIR)
-  const srcRegex = /::figure(?:\{[^}]*?src=["']([^"']+)["'][^}]*?\})/g
+
+  // Use remark to parse files and find all images and figures
+  const processor = remark().use(remarkDirective)
 
   let addedCount = 0
 
   for (const file of files) {
     const content = await fs.readFile(file, 'utf-8')
-    let match
+    const tree = processor.parse(content)
 
-    while ((match = srcRegex.exec(content)) !== null) {
-      const src = match[1].replace('\\_', '_') // as done in +page.server.ts
+    visit(tree, (node) => {
+      let src = ''
 
-      if (sizes[src]) {
-        continue // Already fetched
+      if (node.type === 'image' && typeof node.url === 'string') {
+        src = node.url
+      } else if ((node.type === 'containerDirective' || node.type === 'leafDirective') && node.name === 'figure') {
+        const attributes = (node.attributes as Record<string, string>) || {}
+        src = attributes.src
       }
 
-      const url = `${IMAGE_BASE_URL}/${src}`
-      console.log(`Probing: ${url}...`)
+      if (!src) return
 
-      try {
-        const result = await probe(url)
-        sizes[src] = {width: result.width, height: result.height}
-        addedCount++
-        console.log(`  -> ${result.width}x${result.height}`)
-      } catch (error) {
-        console.error(`  -> Failed to probe ${url}:`, error)
-      }
+      src = src.replace('\\_', '_')
+
+      if (sizes[src]) return
+
+      // We'll process this src later to avoid duplicate console logs/probes in the same run
+      sizes[src] = {width: 0, height: 0}
+    })
+  }
+
+  const srcsToProbe = Object.keys(sizes).filter((s) => sizes[s].width === 0)
+
+  for (const src of srcsToProbe) {
+    const url = `${IMAGE_BASE_URL}/${src}`
+    console.log(`Probing: ${url}...`)
+
+    try {
+      const result = await probe(url)
+      sizes[src] = {width: result.width, height: result.height}
+      addedCount++
+      console.log(`  -> ${result.width}x${result.height}`)
+    } catch (error) {
+      delete sizes[src]
+      console.error(`  -> Failed to probe ${url}:`, error)
     }
   }
 
