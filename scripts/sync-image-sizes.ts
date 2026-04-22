@@ -1,8 +1,8 @@
 import fs from 'fs/promises'
 import path from 'path'
-import probe from 'probe-image-size'
 import {remark} from 'remark'
 import remarkDirective from 'remark-directive'
+import sharp from 'sharp'
 import {visit} from 'unist-util-visit'
 
 const POSTS_DIR = path.resolve('src/posts')
@@ -71,17 +71,26 @@ async function run() {
     console.log(`Probing: ${url}...`)
 
     try {
-      const result = await probe(url)
-      let {width, height, orientation} = result
+      const res = await fetch(url)
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
+      const buffer = await res.arrayBuffer()
+      const metadata = await sharp(Buffer.from(buffer)).metadata()
 
-      // Swap width and height if orientation is 5, 6, 7, or 8 (portrait/swapped)
-      if (orientation !== undefined && orientation >= 5) {
+      let {width, height, orientation} = metadata
+
+      // Swap width and height if orientation is 5, 6, 7, or 8
+      if (orientation && orientation >= 5) {
         ;[width, height] = [height, width]
       }
 
-      sizes[src] = {width, height}
-      addedCount++
-      console.log(`  -> ${width}x${height}${orientation ? ` (orientation: ${orientation})` : ''}`)
+      if (width && height) {
+        sizes[src] = {width, height}
+        addedCount++
+        console.log(`  -> ${width}x${height}${orientation ? ` (orientation: ${orientation})` : ''}`)
+      } else {
+        delete sizes[src]
+        console.error(`  -> Could not get dimensions for ${url}`)
+      }
     } catch (error) {
       delete sizes[src]
       console.error(`  -> Failed to probe ${url}:`, error)
