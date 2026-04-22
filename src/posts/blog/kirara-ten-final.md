@@ -23,11 +23,11 @@ pubDate: 2026-04-22T13:41
 
 지금은 음원 서비스에 배포된, 키라라전 파이널 한정이었던 특별 음악 콘텐츠. 1,000엔을 내고 5곡을 들을 수 있다.
 
-::figure{src="photo/IMG_2078.PNG" class="max-h-200"}
-
 ::figure{src="photo/IMG_2077.PNG" class="max-h-200"}
 
-QR 코드를 자신의 스마트폰으로 스캔해서 음원을 스트리밍해 전시회를 관람하면서 듣을 수 있다.
+::figure{src="photo/IMG_2078.PNG" class="max-h-200"}
+
+QR 코드를 자신의 스마트폰으로 스캔해서 음원을 스트리밍해 전시회를 관람하면서 듣을 수 있다. 링크는 일정 시간 후 만료된다.
 
 ::figure{src="photo/IMG_2081.HEIC"}
 
