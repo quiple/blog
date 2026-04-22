@@ -9,6 +9,8 @@ pubDate: 2026-04-22T13:41
 
 ::figure{src="photo/IMG_2061.HEIC" class="max-h-200"}
 
+2024년 9월 21일 도쿄 이케부쿠로에 위치한 선샤인시티(サンシャインシティ) 전시홀 A에서 망가타임 키라라전 파이널(まんがタイムきらら展FINAL)이 개최되었다.
+
 ::figure{src="photo/IMG_2071.HEIC"}
 
 ::figure{src="photo/IMG_2072.HEIC"}
