@@ -34,7 +34,9 @@ pubDate: 2026-04-22T01:05
 
 ::figure{src="photo/IMG_0108_Original.HEIC"}
 
-::figure{src="photo/IMG_0109_Original.HEIC"}
+:::figure{src="photo/IMG_0109_Original.HEIC"}
+《사신짱 드롭킥》 애니메이션 원화.
+:::
 
 ::figure{src="photo/IMG_0110_Original.HEIC"}
 
