@@ -1,5 +1,5 @@
 ---
-title: 망가타임 키라라전 파이널
+title: 망가 타임 키라라전 파이널
 image: photo/IMG_2073.HEIC
 # imageVerticalAlign: 25
 imageForeground: fff
@@ -9,7 +9,7 @@ pubDate: 2026-04-22T13:41
 
 ::figure{src="photo/IMG_2061.HEIC" class="max-h-200"}
 
-2024년 9월 21일 도쿄 이케부쿠로에 위치한 선샤인시티(サンシャインシティ) 월드 임포트 마트 빌딩 4층 전시홀 A에서 망가타임 키라라전 파이널(まんがタイムきらら展FINAL)이 개최되었다.
+2024년 9월 21일 도쿄 이케부쿠로에 위치한 선샤인시티(サンシャインシティ) 월드 임포트 마트 빌딩 4층 전시홀 A에서 망가 타임 키라라전 파이널(まんがタイムきらら展FINAL)이 개최되었다.
 
 ::figure{src="photo/IMG_2071.HEIC"}
 
@@ -17,7 +17,11 @@ pubDate: 2026-04-22T13:41
 
 ::figure{src="photo/IMG_2073.HEIC"}
 
-::figure{src="photo/IMG_2074.HEIC" class="max-h-200"}
+:::figure{src="photo/IMG_2074.HEIC" class="max-h-200"}
+스마트폰으로 듣는 특별 음악 콘텐츠 --- 《봇치 더 록!》 결속밴드의 '키라라 애니송 불러보았다'.
+:::
+
+지금은 음원 서비스에 배포된, 키라라전 파이널 한정이었던 특별 음악 콘텐츠. 1,000엔을 내고 5곡을 들을 수 있다.
 
 ::figure{src="photo/IMG_2081.HEIC"}
 

@@ -1,5 +1,5 @@
 ---
-title: 망가타임 키라라전
+title: 망가 타임 키라라전
 image: photo/DSC_0190_Original.JPG
 imageVerticalAlign: 25
 imageForeground: fff
