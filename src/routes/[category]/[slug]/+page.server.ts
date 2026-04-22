@@ -102,7 +102,8 @@ function figure() {
 
         const width = widthVal ? `width="${widthVal}"` : ''
         const height = heightVal ? `height="${heightVal}"` : ''
-        const img = `<img class="${cn('not-prose', className)}" src="${src}" ${width} ${height} loading="lazy" decoding="async" />`
+        const style = widthVal && heightVal ? `style="aspect-ratio: ${widthVal} / ${heightVal}"` : ''
+        const img = `<img class="${cn('not-prose', className)}" src="${src}" ${width} ${height} ${style} loading="lazy" decoding="async" />`
         const youtube = `<iframe class="${cn('aspect-video', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
         const spotify = `<iframe class="${className}" data-testid="embed-iframe" src="https://open.spotify.com/embed/${id?.replace(':', '/')}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" decoding="async"></iframe>`
 
