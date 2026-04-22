@@ -67,11 +67,15 @@ pubDate: 2026-04-23T01:03
 
 ::figure{src="photo/IMG_2840.HEIC"}
 
-::figure{src="photo/IMG_2844.HEIC" class="max-h-200"}
+:::figure{src="photo/IMG_2844.HEIC" class="max-h-200"}
+세계에서 가장 짧은 에스컬레이터.
+:::
 
 ::figure{src="photo/IMG_2854.HEIC"}
 
 ::figure{src="photo/IMG_2861.HEIC"}
+
+2025년 9월 13일부터 도쿄 아키하바라에 위치한 아키하바라 게이머즈 본점(AKIHABARAゲーマーズ本店) 7층에서 《유유시키》 코믹스 15권 발매 기념 스토어를 개최했다.
 
 ::figure{src="photo/IMG_2863.HEIC" class="max-h-200"}
 
