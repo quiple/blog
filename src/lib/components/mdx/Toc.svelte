@@ -238,7 +238,7 @@
                 {heading.level - minLevel === 1 ? 'pl-8' : ''}
                 {heading.level - minLevel === 2 ? 'pl-12' : ''}
                 {activeIds.includes(heading.id)
-                ? 'text-blue-700 dark:text-blue-300 hover:text-foreground'
+                ? 'text-blue-700 dark:text-blue-300 hover:text-foreground dark:hover:text-foreground'
                 : 'text-muted-foreground hover:text-foreground'}"
               onclick={(e) => {
                 e.preventDefault()
