@@ -72,9 +72,16 @@ async function run() {
 
     try {
       const result = await probe(url)
-      sizes[src] = {width: result.width, height: result.height}
+      let {width, height, orientation} = result
+
+      // Swap width and height if orientation is 5, 6, 7, or 8 (portrait/swapped)
+      if (orientation !== undefined && orientation >= 5) {
+        ;[width, height] = [height, width]
+      }
+
+      sizes[src] = {width, height}
       addedCount++
-      console.log(`  -> ${result.width}x${result.height}`)
+      console.log(`  -> ${width}x${height}${orientation ? ` (orientation: ${orientation})` : ''}`)
     } catch (error) {
       delete sizes[src]
       console.error(`  -> Failed to probe ${url}:`, error)
