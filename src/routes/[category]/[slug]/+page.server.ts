@@ -158,8 +158,10 @@ function figure() {
 
         if (node.name === 'figure') {
           wrapperClass = cn(wrapperClass, className)
+          const hasWidthClass = /(^|\s)w-/.test(className)
           if (widthVal && heightVal) {
-            wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: min(100%, ${widthVal}px); width: fit-content;"`
+            const maxWidth = hasWidthClass ? '100%' : `${widthVal}px`
+            wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${maxWidth};"`
           }
           content = `<img class="not-prose w-full h-full block" src="${src}" ${widthAttr} ${heightAttr} loading="lazy" decoding="async" />`
         } else if (node.name === 'youtube') {
