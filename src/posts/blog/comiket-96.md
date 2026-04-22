@@ -22,7 +22,7 @@ pubDate: 2026-04-22T01:05
 
 ::figure{src="photo/IMG_0105_Original.HEIC"}
 
-묘진 카페는 2020년 1월 27일부로 폐업해 이제는 볼 수 없다.
+묘진 카페는 2020년 1월 27일부로 폐업했다.
 
 :::figure{src="photo/IMG_0106_Original.JPG"}
 《사신짱 드롭킥》 컬래버레이션 메뉴.
