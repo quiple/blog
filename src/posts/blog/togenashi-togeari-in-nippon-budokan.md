@@ -103,11 +103,15 @@ pubDate: 2026-04-23T01:03
 
 ::figure{src="photo/IMG_2921.HEIC" class="max-h-200"}
 
-::figure{src="photo/IMG_2922.HEIC" class="max-h-200"}
+:::figure{src="photo/IMG_2922.HEIC" class="max-h-200"}
+150,000원짜리 홍대 수호신이 여기서는 단돈 5,500엔.
+:::
 
 ::figure{src="photo/IMG_2923.HEIC" class="max-h-200"}
 
-::figure{src="photo/IMG_2924.HEIC" class="max-h-200"}
+:::figure{src="photo/IMG_2924.HEIC" class="max-h-200"}
+얘는 데려왔다. 5,500엔.
+:::
 
 ::figure{src="photo/IMG_3044.HEIC"}
 
