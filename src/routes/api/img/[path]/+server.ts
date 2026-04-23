@@ -46,5 +46,5 @@ export const GET: RequestHandler = async ({params, url, fetch}) => {
     cf: {
       image: options,
     },
-  })
+  } as any)
 }
