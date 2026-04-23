@@ -71,7 +71,12 @@ async function run() {
     console.log(`Probing: ${url}...`)
 
     try {
-      const res = await fetch(url)
+      const res = await fetch(url, {
+        headers: {
+          'x-internal-secret': 'fb5328098e2fab0277635ff61df13870',
+          'User-Agent': 'Cloudflare-Image-Resizing',
+        },
+      })
       if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
       const buffer = await res.arrayBuffer()
       const metadata = await sharp(Buffer.from(buffer)).metadata()
