@@ -1,7 +1,7 @@
 import {error} from '@sveltejs/kit'
 import type {RequestHandler} from './$types'
 
-export const GET: RequestHandler = async ({params, url, fetch}) => {
+export const GET: RequestHandler = async ({params, url}) => {
   const {path} = params
   if (!path) throw error(400, 'Missing path')
 
@@ -38,7 +38,7 @@ export const GET: RequestHandler = async ({params, url, fetch}) => {
   if (width) options.width = parseInt(width)
   if (height) options.height = parseInt(height)
 
-  return fetch(imageUrl, {
+  return globalThis.fetch(imageUrl, {
     headers: {
       // 이 키는 Cloudflare WAF 설정과 일치해야 합니다.
       'x-internal-secret': 'fb5328098e2fab0277635ff61df13870',
