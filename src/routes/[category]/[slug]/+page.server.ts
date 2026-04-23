@@ -101,6 +101,9 @@ function rehypeImageSizes() {
         // Remove any remaining leading slashes
         srcClean = srcClean.replace(/^\//, '')
 
+        // 이미지 주소를 프록시 주소로 교체
+        node.properties.src = getImageUrl(srcClean, {w: 1280}, isProd)
+
         const sizeInfo = (imageSizes as Record<string, {width: number; height: number}>)[srcClean]
         if (sizeInfo) {
           node.properties.width = node.properties.width || sizeInfo.width

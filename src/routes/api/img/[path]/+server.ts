@@ -20,8 +20,8 @@ export const GET: RequestHandler = async ({params, url, fetch}) => {
   decodedPath = decodedPath.replace(/^\//, '')
 
   // Internal URL to the original image
-  // Using relative path to the same origin is preferred in Cloudflare
-  const imageUrl = `/img/${decodedPath}`
+  // Cloudflare Image Resizing requires an absolute URL when used in fetch()
+  const imageUrl = `${url.origin}/img/${decodedPath}`
 
   // Resizing options from query parameters
   const width = url.searchParams.get('w')
