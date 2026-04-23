@@ -1,7 +1,7 @@
 ---
 title: 토게나시 토게아리 라이브 인 서울 "린네노코토와리"
-image: photo/IMG_2770.HEIC
-imageVerticalAlign: 60
+image: photo/IMG_3475.HEIC
+imageVerticalAlign: 30
 imageForeground: fff
 origDate: 2026-04-19
 pubDate: 2026-04-23T13:54
