@@ -29,7 +29,6 @@ body {
   .gsc-header {
     .gsc-left-header {
       font-weight: 500;
-      align-items: flex-end;
 
       .gsc-comments-count {
         cursor: text;
