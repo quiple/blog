@@ -4,7 +4,7 @@ image: photo/IMG_2770.HEIC
 imageVerticalAlign: 60
 imageForeground: fff
 origDate: 2026-04-19
-pubDate: 2026-04-23T13:53
+pubDate: 2026-04-23T13:54
 ---
 
 토게나시 토게아리의 첫 한국 원맨 라이브, 토게나시 토게아리 라이브 인 서울 "린네노코토와리"는 서울 광진구에 위치한 예스24 라이브홀에서 2026년 4월 18~19일 양일 개최되었다.
