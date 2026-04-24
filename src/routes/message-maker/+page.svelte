@@ -51,13 +51,13 @@
           {
             type: 'left',
             name: '유우카',
-            portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
+            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
             text: ['안녕하세요, 선생님. 유우카입니다.'],
           },
           {
             type: 'left',
             name: '유우카',
-            portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
+            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
             text: ['저 기억하고 계시죠?'],
           },
           {
@@ -67,13 +67,13 @@
           {
             type: 'left',
             name: '유우카',
-            portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
+            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
             text: ['뭐, 그럼 다행이구요.'],
           },
           {
             type: 'left',
             name: '유우카',
-            portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
+            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
             text: [
               '선생님의 연락처를 받아두길 잘했네요.',
               '모모톡으로 연락드린 건 다름이 아니라…….',
@@ -83,7 +83,7 @@
           {
             type: 'left',
             name: '유우카',
-            portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
+            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
             text: ['경비는 언제쯤 청구받을 수 있을까요?'],
           },
           {
@@ -93,7 +93,7 @@
           {
             type: 'left',
             name: '유우카',
-            portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
+            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
             text: [
               '물론이죠. 탄환도 공짜는 아니니까요.',
               '청구서를 작성해서 보내주시면 총학생회에서',
@@ -107,7 +107,7 @@
           {
             type: 'left',
             name: '유우카',
-            portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
+            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
             text: ['청구서 양식이라면 밀레니엄 학원에서 쓰는 것이 있어요.', '다음에 샬레를 방문할 때 가져다드릴게요.'],
           },
           {
@@ -117,7 +117,7 @@
           {
             type: 'left',
             name: '유우카',
-            portrait: '/img/blue-archive/Student_Portrait_Yuuka_Collection.png',
+            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
             text: ['어려운 일도 아닌걸요.', '그럼 좋은 하루 되세요.'],
           },
         ],
@@ -325,7 +325,7 @@
     if (dialogTargetIndex < 0 || dialogTargetIndex >= messages.length) return
     const portraitFile = student.portrait[portraitIndex]
     messages[dialogTargetIndex].name = student.name[lang]
-    messages[dialogTargetIndex].portrait = `/img/blue-archive/${portraitFile}.png`
+    messages[dialogTargetIndex].portrait = `blue-archive/${portraitFile}.png`
     showStudentDialog = false
     studentSearchQuery = ''
     expandedStudentIndex = -1
@@ -531,7 +531,11 @@
             {#if msg.type === 'left'}
               <div class="flex items-center gap-1">
                 {#if msg.portrait}
-                  {@const src = getImageUrl(msg.portrait.replace('/img/', ''), {h: 48}, isProd)}
+                  {@const src = getImageUrl(
+                    msg.portrait.startsWith('/img/') ? msg.portrait.replace('/img/', '') : msg.portrait,
+                    {h: 48},
+                    isProd,
+                  )}
                   <div class="inner-border rounded-full after:rounded-full">
                     <img class="size-6 object-cover scale-110" {src} alt={msg.name} />
                   </div>
@@ -818,7 +822,7 @@
           style="position: absolute; top: {vsStartRow * vsRowHeight}px; left: 0; right: 0;"
         >
           {#each vsVisibleStudents as { student, globalIndex } (student.name.en)}
-            {@const src = getImageUrl(student.portrait[0], {h: 128}, isProd)}
+            {@const src = getImageUrl(`blue-archive/${student.portrait[0]}.png`, {h: 128}, isProd)}
             <div class="flex flex-col">
               <Button
                 variant="ghost"
@@ -868,7 +872,7 @@
                   ]}
                 >
                   {#each student.portrait as p, pi}
-                    {@const altSrc = getImageUrl(p, {h: 128}, isProd)}
+                    {@const altSrc = getImageUrl(`blue-archive/${p}.png`, {h: 128}, isProd)}
                     <button
                       class="size-16 rounded-full after:rounded-full p-0 inner-border group"
                       onclick={() => selectStudent(student, pi)}
@@ -945,7 +949,7 @@
               ? `${baseUrl}${editPortraitUrl}`
               : editPortraitUrl}
             {@const editPreviewSrc =
-              isProd && editPortraitUrl.startsWith('/img/')
+              isProd && (editPortraitUrl.startsWith('/img/') || editPortraitUrl.startsWith('blue-archive/'))
                 ? getImageUrl(editPortraitUrl.replace('/img/', ''), {h: 160}, isProd)
                 : editPreviewRawSrc}
             <div class="shrink-0 inner-border rounded-full after:rounded-full">
