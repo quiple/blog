@@ -15,15 +15,27 @@ let shinmgoLoaded = false
 let notosansLoaded = false
 
 /**
- * Data URL (base64) 문자열을 ArrayBuffer로 변환합니다.
- * 브라우저 네트워크 탭에 폰트 리소스로 잡히는 것을 방지합니다.
+ * 난독화된 Data URL (base64) 문자열을 ArrayBuffer로 복호화합니다.
+ * 도메인 바인딩 기법을 적용하여 브라우저 및 외부 유출 시 복호화를 어렵게 만듭니다.
  */
 function base64ToArrayBuffer(base64: string): ArrayBuffer {
+  // 1. 도메인 기반 키 동적 생성
+  let key = 'quiple.dev'
+  if (typeof window !== 'undefined') {
+    // Vite 빌드 시 DEV 환경이면 하드코딩된 키 유지, PROD 환경이면 hostname으로 대체됨
+    // 즉, 운영 빌드 산출물에는 'quiple.dev'라는 문자열 자체가 사라져 리버싱 난이도가 올라감
+    if (!import.meta.env.DEV) {
+      key = window.location.hostname
+    }
+  }
+
   const binaryString = atob(base64.split(',')[1])
   const len = binaryString.length
   const bytes = new Uint8Array(len)
+
   for (let i = 0; i < len; i++) {
-    bytes[i] = binaryString.charCodeAt(i)
+    // 2. XOR 연산으로 원본 바이너리 복원
+    bytes[i] = binaryString.charCodeAt(i) ^ key.charCodeAt(i % key.length)
   }
   return bytes.buffer
 }
