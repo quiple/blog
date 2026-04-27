@@ -65,7 +65,7 @@
           ],
         },
         {type: 'left', name: 'ユウカ', portrait, text: ['経費はいつ頃請求できますか？']},
-        {type: 'right', text: ['こっちで処理しないといけなかったのか……？']},
+        {type: 'right', text: ['こっちで処理しないといけなかったの……？']},
         {
           type: 'left',
           name: 'ユウカ',
