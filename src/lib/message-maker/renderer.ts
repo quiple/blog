@@ -197,33 +197,107 @@ function wrapText(ctx: CanvasRenderingContext2D, text: string, maxWidth: number)
   const lines: string[] = []
   // 먼저 명시적 줄바꿈 분리
   const paragraphs = text.split('\n')
+
+  // 알파벳, 숫자, 그리고 단어 내에서 쓰일 수 있는 특수기호 (하이픈, 어포스트로피, 마침표, 쉼표)
+  const isAlphaNum = (char: string) => /^[a-zA-Z0-9_\-\u00C0-\u024F'’.,]+$/.test(char)
+  // 줄바꿈 시 앞 글자에 붙어야 하는 닫는 문장부호들
+  const isClosingPunctuation = (char: string) => /^[)\]>}"”',.!?;:。、！？》」』】…~・·）］｝〉»]+$/.test(char)
+  // 줄바꿈 시 뒷 글자에 붙어야 하는 여는 문장부호들
+  const isOpeningPunctuation = (char: string) => /^[([<{"‘“《「『【（［｛〈«]+$/.test(char)
+
   for (const paragraph of paragraphs) {
     if (paragraph.trim() === '') {
       lines.push('')
       continue
     }
-    let currentLine = ''
-    // 한 글자씩 처리 (한국어에는 공백 기반 단어 분리가 적합하지 않음)
-    for (let i = 0; i < paragraph.length; i++) {
-      const char = paragraph[i]
 
-      // 줄의 시작 부분에 나오는 공백은 포함하지 않음
-      if (currentLine.length === 0 && char.trim() === '') {
+    // 1. 단어나 문장부호 단위로 쪼개기 (Kinsoku Shori & 단어 보호)
+    const chunks: string[] = []
+    let currentChunk = ''
+    let lastChar = ''
+
+    // 이모지 등 다국어 서로게이트 쌍 처리를 위해 Array.from 사용
+    for (const char of Array.from(paragraph)) {
+      if (currentChunk.length === 0) {
+        currentChunk += char
+        lastChar = char
         continue
       }
 
-      const testLine = currentLine + char
+      // Case 1: 영어/숫자 등 단어의 연속
+      if (isAlphaNum(lastChar) && isAlphaNum(char)) {
+        currentChunk += char
+        lastChar = char
+        continue
+      }
+
+      // Case 2: 공백의 연속
+      if (lastChar === ' ' && char === ' ') {
+        currentChunk += char
+        lastChar = char
+        continue
+      }
+
+      // Case 3: 닫는 문장부호는 이전 글자에 붙임
+      if (isClosingPunctuation(char)) {
+        currentChunk += char
+        lastChar = char
+        continue
+      }
+
+      // Case 4: 여는 문장부호는 다음 글자에 붙임 (현재 청크에 계속 누적)
+      if (isOpeningPunctuation(lastChar)) {
+        currentChunk += char
+        lastChar = char
+        continue
+      }
+
+      // 끊어야 하는 경우
+      chunks.push(currentChunk)
+      currentChunk = char
+      lastChar = char
+    }
+    if (currentChunk.length > 0) {
+      chunks.push(currentChunk)
+    }
+
+    // 2. 청크 단위로 너비를 측정하며 줄바꿈 처리
+    let currentLine = ''
+    for (const chunk of chunks) {
+      // 줄의 시작 부분에 나오는 공백은 포함하지 않음
+      if (currentLine.length === 0 && chunk.trim() === '') {
+        continue
+      }
+
+      const testLine = currentLine + chunk
       const metrics = ctx.measureText(testLine)
 
-      if (metrics.width > maxWidth && currentLine.length > 0) {
-        // 최대 너비를 초과하면 현재까지의 문자열을 한 줄로 확정 (우측 공백 제거)
-        lines.push(currentLine.trimEnd())
-        // 현재 문자가 공백이면 다음 줄도 공백으로 시작하지 않게 빈 문자열 처리
-        currentLine = char.trim() === '' ? '' : char
+      if (metrics.width > maxWidth) {
+        // 이미 쌓인 텍스트가 있으면 현재 줄을 확정
+        if (currentLine.length > 0) {
+          lines.push(currentLine.trimEnd())
+          currentLine = chunk.trim() === '' ? '' : chunk
+        } else {
+          currentLine = chunk
+        }
+
+        // 단일 청크 자체가 maxWidth보다 긴 경우, 강제로 글자 단위로 쪼갬
+        while (ctx.measureText(currentLine).width > maxWidth) {
+          let breakIdx = 1
+          const lineChars = Array.from(currentLine)
+          while (breakIdx < lineChars.length) {
+            const tempMetrics = ctx.measureText(lineChars.slice(0, breakIdx + 1).join(''))
+            if (tempMetrics.width > maxWidth) break
+            breakIdx++
+          }
+          lines.push(lineChars.slice(0, breakIdx).join(''))
+          currentLine = lineChars.slice(breakIdx).join('')
+        }
       } else {
         currentLine = testLine
       }
     }
+
     // 남은 글자가 있다면 추가 (우측 공백 제거)
     if (currentLine.trimEnd().length > 0) {
       lines.push(currentLine.trimEnd())
