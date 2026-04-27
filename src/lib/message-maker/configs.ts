@@ -268,7 +268,7 @@ export const momotalk: RawThemeConfig = {
   },
   name: {
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
-    fontSize: {ko: 43, ja: 43, en: 43},
+    fontSize: {ko: 43, ja: 41, en: 43},
     fontWeight: 'normal',
     color: '#3F444A',
     marginTop: {ko: 1, ja: 1, en: 4},
