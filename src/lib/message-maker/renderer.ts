@@ -104,15 +104,22 @@ function loadImage(url: string): Promise<HTMLImageElement> {
   })
 }
 
+/** Data URL 변환용 재사용 캔버스 (DOM 생성 비용 절감) */
+let sharedDataUrlCanvas: HTMLCanvasElement | null = null
+let sharedDataUrlCtx: CanvasRenderingContext2D | null = null
+
 async function getImageAsDataUrl(url: string): Promise<string> {
   const img = await getCachedImage(url)
-  const canvas = document.createElement('canvas')
-  canvas.width = img.naturalWidth
-  canvas.height = img.naturalHeight
-  const ctx = canvas.getContext('2d')
-  if (!ctx) return url
-  ctx.drawImage(img, 0, 0)
-  return canvas.toDataURL('image/png')
+  if (!sharedDataUrlCanvas) {
+    sharedDataUrlCanvas = document.createElement('canvas')
+    sharedDataUrlCtx = sharedDataUrlCanvas.getContext('2d')
+  }
+  if (!sharedDataUrlCtx) return url
+  sharedDataUrlCanvas.width = img.naturalWidth
+  sharedDataUrlCanvas.height = img.naturalHeight
+  sharedDataUrlCtx.clearRect(0, 0, img.naturalWidth, img.naturalHeight)
+  sharedDataUrlCtx.drawImage(img, 0, 0)
+  return sharedDataUrlCanvas.toDataURL('image/png')
 }
 
 /**
@@ -204,13 +211,25 @@ async function getIcon(name: string, size: number): Promise<HTMLImageElement> {
   return img
 }
 
-/** 이미지 캐시 */
+/** 이미지 캐시 (LRU, 최대 50개) */
+const IMAGE_CACHE_MAX = 50
 const imageCache = new Map<string, HTMLImageElement>()
 
 async function getCachedImage(url: string): Promise<HTMLImageElement> {
-  if (imageCache.has(url)) return imageCache.get(url)!
+  const cached = imageCache.get(url)
+  if (cached) {
+    // LRU: 접근 시 맨 뒤로 이동
+    imageCache.delete(url)
+    imageCache.set(url, cached)
+    return cached
+  }
   const img = await loadImage(url)
   imageCache.set(url, img)
+  // 최대 크기 초과 시 가장 오래된 항목 제거
+  if (imageCache.size > IMAGE_CACHE_MAX) {
+    const oldest = imageCache.keys().next().value
+    if (oldest !== undefined) imageCache.delete(oldest)
+  }
   return img
 }
 
@@ -729,13 +748,23 @@ export async function exportAsPng(
   // 고밀도 렌더링
   await renderToContext(hiCtx, messages, themeName, density)
 
-  const dataUrl = hiDpiCanvas.toDataURL('image/png')
+  // toBlob 사용으로 메모리 효율 개선 (toDataURL은 거대한 base64 문자열 생성)
+  const blob = await new Promise<Blob | null>((resolve) => hiDpiCanvas.toBlob(resolve, 'image/png'))
+
+  // 임시 캔버스 메모리 즉시 해제
+  hiDpiCanvas.width = 0
+  hiDpiCanvas.height = 0
+
+  if (!blob) return
+
+  const url = URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.download = `message_${themeName}_${density}x.png`
-  link.href = dataUrl
+  link.href = url
   document.body.appendChild(link)
   link.click()
   document.body.removeChild(link)
+  URL.revokeObjectURL(url)
 }
 
 /**
@@ -761,6 +790,27 @@ export async function copyCanvasToClipboard(canvas: HTMLCanvasElement): Promise<
   } catch (err) {
     console.error('Failed to copy image to clipboard:', err)
     throw err
+  }
+}
+
+/**
+ * 모든 렌더러 캐시 초기화 (페이지 이탈 시 메모리 해제용)
+ */
+export function clearCaches(): void {
+  imageCache.clear()
+  iconCache.clear()
+  svgSourceCache.clear()
+  if (sharedMeasureCanvas) {
+    sharedMeasureCanvas.width = 0
+    sharedMeasureCanvas.height = 0
+    sharedMeasureCanvas = null
+    sharedMeasureCtx = null
+  }
+  if (sharedDataUrlCanvas) {
+    sharedDataUrlCanvas.width = 0
+    sharedDataUrlCanvas.height = 0
+    sharedDataUrlCanvas = null
+    sharedDataUrlCtx = null
   }
 }
 
@@ -947,11 +997,10 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     if (config.header.helpIconSize > 0) {
       const helpSvg = await getSvgSource('help')
       const helpB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(helpSvg)))}`
-      // 대략적인 텍스트 너비 (Canvas API 빌려씀)
-      const tempCanvas = document.createElement('canvas')
-      const tempCtx = tempCanvas.getContext('2d')!
-      tempCtx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
-      const titleWidth = tempCtx.measureText('MomoTalk').width * (config.header.titleScaleX || 1.0)
+      // 대략적인 텍스트 너비 (기존 측정용 캔버스 재사용)
+      const helpMeasureCtx = getMeasureCtx(width)
+      helpMeasureCtx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
+      const titleWidth = helpMeasureCtx.measureText('MomoTalk').width * (config.header.titleScaleX || 1.0)
 
       svgParts.push(
         `<image x="${titleX + titleWidth + config.header.helpIconGap}" y="${centerY - config.header.helpIconSize / 2 + config.header.helpIconOffsetY}" width="${config.header.helpIconSize}" height="${config.header.helpIconSize}" href="${helpB64}" />`,

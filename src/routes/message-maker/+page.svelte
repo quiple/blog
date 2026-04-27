@@ -25,6 +25,7 @@
   import type {Language, ThemeName} from '$lib/message-maker/configs'
   import {themes} from '$lib/message-maker/configs'
   import {
+    clearCaches,
     copyCanvasToClipboard,
     exportAsPng,
     exportAsVectorSvg,
@@ -340,17 +341,30 @@
     expandedStudentIndex = expandedStudentIndex === index ? -1 : index
   }
 
+  // 미리보기용 ObjectURL 추적 (누수 방지)
+  let editPreviewBlobUrl: string | null = $state(null)
+
   // 이름/프로필 편집 대화 상자 열기
   function openEditDialog(index: number) {
     editTargetIndex = index
     editName = messages[index].name || ''
     editPortraitUrl = messages[index].portrait || ''
     editPortraitFile = null
+    // 이전 미리보기 URL 정리
+    if (editPreviewBlobUrl) {
+      URL.revokeObjectURL(editPreviewBlobUrl)
+      editPreviewBlobUrl = null
+    }
     showEditDialog = true
   }
 
   function confirmEdit() {
     if (editTargetIndex < 0 || editTargetIndex >= messages.length) return
+    // 기존 portrait가 blob URL이면 해제
+    const oldPortrait = messages[editTargetIndex].portrait
+    if (oldPortrait && oldPortrait.startsWith('blob:')) {
+      URL.revokeObjectURL(oldPortrait)
+    }
     let portrait = editPortraitUrl
     if (editPortraitFile) {
       portrait = URL.createObjectURL(editPortraitFile)
@@ -361,6 +375,11 @@
     editName = ''
     editPortraitUrl = ''
     editPortraitFile = null
+    // 미리보기 URL은 최종 portrait와 다른 경우만 해제
+    if (editPreviewBlobUrl && editPreviewBlobUrl !== portrait) {
+      URL.revokeObjectURL(editPreviewBlobUrl)
+    }
+    editPreviewBlobUrl = null
     requestRedraw()
   }
 
@@ -368,8 +387,13 @@
     const input = e.target as HTMLInputElement
     const file = input.files?.[0]
     if (file) {
+      // 이전 미리보기 URL 해제
+      if (editPreviewBlobUrl) {
+        URL.revokeObjectURL(editPreviewBlobUrl)
+      }
       editPortraitFile = file
-      editPortraitUrl = URL.createObjectURL(file)
+      editPreviewBlobUrl = URL.createObjectURL(file)
+      editPortraitUrl = editPreviewBlobUrl
     }
   }
 
@@ -417,6 +441,8 @@
     if (browser && canvasEl) {
       doRedraw()
     }
+    // 페이지 이탈 시 렌더러 캐시 해제
+    return () => clearCaches()
   })
 
   // 테마/언어 변경 시 재렌더링
