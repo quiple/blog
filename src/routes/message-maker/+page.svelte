@@ -45,84 +45,129 @@
   let density: number = $state(2)
   let canvasEl: HTMLCanvasElement | undefined = $state()
   let previewContainer: HTMLDivElement | undefined = $state()
-  let messages: MessageItem[] = $state(
-    isProd
-      ? []
-      : [
-          {
-            type: 'left',
-            name: '유우카',
-            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
-            text: ['안녕하세요, 선생님. 유우카입니다.'],
-          },
-          {
-            type: 'left',
-            name: '유우카',
-            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
-            text: ['저 기억하고 계시죠?'],
-          },
-          {
-            type: 'right',
-            text: ['아아. 당연하지.'],
-          },
-          {
-            type: 'left',
-            name: '유우카',
-            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
-            text: ['뭐, 그럼 다행이구요.'],
-          },
-          {
-            type: 'left',
-            name: '유우카',
-            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
-            text: [
-              '선생님의 연락처를 받아두길 잘했네요.',
-              '모모톡으로 연락드린 건 다름이 아니라…….',
-              '지난번 살레 탈환 당시 사용했던 탄환의 경비 처리가 늦어지고 있어서요.',
-            ],
-          },
-          {
-            type: 'left',
-            name: '유우카',
-            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
-            text: ['경비는 언제쯤 청구받을 수 있을까요?'],
-          },
-          {
-            type: 'right',
-            text: ['이쪽에서 처리해야 하는 거였어……?'],
-          },
-          {
-            type: 'left',
-            name: '유우카',
-            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
-            text: [
-              '물론이죠. 탄환도 공짜는 아니니까요.',
-              '청구서를 작성해서 보내주시면 총학생회에서',
-              '대신 잔금을 치러줄 거예요.',
-            ],
-          },
-          {
-            type: 'right',
-            text: ['청구서는 어떻게 써야 하지…….'],
-          },
-          {
-            type: 'left',
-            name: '유우카',
-            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
-            text: ['청구서 양식이라면 밀레니엄 학원에서 쓰는 것이 있어요.', '다음에 샬레를 방문할 때 가져다드릴게요.'],
-          },
-          {
-            type: 'right',
-            text: ['도와줘서 고마워.'],
-          },
-          {
-            type: 'left',
-            name: '유우카',
-            portrait: 'blue-archive/Student_Portrait_Yuuka_Collection.png',
-            text: ['어려운 일도 아닌걸요.', '그럼 좋은 하루 되세요.'],
-          },
+  // 개발 환경 기본 메시지 (언어별 번역)
+  function getDefaultMessages(l: Language): MessageItem[] {
+    const portrait = 'blue-archive/Student_Portrait_Yuuka_Collection.png'
+    if (l === 'ja') {
+      return [
+        {type: 'left', name: 'ユウカ', portrait, text: ['こんにちは、先生。ユウカです。']},
+        {type: 'left', name: 'ユウカ', portrait, text: ['私のこと、覚えていますよね？']},
+        {type: 'right', text: ['ああ、もちろんだよ。']},
+        {type: 'left', name: 'ユウカ', portrait, text: ['それなら良かったです。']},
+        {
+          type: 'left',
+          name: 'ユウカ',
+          portrait,
+          text: [
+            '先生の連絡先をもらっておいてよかったです。',
+            'モモトークでご連絡したのは他でもなく……。',
+            '先日のシャーレ奪還の際に使った弾丸の経費処理が遅れていまして。',
+          ],
+        },
+        {type: 'left', name: 'ユウカ', portrait, text: ['経費はいつ頃請求できますか？']},
+        {type: 'right', text: ['こっちで処理しないといけなかったのか……？']},
+        {
+          type: 'left',
+          name: 'ユウカ',
+          portrait,
+          text: [
+            'もちろんです。弾丸もタダではありませんから。',
+            '請求書を作成して送っていただければ、総合学園生徒会が',
+            '代わりに残金を支払ってくれます。',
+          ],
+        },
+        {type: 'right', text: ['請求書ってどう書けばいいんだ……。']},
+        {
+          type: 'left',
+          name: 'ユウカ',
+          portrait,
+          text: [
+            '請求書のフォーマットなら、ミレニアムの学園で使っているものがあります。',
+            '次にシャーレを訪問する時にお持ちしますね。',
+          ],
+        },
+        {type: 'right', text: ['助かるよ、ありがとう。']},
+        {type: 'left', name: 'ユウカ', portrait, text: ['大したことではありませんよ。', 'では、良い一日を。']},
+      ]
+    } else if (l === 'en') {
+      return [
+        {type: 'left', name: 'Yuuka', portrait, text: ['Hello, Sensei. This is Yuuka.']},
+        {type: 'left', name: 'Yuuka', portrait, text: ['You remember me, right?']},
+        {type: 'right', text: ['Of course I do.']},
+        {type: 'left', name: 'Yuuka', portrait, text: ["That's a relief."]},
+        {
+          type: 'left',
+          name: 'Yuuka',
+          portrait,
+          text: [
+            "I'm glad I got your contact info.",
+            "The reason I'm reaching out on MomoTalk is...",
+            'The expense report for the ammunition used during the Schale recapture has been delayed.',
+          ],
+        },
+        {type: 'left', name: 'Yuuka', portrait, text: ['When can I expect the expense claim?']},
+        {type: 'right', text: ['Wait, I was supposed to handle that...?']},
+        {
+          type: 'left',
+          name: 'Yuuka',
+          portrait,
+          text: [
+            "Of course. Ammunition isn't free, you know.",
+            'If you fill out the invoice and send it over,',
+            'the General Student Council will cover the balance.',
+          ],
+        },
+        {type: 'right', text: ['How do I even write an invoice...']},
+        {
+          type: 'left',
+          name: 'Yuuka',
+          portrait,
+          text: ['Millennium has an invoice template we can use.', "I'll bring it next time I visit Schale."],
+        },
+        {type: 'right', text: ['Thanks for helping out.']},
+        {type: 'left', name: 'Yuuka', portrait, text: ["It's no trouble at all.", 'Have a nice day, Sensei.']},
+      ]
+    }
+    return [
+      {type: 'left', name: '유우카', portrait, text: ['안녕하세요, 선생님. 유우카입니다.']},
+      {type: 'left', name: '유우카', portrait, text: ['저 기억하고 계시죠?']},
+      {type: 'right', text: ['아아. 당연하지.']},
+      {type: 'left', name: '유우카', portrait, text: ['뭐, 그럼 다행이구요.']},
+      {
+        type: 'left',
+        name: '유우카',
+        portrait,
+        text: [
+          '선생님의 연락처를 받아두길 잘했네요.',
+          '모모톡으로 연락드린 건 다름이 아니라…….',
+          '지난번 살레 탈환 당시 사용했던 탄환의 경비 처리가 늦어지고 있어서요.',
         ],
-  )
+      },
+      {type: 'left', name: '유우카', portrait, text: ['경비는 언제쯤 청구받을 수 있을까요?']},
+      {type: 'right', text: ['이쪽에서 처리해야 하는 거였어……?']},
+      {
+        type: 'left',
+        name: '유우카',
+        portrait,
+        text: [
+          '물론이죠. 탄환도 공짜는 아니니까요.',
+          '청구서를 작성해서 보내주시면 총학생회에서',
+          '대신 잔금을 치러줄 거예요.',
+        ],
+      },
+      {type: 'right', text: ['청구서는 어떻게 써야 하지…….']},
+      {
+        type: 'left',
+        name: '유우카',
+        portrait,
+        text: ['청구서 양식이라면 밀레니엄 학원에서 쓰는 것이 있어요.', '다음에 샬레를 방문할 때 가져다드릴게요.'],
+      },
+      {type: 'right', text: ['도와줘서 고마워.']},
+      {type: 'left', name: '유우카', portrait, text: ['어려운 일도 아닌걸요.', '그럼 좋은 하루 되세요.']},
+    ]
+  }
+
+  let messages: MessageItem[] = $state(isProd ? [] : getDefaultMessages('ko'))
 
   // 학생 선택 대화 상자
   let showStudentDialog = $state(false)
@@ -443,6 +488,13 @@
     }
     // 페이지 이탈 시 렌더러 캐시 해제
     return () => clearCaches()
+  })
+
+  // 개발 환경에서 언어 변경 시 기본 메시지 교체
+  $effect(() => {
+    if (!isProd) {
+      messages = getDefaultMessages(lang)
+    }
   })
 
   // 테마/언어 변경 시 재렌더링
