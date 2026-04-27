@@ -709,7 +709,12 @@
                 </Select.Item>
                 <Select.Item value="imessage">iMessage</Select.Item>
                 <Select.Item value="line">LINE</Select.Item>
-                <Select.Item value="kakaotalk">카카오톡</Select.Item>
+                <Select.Item value="kakaotalk">
+                  {#if lang === 'ja'}カカオトーク
+                  {:else if lang === 'ko'}카카오톡
+                  {:else}KakaoTalk
+                  {/if}
+                </Select.Item>
               </Select.Group>
             </Select.Content>
           </Select.Root>
