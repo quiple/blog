@@ -94,11 +94,11 @@ export interface RawThemeConfig {
     fontWeight: string
     color: string
     /** 이름과 메시지 사이 간격 */
-    marginBottom: number
+    marginBottom: LocalizedNumber
     /** 이름 텍스트 위쪽 간격 */
-    marginTop: number
+    marginTop: LocalizedNumber
     /** 프로필 이미지와 이름 사이 가로 간격 */
-    marginLeft: number
+    marginLeft: LocalizedNumber
   }
 
   /** 다른 사람(학생) 메시지 말풍선 */
@@ -260,9 +260,9 @@ export const momotalk: RawThemeConfig = {
     fontSize: {ko: 43, ja: 43, en: 43},
     fontWeight: 'normal',
     color: '#3F444A',
-    marginBottom: 8,
-    marginTop: 1,
-    marginLeft: 32,
+    marginBottom: {ko: 8, ja: 8, en: 8},
+    marginTop: {ko: 1, ja: 1, en: 1},
+    marginLeft: {ko: 32, ja: 32, en: 32},
   },
   bubbleLeft: {
     backgroundColor: '#4C5B6F',
