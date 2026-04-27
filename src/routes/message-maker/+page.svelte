@@ -91,17 +91,17 @@
       ]
     } else if (l === 'en') {
       return [
-        {type: 'left', name: 'Yuuka', portrait, text: ['Hello, Sensei. This is Yuuka.']},
-        {type: 'left', name: 'Yuuka', portrait, text: ['You remember me, right?']},
+        {type: 'left', name: 'Yuuka', portrait, text: ["Hello, Sensei. It's Yuuka."]},
+        {type: 'left', name: 'Yuuka', portrait, text: ['Do you remember me?']},
         {type: 'right', text: ['Of course I do.']},
-        {type: 'left', name: 'Yuuka', portrait, text: ["That's a relief."]},
+        {type: 'left', name: 'Yuuka', portrait, text: ["Well, that's a relief."]},
         {
           type: 'left',
           name: 'Yuuka',
           portrait,
           text: [
-            "I'm glad I got your contact info.",
-            "The reason I'm reaching out on MomoTalk is...",
+            "I'm glad I got your contact information earlier.",
+            'I had something important to discuss with you.',
             'The expense report for the ammunition used during the Schale recapture has been delayed.',
           ],
         },
@@ -122,10 +122,10 @@
           type: 'left',
           name: 'Yuuka',
           portrait,
-          text: ['Millennium has an invoice template we can use.', "I'll bring it next time I visit Schale."],
+          text: ['We use a standardized form at Millennium.', "I'll bring you one the next time I visit Schale."],
         },
-        {type: 'right', text: ['Thanks for helping out.']},
-        {type: 'left', name: 'Yuuka', portrait, text: ["It's no trouble at all.", 'Have a nice day, Sensei.']},
+        {type: 'right', text: ['Thanks for your help.']},
+        {type: 'left', name: 'Yuuka', portrait, text: ["It's no big deal.", 'Have a nice day.']},
       ]
     }
     return [
