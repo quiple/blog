@@ -809,7 +809,7 @@
               size="lg"
               class="grow"
               variant="outline"
-              onclick={() => canvasEl && exportAsVectorSvg(messages, themeName)}
+              onclick={() => canvasEl && exportAsVectorSvg(messages, themeName, lang)}
             >
               <Spline />
               {#if lang === 'ja'}SVGにエクスポート

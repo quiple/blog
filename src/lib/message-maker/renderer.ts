@@ -9,6 +9,8 @@ const rendererIsProd = import.meta.env.PROD
 let jalnan2Loaded = false
 /** GyeonggiTitle 폰트 로드 상태 */
 let gyeonggiLoaded = false
+/** ShinMGo 폰트 로드 상태 */
+let shinmgoLoaded = false
 
 /**
  * Jalnan2 폰트를 FontFace API로 등록 (lazy load)
@@ -50,6 +52,27 @@ async function ensureGyeonggiFont(): Promise<void> {
   await font.load()
   document.fonts.add(font)
   gyeonggiLoaded = true
+}
+
+/**
+ * ShinMGo 폰트를 FontFace API로 등록 (lazy load, 일본어 전용)
+ */
+async function ensureShinMGoFont(): Promise<void> {
+  if (shinmgoLoaded) return
+  if (typeof document === 'undefined') return
+
+  for (const face of document.fonts) {
+    if (face.family === 'ShinMGo') {
+      shinmgoLoaded = true
+      return
+    }
+  }
+
+  const {default: fontDataUrl} = await import('./font-data-shinmgo')
+  const font = new FontFace('ShinMGo', `url(${fontDataUrl})`)
+  await font.load()
+  document.fonts.add(font)
+  shinmgoLoaded = true
 }
 
 export interface MessageItem {
@@ -264,8 +287,15 @@ function getMeasureCtx(width: number): CanvasRenderingContext2D {
 /**
  * 캔버스 높이를 계산
  */
-export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConfig): number {
+export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConfig, lang?: Language): number {
   const tempCtx = getMeasureCtx(config.canvasWidth)
+
+  // 일본어인 경우 ShinMGo 폰트를 사용하여 측정
+  const nameFont = lang === 'ja' ? config.name.font.replace('GyeonggiTitle', 'ShinMGo') : config.name.font
+  const bubbleLeftFont =
+    lang === 'ja' ? config.bubbleLeft.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleLeft.font
+  const bubbleRightFont =
+    lang === 'ja' ? config.bubbleRight.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleRight.font
 
   const chatAreaWidth = config.canvasWidth - config.sidebar.width - config.chat.paddingLeft - config.chat.paddingRight
 
@@ -281,7 +311,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
 
       const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
       const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
-      tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
+      tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
 
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) totalHeight += config.chat.messageGap
@@ -298,7 +328,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
     } else {
       const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
       const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
-      tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
+      tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
 
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) totalHeight += config.chat.messageGap
@@ -329,27 +359,29 @@ export async function renderCanvas(
   canvas: HTMLCanvasElement,
   messages: MessageItem[],
   themeName: ThemeName,
-  _lang: Language,
+  lang: Language,
 ): Promise<void> {
   const renderId = ++lastRenderId
   const config = themes[themeName]
 
   // 폰트 준비
   if (themeName === 'momotalk') {
-    await Promise.all([ensureJalnan2Font(), ensureGyeonggiFont()])
+    const fontPromises: Promise<void>[] = [ensureJalnan2Font(), ensureGyeonggiFont()]
+    if (lang === 'ja') fontPromises.push(ensureShinMGoFont())
+    await Promise.all(fontPromises)
   }
 
   // 최신 렌더링 요청인지 확인
   if (renderId !== lastRenderId) return
 
-  const height = calculateCanvasHeight(messages, config)
+  const height = calculateCanvasHeight(messages, config, lang)
 
   canvas.width = config.canvasWidth
   canvas.height = height
 
   const ctx = canvas.getContext('2d')!
   // 미리 계산한 height를 전달하여 renderToContext 내부의 중복 계산 방지
-  await renderToContext(ctx, messages, themeName, 1, renderId, height)
+  await renderToContext(ctx, messages, themeName, 1, renderId, height, lang)
 }
 
 /**
@@ -362,10 +394,18 @@ async function renderToContext(
   scale: number,
   renderId: number = 0,
   precomputedHeight?: number,
+  lang?: Language,
 ): Promise<void> {
   const config = themes[themeName]
   const width = config.canvasWidth
-  const height = precomputedHeight ?? calculateCanvasHeight(messages, config)
+  const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang)
+
+  // 일본어인 경우 ShinMGo 폰트를 사용
+  const nameFont = lang === 'ja' ? config.name.font.replace('GyeonggiTitle', 'ShinMGo') : config.name.font
+  const bubbleLeftFont =
+    lang === 'ja' ? config.bubbleLeft.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleLeft.font
+  const bubbleRightFont =
+    lang === 'ja' ? config.bubbleRight.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleRight.font
 
   const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
 
@@ -621,7 +661,7 @@ async function renderToContext(
       const nameX = profileX + (config.profile.size > 0 ? config.profile.size : 0) + config.name.marginLeft
       const nameY = cursorY + config.name.marginTop
       ctx.fillStyle = config.name.color
-      ctx.font = `${config.name.fontWeight} ${config.name.fontSize}px ${config.name.font}`
+      ctx.font = `${config.name.fontWeight} ${config.name.fontSize}px ${nameFont}`
       ctx.textBaseline = 'top'
       ctx.fillText(msg.name || '', nameX, nameY)
       cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
@@ -635,7 +675,7 @@ async function renderToContext(
         const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
 
-        ctx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
+        ctx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
         const lines = wrapText(ctx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
         const textBlockHeight = lines.length * lineH
@@ -658,7 +698,7 @@ async function renderToContext(
         }
 
         ctx.fillStyle = config.bubbleLeft.textColor
-        ctx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
+        ctx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
         ctx.textBaseline = 'top'
         for (let li = 0; li < lines.length; li++) {
           ctx.fillText(
@@ -678,7 +718,7 @@ async function renderToContext(
         const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
 
-        ctx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
+        ctx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
         const lines = wrapText(ctx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
         const textBlockHeight = lines.length * lineH
@@ -703,7 +743,7 @@ async function renderToContext(
         }
 
         ctx.fillStyle = config.bubbleRight.textColor
-        ctx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
+        ctx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
         ctx.textBaseline = 'top'
         for (let li = 0; li < lines.length; li++) {
           ctx.fillText(
@@ -729,10 +769,10 @@ export async function exportAsPng(
   density: number,
   messages: MessageItem[],
   themeName: ThemeName,
-  _lang: Language,
+  lang: Language,
 ): Promise<void> {
   const config = themes[themeName]
-  const height = calculateCanvasHeight(messages, config)
+  const height = calculateCanvasHeight(messages, config, lang)
   const width = config.canvasWidth
 
   const hiDpiCanvas = document.createElement('canvas')
@@ -741,7 +781,7 @@ export async function exportAsPng(
   const hiCtx = hiDpiCanvas.getContext('2d', {alpha: false})!
 
   // 고밀도 렌더링
-  await renderToContext(hiCtx, messages, themeName, density)
+  await renderToContext(hiCtx, messages, themeName, density, 0, undefined, lang)
 
   // toBlob 사용으로 메모리 효율 개선 (toDataURL은 거대한 base64 문자열 생성)
   const blob = await new Promise<Blob | null>((resolve) => hiDpiCanvas.toBlob(resolve, 'image/png'))
@@ -853,13 +893,21 @@ async function loadOpentypeFont(familyName: string, modulePromise: Promise<{defa
 /**
  * 캔버스 로직을 미러링하여 실제 벡터 SVG 문자열 생성
  */
-export async function exportAsVectorSvg(messages: MessageItem[], themeName: ThemeName): Promise<void> {
+export async function exportAsVectorSvg(messages: MessageItem[], themeName: ThemeName, lang?: Language): Promise<void> {
   const config = themes[themeName]
-  const height = calculateCanvasHeight(messages, config)
+  const height = calculateCanvasHeight(messages, config, lang)
   const width = config.canvasWidth
 
   let jalnanFont: opentype.Font | undefined
   let gyeonggiFont: opentype.Font | undefined
+  let shinmgoFont: opentype.Font | undefined
+
+  // 일본어인 경우 ShinMGo 폰트를 사용
+  const nameFont = lang === 'ja' ? config.name.font.replace('GyeonggiTitle', 'ShinMGo') : config.name.font
+  const bubbleLeftFont =
+    lang === 'ja' ? config.bubbleLeft.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleLeft.font
+  const bubbleRightFont =
+    lang === 'ja' ? config.bubbleRight.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleRight.font
 
   // 폰트 데이터 가져오기 (인라인 포함)
   let fontStyles = ''
@@ -872,6 +920,20 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
     const jalnan2 = (await jalnanPromise).default
     const gyeonggi = (await gyeonggiPromise).default
+
+    let shinmgoStyle = ''
+    if (lang === 'ja') {
+      const shinmgoPromise = import('./font-data-shinmgo')
+      shinmgoFont = await loadOpentypeFont('ShinMGo', shinmgoPromise)
+      const shinmgo = (await shinmgoPromise).default
+      shinmgoStyle = `
+        @font-face {
+          font-family: 'ShinMGo';
+          src: url('${shinmgo}') format('opentype');
+        }
+      `
+    }
+
     fontStyles = `
       <style>
         @font-face {
@@ -882,6 +944,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           font-family: 'GyeonggiTitle';
           src: url('${gyeonggi}') format('opentype');
         }
+        ${shinmgoStyle}
       </style>
     `
   }
@@ -900,6 +963,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   ) {
     let font: opentype.Font | undefined
     if (fontFamily.includes('Jalnan2')) font = jalnanFont
+    else if (fontFamily.includes('ShinMGo')) font = shinmgoFont
     else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
 
     if (font) {
@@ -1082,7 +1146,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           msg.name || '',
           nameX,
           nameY,
-          config.name.font,
+          nameFont,
           config.name.fontSize,
           config.name.color,
           'start',
@@ -1099,7 +1163,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         if (bi > 0) cursorY += config.chat.messageGap
         const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
-        tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${config.bubbleLeft.font}`
+        tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
         const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
         const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
@@ -1122,7 +1186,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
               lines[li],
               bubbleStartX + config.bubbleLeft.paddingLeft,
               textY,
-              config.bubbleLeft.font,
+              bubbleLeftFont,
               config.bubbleLeft.fontSize,
               config.bubbleLeft.textColor,
               'start',
@@ -1139,7 +1203,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         if (bi > 0) cursorY += config.chat.messageGap
         const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
-        tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${config.bubbleRight.font}`
+        tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
         const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
         const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
@@ -1163,7 +1227,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
               lines[li],
               bubbleX + config.bubbleRight.paddingLeft,
               textY,
-              config.bubbleRight.font,
+              bubbleRightFont,
               config.bubbleRight.fontSize,
               config.bubbleRight.textColor,
               'start',
