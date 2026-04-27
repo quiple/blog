@@ -94,14 +94,15 @@ function rehypeImageSizes() {
         const baseUrl = isProd ? 'https://quiple.dev' : ''
 
         // Handle Cloudflare Image Resizing and other prefixes
-        if (src.includes('/img/')) {
-          srcClean = src.split('/img/').pop() || ''
-        } else if (src.startsWith(baseUrl)) {
-          srcClean = src.replace(baseUrl, '')
+        const imgIdx = src.lastIndexOf('/img/')
+        if (imgIdx !== -1) {
+          srcClean = src.slice(imgIdx + 5)
+        } else if (baseUrl && src.startsWith(baseUrl)) {
+          srcClean = src.slice(baseUrl.length)
         }
 
         // Remove any remaining leading slashes
-        srcClean = srcClean.replace(/^\//, '')
+        if (srcClean.charCodeAt(0) === 47) srcClean = srcClean.slice(1)
 
         // 이미지 주소를 프록시 주소로 교체
         node.properties.src = getImageUrl(srcClean, {w: 1280}, isProd)

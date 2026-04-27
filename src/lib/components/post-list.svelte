@@ -19,7 +19,6 @@
   } = $props()
 
   const isProd = import.meta.env.PROD
-  const baseUrl = isProd ? 'https://quiple.dev' : ''
 
   const lazyImage: Action<HTMLImageElement, string> = (node, src) => {
     let timeoutId: ReturnType<typeof setTimeout>

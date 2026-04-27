@@ -19,7 +19,6 @@
   let {data}: PageProps = $props()
 
   const isProd = import.meta.env.PROD
-  const baseUrl = isProd ? 'https://quiple.dev' : ''
 
   const {transition} = setupViewTransition()
   let scrollY = $state(0)

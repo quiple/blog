@@ -3,7 +3,7 @@
 <script lang="ts">
   import Q from '$lib/components/q.svelte'
   import {BASE_URL} from '$lib/constants'
-  import {getCategoryName, getImageUrl} from '$lib/utils'
+  import {getCategoryName} from '$lib/utils'
 
   type Props = {
     title: string

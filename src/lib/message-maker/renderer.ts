@@ -3,6 +3,8 @@ import {getImageUrl} from '../utils'
 import type {Language, ThemeConfig, ThemeName} from './configs'
 import {themes} from './configs'
 
+const rendererIsProd = import.meta.env.PROD
+
 /** Jalnan2 폰트 로드 상태 */
 let jalnan2Loaded = false
 /** GyeonggiTitle 폰트 로드 상태 */
@@ -525,11 +527,10 @@ async function renderToContext(
       // 프로필 이미지
       if (config.profile.size > 0 && msg.portrait) {
         try {
-          const isProd = import.meta.env.PROD
           const finalUrl =
             msg.portrait.startsWith('http') || msg.portrait.startsWith('blob:')
               ? msg.portrait
-              : getImageUrl(msg.portrait, {w: 512}, isProd)
+              : getImageUrl(msg.portrait, {w: 512}, rendererIsProd)
           const profileImg = await getCachedImage(finalUrl)
           if (isObsolete()) return
           ctx.save()
