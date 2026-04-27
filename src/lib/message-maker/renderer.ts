@@ -11,6 +11,8 @@ let jalnan2Loaded = false
 let gyeonggiLoaded = false
 /** ShinMGo 폰트 로드 상태 */
 let shinmgoLoaded = false
+/** NotoSans 폰트 로드 상태 */
+let notosansLoaded = false
 
 /**
  * Jalnan2 폰트를 FontFace API로 등록 (lazy load)
@@ -73,6 +75,27 @@ async function ensureShinMGoFont(): Promise<void> {
   await font.load()
   document.fonts.add(font)
   shinmgoLoaded = true
+}
+
+/**
+ * NotoSans 폰트를 FontFace API로 등록 (lazy load, 영어 전용)
+ */
+async function ensureNotoSansFont(): Promise<void> {
+  if (notosansLoaded) return
+  if (typeof document === 'undefined') return
+
+  for (const face of document.fonts) {
+    if (face.family === 'NotoSans') {
+      notosansLoaded = true
+      return
+    }
+  }
+
+  const {default: fontDataUrl} = await import('./font-data-notosans')
+  const font = new FontFace('NotoSans', `url(${fontDataUrl})`)
+  await font.load()
+  document.fonts.add(font)
+  notosansLoaded = true
 }
 
 export interface MessageItem {
@@ -290,12 +313,20 @@ function getMeasureCtx(width: number): CanvasRenderingContext2D {
 export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConfig, lang?: Language): number {
   const tempCtx = getMeasureCtx(config.canvasWidth)
 
-  // 일본어인 경우 ShinMGo 폰트를 사용하여 측정
-  const nameFont = lang === 'ja' ? config.name.font.replace('GyeonggiTitle', 'ShinMGo') : config.name.font
-  const bubbleLeftFont =
-    lang === 'ja' ? config.bubbleLeft.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleLeft.font
-  const bubbleRightFont =
-    lang === 'ja' ? config.bubbleRight.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleRight.font
+  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans
+  const langFontReplace = (base: string) =>
+    lang === 'ja'
+      ? base.replace('GyeonggiTitle', 'ShinMGo')
+      : lang === 'en'
+        ? base.replace('GyeonggiTitle', 'NotoSans')
+        : base
+  const nameFont = langFontReplace(config.name.font)
+  const bubbleLeftFont = langFontReplace(config.bubbleLeft.font)
+  const bubbleRightFont = langFontReplace(config.bubbleRight.font)
+  // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
+  const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
+  const bubbleLeftFontWeight = lang === 'en' ? '400' : config.bubbleLeft.fontWeight
+  const bubbleRightFontWeight = lang === 'en' ? '400' : config.bubbleRight.fontWeight
 
   const chatAreaWidth = config.canvasWidth - config.sidebar.width - config.chat.paddingLeft - config.chat.paddingRight
 
@@ -311,7 +342,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
 
       const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
       const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
-      tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
+      tempCtx.font = `${bubbleLeftFontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
 
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) totalHeight += config.chat.messageGap
@@ -328,7 +359,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
     } else {
       const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
       const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
-      tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
+      tempCtx.font = `${bubbleRightFontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
 
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) totalHeight += config.chat.messageGap
@@ -368,6 +399,7 @@ export async function renderCanvas(
   if (themeName === 'momotalk') {
     const fontPromises: Promise<void>[] = [ensureJalnan2Font(), ensureGyeonggiFont()]
     if (lang === 'ja') fontPromises.push(ensureShinMGoFont())
+    if (lang === 'en') fontPromises.push(ensureNotoSansFont())
     await Promise.all(fontPromises)
   }
 
@@ -400,12 +432,20 @@ async function renderToContext(
   const width = config.canvasWidth
   const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang)
 
-  // 일본어인 경우 ShinMGo 폰트를 사용
-  const nameFont = lang === 'ja' ? config.name.font.replace('GyeonggiTitle', 'ShinMGo') : config.name.font
-  const bubbleLeftFont =
-    lang === 'ja' ? config.bubbleLeft.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleLeft.font
-  const bubbleRightFont =
-    lang === 'ja' ? config.bubbleRight.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleRight.font
+  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans
+  const langFontReplace = (base: string) =>
+    lang === 'ja'
+      ? base.replace('GyeonggiTitle', 'ShinMGo')
+      : lang === 'en'
+        ? base.replace('GyeonggiTitle', 'NotoSans')
+        : base
+  const nameFont = langFontReplace(config.name.font)
+  const bubbleLeftFont = langFontReplace(config.bubbleLeft.font)
+  const bubbleRightFont = langFontReplace(config.bubbleRight.font)
+  // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
+  const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
+  const bubbleLeftFontWeight = lang === 'en' ? '400' : config.bubbleLeft.fontWeight
+  const bubbleRightFontWeight = lang === 'en' ? '400' : config.bubbleRight.fontWeight
 
   const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
 
@@ -661,7 +701,7 @@ async function renderToContext(
       const nameX = profileX + (config.profile.size > 0 ? config.profile.size : 0) + config.name.marginLeft
       const nameY = cursorY + config.name.marginTop
       ctx.fillStyle = config.name.color
-      ctx.font = `${config.name.fontWeight} ${config.name.fontSize}px ${nameFont}`
+      ctx.font = `${nameFontWeight} ${config.name.fontSize}px ${nameFont}`
       ctx.textBaseline = 'top'
       ctx.fillText(msg.name || '', nameX, nameY)
       cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
@@ -675,7 +715,7 @@ async function renderToContext(
         const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
 
-        ctx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
+        ctx.font = `${bubbleLeftFontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
         const lines = wrapText(ctx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
         const textBlockHeight = lines.length * lineH
@@ -698,7 +738,7 @@ async function renderToContext(
         }
 
         ctx.fillStyle = config.bubbleLeft.textColor
-        ctx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
+        ctx.font = `${bubbleLeftFontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
         ctx.textBaseline = 'top'
         for (let li = 0; li < lines.length; li++) {
           ctx.fillText(
@@ -718,7 +758,7 @@ async function renderToContext(
         const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
 
-        ctx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
+        ctx.font = `${bubbleRightFontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
         const lines = wrapText(ctx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
         const textBlockHeight = lines.length * lineH
@@ -743,7 +783,7 @@ async function renderToContext(
         }
 
         ctx.fillStyle = config.bubbleRight.textColor
-        ctx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
+        ctx.font = `${bubbleRightFontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
         ctx.textBaseline = 'top'
         for (let li = 0; li < lines.length; li++) {
           ctx.fillText(
@@ -901,13 +941,22 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   let jalnanFont: opentype.Font | undefined
   let gyeonggiFont: opentype.Font | undefined
   let shinmgoFont: opentype.Font | undefined
+  let notosansFont: opentype.Font | undefined
 
-  // 일본어인 경우 ShinMGo 폰트를 사용
-  const nameFont = lang === 'ja' ? config.name.font.replace('GyeonggiTitle', 'ShinMGo') : config.name.font
-  const bubbleLeftFont =
-    lang === 'ja' ? config.bubbleLeft.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleLeft.font
-  const bubbleRightFont =
-    lang === 'ja' ? config.bubbleRight.font.replace('GyeonggiTitle', 'ShinMGo') : config.bubbleRight.font
+  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans
+  const langFontReplace = (base: string) =>
+    lang === 'ja'
+      ? base.replace('GyeonggiTitle', 'ShinMGo')
+      : lang === 'en'
+        ? base.replace('GyeonggiTitle', 'NotoSans')
+        : base
+  const nameFont = langFontReplace(config.name.font)
+  const bubbleLeftFont = langFontReplace(config.bubbleLeft.font)
+  const bubbleRightFont = langFontReplace(config.bubbleRight.font)
+  // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
+  const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
+  const bubbleLeftFontWeight = lang === 'en' ? '400' : config.bubbleLeft.fontWeight
+  const bubbleRightFontWeight = lang === 'en' ? '400' : config.bubbleRight.fontWeight
 
   // 폰트 데이터 가져오기 (인라인 포함)
   let fontStyles = ''
@@ -921,15 +970,25 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     const jalnan2 = (await jalnanPromise).default
     const gyeonggi = (await gyeonggiPromise).default
 
-    let shinmgoStyle = ''
+    let extraFontStyles = ''
     if (lang === 'ja') {
       const shinmgoPromise = import('./font-data-shinmgo')
       shinmgoFont = await loadOpentypeFont('ShinMGo', shinmgoPromise)
       const shinmgo = (await shinmgoPromise).default
-      shinmgoStyle = `
+      extraFontStyles = `
         @font-face {
           font-family: 'ShinMGo';
           src: url('${shinmgo}') format('opentype');
+        }
+      `
+    } else if (lang === 'en') {
+      const notosansPromise = import('./font-data-notosans')
+      notosansFont = await loadOpentypeFont('NotoSans', notosansPromise)
+      const notosans = (await notosansPromise).default
+      extraFontStyles = `
+        @font-face {
+          font-family: 'NotoSans';
+          src: url('${notosans}') format('truetype');
         }
       `
     }
@@ -944,7 +1003,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           font-family: 'GyeonggiTitle';
           src: url('${gyeonggi}') format('opentype');
         }
-        ${shinmgoStyle}
+        ${extraFontStyles}
       </style>
     `
   }
@@ -964,6 +1023,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     let font: opentype.Font | undefined
     if (fontFamily.includes('Jalnan2')) font = jalnanFont
     else if (fontFamily.includes('ShinMGo')) font = shinmgoFont
+    else if (fontFamily.includes('NotoSans')) font = notosansFont
     else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
 
     if (font) {
@@ -1151,7 +1211,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           config.name.color,
           'start',
           'hanging',
-          config.name.fontWeight,
+          nameFontWeight,
         ),
       )
       cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
@@ -1163,7 +1223,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         if (bi > 0) cursorY += config.chat.messageGap
         const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
-        tempCtx.font = `${config.bubbleLeft.fontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
+        tempCtx.font = `${bubbleLeftFontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
         const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
         const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
@@ -1191,7 +1251,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
               config.bubbleLeft.textColor,
               'start',
               'hanging',
-              config.bubbleLeft.fontWeight,
+              bubbleLeftFontWeight,
             ),
           )
         }
@@ -1203,7 +1263,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         if (bi > 0) cursorY += config.chat.messageGap
         const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
-        tempCtx.font = `${config.bubbleRight.fontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
+        tempCtx.font = `${bubbleRightFontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
         const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
         const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
@@ -1232,7 +1292,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
               config.bubbleRight.textColor,
               'start',
               'hanging',
-              config.bubbleRight.fontWeight,
+              bubbleRightFontWeight,
             ),
           )
         }
