@@ -75,10 +75,15 @@ async function ensureGyeonggiFont(): Promise<void> {
     }
   }
 
-  const {default: fontDataUrl} = await import('./font-data-gyeonggi')
+  const [{default: fontDataUrl}, {default: boldDataUrl}] = await Promise.all([
+    import('./font-data-gyeonggi'),
+    import('./font-data-gyeonggi-bold'),
+  ])
   const font = new FontFace('GyeonggiTitle', base64ToArrayBuffer(fontDataUrl))
-  await font.load()
+  const fontBold = new FontFace('GyeonggiTitleBold', base64ToArrayBuffer(boldDataUrl))
+  await Promise.all([font.load(), fontBold.load()])
   document.fonts.add(font)
+  document.fonts.add(fontBold)
   gyeonggiLoaded = true
 }
 
@@ -418,13 +423,15 @@ function getMeasureCtx(width: number): CanvasRenderingContext2D {
 export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConfig, lang?: Language): number {
   const tempCtx = getMeasureCtx(config.canvasWidth)
 
-  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans
+  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans, 한국어 이름 → GyeonggiTitleBold
   const getFont = (base: string, isName: boolean) =>
     lang === 'ja'
       ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
       : lang === 'en'
         ? base.replace('GyeonggiTitle', 'NotoSans')
-        : base
+        : isName
+          ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
+          : base
   const nameFont = getFont(config.name.font, true)
   const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
   const bubbleRightFont = getFont(config.bubbleRight.font, false)
@@ -537,13 +544,15 @@ async function renderToContext(
   const width = config.canvasWidth
   const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang)
 
-  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans
+  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans, 한국어 이름 → GyeonggiTitleBold
   const getFont = (base: string, isName: boolean) =>
     lang === 'ja'
       ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
       : lang === 'en'
         ? base.replace('GyeonggiTitle', 'NotoSans')
-        : base
+        : isName
+          ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
+          : base
   const nameFont = getFont(config.name.font, true)
   const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
   const bubbleRightFont = getFont(config.bubbleRight.font, false)
@@ -1034,17 +1043,20 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
   let jalnanFont: opentype.Font | undefined
   let gyeonggiFont: opentype.Font | undefined
+  let gyeonggiBoldFont: opentype.Font | undefined
   let shinmgoMediumFont: opentype.Font | undefined
   let shinmgoDeboldFont: opentype.Font | undefined
   let notosansFont: opentype.Font | undefined
 
-  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans
+  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans, 한국어 이름 → GyeonggiTitleBold
   const getFont = (base: string, isName: boolean) =>
     lang === 'ja'
       ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
       : lang === 'en'
         ? base.replace('GyeonggiTitle', 'NotoSans')
-        : base
+        : isName
+          ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
+          : base
   const nameFont = getFont(config.name.font, true)
   const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
   const bubbleRightFont = getFont(config.bubbleRight.font, false)
@@ -1058,9 +1070,11 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   if (themeName === 'momotalk') {
     const jalnanPromise = import('./font-data-jalnan')
     const gyeonggiPromise = import('./font-data-gyeonggi')
+    const gyeonggiBoldPromise = import('./font-data-gyeonggi-bold')
 
     jalnanFont = await loadOpentypeFont('Jalnan2', jalnanPromise)
     gyeonggiFont = await loadOpentypeFont('GyeonggiTitle', gyeonggiPromise)
+    gyeonggiBoldFont = await loadOpentypeFont('GyeonggiTitleBold', gyeonggiBoldPromise)
 
     if (lang === 'ja') {
       const shinmgoMediumPromise = import('./font-data-shinmgo')
@@ -1090,6 +1104,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     else if (fontFamily.includes('ShinMGo-Medium')) font = shinmgoMediumFont
     else if (fontFamily.includes('ShinMGo-DeBold')) font = shinmgoDeboldFont
     else if (fontFamily.includes('NotoSans')) font = notosansFont
+    else if (fontFamily.includes('GyeonggiTitleBold')) font = gyeonggiBoldFont
     else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
 
     if (font) {
