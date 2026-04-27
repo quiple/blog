@@ -92,7 +92,7 @@ async function ensureNotoSansFont(): Promise<void> {
   }
 
   const {default: fontDataUrl} = await import('./font-data-notosans')
-  const font = new FontFace('NotoSans', `url(${fontDataUrl})`)
+  const font = new FontFace('NotoSans', `url(${fontDataUrl})`, {weight: '100 900'})
   await font.load()
   document.fonts.add(font)
   notosansLoaded = true
@@ -989,6 +989,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         @font-face {
           font-family: 'NotoSans';
           src: url('${notosans}') format('truetype');
+          font-weight: 100 900;
         }
       `
     }
