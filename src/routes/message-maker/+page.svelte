@@ -50,18 +50,18 @@
     const portrait = 'blue-archive/Student_Portrait_Yuuka_Collection.png'
     if (l === 'ja') {
       return [
-        {type: 'left', name: 'ユウカ', portrait, text: ['こんにちは、先生。ユウカです。']},
-        {type: 'left', name: 'ユウカ', portrait, text: ['私のこと、覚えていますよね？']},
-        {type: 'right', text: ['ああ、もちろんだよ。']},
-        {type: 'left', name: 'ユウカ', portrait, text: ['それなら良かったです。']},
+        {type: 'left', name: 'ユウカ', portrait, text: ['こんにちは、先生。ユウカです']},
+        {type: 'left', name: 'ユウカ', portrait, text: ['私のこと、覚えてますか？']},
+        {type: 'right', text: ['うん、もちろん']},
+        {type: 'left', name: 'ユウカ', portrait, text: ['良かった、覚えていただいて幸いです']},
         {
           type: 'left',
           name: 'ユウカ',
           portrait,
           text: [
-            '先生の連絡先をもらっておいてよかったです。',
-            'モモトークでご連絡したのは他でもなく……。',
-            '先日のシャーレ奪還の際に使った弾丸の経費処理が遅れていまして。',
+            '先生の連絡先をもらっておいて正解でした',
+            'そうだ、要件なのですが',
+            '以前のシャーレ奪還作戦時の弾丸の経費について、振込が確認できておらず',
           ],
         },
         {type: 'left', name: 'ユウカ', portrait, text: ['経費はいつ頃請求できますか？']},
@@ -82,12 +82,12 @@
           name: 'ユウカ',
           portrait,
           text: [
-            '請求書のフォーマットなら、ミレニアムの学園で使っているものがあります。',
-            '次にシャーレを訪問する時にお持ちしますね。',
+            '……ふう。ミレニアムで使っている請求書のひな型がありますので、',
+            '今度、シャーレに伺う時に持って行きます',
           ],
         },
-        {type: 'right', text: ['助かるよ、ありがとう。']},
-        {type: 'left', name: 'ユウカ', portrait, text: ['大したことではありませんよ。', 'では、良い一日を。']},
+        {type: 'right', text: ['ありがとう……！']},
+        {type: 'left', name: 'ユウカ', portrait, text: ['いえ、大したことではありませんし', 'では、今日も良い一日を']},
       ]
     } else if (l === 'en') {
       return [
