@@ -125,7 +125,7 @@
           text: ['We use a standardized form at Millennium.', "I'll bring you one the next time I visit Schale."],
         },
         {type: 'right', text: ['Thanks for your help.']},
-        {type: 'left', name: 'Yuuka', portrait, text: ["It's no big deal.", 'Have a nice day.']},
+        {type: 'left', name: 'Yuuka', portrait, text: ["It's no big deal.", 'Have a good day.']},
       ]
     }
     return [
