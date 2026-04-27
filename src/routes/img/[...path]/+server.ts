@@ -25,7 +25,7 @@ export const GET: RequestHandler = async ({params, platform}) => {
     // Vite가 static 디렉토리를 자동으로 서빙하므로 여기에 도달하면 static에 없는 경우
     // 프로덕션 사이트에서 fallback
     try {
-      const res = await fetch(`https://blog.quiple.dev/${path}`)
+      const res = await fetch(`https://quiple.dev/${path}`)
       if (!res.ok) error(404, 'Not found')
       return new Response(res.body, {
         headers: {
