@@ -325,8 +325,8 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
   const bubbleRightFont = langFontReplace(config.bubbleRight.font)
   // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
   const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
-  const bubbleLeftFontWeight = lang === 'en' ? '400' : config.bubbleLeft.fontWeight
-  const bubbleRightFontWeight = lang === 'en' ? '400' : config.bubbleRight.fontWeight
+  const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
+  const bubbleRightFontWeight = lang === 'en' ? '450' : config.bubbleRight.fontWeight
 
   const chatAreaWidth = config.canvasWidth - config.sidebar.width - config.chat.paddingLeft - config.chat.paddingRight
 
@@ -444,8 +444,8 @@ async function renderToContext(
   const bubbleRightFont = langFontReplace(config.bubbleRight.font)
   // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
   const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
-  const bubbleLeftFontWeight = lang === 'en' ? '400' : config.bubbleLeft.fontWeight
-  const bubbleRightFontWeight = lang === 'en' ? '400' : config.bubbleRight.fontWeight
+  const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
+  const bubbleRightFontWeight = lang === 'en' ? '450' : config.bubbleRight.fontWeight
 
   const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
 
@@ -955,8 +955,8 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   const bubbleRightFont = langFontReplace(config.bubbleRight.font)
   // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
   const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
-  const bubbleLeftFontWeight = lang === 'en' ? '400' : config.bubbleLeft.fontWeight
-  const bubbleRightFontWeight = lang === 'en' ? '400' : config.bubbleRight.fontWeight
+  const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
+  const bubbleRightFontWeight = lang === 'en' ? '450' : config.bubbleRight.fontWeight
 
   // 폰트 데이터 가져오기 (인라인 포함)
   let fontStyles = ''
