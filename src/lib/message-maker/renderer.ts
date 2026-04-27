@@ -873,16 +873,17 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     const jalnan2 = (await jalnanPromise).default
     const gyeonggi = (await gyeonggiPromise).default
     fontStyles = `
-  <style>
-    @font-face {
-      font-family: 'Jalnan2';
-      src: url('${jalnan2}') format('opentype');
-    }
-    @font-face {
-      font-family: 'GyeonggiTitle';
-      src: url('${gyeonggi}') format('opentype');
-    }
-  </style>`
+      <style>
+        @font-face {
+          font-family: 'Jalnan2';
+          src: url('${jalnan2}') format('opentype');
+        }
+        @font-face {
+          font-family: 'GyeonggiTitle';
+          src: url('${gyeonggi}') format('opentype');
+        }
+      </style>
+    `
   }
 
   function renderSvgText(
@@ -949,13 +950,14 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       config.header.backgroundColor,
     ]
     svgParts.push(`
-  <defs>
-    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:${colorMatches[0]};stop-opacity:1" />
-      <stop offset="100%" style="stop-color:${colorMatches[1]};stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect width="${width}" height="${config.header.height}" fill="url(#headerGrad)" />`)
+      <defs>
+        <linearGradient id="headerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" style="stop-color:${colorMatches[0]};stop-opacity:1" />
+          <stop offset="100%" style="stop-color:${colorMatches[1]};stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <rect width="${width}" height="${config.header.height}" fill="url(#headerGrad)" />
+    `)
   } else {
     svgParts.push(`<rect width="${width}" height="${config.header.height}" fill="${config.header.backgroundColor}" />`)
   }
