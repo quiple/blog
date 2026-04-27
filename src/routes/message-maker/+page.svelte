@@ -142,12 +142,13 @@
   // 복사 상태 피드백
   let isCopied = $state(false)
 
-  // 학생 목록 필터링 (대화상자가 열려 있을 때만 계산)
+  // 학생 목록 필터링 및 정렬 (대화상자가 열려 있을 때만 계산)
   let filteredStudents = $derived.by(() => {
     if (!showStudentDialog) return students
-    if (!studentSearchQuery) return students
+    const sortedStudents = [...students].sort((a, b) => a.name[lang].localeCompare(b.name[lang], lang))
+    if (!studentSearchQuery) return sortedStudents
     const q = studentSearchQuery.toLowerCase()
-    return students.filter(
+    return sortedStudents.filter(
       (s) =>
         s.name.ko.toLowerCase().includes(q) ||
         s.name.en.toLowerCase().includes(q) ||
