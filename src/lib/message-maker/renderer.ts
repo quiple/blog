@@ -64,16 +64,21 @@ async function ensureShinMGoFont(): Promise<void> {
   if (typeof document === 'undefined') return
 
   for (const face of document.fonts) {
-    if (face.family === 'ShinMGo') {
+    if (face.family === 'ShinMGo-Medium') {
       shinmgoLoaded = true
       return
     }
   }
 
-  const {default: fontDataUrl} = await import('./font-data-shinmgo')
-  const font = new FontFace('ShinMGo', `url(${fontDataUrl})`)
-  await font.load()
-  document.fonts.add(font)
+  const [{default: mediumDataUrl}, {default: deboldDataUrl}] = await Promise.all([
+    import('./font-data-shinmgo'),
+    import('./font-data-shinmgo-debold'),
+  ])
+  const mediumFont = new FontFace('ShinMGo-Medium', `url(${mediumDataUrl})`)
+  const deboldFont = new FontFace('ShinMGo-DeBold', `url(${deboldDataUrl})`)
+  await Promise.all([mediumFont.load(), deboldFont.load()])
+  document.fonts.add(mediumFont)
+  document.fonts.add(deboldFont)
   shinmgoLoaded = true
 }
 
@@ -314,15 +319,15 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
   const tempCtx = getMeasureCtx(config.canvasWidth)
 
   // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans
-  const langFontReplace = (base: string) =>
+  const getFont = (base: string, isName: boolean) =>
     lang === 'ja'
-      ? base.replace('GyeonggiTitle', 'ShinMGo')
+      ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
       : lang === 'en'
         ? base.replace('GyeonggiTitle', 'NotoSans')
         : base
-  const nameFont = langFontReplace(config.name.font)
-  const bubbleLeftFont = langFontReplace(config.bubbleLeft.font)
-  const bubbleRightFont = langFontReplace(config.bubbleRight.font)
+  const nameFont = getFont(config.name.font, true)
+  const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
+  const bubbleRightFont = getFont(config.bubbleRight.font, false)
   // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
   const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
   const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
@@ -433,15 +438,15 @@ async function renderToContext(
   const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang)
 
   // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans
-  const langFontReplace = (base: string) =>
+  const getFont = (base: string, isName: boolean) =>
     lang === 'ja'
-      ? base.replace('GyeonggiTitle', 'ShinMGo')
+      ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
       : lang === 'en'
         ? base.replace('GyeonggiTitle', 'NotoSans')
         : base
-  const nameFont = langFontReplace(config.name.font)
-  const bubbleLeftFont = langFontReplace(config.bubbleLeft.font)
-  const bubbleRightFont = langFontReplace(config.bubbleRight.font)
+  const nameFont = getFont(config.name.font, true)
+  const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
+  const bubbleRightFont = getFont(config.bubbleRight.font, false)
   // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
   const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
   const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
@@ -940,19 +945,20 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
   let jalnanFont: opentype.Font | undefined
   let gyeonggiFont: opentype.Font | undefined
-  let shinmgoFont: opentype.Font | undefined
+  let shinmgoMediumFont: opentype.Font | undefined
+  let shinmgoDeboldFont: opentype.Font | undefined
   let notosansFont: opentype.Font | undefined
 
   // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans
-  const langFontReplace = (base: string) =>
+  const getFont = (base: string, isName: boolean) =>
     lang === 'ja'
-      ? base.replace('GyeonggiTitle', 'ShinMGo')
+      ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
       : lang === 'en'
         ? base.replace('GyeonggiTitle', 'NotoSans')
         : base
-  const nameFont = langFontReplace(config.name.font)
-  const bubbleLeftFont = langFontReplace(config.bubbleLeft.font)
-  const bubbleRightFont = langFontReplace(config.bubbleRight.font)
+  const nameFont = getFont(config.name.font, true)
+  const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
+  const bubbleRightFont = getFont(config.bubbleRight.font, false)
   // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
   const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
   const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
@@ -972,13 +978,20 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
     let extraFontStyles = ''
     if (lang === 'ja') {
-      const shinmgoPromise = import('./font-data-shinmgo')
-      shinmgoFont = await loadOpentypeFont('ShinMGo', shinmgoPromise)
-      const shinmgo = (await shinmgoPromise).default
+      const shinmgoMediumPromise = import('./font-data-shinmgo')
+      const shinmgoDeboldPromise = import('./font-data-shinmgo-debold')
+      shinmgoMediumFont = await loadOpentypeFont('ShinMGo-Medium', shinmgoMediumPromise)
+      shinmgoDeboldFont = await loadOpentypeFont('ShinMGo-DeBold', shinmgoDeboldPromise)
+      const shinmgoMedium = (await shinmgoMediumPromise).default
+      const shinmgoDebold = (await shinmgoDeboldPromise).default
       extraFontStyles = `
         @font-face {
-          font-family: 'ShinMGo';
-          src: url('${shinmgo}') format('opentype');
+          font-family: 'ShinMGo-Medium';
+          src: url('${shinmgoMedium}') format('opentype');
+        }
+        @font-face {
+          font-family: 'ShinMGo-DeBold';
+          src: url('${shinmgoDebold}') format('opentype');
         }
       `
     } else if (lang === 'en') {
@@ -1023,7 +1036,8 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   ) {
     let font: opentype.Font | undefined
     if (fontFamily.includes('Jalnan2')) font = jalnanFont
-    else if (fontFamily.includes('ShinMGo')) font = shinmgoFont
+    else if (fontFamily.includes('ShinMGo-Medium')) font = shinmgoMediumFont
+    else if (fontFamily.includes('ShinMGo-DeBold')) font = shinmgoDeboldFont
     else if (fontFamily.includes('NotoSans')) font = notosansFont
     else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
 
