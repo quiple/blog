@@ -1084,6 +1084,7 @@
 
   :global(main)
     @apply pb-0!
+    font-feature-settings: normal
 
   .col
     @apply flex flex-col border-r last:border-r-0
