@@ -906,7 +906,11 @@
                       <img
                         class="size-full object-cover transition-transform group-hover:scale-110"
                         src={altSrc}
-                        alt="{student.name[lang]} 변형 {pi + 1}"
+                        alt={lang === 'ja'
+                          ? `${student.name[lang]}変形${pi + 1}`
+                          : lang === 'ko'
+                            ? `${student.name[lang]} 변형 ${pi + 1}`
+                            : `${student.name[lang]} variation ${pi + 1}`}
                         loading="lazy"
                       />
                     </button>
