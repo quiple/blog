@@ -1,7 +1,7 @@
 import opentype from 'opentype.js'
 import {getImageUrl} from '../utils'
 import type {Language, ThemeConfig, ThemeName} from './configs'
-import {themes} from './configs'
+import {resolveThemeConfig, themes} from './configs'
 
 const rendererIsProd = import.meta.env.PROD
 
@@ -393,7 +393,7 @@ export async function renderCanvas(
   lang: Language,
 ): Promise<void> {
   const renderId = ++lastRenderId
-  const config = themes[themeName]
+  const config = resolveThemeConfig(themes[themeName], lang)
 
   // 폰트 준비
   if (themeName === 'momotalk') {
@@ -428,7 +428,7 @@ async function renderToContext(
   precomputedHeight?: number,
   lang?: Language,
 ): Promise<void> {
-  const config = themes[themeName]
+  const config = resolveThemeConfig(themes[themeName], lang || 'ko')
   const width = config.canvasWidth
   const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang)
 
@@ -811,7 +811,7 @@ export async function exportAsPng(
   themeName: ThemeName,
   lang: Language,
 ): Promise<void> {
-  const config = themes[themeName]
+  const config = resolveThemeConfig(themes[themeName], lang || 'ko')
   const height = calculateCanvasHeight(messages, config, lang)
   const width = config.canvasWidth
 
@@ -934,7 +934,7 @@ async function loadOpentypeFont(familyName: string, modulePromise: Promise<{defa
  * 캔버스 로직을 미러링하여 실제 벡터 SVG 문자열 생성
  */
 export async function exportAsVectorSvg(messages: MessageItem[], themeName: ThemeName, lang?: Language): Promise<void> {
-  const config = themes[themeName]
+  const config = resolveThemeConfig(themes[themeName], lang || 'ko')
   const height = calculateCanvasHeight(messages, config, lang)
   const width = config.canvasWidth
 
