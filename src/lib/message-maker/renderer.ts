@@ -1056,7 +1056,11 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       if (config.profile.size > 0 && msg.portrait) {
         const zoom = config.profile.zoom || 1.0
         const size = config.profile.size
-        const portraitDataUrl = await getImageAsDataUrl(msg.portrait)
+        const finalUrl =
+          msg.portrait.startsWith('http') || msg.portrait.startsWith('blob:')
+            ? msg.portrait
+            : getImageUrl(msg.portrait, {w: 512}, rendererIsProd)
+        const portraitDataUrl = await getImageAsDataUrl(finalUrl)
         if (config.profile.circular) {
           svgParts.push(`
   <clipPath id="circleView${i}">
