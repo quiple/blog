@@ -1058,12 +1058,13 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         const portraitDataUrl = await getImageAsDataUrl(finalUrl)
         if (config.profile.circular) {
           svgParts.push(`
-  <clipPath id="circleView${i}">
-    <circle cx="${profileX + size / 2}" cy="${cursorY + size / 2}" r="${size / 2}" />
-  </clipPath>
-  <g clip-path="url(#circleView${i})">
-    <image x="${profileX - (size * (zoom - 1)) / 2}" y="${cursorY - (size * (zoom - 1)) / 2}" width="${size * zoom}" height="${size * zoom}" href="${portraitDataUrl}" preserveAspectRatio="xMidYMid slice" />
-  </g>`)
+            <clipPath id="circleView${i}">
+              <circle cx="${profileX + size / 2}" cy="${cursorY + size / 2}" r="${size / 2}" />
+            </clipPath>
+            <g clip-path="url(#circleView${i})">
+              <image x="${profileX - (size * (zoom - 1)) / 2}" y="${cursorY - (size * (zoom - 1)) / 2}" width="${size * zoom}" height="${size * zoom}" href="${portraitDataUrl}" preserveAspectRatio="xMidYMid slice" />
+            </g>
+          `)
         } else {
           svgParts.push(`<rect x="${profileX}" y="${cursorY}" width="${size}" height="${size}" rx="12" fill="#ddd" />`)
           svgParts.push(
