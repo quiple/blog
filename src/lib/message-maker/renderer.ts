@@ -1013,23 +1013,12 @@ async function getSvgSource(name: string): Promise<string> {
 
 const opentypeCache = new Map<string, opentype.Font>()
 
-function dataUrlToArrayBuffer(dataUrl: string): ArrayBuffer {
-  const base64 = dataUrl.split(',')[1]
-  const binaryString = window.atob(base64)
-  const len = binaryString.length
-  const bytes = new Uint8Array(len)
-  for (let i = 0; i < len; i++) {
-    bytes[i] = binaryString.charCodeAt(i)
-  }
-  return bytes.buffer
-}
-
 async function loadOpentypeFont(familyName: string, modulePromise: Promise<{default: string}>): Promise<opentype.Font> {
   if (opentypeCache.has(familyName)) {
     return opentypeCache.get(familyName)!
   }
   const {default: dataUrl} = await modulePromise
-  const buffer = dataUrlToArrayBuffer(dataUrl)
+  const buffer = base64ToArrayBuffer(dataUrl)
   const font = opentype.parse(buffer)
   opentypeCache.set(familyName, font)
   return font
@@ -1064,7 +1053,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
   const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
   const bubbleRightFontWeight = lang === 'en' ? '450' : config.bubbleRight.fontWeight
 
-  // 폰트 데이터 가져오기 (인라인 포함)
+  // 폰트 데이터 가져오기 (SVG 패스 변환용)
   let fontStyles = ''
   if (themeName === 'momotalk') {
     const jalnanPromise = import('./font-data-jalnan')
@@ -1073,53 +1062,15 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     jalnanFont = await loadOpentypeFont('Jalnan2', jalnanPromise)
     gyeonggiFont = await loadOpentypeFont('GyeonggiTitle', gyeonggiPromise)
 
-    const jalnan2 = (await jalnanPromise).default
-    const gyeonggi = (await gyeonggiPromise).default
-
-    let extraFontStyles = ''
     if (lang === 'ja') {
       const shinmgoMediumPromise = import('./font-data-shinmgo')
       const shinmgoDeboldPromise = import('./font-data-shinmgo-debold')
       shinmgoMediumFont = await loadOpentypeFont('ShinMGo-Medium', shinmgoMediumPromise)
       shinmgoDeboldFont = await loadOpentypeFont('ShinMGo-DeBold', shinmgoDeboldPromise)
-      const shinmgoMedium = (await shinmgoMediumPromise).default
-      const shinmgoDebold = (await shinmgoDeboldPromise).default
-      extraFontStyles = `
-        @font-face {
-          font-family: 'ShinMGo-Medium';
-          src: url('${shinmgoMedium}') format('opentype');
-        }
-        @font-face {
-          font-family: 'ShinMGo-DeBold';
-          src: url('${shinmgoDebold}') format('opentype');
-        }
-      `
     } else if (lang === 'en') {
       const notosansPromise = import('./font-data-notosans')
       notosansFont = await loadOpentypeFont('NotoSans', notosansPromise)
-      const notosans = (await notosansPromise).default
-      extraFontStyles = `
-        @font-face {
-          font-family: 'NotoSans';
-          src: url('${notosans}') format('truetype');
-          font-weight: 100 900;
-        }
-      `
     }
-
-    fontStyles = `
-      <style>
-        @font-face {
-          font-family: 'Jalnan2';
-          src: url('${jalnan2}') format('opentype');
-        }
-        @font-face {
-          font-family: 'GyeonggiTitle';
-          src: url('${gyeonggi}') format('opentype');
-        }
-        ${extraFontStyles}
-      </style>
-    `
   }
 
   function renderSvgText(
