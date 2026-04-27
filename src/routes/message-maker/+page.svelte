@@ -283,6 +283,8 @@
       messages = [...messages, {type: 'left', name: '', portrait: '', text: ['']}]
       // 학생 선택 대화 상자 표시
       dialogTargetIndex = messages.length - 1
+      studentSearchQuery = ''
+      expandedStudentIndex = -1
       showStudentDialog = true
     }
   }
@@ -329,8 +331,6 @@
     messages[dialogTargetIndex].name = student.name[lang]
     messages[dialogTargetIndex].portrait = `blue-archive/${portraitFile}.png`
     showStudentDialog = false
-    studentSearchQuery = ''
-    expandedStudentIndex = -1
     focusIndex = dialogTargetIndex
     requestRedraw()
   }
@@ -831,8 +831,6 @@
   onOpenChange={(open) => {
     if (!open) {
       showStudentDialog = false
-      studentSearchQuery = ''
-      expandedStudentIndex = -1
     }
   }}
 >
