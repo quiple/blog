@@ -154,7 +154,12 @@ export interface RawThemeConfig {
 }
 
 export type ThemeConfig = Omit<RawThemeConfig, 'name' | 'bubbleLeft' | 'bubbleRight'> & {
-  name: Omit<RawThemeConfig['name'], 'fontSize'> & {fontSize: number}
+  name: Omit<RawThemeConfig['name'], 'fontSize' | 'marginTop' | 'marginBottom' | 'marginLeft'> & {
+    fontSize: number
+    marginTop: number
+    marginBottom: number
+    marginLeft: number
+  }
   bubbleLeft: Omit<
     RawThemeConfig['bubbleLeft'],
     'fontSize' | 'lineHeight' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
@@ -186,7 +191,13 @@ export function resolveThemeConfig(config: RawThemeConfig, lang: Language): Them
   }
   return {
     ...config,
-    name: {...config.name, fontSize: resolve(config.name.fontSize)},
+    name: {
+      ...config.name,
+      fontSize: resolve(config.name.fontSize),
+      marginTop: resolve(config.name.marginTop),
+      marginBottom: resolve(config.name.marginBottom),
+      marginLeft: resolve(config.name.marginLeft),
+    },
     bubbleLeft: {
       ...config.bubbleLeft,
       fontSize: resolve(config.bubbleLeft.fontSize),
