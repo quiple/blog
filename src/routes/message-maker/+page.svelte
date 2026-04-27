@@ -625,7 +625,17 @@
                 <Textarea
                   id="msg-input-{i}-{bi}"
                   class="grow min-h-9.5"
-                  placeholder={msg.type === 'left' ? '왼쪽 메시지 입력...' : '오른쪽 메시지 입력...'}
+                  placeholder={msg.type === 'left'
+                    ? lang === 'ja'
+                      ? '左のメッセージを入力...'
+                      : lang === 'ko'
+                        ? '왼쪽 메시지 입력...'
+                        : 'Enter message on the left...'
+                    : lang === 'ja'
+                      ? '右のメッセージを入力...'
+                      : lang === 'ko'
+                        ? '오른쪽 메시지 입력...'
+                        : 'Enter message on the right...'}
                   bind:value={msg.text[bi]}
                   oninput={requestRedraw}
                 />
