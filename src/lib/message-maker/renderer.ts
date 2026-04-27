@@ -15,6 +15,20 @@ let shinmgoLoaded = false
 let notosansLoaded = false
 
 /**
+ * Data URL (base64) 문자열을 ArrayBuffer로 변환합니다.
+ * 브라우저 네트워크 탭에 폰트 리소스로 잡히는 것을 방지합니다.
+ */
+function base64ToArrayBuffer(base64: string): ArrayBuffer {
+  const binaryString = atob(base64.split(',')[1])
+  const len = binaryString.length
+  const bytes = new Uint8Array(len)
+  for (let i = 0; i < len; i++) {
+    bytes[i] = binaryString.charCodeAt(i)
+  }
+  return bytes.buffer
+}
+
+/**
  * Jalnan2 폰트를 FontFace API로 등록 (lazy load)
  */
 async function ensureJalnan2Font(): Promise<void> {
@@ -29,7 +43,7 @@ async function ensureJalnan2Font(): Promise<void> {
   }
 
   const {default: fontDataUrl} = await import('./font-data-jalnan')
-  const font = new FontFace('Jalnan2', `url(${fontDataUrl})`)
+  const font = new FontFace('Jalnan2', base64ToArrayBuffer(fontDataUrl))
   await font.load()
   document.fonts.add(font)
   jalnan2Loaded = true
@@ -50,7 +64,7 @@ async function ensureGyeonggiFont(): Promise<void> {
   }
 
   const {default: fontDataUrl} = await import('./font-data-gyeonggi')
-  const font = new FontFace('GyeonggiTitle', `url(${fontDataUrl})`)
+  const font = new FontFace('GyeonggiTitle', base64ToArrayBuffer(fontDataUrl))
   await font.load()
   document.fonts.add(font)
   gyeonggiLoaded = true
@@ -74,8 +88,8 @@ async function ensureShinMGoFont(): Promise<void> {
     import('./font-data-shinmgo'),
     import('./font-data-shinmgo-debold'),
   ])
-  const mediumFont = new FontFace('ShinMGo-Medium', `url(${mediumDataUrl})`)
-  const deboldFont = new FontFace('ShinMGo-DeBold', `url(${deboldDataUrl})`)
+  const mediumFont = new FontFace('ShinMGo-Medium', base64ToArrayBuffer(mediumDataUrl))
+  const deboldFont = new FontFace('ShinMGo-DeBold', base64ToArrayBuffer(deboldDataUrl))
   await Promise.all([mediumFont.load(), deboldFont.load()])
   document.fonts.add(mediumFont)
   document.fonts.add(deboldFont)
@@ -97,7 +111,7 @@ async function ensureNotoSansFont(): Promise<void> {
   }
 
   const {default: fontDataUrl} = await import('./font-data-notosans')
-  const font = new FontFace('NotoSans', `url(${fontDataUrl})`, {weight: '100 900'})
+  const font = new FontFace('NotoSans', base64ToArrayBuffer(fontDataUrl), {weight: '100 900'})
   await font.load()
   document.fonts.add(font)
   notosansLoaded = true
