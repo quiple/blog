@@ -29,6 +29,8 @@ import {visit} from 'unist-util-visit'
 import type {PageServerLoad} from './$types'
 
 const isProd = import.meta.env.PROD
+const imageSizeMap = imageSizes as Record<string, {width: number; height: number}>
+const widthClassRegex = /(^|\s)w-/
 
 export const load: PageServerLoad = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
@@ -104,7 +106,7 @@ function rehypeImageSizes() {
         // 이미지 주소를 프록시 주소로 교체
         node.properties.src = getImageUrl(srcClean, {w: 1280}, isProd)
 
-        const sizeInfo = (imageSizes as Record<string, {width: number; height: number}>)[srcClean]
+        const sizeInfo = imageSizeMap[srcClean]
         if (sizeInfo) {
           node.properties.width = node.properties.width || sizeInfo.width
           node.properties.height = node.properties.height || sizeInfo.height
@@ -145,7 +147,7 @@ function figure() {
         const id = attributes.id
         const className = attributes.class ?? ''
 
-        const sizeInfo = (imageSizes as Record<string, {width: number; height: number}>)[srcClean]
+        const sizeInfo = imageSizeMap[srcClean]
         const widthVal = attributes.width || sizeInfo?.width || ''
         const heightVal = attributes.height || sizeInfo?.height || ''
 
@@ -158,7 +160,7 @@ function figure() {
 
         if (node.name === 'figure') {
           wrapperClass = cn(wrapperClass, className)
-          const hasWidthClass = /(^|\s)w-/.test(className)
+          const hasWidthClass = widthClassRegex.test(className)
           if (widthVal && heightVal) {
             const maxWidth = hasWidthClass ? '100%' : `${widthVal}px`
             wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${maxWidth};"`

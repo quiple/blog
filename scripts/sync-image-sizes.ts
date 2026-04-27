@@ -1,5 +1,6 @@
 import fs from 'fs/promises'
 import path from 'path'
+import {Readable} from 'stream'
 import {remark} from 'remark'
 import remarkDirective from 'remark-directive'
 import sharp from 'sharp'
@@ -13,13 +14,59 @@ const IMAGE_BASE_URL = 'https://quiple.dev/img'
 
 async function getMarkdownFiles(dir: string): Promise<string[]> {
   const entries = await fs.readdir(dir, {withFileTypes: true})
-  const files = await Promise.all(
-    entries.map(async (entry) => {
-      const res = path.resolve(dir, entry.name)
-      return entry.isDirectory() ? getMarkdownFiles(res) : res
-    }),
-  )
-  return files.flat().filter((f) => f.endsWith('.md'))
+  const files: string[] = []
+  for (const entry of entries) {
+    const res = path.resolve(dir, entry.name)
+    if (entry.isDirectory()) {
+      files.push(...(await getMarkdownFiles(res)))
+    } else if (res.endsWith('.md')) {
+      files.push(res)
+    }
+  }
+  return files
+}
+
+async function probeImageSize(url: string): Promise<{width: number; height: number} | null> {
+  const res = await fetch(url, {
+    headers: {
+      'x-internal-secret': 'fb5328098e2fab0277635ff61df13870',
+      'User-Agent': 'Cloudflare-Image-Resizing',
+    },
+  })
+  if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
+
+  // Stream the response body into sharp instead of buffering entire file
+  const reader = res.body?.getReader()
+  if (!reader) throw new Error('No response body')
+
+  const readable = new Readable({
+    async read() {
+      const {done, value} = await reader.read()
+      if (done) {
+        this.push(null)
+      } else {
+        this.push(Buffer.from(value))
+      }
+    },
+  })
+
+  const pipeline = sharp()
+  readable.pipe(pipeline)
+
+  const metadata = await pipeline.metadata()
+
+  // Destroy the stream early — we only needed the header
+  readable.destroy()
+
+  let {width, height, orientation} = metadata
+
+  // Swap width and height if orientation is 5, 6, 7, or 8
+  if (orientation && orientation >= 5) {
+    ;[width, height] = [height, width]
+  }
+
+  if (width && height) return {width, height}
+  return null
 }
 
 async function run() {
@@ -28,7 +75,7 @@ async function run() {
   try {
     const data = await fs.readFile(SIZES_FILE, 'utf-8')
     sizes = JSON.parse(data)
-  } catch (e) {
+  } catch {
     // File doesn't exist or invalid JSON, start fresh
   }
 
@@ -37,7 +84,7 @@ async function run() {
   // Use remark to parse files and find all images and figures
   const processor = remark().use(remarkDirective)
 
-  let addedCount = 0
+  const newSrcs = new Set<string>()
 
   for (const file of files) {
     const content = await fs.readFile(file, 'utf-8')
@@ -57,47 +104,28 @@ async function run() {
 
       src = src.replace('\\_', '_')
 
-      if (sizes[src]) return
-
-      // We'll process this src later to avoid duplicate console logs/probes in the same run
-      sizes[src] = {width: 0, height: 0}
+      if (!sizes[src]) {
+        newSrcs.add(src)
+      }
     })
   }
 
-  const srcsToProbe = Object.keys(sizes).filter((s) => sizes[s].width === 0)
+  let addedCount = 0
 
-  for (const src of srcsToProbe) {
+  for (const src of newSrcs) {
     const url = `${IMAGE_BASE_URL}/${src}`
     console.log(`Probing: ${url}...`)
 
     try {
-      const res = await fetch(url, {
-        headers: {
-          'x-internal-secret': 'fb5328098e2fab0277635ff61df13870',
-          'User-Agent': 'Cloudflare-Image-Resizing',
-        },
-      })
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
-      const buffer = await res.arrayBuffer()
-      const metadata = await sharp(Buffer.from(buffer)).metadata()
-
-      let {width, height, orientation} = metadata
-
-      // Swap width and height if orientation is 5, 6, 7, or 8
-      if (orientation && orientation >= 5) {
-        ;[width, height] = [height, width]
-      }
-
-      if (width && height) {
-        sizes[src] = {width, height}
+      const result = await probeImageSize(url)
+      if (result) {
+        sizes[src] = result
         addedCount++
-        console.log(`  -> ${width}x${height}${orientation ? ` (orientation: ${orientation})` : ''}`)
+        console.log(`  -> ${result.width}x${result.height}`)
       } else {
-        delete sizes[src]
         console.error(`  -> Could not get dimensions for ${url}`)
       }
     } catch (error) {
-      delete sizes[src]
       console.error(`  -> Failed to probe ${url}:`, error)
     }
   }
