@@ -1,6 +1,7 @@
 export type Language = 'ko' | 'en' | 'ja'
+export type LocalizedNumber = number | Partial<Record<Language, number>>
 
-export interface ThemeConfig {
+export interface RawThemeConfig {
   /** 캔버스 너비 (px) */
   canvasWidth: number
 
@@ -89,7 +90,7 @@ export interface ThemeConfig {
   /** 이름 표시 */
   name: {
     font: string
-    fontSize: number
+    fontSize: LocalizedNumber
     fontWeight: string
     color: string
     /** 이름과 메시지 사이 간격 */
@@ -105,14 +106,14 @@ export interface ThemeConfig {
     backgroundColor: string
     textColor: string
     font: string
-    fontSize: number
+    fontSize: LocalizedNumber
     fontWeight: string
-    lineHeight: number
+    lineHeight: LocalizedNumber
     /** 말풍선 내부 여백 */
-    paddingTop: number
-    paddingRight: number
-    paddingBottom: number
-    paddingLeft: number
+    paddingTop: LocalizedNumber
+    paddingRight: LocalizedNumber
+    paddingBottom: LocalizedNumber
+    paddingLeft: LocalizedNumber
     /** 말풍선 모서리 반경 */
     borderRadius: number
     /** 말풍선 최대 너비 비율 (대화 영역 대비) */
@@ -132,13 +133,13 @@ export interface ThemeConfig {
     backgroundColor: string
     textColor: string
     font: string
-    fontSize: number
+    fontSize: LocalizedNumber
     fontWeight: string
-    lineHeight: number
-    paddingTop: number
-    paddingRight: number
-    paddingBottom: number
-    paddingLeft: number
+    lineHeight: LocalizedNumber
+    paddingTop: LocalizedNumber
+    paddingRight: LocalizedNumber
+    paddingBottom: LocalizedNumber
+    paddingLeft: LocalizedNumber
     borderRadius: number
     maxWidthRatio: number
     /** 우측 여백 */
@@ -152,7 +153,62 @@ export interface ThemeConfig {
   }
 }
 
-export const momotalk: ThemeConfig = {
+export type ThemeConfig = Omit<RawThemeConfig, 'name' | 'bubbleLeft' | 'bubbleRight'> & {
+  name: Omit<RawThemeConfig['name'], 'fontSize'> & {fontSize: number}
+  bubbleLeft: Omit<
+    RawThemeConfig['bubbleLeft'],
+    'fontSize' | 'lineHeight' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
+  > & {
+    fontSize: number
+    lineHeight: number
+    paddingTop: number
+    paddingRight: number
+    paddingBottom: number
+    paddingLeft: number
+  }
+  bubbleRight: Omit<
+    RawThemeConfig['bubbleRight'],
+    'fontSize' | 'lineHeight' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
+  > & {
+    fontSize: number
+    lineHeight: number
+    paddingTop: number
+    paddingRight: number
+    paddingBottom: number
+    paddingLeft: number
+  }
+}
+
+export function resolveThemeConfig(config: RawThemeConfig, lang: Language): ThemeConfig {
+  const resolve = (val: LocalizedNumber) => {
+    if (typeof val === 'number') return val
+    return val[lang] ?? val['ko'] ?? Object.values(val)[0] ?? 0
+  }
+  return {
+    ...config,
+    name: {...config.name, fontSize: resolve(config.name.fontSize)},
+    bubbleLeft: {
+      ...config.bubbleLeft,
+      fontSize: resolve(config.bubbleLeft.fontSize),
+      lineHeight: resolve(config.bubbleLeft.lineHeight),
+      paddingTop: resolve(config.bubbleLeft.paddingTop),
+      paddingRight: resolve(config.bubbleLeft.paddingRight),
+      paddingBottom: resolve(config.bubbleLeft.paddingBottom),
+      paddingLeft: resolve(config.bubbleLeft.paddingLeft),
+    },
+    bubbleRight: {
+      ...config.bubbleRight,
+      fontSize: resolve(config.bubbleRight.fontSize),
+      lineHeight: resolve(config.bubbleRight.lineHeight),
+      paddingTop: resolve(config.bubbleRight.paddingTop),
+      paddingRight: resolve(config.bubbleRight.paddingRight),
+      paddingBottom: resolve(config.bubbleRight.paddingBottom),
+      paddingLeft: resolve(config.bubbleRight.paddingLeft),
+    },
+  }
+}
+
+export const momotalk: RawThemeConfig = {
   canvasWidth: 1282,
   backgroundColor: '#ffffff',
   header: {
@@ -201,7 +257,7 @@ export const momotalk: ThemeConfig = {
   },
   name: {
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
-    fontSize: 43,
+    fontSize: {ko: 43, ja: 40, en: 45},
     fontWeight: 'normal',
     color: '#3F444A',
     marginBottom: 8,
@@ -212,13 +268,13 @@ export const momotalk: ThemeConfig = {
     backgroundColor: '#4C5B6F',
     textColor: '#ffffff',
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
-    fontSize: 44.5,
+    fontSize: {ko: 44.5, ja: 41.5, en: 46},
     fontWeight: 'normal',
-    lineHeight: 1.25,
-    paddingTop: 20,
-    paddingRight: 23,
-    paddingBottom: 10,
-    paddingLeft: 23,
+    lineHeight: {ko: 1.25, ja: 1.4, en: 1.2},
+    paddingTop: {ko: 20, ja: 22, en: 18},
+    paddingRight: {ko: 23, ja: 25, en: 21},
+    paddingBottom: {ko: 10, ja: 12, en: 8},
+    paddingLeft: {ko: 23, ja: 25, en: 21},
     borderRadius: 23,
     maxWidthRatio: 0.82,
     marginLeft: 30,
@@ -230,13 +286,13 @@ export const momotalk: ThemeConfig = {
     backgroundColor: '#4A8ACB',
     textColor: '#ffffff',
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
-    fontSize: 44.5,
+    fontSize: {ko: 44.5, ja: 41.5, en: 46},
     fontWeight: 'normal',
-    lineHeight: 1.25,
-    paddingTop: 20,
-    paddingRight: 23,
-    paddingBottom: 10,
-    paddingLeft: 23,
+    lineHeight: {ko: 1.25, ja: 1.4, en: 1.2},
+    paddingTop: {ko: 20, ja: 22, en: 18},
+    paddingRight: {ko: 23, ja: 25, en: 21},
+    paddingBottom: {ko: 10, ja: 12, en: 8},
+    paddingLeft: {ko: 23, ja: 25, en: 21},
     borderRadius: 23,
     maxWidthRatio: 0.82,
     marginRight: 0,
@@ -246,7 +302,7 @@ export const momotalk: ThemeConfig = {
   },
 }
 
-export const imessage: ThemeConfig = {
+export const imessage: RawThemeConfig = {
   canvasWidth: 1024,
   backgroundColor: '#ffffff',
   header: {
@@ -339,7 +395,7 @@ export const imessage: ThemeConfig = {
   },
 }
 
-export const line: ThemeConfig = {
+export const line: RawThemeConfig = {
   canvasWidth: 1024,
   backgroundColor: '#8cabd9',
   header: {
@@ -432,7 +488,7 @@ export const line: ThemeConfig = {
   },
 }
 
-export const kakaotalk: ThemeConfig = {
+export const kakaotalk: RawThemeConfig = {
   canvasWidth: 1024,
   backgroundColor: '#b3c9db',
   header: {
