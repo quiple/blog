@@ -2326,5 +2326,53 @@
   "article/0041.png": {
     "width": 1000,
     "height": 1500
+  },
+  "article/ashasaishin_.jpg": {
+    "width": 3372,
+    "height": 4960
+  },
+  "article/anomi.jpg": {
+    "width": 3136,
+    "height": 2352
+  },
+  "article/demo.jpg": {
+    "width": 3648,
+    "height": 2736
+  },
+  "article/shashin.png": {
+    "width": 515,
+    "height": 729
+  },
+  "article/wasureflyer.png": {
+    "width": 435,
+    "height": 622
+  },
+  "article/IMG_0393.jpg": {
+    "width": 3264,
+    "height": 2448
+  },
+  "article/IMG_0441.jpg": {
+    "width": 2448,
+    "height": 3264
+  },
+  "article/asamu_.jpg": {
+    "width": 2890,
+    "height": 2929
+  },
+  "article/IMG_0174.jpg": {
+    "width": 2048,
+    "height": 2048
+  },
+  "article/IMG_0178.jpg": {
+    "width": 2048,
+    "height": 2048
+  },
+  "article/sub.jpg": {
+    "width": 2496,
+    "height": 1664
+  },
+  "article/IMG_3212.jpg": {
+    "width": 2496,
+    "height": 1664
   }
 }
