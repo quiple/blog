@@ -55,7 +55,7 @@
     class={cn(
       'block object-cover transition-opacity',
       !loaded || error ? 'opacity-0' : 'opacity-100',
-      fullSize ? 'w-full h-full' : '',
+      fullSize ? 'w-full h-full' : 'max-h-full h-auto',
     )}
     onload={handleLoad}
     onerror={handleError}

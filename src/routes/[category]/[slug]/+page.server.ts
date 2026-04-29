@@ -175,7 +175,7 @@ function figure() {
             src,
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
-            class: hasWidthClass ? 'not-prose w-full h-full block' : 'not-prose block',
+            class: hasWidthClass ? 'not-prose w-full h-full block' : 'not-prose block w-fit mx-auto max-h-full',
             fullSize: hasWidthClass,
           }).replace(/"/g, '&quot;')}"></div>`
         } else if (node.name === 'youtube') {
