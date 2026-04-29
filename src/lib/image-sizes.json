@@ -2510,5 +2510,29 @@
   "article/DiverCity2020.png": {
     "width": 750,
     "height": 499
+  },
+  "article/wasure_anoko_jyake.png": {
+    "width": 855,
+    "height": 742
+  },
+  "article/shibataken_asha.png": {
+    "width": 1299,
+    "height": 1270
+  },
+  "article/goods.png": {
+    "width": 1191,
+    "height": 842
+  },
+  "article/domino2.png": {
+    "width": 684,
+    "height": 1024
+  },
+  "article/domino1.png": {
+    "width": 640,
+    "height": 427
+  },
+  "article/bokunidekiru_jkt.jpg": {
+    "width": 3000,
+    "height": 3000
   }
 }
