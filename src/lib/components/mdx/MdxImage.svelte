@@ -51,10 +51,7 @@
       {height}
       {loading}
       {decoding}
-      class={cn(
-        'block w-full h-full object-cover transition-opacity duration-300',
-        !loaded ? 'opacity-0' : 'opacity-100',
-      )}
+      class={cn('block w-full h-full object-cover transition-opacity', !loaded ? 'opacity-0' : 'opacity-100')}
       onload={handleLoad}
       onerror={handleError}
       {...restProps}

@@ -220,7 +220,7 @@
           d={pathD}
           fill="none"
           stroke="currentColor"
-          class="text-blue-700 dark:text-blue-300 {isReady ? 'transition-all duration-300 ease-out' : ''}"
+          class="text-blue-700 dark:text-blue-300 {isReady ? 'transition-all ease-out' : ''}"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
