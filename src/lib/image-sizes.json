@@ -2374,5 +2374,41 @@
   "article/IMG_3212.jpg": {
     "width": 2496,
     "height": 1664
+  },
+  "article/takanari_sha.jpg": {
+    "width": 5760,
+    "height": 3840
+  },
+  "article/14.png": {
+    "width": 720,
+    "height": 480
+  },
+  "article/bokura_asha.jpg": {
+    "width": 5760,
+    "height": 3840
+  },
+  "article/bokura_punk.jpg": {
+    "width": 1004,
+    "height": 886
+  },
+  "article/wasure4.jpg": {
+    "width": 2807,
+    "height": 1403
+  },
+  "article/2013UNIT_live.jpg": {
+    "width": 3888,
+    "height": 2592
+  },
+  "article/2ndALs3.png": {
+    "width": 1385,
+    "height": 923
+  },
+  "article/2ndALs1.jpg": {
+    "width": 2944,
+    "height": 1965
+  },
+  "article/2ndALs2.jpg": {
+    "width": 2944,
+    "height": 1965
   }
 }
