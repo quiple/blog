@@ -38,7 +38,7 @@
   const mergedStyle = [aspectRatioStyle, style].filter(Boolean).join(' ')
 </script>
 
-<div class={cn('relative block w-full h-full', className)} style={mergedStyle}>
+<div class={cn('relative block', className)} style={mergedStyle}>
   {#if !loaded || error}
     <Skeleton class="absolute inset-0 w-full h-full rounded-md" />
   {/if}
@@ -51,7 +51,7 @@
       {height}
       {loading}
       {decoding}
-      class={cn('block w-full h-full object-cover transition-opacity', !loaded ? 'opacity-0' : 'opacity-100')}
+      class={cn('block object-cover transition-opacity', !loaded ? 'opacity-0' : 'opacity-100')}
       onload={handleLoad}
       onerror={handleError}
       {...restProps}

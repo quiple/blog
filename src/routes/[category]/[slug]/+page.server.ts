@@ -167,15 +167,15 @@ function figure() {
           wrapperClass = cn(wrapperClass, className)
           const hasWidthClass = widthClassRegex.test(className)
           if (widthVal && heightVal) {
-            const maxWidth = hasWidthClass ? '100%' : '100%'
-            const widthStyle = hasWidthClass ? '' : ` width: ${widthVal}px;`
+            const maxWidth = hasWidthClass ? '100%' : `min(100%, ${widthVal}px)`
+            const widthStyle = hasWidthClass ? '' : ' width: fit-content;'
             wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${maxWidth};${widthStyle}"`
           }
           content = `<div data-mdx-component="MdxImage" data-mdx-props="${JSON.stringify({
             src,
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
-            class: 'not-prose w-full h-full block',
+            class: 'not-prose block',
           }).replace(/"/g, '&quot;')}"></div>`
         } else if (node.name === 'youtube') {
           content = `<iframe class="${cn('aspect-video w-full', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
