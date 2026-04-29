@@ -171,11 +171,15 @@ function figure() {
             const widthStyle = hasWidthClass ? '' : ' width: fit-content;'
             wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${maxWidth};${widthStyle}"`
           }
+          const heightClasses = className?.match(/\b(max-h-|h-)[^\s]+\b/g)?.join(' ') || ''
+          const mdxImageClass = hasWidthClass
+            ? 'not-prose w-full h-full block'
+            : `not-prose block w-fit mx-auto max-h-full ${heightClasses}`
           content = `<div data-mdx-component="MdxImage" data-mdx-props="${JSON.stringify({
             src,
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
-            class: hasWidthClass ? 'not-prose w-full h-full block' : 'not-prose block w-fit mx-auto max-h-full',
+            class: mdxImageClass.trim(),
             fullSize: hasWidthClass,
           }).replace(/"/g, '&quot;')}"></div>`
         } else if (node.name === 'youtube') {
