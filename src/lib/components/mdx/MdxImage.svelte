@@ -11,6 +11,7 @@
     style,
     loading = 'lazy',
     decoding = 'async',
+    fullSize = false,
     ...restProps
   }: {
     src: string
@@ -21,6 +22,7 @@
     style?: string
     loading?: 'lazy' | 'eager'
     decoding?: 'async' | 'auto' | 'sync'
+    fullSize?: boolean
     [key: string]: any
   } = $props()
 
@@ -43,18 +45,20 @@
     <Skeleton class="absolute inset-0 w-full h-full rounded-md" />
   {/if}
 
-  {#if !error}
-    <img
-      {src}
-      {alt}
-      {width}
-      {height}
-      {loading}
-      {decoding}
-      class={cn('block object-cover transition-opacity', !loaded ? 'opacity-0' : 'opacity-100')}
-      onload={handleLoad}
-      onerror={handleError}
-      {...restProps}
-    />
-  {/if}
+  <img
+    {src}
+    {alt}
+    {width}
+    {height}
+    {loading}
+    {decoding}
+    class={cn(
+      'block object-cover transition-opacity',
+      !loaded || error ? 'opacity-0' : 'opacity-100',
+      fullSize ? 'w-full h-full' : '',
+    )}
+    onload={handleLoad}
+    onerror={handleError}
+    {...restProps}
+  />
 </div>
