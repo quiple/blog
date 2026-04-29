@@ -108,17 +108,21 @@ function rehypeImageSizes() {
         node.properties.src = getImageUrl(srcClean, {w: 1280}, isProd)
 
         const sizeInfo = imageSizeMap[srcClean]
-        if (sizeInfo) {
-          node.properties.width = node.properties.width || sizeInfo.width
-          node.properties.height = node.properties.height || sizeInfo.height
-          node.properties.loading = node.properties.loading || 'lazy'
-          node.properties.decoding = node.properties.decoding || 'async'
 
-          const ratio = `${sizeInfo.width} / ${sizeInfo.height}`
-          const existingStyle = node.properties.style || ''
-          if (!existingStyle.includes('aspect-ratio')) {
-            node.properties.style = `${existingStyle}${existingStyle ? ';' : ''} aspect-ratio: ${ratio};`.trim()
-          }
+        // Convert img element to MdxImage component
+        node.tagName = 'div'
+        node.properties = {
+          'data-mdx-component': 'MdxImage',
+          'data-mdx-props': JSON.stringify({
+            src: node.properties.src,
+            alt: node.properties.alt,
+            width: node.properties.width || sizeInfo?.width,
+            height: node.properties.height || sizeInfo?.height,
+            class: node.properties.className || '',
+            loading: node.properties.loading || 'lazy',
+            decoding: node.properties.decoding || 'async',
+            style: node.properties.style,
+          }),
         }
       } else if (
         node.tagName === 'iframe' &&
@@ -164,9 +168,15 @@ function figure() {
           const hasWidthClass = widthClassRegex.test(className)
           if (widthVal && heightVal) {
             const maxWidth = hasWidthClass ? '100%' : `${widthVal}px`
-            wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${maxWidth};"`
+            const widthStyle = hasWidthClass ? '' : ' width: 100%;'
+            wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${maxWidth};${widthStyle}"`
           }
-          content = `<img class="not-prose w-full h-full block" src="${src}" ${widthAttr} ${heightAttr} loading="lazy" decoding="async" />`
+          content = `<div data-mdx-component="MdxImage" data-mdx-props="${JSON.stringify({
+            src,
+            width: widthAttr ? widthVal : undefined,
+            height: heightAttr ? heightVal : undefined,
+            class: 'not-prose w-full h-full block',
+          }).replace(/"/g, '&quot;')}"></div>`
         } else if (node.name === 'youtube') {
           content = `<iframe class="${cn('aspect-video w-full', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
         } else if (node.name === 'spotify') {
