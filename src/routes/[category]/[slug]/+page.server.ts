@@ -167,8 +167,8 @@ function figure() {
           wrapperClass = cn(wrapperClass, className)
           const hasWidthClass = widthClassRegex.test(className)
           if (widthVal && heightVal) {
-            const maxWidth = hasWidthClass ? '100%' : `${widthVal}px`
-            const widthStyle = hasWidthClass ? '' : ' width: 100%;'
+            const maxWidth = hasWidthClass ? '100%' : '100%'
+            const widthStyle = hasWidthClass ? '' : ` width: ${widthVal}px;`
             wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${maxWidth};${widthStyle}"`
           }
           content = `<div data-mdx-component="MdxImage" data-mdx-props="${JSON.stringify({
