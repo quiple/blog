@@ -2454,5 +2454,61 @@
   "article/airabuiu.jpg": {
     "width": 3000,
     "height": 3000
+  },
+  "article/yaon1.jpg": {
+    "width": 640,
+    "height": 427
+  },
+  "article/yaon2.jpg": {
+    "width": 660,
+    "height": 440
+  },
+  "article/yaon3.jpg": {
+    "width": 640,
+    "height": 427
+  },
+  "article/wasure.png": {
+    "width": 1500,
+    "height": 1500
+  },
+  "article/long_jkt.png": {
+    "width": 3000,
+    "height": 3000
+  },
+  "article/quatro.png": {
+    "width": 1568,
+    "height": 1045
+  },
+  "article/quatro2.png": {
+    "width": 600,
+    "height": 400
+  },
+  "article/asha_collage.png": {
+    "width": 800,
+    "height": 525
+  },
+  "article/shuukanseishun.png": {
+    "width": 3000,
+    "height": 3000
+  },
+  "article/ZeppDiver2020_2.png": {
+    "width": 800,
+    "height": 533
+  },
+  "article/heyarec.png": {
+    "width": 750,
+    "height": 563
+  },
+  "article/shuukanseishun_suda.png": {
+    "width": 750,
+    "height": 501
+  },
+  "article/shuukanseishun_taidan.png": {
+    "width": 1080,
+    "height": 720
+  },
+  "article/DiverCity2020.png": {
+    "width": 750,
+    "height": 499
   }
 }
