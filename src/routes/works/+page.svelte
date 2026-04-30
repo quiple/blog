@@ -1,5 +1,21 @@
 <script lang="ts">
-  const works = [
+  import {ExternalLink} from '@lucide/svelte'
+  import {Badge} from '$lib/components/ui/badge'
+  import {Button} from '$lib/components/ui/button'
+  import * as Card from '$lib/components/ui/card'
+
+  type WorkType = '웹 도구' | '웹사이트' | '폰트'
+
+  interface Work {
+    title: string
+    url: string
+    description: string
+    type: WorkType
+    scope?: string
+    stack?: string[]
+  }
+
+  const works: Work[] = [
     {
       title: 'BitHangul',
       url: 'https://bithangul.quiple.dev',
@@ -49,7 +65,7 @@
     },
   ]
 
-  const contributions = [
+  const contributions: Work[] = [
     {
       title: 'Bluesky',
       url: 'https://bsky.social',
@@ -67,16 +83,67 @@
   <meta name="robots" content="noindex" />
 </svelte:head>
 
-<h1 class="page-title">Works</h1>
+{#snippet workCard(work: Work)}
+  <Card.Root class="flex h-full flex-col transition-colors hover:border-primary/50">
+    <Card.Header>
+      <div class="flex items-start justify-between gap-4">
+        <div>
+          <Card.Title class="text-xl">
+            <a href={work.url} target={work.url.startsWith('http') ? '_blank' : '_self'} class="hover:underline">
+              {work.title}
+            </a>
+          </Card.Title>
+          <Card.Description class="mt-2">
+            <Badge variant="secondary">{work.type}</Badge>
+          </Card.Description>
+        </div>
+        {#if work.url.startsWith('http')}
+          <Button
+            href={work.url}
+            target="_blank"
+            variant="ghost"
+            size="icon"
+            class="h-8 w-8 shrink-0 text-muted-foreground hover:text-foreground"
+          >
+            <ExternalLink class="h-4 w-4" />
+          </Button>
+        {/if}
+      </div>
+    </Card.Header>
+    <Card.Content class="flex-grow">
+      <p class="mb-2 text-sm text-foreground/90">{work.description}</p>
+      {#if work.scope}
+        <p class="text-sm text-muted-foreground"><span class="font-semibold">담당:</span> {work.scope}</p>
+      {/if}
+    </Card.Content>
+    {#if work.stack && work.stack.length > 0}
+      <Card.Footer>
+        <div class="mt-auto flex flex-wrap gap-1.5">
+          {#each work.stack as tech}
+            <Badge variant="outline" class="text-xs font-normal">{tech}</Badge>
+          {/each}
+        </div>
+      </Card.Footer>
+    {/if}
+  </Card.Root>
+{/snippet}
 
-<div>
-  <ul>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+<h1 class="page-title mb-8 text-3xl font-bold tracking-tight">Works</h1>
+
+<div class="mb-12">
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {#each works as work}
+      {@render workCard(work)}
+    {/each}
+  </div>
 </div>
 
-<style lang="sass">
+<h2 class="mb-6 text-2xl font-bold tracking-tight">Contributions</h2>
 
-</style>
+<div>
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    {#each contributions as work}
+      {@render workCard(work)}
+    {/each}
+  </div>
+</div>
