@@ -77,22 +77,29 @@
   ]
 
   function tilt(node: HTMLElement) {
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = node.getBoundingClientRect()
-      const x = e.clientX - rect.left
-      const y = e.clientY - rect.top
-      const centerX = rect.width / 2
-      const centerY = rect.height / 2
-      const rotateX = (y - centerY) / 20
-      const rotateY = (centerX - x) / 20
+    let frameId: number
 
-      node.style.setProperty('--rx', `${rotateX}deg`)
-      node.style.setProperty('--ry', `${rotateY}deg`)
-      node.style.setProperty('--mx', `${(x / rect.width) * 100}%`)
-      node.style.setProperty('--my', `${(y / rect.height) * 100}%`)
+    const handleMouseMove = (e: MouseEvent) => {
+      if (frameId) cancelAnimationFrame(frameId)
+
+      frameId = requestAnimationFrame(() => {
+        const rect = node.getBoundingClientRect()
+        const x = e.clientX - rect.left
+        const y = e.clientY - rect.top
+        const centerX = rect.width / 2
+        const centerY = rect.height / 2
+        const rotateX = (y - centerY) / 20
+        const rotateY = (centerX - x) / 20
+
+        node.style.setProperty('--rx', `${rotateX}deg`)
+        node.style.setProperty('--ry', `${rotateY}deg`)
+        node.style.setProperty('--mx', `${(x / rect.width) * 100}%`)
+        node.style.setProperty('--my', `${(y / rect.height) * 100}%`)
+      })
     }
 
     const handleMouseLeave = () => {
+      if (frameId) cancelAnimationFrame(frameId)
       node.style.setProperty('--rx', '0deg')
       node.style.setProperty('--ry', '0deg')
     }
@@ -102,6 +109,7 @@
 
     return {
       destroy() {
+        if (frameId) cancelAnimationFrame(frameId)
         node.removeEventListener('mousemove', handleMouseMove)
         node.removeEventListener('mouseleave', handleMouseLeave)
       },
@@ -211,8 +219,10 @@
     overflow: hidden
     will-change: transform, box-shadow
     transform-style: preserve-3d
+    -webkit-font-smoothing: antialiased
+    backface-visibility: hidden
     transition: transform 0.15s ease-out, box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease
-    transform: translateY(0) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
+    transform: translateZ(0) translateY(0) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
 
     &::before
       content: ''
@@ -250,7 +260,7 @@
     z-index: 50
 
   :global(a.group:hover .card-dynamic)
-    transform: translateY(-8px) scale(1.02) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
+    transform: translateZ(0) translateY(-8px) scale(1.02) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
     box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.2)
 
     &::before
