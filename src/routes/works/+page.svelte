@@ -158,7 +158,7 @@
 
 <h1 class="page-title mb-8 text-3xl font-bold tracking-tight">Works</h1>
 
-<section class="container-x">
+<section class="container-x mb-4">
   <div class="mb-12">
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
       {#each works as work, i}
