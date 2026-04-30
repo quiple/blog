@@ -33,7 +33,7 @@
     {
       title: 'Arcana of Trickcal',
       url: 'https://trickcaltarot.com',
-      description: '랜딩 페이지.',
+      description: '2차 창작 프로젝트 랜딩 페이지.',
       type: '웹사이트',
       stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Cloudflare'],
     },
@@ -110,7 +110,7 @@
         {/if}
       </div>
     </Card.Header>
-    <Card.Content class="flex-grow">
+    <Card.Content class="grow">
       <p class="mb-2 text-sm text-foreground/90">{work.description}</p>
       {#if work.scope}
         <p class="text-sm text-muted-foreground"><span class="font-semibold">담당:</span> {work.scope}</p>
