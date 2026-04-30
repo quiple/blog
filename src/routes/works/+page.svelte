@@ -86,7 +86,7 @@
 {#snippet workCard(work: Work)}
   <a href={work.url} target={work.url.startsWith('http') ? '_blank' : '_self'} class="group block h-full outline-none">
     <Card.Root
-      class="flex h-full flex-col transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md group-focus-visible:ring-2 group-focus-visible:ring-ring"
+      class="card-dynamic flex h-full flex-col transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-xl group-focus-visible:ring-2 group-focus-visible:ring-ring"
     >
       <Card.Header>
         <Card.Title class="flex items-center gap-2 text-xl">
@@ -139,3 +139,31 @@
     </div>
   </div>
 </section>
+
+<style>
+  :global(.card-dynamic) {
+    position: relative;
+    overflow: hidden;
+  }
+
+  :global(.card-dynamic::after) {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transform: skewX(-20deg);
+    pointer-events: none;
+    z-index: 10;
+  }
+
+  :global(.dark .card-dynamic::after) {
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
+  }
+
+  :global(a.group:hover .card-dynamic) {
+    transform: translateY(-8px) scale(1.02);
+  }
+</style>
