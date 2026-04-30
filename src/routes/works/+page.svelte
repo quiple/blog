@@ -244,7 +244,7 @@
 
   :global(a.group:hover .card-dynamic)
     transform: translateY(-8px) scale(1.02) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3)
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.2)
 
     &::before
       opacity: 1
@@ -253,7 +253,7 @@
       animation: sleek-shine 1s cubic-bezier(0.16, 1, 0.3, 1) forwards
 
   :global(.dark a.group:hover .card-dynamic)
-    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.7), 0 0 30px -5px rgba(255, 255, 255, 0.05)
+    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.5), 0 0 30px -5px rgba(255, 255, 255, 0.04)
     border-color: rgba(255, 255, 255, 0.1)
 
     &::after
