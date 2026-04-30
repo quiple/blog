@@ -1,5 +1,6 @@
 <script lang="ts">
   import {ExternalLink} from '@lucide/svelte'
+  import {goto} from '$app/navigation'
   import {Badge} from '$lib/components/ui/badge'
   import * as Card from '$lib/components/ui/card'
 
@@ -118,6 +119,12 @@
   <a
     href={work.url}
     target={work.url.startsWith('http') ? '_blank' : '_self'}
+    onclick={(e) => {
+      if (!work.url.startsWith('http')) {
+        e.preventDefault()
+        goto(work.url)
+      }
+    }}
     class="group block h-full outline-none"
     style="perspective: 1000px;"
   >
