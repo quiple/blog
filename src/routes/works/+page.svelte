@@ -3,6 +3,7 @@
   import {Badge} from '$lib/components/ui/badge'
   import {Button} from '$lib/components/ui/button'
   import * as Card from '$lib/components/ui/card'
+  import {fly} from 'svelte/transition'
 
   type WorkType = '웹' | '폰트'
 
@@ -85,9 +86,7 @@
 
 {#snippet workCard(work: Work)}
   <a href={work.url} target={work.url.startsWith('http') ? '_blank' : '_self'} class="group block h-full outline-none">
-    <Card.Root
-      class="card-dynamic flex h-full flex-col transition-all duration-300 group-hover:border-primary/50 group-hover:shadow-xl group-focus-visible:ring-2 group-focus-visible:ring-ring"
-    >
+    <Card.Root class="card-dynamic flex h-full flex-col group-focus-visible:ring-2 group-focus-visible:ring-ring">
       <Card.Header>
         <Card.Title class="flex items-center gap-2 text-xl">
           {work.title}
@@ -123,8 +122,10 @@
 <section class="container-x">
   <div class="mb-12">
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-      {#each works as work}
-        {@render workCard(work)}
+      {#each works as work, i}
+        <div class="grid-item">
+          {@render workCard(work)}
+        </div>
       {/each}
     </div>
   </div>
@@ -133,37 +134,84 @@
 
   <div>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-      {#each contributions as work}
-        {@render workCard(work)}
+      {#each contributions as work, i}
+        <div class="grid-item">
+          {@render workCard(work)}
+        </div>
       {/each}
     </div>
   </div>
 </section>
 
-<style>
-  :global(.card-dynamic) {
-    position: relative;
-    overflow: hidden;
-  }
+<style lang="sass">
+  .grid-item
+    opacity: 0
+    animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards
+    
+    @for $i from 1 through 20
+      &:nth-child(#{$i})
+        animation-delay: #{$i * 0.05}s
 
-  :global(.card-dynamic::after) {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
-    transform: skewX(-20deg);
-    pointer-events: none;
-    z-index: 10;
-  }
+  @keyframes fade-in-up
+    from
+      opacity: 0
+      transform: translateY(30px)
+    to
+      opacity: 1
+      transform: translateY(0)
 
-  :global(.dark .card-dynamic::after) {
-    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1), transparent);
-  }
+  :global(.card-dynamic)
+    position: relative
+    overflow: hidden
+    will-change: transform, box-shadow
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease
+    background: hsl(var(--card))
+    
+    &::before
+      content: ''
+      position: absolute
+      inset: 0
+      background: radial-gradient(circle at top left, hsl(var(--primary) / 0.1), transparent 70%)
+      opacity: 0
+      transition: opacity 0.6s ease
+      pointer-events: none
+      z-index: 1
+    
+    &::after
+      content: ''
+      position: absolute
+      top: 0
+      left: -150%
+      width: 150%
+      height: 100%
+      background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.05) 30%, hsl(var(--primary) / 0.2) 50%, hsl(var(--primary) / 0.05) 70%, transparent)
+      transform: skewX(-25deg)
+      pointer-events: none
+      z-index: 10
 
-  :global(a.group:hover .card-dynamic) {
-    transform: translateY(-8px) scale(1.02);
-  }
+  :global(.dark .card-dynamic)
+    &::before
+      background: radial-gradient(circle at top left, hsl(var(--primary) / 0.15), transparent 70%)
+    &::after
+      background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.02) 30%, hsl(var(--primary) / 0.1) 50%, hsl(var(--primary) / 0.02) 70%, transparent)
+
+  :global(a.group:hover .card-dynamic)
+    transform: translateY(-8px)
+    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2), 0 18px 36px -18px rgba(0, 0, 0, 0.25)
+    border-color: hsl(var(--primary) / 0.5)
+    
+    &::before
+      opacity: 1
+
+    &::after
+      animation: sleek-shine 1s cubic-bezier(0.16, 1, 0.3, 1) forwards
+
+  :global(.dark a.group:hover .card-dynamic)
+    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.7), 0 0 30px -5px hsl(var(--primary) / 0.2)
+
+  @keyframes sleek-shine
+    0%
+      left: -150%
+    100%
+      left: 150%
 </style>
