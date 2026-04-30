@@ -40,7 +40,7 @@
     {
       title: 'FitVac',
       url: 'https://fit-vac.com',
-      description: '기업 웹사이트.',
+      description: '기업 홈페이지.',
       scope: '전체 홈페이지 리뉴얼 및 관리자 기능 추가.',
       type: '웹',
       stack: ['PHP', 'Laravel', 'MySQL', 'JavaScript'],
