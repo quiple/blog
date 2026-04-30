@@ -86,13 +86,13 @@
 {#snippet workCard(work: Work)}
   <a href={work.url} target={work.url.startsWith('http') ? '_blank' : '_self'} class="group block h-full outline-none">
     <Card.Root
-      class="flex h-full flex-col transition-colors group-hover:border-primary/50 group-focus-visible:ring-2 group-focus-visible:ring-ring"
+      class="flex h-full flex-col transition-all duration-300 group-hover:-translate-y-1 group-hover:shadow-md group-focus-visible:ring-2 group-focus-visible:ring-ring"
     >
       <Card.Header>
-        <Card.Title class="flex items-center gap-2 text-xl group-hover:underline">
+        <Card.Title class="flex items-center gap-2 text-xl">
           {work.title}
           {#if work.url.startsWith('http')}
-            <ExternalLink class="h-4 w-4 text-muted-foreground transition-colors group-hover:text-foreground" />
+            <ExternalLink class="h-4 w-4 text-muted-foreground" />
           {/if}
         </Card.Title>
         <Card.Description class="mt-2">
