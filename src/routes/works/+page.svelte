@@ -245,7 +245,7 @@
   :global(a.group:hover .card-dynamic)
     transform: translateY(-8px) scale(1.02) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
     box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25), 0 18px 36px -18px rgba(0, 0, 0, 0.3)
-    border-color: rgba(255, 255, 255, 0.2)
+    border-color: transparent
 
     &::before
       opacity: 1
