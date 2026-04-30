@@ -23,7 +23,6 @@
   import * as Select from '$lib/components/ui/select/index.js'
   import {Textarea} from '$lib/components/ui/textarea/index.js'
   import type {Language, ThemeName} from '$lib/message-maker/configs'
-  import {themes} from '$lib/message-maker/configs'
   import {
     clearCaches,
     copyCanvasToClipboard,
