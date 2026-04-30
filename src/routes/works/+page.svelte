@@ -68,7 +68,7 @@
   const contributions: Work[] = [
     {
       title: 'Bluesky',
-      url: 'https://bsky.social',
+      url: 'https://bsky.app',
       description: '소셜 네트워크 서비스.',
       scope: '앱 전체의 한국어 번역 및 일부 국제화 개선.',
       type: '웹',
