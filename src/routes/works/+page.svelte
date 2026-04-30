@@ -1,9 +1,7 @@
 <script lang="ts">
   import {ExternalLink} from '@lucide/svelte'
   import {Badge} from '$lib/components/ui/badge'
-  import {Button} from '$lib/components/ui/button'
   import * as Card from '$lib/components/ui/card'
-  import {fly} from 'svelte/transition'
 
   type WorkType = '웹' | '폰트'
 
@@ -147,7 +145,7 @@
   .grid-item
     opacity: 0
     animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards
-    
+
     @for $i from 1 through 20
       &:nth-child(#{$i})
         animation-delay: #{$i * 0.05}s
@@ -166,7 +164,7 @@
     will-change: transform, box-shadow
     transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease
     background: hsl(var(--card))
-    
+
     &::before
       content: ''
       position: absolute
@@ -176,7 +174,7 @@
       transition: opacity 0.6s ease
       pointer-events: none
       z-index: 1
-    
+
     &::after
       content: ''
       position: absolute
@@ -199,7 +197,7 @@
     transform: translateY(-8px)
     box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.2), 0 18px 36px -18px rgba(0, 0, 0, 0.25)
     border-color: hsl(var(--primary) / 0.5)
-    
+
     &::before
       opacity: 1
 
