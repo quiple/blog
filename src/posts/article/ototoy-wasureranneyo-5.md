@@ -6,6 +6,7 @@ author: 오카모토 타카유키 (岡本貴之)
 authorURL: https://x.com/smoky09
 image: article/wasure8.png
 imageForeground: fff
+outline: '09090b'
 origDate: 2024-04-25T21:00
 pubDate: 2026-04-30T00:38
 ---
