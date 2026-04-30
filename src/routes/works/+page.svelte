@@ -131,7 +131,7 @@
 <h1 class="page-title mb-8 text-3xl font-bold tracking-tight">Works</h1>
 
 <div class="mb-12">
-  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     {#each works as work}
       {@render workCard(work)}
     {/each}
@@ -141,7 +141,7 @@
 <h2 class="mb-6 text-2xl font-bold tracking-tight">Contributions</h2>
 
 <div>
-  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+  <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
     {#each contributions as work}
       {@render workCard(work)}
     {/each}
