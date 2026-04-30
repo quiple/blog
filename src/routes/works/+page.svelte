@@ -266,20 +266,7 @@
     &::before
       opacity: 1
 
-    &::after
-      animation: sleek-shine 1s cubic-bezier(0.16, 1, 0.3, 1) forwards
-
   :global(.dark a.group:hover .card-dynamic)
     box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.5), 0 0 30px -5px rgba(255, 255, 255, 0.04)
     border-color: rgba(255, 255, 255, 0.1)
-
-    &::after
-      display: none
-      animation: none
-
-  @keyframes sleek-shine
-    0%
-      left: -150%
-    100%
-      left: 150%
 </style>
