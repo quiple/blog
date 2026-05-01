@@ -26,7 +26,7 @@
   const isArticle = $derived(data.category === 'article')
   const isFont = $derived(data.category === 'font')
 
-  const image = $derived(data.image ? getImageUrl(data.image, {w: 3840}, isProd) : '')
+  const image = $derived(data.image ? getImageUrl(data.image, {w: 2560}, isProd) : '')
   const thumbnailImage = $derived(data.image ? getImageUrl(data.image, {h: 180}, isProd) : '')
   const publishedDate = $derived(data.origDate ?? data.pubDate)
   const publishedDateObj = $derived(
