@@ -40,11 +40,11 @@ function obfuscate() {
       // 기존 API에서 사용하는 이름과 매핑
       if (baseName.includes('shinmgo') && baseName.includes('debold')) {
         baseName = 'shinmgo-debold'
-      } else if (baseName.includes('shinmgo') && (baseName.includes('medium') || baseName.includes('medium'))) {
+      } else if (baseName.includes('shinmgo') && baseName.includes('medium')) {
         baseName = 'shinmgo'
       } else if (baseName.includes('gyeonggititle-bold')) {
         baseName = 'gyeonggi-bold'
-      } else if (baseName.includes('gyeonggititle-medium') || baseName.includes('gyeonggititle-light')) {
+      } else if (baseName.includes('gyeonggititle-medium')) {
         // 기존 gyeonggi.bin은 Medium 또는 기본 폰트를 의미함
         baseName = 'gyeonggi'
       } else if (baseName.includes('jalnan')) {
