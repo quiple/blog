@@ -32,7 +32,7 @@ const isProd = import.meta.env.PROD
 const imageSizeMap = imageSizes as Record<string, {width: number; height: number}>
 const widthClassRegex = /(^|\s)w-/
 const IMAGE_WIDTHS = [343, 576, 672, 686, 1152, 1344]
-const DEFAULT_SIZES = '(min-width: 1536px) 672px, (min-width: 1280px) 576px, calc(100vw - 32px)'
+const DEFAULT_SIZES = '(min-width: 1536px) 672px, (min-width: 609px) 576px, calc(100vw - 32px)'
 
 function generateSrcSet(src: string, isProd: boolean) {
   return IMAGE_WIDTHS.map((w) => `${getImageUrl(src, {w}, isProd)} ${w}w`).join(', ')
