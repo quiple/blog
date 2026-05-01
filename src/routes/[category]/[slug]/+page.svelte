@@ -27,7 +27,11 @@
   const isFont = $derived(data.category === 'font')
 
   const image = $derived(data.image ? getImageUrl(data.image, {w: 2560}, isProd) : '')
-  const thumbnailImage = $derived(data.image ? getImageUrl(data.image, {h: 180}, isProd) : '')
+  const thumbnail1x = $derived(data.image ? getImageUrl(data.image, {h: 88, q: 80}, isProd) : '')
+  const thumbnail2x = $derived(data.image ? getImageUrl(data.image, {h: 176, q: 80}, isProd) : '')
+  const thumbnailImage = $derived(
+    `image-set(url('${thumbnail1x}') 1x, url('${thumbnail2x}') 2x), -webkit-image-set(url('${thumbnail1x}') 1x, url('${thumbnail2x}') 2x)`,
+  )
   const publishedDate = $derived(data.origDate ?? data.pubDate)
   const publishedDateObj = $derived(
     typeof publishedDate === 'object' ? (publishedDate as Date) : new Date(`${publishedDate}+09:00`),
@@ -189,7 +193,7 @@
 {#if image}
   <div
     class="hero bg"
-    style:background-image={`url('${image}'), url('${thumbnailImage}')`}
+    style:background-image={`url('${image}'), ${thumbnailImage}`}
     style:background-position={`center calc(${data.imageVerticalAlign ?? 50}% + ${scrollY * 0.5}px)`}
     use:transition={`post-image-${data.slug}`}
   ></div>
