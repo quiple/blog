@@ -15,6 +15,8 @@
     ...restProps
   }: {
     src: string
+    srcset?: string
+    sizes?: string
     alt?: string
     width?: string | number
     height?: string | number
@@ -47,6 +49,8 @@
 
   <img
     {src}
+    {srcset}
+    {sizes}
     {alt}
     {width}
     {height}

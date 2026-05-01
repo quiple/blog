@@ -31,6 +31,12 @@ import type {PageServerLoad} from './$types'
 const isProd = import.meta.env.PROD
 const imageSizeMap = imageSizes as Record<string, {width: number; height: number}>
 const widthClassRegex = /(^|\s)w-/
+const IMAGE_WIDTHS = [576, 672, 1152, 1344]
+const DEFAULT_SIZES = '(min-width: 1536px) 672px, (min-width: 1280px) 576px, 100vw'
+
+function generateSrcSet(src: string, isProd: boolean) {
+  return IMAGE_WIDTHS.map((w) => `${getImageUrl(src, {w}, isProd)} ${w}w`).join(', ')
+}
 
 export const load: PageServerLoad = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
@@ -105,7 +111,9 @@ function rehypeImageSizes() {
         if (srcClean.charCodeAt(0) === 47) srcClean = srcClean.slice(1)
 
         // 이미지 주소를 프록시 주소로 교체
-        node.properties.src = getImageUrl(srcClean, {w: 1280}, isProd)
+        node.properties.src = getImageUrl(srcClean, {w: 1344}, isProd)
+        node.properties.srcset = generateSrcSet(srcClean, isProd)
+        node.properties.sizes = DEFAULT_SIZES
 
         const sizeInfo = imageSizeMap[srcClean]
 
@@ -115,6 +123,8 @@ function rehypeImageSizes() {
           'data-mdx-component': 'MdxImage',
           'data-mdx-props': JSON.stringify({
             src: node.properties.src,
+            srcset: node.properties.srcset,
+            sizes: node.properties.sizes,
             alt: node.properties.alt,
             width: node.properties.width || sizeInfo?.width,
             height: node.properties.height || sizeInfo?.height,
@@ -148,7 +158,9 @@ function figure() {
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
         const srcClean = attributes.src?.replace('\\_', '_') || ''
-        const src = getImageUrl(srcClean, {w: 1280}, isProd)
+        const src = getImageUrl(srcClean, {w: 1344}, isProd)
+        const srcset = generateSrcSet(srcClean, isProd)
+        const sizes = attributes.sizes || DEFAULT_SIZES
         const id = attributes.id
         const className = attributes.class ?? ''
 
@@ -177,6 +189,8 @@ function figure() {
             : `not-prose block w-fit mx-auto max-h-full ${heightClasses}`
           content = `<div data-mdx-component="MdxImage" data-mdx-props="${JSON.stringify({
             src,
+            srcset,
+            sizes,
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
             class: mdxImageClass.trim(),

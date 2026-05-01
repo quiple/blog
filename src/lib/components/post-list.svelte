@@ -168,6 +168,7 @@
                 <img
                   alt=""
                   class="absolute inset-0 size-full object-cover opacity-0 transition-opacity"
+                  src={src2x}
                   use:lazyImage={src1x}
                   srcset={`${src1x} 1x, ${src2x} 2x`}
                   loading="lazy"
