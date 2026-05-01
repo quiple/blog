@@ -803,7 +803,12 @@
       </div>
 
       <div class="grid gap-2">
-        <label class="setting-label" for="setting-density">PNG 배율</label>
+        <label class="setting-label" for="setting-density">
+          {#if lang === 'ja'}PNG出力倍率
+          {:else if lang === 'ko'}PNG 출력 배율
+          {:else}PNG Output Scale
+          {/if}
+        </label>
         <Select.Root
           type="single"
           value={String(density)}
