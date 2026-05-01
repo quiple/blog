@@ -21,10 +21,12 @@ export const GET: RequestHandler = async ({params, request, url}) => {
   // 2. 폰트 데이터 매핑 (static/fonts/*.bin 파일에서 가져옴)
   let fontData: string
   try {
+    console.log(`[Font API] Fetching font: ${name}`)
     // JS 번들에서 제외된 바이너리 파일을 읽어와서 Base64로 변환하여 전송
     const fontBuffer = await read(`/fonts/${name}.bin`)
     fontData = Buffer.from(fontBuffer).toString('base64')
   } catch (e) {
+    console.error(`[Font API] Error loading font ${name}:`, e)
     throw error(404, `Font not found: ${name}`)
   }
 
