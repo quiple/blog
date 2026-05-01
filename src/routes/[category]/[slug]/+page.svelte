@@ -153,7 +153,7 @@
 
 <svelte:window bind:scrollY />
 
-<div use:hero={{hasHero: Boolean(image)}}></div>
+<div use:hero={{hasHero: Boolean(imageMobile)}}></div>
 
 {#snippet metadata(isOutline: boolean = false)}
   <div
@@ -222,7 +222,7 @@
 <section class="flex lg:gap-6 xl:gap-12 2xl:gap-18">
   <div class="flex-1"></div>
   <article>
-    {#if !image}
+    {#if !imageMobile}
       <div class="inline-block mb-1.25" use:transition={`post-category-${data.slug}`}>
         <Badge variant="secondary">{getCategoryName(data.category)}</Badge>
       </div>
