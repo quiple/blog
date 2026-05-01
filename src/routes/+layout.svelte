@@ -36,6 +36,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
   <link rel="icon" type="image/svg+xml" sizes="any" href={favicon} />
   <link rel="apple-touch-icon" type="image/png" href={appleTouchIcon} />
+  <link rel="preload" href="/fonts/AstaSans.woff2" as="font" type="font/woff2" crossorigin />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:site_name" content="quiple" />
 </svelte:head>

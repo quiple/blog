@@ -151,7 +151,8 @@
                   }
                 </style>
               `}
-              {@const src = getImageUrl(post.image, {h: 180}, isProd)}
+              {@const src1x = getImageUrl(post.image, {w: 88, h: 88, q: 80}, isProd)}
+              {@const src2x = getImageUrl(post.image, {w: 176, h: 176, q: 80}, isProd)}
               <div
                 class="img bg-muted animate-pulse"
                 use:transition={{
@@ -167,7 +168,8 @@
                 <img
                   alt=""
                   class="absolute inset-0 size-full object-cover opacity-0 transition-opacity"
-                  use:lazyImage={src}
+                  use:lazyImage={src1x}
+                  srcset={`${src1x} 1x, ${src2x} 2x`}
                   loading="lazy"
                   decoding="async"
                 />

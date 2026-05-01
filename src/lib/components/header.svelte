@@ -99,6 +99,7 @@
                 bind:value={query}
                 bind:ref={inputElement}
                 placeholder="검색"
+                aria-label="검색"
               />
             </div>
           {/if}
@@ -112,13 +113,31 @@
             색상 테마
             <Tabs.Root value={userPrefersMode.current ?? 'system'}>
               <Tabs.List>
-                <Tabs.Trigger class="px-1" title="시스템 테마" value="system" onclick={() => setMode('system')}>
+                <Tabs.Trigger
+                  class="px-1"
+                  title="시스템 테마"
+                  aria-label="시스템 테마"
+                  value="system"
+                  onclick={() => setMode('system')}
+                >
                   <Monitor />
                 </Tabs.Trigger>
-                <Tabs.Trigger class="px-1" title="밝은 테마" value="light" onclick={() => setMode('light')}>
+                <Tabs.Trigger
+                  class="px-1"
+                  title="밝은 테마"
+                  aria-label="밝은 테마"
+                  value="light"
+                  onclick={() => setMode('light')}
+                >
                   <Sun />
                 </Tabs.Trigger>
-                <Tabs.Trigger class="px-1" title="어두운 테마" value="dark" onclick={() => setMode('dark')}>
+                <Tabs.Trigger
+                  class="px-1"
+                  title="어두운 테마"
+                  aria-label="어두운 테마"
+                  value="dark"
+                  onclick={() => setMode('dark')}
+                >
                   <Moon />
                 </Tabs.Trigger>
               </Tabs.List>
