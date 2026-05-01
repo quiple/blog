@@ -61,9 +61,11 @@ export const GET: RequestHandler = async ({params, request, url}) => {
     }
 
     fontData = Buffer.from(fontBuffer).toString('base64')
-  } catch (e) {
+  } catch (e: any) {
+    // 만약 내부에서 던진 특정 에러(404 상세 메시지 등)라면 그대로 전달
+    if (e.status) throw e
     console.error(`[Font API] Error loading font "${name}":`, e)
-    throw error(404, `Font not found: ${name}`)
+    throw error(404, `Font not found: ${name} (${e.message})`)
   }
 
   // 3. 응답 반환 (CORS 헤더 포함)
