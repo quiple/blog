@@ -9,7 +9,7 @@ import type {RequestHandler} from './$types'
  * 폰트 데이터를 안전하게 제공하는 API
  * Referer 체크 및 CORS 헤더를 통해 외부 핫링크를 방지합니다.
  */
-export const GET: RequestHandler = async ({params, request, url, platform}) => {
+export const GET: RequestHandler = async ({params, request, platform}) => {
   const {name} = params
   if (!name) throw error(400, 'Missing font name')
 
