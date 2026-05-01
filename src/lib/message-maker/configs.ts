@@ -235,7 +235,7 @@ export const momotalk: RawThemeConfig = {
     paddingLeft: 38,
     helpIconSize: 100,
     helpIconGap: 2,
-    titleOffsetY: 10,
+    titleOffsetY: 8,
     logoOffsetY: 0,
     helpIconOffsetY: 9,
   },
