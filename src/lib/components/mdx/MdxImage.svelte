@@ -4,6 +4,8 @@
 
   let {
     src,
+    srcset,
+    sizes,
     alt = '',
     width,
     height,
