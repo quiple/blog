@@ -1024,147 +1024,161 @@ async function getSvgSource(name: string): Promise<string> {
 const opentypeCache = new Map<string, opentype.Font>()
 
 async function loadOpentypeFont(familyName: string, modulePromise: Promise<{default: string}>): Promise<opentype.Font> {
-  if (opentypeCache.has(familyName)) {
-    return opentypeCache.get(familyName)!
-  }
-  const {default: dataUrl} = await modulePromise
-  const buffer = base64ToArrayBuffer(dataUrl)
+  try {
+    if (opentypeCache.has(familyName)) {
+      return opentypeCache.get(familyName)!
+    }
+    const {default: dataUrl} = await modulePromise
+    const buffer = base64ToArrayBuffer(dataUrl)
 
-  // WOFF2 시그니처 확인 (wOF2 = 0x774F4632) 후 필요시 압축 해제
-  let sfntBuffer = buffer
-  const view = new DataView(buffer)
-  if (buffer.byteLength > 4 && view.getUint32(0) === 0x774f4632) {
-    const decompressed = await decompress(new Uint8Array(buffer))
-    sfntBuffer = decompressed.buffer
-  }
+    // WOFF2 시그니처 확인 (wOF2 = 0x774F4632) 후 필요시 압축 해제
+    let sfntBuffer = buffer
+    const view = new DataView(buffer)
+    if (buffer.byteLength > 4 && view.getUint32(0) === 0x774f4632) {
+      console.log(`Decompressing WOFF2 font: ${familyName}...`)
+      try {
+        const decompressed = await decompress(new Uint8Array(buffer))
+        sfntBuffer = decompressed.buffer
+        console.log(`Decompressed ${familyName} successfully.`)
+      } catch (err) {
+        console.error(`Failed to decompress ${familyName}:`, err)
+        throw err
+      }
+    }
 
-  const font = opentype.parse(sfntBuffer)
-  opentypeCache.set(familyName, font)
-  return font
+    const font = opentype.parse(sfntBuffer)
+    opentypeCache.set(familyName, font)
+    return font
+  } catch (err) {
+    console.error(`Error loading opentype font ${familyName}:`, err)
+    throw err
+  }
 }
 
 /**
  * 캔버스 로직을 미러링하여 실제 벡터 SVG 문자열 생성
  */
 export async function exportAsVectorSvg(messages: MessageItem[], themeName: ThemeName, lang?: Language): Promise<void> {
-  const config = resolveThemeConfig(themes[themeName], lang || 'ko')
-  const height = calculateCanvasHeight(messages, config, lang)
-  const width = config.canvasWidth
+  try {
+    console.log('Starting SVG export...')
+    const config = resolveThemeConfig(themes[themeName], lang || 'ko')
+    const height = calculateCanvasHeight(messages, config, lang)
+    const width = config.canvasWidth
 
-  let jalnanFont: opentype.Font | undefined
-  let gyeonggiFont: opentype.Font | undefined
-  let gyeonggiBoldFont: opentype.Font | undefined
-  let shinmgoMediumFont: opentype.Font | undefined
-  let shinmgoDeboldFont: opentype.Font | undefined
-  let notosansFont: opentype.Font | undefined
+    let jalnanFont: opentype.Font | undefined
+    let gyeonggiFont: opentype.Font | undefined
+    let gyeonggiBoldFont: opentype.Font | undefined
+    let shinmgoMediumFont: opentype.Font | undefined
+    let shinmgoDeboldFont: opentype.Font | undefined
+    let notosansFont: opentype.Font | undefined
 
-  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans, 한국어 이름 → GyeonggiTitleBold
-  const getFont = (base: string, isName: boolean) =>
-    lang === 'ja'
-      ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
-      : lang === 'en'
-        ? base.replace('GyeonggiTitle', 'NotoSans')
-        : isName
-          ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
-          : base
-  const nameFont = getFont(config.name.font, true)
-  const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
-  const bubbleRightFont = getFont(config.bubbleRight.font, false)
-  // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
-  const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
-  const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
-  const bubbleRightFontWeight = lang === 'en' ? '450' : config.bubbleRight.fontWeight
+    // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans, 한국어 이름 → GyeonggiTitleBold
+    const getFont = (base: string, isName: boolean) =>
+      lang === 'ja'
+        ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
+        : lang === 'en'
+          ? base.replace('GyeonggiTitle', 'NotoSans')
+          : isName
+            ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
+            : base
+    const nameFont = getFont(config.name.font, true)
+    const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
+    const bubbleRightFont = getFont(config.bubbleRight.font, false)
+    // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
+    const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
+    const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
+    const bubbleRightFontWeight = lang === 'en' ? '450' : config.bubbleRight.fontWeight
 
-  // 폰트 데이터 가져오기 (SVG 패스 변환용)
-  let fontStyles = ''
-  if (themeName === 'momotalk') {
-    const jalnanPromise = import('./font-data-jalnan')
-    const gyeonggiPromise = import('./font-data-gyeonggi')
-    const gyeonggiBoldPromise = import('./font-data-gyeonggi-bold')
+    // 폰트 데이터 가져오기 (SVG 패스 변환용)
+    let fontStyles = ''
+    if (themeName === 'momotalk') {
+      const jalnanPromise = import('./font-data-jalnan')
+      const gyeonggiPromise = import('./font-data-gyeonggi')
+      const gyeonggiBoldPromise = import('./font-data-gyeonggi-bold')
 
-    jalnanFont = await loadOpentypeFont('Jalnan2', jalnanPromise)
-    gyeonggiFont = await loadOpentypeFont('GyeonggiTitle', gyeonggiPromise)
-    gyeonggiBoldFont = await loadOpentypeFont('GyeonggiTitleBold', gyeonggiBoldPromise)
+      jalnanFont = await loadOpentypeFont('Jalnan2', jalnanPromise)
+      gyeonggiFont = await loadOpentypeFont('GyeonggiTitle', gyeonggiPromise)
+      gyeonggiBoldFont = await loadOpentypeFont('GyeonggiTitleBold', gyeonggiBoldPromise)
 
-    if (lang === 'ja') {
-      const shinmgoMediumPromise = import('./font-data-shinmgo')
-      const shinmgoDeboldPromise = import('./font-data-shinmgo-debold')
-      shinmgoMediumFont = await loadOpentypeFont('ShinMGo-Medium', shinmgoMediumPromise)
-      shinmgoDeboldFont = await loadOpentypeFont('ShinMGo-DeBold', shinmgoDeboldPromise)
-    } else if (lang === 'en') {
-      const notosansPromise = import('./font-data-notosans')
-      notosansFont = await loadOpentypeFont('NotoSans', notosansPromise)
+      if (lang === 'ja') {
+        const shinmgoMediumPromise = import('./font-data-shinmgo')
+        const shinmgoDeboldPromise = import('./font-data-shinmgo-debold')
+        shinmgoMediumFont = await loadOpentypeFont('ShinMGo-Medium', shinmgoMediumPromise)
+        shinmgoDeboldFont = await loadOpentypeFont('ShinMGo-DeBold', shinmgoDeboldPromise)
+      } else if (lang === 'en') {
+        const notosansPromise = import('./font-data-notosans')
+        notosansFont = await loadOpentypeFont('NotoSans', notosansPromise)
+      }
     }
-  }
 
-  function renderSvgText(
-    text: string,
-    x: number,
-    y: number,
-    fontFamily: string,
-    fontSize: number,
-    color: string,
-    align: 'start' | 'center' | 'middle' = 'start',
-    baseline: 'top' | 'hanging' | 'middle' = 'hanging',
-    fontWeight: string = 'normal',
-    scaleX: number = 1.0,
-  ) {
-    let font: opentype.Font | undefined
-    if (fontFamily.includes('Jalnan2')) font = jalnanFont
-    else if (fontFamily.includes('ShinMGo-Medium')) font = shinmgoMediumFont
-    else if (fontFamily.includes('ShinMGo-DeBold')) font = shinmgoDeboldFont
-    else if (fontFamily.includes('NotoSans')) font = notosansFont
-    else if (fontFamily.includes('GyeonggiTitleBold')) font = gyeonggiBoldFont
-    else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
+    function renderSvgText(
+      text: string,
+      x: number,
+      y: number,
+      fontFamily: string,
+      fontSize: number,
+      color: string,
+      align: 'start' | 'center' | 'middle' = 'start',
+      baseline: 'top' | 'hanging' | 'middle' = 'hanging',
+      fontWeight: string = 'normal',
+      scaleX: number = 1.0,
+    ) {
+      let font: opentype.Font | undefined
+      if (fontFamily.includes('Jalnan2')) font = jalnanFont
+      else if (fontFamily.includes('ShinMGo-Medium')) font = shinmgoMediumFont
+      else if (fontFamily.includes('ShinMGo-DeBold')) font = shinmgoDeboldFont
+      else if (fontFamily.includes('NotoSans')) font = notosansFont
+      else if (fontFamily.includes('GyeonggiTitleBold')) font = gyeonggiBoldFont
+      else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
 
-    if (font) {
-      const path = font.getPath(text, 0, 0, fontSize)
-      const bbox = path.getBoundingBox()
+      if (font) {
+        const path = font.getPath(text, 0, 0, fontSize)
+        const bbox = path.getBoundingBox()
 
-      let drawX = x
-      if (align === 'center' || align === 'middle') {
-        const w = font.getAdvanceWidth(text, fontSize)
-        drawX -= (w / 2) * scaleX
-      }
+        let drawX = x
+        if (align === 'center' || align === 'middle') {
+          const w = font.getAdvanceWidth(text, fontSize)
+          drawX -= (w / 2) * scaleX
+        }
 
-      let drawY = y
-      if (baseline === 'hanging' || baseline === 'top') {
-        // 'top' 기준선은 폰트의 ascender만큼 내림 (Canvas의 top 동작과 유사)
-        drawY = y + (font.ascender / font.unitsPerEm) * fontSize
-      } else if (baseline === 'middle') {
-        // 'middle' 기준선은 ascender와 descender의 중간 지점을 y에 맞춤 (2.5px 수동 보정으로 PNG와 일치시킴)
-        drawY = y + ((font.ascender + font.descender) / (2 * font.unitsPerEm)) * fontSize - 2.5
-      }
+        let drawY = y
+        if (baseline === 'hanging' || baseline === 'top') {
+          // 'top' 기준선은 폰트의 ascender만큼 내림 (Canvas의 top 동작과 유사)
+          drawY = y + (font.ascender / font.unitsPerEm) * fontSize
+        } else if (baseline === 'middle') {
+          // 'middle' 기준선은 ascender와 descender의 중간 지점을 y에 맞춤 (2.5px 수동 보정으로 PNG와 일치시킴)
+          drawY = y + ((font.ascender + font.descender) / (2 * font.unitsPerEm)) * fontSize - 2.5
+        }
 
-      const svgPath = path.toSVG(2)
-      if (scaleX !== 1.0) {
-        return svgPath.replace(
-          '<path ',
-          `<path fill="${color}" transform="translate(${drawX}, ${drawY}) scale(${scaleX}, 1)" `,
-        )
+        const svgPath = path.toSVG(2)
+        if (scaleX !== 1.0) {
+          return svgPath.replace(
+            '<path ',
+            `<path fill="${color}" transform="translate(${drawX}, ${drawY}) scale(${scaleX}, 1)" `,
+          )
+        } else {
+          return svgPath.replace('<path ', `<path fill="${color}" transform="translate(${drawX}, ${drawY})" `)
+        }
       } else {
-        return svgPath.replace('<path ', `<path fill="${color}" transform="translate(${drawX}, ${drawY})" `)
+        const anchor = align === 'center' || align === 'middle' ? 'middle' : 'start'
+        const transformAttr =
+          scaleX !== 1.0 ? ` transform="translate(${x}, ${y}) scale(${scaleX}, 1) translate(${-x}, ${-y})"` : ''
+        return `<text x="${x}" y="${y}" fill="${color}" font-family="${fontFamily}" font-size="${fontSize}" font-weight="${fontWeight}" text-anchor="${anchor}" dominant-baseline="${baseline}"${transformAttr}>${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`
       }
-    } else {
-      const anchor = align === 'center' || align === 'middle' ? 'middle' : 'start'
-      const transformAttr =
-        scaleX !== 1.0 ? ` transform="translate(${x}, ${y}) scale(${scaleX}, 1) translate(${-x}, ${-y})"` : ''
-      return `<text x="${x}" y="${y}" fill="${color}" font-family="${fontFamily}" font-size="${fontSize}" font-weight="${fontWeight}" text-anchor="${anchor}" dominant-baseline="${baseline}"${transformAttr}>${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`
     }
-  }
 
-  let svgParts: string[] = []
+    let svgParts: string[] = []
 
-  // 배경
-  svgParts.push(`<rect width="${width}" height="${height}" fill="${config.backgroundColor}" />`)
+    // 배경
+    svgParts.push(`<rect width="${width}" height="${height}" fill="${config.backgroundColor}" />`)
 
-  // 헤더
-  if (config.header.backgroundGradient) {
-    const colorMatches = config.header.backgroundGradient.match(/#[0-9a-fA-F]{6}/g) || [
-      config.header.backgroundColor,
-      config.header.backgroundColor,
-    ]
-    svgParts.push(`
+    // 헤더
+    if (config.header.backgroundGradient) {
+      const colorMatches = config.header.backgroundGradient.match(/#[0-9a-fA-F]{6}/g) || [
+        config.header.backgroundColor,
+        config.header.backgroundColor,
+      ]
+      svgParts.push(`
       <defs>
         <linearGradient id="headerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" style="stop-color:${colorMatches[0]};stop-opacity:1" />
@@ -1173,108 +1187,110 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       </defs>
       <rect width="${width}" height="${config.header.height}" fill="url(#headerGrad)" />
     `)
-  } else {
-    svgParts.push(`<rect width="${width}" height="${config.header.height}" fill="${config.header.backgroundColor}" />`)
-  }
-
-  // 헤더 아이콘 & 텍스트
-  if (themeName === 'momotalk') {
-    const logoSvg = await getSvgSource('momotalk')
-    const centerY = config.header.height / 2
-
-    // 로고 (간단하게 <g>로 삽입하거나 <image>로 삽입. 원본 소스가 있으니 <svg> 내부 삽입 시도)
-    // 여기선 호환성을 위해 base64 image로 처리하거나 svg injection
-    const logoB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(logoSvg)))}`
-    svgParts.push(
-      `<image x="${config.header.paddingLeft}" y="${centerY - config.header.logoSize / 2 + config.header.logoOffsetY}" width="${config.header.logoSize}" height="${config.header.logoSize}" href="${logoB64}" />`,
-    )
-
-    const titleX = config.header.paddingLeft + config.header.logoSize + config.header.logoGap
-    const titleY = centerY + config.header.titleOffsetY
-    svgParts.push(
-      renderSvgText(
-        'MomoTalk',
-        titleX,
-        titleY,
-        config.header.titleFont,
-        config.header.titleFontSize,
-        config.header.titleColor,
-        'start',
-        'middle',
-        'bold',
-        config.header.titleScaleX,
-      ),
-    )
-
-    if (config.header.helpIconSize > 0) {
-      const helpSvg = await getSvgSource('help')
-      const helpB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(helpSvg)))}`
-      // 대략적인 텍스트 너비 (기존 측정용 캔버스 재사용)
-      const helpMeasureCtx = getMeasureCtx(width)
-      helpMeasureCtx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
-      const titleWidth = helpMeasureCtx.measureText('MomoTalk').width * (config.header.titleScaleX || 1.0)
-
+    } else {
       svgParts.push(
-        `<image x="${titleX + titleWidth + config.header.helpIconGap}" y="${centerY - config.header.helpIconSize / 2 + config.header.helpIconOffsetY}" width="${config.header.helpIconSize}" height="${config.header.helpIconSize}" href="${helpB64}" />`,
+        `<rect width="${width}" height="${config.header.height}" fill="${config.header.backgroundColor}" />`,
       )
     }
-  }
 
-  // 사이드바
-  if (config.sidebar.width > 0) {
-    svgParts.push(
-      `<rect x="0" y="${config.header.height}" width="${config.sidebar.width}" height="${height - config.header.height}" fill="${config.sidebar.backgroundColor}" />`,
-    )
+    // 헤더 아이콘 & 텍스트
+    if (themeName === 'momotalk') {
+      const logoSvg = await getSvgSource('momotalk')
+      const centerY = config.header.height / 2
 
-    let sidebarY = config.header.height + config.sidebar.paddingTop
-    if (config.sidebar.studentIconSize > 0) {
-      const studentSvg = await getSvgSource('student')
-      const studentB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(studentSvg)))}`
+      // 로고 (간단하게 <g>로 삽입하거나 <image>로 삽입. 원본 소스가 있으니 <svg> 내부 삽입 시도)
+      // 여기선 호환성을 위해 base64 image로 처리하거나 svg injection
+      const logoB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(logoSvg)))}`
       svgParts.push(
-        `<image x="${config.sidebar.width / 2 - config.sidebar.studentIconSize / 2}" y="${sidebarY}" width="${config.sidebar.studentIconSize}" height="${config.sidebar.studentIconSize}" href="${studentB64}" opacity="${config.sidebar.studentIconOpacity}" />`,
+        `<image x="${config.header.paddingLeft}" y="${centerY - config.header.logoSize / 2 + config.header.logoOffsetY}" width="${config.header.logoSize}" height="${config.header.logoSize}" href="${logoB64}" />`,
       )
-      sidebarY += config.sidebar.studentIconSize + config.sidebar.iconGap
-    }
 
-    if (config.sidebar.chatIconSize > 0) {
-      if (config.sidebar.activeChatBackgroundColor && config.sidebar.activeChatBackgroundColor !== 'transparent') {
+      const titleX = config.header.paddingLeft + config.header.logoSize + config.header.logoGap
+      const titleY = centerY + config.header.titleOffsetY
+      svgParts.push(
+        renderSvgText(
+          'MomoTalk',
+          titleX,
+          titleY,
+          config.header.titleFont,
+          config.header.titleFontSize,
+          config.header.titleColor,
+          'start',
+          'middle',
+          'bold',
+          config.header.titleScaleX,
+        ),
+      )
+
+      if (config.header.helpIconSize > 0) {
+        const helpSvg = await getSvgSource('help')
+        const helpB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(helpSvg)))}`
+        // 대략적인 텍스트 너비 (기존 측정용 캔버스 재사용)
+        const helpMeasureCtx = getMeasureCtx(width)
+        helpMeasureCtx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`
+        const titleWidth = helpMeasureCtx.measureText('MomoTalk').width * (config.header.titleScaleX || 1.0)
+
         svgParts.push(
-          `<rect x="0" y="${sidebarY + config.sidebar.activeChatBackgroundOffsetY}" width="${config.sidebar.width}" height="${config.sidebar.activeChatBackgroundHeight}" fill="${config.sidebar.activeChatBackgroundColor}" />`,
+          `<image x="${titleX + titleWidth + config.header.helpIconGap}" y="${centerY - config.header.helpIconSize / 2 + config.header.helpIconOffsetY}" width="${config.header.helpIconSize}" height="${config.header.helpIconSize}" href="${helpB64}" />`,
         )
       }
-      const chatSvg = await getSvgSource('chat')
-      const chatB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(chatSvg)))}`
-      const chatX = config.sidebar.width / 2 - config.sidebar.chatIconSize / 2
-      svgParts.push(
-        `<image x="${chatX}" y="${sidebarY}" width="${config.sidebar.chatIconSize}" height="${config.sidebar.chatIconSize}" href="${chatB64}" />`,
-      )
     }
-  }
 
-  // 대화 영역
-  const chatLeft = config.sidebar.width + config.chat.paddingLeft
-  const chatRight = width - config.chat.paddingRight
-  const chatAreaWidth = chatRight - chatLeft
-  let cursorY = config.header.height + config.chat.paddingTop
+    // 사이드바
+    if (config.sidebar.width > 0) {
+      svgParts.push(
+        `<rect x="0" y="${config.header.height}" width="${config.sidebar.width}" height="${height - config.header.height}" fill="${config.sidebar.backgroundColor}" />`,
+      )
 
-  const tempCtx = getMeasureCtx(width)
+      let sidebarY = config.header.height + config.sidebar.paddingTop
+      if (config.sidebar.studentIconSize > 0) {
+        const studentSvg = await getSvgSource('student')
+        const studentB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(studentSvg)))}`
+        svgParts.push(
+          `<image x="${config.sidebar.width / 2 - config.sidebar.studentIconSize / 2}" y="${sidebarY}" width="${config.sidebar.studentIconSize}" height="${config.sidebar.studentIconSize}" href="${studentB64}" opacity="${config.sidebar.studentIconOpacity}" />`,
+        )
+        sidebarY += config.sidebar.studentIconSize + config.sidebar.iconGap
+      }
 
-  for (let i = 0; i < messages.length; i++) {
-    const msg = messages[i]
-    if (i > 0) cursorY += config.chat.groupGap
+      if (config.sidebar.chatIconSize > 0) {
+        if (config.sidebar.activeChatBackgroundColor && config.sidebar.activeChatBackgroundColor !== 'transparent') {
+          svgParts.push(
+            `<rect x="0" y="${sidebarY + config.sidebar.activeChatBackgroundOffsetY}" width="${config.sidebar.width}" height="${config.sidebar.activeChatBackgroundHeight}" fill="${config.sidebar.activeChatBackgroundColor}" />`,
+          )
+        }
+        const chatSvg = await getSvgSource('chat')
+        const chatB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(chatSvg)))}`
+        const chatX = config.sidebar.width / 2 - config.sidebar.chatIconSize / 2
+        svgParts.push(
+          `<image x="${chatX}" y="${sidebarY}" width="${config.sidebar.chatIconSize}" height="${config.sidebar.chatIconSize}" href="${chatB64}" />`,
+        )
+      }
+    }
 
-    if (msg.type === 'left') {
-      const profileX = chatLeft
-      if (config.profile.size > 0 && msg.portrait) {
-        const zoom = config.profile.zoom || 1.0
-        const size = config.profile.size
-        const finalUrl =
-          msg.portrait.startsWith('http') || msg.portrait.startsWith('blob:')
-            ? msg.portrait
-            : getImageUrl(msg.portrait, {w: 512}, rendererIsProd)
-        const portraitDataUrl = await getImageAsDataUrl(finalUrl)
-        if (config.profile.circular) {
-          svgParts.push(`
+    // 대화 영역
+    const chatLeft = config.sidebar.width + config.chat.paddingLeft
+    const chatRight = width - config.chat.paddingRight
+    const chatAreaWidth = chatRight - chatLeft
+    let cursorY = config.header.height + config.chat.paddingTop
+
+    const tempCtx = getMeasureCtx(width)
+
+    for (let i = 0; i < messages.length; i++) {
+      const msg = messages[i]
+      if (i > 0) cursorY += config.chat.groupGap
+
+      if (msg.type === 'left') {
+        const profileX = chatLeft
+        if (config.profile.size > 0 && msg.portrait) {
+          const zoom = config.profile.zoom || 1.0
+          const size = config.profile.size
+          const finalUrl =
+            msg.portrait.startsWith('http') || msg.portrait.startsWith('blob:')
+              ? msg.portrait
+              : getImageUrl(msg.portrait, {w: 512}, rendererIsProd)
+          const portraitDataUrl = await getImageAsDataUrl(finalUrl)
+          if (config.profile.circular) {
+            svgParts.push(`
             <clipPath id="circleView${i}">
               <circle cx="${profileX + size / 2}" cy="${cursorY + size / 2}" r="${size / 2}" />
             </clipPath>
@@ -1282,129 +1298,135 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
               <image x="${profileX - (size * (zoom - 1)) / 2}" y="${cursorY - (size * (zoom - 1)) / 2}" width="${size * zoom}" height="${size * zoom}" href="${portraitDataUrl}" preserveAspectRatio="xMidYMid slice" />
             </g>
           `)
-        } else {
-          svgParts.push(`<rect x="${profileX}" y="${cursorY}" width="${size}" height="${size}" rx="12" fill="#ddd" />`)
-          svgParts.push(
-            `<image x="${profileX - (size * (zoom - 1)) / 2}" y="${cursorY - (size * (zoom - 1)) / 2}" width="${size * zoom}" height="${size * zoom}" href="${portraitDataUrl}" preserveAspectRatio="xMidYMid slice" />`,
-          )
+          } else {
+            svgParts.push(
+              `<rect x="${profileX}" y="${cursorY}" width="${size}" height="${size}" rx="12" fill="#ddd" />`,
+            )
+            svgParts.push(
+              `<image x="${profileX - (size * (zoom - 1)) / 2}" y="${cursorY - (size * (zoom - 1)) / 2}" width="${size * zoom}" height="${size * zoom}" href="${portraitDataUrl}" preserveAspectRatio="xMidYMid slice" />`,
+            )
+          }
         }
-      }
 
-      const nameX = profileX + (config.profile.size > 0 ? config.profile.size : 0) + config.name.marginLeft
-      const nameY = cursorY + config.name.marginTop
-      svgParts.push(
-        renderSvgText(
-          msg.name || '',
-          nameX,
-          nameY,
-          nameFont,
-          config.name.fontSize,
-          config.name.color,
-          'start',
-          'hanging',
-          nameFontWeight,
-        ),
-      )
-      cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
-
-      const profileSize = config.profile.size > 0 ? config.profile.size : 0
-      const bubbleStartX = profileX + profileSize + config.bubbleLeft.marginLeft
-
-      for (let bi = 0; bi < msg.text.length; bi++) {
-        if (bi > 0) cursorY += config.chat.messageGap
-        const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
-        const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
-        tempCtx.font = `${bubbleLeftFontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
-        const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
-        const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
-        const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
-        const bubbleW = textBlockWidth + config.bubbleLeft.paddingLeft + config.bubbleLeft.paddingRight
-        const bubbleH = lines.length * lineH + config.bubbleLeft.paddingTop + config.bubbleLeft.paddingBottom
-
+        const nameX = profileX + (config.profile.size > 0 ? config.profile.size : 0) + config.name.marginLeft
+        const nameY = cursorY + config.name.marginTop
         svgParts.push(
-          `<rect x="${bubbleStartX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleLeft.borderRadius}" fill="${config.bubbleLeft.backgroundColor}" />`,
+          renderSvgText(
+            msg.name || '',
+            nameX,
+            nameY,
+            nameFont,
+            config.name.fontSize,
+            config.name.color,
+            'start',
+            'hanging',
+            nameFontWeight,
+          ),
         )
-        if (bi === 0 && config.bubbleLeft.tailWidth > 0) {
-          const tailY = cursorY + config.bubbleLeft.tailOffsetY
-          svgParts.push(
-            `<path d="M${bubbleStartX},${tailY} L${bubbleStartX - config.bubbleLeft.tailWidth},${tailY + config.bubbleLeft.tailHeight / 2} L${bubbleStartX},${tailY + config.bubbleLeft.tailHeight} Z" fill="${config.bubbleLeft.backgroundColor}" />`,
-          )
-        }
-        for (let li = 0; li < lines.length; li++) {
-          const textY = cursorY + config.bubbleLeft.paddingTop + li * lineH
-          svgParts.push(
-            renderSvgText(
-              lines[li],
-              bubbleStartX + config.bubbleLeft.paddingLeft,
-              textY,
-              bubbleLeftFont,
-              config.bubbleLeft.fontSize,
-              config.bubbleLeft.textColor,
-              'start',
-              'hanging',
-              bubbleLeftFontWeight,
-            ),
-          )
-        }
-        cursorY += bubbleH
-      }
-    } else {
-      // 선생님
-      for (let bi = 0; bi < msg.text.length; bi++) {
-        if (bi > 0) cursorY += config.chat.messageGap
-        const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
-        const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
-        tempCtx.font = `${bubbleRightFontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
-        const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
-        const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
-        const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
-        const bubbleW = textBlockWidth + config.bubbleRight.paddingLeft + config.bubbleRight.paddingRight
-        const bubbleH = lines.length * lineH + config.bubbleRight.paddingTop + config.bubbleRight.paddingBottom
-        const bubbleX = chatRight - bubbleW - config.bubbleRight.marginRight
+        cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
 
-        svgParts.push(
-          `<rect x="${bubbleX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleRight.borderRadius}" fill="${config.bubbleRight.backgroundColor}" />`,
-        )
-        if (bi === 0 && config.bubbleRight.tailWidth > 0) {
-          const tailY = cursorY + config.bubbleRight.tailOffsetY
+        const profileSize = config.profile.size > 0 ? config.profile.size : 0
+        const bubbleStartX = profileX + profileSize + config.bubbleLeft.marginLeft
+
+        for (let bi = 0; bi < msg.text.length; bi++) {
+          if (bi > 0) cursorY += config.chat.messageGap
+          const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
+          const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
+          tempCtx.font = `${bubbleLeftFontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
+          const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
+          const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
+          const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
+          const bubbleW = textBlockWidth + config.bubbleLeft.paddingLeft + config.bubbleLeft.paddingRight
+          const bubbleH = lines.length * lineH + config.bubbleLeft.paddingTop + config.bubbleLeft.paddingBottom
+
           svgParts.push(
-            `<path d="M${bubbleX + bubbleW},${tailY} L${bubbleX + bubbleW + config.bubbleRight.tailWidth},${tailY + config.bubbleRight.tailHeight / 2} L${bubbleX + bubbleW},${tailY + config.bubbleRight.tailHeight} Z" fill="${config.bubbleRight.backgroundColor}" />`,
+            `<rect x="${bubbleStartX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleLeft.borderRadius}" fill="${config.bubbleLeft.backgroundColor}" />`,
           )
+          if (bi === 0 && config.bubbleLeft.tailWidth > 0) {
+            const tailY = cursorY + config.bubbleLeft.tailOffsetY
+            svgParts.push(
+              `<path d="M${bubbleStartX},${tailY} L${bubbleStartX - config.bubbleLeft.tailWidth},${tailY + config.bubbleLeft.tailHeight / 2} L${bubbleStartX},${tailY + config.bubbleLeft.tailHeight} Z" fill="${config.bubbleLeft.backgroundColor}" />`,
+            )
+          }
+          for (let li = 0; li < lines.length; li++) {
+            const textY = cursorY + config.bubbleLeft.paddingTop + li * lineH
+            svgParts.push(
+              renderSvgText(
+                lines[li],
+                bubbleStartX + config.bubbleLeft.paddingLeft,
+                textY,
+                bubbleLeftFont,
+                config.bubbleLeft.fontSize,
+                config.bubbleLeft.textColor,
+                'start',
+                'hanging',
+                bubbleLeftFontWeight,
+              ),
+            )
+          }
+          cursorY += bubbleH
         }
-        for (let li = 0; li < lines.length; li++) {
-          const textY = cursorY + config.bubbleRight.paddingTop + li * lineH
+      } else {
+        // 선생님
+        for (let bi = 0; bi < msg.text.length; bi++) {
+          if (bi > 0) cursorY += config.chat.messageGap
+          const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
+          const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
+          tempCtx.font = `${bubbleRightFontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
+          const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
+          const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
+          const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
+          const bubbleW = textBlockWidth + config.bubbleRight.paddingLeft + config.bubbleRight.paddingRight
+          const bubbleH = lines.length * lineH + config.bubbleRight.paddingTop + config.bubbleRight.paddingBottom
+          const bubbleX = chatRight - bubbleW - config.bubbleRight.marginRight
+
           svgParts.push(
-            renderSvgText(
-              lines[li],
-              bubbleX + config.bubbleRight.paddingLeft,
-              textY,
-              bubbleRightFont,
-              config.bubbleRight.fontSize,
-              config.bubbleRight.textColor,
-              'start',
-              'hanging',
-              bubbleRightFontWeight,
-            ),
+            `<rect x="${bubbleX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleRight.borderRadius}" fill="${config.bubbleRight.backgroundColor}" />`,
           )
+          if (bi === 0 && config.bubbleRight.tailWidth > 0) {
+            const tailY = cursorY + config.bubbleRight.tailOffsetY
+            svgParts.push(
+              `<path d="M${bubbleX + bubbleW},${tailY} L${bubbleX + bubbleW + config.bubbleRight.tailWidth},${tailY + config.bubbleRight.tailHeight / 2} L${bubbleX + bubbleW},${tailY + config.bubbleRight.tailHeight} Z" fill="${config.bubbleRight.backgroundColor}" />`,
+            )
+          }
+          for (let li = 0; li < lines.length; li++) {
+            const textY = cursorY + config.bubbleRight.paddingTop + li * lineH
+            svgParts.push(
+              renderSvgText(
+                lines[li],
+                bubbleX + config.bubbleRight.paddingLeft,
+                textY,
+                bubbleRightFont,
+                config.bubbleRight.fontSize,
+                config.bubbleRight.textColor,
+                'start',
+                'hanging',
+                bubbleRightFontWeight,
+              ),
+            )
+          }
+          cursorY += bubbleH
         }
-        cursorY += bubbleH
       }
     }
-  }
 
-  const finalSvg = `<?xml version="1.0" encoding="UTF-8"?>
+    const finalSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
 ${fontStyles}
 ${svgParts.join('\n')}
 </svg>`
 
-  const blob = new Blob([finalSvg], {type: 'image/svg+xml;charset=utf-8'})
-  const url = URL.createObjectURL(blob)
-  const link = document.createElement('a')
-  link.download = `message_${themeName}_vector.svg`
-  link.href = url
-  document.body.appendChild(link)
-  link.click()
-  document.body.removeChild(link)
-  URL.revokeObjectURL(url)
+    const blob = new Blob([finalSvg], {type: 'image/svg+xml;charset=utf-8'})
+    const url = URL.createObjectURL(blob)
+    const link = document.createElement('a')
+    link.download = `message_${themeName}_vector.svg`
+    link.href = url
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+    URL.revokeObjectURL(url)
+    console.log('SVG export completed successfully.')
+  } catch (err) {
+    console.error('SVG export failed:', err)
+  }
 }
