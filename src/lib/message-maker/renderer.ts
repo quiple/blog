@@ -1035,11 +1035,9 @@ async function loadOpentypeFont(familyName: string, modulePromise: Promise<{defa
     let sfntBuffer = buffer
     const view = new DataView(buffer)
     if (buffer.byteLength > 4 && view.getUint32(0) === 0x774f4632) {
-      console.log(`Decompressing WOFF2 font: ${familyName}...`)
       try {
         const decompressed = await woff2Decode(new Uint8Array(buffer))
         sfntBuffer = decompressed.buffer
-        console.log(`Decompressed ${familyName} successfully.`)
       } catch (err) {
         console.error(`Failed to decompress ${familyName}:`, err)
         throw err
@@ -1060,7 +1058,6 @@ async function loadOpentypeFont(familyName: string, modulePromise: Promise<{defa
  */
 export async function exportAsVectorSvg(messages: MessageItem[], themeName: ThemeName, lang?: Language): Promise<void> {
   try {
-    console.log('Starting SVG export...')
     const config = resolveThemeConfig(themes[themeName], lang || 'ko')
     const height = calculateCanvasHeight(messages, config, lang)
     const width = config.canvasWidth
@@ -1425,7 +1422,6 @@ ${svgParts.join('\n')}
     link.click()
     document.body.removeChild(link)
     URL.revokeObjectURL(url)
-    console.log('SVG export completed successfully.')
   } catch (err) {
     console.error('SVG export failed:', err)
   }
