@@ -18,12 +18,12 @@ export const GET: RequestHandler = async ({params, request, url}) => {
     throw error(403, 'Forbidden: Hotlinking is not allowed.')
   }
 
-  // 2. 폰트 데이터 매핑 (기존 파일들에서 가져오거나, 별도 저장소 활용 가능)
-  // 여기서는 기존에 만들어진 font-data-*.ts 모듈을 동적으로 가져옵니다.
+  // 2. 폰트 데이터 매핑 (static/fonts/*.bin 파일에서 가져옴)
   let fontData: string
   try {
-    const fontModule = await import(`../../../../lib/message-maker/font-data-${name}.ts`)
-    fontData = fontModule.default
+    // JS 번들에서 제외된 바이너리 파일을 읽어와서 Base64로 변환하여 전송
+    const fontBuffer = await read(`/fonts/${name}.bin`)
+    fontData = Buffer.from(fontBuffer).toString('base64')
   } catch (e) {
     throw error(404, `Font not found: ${name}`)
   }
