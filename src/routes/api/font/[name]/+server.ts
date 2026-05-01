@@ -1,5 +1,8 @@
+import fs from 'fs'
+import path from 'path'
 import {error} from '@sveltejs/kit'
 import {dev} from '$app/environment'
+import {read} from '$app/server'
 import type {RequestHandler} from './$types'
 
 /**
@@ -21,12 +24,24 @@ export const GET: RequestHandler = async ({params, request, url}) => {
   // 2. 폰트 데이터 매핑 (static/fonts/*.bin 파일에서 가져옴)
   let fontData: string
   try {
-    console.log(`[Font API] Fetching font: ${name}`)
-    // JS 번들에서 제외된 바이너리 파일을 읽어와서 Base64로 변환하여 전송
-    const fontBuffer = await read(`/fonts/${name}.bin`)
+    let fontBuffer: Uint8Array | Buffer
+
+    if (dev) {
+      // 개발 환경에서는 fs로 직접 읽어오는 것이 더 안정적일 수 있습니다.
+      const filePath = path.join(process.cwd(), 'static', 'fonts', `${name}.bin`)
+      if (fs.existsSync(filePath)) {
+        fontBuffer = fs.readFileSync(filePath)
+      } else {
+        // fs로 못 찾으면 read로 시도
+        fontBuffer = await read(`/fonts/${name}.bin`)
+      }
+    } else {
+      fontBuffer = await read(`/fonts/${name}.bin`)
+    }
+
     fontData = Buffer.from(fontBuffer).toString('base64')
   } catch (e) {
-    console.error(`[Font API] Error loading font ${name}:`, e)
+    console.error(`[Font API] Error loading font "${name}":`, e)
     throw error(404, `Font not found: ${name}`)
   }
 
