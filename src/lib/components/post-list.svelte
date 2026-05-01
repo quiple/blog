@@ -151,8 +151,8 @@
                   }
                 </style>
               `}
-              {@const src1x = getImageUrl(post.image, {h: 88, q: 80}, isProd)}
-              {@const src2x = getImageUrl(post.image, {h: 176, q: 80}, isProd)}
+              {@const src1x = getImageUrl(post.image, {h: 88}, isProd)}
+              {@const src2x = getImageUrl(post.image, {h: 176}, isProd)}
               <div
                 class="img bg-muted animate-pulse"
                 use:transition={{
