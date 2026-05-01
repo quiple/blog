@@ -38,15 +38,25 @@ export const GET: RequestHandler = async ({params, request, url}) => {
       }
     } else {
       try {
-        // 우선 SvelteKit의 read()로 시도
+        // 1. SvelteKit의 read() 시도
         const response = await read(`/fonts/${name}.bin`)
         fontBuffer = new Uint8Array(await response.arrayBuffer())
       } catch (e) {
-        // read() 실패 시 (Cloudflare Assets 환경 등) 직접 fetch로 가져옴
-        const assetUrl = `${url.origin}/fonts/${name}.bin`
-        const res = await fetch(assetUrl)
-        if (!res.ok) throw error(404, `Font file not found: ${name}`)
-        fontBuffer = new Uint8Array(await res.arrayBuffer())
+        // 2. read() 실패 시 fetch 시도 (Cloudflare Assets 환경 등)
+        const assetUrl = `${url.protocol}//${url.host}/fonts/${name}.bin`
+
+        try {
+          const res = await fetch(assetUrl)
+          if (!res.ok) {
+            // 실패 시 상세 사유를 에러 메시지에 포함하여 브라우저에서 확인할 수 있게 함
+            throw error(404, `Font file not found at: ${assetUrl} (Status: ${res.status})`)
+          }
+          fontBuffer = new Uint8Array(await res.arrayBuffer())
+        } catch (fetchErr: any) {
+          if (fetchErr.status === 404) throw fetchErr
+          console.error(`[Font API] Fetch error for ${name}:`, fetchErr)
+          throw error(404, `Failed to fetch font: ${name} (${fetchErr.message})`)
+        }
       }
     }
 
