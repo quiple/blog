@@ -9,7 +9,7 @@ import type {RequestHandler} from './$types'
  * 폰트 데이터를 안전하게 제공하는 API
  * Referer 체크 및 CORS 헤더를 통해 외부 핫링크를 방지합니다.
  */
-export const GET: RequestHandler = async ({params, request}) => {
+export const GET: RequestHandler = async ({params, request, url}) => {
   const {name} = params
   if (!name) throw error(400, 'Missing font name')
 
@@ -37,8 +37,17 @@ export const GET: RequestHandler = async ({params, request}) => {
         fontBuffer = new Uint8Array(await response.arrayBuffer())
       }
     } else {
-      const response = await read(`/fonts/${name}.bin`)
-      fontBuffer = new Uint8Array(await response.arrayBuffer())
+      try {
+        // 우선 SvelteKit의 read()로 시도
+        const response = await read(`/fonts/${name}.bin`)
+        fontBuffer = new Uint8Array(await response.arrayBuffer())
+      } catch (e) {
+        // read() 실패 시 (Cloudflare Assets 환경 등) 직접 fetch로 가져옴
+        const assetUrl = `${url.origin}/fonts/${name}.bin`
+        const res = await fetch(assetUrl)
+        if (!res.ok) throw error(404, `Font file not found: ${name}`)
+        fontBuffer = new Uint8Array(await res.arrayBuffer())
+      }
     }
 
     fontData = Buffer.from(fontBuffer).toString('base64')
