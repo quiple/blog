@@ -32,7 +32,7 @@ export const GET: RequestHandler = async ({params, url}) => {
   const options: Record<string, string | number> = isOriginal
     ? {
         quality: 100,
-        format: 'passthrough', // 원본 포맷 유지
+        format: 'webp',
       }
     : {
         quality: quality ? +quality : 75,
