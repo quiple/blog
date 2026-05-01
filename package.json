@@ -14,7 +14,8 @@
     "format": "prettier --write .",
     "lint": "oxlint --type-aware",
     "lint:fix": "oxlint --type-aware --fix",
-    "sync-images": "bun scripts/sync-image-sizes.ts"
+    "sync-images": "bun scripts/sync-image-sizes.ts",
+    "obfuscate-fonts": "bun scripts/obfuscate-fonts.ts"
   },
   "devDependencies": {
     "@ethercorps/sveltekit-og": "github:quiple/sveltekit-og",
