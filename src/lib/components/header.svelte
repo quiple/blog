@@ -62,7 +62,12 @@
 >
   <section>
     <div class="flex gap-2">
-      <a href="/" class="logo" style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}")`}>
+      <a
+        href="/"
+        class="logo"
+        aria-label="홈"
+        style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}")`}
+      >
         <Q class="size-9" />
       </a>
     </div>
