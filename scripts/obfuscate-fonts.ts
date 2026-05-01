@@ -45,8 +45,9 @@ function obfuscate() {
       } else if (baseName.includes('gyeonggititle-bold')) {
         baseName = 'gyeonggi-bold'
       } else if (baseName.includes('gyeonggititle-medium')) {
-        // 기존 gyeonggi.bin은 Medium 또는 기본 폰트를 의미함
         baseName = 'gyeonggi'
+      } else if (baseName.includes('gyeonggititle-light')) {
+        baseName = 'gyeonggi-light'
       } else if (baseName.includes('jalnan')) {
         baseName = 'jalnan'
       } else if (baseName.includes('notosans')) {
