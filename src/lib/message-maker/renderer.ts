@@ -55,7 +55,10 @@ async function ensureJalnan2Font(): Promise<void> {
     }
   }
 
-  const {default: fontDataUrl} = await import('./font-data-jalnan')
+  const response = await fetch('/api/font/jalnan')
+  if (!response.ok) throw new Error('Failed to fetch Jalnan font')
+  const fontDataUrl = await response.text()
+
   const font = new FontFace('Jalnan2', base64ToArrayBuffer(fontDataUrl))
   await font.load()
   document.fonts.add(font)
@@ -76,10 +79,10 @@ async function ensureGyeonggiFont(): Promise<void> {
     }
   }
 
-  const [{default: fontDataUrl}, {default: boldDataUrl}] = await Promise.all([
-    import('./font-data-gyeonggi'),
-    import('./font-data-gyeonggi-bold'),
-  ])
+  const [res1, res2] = await Promise.all([fetch('/api/font/gyeonggi'), fetch('/api/font/gyeonggi-bold')])
+  if (!res1.ok || !res2.ok) throw new Error('Failed to fetch Gyeonggi fonts')
+  const [fontDataUrl, boldDataUrl] = await Promise.all([res1.text(), res2.text()])
+
   const font = new FontFace('GyeonggiTitle', base64ToArrayBuffer(fontDataUrl))
   const fontBold = new FontFace('GyeonggiTitleBold', base64ToArrayBuffer(boldDataUrl))
   await Promise.all([font.load(), fontBold.load()])
@@ -102,10 +105,10 @@ async function ensureShinMGoFont(): Promise<void> {
     }
   }
 
-  const [{default: mediumDataUrl}, {default: deboldDataUrl}] = await Promise.all([
-    import('./font-data-shinmgo'),
-    import('./font-data-shinmgo-debold'),
-  ])
+  const [res1, res2] = await Promise.all([fetch('/api/font/shinmgo'), fetch('/api/font/shinmgo-debold')])
+  if (!res1.ok || !res2.ok) throw new Error('Failed to fetch ShinMGo fonts')
+  const [mediumDataUrl, deboldDataUrl] = await Promise.all([res1.text(), res2.text()])
+
   const mediumFont = new FontFace('ShinMGo-Medium', base64ToArrayBuffer(mediumDataUrl))
   const deboldFont = new FontFace('ShinMGo-DeBold', base64ToArrayBuffer(deboldDataUrl))
   await Promise.all([mediumFont.load(), deboldFont.load()])
@@ -128,7 +131,10 @@ async function ensureNotoSansFont(): Promise<void> {
     }
   }
 
-  const {default: fontDataUrl} = await import('./font-data-notosans')
+  const response = await fetch('/api/font/notosans')
+  if (!response.ok) throw new Error('Failed to fetch NotoSans font')
+  const fontDataUrl = await response.text()
+
   const font = new FontFace('NotoSans', base64ToArrayBuffer(fontDataUrl), {weight: '100 900'})
   await font.load()
   document.fonts.add(font)
