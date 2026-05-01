@@ -1029,12 +1029,12 @@ async function getSvgSource(name: string): Promise<string> {
 
 const opentypeCache = new Map<string, opentype.Font>()
 
-async function loadOpentypeFont(familyName: string, modulePromise: Promise<{default: string}>): Promise<opentype.Font> {
+async function loadOpentypeFont(familyName: string, dataUrlPromise: Promise<string>): Promise<opentype.Font> {
   try {
     if (opentypeCache.has(familyName)) {
       return opentypeCache.get(familyName)!
     }
-    const {default: dataUrl} = await modulePromise
+    const dataUrl = await dataUrlPromise
     const buffer = base64ToArrayBuffer(dataUrl)
 
     // WOFF2 시그니처 확인 (wOF2 = 0x774F4632) 후 필요시 압축 해제
@@ -1095,21 +1095,21 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     // 폰트 데이터 가져오기 (SVG 패스 변환용)
     let fontStyles = ''
     if (themeName === 'momotalk') {
-      const jalnanPromise = import('./font-data-jalnan')
-      const gyeonggiPromise = import('./font-data-gyeonggi')
-      const gyeonggiBoldPromise = import('./font-data-gyeonggi-bold')
+      const jalnanPromise = fetch('/api/font/jalnan').then((r) => r.text())
+      const gyeonggiPromise = fetch('/api/font/gyeonggi').then((r) => r.text())
+      const gyeonggiBoldPromise = fetch('/api/font/gyeonggi-bold').then((r) => r.text())
 
       jalnanFont = await loadOpentypeFont('Jalnan2', jalnanPromise)
       gyeonggiFont = await loadOpentypeFont('GyeonggiTitle', gyeonggiPromise)
       gyeonggiBoldFont = await loadOpentypeFont('GyeonggiTitleBold', gyeonggiBoldPromise)
 
       if (lang === 'ja') {
-        const shinmgoMediumPromise = import('./font-data-shinmgo')
-        const shinmgoDeboldPromise = import('./font-data-shinmgo-debold')
+        const shinmgoMediumPromise = fetch('/api/font/shinmgo').then((r) => r.text())
+        const shinmgoDeboldPromise = fetch('/api/font/shinmgo-debold').then((r) => r.text())
         shinmgoMediumFont = await loadOpentypeFont('ShinMGo-Medium', shinmgoMediumPromise)
         shinmgoDeboldFont = await loadOpentypeFont('ShinMGo-DeBold', shinmgoDeboldPromise)
       } else if (lang === 'en') {
-        const notosansPromise = import('./font-data-notosans')
+        const notosansPromise = fetch('/api/font/notosans').then((r) => r.text())
         notosansFont = await loadOpentypeFont('NotoSans', notosansPromise)
       }
     }
