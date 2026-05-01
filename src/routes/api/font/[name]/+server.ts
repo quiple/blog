@@ -33,7 +33,7 @@ export const GET: RequestHandler = async ({params, request, platform}) => {
         fontBuffer = fs.readFileSync(filePath)
       } else {
         // fs로 못 찾으면 read로 시도
-        const response = await read(`/fonts/${name}.bin`)
+        const response = read(`/fonts/${name}.bin`)
         fontBuffer = new Uint8Array(await response.arrayBuffer())
       }
     } else {
