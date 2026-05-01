@@ -739,7 +739,7 @@ async function renderToContext(
           const finalUrl =
             msg.portrait.startsWith('http') || msg.portrait.startsWith('blob:')
               ? msg.portrait
-              : getImageUrl(msg.portrait, {w: 512}, rendererIsProd)
+              : getImageUrl(msg.portrait, {w: 512}, false)
           const profileImg = await getCachedImage(finalUrl)
           if (isObsolete()) return
           ctx.save()
@@ -1284,7 +1284,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           const finalUrl =
             msg.portrait.startsWith('http') || msg.portrait.startsWith('blob:')
               ? msg.portrait
-              : getImageUrl(msg.portrait, {w: 512}, rendererIsProd)
+              : getImageUrl(msg.portrait, {w: 512}, false)
           const portraitDataUrl = await getImageAsDataUrl(finalUrl)
           if (config.profile.circular) {
             svgParts.push(`
