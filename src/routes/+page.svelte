@@ -57,7 +57,7 @@
       {#snippet children({pages, currentPage})}
         <Pagination.Content>
           <Pagination.Item>
-            <Pagination.PrevButton size="icon-xl" />
+            <Pagination.PrevButton />
           </Pagination.Item>
           {#each pages as page (page.key)}
             <Pagination.Item>
@@ -67,7 +67,6 @@
                 <Pagination.Link
                   class={currentPage === page.value ? 'pointer-events-none' : undefined}
                   {page}
-                  size="icon-xl"
                   isActive={currentPage === page.value}
                 >
                   {page.value}
@@ -76,7 +75,7 @@
             </Pagination.Item>
           {/each}
           <Pagination.Item>
-            <Pagination.NextButton size="icon-xl" />
+            <Pagination.NextButton />
           </Pagination.Item>
         </Pagination.Content>
       {/snippet}

@@ -4,13 +4,7 @@
   import {Pagination as PaginationPrimitive} from 'bits-ui'
   import {buttonVariants} from '../button/index.js'
 
-  let {
-    ref = $bindable(null),
-    class: className,
-    size = 'icon-lg',
-    children,
-    ...restProps
-  }: PaginationPrimitive.PrevButtonProps & {size?: ButtonSize} = $props()
+  let {ref = $bindable(null), class: className, children, ...restProps}: PaginationPrimitive.PrevButtonProps = $props()
 </script>
 
 {#snippet Fallback()}
@@ -21,7 +15,7 @@
 <PaginationPrimitive.PrevButton
   bind:ref
   aria-label="이전 페이지로 이동"
-  class={cn(buttonVariants({variant: 'ghost', size}), 'pl-1.5!', className)}
+  class={cn(buttonVariants({variant: 'ghost'}), 'pl-1.5!', className)}
   {...restProps}
 >
   {#if children}
