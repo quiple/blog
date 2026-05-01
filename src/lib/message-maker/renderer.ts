@@ -1,5 +1,5 @@
 import opentype from 'opentype.js'
-import {decompress} from 'wawoff2'
+import {woff2Decode} from 'woff2-decode'
 import {getImageUrl} from '../utils'
 import type {Language, ThemeConfig, ThemeName} from './configs'
 import {resolveThemeConfig, themes} from './configs'
@@ -1037,7 +1037,7 @@ async function loadOpentypeFont(familyName: string, modulePromise: Promise<{defa
     if (buffer.byteLength > 4 && view.getUint32(0) === 0x774f4632) {
       console.log(`Decompressing WOFF2 font: ${familyName}...`)
       try {
-        const decompressed = await decompress(new Uint8Array(buffer))
+        const decompressed = await woff2Decode(new Uint8Array(buffer))
         sfntBuffer = decompressed.buffer
         console.log(`Decompressed ${familyName} successfully.`)
       } catch (err) {
