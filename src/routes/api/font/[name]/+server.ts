@@ -38,25 +38,26 @@ export const GET: RequestHandler = async ({params, request, url}) => {
       }
     } else {
       try {
-        // 1. SvelteKit의 read() 시도
-        const response = await read(`/fonts/${name}.bin`)
-        fontBuffer = new Uint8Array(await response.arrayBuffer())
-      } catch (e) {
-        // 2. read() 실패 시 fetch 시도 (Cloudflare Assets 환경 등)
-        const assetUrl = `${url.protocol}//${url.host}/fonts/${name}.bin`
-
-        try {
-          const res = await fetch(assetUrl)
-          if (!res.ok) {
-            // 실패 시 상세 사유를 에러 메시지에 포함하여 브라우저에서 확인할 수 있게 함
-            throw error(404, `Font file not found at: ${assetUrl} (Status: ${res.status})`)
+        // Cloudflare 환경에서는 R2 버킷에서 직접 읽어오는 것이 가장 안정적입니다.
+        const bucket = (platform as any)?.env?.R2
+        if (bucket) {
+          const object = await bucket.get(`fonts/${name}.bin`)
+          if (object) {
+            fontBuffer = new Uint8Array(await object.arrayBuffer())
+          } else {
+            // R2에 없으면 마지막으로 read() 시도
+            const response = await read(`/fonts/${name}.bin`)
+            fontBuffer = new Uint8Array(await response.arrayBuffer())
           }
-          fontBuffer = new Uint8Array(await res.arrayBuffer())
-        } catch (fetchErr: any) {
-          if (fetchErr.status === 404) throw fetchErr
-          console.error(`[Font API] Fetch error for ${name}:`, fetchErr)
-          throw error(404, `Failed to fetch font: ${name} (${fetchErr.message})`)
+        } else {
+          // R2 설정이 없으면 read() 시도
+          const response = await read(`/fonts/${name}.bin`)
+          fontBuffer = new Uint8Array(await response.arrayBuffer())
         }
+      } catch (e: any) {
+        if (e.status) throw e
+        console.error(`[Font API] Error loading font "${name}" in production:`, e)
+        throw error(404, `Font not found: ${name} (R2 or Read failed)`)
       }
     }
 
