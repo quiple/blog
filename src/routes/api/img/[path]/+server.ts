@@ -29,21 +29,27 @@ export const GET: RequestHandler = async ({params, url}) => {
   const quality = url.searchParams.get('q')
   const format = url.searchParams.get('f') || 'avif'
 
-  const options: Record<string, string | number> = {
-    quality: quality ? +quality : 75,
-    format,
+  const options: Record<string, string | number> = isOriginal
+    ? {
+        quality: 100,
+        format: 'passthrough', // 원본 포맷 유지
+      }
+    : {
+        quality: quality ? +quality : 75,
+        format,
+      }
+
+  if (!isOriginal) {
+    if (width) options.width = +width
+    if (height) options.height = +height
   }
-  if (width) options.width = +width
-  if (height) options.height = +height
 
   return globalThis.fetch(imageUrl, {
     headers: {
       'x-internal-secret': SECRET_HEADER,
     },
-    cf: isOriginal
-      ? undefined
-      : {
-          image: options,
-        },
+    cf: {
+      image: options,
+    },
   } as any)
 }
