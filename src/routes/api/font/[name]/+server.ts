@@ -38,26 +38,29 @@ export const GET: RequestHandler = async ({params, request, url}) => {
       }
     } else {
       try {
-        // Cloudflare 환경에서는 R2 버킷에서 직접 읽어오는 것이 가장 안정적입니다.
         const bucket = (platform as any)?.env?.R2
         if (bucket) {
-          const object = await bucket.get(`fonts/${name}.bin`)
+          const key = `fonts/${name}.bin`
+          let object = await bucket.get(key)
+
+          // 만약 못 찾았다면 슬래시를 붙여서 한 번 더 시도 (일부 설정 대응)
+          if (!object) {
+            object = await bucket.get(`/${key}`)
+          }
+
           if (object) {
             fontBuffer = new Uint8Array(await object.arrayBuffer())
           } else {
-            // R2에 없으면 마지막으로 read() 시도
-            const response = await read(`/fonts/${name}.bin`)
-            fontBuffer = new Uint8Array(await response.arrayBuffer())
+            // 실패 시 시도했던 정확한 키(Key) 값을 에러 메시지에 노출
+            throw error(404, `Font not found in R2. Tried keys: "${key}", "/${key}"`)
           }
         } else {
-          // R2 설정이 없으면 read() 시도
-          const response = await read(`/fonts/${name}.bin`)
-          fontBuffer = new Uint8Array(await response.arrayBuffer())
+          throw error(500, "R2 bucket binding 'R2' is missing in this request context.")
         }
       } catch (e: any) {
         if (e.status) throw e
-        console.error(`[Font API] Error loading font "${name}" in production:`, e)
-        throw error(404, `Font not found: ${name} (R2 or Read failed)`)
+        console.error(`[Font API] Production Error:`, e)
+        throw error(404, `Font loading failed: ${name} (${e.message})`)
       }
     }
 
