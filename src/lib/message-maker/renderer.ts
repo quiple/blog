@@ -1,4 +1,5 @@
 import opentype from 'opentype.js'
+import {decompress} from 'wawoff2'
 import {getImageUrl} from '../utils'
 import type {Language, ThemeConfig, ThemeName} from './configs'
 import {resolveThemeConfig, themes} from './configs'
@@ -1028,7 +1029,16 @@ async function loadOpentypeFont(familyName: string, modulePromise: Promise<{defa
   }
   const {default: dataUrl} = await modulePromise
   const buffer = base64ToArrayBuffer(dataUrl)
-  const font = opentype.parse(buffer)
+
+  // WOFF2 시그니처 확인 (wOF2 = 0x774F4632) 후 필요시 압축 해제
+  let sfntBuffer = buffer
+  const view = new DataView(buffer)
+  if (buffer.byteLength > 4 && view.getUint32(0) === 0x774f4632) {
+    const decompressed = await decompress(new Uint8Array(buffer))
+    sfntBuffer = decompressed.buffer
+  }
+
+  const font = opentype.parse(sfntBuffer)
   opentypeCache.set(familyName, font)
   return font
 }
