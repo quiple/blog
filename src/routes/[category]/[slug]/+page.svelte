@@ -27,8 +27,8 @@
   const isFont = $derived(data.category === 'font')
 
   const image = $derived(data.image ? getImageUrl(data.image, {w: 2560}, isProd) : '')
-  const thumbnail1x = $derived(data.image ? getImageUrl(data.image, {h: 88, q: 80}, isProd) : '')
-  const thumbnail2x = $derived(data.image ? getImageUrl(data.image, {h: 176, q: 80}, isProd) : '')
+  const thumbnail1x = $derived(data.image ? getImageUrl(data.image, {h: 88}, isProd) : '')
+  const thumbnail2x = $derived(data.image ? getImageUrl(data.image, {h: 176}, isProd) : '')
   const thumbnailImage = $derived(
     `image-set(url('${thumbnail1x}') 1x, url('${thumbnail2x}') 2x), -webkit-image-set(url('${thumbnail1x}') 1x, url('${thumbnail2x}') 2x)`,
   )
