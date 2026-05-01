@@ -23,6 +23,7 @@ export const GET: RequestHandler = async ({params, url}) => {
 
   const imageUrl = `${url.origin}/img/${decodedPath}`
 
+  const isOriginal = url.searchParams.get('original') === 'true'
   const width = url.searchParams.get('w')
   const height = url.searchParams.get('h')
   const quality = url.searchParams.get('q')
@@ -39,8 +40,10 @@ export const GET: RequestHandler = async ({params, url}) => {
     headers: {
       'x-internal-secret': SECRET_HEADER,
     },
-    cf: {
-      image: options,
-    },
+    cf: isOriginal
+      ? undefined
+      : {
+          image: options,
+        },
   } as any)
 }

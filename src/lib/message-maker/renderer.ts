@@ -5,7 +5,6 @@ import type {Language, ThemeConfig, ThemeName} from './configs'
 import {resolveThemeConfig, themes} from './configs'
 
 const rendererIsProd = import.meta.env.PROD
-const INTERNAL_SECRET = 'fb5328098e2fab0277635ff61df13870'
 
 /** Jalnan2 폰트 로드 상태 */
 let jalnan2Loaded = false
@@ -178,28 +177,13 @@ function loadSvgAsImage(svgText: string, width: number, height: number): Promise
 /**
  * URL에서 Image를 로드하고 가끔 필요할 때 Data URL로 변환
  */
-async function loadImage(url: string): Promise<HTMLImageElement> {
-  // 원본 이미지 접근을 위해 보안 헤더를 포함하여 fetch
-  const res = await fetch(url, {
-    headers: {
-      'x-internal-secret': INTERNAL_SECRET,
-    },
-  })
-  if (!res.ok) throw new Error(`Failed to load image: ${res.status}`)
-  const blob = await res.blob()
-  const blobUrl = URL.createObjectURL(blob)
-
+function loadImage(url: string): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const img = new Image()
-    img.onload = () => {
-      URL.revokeObjectURL(blobUrl)
-      resolve(img)
-    }
-    img.onerror = (e) => {
-      URL.revokeObjectURL(blobUrl)
-      reject(e)
-    }
-    img.src = blobUrl
+    img.crossOrigin = 'anonymous'
+    img.onload = () => resolve(img)
+    img.onerror = (e) => reject(e)
+    img.src = url
   })
 }
 
@@ -755,7 +739,7 @@ async function renderToContext(
           const finalUrl =
             msg.portrait.startsWith('http') || msg.portrait.startsWith('blob:')
               ? msg.portrait
-              : getImageUrl(msg.portrait, {w: 512}, false)
+              : getImageUrl(msg.portrait, {original: true}, rendererIsProd)
           const profileImg = await getCachedImage(finalUrl)
           if (isObsolete()) return
           ctx.save()
@@ -1300,7 +1284,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           const finalUrl =
             msg.portrait.startsWith('http') || msg.portrait.startsWith('blob:')
               ? msg.portrait
-              : getImageUrl(msg.portrait, {w: 512}, false)
+              : getImageUrl(msg.portrait, {original: true}, rendererIsProd)
           const portraitDataUrl = await getImageAsDataUrl(finalUrl)
           if (config.profile.circular) {
             svgParts.push(`

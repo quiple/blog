@@ -27,7 +27,7 @@ export function getCategoryName(category: string) {
 
 export function getImageUrl(
   path: string,
-  options: {w?: number; h?: number; q?: number; f?: string; absolute?: boolean} = {},
+  options: {w?: number; h?: number; q?: number; f?: string; absolute?: boolean; original?: boolean} = {},
   isProd = false,
 ) {
   const baseUrl = options.absolute ? 'https://quiple.dev' : ''
@@ -40,6 +40,7 @@ export function getImageUrl(
 
   // Build query string without URLSearchParams allocation
   const parts: string[] = []
+  if (options.original) parts.push('original=true')
   if (options.w) parts.push(`w=${options.w}`)
   if (options.h) parts.push(`h=${options.h}`)
   if (options.q) parts.push(`q=${options.q}`)
