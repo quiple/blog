@@ -2415,26 +2415,6 @@
     "width": 1328,
     "height": 669
   },
-  "article/bakamono_kive.jpg": {
-    "width": 2592,
-    "height": 1728
-  },
-  "article/inuni.jpg": {
-    "width": 2400,
-    "height": 2400
-  },
-  "article/asha.jpg": {
-    "width": 2502,
-    "height": 1715
-  },
-  "article/best_jkt.jpg": {
-    "width": 1696,
-    "height": 1504
-  },
-  "article/jkt_orenitodoke.jpg": {
-    "width": 1660,
-    "height": 1648
-  },
   "article/2016asha.jpg": {
     "width": 3420,
     "height": 2340
@@ -2531,10 +2511,6 @@
     "width": 640,
     "height": 427
   },
-  "article/bokunidekiru_jkt.jpg": {
-    "width": 3000,
-    "height": 3000
-  },
   "article/bakamono_live.png": {
     "width": 2592,
     "height": 1728
@@ -2550,5 +2526,13 @@
   "article/bokunidekiru_jkt.png": {
     "width": 2999,
     "height": 2961
+  },
+  "article/asha.png": {
+    "width": 2502,
+    "height": 1715
+  },
+  "article/best_jkt.png": {
+    "width": 1696,
+    "height": 1504
   }
 }
