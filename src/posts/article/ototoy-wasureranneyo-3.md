@@ -78,7 +78,7 @@ pubDate: 2026-04-29T23:36
 
 > 〈여기는 아니지만 지금이야〉는 라이브에서 처음 선보였을 때 반응이 굉장히 좋았었죠?
 
-:::figure{src="article/bakamono_kive.jpg"}
+:::figure{src="article/bakamono_live.png"}
 〈츠레덴 투어 파이널 \~그리고 전설로\~(ツレ伝ツアーファイナル～そして伝説へ～)〉 마지막 공연.
 :::
 
@@ -94,7 +94,7 @@ pubDate: 2026-04-29T23:36
 
 > 이어서 발매된 것이 세 번째 앨범 《개로 만들어줘》(2015년 6월 24일). 이것도 어떤 의미에선 밴드의 터닝 포인트 중 하나 아닐까요.
 
-:::figure{src="article/inuni.jpg" class="w-100"}
+:::figure{src="article/inuni.png" class="w-100"}
 《개로 만들어줘》 재킷 사진.
 :::
 
@@ -136,6 +136,6 @@ pubDate: 2026-04-29T23:36
 와스레란네요 2015 서머 굿즈.
 :::
 
-:::figure{src="article/asha.jpg"}
+:::figure{src="article/asha.png"}
 《개로 만들어줘》 아티스트 사진.
 :::
