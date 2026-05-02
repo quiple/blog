@@ -42,5 +42,13 @@ export const handle: Handle = async ({event, resolve}) => {
     }
   }
 
-  return resolve(event)
+  const response = await resolve(event)
+
+  // 홈페이지에 에이전트를 위한 Link 헤더 추가 (RFC 8288)
+  if (event.url.pathname === '/') {
+    response.headers.append('Link', '</llms.txt>; rel="index"; type="text/plain"')
+    response.headers.append('Link', '</sitemap.xml>; rel="sitemap"; type="application/xml"')
+  }
+
+  return response
 }
