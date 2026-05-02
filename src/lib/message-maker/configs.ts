@@ -293,10 +293,10 @@ export const momotalk: RawThemeConfig = {
     borderRadius: 23,
     maxWidthRatio: 0.82,
     marginLeft: 30,
-    tailWidth: 12,
+    tailWidth: 14,
     tailHeight: 16,
     tailOffsetY: 24,
-    tailRadius: 2,
+    tailRadius: 1.5,
   },
   bubbleRight: {
     backgroundColor: '#4A8ACB',
@@ -312,10 +312,10 @@ export const momotalk: RawThemeConfig = {
     borderRadius: 23,
     maxWidthRatio: 0.82,
     marginRight: 0,
-    tailWidth: 12,
+    tailWidth: 14,
     tailHeight: 16,
     tailOffsetY: 24,
-    tailRadius: 2,
+    tailRadius: 1.5,
   },
 }
 
