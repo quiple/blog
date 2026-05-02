@@ -38,7 +38,7 @@ function base64ToArrayBuffer(base64: string): ArrayBuffer {
     // 2. XOR 연산으로 원본 바이너리 복원
     bytes[i] = binaryString.charCodeAt(i) ^ key.charCodeAt(i % key.length)
   }
-  return bytes.buffer
+  return bytes.buffer as ArrayBuffer
 }
 
 /**
@@ -1043,7 +1043,7 @@ async function loadOpentypeFont(familyName: string, dataUrlPromise: Promise<stri
     if (buffer.byteLength > 4 && view.getUint32(0) === 0x774f4632) {
       try {
         const decompressed = await woff2Decode(new Uint8Array(buffer))
-        sfntBuffer = decompressed.buffer
+        sfntBuffer = decompressed.buffer as ArrayBuffer
       } catch (err) {
         console.error(`Failed to decompress ${familyName}:`, err)
         throw err
