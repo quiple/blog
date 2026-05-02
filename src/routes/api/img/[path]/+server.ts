@@ -24,7 +24,7 @@ export const GET: RequestHandler = async ({params, url}) => {
   const imageUrl = `${url.origin}/img/${decodedPath}`
 
   const isOriginal = url.searchParams.get('original') === 'true'
-  const width = url.searchParams.get('w')
+  const width = url.searchParams.get('w') || '1280'
   const height = url.searchParams.get('h')
   const quality = url.searchParams.get('q')
   const format = url.searchParams.get('f') || 'avif'
