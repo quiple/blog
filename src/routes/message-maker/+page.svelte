@@ -1088,7 +1088,6 @@
 
   :global(main)
     @apply pb-0!
-    font-feature-settings: normal
 
   .col
     @apply flex flex-col border-r last:border-r-0
@@ -1108,6 +1107,7 @@
 
   .preview-canvas
     @apply w-full h-auto block
+    font-feature-settings: normal
 
   // ── 2열: 에디터 ──
   .col-editor
