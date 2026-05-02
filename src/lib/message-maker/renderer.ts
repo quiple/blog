@@ -853,7 +853,13 @@ async function renderToContext(
           ctx.beginPath()
           const tailY = cursorY + config.bubbleLeft.tailOffsetY
           ctx.moveTo(bubbleStartX, tailY)
-          ctx.lineTo(bubbleStartX - config.bubbleLeft.tailWidth, tailY + config.bubbleLeft.tailHeight / 2)
+          ctx.arcTo(
+            bubbleStartX - config.bubbleLeft.tailWidth,
+            tailY + config.bubbleLeft.tailHeight / 2,
+            bubbleStartX,
+            tailY + config.bubbleLeft.tailHeight,
+            config.bubbleLeft.tailRadius,
+          )
           ctx.lineTo(bubbleStartX, tailY + config.bubbleLeft.tailHeight)
           ctx.fill()
         }
@@ -898,7 +904,13 @@ async function renderToContext(
           ctx.beginPath()
           const tailY = cursorY + config.bubbleRight.tailOffsetY
           ctx.moveTo(bubbleX + bubbleW, tailY)
-          ctx.lineTo(bubbleX + bubbleW + config.bubbleRight.tailWidth, tailY + config.bubbleRight.tailHeight / 2)
+          ctx.arcTo(
+            bubbleX + bubbleW + config.bubbleRight.tailWidth,
+            tailY + config.bubbleRight.tailHeight / 2,
+            bubbleX + bubbleW,
+            tailY + config.bubbleRight.tailHeight,
+            config.bubbleRight.tailRadius,
+          )
           ctx.lineTo(bubbleX + bubbleW, tailY + config.bubbleRight.tailHeight)
           ctx.fill()
         }
@@ -1348,7 +1360,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           if (bi === 0 && config.bubbleLeft.tailWidth > 0) {
             const tailY = cursorY + config.bubbleLeft.tailOffsetY
             svgParts.push(
-              `<path d="M${bubbleStartX},${tailY} L${bubbleStartX - config.bubbleLeft.tailWidth},${tailY + config.bubbleLeft.tailHeight / 2} L${bubbleStartX},${tailY + config.bubbleLeft.tailHeight} Z" fill="${config.bubbleLeft.backgroundColor}" />`,
+              `<path d="M${bubbleStartX},${tailY} L${bubbleStartX - config.bubbleLeft.tailWidth + config.bubbleLeft.tailRadius * 0.6},${tailY + config.bubbleLeft.tailHeight / 2 - config.bubbleLeft.tailRadius * 0.4} Q${bubbleStartX - config.bubbleLeft.tailWidth},${tailY + config.bubbleLeft.tailHeight / 2} ${bubbleStartX - config.bubbleLeft.tailWidth + config.bubbleLeft.tailRadius * 0.6},${tailY + config.bubbleLeft.tailHeight / 2 + config.bubbleLeft.tailRadius * 0.4} L${bubbleStartX},${tailY + config.bubbleLeft.tailHeight} Z" fill="${config.bubbleLeft.backgroundColor}" />`,
             )
           }
           for (let li = 0; li < lines.length; li++) {
@@ -1389,7 +1401,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           if (bi === 0 && config.bubbleRight.tailWidth > 0) {
             const tailY = cursorY + config.bubbleRight.tailOffsetY
             svgParts.push(
-              `<path d="M${bubbleX + bubbleW},${tailY} L${bubbleX + bubbleW + config.bubbleRight.tailWidth},${tailY + config.bubbleRight.tailHeight / 2} L${bubbleX + bubbleW},${tailY + config.bubbleRight.tailHeight} Z" fill="${config.bubbleRight.backgroundColor}" />`,
+              `<path d="M${bubbleX + bubbleW},${tailY} L${bubbleX + bubbleW + config.bubbleRight.tailWidth - config.bubbleRight.tailRadius * 0.6},${tailY + config.bubbleRight.tailHeight / 2 - config.bubbleRight.tailRadius * 0.4} Q${bubbleX + bubbleW + config.bubbleRight.tailWidth},${tailY + config.bubbleRight.tailHeight / 2} ${bubbleX + bubbleW + config.bubbleRight.tailWidth - config.bubbleRight.tailRadius * 0.6},${tailY + config.bubbleRight.tailHeight / 2 + config.bubbleRight.tailRadius * 0.4} L${bubbleX + bubbleW},${tailY + config.bubbleRight.tailHeight} Z" fill="${config.bubbleRight.backgroundColor}" />`,
             )
           }
           for (let li = 0; li < lines.length; li++) {

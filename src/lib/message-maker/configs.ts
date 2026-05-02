@@ -126,6 +126,8 @@ export interface RawThemeConfig {
     tailHeight: number
     /** 삼각형 꼬리 세로 위치 오프셋 (말풍선 상단 기준) */
     tailOffsetY: number
+    /** 삼각형 꼬리 끝부분 반경 */
+    tailRadius: number
   }
 
   /** 내(선생님) 메시지 말풍선 */
@@ -150,6 +152,8 @@ export interface RawThemeConfig {
     tailHeight: number
     /** 삼각형 꼬리 세로 위치 오프셋 (말풍선 상단 기준) */
     tailOffsetY: number
+    /** 삼각형 꼬리 끝부분 반경 */
+    tailRadius: number
   }
 }
 
@@ -292,6 +296,7 @@ export const momotalk: RawThemeConfig = {
     tailWidth: 12,
     tailHeight: 16,
     tailOffsetY: 24,
+    tailRadius: 2,
   },
   bubbleRight: {
     backgroundColor: '#4A8ACB',
@@ -310,6 +315,7 @@ export const momotalk: RawThemeConfig = {
     tailWidth: 12,
     tailHeight: 16,
     tailOffsetY: 24,
+    tailRadius: 2,
   },
 }
 
@@ -385,6 +391,7 @@ export const imessage: RawThemeConfig = {
     tailWidth: 0,
     tailHeight: 0,
     tailOffsetY: 0,
+    tailRadius: 0,
   },
   bubbleRight: {
     backgroundColor: '#007aff',
@@ -403,6 +410,7 @@ export const imessage: RawThemeConfig = {
     tailWidth: 0,
     tailHeight: 0,
     tailOffsetY: 0,
+    tailRadius: 0,
   },
 }
 
@@ -478,6 +486,7 @@ export const line: RawThemeConfig = {
     tailWidth: 0,
     tailHeight: 0,
     tailOffsetY: 0,
+    tailRadius: 0,
   },
   bubbleRight: {
     backgroundColor: '#a3dd6e',
@@ -496,6 +505,7 @@ export const line: RawThemeConfig = {
     tailWidth: 0,
     tailHeight: 0,
     tailOffsetY: 0,
+    tailRadius: 0,
   },
 }
 
@@ -571,6 +581,7 @@ export const kakaotalk: RawThemeConfig = {
     tailWidth: 0,
     tailHeight: 0,
     tailOffsetY: 0,
+    tailRadius: 0,
   },
   bubbleRight: {
     backgroundColor: '#fef01b',
@@ -589,6 +600,7 @@ export const kakaotalk: RawThemeConfig = {
     tailWidth: 0,
     tailHeight: 0,
     tailOffsetY: 0,
+    tailRadius: 0,
   },
 }
 
