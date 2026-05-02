@@ -38,24 +38,10 @@ function generateSrcSet(src: string, isProd: boolean) {
   return IMAGE_WIDTHS.map((w) => `${getImageUrl(src, {w}, isProd)} ${w}w`).join(', ')
 }
 
-export const load: PageServerLoad = async ({params, request}) => {
+export const load: PageServerLoad = async ({params}) => {
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
   if (!rawContent) return error(404)
-
-  const accept = request.headers.get('accept')
-  if (accept?.includes('text/markdown')) {
-    const body = rawContent as string
-    const tokens = Math.ceil(new TextEncoder().encode(body).length / 4)
-    return new Response(body, {
-      headers: {
-        'content-type': 'text/markdown; charset=utf-8',
-        vary: 'accept',
-        'x-markdown-tokens': tokens.toString(),
-        'content-signal': 'ai-train=yes, search=yes, ai-input=yes',
-      },
-    })
-  }
   const {content, data} = matter(rawContent as string)
   const isBlog = params.category === 'blog'
   const isArticle = params.category === 'article'
