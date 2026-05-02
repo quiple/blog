@@ -2534,5 +2534,21 @@
   "article/bokunidekiru_jkt.jpg": {
     "width": 3000,
     "height": 3000
+  },
+  "article/bakamono_live.png": {
+    "width": 2592,
+    "height": 1728
+  },
+  "article/inuni.png": {
+    "width": 2400,
+    "height": 2400
+  },
+  "article/jkt_orenitodoke.png": {
+    "width": 1660,
+    "height": 1648
+  },
+  "article/bokunidekiru_jkt.png": {
+    "width": 2999,
+    "height": 2961
   }
 }
