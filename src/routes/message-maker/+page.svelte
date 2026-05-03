@@ -890,14 +890,24 @@
             {:else}Language
             {/if}
           </h2>
-          <p>이미지의 폰트를 각 언어에 맞도록 변경합니다.</p>
+          <p>
+            {#if lang === 'ja'}画像のフォントを各言語に合わせて変更します。
+            {:else if lang === 'ko'}이미지의 폰트를 각 언어에 맞도록 변경합니다.
+            {:else}Changes the font of the image to match each language.
+            {/if}
+          </p>
           <h2>
             {#if lang === 'ja'}PNG出力倍率
             {:else if lang === 'ko'}PNG 출력 배율
             {:else}PNG Output Scale
             {/if}
           </h2>
-          <p>PNG로 내보내기를 할 때의 배율을 결정합니다.</p>
+          <p>
+            {#if lang === 'ja'}PNGで書き出す際の倍率を決定します。
+            {:else if lang === 'ko'}PNG로 내보내기를 할 때의 배율을 결정합니다.
+            {:else}Determines the scale factor when exporting to PNG.
+            {/if}
+          </p>
           <h2>
             {#if lang === 'ja'}ファイルのエクスポート
             {:else if lang === 'ko'}파일 내보내기
@@ -905,9 +915,24 @@
             {/if}
           </h2>
           <ul>
-            <li>PNG로 내보내기: 이미지를 PNG 파일로 내보냅니다. 일반적인 공유용으로 적합합니다.</li>
-            <li>PNG로 복사하기: 이미지를 PNG 파일로 클립보드에 복사합니다.</li>
-            <li>SVG로 내보내기: 이미지를 SVG 파일로 내보냅니다. 인쇄용으로 적합합니다.</li>
+            <li>
+              {#if lang === 'ja'}PNGで書き出す: 画像をPNGファイルとして書き出します。一般的な共有に適しています。
+              {:else if lang === 'ko'}PNG로 내보내기: 이미지를 PNG 파일로 내보냅니다. 일반적인 공유용으로 적합합니다.
+              {:else}Export as PNG: Exports the image as a PNG file. Best for general sharing.
+              {/if}
+            </li>
+            <li>
+              {#if lang === 'ja'}PNGとしてコピー: 画像をPNG形式でクリップボードにコピーします。
+              {:else if lang === 'ko'}PNG로 복사하기: 이미지를 PNG 파일로 클립보드에 복사합니다.
+              {:else}Copy as PNG: Copies the image to the clipboard as a PNG file.
+              {/if}
+            </li>
+            <li>
+              {#if lang === 'ja'}SVGで書き出す: 画像をSVGファイルとして書き出します。印刷用に適しています。
+              {:else if lang === 'ko'}SVG로 내보내기: 이미지를 SVG 파일로 내보냅니다. 인쇄용으로 적합합니다.
+              {:else}Export as SVG: Exports the image as an SVG file. Best for printing.
+              {/if}
+            </li>
           </ul>
         </section>
       </div>
