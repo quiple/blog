@@ -275,8 +275,8 @@ export const momotalk: RawThemeConfig = {
     fontSize: {ko: 43, ja: 41, en: 43},
     fontWeight: 'normal',
     color: '#3F444A',
-    marginTop: {ko: 2, ja: 1, en: 4},
-    marginBottom: {ko: 7, ja: 8, en: 5},
+    marginTop: {ko: 2, ja: 1.5, en: 4},
+    marginBottom: {ko: 7, ja: 9, en: 5},
     marginLeft: {ko: 32, ja: 32, en: 32},
   },
   bubbleLeft: {
