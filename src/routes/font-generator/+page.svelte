@@ -721,7 +721,7 @@
     <article class="charset-info prose-shadcn">
       <ul>
         <li>
-          한글 음절
+          <strong>한글 음절</strong>
           <ul>
             <li>
               2,350자: <a
@@ -758,7 +758,7 @@
           </ul>
         </li>
         <li>
-          한자
+          <strong>한자</strong>
           <ul>
             <li>
               KS 4,888자: <a
@@ -778,14 +778,14 @@
           </ul>
         </li>
         <li>
-          EUC-KR
+          <strong>EUC-KR</strong>
           <ul>
             <li>EUC-KR: KS X 1001과 KS X 1003을 포함하는 문자 집합. 로마자와 기호, 한자 등을 포함합니다.</li>
             <li>한자 제외: EUC-KR에서 한자를 제외한 문자 집합.</li>
           </ul>
         </li>
         <li>
-          Shift_JIS
+          <strong>Shift_JIS</strong>
           <ul>
             <li>
               Shift_JIS: <a
