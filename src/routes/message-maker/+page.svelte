@@ -800,6 +800,14 @@
             </Select.Group>
           </Select.Content>
         </Select.Root>
+        <section class="description">
+          <p>
+            {#if lang === 'ja'}画像のフォントを各言語に合わせて変更します。
+            {:else if lang === 'ko'}이미지의 폰트를 각 언어에 맞도록 변경합니다.
+            {:else}Changes the font of the image to match each language.
+            {/if}
+          </p>
+        </section>
       </div>
 
       <div class="grid gap-2">
@@ -831,6 +839,14 @@
             </Select.Group>
           </Select.Content>
         </Select.Root>
+        <section class="description">
+          <p>
+            {#if lang === 'ja'}「PNGでエクスポート」を行う際の倍率を決定します。
+            {:else if lang === 'ko'}‘PNG로 내보내기’를 할 때의 배율을 결정합니다.
+            {:else}Determines the scale factor when using "Export as PNG".
+            {/if}
+          </p>
+        </section>
       </div>
 
       <div class="grid gap-2">
@@ -881,39 +897,7 @@
             </Button>
           </ButtonGroup.Root>
         </ButtonGroup.Root>
-        <section
-          class="prose-shadcn prose-h2:pb-0! prose-h2:mt-6! prose-h2:border-b-0! prose-h2:mb-0! prose-h2:text-lg! text-sm prose-p:my-1! prose-ul:my-3!"
-        >
-          <h2>
-            {#if lang === 'ja'}言語
-            {:else if lang === 'ko'}언어
-            {:else}Language
-            {/if}
-          </h2>
-          <p>
-            {#if lang === 'ja'}画像のフォントを各言語に合わせて変更します。
-            {:else if lang === 'ko'}이미지의 폰트를 각 언어에 맞도록 변경합니다.
-            {:else}Changes the font of the image to match each language.
-            {/if}
-          </p>
-          <h2>
-            {#if lang === 'ja'}PNG出力倍率
-            {:else if lang === 'ko'}PNG 출력 배율
-            {:else}PNG Output Scale
-            {/if}
-          </h2>
-          <p>
-            {#if lang === 'ja'}「PNGでエクスポート」を行う際の倍率を決定します。
-            {:else if lang === 'ko'}‘PNG로 내보내기’를 할 때의 배율을 결정합니다.
-            {:else}Determines the scale factor when using "Export as PNG".
-            {/if}
-          </p>
-          <h2>
-            {#if lang === 'ja'}ファイルのエクスポート
-            {:else if lang === 'ko'}파일 내보내기
-            {:else}Export File
-            {/if}
-          </h2>
+        <section class="description">
           <ul>
             <li>
               {#if lang === 'ja'}PNGでエクスポート：画像をPNG形式でエクスポートします。一般的な共有に適しています。
@@ -1182,4 +1166,7 @@
 
   .setting-label
     @apply text-sm font-medium text-foreground
+
+  .description
+    @apply prose-shadcn text-sm prose-p:my-0! prose-ul:my-2!
 </style>
