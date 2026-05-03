@@ -916,19 +916,19 @@
           </h2>
           <ul>
             <li>
-              {#if lang === 'ja'}PNGでエクスポート: 画像をPNGファイルとして書き出します。一般的な共有に適しています。
+              {#if lang === 'ja'}PNGでエクスポート：画像をPNG形式でエクスポートします。一般的な共有に適しています。
               {:else if lang === 'ko'}PNG로 내보내기: 이미지를 PNG 파일로 내보냅니다. 일반적인 공유용으로 적합합니다.
               {:else}Export as PNG: Exports the image as a PNG file. Best for general sharing.
               {/if}
             </li>
             <li>
-              {#if lang === 'ja'}PNGでコピー: 画像をPNG形式でクリップボードにコピーします。
+              {#if lang === 'ja'}PNGでコピー：画像をPNG形式でクリップボードにコピーします。
               {:else if lang === 'ko'}PNG로 복사하기: 이미지를 PNG 파일로 클립보드에 복사합니다.
               {:else}Copy as PNG: Copies the image to the clipboard as a PNG file.
               {/if}
             </li>
             <li>
-              {#if lang === 'ja'}SVGでエクスポート: 画像をSVGファイルとして書き出します。印刷用に適しています。
+              {#if lang === 'ja'}SVGでエクスポート：画像をSVG形式でエクスポートします。印刷用に適しています。
               {:else if lang === 'ko'}SVG로 내보내기: 이미지를 SVG 파일로 내보냅니다. 인쇄용으로 적합합니다.
               {:else}Export as SVG: Exports the image as an SVG file. Best for printing.
               {/if}
