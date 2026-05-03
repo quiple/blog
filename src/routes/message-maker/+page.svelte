@@ -904,7 +904,7 @@
           </h2>
           <p>
             {#if lang === 'ja'}「PNGでエクスポート」を行う際の倍率を決定します。
-            {:else if lang === 'ko'}'PNG로 내보내기'를 할 때의 배율을 결정합니다.
+            {:else if lang === 'ko'}‘PNG로 내보내기’를 할 때의 배율을 결정합니다.
             {:else}Determines the scale factor when using "Export as PNG".
             {/if}
           </p>
