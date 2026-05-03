@@ -833,7 +833,13 @@
         </Select.Root>
       </div>
 
-      <div class="gap-2 flex flex-col">
+      <div class="grid gap-2">
+        <label class="setting-label" for="setting-density">
+          {#if lang === 'ja'}ファイルのエクスポート
+          {:else if lang === 'ko'}파일 내보내기
+          {:else}Export File
+          {/if}
+        </label>
         <ButtonGroup.Root class="w-full">
           <ButtonGroup.Root class="grow">
             <Button
@@ -875,6 +881,35 @@
             </Button>
           </ButtonGroup.Root>
         </ButtonGroup.Root>
+        <section
+          class="prose-shadcn prose-h2:pb-0! prose-h2:mt-6! prose-h2:border-b-0! prose-h2:mb-0! prose-h2:text-lg! text-sm prose-p:my-1! prose-ul:my-3!"
+        >
+          <h2>
+            {#if lang === 'ja'}言語
+            {:else if lang === 'ko'}언어
+            {:else}Language
+            {/if}
+          </h2>
+          <p>이미지의 폰트를 각 언어에 맞도록 변경합니다.</p>
+          <h2>
+            {#if lang === 'ja'}PNG出力倍率
+            {:else if lang === 'ko'}PNG 출력 배율
+            {:else}PNG Output Scale
+            {/if}
+          </h2>
+          <p>PNG로 내보내기를 할 때의 배율을 결정합니다.</p>
+          <h2>
+            {#if lang === 'ja'}ファイルのエクスポート
+            {:else if lang === 'ko'}파일 내보내기
+            {:else}Export File
+            {/if}
+          </h2>
+          <ul>
+            <li>PNG로 내보내기: 이미지를 PNG 파일로 내보냅니다. 일반적인 공유용으로 적합합니다.</li>
+            <li>PNG로 복사하기: 이미지를 PNG 파일로 클립보드에 복사합니다.</li>
+            <li>SVG로 내보내기: 이미지를 SVG 파일로 내보냅니다. 인쇄용으로 적합합니다.</li>
+          </ul>
+        </section>
       </div>
     </div>
   </div>
