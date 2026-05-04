@@ -5,6 +5,7 @@
     ChevronUp,
     Copy,
     Download,
+    Heart,
     Image,
     Pencil,
     Plus,
@@ -722,17 +723,24 @@
           <Plus />
           {#if lang === 'ja'}左のメッセージを追加
           {:else if lang === 'ko'}왼쪽 메시지 추가
-          {:else}Add message on the left
+          {:else}Add Message on the Left
           {/if}
         </Button>
         <Button class="grow flex-1" size="lg" variant="outline" onclick={() => addMessage('right')}>
           <Plus />
           {#if lang === 'ja'}右のメッセージを追加
           {:else if lang === 'ko'}오른쪽 메시지 추가
-          {:else}Add message on the right
+          {:else}Add Message on the Right
           {/if}
         </Button>
       </div>
+      <Button size="lg" variant="outline">
+        <Heart />
+        {#if lang === 'ja'}絆ストーリーを追加
+        {:else if lang === 'ko'}인연 스토리 추가
+        {:else}Add Relationship Story
+        {/if}
+      </Button>
     </div>
   </div>
 
