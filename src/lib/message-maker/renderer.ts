@@ -637,6 +637,18 @@ async function renderToContext(
           config.header.helpIconSize,
         )
       }
+
+      if (config.header.closeIconSize > 0) {
+        const closeIcon = await getIcon('close', config.header.closeIconSize)
+        if (isObsolete()) return
+        ctx.drawImage(
+          closeIcon,
+          width + config.header.closeIconOffsetX - config.header.closeIconSize,
+          centerY - config.header.closeIconSize / 2 + config.header.closeIconOffsetY,
+          config.header.closeIconSize,
+          config.header.closeIconSize,
+        )
+      }
     } catch {
       ctx.fillStyle = config.header.titleColor
       ctx.font = `${config.header.titleFontSize}px ${config.header.titleFont}`

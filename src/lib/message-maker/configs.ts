@@ -35,6 +35,12 @@ export interface RawThemeConfig {
     logoOffsetY: number
     /** 물음표 아이콘 y축 오프셋 */
     helpIconOffsetY: number
+    /** 닫기 아이콘 크기 */
+    closeIconSize: number
+    /** 닫기 아이콘 x축 오프셋 (우측 끝 기준) */
+    closeIconOffsetX: number
+    /** 닫기 아이콘 y축 오프셋 */
+    closeIconOffsetY: number
   }
 
   /** 왼쪽 사이드바 */
@@ -242,6 +248,9 @@ export const momotalk: RawThemeConfig = {
     titleOffsetY: 8,
     logoOffsetY: 0,
     helpIconOffsetY: 9,
+    closeIconSize: 100,
+    closeIconOffsetX: -38,
+    closeIconOffsetY: 0,
   },
   sidebar: {
     width: 201,
@@ -337,6 +346,9 @@ export const imessage: RawThemeConfig = {
     titleOffsetY: 0,
     logoOffsetY: 0,
     helpIconOffsetY: 0,
+    closeIconSize: 0,
+    closeIconOffsetX: 0,
+    closeIconOffsetY: 0,
   },
   sidebar: {
     width: 0,
@@ -432,6 +444,9 @@ export const line: RawThemeConfig = {
     titleOffsetY: 0,
     logoOffsetY: 0,
     helpIconOffsetY: 0,
+    closeIconSize: 0,
+    closeIconOffsetX: 0,
+    closeIconOffsetY: 0,
   },
   sidebar: {
     width: 0,
@@ -527,6 +542,9 @@ export const kakaotalk: RawThemeConfig = {
     titleOffsetY: 0,
     logoOffsetY: 0,
     helpIconOffsetY: 0,
+    closeIconSize: 0,
+    closeIconOffsetX: 0,
+    closeIconOffsetY: 0,
   },
   sidebar: {
     width: 0,
