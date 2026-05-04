@@ -665,6 +665,8 @@ function hashMessage(msg: MessageItem): string {
   return `${msg.type}\0${msg.name ?? ''}\0${msg.portrait ?? ''}\0${msg.text.join('\0')}`
 }
 
+let sharedRenderBufferCanvas: HTMLCanvasElement | null = null
+
 /**
  * 메인 렌더링 함수
  */
@@ -690,14 +692,28 @@ export async function renderCanvas(
 
   const height = calculateCanvasHeight(messages, config, lang)
 
-  // 캔버스 크기가 바뀌면 chrome 캐시 무효화 (사이드바 높이가 달라지므로)
-  const prevHeight = canvas.height
-  canvas.width = config.canvasWidth
-  canvas.height = height
+  // 깜빡임(flickering) 방지를 위한 더블 버퍼링
+  if (!sharedRenderBufferCanvas) {
+    sharedRenderBufferCanvas = document.createElement('canvas')
+  }
+  sharedRenderBufferCanvas.width = config.canvasWidth
+  sharedRenderBufferCanvas.height = height
 
+  const bufferCtx = sharedRenderBufferCanvas.getContext('2d')!
+
+  // 오프스크린 버퍼에 모든 비동기 드로잉 작업 수행
+  await renderToContext(bufferCtx, messages, themeName, 1, renderId, height, lang)
+
+  // 렌더링 중 새로운 요청이 들어왔으면 폐기
+  if (renderId !== lastRenderId) return
+
+  // 준비된 버퍼를 화면 캔버스에 한 번에 복사
+  if (canvas.width !== config.canvasWidth || canvas.height !== height) {
+    canvas.width = config.canvasWidth
+    canvas.height = height
+  }
   const ctx = canvas.getContext('2d')!
-  // 미리 계산한 height를 전달하여 renderToContext 내부의 중복 계산 방지
-  await renderToContext(ctx, messages, themeName, 1, renderId, height, lang)
+  ctx.drawImage(sharedRenderBufferCanvas, 0, 0)
 }
 
 async function renderChrome(
@@ -1335,6 +1351,11 @@ export function clearCaches(): void {
     sharedDataUrlCanvas.height = 0
     sharedDataUrlCanvas = null
     sharedDataUrlCtx = null
+  }
+  if (sharedRenderBufferCanvas) {
+    sharedRenderBufferCanvas.width = 0
+    sharedRenderBufferCanvas.height = 0
+    sharedRenderBufferCanvas = null
   }
 }
 
