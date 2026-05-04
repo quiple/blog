@@ -6,15 +6,6 @@ import {resolveThemeConfig, themes} from './configs'
 
 const rendererIsProd = import.meta.env.PROD
 
-/** Jalnan2 폰트 로드 상태 */
-let jalnan2Loaded = false
-/** GyeonggiTitle 폰트 로드 상태 */
-let gyeonggiLoaded = false
-/** ShinMGo 폰트 로드 상태 */
-let shinmgoLoaded = false
-/** NotoSans 폰트 로드 상태 */
-let notosansLoaded = false
-
 /**
  * 난독화된 Data URL (base64) 문자열을 ArrayBuffer로 복호화합니다.
  * 도메인 바인딩 기법을 적용하여 브라우저 및 외부 유출 시 복호화를 어렵게 만듭니다.
@@ -56,6 +47,9 @@ function fetchFontDataUrl(endpoint: string): Promise<string> {
   }
   return fontDataUrlCache.get(endpoint)!
 }
+
+/** opentype.js 파싱 결과 캐시 */
+const opentypeCache = new Map<string, opentype.Font>()
 
 /** CSS font-family 문자열에서 대응하는 opentype.Font를 찾음 */
 function resolveOpentypeFont(fontFamily: string): opentype.Font | undefined {
@@ -130,140 +124,42 @@ async function parseAndCacheOpentypeFont(familyName: string, dataUrl: string): P
   return font
 }
 
+/** FontFace 등록 완료된 패밀리 추적 */
+const loadedFontFamilies = new Set<string>()
+
 /**
- * Jalnan2 폰트를 FontFace API로 등록 (lazy load)
+ * 범용 폰트 로딩: FontFace 등록 + opentype 캐시를 한 번에 처리
+ * @param faces - [{family: CSS family 이름, endpoint: API 경로}] 배열
  */
-async function ensureJalnan2Font(): Promise<void> {
-  if (jalnan2Loaded && opentypeCache.has('Jalnan2')) return
+async function ensureFontFamily(faces: {family: string; endpoint: string}[]): Promise<void> {
+  // 이미 모두 로드 완료된 경우 즉시 반환
+  if (faces.every((f) => loadedFontFamilies.has(f.family) && opentypeCache.has(f.family))) return
   if (typeof document === 'undefined') return
 
-  const fontDataUrl = await fetchFontDataUrl('/api/font/jalnan')
+  const dataUrls = await Promise.all(faces.map((f) => fetchFontDataUrl(f.endpoint)))
 
-  if (!jalnan2Loaded) {
+  // FontFace 등록 (아직 등록되지 않은 것만)
+  const fontFacePromises: Promise<FontFace>[] = []
+  for (let i = 0; i < faces.length; i++) {
+    if (loadedFontFamilies.has(faces[i].family)) continue
     let alreadyRegistered = false
     for (const face of document.fonts) {
-      if (face.family === 'Jalnan2') {
+      if (face.family === faces[i].family) {
         alreadyRegistered = true
         break
       }
     }
     if (!alreadyRegistered) {
-      const font = new FontFace('Jalnan2', base64ToArrayBuffer(fontDataUrl))
-      await font.load()
-      document.fonts.add(font)
+      const fontFace = new FontFace(faces[i].family, base64ToArrayBuffer(dataUrls[i]))
+      fontFacePromises.push(fontFace.load())
     }
-    jalnan2Loaded = true
+    loadedFontFamilies.add(faces[i].family)
   }
+  const loadedFaces = await Promise.all(fontFacePromises)
+  for (const face of loadedFaces) document.fonts.add(face)
 
-  await parseAndCacheOpentypeFont('Jalnan2', fontDataUrl)
-}
-
-/**
- * GyeonggiTitle 폰트를 FontFace API로 등록 (lazy load)
- */
-async function ensureGyeonggiFont(): Promise<void> {
-  if (gyeonggiLoaded && opentypeCache.has('GyeonggiTitle') && opentypeCache.has('GyeonggiTitleBold')) return
-  if (typeof document === 'undefined') return
-
-  const [fontDataUrl, boldDataUrl] = await Promise.all([
-    fetchFontDataUrl('/api/font/gyeonggi'),
-    fetchFontDataUrl('/api/font/gyeonggi-bold'),
-  ])
-
-  if (!gyeonggiLoaded) {
-    let alreadyRegistered = false
-    for (const face of document.fonts) {
-      if (face.family === 'GyeonggiTitle') {
-        alreadyRegistered = true
-        break
-      }
-    }
-    if (!alreadyRegistered) {
-      const font = new FontFace('GyeonggiTitle', base64ToArrayBuffer(fontDataUrl))
-      const fontBold = new FontFace('GyeonggiTitleBold', base64ToArrayBuffer(boldDataUrl))
-      await Promise.all([font.load(), fontBold.load()])
-      document.fonts.add(font)
-      document.fonts.add(fontBold)
-    }
-    gyeonggiLoaded = true
-  }
-
-  await Promise.all([
-    parseAndCacheOpentypeFont('GyeonggiTitle', fontDataUrl),
-    parseAndCacheOpentypeFont('GyeonggiTitleBold', boldDataUrl),
-  ])
-}
-
-/**
- * ShinMGo 폰트를 FontFace API로 등록 (lazy load, 일본어 전용)
- */
-async function ensureShinMGoFont(): Promise<void> {
-  if (shinmgoLoaded && opentypeCache.has('ShinMGo-Medium') && opentypeCache.has('ShinMGo-DeBold')) return
-  if (typeof document === 'undefined') return
-
-  const [mediumDataUrl, deboldDataUrl] = await Promise.all([
-    fetchFontDataUrl('/api/font/shinmgo'),
-    fetchFontDataUrl('/api/font/shinmgo-debold'),
-  ])
-
-  if (!shinmgoLoaded) {
-    let alreadyRegistered = false
-    for (const face of document.fonts) {
-      if (face.family === 'ShinMGo-Medium') {
-        alreadyRegistered = true
-        break
-      }
-    }
-    if (!alreadyRegistered) {
-      const mediumFont = new FontFace('ShinMGo-Medium', base64ToArrayBuffer(mediumDataUrl))
-      const deboldFont = new FontFace('ShinMGo-DeBold', base64ToArrayBuffer(deboldDataUrl))
-      await Promise.all([mediumFont.load(), deboldFont.load()])
-      document.fonts.add(mediumFont)
-      document.fonts.add(deboldFont)
-    }
-    shinmgoLoaded = true
-  }
-
-  await Promise.all([
-    parseAndCacheOpentypeFont('ShinMGo-Medium', mediumDataUrl),
-    parseAndCacheOpentypeFont('ShinMGo-DeBold', deboldDataUrl),
-  ])
-}
-
-/**
- * NotoSans 폰트를 FontFace API로 등록 (lazy load, 영어 전용)
- */
-async function ensureNotoSansFont(): Promise<void> {
-  if (notosansLoaded && opentypeCache.has('NotoSans') && opentypeCache.has('NotoSansBold')) return
-  if (typeof document === 'undefined') return
-
-  const [fontDataUrl, boldDataUrl] = await Promise.all([
-    fetchFontDataUrl('/api/font/notosans'),
-    fetchFontDataUrl('/api/font/notosans-bold'),
-  ])
-
-  if (!notosansLoaded) {
-    let alreadyRegistered = false
-    for (const face of document.fonts) {
-      if (face.family === 'NotoSans') {
-        alreadyRegistered = true
-        break
-      }
-    }
-    if (!alreadyRegistered) {
-      const font = new FontFace('NotoSans', base64ToArrayBuffer(fontDataUrl))
-      const fontBold = new FontFace('NotoSansBold', base64ToArrayBuffer(boldDataUrl))
-      await Promise.all([font.load(), fontBold.load()])
-      document.fonts.add(font)
-      document.fonts.add(fontBold)
-    }
-    notosansLoaded = true
-  }
-
-  await Promise.all([
-    parseAndCacheOpentypeFont('NotoSans', fontDataUrl),
-    parseAndCacheOpentypeFont('NotoSansBold', boldDataUrl),
-  ])
+  // opentype 파싱 (아직 캐시되지 않은 것만)
+  await Promise.all(faces.map((f, i) => parseAndCacheOpentypeFont(f.family, dataUrls[i])))
 }
 
 export interface MessageItem {
@@ -552,21 +448,76 @@ async function getCachedImage(url: string): Promise<HTMLImageElement> {
 }
 
 /**
- * 말풍선 하나의 높이를 계산하는 헬퍼
+ * 말풍선 레이아웃 계산 결과
  */
-function measureBubbleHeight(
+interface BubbleLayout {
+  lines: string[]
+  lineH: number
+  textBlockWidth: number
+  bubbleW: number
+  bubbleH: number
+}
+
+/**
+ * 말풍선 하나의 레이아웃을 계산하는 헬퍼 (높이 계산 / Canvas 렌더링 / SVG 내보내기 공통)
+ */
+function computeBubbleLayout(
   ctx: CanvasRenderingContext2D,
   text: string,
-  maxTextWidth: number,
-  fontSize: number,
-  lineHeight: number,
-  paddingTop: number,
-  paddingBottom: number,
+  bubbleConfig: {
+    fontSize: number
+    lineHeight: number
+    paddingTop: number
+    paddingRight: number
+    paddingBottom: number
+    paddingLeft: number
+    maxWidthRatio: number
+    font: string
+  },
+  chatAreaWidth: number,
   otFont?: opentype.Font,
-): number {
-  const lines = wrapText(ctx, text, maxTextWidth, otFont, fontSize)
-  const textHeight = lines.length * fontSize * lineHeight
-  return textHeight + paddingTop + paddingBottom
+): BubbleLayout {
+  const maxBubbleWidth = chatAreaWidth * bubbleConfig.maxWidthRatio
+  const maxTextWidth = maxBubbleWidth - bubbleConfig.paddingLeft - bubbleConfig.paddingRight
+  ctx.font = `${bubbleConfig.fontSize}px ${bubbleConfig.font}`
+  const lines = wrapText(ctx, text, maxTextWidth, otFont, bubbleConfig.fontSize)
+  const lineH = bubbleConfig.fontSize * bubbleConfig.lineHeight
+  const textBlockWidth = Math.max(...lines.map((l) => measureTextWidth(l, ctx, otFont, bubbleConfig.fontSize)))
+  const bubbleW = textBlockWidth + bubbleConfig.paddingLeft + bubbleConfig.paddingRight
+  const bubbleH = lines.length * lineH + bubbleConfig.paddingTop + bubbleConfig.paddingBottom
+  return {lines, lineH, textBlockWidth, bubbleW, bubbleH}
+}
+
+/**
+ * Canvas에 텍스트 그리기 (opentype 가능 시 Path 렌더링, 아니면 Canvas fallback)
+ */
+function drawText(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  x: number,
+  y: number,
+  fontSize: number,
+  fontFamily: string,
+  color: string,
+  otFont?: opentype.Font,
+  baseline: 'top' | 'middle' = 'top',
+  scaleX: number = 1.0,
+) {
+  if (otFont) {
+    drawTextOt(ctx, otFont, text, x, y, fontSize, color, baseline, scaleX)
+  } else {
+    ctx.fillStyle = color
+    ctx.font = `${fontSize}px ${fontFamily}`
+    ctx.textBaseline = baseline === 'middle' ? 'middle' : 'top'
+    if (scaleX !== 1.0) {
+      ctx.save()
+      ctx.scale(scaleX, 1)
+      ctx.fillText(text, x / scaleX, y)
+      ctx.restore()
+    } else {
+      ctx.fillText(text, x, y)
+    }
+  }
 }
 
 /** 텍스트 측정용 재사용 캔버스 (DOM 생성 비용 절감) */
@@ -591,12 +542,9 @@ function getMeasureCtx(width: number): CanvasRenderingContext2D {
 export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConfig, lang?: Language): number {
   const tempCtx = getMeasureCtx(config.canvasWidth)
 
-  const bubbleLeftFont = config.bubbleLeft.font
-  const bubbleRightFont = config.bubbleRight.font
-
   // opentype 폰트 resolve (캐시에 있으면 사용, 없으면 Canvas fallback)
-  const otBubbleLeft = resolveOpentypeFont(bubbleLeftFont)
-  const otBubbleRight = resolveOpentypeFont(bubbleRightFont)
+  const otBubbleLeft = resolveOpentypeFont(config.bubbleLeft.font)
+  const otBubbleRight = resolveOpentypeFont(config.bubbleRight.font)
 
   const chatAreaWidth = config.canvasWidth - config.sidebar.width - config.chat.paddingLeft - config.chat.paddingRight
 
@@ -606,45 +554,18 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
     const msg = messages[i]
     if (i > 0) totalHeight += config.chat.groupGap
 
-    if (msg.type === 'left') {
-      // 이름 높이
+    const isLeft = msg.type === 'left'
+    if (isLeft) {
       totalHeight += config.name.marginTop + config.name.fontSize + config.name.marginBottom
+    }
 
-      const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
-      const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
-      tempCtx.font = `${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
+    const bubbleCfg = isLeft ? config.bubbleLeft : config.bubbleRight
+    const otFont = isLeft ? otBubbleLeft : otBubbleRight
 
-      for (let bi = 0; bi < msg.text.length; bi++) {
-        if (bi > 0) totalHeight += config.chat.messageGap
-        totalHeight += measureBubbleHeight(
-          tempCtx,
-          msg.text[bi],
-          maxTextWidth,
-          config.bubbleLeft.fontSize,
-          config.bubbleLeft.lineHeight,
-          config.bubbleLeft.paddingTop,
-          config.bubbleLeft.paddingBottom,
-          otBubbleLeft,
-        )
-      }
-    } else {
-      const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
-      const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
-      tempCtx.font = `${config.bubbleRight.fontSize}px ${bubbleRightFont}`
-
-      for (let bi = 0; bi < msg.text.length; bi++) {
-        if (bi > 0) totalHeight += config.chat.messageGap
-        totalHeight += measureBubbleHeight(
-          tempCtx,
-          msg.text[bi],
-          maxTextWidth,
-          config.bubbleRight.fontSize,
-          config.bubbleRight.lineHeight,
-          config.bubbleRight.paddingTop,
-          config.bubbleRight.paddingBottom,
-          otBubbleRight,
-        )
-      }
+    for (let bi = 0; bi < msg.text.length; bi++) {
+      if (bi > 0) totalHeight += config.chat.messageGap
+      const {bubbleH} = computeBubbleLayout(tempCtx, msg.text[bi], bubbleCfg, chatAreaWidth, otFont)
+      totalHeight += bubbleH
     }
   }
 
@@ -681,10 +602,20 @@ export async function renderCanvas(
 
   // 폰트 준비
   if (themeName === 'momotalk') {
-    const fontPromises: Promise<void>[] = [ensureJalnan2Font(), ensureGyeonggiFont()]
-    if (lang === 'ja') fontPromises.push(ensureShinMGoFont())
-    if (lang === 'en') fontPromises.push(ensureNotoSansFont())
-    await Promise.all(fontPromises)
+    const faces: {family: string; endpoint: string}[] = [
+      {family: 'Jalnan2', endpoint: '/api/font/jalnan'},
+      {family: 'GyeonggiTitle', endpoint: '/api/font/gyeonggi'},
+      {family: 'GyeonggiTitleBold', endpoint: '/api/font/gyeonggi-bold'},
+    ]
+    if (lang === 'ja') {
+      faces.push({family: 'ShinMGo-Medium', endpoint: '/api/font/shinmgo'})
+      faces.push({family: 'ShinMGo-DeBold', endpoint: '/api/font/shinmgo-debold'})
+    }
+    if (lang === 'en') {
+      faces.push({family: 'NotoSans', endpoint: '/api/font/notosans'})
+      faces.push({family: 'NotoSansBold', endpoint: '/api/font/notosans-bold'})
+    }
+    await ensureFontFamily(faces)
   }
 
   // 최신 렌더링 요청인지 확인
@@ -927,14 +858,10 @@ async function renderToContext(
   const width = config.canvasWidth
   const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang)
 
-  const nameFont = config.name.font
-  const bubbleLeftFont = config.bubbleLeft.font
-  const bubbleRightFont = config.bubbleRight.font
-
   // opentype 폰트 resolve (브라우저 독립 렌더링용)
-  const otNameFont = resolveOpentypeFont(nameFont)
-  const otBubbleLeftFont = resolveOpentypeFont(bubbleLeftFont)
-  const otBubbleRightFont = resolveOpentypeFont(bubbleRightFont)
+  const otNameFont = resolveOpentypeFont(config.name.font)
+  const otBubbleLeftFont = resolveOpentypeFont(config.bubbleLeft.font)
+  const otBubbleRightFont = resolveOpentypeFont(config.bubbleRight.font)
   const otHeaderFont = resolveOpentypeFont(config.header.titleFont)
 
   const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
@@ -1038,7 +965,6 @@ async function renderToContext(
           const size = config.profile.size
           const imgW = profileImg.naturalWidth
           const imgH = profileImg.naturalHeight
-          const imgAspect = imgW / imgH
 
           // 소스 영역 계산 (중앙 유지하면서 zoom 적용)
           const minDim = Math.min(imgW, imgH)
@@ -1092,14 +1018,7 @@ async function renderToContext(
       // 이름
       const nameX = profileX + (config.profile.size > 0 ? config.profile.size : 0) + config.name.marginLeft
       const nameY = cursorY + config.name.marginTop
-      if (otNameFont) {
-        drawTextOt(ctx, otNameFont, msg.name || '', nameX, nameY, config.name.fontSize, config.name.color)
-      } else {
-        ctx.fillStyle = config.name.color
-        ctx.font = `${config.name.fontSize}px ${nameFont}`
-        ctx.textBaseline = 'top'
-        ctx.fillText(msg.name || '', nameX, nameY)
-      }
+      drawText(ctx, msg.name || '', nameX, nameY, config.name.fontSize, config.name.font, config.name.color, otNameFont)
       cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
 
       // 말풍선들
@@ -1108,18 +1027,13 @@ async function renderToContext(
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) cursorY += config.chat.messageGap
 
-        const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
-        const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
-
-        ctx.font = `${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
-        const lines = wrapText(ctx, msg.text[bi], maxTextWidth, otBubbleLeftFont, config.bubbleLeft.fontSize)
-        const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
-        const textBlockHeight = lines.length * lineH
-        const textBlockWidth = Math.max(
-          ...lines.map((l) => measureTextWidth(l, ctx, otBubbleLeftFont, config.bubbleLeft.fontSize)),
+        const {lines, lineH, bubbleW, bubbleH} = computeBubbleLayout(
+          ctx,
+          msg.text[bi],
+          config.bubbleLeft,
+          chatAreaWidth,
+          otBubbleLeftFont,
         )
-        const bubbleW = textBlockWidth + config.bubbleLeft.paddingLeft + config.bubbleLeft.paddingRight
-        const bubbleH = textBlockHeight + config.bubbleLeft.paddingTop + config.bubbleLeft.paddingBottom
 
         ctx.fillStyle = config.bubbleLeft.backgroundColor
         roundRect(ctx, bubbleStartX, cursorY, bubbleW, bubbleH, config.bubbleLeft.borderRadius)
@@ -1144,22 +1058,16 @@ async function renderToContext(
         for (let li = 0; li < lines.length; li++) {
           const textX = bubbleStartX + config.bubbleLeft.paddingLeft
           const textY = cursorY + config.bubbleLeft.paddingTop + li * lineH
-          if (otBubbleLeftFont) {
-            drawTextOt(
-              ctx,
-              otBubbleLeftFont,
-              lines[li],
-              textX,
-              textY,
-              config.bubbleLeft.fontSize,
-              config.bubbleLeft.textColor,
-            )
-          } else {
-            ctx.fillStyle = config.bubbleLeft.textColor
-            ctx.font = `${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
-            ctx.textBaseline = 'top'
-            ctx.fillText(lines[li], textX, textY)
-          }
+          drawText(
+            ctx,
+            lines[li],
+            textX,
+            textY,
+            config.bubbleLeft.fontSize,
+            config.bubbleLeft.font,
+            config.bubbleLeft.textColor,
+            otBubbleLeftFont,
+          )
         }
 
         cursorY += bubbleH
@@ -1169,18 +1077,13 @@ async function renderToContext(
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) cursorY += config.chat.messageGap
 
-        const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
-        const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
-
-        ctx.font = `${config.bubbleRight.fontSize}px ${bubbleRightFont}`
-        const lines = wrapText(ctx, msg.text[bi], maxTextWidth, otBubbleRightFont, config.bubbleRight.fontSize)
-        const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
-        const textBlockHeight = lines.length * lineH
-        const textBlockWidth = Math.max(
-          ...lines.map((l) => measureTextWidth(l, ctx, otBubbleRightFont, config.bubbleRight.fontSize)),
+        const {lines, lineH, bubbleW, bubbleH} = computeBubbleLayout(
+          ctx,
+          msg.text[bi],
+          config.bubbleRight,
+          chatAreaWidth,
+          otBubbleRightFont,
         )
-        const bubbleW = textBlockWidth + config.bubbleRight.paddingLeft + config.bubbleRight.paddingRight
-        const bubbleH = textBlockHeight + config.bubbleRight.paddingTop + config.bubbleRight.paddingBottom
 
         const bubbleX = chatRight - bubbleW - config.bubbleRight.marginRight
 
@@ -1207,22 +1110,16 @@ async function renderToContext(
         for (let li = 0; li < lines.length; li++) {
           const textX = bubbleX + config.bubbleRight.paddingLeft
           const textY = cursorY + config.bubbleRight.paddingTop + li * lineH
-          if (otBubbleRightFont) {
-            drawTextOt(
-              ctx,
-              otBubbleRightFont,
-              lines[li],
-              textX,
-              textY,
-              config.bubbleRight.fontSize,
-              config.bubbleRight.textColor,
-            )
-          } else {
-            ctx.fillStyle = config.bubbleRight.textColor
-            ctx.font = `${config.bubbleRight.fontSize}px ${bubbleRightFont}`
-            ctx.textBaseline = 'top'
-            ctx.fillText(lines[li], textX, textY)
-          }
+          drawText(
+            ctx,
+            lines[li],
+            textX,
+            textY,
+            config.bubbleRight.fontSize,
+            config.bubbleRight.font,
+            config.bubbleRight.textColor,
+            otBubbleRightFont,
+          )
         }
 
         cursorY += bubbleH
@@ -1330,7 +1227,7 @@ export async function copyCanvasToClipboard(canvas: HTMLCanvasElement): Promise<
 export function clearCaches(): void {
   imageCache.clear()
   iconCache.clear()
-  svgSourceCache.clear()
+  loadedFontFamilies.clear()
   opentypeCache.clear()
   fontDataUrlCache.clear()
   wrapTextCache.clear()
@@ -1359,53 +1256,12 @@ export function clearCaches(): void {
   }
 }
 
-/**
- * 전역 SVG 아이콘 텍스트 캐시 (원시 SVG 코드)
- * svgModules는 이미 모듈 레벨에서 한 번 평가됨
- */
-const svgSourceCache = new Map<string, string>()
-
-async function getSvgSource(name: string): Promise<string> {
-  if (svgSourceCache.has(name)) return svgSourceCache.get(name)!
-
+/** svgModules에서 직접 SVG 소스를 가져옴 (별도 캐시 불필요) */
+function getSvgSource(name: string): string {
   const path = `/src/lib/assets/message-maker/${name}.svg`
   const svgText = svgModules[path]
   if (!svgText) throw new Error(`SVG source not found: ${name}`)
-
-  svgSourceCache.set(name, svgText)
   return svgText
-}
-
-const opentypeCache = new Map<string, opentype.Font>()
-
-async function loadOpentypeFont(familyName: string, dataUrlPromise: Promise<string>): Promise<opentype.Font> {
-  try {
-    if (opentypeCache.has(familyName)) {
-      return opentypeCache.get(familyName)!
-    }
-    const dataUrl = await dataUrlPromise
-    const buffer = base64ToArrayBuffer(dataUrl)
-
-    // WOFF2 시그니처 확인 (wOF2 = 0x774F4632) 후 필요시 압축 해제
-    let sfntBuffer = buffer
-    const view = new DataView(buffer)
-    if (buffer.byteLength > 4 && view.getUint32(0) === 0x774f4632) {
-      try {
-        const decompressed = await woff2Decode(new Uint8Array(buffer))
-        sfntBuffer = decompressed.buffer as ArrayBuffer
-      } catch (err) {
-        console.error(`Failed to decompress ${familyName}:`, err)
-        throw err
-      }
-    }
-
-    const font = opentype.parse(sfntBuffer)
-    opentypeCache.set(familyName, font)
-    return font
-  } catch (err) {
-    console.error(`Error loading opentype font ${familyName}:`, err)
-    throw err
-  }
 }
 
 /**
@@ -1417,40 +1273,26 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     const height = calculateCanvasHeight(messages, config, lang)
     const width = config.canvasWidth
 
-    let jalnanFont: opentype.Font | undefined
-    let gyeonggiFont: opentype.Font | undefined
-    let gyeonggiBoldFont: opentype.Font | undefined
-    let shinmgoMediumFont: opentype.Font | undefined
-    let shinmgoDeboldFont: opentype.Font | undefined
-    let notosansFont: opentype.Font | undefined
-    let notosansBoldFont: opentype.Font | undefined
-
     const nameFont = config.name.font
     const bubbleLeftFont = config.bubbleLeft.font
     const bubbleRightFont = config.bubbleRight.font
 
-    // 폰트 데이터 가져오기 (SVG 패스 변환용)
-    let fontStyles = ''
+    // 폰트 데이터 가져오기 (SVG 패스 변환용) — fetchFontDataUrl 캐시 재활용
     if (themeName === 'momotalk') {
-      const jalnanPromise = fetch('/api/font/jalnan').then((r) => r.text())
-      const gyeonggiPromise = fetch('/api/font/gyeonggi').then((r) => r.text())
-      const gyeonggiBoldPromise = fetch('/api/font/gyeonggi-bold').then((r) => r.text())
-
-      jalnanFont = await loadOpentypeFont('Jalnan2', jalnanPromise)
-      gyeonggiFont = await loadOpentypeFont('GyeonggiTitle', gyeonggiPromise)
-      gyeonggiBoldFont = await loadOpentypeFont('GyeonggiTitleBold', gyeonggiBoldPromise)
-
+      const faces: {family: string; endpoint: string}[] = [
+        {family: 'Jalnan2', endpoint: '/api/font/jalnan'},
+        {family: 'GyeonggiTitle', endpoint: '/api/font/gyeonggi'},
+        {family: 'GyeonggiTitleBold', endpoint: '/api/font/gyeonggi-bold'},
+      ]
       if (lang === 'ja') {
-        const shinmgoMediumPromise = fetch('/api/font/shinmgo').then((r) => r.text())
-        const shinmgoDeboldPromise = fetch('/api/font/shinmgo-debold').then((r) => r.text())
-        shinmgoMediumFont = await loadOpentypeFont('ShinMGo-Medium', shinmgoMediumPromise)
-        shinmgoDeboldFont = await loadOpentypeFont('ShinMGo-DeBold', shinmgoDeboldPromise)
+        faces.push({family: 'ShinMGo-Medium', endpoint: '/api/font/shinmgo'})
+        faces.push({family: 'ShinMGo-DeBold', endpoint: '/api/font/shinmgo-debold'})
       } else if (lang === 'en') {
-        const notosansPromise = fetch('/api/font/notosans').then((r) => r.text())
-        const notosansBoldPromise = fetch('/api/font/notosans-bold').then((r) => r.text())
-        notosansFont = await loadOpentypeFont('NotoSans', notosansPromise)
-        notosansBoldFont = await loadOpentypeFont('NotoSansBold', notosansBoldPromise)
+        faces.push({family: 'NotoSans', endpoint: '/api/font/notosans'})
+        faces.push({family: 'NotoSansBold', endpoint: '/api/font/notosans-bold'})
       }
+      const dataUrls = await Promise.all(faces.map((f) => fetchFontDataUrl(f.endpoint)))
+      await Promise.all(faces.map((f, i) => parseAndCacheOpentypeFont(f.family, dataUrls[i])))
     }
 
     function renderSvgText(
@@ -1465,18 +1307,10 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       fontWeight: string = 'normal',
       scaleX: number = 1.0,
     ) {
-      let font: opentype.Font | undefined
-      if (fontFamily.includes('Jalnan2')) font = jalnanFont
-      else if (fontFamily.includes('ShinMGo-Medium')) font = shinmgoMediumFont
-      else if (fontFamily.includes('ShinMGo-DeBold')) font = shinmgoDeboldFont
-      else if (fontFamily.includes('NotoSansBold')) font = notosansBoldFont
-      else if (fontFamily.includes('NotoSans')) font = notosansFont
-      else if (fontFamily.includes('GyeonggiTitleBold')) font = gyeonggiBoldFont
-      else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
+      const font = resolveOpentypeFont(fontFamily)
 
       if (font) {
         const path = font.getPath(text, 0, 0, fontSize)
-        const bbox = path.getBoundingBox()
 
         let drawX = x
         if (align === 'center' || align === 'middle') {
@@ -1628,6 +1462,8 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     let cursorY = config.header.height + config.chat.paddingTop
 
     const tempCtx = getMeasureCtx(width)
+    const otLeft = resolveOpentypeFont(bubbleLeftFont)
+    const otRight = resolveOpentypeFont(bubbleRightFont)
 
     for (let i = 0; i < messages.length; i++) {
       const msg = messages[i]
@@ -1685,17 +1521,13 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
         for (let bi = 0; bi < msg.text.length; bi++) {
           if (bi > 0) cursorY += config.chat.messageGap
-          const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
-          const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
-          tempCtx.font = `${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
-          const otLeft = resolveOpentypeFont(bubbleLeftFont)
-          const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth, otLeft, config.bubbleLeft.fontSize)
-          const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
-          const textBlockWidth = Math.max(
-            ...lines.map((l) => measureTextWidth(l, tempCtx, otLeft, config.bubbleLeft.fontSize)),
+          const {lines, lineH, bubbleW, bubbleH} = computeBubbleLayout(
+            tempCtx,
+            msg.text[bi],
+            config.bubbleLeft,
+            chatAreaWidth,
+            otLeft,
           )
-          const bubbleW = textBlockWidth + config.bubbleLeft.paddingLeft + config.bubbleLeft.paddingRight
-          const bubbleH = lines.length * lineH + config.bubbleLeft.paddingTop + config.bubbleLeft.paddingBottom
 
           svgParts.push(
             `<rect x="${bubbleStartX}" y="${cursorY}" width="${bubbleW}" height="${bubbleH}" rx="${config.bubbleLeft.borderRadius}" fill="${config.bubbleLeft.backgroundColor}" />`,
@@ -1728,17 +1560,13 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         // 선생님
         for (let bi = 0; bi < msg.text.length; bi++) {
           if (bi > 0) cursorY += config.chat.messageGap
-          const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
-          const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
-          tempCtx.font = `${config.bubbleRight.fontSize}px ${bubbleRightFont}`
-          const otRight = resolveOpentypeFont(bubbleRightFont)
-          const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth, otRight, config.bubbleRight.fontSize)
-          const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
-          const textBlockWidth = Math.max(
-            ...lines.map((l) => measureTextWidth(l, tempCtx, otRight, config.bubbleRight.fontSize)),
+          const {lines, lineH, bubbleW, bubbleH} = computeBubbleLayout(
+            tempCtx,
+            msg.text[bi],
+            config.bubbleRight,
+            chatAreaWidth,
+            otRight,
           )
-          const bubbleW = textBlockWidth + config.bubbleRight.paddingLeft + config.bubbleRight.paddingRight
-          const bubbleH = lines.length * lineH + config.bubbleRight.paddingTop + config.bubbleRight.paddingBottom
           const bubbleX = chatRight - bubbleW - config.bubbleRight.marginRight
 
           svgParts.push(
@@ -1773,7 +1601,6 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
     const finalSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
-${fontStyles}
 ${svgParts.join('\n')}
 </svg>`
 
