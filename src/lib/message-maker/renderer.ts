@@ -131,13 +131,15 @@ async function ensureNotoSansFont(): Promise<void> {
     }
   }
 
-  const response = await fetch('/api/font/notosans')
-  if (!response.ok) throw new Error('Failed to fetch NotoSans font')
-  const fontDataUrl = await response.text()
+  const [res1, res2] = await Promise.all([fetch('/api/font/notosans'), fetch('/api/font/notosans-bold')])
+  if (!res1.ok || !res2.ok) throw new Error('Failed to fetch NotoSans fonts')
+  const [fontDataUrl, boldDataUrl] = await Promise.all([res1.text(), res2.text()])
 
-  const font = new FontFace('NotoSans', base64ToArrayBuffer(fontDataUrl), {weight: '100 900'})
-  await font.load()
+  const font = new FontFace('NotoSans', base64ToArrayBuffer(fontDataUrl))
+  const fontBold = new FontFace('NotoSansBold', base64ToArrayBuffer(boldDataUrl))
+  await Promise.all([font.load(), fontBold.load()])
   document.fonts.add(font)
+  document.fonts.add(fontBold)
   notosansLoaded = true
 }
 
@@ -444,7 +446,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
     lang === 'ja'
       ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
       : lang === 'en'
-        ? base.replace('GyeonggiTitle', 'NotoSans')
+        ? base.replace('GyeonggiTitle', isName ? 'NotoSansBold' : 'NotoSans')
         : isName
           ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
           : base
@@ -565,7 +567,7 @@ async function renderToContext(
     lang === 'ja'
       ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
       : lang === 'en'
-        ? base.replace('GyeonggiTitle', 'NotoSans')
+        ? base.replace('GyeonggiTitle', isName ? 'NotoSansBold' : 'NotoSans')
         : isName
           ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
           : base
@@ -1107,13 +1109,14 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     let shinmgoMediumFont: opentype.Font | undefined
     let shinmgoDeboldFont: opentype.Font | undefined
     let notosansFont: opentype.Font | undefined
+    let notosansBoldFont: opentype.Font | undefined
 
     // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans, 한국어 이름 → GyeonggiTitleBold
     const getFont = (base: string, isName: boolean) =>
       lang === 'ja'
         ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
         : lang === 'en'
-          ? base.replace('GyeonggiTitle', 'NotoSans')
+          ? base.replace('GyeonggiTitle', isName ? 'NotoSansBold' : 'NotoSans')
           : isName
             ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
             : base
@@ -1143,7 +1146,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         shinmgoDeboldFont = await loadOpentypeFont('ShinMGo-DeBold', shinmgoDeboldPromise)
       } else if (lang === 'en') {
         const notosansPromise = fetch('/api/font/notosans').then((r) => r.text())
+        const notosansBoldPromise = fetch('/api/font/notosans-bold').then((r) => r.text())
         notosansFont = await loadOpentypeFont('NotoSans', notosansPromise)
+        notosansBoldFont = await loadOpentypeFont('NotoSansBold', notosansBoldPromise)
       }
     }
 
@@ -1163,6 +1168,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       if (fontFamily.includes('Jalnan2')) font = jalnanFont
       else if (fontFamily.includes('ShinMGo-Medium')) font = shinmgoMediumFont
       else if (fontFamily.includes('ShinMGo-DeBold')) font = shinmgoDeboldFont
+      else if (fontFamily.includes('NotoSansBold')) font = notosansBoldFont
       else if (fontFamily.includes('NotoSans')) font = notosansFont
       else if (fontFamily.includes('GyeonggiTitleBold')) font = gyeonggiBoldFont
       else if (fontFamily.includes('GyeonggiTitle')) font = gyeonggiFont
