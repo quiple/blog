@@ -105,9 +105,6 @@
           {/if}
           <DropdownMenu.Item onclick={() => goto('/font-generator')}>비트맵 폰트 이미지 생성기</DropdownMenu.Item>
           <DropdownMenu.Item onclick={() => goto('/message-maker')}>메시지 만들기</DropdownMenu.Item>
-          {#if !isProd}
-            <DropdownMenu.Item onclick={() => goto('/frame-maker')}>프레임 만들기</DropdownMenu.Item>
-          {/if}
           <DropdownMenu.Separator />
           <div class="flex px-1.5 py-1 items-center justify-between text-sm">
             색상 테마
