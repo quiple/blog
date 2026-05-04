@@ -198,17 +198,26 @@ let sharedDataUrlCanvas: HTMLCanvasElement | null = null
 let sharedDataUrlCtx: CanvasRenderingContext2D | null = null
 
 async function getImageAsDataUrl(url: string): Promise<string> {
-  const img = await getCachedImage(url)
-  if (!sharedDataUrlCanvas) {
-    sharedDataUrlCanvas = document.createElement('canvas')
-    sharedDataUrlCtx = sharedDataUrlCanvas.getContext('2d')
+  try {
+    const img = await getCachedImage(url)
+    if (!sharedDataUrlCanvas) {
+      sharedDataUrlCanvas = document.createElement('canvas')
+      sharedDataUrlCtx = sharedDataUrlCanvas.getContext('2d')
+    }
+    if (!sharedDataUrlCtx) return url
+    sharedDataUrlCanvas.width = img.naturalWidth
+    sharedDataUrlCanvas.height = img.naturalHeight
+    sharedDataUrlCtx.clearRect(0, 0, img.naturalWidth, img.naturalHeight)
+    sharedDataUrlCtx.drawImage(img, 0, 0)
+    return sharedDataUrlCanvas.toDataURL('image/png')
+  } catch (err) {
+    // 개발 환경에서는 이미지 로드 실패 시 투명 이미지로 대체하여 SVG 내보내기 중단을 방지
+    if (!rendererIsProd) {
+      console.warn(`[SVG Export] Failed to load image: ${url}. Using placeholder.`)
+      return 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII='
+    }
+    throw err
   }
-  if (!sharedDataUrlCtx) return url
-  sharedDataUrlCanvas.width = img.naturalWidth
-  sharedDataUrlCanvas.height = img.naturalHeight
-  sharedDataUrlCtx.clearRect(0, 0, img.naturalWidth, img.naturalHeight)
-  sharedDataUrlCtx.drawImage(img, 0, 0)
-  return sharedDataUrlCanvas.toDataURL('image/png')
 }
 
 /**
@@ -1329,6 +1338,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
             <clipPath id="circleView${i}">
               <circle cx="${profileX + size / 2}" cy="${cursorY + size / 2}" r="${size / 2}" />
             </clipPath>
+            <circle cx="${profileX + size / 2}" cy="${cursorY + size / 2}" r="${size / 2}" fill="#ddd" />
             <g clip-path="url(#circleView${i})">
               <image x="${profileX - (size * (zoom - 1)) / 2}" y="${cursorY - (size * (zoom - 1)) / 2}" width="${size * zoom}" height="${size * zoom}" href="${portraitDataUrl}" preserveAspectRatio="xMidYMid slice" />
             </g>
