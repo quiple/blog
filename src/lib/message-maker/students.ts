@@ -1,5 +1,5 @@
 export const VARIATION_LABELS: Record<string, {en: string; ja: string; ko: string}> = {
-  arbait: {ko: '(아르바이트)', ja: '（アルバイト）', en: ' (Part-Timer)'},
+  arbeit: {ko: '(아르바이트)', ja: '（アルバイト）', en: ' (Part-Timer)'},
   armed: {ko: '(무장)', ja: '（臨戦）', en: ' (Armed)'},
   band: {ko: '(밴드)', ja: '（バンド）', en: ' (Band)'},
   bunny: {ko: '(바니걸)', ja: '（バニーガール）', en: ' (Bunny)'},
@@ -253,7 +253,7 @@ export default [
   },
   {
     name: {en: 'Juri', ko: '주리', ja: 'ジュリ'},
-    portrait: ['Student_Portrait_Juri_Collection', {id: 'Student_Portrait_CH0286_Collection', variation: 'arbait'}],
+    portrait: ['Student_Portrait_Juri_Collection', {id: 'Student_Portrait_CH0286_Collection', variation: 'arbeit'}],
   },
   {
     name: {en: 'Kaede', ko: '카에데', ja: 'カエデ'},
