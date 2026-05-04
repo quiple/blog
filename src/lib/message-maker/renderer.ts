@@ -851,7 +851,7 @@ async function renderToContext(
         const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
 
-        ctx.font = `${bubbleLeftFontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
+        ctx.font = `${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
         const lines = wrapText(ctx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
         const textBlockHeight = lines.length * lineH
@@ -880,7 +880,7 @@ async function renderToContext(
         }
 
         ctx.fillStyle = config.bubbleLeft.textColor
-        ctx.font = `${bubbleLeftFontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
+        ctx.font = `${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
         ctx.textBaseline = 'top'
         for (let li = 0; li < lines.length; li++) {
           ctx.fillText(
@@ -900,7 +900,7 @@ async function renderToContext(
         const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
         const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
 
-        ctx.font = `${bubbleRightFontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
+        ctx.font = `${config.bubbleRight.fontSize}px ${bubbleRightFont}`
         const lines = wrapText(ctx, msg.text[bi], maxTextWidth)
         const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
         const textBlockHeight = lines.length * lineH
@@ -931,7 +931,7 @@ async function renderToContext(
         }
 
         ctx.fillStyle = config.bubbleRight.textColor
-        ctx.font = `${bubbleRightFontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
+        ctx.font = `${config.bubbleRight.fontSize}px ${bubbleRightFont}`
         ctx.textBaseline = 'top'
         for (let li = 0; li < lines.length; li++) {
           ctx.fillText(
