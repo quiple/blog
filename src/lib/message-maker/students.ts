@@ -26,7 +26,30 @@ export const VARIATION_LABELS: Record<string, {en: string; ja: string; ko: strin
 
 export interface Portrait {
   id: string
-  variation?: string
+  variation?:
+    | 'arbeit'
+    | 'armed'
+    | 'band'
+    | 'bunny'
+    | 'camp'
+    | 'casual'
+    | 'christmas'
+    | 'dress'
+    | 'guide'
+    | 'idol'
+    | 'magical'
+    | 'maid'
+    | 'newyear'
+    | 'onsen'
+    | 'ouen'
+    | 'pajamas'
+    | 'qipao'
+    | 'ride'
+    | 'school'
+    | 'small'
+    | 'swimsuit'
+    | 'taisou'
+    | 'terror'
 }
 
 export interface Student {
