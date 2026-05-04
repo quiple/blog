@@ -32,7 +32,7 @@
     type ConversationData,
     type MessageItem,
   } from '$lib/message-maker/renderer'
-  import students, {type Student} from '$lib/message-maker/students'
+  import students, {VARIATION_LABELS, type Student} from '$lib/message-maker/students'
   import {getImageUrl} from '$lib/utils'
 
   const isProd = import.meta.env.PROD
@@ -370,9 +370,13 @@
   // 학생 선택
   function selectStudent(student: Student, portraitIndex: number = 0) {
     if (dialogTargetIndex < 0 || dialogTargetIndex >= messages.length) return
-    const portraitFile = student.portrait[portraitIndex]
-    messages[dialogTargetIndex].name = student.name[lang]
-    messages[dialogTargetIndex].portrait = `blue-archive/${portraitFile}.png`
+    const p = student.portrait[portraitIndex]
+    const portraitId = typeof p === 'string' ? p : p.id
+    const variationKey = typeof p === 'string' ? null : p.variation
+    const suffix = variationKey ? VARIATION_LABELS[variationKey]?.[lang] || '' : ''
+
+    messages[dialogTargetIndex].name = student.name[lang] + suffix
+    messages[dialogTargetIndex].portrait = `blue-archive/${portraitId}.png`
     showStudentDialog = false
     focusIndex = dialogTargetIndex
     requestRedraw()
@@ -961,7 +965,9 @@
           style="position: absolute; top: {vsStartRow * vsRowHeight}px; left: 0; right: 0;"
         >
           {#each vsVisibleStudents as { student, globalIndex } (student.name.en)}
-            {@const src = getImageUrl(`blue-archive/${student.portrait[0]}.png`, {h: 128}, isProd)}
+            {@const firstPortrait = student.portrait[0]}
+            {@const portraitId = typeof firstPortrait === 'string' ? firstPortrait : firstPortrait.id}
+            {@const src = getImageUrl(`blue-archive/${portraitId}.png`, {h: 128}, isProd)}
             <div class="flex flex-col">
               <Button
                 variant="ghost"
@@ -1011,7 +1017,8 @@
                   ]}
                 >
                   {#each student.portrait as p, pi}
-                    {@const altSrc = getImageUrl(`blue-archive/${p}.png`, {h: 128}, isProd)}
+                    {@const portraitId = typeof p === 'string' ? p : p.id}
+                    {@const altSrc = getImageUrl(`blue-archive/${portraitId}.png`, {h: 128}, isProd)}
                     <button
                       class="size-16 rounded-full after:rounded-full p-0 inner-border group"
                       onclick={() => selectStudent(student, pi)}
