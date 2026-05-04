@@ -1,5 +1,6 @@
 export type Language = 'ko' | 'en' | 'ja'
 export type LocalizedNumber = number | Partial<Record<Language, number>>
+export type LocalizedFont = string | Partial<Record<Language, string>>
 
 export interface RawThemeConfig {
   /** 캔버스 너비 (px) */
@@ -15,7 +16,7 @@ export interface RawThemeConfig {
     /** 그라데이션 배경 (설정 시 backgroundColor 대신 사용) */
     backgroundGradient?: string
     titleColor: string
-    titleFont: string
+    titleFont: LocalizedFont
     titleFontSize: number
     /** 제목 글자 장평 (가로 비율) */
     titleScaleX: number
@@ -95,7 +96,7 @@ export interface RawThemeConfig {
 
   /** 이름 표시 */
   name: {
-    font: string
+    font: LocalizedFont
     fontSize: LocalizedNumber
     color: string
     /** 이름과 메시지 사이 간격 */
@@ -110,7 +111,7 @@ export interface RawThemeConfig {
   bubbleLeft: {
     backgroundColor: string
     textColor: string
-    font: string
+    font: LocalizedFont
     fontSize: LocalizedNumber
     lineHeight: LocalizedNumber
     /** 말풍선 내부 여백 */
@@ -138,7 +139,7 @@ export interface RawThemeConfig {
   bubbleRight: {
     backgroundColor: string
     textColor: string
-    font: string
+    font: LocalizedFont
     fontSize: LocalizedNumber
     lineHeight: LocalizedNumber
     paddingTop: LocalizedNumber
@@ -160,8 +161,12 @@ export interface RawThemeConfig {
   }
 }
 
-export type ThemeConfig = Omit<RawThemeConfig, 'name' | 'bubbleLeft' | 'bubbleRight'> & {
-  name: Omit<RawThemeConfig['name'], 'fontSize' | 'marginTop' | 'marginBottom' | 'marginLeft'> & {
+export type ThemeConfig = Omit<RawThemeConfig, 'header' | 'name' | 'bubbleLeft' | 'bubbleRight'> & {
+  header: Omit<RawThemeConfig['header'], 'titleFont'> & {
+    titleFont: string
+  }
+  name: Omit<RawThemeConfig['name'], 'font' | 'fontSize' | 'marginTop' | 'marginBottom' | 'marginLeft'> & {
+    font: string
     fontSize: number
     marginTop: number
     marginBottom: number
@@ -169,8 +174,9 @@ export type ThemeConfig = Omit<RawThemeConfig, 'name' | 'bubbleLeft' | 'bubbleRi
   }
   bubbleLeft: Omit<
     RawThemeConfig['bubbleLeft'],
-    'fontSize' | 'lineHeight' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
+    'font' | 'fontSize' | 'lineHeight' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
   > & {
+    font: string
     fontSize: number
     lineHeight: number
     paddingTop: number
@@ -180,8 +186,9 @@ export type ThemeConfig = Omit<RawThemeConfig, 'name' | 'bubbleLeft' | 'bubbleRi
   }
   bubbleRight: Omit<
     RawThemeConfig['bubbleRight'],
-    'fontSize' | 'lineHeight' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
+    'font' | 'fontSize' | 'lineHeight' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
   > & {
+    font: string
     fontSize: number
     lineHeight: number
     paddingTop: number
@@ -192,36 +199,47 @@ export type ThemeConfig = Omit<RawThemeConfig, 'name' | 'bubbleLeft' | 'bubbleRi
 }
 
 export function resolveThemeConfig(config: RawThemeConfig, lang: Language): ThemeConfig {
-  const resolve = (val: LocalizedNumber) => {
+  const resolveNum = (val: LocalizedNumber) => {
     if (typeof val === 'number') return val
     return val[lang] ?? val['ko'] ?? Object.values(val)[0] ?? 0
   }
+  const resolveStr = (val: LocalizedFont) => {
+    if (typeof val === 'string') return val
+    return val[lang] ?? val['ko'] ?? Object.values(val)[0] ?? ''
+  }
   return {
     ...config,
+    header: {
+      ...config.header,
+      titleFont: resolveStr(config.header.titleFont),
+    },
     name: {
       ...config.name,
-      fontSize: resolve(config.name.fontSize),
-      marginTop: resolve(config.name.marginTop),
-      marginBottom: resolve(config.name.marginBottom),
-      marginLeft: resolve(config.name.marginLeft),
+      font: resolveStr(config.name.font),
+      fontSize: resolveNum(config.name.fontSize),
+      marginTop: resolveNum(config.name.marginTop),
+      marginBottom: resolveNum(config.name.marginBottom),
+      marginLeft: resolveNum(config.name.marginLeft),
     },
     bubbleLeft: {
       ...config.bubbleLeft,
-      fontSize: resolve(config.bubbleLeft.fontSize),
-      lineHeight: resolve(config.bubbleLeft.lineHeight),
-      paddingTop: resolve(config.bubbleLeft.paddingTop),
-      paddingRight: resolve(config.bubbleLeft.paddingRight),
-      paddingBottom: resolve(config.bubbleLeft.paddingBottom),
-      paddingLeft: resolve(config.bubbleLeft.paddingLeft),
+      font: resolveStr(config.bubbleLeft.font),
+      fontSize: resolveNum(config.bubbleLeft.fontSize),
+      lineHeight: resolveNum(config.bubbleLeft.lineHeight),
+      paddingTop: resolveNum(config.bubbleLeft.paddingTop),
+      paddingRight: resolveNum(config.bubbleLeft.paddingRight),
+      paddingBottom: resolveNum(config.bubbleLeft.paddingBottom),
+      paddingLeft: resolveNum(config.bubbleLeft.paddingLeft),
     },
     bubbleRight: {
       ...config.bubbleRight,
-      fontSize: resolve(config.bubbleRight.fontSize),
-      lineHeight: resolve(config.bubbleRight.lineHeight),
-      paddingTop: resolve(config.bubbleRight.paddingTop),
-      paddingRight: resolve(config.bubbleRight.paddingRight),
-      paddingBottom: resolve(config.bubbleRight.paddingBottom),
-      paddingLeft: resolve(config.bubbleRight.paddingLeft),
+      font: resolveStr(config.bubbleRight.font),
+      fontSize: resolveNum(config.bubbleRight.fontSize),
+      lineHeight: resolveNum(config.bubbleRight.lineHeight),
+      paddingTop: resolveNum(config.bubbleRight.paddingTop),
+      paddingRight: resolveNum(config.bubbleRight.paddingRight),
+      paddingBottom: resolveNum(config.bubbleRight.paddingBottom),
+      paddingLeft: resolveNum(config.bubbleRight.paddingLeft),
     },
   }
 }
@@ -277,7 +295,11 @@ export const momotalk: RawThemeConfig = {
     zoom: 1.1,
   },
   name: {
-    font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
+    font: {
+      ko: 'GyeonggiTitleBold, Noto Sans KR, sans-serif',
+      ja: 'ShinMGo-DeBold, sans-serif',
+      en: 'NotoSansBold, sans-serif',
+    },
     fontSize: {ko: 43, ja: 41, en: 43},
     color: '#3F444A',
     marginTop: {ko: 2, ja: 1.5, en: -8},
@@ -287,7 +309,11 @@ export const momotalk: RawThemeConfig = {
   bubbleLeft: {
     backgroundColor: '#4C5B6F',
     textColor: '#ffffff',
-    font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
+    font: {
+      ko: 'GyeonggiTitle, Noto Sans KR, sans-serif',
+      ja: 'ShinMGo-Medium, sans-serif',
+      en: 'NotoSans, sans-serif',
+    },
     fontSize: {ko: 44.5, ja: 43, en: 44.5},
     lineHeight: {ko: 1.25, ja: 1.25, en: 1.25},
     paddingTop: {ko: 20, ja: 18, en: 10},
@@ -305,7 +331,11 @@ export const momotalk: RawThemeConfig = {
   bubbleRight: {
     backgroundColor: '#4A8ACB',
     textColor: '#ffffff',
-    font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
+    font: {
+      ko: 'GyeonggiTitle, Noto Sans KR, sans-serif',
+      ja: 'ShinMGo-Medium, sans-serif',
+      en: 'NotoSans, sans-serif',
+    },
     fontSize: {ko: 44.5, ja: 43, en: 44.5},
     lineHeight: {ko: 1.25, ja: 1.25, en: 1.25},
     paddingTop: {ko: 20, ja: 18, en: 10},
