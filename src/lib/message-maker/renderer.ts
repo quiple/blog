@@ -362,10 +362,31 @@ function roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: numbe
   ctx.closePath()
 }
 
-/**
- * 텍스트를 maxWidth에 맞게 줄바꿈하여 줄 배열을 반환
- */
+/** 텍스트 줄바꿈 결과 캐시 (동일 입력 시 재계산 방지) */
+const wrapTextCache = new Map<string, string[]>()
+const WRAP_CACHE_MAX = 500
+
 function wrapText(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  maxWidth: number,
+  otFont?: opentype.Font,
+  otFontSize?: number,
+): string[] {
+  // 캐시 키: 텍스트 + 폰트 + 최대 너비
+  const cacheKey = otFont ? `ot:${otFontSize}:${maxWidth}:${text}` : `cv:${ctx.font}:${maxWidth}:${text}`
+  const cached = wrapTextCache.get(cacheKey)
+  if (cached) return cached
+  const result = wrapTextCore(ctx, text, maxWidth, otFont, otFontSize)
+  wrapTextCache.set(cacheKey, result)
+  if (wrapTextCache.size > WRAP_CACHE_MAX) {
+    const oldest = wrapTextCache.keys().next().value
+    if (oldest !== undefined) wrapTextCache.delete(oldest)
+  }
+  return result
+}
+
+function wrapTextCore(
   ctx: CanvasRenderingContext2D,
   text: string,
   maxWidth: number,
@@ -634,6 +655,16 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
 /** 마지막 렌더링 ID (중복 실행 방지용) */
 let lastRenderId = 0
 
+/** 정적 크롬(헤더+사이드바) 오프스크린 캐시 */
+let chromeCache: {hash: string; canvas: HTMLCanvasElement; height: number} | null = null
+
+/** 메시지 그룹별 오프스크린 캐시 */
+let groupCaches: {hash: string; canvas: HTMLCanvasElement; width: number; height: number}[] = []
+
+function hashMessage(msg: MessageItem): string {
+  return `${msg.type}\0${msg.name ?? ''}\0${msg.portrait ?? ''}\0${msg.text.join('\0')}`
+}
+
 /**
  * 메인 렌더링 함수
  */
@@ -659,6 +690,8 @@ export async function renderCanvas(
 
   const height = calculateCanvasHeight(messages, config, lang)
 
+  // 캔버스 크기가 바뀌면 chrome 캐시 무효화 (사이드바 높이가 달라지므로)
+  const prevHeight = canvas.height
   canvas.width = config.canvasWidth
   canvas.height = height
 
@@ -667,46 +700,16 @@ export async function renderCanvas(
   await renderToContext(ctx, messages, themeName, 1, renderId, height, lang)
 }
 
-/**
- * 특정 컨텍스트에 렌더링 (배율 지원)
- */
-async function renderToContext(
+async function renderChrome(
   ctx: CanvasRenderingContext2D,
-  messages: MessageItem[],
+  config: ThemeConfig,
   themeName: ThemeName,
-  scale: number,
-  renderId: number = 0,
-  precomputedHeight?: number,
-  lang?: Language,
+  width: number,
+  height: number,
+  otHeaderFont: opentype.Font | undefined,
+  isObsolete: () => boolean,
 ): Promise<void> {
-  const config = resolveThemeConfig(themes[themeName], lang || 'ko')
-  const width = config.canvasWidth
-  const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang)
-
-  const nameFont = config.name.font
-  const bubbleLeftFont = config.bubbleLeft.font
-  const bubbleRightFont = config.bubbleRight.font
-
-  // opentype 폰트 resolve (브라우저 독립 렌더링용)
-  const otNameFont = resolveOpentypeFont(nameFont)
-  const otBubbleLeftFont = resolveOpentypeFont(bubbleLeftFont)
-  const otBubbleRightFont = resolveOpentypeFont(bubbleRightFont)
-  const otHeaderFont = resolveOpentypeFont(config.header.titleFont)
-
-  const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
-
-  ctx.save()
-  if (scale !== 1) {
-    ctx.scale(scale, scale)
-  }
-
-  ctx.clearRect(0, 0, width, height)
-
-  // 배경
-  ctx.fillStyle = config.backgroundColor
-  ctx.fillRect(0, 0, width, height)
-
-  // ── 헤더 ──
+  // ── 헤더 배경 ──
   if (config.header.backgroundGradient) {
     const grad = ctx.createLinearGradient(0, 0, 0, config.header.height)
     const colorMatches = config.header.backgroundGradient.match(/#[0-9a-fA-F]{6}/g)
@@ -723,7 +726,7 @@ async function renderToContext(
   }
   ctx.fillRect(0, 0, width, config.header.height)
 
-  // 헤더 내용
+  // ── 헤더 내용 ──
   if (themeName === 'momotalk') {
     try {
       const momotalkLogo = await getIcon('momotalk', config.header.logoSize)
@@ -890,17 +893,101 @@ async function renderToContext(
       }
     }
   }
+}
+
+/**
+ * 특정 컨텍스트에 렌더링 (배율 지원)
+ */
+async function renderToContext(
+  ctx: CanvasRenderingContext2D,
+  messages: MessageItem[],
+  themeName: ThemeName,
+  scale: number,
+  renderId: number = 0,
+  precomputedHeight?: number,
+  lang?: Language,
+): Promise<void> {
+  const config = resolveThemeConfig(themes[themeName], lang || 'ko')
+  const width = config.canvasWidth
+  const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang)
+
+  const nameFont = config.name.font
+  const bubbleLeftFont = config.bubbleLeft.font
+  const bubbleRightFont = config.bubbleRight.font
+
+  // opentype 폰트 resolve (브라우저 독립 렌더링용)
+  const otNameFont = resolveOpentypeFont(nameFont)
+  const otBubbleLeftFont = resolveOpentypeFont(bubbleLeftFont)
+  const otBubbleRightFont = resolveOpentypeFont(bubbleRightFont)
+  const otHeaderFont = resolveOpentypeFont(config.header.titleFont)
+
+  const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
+
+  // 캐싱은 scale === 1 (미리보기)에서만 사용. 내보내기(scale > 1)에서는 매번 풀렌더링.
+  const useCache = scale === 1
+
+  ctx.save()
+  if (scale !== 1) {
+    ctx.scale(scale, scale)
+  }
+
+  ctx.clearRect(0, 0, width, height)
+
+  // 배경
+  ctx.fillStyle = config.backgroundColor
+  ctx.fillRect(0, 0, width, height)
+
+  // ── 정적 크롬 (헤더+사이드바) ──
+  const chromeHash = `${themeName}:${lang}:${width}:${height}`
+  if (useCache && chromeCache && chromeCache.hash === chromeHash) {
+    // 캐시된 크롬 비트맵 합성
+    ctx.drawImage(chromeCache.canvas, 0, 0)
+  } else {
+    // 크롬을 새로 렌더링
+    await renderChrome(ctx, config, themeName, width, height, otHeaderFont, isObsolete)
+    if (isObsolete()) return
+
+    // scale === 1일 때만 캐시 저장
+    if (useCache) {
+      const cc = chromeCache?.canvas ?? document.createElement('canvas')
+      cc.width = width
+      cc.height = height
+      const cctx = cc.getContext('2d')!
+      cctx.clearRect(0, 0, width, height)
+      // 배경+헤더+사이드바 영역만 복사
+      cctx.drawImage(ctx.canvas, 0, 0)
+      chromeCache = {hash: chromeHash, canvas: cc, height}
+    }
+  }
 
   // ── 대화 영역 ──
   const chatLeft = config.sidebar.width + config.chat.paddingLeft
   const chatRight = width - config.chat.paddingRight
   const chatAreaWidth = chatRight - chatLeft
 
+  // 그룹 캐시 배열 크기 조정
+  if (useCache) {
+    while (groupCaches.length > messages.length) groupCaches.pop()
+  }
+
   let cursorY = config.header.height + config.chat.paddingTop
 
   for (let i = 0; i < messages.length; i++) {
     const msg = messages[i]
     if (i > 0) cursorY += config.chat.groupGap
+
+    // 그룹 캐시 확인
+    // 캔버스 높이가 변해도 기존 캐시를 재사용하기 위해 msgHash에서 height를 제외
+    const msgHash = useCache ? `${themeName}:${lang}:${width}:${hashMessage(msg)}` : ''
+    const cachedGroup = useCache ? groupCaches[i] : undefined
+    if (cachedGroup && cachedGroup.hash === msgHash) {
+      // 캐시된 그룹 비트맵 합성 (사이드바 영역을 제외한 채팅 영역)
+      ctx.drawImage(cachedGroup.canvas, config.sidebar.width, cursorY)
+      cursorY += cachedGroup.height
+      continue
+    }
+
+    const groupStartY = cursorY
 
     if (msg.type === 'left') {
       // ── 학생 메시지 (왼쪽) ──
@@ -1125,6 +1212,30 @@ async function renderToContext(
         cursorY += bubbleH
       }
     }
+
+    // 그룹 캐시 저장
+    if (useCache) {
+      const groupHeight = cursorY - groupStartY
+      const gc = cachedGroup?.canvas ?? document.createElement('canvas')
+      const chatWidth = width - config.sidebar.width
+      gc.width = chatWidth
+      gc.height = groupHeight
+      const gctx = gc.getContext('2d')!
+      gctx.clearRect(0, 0, chatWidth, groupHeight)
+      // 메인 캔버스에서 그룹 영역 스냅샷 (사이드바 제외)
+      gctx.drawImage(
+        ctx.canvas,
+        config.sidebar.width,
+        groupStartY,
+        chatWidth,
+        groupHeight,
+        0,
+        0,
+        chatWidth,
+        groupHeight,
+      )
+      groupCaches[i] = {hash: msgHash, canvas: gc, width: chatWidth, height: groupHeight}
+    }
   }
   ctx.restore()
 }
@@ -1206,6 +1317,13 @@ export function clearCaches(): void {
   svgSourceCache.clear()
   opentypeCache.clear()
   fontDataUrlCache.clear()
+  wrapTextCache.clear()
+  chromeCache = null
+  for (const gc of groupCaches) {
+    gc.canvas.width = 0
+    gc.canvas.height = 0
+  }
+  groupCaches = []
   if (sharedMeasureCanvas) {
     sharedMeasureCanvas.width = 0
     sharedMeasureCanvas.height = 0
