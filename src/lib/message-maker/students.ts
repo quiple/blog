@@ -172,7 +172,11 @@ export default [
   },
   {
     name: {en: 'Hasumi', ko: '하스미', ja: 'ハスミ'},
-    portrait: ['Student_Portrait_Hasumi_Collection', {id: 'Student_Portrait_CH0291_Collection', variation: 'swimsuit'}],
+    portrait: [
+      'Student_Portrait_Hasumi_Collection',
+      {id: 'Student_Portrait_CH0190_Collection', variation: 'taisou'},
+      {id: 'Student_Portrait_CH0291_Collection', variation: 'swimsuit'},
+    ],
   },
   {
     name: {en: 'Hibiki', ko: '히비키', ja: 'ヒビキ'},
@@ -503,7 +507,7 @@ export default [
   },
   {
     name: {en: 'Rio', ko: '리오', ja: 'リオ'},
-    portrait: ['Student_Portrait_CH0158_Collection', {id: 'Student_Portrait_CH0190_Collection', variation: 'armed'}],
+    portrait: ['Student_Portrait_CH0158_Collection'],
   },
   {
     name: {en: 'Ritsu', ko: '리츠', ja: 'リツ'},
