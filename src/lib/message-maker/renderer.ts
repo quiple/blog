@@ -1261,6 +1261,14 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           `<image x="${titleX + titleWidth + config.header.helpIconGap}" y="${centerY - config.header.helpIconSize / 2 + config.header.helpIconOffsetY}" width="${config.header.helpIconSize}" height="${config.header.helpIconSize}" href="${helpB64}" />`,
         )
       }
+
+      if (config.header.closeIconSize > 0) {
+        const closeSvg = await getSvgSource('close')
+        const closeB64 = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(closeSvg)))}`
+        svgParts.push(
+          `<image x="${width + config.header.closeIconOffsetX - config.header.closeIconSize}" y="${centerY - config.header.closeIconSize / 2 + config.header.closeIconOffsetY}" width="${config.header.closeIconSize}" height="${config.header.closeIconSize}" href="${closeB64}" />`,
+        )
+      }
     }
 
     // 사이드바
