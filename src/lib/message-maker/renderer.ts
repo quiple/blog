@@ -268,12 +268,15 @@ function wrapText(
   maxWidth: number,
   otFont?: opentype.Font,
   otFontSize?: number,
+  breakHangul: boolean = true,
 ): string[] {
-  // 캐시 키: 텍스트 + 폰트 + 최대 너비
-  const cacheKey = otFont ? `ot:${otFontSize}:${maxWidth}:${text}` : `cv:${ctx.font}:${maxWidth}:${text}`
+  // 캐시 키: 텍스트 + 폰트 + 최대 너비 + breakHangul
+  const cacheKey = otFont
+    ? `ot:${otFontSize}:${maxWidth}:${breakHangul}:${text}`
+    : `cv:${ctx.font}:${maxWidth}:${breakHangul}:${text}`
   const cached = wrapTextCache.get(cacheKey)
   if (cached) return cached
-  const result = wrapTextCore(ctx, text, maxWidth, otFont, otFontSize)
+  const result = wrapTextCore(ctx, text, maxWidth, otFont, otFontSize, breakHangul)
   wrapTextCache.set(cacheKey, result)
   if (wrapTextCache.size > WRAP_CACHE_MAX) {
     const oldest = wrapTextCache.keys().next().value
@@ -288,13 +291,20 @@ function wrapTextCore(
   maxWidth: number,
   otFont?: opentype.Font,
   otFontSize?: number,
+  breakHangul: boolean = true,
 ): string[] {
   const lines: string[] = []
   // 먼저 명시적 줄바꿈 분리
   const paragraphs = text.split('\n')
 
   // 알파벳, 숫자, 그리고 단어 내에서 쓰일 수 있는 특수기호 (하이픈, 어포스트로피, 마침표, 쉼표)
-  const isAlphaNum = (char: string) => /^[a-zA-Z0-9_\-\u00C0-\u024F'’.,]+$/.test(char)
+  // breakHangul이 false인 경우 한글도 단어 단위로 취급하여 단어 중간 줄바꿈 방지
+  const isAlphaNum = (char: string) => {
+    if (breakHangul) {
+      return /^[a-zA-Z0-9_\-\u00C0-\u024F'’.,]+$/.test(char)
+    }
+    return /^[a-zA-Z0-9_\-\u00C0-\u024F'’.,\u1100-\u11FF\u3130-\u318F\uAC00-\uD7AF]+$/.test(char)
+  }
   // 줄바꿈 시 앞 글자에 붙어야 하는 닫는 문장부호들
   const isClosingPunctuation = (char: string) => /^[)\]>}"”',.!?;:。、！？》」』】…~・·）］｝〉»]+$/.test(char)
   // 줄바꿈 시 뒷 글자에 붙어야 하는 여는 문장부호들
@@ -476,11 +486,12 @@ function computeBubbleLayout(
   },
   chatAreaWidth: number,
   otFont?: opentype.Font,
+  breakHangul: boolean = true,
 ): BubbleLayout {
   const maxBubbleWidth = chatAreaWidth * bubbleConfig.maxWidthRatio
   const maxTextWidth = maxBubbleWidth - bubbleConfig.paddingLeft - bubbleConfig.paddingRight
   ctx.font = `${bubbleConfig.fontSize}px ${bubbleConfig.font}`
-  const lines = wrapText(ctx, text, maxTextWidth, otFont, bubbleConfig.fontSize)
+  const lines = wrapText(ctx, text, maxTextWidth, otFont, bubbleConfig.fontSize, breakHangul)
   const lineH = bubbleConfig.fontSize * bubbleConfig.lineHeight
   const textBlockWidth = Math.max(...lines.map((l) => measureTextWidth(l, ctx, otFont, bubbleConfig.fontSize)))
   const bubbleW = textBlockWidth + bubbleConfig.paddingLeft + bubbleConfig.paddingRight
@@ -539,7 +550,13 @@ function getMeasureCtx(width: number): CanvasRenderingContext2D {
 /**
  * 캔버스 높이를 계산
  */
-export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConfig, lang?: Language): number {
+export function calculateCanvasHeight(
+  messages: MessageItem[],
+  config: ThemeConfig,
+  lang?: Language,
+  themeName?: ThemeName,
+): number {
+  const breakHangul = themeName !== 'momotalk'
   const tempCtx = getMeasureCtx(config.canvasWidth)
 
   // opentype 폰트 resolve (캐시에 있으면 사용, 없으면 Canvas fallback)
@@ -564,7 +581,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
 
     for (let bi = 0; bi < msg.text.length; bi++) {
       if (bi > 0) totalHeight += config.chat.messageGap
-      const {bubbleH} = computeBubbleLayout(tempCtx, msg.text[bi], bubbleCfg, chatAreaWidth, otFont)
+      const {bubbleH} = computeBubbleLayout(tempCtx, msg.text[bi], bubbleCfg, chatAreaWidth, otFont, breakHangul)
       totalHeight += bubbleH
     }
   }
@@ -621,7 +638,7 @@ export async function renderCanvas(
   // 최신 렌더링 요청인지 확인
   if (renderId !== lastRenderId) return
 
-  const height = calculateCanvasHeight(messages, config, lang)
+  const height = calculateCanvasHeight(messages, config, lang, themeName)
 
   // 깜빡임(flickering) 방지를 위한 더블 버퍼링
   if (!sharedRenderBufferCanvas) {
@@ -856,7 +873,9 @@ async function renderToContext(
 ): Promise<void> {
   const config = resolveThemeConfig(themes[themeName], lang || 'ko')
   const width = config.canvasWidth
-  const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang)
+  const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang, themeName)
+
+  const breakHangul = themeName !== 'momotalk'
 
   // opentype 폰트 resolve (브라우저 독립 렌더링용)
   const otNameFont = resolveOpentypeFont(config.name.font)
@@ -1033,6 +1052,7 @@ async function renderToContext(
           config.bubbleLeft,
           chatAreaWidth,
           otBubbleLeftFont,
+          breakHangul,
         )
 
         ctx.fillStyle = config.bubbleLeft.backgroundColor
@@ -1083,6 +1103,7 @@ async function renderToContext(
           config.bubbleRight,
           chatAreaWidth,
           otBubbleRightFont,
+          breakHangul,
         )
 
         const bubbleX = chatRight - bubbleW - config.bubbleRight.marginRight
@@ -1270,8 +1291,9 @@ function getSvgSource(name: string): string {
 export async function exportAsVectorSvg(messages: MessageItem[], themeName: ThemeName, lang?: Language): Promise<void> {
   try {
     const config = resolveThemeConfig(themes[themeName], lang || 'ko')
-    const height = calculateCanvasHeight(messages, config, lang)
+    const height = calculateCanvasHeight(messages, config, lang, themeName)
     const width = config.canvasWidth
+    const breakHangul = themeName !== 'momotalk'
 
     const nameFont = config.name.font
     const bubbleLeftFont = config.bubbleLeft.font
@@ -1527,6 +1549,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
             config.bubbleLeft,
             chatAreaWidth,
             otLeft,
+            breakHangul,
           )
 
           svgParts.push(
@@ -1566,6 +1589,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
             config.bubbleRight,
             chatAreaWidth,
             otRight,
+            breakHangul,
           )
           const bubbleX = chatRight - bubbleW - config.bubbleRight.marginRight
 
