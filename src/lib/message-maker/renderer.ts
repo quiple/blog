@@ -441,18 +441,9 @@ function getMeasureCtx(width: number): CanvasRenderingContext2D {
 export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConfig, lang?: Language): number {
   const tempCtx = getMeasureCtx(config.canvasWidth)
 
-  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans, 한국어 이름 → GyeonggiTitleBold
-  const getFont = (base: string, isName: boolean) =>
-    lang === 'ja'
-      ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
-      : lang === 'en'
-        ? base.replace('GyeonggiTitle', isName ? 'NotoSansBold' : 'NotoSans')
-        : isName
-          ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
-          : base
-  const nameFont = getFont(config.name.font, true)
-  const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
-  const bubbleRightFont = getFont(config.bubbleRight.font, false)
+  const nameFont = config.name.font
+  const bubbleLeftFont = config.bubbleLeft.font
+  const bubbleRightFont = config.bubbleRight.font
 
   const chatAreaWidth = config.canvasWidth - config.sidebar.width - config.chat.paddingLeft - config.chat.paddingRight
 
@@ -558,18 +549,9 @@ async function renderToContext(
   const width = config.canvasWidth
   const height = precomputedHeight ?? calculateCanvasHeight(messages, config, lang)
 
-  // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans, 한국어 이름 → GyeonggiTitleBold
-  const getFont = (base: string, isName: boolean) =>
-    lang === 'ja'
-      ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
-      : lang === 'en'
-        ? base.replace('GyeonggiTitle', isName ? 'NotoSansBold' : 'NotoSans')
-        : isName
-          ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
-          : base
-  const nameFont = getFont(config.name.font, true)
-  const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
-  const bubbleRightFont = getFont(config.bubbleRight.font, false)
+  const nameFont = config.name.font
+  const bubbleLeftFont = config.bubbleLeft.font
+  const bubbleRightFont = config.bubbleRight.font
 
   const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
 
@@ -1103,18 +1085,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     let notosansFont: opentype.Font | undefined
     let notosansBoldFont: opentype.Font | undefined
 
-    // 언어별 폰트 교체: 일본어 → ShinMGo, 영어 → NotoSans, 한국어 이름 → GyeonggiTitleBold
-    const getFont = (base: string, isName: boolean) =>
-      lang === 'ja'
-        ? base.replace('GyeonggiTitle', isName ? 'ShinMGo-DeBold' : 'ShinMGo-Medium')
-        : lang === 'en'
-          ? base.replace('GyeonggiTitle', isName ? 'NotoSansBold' : 'NotoSans')
-          : isName
-            ? base.replace('GyeonggiTitle', 'GyeonggiTitleBold')
-            : base
-    const nameFont = getFont(config.name.font, true)
-    const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
-    const bubbleRightFont = getFont(config.bubbleRight.font, false)
+    const nameFont = config.name.font
+    const bubbleLeftFont = config.bubbleLeft.font
+    const bubbleRightFont = config.bubbleRight.font
 
     // 폰트 데이터 가져오기 (SVG 패스 변환용)
     let fontStyles = ''
