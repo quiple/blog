@@ -1,28 +1,55 @@
+export const VARIATION_LABELS: Record<string, {en: string; ja: string; ko: string}> = {
+  armed: {ko: '(무장)', ja: '（臨戦）', en: ' (Armed)'},
+  band: {ko: '(밴드)', ja: '（バンド）', en: ' (Band)'},
+  bunny: {ko: '(바니걸)', ja: '（バニーガール）', en: ' (Bunny)'},
+  camp: {ko: '(캠핑)', ja: '（キャンプ）', en: ' (Camp)'},
+  christmas: {ko: '(크리스마스)', ja: '（クリスマス）', en: ' (Christmas)'},
+  dress: {ko: '(드레스)', ja: '（ドレス）', en: ' (Dress)'},
+  guide: {ko: '(가이드)', ja: '（ガイド）', en: ' (Guide)'},
+  magical: {ko: '(매지컬)', ja: '（マジカル）', en: ' (Magical)'},
+  maid: {ko: '(메이드)', ja: '（メイド）', en: ' (Maid)'},
+  newyear: {ko: '(새해)', ja: '（正月）', en: ' (New Year)'},
+  onsen: {ko: '(온천)', ja: '（温泉）', en: ' (Hot Spring)'},
+  ouen: {ko: '(응원단)', ja: '（応援団）', en: ' (Cheer Squad)'},
+  pajamas: {ko: '(파자마)', ja: '（パジャマ）', en: ' (Pajamas)'},
+  qipao: {ko: '(치파오)', ja: '（チーパオ）', en: ' (Qipao)'},
+  ride: {ko: '(라이딩)', ja: '（ライディング）', en: ' (Cycling)'},
+  school: {ko: '(교복)', ja: '（制服）', en: ' (School)'},
+  swimsuit: {ko: '(수영복)', ja: '（水着）', en: ' (Swimsuit)'},
+  taisou: {ko: '(체육복)', ja: '（体操服）', en: ' (Track)'},
+  terror: {ko: '*테러', ja: '＊テラー', en: '*Terror'},
+}
+
+export interface Portrait {
+  id: string
+  variation?: string
+}
+
 export interface Student {
   name: {
     en: string
     ja: string
     ko: string
   }
-  portrait: string[]
+  portrait: (string | Portrait)[]
 }
 
 export default [
   {
     name: {en: 'Airi', ko: '아이리', ja: 'アイリ'},
-    portrait: ['Student_Portrait_Airi_Collection', 'Student_Portrait_CH0251_Collection'],
+    portrait: ['Student_Portrait_Airi_Collection', {id: 'Student_Portrait_CH0251_Collection', variation: 'band'}],
   },
   {
     name: {en: 'Akane', ko: '아카네', ja: 'アカネ'},
-    portrait: ['Student_Portrait_Akane_Collection', 'Student_Portrait_CH0099_Collection'],
+    portrait: ['Student_Portrait_Akane_Collection', {id: 'Student_Portrait_CH0099_Collection', variation: 'bunny'}],
   },
   {
     name: {en: 'Akari', ko: '아카리', ja: 'アカリ'},
-    portrait: ['Student_Portrait_Akari_Collection', 'Student_Portrait_CH0196_Collection'],
+    portrait: ['Student_Portrait_Akari_Collection', {id: 'Student_Portrait_CH0196_Collection', variation: 'newyear'}],
   },
   {
     name: {en: 'Ako', ko: '아코', ja: 'アコ'},
-    portrait: ['Student_Portrait_Ako_Collection', 'Student_Portrait_CH0231_Collection'],
+    portrait: ['Student_Portrait_Ako_Collection', {id: 'Student_Portrait_CH0231_Collection', variation: 'dress'}],
   },
   {
     name: {en: 'Aoba', ko: '아오바', ja: 'アオバ'},
@@ -34,7 +61,7 @@ export default [
   },
   {
     name: {en: 'Arisu', ko: '아리스', ja: 'アリス'},
-    portrait: ['Student_Portrait_Aris_Collection', 'Student_Portrait_CH0200_Collection'],
+    portrait: ['Student_Portrait_Aris_Collection', {id: 'Student_Portrait_CH0200_Collection', variation: 'maid'}],
   },
   {
     name: {en: 'Arona', ko: '아로나', ja: 'アロナ'},
@@ -44,25 +71,25 @@ export default [
     name: {en: 'Aru', ko: '아루', ja: 'アル'},
     portrait: [
       'Student_Portrait_Aru_Collection',
-      'Student_Portrait_Aru_Newyear_Collection',
-      'Student_Portrait_CH0240_Collection',
+      {id: 'Student_Portrait_Aru_Newyear_Collection', variation: 'newyear'},
+      {id: 'Student_Portrait_CH0240_Collection', variation: 'dress'},
     ],
   },
   {
     name: {en: 'Asuna', ko: '아스나', ja: 'アスナ'},
     portrait: [
       'Student_Portrait_Asuna_Collection',
-      'Student_Portrait_CH0098_Collection',
-      'Student_Portrait_CH0281_Collection',
+      {id: 'Student_Portrait_CH0098_Collection', variation: 'bunny'},
+      {id: 'Student_Portrait_CH0281_Collection', variation: 'school'},
     ],
   },
   {
     name: {en: 'Atsuko', ko: '아츠코', ja: 'アツコ'},
-    portrait: ['Student_Portrait_Atsuko_Collection', 'Student_Portrait_CH0267_Collection'],
+    portrait: ['Student_Portrait_Atsuko_Collection', {id: 'Student_Portrait_CH0267_Collection', variation: 'swimsuit'}],
   },
   {
     name: {en: 'Ayane', ko: '아야네', ja: 'アヤネ'},
-    portrait: ['Student_Portrait_Ayane_Collection', 'Student_Portrait_CH0176_Collection'],
+    portrait: ['Student_Portrait_Ayane_Collection', {id: 'Student_Portrait_CH0176_Collection', variation: 'swimsuit'}],
   },
   {
     name: {en: 'Ayumu', ko: '아유무', ja: 'アユム'},
@@ -70,11 +97,14 @@ export default [
   },
   {
     name: {en: 'Azusa', ko: '아즈사', ja: 'アズサ'},
-    portrait: ['Student_Portrait_Azusa_Collection', 'Student_Portrait_Azusa_Swimsuit_Collection'],
+    portrait: [
+      'Student_Portrait_Azusa_Collection',
+      {id: 'Student_Portrait_Azusa_Swimsuit_Collection', variation: 'swimsuit'},
+    ],
   },
   {
     name: {en: 'Cherino', ko: '체리노', ja: 'チェリノ'},
-    portrait: ['Student_Portrait_Cherino_Collection', 'Student_Portrait_CH0164_Collection'],
+    portrait: ['Student_Portrait_Cherino_Collection', {id: 'Student_Portrait_CH0164_Collection', variation: 'onsen'}],
   },
   {
     name: {en: 'Chiaki', ko: '치아키', ja: 'チアキ'},
@@ -529,9 +559,9 @@ export default [
     name: {en: 'Shiroko', ko: '시로코', ja: 'シロコ'},
     portrait: [
       'Student_Portrait_Shiroko_Collection',
-      'Student_Portrait_Shiroko_ridingsuit_Collection',
-      'Student_Portrait_CH0188_Collection',
-      'Student_Portrait_CH0263_Collection',
+      {id: 'Student_Portrait_Shiroko_ridingsuit_Collection', variation: 'ride'},
+      {id: 'Student_Portrait_CH0188_Collection', variation: 'swimsuit'},
+      {id: 'Student_Portrait_CH0263_Collection', variation: 'terror'},
     ],
   },
   {
