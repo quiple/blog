@@ -97,7 +97,6 @@ export interface RawThemeConfig {
   name: {
     font: string
     fontSize: LocalizedNumber
-    fontWeight: string
     color: string
     /** 이름과 메시지 사이 간격 */
     marginBottom: LocalizedNumber
@@ -113,7 +112,6 @@ export interface RawThemeConfig {
     textColor: string
     font: string
     fontSize: LocalizedNumber
-    fontWeight: string
     lineHeight: LocalizedNumber
     /** 말풍선 내부 여백 */
     paddingTop: LocalizedNumber
@@ -142,7 +140,6 @@ export interface RawThemeConfig {
     textColor: string
     font: string
     fontSize: LocalizedNumber
-    fontWeight: string
     lineHeight: LocalizedNumber
     paddingTop: LocalizedNumber
     paddingRight: LocalizedNumber
@@ -282,7 +279,6 @@ export const momotalk: RawThemeConfig = {
   name: {
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
     fontSize: {ko: 43, ja: 41, en: 43},
-    fontWeight: 'normal',
     color: '#3F444A',
     marginTop: {ko: 2, ja: 1.5, en: -8},
     marginBottom: {ko: 7, ja: 9, en: 17},
@@ -293,7 +289,6 @@ export const momotalk: RawThemeConfig = {
     textColor: '#ffffff',
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
     fontSize: {ko: 44.5, ja: 43, en: 44.5},
-    fontWeight: 'normal',
     lineHeight: {ko: 1.25, ja: 1.25, en: 1.25},
     paddingTop: {ko: 20, ja: 18, en: 10},
     paddingRight: {ko: 23, ja: 23, en: 23},
@@ -312,7 +307,6 @@ export const momotalk: RawThemeConfig = {
     textColor: '#ffffff',
     font: 'GyeonggiTitle, Noto Sans KR, sans-serif',
     fontSize: {ko: 44.5, ja: 43, en: 44.5},
-    fontWeight: 'normal',
     lineHeight: {ko: 1.25, ja: 1.25, en: 1.25},
     paddingTop: {ko: 20, ja: 18, en: 10},
     paddingRight: {ko: 23, ja: 23, en: 23},
@@ -380,7 +374,6 @@ export const imessage: RawThemeConfig = {
   name: {
     font: 'SF Pro Display, -apple-system, sans-serif',
     fontSize: 16,
-    fontWeight: 'bold',
     color: '#8e8e93',
     marginBottom: 4,
     marginTop: 0,
@@ -391,7 +384,6 @@ export const imessage: RawThemeConfig = {
     textColor: '#000000',
     font: 'SF Pro Display, -apple-system, sans-serif',
     fontSize: 20,
-    fontWeight: 'normal',
     lineHeight: 1.45,
     paddingTop: 10,
     paddingRight: 16,
@@ -410,7 +402,6 @@ export const imessage: RawThemeConfig = {
     textColor: '#ffffff',
     font: 'SF Pro Display, -apple-system, sans-serif',
     fontSize: 20,
-    fontWeight: 'normal',
     lineHeight: 1.45,
     paddingTop: 10,
     paddingRight: 16,
@@ -478,7 +469,6 @@ export const line: RawThemeConfig = {
   name: {
     font: 'Noto Sans KR, sans-serif',
     fontSize: 16,
-    fontWeight: 'normal',
     color: '#213a4f',
     marginBottom: 4,
     marginTop: 0,
@@ -489,7 +479,6 @@ export const line: RawThemeConfig = {
     textColor: '#333333',
     font: 'Noto Sans KR, sans-serif',
     fontSize: 19,
-    fontWeight: 'normal',
     lineHeight: 1.45,
     paddingTop: 10,
     paddingRight: 14,
@@ -508,7 +497,6 @@ export const line: RawThemeConfig = {
     textColor: '#333333',
     font: 'Noto Sans KR, sans-serif',
     fontSize: 19,
-    fontWeight: 'normal',
     lineHeight: 1.45,
     paddingTop: 10,
     paddingRight: 14,
@@ -576,7 +564,6 @@ export const kakaotalk: RawThemeConfig = {
   name: {
     font: 'Noto Sans KR, sans-serif',
     fontSize: 16,
-    fontWeight: 'normal',
     color: '#333333',
     marginBottom: 4,
     marginTop: 0,
@@ -587,7 +574,6 @@ export const kakaotalk: RawThemeConfig = {
     textColor: '#333333',
     font: 'Noto Sans KR, sans-serif',
     fontSize: 19,
-    fontWeight: 'normal',
     lineHeight: 1.45,
     paddingTop: 10,
     paddingRight: 14,
@@ -606,7 +592,6 @@ export const kakaotalk: RawThemeConfig = {
     textColor: '#333333',
     font: 'Noto Sans KR, sans-serif',
     fontSize: 19,
-    fontWeight: 'normal',
     lineHeight: 1.45,
     paddingTop: 10,
     paddingRight: 14,
