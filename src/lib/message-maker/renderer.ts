@@ -453,10 +453,6 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
   const nameFont = getFont(config.name.font, true)
   const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
   const bubbleRightFont = getFont(config.bubbleRight.font, false)
-  // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
-  const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
-  const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
-  const bubbleRightFontWeight = lang === 'en' ? '450' : config.bubbleRight.fontWeight
 
   const chatAreaWidth = config.canvasWidth - config.sidebar.width - config.chat.paddingLeft - config.chat.paddingRight
 
@@ -472,7 +468,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
 
       const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
       const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
-      tempCtx.font = `${bubbleLeftFontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
+      tempCtx.font = `${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
 
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) totalHeight += config.chat.messageGap
@@ -489,7 +485,7 @@ export function calculateCanvasHeight(messages: MessageItem[], config: ThemeConf
     } else {
       const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
       const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
-      tempCtx.font = `${bubbleRightFontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
+      tempCtx.font = `${config.bubbleRight.fontSize}px ${bubbleRightFont}`
 
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) totalHeight += config.chat.messageGap
@@ -574,10 +570,6 @@ async function renderToContext(
   const nameFont = getFont(config.name.font, true)
   const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
   const bubbleRightFont = getFont(config.bubbleRight.font, false)
-  // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
-  const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
-  const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
-  const bubbleRightFontWeight = lang === 'en' ? '450' : config.bubbleRight.fontWeight
 
   const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
 
@@ -845,7 +837,7 @@ async function renderToContext(
       const nameX = profileX + (config.profile.size > 0 ? config.profile.size : 0) + config.name.marginLeft
       const nameY = cursorY + config.name.marginTop
       ctx.fillStyle = config.name.color
-      ctx.font = `${nameFontWeight} ${config.name.fontSize}px ${nameFont}`
+      ctx.font = `${config.name.fontSize}px ${nameFont}`
       ctx.textBaseline = 'top'
       ctx.fillText(msg.name || '', nameX, nameY)
       cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
@@ -1123,10 +1115,6 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     const nameFont = getFont(config.name.font, true)
     const bubbleLeftFont = getFont(config.bubbleLeft.font, false)
     const bubbleRightFont = getFont(config.bubbleRight.font, false)
-    // 영어인 경우 폰트 weight 오버라이드: 이름 700, 메시지 본문 400
-    const nameFontWeight = lang === 'en' ? '700' : config.name.fontWeight
-    const bubbleLeftFontWeight = lang === 'en' ? '450' : config.bubbleLeft.fontWeight
-    const bubbleRightFontWeight = lang === 'en' ? '450' : config.bubbleRight.fontWeight
 
     // 폰트 데이터 가져오기 (SVG 패스 변환용)
     let fontStyles = ''
@@ -1371,7 +1359,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
             config.name.color,
             'start',
             'hanging',
-            nameFontWeight,
+            'normal',
           ),
         )
         cursorY += config.name.marginTop + config.name.fontSize + config.name.marginBottom
@@ -1383,7 +1371,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           if (bi > 0) cursorY += config.chat.messageGap
           const maxBubbleWidth = chatAreaWidth * config.bubbleLeft.maxWidthRatio
           const maxTextWidth = maxBubbleWidth - config.bubbleLeft.paddingLeft - config.bubbleLeft.paddingRight
-          tempCtx.font = `${bubbleLeftFontWeight} ${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
+          tempCtx.font = `${config.bubbleLeft.fontSize}px ${bubbleLeftFont}`
           const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
           const lineH = config.bubbleLeft.fontSize * config.bubbleLeft.lineHeight
           const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
@@ -1411,7 +1399,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
                 config.bubbleLeft.textColor,
                 'start',
                 'hanging',
-                bubbleLeftFontWeight,
+                'normal',
               ),
             )
           }
@@ -1423,7 +1411,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           if (bi > 0) cursorY += config.chat.messageGap
           const maxBubbleWidth = chatAreaWidth * config.bubbleRight.maxWidthRatio
           const maxTextWidth = maxBubbleWidth - config.bubbleRight.paddingLeft - config.bubbleRight.paddingRight
-          tempCtx.font = `${bubbleRightFontWeight} ${config.bubbleRight.fontSize}px ${bubbleRightFont}`
+          tempCtx.font = `${config.bubbleRight.fontSize}px ${bubbleRightFont}`
           const lines = wrapText(tempCtx, msg.text[bi], maxTextWidth)
           const lineH = config.bubbleRight.fontSize * config.bubbleRight.lineHeight
           const textBlockWidth = Math.max(...lines.map((l) => tempCtx.measureText(l).width))
@@ -1452,7 +1440,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
                 config.bubbleRight.textColor,
                 'start',
                 'hanging',
-                bubbleRightFontWeight,
+                'normal',
               ),
             )
           }
