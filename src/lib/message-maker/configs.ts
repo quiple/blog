@@ -249,7 +249,7 @@ export const momotalk: RawThemeConfig = {
     logoOffsetY: 0,
     helpIconOffsetY: 9,
     closeIconSize: 100,
-    closeIconOffsetX: -38,
+    closeIconOffsetX: -20,
     closeIconOffsetY: 0,
   },
   sidebar: {
