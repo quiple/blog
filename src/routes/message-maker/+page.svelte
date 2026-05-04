@@ -876,7 +876,7 @@
               {:else}
                 <Copy />
               {/if}
-              {#if lang === 'ja'}{isCopied ? 'コピー済み!' : 'PNGにコピー'}
+              {#if lang === 'ja'}{isCopied ? 'コピー済み!' : 'PNGでコピー'}
               {:else if lang === 'ko'}{isCopied ? '복사됨!' : 'PNG로 복사하기'}
               {:else}{isCopied ? 'Copied!' : 'Copy as PNG'}
               {/if}
