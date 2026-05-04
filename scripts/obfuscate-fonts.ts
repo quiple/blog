@@ -50,8 +50,10 @@ function obfuscate() {
         baseName = 'gyeonggi-light'
       } else if (baseName.includes('jalnan')) {
         baseName = 'jalnan'
-      } else if (baseName.includes('notosans')) {
+      } else if (baseName.includes('notosans-regular')) {
         baseName = 'notosans'
+      } else if (baseName.includes('notosans-bold')) {
+        baseName = 'notosans-bold'
       }
 
       const outputName = `${baseName}.bin`
