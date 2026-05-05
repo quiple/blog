@@ -722,9 +722,9 @@
               </Button>
             {:else}
               <div class="w-full text-center p-3 text-sm text-muted-foreground">
-                {#if lang === 'ja'}{msg.name}絆ストーリー
+                {#if lang === 'ja'}{msg.name}の絆ストーリーへ
                 {:else if lang === 'ko'}{msg.name}의 인연 스토리로
-                {:else}{msg.name} Relationship Story
+                {:else}To {msg.name}'s Relationship Story
                 {/if}
               </div>
             {/if}
