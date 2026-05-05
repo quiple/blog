@@ -488,7 +488,7 @@ export const momotalk: RawThemeConfig = {
     fontSize: {ko: 44.5, ja: 43, en: 44.5},
     paddingTop: {ko: 29, ja: 24, en: 24},
     paddingRight: {ko: 30, ja: 30, en: 30},
-    paddingBottom: {ko: 24, ja: 24, en: 24},
+    paddingBottom: {ko: 29, ja: 29, en: 29},
     paddingLeft: {ko: 35.5, ja: 30, en: 30},
     borderRadius: 23,
     maxWidthRatio: 1,
