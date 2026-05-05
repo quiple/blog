@@ -600,7 +600,8 @@ export function calculateCanvasHeight(
       tempCtx.font = `${config.bond.fontSize}px ${config.bond.font}`
 
       if (themeName === 'momotalk') {
-        const bannerW = chatAreaWidth * config.bond.maxWidthRatio
+        const availableWidth = chatAreaWidth - config.bond.marginLeft - config.bond.marginRight
+        const bannerW = availableWidth * config.bond.maxWidthRatio
         const btnW = bannerW - config.bond.buttonPaddingX * 2
 
         const lines = wrapText(
@@ -622,17 +623,15 @@ export function calculateCanvasHeight(
           config.bond.buttonMarginTop +
           buttonH +
           config.bond.paddingBottom
-        totalHeight += bannerH
+        totalHeight += config.bond.marginTop + bannerH + config.bond.marginBottom
       } else {
-        const lines = wrapText(
-          tempCtx,
-          text,
-          chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight,
-          otBondFont,
-          config.bond.fontSize,
-          breakHangul,
-        )
-        totalHeight += lines.length * config.bond.fontSize + config.bond.paddingTop + config.bond.paddingBottom
+        const availableWidth = chatAreaWidth - config.bond.marginLeft - config.bond.marginRight
+        const maxTextWidth =
+          availableWidth * config.bond.maxWidthRatio - config.bond.paddingLeft - config.bond.paddingRight
+        const lines = wrapText(tempCtx, text, maxTextWidth, otBondFont, config.bond.fontSize, breakHangul)
+        const lineH = config.bond.fontSize * 1.2
+        const bannerH = lines.length * lineH + config.bond.paddingTop + config.bond.paddingBottom
+        totalHeight += config.bond.marginTop + bannerH + config.bond.marginBottom
       }
     } else {
       const bubbleCfg = isLeft ? config.bubbleLeft : config.bubbleRight
@@ -1216,10 +1215,13 @@ async function renderToContext(
             ? `${name}의 인연 스토리로`
             : `To ${name}'s Relationship Story`
 
+      cursorY += config.bond.marginTop
+      const availableWidth = chatAreaWidth - config.bond.marginLeft - config.bond.marginRight
+
       if (themeName === 'momotalk') {
         const headerText = lang === 'ja' ? '絆イベント' : lang === 'ko' ? '인연 이벤트' : 'Relationship Event'
 
-        const bannerW = chatAreaWidth * config.bond.maxWidthRatio
+        const bannerW = availableWidth * config.bond.maxWidthRatio
         const btnW = bannerW - config.bond.buttonPaddingX * 2
 
         ctx.font = `${config.bond.fontSize}px ${config.bond.font}`
@@ -1235,8 +1237,7 @@ async function renderToContext(
           buttonH +
           config.bond.paddingBottom
 
-        // 가운데 정렬 대신 버블 시작점 근처로 정렬 (좌측 패딩 고려)
-        const bannerX = chatLeft + config.bubbleLeft.marginLeft + (chatAreaWidth - bannerW) / 2
+        const bannerX = chatLeft + config.bond.marginLeft + (availableWidth - bannerW) / 2
 
         // Outer Box
         ctx.save()
@@ -1311,9 +1312,10 @@ async function renderToContext(
         }
         ctx.restore() // restore outer save
 
-        cursorY += bannerH
+        cursorY += bannerH + config.bond.marginBottom
       } else {
-        const maxTextWidth = chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight
+        const maxTextWidth =
+          availableWidth * config.bond.maxWidthRatio - config.bond.paddingLeft - config.bond.paddingRight
         ctx.font = `${config.bond.fontSize}px ${config.bond.font}`
         const lines = wrapText(ctx, bondText, maxTextWidth, otBondFont, config.bond.fontSize, breakHangul)
         const lineH = config.bond.fontSize * 1.2
@@ -1321,7 +1323,7 @@ async function renderToContext(
         const bannerW = textBlockWidth + config.bond.paddingLeft + config.bond.paddingRight
         const bannerH = lines.length * lineH + config.bond.paddingTop + config.bond.paddingBottom
 
-        const bannerX = chatLeft + (chatAreaWidth - bannerW) / 2
+        const bannerX = chatLeft + config.bond.marginLeft + (availableWidth - bannerW) / 2
 
         ctx.fillStyle = config.bond.backgroundColor
         roundRect(ctx, bannerX, cursorY, bannerW, bannerH, config.bond.borderRadius)
@@ -1342,7 +1344,7 @@ async function renderToContext(
           )
         }
 
-        cursorY += bannerH
+        cursorY += bannerH + config.bond.marginBottom
       }
     }
 
@@ -1831,10 +1833,13 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
               : `To ${name}'s Relationship Story`
         const otBond = resolveOpentypeFont(bondFont)
 
+        cursorY += config.bond.marginTop
+        const availableWidth = chatAreaWidth - config.bond.marginLeft - config.bond.marginRight
+
         if (themeName === 'momotalk') {
           const headerText = lang === 'ja' ? '絆イベント' : lang === 'ko' ? '인연 이벤트' : 'Relationship Event'
 
-          const bannerW = chatAreaWidth * config.bond.maxWidthRatio
+          const bannerW = availableWidth * config.bond.maxWidthRatio
           const btnW = bannerW - config.bond.buttonPaddingX * 2
 
           tempCtx.font = `${config.bond.fontSize}px ${bondFont}`
@@ -1850,7 +1855,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
             buttonH +
             config.bond.paddingBottom
 
-          const bannerX = chatLeft + config.bubbleLeft.marginLeft + (chatAreaWidth - bannerW) / 2
+          const bannerX = chatLeft + config.bond.marginLeft + (availableWidth - bannerW) / 2
 
           const clipId = `bondClip-${i}`
           const gradId = `bondGrad-${i}`
@@ -1895,9 +1900,10 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
             )
           }
 
-          cursorY += bannerH
+          cursorY += bannerH + config.bond.marginBottom
         } else {
-          const maxTextWidth = chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight
+          const maxTextWidth =
+            availableWidth * config.bond.maxWidthRatio - config.bond.paddingLeft - config.bond.paddingRight
           tempCtx.font = `${config.bond.fontSize}px ${bondFont}`
           const lines = wrapText(tempCtx, bondText, maxTextWidth, otBond, config.bond.fontSize, breakHangul)
           const lineH = config.bond.fontSize * 1.2
@@ -1907,7 +1913,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           const bannerW = textBlockWidth + config.bond.paddingLeft + config.bond.paddingRight
           const bannerH = lines.length * lineH + config.bond.paddingTop + config.bond.paddingBottom
 
-          const bannerX = chatLeft + (chatAreaWidth - bannerW) / 2
+          const bannerX = chatLeft + config.bond.marginLeft + (availableWidth - bannerW) / 2
 
           svgParts.push(
             `<rect x="${bannerX}" y="${cursorY}" width="${bannerW}" height="${bannerH}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" />`,
@@ -1931,7 +1937,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
             )
           }
 
-          cursorY += bannerH
+          cursorY += bannerH + config.bond.marginBottom
         }
       }
     }

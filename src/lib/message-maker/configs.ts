@@ -174,6 +174,14 @@ export interface RawThemeConfig {
     borderRadius: number
     /** 배너 최대 너비 비율 (대화 영역 대비) */
     maxWidthRatio: number
+    /** 외부 상단 여백 */
+    marginTop: number
+    /** 외부 하단 여백 */
+    marginBottom: number
+    /** 외부 좌측 여백 */
+    marginLeft: number
+    /** 외부 우측 여백 */
+    marginRight: number
     /** 헤더 텍스트 폰트 크기 */
     headerFontSize: number
     /** 헤더 텍스트 색상 */
@@ -426,6 +434,10 @@ export const momotalk: RawThemeConfig = {
     paddingLeft: {ko: 30, ja: 30, en: 30},
     borderRadius: 12,
     maxWidthRatio: 0.95,
+    marginTop: 0,
+    marginBottom: 0,
+    marginLeft: 0,
+    marginRight: 0,
     headerFontSize: 32,
     headerColor: '#4C5B6F',
     headerBarWidth: 5,
@@ -546,6 +558,10 @@ export const imessage: RawThemeConfig = {
     paddingLeft: 16,
     borderRadius: 16,
     maxWidthRatio: 1.0,
+    marginTop: 0,
+    marginBottom: 0,
+    marginLeft: 0,
+    marginRight: 0,
     headerFontSize: 16,
     headerColor: '#000000',
     headerBarWidth: 0,
@@ -666,6 +682,10 @@ export const line: RawThemeConfig = {
     paddingLeft: 16,
     borderRadius: 16,
     maxWidthRatio: 1.0,
+    marginTop: 0,
+    marginBottom: 0,
+    marginLeft: 0,
+    marginRight: 0,
     headerFontSize: 16,
     headerColor: '#000000',
     headerBarWidth: 0,
@@ -786,6 +806,10 @@ export const kakaotalk: RawThemeConfig = {
     paddingLeft: 16,
     borderRadius: 16,
     maxWidthRatio: 1.0,
+    marginTop: 0,
+    marginBottom: 0,
+    marginLeft: 0,
+    marginRight: 0,
     headerFontSize: 16,
     headerColor: '#000000',
     headerBarWidth: 0,
