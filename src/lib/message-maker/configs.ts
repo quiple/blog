@@ -500,7 +500,7 @@ export const momotalk: RawThemeConfig = {
     headerGap: 12,
     dividerColor: '#ACBBC1',
     dividerThickness: 1.5,
-    dividerMarginTop: 24,
+    dividerMarginTop: 19,
     buttonBackgroundColor: '#FF8399',
     buttonBorderColor: '#ACBBC1',
     buttonBorderWidth: 1,
