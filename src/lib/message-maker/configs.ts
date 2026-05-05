@@ -470,7 +470,7 @@ export const momotalk: RawThemeConfig = {
     paddingLeft: {ko: 35.5, ja: 30, en: 30},
     borderRadius: 23,
     maxWidthRatio: 1,
-    marginTop: 0,
+    marginTop: 2.5,
     marginBottom: 0,
     marginLeft: 0,
     marginRight: -8,
