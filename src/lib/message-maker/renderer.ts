@@ -1326,10 +1326,14 @@ async function renderToContext(
 
         // Divider
         ctx.fillStyle = config.bond.dividerColor
+        const actualDividerWidth =
+          config.bond.dividerWidth === 'auto'
+            ? bannerW - config.bond.paddingLeft - config.bond.paddingRight
+            : config.bond.dividerWidth
         ctx.fillRect(
           bannerX + config.bond.paddingLeft,
           cursorY + config.bond.paddingTop + headerH + config.bond.dividerMarginTop,
-          bannerW - config.bond.paddingLeft - config.bond.paddingRight,
+          actualDividerWidth,
           config.bond.dividerThickness,
         )
 
@@ -1997,10 +2001,15 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           `)
 
           // Header Bar & Text
+          const actualDividerWidth =
+            config.bond.dividerWidth === 'auto'
+              ? bannerW - config.bond.paddingLeft - config.bond.paddingRight
+              : config.bond.dividerWidth
+
           svgParts.push(`
             <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop}" width="${config.bond.headerBarWidth}" height="${config.bond.headerBarHeight}" fill="${config.bond.headerBarColor}" />
             ${renderSvgText(headerText, bannerX + config.bond.paddingLeft + config.bond.headerBarWidth + config.bond.headerGap, cursorY + config.bond.paddingTop + (config.bond.headerBarHeight - config.bond.headerFontSize) / 2, config.bond.headerFont, config.bond.headerFontSize, config.bond.headerColor, 'start', 'hanging', 'normal')}
-            <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop + headerH + config.bond.dividerMarginTop}" width="${bannerW - config.bond.paddingLeft - config.bond.paddingRight}" height="${config.bond.dividerThickness}" fill="${config.bond.dividerColor}" />
+            <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop + headerH + config.bond.dividerMarginTop}" width="${actualDividerWidth}" height="${config.bond.dividerThickness}" fill="${config.bond.dividerColor}" />
           `)
 
           // Button
