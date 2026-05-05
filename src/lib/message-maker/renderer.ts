@@ -1245,9 +1245,11 @@ async function renderToContext(
         roundRect(ctx, bannerX, cursorY, bannerW, bannerH, config.bond.borderRadius)
         ctx.fill()
 
-        ctx.strokeStyle = config.bond.borderColor
-        ctx.lineWidth = 1.5
-        ctx.stroke()
+        if (config.bond.borderWidth > 0 && config.bond.borderColor !== 'transparent') {
+          ctx.strokeStyle = config.bond.borderColor
+          ctx.lineWidth = config.bond.borderWidth
+          ctx.stroke()
+        }
 
         // Header Bar
         ctx.fillStyle = config.bond.headerBarColor
@@ -1276,7 +1278,7 @@ async function renderToContext(
           bannerX + config.bond.paddingLeft,
           cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop,
           bannerW - config.bond.paddingLeft - config.bond.paddingRight,
-          2,
+          config.bond.dividerThickness,
         )
 
         // Button Shadow / Bottom Edge
@@ -1292,6 +1294,14 @@ async function renderToContext(
         ctx.fillStyle = config.bond.buttonBackgroundColor
         roundRect(ctx, btnX, btnY, btnW, buttonH, config.bond.buttonBorderRadius)
         ctx.fill()
+
+        // Button Border
+        if (config.bond.buttonBorderWidth > 0 && config.bond.buttonBorderColor !== 'transparent') {
+          ctx.strokeStyle = config.bond.buttonBorderColor
+          ctx.lineWidth = config.bond.buttonBorderWidth
+          roundRect(ctx, btnX, btnY, btnW, buttonH, config.bond.buttonBorderRadius)
+          ctx.stroke()
+        }
 
         // Button Text
         for (let li = 0; li < lines.length; li++) {
@@ -1862,14 +1872,14 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
           // Outer Box & Definitions
           svgParts.push(`
-            <rect x="${bannerX}" y="${cursorY}" width="${bannerW}" height="${bannerH}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="1.5" />
+            <rect x="${bannerX}" y="${cursorY}" width="${bannerW}" height="${bannerH}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="${config.bond.borderWidth}" />
           `)
 
           // Header Bar & Text
           svgParts.push(`
             <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop}" width="${config.bond.headerBarWidth}" height="${config.bond.headerBarHeight}" fill="${config.bond.headerBarColor}" />
             ${renderSvgText(headerText, bannerX + config.bond.paddingLeft + config.bond.headerBarWidth + 10, cursorY + config.bond.paddingTop + (config.bond.headerBarHeight - config.bond.headerFontSize) / 2, bondFont, config.bond.headerFontSize, config.bond.headerColor, 'start', 'hanging', 'normal')}
-            <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop}" width="${bannerW - config.bond.paddingLeft - config.bond.paddingRight}" height="2" fill="${config.bond.dividerColor}" />
+            <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop}" width="${bannerW - config.bond.paddingLeft - config.bond.paddingRight}" height="${config.bond.dividerThickness}" fill="${config.bond.dividerColor}" />
           `)
 
           // Button
@@ -1879,7 +1889,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
           svgParts.push(`
             <rect x="${btnX}" y="${btnY + config.bond.buttonShadowHeight}" width="${btnW}" height="${buttonH}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonShadowColor}" />
-            <rect x="${btnX}" y="${btnY}" width="${btnW}" height="${buttonH}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonBackgroundColor}" />
+            <rect x="${btnX}" y="${btnY}" width="${btnW}" height="${buttonH}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonBackgroundColor}" stroke="${config.bond.buttonBorderColor}" stroke-width="${config.bond.buttonBorderWidth}" />
           `)
 
           // Button Text

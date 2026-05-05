@@ -164,6 +164,8 @@ export interface RawThemeConfig {
   bond: {
     backgroundColor: string
     borderColor: string
+    /** 테두리 두께 */
+    borderWidth: number
     textColor: string
     font: LocalizedFont
     fontSize: LocalizedNumber
@@ -194,8 +196,14 @@ export interface RawThemeConfig {
     headerBarColor: string
     /** 구분선 색상 */
     dividerColor: string
+    /** 구분선 두께 (높이) */
+    dividerThickness: number
     /** 버튼 배경 색상 */
     buttonBackgroundColor: string
+    /** 버튼 테두리 색상 */
+    buttonBorderColor: string
+    /** 버튼 테두리 두께 */
+    buttonBorderWidth: number
     /** 버튼 그림자/하단 테두리 색상 */
     buttonShadowColor: string
     /** 버튼 그림자/하단 테두리 두께 */
@@ -421,6 +429,7 @@ export const momotalk: RawThemeConfig = {
   bond: {
     backgroundColor: '#FFEDF1',
     borderColor: '#F1DDE1',
+    borderWidth: 1.5,
     textColor: '#ffffff',
     font: {
       ko: 'GyeonggiTitle, sans-serif',
@@ -444,7 +453,10 @@ export const momotalk: RawThemeConfig = {
     headerBarHeight: 28,
     headerBarColor: '#F2899A',
     dividerColor: '#E2D2D7',
+    dividerThickness: 2,
     buttonBackgroundColor: '#FF8399',
+    buttonBorderColor: 'transparent',
+    buttonBorderWidth: 0,
     buttonShadowColor: '#E05F77',
     buttonShadowHeight: 4,
     buttonBorderRadius: 16,
@@ -547,8 +559,9 @@ export const imessage: RawThemeConfig = {
     tailRadius: 0,
   },
   bond: {
-    backgroundColor: '#e5e5ea',
+    backgroundColor: 'transparent',
     borderColor: 'transparent',
+    borderWidth: 0,
     textColor: '#000000',
     font: 'SF Pro Display, -apple-system, sans-serif',
     fontSize: 16,
@@ -568,7 +581,10 @@ export const imessage: RawThemeConfig = {
     headerBarHeight: 0,
     headerBarColor: 'transparent',
     dividerColor: 'transparent',
+    dividerThickness: 0,
     buttonBackgroundColor: 'transparent',
+    buttonBorderColor: 'transparent',
+    buttonBorderWidth: 0,
     buttonShadowColor: 'transparent',
     buttonShadowHeight: 0,
     buttonBorderRadius: 0,
@@ -673,6 +689,7 @@ export const line: RawThemeConfig = {
   bond: {
     backgroundColor: '#6e93c0',
     borderColor: 'transparent',
+    borderWidth: 0,
     textColor: '#ffffff',
     font: 'Noto Sans KR, sans-serif',
     fontSize: 15,
@@ -692,7 +709,10 @@ export const line: RawThemeConfig = {
     headerBarHeight: 0,
     headerBarColor: 'transparent',
     dividerColor: 'transparent',
+    dividerThickness: 0,
     buttonBackgroundColor: 'transparent',
+    buttonBorderColor: 'transparent',
+    buttonBorderWidth: 0,
     buttonShadowColor: 'transparent',
     buttonShadowHeight: 0,
     buttonBorderRadius: 0,
@@ -797,6 +817,7 @@ export const kakaotalk: RawThemeConfig = {
   bond: {
     backgroundColor: '#3f3f3f',
     borderColor: 'transparent',
+    borderWidth: 0,
     textColor: '#ffffff',
     font: 'Noto Sans KR, sans-serif',
     fontSize: 15,
@@ -816,7 +837,10 @@ export const kakaotalk: RawThemeConfig = {
     headerBarHeight: 0,
     headerBarColor: 'transparent',
     dividerColor: 'transparent',
+    dividerThickness: 0,
     buttonBackgroundColor: 'transparent',
+    buttonBorderColor: 'transparent',
+    buttonBorderWidth: 0,
     buttonShadowColor: 'transparent',
     buttonShadowHeight: 0,
     buttonBorderRadius: 0,
