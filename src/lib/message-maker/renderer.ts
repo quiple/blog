@@ -609,17 +609,12 @@ export function calculateCanvasHeight(
         const bannerLeftOffset = config.profile.size + config.bubbleLeft.marginLeft
         const availableWidth = chatAreaWidth - bannerLeftOffset - config.bond.marginLeft - config.bond.marginRight
         const bannerW = availableWidth * config.bond.maxWidthRatio
-        const btnW = bannerW - config.bond.buttonPaddingX * 2
+        const btnW = bannerW - config.bond.buttonMarginX * 2
+        const buttonInnerW = btnW - config.bond.buttonPaddingLeft - config.bond.buttonPaddingRight
 
-        const lines = wrapText(
-          tempCtx,
-          text,
-          btnW - 20, // 텍스트 여백 약간
-          otBondFont,
-          config.bond.fontSize,
-          breakHangul,
-        )
-        const buttonH = lines.length * config.bond.fontSize * 1.2 + 30
+        const lines = wrapText(tempCtx, text, buttonInnerW, otBondFont, config.bond.fontSize, breakHangul)
+        const buttonH =
+          lines.length * config.bond.fontSize * 1.2 + config.bond.buttonPaddingTop + config.bond.buttonPaddingBottom
         const headerH = Math.max(config.bond.headerBarHeight, config.bond.headerFontSize)
 
         const bannerH =
@@ -1237,11 +1232,13 @@ async function renderToContext(
         const headerText = lang === 'ja' ? '絆イベント' : lang === 'ko' ? '인연 이벤트' : 'Relationship Event'
 
         const bannerW = availableWidth * config.bond.maxWidthRatio
-        const btnW = bannerW - config.bond.buttonPaddingX * 2
+        const btnW = bannerW - config.bond.buttonMarginX * 2
+        const buttonInnerW = btnW - config.bond.buttonPaddingLeft - config.bond.buttonPaddingRight
 
         ctx.font = `${config.bond.fontSize}px ${config.bond.font}`
-        const lines = wrapText(ctx, bondText, btnW - 20, otBondFont, config.bond.fontSize, breakHangul)
-        const buttonH = lines.length * config.bond.fontSize * 1.2 + 30
+        const lines = wrapText(ctx, bondText, buttonInnerW, otBondFont, config.bond.fontSize, breakHangul)
+        const buttonH =
+          lines.length * config.bond.fontSize * 1.2 + config.bond.buttonPaddingTop + config.bond.buttonPaddingBottom
         const headerH = Math.max(config.bond.headerBarHeight, config.bond.headerFontSize)
         const bannerH =
           config.bond.paddingTop +
@@ -1303,7 +1300,7 @@ async function renderToContext(
         )
 
         // Button Shadow / Bottom Edge
-        const btnX = bannerX + config.bond.buttonPaddingX
+        const btnX = bannerX + config.bond.buttonMarginX
         const btnY =
           cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop + 2 + config.bond.buttonMarginTop
 
@@ -1348,7 +1345,7 @@ async function renderToContext(
 
         // Button Text
         for (let li = 0; li < lines.length; li++) {
-          const textY = btnY + 15 + li * config.bond.fontSize * 1.2
+          const textY = btnY + config.bond.buttonPaddingTop + li * config.bond.fontSize * 1.2
           drawText(
             ctx,
             lines[li],
@@ -1911,11 +1908,13 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           const headerText = lang === 'ja' ? '絆イベント' : lang === 'ko' ? '인연 이벤트' : 'Relationship Event'
 
           const bannerW = availableWidth * config.bond.maxWidthRatio
-          const btnW = bannerW - config.bond.buttonPaddingX * 2
+          const btnW = bannerW - config.bond.buttonMarginX * 2
+          const buttonInnerW = btnW - config.bond.buttonPaddingLeft - config.bond.buttonPaddingRight
 
           tempCtx.font = `${config.bond.fontSize}px ${bondFont}`
-          const lines = wrapText(tempCtx, bondText, btnW - 20, otBond, config.bond.fontSize, breakHangul)
-          const buttonH = lines.length * config.bond.fontSize * 1.2 + 30
+          const lines = wrapText(tempCtx, bondText, buttonInnerW, otBond, config.bond.fontSize, breakHangul)
+          const buttonH =
+            lines.length * config.bond.fontSize * 1.2 + config.bond.buttonPaddingTop + config.bond.buttonPaddingBottom
           const headerH = Math.max(config.bond.headerBarHeight, config.bond.headerFontSize)
           const bannerH =
             config.bond.paddingTop +
@@ -1946,7 +1945,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           `)
 
           // Button
-          const btnX = bannerX + config.bond.buttonPaddingX
+          const btnX = bannerX + config.bond.buttonMarginX
           const btnY =
             cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop + 2 + config.bond.buttonMarginTop
 
@@ -1985,7 +1984,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
           // Button Text
           for (let li = 0; li < lines.length; li++) {
-            const textY = btnY + 15 + li * config.bond.fontSize * 1.2
+            const textY = btnY + config.bond.buttonPaddingTop + li * config.bond.fontSize * 1.2
             svgParts.push(
               renderSvgText(
                 lines[li],

@@ -219,10 +219,18 @@ export interface RawThemeConfig {
     buttonShadowSize: number
     /** 버튼 그림자 투명도 (0~1) */
     buttonShadowOpacity: number
+    /** 버튼 상단 패딩 */
+    buttonPaddingTop: LocalizedNumber
+    /** 버튼 우측 패딩 */
+    buttonPaddingRight: LocalizedNumber
+    /** 버튼 하단 패딩 */
+    buttonPaddingBottom: LocalizedNumber
+    /** 버튼 좌측 패딩 */
+    buttonPaddingLeft: LocalizedNumber
     /** 버튼 모서리 반경 */
     buttonBorderRadius: number
-    /** 버튼과 좌우 여백 */
-    buttonPaddingX: number
+    /** 버튼과 배너 테두리 사이의 좌우 여백 */
+    buttonMarginX: number
     /** 버튼과 상단(구분선) 간격 */
     buttonMarginTop: number
   }
@@ -278,6 +286,10 @@ export type ThemeConfig = Omit<RawThemeConfig, 'header' | 'name' | 'bubbleLeft' 
     headerFont: string
     fontSize: number
     headerFontSize: number
+    buttonPaddingTop: number
+    buttonPaddingRight: number
+    buttonPaddingBottom: number
+    buttonPaddingLeft: number
     paddingTop: number
     paddingRight: number
     paddingBottom: number
@@ -334,6 +346,10 @@ export function resolveThemeConfig(config: RawThemeConfig, lang: Language): Them
       headerFont: resolveStr(config.bond.headerFont),
       fontSize: resolveNum(config.bond.fontSize),
       headerFontSize: resolveNum(config.bond.headerFontSize),
+      buttonPaddingTop: resolveNum(config.bond.buttonPaddingTop),
+      buttonPaddingRight: resolveNum(config.bond.buttonPaddingRight),
+      buttonPaddingBottom: resolveNum(config.bond.buttonPaddingBottom),
+      buttonPaddingLeft: resolveNum(config.bond.buttonPaddingLeft),
       paddingTop: resolveNum(config.bond.paddingTop),
       paddingRight: resolveNum(config.bond.paddingRight),
       paddingBottom: resolveNum(config.bond.paddingBottom),
@@ -490,8 +506,12 @@ export const momotalk: RawThemeConfig = {
     buttonShadowBlur: 8,
     buttonShadowSize: 0,
     buttonShadowOpacity: 0.5,
+    buttonPaddingTop: {ko: 15, ja: 15, en: 15},
+    buttonPaddingRight: {ko: 10, ja: 10, en: 10},
+    buttonPaddingBottom: {ko: 15, ja: 15, en: 15},
+    buttonPaddingLeft: {ko: 10, ja: 10, en: 10},
     buttonBorderRadius: 23,
-    buttonPaddingX: 30,
+    buttonMarginX: 30,
     buttonMarginTop: 24,
   },
 }
@@ -631,8 +651,12 @@ export const imessage: RawThemeConfig = {
     buttonShadowBlur: 0,
     buttonShadowSize: 0,
     buttonShadowOpacity: 1,
+    buttonPaddingTop: {ko: 0, ja: 0, en: 0},
+    buttonPaddingRight: {ko: 0, ja: 0, en: 0},
+    buttonPaddingBottom: {ko: 0, ja: 0, en: 0},
+    buttonPaddingLeft: {ko: 0, ja: 0, en: 0},
     buttonBorderRadius: 0,
-    buttonPaddingX: 0,
+    buttonMarginX: 0,
     buttonMarginTop: 0,
   },
 }
@@ -772,8 +796,12 @@ export const line: RawThemeConfig = {
     buttonShadowBlur: 0,
     buttonShadowSize: 0,
     buttonShadowOpacity: 1,
+    buttonPaddingTop: {ko: 0, ja: 0, en: 0},
+    buttonPaddingRight: {ko: 0, ja: 0, en: 0},
+    buttonPaddingBottom: {ko: 0, ja: 0, en: 0},
+    buttonPaddingLeft: {ko: 0, ja: 0, en: 0},
     buttonBorderRadius: 0,
-    buttonPaddingX: 0,
+    buttonMarginX: 0,
     buttonMarginTop: 0,
   },
 }
@@ -913,8 +941,12 @@ export const kakaotalk: RawThemeConfig = {
     buttonShadowBlur: 0,
     buttonShadowSize: 0,
     buttonShadowOpacity: 1,
+    buttonPaddingTop: {ko: 0, ja: 0, en: 0},
+    buttonPaddingRight: {ko: 0, ja: 0, en: 0},
+    buttonPaddingBottom: {ko: 0, ja: 0, en: 0},
+    buttonPaddingLeft: {ko: 0, ja: 0, en: 0},
     buttonBorderRadius: 0,
-    buttonPaddingX: 0,
+    buttonMarginX: 0,
     buttonMarginTop: 0,
   },
 }
