@@ -1407,6 +1407,11 @@ async function renderToContext(
             config.bond.font,
             config.bond.textColor,
             otBondFont,
+            'top',
+            'center',
+            1,
+            config.bond.buttonTextBorderColor,
+            config.bond.buttonTextBorderWidth,
           )
         }
 
@@ -1596,6 +1601,8 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
       baseline: 'top' | 'hanging' | 'middle' = 'hanging',
       fontWeight: string = 'normal',
       scaleX: number = 1.0,
+      strokeColor?: string,
+      strokeWidth?: number,
     ) {
       const font = resolveOpentypeFont(fontFamily)
 
@@ -1618,19 +1625,24 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         }
 
         const svgPath = path.toSVG(2)
+        const strokeAttr = strokeColor && strokeWidth ? ` stroke="${strokeColor}" stroke-width="${strokeWidth}"` : ''
         if (scaleX !== 1.0) {
           return svgPath.replace(
             '<path ',
-            `<path fill="${color}" transform="translate(${drawX}, ${drawY}) scale(${scaleX}, 1)" `,
+            `<path fill="${color}"${strokeAttr} transform="translate(${drawX}, ${drawY}) scale(${scaleX}, 1)" `,
           )
         } else {
-          return svgPath.replace('<path ', `<path fill="${color}" transform="translate(${drawX}, ${drawY})" `)
+          return svgPath.replace(
+            '<path ',
+            `<path fill="${color}"${strokeAttr} transform="translate(${drawX}, ${drawY})" `,
+          )
         }
       } else {
         const anchor = align === 'center' || align === 'middle' ? 'middle' : 'start'
+        const strokeAttr = strokeColor && strokeWidth ? ` stroke="${strokeColor}" stroke-width="${strokeWidth}"` : ''
         const transformAttr =
           scaleX !== 1.0 ? ` transform="translate(${x}, ${y}) scale(${scaleX}, 1) translate(${-x}, ${-y})"` : ''
-        return `<text x="${x}" y="${y}" fill="${color}" font-family="${fontFamily}" font-size="${fontSize}" font-weight="${fontWeight}" text-anchor="${anchor}" dominant-baseline="${baseline}"${transformAttr}>${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`
+        return `<text x="${x}" y="${y}" fill="${color}"${strokeAttr} font-family="${fontFamily}" font-size="${fontSize}" font-weight="${fontWeight}" text-anchor="${anchor}" dominant-baseline="${baseline}"${transformAttr}>${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`
       }
     }
 
@@ -2006,6 +2018,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
                 'middle',
                 'hanging',
                 'normal',
+                1.0,
+                config.bond.buttonTextBorderColor,
+                config.bond.buttonTextBorderWidth,
               ),
             )
           }
@@ -2045,6 +2060,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
                 'start',
                 'hanging',
                 'normal',
+                1.0,
+                config.bond.buttonTextBorderColor,
+                config.bond.buttonTextBorderWidth,
               ),
             )
           }

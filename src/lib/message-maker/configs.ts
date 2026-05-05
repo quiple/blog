@@ -211,6 +211,10 @@ export interface RawThemeConfig {
     buttonBorderColor: string
     /** 버튼 테두리 두께 */
     buttonBorderWidth: number
+    /** 버튼 텍스트 테두리 색상 */
+    buttonTextBorderColor: string
+    /** 버튼 텍스트 테두리 두께 */
+    buttonTextBorderWidth: number
     /** 버튼 그림자 색상 */
     buttonShadowColor: string
     /** 버튼 그림자 세로 거리 */
@@ -504,6 +508,8 @@ export const momotalk: RawThemeConfig = {
     buttonBackgroundColor: '#FF8399',
     buttonBorderColor: '#ACBBC1',
     buttonBorderWidth: 1,
+    buttonTextBorderColor: 'transparent',
+    buttonTextBorderWidth: 0,
     buttonShadowColor: '#000000',
     buttonShadowHeight: 4,
     buttonShadowBlur: 8,
@@ -650,6 +656,8 @@ export const imessage: RawThemeConfig = {
     buttonBackgroundColor: 'transparent',
     buttonBorderColor: 'transparent',
     buttonBorderWidth: 0,
+    buttonTextBorderColor: 'transparent',
+    buttonTextBorderWidth: 0,
     buttonShadowColor: 'transparent',
     buttonShadowHeight: 0,
     buttonShadowBlur: 0,
@@ -796,6 +804,8 @@ export const line: RawThemeConfig = {
     buttonBackgroundColor: 'transparent',
     buttonBorderColor: 'transparent',
     buttonBorderWidth: 0,
+    buttonTextBorderColor: 'transparent',
+    buttonTextBorderWidth: 0,
     buttonShadowColor: 'transparent',
     buttonShadowHeight: 0,
     buttonShadowBlur: 0,
@@ -942,6 +952,8 @@ export const kakaotalk: RawThemeConfig = {
     buttonBackgroundColor: 'transparent',
     buttonBorderColor: 'transparent',
     buttonBorderWidth: 0,
+    buttonTextBorderColor: 'transparent',
+    buttonTextBorderWidth: 0,
     buttonShadowColor: 'transparent',
     buttonShadowHeight: 0,
     buttonShadowBlur: 0,
