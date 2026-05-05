@@ -620,8 +620,8 @@ export function calculateCanvasHeight(
         const bannerH =
           config.bond.paddingTop +
           headerH +
-          config.bond.buttonMarginTop +
-          2 +
+          config.bond.dividerMarginTop +
+          config.bond.dividerThickness +
           config.bond.buttonMarginTop +
           buttonH +
           config.bond.paddingBottom
@@ -1243,8 +1243,8 @@ async function renderToContext(
         const bannerH =
           config.bond.paddingTop +
           headerH +
-          config.bond.buttonMarginTop +
-          2 +
+          config.bond.dividerMarginTop +
+          config.bond.dividerThickness +
           config.bond.buttonMarginTop +
           buttonH +
           config.bond.paddingBottom
@@ -1294,7 +1294,7 @@ async function renderToContext(
         ctx.fillStyle = config.bond.dividerColor
         ctx.fillRect(
           bannerX + config.bond.paddingLeft,
-          cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop,
+          cursorY + config.bond.paddingTop + headerH + config.bond.dividerMarginTop,
           bannerW - config.bond.paddingLeft - config.bond.paddingRight,
           config.bond.dividerThickness,
         )
@@ -1302,7 +1302,12 @@ async function renderToContext(
         // Button Shadow / Bottom Edge
         const btnX = bannerX + config.bond.buttonMarginX
         const btnY =
-          cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop + 2 + config.bond.buttonMarginTop
+          cursorY +
+          config.bond.paddingTop +
+          headerH +
+          config.bond.dividerMarginTop +
+          config.bond.dividerThickness +
+          config.bond.buttonMarginTop
 
         if (config.bond.buttonShadowColor !== 'transparent') {
           ctx.save()
@@ -1919,8 +1924,8 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           const bannerH =
             config.bond.paddingTop +
             headerH +
-            config.bond.buttonMarginTop +
-            2 +
+            config.bond.dividerMarginTop +
+            config.bond.dividerThickness +
             config.bond.buttonMarginTop +
             buttonH +
             config.bond.paddingBottom
@@ -1941,13 +1946,18 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           svgParts.push(`
             <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop}" width="${config.bond.headerBarWidth}" height="${config.bond.headerBarHeight}" fill="${config.bond.headerBarColor}" />
             ${renderSvgText(headerText, bannerX + config.bond.paddingLeft + config.bond.headerBarWidth + config.bond.headerGap, cursorY + config.bond.paddingTop + (config.bond.headerBarHeight - config.bond.headerFontSize) / 2, config.bond.headerFont, config.bond.headerFontSize, config.bond.headerColor, 'start', 'hanging', 'normal')}
-            <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop}" width="${bannerW - config.bond.paddingLeft - config.bond.paddingRight}" height="${config.bond.dividerThickness}" fill="${config.bond.dividerColor}" />
+            <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop + headerH + config.bond.dividerMarginTop}" width="${bannerW - config.bond.paddingLeft - config.bond.paddingRight}" height="${config.bond.dividerThickness}" fill="${config.bond.dividerColor}" />
           `)
 
           // Button
           const btnX = bannerX + config.bond.buttonMarginX
           const btnY =
-            cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop + 2 + config.bond.buttonMarginTop
+            cursorY +
+            config.bond.paddingTop +
+            headerH +
+            config.bond.dividerMarginTop +
+            config.bond.dividerThickness +
+            config.bond.buttonMarginTop
 
           const bbw = config.bond.buttonBorderWidth
           const br = Math.max(0, config.bond.buttonBorderRadius - bbw / 2)
