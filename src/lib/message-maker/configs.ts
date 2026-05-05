@@ -452,7 +452,7 @@ export const momotalk: RawThemeConfig = {
       ja: 'ShinMGo-DeBold, sans-serif',
       en: 'NotoSansBold, sans-serif',
     },
-    fontSize: {ko: 38, ja: 36, en: 38},
+    fontSize: {ko: 44.5, ja: 43, en: 44.5},
     paddingTop: {ko: 29, ja: 24, en: 24},
     paddingRight: {ko: 30, ja: 30, en: 30},
     paddingBottom: {ko: 24, ja: 24, en: 24},
