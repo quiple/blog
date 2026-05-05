@@ -167,7 +167,10 @@ export interface RawThemeConfig {
     /** 테두리 두께 */
     borderWidth: number
     textColor: string
+    /** 버튼 텍스트 폰트 */
     font: LocalizedFont
+    /** 헤더 텍스트 폰트 */
+    headerFont: LocalizedFont
     fontSize: LocalizedNumber
     paddingTop: LocalizedNumber
     paddingRight: LocalizedNumber
@@ -260,9 +263,10 @@ export type ThemeConfig = Omit<RawThemeConfig, 'header' | 'name' | 'bubbleLeft' 
   }
   bond: Omit<
     RawThemeConfig['bond'],
-    'font' | 'fontSize' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
+    'font' | 'headerFont' | 'fontSize' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
   > & {
     font: string
+    headerFont: string
     fontSize: number
     paddingTop: number
     paddingRight: number
@@ -317,6 +321,7 @@ export function resolveThemeConfig(config: RawThemeConfig, lang: Language): Them
     bond: {
       ...config.bond,
       font: resolveStr(config.bond.font),
+      headerFont: resolveStr(config.bond.headerFont),
       fontSize: resolveNum(config.bond.fontSize),
       paddingTop: resolveNum(config.bond.paddingTop),
       paddingRight: resolveNum(config.bond.paddingRight),
@@ -441,6 +446,11 @@ export const momotalk: RawThemeConfig = {
       ko: 'GyeonggiTitle, sans-serif',
       ja: 'ShinMGo-Medium, sans-serif',
       en: 'NotoSans, sans-serif',
+    },
+    headerFont: {
+      ko: 'GyeonggiTitleBold, sans-serif',
+      ja: 'ShinMGo-DeBold, sans-serif',
+      en: 'NotoSansBold, sans-serif',
     },
     fontSize: {ko: 38, ja: 36, en: 38},
     paddingTop: {ko: 24, ja: 24, en: 24},
@@ -572,7 +582,16 @@ export const imessage: RawThemeConfig = {
     borderColor: 'transparent',
     borderWidth: 0,
     textColor: '#000000',
-    font: 'SF Pro Display, -apple-system, sans-serif',
+    font: {
+      ko: 'SF Pro Display, -apple-system, sans-serif',
+      ja: 'SF Pro Display, -apple-system, sans-serif',
+      en: 'SF Pro Display, -apple-system, sans-serif',
+    },
+    headerFont: {
+      ko: 'SF Pro Display, -apple-system, sans-serif',
+      ja: 'SF Pro Display, -apple-system, sans-serif',
+      en: 'SF Pro Display, -apple-system, sans-serif',
+    },
     fontSize: 16,
     paddingTop: 8,
     paddingRight: 16,
@@ -703,7 +722,16 @@ export const line: RawThemeConfig = {
     borderColor: 'transparent',
     borderWidth: 0,
     textColor: '#ffffff',
-    font: 'Noto Sans KR, sans-serif',
+    font: {
+      ko: 'Apple SD Gothic Neo, sans-serif',
+      ja: 'Apple SD Gothic Neo, sans-serif',
+      en: 'Apple SD Gothic Neo, sans-serif',
+    },
+    headerFont: {
+      ko: 'Apple SD Gothic Neo, sans-serif',
+      ja: 'Apple SD Gothic Neo, sans-serif',
+      en: 'Apple SD Gothic Neo, sans-serif',
+    },
     fontSize: 15,
     paddingTop: 6,
     paddingRight: 16,
@@ -834,7 +862,16 @@ export const kakaotalk: RawThemeConfig = {
     borderColor: 'transparent',
     borderWidth: 0,
     textColor: '#ffffff',
-    font: 'Noto Sans KR, sans-serif',
+    font: {
+      ko: 'Kakao, sans-serif',
+      ja: 'Kakao, sans-serif',
+      en: 'Kakao, sans-serif',
+    },
+    headerFont: {
+      ko: 'Kakao, sans-serif',
+      ja: 'Kakao, sans-serif',
+      en: 'Kakao, sans-serif',
+    },
     fontSize: 15,
     paddingTop: 6,
     paddingRight: 16,

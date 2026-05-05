@@ -1281,15 +1281,16 @@ async function renderToContext(
         )
 
         // Header Text
+        const otHeaderFont = resolveOpentypeFont(config.bond.headerFont)
         drawText(
           ctx,
           headerText,
           bannerX + config.bond.paddingLeft + config.bond.headerBarWidth + 10,
           cursorY + config.bond.paddingTop + (config.bond.headerBarHeight - config.bond.headerFontSize) / 2,
           config.bond.headerFontSize,
-          config.bond.font,
+          config.bond.headerFont,
           config.bond.headerColor,
-          otBondFont,
+          otHeaderFont,
         )
 
         // Divider
@@ -1940,7 +1941,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           // Header Bar & Text
           svgParts.push(`
             <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop}" width="${config.bond.headerBarWidth}" height="${config.bond.headerBarHeight}" fill="${config.bond.headerBarColor}" />
-            ${renderSvgText(headerText, bannerX + config.bond.paddingLeft + config.bond.headerBarWidth + 10, cursorY + config.bond.paddingTop + (config.bond.headerBarHeight - config.bond.headerFontSize) / 2, bondFont, config.bond.headerFontSize, config.bond.headerColor, 'start', 'hanging', 'normal')}
+            ${renderSvgText(headerText, bannerX + config.bond.paddingLeft + config.bond.headerBarWidth + 10, cursorY + config.bond.paddingTop + (config.bond.headerBarHeight - config.bond.headerFontSize) / 2, config.bond.headerFont, config.bond.headerFontSize, config.bond.headerColor, 'start', 'hanging', 'normal')}
             <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop}" width="${bannerW - config.bond.paddingLeft - config.bond.paddingRight}" height="${config.bond.dividerThickness}" fill="${config.bond.dividerColor}" />
           `)
 
