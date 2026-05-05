@@ -413,7 +413,7 @@ export const momotalk: RawThemeConfig = {
     tailRadius: 1.5,
   },
   bond: {
-    backgroundColor: '#FCEEF0',
+    backgroundColor: '#FFEDF1',
     borderColor: '#F1DDE1',
     textColor: '#ffffff',
     font: {
