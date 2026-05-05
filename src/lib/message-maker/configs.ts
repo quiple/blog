@@ -495,7 +495,7 @@ export const momotalk: RawThemeConfig = {
     marginTop: 2.5,
     marginBottom: 0,
     marginLeft: 0,
-    marginRight: -4,
+    marginRight: -12,
     headerFontSize: {ko: 44.5, ja: 43, en: 44.5},
     headerColor: '#4C5B6F',
     headerBarWidth: 5.5,
