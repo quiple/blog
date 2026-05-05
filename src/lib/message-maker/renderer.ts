@@ -1349,8 +1349,8 @@ async function renderToContext(
           ctx.fillStyle = config.bond.buttonShadowColor
           if (config.bond.buttonShadowBlur > 0) {
             ctx.shadowColor = config.bond.buttonShadowColor
-            ctx.shadowBlur = config.bond.buttonShadowBlur
-            ctx.shadowOffsetY = config.bond.buttonShadowHeight
+            ctx.shadowBlur = config.bond.buttonShadowBlur * scale
+            ctx.shadowOffsetY = config.bond.buttonShadowHeight * scale
           }
           const bs = config.bond.buttonShadowSize
           roundRect(
