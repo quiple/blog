@@ -581,7 +581,13 @@ export function calculateCanvasHeight(
 
   for (let i = 0; i < messages.length; i++) {
     const msg = messages[i]
-    if (i > 0) totalHeight += config.chat.groupGap
+    if (i > 0) {
+      if (msg.type === 'bond') {
+        totalHeight += config.chat.messageGap
+      } else {
+        totalHeight += config.chat.groupGap
+      }
+    }
 
     const isLeft = msg.type === 'left'
     if (isLeft) {
@@ -998,7 +1004,13 @@ async function renderToContext(
 
   for (let i = 0; i < messages.length; i++) {
     const msg = messages[i]
-    if (i > 0) cursorY += config.chat.groupGap
+    if (i > 0) {
+      if (msg.type === 'bond') {
+        cursorY += config.chat.messageGap
+      } else {
+        cursorY += config.chat.groupGap
+      }
+    }
 
     // 그룹 캐시 확인
     // 캔버스 높이가 변해도 기존 캐시를 재사용하기 위해 msgHash에서 height를 제외
@@ -1704,7 +1716,13 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
     for (let i = 0; i < messages.length; i++) {
       const msg = messages[i]
-      if (i > 0) cursorY += config.chat.groupGap
+      if (i > 0) {
+        if (msg.type === 'bond') {
+          cursorY += config.chat.messageGap
+        } else {
+          cursorY += config.chat.groupGap
+        }
+      }
 
       if (msg.type === 'left') {
         const profileX = chatLeft
