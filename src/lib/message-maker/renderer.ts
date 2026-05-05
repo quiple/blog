@@ -1381,6 +1381,8 @@ async function renderToContext(
             'top',
             1.0,
             'center',
+            config.bond.buttonTextBorderColor,
+            config.bond.buttonTextBorderWidth,
           )
         }
         ctx.restore() // restore outer save
@@ -1426,8 +1428,8 @@ async function renderToContext(
             config.bond.textColor,
             otBondFont,
             'top',
-            'center',
-            1,
+            1.0,
+            'left',
             config.bond.buttonTextBorderColor,
             config.bond.buttonTextBorderWidth,
           )
