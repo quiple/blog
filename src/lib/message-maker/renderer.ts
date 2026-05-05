@@ -1261,9 +1261,13 @@ async function renderToContext(
         ctx.fill()
 
         if (config.bond.borderWidth > 0 && config.bond.borderColor !== 'transparent') {
+          ctx.save()
           ctx.strokeStyle = config.bond.borderColor
           ctx.lineWidth = config.bond.borderWidth
+          const bw = config.bond.borderWidth
+          roundRect(ctx, bannerX + bw / 2, cursorY + bw / 2, bannerW - bw, bannerH - bw, config.bond.borderRadius)
           ctx.stroke()
+          ctx.restore()
         }
 
         // Header Bar
@@ -1301,9 +1305,26 @@ async function renderToContext(
         const btnY =
           cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop + 2 + config.bond.buttonMarginTop
 
-        ctx.fillStyle = config.bond.buttonShadowColor
-        roundRect(ctx, btnX, btnY + config.bond.buttonShadowHeight, btnW, buttonH, config.bond.buttonBorderRadius)
-        ctx.fill()
+        if (config.bond.buttonShadowColor !== 'transparent') {
+          ctx.save()
+          ctx.fillStyle = config.bond.buttonShadowColor
+          if (config.bond.buttonShadowBlur > 0) {
+            ctx.shadowColor = config.bond.buttonShadowColor
+            ctx.shadowBlur = config.bond.buttonShadowBlur
+            ctx.shadowOffsetY = config.bond.buttonShadowHeight
+          }
+          const bs = config.bond.buttonShadowSize
+          roundRect(
+            ctx,
+            btnX - bs,
+            btnY + (config.bond.buttonShadowBlur > 0 ? 0 : config.bond.buttonShadowHeight) - bs,
+            btnW + bs * 2,
+            buttonH + bs * 2,
+            config.bond.buttonBorderRadius,
+          )
+          ctx.fill()
+          ctx.restore()
+        }
 
         // Button Background
         ctx.fillStyle = config.bond.buttonBackgroundColor
@@ -1312,10 +1333,13 @@ async function renderToContext(
 
         // Button Border
         if (config.bond.buttonBorderWidth > 0 && config.bond.buttonBorderColor !== 'transparent') {
+          ctx.save()
           ctx.strokeStyle = config.bond.buttonBorderColor
           ctx.lineWidth = config.bond.buttonBorderWidth
-          roundRect(ctx, btnX, btnY, btnW, buttonH, config.bond.buttonBorderRadius)
+          const bbw = config.bond.buttonBorderWidth
+          roundRect(ctx, btnX + bbw / 2, btnY + bbw / 2, btnW - bbw, buttonH - bbw, config.bond.buttonBorderRadius)
           ctx.stroke()
+          ctx.restore()
         }
 
         // Button Text
@@ -1353,6 +1377,16 @@ async function renderToContext(
         ctx.fillStyle = config.bond.backgroundColor
         roundRect(ctx, bannerX, cursorY, bannerW, bannerH, config.bond.borderRadius)
         ctx.fill()
+
+        if (config.bond.borderWidth > 0 && config.bond.borderColor !== 'transparent') {
+          ctx.save()
+          ctx.strokeStyle = config.bond.borderColor
+          ctx.lineWidth = config.bond.borderWidth
+          const bw = config.bond.borderWidth
+          roundRect(ctx, bannerX + bw / 2, cursorY + bw / 2, bannerW - bw, bannerH - bw, config.bond.borderRadius)
+          ctx.stroke()
+          ctx.restore()
+        }
 
         for (let li = 0; li < lines.length; li++) {
           const textX = bannerX + config.bond.paddingLeft
@@ -1893,8 +1927,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           const gradId = `bondGrad-${i}`
 
           // Outer Box & Definitions
+          const bw = config.bond.borderWidth
           svgParts.push(`
-            <rect x="${bannerX}" y="${cursorY}" width="${bannerW}" height="${bannerH}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="${config.bond.borderWidth}" />
+            <rect x="${bannerX + bw / 2}" y="${cursorY + bw / 2}" width="${bannerW - bw}" height="${bannerH - bw}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="${config.bond.borderWidth}" />
           `)
 
           // Header Bar & Text
@@ -1909,9 +1944,36 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           const btnY =
             cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop + 2 + config.bond.buttonMarginTop
 
+          const bbw = config.bond.buttonBorderWidth
+          const bs = config.bond.buttonShadowSize
+          const bsh = config.bond.buttonShadowHeight
+          const bsb = config.bond.buttonShadowBlur
+
+          if (config.bond.buttonShadowColor !== 'transparent') {
+            const filterId = `shadow-${i}`
+            if (bsb > 0) {
+              svgParts.push(`
+                <defs>
+                  <filter id="${filterId}" x="-50%" y="-50%" width="200%" height="200%">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="${bsb / 2}" />
+                    <feOffset dx="0" dy="${bsh}" result="offsetblur" />
+                    <feFlood flood-color="${config.bond.buttonShadowColor}" />
+                    <feComposite in2="offsetblur" operator="in" />
+                    <feMerge>
+                      <feMergeNode />
+                      <feMergeNode in="SourceGraphic" />
+                    </feMerge>
+                  </filter>
+                </defs>
+              `)
+            }
+            svgParts.push(`
+              <rect x="${btnX - bs}" y="${btnY + (bsb > 0 ? 0 : bsh) - bs}" width="${btnW + bs * 2}" height="${buttonH + bs * 2}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonShadowColor}" ${bsb > 0 ? `filter="url(#${filterId})"` : ''} />
+            `)
+          }
+
           svgParts.push(`
-            <rect x="${btnX}" y="${btnY + config.bond.buttonShadowHeight}" width="${btnW}" height="${buttonH}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonShadowColor}" />
-            <rect x="${btnX}" y="${btnY}" width="${btnW}" height="${buttonH}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonBackgroundColor}" stroke="${config.bond.buttonBorderColor}" stroke-width="${config.bond.buttonBorderWidth}" />
+            <rect x="${btnX + bbw / 2}" y="${btnY + bbw / 2}" width="${btnW - bbw}" height="${buttonH - bbw}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonBackgroundColor}" stroke="${config.bond.buttonBorderColor}" stroke-width="${config.bond.buttonBorderWidth}" />
           `)
 
           // Button Text
@@ -1947,8 +2009,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
           const bannerX = chatLeft + bannerLeftOffset + config.bond.marginLeft + (availableWidth - bannerW) / 2
 
+          const bw = config.bond.borderWidth
           svgParts.push(
-            `<rect x="${bannerX}" y="${cursorY}" width="${bannerW}" height="${bannerH}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" />`,
+            `<rect x="${bannerX + bw / 2}" y="${cursorY + bw / 2}" width="${bannerW - bw}" height="${bannerH - bw}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="${config.bond.borderWidth}" />`,
           )
 
           for (let li = 0; li < lines.length; li++) {
