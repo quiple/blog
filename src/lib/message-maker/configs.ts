@@ -189,6 +189,8 @@ export interface RawThemeConfig {
     marginRight: number
     /** 헤더 텍스트 폰트 크기 */
     headerFontSize: LocalizedNumber
+    /** 헤더 텍스트 상하 위치 보정치 (언어별) */
+    headerOffsetY: LocalizedNumber
     /** 헤더 텍스트 색상 */
     headerColor: string
     /** 헤더 좌측 바 너비 */
@@ -285,15 +287,21 @@ export type ThemeConfig = Omit<RawThemeConfig, 'header' | 'name' | 'bubbleLeft' 
     | 'headerFont'
     | 'fontSize'
     | 'headerFontSize'
+    | 'headerOffsetY'
     | 'paddingTop'
     | 'paddingRight'
     | 'paddingBottom'
     | 'paddingLeft'
+    | 'buttonPaddingTop'
+    | 'buttonPaddingRight'
+    | 'buttonPaddingBottom'
+    | 'buttonPaddingLeft'
   > & {
     font: string
     headerFont: string
     fontSize: number
     headerFontSize: number
+    headerOffsetY: number
     buttonPaddingTop: number
     buttonPaddingRight: number
     buttonPaddingBottom: number
@@ -354,6 +362,7 @@ export function resolveThemeConfig(config: RawThemeConfig, lang: Language): Them
       headerFont: resolveStr(config.bond.headerFont),
       fontSize: resolveNum(config.bond.fontSize),
       headerFontSize: resolveNum(config.bond.headerFontSize),
+      headerOffsetY: resolveNum(config.bond.headerOffsetY),
       buttonPaddingTop: resolveNum(config.bond.buttonPaddingTop),
       buttonPaddingRight: resolveNum(config.bond.buttonPaddingRight),
       buttonPaddingBottom: resolveNum(config.bond.buttonPaddingBottom),
@@ -499,6 +508,7 @@ export const momotalk: RawThemeConfig = {
     marginLeft: 0,
     marginRight: -12,
     headerFontSize: {ko: 44.5, ja: 43, en: 44.5},
+    headerOffsetY: {ko: 0, ja: 0, en: 0},
     headerColor: '#4C5B6F',
     headerBarWidth: 5.5,
     headerBarHeight: 44,
@@ -648,6 +658,7 @@ export const imessage: RawThemeConfig = {
     marginLeft: 0,
     marginRight: 0,
     headerFontSize: {ko: 16, ja: 16, en: 16},
+    headerOffsetY: {ko: 0, ja: 0, en: 0},
     headerColor: '#000000',
     headerBarWidth: 0,
     headerBarHeight: 0,
@@ -797,6 +808,7 @@ export const line: RawThemeConfig = {
     marginLeft: 0,
     marginRight: 0,
     headerFontSize: {ko: 16, ja: 16, en: 16},
+    headerOffsetY: {ko: 0, ja: 0, en: 0},
     headerColor: '#000000',
     headerBarWidth: 0,
     headerBarHeight: 0,
@@ -946,6 +958,7 @@ export const kakaotalk: RawThemeConfig = {
     marginLeft: 0,
     marginRight: 0,
     headerFontSize: {ko: 16, ja: 16, en: 16},
+    headerOffsetY: {ko: 0, ja: 0, en: 0},
     headerColor: '#000000',
     headerBarWidth: 0,
     headerBarHeight: 0,
