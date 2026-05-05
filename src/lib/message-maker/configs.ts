@@ -163,6 +163,7 @@ export interface RawThemeConfig {
   /** 인연 스토리 배너 (가운데 정렬) */
   bond: {
     backgroundColor: string
+    borderColor: string
     textColor: string
     font: LocalizedFont
     fontSize: LocalizedNumber
@@ -171,6 +172,34 @@ export interface RawThemeConfig {
     paddingBottom: LocalizedNumber
     paddingLeft: LocalizedNumber
     borderRadius: number
+    /** 배너 최대 너비 비율 (대화 영역 대비) */
+    maxWidthRatio: number
+    /** 헤더 텍스트 폰트 크기 */
+    headerFontSize: number
+    /** 헤더 텍스트 색상 */
+    headerColor: string
+    /** 헤더 좌측 바 너비 */
+    headerBarWidth: number
+    /** 헤더 좌측 바 높이 */
+    headerBarHeight: number
+    /** 헤더 좌측 바 색상 */
+    headerBarColor: string
+    /** 구분선 색상 */
+    dividerColor: string
+    /** 버튼 그라데이션 시작 색상 */
+    buttonGradientStart: string
+    /** 버튼 그라데이션 끝 색상 */
+    buttonGradientEnd: string
+    /** 버튼 그림자/하단 테두리 색상 */
+    buttonShadowColor: string
+    /** 버튼 그림자/하단 테두리 두께 */
+    buttonShadowHeight: number
+    /** 버튼 모서리 반경 */
+    buttonBorderRadius: number
+    /** 버튼과 좌우 여백 */
+    buttonPaddingX: number
+    /** 버튼과 상단(구분선) 간격 */
+    buttonMarginTop: number
   }
 }
 
@@ -329,7 +358,7 @@ export const momotalk: RawThemeConfig = {
   },
   name: {
     font: {
-      ko: 'GyeonggiTitleBold, Noto Sans KR, sans-serif',
+      ko: 'GyeonggiTitleBold, sans-serif',
       ja: 'ShinMGo-DeBold, sans-serif',
       en: 'NotoSansBold, sans-serif',
     },
@@ -384,7 +413,8 @@ export const momotalk: RawThemeConfig = {
     tailRadius: 1.5,
   },
   bond: {
-    backgroundColor: '#FF8FA0',
+    backgroundColor: '#FCEEF0',
+    borderColor: '#F1DDE1',
     textColor: '#ffffff',
     font: {
       ko: 'GyeonggiTitle, sans-serif',
@@ -392,11 +422,25 @@ export const momotalk: RawThemeConfig = {
       en: 'NotoSans, sans-serif',
     },
     fontSize: {ko: 38, ja: 36, en: 38},
-    paddingTop: {ko: 16, ja: 14, en: 8},
-    paddingRight: {ko: 32, ja: 32, en: 32},
-    paddingBottom: {ko: 10, ja: 12, en: 18},
-    paddingLeft: {ko: 32, ja: 32, en: 32},
-    borderRadius: 20,
+    paddingTop: {ko: 24, ja: 24, en: 24},
+    paddingRight: {ko: 30, ja: 30, en: 30},
+    paddingBottom: {ko: 24, ja: 24, en: 24},
+    paddingLeft: {ko: 30, ja: 30, en: 30},
+    borderRadius: 12,
+    maxWidthRatio: 0.95,
+    headerFontSize: 32,
+    headerColor: '#4C5B6F',
+    headerBarWidth: 5,
+    headerBarHeight: 28,
+    headerBarColor: '#F2899A',
+    dividerColor: '#E2D2D7',
+    buttonGradientStart: '#FF8DA1',
+    buttonGradientEnd: '#FB728A',
+    buttonShadowColor: '#E05F77',
+    buttonShadowHeight: 4,
+    buttonBorderRadius: 16,
+    buttonPaddingX: 30,
+    buttonMarginTop: 24,
   },
 }
 
@@ -495,6 +539,7 @@ export const imessage: RawThemeConfig = {
   },
   bond: {
     backgroundColor: '#e5e5ea',
+    borderColor: 'transparent',
     textColor: '#000000',
     font: 'SF Pro Display, -apple-system, sans-serif',
     fontSize: 16,
@@ -503,6 +548,20 @@ export const imessage: RawThemeConfig = {
     paddingBottom: 8,
     paddingLeft: 16,
     borderRadius: 16,
+    maxWidthRatio: 1.0,
+    headerFontSize: 16,
+    headerColor: '#000000',
+    headerBarWidth: 0,
+    headerBarHeight: 0,
+    headerBarColor: 'transparent',
+    dividerColor: 'transparent',
+    buttonGradientStart: 'transparent',
+    buttonGradientEnd: 'transparent',
+    buttonShadowColor: 'transparent',
+    buttonShadowHeight: 0,
+    buttonBorderRadius: 0,
+    buttonPaddingX: 0,
+    buttonMarginTop: 0,
   },
 }
 
@@ -601,6 +660,7 @@ export const line: RawThemeConfig = {
   },
   bond: {
     backgroundColor: '#6e93c0',
+    borderColor: 'transparent',
     textColor: '#ffffff',
     font: 'Noto Sans KR, sans-serif',
     fontSize: 15,
@@ -609,6 +669,20 @@ export const line: RawThemeConfig = {
     paddingBottom: 6,
     paddingLeft: 16,
     borderRadius: 16,
+    maxWidthRatio: 1.0,
+    headerFontSize: 16,
+    headerColor: '#000000',
+    headerBarWidth: 0,
+    headerBarHeight: 0,
+    headerBarColor: 'transparent',
+    dividerColor: 'transparent',
+    buttonGradientStart: 'transparent',
+    buttonGradientEnd: 'transparent',
+    buttonShadowColor: 'transparent',
+    buttonShadowHeight: 0,
+    buttonBorderRadius: 0,
+    buttonPaddingX: 0,
+    buttonMarginTop: 0,
   },
 }
 
@@ -707,6 +781,7 @@ export const kakaotalk: RawThemeConfig = {
   },
   bond: {
     backgroundColor: '#3f3f3f',
+    borderColor: 'transparent',
     textColor: '#ffffff',
     font: 'Noto Sans KR, sans-serif',
     fontSize: 15,
@@ -715,6 +790,20 @@ export const kakaotalk: RawThemeConfig = {
     paddingBottom: 6,
     paddingLeft: 16,
     borderRadius: 16,
+    maxWidthRatio: 1.0,
+    headerFontSize: 16,
+    headerColor: '#000000',
+    headerBarWidth: 0,
+    headerBarHeight: 0,
+    headerBarColor: 'transparent',
+    dividerColor: 'transparent',
+    buttonGradientStart: 'transparent',
+    buttonGradientEnd: 'transparent',
+    buttonShadowColor: 'transparent',
+    buttonShadowHeight: 0,
+    buttonBorderRadius: 0,
+    buttonPaddingX: 0,
+    buttonMarginTop: 0,
   },
 }
 

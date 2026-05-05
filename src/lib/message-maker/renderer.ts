@@ -90,6 +90,7 @@ function drawTextOt(
   color: string,
   baseline: 'top' | 'middle' = 'top',
   scaleX: number = 1.0,
+  align: CanvasTextAlign = 'left',
 ) {
   let drawY = y
   if (baseline === 'top') {
@@ -98,9 +99,18 @@ function drawTextOt(
     drawY = y + ((font.ascender + font.descender) / (2 * font.unitsPerEm)) * fontSize
   }
 
+  let drawX = x
+  if (align === 'center') {
+    const width = measureTextOt(font, text, fontSize)
+    drawX = x - (width * scaleX) / 2
+  } else if (align === 'right') {
+    const width = measureTextOt(font, text, fontSize)
+    drawX = x - width * scaleX
+  }
+
   const path = font.getPath(text, 0, 0, fontSize)
   ctx.save()
-  ctx.translate(x, drawY)
+  ctx.translate(drawX, drawY)
   if (scaleX !== 1.0) {
     ctx.scale(scaleX, 1)
   }
@@ -513,13 +523,15 @@ function drawText(
   otFont?: opentype.Font,
   baseline: 'top' | 'middle' = 'top',
   scaleX: number = 1.0,
+  align: CanvasTextAlign = 'left',
 ) {
   if (otFont) {
-    drawTextOt(ctx, otFont, text, x, y, fontSize, color, baseline, scaleX)
+    drawTextOt(ctx, otFont, text, x, y, fontSize, color, baseline, scaleX, align)
   } else {
     ctx.fillStyle = color
     ctx.font = `${fontSize}px ${fontFamily}`
     ctx.textBaseline = baseline === 'middle' ? 'middle' : 'top'
+    ctx.textAlign = align
     if (scaleX !== 1.0) {
       ctx.save()
       ctx.scale(scaleX, 1)
@@ -584,19 +596,44 @@ export function calculateCanvasHeight(
           : lang === 'ko'
             ? `${name}의 인연 스토리로`
             : `To ${name}'s Relationship Story`
-      // Using bubbleLeft font and size as approximation for bond text if not explicitly using bond config,
-      // but we do have config.bond!
       const otBondFont = resolveOpentypeFont(config.bond.font)
       tempCtx.font = `${config.bond.fontSize}px ${config.bond.font}`
-      const lines = wrapText(
-        tempCtx,
-        text,
-        chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight,
-        otBondFont,
-        config.bond.fontSize,
-        breakHangul,
-      )
-      totalHeight += lines.length * config.bond.fontSize + config.bond.paddingTop + config.bond.paddingBottom
+
+      if (themeName === 'momotalk') {
+        const bannerW = chatAreaWidth * config.bond.maxWidthRatio
+        const btnW = bannerW - config.bond.buttonPaddingX * 2
+
+        const lines = wrapText(
+          tempCtx,
+          text,
+          btnW - 20, // 텍스트 여백 약간
+          otBondFont,
+          config.bond.fontSize,
+          breakHangul,
+        )
+        const buttonH = lines.length * config.bond.fontSize * 1.2 + 30
+        const headerH = Math.max(config.bond.headerBarHeight, config.bond.headerFontSize)
+
+        const bannerH =
+          config.bond.paddingTop +
+          headerH +
+          config.bond.buttonMarginTop +
+          2 +
+          config.bond.buttonMarginTop +
+          buttonH +
+          config.bond.paddingBottom
+        totalHeight += bannerH
+      } else {
+        const lines = wrapText(
+          tempCtx,
+          text,
+          chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight,
+          otBondFont,
+          config.bond.fontSize,
+          breakHangul,
+        )
+        totalHeight += lines.length * config.bond.fontSize + config.bond.paddingTop + config.bond.paddingBottom
+      }
     } else {
       const bubbleCfg = isLeft ? config.bubbleLeft : config.bubbleRight
       const otFont = isLeft ? otBubbleLeft : otBubbleRight
@@ -1179,36 +1216,137 @@ async function renderToContext(
             ? `${name}의 인연 스토리로`
             : `To ${name}'s Relationship Story`
 
-      const maxTextWidth = chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight
-      ctx.font = `${config.bond.fontSize}px ${config.bond.font}`
-      const lines = wrapText(ctx, bondText, maxTextWidth, otBondFont, config.bond.fontSize, breakHangul)
-      const lineH = config.bond.fontSize * 1.2
-      const textBlockWidth = Math.max(...lines.map((l) => measureTextWidth(l, ctx, otBondFont, config.bond.fontSize)))
-      const bannerW = textBlockWidth + config.bond.paddingLeft + config.bond.paddingRight
-      const bannerH = lines.length * lineH + config.bond.paddingTop + config.bond.paddingBottom
+      if (themeName === 'momotalk') {
+        const headerText = lang === 'ja' ? '絆イベント' : lang === 'ko' ? '인연 이벤트' : 'Relationship Event'
 
-      const bannerX = chatLeft + (chatAreaWidth - bannerW) / 2
+        const bannerW = chatAreaWidth * config.bond.maxWidthRatio
+        const btnW = bannerW - config.bond.buttonPaddingX * 2
 
-      ctx.fillStyle = config.bond.backgroundColor
-      roundRect(ctx, bannerX, cursorY, bannerW, bannerH, config.bond.borderRadius)
-      ctx.fill()
+        ctx.font = `${config.bond.fontSize}px ${config.bond.font}`
+        const lines = wrapText(ctx, bondText, btnW - 20, otBondFont, config.bond.fontSize, breakHangul)
+        const buttonH = lines.length * config.bond.fontSize * 1.2 + 30
+        const headerH = Math.max(config.bond.headerBarHeight, config.bond.headerFontSize)
+        const bannerH =
+          config.bond.paddingTop +
+          headerH +
+          config.bond.buttonMarginTop +
+          2 +
+          config.bond.buttonMarginTop +
+          buttonH +
+          config.bond.paddingBottom
 
-      for (let li = 0; li < lines.length; li++) {
-        const textX = bannerX + config.bond.paddingLeft
-        const textY = cursorY + config.bond.paddingTop + li * lineH
+        // 가운데 정렬 대신 버블 시작점 근처로 정렬 (좌측 패딩 고려)
+        const bannerX = chatLeft + config.bubbleLeft.marginLeft + (chatAreaWidth - bannerW) / 2
+
+        // Outer Box
+        ctx.save()
+        ctx.fillStyle = config.bond.backgroundColor
+        roundRect(ctx, bannerX, cursorY, bannerW, bannerH, config.bond.borderRadius)
+        ctx.fill()
+
+        ctx.strokeStyle = config.bond.borderColor
+        ctx.lineWidth = 1.5
+        ctx.stroke()
+
+        // Header Bar
+        ctx.fillStyle = config.bond.headerBarColor
+        ctx.fillRect(
+          bannerX + config.bond.paddingLeft,
+          cursorY + config.bond.paddingTop,
+          config.bond.headerBarWidth,
+          config.bond.headerBarHeight,
+        )
+
+        // Header Text
         drawText(
           ctx,
-          lines[li],
-          textX,
-          textY,
-          config.bond.fontSize,
+          headerText,
+          bannerX + config.bond.paddingLeft + config.bond.headerBarWidth + 10,
+          cursorY + config.bond.paddingTop + (config.bond.headerBarHeight - config.bond.headerFontSize) / 2,
+          config.bond.headerFontSize,
           config.bond.font,
-          config.bond.textColor,
+          config.bond.headerColor,
           otBondFont,
         )
-      }
 
-      cursorY += bannerH
+        // Divider
+        ctx.fillStyle = config.bond.dividerColor
+        ctx.fillRect(
+          bannerX + config.bond.paddingLeft,
+          cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop,
+          bannerW - config.bond.paddingLeft - config.bond.paddingRight,
+          2,
+        )
+
+        // Button Shadow / Bottom Edge
+        const btnX = bannerX + config.bond.buttonPaddingX
+        const btnY =
+          cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop + 2 + config.bond.buttonMarginTop
+
+        ctx.fillStyle = config.bond.buttonShadowColor
+        roundRect(ctx, btnX, btnY + config.bond.buttonShadowHeight, btnW, buttonH, config.bond.buttonBorderRadius)
+        ctx.fill()
+
+        // Button Gradient Background
+        const btnGrad = ctx.createLinearGradient(0, btnY, 0, btnY + buttonH)
+        btnGrad.addColorStop(0, config.bond.buttonGradientStart)
+        btnGrad.addColorStop(1, config.bond.buttonGradientEnd)
+        ctx.fillStyle = btnGrad
+        roundRect(ctx, btnX, btnY, btnW, buttonH, config.bond.buttonBorderRadius)
+        ctx.fill()
+
+        // Button Text
+        for (let li = 0; li < lines.length; li++) {
+          const textY = btnY + 15 + li * config.bond.fontSize * 1.2
+          drawText(
+            ctx,
+            lines[li],
+            btnX + btnW / 2,
+            textY,
+            config.bond.fontSize,
+            config.bond.font,
+            config.bond.textColor,
+            otBondFont,
+            'top',
+            1.0,
+            'center',
+          )
+        }
+        ctx.restore() // restore outer save
+
+        cursorY += bannerH
+      } else {
+        const maxTextWidth = chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight
+        ctx.font = `${config.bond.fontSize}px ${config.bond.font}`
+        const lines = wrapText(ctx, bondText, maxTextWidth, otBondFont, config.bond.fontSize, breakHangul)
+        const lineH = config.bond.fontSize * 1.2
+        const textBlockWidth = Math.max(...lines.map((l) => measureTextWidth(l, ctx, otBondFont, config.bond.fontSize)))
+        const bannerW = textBlockWidth + config.bond.paddingLeft + config.bond.paddingRight
+        const bannerH = lines.length * lineH + config.bond.paddingTop + config.bond.paddingBottom
+
+        const bannerX = chatLeft + (chatAreaWidth - bannerW) / 2
+
+        ctx.fillStyle = config.bond.backgroundColor
+        roundRect(ctx, bannerX, cursorY, bannerW, bannerH, config.bond.borderRadius)
+        ctx.fill()
+
+        for (let li = 0; li < lines.length; li++) {
+          const textX = bannerX + config.bond.paddingLeft
+          const textY = cursorY + config.bond.paddingTop + li * lineH
+          drawText(
+            ctx,
+            lines[li],
+            textX,
+            textY,
+            config.bond.fontSize,
+            config.bond.font,
+            config.bond.textColor,
+            otBondFont,
+          )
+        }
+
+        cursorY += bannerH
+      }
     }
 
     // 그룹 캐시 저장
@@ -1696,39 +1834,114 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
               : `To ${name}'s Relationship Story`
         const otBond = resolveOpentypeFont(bondFont)
 
-        const maxTextWidth = chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight
-        tempCtx.font = `${config.bond.fontSize}px ${bondFont}`
-        const lines = wrapText(tempCtx, bondText, maxTextWidth, otBond, config.bond.fontSize, breakHangul)
-        const lineH = config.bond.fontSize * 1.2
-        const textBlockWidth = Math.max(...lines.map((l) => measureTextWidth(l, tempCtx, otBond, config.bond.fontSize)))
-        const bannerW = textBlockWidth + config.bond.paddingLeft + config.bond.paddingRight
-        const bannerH = lines.length * lineH + config.bond.paddingTop + config.bond.paddingBottom
+        if (themeName === 'momotalk') {
+          const headerText = lang === 'ja' ? '絆イベント' : lang === 'ko' ? '인연 이벤트' : 'Relationship Event'
 
-        const bannerX = chatLeft + (chatAreaWidth - bannerW) / 2
+          const bannerW = chatAreaWidth * config.bond.maxWidthRatio
+          const btnW = bannerW - config.bond.buttonPaddingX * 2
 
-        svgParts.push(
-          `<rect x="${bannerX}" y="${cursorY}" width="${bannerW}" height="${bannerH}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" />`,
-        )
+          tempCtx.font = `${config.bond.fontSize}px ${bondFont}`
+          const lines = wrapText(tempCtx, bondText, btnW - 20, otBond, config.bond.fontSize, breakHangul)
+          const buttonH = lines.length * config.bond.fontSize * 1.2 + 30
+          const headerH = Math.max(config.bond.headerBarHeight, config.bond.headerFontSize)
+          const bannerH =
+            config.bond.paddingTop +
+            headerH +
+            config.bond.buttonMarginTop +
+            2 +
+            config.bond.buttonMarginTop +
+            buttonH +
+            config.bond.paddingBottom
 
-        for (let li = 0; li < lines.length; li++) {
-          const textX = bannerX + config.bond.paddingLeft
-          const textY = cursorY + config.bond.paddingTop + li * lineH
-          svgParts.push(
-            renderSvgText(
-              lines[li],
-              textX,
-              textY,
-              bondFont,
-              config.bond.fontSize,
-              config.bond.textColor,
-              'start',
-              'hanging',
-              'normal',
-            ),
+          const bannerX = chatLeft + config.bubbleLeft.marginLeft + (chatAreaWidth - bannerW) / 2
+
+          const clipId = `bondClip-${i}`
+          const gradId = `bondGrad-${i}`
+
+          // Outer Box & Definitions
+          svgParts.push(`
+            <defs>
+              <linearGradient id="${gradId}" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="${config.bond.buttonGradientStart}" />
+                <stop offset="100%" stop-color="${config.bond.buttonGradientEnd}" />
+              </linearGradient>
+            </defs>
+            <rect x="${bannerX}" y="${cursorY}" width="${bannerW}" height="${bannerH}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="1.5" />
+          `)
+
+          // Header Bar & Text
+          svgParts.push(`
+            <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop}" width="${config.bond.headerBarWidth}" height="${config.bond.headerBarHeight}" fill="${config.bond.headerBarColor}" />
+            ${renderSvgText(headerText, bannerX + config.bond.paddingLeft + config.bond.headerBarWidth + 10, cursorY + config.bond.paddingTop + (config.bond.headerBarHeight - config.bond.headerFontSize) / 2, bondFont, config.bond.headerFontSize, config.bond.headerColor, 'start', 'hanging', 'normal')}
+            <rect x="${bannerX + config.bond.paddingLeft}" y="${cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop}" width="${bannerW - config.bond.paddingLeft - config.bond.paddingRight}" height="2" fill="${config.bond.dividerColor}" />
+          `)
+
+          // Button
+          const btnX = bannerX + config.bond.buttonPaddingX
+          const btnY =
+            cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop + 2 + config.bond.buttonMarginTop
+
+          svgParts.push(`
+            <rect x="${btnX}" y="${btnY + config.bond.buttonShadowHeight}" width="${btnW}" height="${buttonH}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonShadowColor}" />
+            <rect x="${btnX}" y="${btnY}" width="${btnW}" height="${buttonH}" rx="${config.bond.buttonBorderRadius}" fill="url(#${gradId})" />
+          `)
+
+          // Button Text
+          for (let li = 0; li < lines.length; li++) {
+            const textY = btnY + 15 + li * config.bond.fontSize * 1.2
+            svgParts.push(
+              renderSvgText(
+                lines[li],
+                btnX + btnW / 2,
+                textY,
+                bondFont,
+                config.bond.fontSize,
+                config.bond.textColor,
+                'middle',
+                'hanging',
+                'normal',
+              ),
+            )
+          }
+
+          cursorY += bannerH
+        } else {
+          const maxTextWidth = chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight
+          tempCtx.font = `${config.bond.fontSize}px ${bondFont}`
+          const lines = wrapText(tempCtx, bondText, maxTextWidth, otBond, config.bond.fontSize, breakHangul)
+          const lineH = config.bond.fontSize * 1.2
+          const textBlockWidth = Math.max(
+            ...lines.map((l) => measureTextWidth(l, tempCtx, otBond, config.bond.fontSize)),
           )
-        }
+          const bannerW = textBlockWidth + config.bond.paddingLeft + config.bond.paddingRight
+          const bannerH = lines.length * lineH + config.bond.paddingTop + config.bond.paddingBottom
 
-        cursorY += bannerH
+          const bannerX = chatLeft + (chatAreaWidth - bannerW) / 2
+
+          svgParts.push(
+            `<rect x="${bannerX}" y="${cursorY}" width="${bannerW}" height="${bannerH}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" />`,
+          )
+
+          for (let li = 0; li < lines.length; li++) {
+            const textX = bannerX + config.bond.paddingLeft
+            const textY = cursorY + config.bond.paddingTop + li * lineH
+            svgParts.push(
+              renderSvgText(
+                lines[li],
+                textX,
+                textY,
+                bondFont,
+                config.bond.fontSize,
+                config.bond.textColor,
+                'start',
+                'hanging',
+                'normal',
+              ),
+            )
+          }
+
+          cursorY += bannerH
+        }
       }
     }
 
