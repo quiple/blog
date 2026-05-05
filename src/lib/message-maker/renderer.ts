@@ -580,10 +580,10 @@ export function calculateCanvasHeight(
       const name = msg.name || ''
       const text =
         lang === 'ja'
-          ? `${name}の絆ストーリー`
-          : lang === 'en'
-            ? `${name}'s Relationship Story`
-            : `${name}의 인연 스토리`
+          ? `${name}の絆ストーリーへ`
+          : lang === 'ko'
+            ? `${name}의 인연 스토리로`
+            : `To ${name}'s Relationship Story`
       // Using bubbleLeft font and size as approximation for bond text if not explicitly using bond config,
       // but we do have config.bond!
       const otBondFont = resolveOpentypeFont(config.bond.font)
