@@ -121,6 +121,8 @@ function drawTextOt(
     path.stroke = strokeColor
     path.strokeWidth = strokeWidth * 2
     ctx.lineJoin = 'round'
+    ctx.lineCap = 'round'
+    ctx.miterLimit = 2
     path.draw(ctx)
   }
 
@@ -552,6 +554,9 @@ function drawText(
       if (strokeColor && strokeWidth) {
         ctx.strokeStyle = strokeColor
         ctx.lineWidth = strokeWidth * 2
+        ctx.lineJoin = 'round'
+        ctx.lineCap = 'round'
+        ctx.miterLimit = 2
         ctx.strokeText(text, x / scaleX, y)
       }
       ctx.fillStyle = color
@@ -561,6 +566,9 @@ function drawText(
       if (strokeColor && strokeWidth) {
         ctx.strokeStyle = strokeColor
         ctx.lineWidth = strokeWidth * 2
+        ctx.lineJoin = 'round'
+        ctx.lineCap = 'round'
+        ctx.miterLimit = 2
         ctx.strokeText(text, x, y)
       }
       ctx.fillStyle = color
@@ -1655,7 +1663,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         const svgPath = path.toSVG(2)
         const strokeAttr =
           strokeColor && strokeWidth
-            ? ` stroke="${strokeColor}" stroke-width="${strokeWidth * 2}" stroke-linejoin="round" paint-order="stroke fill"`
+            ? ` stroke="${strokeColor}" stroke-width="${strokeWidth * 2}" stroke-linejoin="round" stroke-linecap="round" paint-order="stroke fill"`
             : ''
         if (scaleX !== 1.0) {
           return svgPath.replace(
@@ -1672,7 +1680,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         const anchor = align === 'center' || align === 'middle' ? 'middle' : 'start'
         const strokeAttr =
           strokeColor && strokeWidth
-            ? ` stroke="${strokeColor}" stroke-width="${strokeWidth * 2}" stroke-linejoin="round" paint-order="stroke fill"`
+            ? ` stroke="${strokeColor}" stroke-width="${strokeWidth * 2}" stroke-linejoin="round" stroke-linecap="round" paint-order="stroke fill"`
             : ''
         const transformAttr =
           scaleX !== 1.0 ? ` transform="translate(${x}, ${y}) scale(${scaleX}, 1) translate(${-x}, ${-y})"` : ''
