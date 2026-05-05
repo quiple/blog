@@ -91,6 +91,8 @@ function drawTextOt(
   baseline: 'top' | 'middle' = 'top',
   scaleX: number = 1.0,
   align: CanvasTextAlign = 'left',
+  strokeColor?: string,
+  strokeWidth?: number,
 ) {
   let drawY = y
   if (baseline === 'top') {
@@ -115,6 +117,10 @@ function drawTextOt(
     ctx.scale(scaleX, 1)
   }
   path.fill = color
+  if (strokeColor && strokeWidth) {
+    path.stroke = strokeColor
+    path.strokeWidth = strokeWidth
+  }
   path.draw(ctx)
   ctx.restore()
 }
@@ -524,9 +530,11 @@ function drawText(
   baseline: 'top' | 'middle' = 'top',
   scaleX: number = 1.0,
   align: CanvasTextAlign = 'left',
+  strokeColor?: string,
+  strokeWidth?: number,
 ) {
   if (otFont) {
-    drawTextOt(ctx, otFont, text, x, y, fontSize, color, baseline, scaleX, align)
+    drawTextOt(ctx, otFont, text, x, y, fontSize, color, baseline, scaleX, align, strokeColor, strokeWidth)
   } else {
     ctx.fillStyle = color
     ctx.font = `${fontSize}px ${fontFamily}`
@@ -535,9 +543,19 @@ function drawText(
     if (scaleX !== 1.0) {
       ctx.save()
       ctx.scale(scaleX, 1)
+      if (strokeColor && strokeWidth) {
+        ctx.strokeStyle = strokeColor
+        ctx.lineWidth = strokeWidth
+        ctx.strokeText(text, x / scaleX, y)
+      }
       ctx.fillText(text, x / scaleX, y)
       ctx.restore()
     } else {
+      if (strokeColor && strokeWidth) {
+        ctx.strokeStyle = strokeColor
+        ctx.lineWidth = strokeWidth
+        ctx.strokeText(text, x, y)
+      }
       ctx.fillText(text, x, y)
     }
   }
