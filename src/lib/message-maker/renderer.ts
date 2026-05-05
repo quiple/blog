@@ -1375,6 +1375,7 @@ async function renderToContext(
           ctx.save()
           ctx.strokeStyle = config.bond.buttonBorderColor
           ctx.lineWidth = config.bond.buttonBorderWidth
+          ctx.globalAlpha = config.bond.buttonBorderOpacity
           const bbw = config.bond.buttonBorderWidth
           const r = Math.max(0, config.bond.buttonBorderRadius - bbw / 2)
           roundRect(ctx, btnX + bbw / 2, btnY + bbw / 2, btnW - bbw, buttonH - bbw, r)
@@ -2043,7 +2044,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           }
 
           svgParts.push(`
-            <rect x="${btnX + bbw / 2}" y="${btnY + bbw / 2}" width="${btnW - bbw}" height="${buttonH - bbw}" rx="${br}" fill="${config.bond.buttonBackgroundColor}" stroke="${config.bond.buttonBorderColor}" stroke-width="${config.bond.buttonBorderWidth}" />
+            <rect x="${btnX + bbw / 2}" y="${btnY + bbw / 2}" width="${btnW - bbw}" height="${buttonH - bbw}" rx="${br}" fill="${config.bond.buttonBackgroundColor}" stroke="${config.bond.buttonBorderColor}" stroke-width="${config.bond.buttonBorderWidth}" stroke-opacity="${config.bond.buttonBorderOpacity}" />
           `)
 
           // Button Text
