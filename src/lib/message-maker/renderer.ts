@@ -1432,7 +1432,7 @@ async function renderToContext(
         }
 
         for (let li = 0; li < lines.length; li++) {
-          const textX = bannerX + config.bond.paddingLeft
+          const textX = bannerX + bannerW / 2
           const textY = cursorY + config.bond.paddingTop + li * lineH
           drawText(
             ctx,
@@ -1445,7 +1445,7 @@ async function renderToContext(
             otBondFont,
             'top',
             1.0,
-            'left',
+            'center',
             config.bond.buttonTextBorderColor,
             config.bond.buttonTextBorderWidth,
           )
@@ -2089,7 +2089,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           )
 
           for (let li = 0; li < lines.length; li++) {
-            const textX = bannerX + config.bond.paddingLeft
+            const textX = bannerX + bannerW / 2
             const textY = cursorY + config.bond.paddingTop + li * lineH
             svgParts.push(
               renderSvgText(
@@ -2099,7 +2099,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
                 bondFont,
                 config.bond.fontSize,
                 config.bond.textColor,
-                'start',
+                'middle',
                 'hanging',
                 'normal',
                 1.0,
