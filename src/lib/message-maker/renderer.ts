@@ -1308,6 +1308,7 @@ async function renderToContext(
 
         if (config.bond.buttonShadowColor !== 'transparent') {
           ctx.save()
+          ctx.globalAlpha = config.bond.buttonShadowOpacity
           ctx.fillStyle = config.bond.buttonShadowColor
           if (config.bond.buttonShadowBlur > 0) {
             ctx.shadowColor = config.bond.buttonShadowColor
@@ -1973,7 +1974,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
               `)
             }
             svgParts.push(`
-              <rect x="${btnX - bs}" y="${btnY + (bsb > 0 ? 0 : bsh) - bs}" width="${btnW + bs * 2}" height="${buttonH + bs * 2}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonShadowColor}" ${bsb > 0 ? `filter="url(#${filterId})"` : ''} />
+              <rect x="${btnX - bs}" y="${btnY + (bsb > 0 ? 0 : bsh) - bs}" width="${btnW + bs * 2}" height="${buttonH + bs * 2}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonShadowColor}" fill-opacity="${config.bond.buttonShadowOpacity}" ${bsb > 0 ? `filter="url(#${filterId})"` : ''} />
             `)
           }
 

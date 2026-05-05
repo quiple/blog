@@ -212,6 +212,8 @@ export interface RawThemeConfig {
     buttonShadowBlur: number
     /** 버튼 그림자 크기 (확장) */
     buttonShadowSize: number
+    /** 버튼 그림자 투명도 (0~1) */
+    buttonShadowOpacity: number
     /** 버튼 모서리 반경 */
     buttonBorderRadius: number
     /** 버튼과 좌우 여백 */
@@ -465,6 +467,7 @@ export const momotalk: RawThemeConfig = {
     buttonShadowHeight: 4,
     buttonShadowBlur: 8,
     buttonShadowSize: 0,
+    buttonShadowOpacity: 1,
     buttonBorderRadius: 16,
     buttonPaddingX: 30,
     buttonMarginTop: 24,
@@ -595,6 +598,7 @@ export const imessage: RawThemeConfig = {
     buttonShadowHeight: 0,
     buttonShadowBlur: 0,
     buttonShadowSize: 0,
+    buttonShadowOpacity: 1,
     buttonBorderRadius: 0,
     buttonPaddingX: 0,
     buttonMarginTop: 0,
@@ -725,6 +729,7 @@ export const line: RawThemeConfig = {
     buttonShadowHeight: 0,
     buttonShadowBlur: 0,
     buttonShadowSize: 0,
+    buttonShadowOpacity: 1,
     buttonBorderRadius: 0,
     buttonPaddingX: 0,
     buttonMarginTop: 0,
@@ -855,6 +860,7 @@ export const kakaotalk: RawThemeConfig = {
     buttonShadowHeight: 0,
     buttonShadowBlur: 0,
     buttonShadowSize: 0,
+    buttonShadowOpacity: 1,
     buttonBorderRadius: 0,
     buttonPaddingX: 0,
     buttonMarginTop: 0,
