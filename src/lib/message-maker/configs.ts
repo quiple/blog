@@ -201,8 +201,6 @@ export interface RawThemeConfig {
     headerGap: number
     /** 구분선 색상 */
     dividerColor: string
-    /** 구분선 길이 (너비), 'auto' 시 여백 제외 꽉 채움 */
-    dividerWidth: number | 'auto'
     /** 구분선 두께 (높이) */
     dividerThickness: number
     /** 구분선 상단 여백 (헤더와의 간격) */
@@ -294,7 +292,6 @@ export type ThemeConfig = Omit<RawThemeConfig, 'header' | 'name' | 'bubbleLeft' 
     headerFont: string
     fontSize: number
     headerFontSize: number
-    dividerWidth: number | 'auto'
     buttonPaddingTop: number
     buttonPaddingRight: number
     buttonPaddingBottom: number
@@ -355,7 +352,6 @@ export function resolveThemeConfig(config: RawThemeConfig, lang: Language): Them
       headerFont: resolveStr(config.bond.headerFont),
       fontSize: resolveNum(config.bond.fontSize),
       headerFontSize: resolveNum(config.bond.headerFontSize),
-      dividerWidth: config.bond.dividerWidth,
       buttonPaddingTop: resolveNum(config.bond.buttonPaddingTop),
       buttonPaddingRight: resolveNum(config.bond.buttonPaddingRight),
       buttonPaddingBottom: resolveNum(config.bond.buttonPaddingBottom),
@@ -507,7 +503,6 @@ export const momotalk: RawThemeConfig = {
     headerBarColor: '#FC8DA2',
     headerGap: 12,
     dividerColor: '#ACBBC1',
-    dividerWidth: 'auto',
     dividerThickness: 1.5,
     dividerMarginTop: 19,
     buttonBackgroundColor: '#FF8399',
@@ -656,7 +651,6 @@ export const imessage: RawThemeConfig = {
     headerBarColor: 'transparent',
     headerGap: 0,
     dividerColor: 'transparent',
-    dividerWidth: 0,
     dividerThickness: 0,
     dividerMarginTop: 0,
     buttonBackgroundColor: 'transparent',
@@ -805,7 +799,6 @@ export const line: RawThemeConfig = {
     headerBarColor: 'transparent',
     headerGap: 0,
     dividerColor: 'transparent',
-    dividerWidth: 0,
     dividerThickness: 0,
     dividerMarginTop: 0,
     buttonBackgroundColor: 'transparent',
@@ -954,7 +947,6 @@ export const kakaotalk: RawThemeConfig = {
     headerBarColor: 'transparent',
     headerGap: 0,
     dividerColor: 'transparent',
-    dividerWidth: 0,
     dividerThickness: 0,
     dividerMarginTop: 0,
     buttonBackgroundColor: 'transparent',
