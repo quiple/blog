@@ -127,7 +127,7 @@
         },
         {type: 'right', text: ['도와줘서 고마워.']},
         {type: 'left', name: '유우카', portrait, text: ['어려운 일도 아닌걸요.', '그럼 좋은 하루 되세요.']},
-        {type: 'bond', name: 'ユウカ', portrait, text: []},
+        {type: 'bond', name: '유우카', portrait, text: []},
       ]
     }
     return [
@@ -166,7 +166,7 @@
       },
       {type: 'right', text: ['Thanks for your help.']},
       {type: 'left', name: 'Yuuka', portrait, text: ["It's no big deal.", 'Have a good day.']},
-      {type: 'bond', name: 'ユウカ', portrait, text: []},
+      {type: 'bond', name: 'Yuuka', portrait, text: []},
     ]
   }
 
