@@ -607,7 +607,6 @@
             'overflow-visible pl-2 pr-2 pb-2 pt-1 gap-1',
             msg.type === 'left' && 'mr-8',
             msg.type === 'right' && 'ml-8',
-            msg.type === 'bond' && 'mx-4 bg-muted/20 border-dashed',
           ]}
         >
           <Card.Header class="flex items-center p-0">
