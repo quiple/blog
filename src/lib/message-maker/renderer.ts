@@ -117,15 +117,17 @@ function drawTextOt(
     ctx.scale(scaleX, 1)
   }
   if (strokeColor && strokeWidth) {
-    ctx.strokeStyle = strokeColor
-    ctx.lineWidth = strokeWidth * 2
+    path.fill = null
+    path.stroke = strokeColor
+    path.strokeWidth = strokeWidth * 2
     ctx.lineJoin = 'round'
-    path.toContext(ctx)
-    ctx.stroke()
+    path.draw(ctx)
   }
-  ctx.fillStyle = color
-  path.toContext(ctx)
-  ctx.fill()
+
+  // 텍스트 내부 색상 채우기
+  path.fill = color
+  path.stroke = null
+  path.draw(ctx)
   ctx.restore()
 }
 
