@@ -428,8 +428,8 @@ export const momotalk: RawThemeConfig = {
   },
   bond: {
     backgroundColor: '#FFEDF1',
-    borderColor: '#F1DDE1',
-    borderWidth: 1.5,
+    borderColor: '#DCD2D8',
+    borderWidth: 3,
     textColor: '#ffffff',
     font: {
       ko: 'GyeonggiTitle, sans-serif',
