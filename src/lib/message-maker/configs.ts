@@ -509,7 +509,7 @@ export const momotalk: RawThemeConfig = {
     buttonBorderColor: '#ACBBC1',
     buttonBorderWidth: 1,
     buttonTextBorderColor: '#EC5A72',
-    buttonTextBorderWidth: 4,
+    buttonTextBorderWidth: 1,
     buttonShadowColor: '#000000',
     buttonShadowHeight: 4,
     buttonShadowBlur: 8,
