@@ -1495,7 +1495,7 @@ export async function exportAsPng(
   lang: Language,
 ): Promise<void> {
   const config = resolveThemeConfig(themes[themeName], lang || 'ko')
-  const height = calculateCanvasHeight(messages, config, lang)
+  const height = calculateCanvasHeight(messages, config, lang, themeName)
   const width = config.canvasWidth
 
   const hiDpiCanvas = document.createElement('canvas')
