@@ -163,9 +163,9 @@ async function ensureFontFamily(faces: {family: string; endpoint: string}[]): Pr
 }
 
 export interface MessageItem {
-  /** 'left' = 왼쪽(학생), 'right' = 오른쪽(선생) */
-  type: 'left' | 'right'
-  /** 학생 이름 (type === 'left' 일 때만 사용) */
+  /** 'left' = 왼쪽(학생), 'right' = 오른쪽(선생), 'bond' = 인연 스토리 */
+  type: 'left' | 'right' | 'bond'
+  /** 학생 이름 (type === 'left' 또는 'bond' 일 때만 사용) */
   name?: string
   /** 프로필 사진 URL (type === 'left' 일 때만 사용) */
   portrait?: string
@@ -576,13 +576,36 @@ export function calculateCanvasHeight(
       totalHeight += config.name.marginTop + config.name.fontSize + config.name.marginBottom
     }
 
-    const bubbleCfg = isLeft ? config.bubbleLeft : config.bubbleRight
-    const otFont = isLeft ? otBubbleLeft : otBubbleRight
+    if (msg.type === 'bond') {
+      const name = msg.name || ''
+      const text =
+        lang === 'ja'
+          ? `${name}の絆ストーリー`
+          : lang === 'en'
+            ? `${name}'s Relationship Story`
+            : `${name}의 인연 스토리`
+      // Using bubbleLeft font and size as approximation for bond text if not explicitly using bond config,
+      // but we do have config.bond!
+      const otBondFont = resolveOpentypeFont(config.bond.font)
+      tempCtx.font = `${config.bond.fontSize}px ${config.bond.font}`
+      const lines = wrapText(
+        tempCtx,
+        text,
+        chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight,
+        otBondFont,
+        config.bond.fontSize,
+        breakHangul,
+      )
+      totalHeight += lines.length * config.bond.fontSize + config.bond.paddingTop + config.bond.paddingBottom
+    } else {
+      const bubbleCfg = isLeft ? config.bubbleLeft : config.bubbleRight
+      const otFont = isLeft ? otBubbleLeft : otBubbleRight
 
-    for (let bi = 0; bi < msg.text.length; bi++) {
-      if (bi > 0) totalHeight += config.chat.messageGap
-      const {bubbleH} = computeBubbleLayout(tempCtx, msg.text[bi], bubbleCfg, chatAreaWidth, otFont, breakHangul)
-      totalHeight += bubbleH
+      for (let bi = 0; bi < msg.text.length; bi++) {
+        if (bi > 0) totalHeight += config.chat.messageGap
+        const {bubbleH} = computeBubbleLayout(tempCtx, msg.text[bi], bubbleCfg, chatAreaWidth, otFont, breakHangul)
+        totalHeight += bubbleH
+      }
     }
   }
 
@@ -882,6 +905,7 @@ async function renderToContext(
   const otBubbleLeftFont = resolveOpentypeFont(config.bubbleLeft.font)
   const otBubbleRightFont = resolveOpentypeFont(config.bubbleRight.font)
   const otHeaderFont = resolveOpentypeFont(config.header.titleFont)
+  const otBondFont = resolveOpentypeFont(config.bond.font)
 
   const isObsolete = () => renderId !== 0 && renderId !== lastRenderId
 
@@ -1092,7 +1116,7 @@ async function renderToContext(
 
         cursorY += bubbleH
       }
-    } else {
+    } else if (msg.type === 'right') {
       // ── 선생님 메시지 (오른쪽) ──
       for (let bi = 0; bi < msg.text.length; bi++) {
         if (bi > 0) cursorY += config.chat.messageGap
@@ -1145,6 +1169,46 @@ async function renderToContext(
 
         cursorY += bubbleH
       }
+    } else if (msg.type === 'bond') {
+      // ── 인연 스토리 배너 ──
+      const name = msg.name || ''
+      const bondText =
+        lang === 'ja'
+          ? `${name}の絆ストーリー`
+          : lang === 'en'
+            ? `${name}'s Relationship Story`
+            : `${name}의 인연 스토리`
+
+      const maxTextWidth = chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight
+      ctx.font = `${config.bond.fontSize}px ${config.bond.font}`
+      const lines = wrapText(ctx, bondText, maxTextWidth, otBondFont, config.bond.fontSize, breakHangul)
+      const lineH = config.bond.fontSize * 1.2
+      const textBlockWidth = Math.max(...lines.map((l) => measureTextWidth(l, ctx, otBondFont, config.bond.fontSize)))
+      const bannerW = textBlockWidth + config.bond.paddingLeft + config.bond.paddingRight
+      const bannerH = lines.length * lineH + config.bond.paddingTop + config.bond.paddingBottom
+
+      const bannerX = chatLeft + (chatAreaWidth - bannerW) / 2
+
+      ctx.fillStyle = config.bond.backgroundColor
+      roundRect(ctx, bannerX, cursorY, bannerW, bannerH, config.bond.borderRadius)
+      ctx.fill()
+
+      for (let li = 0; li < lines.length; li++) {
+        const textX = bannerX + config.bond.paddingLeft
+        const textY = cursorY + config.bond.paddingTop + li * lineH
+        drawText(
+          ctx,
+          lines[li],
+          textX,
+          textY,
+          config.bond.fontSize,
+          config.bond.font,
+          config.bond.textColor,
+          otBondFont,
+        )
+      }
+
+      cursorY += bannerH
     }
 
     // 그룹 캐시 저장
@@ -1298,6 +1362,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     const nameFont = config.name.font
     const bubbleLeftFont = config.bubbleLeft.font
     const bubbleRightFont = config.bubbleRight.font
+    const bondFont = config.bond.font
 
     // 폰트 데이터 가져오기 (SVG 패스 변환용) — fetchFontDataUrl 캐시 재활용
     if (themeName === 'momotalk') {
@@ -1579,7 +1644,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           }
           cursorY += bubbleH
         }
-      } else {
+      } else if (msg.type === 'right') {
         // 선생님
         for (let bi = 0; bi < msg.text.length; bi++) {
           if (bi > 0) cursorY += config.chat.messageGap
@@ -1618,8 +1683,52 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
               ),
             )
           }
+
           cursorY += bubbleH
         }
+      } else if (msg.type === 'bond') {
+        const name = msg.name || ''
+        const bondText =
+          lang === 'ja'
+            ? `${name}の絆ストーリー`
+            : lang === 'en'
+              ? `${name}'s Relationship Story`
+              : `${name}의 인연 스토리`
+        const otBond = resolveOpentypeFont(bondFont)
+
+        const maxTextWidth = chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight
+        tempCtx.font = `${config.bond.fontSize}px ${bondFont}`
+        const lines = wrapText(tempCtx, bondText, maxTextWidth, otBond, config.bond.fontSize, breakHangul)
+        const lineH = config.bond.fontSize * 1.2
+        const textBlockWidth = Math.max(...lines.map((l) => measureTextWidth(l, tempCtx, otBond, config.bond.fontSize)))
+        const bannerW = textBlockWidth + config.bond.paddingLeft + config.bond.paddingRight
+        const bannerH = lines.length * lineH + config.bond.paddingTop + config.bond.paddingBottom
+
+        const bannerX = chatLeft + (chatAreaWidth - bannerW) / 2
+
+        svgParts.push(
+          `<rect x="${bannerX}" y="${cursorY}" width="${bannerW}" height="${bannerH}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" />`,
+        )
+
+        for (let li = 0; li < lines.length; li++) {
+          const textX = bannerX + config.bond.paddingLeft
+          const textY = cursorY + config.bond.paddingTop + li * lineH
+          svgParts.push(
+            renderSvgText(
+              lines[li],
+              textX,
+              textY,
+              bondFont,
+              config.bond.fontSize,
+              config.bond.textColor,
+              'start',
+              'hanging',
+              'normal',
+            ),
+          )
+        }
+
+        cursorY += bannerH
       }
     }
 

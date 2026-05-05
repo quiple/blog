@@ -159,9 +159,22 @@ export interface RawThemeConfig {
     /** 삼각형 꼬리 끝부분 반경 */
     tailRadius: number
   }
+
+  /** 인연 스토리 배너 (가운데 정렬) */
+  bond: {
+    backgroundColor: string
+    textColor: string
+    font: LocalizedFont
+    fontSize: LocalizedNumber
+    paddingTop: LocalizedNumber
+    paddingRight: LocalizedNumber
+    paddingBottom: LocalizedNumber
+    paddingLeft: LocalizedNumber
+    borderRadius: number
+  }
 }
 
-export type ThemeConfig = Omit<RawThemeConfig, 'header' | 'name' | 'bubbleLeft' | 'bubbleRight'> & {
+export type ThemeConfig = Omit<RawThemeConfig, 'header' | 'name' | 'bubbleLeft' | 'bubbleRight' | 'bond'> & {
   header: Omit<RawThemeConfig['header'], 'titleFont'> & {
     titleFont: string
   }
@@ -191,6 +204,17 @@ export type ThemeConfig = Omit<RawThemeConfig, 'header' | 'name' | 'bubbleLeft' 
     font: string
     fontSize: number
     lineHeight: number
+    paddingTop: number
+    paddingRight: number
+    paddingBottom: number
+    paddingLeft: number
+  }
+  bond: Omit<
+    RawThemeConfig['bond'],
+    'font' | 'fontSize' | 'paddingTop' | 'paddingRight' | 'paddingBottom' | 'paddingLeft'
+  > & {
+    font: string
+    fontSize: number
     paddingTop: number
     paddingRight: number
     paddingBottom: number
@@ -240,6 +264,15 @@ export function resolveThemeConfig(config: RawThemeConfig, lang: Language): Them
       paddingRight: resolveNum(config.bubbleRight.paddingRight),
       paddingBottom: resolveNum(config.bubbleRight.paddingBottom),
       paddingLeft: resolveNum(config.bubbleRight.paddingLeft),
+    },
+    bond: {
+      ...config.bond,
+      font: resolveStr(config.bond.font),
+      fontSize: resolveNum(config.bond.fontSize),
+      paddingTop: resolveNum(config.bond.paddingTop),
+      paddingRight: resolveNum(config.bond.paddingRight),
+      paddingBottom: resolveNum(config.bond.paddingBottom),
+      paddingLeft: resolveNum(config.bond.paddingLeft),
     },
   }
 }
@@ -350,6 +383,21 @@ export const momotalk: RawThemeConfig = {
     tailOffsetY: 24,
     tailRadius: 1.5,
   },
+  bond: {
+    backgroundColor: '#FF8FA0',
+    textColor: '#ffffff',
+    font: {
+      ko: 'GyeonggiTitle, Noto Sans KR, sans-serif',
+      ja: 'ShinMGo-Medium, sans-serif',
+      en: 'NotoSans, sans-serif',
+    },
+    fontSize: {ko: 38, ja: 36, en: 38},
+    paddingTop: {ko: 16, ja: 14, en: 8},
+    paddingRight: {ko: 32, ja: 32, en: 32},
+    paddingBottom: {ko: 10, ja: 12, en: 18},
+    paddingLeft: {ko: 32, ja: 32, en: 32},
+    borderRadius: 20,
+  },
 }
 
 export const imessage: RawThemeConfig = {
@@ -444,6 +492,17 @@ export const imessage: RawThemeConfig = {
     tailHeight: 0,
     tailOffsetY: 0,
     tailRadius: 0,
+  },
+  bond: {
+    backgroundColor: '#e5e5ea',
+    textColor: '#000000',
+    font: 'SF Pro Display, -apple-system, sans-serif',
+    fontSize: 16,
+    paddingTop: 8,
+    paddingRight: 16,
+    paddingBottom: 8,
+    paddingLeft: 16,
+    borderRadius: 16,
   },
 }
 
@@ -540,6 +599,17 @@ export const line: RawThemeConfig = {
     tailOffsetY: 0,
     tailRadius: 0,
   },
+  bond: {
+    backgroundColor: '#6e93c0',
+    textColor: '#ffffff',
+    font: 'Noto Sans KR, sans-serif',
+    fontSize: 15,
+    paddingTop: 6,
+    paddingRight: 16,
+    paddingBottom: 6,
+    paddingLeft: 16,
+    borderRadius: 16,
+  },
 }
 
 export const kakaotalk: RawThemeConfig = {
@@ -634,6 +704,17 @@ export const kakaotalk: RawThemeConfig = {
     tailHeight: 0,
     tailOffsetY: 0,
     tailRadius: 0,
+  },
+  bond: {
+    backgroundColor: '#3f3f3f',
+    textColor: '#ffffff',
+    font: 'Noto Sans KR, sans-serif',
+    fontSize: 15,
+    paddingTop: 6,
+    paddingRight: 16,
+    paddingBottom: 6,
+    paddingLeft: 16,
+    borderRadius: 16,
   },
 }
 

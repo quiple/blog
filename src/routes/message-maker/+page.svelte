@@ -319,12 +319,12 @@
   }
 
   // 메시지 추가
-  function addMessage(type: 'left' | 'right') {
+  function addMessage(type: 'left' | 'right' | 'bond') {
     if (type === 'right') {
       messages = [...messages, {type: 'right', name: '', portrait: '', text: ['']}]
       focusIndex = messages.length - 1
     } else {
-      messages = [...messages, {type: 'left', name: '', portrait: '', text: ['']}]
+      messages = [...messages, {type: type, name: '', portrait: '', text: ['']}]
       // 학생 선택 대화 상자 표시
       dialogTargetIndex = messages.length - 1
       studentSearchQuery = ''
@@ -604,13 +604,14 @@
             'overflow-visible pl-2 pr-2 pb-2 pt-1 gap-1',
             msg.type === 'left' && 'mr-8',
             msg.type === 'right' && 'ml-8',
+            msg.type === 'bond' && 'mx-4 bg-muted/20 border-dashed',
           ]}
         >
           <Card.Header class="flex items-center p-0">
             <span class="font-medium text-muted-foreground shrink-0 text-right tabular-nums text-xs min-w-4"
               >#{i + 1}</span
             >
-            {#if msg.type === 'left'}
+            {#if msg.type === 'left' || msg.type === 'bond'}
               <div class="flex items-center gap-1">
                 {#if msg.portrait}
                   {@const src = getImageUrl(
@@ -672,48 +673,58 @@
           </Card.Header>
 
           <Card.Content class="flex flex-col gap-1.5 items-end p-0">
-            {#each msg.text as bubble, bi (bi)}
-              <div class="flex items-start gap-1.5 w-full">
-                <span class="font-medium text-muted-foreground mt-2.75 shrink-0 text-right tabular-nums text-xs min-w-4"
-                  >{bi + 1}</span
-                >
-                <Textarea
-                  id="msg-input-{i}-{bi}"
-                  class="grow min-h-9.5"
-                  placeholder={msg.type === 'left'
-                    ? lang === 'ja'
-                      ? '左のメッセージを入力...'
-                      : lang === 'ko'
-                        ? '왼쪽 메시지 입력...'
-                        : 'Enter message on the left...'
-                    : lang === 'ja'
-                      ? '右のメッセージを入力...'
-                      : lang === 'ko'
-                        ? '오른쪽 메시지 입력...'
-                        : 'Enter message on the right...'}
-                  bind:value={msg.text[bi]}
-                  oninput={requestRedraw}
-                />
-                {#if msg.text.length > 1}
-                  <Button
-                    variant="ghost"
-                    size="icon-xs"
-                    class="-mx-1.5"
-                    onclick={() => removeBubble(i, bi)}
-                    title="말풍선 삭제"
+            {#if msg.type !== 'bond'}
+              {#each msg.text as bubble, bi (bi)}
+                <div class="flex items-start gap-1.5 w-full">
+                  <span
+                    class="font-medium text-muted-foreground mt-2.75 shrink-0 text-right tabular-nums text-xs min-w-4"
+                    >{bi + 1}</span
                   >
-                    <X />
-                  </Button>
+                  <Textarea
+                    id="msg-input-{i}-{bi}"
+                    class="grow min-h-9.5"
+                    placeholder={msg.type === 'left'
+                      ? lang === 'ja'
+                        ? '左のメッセージを入力...'
+                        : lang === 'ko'
+                          ? '왼쪽 메시지 입력...'
+                          : 'Enter message on the left...'
+                      : lang === 'ja'
+                        ? '右のメッセージを入力...'
+                        : lang === 'ko'
+                          ? '오른쪽 메시지 입력...'
+                          : 'Enter message on the right...'}
+                    bind:value={msg.text[bi]}
+                    oninput={requestRedraw}
+                  />
+                  {#if msg.text.length > 1}
+                    <Button
+                      variant="ghost"
+                      size="icon-xs"
+                      class="-mx-1.5"
+                      onclick={() => removeBubble(i, bi)}
+                      title="말풍선 삭제"
+                    >
+                      <X />
+                    </Button>
+                  {/if}
+                </div>
+              {/each}
+              <Button variant="outline" size="xs" onclick={() => addBubble(i)}>
+                <Plus />
+                {#if lang === 'ja'}吹き出しを追加
+                {:else if lang === 'ko'}말풍선 추가
+                {:else}Add Bubble
+                {/if}
+              </Button>
+            {:else}
+              <div class="w-full text-center p-3 text-sm text-muted-foreground">
+                {#if lang === 'ja'}キャンバス上に絆ストーリーが表示されます。
+                {:else if lang === 'ko'}캔버스에 인연 스토리가 표시됩니다.
+                {:else}Relationship story banner will be shown on the canvas.
                 {/if}
               </div>
-            {/each}
-            <Button variant="outline" size="xs" onclick={() => addBubble(i)}>
-              <Plus />
-              {#if lang === 'ja'}吹き出しを追加
-              {:else if lang === 'ko'}말풍선 추가
-              {:else}Add Bubble
-              {/if}
-            </Button>
+            {/if}
           </Card.Content>
         </Card.Root>
       {/each}
@@ -734,7 +745,7 @@
           {/if}
         </Button>
       </div>
-      <Button size="lg" variant="outline">
+      <Button size="lg" variant="outline" onclick={() => addMessage('bond')}>
         <Heart />
         {#if lang === 'ja'}絆ストーリーを追加
         {:else if lang === 'ko'}인연 스토리 추가
