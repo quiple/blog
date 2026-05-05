@@ -515,7 +515,7 @@ export const momotalk: RawThemeConfig = {
     buttonShadowBlur: 6,
     buttonShadowSize: 0,
     buttonShadowOpacity: 0.25,
-    buttonPaddingTop: {ko: 21, ja: 21, en: 21},
+    buttonPaddingTop: {ko: 22, ja: 22, en: 22},
     buttonPaddingRight: {ko: 10, ja: 10, en: 10},
     buttonPaddingBottom: {ko: 12, ja: 12, en: 12},
     buttonPaddingLeft: {ko: 10, ja: 10, en: 10},
