@@ -1265,7 +1265,8 @@ async function renderToContext(
           ctx.strokeStyle = config.bond.borderColor
           ctx.lineWidth = config.bond.borderWidth
           const bw = config.bond.borderWidth
-          roundRect(ctx, bannerX + bw / 2, cursorY + bw / 2, bannerW - bw, bannerH - bw, config.bond.borderRadius)
+          const r = Math.max(0, config.bond.borderRadius - bw / 2)
+          roundRect(ctx, bannerX + bw / 2, cursorY + bw / 2, bannerW - bw, bannerH - bw, r)
           ctx.stroke()
           ctx.restore()
         }
@@ -1337,7 +1338,8 @@ async function renderToContext(
           ctx.strokeStyle = config.bond.buttonBorderColor
           ctx.lineWidth = config.bond.buttonBorderWidth
           const bbw = config.bond.buttonBorderWidth
-          roundRect(ctx, btnX + bbw / 2, btnY + bbw / 2, btnW - bbw, buttonH - bbw, config.bond.buttonBorderRadius)
+          const r = Math.max(0, config.bond.buttonBorderRadius - bbw / 2)
+          roundRect(ctx, btnX + bbw / 2, btnY + bbw / 2, btnW - bbw, buttonH - bbw, r)
           ctx.stroke()
           ctx.restore()
         }
@@ -1383,7 +1385,8 @@ async function renderToContext(
           ctx.strokeStyle = config.bond.borderColor
           ctx.lineWidth = config.bond.borderWidth
           const bw = config.bond.borderWidth
-          roundRect(ctx, bannerX + bw / 2, cursorY + bw / 2, bannerW - bw, bannerH - bw, config.bond.borderRadius)
+          const r = Math.max(0, config.bond.borderRadius - bw / 2)
+          roundRect(ctx, bannerX + bw / 2, cursorY + bw / 2, bannerW - bw, bannerH - bw, r)
           ctx.stroke()
           ctx.restore()
         }
@@ -1928,8 +1931,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
           // Outer Box & Definitions
           const bw = config.bond.borderWidth
+          const r = Math.max(0, config.bond.borderRadius - bw / 2)
           svgParts.push(`
-            <rect x="${bannerX + bw / 2}" y="${cursorY + bw / 2}" width="${bannerW - bw}" height="${bannerH - bw}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="${config.bond.borderWidth}" />
+            <rect x="${bannerX + bw / 2}" y="${cursorY + bw / 2}" width="${bannerW - bw}" height="${bannerH - bw}" rx="${r}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="${config.bond.borderWidth}" />
           `)
 
           // Header Bar & Text
@@ -1945,6 +1949,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
             cursorY + config.bond.paddingTop + headerH + config.bond.buttonMarginTop + 2 + config.bond.buttonMarginTop
 
           const bbw = config.bond.buttonBorderWidth
+          const br = Math.max(0, config.bond.buttonBorderRadius - bbw / 2)
           const bs = config.bond.buttonShadowSize
           const bsh = config.bond.buttonShadowHeight
           const bsb = config.bond.buttonShadowBlur
@@ -1973,7 +1978,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           }
 
           svgParts.push(`
-            <rect x="${btnX + bbw / 2}" y="${btnY + bbw / 2}" width="${btnW - bbw}" height="${buttonH - bbw}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonBackgroundColor}" stroke="${config.bond.buttonBorderColor}" stroke-width="${config.bond.buttonBorderWidth}" />
+            <rect x="${btnX + bbw / 2}" y="${btnY + bbw / 2}" width="${btnW - bbw}" height="${buttonH - bbw}" rx="${br}" fill="${config.bond.buttonBackgroundColor}" stroke="${config.bond.buttonBorderColor}" stroke-width="${config.bond.buttonBorderWidth}" />
           `)
 
           // Button Text
@@ -2010,8 +2015,9 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
           const bannerX = chatLeft + bannerLeftOffset + config.bond.marginLeft + (availableWidth - bannerW) / 2
 
           const bw = config.bond.borderWidth
+          const r = Math.max(0, config.bond.borderRadius - bw / 2)
           svgParts.push(
-            `<rect x="${bannerX + bw / 2}" y="${cursorY + bw / 2}" width="${bannerW - bw}" height="${bannerH - bw}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="${config.bond.borderWidth}" />`,
+            `<rect x="${bannerX + bw / 2}" y="${cursorY + bw / 2}" width="${bannerW - bw}" height="${bannerH - bw}" rx="${r}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="${config.bond.borderWidth}" />`,
           )
 
           for (let li = 0; li < lines.length; li++) {
