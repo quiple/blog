@@ -1174,10 +1174,10 @@ async function renderToContext(
       const name = msg.name || ''
       const bondText =
         lang === 'ja'
-          ? `${name}の絆ストーリー`
-          : lang === 'en'
-            ? `${name}'s Relationship Story`
-            : `${name}의 인연 스토리`
+          ? `${name}の絆ストーリーへ`
+          : lang === 'ko'
+            ? `${name}의 인연 스토리로`
+            : `To ${name}'s Relationship Story`
 
       const maxTextWidth = chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight
       ctx.font = `${config.bond.fontSize}px ${config.bond.font}`
@@ -1690,10 +1690,10 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         const name = msg.name || ''
         const bondText =
           lang === 'ja'
-            ? `${name}の絆ストーリー`
-            : lang === 'en'
-              ? `${name}'s Relationship Story`
-              : `${name}의 인연 스토리`
+            ? `${name}の絆ストーリーへ`
+            : lang === 'ko'
+              ? `${name}의 인연 스토리로`
+              : `To ${name}'s Relationship Story`
         const otBond = resolveOpentypeFont(bondFont)
 
         const maxTextWidth = chatAreaWidth - config.bond.paddingLeft - config.bond.paddingRight
