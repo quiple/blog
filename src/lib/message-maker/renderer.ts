@@ -116,12 +116,16 @@ function drawTextOt(
   if (scaleX !== 1.0) {
     ctx.scale(scaleX, 1)
   }
-  path.fill = color
   if (strokeColor && strokeWidth) {
-    path.stroke = strokeColor
-    path.strokeWidth = strokeWidth
+    ctx.strokeStyle = strokeColor
+    ctx.lineWidth = strokeWidth * 2
+    ctx.lineJoin = 'round'
+    path.toContext(ctx)
+    ctx.stroke()
   }
-  path.draw(ctx)
+  ctx.fillStyle = color
+  path.toContext(ctx)
+  ctx.fill()
   ctx.restore()
 }
 
@@ -545,17 +549,19 @@ function drawText(
       ctx.scale(scaleX, 1)
       if (strokeColor && strokeWidth) {
         ctx.strokeStyle = strokeColor
-        ctx.lineWidth = strokeWidth
+        ctx.lineWidth = strokeWidth * 2
         ctx.strokeText(text, x / scaleX, y)
       }
+      ctx.fillStyle = color
       ctx.fillText(text, x / scaleX, y)
       ctx.restore()
     } else {
       if (strokeColor && strokeWidth) {
         ctx.strokeStyle = strokeColor
-        ctx.lineWidth = strokeWidth
+        ctx.lineWidth = strokeWidth * 2
         ctx.strokeText(text, x, y)
       }
+      ctx.fillStyle = color
       ctx.fillText(text, x, y)
     }
   }
@@ -1645,7 +1651,10 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         }
 
         const svgPath = path.toSVG(2)
-        const strokeAttr = strokeColor && strokeWidth ? ` stroke="${strokeColor}" stroke-width="${strokeWidth}"` : ''
+        const strokeAttr =
+          strokeColor && strokeWidth
+            ? ` stroke="${strokeColor}" stroke-width="${strokeWidth * 2}" stroke-linejoin="round" paint-order="stroke fill"`
+            : ''
         if (scaleX !== 1.0) {
           return svgPath.replace(
             '<path ',
@@ -1659,7 +1668,10 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         }
       } else {
         const anchor = align === 'center' || align === 'middle' ? 'middle' : 'start'
-        const strokeAttr = strokeColor && strokeWidth ? ` stroke="${strokeColor}" stroke-width="${strokeWidth}"` : ''
+        const strokeAttr =
+          strokeColor && strokeWidth
+            ? ` stroke="${strokeColor}" stroke-width="${strokeWidth * 2}" stroke-linejoin="round" paint-order="stroke fill"`
+            : ''
         const transformAttr =
           scaleX !== 1.0 ? ` transform="translate(${x}, ${y}) scale(${scaleX}, 1) translate(${-x}, ${-y})"` : ''
         return `<text x="${x}" y="${y}" fill="${color}"${strokeAttr} font-family="${fontFamily}" font-size="${fontSize}" font-weight="${fontWeight}" text-anchor="${anchor}" dominant-baseline="${baseline}"${transformAttr}>${text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')}</text>`
