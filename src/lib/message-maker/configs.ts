@@ -515,7 +515,7 @@ export const momotalk: RawThemeConfig = {
     buttonPaddingLeft: {ko: 10, ja: 10, en: 10},
     buttonBorderRadius: 23,
     buttonMarginX: 35,
-    buttonMarginTop: 24,
+    buttonMarginTop: 26,
   },
 }
 
