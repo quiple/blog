@@ -1287,11 +1287,8 @@ async function renderToContext(
         roundRect(ctx, btnX, btnY + config.bond.buttonShadowHeight, btnW, buttonH, config.bond.buttonBorderRadius)
         ctx.fill()
 
-        // Button Gradient Background
-        const btnGrad = ctx.createLinearGradient(0, btnY, 0, btnY + buttonH)
-        btnGrad.addColorStop(0, config.bond.buttonGradientStart)
-        btnGrad.addColorStop(1, config.bond.buttonGradientEnd)
-        ctx.fillStyle = btnGrad
+        // Button Background
+        ctx.fillStyle = config.bond.buttonBackgroundColor
         roundRect(ctx, btnX, btnY, btnW, buttonH, config.bond.buttonBorderRadius)
         ctx.fill()
 
@@ -1860,12 +1857,6 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
           // Outer Box & Definitions
           svgParts.push(`
-            <defs>
-              <linearGradient id="${gradId}" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="${config.bond.buttonGradientStart}" />
-                <stop offset="100%" stop-color="${config.bond.buttonGradientEnd}" />
-              </linearGradient>
-            </defs>
             <rect x="${bannerX}" y="${cursorY}" width="${bannerW}" height="${bannerH}" rx="${config.bond.borderRadius}" fill="${config.bond.backgroundColor}" stroke="${config.bond.borderColor}" stroke-width="1.5" />
           `)
 
@@ -1883,7 +1874,7 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
 
           svgParts.push(`
             <rect x="${btnX}" y="${btnY + config.bond.buttonShadowHeight}" width="${btnW}" height="${buttonH}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonShadowColor}" />
-            <rect x="${btnX}" y="${btnY}" width="${btnW}" height="${buttonH}" rx="${config.bond.buttonBorderRadius}" fill="url(#${gradId})" />
+            <rect x="${btnX}" y="${btnY}" width="${btnW}" height="${buttonH}" rx="${config.bond.buttonBorderRadius}" fill="${config.bond.buttonBackgroundColor}" />
           `)
 
           // Button Text
