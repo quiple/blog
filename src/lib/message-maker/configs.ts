@@ -343,7 +343,7 @@ export const momotalk: RawThemeConfig = {
     backgroundColor: '#4C5B6F',
     textColor: '#ffffff',
     font: {
-      ko: 'GyeonggiTitle, Noto Sans KR, sans-serif',
+      ko: 'GyeonggiTitle, sans-serif',
       ja: 'ShinMGo-Medium, sans-serif',
       en: 'NotoSans, sans-serif',
     },
@@ -365,7 +365,7 @@ export const momotalk: RawThemeConfig = {
     backgroundColor: '#4A8ACB',
     textColor: '#ffffff',
     font: {
-      ko: 'GyeonggiTitle, Noto Sans KR, sans-serif',
+      ko: 'GyeonggiTitle, sans-serif',
       ja: 'ShinMGo-Medium, sans-serif',
       en: 'NotoSans, sans-serif',
     },
@@ -387,7 +387,7 @@ export const momotalk: RawThemeConfig = {
     backgroundColor: '#FF8FA0',
     textColor: '#ffffff',
     font: {
-      ko: 'GyeonggiTitle, Noto Sans KR, sans-serif',
+      ko: 'GyeonggiTitle, sans-serif',
       ja: 'ShinMGo-Medium, sans-serif',
       en: 'NotoSans, sans-serif',
     },
