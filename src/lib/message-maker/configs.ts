@@ -197,6 +197,8 @@ export interface RawThemeConfig {
     headerBarHeight: number
     /** 헤더 좌측 바 색상 */
     headerBarColor: string
+    /** 헤더 좌측 바와 텍스트 간격 */
+    headerGap: number
     /** 구분선 색상 */
     dividerColor: string
     /** 구분선 두께 (높이) */
@@ -477,6 +479,7 @@ export const momotalk: RawThemeConfig = {
     headerBarWidth: 5.5,
     headerBarHeight: 44,
     headerBarColor: '#FC8DA2',
+    headerGap: 10,
     dividerColor: '#ACBBC1',
     dividerThickness: 1.5,
     buttonBackgroundColor: '#FF8399',
@@ -617,6 +620,7 @@ export const imessage: RawThemeConfig = {
     headerBarWidth: 0,
     headerBarHeight: 0,
     headerBarColor: 'transparent',
+    headerGap: 0,
     dividerColor: 'transparent',
     dividerThickness: 0,
     buttonBackgroundColor: 'transparent',
@@ -757,6 +761,7 @@ export const line: RawThemeConfig = {
     headerBarWidth: 0,
     headerBarHeight: 0,
     headerBarColor: 'transparent',
+    headerGap: 0,
     dividerColor: 'transparent',
     dividerThickness: 0,
     buttonBackgroundColor: 'transparent',
@@ -897,6 +902,7 @@ export const kakaotalk: RawThemeConfig = {
     headerBarWidth: 0,
     headerBarHeight: 0,
     headerBarColor: 'transparent',
+    headerGap: 0,
     dividerColor: 'transparent',
     dividerThickness: 0,
     buttonBackgroundColor: 'transparent',
