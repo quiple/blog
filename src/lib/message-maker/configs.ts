@@ -467,7 +467,7 @@ export const momotalk: RawThemeConfig = {
     headerColor: '#4C5B6F',
     headerBarWidth: 5,
     headerBarHeight: 28,
-    headerBarColor: '#F2899A',
+    headerBarColor: '#FC8DA2',
     dividerColor: '#ACBBC1',
     dividerThickness: 1.5,
     buttonBackgroundColor: '#FF8399',
