@@ -14,13 +14,8 @@
 :root {
   --font-weight-normal: 375;
   --font-weight-bold: 675;
-  --font-sans: Geista, IBMPlexSansJP-web, Asta Sans, Noto Sans KR, ui-sans-serif, system-ui, sans-serif;
-  --font-serif: STIXTwoText, BookkMyungjo-web, AppleMyungjo, Noto Serif KR, ui-serif, serif;
-  --font-ja:
-    Geista, IBMPlexSansJP-web, Asta Sans, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo, ui-sans-serif,
-    system-ui, sans-serif;
-  --font-zhHans: Geista, PingFang SC, Noto Sans SC, Microsoft YaHei UI, ui-sans-serif, system-ui, sans-serif;
-  --font-zhHant: Geista, PingFang TC, Noto Sans TC, Microsoft JhengHei UI, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: Geista, IBMPlexSansJP-web, Asta Sans, Noto Sans JP, ui-sans-serif, system-ui, sans-serif;
+  --font-serif: STIXTwoText, BookkMyungjo-web, AppleMyungjo, Noto Serif JP, ui-serif, serif;
   --default-font-feature-settings: 'palt' 1;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -145,15 +140,6 @@
   }
   body {
     @apply bg-background font-normal text-foreground;
-  }
-  [lang^='ja'] {
-    font-family: var(--font-ja);
-  }
-  [lang='zh-hans'] {
-    font-family: var(--font-zhHans);
-  }
-  [lang='zh-hant'] {
-    font-family: var(--font-zhHant);
   }
   button {
     @apply cursor-pointer;
