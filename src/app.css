@@ -162,8 +162,8 @@
     clip: rect(0, 0, 0, 0);
     clip-path: polygon(0 0, 0 0, 0 0);
   }
-  html {
-    @apply font-sans;
+  strong {
+    @apply font-bold;
   }
 }
 
@@ -253,6 +253,9 @@
   }
   img {
     @apply h-auto max-w-full;
+  }
+  strong {
+    @apply font-bold;
   }
 }
 
