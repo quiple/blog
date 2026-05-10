@@ -1,3 +1,8 @@
+<svelte:head>
+  <title>폰트 섞어쓰기 테스트</title>
+  <meta name="robots" content="noindex" />
+</svelte:head>
+
 <h1 class="page-title">폰트 섞어쓰기 테스트</h1>
 
 <h2 style="font-weight: 375">한0O아123</h2>
