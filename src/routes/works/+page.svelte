@@ -119,7 +119,6 @@
 
 <svelte:head>
   <title>Works</title>
-  <meta name="description" content="내 작업물." />
   <meta name="robots" content="noindex" />
 </svelte:head>
 
