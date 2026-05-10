@@ -281,7 +281,7 @@
   </div>
   <Textarea
     id="tester"
-    class="leading-none pl-[calc(1em/12*4)] pb-[calc(1em/12*4)] pt-[calc(1em/12*3)] pr-[calc(1em/12*3)] [text-autospace:no-autospace]"
+    class="leading-none pl-[calc(1em/12*4)] pb-[calc(1em/12*4)] pt-[calc(1em/12*3)] pr-[calc(1em/12*3)]"
     style="font-size: {previewFontSize}px; font-family: {fontProps.family}; font-weight: {fontProps.weight}; font-stretch: {fontProps.stretch}"
     spellcheck="false"
     bind:value={exampleText}
