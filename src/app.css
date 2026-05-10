@@ -19,8 +19,7 @@
     Noto Sans JP, Meiryo, Asta Sans, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui,
     sans-serif;
   --font-serif:
-    STIXTwoText, New York, Georgia Pro, Georgia, Hiragino Mincho ProN, Noto Serif JP, MS Mincho, BookkMyungjo-web,
-    AppleMyungjo, Noto Serif KR, Batang, ui-serif, serif;
+    STIXTwoText, New York, Georgia Pro, Georgia, BookkMyungjo-web, AppleMyungjo, Noto Serif KR, Batang, ui-serif, serif;
   --default-font-feature-settings: 'palt' 1;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -194,7 +193,7 @@
     @apply scroll-m-5.5 text-2xl leading-tight font-extrabold tracking-tight text-pretty break-keep md:text-3xl lg:text-4xl;
   }
   h2 {
-    @apply scroll-m-5.5 border-b pb-3 text-xl leading-snug font-bold tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
+    @apply scroll-m-5.5 border-b pb-3 font-serif text-xl leading-snug font-medium tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
   }
   h3 {
     @apply scroll-m-5.5 text-lg font-bold tracking-tight md:text-xl lg:text-2xl;
