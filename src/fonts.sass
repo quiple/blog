@@ -1,5 +1,6 @@
 $geist-fonts: 375 Light, 500 Regular, 675 Medium, 800 SemiBold
 $plex-jp-fonts: 375 Regular, 500 Medium, 675 SemiBold, 800 Bold
+$bookk-fonts: 400 Light, 700 Bold
 $i: 0
 
 @font-face
@@ -18,6 +19,15 @@ $i: 0
       weight: $weight
       display: swap
     src: url('/fonts/geista/Geista-#{$name}.woff2') format('woff2')
+
+@each $weight, $name in $bookk-fonts
+  @font-face
+    font:
+      family: BookkMyungjo-web
+      style: normal
+      weight: $weight
+      display: swap
+    src: url('/fonts/bookk/BookkMyungjo-#{$name}.woff2') format('woff2')
 
 @while $i <= 119
   @each $weight, $name in $plex-jp-fonts
