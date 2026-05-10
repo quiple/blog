@@ -14,7 +14,9 @@
 :root {
   --font-weight-normal: 375;
   --font-weight-bold: 675;
-  --font-sans: Geista, IBMPlexSansJP-web, Asta Sans, Noto Sans JP, ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    Geista, IBMPlexSansJP-web, Asta Sans, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo, ui-sans-serif,
+    system-ui, sans-serif;
   --font-serif: STIXTwoText, BookkMyungjo-web, AppleMyungjo, Noto Serif JP, ui-serif, serif;
   --default-font-feature-settings: 'palt' 1;
   --radius: 0.625rem;
