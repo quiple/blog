@@ -101,11 +101,11 @@
       >
         <Q class="size-9" />
       </a>
-      <div class="post-title {navigating.to ? 'transition-none!' : ''}">
-        {#if isPostPage && page.data.title}
+      {#if isPostPage && page.data.title}
+        <div class="post-title {navigating.to ? 'transition-none!' : ''}" title={page.data.title}>
           {page.data.title}
-        {/if}
-      </div>
+        </div>
+      {/if}
     </div>
 
     <div class="flex gap-2">
