@@ -78,7 +78,7 @@
           @apply max-w-full w-xl 2xl:w-2xl
           color-scheme: initial
         :global(.footnotes)
-          @apply text-sm border-t pt-4 mt-6
+          @apply text-sm 2xl:text-base leading-6 border-t pt-4 mt-6
           :global(p)
-            @apply leading-6 my-2 2xl:text-base
+            @apply my-2
 </style>
