@@ -240,7 +240,7 @@
     blockquote {
       @apply pl-3;
     }
-    :last-child {
+    > :last-child {
       @apply mb-0;
     }
   }
