@@ -28,10 +28,15 @@
   let overrideScrollY = $state<number | null>(null)
   let hasHeroImage = $derived(isPostPage && !!page.data?.image)
   let currentScrollY = $derived(overrideScrollY !== null ? overrideScrollY : scrollY)
-  let headerClassName = $derived(hasHeroImage && currentScrollY < innerHeight / 2 - 42 ? 'hero' : '')
   let logoMaskImage = $derived(
     $heroColors.foreground === '#fff' ? ($heroColors.outline ? 'none' : `url("${svgGradeDown}")`) : 'none',
   )
+  let isH1Visible = $state(false)
+  let headerClassName = $derived.by(() => {
+    if (hasHeroImage && currentScrollY < innerHeight / 2 - 42) return 'hero'
+    if (!hasHeroImage && (isH1Visible || (isPostPage && currentScrollY === 0))) return 'title-hidden'
+    return ''
+  })
 
   const isProd = import.meta.env.PROD
   const {transition} = setupViewTransition()
@@ -44,6 +49,25 @@
   $effect(() => {
     const q = page.url.searchParams.get('q')
     query = q?.replaceAll('+', ' ') || ''
+  })
+
+  $effect(() => {
+    if (!isPostPage || hasHeroImage) {
+      isH1Visible = false
+      return
+    }
+
+    const h1 = document.querySelector('article h1')
+    if (h1) {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          isH1Visible = entry.isIntersecting
+        },
+        {threshold: 0},
+      )
+      observer.observe(h1)
+      return () => observer.disconnect()
+    }
   })
 
   beforeNavigate((nav) => {
@@ -167,7 +191,7 @@
 
   header
     @apply relative md:sticky top-0 py-4 sm:py-6 z-1 [print-color-adjust:exact] print:text-(--hero-foreground)
-    &.hero
+    &.hero, &.title-hidden
       @apply text-(--hero-foreground)
       :global(Button)
         @apply hover:text-(--hero-foreground) hover:bg-(--hero-foreground)/5
