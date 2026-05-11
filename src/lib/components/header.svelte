@@ -18,6 +18,11 @@
   let inputElement = $state<HTMLInputElement | null>(null)
   let menuOpen = $state(false)
   let headerClassName = $derived($isHero === true ? 'hero' : '')
+  let isPostPage = $derived(
+    page.url.pathname.startsWith('/blog/') ||
+      page.url.pathname.startsWith('/article/') ||
+      page.url.pathname.startsWith('/font/'),
+  )
   let logoMaskImage = $derived(
     $heroColors.foreground === '#fff' ? ($heroColors.outline ? 'none' : `url("${svgGradeDown}")`) : 'none',
   )
@@ -31,9 +36,6 @@
   }
 
   const onScroll = () => {
-    const path = page.url.pathname
-    const isPostPage = path.startsWith('/blog/') || path.startsWith('/article/') || path.startsWith('/font/')
-
     if ($isHero !== null && isPostPage) {
       if (window.scrollY < window.innerHeight / 2 - 42) isHero.set(true)
       else isHero.set(false)
@@ -71,10 +73,9 @@
         <Q class="size-9" />
       </a>
       <div class="post-title">
-        제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목
-        텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목
-        텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목
-        텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트
+        {#if isPostPage && page.data.title}
+          {page.data.title}
+        {/if}
       </div>
     </div>
 
