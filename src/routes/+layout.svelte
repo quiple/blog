@@ -80,5 +80,5 @@
         :global(.footnotes)
           @apply text-sm 2xl:text-base leading-6 border-t pt-4 mt-6
           :global(p)
-            @apply my-2
+            @apply leading-6 my-2 2xl:text-base
 </style>
