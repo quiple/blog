@@ -216,8 +216,7 @@ function figure() {
                   type: 'html',
                   value: `<div class="${wrapperClass}" ${wrapperStyle}>${content}</div><figcaption>`,
                 },
-                // @ts-ignore
-                ...node.children[0].children,
+                ...node.children,
                 {type: 'html', value: `</figcaption>`},
               ]
       }
