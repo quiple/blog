@@ -1,6 +1,5 @@
 <script lang="ts">
   import {onMount} from 'svelte'
-  import {hero} from '$lib/actions/hero'
   import Giscus from '$lib/components/giscus.svelte'
   import MdxContent from '$lib/components/mdx/MdxContent.svelte'
   import {Badge} from '$lib/components/ui/badge/index.js'
@@ -152,8 +151,6 @@
 </svelte:head>
 
 <svelte:window bind:scrollY />
-
-<div use:hero={{hasHero: Boolean(imageMobile)}}></div>
 
 {#snippet metadata(isOutline: boolean = false)}
   <div

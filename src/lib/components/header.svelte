@@ -1,7 +1,7 @@
 <script lang="ts">
   import {Menu, Monitor, Moon, Search, Sun} from '@lucide/svelte'
-  import {afterNavigate, goto} from '$app/navigation'
-  import {page} from '$app/state'
+  import {afterNavigate, beforeNavigate, goto} from '$app/navigation'
+  import {navigating, page} from '$app/state'
   import svgGradeDown from '$lib/assets/logo-grade-down.svg'
   import svgOutline from '$lib/assets/logo-outline.svg'
   import menu from '$lib/assets/menu.svg'
@@ -10,19 +10,25 @@
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index'
   import {Input} from '$lib/components/ui/input/index'
   import * as Tabs from '$lib/components/ui/tabs/index.js'
-  import {heroColors, isHero} from '$lib/stores/header'
+  import {heroColors} from '$lib/stores/header'
   import {setMode, userPrefersMode} from 'mode-watcher'
   import {setupViewTransition} from 'sveltekit-view-transition'
 
   let query = $state('')
   let inputElement = $state<HTMLInputElement | null>(null)
   let menuOpen = $state(false)
-  let headerClassName = $derived($isHero === true ? 'hero' : '')
+  let scrollY = $state(0)
+  let innerHeight = $state(1000)
+
   let isPostPage = $derived(
     page.url.pathname.startsWith('/blog/') ||
       page.url.pathname.startsWith('/article/') ||
       page.url.pathname.startsWith('/font/'),
   )
+  let overrideScrollY = $state<number | null>(null)
+  let hasHeroImage = $derived(isPostPage && !!page.data?.image)
+  let currentScrollY = $derived(overrideScrollY !== null ? overrideScrollY : scrollY)
+  let headerClassName = $derived(hasHeroImage && currentScrollY < innerHeight / 2 - 42 ? 'hero' : '')
   let logoMaskImage = $derived(
     $heroColors.foreground === '#fff' ? ($heroColors.outline ? 'none' : `url("${svgGradeDown}")`) : 'none',
   )
@@ -35,25 +41,24 @@
     }
   }
 
-  const onScroll = () => {
-    if ($isHero !== null && isPostPage) {
-      if (window.scrollY < window.innerHeight / 2 - 42) isHero.set(true)
-      else isHero.set(false)
-    }
-  }
-
   $effect(() => {
-    if ($isHero === true) onScroll()
     const q = page.url.searchParams.get('q')
     query = q?.replaceAll('+', ' ') || ''
   })
 
+  beforeNavigate((nav) => {
+    if (nav.type !== 'popstate') overrideScrollY = 0
+  })
+
   afterNavigate(() => {
     menuOpen = false
+    setTimeout(() => {
+      overrideScrollY = null
+    }, 100)
   })
 </script>
 
-<svelte:window on:keydown={onKeydown} on:scroll={onScroll} />
+<svelte:window bind:scrollY bind:innerHeight on:keydown={onKeydown} />
 
 <header
   class={headerClassName}
@@ -72,7 +77,7 @@
       >
         <Q class="size-9" />
       </a>
-      <div class="post-title">
+      <div class="post-title {navigating.to ? 'transition-none!' : ''}">
         {#if isPostPage && page.data.title}
           {page.data.title}
         {/if}
