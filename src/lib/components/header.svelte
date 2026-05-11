@@ -177,7 +177,7 @@
       .logo
         @apply flex items-center gap-1 self-center transition relative before:mask-size-[54px] p-1 -m-1
       .post-title
-        @apply invisible opacity-0 lg:visible lg:opacity-100 transition-all font-bold line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)] leading-5 -my-0.5
+        @apply invisible opacity-0 lg:visible lg:opacity-100 transition-all font-bold line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)] leading-5 -my-0.5 text-pretty break-keep
       :global(.menu)
         @apply relative before:mask-size-[24px] print:hidden size-9
       .logo, :global(.menu)
