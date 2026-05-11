@@ -228,7 +228,7 @@
         />
       </svg>
 
-      <ul class="flex flex-col m-0 p-0 list-none text-sm relative z-10 w-full">
+      <ul class="flex flex-col m-0 p-0 list-none text-sm 2xl:text-base relative z-10 w-full">
         {#each headings as heading}
           <li class="m-0 p-0 relative w-full">
             <a
