@@ -70,7 +70,12 @@
       >
         <Q class="size-9" />
       </a>
-      <span class="post-title">제목 텍스트~~</span>
+      <span class="post-title"
+        >제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트
+        제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목
+        텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목
+        텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트 제목 텍스트</span
+      >
     </div>
 
     <div class="flex gap-2">
@@ -165,13 +170,13 @@
       .logo
         mask-image: var(--logo-mask-image) !important
       .post-title
-        @apply invisible opacity-0
+        @apply lg:invisible lg:opacity-0
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-8
       .logo
         @apply flex items-center gap-1 self-center transition relative before:mask-size-[54px] p-1 -m-1
       .post-title
-        @apply visible opacity-100
+        @apply invisible opacity-0 lg:visible lg:opacity-100 transition font-bold line-clamp-2
       :global(.menu)
         @apply relative before:mask-size-[24px] print:hidden size-9
       .logo, :global(.menu)
