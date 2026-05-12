@@ -25,27 +25,22 @@
   let isPostPage = $derived(isPostPath(page.url.pathname))
   let overrideScrollY = $state<number | null>(null)
   let hasHeroImage = $derived(isPostPage && !!page.data?.image)
-  let currentScrollY = $derived(overrideScrollY !== null ? overrideScrollY : scrollY)
 
-  // Compute hero colors synchronously from page.data
-  let hereForeground = $derived(
-    isPostPage && page.data?.image ? `#${page.data?.imageForeground?.toString() ?? '09090b'}` : null,
-  )
+  let heroForeground = $derived(hasHeroImage ? `#${page.data?.imageForeground?.toString() ?? '09090b'}` : null)
   let heroOutline = $derived(isPostPage && page.data?.outline ? `#${page.data.outline.toString()}` : null)
-  let logoMaskImage = $derived(hereForeground === '#fff' ? (heroOutline ? 'none' : `url("${svgGradeDown}")`) : 'none')
+  let logoMaskImage = $derived(heroForeground === '#fff' ? (heroOutline ? 'none' : `url("${svgGradeDown}")`) : 'none')
 
   // Track navigation direction
   let navigatingFromNonPostToPost = $state(false)
-  let navigatingCrossPageType = $state(false)
 
   let isH1Visible = $state(false)
   let headerClassName = $derived.by(() => {
-    if (hasHeroImage && currentScrollY < innerHeight / 2 - 42) return 'hero'
-    if (!hasHeroImage && (isH1Visible || (isPostPage && currentScrollY === 0))) return 'title-hidden'
+    const sy = overrideScrollY ?? scrollY
+    if (hasHeroImage && sy < innerHeight / 2 - 42) return 'hero'
+    if (!hasHeroImage && (isH1Visible || (isPostPage && sy === 0))) return 'title-hidden'
     return ''
   })
 
-  const isProd = import.meta.env.PROD
   const {transition} = setupViewTransition()
   const onKeydown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && inputElement && document.activeElement === inputElement) {
@@ -81,16 +76,12 @@
     if (nav.type !== 'popstate') overrideScrollY = 0
     const fromPath = nav.from?.url.pathname ?? ''
     const toPath = nav.to?.url.pathname ?? ''
-    const fromIsPost = isPostPath(fromPath)
-    const toIsPost = isPostPath(toPath)
-    navigatingFromNonPostToPost = !fromIsPost && toIsPost
-    navigatingCrossPageType = fromIsPost !== toIsPost
+    navigatingFromNonPostToPost = !isPostPath(fromPath) && isPostPath(toPath)
   })
 
   afterNavigate(() => {
     menuOpen = false
     navigatingFromNonPostToPost = false
-    navigatingCrossPageType = false
     setTimeout(() => {
       overrideScrollY = null
     }, 100)
@@ -102,8 +93,7 @@
 <header
   class={headerClassName}
   use:transition={'header'}
-  style:view-transition-name={navigatingCrossPageType ? 'none' : undefined}
-  style:--hero-foreground={hereForeground ?? undefined}
+  style:--hero-foreground={heroForeground ?? undefined}
   style:--outline-color={heroOutline ?? undefined}
   style:--logo-mask-image={logoMaskImage}
 >
