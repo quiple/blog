@@ -173,7 +173,7 @@ function figure() {
 
         let content = ''
         let wrapperStyle = ''
-        let wrapperClass = cn('mx-auto self-center', node.name !== 'figure' && 'after:hidden')
+        let wrapperClass = cn('wrapper', node.name !== 'figure' && 'after:hidden')
 
         if (node.name === 'figure') {
           wrapperClass = cn(wrapperClass, className)
@@ -210,13 +210,17 @@ function figure() {
             ? [
                 {
                   type: 'html',
-                  value: `<div class="${wrapperClass}" ${wrapperStyle}>${content}</div>`,
+                  value:
+                    node.name !== 'tweet' ? `<div class="${wrapperClass}" ${wrapperStyle}>${content}</div>` : content,
                 },
               ]
             : [
                 {
                   type: 'html',
-                  value: `<div class="${wrapperClass}" ${wrapperStyle}>${content}</div><figcaption>`,
+                  value:
+                    node.name !== 'tweet'
+                      ? `<div class="${wrapperClass}" ${wrapperStyle}>${content}</div><figcaption>`
+                      : `${content}<figcaption>`,
                 },
                 ...node.children,
                 {type: 'html', value: `</figcaption>`},
