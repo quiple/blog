@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "semi": false,
+  "singleQuote": true,
+  "bracketSpacing": false,
+  "printWidth": 120,
+  "importOrder": ["^svelte$", "<THIRD_PARTY_MODULES>", "^#.+", "^$.+", "^[.]"],
+  "sortTailwindcss": {
+    "stylesheet": "./src/app.css"
+  },
+  "sortPackageJson": false,
+  "ignorePatterns": ["package-lock.json", "pnpm-lock.yaml", "yarn.lock", "bun.lock", "bun.lockb", "/static/"],
+  "embeddedLanguageFormatting": "auto",
+  "svelte": true
+}
