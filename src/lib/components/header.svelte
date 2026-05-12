@@ -32,6 +32,7 @@
 
   // Track navigation direction
   let navigatingFromNonPostToPost = $state(false)
+  let headerEl = $state<HTMLElement | null>(null)
 
   let isH1Visible = $state(false)
   let headerClassName = $derived.by(() => {
@@ -77,11 +78,15 @@
     const fromPath = nav.from?.url.pathname ?? ''
     const toPath = nav.to?.url.pathname ?? ''
     navigatingFromNonPostToPost = !isPostPath(fromPath) && isPostPath(toPath)
+    if (navigatingFromNonPostToPost && headerEl) {
+      headerEl.style.viewTransitionName = 'none'
+    }
   })
 
   afterNavigate(() => {
     menuOpen = false
     navigatingFromNonPostToPost = false
+    if (headerEl) headerEl.style.viewTransitionName = ''
     setTimeout(() => {
       overrideScrollY = null
     }, 100)
@@ -91,6 +96,7 @@
 <svelte:window bind:scrollY bind:innerHeight on:keydown={onKeydown} />
 
 <header
+  bind:this={headerEl}
   class={headerClassName}
   use:transition={'header'}
   style:--hero-foreground={heroForeground ?? undefined}
