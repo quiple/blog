@@ -201,13 +201,13 @@
 
 {#if headings.length > 0}
   <div class="toc" style="top: var(--header-height, 4rem);">
-    <div class="text-sm font-semibold mb-4 text-muted-foreground flex flex-wrap items-center">
-      <TextAlignStart class="size-4 inline-block mr-1.5" />
+    <div class="mb-4 flex flex-wrap items-center text-sm font-semibold text-muted-foreground">
+      <TextAlignStart class="mr-1.5 inline-block size-4" />
       {title}
     </div>
     <div class="relative" bind:this={tocContainer}>
       <!-- Background SVG Lines -->
-      <svg class="absolute left-0 top-0 w-full h-full pointer-events-none" style="z-index: 0">
+      <svg class="pointer-events-none absolute top-0 left-0 h-full w-full" style="z-index: 0">
         <path
           d={pathD}
           fill="none"
@@ -228,17 +228,17 @@
         />
       </svg>
 
-      <ul class="flex flex-col m-0 p-0 list-none text-sm 2xl:text-base relative z-10 w-full">
+      <ul class="relative z-10 m-0 flex w-full list-none flex-col p-0 text-sm 2xl:text-base">
         {#each headings as heading}
-          <li class="m-0 p-0 relative w-full">
+          <li class="relative m-0 w-full p-0">
             <a
               href="#{heading.id}"
-              class="block py-1.5 transition-colors no-underline
+              class="block py-1.5 no-underline transition-colors
                 {heading.level - minLevel === 0 ? 'pl-4' : ''}
                 {heading.level - minLevel === 1 ? 'pl-8' : ''}
                 {heading.level - minLevel === 2 ? 'pl-12' : ''}
                 {activeIds.includes(heading.id)
-                ? 'text-blue-700 dark:text-blue-300 hover:text-foreground dark:hover:text-foreground'
+                ? 'text-blue-700 hover:text-foreground dark:text-blue-300 dark:hover:text-foreground'
                 : 'text-muted-foreground hover:text-foreground'}"
               onclick={(e) => {
                 e.preventDefault()

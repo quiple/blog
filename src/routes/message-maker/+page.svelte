@@ -557,7 +557,7 @@
 
 <h1 class="page-title">메시지 만들기</h1>
 
-<div class="grid grid-cols-3 gap-0 h-[calc(100vh-var(--header-height))] -mx-4 sm:-mx-6 border-t">
+<div class="-mx-4 grid h-[calc(100vh-var(--header-height))] grid-cols-3 gap-0 border-t sm:-mx-6">
   <!-- ━━━ 1열: 캔버스 미리보기 ━━━ -->
   <div class="col col-preview" bind:this={previewContainer}>
     <div class="col-header">
@@ -600,17 +600,17 @@
       </ButtonGroup.Root>
     </div>
 
-    <div class="flex-1 overflow-y-auto p-3 flex flex-col gap-2">
+    <div class="flex flex-1 flex-col gap-2 overflow-y-auto p-3">
       {#each messages as msg, i (i)}
         <Card.Root
           class={[
-            'overflow-visible pl-2 pr-2 pb-2 pt-1 gap-1',
+            'gap-1 overflow-visible pt-1 pr-2 pb-2 pl-2',
             msg.type === 'left' && 'mr-8',
             msg.type === 'right' && 'ml-8',
           ]}
         >
           <Card.Header class="flex items-center p-0">
-            <span class="font-medium text-muted-foreground shrink-0 text-right tabular-nums text-xs min-w-4"
+            <span class="min-w-4 shrink-0 text-right text-xs font-medium text-muted-foreground tabular-nums"
               >#{i + 1}</span
             >
             {#if msg.type === 'left' || msg.type === 'bond'}
@@ -622,10 +622,10 @@
                     isProd,
                   )}
                   <div class="inner-border rounded-full after:rounded-full">
-                    <img class="size-6 object-cover scale-110" {src} alt={msg.name} />
+                    <img class="size-6 scale-110 object-cover" {src} alt={msg.name} />
                   </div>
                 {:else}
-                  <div class="rounded-full size-6 bg-muted flex items-center justify-center text-muted-foreground">
+                  <div class="flex size-6 items-center justify-center rounded-full bg-muted text-muted-foreground">
                     <User class="size-4" />
                   </div>
                 {/if}
@@ -643,8 +643,8 @@
                 </Button>
               </div>
             {/if}
-            <div class="flex items-center justify-end grow">
-              <ButtonGroup.Root class="gap-0! -mr-1">
+            <div class="flex grow items-center justify-end">
+              <ButtonGroup.Root class="-mr-1 gap-0!">
                 <ButtonGroup.Root>
                   <Button
                     size="icon-sm"
@@ -674,17 +674,17 @@
             </div>
           </Card.Header>
 
-          <Card.Content class="flex flex-col gap-1.5 items-end p-0">
+          <Card.Content class="flex flex-col items-end gap-1.5 p-0">
             {#if msg.type !== 'bond'}
               {#each msg.text as bubble, bi (bi)}
-                <div class="flex items-start gap-1.5 w-full">
+                <div class="flex w-full items-start gap-1.5">
                   <span
-                    class="font-medium text-muted-foreground mt-2.75 shrink-0 text-right tabular-nums text-xs min-w-4"
+                    class="mt-2.75 min-w-4 shrink-0 text-right text-xs font-medium text-muted-foreground tabular-nums"
                     >{bi + 1}</span
                   >
                   <Textarea
                     id="msg-input-{i}-{bi}"
-                    class="grow min-h-9.5"
+                    class="min-h-9.5 grow"
                     placeholder={msg.type === 'left'
                       ? lang === 'ja'
                         ? '左のメッセージを入力...'
@@ -720,7 +720,7 @@
                 {/if}
               </Button>
             {:else}
-              <div class="w-full text-center p-3 text-sm text-muted-foreground">
+              <div class="w-full p-3 text-center text-sm text-muted-foreground">
                 {#if lang === 'ja'}{msg.name}の絆ストーリーへ
                 {:else if lang === 'ko'}{msg.name}의 인연 스토리로
                 {:else}To {msg.name}'s Relationship Story
@@ -732,14 +732,14 @@
       {/each}
 
       <div class="flex gap-2">
-        <Button class="grow flex-1" size="lg" variant="outline" onclick={() => addMessage('left')}>
+        <Button class="flex-1 grow" size="lg" variant="outline" onclick={() => addMessage('left')}>
           <Plus />
           {#if lang === 'ja'}左のメッセージを追加
           {:else if lang === 'ko'}왼쪽 메시지 추가
           {:else}Add Message on the Left
           {/if}
         </Button>
-        <Button class="grow flex-1" size="lg" variant="outline" onclick={() => addMessage('right')}>
+        <Button class="flex-1 grow" size="lg" variant="outline" onclick={() => addMessage('right')}>
           <Plus />
           {#if lang === 'ja'}右のメッセージを追加
           {:else if lang === 'ko'}오른쪽 메시지 추가
@@ -958,7 +958,7 @@
     }
   }}
 >
-  <Dialog.Content class="sm:max-w-3xl max-h-[90vh] flex flex-col overflow-hidden">
+  <Dialog.Content class="flex max-h-[90vh] flex-col overflow-hidden sm:max-w-3xl">
     <Dialog.Header>
       <Dialog.Title lang={lang !== 'ko' ? lang : undefined}>
         {#if lang === 'ja'}生徒の選択
@@ -978,11 +978,11 @@
       />
     </div>
 
-    <div class="flex-1 overflow-y-auto -m-4 p-4" bind:this={studentScrollEl} onscroll={handleStudentScroll}>
+    <div class="-m-4 flex-1 overflow-y-auto p-4" bind:this={studentScrollEl} onscroll={handleStudentScroll}>
       <div style="height: {vsTotalHeight}px; position: relative;">
         <div
           bind:this={vsGridEl}
-          class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-1"
+          class="grid grid-cols-4 gap-1 sm:grid-cols-6 md:grid-cols-8"
           style="position: absolute; top: {vsStartRow * vsRowHeight}px; left: 0; right: 0;"
         >
           {#each vsVisibleStudents as { student, globalIndex } (student.name.en)}
@@ -992,7 +992,7 @@
             <div class="flex flex-col">
               <Button
                 variant="ghost"
-                class={['flex-col h-auto py-1 gap-1 group', expandedStudentIndex === globalIndex && 'bg-muted']}
+                class={['group h-auto flex-col gap-1 py-1', expandedStudentIndex === globalIndex && 'bg-muted']}
                 onclick={() => {
                   if (student.portrait.length > 1) {
                     toggleStudentExpand(globalIndex)
@@ -1002,7 +1002,7 @@
                 }}
               >
                 <div class="relative">
-                  <div class="inner-border rounded-full after:rounded-full size-16">
+                  <div class="inner-border size-16 rounded-full after:rounded-full">
                     <img
                       class="size-full object-cover transition-transform group-hover:scale-110"
                       {src}
@@ -1016,7 +1016,7 @@
                     </Badge>
                   {/if}
                 </div>
-                <span class="text-sm text-center font-medium line-clamp-1" lang={lang !== 'ko' ? lang : undefined}
+                <span class="line-clamp-1 text-center text-sm font-medium" lang={lang !== 'ko' ? lang : undefined}
                   >{student.name[lang]}</span
                 >
               </Button>
@@ -1031,9 +1031,9 @@
                   (isThirdFromRight && student.portrait.length >= 4)}
                 <div
                   class={[
-                    'w-fit flex gap-1.5 p-2 bg-muted my-1 animate-in fade-in zoom-in-95 duration-200',
+                    'my-1 flex w-fit animate-in gap-1.5 bg-muted p-2 duration-200 zoom-in-95 fade-in',
                     shouldAlignRight
-                      ? 'self-end rounded-tr-lg rounded-tl-[40px] rounded-b-[40px]'
+                      ? 'self-end rounded-tl-[40px] rounded-tr-lg rounded-b-[40px]'
                       : 'rounded-tl-lg rounded-tr-[40px] rounded-b-[40px]',
                   ]}
                 >
@@ -1041,7 +1041,7 @@
                     {@const portraitId = typeof p === 'string' ? p : p.id}
                     {@const altSrc = getImageUrl(`blue-archive/${portraitId}.png`, {h: 128}, isProd)}
                     <button
-                      class="size-16 rounded-full after:rounded-full p-0 inner-border group"
+                      class="group inner-border size-16 rounded-full p-0 after:rounded-full"
                       onclick={() => selectStudent(student, pi)}
                     >
                       <img
@@ -1123,15 +1123,15 @@
               isProd && (editPortraitUrl.startsWith('/img/') || editPortraitUrl.startsWith('blue-archive/'))
                 ? getImageUrl(editPortraitUrl.replace('/img/', ''), {h: 160}, isProd)
                 : editPreviewRawSrc}
-            <div class="shrink-0 inner-border rounded-full after:rounded-full">
+            <div class="inner-border shrink-0 rounded-full after:rounded-full">
               <img class="size-20 object-cover" src={editPreviewSrc} alt="미리보기" />
             </div>
           {:else}
-            <div class="shrink-0 size-20 rounded-full bg-muted flex items-center justify-center text-muted-foreground">
+            <div class="flex size-20 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
               <User class="size-10" />
             </div>
           {/if}
-          <div class="flex flex-col gap-2 grow">
+          <div class="flex grow flex-col gap-2">
             <Input id="edit-portrait-upload" type="file" accept="image/*" onchange={handleEditPortraitUpload} />
           </div>
         </div>

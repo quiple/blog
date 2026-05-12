@@ -468,7 +468,7 @@
     </div>
     {#if drawing}
       <div class="placeholder">
-        <LoaderCircle class="animate-spin size-6 text-muted-foreground" />
+        <LoaderCircle class="size-6 animate-spin text-muted-foreground" />
       </div>
     {:else if !canvasReady}
       <div class="placeholder">폰트 이미지를 만들려면 조건을 설정하고 만들기 버튼을 누르세요.</div>
@@ -535,7 +535,7 @@
                   value={charsetPreview}
                   lang={charsetLang}
                   readonly
-                  class="min-h-20 h-20 break-all text-xs!"
+                  class="h-20 min-h-20 text-xs! break-all"
                   spellcheck="false"
                   onclick={(e: MouseEvent) => (e.currentTarget as HTMLTextAreaElement).select()}
                 />
@@ -546,7 +546,7 @@
                 <Textarea
                   id="custom-charset"
                   bind:value={customCharset}
-                  class="min-h-20 h-20 break-all text-xs"
+                  class="h-20 min-h-20 text-xs break-all"
                   spellcheck="false"
                   placeholder="사용자 지정 문자 집합을 입력하세요."
                 />
@@ -608,7 +608,7 @@
                     foreground = sanitizeHex(t.value)
                     t.value = foreground
                   }}
-                  class="tabular-nums pl-6"
+                  class="pl-6 tabular-nums"
                 />
                 <span class="color-swatch" style="background: #{foreground}"></span>
               </div>
@@ -631,7 +631,7 @@
                     background = sanitizeHex(t.value)
                     t.value = background
                   }}
-                  class="tabular-nums pl-6"
+                  class="pl-6 tabular-nums"
                 />
                 <span class="color-swatch" style="background: #{background}"></span>
               </div>
@@ -652,7 +652,7 @@
                     shadowColor = sanitizeHex(t.value)
                     t.value = shadowColor
                   }}
-                  class="tabular-nums pl-6"
+                  class="pl-6 tabular-nums"
                 />
                 <span class="color-swatch" style="background: #{shadowColor}"></span>
               </div>
@@ -679,13 +679,13 @@
           <!-- 액션 버튼들 -->
           <Button type="submit" disabled={drawing} class="w-full" size="lg">
             {#if drawing}
-              <LoaderCircle class="animate-spin size-4" />
+              <LoaderCircle class="size-4 animate-spin" />
               만드는 중...
             {:else}
               만들기
             {/if}
           </Button>
-          <div class="w-full flex gap-2">
+          <div class="flex w-full gap-2">
             <Button
               type="button"
               variant="outline"

@@ -265,7 +265,7 @@
       </Select.Root>
     {/if}
   </div>
-  <div class="flex gap-1.5 items-center tabular-nums print:hidden">
+  <div class="flex items-center gap-1.5 tabular-nums print:hidden">
     <Label for="font-size" class="text-muted-foreground">{previewFontSize}px</Label>
     <Slider
       id="font-size"
@@ -281,7 +281,7 @@
   </div>
   <Textarea
     id="tester"
-    class="leading-none pl-[calc(1em/12*4)] pb-[calc(1em/12*4)] pt-[calc(1em/12*3)] pr-[calc(1em/12*3)]"
+    class="pt-[calc(1em/12*3)] pr-[calc(1em/12*3)] pb-[calc(1em/12*4)] pl-[calc(1em/12*4)] leading-none"
     style="font-size: {previewFontSize}px; font-family: {fontProps.family}; font-weight: {fontProps.weight}; font-stretch: {fontProps.stretch}"
     spellcheck="false"
     bind:value={exampleText}

@@ -65,11 +65,11 @@
 
 {#snippet skeletonItem()}
   <li>
-    <div class="list-item pointer-events-none! py-2">
+    <div class="pointer-events-none! list-item py-2">
       <div class="flex gap-4">
         <div class="grow">
-          <Skeleton class="h-4 w-3/5 mt-1 mb-2" />
-          <div class="space-y-1.5 pb-1.75 pt-0.75">
+          <Skeleton class="mt-1 mb-2 h-4 w-3/5" />
+          <div class="space-y-1.5 pt-0.75 pb-1.75">
             <Skeleton class="h-3.5 w-full" />
             <Skeleton class="h-3.5 w-full" />
             <Skeleton class="h-3.5 w-5/6" />
@@ -77,14 +77,14 @@
         </div>
         <Skeleton class="img size-22" />
       </div>
-      <div class="flex justify-between items-start gap-2 mt-px">
-        <Skeleton class="h-[12.8px] w-1/4 my-[3.2px]" />
+      <div class="mt-px flex items-start justify-between gap-2">
+        <Skeleton class="my-[3.2px] h-[12.8px] w-1/4" />
       </div>
     </div>
   </li>
 {/snippet}
 
-<ul class="flex flex-col gap-1 z-10 relative" use:transition={'post-list'}>
+<ul class="relative z-10 flex flex-col gap-1" use:transition={'post-list'}>
   {#if !isProd}
     {#each Array(2) as _}
       {@render skeletonItem()}
@@ -102,9 +102,9 @@
         <a href={post.relativeURL} class="list-item">
           <div class="flex gap-4">
             <div class="grow">
-              <div class="flex items-center mb-1 gap-1">
+              <div class="mb-1 flex items-center gap-1">
                 <div
-                  class="-ml-px flex items-center shrink-0"
+                  class="-ml-px flex shrink-0 items-center"
                   use:transition={{
                     name: `post-category-${post.slug}`,
                     shouldApply({navigation}: {navigation: any}) {
@@ -130,7 +130,7 @@
                   }}>{post.title}</strong
                 >
               </div>
-              <p class="text-sm line-clamp-3 mb-1 text-justify">{post.description}</p>
+              <p class="mb-1 line-clamp-3 text-justify text-sm">{post.description}</p>
             </div>
             {#if post.image}
               {@html `
@@ -154,7 +154,7 @@
               {@const src1x = getImageUrl(post.image, {h: 88}, isProd)}
               {@const src2x = getImageUrl(post.image, {h: 176}, isProd)}
               <div
-                class="img bg-muted animate-pulse"
+                class="img animate-pulse bg-muted"
                 use:transition={{
                   name: `post-image-${post.slug}`,
                   shouldApply({navigation}: {navigation: any}) {
@@ -177,7 +177,7 @@
               </div>
             {/if}
           </div>
-          <div class="flex justify-between items-start gap-2 mt-px">
+          <div class="mt-px flex items-start justify-between gap-2">
             <small
               class="text-muted-foreground"
               use:transition={{

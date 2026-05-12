@@ -176,13 +176,9 @@
       <Tooltip.Provider>
         <Tooltip.Root>
           <Tooltip.Trigger class="cursor-default">
-            <time datetime={`${publishedDate}+09:00`}>
-              {formattedDate}
-            </time>
+            <time datetime={`${publishedDate}+09:00`}>{formattedDate}</time>
           </Tooltip.Trigger>
-          <Tooltip.Content>
-            {formattedDateTime}
-          </Tooltip.Content>
+          <Tooltip.Content>{formattedDateTime}</Tooltip.Content>
         </Tooltip.Root>
       </Tooltip.Provider>
     {/if}
@@ -205,7 +201,7 @@
     style:--outline-color={data.outline ? `#${data.outline.toString()}` : undefined}
   >
     <div>
-      <div class="inline-block mb-1.25" use:transition={`post-category-${data.slug}`}>
+      <div class="mb-1.25 inline-block" use:transition={`post-category-${data.slug}`}>
         <Badge variant="secondary">{getCategoryName(data.category)}</Badge>
       </div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
@@ -220,7 +216,7 @@
   <div class="flex-1"></div>
   <article>
     {#if !imageMobile}
-      <div class="inline-block mb-1.25" use:transition={`post-category-${data.slug}`}>
+      <div class="mb-1.25 inline-block" use:transition={`post-category-${data.slug}`}>
         <Badge variant="secondary">{getCategoryName(data.category)}</Badge>
       </div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>

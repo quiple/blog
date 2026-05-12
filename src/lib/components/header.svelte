@@ -92,7 +92,7 @@
   style:--logo-mask-image={logoMaskImage}
 >
   <section>
-    <div class="flex gap-4 items-center w-full">
+    <div class="flex w-full items-center gap-4">
       <a
         href="/"
         class="logo"
@@ -142,7 +142,7 @@
           <DropdownMenu.Item onclick={() => goto('/font-generator')}>비트맵 폰트 이미지 생성기</DropdownMenu.Item>
           <DropdownMenu.Item onclick={() => goto('/message-maker')}>메시지 만들기</DropdownMenu.Item>
           <DropdownMenu.Separator />
-          <div class="flex px-1.5 py-1 items-center justify-between text-sm">
+          <div class="flex items-center justify-between px-1.5 py-1 text-sm">
             색상 테마
             <Tabs.Root value={userPrefersMode.current ?? 'system'}>
               <Tabs.List>

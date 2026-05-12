@@ -46,7 +46,7 @@
 
 <div class={cn('relative block', className)} style={mergedStyle}>
   {#if !loaded || error}
-    <Skeleton class="absolute inset-0 w-full h-full rounded-md" />
+    <Skeleton class="absolute inset-0 h-full w-full rounded-md" />
   {/if}
 
   <img
@@ -61,7 +61,7 @@
     class={cn(
       'block object-cover transition-opacity',
       !loaded || error ? 'opacity-0' : 'opacity-100',
-      fullSize ? 'w-full h-full' : 'max-h-full h-auto',
+      fullSize ? 'h-full w-full' : 'h-auto max-h-full',
     )}
     onload={handleLoad}
     onerror={handleError}

@@ -39,7 +39,7 @@
   <meta property="og:description" content={data.description} />
 </svelte:head>
 
-<div class="max-w-xl 2xl:max-w-2xl mx-auto z-10 relative">
+<div class="relative z-10 mx-auto max-w-xl 2xl:max-w-2xl">
   <PostList posts={data.posts} {isPagination} {transition} />
 
   {#if data.totalPages > 1}

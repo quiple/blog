@@ -64,8 +64,8 @@
   {/if}
 </svelte:head>
 
-<div class="max-w-xl 2xl:max-w-2xl mx-auto z-10 relative">
-  <div class="mb-2 mt-0 md:-mt-1.5 sticky top-4 sm:top-4.5 z-20">
+<div class="relative z-10 mx-auto max-w-xl 2xl:max-w-2xl">
+  <div class="sticky top-4 z-20 mt-0 mb-2 sm:top-4.5 md:-mt-1.5">
     <Search class="absolute top-3 left-3 size-6" />
     <Input
       type="search"
@@ -73,7 +73,7 @@
       bind:value={searchInput}
       oninput={handleSearch}
       onkeydown={handleKeydown}
-      class="z-50 pl-11 h-12 text-lg md:text-xl bg-background dark:bg-card"
+      class="z-50 h-12 bg-background pl-11 text-lg md:text-xl dark:bg-card"
       autofocus
     />
   </div>
