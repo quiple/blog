@@ -78,15 +78,11 @@
     const fromPath = nav.from?.url.pathname ?? ''
     const toPath = nav.to?.url.pathname ?? ''
     navigatingFromNonPostToPost = !isPostPath(fromPath) && isPostPath(toPath)
-    if (navigatingFromNonPostToPost && headerEl) {
-      headerEl.style.viewTransitionName = 'none'
-    }
   })
 
   afterNavigate(() => {
     menuOpen = false
     navigatingFromNonPostToPost = false
-    if (headerEl) headerEl.style.viewTransitionName = ''
     setTimeout(() => {
       overrideScrollY = null
     }, 100)
