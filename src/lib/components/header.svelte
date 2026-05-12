@@ -32,7 +32,6 @@
 
   // Track navigation direction
   let navigatingFromNonPostToPost = $state(false)
-  let headerEl = $state<HTMLElement | null>(null)
 
   let isH1Visible = $state(false)
   let headerClassName = $derived.by(() => {
@@ -92,7 +91,6 @@
 <svelte:window bind:scrollY bind:innerHeight on:keydown={onKeydown} />
 
 <header
-  bind:this={headerEl}
   class={headerClassName}
   use:transition={'header'}
   style:--hero-foreground={heroForeground ?? undefined}
