@@ -235,10 +235,16 @@
   figcaption {
     @apply m-0;
     * {
-      @apply my-2 text-sm leading-5 font-medium text-muted-foreground;
+      @apply text-sm leading-5 font-medium text-muted-foreground;
+    }
+    > * {
+      @apply my-2;
     }
     blockquote {
       @apply pl-3;
+    }
+    figure {
+      @apply my-2;
     }
     > :last-child {
       @apply mb-0;
