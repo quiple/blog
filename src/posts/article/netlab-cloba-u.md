@@ -225,7 +225,7 @@ pubDate: 2025-12-25T12:58
 :::tweet{#1464542229087723523}
 
 > "#magic_of_stella"
-> ::figure{src="article/teru.png" class="w-120"}
+> ::figure{src="article/teru.png" class="w-100"}
 > --- 相崎うたう@瑠東さん①発売中 (@py_py_ai) [2021년 11월 27일](https://x.com/py_py_ai/status/1464542229087723523)
 
 아이자키 우타우 선생님이 최종회 전에 그린 테루 선배의 팬아트.
