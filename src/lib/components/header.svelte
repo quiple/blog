@@ -1,7 +1,7 @@
 <script lang="ts">
   import {Menu, Monitor, Moon, Search, Sun} from '@lucide/svelte'
   import {afterNavigate, beforeNavigate, goto} from '$app/navigation'
-  import {navigating, page} from '$app/state'
+  import {page} from '$app/state'
   import svgGradeDown from '$lib/assets/logo-grade-down.svg'
   import svgOutline from '$lib/assets/logo-outline.svg'
   import menu from '$lib/assets/menu.svg'
@@ -10,7 +10,6 @@
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index'
   import {Input} from '$lib/components/ui/input/index'
   import * as Tabs from '$lib/components/ui/tabs/index.js'
-  import {heroColors} from '$lib/stores/header'
   import {setMode, userPrefersMode} from 'mode-watcher'
   import {setupViewTransition} from 'sveltekit-view-transition'
 
@@ -20,17 +19,24 @@
   let scrollY = $state(0)
   let innerHeight = $state(1000)
 
-  let isPostPage = $derived(
-    page.url.pathname.startsWith('/blog/') ||
-      page.url.pathname.startsWith('/article/') ||
-      page.url.pathname.startsWith('/font/'),
-  )
+  const isPostPath = (pathname: string) =>
+    pathname.startsWith('/blog/') || pathname.startsWith('/article/') || pathname.startsWith('/font/')
+
+  let isPostPage = $derived(isPostPath(page.url.pathname))
   let overrideScrollY = $state<number | null>(null)
   let hasHeroImage = $derived(isPostPage && !!page.data?.image)
   let currentScrollY = $derived(overrideScrollY !== null ? overrideScrollY : scrollY)
-  let logoMaskImage = $derived(
-    $heroColors.foreground === '#fff' ? ($heroColors.outline ? 'none' : `url("${svgGradeDown}")`) : 'none',
+
+  // Compute hero colors synchronously from page.data
+  let hereForeground = $derived(
+    isPostPage && page.data?.image ? `#${page.data?.imageForeground?.toString() ?? '09090b'}` : null,
   )
+  let heroOutline = $derived(isPostPage && page.data?.outline ? `#${page.data.outline.toString()}` : null)
+  let logoMaskImage = $derived(hereForeground === '#fff' ? (heroOutline ? 'none' : `url("${svgGradeDown}")`) : 'none')
+
+  // Track navigation direction
+  let navigatingFromNonPostToPost = $state(false)
+
   let isH1Visible = $state(false)
   let headerClassName = $derived.by(() => {
     if (hasHeroImage && currentScrollY < innerHeight / 2 - 42) return 'hero'
@@ -72,10 +78,15 @@
 
   beforeNavigate((nav) => {
     if (nav.type !== 'popstate') overrideScrollY = 0
+    // Determine if we're navigating from a non-post page to a post page
+    const fromPath = nav.from?.url.pathname ?? ''
+    const toPath = nav.to?.url.pathname ?? ''
+    navigatingFromNonPostToPost = !isPostPath(fromPath) && isPostPath(toPath)
   })
 
   afterNavigate(() => {
     menuOpen = false
+    navigatingFromNonPostToPost = false
     setTimeout(() => {
       overrideScrollY = null
     }, 100)
@@ -87,8 +98,8 @@
 <header
   class={headerClassName}
   use:transition={'header'}
-  style:--hero-foreground={$heroColors.foreground ?? undefined}
-  style:--outline-color={$heroColors.outline ?? undefined}
+  style:--hero-foreground={hereForeground ?? undefined}
+  style:--outline-color={heroOutline ?? undefined}
   style:--logo-mask-image={logoMaskImage}
 >
   <section>
@@ -102,7 +113,7 @@
         <Q class="size-9" />
       </a>
       {#if isPostPage && page.data.title}
-        <div class="post-title {navigating.to ? 'transition-none!' : ''}" title={page.data.title}>
+        <div class="post-title {navigatingFromNonPostToPost ? 'transition-none!' : ''}" title={page.data.title}>
           {page.data.title}
         </div>
       {/if}

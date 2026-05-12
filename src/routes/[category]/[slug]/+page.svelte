@@ -5,7 +5,7 @@
   import {Badge} from '$lib/components/ui/badge/index.js'
   import * as Tooltip from '$lib/components/ui/tooltip/index.js'
   import {BASE_URL} from '$lib/constants'
-  import {heroColors} from '$lib/stores/header'
+
   import {getCategoryName, getImageUrl} from '$lib/utils'
   import {mode} from 'mode-watcher'
   import type {PageProps} from './$types'
@@ -103,18 +103,6 @@
       }
     </style>
   `)
-
-  $effect(() => {
-    heroColors.set({
-      foreground: imageMobile ? `#${data.imageForeground?.toString() ?? '09090b'}` : null,
-      outline: data.outline ? `#${data.outline.toString()}` : null,
-    })
-    return () =>
-      heroColors.set({
-        foreground: null,
-        outline: null,
-      })
-  })
 
   onMount(() => {
     const tweets = document.querySelectorAll('.twitter-tweet')
