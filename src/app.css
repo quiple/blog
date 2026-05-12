@@ -235,13 +235,16 @@
   figcaption {
     @apply m-0;
     * {
-      @apply my-2 text-sm leading-5 text-muted-foreground;
+      @apply my-2 text-sm leading-5 font-medium text-muted-foreground;
     }
     blockquote {
       @apply pl-3;
     }
     > :last-child {
       @apply mb-0;
+    }
+    strong {
+      @apply font-extrabold text-foreground;
     }
   }
   thead {
