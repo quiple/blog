@@ -68,8 +68,8 @@
             @apply text-muted-foreground font-normal no-underline hover:text-foreground transition
         :global(figure)
           @apply mx-auto [blockquote_&]:mx-0 max-w-fit flex flex-col items-start
-          & > :global(div)
-            @apply inner-border after:rounded-md rounded-md shadow-xs
+          & > :global(.wrapper)
+            @apply inner-border after:rounded-md rounded-md shadow-xs mx-auto self-center
         :global([target=_blank]:not(.metadata [target=_blank]))
           @apply after:content-['↗'] after:pr-px
         :global(.twitter-tweet)
