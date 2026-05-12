@@ -36,6 +36,7 @@
 
   // Track navigation direction
   let navigatingFromNonPostToPost = $state(false)
+  let navigatingCrossPageType = $state(false)
 
   let isH1Visible = $state(false)
   let headerClassName = $derived.by(() => {
@@ -78,15 +79,18 @@
 
   beforeNavigate((nav) => {
     if (nav.type !== 'popstate') overrideScrollY = 0
-    // Determine if we're navigating from a non-post page to a post page
     const fromPath = nav.from?.url.pathname ?? ''
     const toPath = nav.to?.url.pathname ?? ''
-    navigatingFromNonPostToPost = !isPostPath(fromPath) && isPostPath(toPath)
+    const fromIsPost = isPostPath(fromPath)
+    const toIsPost = isPostPath(toPath)
+    navigatingFromNonPostToPost = !fromIsPost && toIsPost
+    navigatingCrossPageType = fromIsPost !== toIsPost
   })
 
   afterNavigate(() => {
     menuOpen = false
     navigatingFromNonPostToPost = false
+    navigatingCrossPageType = false
     setTimeout(() => {
       overrideScrollY = null
     }, 100)
@@ -98,6 +102,7 @@
 <header
   class={headerClassName}
   use:transition={'header'}
+  style:view-transition-name={navigatingCrossPageType ? 'none' : undefined}
   style:--hero-foreground={hereForeground ?? undefined}
   style:--outline-color={heroOutline ?? undefined}
   style:--logo-mask-image={logoMaskImage}
