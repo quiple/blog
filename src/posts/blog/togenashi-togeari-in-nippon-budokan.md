@@ -93,17 +93,27 @@ pubDate: 2026-04-23T01:03
 
 ::figure{src="photo/IMG_2877.HEIC" class="max-h-200"}
 
-::figure{src="photo/IMG_2881.HEIC"}
+2025년 9월 20일부터 10월 31일까지 마루후쿠 커피 가와사키 어제일리어점(丸福珈琲店 川崎アゼリア店)과 마루후쿠 커피 요도바시아키바점(丸福珈琲店 ヨドバシAKIBA店)에서 [걸즈 밴드 크라이와 마루후쿠 커피의 컬래버레이션](https://girlsbandcry-marufukucoffeeten.com)이 개최되었다.
+
+마루후쿠 커피 요도바시아키바점에 방문했다.
+
+:::figure{src="photo/IMG_2881.HEIC"}
+걸즈 밴드 크라이 × 마루후쿠 커피 프루츠 파르페. 1,540엔.
+:::
 
 ::figure{src="photo/IMG_2884.HEIC"}
 
-::figure{src="photo/IMG_2886.HEIC"}
+:::figure{src="photo/IMG_2886.HEIC"}
+도쿄 스카이트리에서 본 야경.
+:::
 
 ::figure{src="photo/IMG_2893.HEIC" class="max-h-200"}
 
 ::figure{src="photo/IMG_2902.HEIC" class="max-h-200"}
 
-::figure{src="photo/IMG_2915.HEIC" class="max-h-200"}
+:::figure{src="photo/IMG_2915.HEIC" class="max-h-200"}
+센소지 호조몬(浅草寺 宝蔵門)이 보인다.
+:::
 
 ::figure{src="photo/IMG_2919.HEIC"}
 
