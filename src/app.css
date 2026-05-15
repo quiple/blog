@@ -12,8 +12,10 @@
 }
 
 :root {
-  --font-weight-normal: 375;
-  --font-weight-bold: 675;
+  --font-weight-normal: var(--font-sans-weight-normal);
+  --font-weight-medium: var(--font-sans-weight-medium);
+  --font-weight-bold: var(--font-sans-weight-bold);
+  --font-weight-extrabold: var(--font-sans-weight-extrabold);
   --font-sans:
     Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo,
     Asta Sans, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
@@ -191,7 +193,7 @@
     @apply scroll-m-5.5 text-2xl leading-tight font-extrabold tracking-tight text-pretty break-keep md:text-3xl lg:text-4xl;
   }
   h2 {
-    @apply scroll-m-5.5 border-b pb-3 font-serif text-xl leading-snug font-[450] tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
+    @apply scroll-m-5.5 border-b pb-3 font-serif text-xl leading-snug font-(--font-serif-weight-bold) tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
   }
   h3 {
     @apply scroll-m-5.5 text-lg font-bold tracking-tight md:text-xl lg:text-2xl;
