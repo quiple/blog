@@ -24,7 +24,7 @@
       stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Cloudflare'],
     },
     {
-      title: 'BitHangul',
+      title: 'unicode.quiple.dev',
       url: 'https://unicode.quiple.dev',
       description: '유니코드 블록 및 문자 정보.',
       type: '웹',
