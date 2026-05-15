@@ -1,6 +1,7 @@
 <script lang="ts">
   import '#app.css'
   import '#fonts.sass'
+  import '@quiple/blog-fonts'
   import {browser} from '$app/environment'
   import {onNavigate} from '$app/navigation'
   import appleTouchIcon from '$lib/assets/apple-touch-icon.png'

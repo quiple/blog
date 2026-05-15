@@ -6,6 +6,7 @@
       "name": "blog",
       "dependencies": {
         "@giscus/svelte": "^3.1.0",
+        "@quiple/blog-fonts": "^1.0.0",
         "@types/opentype.js": "^1.3.9",
         "bdfparser": "^2.2.5",
         "fetchline": "^1.0.1",
@@ -423,6 +424,8 @@
     "@poppinss/exception": ["@poppinss/exception@1.2.3", "", {}, "sha512-dCED+QRChTVatE9ibtoaxc+WkdzOSjYTKi/+uacHWIsfodVfpsueo3+DKpgU5Px8qXjgmXkSvhXvSCz3fnP9lw=="],
 
     "@prettier/plugin-oxc": ["@prettier/plugin-oxc@0.1.4", "", { "dependencies": { "oxc-parser": "0.125.0" } }, "sha512-P/KX37tuR1R7xMHMakgzdWsRDMeze7SkwUcGQKbqQVSsJLW0q5kxax2dxEJgK4E4zIoMy7pG6UUE7x4al8AQeg=="],
+
+    "@quiple/blog-fonts": ["@quiple/blog-fonts@1.0.0", "", {}, "sha512-huDLcJLWzj4fv7rh2KNByAXeVmPgeH4ZkLWJwZoz0aK7kIidONBUoH+zFNDcrmHgqEdBWMQLHwfxU8S056MmUQ=="],
 
     "@resvg/resvg-wasm": ["@resvg/resvg-wasm@2.6.2", "", {}, "sha512-FqALmHI8D4o6lk/LRWDnhw95z5eO+eAa6ORjVg09YRR7BkcM6oPHU9uyC0gtQG5vpFLvgpeU4+zEAz2H8APHNw=="],
 
