@@ -24,6 +24,13 @@
       stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Cloudflare'],
     },
     {
+      title: 'BitHangul',
+      url: 'https://unicode.quiple.dev',
+      description: '유니코드 블록 및 문자 정보.',
+      type: '웹',
+      stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Neon', 'PostgreSQL', 'Cloudflare'],
+    },
+    {
       title: 'ChuHoody',
       url: 'https://chuhoody.com',
       description: '개인 포트폴리오 블로그.',
