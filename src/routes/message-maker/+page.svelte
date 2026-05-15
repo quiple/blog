@@ -1196,7 +1196,7 @@
     @apply text-sm font-medium text-foreground
 
   .description
-    @apply prose-shadcn text-sm prose-p:my-0! prose-ul:my-2!
+    @apply prose-shadcn prose-p:my-0! prose-ul:my-2!
     *
-      @apply text-sm! 2xl:text-sm!
+      @apply text-sm! 2xl:text-sm! leading-5!
 </style>
