@@ -28,7 +28,7 @@
       url: 'https://unicode.quiple.dev',
       description: '유니코드 블록 및 문자 정보.',
       type: '웹',
-      stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Neon', 'PostgreSQL', 'Cloudflare'],
+      stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Supabase', 'PostgreSQL', 'Cloudflare'],
     },
     {
       title: 'ChuHoody',
