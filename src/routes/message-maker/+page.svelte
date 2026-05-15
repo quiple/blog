@@ -1197,4 +1197,6 @@
 
   .description
     @apply prose-shadcn text-sm prose-p:my-0! prose-ul:my-2!
+    *
+      @apply text-sm! 2xl:text-sm!
 </style>
