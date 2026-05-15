@@ -139,7 +139,13 @@ pubDate: 2026-04-23T01:03
 신권 지폐를 안 먹는 까탈스러운 자판기.
 :::
 
+2025년 9월 25일부터 10월 16일까지 개최된 걸즈 밴드 크라이와 산토리 자판기의 컬래버레이션. 오리지널 라벨 캔을 전국의 산토리 자판기에서 판매한다. 자판기를 찾았으나 신권 지폐를 먹지 않아 ATM에서 현금을 인출해 편의점에서 거스름돈으로 지폐를 바꿔 기어코 구매했다.
+
+어떻게 신가와사키 3명의 라벨은 얻었지만 수량 한정 아크릴 키홀더는 얻지 못했다.
+
 ::figure{src="photo/IMG_3050.HEIC" class="max-h-200"}
+
+2025년 8월 21일부터 9월 28일까지 가라오케의 철인 이케부쿠로 동쪽 출구점(カラオケの鉄人 池袋東口店)에서 [걸즈 밴드 크라이와 가라오케의 철인의 컬래버레이션](https://www.karatetsu.com/animegame/girls-band-cry.shtml)이 개최되어 방문했다. 《학원 아이돌마스터》와의 컬래버레이션도 진행 중.
 
 ::figure{src="photo/IMG_3053.HEIC" class="max-h-200"}
 
@@ -149,13 +155,19 @@ pubDate: 2026-04-23T01:03
 
 ::figure{src="photo/IMG_3059.HEIC" class="max-h-200"}
 
-::figure{src="photo/IMG_3061.HEIC"}
+:::figure{src="photo/IMG_3061.HEIC"}
+걸즈 밴드 크라이 콘셉트 룸.
+:::
+
+콘셉트 룸을 이용하기 위해 새벽 12시 15분에 예약했다.
 
 ::figure{src="photo/IMG_3062.HEIC"}
 
 ::figure{src="photo/IMG_3069.HEIC"}
 
-::figure{src="photo/IMG_3071.HEIC" class="max-h-200"}
+:::figure{src="photo/IMG_3071.HEIC" class="max-h-200"}
+방명록.
+:::
 
 ::figure{src="photo/IMG_3075.HEIC"}
 
