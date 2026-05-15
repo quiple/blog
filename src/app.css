@@ -17,8 +17,7 @@
   --font-sans:
     Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo,
     Asta Sans, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
-  --font-serif:
-    STIXTwoText, New York, Georgia Pro, Georgia, BookkMyungjo-web, AppleMyungjo, Noto Serif KR, Batang, ui-serif, serif;
+  --font-serif: var(--font-serif-quiple);
   --default-font-feature-settings: 'palt' 1;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
