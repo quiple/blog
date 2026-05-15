@@ -8,14 +8,16 @@ pubDate: 2026-04-23T01:03
 ---
 
 :::figure{src="photo/IMG_3094.png" class="max-h-200"}
-토게나시 토게아리 라이브 인 닛폰부도칸 "격주의 외침"(トゲナシトゲアリ LIVE in 日本武道館 "奏檄の叫") 티켓 화면.
+〈토게나시 토게아리 라이브 인 닛폰부도칸 "격주의 외침"(トゲナシトゲアリ LIVE in 日本武道館 "奏檄の叫")〉 티켓 화면.
 :::
 
-토게나시 토게아리 라이브 인 닛폰부도칸 "격주의 외침"은 2025년 9월 23일 닛폰부도칸(日本武道館)에서 개최되었다.
+〈토게나시 토게아리 라이브 인 닛폰부도칸 "격주의 외침"〉은 2025년 9월 23일 닛폰부도칸(日本武道館)에서 개최되었다.
 
 ::figure{src="photo/IMG_2723.HEIC"}
 
-::figure{src="photo/IMG_2724.HEIC"}
+:::figure{src="photo/IMG_2724.HEIC"}
+회장 굿즈 판매 대기 줄.
+:::
 
 ::figure{src="photo/IMG_2728.HEIC" class="max-h-200"}
 
@@ -25,7 +27,9 @@ pubDate: 2026-04-23T01:03
 
 굿즈 구입 후 숙소로 돌아온 뒤 다시 닛폰부도칸으로.
 
-::figure{src="photo/IMG_2732.HEIC"}
+:::figure{src="photo/IMG_2732.HEIC"}
+닛폰부도칸 서쪽 2층석에서 바라본 모습.
+:::
 
 ::figure{src="photo/IMG_2734.HEIC"}
 
@@ -39,9 +43,13 @@ pubDate: 2026-04-23T01:03
 
 ::figure{src="photo/IMG_2775.HEIC"}
 
-::figure{src="photo/IMG_2779.HEIC" class="max-h-200"}
+:::figure{src="photo/IMG_2779.HEIC" class="max-h-200"}
+2025년 10월 3일 현지에서 개봉 예정이었던 《극장판 총집편 걸즈 밴드 크라이 【전편】 청춘광소곡》.
+:::
 
-::figure{src="photo/IMG_2781.HEIC"}
+:::figure{src="photo/IMG_2781.HEIC"}
+2025년 9월 13일부터 9월 28일까지 개최된 〈애니메이션 《걸즈 밴드 크라이》 POP UP SHOP 2025〉.
+:::
 
 ::figure{src="photo/IMG_2783.HEIC" class="max-h-200"}
 
