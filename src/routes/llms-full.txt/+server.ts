@@ -16,8 +16,8 @@ export const GET: RequestHandler = async () => {
       const {content} = parseMatter(rawContent)
 
       return `## [${p.title}](${BASE_URL}${p.relativeURL}.md)
-Date: ${p.pubDate}
-${p.description ? `Description: ${p.description}\n` : ''}
+${p.media ? `Media: ${p.media}` : ''}
+Date: ${p.origDate}\n
 ${content.trim()}
 `
     })
