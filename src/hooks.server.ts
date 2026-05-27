@@ -15,22 +15,34 @@ function createMarkdownResponse(content: string) {
 
 export const handle: Handle = async ({event, resolve}) => {
   const accept = event.request.headers.get('accept')
+  const {pathname, origin} = event.url
 
-  // 마크다운 원본 요청 처리 (Content Negotiation)
-  if (accept?.includes('text/markdown')) {
-    const {pathname, origin} = event.url
+  // 1. Redirect /llms_full.txt to /llms-full.txt
+  if (pathname === '/llms_full.txt') {
+    return new Response(null, {
+      status: 301,
+      headers: {
+        location: '/llms-full.txt',
+      },
+    })
+  }
 
+  const isMarkdownAccept = accept?.includes('text/markdown')
+  const isMarkdownExtension = pathname.endsWith('.md')
+
+  if (isMarkdownAccept || isMarkdownExtension) {
     // 1. Root page (Index)
-    if (pathname === '/') {
+    if (pathname === '/' || pathname === '/index.html.md' || pathname === '/index.md') {
       const allPosts = getAllBlogContentMetadata()
       const markdown = `# quiple\n\n이것저것 블로그.\n\n${allPosts
-        .map((p) => `- [${p.title}](${origin}${p.relativeURL})`)
+        .map((p) => `- [${p.title}](${origin}${p.relativeURL}.md)`)
         .join('\n')}`
       return createMarkdownResponse(markdown)
     }
 
     // 2. Post Detail Pages
-    const match = pathname.match(/^\/(blog|article|font)\/([^/]+)$/)
+    const cleanPathname = isMarkdownExtension ? pathname.slice(0, -3) : pathname
+    const match = cleanPathname.match(/^\/(blog|article|font)\/([^/]+)$/)
     if (match) {
       const [, category, slug] = match
       const matchPath = `/src/posts/${category}/${slug}.md`
