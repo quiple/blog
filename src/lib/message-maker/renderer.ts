@@ -1,5 +1,5 @@
 import opentype from 'opentype.js'
-import {woff2Decode} from 'woff2-decode'
+import {woff2Decode} from 'woff-lib/woff2/decode'
 import {getImageUrl} from '../utils'
 import type {Language, ThemeConfig, ThemeName} from './configs'
 import {resolveThemeConfig, themes} from './configs'

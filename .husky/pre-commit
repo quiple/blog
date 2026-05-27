@@ -1,2 +1,2 @@
-bunx lint-staged
-bun sync-images
+pnx lint-staged
+pnpm sync-images
