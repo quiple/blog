@@ -7,12 +7,4 @@ import {defineConfig} from 'vite'
 export default defineConfig({
   plugins: [tailwindcss(), sveltekit(), sveltekitOG()],
   assetsInclude: ['**/*.md'],
-  resolve: {
-    alias: [
-      {
-        find: /^remark-github-alerts$/,
-        replacement: path.resolve('node_modules/remark-github-alerts/src/index.ts'),
-      },
-    ],
-  },
 })
