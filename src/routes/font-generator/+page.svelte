@@ -9,6 +9,7 @@
   import {Textarea} from '$lib/components/ui/textarea'
   import {Bitmap, $Bitmap as createBitmap, $Font as createFont} from 'bdfparser'
   import fetchline from 'fetchline'
+  import {onDestroy} from 'svelte'
 
   interface FontDef {
     name: string
@@ -205,6 +206,7 @@
   // ── Draw ────────────────────────────────────────────────────────────
   // Cache parsed fonts to prevent repeated slow parsing
   const fontCache = new Map<string, any>()
+  const MAX_FONT_CACHE_SIZE = 2
 
   async function handleSubmit(e: SubmitEvent) {
     e.preventDefault()
@@ -293,6 +295,10 @@
         }
       }
       font = await createFont(yieldyFetchline())
+      if (fontCache.size >= MAX_FONT_CACHE_SIZE) {
+        const firstKey = fontCache.keys().next().value
+        if (firstKey) fontCache.delete(firstKey)
+      }
       fontCache.set(fontValue, font)
     }
 
@@ -306,20 +312,12 @@
     const emptyTile = createBitmap(Array.from({length: tHeight}).fill('0'.repeat(tWidth)) as string[])
     const cps = Array.from(__charset).map((c) => c.codePointAt(0) || 8203)
 
-    // Pre-calculate target bitmaps
-    const targetBitmaps = []
-    for (let i = 0; i < cps.length; i++) {
-      let g = font.glyphbycp(cps[i]) || font.glyphbycp(8203)
-      targetBitmaps.push(g ? g.draw(-1, bb) : emptyTile)
-      // yield during bitmap creation
-      await checkYield()
-    }
-
     // Pass 1: Draw all shadows
     if (positions.length > 0 && shadowColor) {
       ctx.fillStyle = `#${shadowColor}`
-      for (let i = 0; i < targetBitmaps.length; i++) {
-        const tileBmp = targetBitmaps[i]
+      for (let i = 0; i < cps.length; i++) {
+        let g = font.glyphbycp(cps[i]) || font.glyphbycp(8203)
+        const tileBmp = g ? g.draw(-1, bb) : emptyTile
         const col = i % tCol
         const row = Math.floor(i / tCol)
         const offsetX = col * tWidth
@@ -353,8 +351,9 @@
 
     // Pass 2: Draw all foregrounds
     ctx.fillStyle = `#${foreground}`
-    for (let i = 0; i < targetBitmaps.length; i++) {
-      const tileBmp = targetBitmaps[i]
+    for (let i = 0; i < cps.length; i++) {
+      let g = font.glyphbycp(cps[i]) || font.glyphbycp(8203)
+      const tileBmp = g ? g.draw(-1, bb) : emptyTile
       const col = i % tCol
       const row = Math.floor(i / tCol)
       const offsetX = col * tWidth
@@ -439,6 +438,12 @@
   function handleMouseUp() {
     isDragging = false
   }
+
+  onDestroy(() => {
+    if (downloadHref && downloadHref.startsWith('blob:')) {
+      URL.revokeObjectURL(downloadHref)
+    }
+  })
 </script>
 
 <svelte:head>

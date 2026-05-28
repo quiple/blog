@@ -15,6 +15,7 @@
     X,
   } from '@lucide/svelte'
   import {browser} from '$app/environment'
+  import {onDestroy} from 'svelte'
   import {Badge} from '$lib/components/ui/badge/index.js'
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js'
   import {Button, buttonVariants} from '$lib/components/ui/button/index.js'
@@ -546,6 +547,17 @@
     ja: '日本語',
     en: 'English',
   }
+
+  onDestroy(() => {
+    for (const msg of messages) {
+      if (msg.portrait && msg.portrait.startsWith('blob:')) {
+        URL.revokeObjectURL(msg.portrait)
+      }
+    }
+    if (editPreviewBlobUrl) {
+      URL.revokeObjectURL(editPreviewBlobUrl)
+    }
+  })
 </script>
 
 <svelte:head>

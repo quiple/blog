@@ -184,6 +184,11 @@ async function ensureFontFamily(faces: {family: string; endpoint: string}[]): Pr
 
   // opentype 파싱 (아직 캐시되지 않은 것만)
   await Promise.all(faces.map((f, i) => parseAndCacheOpentypeFont(f.family, dataUrls[i])))
+
+  // Reclaim raw base64 data URL memory
+  for (const f of faces) {
+    fontDataUrlCache.delete(f.endpoint)
+  }
 }
 
 export interface MessageItem {
@@ -1024,9 +1029,15 @@ async function renderToContext(
   const chatRight = width - config.chat.paddingRight
   const chatAreaWidth = chatRight - chatLeft
 
-  // 그룹 캐시 배열 크기 조정
+  // 그룹 캐시 배열 크기 조정 및 메모리 해제
   if (useCache) {
-    while (groupCaches.length > messages.length) groupCaches.pop()
+    while (groupCaches.length > messages.length) {
+      const gc = groupCaches.pop()
+      if (gc) {
+        gc.canvas.width = 0
+        gc.canvas.height = 0
+      }
+    }
   }
 
   let cursorY = config.header.height + config.chat.paddingTop
