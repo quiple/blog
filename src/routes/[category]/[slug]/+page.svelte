@@ -174,17 +174,15 @@
 {/snippet}
 
 {#if imageMobile}
-  <div class="hero bg" use:transition={`post-image-${data.slug}`}>
-    <div
-      class="hero-image-inner"
-      style:--image-mobile={`url('${imageMobile}')`}
-      style:--image-desktop={`url('${imageDesktop}')`}
-      style:--image-4k={`url('${image4K}')`}
-      style:--thumbnail-image={thumbnailImage}
-      style:transform={`translate3d(0, ${Math.max(0, scrollY) * 0.5}px, 0)`}
-      style:background-position={`center ${data.imageVerticalAlign ?? 50}%`}
-    ></div>
-  </div>
+  <div
+    class="hero bg"
+    style:--image-mobile={`url('${imageMobile}')`}
+    style:--image-desktop={`url('${imageDesktop}')`}
+    style:--image-4k={`url('${image4K}')`}
+    style:--thumbnail-image={thumbnailImage}
+    style:background-position={`center calc(${data.imageVerticalAlign ?? 50}% + ${scrollY * 0.5}px)`}
+    use:transition={`post-image-${data.slug}`}
+  ></div>
   <div
     class={['hero title', data.outline && 'line']}
     style:--hero-foreground={`#${data.imageForeground?.toString() ?? '09090b'}`}
@@ -247,15 +245,12 @@
   .hero
     @apply inset-0 absolute! [print-color-adjust:exact]
     &.bg
-      @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-[50vh] print:h-[56.25vw] overflow-hidden inner-b-border print:bg-center!
-      .hero-image-inner
-        @apply absolute inset-0 w-full h-full bg-cover -z-10
-        will-change: transform
-        background-image: var(--image-desktop), var(--thumbnail-image)
-        @media (max-width: 1024px)
-          background-image: var(--image-mobile), var(--thumbnail-image)
-        @media (min-width: 2560px)
-          background-image: var(--image-4k), var(--thumbnail-image)
+      @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-[50vh] print:h-[56.25vw] bg-cover inner-b-border print:bg-center!
+      background-image: var(--image-desktop), var(--thumbnail-image)
+      @media (max-width: 1024px)
+        background-image: var(--image-mobile), var(--thumbnail-image)
+      @media (min-width: 2560px)
+        background-image: var(--image-4k), var(--thumbnail-image)
     &.title
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] print:h-[calc(56.25vw-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-[50vh] print:md:h-[56.25vw] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
       & > div
