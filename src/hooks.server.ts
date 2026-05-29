@@ -34,9 +34,7 @@ export const handle: Handle = async ({event, resolve}) => {
     // 1. Root page (Index)
     if (pathname === '/' || pathname === '/index.html.md' || pathname === '/index.md') {
       const allPosts = getAllBlogContentMetadata()
-      const markdown = `# quiple\n\n이것저것 블로그.\n\n${allPosts
-        .map((p) => `- [${p.title}](${origin}${p.relativeURL}.md)`)
-        .join('\n')}`
+      const markdown = `# quiple\n\n${allPosts.map((p) => `- [${p.title}](${origin}${p.relativeURL}.md)`).join('\n')}`
       return createMarkdownResponse(markdown)
     }
 
