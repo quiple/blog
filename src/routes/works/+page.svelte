@@ -17,13 +17,6 @@
 
   const works: Work[] = [
     {
-      title: 'Bluesky 비공식 클라이언트',
-      url: 'https://bsky.quiple.dev',
-      description: '(WIP) 마이크로블로깅 SNS Bluesky의 비공식 클라이언트.',
-      type: '웹',
-      stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Cloudflare'],
-    },
-    {
       title: 'BitHangul',
       url: 'https://bithangul.quiple.dev',
       description: '비트맵 한글 폰트 제작 도구.',
@@ -58,6 +51,13 @@
       scope: '전체 홈페이지 리뉴얼 및 일부 관리자 기능 추가.',
       type: '웹',
       stack: ['PHP', 'Laravel', 'MySQL', 'JavaScript'],
+    },
+    {
+      title: 'Bluesky 비공식 클라이언트',
+      url: 'https://bsky.quiple.dev',
+      description: '(WIP) 마이크로블로깅 SNS Bluesky의 비공식 클라이언트.',
+      type: '웹',
+      stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Cloudflare'],
     },
     {
       title: 'Galmuri',
