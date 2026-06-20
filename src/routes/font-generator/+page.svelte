@@ -10,9 +10,8 @@
   import {Label} from '$lib/components/ui/label'
   import * as Select from '$lib/components/ui/select/index.js'
   import {Textarea} from '$lib/components/ui/textarea'
-  import {Bitmap, $Bitmap as createBitmap, $Font as createFont} from 'bdfparser'
-  import fetchline from 'fetchline'
   import {onDestroy} from 'svelte'
+  import {browser} from '$app/environment'
 
   interface FontDef {
     name: string
@@ -243,10 +242,21 @@
     return value.replaceAll(/[^\dabcdefABCDEF]/g, '')
   }
 
-  // ── Draw ────────────────────────────────────────────────────────────
-  // Cache parsed fonts to prevent repeated slow parsing
-  const fontCache = new Map<string, any>()
-  const MAX_FONT_CACHE_SIZE = 2
+  // ── Draw (Web Worker delegation) ────────────────────────────────────
+  let worker: Worker | undefined
+  let workerResolve: ((value: any) => void) | undefined
+  let workerReject: ((reason: any) => void) | undefined
+
+  if (browser) {
+    worker = new Worker(new URL('./font-worker.ts', import.meta.url), {type: 'module'})
+    worker.onmessage = (e) => {
+      if (e.data.success) {
+        if (workerResolve) workerResolve(e.data)
+      } else {
+        if (workerReject) workerReject(new Error(e.data.error || 'Worker error'))
+      }
+    }
+  }
 
   async function handleSubmit(e: SubmitEvent) {
     e.preventDefault()
@@ -271,166 +281,72 @@
     drawing = true
     canvasReady = false
 
-    // Wait for the DOM to update the spinner visibility before starting heavy logic
+    // Wait for the DOM to update the spinner visibility
     await new Promise((r) => requestAnimationFrame(r))
     await new Promise((r) => setTimeout(r, 0))
 
-    let lastYield = performance.now()
-    const checkYield = async () => {
-      // Yield to the event loop every 15ms to maintain smooth UI ~60fps animation
-      if (performance.now() - lastYield > 15) {
-        // setTimeout 0 allows the browser to paint
-        await new Promise((r) => setTimeout(r, 0))
-        lastYield = performance.now()
-      }
-    }
-
-    const __fontSize = getFontSize(fontValue)
-
-    // Gather active shadow positions
-    const positions: number[][] = []
-    for (const [key, active] of Object.entries(shadowPositions)) {
-      if (active) positions.push(shadowValues[key])
-    }
-
-    let xOff = xOffset
-    let yOff = yOffset
-    const includesArr = (data: number[][], arr: number[]) =>
-      data.some((e) => Array.isArray(e) && e.every((o, i) => Object.is(arr[i], o)))
-
-    if (includesArr(positions, [-1, -1]) || includesArr(positions, [-1, 0]) || includesArr(positions, [-1, 1])) {
-      xOff++
-    }
-    if (includesArr(positions, [-1, 1]) || includesArr(positions, [0, 1]) || includesArr(positions, [1, 1])) {
-      yOff++
-    }
-
-    let __charset = charsetKey === 'custom' ? customCharset : getCharset(charsetKey)
-
-    const cvs = canvasEl!
-    cvs.width = tileWidth * tileColumn
-    cvs.height = tileHeight * Math.ceil(__charset.length / tileColumn)
-    const ctx = cvs.getContext('2d')!
-    ctx.reset()
-
-    if (background !== '') {
-      ctx.fillStyle = `#${background}`
-      ctx.fillRect(0, 0, tileWidth * tileColumn, tileHeight * Math.floor(__charset.length / tileColumn))
-      ctx.fillRect(
-        0,
-        tileHeight * Math.floor(__charset.length / tileColumn),
-        tileWidth * (__charset.length % tileColumn),
-        tileHeight * Math.ceil(__charset.length / tileColumn),
-      )
-    }
-
-    let font = fontCache.get(fontValue)
-    if (!font) {
-      const url = getFontPath(fontValue)
-      const linesIter = fetchline(url)
-      async function* yieldyFetchline() {
-        for await (const line of linesIter) {
-          yield line
-          await checkYield()
-        }
-      }
-      font = await createFont(yieldyFetchline())
-      if (fontCache.size >= MAX_FONT_CACHE_SIZE) {
-        const firstKey = fontCache.keys().next().value
-        if (firstKey) fontCache.delete(firstKey)
-      }
-      fontCache.set(fontValue, font)
-    }
-
-    const tWidth = Number(tileWidth)
-    const tHeight = Number(tileHeight)
-    const tCol = Number(tileColumn)
-    const bbX = -Number(xOff)
-    const bbY = -(tHeight - __fontSize) + Number(yOff)
-    const bb: [number, number, number, number] = [tWidth, tHeight, bbX, bbY]
-
-    const emptyTile = createBitmap(Array.from({length: tHeight}).fill('0'.repeat(tWidth)) as string[])
-    const cps = Array.from(__charset).map((c) => c.codePointAt(0) || 8203)
-
-    // Pass 1: Draw all shadows
-    if (positions.length > 0 && shadowColor) {
-      ctx.fillStyle = `#${shadowColor}`
-      for (let i = 0; i < cps.length; i++) {
-        let g = font.glyphbycp(cps[i]) || font.glyphbycp(8203)
-        const tileBmp = g ? g.draw(-1, bb) : emptyTile
-        const col = i % tCol
-        const row = Math.floor(i / tCol)
-        const offsetX = col * tWidth
-        const offsetY = row * tHeight
-        const data = tileBmp.bindata
-
-        for (let y = 0; y < data.length; y++) {
-          const r = data[y]
-          let inSegment = false
-          let segmentStartX = 0
-
-          for (let x = 0; x <= r.length; x++) {
-            const isFilled = x < r.length && r[x] === '1'
-            if (isFilled && !inSegment) {
-              inSegment = true
-              segmentStartX = x
-            } else if (!isFilled && inSegment) {
-              inSegment = false
-              const segmentWidth = x - segmentStartX
-              for (const pos of positions) {
-                const dx = pos[0]
-                const dy = -pos[1]
-                ctx.fillRect(offsetX + segmentStartX + dx, offsetY + y + dy, segmentWidth, 1)
-              }
-            }
-          }
-        }
-        await checkYield()
-      }
-    }
-
-    // Pass 2: Draw all foregrounds
-    ctx.fillStyle = `#${foreground}`
-    for (let i = 0; i < cps.length; i++) {
-      let g = font.glyphbycp(cps[i]) || font.glyphbycp(8203)
-      const tileBmp = g ? g.draw(-1, bb) : emptyTile
-      const col = i % tCol
-      const row = Math.floor(i / tCol)
-      const offsetX = col * tWidth
-      const offsetY = row * tHeight
-      const data = tileBmp.bindata
-
-      for (let y = 0; y < data.length; y++) {
-        const r = data[y]
-        let inSegment = false
-        let segmentStartX = 0
-
-        for (let x = 0; x <= r.length; x++) {
-          const isFilled = x < r.length && r[x] === '1'
-          if (isFilled && !inSegment) {
-            inSegment = true
-            segmentStartX = x
-          } else if (!isFilled && inSegment) {
-            inSegment = false
-            const segmentWidth = x - segmentStartX
-            ctx.fillRect(offsetX + segmentStartX, offsetY + y, segmentWidth, 1)
-          }
-        }
-      }
-      await checkYield()
-    }
-
-    cvs.toBlob((blob) => {
-      if (blob) {
-        if (downloadHref && downloadHref.startsWith('blob:')) {
-          URL.revokeObjectURL(downloadHref)
-        }
-        downloadHref = URL.createObjectURL(blob)
-      }
-      canvasReady = true
-      downloadName = `${fontValue}_${tileWidth}x${tileHeight}`
+    if (!worker) {
+      alert('워커가 로드되지 않았습니다.')
       drawing = false
-    })
+      return
+    }
+
+    const fontPath = getFontPath(fontValue)
+    const __charset = charsetKey === 'custom' ? customCharset : getCharset(charsetKey)
+    const fontSize = getFontSize(fontValue)
+
+    const payload = {
+      fontValue,
+      fontPath,
+      charset: __charset,
+      tileWidth,
+      tileHeight,
+      tileColumn,
+      xOffset,
+      yOffset,
+      fontSize,
+      background,
+      foreground,
+      shadowColor,
+      shadowPositions: $state.snapshot(shadowPositions),
+      shadowValues,
+    }
+
+    try {
+      const renderPromise = new Promise<{width: number; height: number; buffer: Uint8ClampedArray}>(
+        (resolve, reject) => {
+          workerResolve = resolve
+          workerReject = reject
+          worker!.postMessage(payload)
+        },
+      )
+
+      const {width, height, buffer} = await renderPromise
+
+      const cvs = canvasEl!
+      cvs.width = width
+      cvs.height = height
+      const ctx = cvs.getContext('2d')!
+      ctx.reset()
+
+      const imgData = new ImageData(buffer as any, width, height)
+      ctx.putImageData(imgData, 0, 0)
+
+      cvs.toBlob((blob) => {
+        if (blob) {
+          if (downloadHref && downloadHref.startsWith('blob:')) {
+            URL.revokeObjectURL(downloadHref)
+          }
+          downloadHref = URL.createObjectURL(blob)
+        }
+        canvasReady = true
+        downloadName = `${fontValue}_${tileWidth}x${tileHeight}`
+        drawing = false
+      })
+    } catch (err: any) {
+      toast.error(`이미지 생성 실패: ${err.message || err}`)
+      drawing = false
+    }
   }
 
   async function handleCopy() {
@@ -477,6 +393,9 @@
   }
 
   onDestroy(() => {
+    if (worker) {
+      worker.terminate()
+    }
     if (downloadHref && downloadHref.startsWith('blob:')) {
       URL.revokeObjectURL(downloadHref)
     }
