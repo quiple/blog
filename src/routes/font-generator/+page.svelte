@@ -102,7 +102,7 @@
 
   const fontFilenameMap: Record<string, string> = {
     maruminyahangul: 'x12y12pxMaruMinyaHangul',
-    denkichiphangul: 'x8y12pxDenkiChipHangul',
+    denkichiphangul: 'x10y12pxDenkiChipHangul',
     Galmuri14: 'Galmuri14',
     Galmuri11: 'Galmuri11',
     'Galmuri11-Bold': 'Galmuri11-Bold',

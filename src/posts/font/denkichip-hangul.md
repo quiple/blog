@@ -1,16 +1,16 @@
 ---
-title: x8y12pxDenkiChipHangul
-image: font/x8y12pxDenkiChipHangul.png
+title: x10y12pxDenkiChipHangul
+image: font/x10y12pxDenkiChipHangul.png
 pubDate: 2026-06-21T00:48
 ---
 
-**x8y12pxDenkiChipHangul&#8203;(전기칩 한글)**은 12px 크기의 일본어 픽셀 폰트 '**[x8&#8203;y12&#8203;px&#8203;Denki&#8203;Chip&#8203;(でんきチップ)](https://github.com/hicchicc/x8y12pxDenkiChip)**'를 기반으로 하는 한국어&middot;일본어 픽셀 폰트입니다.
+**x10y12pxDenkiChipHangul&#8203;(전기칩 한글)**은 12px 크기의 일본어 픽셀 폰트 '**[x8&#8203;y12&#8203;px&#8203;Denki&#8203;Chip&#8203;(でんきチップ)](https://github.com/hicchicc/x8y12pxDenkiChip)**'를 기반으로 하는 한국어&middot;일본어 픽셀 폰트입니다.
 
 Adobe-KR-9 보충 0의 한글 음절 2,780자와 일본 한자 640자를 지원합니다.
 
 <Tester font="denkichip" />
 
-- [GitHub 리포지터리에서 다운로드](https://github.com/quiple/x8y12pxDenkiChipHangul/tree/main/fonts)
+- [GitHub 리포지터리에서 다운로드](https://github.com/quiple/x10y12pxDenkiChipHangul/tree/main/fonts)
 - [비트맵 폰트 이미지 만들기](/font-generator?font=denkichiphangul)
 
 ## 라이선스
@@ -30,7 +30,7 @@ Adobe-KR-9 보충 0의 한글 음절 2,780자와 일본 한자 640자를 지원�
 
 전기칩 한글은 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 [https://&#8203;open&#8203;font&#8203;license&#8203;.&#8203;org](https://openfontlicense.org)에서 FAQ와 함께 확인할 수 있습니다.
 
-[라이선스 원문](https://github.com/quiple/x8y12pxDenkiChipHangul/blob/main/OFL.txt)
+[라이선스 원문](https://github.com/quiple/x10y12pxDenkiChipHangul/blob/main/OFL.txt)
 
 ## 제작에 사용된 도구
 
