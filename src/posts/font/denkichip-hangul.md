@@ -11,7 +11,7 @@ Adobe-KR-9 보충 0의 한글 음절 2,780자와 일본 한자 640자를 지원�
 <Tester font="denkichip" />
 
 - [GitHub 리포지터리에서 다운로드](https://github.com/quiple/x8y12pxDenkiChipHangul/tree/main/fonts)
-- [비트맵 폰트 이미지 만들기](/font-generator)
+- [비트맵 폰트 이미지 만들기](/font-generator?font=denkichiphangul)
 
 ## 라이선스
 
