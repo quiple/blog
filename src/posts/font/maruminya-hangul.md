@@ -43,4 +43,4 @@ pubDate: 2026-02-27T01:09
 
 마루미냐 한글 외에도 患者長ひっく 님께서 제작한 x12y12pxMaruMinya를 기반으로 만들어진 파생 폰트가 존재합니다.
 
-- [Z Labs RoundPix 12px](https://github.com/Astro-2539/ZLabs-RoundPix-12px) (번체 중국어)
+- [Z Labs RoundPix 12px](https://github.com/Astro-2539/ZLabs-RoundPix-12px) (간체 중국어)
