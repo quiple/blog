@@ -64,10 +64,11 @@
     },
   ]
 
-  const validFontValues = new Set(fontGroups.flatMap((g) => g.fonts).map((f) => f.value))
+  const allFonts = fontGroups.flatMap((g) => g.fonts)
+  const validFontValues = new Set(allFonts.map((f) => f.value))
 
   const fontTriggerContent = $derived.by(() => {
-    const font = fontGroups.flatMap((g) => g.fonts).find((f) => f.value === fontValue)
+    const font = allFonts.find((f) => f.value === fontValue)
     return font ? `${font.name} (${font.size})` : 'MaruMinyaHangul (12px)'
   })
 
@@ -153,22 +154,12 @@
   // Sync font selection with URL query param ?font=
   $effect(() => {
     const queryFont = page.url.searchParams.get('font')
+    const isValid = queryFont && validFontValues.has(queryFont)
 
-    if (queryFont && validFontValues.has(queryFont)) {
-      if (queryFont !== lastSyncedFont) {
-        fontValue = queryFont
-        lastSyncedFont = queryFont
-      } else if (fontValue !== lastSyncedFont) {
-        const currentUrl = new URL(page.url.href)
-        currentUrl.searchParams.set('font', fontValue)
-        lastSyncedFont = fontValue
-        goto(currentUrl.pathname + currentUrl.search, {
-          replaceState: true,
-          keepFocus: true,
-          noScroll: true,
-        })
-      }
-    } else {
+    if (isValid && queryFont !== lastSyncedFont) {
+      fontValue = queryFont
+      lastSyncedFont = queryFont
+    } else if (!isValid || fontValue !== lastSyncedFont) {
       const currentUrl = new URL(page.url.href)
       currentUrl.searchParams.set('font', fontValue)
       lastSyncedFont = fontValue

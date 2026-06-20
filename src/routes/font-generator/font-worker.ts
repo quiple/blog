@@ -5,38 +5,15 @@ const fontCache = new Map<string, any>()
 const MAX_FONT_CACHE_SIZE = 2
 
 function parseHexColor(hex: string, defaultAlpha = 255): [number, number, number, number] {
-  if (hex === '') return [0, 0, 0, 0]
-  const cleanHex = hex.replace('#', '').trim()
-  const len = cleanHex.length
+  const clean = hex.replace('#', '').trim()
+  const len = clean.length
+  if (![3, 4, 6, 8].includes(len)) return [0, 0, 0, hex ? defaultAlpha : 0]
 
-  let r = 0,
-    g = 0,
-    b = 0,
-    a = defaultAlpha
+  const step = len <= 4 ? 1 : 2
+  const parts = clean.match(new RegExp(`.{1,${step}}`, 'g')) || []
+  const vals = parts.map((p) => parseInt(p.length === 1 ? p + p : p, 16)).map((v) => (isNaN(v) ? 0 : v))
 
-  if (len === 3) {
-    r = parseInt(cleanHex[0] + cleanHex[0], 16)
-    g = parseInt(cleanHex[1] + cleanHex[1], 16)
-    b = parseInt(cleanHex[2] + cleanHex[2], 16)
-  } else if (len === 4) {
-    r = parseInt(cleanHex[0] + cleanHex[0], 16)
-    g = parseInt(cleanHex[1] + cleanHex[1], 16)
-    b = parseInt(cleanHex[2] + cleanHex[2], 16)
-    a = parseInt(cleanHex[3] + cleanHex[3], 16)
-  } else if (len === 6) {
-    r = parseInt(cleanHex.slice(0, 2), 16)
-    g = parseInt(cleanHex.slice(2, 4), 16)
-    b = parseInt(cleanHex.slice(4, 6), 16)
-  } else if (len === 8) {
-    r = parseInt(cleanHex.slice(0, 2), 16)
-    g = parseInt(cleanHex.slice(2, 4), 16)
-    b = parseInt(cleanHex.slice(4, 6), 16)
-    a = parseInt(cleanHex.slice(6, 8), 16)
-  } else {
-    return [0, 0, 0, defaultAlpha]
-  }
-
-  return [isNaN(r) ? 0 : r, isNaN(g) ? 0 : g, isNaN(b) ? 0 : b, isNaN(a) ? defaultAlpha : a]
+  return [vals[0] || 0, vals[1] || 0, vals[2] || 0, vals[3] ?? defaultAlpha]
 }
 
 self.onmessage = async (e: MessageEvent) => {
@@ -61,13 +38,11 @@ self.onmessage = async (e: MessageEvent) => {
     // 1. Load & Parse Font (with Caching)
     let font = fontCache.get(fontValue)
     if (!font) {
-      const linesIter = fetchline(fontPath)
-      async function* yieldyFetchline() {
-        for await (const line of linesIter) {
-          yield line
-        }
-      }
-      font = await createFont(yieldyFetchline())
+      font = await createFont(
+        (async function* () {
+          yield* fetchline(fontPath)
+        })(),
+      )
       if (fontCache.size >= MAX_FONT_CACHE_SIZE) {
         const firstKey = fontCache.keys().next().value
         if (firstKey) fontCache.delete(firstKey)
@@ -78,9 +53,7 @@ self.onmessage = async (e: MessageEvent) => {
     // 2. Prepare canvas boundaries & offset adjustments
     const positions: number[][] = []
     for (const [key, active] of Object.entries(shadowPositions)) {
-      if (active) {
-        positions.push(shadowValues[key] as number[])
-      }
+      if (active) positions.push(shadowValues[key] as number[])
     }
 
     let xOff = xOffset
@@ -108,6 +81,17 @@ self.onmessage = async (e: MessageEvent) => {
     const width = tWidth * tCol
     const height = tHeight * Math.ceil(cps.length / tCol)
 
+    // Pre-calculate positions and glyph bitmaps for each character
+    const glyphData = cps.map((cp, i) => {
+      const g = font.glyphbycp(cp) || font.glyphbycp(8203)
+      const tileBmp = g ? g.draw(-1, bb) : emptyTile
+      return {
+        offsetX: (i % tCol) * tWidth,
+        offsetY: Math.floor(i / tCol) * tHeight,
+        data: tileBmp.bindata,
+      }
+    })
+
     // 3. Allocate pixel buffer (RGBA)
     const buffer = new Uint8ClampedArray(width * height * 4)
 
@@ -125,24 +109,14 @@ self.onmessage = async (e: MessageEvent) => {
     // Pass 1: Draw shadows
     if (positions.length > 0 && shadowColor) {
       const [shR, shG, shB, shA] = parseHexColor(shadowColor, 255)
-      for (let i = 0; i < cps.length; i++) {
-        const g = font.glyphbycp(cps[i]) || font.glyphbycp(8203)
-        const tileBmp = g ? g.draw(-1, bb) : emptyTile
-        const col = i % tCol
-        const row = Math.floor(i / tCol)
-        const offsetX = col * tWidth
-        const offsetY = row * tHeight
-        const data = tileBmp.bindata
-
+      for (const {offsetX, offsetY, data} of glyphData) {
         for (let y = 0; y < data.length; y++) {
           const r = data[y]
           for (let x = 0; x < r.length; x++) {
             if (r[x] === '1') {
-              for (const pos of positions) {
-                const dx = pos[0]
-                const dy = -pos[1]
+              for (const [dx, dy] of positions) {
                 const px = offsetX + x + dx
-                const py = offsetY + y + dy
+                const py = offsetY + y - dy
                 if (px >= 0 && px < width && py >= 0 && py < height) {
                   const idx = (py * width + px) * 4
                   buffer[idx] = shR
@@ -159,15 +133,7 @@ self.onmessage = async (e: MessageEvent) => {
 
     // Pass 2: Draw foregrounds
     const [fgR, fgG, fgB, fgA] = parseHexColor(foreground, 255)
-    for (let i = 0; i < cps.length; i++) {
-      const g = font.glyphbycp(cps[i]) || font.glyphbycp(8203)
-      const tileBmp = g ? g.draw(-1, bb) : emptyTile
-      const col = i % tCol
-      const row = Math.floor(i / tCol)
-      const offsetX = col * tWidth
-      const offsetY = row * tHeight
-      const data = tileBmp.bindata
-
+    for (const {offsetX, offsetY, data} of glyphData) {
       for (let y = 0; y < data.length; y++) {
         const r = data[y]
         for (let x = 0; x < r.length; x++) {
