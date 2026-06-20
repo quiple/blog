@@ -1,6 +1,7 @@
 <script lang="ts">
   import '#app.css'
   import '#fonts.sass'
+  // @ts-ignore
   import '@quiple/blog-fonts'
   import {browser} from '$app/environment'
   import {onNavigate} from '$app/navigation'
