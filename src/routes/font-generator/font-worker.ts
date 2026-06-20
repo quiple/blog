@@ -6,12 +6,37 @@ const MAX_FONT_CACHE_SIZE = 2
 
 function parseHexColor(hex: string, defaultAlpha = 255): [number, number, number, number] {
   if (hex === '') return [0, 0, 0, 0]
-  const cleanHex = hex.replace('#', '')
-  if (cleanHex.length !== 6) return [0, 0, 0, defaultAlpha]
-  const r = parseInt(cleanHex.slice(0, 2), 16)
-  const g = parseInt(cleanHex.slice(2, 4), 16)
-  const b = parseInt(cleanHex.slice(4, 6), 16)
-  return [r, g, b, defaultAlpha]
+  const cleanHex = hex.replace('#', '').trim()
+  const len = cleanHex.length
+
+  let r = 0,
+    g = 0,
+    b = 0,
+    a = defaultAlpha
+
+  if (len === 3) {
+    r = parseInt(cleanHex[0] + cleanHex[0], 16)
+    g = parseInt(cleanHex[1] + cleanHex[1], 16)
+    b = parseInt(cleanHex[2] + cleanHex[2], 16)
+  } else if (len === 4) {
+    r = parseInt(cleanHex[0] + cleanHex[0], 16)
+    g = parseInt(cleanHex[1] + cleanHex[1], 16)
+    b = parseInt(cleanHex[2] + cleanHex[2], 16)
+    a = parseInt(cleanHex[3] + cleanHex[3], 16)
+  } else if (len === 6) {
+    r = parseInt(cleanHex.slice(0, 2), 16)
+    g = parseInt(cleanHex.slice(2, 4), 16)
+    b = parseInt(cleanHex.slice(4, 6), 16)
+  } else if (len === 8) {
+    r = parseInt(cleanHex.slice(0, 2), 16)
+    g = parseInt(cleanHex.slice(2, 4), 16)
+    b = parseInt(cleanHex.slice(4, 6), 16)
+    a = parseInt(cleanHex.slice(6, 8), 16)
+  } else {
+    return [0, 0, 0, defaultAlpha]
+  }
+
+  return [isNaN(r) ? 0 : r, isNaN(g) ? 0 : g, isNaN(b) ? 0 : b, isNaN(a) ? defaultAlpha : a]
 }
 
 self.onmessage = async (e: MessageEvent) => {
