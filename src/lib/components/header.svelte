@@ -203,10 +203,11 @@
         @apply hover:text-(--hero-foreground) hover:bg-(--hero-foreground)/5
       .logo, :global(.menu)
         @apply before:opacity-100
-      .logo
-        mask-image: var(--logo-mask-image) !important
       .post-title
         @apply lg:invisible lg:opacity-0
+    &.hero
+      .logo
+        mask-image: var(--logo-mask-image) !important
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-4
       .logo
