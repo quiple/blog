@@ -1,6 +1,5 @@
 ---
 title: x10y12pxDenkiChipHangul
-image: font/x10y12pxDenkiChipHangul.png
 pubDate: 2026-06-21T00:48
 ---
 
