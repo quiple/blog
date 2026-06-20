@@ -1,6 +1,5 @@
 <script lang="ts">
   import {Copy, Download, LoaderCircle} from '@lucide/svelte'
-  import {goto} from '$app/navigation'
   import {page} from '$app/state'
   import {toast} from 'svelte-sonner'
   import {getCharset, getCharsetGroups} from '$lib/charsets'
@@ -149,27 +148,7 @@
   const initialFont = page.url.searchParams.get('font')
   const defaultFont = initialFont && validFontValues.has(initialFont) ? initialFont : 'maruminyahangul'
   let fontValue = $state(defaultFont)
-  let lastSyncedFont = defaultFont
 
-  // Sync font selection with URL query param ?font=
-  $effect(() => {
-    const queryFont = page.url.searchParams.get('font')
-    const isValid = queryFont && validFontValues.has(queryFont)
-
-    if (isValid && queryFont !== lastSyncedFont) {
-      fontValue = queryFont
-      lastSyncedFont = queryFont
-    } else if (!isValid || fontValue !== lastSyncedFont) {
-      const currentUrl = new URL(page.url.href)
-      currentUrl.searchParams.set('font', fontValue)
-      lastSyncedFont = fontValue
-      goto(currentUrl.pathname + currentUrl.search, {
-        replaceState: true,
-        keepFocus: true,
-        noScroll: true,
-      })
-    }
-  })
   let charsetKey = $state('set2350')
   let customCharset = $state('')
 
