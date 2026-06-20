@@ -37,3 +37,4 @@ pubDate: 2026-02-27T01:09
 - [BitHangul](https://bithangul.quiple.dev)
 - [Bits'N'Picas](https://github.com/kreativekorp/bitsnpicas)
 - [FontForge](https://fontforge.org)
+- [fontTools](https://github.com/fonttools/fonttools)
