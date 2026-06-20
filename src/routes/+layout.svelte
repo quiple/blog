@@ -9,6 +9,7 @@
   import favicon from '$lib/assets/favicon.svg'
   import Header from '$lib/components/header.svelte'
   import {ModeWatcher} from 'mode-watcher'
+  import {Toaster} from '$lib/components/ui/sonner'
   import {setupViewTransition} from 'sveltekit-view-transition'
 
   let {children} = $props()
@@ -48,6 +49,7 @@
 </svelte:head>
 
 <ModeWatcher />
+<Toaster />
 
 <Header />
 
