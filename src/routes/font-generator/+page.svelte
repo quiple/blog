@@ -1,5 +1,7 @@
 <script lang="ts">
   import {Check, Copy, Download, LoaderCircle} from '@lucide/svelte'
+  import {goto} from '$app/navigation'
+  import {page} from '$app/state'
   import {getCharset, getCharsetGroups} from '$lib/charsets'
   import {Button} from '$lib/components/ui/button'
   import * as Card from '$lib/components/ui/card/index.js'
@@ -61,6 +63,8 @@
       ],
     },
   ]
+
+  const validFontValues = new Set(fontGroups.flatMap((g) => g.fonts).map((f) => f.value))
 
   const fontTriggerContent = $derived.by(() => {
     const font = fontGroups.flatMap((g) => g.fonts).find((f) => f.value === fontValue)
@@ -141,7 +145,40 @@
   })
 
   // ── State ───────────────────────────────────────────────────────────
-  let fontValue = $state('maruminyahangul')
+  const initialFont = page.url.searchParams.get('font')
+  const defaultFont = initialFont && validFontValues.has(initialFont) ? initialFont : 'maruminyahangul'
+  let fontValue = $state(defaultFont)
+  let lastSyncedFont = defaultFont
+
+  // Sync font selection with URL query param ?font=
+  $effect(() => {
+    const queryFont = page.url.searchParams.get('font')
+
+    if (queryFont && validFontValues.has(queryFont)) {
+      if (queryFont !== lastSyncedFont) {
+        fontValue = queryFont
+        lastSyncedFont = queryFont
+      } else if (fontValue !== lastSyncedFont) {
+        const currentUrl = new URL(page.url.href)
+        currentUrl.searchParams.set('font', fontValue)
+        lastSyncedFont = fontValue
+        goto(currentUrl.pathname + currentUrl.search, {
+          replaceState: true,
+          keepFocus: true,
+          noScroll: true,
+        })
+      }
+    } else {
+      const currentUrl = new URL(page.url.href)
+      currentUrl.searchParams.set('font', fontValue)
+      lastSyncedFont = fontValue
+      goto(currentUrl.pathname + currentUrl.search, {
+        replaceState: true,
+        keepFocus: true,
+        noScroll: true,
+      })
+    }
+  })
   let charsetKey = $state('set2350')
   let customCharset = $state('')
 
