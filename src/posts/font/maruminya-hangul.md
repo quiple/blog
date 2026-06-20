@@ -4,7 +4,7 @@ image: font/x12y12pxMaruMinyaHangul.png
 pubDate: 2026-02-27T01:09
 ---
 
-**x12y12pxMaruMinyaHangul&#8203;(마루미냐 한글)**은 12px 크기의 일본어 픽셀 폰트 '**[x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya&#8203;(マルミーニャ)](https://github.com/hicchicc/x12y12pxMaruMinya)**'를 기반으로 하는 한국어&middot;일본어 픽셀 폰트입니다.
+**x12y12pxMaruMinyaHangul&#8203;(마루미냐 한글)**은 12px 크기의 일본어 픽셀 폰트 '**[x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya&#8203;(マルミーニャ)](https://github.com/hicchicc/x12y12pxMaruMinya)**'를 기반으로 만들어진 한국어&middot;일본어 픽셀 폰트입니다.
 
 한글 음절 11,172자와 KS X 1001(한자 제외), KS X 1003 및 JIS X 0201, JIS X 0208의 전체 문자를 지원합니다.
 
@@ -38,3 +38,9 @@ pubDate: 2026-02-27T01:09
 - [Bits'N'Picas](https://github.com/kreativekorp/bitsnpicas)
 - [FontForge](https://fontforge.org)
 - [fontTools](https://github.com/fonttools/fonttools)
+
+## 다른 파생 폰트
+
+마루미냐 한글 외에도 患者長ひっく 님께서 제작한 x12y12pxMaruMinya를 기반으로 만들어진 파생 폰트가 존재합니다.
+
+- [Z Labs RoundPix 12px](https://github.com/Astro-2539/ZLabs-RoundPix-12px) (번체 중국어)
