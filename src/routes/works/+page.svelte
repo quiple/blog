@@ -72,7 +72,7 @@
       type: '폰트',
     },
     {
-      title: 'x12y12pxDenkiChipHangul',
+      title: 'x10y12pxDenkiChipHangul',
       url: '/font/denkichip-hangul',
       description: '비트맵 한글 폰트.',
       type: '폰트',
