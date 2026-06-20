@@ -25,6 +25,7 @@
       label: 'quiple',
       fonts: [
         {name: 'MaruMinyaHangul', value: 'maruminyahangul', size: '12px'},
+        {name: 'DenkiChipHangul', value: 'denkichiphangul', size: '12px'},
         {name: 'HBIOS-SYS', value: 'hbios-sys', size: '16px'},
         {name: 'Galmuri14', value: 'Galmuri14', size: '15px'},
         {name: 'Galmuri11', value: 'Galmuri11', size: '12px'},
@@ -90,12 +91,14 @@
     unifont: 14,
     unifont_jp: 14,
     maruminyahangul: 11,
+    denkichiphangul: 11,
     zpix: 9,
   }
   const getFontSize = (font: string): number => fontSizeMap[font] ?? 16
 
   const fontFilenameMap: Record<string, string> = {
     maruminyahangul: 'x12y12pxMaruMinyaHangul',
+    denkichiphangul: 'x8y12pxDenkiChipHangul',
     Galmuri14: 'Galmuri14',
     Galmuri11: 'Galmuri11',
     'Galmuri11-Bold': 'Galmuri11-Bold',

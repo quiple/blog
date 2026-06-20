@@ -45,6 +45,9 @@
     if (font === 'maruminya') {
       return {family: 'x12y12pxMaruMinyaHangul-web', weight: 400, stretch: 'normal'}
     }
+    if (font === 'denkichip') {
+      return {family: 'x8y12pxDenkiChipHangul-web', weight: 400, stretch: 'normal'}
+    }
     switch (selectedFontValue) {
       case 'g14':
         return {family: 'Galmuri14-web', weight: 400, stretch: 'normal'}
@@ -299,6 +302,14 @@
       weight: 400
       display: block
     src: url('/fonts/x12y12pxMaruMinyaHangul.woff2') format('woff2')
+
+  @font-face
+    font:
+      family: x8y12pxDenkiChipHangul-web
+      style: normal
+      weight: 400
+      display: block
+    src: url('/fonts/x8y12pxDenkiChipHangul.woff2') format('woff2')
 
   @each $family, $file in $fonts
     @font-face

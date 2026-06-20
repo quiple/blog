@@ -72,6 +72,12 @@
       type: '폰트',
     },
     {
+      title: 'x12y12pxDenkiChipHangul',
+      url: '/font/denkichip-hangul',
+      description: '비트맵 한글 폰트.',
+      type: '폰트',
+    },
+    {
       title: 'HBIOS-SYS',
       url: 'https://hbios.quiple.dev',
       description: '비트맵 한글 폰트.',
