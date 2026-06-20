@@ -1,7 +1,8 @@
 <script lang="ts">
-  import {Check, Copy, Download, LoaderCircle} from '@lucide/svelte'
+  import {Copy, Download, LoaderCircle} from '@lucide/svelte'
   import {goto} from '$app/navigation'
   import {page} from '$app/state'
+  import {toast} from 'svelte-sonner'
   import {getCharset, getCharsetGroups} from '$lib/charsets'
   import {Button} from '$lib/components/ui/button'
   import * as Card from '$lib/components/ui/card/index.js'
@@ -216,7 +217,6 @@
 
   let drawing = $state(false)
   let canvasReady = $state(false)
-  let copyLabel = $state('복사하기')
   let canvasEl: HTMLCanvasElement | undefined = $state()
   let previewAreaEl: HTMLDivElement | undefined = $state()
   let downloadHref = $state('#')
@@ -446,12 +446,9 @@
       const item = new ClipboardItem({'image/png': blobPromise})
       await navigator.clipboard.write([item])
 
-      copyLabel = '복사됨!'
-      setTimeout(() => {
-        copyLabel = '복사하기'
-      }, 2000)
+      toast.success('이미지를 클립보드에 복사했습니다.')
     } catch (err) {
-      alert('이미지를 복사하지 못했습니다.')
+      toast.error('이미지를 복사하지 못했습니다.')
     }
   }
 
@@ -739,12 +736,8 @@
               class="flex-1"
               size="sm"
             >
-              {#if copyLabel === '복사됨!'}
-                <Check />
-              {:else}
-                <Copy />
-              {/if}
-              {copyLabel}
+              <Copy />
+              복사하기
             </Button>
             <Button
               href={canvasReady ? downloadHref : undefined}
