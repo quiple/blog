@@ -332,9 +332,9 @@
       const item = new ClipboardItem({'image/png': blobPromise})
       await navigator.clipboard.write([item])
 
-      toast.success('이미지를 클립보드에 복사했습니다.')
+      toast.success('이미지를 클립보드에 복사했습니다')
     } catch (err) {
-      toast.error('이미지를 복사하지 못했습니다.')
+      toast.error('이미지를 복사하지 못했습니다')
     }
   }
 
