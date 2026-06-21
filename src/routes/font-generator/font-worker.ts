@@ -95,14 +95,22 @@ self.onmessage = async (e: MessageEvent) => {
     // 3. Allocate pixel buffer (RGBA)
     const buffer = new Uint8ClampedArray(width * height * 4)
 
-    // Fill background color
+    // Fill background color only for tiles containing characters
     const [bgR, bgG, bgB, bgA] = parseHexColor(background, background === '' ? 0 : 255)
     if (bgA > 0) {
-      for (let i = 0; i < buffer.length; i += 4) {
-        buffer[i] = bgR
-        buffer[i + 1] = bgG
-        buffer[i + 2] = bgB
-        buffer[i + 3] = bgA
+      const fullRows = Math.floor(cps.length / tCol)
+      const lastRowCols = cps.length % tCol
+      const fullRowsHeight = fullRows * tHeight
+
+      for (let y = 0; y < height; y++) {
+        const limitX = y < fullRowsHeight ? width : tWidth * lastRowCols
+        for (let x = 0; x < limitX; x++) {
+          const idx = (y * width + x) * 4
+          buffer[idx] = bgR
+          buffer[idx + 1] = bgG
+          buffer[idx + 2] = bgB
+          buffer[idx + 3] = bgA
+        }
       }
     }
 
