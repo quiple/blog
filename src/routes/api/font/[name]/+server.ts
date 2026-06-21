@@ -22,8 +22,10 @@ export const GET: RequestHandler = async ({params, request, platform}) => {
   }
 
   // 2. 폰트 데이터 매핑 (static/fonts/*.bin 파일에서 가져옴)
-  let fontBuffer: Uint8Array | Buffer
+  let fontData: string
   try {
+    let fontBuffer: Uint8Array | Buffer
+
     if (dev) {
       // 개발 환경에서는 fs로 직접 읽어오는 것이 더 안정적일 수 있습니다.
       const filePath = path.join(process.cwd(), 'static', 'fonts', `${name}.bin`)
@@ -61,6 +63,8 @@ export const GET: RequestHandler = async ({params, request, platform}) => {
         throw error(404, `Font loading failed: ${name} (${e.message})`)
       }
     }
+
+    fontData = Buffer.from(fontBuffer).toString('base64')
   } catch (e: any) {
     // 만약 내부에서 던진 특정 에러(404 상세 메시지 등)라면 그대로 전달
     if (e.status) throw e
@@ -68,10 +72,10 @@ export const GET: RequestHandler = async ({params, request, platform}) => {
     throw error(404, `Font not found: ${name} (${e.message})`)
   }
 
-  // 3. 응답 반환 (CORS 헤더 포함, 바이너리 옥텟 스트림 전달)
-  return new Response(fontBuffer as any, {
+  // 3. 응답 반환 (CORS 헤더 포함)
+  return new Response(fontData, {
     headers: {
-      'Content-Type': 'application/octet-stream',
+      'Content-Type': 'text/plain', // Base64 문자열 그대로 반환
       'Access-Control-Allow-Origin': dev ? '*' : `https://${allowedHost}`,
       'Cache-Control': 'public, max-age=31536000, immutable', // 폰트는 거의 안 바뀌므로 강력 캐싱
     },

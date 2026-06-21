@@ -10,40 +10,42 @@ const rendererIsProd = import.meta.env.PROD
  * 난독화된 Data URL (base64) 문자열을 ArrayBuffer로 복호화합니다.
  * 도메인 바인딩 기법을 적용하여 브라우저 및 외부 유출 시 복호화를 어렵게 만듭니다.
  */
-/**
- * 난독화된 ArrayBuffer를 도메인 기반 키를 이용해 in-place XOR 복호화합니다.
- * 새로운 버퍼를 생성하지 않고 기존 메모리를 수정하여 가비지 컬렉션(GC) 압박을 줄입니다.
- */
-function decryptFontBuffer(buffer: ArrayBuffer): ArrayBuffer {
+function base64ToArrayBuffer(base64: string): ArrayBuffer {
+  // 1. 도메인 기반 키 동적 생성
   let key = 'quiple.dev'
   if (typeof window !== 'undefined') {
+    // Vite 빌드 시 DEV 환경이면 하드코딩된 키 유지, PROD 환경이면 hostname으로 대체됨
+    // 즉, 운영 빌드 산출물에는 'quiple.dev'라는 문자열 자체가 사라져 리버싱 난이도가 올라감
     if (!import.meta.env.DEV) {
       key = window.location.hostname
     }
   }
 
-  const bytes = new Uint8Array(buffer)
-  const len = bytes.length
+  const binaryString = atob(base64)
+  const len = binaryString.length
+  const bytes = new Uint8Array(len)
+
   for (let i = 0; i < len; i++) {
-    bytes[i] ^= key.charCodeAt(i % key.length)
+    // 2. XOR 연산으로 원본 바이너리 복원
+    bytes[i] = binaryString.charCodeAt(i) ^ key.charCodeAt(i % key.length)
   }
-  return buffer
+  return bytes.buffer as ArrayBuffer
 }
 
-/** 폰트 데이터 바이너리 캐시 (FontFace + opentype 중복 fetch 방지) */
-const fontArrayBufferCache = new Map<string, Promise<ArrayBuffer>>()
+/** 폰트 데이터 URL 캐시 (FontFace + opentype 중복 fetch 방지) */
+const fontDataUrlCache = new Map<string, Promise<string>>()
 
-function fetchFontArrayBuffer(endpoint: string): Promise<ArrayBuffer> {
-  if (!fontArrayBufferCache.has(endpoint)) {
-    fontArrayBufferCache.set(
+function fetchFontDataUrl(endpoint: string): Promise<string> {
+  if (!fontDataUrlCache.has(endpoint)) {
+    fontDataUrlCache.set(
       endpoint,
       fetch(endpoint).then((r) => {
         if (!r.ok) throw new Error(`Failed to fetch font from ${endpoint}`)
-        return r.arrayBuffer()
+        return r.text()
       }),
     )
   }
-  return fontArrayBufferCache.get(endpoint)!
+  return fontDataUrlCache.get(endpoint)!
 }
 
 /** opentype.js 파싱 결과 캐시 */
@@ -131,9 +133,10 @@ function drawTextOt(
   ctx.restore()
 }
 
-/** opentype ArrayBuffer에서 opentype.Font를 파싱하고 캐싱 */
-async function parseAndCacheOpentypeFont(familyName: string, buffer: ArrayBuffer): Promise<opentype.Font> {
+/** opentype 데이터 URL에서 opentype.Font를 파싱하고 캐싱 */
+async function parseAndCacheOpentypeFont(familyName: string, dataUrl: string): Promise<opentype.Font> {
   if (opentypeCache.has(familyName)) return opentypeCache.get(familyName)!
+  const buffer = base64ToArrayBuffer(dataUrl)
   let sfntBuffer = buffer
   const view = new DataView(buffer)
   if (buffer.byteLength > 4 && view.getUint32(0) === 0x774f4632) {
@@ -157,7 +160,7 @@ async function ensureFontFamily(faces: {family: string; endpoint: string}[]): Pr
   if (faces.every((f) => loadedFontFamilies.has(f.family) && opentypeCache.has(f.family))) return
   if (typeof document === 'undefined') return
 
-  const fontBuffers = await Promise.all(faces.map((f) => fetchFontArrayBuffer(f.endpoint)))
+  const dataUrls = await Promise.all(faces.map((f) => fetchFontDataUrl(f.endpoint)))
 
   // FontFace 등록 (아직 등록되지 않은 것만)
   const fontFacePromises: Promise<FontFace>[] = []
@@ -171,9 +174,7 @@ async function ensureFontFamily(faces: {family: string; endpoint: string}[]): Pr
       }
     }
     if (!alreadyRegistered) {
-      // in-place 복호화 적용하여 오버헤드 최소화
-      const decrypted = decryptFontBuffer(fontBuffers[i])
-      const fontFace = new FontFace(faces[i].family, decrypted)
+      const fontFace = new FontFace(faces[i].family, base64ToArrayBuffer(dataUrls[i]))
       fontFacePromises.push(fontFace.load())
     }
     loadedFontFamilies.add(faces[i].family)
@@ -182,16 +183,11 @@ async function ensureFontFamily(faces: {family: string; endpoint: string}[]): Pr
   for (const face of loadedFaces) document.fonts.add(face)
 
   // opentype 파싱 (아직 캐시되지 않은 것만)
-  await Promise.all(
-    faces.map((f, i) => {
-      const decrypted = decryptFontBuffer(fontBuffers[i])
-      return parseAndCacheOpentypeFont(f.family, decrypted)
-    }),
-  )
+  await Promise.all(faces.map((f, i) => parseAndCacheOpentypeFont(f.family, dataUrls[i])))
 
-  // Reclaim cache
+  // Reclaim raw base64 data URL memory
   for (const f of faces) {
-    fontArrayBufferCache.delete(f.endpoint)
+    fontDataUrlCache.delete(f.endpoint)
   }
 }
 
@@ -1574,7 +1570,7 @@ export function clearCaches(): void {
   iconCache.clear()
   loadedFontFamilies.clear()
   opentypeCache.clear()
-  fontArrayBufferCache.clear()
+  fontDataUrlCache.clear()
   wrapTextCache.clear()
   chromeCache = null
   for (const gc of groupCaches) {
@@ -1638,13 +1634,8 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
         faces.push({family: 'NotoSans', endpoint: '/api/font/notosans'})
         faces.push({family: 'NotoSansBold', endpoint: '/api/font/notosans-bold'})
       }
-      const fontBuffers = await Promise.all(faces.map((f) => fetchFontArrayBuffer(f.endpoint)))
-      await Promise.all(
-        faces.map((f, i) => {
-          const decrypted = decryptFontBuffer(fontBuffers[i])
-          return parseAndCacheOpentypeFont(f.family, decrypted)
-        }),
-      )
+      const dataUrls = await Promise.all(faces.map((f) => fetchFontDataUrl(f.endpoint)))
+      await Promise.all(faces.map((f, i) => parseAndCacheOpentypeFont(f.family, dataUrls[i])))
     }
 
     function renderSvgText(
