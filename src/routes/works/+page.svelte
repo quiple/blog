@@ -54,7 +54,7 @@
     },
     {
       title: 'Bluesky 비공식 클라이언트',
-      url: 'https://bsky.quiple.dev',
+      url: 'https://sorage.app',
       description: '(WIP) 마이크로블로깅 SNS Bluesky의 비공식 클라이언트.',
       type: '웹',
       stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Cloudflare'],
