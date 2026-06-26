@@ -53,16 +53,17 @@
       stack: ['PHP', 'Laravel', 'MySQL', 'JavaScript'],
     },
     {
-      title: 'Bluesky 비공식 클라이언트',
+      title: 'Sorage',
       url: 'https://sorage.app',
-      description: '(WIP) 마이크로블로깅 SNS Bluesky의 비공식 클라이언트.',
+      description: '(WIP) 마이크로블로깅 SNS인 Bluesky의 비공식 클라이언트.',
       type: '웹',
       stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Cloudflare'],
     },
     {
       title: 'Galmuri',
       url: '/font/galmuri',
-      description: '비트맵 한글 폰트 9종.',
+      description:
+        '《Papers, Please》, 《VVVVVV》 등의 인디 게임에 널리 사용되는 비트맵 한글 폰트 9종. 다양한 크기의 폰트를 제공하며, 오픈 소스 비트맵 한글 폰트의 사실상 표준입니다.',
       type: '폰트',
     },
     {
