@@ -39,6 +39,6 @@ Adobe-KR-9 보충 0의 한글 음절 2,780자와 일본 한자 640자를 지원�
 
 ## 다른 파생 폰트
 
-전기칩 한글 외에도 患者長ひっく 님께서 제작한 x12y12pxMaruMinya를 기반으로 만들어진 파생 폰트가 존재합니다.
+전기칩 한글 외에도 患者長ひっく 님께서 제작한 x8y12pxDenkiChip를 기반으로 만들어진 파생 폰트가 존재합니다.
 
 - [Liora Chip 10x12](https://github.com/LioraChen09/LioraChip10x12) (번체 중국어)
