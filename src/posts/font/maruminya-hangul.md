@@ -8,6 +8,8 @@ pubDate: 2026-02-27T01:09
 
 한글 음절 11,172자와 KS X 1001(한자 제외), KS X 1003 및 JIS X 0201, JIS X 0208의 전체 문자를 지원합니다.
 
+한글 및 추가 문자를 제외한 원본에 존재한 문자의 모양은 x12y12pxMaruMinya와 완전히 동일합니다.
+
 <Tester font="maruminya" />
 
 - [GitHub 리포지터리에서 다운로드](https://github.com/quiple/x12y12pxMaruMinyaHangul/tree/main/fonts)
