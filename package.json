@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:full": "VITE_PRERENDER_OG_IMAGES=true vite build",
     "preview": "wrangler pages dev ./.svelte-kit/cloudflare",
     "deploy": "vite build && wrangler deploy",
+    "deploy:full": "VITE_PRERENDER_OG_IMAGES=true vite build && wrangler deploy",
     "prepare": "husky",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",

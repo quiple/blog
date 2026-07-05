@@ -22,7 +22,7 @@ export const entries: EntryGenerator = () => {
   })
 }
 
-export const prerender = true
+export const prerender = import.meta.env.VITE_PRERENDER_OG_IMAGES === 'true'
 
 const geista = new CustomFont('Geista', () => read(geistaFontPath).arrayBuffer(), {
   weight: 800,
@@ -36,8 +36,15 @@ const plexSansJP = new CustomFont('IBM Plex Sans JP', () => read(plexSansJPFontP
   weight: 800,
 })
 
+let resolvedFontOptionsPromise: ReturnType<typeof resolveFonts> | undefined
+
+function getResolvedFontOptions() {
+  resolvedFontOptionsPromise ??= resolveFonts([geista, astaSans, plexSansJP])
+  return resolvedFontOptionsPromise
+}
+
 export const GET: RequestHandler = async ({params}) => {
-  const resolvedFontOptions = await resolveFonts([geista, astaSans, plexSansJP])
+  const resolvedFontOptions = await getResolvedFontOptions()
 
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
