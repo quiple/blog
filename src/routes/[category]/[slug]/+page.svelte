@@ -142,6 +142,8 @@
     const article = document.querySelector('article')
     if (article) {
       const markImageLoaded = (image: HTMLImageElement) => {
+        image.classList.remove('opacity-0')
+        image.classList.add('opacity-100')
         image.closest('.mdx-image-frame')?.classList.remove('bg-muted', 'animate-pulse')
       }
       const handleImageLoad = (event: Event) => {
@@ -340,9 +342,5 @@
   :global(.mdx-image-frame)
     @apply relative block overflow-hidden rounded-md
     :global(img)
-      @apply block max-w-full
-  :global(.wrapper > .mdx-image-frame)
-    @apply h-full w-full
-    :global(img)
-      @apply h-full w-full
+      @apply block max-w-full object-cover
 </style>
