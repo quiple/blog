@@ -102,7 +102,7 @@ function imageFrameHtml({
     alt,
     width,
     height,
-    class: imgClassName,
+    class: cn('opacity-0 transition-opacity', imgClassName),
     loading,
     decoding,
   })}></span>`
@@ -214,6 +214,7 @@ function rehypeImageSizes() {
               alt: imageAlt,
               width,
               height,
+              className: 'opacity-0 transition-opacity',
               loading: imageLoading,
               decoding: imageDecoding,
             },
@@ -281,7 +282,8 @@ function figure() {
             alt: attributes.alt ?? '',
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
-            imgClassName: mdxImageClass.trim(),
+            className: mdxImageClass.trim(),
+            imgClassName: hasWidthClass ? 'h-full w-full' : 'h-auto max-h-full',
             loading: 'lazy',
             decoding: 'async',
           })
