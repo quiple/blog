@@ -1,5 +1,4 @@
-import opentype from 'opentype.js'
-import {woff2Decode} from 'woff-lib/woff2/decode'
+import type {Font as OpenTypeFont} from 'opentype.js'
 import {getImageUrl} from '../utils'
 import type {Language, ThemeConfig, ThemeName} from './configs'
 import {resolveThemeConfig, themes} from './configs'
@@ -49,10 +48,10 @@ function fetchFontDataUrl(endpoint: string): Promise<string> {
 }
 
 /** opentype.js 파싱 결과 캐시 */
-const opentypeCache = new Map<string, opentype.Font>()
+const opentypeCache = new Map<string, OpenTypeFont>()
 
 /** CSS font-family 문자열에서 대응하는 opentype.Font를 찾음 */
-function resolveOpentypeFont(fontFamily: string): opentype.Font | undefined {
+function resolveOpentypeFont(fontFamily: string): OpenTypeFont | undefined {
   if (fontFamily.includes('Jalnan2')) return opentypeCache.get('Jalnan2')
   if (fontFamily.includes('ShinMGo-DeBold')) return opentypeCache.get('ShinMGo-DeBold')
   if (fontFamily.includes('ShinMGo-Medium')) return opentypeCache.get('ShinMGo-Medium')
@@ -64,7 +63,7 @@ function resolveOpentypeFont(fontFamily: string): opentype.Font | undefined {
 }
 
 /** opentype.js 폰트로 텍스트 너비 측정 */
-function measureTextOt(font: opentype.Font, text: string, fontSize: number): number {
+function measureTextOt(font: OpenTypeFont, text: string, fontSize: number): number {
   return font.getAdvanceWidth(text, fontSize)
 }
 
@@ -72,7 +71,7 @@ function measureTextOt(font: opentype.Font, text: string, fontSize: number): num
 function measureTextWidth(
   text: string,
   ctx: CanvasRenderingContext2D,
-  otFont?: opentype.Font,
+  otFont?: OpenTypeFont,
   otFontSize?: number,
 ): number {
   if (otFont && otFontSize) return measureTextOt(otFont, text, otFontSize)
@@ -82,7 +81,7 @@ function measureTextWidth(
 /** opentype.js 폰트로 Canvas에 텍스트 그리기 (Path 렌더링으로 브라우저 차이 제거) */
 function drawTextOt(
   ctx: CanvasRenderingContext2D,
-  font: opentype.Font,
+  font: OpenTypeFont,
   text: string,
   x: number,
   y: number,
@@ -133,36 +132,28 @@ function drawTextOt(
   ctx.restore()
 }
 
-/** opentype 데이터 URL에서 opentype.Font를 파싱하고 캐싱 */
-async function parseAndCacheOpentypeFont(familyName: string, dataUrl: string): Promise<opentype.Font> {
-  if (opentypeCache.has(familyName)) return opentypeCache.get(familyName)!
-  const buffer = base64ToArrayBuffer(dataUrl)
-  let sfntBuffer = buffer
-  const view = new DataView(buffer)
-  if (buffer.byteLength > 4 && view.getUint32(0) === 0x774f4632) {
-    const decompressed = await woff2Decode(new Uint8Array(buffer))
-    sfntBuffer = decompressed.buffer as ArrayBuffer
-  }
-  const font = opentype.parse(sfntBuffer)
-  opentypeCache.set(familyName, font)
-  return font
-}
-
 /** FontFace 등록 완료된 패밀리 추적 */
 const loadedFontFamilies = new Set<string>()
 
-/**
- * 범용 폰트 로딩: FontFace 등록 + opentype 캐시를 한 번에 처리
- * @param faces - [{family: CSS family 이름, endpoint: API 경로}] 배열
- */
-async function ensureFontFamily(faces: {family: string; endpoint: string}[]): Promise<void> {
-  // 이미 모두 로드 완료된 경우 즉시 반환
-  if (faces.every((f) => loadedFontFamilies.has(f.family) && opentypeCache.has(f.family))) return
-  if (typeof document === 'undefined') return
+type FontFaceRequest = {family: string; endpoint: string}
 
-  const dataUrls = await Promise.all(faces.map((f) => fetchFontDataUrl(f.endpoint)))
+function getMomotalkFontFaces(lang?: Language): FontFaceRequest[] {
+  const faces: FontFaceRequest[] = [
+    {family: 'Jalnan2', endpoint: '/api/font/jalnan'},
+    {family: 'GyeonggiTitle', endpoint: '/api/font/gyeonggi'},
+    {family: 'GyeonggiTitleBold', endpoint: '/api/font/gyeonggi-bold'},
+  ]
+  if (lang === 'ja') {
+    faces.push({family: 'ShinMGo-Medium', endpoint: '/api/font/shinmgo'})
+    faces.push({family: 'ShinMGo-DeBold', endpoint: '/api/font/shinmgo-debold'})
+  } else if (lang === 'en') {
+    faces.push({family: 'NotoSans', endpoint: '/api/font/notosans'})
+    faces.push({family: 'NotoSansBold', endpoint: '/api/font/notosans-bold'})
+  }
+  return faces
+}
 
-  // FontFace 등록 (아직 등록되지 않은 것만)
+async function registerFontFaces(faces: FontFaceRequest[], dataUrls: string[]): Promise<void> {
   const fontFacePromises: Promise<FontFace>[] = []
   for (let i = 0; i < faces.length; i++) {
     if (loadedFontFamilies.has(faces[i].family)) continue
@@ -181,11 +172,15 @@ async function ensureFontFamily(faces: {family: string; endpoint: string}[]): Pr
   }
   const loadedFaces = await Promise.all(fontFacePromises)
   for (const face of loadedFaces) document.fonts.add(face)
+}
 
-  // opentype 파싱 (아직 캐시되지 않은 것만)
-  await Promise.all(faces.map((f, i) => parseAndCacheOpentypeFont(f.family, dataUrls[i])))
+async function ensureCanvasFontFamily(faces: FontFaceRequest[]): Promise<void> {
+  if (faces.every((f) => loadedFontFamilies.has(f.family))) return
+  if (typeof document === 'undefined') return
 
-  // Reclaim raw base64 data URL memory
+  const dataUrls = await Promise.all(faces.map((f) => fetchFontDataUrl(f.endpoint)))
+  await registerFontFaces(faces, dataUrls)
+
   for (const f of faces) {
     fontDataUrlCache.delete(f.endpoint)
   }
@@ -295,7 +290,7 @@ function wrapText(
   ctx: CanvasRenderingContext2D,
   text: string,
   maxWidth: number,
-  otFont?: opentype.Font,
+  otFont?: OpenTypeFont,
   otFontSize?: number,
   breakHangul: boolean = true,
 ): string[] {
@@ -318,7 +313,7 @@ function wrapTextCore(
   ctx: CanvasRenderingContext2D,
   text: string,
   maxWidth: number,
-  otFont?: opentype.Font,
+  otFont?: OpenTypeFont,
   otFontSize?: number,
   breakHangul: boolean = true,
 ): string[] {
@@ -514,7 +509,7 @@ function computeBubbleLayout(
     font: string
   },
   chatAreaWidth: number,
-  otFont?: opentype.Font,
+  otFont?: OpenTypeFont,
   breakHangul: boolean = true,
 ): BubbleLayout {
   const maxBubbleWidth = chatAreaWidth * bubbleConfig.maxWidthRatio
@@ -539,7 +534,7 @@ function drawText(
   fontSize: number,
   fontFamily: string,
   color: string,
-  otFont?: opentype.Font,
+  otFont?: OpenTypeFont,
   baseline: 'top' | 'middle' = 'top',
   scaleX: number = 1.0,
   align: CanvasTextAlign = 'left',
@@ -709,6 +704,12 @@ let sharedRenderBufferCanvas: HTMLCanvasElement | null = null
 /**
  * 메인 렌더링 함수
  */
+export async function preparePreviewFonts(themeName: ThemeName, lang: Language): Promise<void> {
+  if (themeName === 'momotalk') {
+    await ensureCanvasFontFamily(getMomotalkFontFaces(lang))
+  }
+}
+
 export async function renderCanvas(
   canvas: HTMLCanvasElement,
   messages: MessageItem[],
@@ -718,23 +719,7 @@ export async function renderCanvas(
   const renderId = ++lastRenderId
   const config = resolveThemeConfig(themes[themeName], lang)
 
-  // 폰트 준비
-  if (themeName === 'momotalk') {
-    const faces: {family: string; endpoint: string}[] = [
-      {family: 'Jalnan2', endpoint: '/api/font/jalnan'},
-      {family: 'GyeonggiTitle', endpoint: '/api/font/gyeonggi'},
-      {family: 'GyeonggiTitleBold', endpoint: '/api/font/gyeonggi-bold'},
-    ]
-    if (lang === 'ja') {
-      faces.push({family: 'ShinMGo-Medium', endpoint: '/api/font/shinmgo'})
-      faces.push({family: 'ShinMGo-DeBold', endpoint: '/api/font/shinmgo-debold'})
-    }
-    if (lang === 'en') {
-      faces.push({family: 'NotoSans', endpoint: '/api/font/notosans'})
-      faces.push({family: 'NotoSansBold', endpoint: '/api/font/notosans-bold'})
-    }
-    await ensureFontFamily(faces)
-  }
+  await preparePreviewFonts(themeName, lang)
 
   // 최신 렌더링 요청인지 확인
   if (renderId !== lastRenderId) return
@@ -771,7 +756,7 @@ async function renderChrome(
   themeName: ThemeName,
   width: number,
   height: number,
-  otHeaderFont: opentype.Font | undefined,
+  otHeaderFont: OpenTypeFont | undefined,
   isObsolete: () => boolean,
 ): Promise<void> {
   // ── 헤더 배경 ──
@@ -1506,6 +1491,8 @@ export async function exportAsPng(
   lang: Language,
 ): Promise<void> {
   const config = resolveThemeConfig(themes[themeName], lang || 'ko')
+  await preparePreviewFonts(themeName, lang)
+
   const height = calculateCanvasHeight(messages, config, lang, themeName)
   const width = config.canvasWidth
 
@@ -1611,6 +1598,8 @@ function getSvgSource(name: string): string {
 export async function exportAsVectorSvg(messages: MessageItem[], themeName: ThemeName, lang?: Language): Promise<void> {
   try {
     const config = resolveThemeConfig(themes[themeName], lang || 'ko')
+    await preparePreviewFonts(themeName, lang || 'ko')
+
     const height = calculateCanvasHeight(messages, config, lang, themeName)
     const width = config.canvasWidth
     const breakHangul = themeName !== 'momotalk'
@@ -1619,24 +1608,6 @@ export async function exportAsVectorSvg(messages: MessageItem[], themeName: Them
     const bubbleLeftFont = config.bubbleLeft.font
     const bubbleRightFont = config.bubbleRight.font
     const bondFont = config.bond.font
-
-    // 폰트 데이터 가져오기 (SVG 패스 변환용) — fetchFontDataUrl 캐시 재활용
-    if (themeName === 'momotalk') {
-      const faces: {family: string; endpoint: string}[] = [
-        {family: 'Jalnan2', endpoint: '/api/font/jalnan'},
-        {family: 'GyeonggiTitle', endpoint: '/api/font/gyeonggi'},
-        {family: 'GyeonggiTitleBold', endpoint: '/api/font/gyeonggi-bold'},
-      ]
-      if (lang === 'ja') {
-        faces.push({family: 'ShinMGo-Medium', endpoint: '/api/font/shinmgo'})
-        faces.push({family: 'ShinMGo-DeBold', endpoint: '/api/font/shinmgo-debold'})
-      } else if (lang === 'en') {
-        faces.push({family: 'NotoSans', endpoint: '/api/font/notosans'})
-        faces.push({family: 'NotoSansBold', endpoint: '/api/font/notosans-bold'})
-      }
-      const dataUrls = await Promise.all(faces.map((f) => fetchFontDataUrl(f.endpoint)))
-      await Promise.all(faces.map((f, i) => parseAndCacheOpentypeFont(f.family, dataUrls[i])))
-    }
 
     function renderSvgText(
       text: string,

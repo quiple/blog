@@ -244,7 +244,8 @@
     const firstItem = vsGridEl.firstElementChild as HTMLElement | null
     if (!firstItem) return
     const gap = parseFloat(getComputedStyle(vsGridEl).rowGap) || 0
-    vsRowHeight = firstItem.offsetHeight + gap
+    const nextRowHeight = firstItem.offsetHeight + gap
+    if (vsRowHeight !== nextRowHeight) vsRowHeight = nextRowHeight
   }
 
   // 열 수 업데이트 (ResizeObserver)
@@ -252,10 +253,10 @@
     if (!studentScrollEl) return
     const w = studentScrollEl.clientWidth
     // Tailwind breakpoints 기준: md(768) → 8열, sm(640) → 6열, 기본 → 4열
-    if (w >= 680) vsColumns = 8
-    else if (w >= 480) vsColumns = 6
-    else vsColumns = 4
-    vsContainerHeight = studentScrollEl.clientHeight
+    const nextColumns = w >= 680 ? 8 : w >= 480 ? 6 : 4
+    const nextHeight = studentScrollEl.clientHeight
+    if (vsColumns !== nextColumns) vsColumns = nextColumns
+    if (vsContainerHeight !== nextHeight) vsContainerHeight = nextHeight
     measureRowHeight()
   }
 
@@ -273,7 +274,7 @@
 
   // ResizeObserver로 열 수 실시간 추적
   $effect(() => {
-    if (!studentScrollEl) return
+    if (!showStudentDialog || !studentScrollEl) return
     const observer = new ResizeObserver(() => updateColumns())
     observer.observe(studentScrollEl)
     return () => observer.disconnect()
@@ -460,11 +461,14 @@
 
   // Canvas 다시 그리기
   let drawTimer: ReturnType<typeof setTimeout> | undefined
-  function requestRedraw() {
+  let rendering = false
+  let redrawQueued = false
+
+  function requestRedraw(delay = 200) {
     if (drawTimer) clearTimeout(drawTimer)
     drawTimer = setTimeout(() => {
       doRedraw()
-    }, 200)
+    }, delay)
   }
 
   async function handleCopyPng() {
@@ -482,17 +486,29 @@
 
   async function doRedraw() {
     if (!browser || !canvasEl) return
+    if (rendering) {
+      redrawQueued = true
+      return
+    }
+
+    rendering = true
     try {
       await renderCanvas(canvasEl, messages, themeName, lang)
     } catch (e) {
       console.error('Render error:', e)
+    } finally {
+      rendering = false
+      if (redrawQueued) {
+        redrawQueued = false
+        requestRedraw(0)
+      }
     }
   }
 
   // 초기 렌더링 및 감시
   $effect(() => {
     if (browser && canvasEl) {
-      untrack(doRedraw)
+      untrack(() => requestRedraw(0))
     }
   })
 
@@ -709,7 +725,7 @@
                           ? '오른쪽 메시지 입력...'
                           : 'Enter message on the right...'}
                     bind:value={msg.text[bi]}
-                    oninput={requestRedraw}
+                    oninput={() => requestRedraw()}
                   />
                   {#if msg.text.length > 1}
                     <Button
