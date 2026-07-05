@@ -4,8 +4,8 @@
   import MdxContent from '$lib/components/mdx/MdxContent.svelte'
   import {Badge} from '$lib/components/ui/badge/index.js'
   import * as Tooltip from '$lib/components/ui/tooltip/index.js'
-  import {BASE_URL} from '$lib/constants'
 
+  import {absoluteUrl, jsonLd as stringifyJsonLd, SITE_AUTHOR, SITE_NAME, toKstDateTime} from '$lib/seo'
   import {getCategoryName, getImageUrl} from '$lib/utils'
   import {mode} from 'mode-watcher'
   import type {PageProps} from './$types'
@@ -34,7 +34,11 @@
   const thumbnailImage = $derived(
     `image-set(url('${thumbnail1x}') 1x, url('${thumbnail2x}') 2x), -webkit-image-set(url('${thumbnail1x}') 1x, url('${thumbnail2x}') 2x)`,
   )
+  const ogImageUrl = $derived(absoluteUrl(`/api/og/${data.category}/${data.slug}.png`))
+  const articleImageUrl = $derived(imageDesktop ? absoluteUrl(imageDesktop) : ogImageUrl)
   const publishedDate = $derived(data.origDate ?? data.pubDate)
+  const publishedDateIso = $derived(toKstDateTime(publishedDate) ?? toKstDateTime(data.pubDate))
+  const modifiedDateIso = $derived(toKstDateTime(data.pubDate))
   const publishedDateObj = $derived(
     typeof publishedDate === 'object' ? (publishedDate as Date) : new Date(`${publishedDate}+09:00`),
   )
@@ -44,44 +48,45 @@
     new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long', timeStyle: 'short'}).format(publishedDateObj),
   )
   const jsonLd = $derived(
-    JSON.stringify({
+    stringifyJsonLd({
       '@context': 'https://schema.org',
-      '@type': 'Article',
+      '@type': isFont ? 'TechArticle' : isArticle ? 'Article' : 'BlogPosting',
+      '@id': `${data.canonicalURL}#article`,
+      mainEntityOfPage: data.canonicalURL,
+      url: data.canonicalURL,
       headline: data.title,
-      datePublished: `${publishedDate}+09:00`,
-      image: imageDesktop && [`${BASE_URL}${imageDesktop}`],
-      ...(data.author
+      description: data.description,
+      inLanguage: 'ko-KR',
+      datePublished: publishedDateIso,
+      dateModified: modifiedDateIso,
+      image: [articleImageUrl],
+      author: data.authorURL
         ? {
-            author: [
-              data.authorURL
-                ? {
-                    '@type': 'Person',
-                    name: data.author,
-                    url: data.authorURL,
-                  }
-                : {
-                    '@type': 'Person',
-                    name: data.author,
-                  },
-            ],
+            '@type': 'Person',
+            name: data.author,
+            url: data.authorURL,
           }
-        : {}),
-      ...(data.media
+        : {
+            '@type': 'Person',
+            name: data.author ?? SITE_AUTHOR,
+          },
+      publisher: data.media
         ? {
-            publisher: [
-              data.source
-                ? {
-                    '@type': 'Organization',
-                    name: data.media,
-                    url: `${new URL(data.source).protocol}//${new URL(data.source).hostname}`,
-                  }
-                : {
-                    '@type': 'Organization',
-                    name: data.media,
-                  },
-            ],
+            '@type': 'Organization',
+            name: data.media,
+            ...(data.source ? {url: `${new URL(data.source).protocol}//${new URL(data.source).hostname}`} : {}),
           }
-        : {}),
+        : {
+            '@type': 'Organization',
+            name: SITE_NAME,
+            url: absoluteUrl('/'),
+          },
+      isPartOf: {
+        '@type': 'Blog',
+        name: SITE_NAME,
+        url: absoluteUrl('/'),
+      },
+      ...(data.tags?.length ? {keywords: data.tags.join(', ')} : {}),
     }),
   )
 
@@ -123,19 +128,27 @@
   <meta property="og:url" content={data.canonicalURL} />
   <meta property="og:title" content={data.title} />
   <meta property="og:description" content={data.description} />
+  <meta property="og:locale" content="ko_KR" />
   <meta name="twitter:title" content={data.title} />
   <meta name="twitter:description" content={data.description} />
-  <meta property="og:image" content={`${BASE_URL}/api/og/${data.category}/${data.slug}.png`} />
+  <meta property="og:image" content={ogImageUrl} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta name="twitter:image" content={`${BASE_URL}/api/og/${data.category}/${data.slug}.png`} />
+  <meta name="twitter:url" content={data.canonicalURL} />
+  <meta name="twitter:image" content={ogImageUrl} />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta property="article:published_time" content={`${publishedDate}+09:00`} />
+  <meta property="article:published_time" content={publishedDateIso} />
+  <meta property="article:modified_time" content={modifiedDateIso} />
+  <meta property="article:section" content={getCategoryName(data.category)} />
+  {#each data.tags ?? [] as tag}
+    <meta property="article:tag" content={tag} />
+  {/each}
   {#if data.author}
     <meta property="article:author" content={data.author} />
   {/if}
 
   <link rel="canonical" href={data.canonicalURL} />
+  <link rel="alternate" type="text/markdown" href={`${data.canonicalURL}.md`} />
   {@html jsonLdScript}
   {@html viewTransitionStyle}
 </svelte:head>

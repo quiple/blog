@@ -2,7 +2,7 @@
   import {goto} from '$app/navigation'
   import PostList from '$lib/components/post-list.svelte'
   import * as Pagination from '$lib/components/ui/pagination/index.js'
-  import {BASE_URL} from '$lib/constants'
+  import {absoluteUrl, jsonLd as stringifyJsonLd, SITE_NAME} from '$lib/seo'
   import {setupViewTransition} from 'sveltekit-view-transition'
   import type {PageProps} from './$types'
 
@@ -27,6 +27,24 @@
     if (!isPagination(navigation)) return
     return isGoingForward(navigation) ? ['paginate-forward'] : ['paginate-backward']
   })
+
+  const jsonLd = $derived(
+    stringifyJsonLd({
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      '@id': `${absoluteUrl('/')}#website`,
+      name: SITE_NAME,
+      url: absoluteUrl('/'),
+      description: data.description,
+      inLanguage: 'ko-KR',
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: `${absoluteUrl('/search')}?q={search_term_string}`,
+        'query-input': 'required name=search_term_string',
+      },
+    }),
+  )
+  const jsonLdScript = $derived(`<script type="application/ld+json">${jsonLd}</sc` + `ript>`)
 </script>
 
 <svelte:head>
@@ -34,9 +52,21 @@
   <meta name="description" content={data.description} />
 
   <meta property="og:type" content="website" />
-  <meta property="og:url" content={BASE_URL} />
+  <meta property="og:url" content={data.canonicalURL} />
   <meta property="og:title" content={data.title} />
   <meta property="og:description" content={data.description} />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={data.title} />
+  <meta name="twitter:description" content={data.description} />
+
+  <link rel="canonical" href={data.canonicalURL} />
+  {#if data.previousPageURL}
+    <link rel="prev" href={data.previousPageURL} />
+  {/if}
+  {#if data.nextPageURL}
+    <link rel="next" href={data.nextPageURL} />
+  {/if}
+  {@html jsonLdScript}
 </svelte:head>
 
 <div class="relative z-10 mx-auto max-w-xl 2xl:max-w-2xl">

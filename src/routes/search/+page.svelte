@@ -4,6 +4,7 @@
   import PostList from '$lib/components/post-list.svelte'
   import {Input} from '$lib/components/ui/input/index'
   import * as Pagination from '$lib/components/ui/pagination/index.js'
+  import {absoluteUrl} from '$lib/seo'
   import {setupViewTransition} from 'sveltekit-view-transition'
   import type {PageProps} from './$types'
 
@@ -62,6 +63,9 @@
   {:else}
     <title>‘{data.searchQuery}’ 검색 결과</title>
   {/if}
+  <meta name="robots" content="noindex,follow" />
+  <meta name="description" content="블로그 글 검색 결과입니다." />
+  <link rel="canonical" href={absoluteUrl('/search')} />
 </svelte:head>
 
 <div class="relative z-10 mx-auto max-w-xl 2xl:max-w-2xl">
