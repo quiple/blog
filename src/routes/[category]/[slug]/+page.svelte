@@ -1,6 +1,6 @@
 <script lang="ts">
   import {onMount} from 'svelte'
-  import Giscus from '$lib/components/giscus.svelte'
+  import LazyGiscus from '$lib/components/lazy-giscus.svelte'
   import MdxContent from '$lib/components/mdx/MdxContent.svelte'
   import {Badge} from '$lib/components/ui/badge/index.js'
   import * as Tooltip from '$lib/components/ui/tooltip/index.js'
@@ -112,11 +112,33 @@
 
   onMount(() => {
     supportsScrollTimeline = typeof CSS !== 'undefined' && CSS.supports('animation-timeline', 'scroll()')
-    const tweets = document.querySelectorAll('.twitter-tweet')
+    let cleanupScroll: (() => void) | undefined
 
-    for (let i = 0; i < tweets.length; i++) {
-      ;(tweets[i] as HTMLElement).dataset.theme = mode.current
+    if (!supportsScrollTimeline) {
+      let ticking = false
+      const updateScrollY = () => {
+        if (ticking) return
+        ticking = true
+        requestAnimationFrame(() => {
+          scrollY = window.scrollY
+          ticking = false
+        })
+      }
+
+      window.addEventListener('scroll', updateScrollY, {passive: true})
+      updateScrollY()
+      cleanupScroll = () => window.removeEventListener('scroll', updateScrollY)
     }
+
+    if (isContainTwitter) {
+      const tweets = document.querySelectorAll('.twitter-tweet')
+
+      for (let i = 0; i < tweets.length; i++) {
+        ;(tweets[i] as HTMLElement).dataset.theme = mode.current
+      }
+    }
+
+    return cleanupScroll
   })
 </script>
 
@@ -152,8 +174,6 @@
   {@html jsonLdScript}
   {@html viewTransitionStyle}
 </svelte:head>
-
-<svelte:window bind:scrollY />
 
 {#snippet metadata(isOutline: boolean = false)}
   <div
@@ -233,7 +253,7 @@
     {#if isContainTwitter}
       <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     {/if}
-    <Giscus />
+    <LazyGiscus />
   </article>
   <div class="flex-1">
     <Toc title="목차" selector="article" />

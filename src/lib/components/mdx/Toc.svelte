@@ -1,4 +1,5 @@
 <script lang="ts">
+  import {onMount} from 'svelte'
   import {TextAlignStart} from '@lucide/svelte'
   import {afterNavigate, pushState} from '$app/navigation'
 
@@ -9,6 +10,7 @@
   let activeIds = $state<string[]>([])
 
   let tocContainer = $state<HTMLElement | null>(null)
+  let shouldRender = $state(false)
 
   let isReady = $state(false)
   let pathD = $state('')
@@ -19,6 +21,11 @@
   let scrollTicking = false
 
   const updateHeadings = () => {
+    if (!shouldRender) {
+      headings = []
+      return
+    }
+
     const article = document.querySelector(selector)
     if (!article) {
       headings = []
@@ -45,6 +52,22 @@
       }
     })
   }
+
+  onMount(() => {
+    const media = window.matchMedia('(min-width: 1024px)')
+    const update = () => {
+      shouldRender = media.matches
+      if (shouldRender) {
+        queueMicrotask(updateHeadings)
+      } else {
+        headings = []
+      }
+    }
+
+    update()
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  })
 
   afterNavigate(() => {
     updateHeadings()
@@ -199,7 +222,7 @@
   const minLevel = $derived(headings.length > 0 ? Math.min(...headings.map((h) => h.level)) : 2)
 </script>
 
-{#if headings.length > 0}
+{#if shouldRender && headings.length > 0}
   <div class="toc" style="top: var(--header-height, 4rem);">
     <div class="mb-4 flex flex-wrap items-center text-sm font-semibold text-muted-foreground">
       <TextAlignStart class="mr-1.5 inline-block size-4" />

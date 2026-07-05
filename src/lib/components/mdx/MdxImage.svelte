@@ -40,8 +40,8 @@
   function handleError() {
     error = true
   }
-  const aspectRatioStyle = width && height ? `aspect-ratio: ${width} / ${height};` : ''
-  const mergedStyle = [aspectRatioStyle, style].filter(Boolean).join(' ')
+  const aspectRatioStyle = $derived(width && height ? `aspect-ratio: ${width} / ${height};` : '')
+  const mergedStyle = $derived([aspectRatioStyle, style].filter(Boolean).join(' '))
 </script>
 
 <div class={cn('relative block', className)} style={mergedStyle}>

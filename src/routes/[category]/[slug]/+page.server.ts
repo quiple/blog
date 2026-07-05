@@ -34,6 +34,21 @@ const widthClassRegex = /(^|\s)w-/
 const IMAGE_WIDTHS = [343, 576, 672, 686, 1152, 1344]
 const DEFAULT_SIZES = '(min-width: 1536px) 672px, (min-width: calc(576px + 32px)) 576px, calc(100vw - 32px)'
 
+function escapeHtmlAttr(value: unknown) {
+  return String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('"', '&quot;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+}
+
+function htmlAttrs(attrs: Record<string, unknown>) {
+  return Object.entries(attrs)
+    .filter(([, value]) => value !== undefined && value !== null && value !== false)
+    .map(([name, value]) => (value === true ? name : `${name}="${escapeHtmlAttr(value)}"`))
+    .join(' ')
+}
+
 function generateSrcSet(src: string, isProd: boolean) {
   return IMAGE_WIDTHS.map((w) => `${getImageUrl(src, {w}, isProd)} ${w}w`).join(', ')
 }
@@ -116,22 +131,12 @@ function rehypeImageSizes() {
 
         const sizeInfo = imageSizeMap[srcClean]
 
-        // Convert img element to MdxImage component
-        node.tagName = 'div'
         node.properties = {
-          'data-mdx-component': 'MdxImage',
-          'data-mdx-props': JSON.stringify({
-            src: node.properties.src,
-            srcset: node.properties.srcset,
-            sizes: node.properties.sizes,
-            alt: node.properties.alt,
-            width: node.properties.width || sizeInfo?.width,
-            height: node.properties.height || sizeInfo?.height,
-            class: node.properties.className || '',
-            loading: node.properties.loading || 'lazy',
-            decoding: node.properties.decoding || 'async',
-            style: node.properties.style,
-          }),
+          ...node.properties,
+          width: node.properties.width || sizeInfo?.width,
+          height: node.properties.height || sizeInfo?.height,
+          loading: node.properties.loading || 'lazy',
+          decoding: node.properties.decoding || 'async',
         }
       } else if (
         node.tagName === 'iframe' &&
@@ -185,17 +190,19 @@ function figure() {
           }
           const heightClasses = className?.match(/\b(max-h-|h-)[^\s]+\b/g)?.join(' ') || ''
           const mdxImageClass = hasWidthClass
-            ? 'not-prose w-full h-full block'
+            ? 'not-prose block h-full w-full object-cover'
             : `not-prose block w-fit mx-auto max-h-full ${heightClasses}`
-          content = `<div data-mdx-component="MdxImage" data-mdx-props="${JSON.stringify({
+          content = `<img ${htmlAttrs({
             src,
             srcset,
             sizes,
+            alt: attributes.alt ?? '',
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
             class: mdxImageClass.trim(),
-            fullSize: hasWidthClass,
-          }).replace(/"/g, '&quot;')}"></div>`
+            loading: 'lazy',
+            decoding: 'async',
+          })}>`
         } else if (node.name === 'youtube') {
           content = `<iframe class="${cn('aspect-video w-full', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
         } else if (node.name === 'spotify') {

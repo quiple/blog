@@ -8,6 +8,7 @@
   import {Input} from '$lib/components/ui/input'
   import {Label} from '$lib/components/ui/label'
   import * as Select from '$lib/components/ui/select/index.js'
+  import {Toaster} from '$lib/components/ui/sonner'
   import {Textarea} from '$lib/components/ui/textarea'
   import {onDestroy} from 'svelte'
   import {browser} from '$app/environment'
@@ -378,6 +379,8 @@
   <meta name="description" content="비트맵 폰트 이미지를 만드는 도구." />
   <meta property="og:description" content="비트맵 폰트 이미지를 만드는 도구." />
 </svelte:head>
+
+<Toaster />
 
 <h1 class="page-title">비트맵 폰트 이미지 생성기</h1>
 
