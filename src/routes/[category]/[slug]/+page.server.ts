@@ -49,6 +49,65 @@ function htmlAttrs(attrs: Record<string, unknown>) {
     .join(' ')
 }
 
+function htmlAttrString(value: unknown) {
+  return typeof value === 'string' || typeof value === 'number' ? String(value) : ''
+}
+
+function imageFrameStyle(width: unknown, height: unknown, style?: unknown) {
+  const widthValue = htmlAttrString(width)
+  const heightValue = htmlAttrString(height)
+
+  return [
+    widthValue && heightValue ? `aspect-ratio: ${widthValue} / ${heightValue}` : '',
+    typeof style === 'string' ? style.replace(/;$/, '') : '',
+  ]
+    .filter(Boolean)
+    .join('; ')
+}
+
+function imageFrameHtml({
+  src,
+  srcset,
+  sizes,
+  alt = '',
+  width,
+  height,
+  className,
+  style,
+  imgClassName,
+  loading = 'lazy',
+  decoding = 'async',
+}: {
+  src: string
+  srcset?: string
+  sizes?: string
+  alt?: unknown
+  width?: unknown
+  height?: unknown
+  className?: string
+  style?: unknown
+  imgClassName?: string
+  loading?: unknown
+  decoding?: unknown
+}) {
+  const frameStyle = imageFrameStyle(width, height, style)
+
+  return `<span ${htmlAttrs({
+    class: cn('mdx-image-frame bg-muted animate-pulse', className),
+    style: frameStyle || undefined,
+  })}><img ${htmlAttrs({
+    src,
+    srcset,
+    sizes,
+    alt,
+    width,
+    height,
+    class: imgClassName,
+    loading,
+    decoding,
+  })}></span>`
+}
+
 function generateSrcSet(src: string, isProd: boolean) {
   return IMAGE_WIDTHS.map((w) => `${getImageUrl(src, {w}, isProd)} ${w}w`).join(', ')
 }
@@ -125,19 +184,42 @@ function rehypeImageSizes() {
         if (srcClean.charCodeAt(0) === 47) srcClean = srcClean.slice(1)
 
         // 이미지 주소를 프록시 주소로 교체
-        node.properties.src = getImageUrl(srcClean, {w: 1344}, isProd)
-        node.properties.srcset = generateSrcSet(srcClean, isProd)
-        node.properties.sizes = DEFAULT_SIZES
+        const imageSrc = getImageUrl(srcClean, {w: 1344}, isProd)
+        const imageSrcset = generateSrcSet(srcClean, isProd)
+        const imageSizesAttr = DEFAULT_SIZES
+        const imageAlt = node.properties.alt
+        const imageClassName = node.properties.className
+        const imageStyle = node.properties.style
+        const imageLoading = node.properties.loading || 'lazy'
+        const imageDecoding = node.properties.decoding || 'async'
 
         const sizeInfo = imageSizeMap[srcClean]
+        const width = node.properties.width || sizeInfo?.width
+        const height = node.properties.height || sizeInfo?.height
+        const frameStyle = imageFrameStyle(width, height, imageStyle)
 
+        node.tagName = 'span'
         node.properties = {
-          ...node.properties,
-          width: node.properties.width || sizeInfo?.width,
-          height: node.properties.height || sizeInfo?.height,
-          loading: node.properties.loading || 'lazy',
-          decoding: node.properties.decoding || 'async',
+          className: cn('mdx-image-frame bg-muted animate-pulse', imageClassName),
+          style: frameStyle || undefined,
         }
+        node.children = [
+          {
+            type: 'element',
+            tagName: 'img',
+            properties: {
+              src: imageSrc,
+              srcset: imageSrcset,
+              sizes: imageSizesAttr,
+              alt: imageAlt,
+              width,
+              height,
+              loading: imageLoading,
+              decoding: imageDecoding,
+            },
+            children: [],
+          },
+        ]
       } else if (
         node.tagName === 'iframe' &&
         (node.properties.src?.includes('youtube.com') || node.properties.className?.includes('aspect-video'))
@@ -192,17 +274,17 @@ function figure() {
           const mdxImageClass = hasWidthClass
             ? 'not-prose block h-full w-full object-cover'
             : `not-prose block w-fit mx-auto max-h-full ${heightClasses}`
-          content = `<img ${htmlAttrs({
+          content = imageFrameHtml({
             src,
             srcset,
             sizes,
             alt: attributes.alt ?? '',
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
-            class: mdxImageClass.trim(),
+            imgClassName: mdxImageClass.trim(),
             loading: 'lazy',
             decoding: 'async',
-          })}>`
+          })
         } else if (node.name === 'youtube') {
           content = `<iframe class="${cn('aspect-video w-full', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
         } else if (node.name === 'spotify') {

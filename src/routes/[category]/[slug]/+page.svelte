@@ -113,6 +113,7 @@
   onMount(() => {
     supportsScrollTimeline = typeof CSS !== 'undefined' && CSS.supports('animation-timeline', 'scroll()')
     let cleanupScroll: (() => void) | undefined
+    let cleanupImages: (() => void) | undefined
 
     if (!supportsScrollTimeline) {
       let ticking = false
@@ -138,7 +139,28 @@
       }
     }
 
-    return cleanupScroll
+    const article = document.querySelector('article')
+    if (article) {
+      const markImageLoaded = (image: HTMLImageElement) => {
+        image.closest('.mdx-image-frame')?.classList.remove('bg-muted', 'animate-pulse')
+      }
+      const handleImageLoad = (event: Event) => {
+        if (event.target instanceof HTMLImageElement) {
+          markImageLoaded(event.target)
+        }
+      }
+
+      article.addEventListener('load', handleImageLoad, true)
+      article.querySelectorAll<HTMLImageElement>('.mdx-image-frame img').forEach((image) => {
+        if (image.complete && image.naturalWidth > 0) markImageLoaded(image)
+      })
+      cleanupImages = () => article.removeEventListener('load', handleImageLoad, true)
+    }
+
+    return () => {
+      cleanupScroll?.()
+      cleanupImages?.()
+    }
   })
 </script>
 
@@ -315,4 +337,12 @@
       &.line .metadata::before
         @apply content-(--content) absolute -z-1
         -webkit-text-stroke: 6px var(--outline-color)
+  :global(.mdx-image-frame)
+    @apply relative block overflow-hidden rounded-md
+    :global(img)
+      @apply block max-w-full
+  :global(.wrapper > .mdx-image-frame)
+    @apply h-full w-full
+    :global(img)
+      @apply h-full w-full
 </style>
