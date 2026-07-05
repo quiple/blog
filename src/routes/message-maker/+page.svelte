@@ -585,7 +585,7 @@
 
 <h1 class="page-title">메시지 만들기</h1>
 
-<div class="-mx-4 grid h-[calc(100vh-var(--header-height))] grid-cols-3 gap-0 border-t sm:-mx-6">
+<div class="-mx-4 -mb-6 grid h-[calc(100vh-var(--header-height))] grid-cols-3 gap-0 border-t sm:-mx-6">
   <!-- ━━━ 1열: 캔버스 미리보기 ━━━ -->
   <div class="col col-preview" bind:this={previewContainer}>
     <div class="col-header">
@@ -1185,9 +1185,6 @@
 
 <style lang="sass">
   @reference '#app.css'
-
-  :global(main)
-    @apply pb-0!
 
   .col
     @apply flex flex-col border-r last:border-r-0
