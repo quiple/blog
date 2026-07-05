@@ -266,15 +266,16 @@ function figure() {
         if (node.name === 'figure') {
           wrapperClass = cn(wrapperClass, className)
           const hasWidthClass = widthClassRegex.test(className)
+          const heightClasses = className?.match(/\b(max-h-|h-)[^\s]+\b/g)?.join(' ') || ''
+          const hasHeightClass = Boolean(heightClasses)
           if (widthVal && heightVal) {
-            const maxWidth = hasWidthClass ? '100%' : `min(100%, ${widthVal}px)`
-            const widthStyle = hasWidthClass ? '' : ' width: fit-content;'
+            const maxWidth = hasWidthClass || !hasHeightClass ? '100%' : `min(100%, ${widthVal}px)`
+            const widthStyle = hasWidthClass ? '' : hasHeightClass ? ' width: fit-content;' : ` width: ${widthVal}px;`
             wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${maxWidth};${widthStyle}"`
           }
-          const heightClasses = className?.match(/\b(max-h-|h-)[^\s]+\b/g)?.join(' ') || ''
           const mdxImageClass = hasWidthClass
             ? 'not-prose block h-full w-full object-cover'
-            : `not-prose block w-fit mx-auto max-h-full ${heightClasses}`
+            : `not-prose block ${hasHeightClass ? 'w-fit' : 'w-full'} mx-auto max-h-full ${heightClasses}`
           content = imageFrameHtml({
             src,
             srcset,
