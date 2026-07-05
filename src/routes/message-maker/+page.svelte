@@ -15,7 +15,7 @@
     X,
   } from '@lucide/svelte'
   import {browser} from '$app/environment'
-  import {onDestroy} from 'svelte'
+  import {onDestroy, untrack} from 'svelte'
   import {Badge} from '$lib/components/ui/badge/index.js'
   import * as ButtonGroup from '$lib/components/ui/button-group/index.js'
   import {Button, buttonVariants} from '$lib/components/ui/button/index.js'
@@ -492,10 +492,8 @@
   // 초기 렌더링 및 감시
   $effect(() => {
     if (browser && canvasEl) {
-      doRedraw()
+      untrack(doRedraw)
     }
-    // 페이지 이탈 시 렌더러 캐시 해제
-    return () => clearCaches()
   })
 
   // 개발 환경에서 언어 변경 시 기본 메시지 교체
@@ -549,6 +547,8 @@
   }
 
   onDestroy(() => {
+    if (drawTimer) clearTimeout(drawTimer)
+    clearCaches()
     for (const msg of messages) {
       if (msg.portrait && msg.portrait.startsWith('blob:')) {
         URL.revokeObjectURL(msg.portrait)
