@@ -1,6 +1,4 @@
 import type {ComponentProps} from 'svelte'
-import {ImageResponse} from '@ethercorps/sveltekit-og'
-import {CustomFont, resolveFonts} from '@ethercorps/sveltekit-og/fonts'
 import {read} from '$app/server'
 import astaSansFontPath from '$lib/assets/fonts/AstaSans-ExtraBold.ttf?url'
 import geistaFontPath from '$lib/assets/fonts/Geista-SemiBold.otf?url'
@@ -24,26 +22,31 @@ export const entries: EntryGenerator = () => {
 
 export const prerender = import.meta.env.VITE_PRERENDER_OG_IMAGES === 'true'
 
-const geista = new CustomFont('Geista', () => read(geistaFontPath).arrayBuffer(), {
-  weight: 800,
-})
-
-const astaSans = new CustomFont('IBM Plex Sans KR', () => read(astaSansFontPath).arrayBuffer(), {
-  weight: 800,
-})
-
-const plexSansJP = new CustomFont('IBM Plex Sans JP', () => read(plexSansJPFontPath).arrayBuffer(), {
-  weight: 800,
-})
-
-let resolvedFontOptionsPromise: ReturnType<typeof resolveFonts> | undefined
+let resolvedFontOptionsPromise: ReturnType<typeof import('@ethercorps/sveltekit-og/fonts').resolveFonts> | undefined
 
 function getResolvedFontOptions() {
-  resolvedFontOptionsPromise ??= resolveFonts([geista, astaSans, plexSansJP])
+  resolvedFontOptionsPromise ??= (async () => {
+    const {CustomFont, resolveFonts} = await import('@ethercorps/sveltekit-og/fonts')
+
+    const geista = new CustomFont('Geista', () => read(geistaFontPath).arrayBuffer(), {
+      weight: 800,
+    })
+
+    const astaSans = new CustomFont('IBM Plex Sans KR', () => read(astaSansFontPath).arrayBuffer(), {
+      weight: 800,
+    })
+
+    const plexSansJP = new CustomFont('IBM Plex Sans JP', () => read(plexSansJPFontPath).arrayBuffer(), {
+      weight: 800,
+    })
+
+    return resolveFonts([geista, astaSans, plexSansJP])
+  })()
   return resolvedFontOptionsPromise
 }
 
 export const GET: RequestHandler = async ({params}) => {
+  const {ImageResponse} = await import('@ethercorps/sveltekit-og')
   const resolvedFontOptions = await getResolvedFontOptions()
 
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
