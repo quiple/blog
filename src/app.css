@@ -35,9 +35,9 @@
     Hiragino Sans GB, Noto Sans SC, Microsoft YaHei UI, Microsoft YaHei, sans-serif, Apple Color Emoji, Segoe UI Emoji,
     Segoe UI Symbol, Noto Color Emoji;
   --font-sans-zh-tw:
-    -apple-system, BlinkMacSystemFont, InterVariable, Inter, Helvetica Neue, Roboto, Arial, PingFang SC,
-    Hiragino Sans GB, Noto Sans SC, Microsoft YaHei UI, Microsoft YaHei, sans-serif, Apple Color Emoji, Segoe UI Emoji,
-    Segoe UI Symbol, Noto Color Emoji;
+    -apple-system, BlinkMacSystemFont, InterVariable, Inter, Helvetica Neue, Roboto, Arial, PingFang TC, Noto Sans TC,
+    Microsoft JhengHei UI, Microsoft JhengHei, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+    Noto Color Emoji;
   --font-serif: var(--font-serif-quiple);
   --default-font-feature-settings: 'palt' 1;
   --radius: 0.625rem;
