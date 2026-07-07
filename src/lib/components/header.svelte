@@ -48,14 +48,16 @@
 
   // Track navigation direction
   let navigatingFromNonPostToPost = $state(false)
+  let lockedHeaderClassName = $state<string | null>(null)
 
   let isH1Visible = $state(false)
-  let headerClassName = $derived.by(() => {
+  let actualHeaderClassName = $derived.by(() => {
     const sy = overrideScrollY ?? scrollY
     if (hasHeroImage && sy < innerHeight / 2 - 42) return 'hero'
     if (!hasHeroImage && (isH1Visible || (isPostPage && sy === 0))) return 'title-hidden'
     return ''
   })
+  let headerClassName = $derived(lockedHeaderClassName ?? actualHeaderClassName)
 
   const {transition} = setupViewTransition()
   const onKeydown = (e: KeyboardEvent) => {
@@ -91,14 +93,17 @@
   beforeNavigate((nav) => {
     const fromPath = nav.from?.url.pathname ?? ''
     const toPath = nav.to?.url.pathname ?? ''
+    const fromIsPostPath = isPostPath(fromPath)
     const toIsPostPath = isPostPath(toPath)
 
     if (nav.type !== 'popstate') overrideScrollY = toIsPostPath ? 0 : null
-    navigatingFromNonPostToPost = !isPostPath(fromPath) && toIsPostPath
+    lockedHeaderClassName = nav.type !== 'popstate' && fromIsPostPath && !toIsPostPath ? actualHeaderClassName : null
+    navigatingFromNonPostToPost = !fromIsPostPath && toIsPostPath
   })
 
   afterNavigate(() => {
     menuOpen = false
+    lockedHeaderClassName = null
     navigatingFromNonPostToPost = false
     setTimeout(() => {
       overrideScrollY = null
