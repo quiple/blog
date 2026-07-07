@@ -146,7 +146,7 @@
 </script>
 
 <svelte:head>
-  <title>{data.title}</title>
+  <title>{data.title} – quiple</title>
   <meta name="description" content={data.description} />
 
   <meta property="og:type" content="article" />
