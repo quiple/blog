@@ -1,3 +1,5 @@
+import {renderLanguageTemplates} from './language-template'
+
 /**
  * Set of all standard HTML element tag names.
  * Used to distinguish HTML elements from MDX components.
@@ -243,5 +245,5 @@ export function mdxHandlers() {
  * conflicts with MDX's JSX syntax parsing.
  */
 export function preprocessMdx(content: string): string {
-  return content.replace(/<(https?:\/\/[^>]+)>/g, '[$1]($1)')
+  return renderLanguageTemplates(content).replace(/<(https?:\/\/[^>]+)>/g, '[$1]($1)')
 }

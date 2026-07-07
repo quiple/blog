@@ -8,7 +8,6 @@ import {
   getPostMetadataFromMatter,
 } from '$lib/content'
 import imageSizes from '$lib/image-sizes.json'
-import {remarkLanguageTemplates} from '$lib/language-template'
 import {generateDescription, processTitle} from '$lib/markdown'
 import {mdxHandlers, preprocessMdx} from '$lib/mdx'
 import {cn, getImageUrl} from '$lib/utils'
@@ -134,7 +133,6 @@ export const load: PageServerLoad = async ({params}) => {
     await remark()
       .use(remarkDirective)
       .use(remarkMdx)
-      .use(remarkLanguageTemplates)
       .use(figure)
       .use(remarkGfm)
       .use(remarkCjkFriendly)
