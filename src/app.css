@@ -12,10 +12,16 @@
 }
 
 :root {
-  --font-weight-normal: var(--font-sans-weight-normal);
-  --font-weight-medium: var(--font-sans-weight-medium);
-  --font-weight-bold: var(--font-sans-weight-bold);
-  --font-weight-extrabold: var(--font-sans-weight-extrabold);
+  --font-weight-normal-theme: var(--font-sans-weight-normal);
+  --font-weight-medium-theme: var(--font-sans-weight-medium);
+  --font-weight-bold-theme: var(--font-sans-weight-bold);
+  --font-weight-extrabold-theme: var(--font-sans-weight-extrabold);
+  --font-serif-weight-theme: var(--font-serif-weight-bold);
+  --font-weight-normal-system: 400;
+  --font-weight-medium-system: 500;
+  --font-weight-bold-system: 700;
+  --font-weight-extrabold-system: 800;
+  --font-serif-weight-system: 700;
   --font-sans-theme:
     Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
     Meiryo, MS Gothic, Asta Sans, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
@@ -37,7 +43,8 @@
     -apple-system, BlinkMacSystemFont, InterVariable, Inter, Helvetica Neue, Roboto, Arial, PingFang TC, Noto Sans TC,
     Microsoft JhengHei UI, Microsoft JhengHei, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
     Noto Color Emoji;
-  --font-serif: var(--font-serif-quiple);
+  --font-serif-theme: var(--font-serif-quiple);
+  --font-serif-system: serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --default-font-feature-settings: 'palt' 1;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
