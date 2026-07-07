@@ -46,7 +46,7 @@
 
 <div class={cn('relative block', className)} style={mergedStyle}>
   {#if !loaded || error}
-    <Skeleton class="absolute inset-0 h-full w-full rounded-md" />
+    <Skeleton class="absolute inset-0 h-full w-full rounded-lg" />
   {/if}
 
   <img
