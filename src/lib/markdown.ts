@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
 import smartypants from 'remark-smartypants'
 import strip from 'strip-markdown'
+import {stripLanguageTemplates} from './language-template'
 
 // --- Reusable remark processors ---
 // Processors are frozen via .freeze() on first use, so creating them once is efficient.
@@ -33,12 +34,12 @@ export const simpleHtmlProcessor = remark()
 
 /** Processes a title string: strips markdown formatting and removes newlines. */
 export async function processTitle(title: string): Promise<string> {
-  return (await titleProcessor.process(title)).toString().replaceAll('\n', '')
+  return (await titleProcessor.process(stripLanguageTemplates(title))).toString().replaceAll('\n', '')
 }
 
 /** Generates a description from raw markdown content (max 200 chars + ellipsis). */
 export async function generateDescription(content: string): Promise<string> {
-  const stripped = (await descriptionProcessor.process(content))
+  const stripped = (await descriptionProcessor.process(stripLanguageTemplates(content)))
     .toString()
     .replaceAll('\n', ' ')
     .replaceAll('  ', ' ')
