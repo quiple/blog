@@ -59,9 +59,9 @@
 
 <svelte:head>
   {#if !data.searchQuery}
-    <title>검색</title>
+    <title>검색 – quiple</title>
   {:else}
-    <title>‘{data.searchQuery}’ 검색 결과</title>
+    <title>‘{data.searchQuery}’ 검색 결과 – quiple</title>
   {/if}
   <meta name="robots" content="noindex,follow" />
   <meta name="description" content="블로그 글 검색 결과입니다." />
