@@ -17,11 +17,11 @@
   --font-weight-bold: var(--font-sans-weight-bold);
   --font-weight-extrabold: var(--font-sans-weight-extrabold);
   --font-sans-theme:
-    Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo,
-    Asta Sans, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
+    Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
+    Meiryo, MS Gothic, Asta Sans, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
   --font-sans-ja-theme:
-    Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Meiryo,
-    ui-sans-serif, system-ui, sans-serif;
+    Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
+    Meiryo, MS Gothic, ui-sans-serif, system-ui, sans-serif;
   --font-sans-system:
     -apple-system, BlinkMacSystemFont, InterVariable, Inter, Helvetica Neue, Roboto, Arial, Apple SD Gothic Neo,
     Noto Sans KR, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
