@@ -245,7 +245,7 @@
     @apply scroll-m-5.5 text-2xl leading-tight font-extrabold tracking-tight text-pretty break-keep md:text-3xl lg:text-4xl;
   }
   h2 {
-    @apply scroll-m-5.5 border-b pb-3 font-serif text-xl leading-snug font-(--font-serif-weight-bold) tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
+    @apply scroll-m-5.5 border-b pb-3 font-serif text-xl leading-snug font-(--font-serif-weight) tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
   }
   h3 {
     @apply scroll-m-5.5 text-lg font-bold tracking-tight md:text-xl lg:text-2xl;
