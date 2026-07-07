@@ -22,11 +22,11 @@
   --font-weight-bold-system: 700;
   --font-weight-extrabold-system: 800;
   --font-serif-weight-system: 700;
-  --font-weight-normal: var(--font-sans-weight-normal);
-  --font-weight-medium: var(--font-sans-weight-medium);
-  --font-weight-bold: var(--font-sans-weight-bold);
-  --font-weight-extrabold: var(--font-sans-weight-extrabold);
-  --font-serif-weight: var(--font-serif-weight-bold);
+  --font-weight-normal: var(--font-weight-normal-theme);
+  --font-weight-medium: var(--font-weight-medium-theme);
+  --font-weight-bold: var(--font-weight-bold-theme);
+  --font-weight-extrabold: var(--font-weight-extrabold-theme);
+  --font-serif-weight: var(--font-serif-weight-theme);
   --font-sans-theme:
     Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
     Meiryo, MS Gothic, Asta Sans, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
@@ -50,6 +50,9 @@
     Noto Color Emoji;
   --font-serif-theme: var(--font-serif-quiple);
   --font-serif-system: serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  --font-sans-active: var(--font-sans-theme);
+  --font-sans-ja-active: var(--font-sans-ja-theme);
+  --font-serif-active: var(--font-serif-theme);
   --default-font-feature-settings: 'palt' 1;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
@@ -83,6 +86,17 @@
   --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
   --sidebar-border: oklch(0.92 0.004 286.32);
   --sidebar-ring: oklch(0.705 0.015 286.067);
+}
+
+:root[data-font-family='system'] {
+  --font-weight-normal: var(--font-weight-normal-system);
+  --font-weight-medium: var(--font-weight-medium-system);
+  --font-weight-bold: var(--font-weight-bold-system);
+  --font-weight-extrabold: var(--font-weight-extrabold-system);
+  --font-serif-weight: var(--font-serif-weight-system);
+  --font-sans-active: var(--font-sans-system);
+  --font-sans-ja-active: var(--font-sans-ja-system);
+  --font-serif-active: var(--font-serif-system);
 }
 
 @media not print {
@@ -122,6 +136,8 @@
 }
 
 @theme inline {
+  --font-sans: var(--font-sans-active);
+  --font-serif: var(--font-serif-active);
   --font-sans-theme: var(--font-sans-theme);
   --font-sans-ja-theme: var(--font-sans-ja-theme);
   --font-sans-system: var(--font-sans-system);
@@ -176,7 +192,7 @@
     @apply border-border text-wrap underline-offset-[.15em] outline-ring/50;
   }
   html {
-    @apply font-sans-theme;
+    font-family: var(--font-sans-active);
   }
   body {
     @apply bg-background font-normal text-foreground;
@@ -186,7 +202,7 @@
     @apply [text-autospace:normal];
   }
   :lang(ja) {
-    @apply font-sans-ja-theme;
+    font-family: var(--font-sans-ja-active);
   }
   :lang(zh-CN),
   :lang(zh-Hans) {
