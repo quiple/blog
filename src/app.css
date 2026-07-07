@@ -168,6 +168,15 @@
   :lang(zh) {
     @apply [text-autospace:normal];
   }
+  :lang(ja) {
+    @apply font-sans-ja-theme;
+  }
+  :lang(zh-CN) {
+    @apply font-sans-zh-cn;
+  }
+  :lang(zh-TW) {
+    @apply font-sans-zh-tw;
+  }
   button {
     @apply cursor-pointer;
   }
