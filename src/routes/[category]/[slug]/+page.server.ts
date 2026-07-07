@@ -261,7 +261,7 @@ function figure() {
 
         let content = ''
         let wrapperStyle = ''
-        let wrapperClass = cn('wrapper', node.name !== 'figure' && 'after:hidden')
+        let wrapperClass = 'wrapper'
 
         if (node.name === 'figure') {
           wrapperClass = cn(wrapperClass, className)
