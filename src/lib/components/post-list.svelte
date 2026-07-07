@@ -207,5 +207,7 @@
   .list-item
     @apply flex flex-col before:rounded-[1rem] py-2 pl-3.25 -ml-3.25 pr-2 -mr-2 rounded-[1rem] hover-bg-muted hover:[&_.badge-item]:border-border
     .img
-      @apply shrink-0 size-22 bg-cover bg-center inner-border rounded-md shadow-xs
+      @apply relative shrink-0 size-22 overflow-hidden bg-cover bg-center rounded-md shadow-xs
+      > img
+        @apply rounded-[inherit] inner-border
 </style>
