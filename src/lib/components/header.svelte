@@ -89,10 +89,12 @@
   })
 
   beforeNavigate((nav) => {
-    if (nav.type !== 'popstate') overrideScrollY = 0
     const fromPath = nav.from?.url.pathname ?? ''
     const toPath = nav.to?.url.pathname ?? ''
-    navigatingFromNonPostToPost = !isPostPath(fromPath) && isPostPath(toPath)
+    const toIsPostPath = isPostPath(toPath)
+
+    if (nav.type !== 'popstate') overrideScrollY = toIsPostPath ? 0 : null
+    navigatingFromNonPostToPost = !isPostPath(fromPath) && toIsPostPath
   })
 
   afterNavigate(() => {
