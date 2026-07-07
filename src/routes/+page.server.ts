@@ -13,7 +13,7 @@ export const load: PageServerLoad = async ({url}) => {
 
   const start = (currentPage - 1) * PER_PAGE
   const posts = allPosts.slice(start, start + PER_PAGE)
-  const title = currentPage > 1 ? `${SITE_NAME} - ${currentPage}페이지` : SITE_NAME
+  const title = currentPage > 1 ? `${SITE_NAME} – ${currentPage}페이지` : SITE_NAME
   const canonicalURL = homeCanonicalUrl(currentPage)
   const previousPageURL = currentPage > 1 ? homeCanonicalUrl(currentPage - 1) : undefined
   const nextPageURL = currentPage < totalPages ? homeCanonicalUrl(currentPage + 1) : undefined
