@@ -374,7 +374,7 @@
 </script>
 
 <svelte:head>
-  <title>비트맵 폰트 이미지 생성기</title>
+  <title>비트맵 폰트 이미지 생성기 – quiple</title>
   <meta property="og:title" content="비트맵 폰트 이미지 생성기" />
   <meta name="description" content="비트맵 폰트 이미지를 만드는 도구." />
   <meta property="og:description" content="비트맵 폰트 이미지를 만드는 도구." />
