@@ -2,6 +2,7 @@
   import {Menu, Monitor, Moon, Search, Sun} from '@lucide/svelte'
   import {afterNavigate, beforeNavigate, goto} from '$app/navigation'
   import {page} from '$app/state'
+  import {onMount} from 'svelte'
   import svgGradeDown from '$lib/assets/logo-grade-down.svg'
   import svgOutline from '$lib/assets/logo-outline.svg'
   import menu from '$lib/assets/menu.svg'
@@ -18,6 +19,21 @@
   let menuOpen = $state(false)
   let scrollY = $state(0)
   let innerHeight = $state(1000)
+  let fontFamilyMode = $state<'theme' | 'system'>('theme')
+
+  const fontFamilyStorageKey = 'font-family'
+
+  const setFontFamilyMode = (mode: 'theme' | 'system') => {
+    fontFamilyMode = mode
+
+    if (mode === 'system') {
+      document.documentElement.dataset.fontFamily = 'system'
+      localStorage.setItem(fontFamilyStorageKey, mode)
+    } else {
+      delete document.documentElement.dataset.fontFamily
+      localStorage.setItem(fontFamilyStorageKey, mode)
+    }
+  }
 
   const isPostPath = (pathname: string) =>
     pathname.startsWith('/blog/') || pathname.startsWith('/article/') || pathname.startsWith('/font/')
@@ -85,6 +101,11 @@
     setTimeout(() => {
       overrideScrollY = null
     }, 100)
+  })
+
+  onMount(() => {
+    const savedFontFamilyMode = localStorage.getItem(fontFamilyStorageKey)
+    setFontFamilyMode(savedFontFamilyMode === 'system' ? 'system' : 'theme')
   })
 </script>
 
@@ -184,10 +205,12 @@
           </div>
           <div class="flex items-center justify-between px-1.5 py-1 text-sm">
             폰트 패밀리
-            <Tabs.Root value="theme">
+            <Tabs.Root value={fontFamilyMode}>
               <Tabs.List>
-                <Tabs.Trigger class="px-1" value="theme">테마</Tabs.Trigger>
-                <Tabs.Trigger class="px-1" value="system">시스템</Tabs.Trigger>
+                <Tabs.Trigger class="px-1" value="theme" onclick={() => setFontFamilyMode('theme')}>테마</Tabs.Trigger>
+                <Tabs.Trigger class="px-1" value="system" onclick={() => setFontFamilyMode('system')}>
+                  시스템
+                </Tabs.Trigger>
               </Tabs.List>
             </Tabs.Root>
           </div>
