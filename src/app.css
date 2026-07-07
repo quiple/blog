@@ -299,7 +299,7 @@
     @apply text-sm leading-none;
   }
   a {
-    @apply scroll-m-5.5 decoration-[1.5px] transition-[text-decoration-thickness] hover:decoration-2;
+    @apply scroll-m-5.5 decoration-muted-foreground transition hover:decoration-foreground;
   }
   figcaption {
     @apply m-0;
