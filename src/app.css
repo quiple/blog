@@ -159,7 +159,7 @@
     @apply border-border text-wrap underline-offset-[.15em] outline-ring/50;
   }
   html {
-    @apply font-sans;
+    @apply font-sans-theme;
   }
   body {
     @apply bg-background font-normal text-foreground;
