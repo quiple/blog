@@ -22,6 +22,11 @@
   --font-weight-bold-system: 700;
   --font-weight-extrabold-system: 800;
   --font-serif-weight-system: 700;
+  --font-weight-normal: var(--font-sans-weight-normal);
+  --font-weight-medium: var(--font-sans-weight-medium);
+  --font-weight-bold: var(--font-sans-weight-bold);
+  --font-weight-extrabold: var(--font-sans-weight-extrabold);
+  --font-serif-weight: var(--font-serif-weight-bold);
   --font-sans-theme:
     Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
     Meiryo, MS Gothic, Asta Sans, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
