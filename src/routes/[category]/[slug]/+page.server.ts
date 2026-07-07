@@ -288,9 +288,9 @@ function figure() {
             decoding: 'async',
           })
         } else if (node.name === 'youtube') {
-          content = `<iframe class="${cn('aspect-video w-full rounded-lg shadow-xs mx-auto self-center', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
+          content = `<iframe class="${cn('mdx-embed-frame aspect-video w-full rounded-lg shadow-xs mx-auto self-center', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
         } else if (node.name === 'spotify') {
-          content = `<iframe class="${cn('w-full rounded-lg shadow-xs mx-auto self-center', className)}" data-testid="embed-iframe" src="https://open.spotify.com/embed/${id?.replace(':', '/')}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" decoding="async"></iframe>`
+          content = `<iframe class="${cn('mdx-embed-frame w-full rounded-lg shadow-xs mx-auto self-center', className)}" data-testid="embed-iframe" src="https://open.spotify.com/embed/${id?.replace(':', '/')}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" decoding="async"></iframe>`
         } else if (node.name === 'tweet') {
           content = `<blockquote class="twitter-tweet" data-lang="ko"><a href="https://twitter.com/username/status/${id}?ref_src=twsrc%5Etfw"></a></blockquote>`
         }
