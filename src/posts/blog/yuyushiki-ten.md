@@ -22,10 +22,10 @@ pubDate: 2026-04-22T00:49
 ::figure{src="photo/DSC_0264_Original.JPG" class="max-h-200"}
 
 :::figure{src="photo/DSC_0265_Original.JPG"}
-이른 새벽 셔터가 닫힌 아키바 CO 갤러리(アキバCOギャラリー).
+이른 새벽 셔터가 닫힌 아키바 CO 갤러리({{ja|アキバCOギャラリー}}).
 :::
 
-2018년 11월 30일 도쿄 아키하바라에 위치한 아키바 CO 갤러리에서 〈유유시키 10주년 기념전(ゆゆ式10周年記念展)〉이 개최되었다.
+2018년 11월 30일 도쿄 아키하바라에 위치한 아키바 CO 갤러리에서 〈유유시키 10주년 기념전({{ja|ゆゆ式10周年記念展}})〉이 개최되었다.
 
 ::figure{src="photo/DSC_0266_Original.JPG"}
 
@@ -98,7 +98,7 @@ pubDate: 2026-04-22T00:49
 ::figure{src="photo/DSC_0294_Original.JPG"}
 
 :::figure{src="photo/DSC_0298_Original.JPG" class="max-h-200"}
-히노야카레 아키하바라점(日乃屋カレー 秋葉原店).
+히노야카레 아키하바라점({{ja|日乃屋カレー 秋葉原店}}).
 :::
 
 ::figure{src="photo/DSC_0299_Original.JPG"}
