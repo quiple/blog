@@ -25,9 +25,13 @@ pubDate: 2026-04-23T13:54
 
 ::figure{src="photo/IMG_3443.HEIC"}
 
-::figure{src="photo/IMG_3444.HEIC"}
+:::figure{src="photo/IMG_3444.HEIC"}
+가츠시 건대점에서 먹은 소바 정식. 12,500원.
+:::
 
 ::figure{src="photo/IMG_3445.HEIC"}
+
+식사를 마치고 다시 예스24 라이브홀로.
 
 ::figure{src="photo/IMG_3447.HEIC"}
 
