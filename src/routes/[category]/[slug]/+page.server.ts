@@ -260,18 +260,16 @@ function figure() {
         const heightAttr = heightVal ? `height="${heightVal}"` : ''
 
         let content = ''
-        let wrapperStyle = ''
-        let wrapperClass = 'wrapper'
+        let mediaStyle = ''
 
         if (node.name === 'figure') {
-          wrapperClass = cn(wrapperClass, className)
           const hasWidthClass = widthClassRegex.test(className)
           const heightClasses = className?.match(/\b(max-h-|h-)[^\s]+\b/g)?.join(' ') || ''
           const hasHeightClass = Boolean(heightClasses)
           if (widthVal && heightVal) {
             const maxWidth = hasWidthClass || !hasHeightClass ? '100%' : `min(100%, ${widthVal}px)`
             const widthStyle = hasWidthClass ? '' : hasHeightClass ? ' width: fit-content;' : ` width: ${widthVal}px;`
-            wrapperStyle = `style="aspect-ratio: ${widthVal} / ${heightVal}; max-width: ${maxWidth};${widthStyle}"`
+            mediaStyle = `max-width: ${maxWidth};${widthStyle}`
           }
           const mdxImageClass = hasWidthClass
             ? 'not-prose block h-full w-full object-cover'
@@ -283,15 +281,16 @@ function figure() {
             alt: attributes.alt ?? '',
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
-            className: mdxImageClass.trim(),
+            className: cn('mx-auto self-center shadow-xs', mdxImageClass.trim(), className),
+            style: mediaStyle || undefined,
             imgClassName: hasWidthClass ? 'h-full w-full' : 'h-auto max-h-full',
             loading: 'lazy',
             decoding: 'async',
           })
         } else if (node.name === 'youtube') {
-          content = `<iframe class="${cn('aspect-video w-full', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
+          content = `<iframe class="${cn('aspect-video w-full rounded-lg shadow-xs mx-auto self-center', className)}" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy" decoding="async"></iframe>`
         } else if (node.name === 'spotify') {
-          content = `<iframe class="${cn('w-full', className)}" data-testid="embed-iframe" src="https://open.spotify.com/embed/${id?.replace(':', '/')}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" decoding="async"></iframe>`
+          content = `<iframe class="${cn('w-full rounded-lg shadow-xs mx-auto self-center', className)}" data-testid="embed-iframe" src="https://open.spotify.com/embed/${id?.replace(':', '/')}" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" decoding="async"></iframe>`
         } else if (node.name === 'tweet') {
           content = `<blockquote class="twitter-tweet" data-lang="ko"><a href="https://twitter.com/username/status/${id}?ref_src=twsrc%5Etfw"></a></blockquote>`
         }
@@ -302,17 +301,13 @@ function figure() {
             ? [
                 {
                   type: 'html',
-                  value:
-                    node.name !== 'tweet' ? `<div class="${wrapperClass}" ${wrapperStyle}>${content}</div>` : content,
+                  value: content,
                 },
               ]
             : [
                 {
                   type: 'html',
-                  value:
-                    node.name !== 'tweet'
-                      ? `<div class="${wrapperClass}" ${wrapperStyle}>${content}</div><figcaption>`
-                      : `${content}<figcaption>`,
+                  value: `${content}<figcaption>`,
                 },
                 ...node.children,
                 {type: 'html', value: `</figcaption>`},

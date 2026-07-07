@@ -321,12 +321,13 @@
         @apply content-(--content) absolute -z-1
         -webkit-text-stroke: 6px var(--outline-color)
   :global(.mdx-image-frame)
-    @apply relative block overflow-hidden rounded-md
+    @apply relative block overflow-hidden rounded-lg
     content-visibility: auto
     contain-intrinsic-size: auto 24rem
     :global(img)
-      @apply block max-w-full object-cover
+      @apply block max-w-full rounded-[inherit] object-cover inner-border
   :global(article iframe)
+    @apply rounded-lg inner-border
     content-visibility: auto
     contain-intrinsic-size: auto 24rem
 </style>
