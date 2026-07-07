@@ -139,7 +139,7 @@
 </script>
 
 <svelte:head>
-  <title>Works</title>
+  <title>Works – quiple</title>
   <meta name="robots" content="noindex" />
 </svelte:head>
 
