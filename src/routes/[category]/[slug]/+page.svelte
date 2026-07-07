@@ -326,8 +326,9 @@
     contain-intrinsic-size: auto 24rem
     :global(img)
       @apply block max-w-full rounded-[inherit] object-cover inner-border
-  :global(article iframe)
+  :global(article iframe.mdx-embed-frame)
     @apply rounded-lg inner-border
+  :global(article iframe)
     content-visibility: auto
     contain-intrinsic-size: auto 24rem
 </style>
