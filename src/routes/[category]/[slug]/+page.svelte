@@ -13,15 +13,13 @@
   import 'remark-github-alerts/styles/github-colors-dark-class.css'
   import 'remark-github-alerts/styles/github-base.css'
   import Toc from '$lib/components/mdx/Toc.svelte'
-  import {setupViewTransition} from 'sveltekit-view-transition'
+  import {setupViewTransition} from '$lib/view-transition'
 
   let {data}: PageProps = $props()
 
   const isProd = import.meta.env.PROD
 
   const {transition} = setupViewTransition()
-  let scrollY = $state(0)
-  let supportsScrollTimeline = $state(false)
   const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
   const isArticle = $derived(data.category === 'article')
   const isFont = $derived(data.category === 'font')
@@ -111,25 +109,7 @@
   `)
 
   onMount(() => {
-    supportsScrollTimeline = typeof CSS !== 'undefined' && CSS.supports('animation-timeline', 'scroll()')
-    let cleanupScroll: (() => void) | undefined
     let cleanupImages: (() => void) | undefined
-
-    if (!supportsScrollTimeline) {
-      let ticking = false
-      const updateScrollY = () => {
-        if (ticking) return
-        ticking = true
-        requestAnimationFrame(() => {
-          scrollY = window.scrollY
-          ticking = false
-        })
-      }
-
-      window.addEventListener('scroll', updateScrollY, {passive: true})
-      updateScrollY()
-      cleanupScroll = () => window.removeEventListener('scroll', updateScrollY)
-    }
 
     if (isContainTwitter) {
       const tweets = document.querySelectorAll('.twitter-tweet')
@@ -160,7 +140,6 @@
     }
 
     return () => {
-      cleanupScroll?.()
       cleanupImages?.()
     }
   })
@@ -240,7 +219,6 @@
       style:--image-desktop={`url('${imageDesktop}')`}
       style:--image-4k={`url('${image4K}')`}
       style:--thumbnail-image={thumbnailImage}
-      style:transform={!supportsScrollTimeline ? `translate3d(0, ${Math.max(0, scrollY) * 0.5}px, 0)` : undefined}
       style:background-position={`center ${data.imageVerticalAlign ?? 50}%`}
     ></div>
   </div>
@@ -325,6 +303,9 @@
           animation: hero-parallax linear both
           animation-timeline: scroll(root)
           animation-range: 0 50vh
+        @media (prefers-reduced-motion: reduce)
+          animation: none
+          will-change: auto
     &.title
       @apply justify-center items-end flex z-10 h-[calc(50vh-var(--header-height))] print:h-[calc(56.25vw-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-[50vh] print:md:h-[56.25vw] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
       & > div
@@ -341,6 +322,11 @@
         -webkit-text-stroke: 6px var(--outline-color)
   :global(.mdx-image-frame)
     @apply relative block overflow-hidden rounded-md
+    content-visibility: auto
+    contain-intrinsic-size: auto 24rem
     :global(img)
       @apply block max-w-full object-cover
+  :global(article iframe)
+    content-visibility: auto
+    contain-intrinsic-size: auto 24rem
 </style>

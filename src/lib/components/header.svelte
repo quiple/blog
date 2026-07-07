@@ -12,7 +12,7 @@
   import {Input} from '$lib/components/ui/input/index'
   import * as Tabs from '$lib/components/ui/tabs/index.js'
   import {setMode, userPrefersMode} from 'mode-watcher'
-  import {setupViewTransition} from 'sveltekit-view-transition'
+  import {setupViewTransition} from '$lib/view-transition'
 
   let query = $state('')
   let inputElement = $state<HTMLInputElement | null>(null)
@@ -113,10 +113,35 @@
   onMount(() => {
     const savedFontFamilyMode = localStorage.getItem(fontFamilyStorageKey)
     setFontFamilyMode(savedFontFamilyMode === 'system' ? 'system' : 'theme')
+
+    let scrollFrame = 0
+
+    const updateScroll = () => {
+      if (scrollFrame) return
+      scrollFrame = requestAnimationFrame(() => {
+        scrollY = window.scrollY
+        scrollFrame = 0
+      })
+    }
+
+    const updateViewport = () => {
+      innerHeight = window.innerHeight
+      updateScroll()
+    }
+
+    updateViewport()
+    window.addEventListener('scroll', updateScroll, {passive: true})
+    window.addEventListener('resize', updateViewport, {passive: true})
+
+    return () => {
+      if (scrollFrame) cancelAnimationFrame(scrollFrame)
+      window.removeEventListener('scroll', updateScroll)
+      window.removeEventListener('resize', updateViewport)
+    }
   })
 </script>
 
-<svelte:window bind:scrollY bind:innerHeight on:keydown={onKeydown} />
+<svelte:window on:keydown={onKeydown} />
 
 <header
   class={headerClassName}

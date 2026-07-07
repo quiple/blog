@@ -9,7 +9,7 @@
   import favicon from '$lib/assets/favicon.svg'
   import Header from '$lib/components/header.svelte'
   import {ModeWatcher} from 'mode-watcher'
-  import {setupViewTransition} from 'sveltekit-view-transition'
+  import {setupViewTransition} from '$lib/view-transition'
 
   let {children} = $props()
 

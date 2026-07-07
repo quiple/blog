@@ -459,8 +459,8 @@ async function getIcon(name: string, size: number): Promise<HTMLImageElement> {
   return img
 }
 
-/** 이미지 캐시 (LRU, 최대 50개) */
-const IMAGE_CACHE_MAX = 50
+/** 이미지 캐시 (LRU, 큰 프로필 이미지를 오래 붙잡지 않도록 작게 유지) */
+const IMAGE_CACHE_MAX = 20
 const imageCache = new Map<string, HTMLImageElement>()
 
 async function getCachedImage(url: string): Promise<HTMLImageElement> {
@@ -689,17 +689,16 @@ export function calculateCanvasHeight(
 /** 마지막 렌더링 ID (중복 실행 방지용) */
 let lastRenderId = 0
 
-/** 정적 크롬(헤더+사이드바) 오프스크린 캐시 */
-let chromeCache: {hash: string; canvas: HTMLCanvasElement; height: number} | null = null
-
 /** 메시지 그룹별 오프스크린 캐시 */
 let groupCaches: {hash: string; canvas: HTMLCanvasElement; width: number; height: number}[] = []
+const GROUP_CACHE_MAX = 24
 
 function hashMessage(msg: MessageItem): string {
   return `${msg.type}\0${msg.name ?? ''}\0${msg.portrait ?? ''}\0${msg.text.join('\0')}`
 }
 
 let sharedRenderBufferCanvas: HTMLCanvasElement | null = null
+const DOUBLE_BUFFER_MAX_PIXELS = 2_500_000
 
 /**
  * 메인 렌더링 함수
@@ -725,15 +724,31 @@ export async function renderCanvas(
   if (renderId !== lastRenderId) return
 
   const height = calculateCanvasHeight(messages, config, lang, themeName)
+  const useDoubleBuffer = config.canvasWidth * height <= DOUBLE_BUFFER_MAX_PIXELS
 
   // 깜빡임(flickering) 방지를 위한 더블 버퍼링
+  if (!useDoubleBuffer) {
+    if (sharedRenderBufferCanvas) {
+      sharedRenderBufferCanvas.width = 0
+      sharedRenderBufferCanvas.height = 0
+      sharedRenderBufferCanvas = null
+    }
+    if (canvas.width !== config.canvasWidth || canvas.height !== height) {
+      canvas.width = config.canvasWidth
+      canvas.height = height
+    }
+    const ctx = canvas.getContext('2d', {alpha: false})!
+    await renderToContext(ctx, messages, themeName, 1, renderId, height, lang)
+    return
+  }
+
   if (!sharedRenderBufferCanvas) {
     sharedRenderBufferCanvas = document.createElement('canvas')
   }
   sharedRenderBufferCanvas.width = config.canvasWidth
   sharedRenderBufferCanvas.height = height
 
-  const bufferCtx = sharedRenderBufferCanvas.getContext('2d')!
+  const bufferCtx = sharedRenderBufferCanvas.getContext('2d', {alpha: false})!
 
   // 오프스크린 버퍼에 모든 비동기 드로잉 작업 수행
   await renderToContext(bufferCtx, messages, themeName, 1, renderId, height, lang)
@@ -746,7 +761,7 @@ export async function renderCanvas(
     canvas.width = config.canvasWidth
     canvas.height = height
   }
-  const ctx = canvas.getContext('2d')!
+  const ctx = canvas.getContext('2d', {alpha: false})!
   ctx.drawImage(sharedRenderBufferCanvas, 0, 0)
 }
 
@@ -987,27 +1002,8 @@ async function renderToContext(
   ctx.fillRect(0, 0, width, height)
 
   // ── 정적 크롬 (헤더+사이드바) ──
-  const chromeHash = `${themeName}:${lang}:${width}:${height}`
-  if (useCache && chromeCache && chromeCache.hash === chromeHash) {
-    // 캐시된 크롬 비트맵 합성
-    ctx.drawImage(chromeCache.canvas, 0, 0)
-  } else {
-    // 크롬을 새로 렌더링
-    await renderChrome(ctx, config, themeName, width, height, otHeaderFont, isObsolete)
-    if (isObsolete()) return
-
-    // scale === 1일 때만 캐시 저장
-    if (useCache) {
-      const cc = chromeCache?.canvas ?? document.createElement('canvas')
-      cc.width = width
-      cc.height = height
-      const cctx = cc.getContext('2d')!
-      cctx.clearRect(0, 0, width, height)
-      // 배경+헤더+사이드바 영역만 복사
-      cctx.drawImage(ctx.canvas, 0, 0)
-      chromeCache = {hash: chromeHash, canvas: cc, height}
-    }
-  }
+  await renderChrome(ctx, config, themeName, width, height, otHeaderFont, isObsolete)
+  if (isObsolete()) return
 
   // ── 대화 영역 ──
   const chatLeft = config.sidebar.width + config.chat.paddingLeft
@@ -1016,7 +1012,8 @@ async function renderToContext(
 
   // 그룹 캐시 배열 크기 조정 및 메모리 해제
   if (useCache) {
-    while (groupCaches.length > messages.length) {
+    const maxCacheLength = Math.min(messages.length, GROUP_CACHE_MAX)
+    while (groupCaches.length > maxCacheLength) {
       const gc = groupCaches.pop()
       if (gc) {
         gc.canvas.width = 0
@@ -1039,8 +1036,9 @@ async function renderToContext(
 
     // 그룹 캐시 확인
     // 캔버스 높이가 변해도 기존 캐시를 재사용하기 위해 msgHash에서 height를 제외
-    const msgHash = useCache ? `${themeName}:${lang}:${width}:${hashMessage(msg)}` : ''
-    const cachedGroup = useCache ? groupCaches[i] : undefined
+    const canCacheGroup = useCache && i < GROUP_CACHE_MAX
+    const msgHash = canCacheGroup ? `${themeName}:${lang}:${width}:${hashMessage(msg)}` : ''
+    const cachedGroup = canCacheGroup ? groupCaches[i] : undefined
     if (cachedGroup && cachedGroup.hash === msgHash) {
       // 캐시된 그룹 비트맵 합성 (사이드바 영역을 제외한 채팅 영역)
       ctx.drawImage(cachedGroup.canvas, config.sidebar.width, cursorY)
@@ -1061,7 +1059,7 @@ async function renderToContext(
           const finalUrl =
             msg.portrait.startsWith('http') || msg.portrait.startsWith('blob:')
               ? msg.portrait
-              : getImageUrl(msg.portrait, {original: true}, rendererIsProd)
+              : getImageUrl(msg.portrait, {h: Math.max(128, Math.ceil(config.profile.size * scale))}, rendererIsProd)
           const profileImg = await getCachedImage(finalUrl)
           if (isObsolete()) return
           ctx.save()
@@ -1453,7 +1451,7 @@ async function renderToContext(
     }
 
     // 그룹 캐시 저장
-    if (useCache) {
+    if (canCacheGroup) {
       const groupHeight = cursorY - groupStartY
       const gc = cachedGroup?.canvas ?? document.createElement('canvas')
       const chatWidth = width - config.sidebar.width
@@ -1559,7 +1557,6 @@ export function clearCaches(): void {
   opentypeCache.clear()
   fontDataUrlCache.clear()
   wrapTextCache.clear()
-  chromeCache = null
   for (const gc of groupCaches) {
     gc.canvas.width = 0
     gc.canvas.height = 0

@@ -5,7 +5,7 @@
   import {Input} from '$lib/components/ui/input/index'
   import * as Pagination from '$lib/components/ui/pagination/index.js'
   import {absoluteUrl} from '$lib/seo'
-  import {setupViewTransition} from 'sveltekit-view-transition'
+  import {setupViewTransition} from '$lib/view-transition'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()

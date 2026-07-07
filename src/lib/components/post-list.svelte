@@ -19,6 +19,7 @@
   } = $props()
 
   const isProd = import.meta.env.PROD
+  const dateFormatter = new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'})
 
   const lazyImage: Action<HTMLImageElement, string> = (node, src) => {
     let timeoutId: ReturnType<typeof setTimeout>
@@ -191,9 +192,7 @@
               }}
             >
               {#if post.media}
-                {post.media}&#8194;&#8226;&#8194;{/if}{new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'}).format(
-                displayDate,
-              )}
+                {post.media}&#8194;&#8226;&#8194;{/if}{dateFormatter.format(displayDate)}
             </small>
           </div>
         </a>

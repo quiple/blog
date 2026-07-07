@@ -3,7 +3,7 @@
   import PostList from '$lib/components/post-list.svelte'
   import * as Pagination from '$lib/components/ui/pagination/index.js'
   import {absoluteUrl, jsonLd as stringifyJsonLd, SITE_NAME} from '$lib/seo'
-  import {setupViewTransition} from 'sveltekit-view-transition'
+  import {setupViewTransition} from '$lib/view-transition'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()

@@ -40,6 +40,12 @@
   const isProd = import.meta.env.PROD
   const baseUrl = isProd ? 'https://quiple.dev' : ''
 
+  const sortedStudentsByLang: Record<Language, Student[]> = {
+    ko: [...students].sort((a, b) => a.name.ko.localeCompare(b.name.ko, 'ko')),
+    ja: [...students].sort((a, b) => a.name.ja.localeCompare(b.name.ja, 'ja')),
+    en: [...students].sort((a, b) => a.name.en.localeCompare(b.name.en, 'en')),
+  }
+
   // ── 상태 ──
   let themeName: ThemeName = $state('momotalk')
   let lang: Language = $state('ko')
@@ -193,9 +199,9 @@
 
   // 학생 목록 필터링 및 정렬
   let filteredStudents = $derived.by(() => {
-    const sortedStudents = [...students].sort((a, b) => a.name[lang].localeCompare(b.name[lang], lang))
-    if (!studentSearchQuery) return sortedStudents
-    const q = studentSearchQuery.toLowerCase()
+    const sortedStudents = sortedStudentsByLang[lang]
+    const q = studentSearchQuery.trim().toLowerCase()
+    if (!q) return sortedStudents
     return sortedStudents.filter(
       (s) =>
         s.name.ko.toLowerCase().includes(q) ||
@@ -214,6 +220,8 @@
 
   // 현재 열 수 (반응형 — 기본 4, sm: 6, md: 8)
   let vsColumns = $state(4)
+  let studentScrollFrame = 0
+  let pendingStudentScrollTop = 0
 
   // 전체 행 수와 보이는 행 범위
   let vsTotalRows = $derived(Math.ceil(filteredStudents.length / vsColumns))
@@ -235,7 +243,12 @@
 
   function handleStudentScroll(e: Event) {
     const el = e.target as HTMLDivElement
-    vsScrollTop = el.scrollTop
+    pendingStudentScrollTop = el.scrollTop
+    if (studentScrollFrame) return
+    studentScrollFrame = requestAnimationFrame(() => {
+      vsScrollTop = pendingStudentScrollTop
+      studentScrollFrame = 0
+    })
   }
 
   // 그리드에서 실제 행 높이 측정
@@ -275,9 +288,19 @@
   // ResizeObserver로 열 수 실시간 추적
   $effect(() => {
     if (!showStudentDialog || !studentScrollEl) return
-    const observer = new ResizeObserver(() => updateColumns())
+    let resizeFrame = 0
+    const observer = new ResizeObserver(() => {
+      if (resizeFrame) return
+      resizeFrame = requestAnimationFrame(() => {
+        updateColumns()
+        resizeFrame = 0
+      })
+    })
     observer.observe(studentScrollEl)
-    return () => observer.disconnect()
+    return () => {
+      if (resizeFrame) cancelAnimationFrame(resizeFrame)
+      observer.disconnect()
+    }
   })
 
   // 대화 JSON 내보내기
@@ -564,6 +587,7 @@
 
   onDestroy(() => {
     if (drawTimer) clearTimeout(drawTimer)
+    if (studentScrollFrame) cancelAnimationFrame(studentScrollFrame)
     clearCaches()
     for (const msg of messages) {
       if (msg.portrait && msg.portrait.startsWith('blob:')) {
@@ -632,7 +656,7 @@
       {#each messages as msg, i (i)}
         <Card.Root
           class={[
-            'gap-1 overflow-visible pt-1 pr-2 pb-2 pl-2',
+            'message-card gap-1 overflow-visible pt-1 pr-2 pb-2 pl-2',
             msg.type === 'left' && 'mr-8',
             msg.type === 'right' && 'ml-8',
           ]}
@@ -1212,6 +1236,10 @@
 
   .msg-student-name
     @apply text-sm font-medium flex-1 truncate
+
+  :global(.message-card)
+    content-visibility: auto
+    contain-intrinsic-size: auto 9rem
 
   // ── 3열: 설정 ──
   .col-settings
