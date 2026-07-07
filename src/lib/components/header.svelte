@@ -182,6 +182,15 @@
               </Tabs.List>
             </Tabs.Root>
           </div>
+          <div class="flex items-center justify-between px-1.5 py-1 text-sm">
+            폰트 패밀리
+            <Tabs.Root value="theme">
+              <Tabs.List>
+                <Tabs.Trigger class="px-1" value="theme">테마</Tabs.Trigger>
+                <Tabs.Trigger class="px-1" value="system">시스템</Tabs.Trigger>
+              </Tabs.List>
+            </Tabs.Root>
+          </div>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
     </div>
