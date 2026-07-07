@@ -111,6 +111,12 @@
 }
 
 @theme inline {
+  --font-sans-theme: var(--font-sans-theme);
+  --font-sans-ja-theme: var(--font-sans-ja-theme);
+  --font-sans-system: var(--font-sans-system);
+  --font-sans-ja-system: var(--font-sans-ja-system);
+  --font-sans-zh-cn: var(--font-sans-zh-cn);
+  --font-sans-zh-tw: var(--font-sans-zh-tw);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -171,10 +177,13 @@
   :lang(ja) {
     @apply font-sans-ja-theme;
   }
-  :lang(zh-CN) {
+  :lang(zh-CN),
+  :lang(zh-Hans) {
     @apply font-sans-zh-cn;
   }
-  :lang(zh-TW) {
+  :lang(zh-TW),
+  :lang(zh-HK),
+  :lang(zh-Hant) {
     @apply font-sans-zh-tw;
   }
   button {
