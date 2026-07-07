@@ -21,7 +21,9 @@ pubDate: 2026-04-23T13:54
 
 ::figure{src="photo/IMG_3438.HEIC"}
 
-::figure{src="photo/IMG_3440.HEIC"}
+:::figure{src="photo/IMG_3440.HEIC"}
+광나루역 2번 출구 토게토게 내한 기념 광고.
+:::
 
 ::figure{src="photo/IMG_3443.HEIC"}
 
