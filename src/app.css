@@ -145,6 +145,10 @@
   body {
     @apply bg-background font-normal text-foreground;
   }
+  :lang(ja),
+  :lang(zh) {
+    @apply [text-autospace:normal];
+  }
   button {
     @apply cursor-pointer;
   }
