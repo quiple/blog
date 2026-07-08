@@ -5,6 +5,8 @@ source: https://storywriter.tokyo/2026/04/06/7392/
 author: 오카모토 타카유키 (岡本貴之)
 authorURL: https://x.com/smoky09
 image: article/profile_2024_0916up.png
+imageVerticalAlign: 25
+imageForeground: fff
 origDate: 2026-04-06
 pubDate: 2026-07-08T11:07
 ---
