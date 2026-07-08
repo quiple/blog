@@ -28,7 +28,7 @@
     "@prettier/plugin-oxc": "^0.2.0",
     "@sveltejs/adapter-cloudflare": "^7.2.9",
     "@sveltejs/kit": "^2.69.1",
-    "@sveltejs/vite-plugin-svelte": "^7.1.2",
+    "@sveltejs/vite-plugin-svelte": "^7.2.0",
     "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.2",
     "@types/hast": "^3.0.4",
@@ -41,8 +41,8 @@
     "gray-matter": "^4.0.3",
     "husky": "^9.1.7",
     "mode-watcher": "^1.1.0",
-    "oxfmt": "^0.57.0",
-    "oxlint": "^1.72.0",
+    "oxfmt": "^0.58.0",
+    "oxlint": "^1.73.0",
     "oxlint-tsgolint": "^0.24.0",
     "probe-image-size": "^7.3.0",
     "rehype-external-links": "^3.0.0",
@@ -61,7 +61,7 @@
     "sharp-cli": "^5.2.0",
     "strip-markdown": "^6.0.0",
     "svelte": "^5.56.4",
-    "svelte-check": "^4.7.1",
+    "svelte-check": "^4.7.2",
     "svelte-sonner": "^1.1.1",
     "svelte-toc": "^0.7.0",
     "sveltekit-view-transition": "^0.5.3",
@@ -73,7 +73,7 @@
     "unist-util-visit": "^5.1.0",
     "valibot": "^1.4.2",
     "vite": "^8.1.3",
-    "wrangler": "^4.107.0"
+    "wrangler": "^4.108.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,cjs}": "pnpm lint",
@@ -86,12 +86,8 @@
   "dependencies": {
     "@giscus/svelte": "^3.1.0",
     "@quiple/blog-fonts": "^1.2.1",
-    "@types/opentype.js": "^1.3.10",
     "bdfparser": "^2.2.5",
     "fetchline": "^1.0.1",
-    "opentype.js": "^2.0.0",
-    "sharp": "^0.35.3",
-    "skia-canvas": "^3.0.8",
-    "woff-lib": "^0.0.3"
+    "sharp": "^0.35.3"
   }
 }
