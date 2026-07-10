@@ -257,6 +257,9 @@
 
 @utility prose-shadcn {
   @apply prose max-w-none prose-zinc dark:prose-invert;
+  hr {
+    @apply border-border;
+  }
   h1 {
     @apply scroll-m-5.5 text-2xl leading-tight font-extrabold tracking-tight text-pretty break-keep md:text-3xl lg:text-4xl;
   }
