@@ -8,38 +8,31 @@
 
   let {font}: {font?: string} = $props()
   let selectedFontValue = $state('g11')
-  const fontSize = $derived.by(() => {
-    switch (selectedFontValue) {
-      case 'g14':
-        return 15
-      case 'g9':
-      case 'gm9':
-        return 10
-      case 'g7':
-      case 'gm7':
-        return 8
-      default:
-        return 12
-    }
-  })
+  const galmuris = [
+    {value: 'g14', label: 'Galmuri14', size: 15, family: 'Galmuri14-web', weight: 400, stretch: 'normal'},
+    {value: 'g11', label: 'Galmuri11', size: 12, family: 'Galmuri11-web', weight: 400, stretch: 'normal'},
+    {value: 'g11b', label: 'Galmuri11 Bold', size: 12, family: 'Galmuri11-web', weight: 700, stretch: 'normal'},
+    {
+      value: 'g11c',
+      label: 'Galmuri11 Condensed',
+      size: 12,
+      family: 'Galmuri11-web',
+      weight: 400,
+      stretch: 'condensed',
+    },
+    {value: 'g9', label: 'Galmuri9', size: 10, family: 'Galmuri9-web', weight: 400, stretch: 'normal'},
+    {value: 'g7', label: 'Galmuri7', size: 8, family: 'Galmuri7-web', weight: 400, stretch: 'normal'},
+    {value: 'gm11', label: 'GalmuriMono11', size: 12, family: 'GalmuriMono11-web', weight: 400, stretch: 'normal'},
+    {value: 'gm9', label: 'GalmuriMono9', size: 10, family: 'GalmuriMono9-web', weight: 400, stretch: 'normal'},
+    {value: 'gm7', label: 'GalmuriMono7', size: 8, family: 'GalmuriMono7-web', weight: 400, stretch: 'normal'},
+  ]
+  const selectedFont = $derived(galmuris.find((entry) => entry.value === selectedFontValue) ?? galmuris[1])
+  const fontSize = $derived(selectedFont.size)
   let previewFontSize = $state(24)
-  let previewFontSizeMax = $state(96)
+  const previewFontSizeMax = $derived(fontSize * 8)
   $effect(() => {
     previewFontSize = fontSize * 2
-    previewFontSizeMax = fontSize * 8
   })
-
-  const galmuris = [
-    {value: 'g14', label: 'Galmuri14'},
-    {value: 'g11', label: 'Galmuri11'},
-    {value: 'g11b', label: 'Galmuri11 Bold'},
-    {value: 'g11c', label: 'Galmuri11 Condensed'},
-    {value: 'g9', label: 'Galmuri9'},
-    {value: 'g7', label: 'Galmuri7'},
-    {value: 'gm11', label: 'GalmuriMono11'},
-    {value: 'gm9', label: 'GalmuriMono9'},
-    {value: 'gm7', label: 'GalmuriMono7'},
-  ]
 
   const fontProps = $derived.by(() => {
     if (font === 'maruminya') {
@@ -48,38 +41,22 @@
     if (font === 'denkichip') {
       return {family: 'x10y12pxDenkiChipHangul-web', weight: 400, stretch: 'normal'}
     }
-    switch (selectedFontValue) {
-      case 'g14':
-        return {family: 'Galmuri14-web', weight: 400, stretch: 'normal'}
-      case 'g11b':
-        return {family: 'Galmuri11-web', weight: 700, stretch: 'normal'}
-      case 'g11c':
-        return {family: 'Galmuri11-web', weight: 400, stretch: 'condensed'}
-      case 'g9':
-        return {family: 'Galmuri9-web', weight: 400, stretch: 'normal'}
-      case 'g7':
-        return {family: 'Galmuri7-web', weight: 400, stretch: 'normal'}
-      case 'gm11':
-        return {family: 'GalmuriMono11-web', weight: 400, stretch: 'normal'}
-      case 'gm9':
-        return {family: 'GalmuriMono9-web', weight: 400, stretch: 'normal'}
-      case 'gm7':
-        return {family: 'GalmuriMono7-web', weight: 400, stretch: 'normal'}
-      default:
-        return {family: 'Galmuri11-web', weight: 400, stretch: 'normal'}
-    }
+    return {family: selectedFont.family, weight: selectedFont.weight, stretch: selectedFont.stretch}
   })
 
-  const triggerContent = $derived(galmuris.find((f) => f.value === selectedFontValue)?.label ?? '폰트 선택')
+  const triggerContent = $derived(selectedFont.label)
 
-  function pickRandom<T>(set: Set<T>, previous?: T): T {
-    const arr = [...set].filter((item) => item !== previous)
-    return arr[Math.floor(Math.random() * arr.length)]
+  function pickRandom<T>(items: readonly T[], previous?: T): T {
+    if (items.length === 1) return items[0]
+    let item: T
+    do item = items[Math.floor(Math.random() * items.length)]
+    while (item === previous)
+    return item
   }
 
   let exampleText = $state('')
 
-  const pangramEn = new Set([
+  const pangramEn = [
     'The quick brown fox jumps over the lazy dog',
     'Glib jocks quiz nymph to vex dwarf',
     'How quickly daft jumping zebras vex',
@@ -119,9 +96,9 @@
     'But the moon’s not burning through my skin tonight',
     'I wanna be an ordinary man,\nnot just an ego caught inside a trend',
     'This way is a waterslide away from me\nthat takes you further every day',
-  ])
+  ]
 
-  const pangramKo = new Set([
+  const pangramKo = [
     // 팬그램
     '다람쥐 헌 쳇바퀴에 타고파',
     '동녘 구름 틈새로 퍼지는 햇빛',
@@ -191,9 +168,9 @@
     '마즈피플 코스프레 나도 이제 할 수 있다\n(너도 할 수 있다)',
     '마즈피플 지구인들과 친해지고 싶다\n지구의 피자와 햄버거가 그렇게 맛있다던데',
     '자기가 잘 못해서 죽어놓고 게임 탓하고 있으면\n누가 그걸 보고 좋아하겠어요',
-  ])
+  ]
 
-  const pangramJa = new Set([
+  const pangramJa = [
     // 더백혼
     '人間関係　とうめいくもの巣\nヘリコプターの音で世界は破滅',
     'ずっと後回しにしてきたちっぽけな事が重なって\n雪崩を起こして生き埋めさ　独りぼっちで',
@@ -229,7 +206,7 @@
     '愛も名誉も名前も残さず\n一生進んで行こうという熱い誓',
     'だから僕たち　偶然にでも\nあの時の気持ち　あの日の夜を思い出させないで',
     '僕の小さな空間の中に思い出だけがつまって\nわけもなく涙だけが目に浮かぶよ',
-  ])
+  ]
 
   let prevEn: string | undefined
   let prevKo: string | undefined

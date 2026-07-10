@@ -107,6 +107,12 @@ export function getFontMetadataFromMatter(category: string, slug: string, data: 
 export type Post = ReturnType<typeof getPostMetadataFromMatter>
 export type Article = ReturnType<typeof getArticleMetadataFromMatter>
 export type Font = ReturnType<typeof getFontMetadataFromMatter>
+export type ContentMetadata = (Post | Article | Font) & {media?: string}
+
+let postsMetadata: Post[] | undefined
+let articlesMetadata: Article[] | undefined
+let fontsMetadata: Font[] | undefined
+let allContentMetadata: ContentMetadata[] | undefined
 
 // --- Generic content list builder ---
 
@@ -130,18 +136,20 @@ function getContentMetadata<T>(
 }
 
 export function getBlogPostsMetadata() {
-  return getContentMetadata(blogPosts, getPostMetadataFromMatter)
+  return (postsMetadata ??= getContentMetadata(blogPosts, getPostMetadataFromMatter))
 }
 
 export function getBlogArticlesMetadata() {
-  return getContentMetadata(blogArticles, getArticleMetadataFromMatter)
+  return (articlesMetadata ??= getContentMetadata(blogArticles, getArticleMetadataFromMatter))
 }
 
 export function getBlogFontsMetadata() {
-  return getContentMetadata(blogFonts, getFontMetadataFromMatter)
+  return (fontsMetadata ??= getContentMetadata(blogFonts, getFontMetadataFromMatter))
 }
 
 export function getAllBlogContentMetadata() {
+  if (allContentMetadata) return allContentMetadata
+
   const posts = getBlogPostsMetadata().map((p) => ({
     ...p,
     origDate: p.origDate,
@@ -158,7 +166,8 @@ export function getAllBlogContentMetadata() {
     media: undefined as string | undefined,
   }))
 
-  return [...posts, ...articles, ...fonts].sort(
+  allContentMetadata = [...posts, ...articles, ...fonts].sort(
     (a, b) => Date.parse(`${b.pubDate.valueOf()}+09:00`) - Date.parse(`${a.pubDate.valueOf()}+09:00`),
   )
+  return allContentMetadata
 }

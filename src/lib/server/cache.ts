@@ -1,10 +1,11 @@
 import {blogArticles, blogFonts, blogPosts, getAllBlogContentMetadata, parseMatter} from '$lib/content'
-import type {Article, Font, Post} from '$lib/content'
+import type {ContentMetadata} from '$lib/content'
 import {generateDescription, processTitle} from '$lib/markdown'
 
-export type ProcessedPost = (Post | Article | Font) & {
+export type ProcessedPost = ContentMetadata & {
   searchableText: string
 }
+export type ListedPost = ContentMetadata
 
 let cachedProcessedMetadata: ProcessedPost[] | null = null
 
@@ -26,4 +27,8 @@ export async function getCachedProcessedMetadata() {
 
   cachedProcessedMetadata = allPosts
   return cachedProcessedMetadata
+}
+
+export function toListedPosts(posts: ProcessedPost[]): ListedPost[] {
+  return posts.map(({searchableText: _, ...post}) => post)
 }

@@ -18,7 +18,6 @@
 
   // Optimize scroll by avoiding layout reads and proxies
   let headingPositions: {id: string; top: number; layoutTop: number; layoutBottom: number}[] = []
-  let scrollTicking = false
 
   const updateHeadings = () => {
     if (!shouldRender) {
@@ -76,6 +75,9 @@
   // Unified layout, scroll, and resize observer
   $effect(() => {
     if (headings.length === 0 || !tocContainer) return
+
+    let scrollFrame = 0
+    let documentHeight = document.documentElement.scrollHeight
 
     const calculateLayout = () => {
       if (!tocContainer) return
@@ -136,16 +138,16 @@
           layoutBottom: item.bottom,
         }
       })
+      documentHeight = document.documentElement.scrollHeight
       onScroll()
     }
 
     const _nextActiveIds: string[] = []
 
     const onScroll = () => {
-      if (scrollTicking) return
-      scrollTicking = true
+      if (scrollFrame) return
 
-      requestAnimationFrame(() => {
+      scrollFrame = requestAnimationFrame(() => {
         const y = window.scrollY
         const innerHeight = window.innerHeight
         const topViewport = y + 100
@@ -157,7 +159,7 @@
           const next = headingPositions[i + 1]
 
           const top = curr.top
-          const bottom = next ? next.top : document.documentElement.scrollHeight
+          const bottom = next ? next.top : documentHeight
 
           if (top < bottomViewport && bottom > topViewport) {
             _nextActiveIds.push(curr.id)
@@ -187,7 +189,7 @@
           }
           if (!isReady) isReady = true
         }
-        scrollTicking = false
+        scrollFrame = 0
       })
     }
 
@@ -211,6 +213,7 @@
     }
 
     return () => {
+      if (scrollFrame) cancelAnimationFrame(scrollFrame)
       clearTimeout(timer)
       clearTimeout(resizeTimeout)
       window.removeEventListener('resize', debouncedLayout)
@@ -220,6 +223,7 @@
   })
 
   const minLevel = $derived(headings.length > 0 ? Math.min(...headings.map((h) => h.level)) : 2)
+  const activeIdSet = $derived(new Set(activeIds))
 </script>
 
 {#if shouldRender && headings.length > 0}
@@ -260,7 +264,7 @@
                 {heading.level - minLevel === 0 ? 'pl-4' : ''}
                 {heading.level - minLevel === 1 ? 'pl-8' : ''}
                 {heading.level - minLevel === 2 ? 'pl-12' : ''}
-                {activeIds.includes(heading.id)
+                {activeIdSet.has(heading.id)
                 ? 'text-blue-700 hover:text-foreground dark:text-blue-300 dark:hover:text-foreground'
                 : 'text-muted-foreground hover:text-foreground'}"
               onclick={(e) => {

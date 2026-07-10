@@ -1,7 +1,8 @@
 <script lang="ts">
   import {goto} from '$app/navigation'
+  import PostPagination from '$lib/components/post-pagination.svelte'
   import PostList from '$lib/components/post-list.svelte'
-  import * as Pagination from '$lib/components/ui/pagination/index.js'
+  import {isGoingForward, isRoutePagination, type NavigationLike} from '$lib/navigation'
   import {absoluteUrl, jsonLd as stringifyJsonLd, SITE_NAME} from '$lib/seo'
   import {setupViewTransition} from '$lib/view-transition'
   import type {PageProps} from './$types'
@@ -10,18 +11,7 @@
 
   const {transition, classes} = setupViewTransition()
 
-  function isPagination(navigation: {
-    from?: {route: {id: string | null}} | null
-    to?: {route: {id: string | null}} | null
-  }) {
-    return navigation?.from?.route?.id === '/' && navigation?.to?.route?.id === '/'
-  }
-
-  function isGoingForward(navigation: {from?: {url?: URL | null} | null; to?: {url?: URL | null} | null}) {
-    const fromPage = Number(navigation?.from?.url?.searchParams?.get('p')) || 1
-    const toPage = Number(navigation?.to?.url?.searchParams?.get('p')) || 1
-    return toPage > fromPage
-  }
+  const isPagination = (navigation: NavigationLike) => isRoutePagination(navigation, '/')
 
   classes(({navigation}) => {
     if (!isPagination(navigation)) return
@@ -72,65 +62,13 @@
 <div class="relative z-10 mx-auto max-w-xl 2xl:max-w-2xl">
   <PostList posts={data.posts} {isPagination} {transition} />
 
-  {#if data.totalPages > 1}
-    <Pagination.Root
-      count={data.totalPages * 15}
-      siblingCount={2}
-      perPage={data.perPage}
-      page={data.currentPage}
-      onPageChange={(page) => {
-        window.scrollTo(0, 0)
-        goto(`?p=${page}`)
-      }}
-      class="my-4"
-    >
-      {#snippet children({pages, currentPage})}
-        <Pagination.Content>
-          <Pagination.Item>
-            <Pagination.PrevButton />
-          </Pagination.Item>
-          {#each pages as page (page.key)}
-            <Pagination.Item>
-              {#if page.type === 'ellipsis'}
-                <Pagination.Ellipsis />
-              {:else}
-                <Pagination.Link
-                  class={currentPage === page.value ? 'pointer-events-none' : undefined}
-                  {page}
-                  isActive={currentPage === page.value}
-                >
-                  {page.value}
-                </Pagination.Link>
-              {/if}
-            </Pagination.Item>
-          {/each}
-          <Pagination.Item>
-            <Pagination.NextButton />
-          </Pagination.Item>
-        </Pagination.Content>
-      {/snippet}
-    </Pagination.Root>
-  {:else}
-    검색 결과가 없습니다.
-  {/if}
+  <PostPagination
+    totalPages={data.totalPages}
+    perPage={data.perPage}
+    currentPage={data.currentPage}
+    onPageChange={(page) => {
+      window.scrollTo(0, 0)
+      goto(`?p=${page}`)
+    }}
+  />
 </div>
-
-<style lang="sass">
-  @reference '#app.css'
-
-  @keyframes -global-zoom-out-old
-    from
-      opacity: 1
-      height: 50vh
-    to
-      opacity: 0
-      height: 5.5rem
-
-  @keyframes -global-zoom-out-new
-    from
-      opacity: 0
-      height: 50vh
-    to
-      opacity: 1
-      height: 5.5rem
-</style>

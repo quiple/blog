@@ -96,9 +96,6 @@
       ::view-transition-group(post-metadata-${data.slug}) {
         z-index: 10;
       }
-      ::view-transition-group-children(post-image-wrapper-${data.slug}) {
-        overflow: clip;
-      }
       ::view-transition-old(post-image-${data.slug}) {
         animation-name: zoom-in-old;
       }

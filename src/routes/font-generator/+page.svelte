@@ -5,6 +5,7 @@
   import {getCharset, getCharsetGroups} from '$lib/charsets'
   import {Button} from '$lib/components/ui/button'
   import * as Card from '$lib/components/ui/card/index.js'
+  import HexColorInput from '$lib/components/hex-color-input.svelte'
   import {Input} from '$lib/components/ui/input'
   import {Label} from '$lib/components/ui/label'
   import * as Select from '$lib/components/ui/select/index.js'
@@ -17,6 +18,8 @@
     name: string
     value: string
     size: string
+    baseline: number
+    file: string
   }
   interface FontGroup {
     label: string
@@ -26,118 +29,89 @@
     {
       label: 'quiple',
       fonts: [
-        {name: 'MaruMinyaHangul', value: 'maruminyahangul', size: '12px'},
-        {name: 'DenkiChipHangul', value: 'denkichiphangul', size: '12px'},
-        {name: 'HBIOS-SYS', value: 'hbios-sys', size: '16px'},
-        {name: 'Galmuri14', value: 'Galmuri14', size: '15px'},
-        {name: 'Galmuri11', value: 'Galmuri11', size: '12px'},
-        {name: 'Galmuri11 Bold', value: 'Galmuri11-Bold', size: '12px'},
-        {name: 'Galmuri11 Condensed', value: 'Galmuri11-Condensed', size: '12px'},
-        {name: 'Galmuri9', value: 'Galmuri9', size: '10px'},
-        {name: 'Galmuri7', value: 'Galmuri7', size: '8px'},
-        {name: 'GalmuriMono11', value: 'GalmuriMono11', size: '12px'},
-        {name: 'GalmuriMono9', value: 'GalmuriMono9', size: '10px'},
-        {name: 'GalmuriMono7', value: 'GalmuriMono7', size: '8px'},
+        {
+          name: 'MaruMinyaHangul',
+          value: 'maruminyahangul',
+          size: '12px',
+          baseline: 11,
+          file: 'x12y12pxMaruMinyaHangul',
+        },
+        {
+          name: 'DenkiChipHangul',
+          value: 'denkichiphangul',
+          size: '12px',
+          baseline: 11,
+          file: 'x10y12pxDenkiChipHangul',
+        },
+        {name: 'HBIOS-SYS', value: 'hbios-sys', size: '16px', baseline: 13, file: 'hbios-sys'},
+        {name: 'Galmuri14', value: 'Galmuri14', size: '15px', baseline: 14, file: 'Galmuri14'},
+        {name: 'Galmuri11', value: 'Galmuri11', size: '12px', baseline: 11, file: 'Galmuri11'},
+        {
+          name: 'Galmuri11 Bold',
+          value: 'Galmuri11-Bold',
+          size: '12px',
+          baseline: 11,
+          file: 'Galmuri11-Bold',
+        },
+        {
+          name: 'Galmuri11 Condensed',
+          value: 'Galmuri11-Condensed',
+          size: '12px',
+          baseline: 11,
+          file: 'Galmuri11-Condensed',
+        },
+        {name: 'Galmuri9', value: 'Galmuri9', size: '10px', baseline: 9, file: 'Galmuri9'},
+        {name: 'Galmuri7', value: 'Galmuri7', size: '8px', baseline: 7, file: 'Galmuri7'},
+        {name: 'GalmuriMono11', value: 'GalmuriMono11', size: '12px', baseline: 11, file: 'GalmuriMono11'},
+        {name: 'GalmuriMono9', value: 'GalmuriMono9', size: '10px', baseline: 9, file: 'GalmuriMono9'},
+        {name: 'GalmuriMono7', value: 'GalmuriMono7', size: '8px', baseline: 7, file: 'GalmuriMono7'},
       ],
     },
     {
       label: 'Num Kadoma',
       fonts: [
-        {name: 'k6x8 Gothic', value: 'k6x8-gothic', size: '8px'},
-        {name: 'k6x8 Mincho', value: 'k6x8-mincho', size: '8px'},
-        {name: 'Misaki Gothic', value: 'misaki-gothic', size: '8px'},
-        {name: 'Misaki Gothic 2nd', value: 'misaki-gothic-2nd', size: '8px'},
-        {name: 'Misaki Mincho', value: 'misaki-mincho', size: '8px'},
-        {name: 'k8x12', value: 'k8x12', size: '12px'},
-        {name: 'k8x12L', value: 'k8x12l', size: '12px'},
-        {name: 'k8x12S', value: 'k8x12s', size: '12px'},
-        {name: 'k12x8', value: 'k12x8', size: '8px'},
+        {name: 'k6x8 Gothic', value: 'k6x8-gothic', size: '8px', baseline: 7, file: 'k6x8_gothic'},
+        {name: 'k6x8 Mincho', value: 'k6x8-mincho', size: '8px', baseline: 7, file: 'k6x8_mincho'},
+        {name: 'Misaki Gothic', value: 'misaki-gothic', size: '8px', baseline: 6, file: 'misaki_gothic'},
+        {
+          name: 'Misaki Gothic 2nd',
+          value: 'misaki-gothic-2nd',
+          size: '8px',
+          baseline: 7,
+          file: 'misaki_gothic_2nd',
+        },
+        {name: 'Misaki Mincho', value: 'misaki-mincho', size: '8px', baseline: 6, file: 'misaki_mincho'},
+        {name: 'k8x12', value: 'k8x12', size: '12px', baseline: 10, file: 'k8x12'},
+        {name: 'k8x12L', value: 'k8x12l', size: '12px', baseline: 10, file: 'k8x12L'},
+        {name: 'k8x12S', value: 'k8x12s', size: '12px', baseline: 10, file: 'k8x12S'},
+        {name: 'k12x8', value: 'k12x8', size: '8px', baseline: 7, file: 'k12x8'},
       ],
     },
     {
       label: '기타',
       fonts: [
-        {name: 'Unifont', value: 'unifont', size: '16px'},
-        {name: 'Unifont JP', value: 'unifont_jp', size: '16px'},
-        {name: 'Zpix', value: 'zpix', size: '12px'},
+        {name: 'Unifont', value: 'unifont', size: '16px', baseline: 14, file: 'unifont'},
+        {name: 'Unifont JP', value: 'unifont_jp', size: '16px', baseline: 14, file: 'unifont_jp'},
+        {name: 'Zpix', value: 'zpix', size: '12px', baseline: 9, file: 'zpix'},
       ],
     },
   ]
 
   const allFonts = fontGroups.flatMap((g) => g.fonts)
-  const validFontValues = new Set(allFonts.map((f) => f.value))
+  const fontsByValue = new Map(allFonts.map((font) => [font.value, font]))
 
   const fontTriggerContent = $derived.by(() => {
-    const font = allFonts.find((f) => f.value === fontValue)
+    const font = fontsByValue.get(fontValue)
     return font ? `${font.name} (${font.size})` : 'MaruMinyaHangul (12px)'
   })
 
-  // Height from baseline to ascent
-  const fontSizeMap: Record<string, number> = {
-    Galmuri14: 14,
-    Galmuri11: 11,
-    'Galmuri11-Bold': 11,
-    'Galmuri11-Condensed': 11,
-    Galmuri9: 9,
-    Galmuri7: 7,
-    GalmuriMono11: 11,
-    GalmuriMono9: 9,
-    GalmuriMono7: 7,
-    'k6x8-gothic': 7,
-    'k6x8-mincho': 7,
-    'misaki-gothic': 6,
-    'misaki-gothic-2nd': 7,
-    'misaki-mincho': 6,
-    k8x12: 10,
-    k8x12l: 10,
-    k8x12s: 10,
-    k12x8: 7,
-    'hbios-sys': 13,
-    unifont: 14,
-    unifont_jp: 14,
-    maruminyahangul: 11,
-    denkichiphangul: 11,
-    zpix: 9,
-  }
-  const getFontSize = (font: string): number => fontSizeMap[font] ?? 16
-
-  const fontFilenameMap: Record<string, string> = {
-    maruminyahangul: 'x12y12pxMaruMinyaHangul',
-    denkichiphangul: 'x10y12pxDenkiChipHangul',
-    Galmuri14: 'Galmuri14',
-    Galmuri11: 'Galmuri11',
-    'Galmuri11-Bold': 'Galmuri11-Bold',
-    'Galmuri11-Condensed': 'Galmuri11-Condensed',
-    Galmuri9: 'Galmuri9',
-    Galmuri7: 'Galmuri7',
-    GalmuriMono11: 'GalmuriMono11',
-    GalmuriMono9: 'GalmuriMono9',
-    GalmuriMono7: 'GalmuriMono7',
-    'k6x8-gothic': 'k6x8_gothic',
-    'k6x8-mincho': 'k6x8_mincho',
-    'misaki-gothic': 'misaki_gothic',
-    'misaki-gothic-2nd': 'misaki_gothic_2nd',
-    'misaki-mincho': 'misaki_mincho',
-    k8x12: 'k8x12',
-    k8x12l: 'k8x12L',
-    k8x12s: 'k8x12S',
-    k12x8: 'k12x8',
-    'hbios-sys': 'hbios-sys',
-    unifont: 'unifont',
-    unifont_jp: 'unifont_jp',
-    zpix: 'zpix',
-  }
-  const getFontPath = (font: string): string => `/fonts/bdfs/${fontFilenameMap[font]}.bdf`
-
   // ── Charset groups (from shared charsets index) ─────────────────────
-  const charsetGroups = getCharsetGroups()
+  const charsetGroups = [...getCharsetGroups()]
+  const charsetsByKey = new Map(charsetGroups.flatMap(([, entries]) => entries).map((entry) => [entry.key, entry]))
 
   const charsetTriggerContent = $derived.by(() => {
     if (charsetKey === 'custom') return '사용자 지정 문자 집합 입력'
-    const entry = charsetGroups
-      .values()
-      .flatMap((entries) => entries)
-      .find((e) => e.key === charsetKey)
+    const entry = charsetsByKey.get(charsetKey)
     return entry
       ? entry.group === entry.label
         ? entry.label
@@ -147,7 +121,7 @@
 
   // ── State ───────────────────────────────────────────────────────────
   const initialFont = page.url.searchParams.get('font')
-  const defaultFont = initialFont && validFontValues.has(initialFont) ? initialFont : 'maruminyahangul'
+  const defaultFont = initialFont && fontsByValue.has(initialFont) ? initialFont : 'maruminyahangul'
   let fontValue = $state(defaultFont)
 
   let charsetKey = $state('set2350')
@@ -184,17 +158,28 @@
     bottom: [0, -1],
     bottomright: [1, -1],
   }
+  const shadowControls = [
+    'topleft',
+    'top',
+    'topright',
+    'left',
+    null,
+    'right',
+    'bottomleft',
+    'bottom',
+    'bottomright',
+  ] as const
 
   let drawing = $state(false)
   let canvasReady = $state(false)
   let canvasEl: HTMLCanvasElement | undefined = $state()
   let previewAreaEl: HTMLDivElement | undefined = $state()
-  let downloadHref = $state('#')
+  let downloadHref = $state('')
   let downloadName = $state('')
 
   let isDragging = $state(false)
-  let startX = $state(0)
-  let startY = $state(0)
+  let startX = 0
+  let startY = 0
   let scrollLeft = $state(0)
   let scrollTop = $state(0)
 
@@ -208,25 +193,35 @@
       : 'ko',
   )
 
-  // ── Helpers ─────────────────────────────────────────────────────────
-  function sanitizeHex(value: string): string {
-    return value.replaceAll(/[^\dabcdefABCDEF]/g, '')
-  }
-
   // ── Draw (Web Worker delegation) ────────────────────────────────────
   let worker: Worker | undefined
-  let workerResolve: ((value: any) => void) | undefined
-  let workerReject: ((reason: any) => void) | undefined
+  let workerResolve: ((value: RenderResult) => void) | undefined
+  let workerReject: ((reason: Error) => void) | undefined
+  let destroyed = false
 
-  if (browser) {
+  type RenderResult = {width: number; height: number; buffer: Uint8ClampedArray<ArrayBuffer>}
+  type WorkerMessage = ({success: true} & RenderResult) | {success: false; error: string}
+
+  function getWorker() {
+    if (worker) return worker
+    if (!browser) return
+
     worker = new Worker(new URL('./font-worker.ts', import.meta.url), {type: 'module'})
-    worker.onmessage = (e) => {
-      if (e.data.success) {
-        if (workerResolve) workerResolve(e.data)
-      } else {
-        if (workerReject) workerReject(new Error(e.data.error || 'Worker error'))
-      }
+    worker.onmessage = ({data}: MessageEvent<WorkerMessage>) => {
+      const resolve = workerResolve
+      const reject = workerReject
+      workerResolve = undefined
+      workerReject = undefined
+
+      if (data.success) resolve?.(data)
+      else reject?.(new Error(data.error || 'Worker error'))
     }
+    worker.onerror = () => {
+      workerReject?.(new Error('워커에서 이미지를 만들지 못했습니다.'))
+      workerResolve = undefined
+      workerReject = undefined
+    }
+    return worker
   }
 
   async function handleSubmit(e: SubmitEvent) {
@@ -252,19 +247,28 @@
     drawing = true
     canvasReady = false
 
-    // Wait for the DOM to update the spinner visibility
-    await new Promise((r) => requestAnimationFrame(r))
-    await new Promise((r) => setTimeout(r, 0))
+    if (downloadHref) {
+      URL.revokeObjectURL(downloadHref)
+      downloadHref = ''
+    }
+    if (canvasEl) {
+      canvasEl.width = 0
+      canvasEl.height = 0
+    }
 
-    if (!worker) {
+    // Wait for the DOM to update the spinner visibility
+    await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
+
+    const renderWorker = getWorker()
+    if (!renderWorker) {
       alert('워커가 로드되지 않았습니다.')
       drawing = false
       return
     }
 
-    const fontPath = getFontPath(fontValue)
+    const font = fontsByValue.get(fontValue) ?? fontsByValue.get('maruminyahangul')!
+    const fontPath = `/fonts/bdfs/${font.file}.bdf`
     const __charset = charsetKey === 'custom' ? customCharset : getCharset(charsetKey)
-    const fontSize = getFontSize(fontValue)
 
     const payload = {
       fontValue,
@@ -275,7 +279,7 @@
       tileColumn,
       xOffset,
       yOffset,
-      fontSize,
+      fontSize: font.baseline,
       background,
       foreground,
       shadowColor,
@@ -284,38 +288,39 @@
     }
 
     try {
-      const renderPromise = new Promise<{width: number; height: number; buffer: Uint8ClampedArray}>(
-        (resolve, reject) => {
-          workerResolve = resolve
-          workerReject = reject
-          worker!.postMessage(payload)
-        },
-      )
+      const renderPromise = new Promise<RenderResult>((resolve, reject) => {
+        workerResolve = resolve
+        workerReject = reject
+        renderWorker.postMessage(payload)
+      })
 
       const {width, height, buffer} = await renderPromise
+      if (destroyed) return
 
-      const cvs = canvasEl!
+      const cvs = canvasEl
+      if (!cvs) throw new Error('캔버스를 초기화하지 못했습니다.')
       cvs.width = width
       cvs.height = height
-      const ctx = cvs.getContext('2d')!
-      ctx.reset()
+      const ctx = cvs.getContext('2d')
+      if (!ctx) throw new Error('캔버스를 초기화하지 못했습니다.')
 
-      const imgData = new ImageData(buffer as any, width, height)
+      const imgData = new ImageData(buffer, width, height)
       ctx.putImageData(imgData, 0, 0)
 
-      cvs.toBlob((blob) => {
-        if (blob) {
-          if (downloadHref && downloadHref.startsWith('blob:')) {
-            URL.revokeObjectURL(downloadHref)
-          }
-          downloadHref = URL.createObjectURL(blob)
-        }
-        canvasReady = true
-        downloadName = `${fontValue}_${tileWidth}x${tileHeight}`
-        drawing = false
+      const blob = await new Promise<Blob>((resolve, reject) => {
+        cvs.toBlob((result) => {
+          if (result) resolve(result)
+          else reject(new Error('PNG 파일을 만들지 못했습니다.'))
+        })
       })
-    } catch (err: any) {
-      toast.error(`이미지 생성 실패: ${err.message || err}`)
+      if (destroyed) return
+
+      downloadHref = URL.createObjectURL(blob)
+      canvasReady = true
+      downloadName = `${fontValue}_${tileWidth}x${tileHeight}`
+      drawing = false
+    } catch (error) {
+      toast.error(`이미지 생성 실패: ${error instanceof Error ? error.message : String(error)}`)
       drawing = false
     }
   }
@@ -334,41 +339,43 @@
       await navigator.clipboard.write([item])
 
       toast.success('이미지를 클립보드에 복사했습니다')
-    } catch (err) {
+    } catch {
       toast.error('이미지를 복사하지 못했습니다')
     }
   }
 
-  function handleMouseDown(e: MouseEvent) {
-    if (!previewAreaEl) return
+  function handlePointerDown(e: PointerEvent) {
+    if (!previewAreaEl || !canvasReady) return
     isDragging = true
-    startX = e.pageX - previewAreaEl.offsetLeft
-    startY = e.pageY - previewAreaEl.offsetTop
+    startX = e.clientX
+    startY = e.clientY
     scrollLeft = previewAreaEl.scrollLeft
     scrollTop = previewAreaEl.scrollTop
+    previewAreaEl.setPointerCapture(e.pointerId)
   }
 
-  function handleMouseMove(e: MouseEvent) {
+  function handlePointerMove(e: PointerEvent) {
     if (!isDragging || !previewAreaEl) return
     e.preventDefault()
-    const x = e.pageX - previewAreaEl.offsetLeft
-    const y = e.pageY - previewAreaEl.offsetTop
-    const walkX = x - startX
-    const walkY = y - startY
+    const walkX = e.clientX - startX
+    const walkY = e.clientY - startY
     previewAreaEl.scrollLeft = scrollLeft - walkX
     previewAreaEl.scrollTop = scrollTop - walkY
   }
 
-  function handleMouseUp() {
+  function handlePointerUp(e: PointerEvent) {
     isDragging = false
+    if (previewAreaEl?.hasPointerCapture(e.pointerId)) previewAreaEl.releasePointerCapture(e.pointerId)
   }
 
   onDestroy(() => {
-    if (worker) {
-      worker.terminate()
-    }
-    if (downloadHref && downloadHref.startsWith('blob:')) {
-      URL.revokeObjectURL(downloadHref)
+    destroyed = true
+    workerReject?.(new Error('페이지를 떠나 이미지 생성을 중단했습니다.'))
+    worker?.terminate()
+    if (downloadHref) URL.revokeObjectURL(downloadHref)
+    if (canvasEl) {
+      canvasEl.width = 0
+      canvasEl.height = 0
     }
   })
 </script>
@@ -392,10 +399,10 @@
     class:cursor-grab={canvasReady && !isDragging}
     class:cursor-grabbing={canvasReady && isDragging}
     bind:this={previewAreaEl}
-    onmousedown={handleMouseDown}
-    onmousemove={handleMouseMove}
-    onmouseup={handleMouseUp}
-    onmouseleave={handleMouseUp}
+    onpointerdown={handlePointerDown}
+    onpointermove={handlePointerMove}
+    onpointerup={handlePointerUp}
+    onpointercancel={handlePointerUp}
   >
     <div class="canvas-wrapper" class:hidden={!canvasReady}>
       <canvas bind:this={canvasEl} id="preview" class="preview-canvas"></canvas>
@@ -443,7 +450,7 @@
               <Select.Root type="single" name="charset" bind:value={charsetKey}>
                 <Select.Trigger class="w-full" id="charset">{charsetTriggerContent}</Select.Trigger>
                 <Select.Content class="max-h-[calc(100vh-var(--header-height)-9.25rem)]">
-                  {#each [...charsetGroups] as [groupName, entries]}
+                  {#each charsetGroups as [groupName, entries]}
                     <Select.Group>
                       <Select.Label>{groupName}</Select.Label>
                       {#each entries as entry}
@@ -527,84 +534,21 @@
               <Input id="tile-column" type="number" min={1} bind:value={tileColumn} class="tabular-nums" />
             </div>
 
-            <!-- 전경색 -->
-            <div class="grid gap-2">
-              <Label for="foreground">전경색</Label>
-              <div class="color-input">
-                <span class="hash">#</span>
-                <Input
-                  id="foreground"
-                  type="text"
-                  spellcheck={false}
-                  value={foreground}
-                  oninput={(e: Event) => {
-                    const t = e.currentTarget as HTMLInputElement
-                    foreground = sanitizeHex(t.value)
-                    t.value = foreground
-                  }}
-                  class="pl-6 tabular-nums"
-                />
-                <span class="color-swatch" style="background: #{foreground}"></span>
-              </div>
-            </div>
-
-            <!-- 배경색 -->
-            <div class="grid gap-2">
-              <Label for="background">
-                <abbr title="비워 두면 투명을 사용합니다.">배경색</abbr>
-              </Label>
-              <div class="color-input">
-                <span class="hash">#</span>
-                <Input
-                  id="background"
-                  type="text"
-                  spellcheck={false}
-                  value={background}
-                  oninput={(e: Event) => {
-                    const t = e.currentTarget as HTMLInputElement
-                    background = sanitizeHex(t.value)
-                    t.value = background
-                  }}
-                  class="pl-6 tabular-nums"
-                />
-                <span class="color-swatch" style="background: #{background}"></span>
-              </div>
-            </div>
-
-            <!-- 그림자 색 -->
-            <div class="grid gap-2">
-              <Label for="shadow-color">그림자 색</Label>
-              <div class="color-input">
-                <span class="hash">#</span>
-                <Input
-                  id="shadow-color"
-                  type="text"
-                  spellcheck={false}
-                  value={shadowColor}
-                  oninput={(e: Event) => {
-                    const t = e.currentTarget as HTMLInputElement
-                    shadowColor = sanitizeHex(t.value)
-                    t.value = shadowColor
-                  }}
-                  class="pl-6 tabular-nums"
-                />
-                <span class="color-swatch" style="background: #{shadowColor}"></span>
-              </div>
-            </div>
+            <HexColorInput id="foreground" label="전경색" bind:value={foreground} />
+            <HexColorInput id="background" label="배경색" help="비워 두면 투명을 사용합니다." bind:value={background} />
+            <HexColorInput id="shadow-color" label="그림자 색" bind:value={shadowColor} />
 
             <!-- 그림자 위치 -->
             <div class="grid gap-2">
               <Label>그림자 위치</Label>
               <div class="shadow-grid">
-                <input type="checkbox" id="shadow-topleft" bind:checked={shadowPositions.topleft} />
-                <input type="checkbox" id="shadow-top" bind:checked={shadowPositions.top} />
-                <input type="checkbox" id="shadow-topright" bind:checked={shadowPositions.topright} />
-                <input type="checkbox" id="shadow-left" bind:checked={shadowPositions.left} />
-                <input type="checkbox" disabled />
-                <input type="checkbox" id="shadow-right" bind:checked={shadowPositions.right} />
-                <input type="checkbox" id="shadow-bottomleft" bind:checked={shadowPositions.bottomleft} />
-                <input type="checkbox" id="shadow-bottom" bind:checked={shadowPositions.bottom} />
-                <input type="checkbox" id="shadow-bottomright" bind:checked={shadowPositions.bottomright} />
+                {#each shadowControls as position}
+                  {#if position}
+                    <input type="checkbox" id="shadow-{position}" bind:checked={shadowPositions[position]} />
+                  {:else}
+                    <input type="checkbox" aria-label="그림자 없음" disabled />
+                  {/if}
+                {/each}
               </div>
             </div>
           </div>
@@ -748,13 +692,6 @@
     @apply flex flex-col gap-2
     .input-pair
       @apply flex items-center gap-2 text-sm [&_span]:text-muted-foreground
-
-  .color-input
-    @apply relative
-    .hash
-      @apply absolute left-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground z-1 pointer-events-none
-    .color-swatch
-      @apply absolute right-1.5 top-1/2 -translate-y-1/2 size-5 rounded inner-border
 
   .shadow-grid
     @apply grid grid-cols-3 gap-0 w-fit

@@ -1,11 +1,26 @@
 <script lang="ts">
   import {mount, unmount, type Component} from 'svelte'
 
-  const componentLoaders: Record<string, () => Promise<Component<any>>> = {
-    Tester: () => import('./Tester.svelte').then((module) => module.default),
-    Check: () => import('@lucide/svelte/icons/check').then((module) => module.default),
-    X: () => import('@lucide/svelte/icons/x').then((module) => module.default),
-    MdxImage: () => import('./MdxImage.svelte').then((module) => module.default),
+  type MdxComponent = Component<Record<string, unknown>>
+
+  const componentLoaders: Record<string, () => Promise<MdxComponent>> = {
+    Tester: () => import('./Tester.svelte').then((module) => module.default as unknown as MdxComponent),
+    Check: () => import('@lucide/svelte/icons/check').then((module) => module.default as unknown as MdxComponent),
+    X: () => import('@lucide/svelte/icons/x').then((module) => module.default as unknown as MdxComponent),
+    MdxImage: () => import('./MdxImage.svelte').then((module) => module.default as unknown as MdxComponent),
+  }
+  const componentPromises = new Map<string, Promise<MdxComponent>>()
+
+  function loadComponent(name: string) {
+    const loader = componentLoaders[name]
+    if (!loader) return
+
+    let promise = componentPromises.get(name)
+    if (!promise) {
+      promise = loader()
+      componentPromises.set(name, promise)
+    }
+    return promise
   }
 
   let {html}: {html: string} = $props()
@@ -15,15 +30,28 @@
     if (!container) return
     let cancelled = false
     const mountedComponents: ReturnType<typeof mount>[] = []
-    const placeholders = container.querySelectorAll<HTMLElement>('[data-mdx-component]')
+    const placeholders = [...container.querySelectorAll<HTMLElement>('[data-mdx-component]')]
 
     async function mountComponents() {
+      const names = [
+        ...new Set(placeholders.map((element) => element.dataset.mdxComponent).filter(Boolean)),
+      ] as string[]
+      const loadedComponents = new Map(
+        await Promise.all(
+          names.map(async (name) => {
+            const promise = loadComponent(name)
+            return [name, promise ? await promise : undefined] as const
+          }),
+        ),
+      )
+      if (cancelled) return
+
       for (const el of placeholders) {
         const name = el.dataset.mdxComponent
         if (!name) continue
 
-        const loadComponent = componentLoaders[name]
-        if (!loadComponent) {
+        const Component = loadedComponents.get(name)
+        if (!Component) {
           console.warn(`[MDX] Unknown component: "${name}". Register it in src/lib/components/mdx/MdxContent.svelte`)
           continue
         }
@@ -41,9 +69,6 @@
           props.children = childrenHtml
         }
 
-        const Component = await loadComponent()
-        if (cancelled) return
-
         el.innerHTML = ''
         const instance = mount(Component, {target: el, props})
         mountedComponents.push(instance)
@@ -55,7 +80,7 @@
     return () => {
       cancelled = true
       for (const instance of mountedComponents) {
-        unmount(instance)
+        void unmount(instance)
       }
     }
   })

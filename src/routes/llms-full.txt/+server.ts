@@ -17,7 +17,7 @@ export const GET: RequestHandler = async () => {
 
       return `## [${p.title}](${BASE_URL}${p.relativeURL}.md)
 ${p.media ? `Media: ${p.media}` : ''}
-Date: ${p.origDate}\n
+Date: ${String(p.origDate)}\n
 ${content.trim()}
 `
     })

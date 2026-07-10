@@ -1,6 +1,5 @@
 <script lang="ts">
   import {ExternalLink} from '@lucide/svelte'
-  import {goto} from '$app/navigation'
   import {Badge} from '$lib/components/ui/badge'
   import * as Card from '$lib/components/ui/card'
 
@@ -98,13 +97,22 @@
   ]
 
   function tilt(node: HTMLElement) {
-    let frameId: number
+    const canTilt = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (!canTilt || reduceMotion) return
 
-    const handleMouseMove = (e: MouseEvent) => {
+    let frameId = 0
+    let rect: DOMRect | undefined
+
+    const handlePointerEnter = () => {
+      rect = node.getBoundingClientRect()
+    }
+
+    const handlePointerMove = (e: PointerEvent) => {
       if (frameId) cancelAnimationFrame(frameId)
 
       frameId = requestAnimationFrame(() => {
-        const rect = node.getBoundingClientRect()
+        if (!rect) return
         const x = e.clientX - rect.left
         const y = e.clientY - rect.top
         const centerX = rect.width / 2
@@ -116,23 +124,28 @@
         node.style.setProperty('--ry', `${rotateY}deg`)
         node.style.setProperty('--mx', `${(x / rect.width) * 100}%`)
         node.style.setProperty('--my', `${(y / rect.height) * 100}%`)
+        frameId = 0
       })
     }
 
-    const handleMouseLeave = () => {
+    const handlePointerLeave = () => {
       if (frameId) cancelAnimationFrame(frameId)
+      frameId = 0
+      rect = undefined
       node.style.setProperty('--rx', '0deg')
       node.style.setProperty('--ry', '0deg')
     }
 
-    node.addEventListener('mousemove', handleMouseMove)
-    node.addEventListener('mouseleave', handleMouseLeave)
+    node.addEventListener('pointerenter', handlePointerEnter)
+    node.addEventListener('pointermove', handlePointerMove)
+    node.addEventListener('pointerleave', handlePointerLeave)
 
     return {
       destroy() {
         if (frameId) cancelAnimationFrame(frameId)
-        node.removeEventListener('mousemove', handleMouseMove)
-        node.removeEventListener('mouseleave', handleMouseLeave)
+        node.removeEventListener('pointerenter', handlePointerEnter)
+        node.removeEventListener('pointermove', handlePointerMove)
+        node.removeEventListener('pointerleave', handlePointerLeave)
       },
     }
   }
@@ -144,15 +157,11 @@
 </svelte:head>
 
 {#snippet workCard(work: Work)}
+  {@const external = work.url.startsWith('http')}
   <a
     href={work.url}
-    target={work.url.startsWith('http') ? '_blank' : '_self'}
-    onclick={(e) => {
-      if (!work.url.startsWith('http')) {
-        e.preventDefault()
-        goto(work.url)
-      }
-    }}
+    target={external ? '_blank' : undefined}
+    rel={external ? 'noopener noreferrer' : undefined}
     class="group block h-full outline-none"
     style="perspective: 1000px;"
   >
@@ -163,7 +172,7 @@
         <Card.Header>
           <Card.Title class="flex items-center gap-2 text-xl">
             {work.title}
-            {#if work.url.startsWith('http')}
+            {#if external}
               <ExternalLink class="h-4 w-4 text-muted-foreground" />
             {/if}
           </Card.Title>
@@ -196,7 +205,7 @@
 <section class="container-x mb-4">
   <div class="mb-12">
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-      {#each works as work, i}
+      {#each works as work}
         <div class="grid-item">
           {@render workCard(work)}
         </div>
@@ -208,7 +217,7 @@
 
   <div>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-      {#each contributions as work, i}
+      {#each contributions as work}
         <div class="grid-item">
           {@render workCard(work)}
         </div>
@@ -237,7 +246,6 @@
   :global(.card-dynamic)
     position: relative
     overflow: hidden
-    will-change: transform, box-shadow
     transform-style: preserve-3d
     -webkit-font-smoothing: antialiased
     backface-visibility: hidden
@@ -280,6 +288,7 @@
     z-index: 50
 
   :global(a.group:hover .card-dynamic)
+    will-change: transform, box-shadow
     transform: translateZ(0) translateY(-8px) scale(1.02) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
     box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.2)
 
@@ -289,4 +298,13 @@
   :global(.dark a.group:hover .card-dynamic)
     box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.5), 0 0 30px -5px rgba(255, 255, 255, 0.04)
     border-color: rgba(255, 255, 255, 0.1)
+
+  @media (prefers-reduced-motion: reduce)
+    .grid-item
+      opacity: 1
+      animation: none
+
+    :global(.card-dynamic), :global(a.group:hover .card-dynamic)
+      transform: none
+      transition: border-color 0.4s ease
 </style>

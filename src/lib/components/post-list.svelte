@@ -2,7 +2,10 @@
   import {navigating} from '$app/state'
   import {Badge} from '$lib/components/ui/badge/index.js'
   import {Skeleton} from '$lib/components/ui/skeleton/index.js'
+  import type {NavigationLike} from '$lib/navigation'
+  import type {ListedPost} from '$lib/server/cache'
   import {getCategoryName, getImageUrl} from '$lib/utils'
+  import type {setupViewTransition} from '$lib/view-transition'
   import type {Action} from 'svelte/action'
 
   let {
@@ -10,16 +13,41 @@
     isPagination,
     transition,
   }: {
-    posts: any[]
-    isPagination: (navigation: {
-      from?: {route: {id: string | null}} | null
-      to?: {route: {id: string | null}} | null
-    }) => boolean
-    transition: Action<HTMLElement, any>
+    posts: ListedPost[]
+    isPagination: (navigation: NavigationLike) => boolean
+    transition: ReturnType<typeof setupViewTransition>['transition']
   } = $props()
 
   const isProd = import.meta.env.PROD
   const dateFormatter = new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'})
+  const paginationSkeletons = Array.from({length: 15})
+
+  function postTransition(slug: string, part: 'category' | 'title' | 'image' | 'metadata') {
+    return {
+      name: `post-${part}-${slug}`,
+      shouldApply: ({navigation}: {navigation: NavigationLike}) =>
+        !isPagination(navigation) && navigation.to?.params?.slug === slug,
+      applyImmediately: ({navigation}: {navigation: NavigationLike}) =>
+        !isPagination(navigation) && navigation.from?.params?.slug === slug,
+    }
+  }
+
+  const transitionStyles = $derived.by(() => {
+    const rules = posts
+      .filter((post) => post.image)
+      .map(
+        ({slug}) => `
+          ::view-transition-group(post-title-${slug}),
+          ::view-transition-group(post-category-${slug}),
+          ::view-transition-group(post-metadata-${slug}) { z-index: 10; }
+          ::view-transition-old(post-image-${slug}) { animation-name: zoom-out-old; }
+          ::view-transition-new(post-image-${slug}) { animation-name: zoom-out-new; }
+        `,
+      )
+      .join('')
+
+    return rules ? `<style>${rules}</style>` : ''
+  })
 
   const lazyImage: Action<HTMLImageElement, string> = (node, src) => {
     let timeoutId: ReturnType<typeof setTimeout>
@@ -86,13 +114,8 @@
 {/snippet}
 
 <ul class="relative z-10 flex flex-col gap-1" use:transition={'post-list'}>
-  {#if !isProd}
-    {#each Array(2) as _}
-      {@render skeletonItem()}
-    {/each}
-  {/if}
   {#if navigating && isPagination(navigating)}
-    {#each Array(15) as _}
+    {#each paginationSkeletons as _}
       {@render skeletonItem()}
     {/each}
   {:else}
@@ -104,68 +127,19 @@
           <div class="flex gap-4">
             <div class="grow">
               <div class="mb-1 flex items-center gap-1">
-                <div
-                  class="-ml-px flex shrink-0 items-center"
-                  use:transition={{
-                    name: `post-category-${post.slug}`,
-                    shouldApply({navigation}: {navigation: any}) {
-                      return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-                    },
-                    applyImmediately({navigation}: {navigation: any}) {
-                      return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-                    },
-                  }}
-                >
+                <div class="-ml-px flex shrink-0 items-center" use:transition={postTransition(post.slug, 'category')}>
                   <Badge variant="secondary" class="badge-item">{getCategoryName(post.category)}</Badge>
                 </div>
-                <strong
-                  class="line-clamp-1 grow"
-                  use:transition={{
-                    name: `post-title-${post.slug}`,
-                    shouldApply({navigation}: {navigation: any}) {
-                      return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-                    },
-                    applyImmediately({navigation}: {navigation: any}) {
-                      return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-                    },
-                  }}>{post.title}</strong
+                <strong class="line-clamp-1 grow" use:transition={postTransition(post.slug, 'title')}
+                  >{post.title}</strong
                 >
               </div>
               <p class="mb-1 line-clamp-3 text-justify text-sm">{post.description}</p>
             </div>
             {#if post.image}
-              {@html `
-                <style>
-                  ::view-transition-group(post-title-${post.slug}),
-                  ::view-transition-group(post-category-${post.slug}),
-                  ::view-transition-group(post-metadata-${post.slug}) {
-                    z-index: 10;
-                  }
-                  ::view-transition-group-children(post-image-wrapper-${post.slug}) {
-                    overflow: clip;
-                  }
-                  ::view-transition-old(post-image-${post.slug}) {
-                    animation-name: zoom-out-old;
-                  }
-                  ::view-transition-new(post-image-${post.slug}) {
-                    animation-name: zoom-out-new;
-                  }
-                </style>
-              `}
               {@const src1x = getImageUrl(post.image, {h: 88}, isProd)}
               {@const src2x = getImageUrl(post.image, {h: 176}, isProd)}
-              <div
-                class="img animate-pulse bg-muted"
-                use:transition={{
-                  name: `post-image-${post.slug}`,
-                  shouldApply({navigation}: {navigation: any}) {
-                    return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-                  },
-                  applyImmediately({navigation}: {navigation: any}) {
-                    return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-                  },
-                }}
-              >
+              <div class="img animate-pulse bg-muted" use:transition={postTransition(post.slug, 'image')}>
                 <img
                   alt=""
                   class="absolute inset-0 size-full object-cover opacity-0 transition-opacity"
@@ -179,18 +153,7 @@
             {/if}
           </div>
           <div class="mt-px flex items-start justify-between gap-2">
-            <small
-              class="text-muted-foreground"
-              use:transition={{
-                name: `post-metadata-${post.slug}`,
-                shouldApply({navigation}: {navigation: any}) {
-                  return !isPagination(navigation) && navigation?.to?.params?.slug === post.slug
-                },
-                applyImmediately({navigation}: {navigation: any}) {
-                  return !isPagination(navigation) && navigation?.from?.params?.slug === post.slug
-                },
-              }}
-            >
+            <small class="text-muted-foreground" use:transition={postTransition(post.slug, 'metadata')}>
               {#if post.media}
                 {post.media}&#8194;&#8226;&#8194;{/if}{dateFormatter.format(displayDate)}
             </small>
@@ -201,6 +164,8 @@
   {/if}
 </ul>
 
+{@html transitionStyles}
+
 <style lang="sass">
   @reference '#app.css'
 
@@ -210,4 +175,20 @@
       @apply relative shrink-0 size-22 overflow-hidden bg-cover bg-center rounded-md shadow-xs
       > img
         @apply rounded-[inherit] inner-border
+
+  @keyframes -global-zoom-out-old
+    from
+      opacity: 1
+      height: 50vh
+    to
+      opacity: 0
+      height: 5.5rem
+
+  @keyframes -global-zoom-out-new
+    from
+      opacity: 0
+      height: 50vh
+    to
+      opacity: 1
+      height: 5.5rem
 </style>

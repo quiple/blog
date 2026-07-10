@@ -1,4 +1,4 @@
-import {getCachedProcessedMetadata} from '$lib/server/cache'
+import {getCachedProcessedMetadata, toListedPosts} from '$lib/server/cache'
 import {homeCanonicalUrl, SITE_DESCRIPTION, SITE_NAME} from '$lib/seo'
 import type {PageServerLoad} from './$types'
 
@@ -12,7 +12,7 @@ export const load: PageServerLoad = async ({url}) => {
   currentPage = Math.max(1, Math.min(currentPage, totalPages))
 
   const start = (currentPage - 1) * PER_PAGE
-  const posts = allPosts.slice(start, start + PER_PAGE)
+  const posts = toListedPosts(allPosts.slice(start, start + PER_PAGE))
   const title = currentPage > 1 ? `${SITE_NAME} – ${currentPage}페이지` : SITE_NAME
   const canonicalURL = homeCanonicalUrl(currentPage)
   const previousPageURL = currentPage > 1 ? homeCanonicalUrl(currentPage - 1) : undefined

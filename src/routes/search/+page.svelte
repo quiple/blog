@@ -1,11 +1,13 @@
 <script lang="ts">
   import {Search} from '@lucide/svelte'
   import {goto} from '$app/navigation'
+  import PostPagination from '$lib/components/post-pagination.svelte'
   import PostList from '$lib/components/post-list.svelte'
   import {Input} from '$lib/components/ui/input/index'
-  import * as Pagination from '$lib/components/ui/pagination/index.js'
+  import {isGoingForward, isRoutePagination, type NavigationLike} from '$lib/navigation'
   import {absoluteUrl} from '$lib/seo'
   import {setupViewTransition} from '$lib/view-transition'
+  import {onDestroy} from 'svelte'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()
@@ -14,47 +16,30 @@
 
   const {transition, classes} = setupViewTransition()
 
-  function isPagination(navigation: {
-    from?: {route: {id: string | null}} | null
-    to?: {route: {id: string | null}} | null
-  }) {
-    return navigation?.from?.route?.id === '/search' && navigation?.to?.route?.id === '/search'
-  }
-
-  function isGoingForward(navigation: {from?: {url?: URL | null} | null; to?: {url?: URL | null} | null}) {
-    const fromPage = Number(navigation?.from?.url?.searchParams?.get('p')) || 1
-    const toPage = Number(navigation?.to?.url?.searchParams?.get('p')) || 1
-    return toPage > fromPage
-  }
+  const isPagination = (navigation: NavigationLike) => isRoutePagination(navigation, '/search')
 
   classes(({navigation}) => {
     if (!isPagination(navigation)) return
     return isGoingForward(navigation) ? ['paginate-forward'] : ['paginate-backward']
   })
 
-  function handleSearch() {
-    clearTimeout(debounceTimer)
-    debounceTimer = setTimeout(() => {
-      const trimmed = searchInput.trim()
-      if (trimmed) {
-        goto(`/search?q=${encodeURIComponent(trimmed)}`, {keepFocus: true})
-      } else {
-        goto('/search', {keepFocus: true})
-      }
-    }, 300)
+  function submitSearch() {
+    const trimmed = searchInput.trim()
+    goto(trimmed ? `/search?q=${encodeURIComponent(trimmed)}` : '/search', {keepFocus: true})
   }
 
-  function handleKeydown(e: KeyboardEvent) {
-    if (e.key === 'Enter') {
-      clearTimeout(debounceTimer)
-      const trimmed = searchInput.trim()
-      if (trimmed) {
-        goto(`/search?q=${encodeURIComponent(trimmed)}`, {keepFocus: true})
-      } else {
-        goto('/search', {keepFocus: true})
-      }
-    }
+  function handleSearch() {
+    clearTimeout(debounceTimer)
+    debounceTimer = setTimeout(submitSearch, 300)
   }
+
+  function handleKeydown(event: KeyboardEvent) {
+    if (event.key !== 'Enter') return
+    clearTimeout(debounceTimer)
+    submitSearch()
+  }
+
+  onDestroy(() => clearTimeout(debounceTimer))
 </script>
 
 <svelte:head>
@@ -89,45 +74,15 @@
 
     <PostList posts={data.matches} {isPagination} {transition} />
 
-    {#if data.totalPages > 1}
-      <Pagination.Root
-        count={data.totalPages * data.perPage}
-        siblingCount={2}
-        perPage={data.perPage}
-        page={data.currentPage}
-        onPageChange={(p) => {
-          window.scrollTo(0, 0)
-          goto(`/search?q=${encodeURIComponent(data.searchQuery)}&p=${p}`)
-        }}
-        class="my-4"
-      >
-        {#snippet children({pages, currentPage})}
-          <Pagination.Content>
-            <Pagination.Item>
-              <Pagination.PrevButton />
-            </Pagination.Item>
-            {#each pages as p (p.key)}
-              <Pagination.Item>
-                {#if p.type === 'ellipsis'}
-                  <Pagination.Ellipsis />
-                {:else}
-                  <Pagination.Link
-                    class={currentPage === p.value ? 'pointer-events-none' : undefined}
-                    page={p}
-                    isActive={currentPage === p.value}
-                  >
-                    {p.value}
-                  </Pagination.Link>
-                {/if}
-              </Pagination.Item>
-            {/each}
-            <Pagination.Item>
-              <Pagination.NextButton />
-            </Pagination.Item>
-          </Pagination.Content>
-        {/snippet}
-      </Pagination.Root>
-    {/if}
+    <PostPagination
+      totalPages={data.totalPages}
+      perPage={data.perPage}
+      currentPage={data.currentPage}
+      onPageChange={(page) => {
+        window.scrollTo(0, 0)
+        goto(`/search?q=${encodeURIComponent(data.searchQuery)}&p=${page}`)
+      }}
+    />
   {:else}
     <p class="empty-state">검색 결과가 없습니다.</p>
   {/if}
@@ -135,22 +90,6 @@
 
 <style lang="sass">
   @reference '#app.css'
-
-  @keyframes -global-zoom-out-old
-    from
-      opacity: 1
-      height: 50vh
-    to
-      opacity: 0
-      height: 5.5rem
-
-  @keyframes -global-zoom-out-new
-    from
-      opacity: 0
-      height: 50vh
-    to
-      opacity: 1
-      height: 5.5rem
 
   .empty-state
     @apply text-muted-foreground text-center py-16

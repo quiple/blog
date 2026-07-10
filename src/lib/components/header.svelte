@@ -2,7 +2,7 @@
   import {Menu, Monitor, Moon, Search, Sun} from '@lucide/svelte'
   import {afterNavigate, beforeNavigate, goto} from '$app/navigation'
   import {page} from '$app/state'
-  import {onMount} from 'svelte'
+  import {onDestroy, onMount} from 'svelte'
   import svgGradeDown from '$lib/assets/logo-grade-down.svg'
   import svgOutline from '$lib/assets/logo-outline.svg'
   import menu from '$lib/assets/menu.svg'
@@ -20,6 +20,7 @@
   let scrollY = $state(0)
   let innerHeight = $state(1000)
   let fontFamilyMode = $state<'theme' | 'system'>('theme')
+  let overrideTimer: ReturnType<typeof setTimeout> | undefined
 
   const fontFamilyStorageKey = 'font-family'
 
@@ -62,7 +63,8 @@
   const {transition} = setupViewTransition()
   const onKeydown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && inputElement && document.activeElement === inputElement) {
-      goto(`/search?q=${query.trim().replaceAll(' ', '+')}`)
+      const trimmed = query.trim()
+      goto(trimmed ? `/search?q=${encodeURIComponent(trimmed)}` : '/search')
     }
   }
 
@@ -105,7 +107,8 @@
     menuOpen = false
     lockedHeaderClassName = null
     navigatingFromNonPostToPost = false
-    setTimeout(() => {
+    clearTimeout(overrideTimer)
+    overrideTimer = setTimeout(() => {
       overrideScrollY = null
     }, 100)
   })
@@ -113,6 +116,13 @@
   onMount(() => {
     const savedFontFamilyMode = localStorage.getItem(fontFamilyStorageKey)
     setFontFamilyMode(savedFontFamilyMode === 'system' ? 'system' : 'theme')
+  })
+
+  $effect(() => {
+    if (!isPostPage) {
+      scrollY = 0
+      return
+    }
 
     let scrollFrame = 0
 
@@ -131,14 +141,16 @@
 
     updateViewport()
     window.addEventListener('scroll', updateScroll, {passive: true})
-    window.addEventListener('resize', updateViewport, {passive: true})
+    if (hasHeroImage) window.addEventListener('resize', updateViewport, {passive: true})
 
     return () => {
       if (scrollFrame) cancelAnimationFrame(scrollFrame)
       window.removeEventListener('scroll', updateScroll)
-      window.removeEventListener('resize', updateViewport)
+      if (hasHeroImage) window.removeEventListener('resize', updateViewport)
     }
   })
+
+  onDestroy(() => clearTimeout(overrideTimer))
 </script>
 
 <svelte:window on:keydown={onKeydown} />

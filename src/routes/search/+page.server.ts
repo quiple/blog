@@ -1,4 +1,4 @@
-import {getCachedProcessedMetadata} from '$lib/server/cache'
+import {getCachedProcessedMetadata, toListedPosts} from '$lib/server/cache'
 import type {PageServerLoad} from './$types'
 
 const PER_PAGE = 15
@@ -35,7 +35,7 @@ export const load: PageServerLoad = async ({url}) => {
 
   return {
     searchQuery,
-    matches: paginatedMatches,
+    matches: toListedPosts(paginatedMatches),
     totalCount,
     totalPages,
     currentPage: safePage,

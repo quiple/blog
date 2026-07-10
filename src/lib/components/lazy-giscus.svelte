@@ -5,30 +5,37 @@
   let container = $state<HTMLElement>()
   let Giscus = $state<Component | null>(null)
 
-  async function loadGiscus() {
-    if (Giscus) return
-    Giscus = (await import('./giscus.svelte')).default
-  }
-
   $effect(() => {
     if (!browser || !container || Giscus) return
+    let cancelled = false
+
+    async function loadGiscus() {
+      const component = (await import('./giscus.svelte')).default
+      if (!cancelled) Giscus = component
+    }
 
     if (!('IntersectionObserver' in window)) {
-      const timeoutId = setTimeout(loadGiscus, 1200)
-      return () => clearTimeout(timeoutId)
+      const timeoutId = setTimeout(() => void loadGiscus(), 1200)
+      return () => {
+        cancelled = true
+        clearTimeout(timeoutId)
+      }
     }
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry?.isIntersecting) return
         observer.disconnect()
-        loadGiscus()
+        void loadGiscus()
       },
       {rootMargin: '800px 0px'},
     )
 
     observer.observe(container)
-    return () => observer.disconnect()
+    return () => {
+      cancelled = true
+      observer.disconnect()
+    }
   })
 </script>
 
