@@ -35,9 +35,7 @@ Adobe-KR-9 보충 0의 한글 음절 2,780자와 일본 한자 640자를 지원�
 
 ## 제작에 사용된 도구
 
-- [Bits'N'Picas](https://github.com/kreativekorp/bitsnpicas)
-- [FontForge](https://fontforge.org)
-- [fontTools](https://github.com/fonttools/fonttools)
+- [Glyphs](https://glyphsapp.com/)
 
 ## 다른 파생 폰트
 
