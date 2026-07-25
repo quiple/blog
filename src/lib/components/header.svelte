@@ -175,7 +175,7 @@
         class:home-logo={isHomePage}
         class="logo"
         aria-label="홈"
-        style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}"); --wordmark: url("${wordmark}")`}
+        style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}"); --wordmark: url("${wordmark}"); --wordmark-grade-down: url("${wordmarkGradeDown}")`}
       >
         <span class="logo-symbol" use:transition={'header-logo-symbol'}>
           <Q class="q-logo size-full dark:hidden" />
@@ -186,14 +186,14 @@
           {#if isHomePage}
             <span class="wordmark-symbol" aria-hidden="true">
               <span class="wordmark-image wordmark-light dark:hidden"></span>
-              <img src={wordmarkGradeDown} alt="" class="wordmark-image hidden dark:block" />
+              <span class="wordmark-image wordmark-grade-down hidden dark:block"></span>
             </span>
           {/if}
         </span>
         {#if isHomePage}
           <span class="wordmark-rest" aria-hidden="true" use:transition={'header-wordmark-rest'}>
             <span class="wordmark-image wordmark-light dark:hidden"></span>
-            <img src={wordmarkGradeDown} alt="" class="wordmark-image hidden dark:block" />
+            <span class="wordmark-image wordmark-grade-down hidden dark:block"></span>
           </span>
         {/if}
       </a>
@@ -312,7 +312,7 @@
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-4
       .logo
-        @apply flex items-center self-center transition relative before:mask-size-[54px] p-1 -m-1 text-primary dark:text-inherit
+        @apply flex items-center self-center transition relative before:mask-size-[54px] p-1 -m-1 text-primary
         .logo-symbol
           @apply relative block size-9 shrink-0
         .wordmark-symbol, .wordmark-rest
@@ -321,6 +321,8 @@
           @apply absolute top-0 left-0 h-9 w-[210px] max-w-none
         .wordmark-light
           @apply bg-current mask-(--wordmark) mask-size-[210px_36px] mask-top-left mask-no-repeat
+        .wordmark-grade-down
+          @apply bg-current mask-(--wordmark-grade-down) mask-size-[210px_36px] mask-top-left mask-no-repeat
         &.home-logo
           @apply xl:gap-0
           .logo-symbol
