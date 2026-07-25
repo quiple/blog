@@ -48,7 +48,6 @@
 
   let heroForeground = $derived(hasHeroImage ? `#${page.data?.imageForeground?.toString() ?? '09090b'}` : null)
   let heroOutline = $derived(isPostPage && page.data?.outline ? `#${page.data.outline.toString()}` : null)
-  let logoMaskImage = $derived(heroForeground === '#fff' ? (heroOutline ? 'none' : `url("${svgGradeDown}")`) : 'none')
 
   // Track navigation direction
   let navigatingFromNonPostToPost = $state(false)
@@ -62,6 +61,10 @@
     return ''
   })
   let headerClassName = $derived(lockedHeaderClassName ?? actualHeaderClassName)
+  let usesGradeDownLogo = $derived(
+    headerClassName === 'hero' &&
+      (heroForeground?.toLowerCase() === '#fff' || heroForeground?.toLowerCase() === '#ffffff'),
+  )
 
   const {transition} = setupViewTransition()
   const onKeydown = (e: KeyboardEvent) => {
@@ -160,10 +163,10 @@
 
 <header
   class={headerClassName}
+  class:grade-down-logo={usesGradeDownLogo}
   use:transition={'header'}
   style:--hero-foreground={heroForeground ?? undefined}
   style:--outline-color={heroOutline ?? undefined}
-  style:--logo-mask-image={logoMaskImage}
 >
   <section>
     <div class="flex w-full items-center gap-4">
@@ -175,7 +178,11 @@
         style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}"); --wordmark: url("${wordmark}")`}
       >
         <span class="logo-symbol" use:transition={'header-logo-symbol'}>
-          <Q class="q-logo size-full" />
+          <Q class="q-logo size-full dark:hidden" />
+          <span
+            class="q-logo-grade-down absolute inset-0 hidden bg-current mask-(--svg-grade-down) mask-contain mask-center mask-no-repeat dark:block"
+            aria-hidden="true"
+          ></span>
           {#if isHomePage}
             <span class="wordmark-symbol" aria-hidden="true">
               <span class="wordmark-image wordmark-light dark:hidden"></span>
@@ -284,10 +291,6 @@
 <style lang="sass">
   @reference '#app.css'
 
-  @media print
-    header .logo
-      mask-image: var(--logo-mask-image) !important
-
   header
     @apply relative md:sticky top-0 py-4 sm:py-6 z-1 [print-color-adjust:exact] print:text-(--hero-foreground)
     &.hero, &.title-hidden
@@ -298,10 +301,14 @@
         @apply before:opacity-100
       .post-title
         @apply lg:invisible lg:opacity-0
+    &.grade-down-logo
+      :global(.q-logo)
+        @apply hidden
+      .q-logo-grade-down
+        @apply block
     &.hero
       .logo
         @apply text-(--hero-foreground)
-        mask-image: var(--logo-mask-image) !important
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-4
       .logo
@@ -318,7 +325,7 @@
           @apply xl:gap-0
           .logo-symbol
             @apply xl:size-9
-          :global(.q-logo)
+          :global(.q-logo), .q-logo-grade-down
             @apply xl:hidden
           .wordmark-symbol
             @apply xl:block xl:absolute xl:inset-0
@@ -331,7 +338,5 @@
       :global(.menu)
         @apply relative before:mask-size-[24px] print:hidden size-9
       .logo, :global(.menu)
-        @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:mask-(--svg-outline) before:mask-center before:mask-no-repeat dark:mask-(--svg-grade-down) mask-center mask-[size:36px] mask-no-repeat
-      .logo.home-logo
-        @apply md:mask-none
+        @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:mask-(--svg-outline) before:mask-center before:mask-no-repeat
 </style>
