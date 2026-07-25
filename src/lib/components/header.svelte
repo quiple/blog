@@ -178,14 +178,14 @@
           <Q class="q-logo size-full" />
           {#if isHomePage}
             <span class="wordmark-symbol" aria-hidden="true">
-              <span class="wordmark-image wordmark-primary dark:hidden"></span>
+              <span class="wordmark-image wordmark-light dark:hidden"></span>
               <img src={wordmarkGradeDown} alt="" class="wordmark-image hidden dark:block" />
             </span>
           {/if}
         </span>
         {#if isHomePage}
           <span class="wordmark-rest" aria-hidden="true" use:transition={'header-wordmark-rest'}>
-            <span class="wordmark-image wordmark-primary dark:hidden"></span>
+            <span class="wordmark-image wordmark-light dark:hidden"></span>
             <img src={wordmarkGradeDown} alt="" class="wordmark-image hidden dark:block" />
           </span>
         {/if}
@@ -300,19 +300,20 @@
         @apply lg:invisible lg:opacity-0
     &.hero
       .logo
+        @apply text-(--hero-foreground)
         mask-image: var(--logo-mask-image) !important
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-4
       .logo
-        @apply flex items-center self-center transition relative before:mask-size-[54px] p-1 -m-1
+        @apply flex items-center self-center transition relative before:mask-size-[54px] p-1 -m-1 text-primary dark:text-inherit
         .logo-symbol
           @apply relative block size-9 shrink-0
         .wordmark-symbol, .wordmark-rest
           @apply hidden overflow-hidden
         .wordmark-image
           @apply absolute top-0 left-0 h-9 w-[210px] max-w-none
-        .wordmark-primary
-          @apply bg-primary mask-(--wordmark) mask-size-[210px_36px] mask-top-left mask-no-repeat
+        .wordmark-light
+          @apply bg-current mask-(--wordmark) mask-size-[210px_36px] mask-top-left mask-no-repeat
         &.home-logo
           @apply md:gap-0
           .logo-symbol
