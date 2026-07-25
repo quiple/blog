@@ -61,7 +61,7 @@
   --card-foreground: oklch(0.141 0.005 285.823);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
+  --primary: oklch(0.6637 0.22 37.43);
   --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
@@ -341,4 +341,18 @@
 
 ::view-transition-group(header) {
   z-index: 20;
+}
+
+::view-transition-group(header-logo-symbol),
+::view-transition-group(header-wordmark-rest) {
+  z-index: 21;
+  animation-duration: 350ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(header-logo-symbol),
+::view-transition-new(header-logo-symbol),
+::view-transition-old(header-wordmark-rest),
+::view-transition-new(header-wordmark-rest) {
+  mix-blend-mode: normal;
 }
