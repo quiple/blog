@@ -315,17 +315,17 @@
         .wordmark-light
           @apply bg-current mask-(--wordmark) mask-size-[210px_36px] mask-top-left mask-no-repeat
         &.home-logo
-          @apply md:gap-0
+          @apply xl:gap-0
           .logo-symbol
-            @apply md:size-9
+            @apply xl:size-9
           :global(.q-logo)
-            @apply md:hidden
+            @apply xl:hidden
           .wordmark-symbol
-            @apply md:block md:absolute md:inset-0
+            @apply xl:block xl:absolute xl:inset-0
           .wordmark-rest
-            @apply md:relative md:block md:h-9 md:w-[174px]
+            @apply xl:relative xl:block xl:h-9 xl:w-[174px]
             .wordmark-image
-              @apply md:-left-9
+              @apply xl:-left-9
       .post-title
         @apply invisible opacity-0 lg:visible lg:opacity-100 transition-all font-bold line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)] leading-5 -my-0.5 text-pretty break-keep
       :global(.menu)
