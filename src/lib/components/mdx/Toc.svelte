@@ -247,7 +247,7 @@
           d={pathD}
           fill="none"
           stroke="currentColor"
-          class="text-blue-700 dark:text-blue-300 {isReady ? 'transition-all ease-out' : ''}"
+          class="text-orange-600 dark:text-orange-400 {isReady ? 'transition-all ease-out' : ''}"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -265,7 +265,7 @@
                 {heading.level - minLevel === 1 ? 'pl-8' : ''}
                 {heading.level - minLevel === 2 ? 'pl-12' : ''}
                 {activeIdSet.has(heading.id)
-                ? 'text-blue-700 hover:text-foreground dark:text-blue-300 dark:hover:text-foreground'
+                ? 'text-orange-600 hover:text-foreground dark:text-orange-400 dark:hover:text-foreground'
                 : 'text-muted-foreground hover:text-foreground'}"
               onclick={(e) => {
                 e.preventDefault()
