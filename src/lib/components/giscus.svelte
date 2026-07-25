@@ -1,10 +1,32 @@
 <script lang="ts">
   import Giscus from '@giscus/svelte'
+  import {onMount} from 'svelte'
   import {mode} from 'mode-watcher'
 
-  const theme = $derived(
-    mode.current === 'dark' ? 'https://quiple.dev/giscus/dark.css' : 'https://quiple.dev/giscus/light.css',
-  )
+  let fontFamilyMode = $state<'theme' | 'system'>('theme')
+
+  onMount(() => {
+    const root = document.documentElement
+    const updateFontFamilyMode = () => {
+      fontFamilyMode = root.dataset.fontFamily === 'system' ? 'system' : 'theme'
+    }
+
+    updateFontFamilyMode()
+
+    const observer = new MutationObserver(updateFontFamilyMode)
+    observer.observe(root, {
+      attributes: true,
+      attributeFilter: ['data-font-family'],
+    })
+
+    return () => observer.disconnect()
+  })
+
+  const theme = $derived.by(() => {
+    const color = mode.current === 'dark' ? 'dark' : 'light'
+    const font = fontFamilyMode === 'system' ? '-system' : ''
+    return `https://quiple.dev/giscus/${color}${font}.css`
+  })
 </script>
 
 <Giscus
