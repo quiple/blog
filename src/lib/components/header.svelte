@@ -172,20 +172,20 @@
         class:home-logo={isHomePage}
         class="logo"
         aria-label="홈"
-        style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}")`}
+        style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}"); --wordmark: url("${wordmark}")`}
       >
         <span class="logo-symbol" use:transition={'header-logo-symbol'}>
           <Q class="q-logo size-full" />
           {#if isHomePage}
             <span class="wordmark-symbol" aria-hidden="true">
-              <img src={wordmark} alt="" class="wordmark-image dark:hidden" />
+              <span class="wordmark-image wordmark-primary dark:hidden"></span>
               <img src={wordmarkGradeDown} alt="" class="wordmark-image hidden dark:block" />
             </span>
           {/if}
         </span>
         {#if isHomePage}
           <span class="wordmark-rest" aria-hidden="true" use:transition={'header-wordmark-rest'}>
-            <img src={wordmark} alt="" class="wordmark-image dark:hidden" />
+            <span class="wordmark-image wordmark-primary dark:hidden"></span>
             <img src={wordmarkGradeDown} alt="" class="wordmark-image hidden dark:block" />
           </span>
         {/if}
@@ -310,19 +310,21 @@
         .wordmark-symbol, .wordmark-rest
           @apply hidden overflow-hidden
         .wordmark-image
-          @apply absolute top-0 left-0 h-6 w-35 max-w-none
+          @apply absolute top-0 left-0 h-9 w-[210px] max-w-none
+        .wordmark-primary
+          @apply bg-primary mask-(--wordmark) mask-size-[210px_36px] mask-top-left mask-no-repeat
         &.home-logo
           @apply md:gap-0
           .logo-symbol
-            @apply md:size-6
+            @apply md:size-9
           :global(.q-logo)
             @apply md:hidden
           .wordmark-symbol
             @apply md:block md:absolute md:inset-0
           .wordmark-rest
-            @apply md:relative md:block md:h-6 md:w-29
+            @apply md:relative md:block md:h-9 md:w-[174px]
             .wordmark-image
-              @apply md:-left-6
+              @apply md:-left-9
       .post-title
         @apply invisible opacity-0 lg:visible lg:opacity-100 transition-all font-bold line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)] leading-5 -my-0.5 text-pretty break-keep
       :global(.menu)
