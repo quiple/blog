@@ -6,6 +6,8 @@
   import svgGradeDown from '$lib/assets/logo-grade-down.svg'
   import svgOutline from '$lib/assets/logo-outline.svg'
   import menu from '$lib/assets/menu.svg'
+  import wordmarkGradeDown from '$lib/assets/wordmark-gradedown.svg'
+  import wordmark from '$lib/assets/wordmark.svg'
   import Q from '$lib/components/q.svelte'
   import {Button} from '$lib/components/ui/button/index'
   import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index'
@@ -39,6 +41,7 @@
   const isPostPath = (pathname: string) =>
     pathname.startsWith('/blog/') || pathname.startsWith('/article/') || pathname.startsWith('/font/')
 
+  let isHomePage = $derived(page.url.pathname === '/')
   let isPostPage = $derived(isPostPath(page.url.pathname))
   let overrideScrollY = $state<number | null>(null)
   let hasHeroImage = $derived(isPostPage && !!page.data?.image)
@@ -166,11 +169,26 @@
     <div class="flex w-full items-center gap-4">
       <a
         href="/"
+        class:home-logo={isHomePage}
         class="logo"
         aria-label="홈"
         style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}")`}
       >
-        <Q class="size-9" />
+        <span class="logo-symbol" use:transition={'header-logo-symbol'}>
+          <Q class="q-logo size-full" />
+          {#if isHomePage}
+            <span class="wordmark-symbol" aria-hidden="true">
+              <img src={wordmark} alt="" class="wordmark-image dark:hidden" />
+              <img src={wordmarkGradeDown} alt="" class="wordmark-image hidden dark:block" />
+            </span>
+          {/if}
+        </span>
+        {#if isHomePage}
+          <span class="wordmark-rest" aria-hidden="true" use:transition={'header-wordmark-rest'}>
+            <img src={wordmark} alt="" class="wordmark-image dark:hidden" />
+            <img src={wordmarkGradeDown} alt="" class="wordmark-image hidden dark:block" />
+          </span>
+        {/if}
       </a>
       {#if isPostPage && page.data.title}
         <div class="post-title {navigatingFromNonPostToPost ? 'transition-none!' : ''}" title={page.data.title}>
@@ -286,11 +304,31 @@
     section
       @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-4
       .logo
-        @apply flex items-center gap-1 self-center transition relative before:mask-size-[54px] p-1 -m-1
+        @apply flex items-center self-center transition relative before:mask-size-[54px] p-1 -m-1
+        .logo-symbol
+          @apply relative block size-9 shrink-0
+        .wordmark-symbol, .wordmark-rest
+          @apply hidden overflow-hidden
+        .wordmark-image
+          @apply absolute top-0 left-0 h-6 w-35 max-w-none
+        &.home-logo
+          @apply md:gap-0
+          .logo-symbol
+            @apply md:size-6
+          :global(.q-logo)
+            @apply md:hidden
+          .wordmark-symbol
+            @apply md:block md:absolute md:inset-0
+          .wordmark-rest
+            @apply md:relative md:block md:h-6 md:w-29
+            .wordmark-image
+              @apply md:-left-6
       .post-title
         @apply invisible opacity-0 lg:visible lg:opacity-100 transition-all font-bold line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)] leading-5 -my-0.5 text-pretty break-keep
       :global(.menu)
         @apply relative before:mask-size-[24px] print:hidden size-9
       .logo, :global(.menu)
         @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:mask-(--svg-outline) before:mask-center before:mask-no-repeat dark:mask-(--svg-grade-down) mask-center mask-[size:36px] mask-no-repeat
+      .logo.home-logo
+        @apply md:mask-none
 </style>
