@@ -35,7 +35,7 @@ Adobe-KR-0의 한글 음절 2,780자와 일본 한자 640자를 지원합니다.
 
 ## 제작에 사용된 도구
 
-- [Glyphs](https://glyphsapp.com/)
+- [Glyphs 3](https://glyphsapp.com/)
 
 ## 다른 파생 폰트
 
