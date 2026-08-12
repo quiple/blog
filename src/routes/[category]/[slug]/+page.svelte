@@ -198,8 +198,10 @@
     {:else}
       <Tooltip.Provider>
         <Tooltip.Root>
-          <Tooltip.Trigger class="cursor-default">
-            <time datetime={`${publishedDate}+09:00`}>{formattedDate}</time>
+          <Tooltip.Trigger>
+            {#snippet child({props: {type, ...props}})}
+              <time {...props} class="cursor-default" datetime={`${publishedDate}+09:00`}>{formattedDate}</time>
+            {/snippet}
           </Tooltip.Trigger>
           <Tooltip.Content>{formattedDateTime}</Tooltip.Content>
         </Tooltip.Root>
