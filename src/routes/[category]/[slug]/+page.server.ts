@@ -31,7 +31,7 @@ import type {PageServerLoad} from './$types'
 const isProd = import.meta.env.PROD
 const imageSizeMap = imageSizes as Record<string, {width: number; height: number}>
 const widthClassRegex = /(^|\s)w-/
-const heightClassRegex = /\b(?:max-h-|h-)[^\s]+\b/g
+const maxHeightClassRegex = /\bmax-h-(\d+(?:\.\d+)?)\b/
 const IMAGE_WIDTHS = [343, 576, 672, 686, 1152, 1344]
 const DEFAULT_SIZES = '(min-width: 1536px) 672px, (min-width: calc(576px + 32px)) 576px, calc(100vw - 32px)'
 
@@ -264,8 +264,12 @@ function figure() {
 
         if (node.name === 'figure') {
           const hasWidthClass = widthClassRegex.test(className)
-          const heightClasses = className.match(heightClassRegex)?.join(' ') || ''
-          const hasHeightClass = Boolean(heightClasses)
+          const maxHeight = className.match(maxHeightClassRegex)?.[1]
+          const hasHeightClass = Boolean(maxHeight)
+          const constrainedWidth =
+            maxHeight && widthVal && heightVal
+              ? `min(100%, calc(var(--spacing, 0.25rem) * ${(Number(maxHeight) * Number(widthVal)) / Number(heightVal)}))`
+              : undefined
           const mdxImageClass = hasWidthClass
             ? 'not-prose block h-full w-full max-w-full object-cover'
             : `not-prose mx-auto block max-w-full ${hasHeightClass ? 'w-fit' : 'w-full'}`
@@ -276,9 +280,12 @@ function figure() {
             alt: attributes.alt ?? '',
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
-            className: cn('mx-auto self-center shadow-xs', mdxImageClass, className.replace(heightClassRegex, '')),
-            style: !hasWidthClass && !hasHeightClass && widthVal && heightVal ? `width: ${widthVal}px` : undefined,
-            imgClassName: hasWidthClass ? 'h-full w-full' : cn('h-auto max-w-full', heightClasses),
+            className: cn('mx-auto self-center shadow-xs', mdxImageClass, className),
+            style:
+              !hasWidthClass && widthVal && heightVal
+                ? `width: ${constrainedWidth ?? `${widthVal}px`}; max-width: 100%`
+                : undefined,
+            imgClassName: hasWidthClass || hasHeightClass ? 'h-full w-full' : 'h-auto max-h-full',
             loading: 'lazy',
             decoding: 'async',
           })
