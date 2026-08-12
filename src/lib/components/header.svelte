@@ -56,7 +56,7 @@
   let isH1Visible = $state(false)
   let actualHeaderClassName = $derived.by(() => {
     const sy = overrideScrollY ?? scrollY
-    if (hasHeroImage && sy < innerHeight / 2 - 42) return 'hero'
+    if (hasHeroImage && sy < (innerHeight / 3) * 2 - 42) return 'hero'
     if (!hasHeroImage && (isH1Visible || (isPostPage && sy === 0))) return 'title-hidden'
     return ''
   })
