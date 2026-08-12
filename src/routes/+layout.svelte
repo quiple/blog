@@ -65,7 +65,7 @@
     :global(.page-title)
       @apply mb-4 px-12 sm:mb-6 h-9 leading-9 text-center line-clamp-1 font-semibold text-lg
     :global(section)
-      @apply [.hero+&]:pt-[calc(50dvh-var(--header-height))] md:[.hero+&]:pt-[calc(50dvh-1.5rem)] print:[.hero+&]:pt-[calc(56.25vw-var(--header-height))] print:md:[.hero+&]:pt-[calc(56.25vw-1.5rem)]
+      @apply [.hero+&]:pt-[calc(100dvh/3*2-var(--header-height))] md:[.hero+&]:pt-[calc(100dvh/3*2-1.5rem)] print:[.hero+&]:pt-[calc(56.25vw-var(--header-height))] print:md:[.hero+&]:pt-[calc(56.25vw-1.5rem)]
       :global(article)
         @apply z-10 prose-shadcn max-w-xl 2xl:max-w-2xl w-full shrink-0
         :global(.metadata)
