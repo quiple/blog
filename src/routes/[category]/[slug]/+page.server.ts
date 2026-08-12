@@ -31,7 +31,7 @@ import type {PageServerLoad} from './$types'
 const isProd = import.meta.env.PROD
 const imageSizeMap = imageSizes as Record<string, {width: number; height: number}>
 const widthClassRegex = /(^|\s)w-/
-const maxHeightSpacingClassRegex = /(?:^|\s)max-h-(\d+(?:\.\d+)?)(?=\s|$)/
+const heightClassRegex = /\b(?:max-h-|h-)[^\s]+\b/g
 const IMAGE_WIDTHS = [343, 576, 672, 686, 1152, 1344]
 const DEFAULT_SIZES = '(min-width: 1536px) 672px, (min-width: calc(576px + 32px)) 576px, calc(100vw - 32px)'
 
@@ -64,18 +64,6 @@ function imageFrameStyle(width: unknown, height: unknown, style?: unknown) {
   ]
     .filter(Boolean)
     .join('; ')
-}
-
-function imageWidthFromMaxHeightClass(className: string, width: unknown, height: unknown) {
-  const match = className.match(maxHeightSpacingClassRegex)
-  const widthValue = Number(width)
-  const heightValue = Number(height)
-  const maxHeightSpacing = Number(match?.[1])
-
-  if (!match || !Number.isFinite(widthValue) || !Number.isFinite(heightValue) || heightValue <= 0) return
-
-  const widthSpacing = Number(((maxHeightSpacing * widthValue) / heightValue).toFixed(6))
-  return `calc(var(--spacing, 0.25rem) * ${widthSpacing})`
 }
 
 function imageFrameHtml({
@@ -273,31 +261,14 @@ function figure() {
         const heightAttr = heightVal ? `height="${heightVal}"` : ''
 
         let content = ''
-        let mediaStyle = ''
 
         if (node.name === 'figure') {
           const hasWidthClass = widthClassRegex.test(className)
-          const heightClasses = className?.match(/\b(max-h-|h-)[^\s]+\b/g)?.join(' ') || ''
+          const heightClasses = className.match(heightClassRegex)?.join(' ') || ''
           const hasHeightClass = Boolean(heightClasses)
-          if (widthVal && heightVal) {
-            const heightConstrainedWidth = imageWidthFromMaxHeightClass(className, widthVal, heightVal)
-            const responsiveHeightConstrainedWidth = heightConstrainedWidth
-              ? `min(100%, ${heightConstrainedWidth})`
-              : undefined
-            const maxWidth =
-              hasWidthClass || !hasHeightClass
-                ? '100%'
-                : (responsiveHeightConstrainedWidth ?? `min(100%, ${widthVal}px)`)
-            const widthStyle = hasWidthClass
-              ? ''
-              : hasHeightClass
-                ? ` width: ${responsiveHeightConstrainedWidth ?? 'fit-content'};`
-                : ` width: ${widthVal}px;`
-            mediaStyle = `max-width: ${maxWidth};${widthStyle}`
-          }
           const mdxImageClass = hasWidthClass
-            ? 'not-prose block h-full w-full object-cover'
-            : `not-prose block ${hasHeightClass ? 'w-fit' : 'w-full'} mx-auto max-h-full ${heightClasses}`
+            ? 'not-prose block h-full w-full max-w-full object-cover'
+            : `not-prose mx-auto block max-w-full ${hasHeightClass ? 'w-fit' : 'w-full'}`
           content = imageFrameHtml({
             src,
             srcset,
@@ -305,9 +276,9 @@ function figure() {
             alt: attributes.alt ?? '',
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
-            className: cn('mx-auto self-center shadow-xs', mdxImageClass.trim(), className),
-            style: mediaStyle || undefined,
-            imgClassName: hasWidthClass ? 'h-full w-full' : 'h-auto max-h-full',
+            className: cn('mx-auto self-center shadow-xs', mdxImageClass, className.replace(heightClassRegex, '')),
+            style: !hasWidthClass && !hasHeightClass && widthVal && heightVal ? `width: ${widthVal}px` : undefined,
+            imgClassName: hasWidthClass ? 'h-full w-full' : cn('h-auto max-w-full', heightClasses),
             loading: 'lazy',
             decoding: 'async',
           })
