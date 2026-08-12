@@ -19,8 +19,6 @@
   let query = $state('')
   let inputElement = $state<HTMLInputElement | null>(null)
   let menuOpen = $state(false)
-  let scrollY = $state(0)
-  let innerHeight = $state(1000)
   let fontFamilyMode = $state<'theme' | 'system'>('theme')
   let overrideTimer: ReturnType<typeof setTimeout> | undefined
 
@@ -53,11 +51,11 @@
   let navigatingFromNonPostToPost = $state(false)
   let lockedHeaderClassName = $state<string | null>(null)
 
-  let isH1Visible = $state(false)
+  let isH1Visible = $state(true)
+  let isHeroVisible = $state(true)
   let actualHeaderClassName = $derived.by(() => {
-    const sy = overrideScrollY ?? scrollY
-    if (hasHeroImage && sy < (innerHeight / 3) * 2 - 42) return 'hero'
-    if (!hasHeroImage && (isH1Visible || (isPostPage && sy === 0))) return 'title-hidden'
+    if (hasHeroImage && (isHeroVisible || overrideScrollY === 0)) return 'hero'
+    if (!hasHeroImage && isPostPage && (isH1Visible || overrideScrollY === 0)) return 'title-hidden'
     return ''
   })
   let headerClassName = $derived(lockedHeaderClassName ?? actualHeaderClassName)
@@ -77,6 +75,25 @@
   $effect(() => {
     const q = page.url.searchParams.get('q')
     query = q?.replaceAll('+', ' ') || ''
+  })
+
+  $effect(() => {
+    if (!isPostPage || !hasHeroImage) {
+      isHeroVisible = false
+      return
+    }
+
+    const hero = document.querySelector('.hero.bg')
+    if (!hero) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isHeroVisible = entry.isIntersecting
+      },
+      {rootMargin: '-42px 0px 0px 0px'},
+    )
+    observer.observe(hero)
+    return () => observer.disconnect()
   })
 
   $effect(() => {
@@ -122,38 +139,6 @@
   onMount(() => {
     const savedFontFamilyMode = localStorage.getItem(fontFamilyStorageKey)
     setFontFamilyMode(savedFontFamilyMode === 'system' ? 'system' : 'theme')
-  })
-
-  $effect(() => {
-    if (!isPostPage) {
-      scrollY = 0
-      return
-    }
-
-    let scrollFrame = 0
-
-    const updateScroll = () => {
-      if (scrollFrame) return
-      scrollFrame = requestAnimationFrame(() => {
-        scrollY = window.scrollY
-        scrollFrame = 0
-      })
-    }
-
-    const updateViewport = () => {
-      innerHeight = window.innerHeight
-      updateScroll()
-    }
-
-    updateViewport()
-    window.addEventListener('scroll', updateScroll, {passive: true})
-    if (hasHeroImage) window.addEventListener('resize', updateViewport, {passive: true})
-
-    return () => {
-      if (scrollFrame) cancelAnimationFrame(scrollFrame)
-      window.removeEventListener('scroll', updateScroll)
-      if (hasHeroImage) window.removeEventListener('resize', updateViewport)
-    }
   })
 
   onDestroy(() => clearTimeout(overrideTimer))

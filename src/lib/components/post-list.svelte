@@ -179,7 +179,7 @@
   @keyframes -global-zoom-out
     from
       opacity: var(--zoom-out-opacity)
-      height: calc(100dvh/3*2)
+      height: var(--hero-height)
     to
       opacity: calc(1 - var(--zoom-out-opacity))
       height: 5.5rem

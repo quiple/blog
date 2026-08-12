@@ -272,18 +272,18 @@
       height: 5.5rem
     to
       opacity: calc(1 - var(--zoom-in-opacity))
-      height: calc(100dvh/3*2)
+      height: var(--hero-height)
 
   @keyframes hero-parallax
     from
-      transform: translateY(0)
+      transform: translate3d(0, 0, 0)
     to
-      transform: translateY(25dvh)
+      transform: translate3d(0, 25svh, 0)
 
   .hero
     @apply inset-0 absolute! [print-color-adjust:exact]
     &.bg
-      @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-[calc(100dvh/3*2)] print:h-[56.25vw] overflow-hidden inner-b-border print:bg-center!
+      @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-(--hero-height) print:h-[56.25vw] overflow-hidden inner-b-border print:bg-center!
       .hero-image-inner
         @apply absolute inset-0 w-full h-full bg-cover -z-10
         background-image: var(--image-desktop), var(--thumbnail-image)
@@ -295,12 +295,12 @@
           will-change: transform
           animation: hero-parallax linear both
           animation-timeline: scroll(root)
-          animation-range: 0 calc(100dvh/3*2)
+          animation-range: 0 var(--hero-height)
         @media (prefers-reduced-motion: reduce)
           animation: none
           will-change: auto
     &.title
-      @apply justify-center items-end flex z-10 h-[calc(100dvh/3*2-var(--header-height))] print:h-[calc(56.25vw-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-[calc(100dvh/3*2)] print:md:h-[56.25vw] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
+      @apply justify-center items-end flex z-10 h-[calc(var(--hero-height)-var(--header-height))] print:h-[calc(56.25vw-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-(--hero-height) print:md:h-[56.25vw] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
       & > div
         @apply w-full prose-shadcn mx-auto [--tw-prose-headings:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)] [--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-body:var(--hero-foreground)] md:-translate-x-[calc(var(--scrollbar-width)/2)] pr-(--scrollbar-width) md:pr-0
         .metadata
