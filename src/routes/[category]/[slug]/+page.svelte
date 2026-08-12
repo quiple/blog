@@ -315,7 +315,7 @@
         @apply content-(--content) absolute -z-1 pr-4 sm:pr-8 md:pr-0
         -webkit-text-stroke: 6px var(--outline-color)
       &.line .metadata::before
-        @apply content-(--content) absolute -z-1
+        @apply content-(--content) absolute -z-1 pr-4 sm:pr-8 md:pr-0
         -webkit-text-stroke: 6px var(--outline-color)
   :global(.mdx-image-frame)
     @apply relative block overflow-hidden rounded-lg
