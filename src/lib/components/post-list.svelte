@@ -40,8 +40,8 @@
           ::view-transition-group(post-title-${slug}),
           ::view-transition-group(post-category-${slug}),
           ::view-transition-group(post-metadata-${slug}) { z-index: 10; }
-          ::view-transition-old(post-image-${slug}) { animation-name: zoom-out-old; }
-          ::view-transition-new(post-image-${slug}) { animation-name: zoom-out-new; }
+          ::view-transition-old(post-image-${slug}) { --zoom-out-opacity: 1; animation-name: zoom-out; }
+          ::view-transition-new(post-image-${slug}) { --zoom-out-opacity: 0; animation-name: zoom-out; }
         `,
       )
       .join('')
@@ -176,19 +176,11 @@
       > img
         @apply rounded-[inherit] inner-border
 
-  @keyframes -global-zoom-out-old
+  @keyframes -global-zoom-out
     from
-      opacity: 1
+      opacity: var(--zoom-out-opacity)
       height: calc(100dvh/3*2)
     to
-      opacity: 0
-      height: 5.5rem
-
-  @keyframes -global-zoom-out-new
-    from
-      opacity: 0
-      height: calc(100dvh/3*2)
-    to
-      opacity: 1
+      opacity: calc(1 - var(--zoom-out-opacity))
       height: 5.5rem
 </style>
