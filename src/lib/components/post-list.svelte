@@ -128,7 +128,7 @@
             <div class="grow">
               <div class="mb-1 flex items-center gap-1">
                 <div class="-ml-px flex shrink-0 items-center" use:transition={postTransition(post.slug, 'category')}>
-                  <Badge variant="secondary" class="badge-item">{getCategoryName(post.category)}</Badge>
+                  <Badge variant="secondary" class="bg-zinc-950/5">{getCategoryName(post.category)}</Badge>
                 </div>
                 <strong class="line-clamp-1 grow" use:transition={postTransition(post.slug, 'title')}
                   >{post.title}</strong
@@ -170,7 +170,7 @@
   @reference '#app.css'
 
   .list-item
-    @apply flex flex-col before:rounded-[1rem] py-2 pl-3.25 -ml-3.25 pr-2 -mr-2 rounded-[1rem] hover-bg-muted hover:[&_.badge-item]:border-border
+    @apply flex flex-col before:rounded-[1rem] py-2 pl-3.25 -ml-3.25 pr-2 -mr-2 rounded-[1rem] hover-bg-muted
     .img
       @apply relative shrink-0 size-22 overflow-hidden bg-cover bg-center rounded-md shadow-xs
       > img
