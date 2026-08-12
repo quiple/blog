@@ -179,7 +179,7 @@
   @keyframes -global-zoom-out-old
     from
       opacity: 1
-      height: 50vh
+      height: 50dvh
     to
       opacity: 0
       height: 5.5rem
@@ -187,7 +187,7 @@
   @keyframes -global-zoom-out-new
     from
       opacity: 0
-      height: 50vh
+      height: 50dvh
     to
       opacity: 1
       height: 5.5rem

@@ -61,11 +61,11 @@
   :root
     @apply [--header-height:68px] sm:[--header-height:84px]
   main
-    @apply px-4 sm:px-6 min-h-[calc(100vh-var(--header-height)-var(--footer-height))] pb-6 md:-mt-(--header-height) md:pt-6
+    @apply px-4 sm:px-6 min-h-[calc(100dvh-var(--header-height)-var(--footer-height))] pb-6 md:-mt-(--header-height) md:pt-6
     :global(.page-title)
       @apply mb-4 px-12 sm:mb-6 h-9 leading-9 text-center line-clamp-1 font-semibold text-lg
     :global(section)
-      @apply [.hero+&]:pt-[calc(50vh-var(--header-height))] md:[.hero+&]:pt-[calc(50vh-1.5rem)] print:[.hero+&]:pt-[calc(56.25vw-var(--header-height))] print:md:[.hero+&]:pt-[calc(56.25vw-1.5rem)]
+      @apply [.hero+&]:pt-[calc(50dvh-var(--header-height))] md:[.hero+&]:pt-[calc(50dvh-1.5rem)] print:[.hero+&]:pt-[calc(56.25vw-var(--header-height))] print:md:[.hero+&]:pt-[calc(56.25vw-1.5rem)]
       :global(article)
         @apply z-10 prose-shadcn max-w-xl 2xl:max-w-2xl w-full shrink-0
         :global(.metadata)

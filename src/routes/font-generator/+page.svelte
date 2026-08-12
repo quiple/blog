@@ -429,7 +429,7 @@
                 <Select.Trigger class="w-full" id="font">
                   {fontTriggerContent}
                 </Select.Trigger>
-                <Select.Content class="max-h-[calc(100vh-var(--header-height)-5rem)]">
+                <Select.Content class="max-h-[calc(100dvh-var(--header-height)-5rem)]">
                   {#each fontGroups as group}
                     <Select.Group>
                       <Select.Label>{group.label}</Select.Label>
@@ -449,7 +449,7 @@
               <Label for="charset">문자 집합</Label>
               <Select.Root type="single" name="charset" bind:value={charsetKey}>
                 <Select.Trigger class="w-full" id="charset">{charsetTriggerContent}</Select.Trigger>
-                <Select.Content class="max-h-[calc(100vh-var(--header-height)-9.25rem)]">
+                <Select.Content class="max-h-[calc(100dvh-var(--header-height)-9.25rem)]">
                   {#each charsetGroups as [groupName, entries]}
                     <Select.Group>
                       <Select.Label>{groupName}</Select.Label>
@@ -677,7 +677,7 @@
     @apply flex flex-col lg:flex-row items-start gap-4
 
   .preview-area
-    @apply block flex-1 w-full min-h-40 bg-muted/50 rounded-lg h-[calc(100vh-3rem)] overflow-hidden lg:sticky top-6
+    @apply block flex-1 w-full min-h-40 bg-muted/50 rounded-lg h-[calc(100dvh-3rem)] overflow-hidden lg:sticky top-6
     .placeholder
       @apply absolute inset-0 text-sm text-muted-foreground p-6 flex items-center justify-center text-center pointer-events-none
     .canvas-wrapper
