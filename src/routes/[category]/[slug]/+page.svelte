@@ -308,14 +308,14 @@
       & > div
         @apply w-full prose-shadcn mx-auto [--tw-prose-headings:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)] [--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-body:var(--hero-foreground)] md:-translate-x-[calc(var(--scrollbar-width)/2)] pr-(--scrollbar-width) md:pr-0
         .metadata
-          @apply text-sm mb-5 inline-block
+          @apply relative text-sm mb-5 inline-block
           a
             @apply font-normal text-(--hero-foreground)! no-underline
       &.line h1::before
         @apply content-(--content) absolute -z-1 pr-4 sm:pr-8 md:pr-0
         -webkit-text-stroke: 6px var(--outline-color)
       &.line .metadata::before
-        @apply content-(--content) absolute -z-1 pr-4 sm:pr-8 md:pr-0
+        @apply content-(--content) absolute inset-0 -z-1
         -webkit-text-stroke: 6px var(--outline-color)
   :global(.mdx-image-frame)
     @apply relative block overflow-hidden rounded-lg
