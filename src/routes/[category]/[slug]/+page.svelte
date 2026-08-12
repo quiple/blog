@@ -97,10 +97,12 @@
         z-index: 10;
       }
       ::view-transition-old(post-image-${data.slug}) {
-        animation-name: zoom-in-old;
+        --zoom-in-opacity: 1;
+        animation-name: zoom-in;
       }
       ::view-transition-new(post-image-${data.slug}) {
-        animation-name: zoom-in-new;
+        --zoom-in-opacity: 0;
+        animation-name: zoom-in;
       }
     </style>
   `)
@@ -264,20 +266,12 @@
 <style lang="sass">
   @reference '#app.css'
 
-  @keyframes -global-zoom-in-old
+  @keyframes -global-zoom-in
     from
-      opacity: 1
+      opacity: var(--zoom-in-opacity)
       height: 5.5rem
     to
-      opacity: 0
-      height: calc(100dvh/3*2)
-
-  @keyframes -global-zoom-in-new
-    from
-      opacity: 0
-      height: 5.5rem
-    to
-      opacity: 1
+      opacity: calc(1 - var(--zoom-in-opacity))
       height: calc(100dvh/3*2)
 
   @keyframes hero-parallax
