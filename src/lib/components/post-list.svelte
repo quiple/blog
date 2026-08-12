@@ -128,7 +128,9 @@
             <div class="grow">
               <div class="mb-1 flex items-center gap-1">
                 <div class="-ml-px flex shrink-0 items-center" use:transition={postTransition(post.slug, 'category')}>
-                  <Badge variant="secondary" class="bg-zinc-950/5">{getCategoryName(post.category)}</Badge>
+                  <Badge variant="secondary" class="bg-zinc-950/5 dark:bg-zinc-50/9"
+                    >{getCategoryName(post.category)}</Badge
+                  >
                 </div>
                 <strong class="line-clamp-1 grow" use:transition={postTransition(post.slug, 'title')}
                   >{post.title}</strong
