@@ -61,7 +61,7 @@
     "sharp-cli": "^5.2.0",
     "strip-markdown": "^6.0.0",
     "svelte": "^5.56.9",
-    "svelte-check": "^4.7.5",
+    "svelte-check": "^4.7.6",
     "svelte-sonner": "^1.1.1",
     "svelte-toc": "^0.7.0",
     "sveltekit-view-transition": "^0.5.3",
@@ -73,7 +73,7 @@
     "unist-util-visit": "^5.1.0",
     "valibot": "^1.4.2",
     "vite": "^8.2.1",
-    "wrangler": "^4.122.0"
+    "wrangler": "^4.123.0"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,cjs}": "pnpm lint",
