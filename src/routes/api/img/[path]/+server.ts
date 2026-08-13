@@ -1,4 +1,5 @@
 import {error} from '@sveltejs/kit'
+import {dev} from '$app/environment'
 import {getAllBlogContentMetadata} from '$lib/content'
 import type {RequestHandler} from './$types'
 
@@ -45,7 +46,7 @@ function assertSafeImagePath(path: string, origin: string) {
   return imageUrl
 }
 
-export const GET: RequestHandler = async ({params, url}) => {
+export const GET: RequestHandler = async ({params, url, platform}) => {
   const {path} = params
   if (!path) throw error(400, 'Missing path')
 
@@ -58,7 +59,23 @@ export const GET: RequestHandler = async ({params, url}) => {
 
   if (isOriginal) {
     if (!originalImagePaths.has(decodedPath)) throw error(403, 'Original image access denied')
-    return globalThis.fetch(imageUrl, {headers})
+
+    if (dev) {
+      return globalThis.fetch(new URL(imageUrl.pathname, 'https://quiple.dev'), {headers})
+    }
+
+    const bucket = platform?.env.R2
+    if (!bucket) throw error(500, 'R2 bucket not available')
+
+    const object = await bucket.get(`img/${decodedPath}`)
+    if (!object) throw error(404, 'Not found')
+
+    const responseHeaders = new Headers()
+    object.writeHttpMetadata(responseHeaders)
+    responseHeaders.set('Cache-Control', 'public, max-age=31536000, immutable')
+    responseHeaders.set('ETag', object.httpEtag)
+
+    return new Response(object.body as ReadableStream, {headers: responseHeaders})
   }
 
   const width = url.searchParams.get('w') || '1280'
