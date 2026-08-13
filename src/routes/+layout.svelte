@@ -41,11 +41,6 @@
   <link rel="preload" href={astaSansUrl} as="font" type="font/woff2" crossorigin="anonymous" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:site_name" content="quiple" />
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7072683555331245"
-    crossorigin="anonymous"
-  ></script>
 </svelte:head>
 
 <ModeWatcher />
