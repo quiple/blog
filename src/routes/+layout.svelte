@@ -5,6 +5,7 @@
   import {browser} from '$app/environment'
   import {onNavigate} from '$app/navigation'
   import appleTouchIcon from '$lib/assets/apple-touch-icon.png'
+  import astaSansUrl from '@quiple/blog-fonts/fonts/AstaSans.woff2?url'
   import favicon32 from '$lib/assets/favicon.png'
   import favicon from '$lib/assets/favicon.svg'
   import Header from '$lib/components/header.svelte'
@@ -37,7 +38,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
   <link rel="icon" type="image/svg+xml" sizes="any" href={favicon} />
   <link rel="apple-touch-icon" type="image/png" href={appleTouchIcon} />
-  <link rel="preload" href="/fonts/AstaSans.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" href={astaSansUrl} as="font" type="font/woff2" crossorigin="anonymous" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:site_name" content="quiple" />
   <script
