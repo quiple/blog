@@ -32,8 +32,7 @@ export function getImageUrl(
 ) {
   const baseUrl = options.absolute ? 'https://quiple.dev' : ''
 
-  if (options.original) return `${baseUrl}/img/${path}`
-  if (!isProd) return `${baseUrl}/img/${path}`
+  if (!isProd && !options.original) return `${baseUrl}/img/${path}`
 
   // Base64 encode and make it URL safe
   const b64 = typeof btoa !== 'undefined' ? btoa(path) : Buffer.from(path).toString('base64')
@@ -41,6 +40,7 @@ export function getImageUrl(
 
   // Build query string without URLSearchParams allocation
   const parts: string[] = []
+  if (options.original) parts.push('original=true')
   if (options.w) parts.push(`w=${options.w}`)
   if (options.h) parts.push(`h=${options.h}`)
   if (options.q) parts.push(`q=${options.q}`)
