@@ -683,6 +683,7 @@
     .canvas-wrapper
       @apply flex items-center justify-center min-w-full min-h-full w-max h-max p-6 [&.hidden]:hidden
       .preview-canvas
+        image-rendering: pixelated
         image-rendering: crisp-edges
 
   .sidebar

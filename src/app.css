@@ -251,6 +251,11 @@
   @apply relative overflow-hidden after:absolute after:inset-0 after:inset-shadow-[0_-1px_0_0] after:inset-shadow-foreground/13 dark:after:inset-shadow-foreground/10.5;
 }
 
+@utility pixel-image {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
 @utility hover-bg-muted {
   @apply relative before:absolute before:inset-0 before:-z-1 before:scale-95 before:bg-muted before:opacity-0 before:transition hover:before:scale-100 hover:before:opacity-100;
 }

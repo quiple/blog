@@ -40,6 +40,7 @@ const baseMetadataFields = {
   title: trimmedString,
   description: optionalTrimmedString,
   image: optionalTrimmedString,
+  imageType: v.optional(v.literal('pixel')),
   originalImage: optionalTrimmedString,
   imageVerticalAlign: v.optional(v.pipe(v.number())),
   thumbnail: optionalTrimmedString,

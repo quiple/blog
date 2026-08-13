@@ -1,6 +1,7 @@
 ---
 title: x12y12pxMaruMinyaHangul
 image: font/x12y12pxMaruMinyaHangul.png
+imageType: pixel
 pubDate: 2026-02-27T01:09
 ---
 

@@ -23,12 +23,23 @@
   const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
   const isArticle = $derived(data.category === 'article')
   const isFont = $derived(data.category === 'font')
+  const isPixelImage = $derived(data.imageType === 'pixel')
 
-  const imageMobile = $derived(data.image ? getImageUrl(data.image, {w: 1280}, isProd) : '')
-  const imageDesktop = $derived(data.image ? getImageUrl(data.image, {w: 2560}, isProd) : '')
-  const image4K = $derived(data.image ? getImageUrl(data.image, {w: 3840}, isProd) : '')
-  const thumbnail1x = $derived(data.image ? getImageUrl(data.image, {h: 88}, isProd) : '')
-  const thumbnail2x = $derived(data.image ? getImageUrl(data.image, {h: 176}, isProd) : '')
+  const imageMobile = $derived(
+    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 1280}, isProd) : '',
+  )
+  const imageDesktop = $derived(
+    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 2560}, isProd) : '',
+  )
+  const image4K = $derived(
+    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 3840}, isProd) : '',
+  )
+  const thumbnail1x = $derived(
+    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 88}, isProd) : '',
+  )
+  const thumbnail2x = $derived(
+    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 176}, isProd) : '',
+  )
   const thumbnailImage = $derived(
     `image-set(url('${thumbnail1x}') 1x, url('${thumbnail2x}') 2x), -webkit-image-set(url('${thumbnail1x}') 1x, url('${thumbnail2x}') 2x)`,
   )
@@ -215,7 +226,7 @@
 {#if imageMobile}
   <div class="hero bg" use:transition={`post-image-${data.slug}`}>
     <div
-      class="hero-image-inner"
+      class={['hero-image-inner', isPixelImage && 'pixel-image']}
       style:--image-mobile={`url('${imageMobile}')`}
       style:--image-desktop={`url('${imageDesktop}')`}
       style:--image-4k={`url('${image4K}')`}

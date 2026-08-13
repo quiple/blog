@@ -139,15 +139,19 @@
               <p class="mb-1 line-clamp-3 text-justify text-sm">{post.description}</p>
             </div>
             {#if post.image}
-              {@const src1x = getImageUrl(post.image, {h: 88}, isProd)}
-              {@const src2x = getImageUrl(post.image, {h: 176}, isProd)}
+              {@const isPixelImage = post.imageType === 'pixel'}
+              {@const src1x = getImageUrl(post.image, isPixelImage ? {original: true} : {h: 88}, isProd)}
+              {@const src2x = getImageUrl(post.image, isPixelImage ? {original: true} : {h: 176}, isProd)}
               <div class="img animate-pulse bg-muted" use:transition={postTransition(post.slug, 'image')}>
                 <img
                   alt=""
-                  class="absolute inset-0 size-full object-cover opacity-0 transition-opacity"
+                  class={[
+                    'absolute inset-0 size-full object-cover opacity-0 transition-opacity',
+                    isPixelImage && 'pixel-image',
+                  ]}
                   src={src1x}
                   use:lazyImage={src1x}
-                  srcset={`${src1x} 1x, ${src2x} 2x`}
+                  srcset={isPixelImage ? undefined : `${src1x} 1x, ${src2x} 2x`}
                   loading="lazy"
                   decoding="async"
                 />
