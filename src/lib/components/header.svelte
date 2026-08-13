@@ -163,22 +163,22 @@
         style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}"); --wordmark: url("${wordmark}"); --wordmark-grade-down: url("${wordmarkGradeDown}")`}
       >
         <span class="logo-symbol" use:transition={'header-logo-symbol'}>
-          <Q class="q-logo size-full dark:hidden" />
+          <Q class="q-logo size-full" />
           <span
-            class="q-logo-grade-down absolute inset-0 hidden bg-current mask-(--svg-grade-down) mask-contain mask-center mask-no-repeat dark:block"
+            class="q-logo-grade-down absolute inset-0 hidden bg-current mask-(--svg-grade-down) mask-contain mask-center mask-no-repeat"
             aria-hidden="true"
           ></span>
           {#if isHomePage}
             <span class="wordmark-symbol" aria-hidden="true">
-              <span class="wordmark-image wordmark-light dark:hidden"></span>
-              <span class="wordmark-image wordmark-grade-down hidden dark:block"></span>
+              <span class="wordmark-image wordmark-light"></span>
+              <span class="wordmark-image wordmark-grade-down hidden"></span>
             </span>
           {/if}
         </span>
         {#if isHomePage}
           <span class="wordmark-rest" aria-hidden="true" use:transition={'header-wordmark-rest'}>
-            <span class="wordmark-image wordmark-light dark:hidden"></span>
-            <span class="wordmark-image wordmark-grade-down hidden dark:block"></span>
+            <span class="wordmark-image wordmark-light"></span>
+            <span class="wordmark-image wordmark-grade-down hidden"></span>
           </span>
         {/if}
       </a>
@@ -290,6 +290,10 @@
       :global(.q-logo)
         @apply hidden
       .q-logo-grade-down
+        @apply block
+      .wordmark-light
+        @apply hidden
+      .wordmark-grade-down
         @apply block
     &.hero
       .logo
