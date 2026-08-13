@@ -59,7 +59,7 @@
     return ''
   })
   let headerClassName = $derived(lockedHeaderClassName ?? actualHeaderClassName)
-  let usesGradeDownLogo = $derived(
+  let usesHeroGradeDownLogo = $derived(
     headerClassName === 'hero' &&
       (heroForeground?.toLowerCase() === '#fff' || heroForeground?.toLowerCase() === '#ffffff'),
   )
@@ -148,7 +148,7 @@
 
 <header
   class={headerClassName}
-  class:grade-down-logo={usesGradeDownLogo}
+  class:grade-down-logo={usesHeroGradeDownLogo}
   use:transition={'header'}
   style:--hero-foreground={heroForeground ?? undefined}
   style:--outline-color={heroOutline ?? undefined}
@@ -286,7 +286,7 @@
         @apply before:opacity-100
       .post-title
         @apply lg:invisible lg:opacity-0
-    &.grade-down-logo
+    &.grade-down-logo, :global(.dark) &:not(.hero)
       :global(.q-logo)
         @apply hidden
       .q-logo-grade-down
