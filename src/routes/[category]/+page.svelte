@@ -44,7 +44,7 @@
 <PageTitle>{data.categoryName}</PageTitle>
 
 <div class="relative z-10 mx-auto max-w-xl 2xl:max-w-2xl">
-  <PostList posts={data.posts} {isPagination} {transition} />
+  <PostList posts={data.posts} {isPagination} {transition} showCategory={false} />
 
   <PostPagination
     totalPages={data.totalPages}
