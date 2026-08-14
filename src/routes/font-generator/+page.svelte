@@ -4,6 +4,7 @@
   import {toast} from 'svelte-sonner'
   import {getCharset, getCharsetGroups} from '$lib/charsets'
   import {Button} from '$lib/components/ui/button'
+  import PageTitle from '$lib/components/page-title.svelte'
   import * as Card from '$lib/components/ui/card/index.js'
   import HexColorInput from '$lib/components/hex-color-input.svelte'
   import {Input} from '$lib/components/ui/input'
@@ -389,7 +390,7 @@
 
 <Toaster />
 
-<h1 class="page-title">비트맵 폰트 이미지 생성기</h1>
+<PageTitle>비트맵 폰트 이미지 생성기</PageTitle>
 
 <div class="generator">
   <!-- ── Canvas preview area ──────────────────────────────────────── -->

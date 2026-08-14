@@ -1,9 +1,13 @@
+<script lang="ts">
+  import PageTitle from '$lib/components/page-title.svelte'
+</script>
+
 <svelte:head>
   <title>폰트 섞어쓰기 테스트</title>
   <meta name="robots" content="noindex" />
 </svelte:head>
 
-<h1 class="page-title">폰트 섞어쓰기 테스트</h1>
+<PageTitle>폰트 섞어쓰기 테스트</PageTitle>
 
 <h2 class="text-9xl" style="font-weight: 375">한0O아123요.</h2>
 <h2 class="text-9xl" style="font-weight: 500">한0O아123요.</h2>

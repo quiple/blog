@@ -1,5 +1,6 @@
 <script lang="ts">
   import {ExternalLink} from '@lucide/svelte'
+  import PageTitle from '$lib/components/page-title.svelte'
   import {Badge} from '$lib/components/ui/badge'
   import * as Card from '$lib/components/ui/card'
 
@@ -200,7 +201,7 @@
   </a>
 {/snippet}
 
-<h1 class="page-title mb-8 text-3xl font-bold tracking-tight">Works</h1>
+<PageTitle class="mb-8 text-3xl font-bold tracking-tight">Works</PageTitle>
 
 <section class="container-x mb-4">
   <div class="mb-12">

@@ -2,12 +2,12 @@ export interface NavigationLike {
   from?: {
     route?: {id: string | null}
     url?: URL | null
-    params?: {slug?: string} | null
+    params?: {category?: string; slug?: string} | null
   } | null
   to?: {
     route?: {id: string | null}
     url?: URL | null
-    params?: {slug?: string} | null
+    params?: {category?: string; slug?: string} | null
   } | null
 }
 
