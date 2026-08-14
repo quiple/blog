@@ -38,8 +38,9 @@
 
   const isPostPath = (pathname: string) =>
     pathname.startsWith('/blog/') || pathname.startsWith('/article/') || pathname.startsWith('/font/')
+  const categoryPaths = new Set(['/blog', '/article', '/font'])
 
-  let isHomePage = $derived(page.url.pathname === '/')
+  let usesWordmarkLogo = $derived(page.url.pathname === '/' || categoryPaths.has(page.url.pathname))
   let isPostPage = $derived(isPostPath(page.url.pathname))
   let overrideScrollY = $state<number | null>(null)
   let hasHeroImage = $derived(isPostPage && !!page.data?.image)
@@ -157,7 +158,7 @@
     <div class="flex w-full items-center gap-4">
       <a
         href="/"
-        class:home-logo={isHomePage}
+        class:wordmark-logo={usesWordmarkLogo}
         class="logo"
         aria-label="홈"
         style={`--svg-outline: url("${svgOutline}"); --svg-grade-down: url("${svgGradeDown}"); --wordmark: url("${wordmark}"); --wordmark-grade-down: url("${wordmarkGradeDown}")`}
@@ -168,14 +169,14 @@
             class="q-logo-grade-down absolute inset-0 hidden bg-current mask-(--svg-grade-down) mask-contain mask-center mask-no-repeat"
             aria-hidden="true"
           ></span>
-          {#if isHomePage}
+          {#if usesWordmarkLogo}
             <span class="wordmark-symbol" aria-hidden="true">
               <span class="wordmark-image wordmark-light"></span>
               <span class="wordmark-image wordmark-grade-down hidden"></span>
             </span>
           {/if}
         </span>
-        {#if isHomePage}
+        {#if usesWordmarkLogo}
           <span class="wordmark-rest" aria-hidden="true" use:transition={'header-wordmark-rest'}>
             <span class="wordmark-image wordmark-light"></span>
             <span class="wordmark-image wordmark-grade-down hidden"></span>
@@ -312,7 +313,7 @@
           @apply bg-current mask-(--wordmark) mask-size-[210px_36px] mask-top-left mask-no-repeat
         .wordmark-grade-down
           @apply bg-current mask-(--wordmark-grade-down) mask-size-[210px_36px] mask-top-left mask-no-repeat
-        &.home-logo
+        &.wordmark-logo
           @apply xl:gap-0
           .logo-symbol
             @apply xl:size-9
