@@ -241,7 +241,9 @@
   >
     <div>
       <div class="mb-1.25 inline-block" use:transition={`post-category-${data.slug}`}>
-        <Badge href={`/${data.category}`} variant="secondary">{getCategoryName(data.category)}</Badge>
+        <Badge href={`/${data.category}`} class="no-underline!" variant="secondary"
+          >{getCategoryName(data.category)}</Badge
+        >
       </div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
         {data.title}
@@ -256,7 +258,9 @@
   <article>
     {#if !imageMobile}
       <div class="mb-1.25 inline-block" use:transition={`post-category-${data.slug}`}>
-        <Badge href={`/${data.category}`} variant="secondary">{getCategoryName(data.category)}</Badge>
+        <Badge href={`/${data.category}`} class="no-underline!" variant="secondary"
+          >{getCategoryName(data.category)}</Badge
+        >
       </div>
       <h1 class="mb-2!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
       {@render metadata()}
