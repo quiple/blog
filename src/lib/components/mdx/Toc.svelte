@@ -1,6 +1,6 @@
 <script lang="ts">
   import {onMount} from 'svelte'
-  import {TextAlignStart} from '@lucide/svelte'
+  import TextAlignStartIcon from '@lucide/svelte/icons/text-align-start'
   import {afterNavigate, pushState} from '$app/navigation'
 
   let {selector = 'article', title = '목차'} = $props<{selector?: string; title?: string}>()
@@ -229,7 +229,7 @@
 {#if shouldRender && headings.length > 0}
   <div class="toc" style="top: var(--header-height, 4rem);">
     <div class="mb-4 flex flex-wrap items-center text-sm font-semibold text-muted-foreground">
-      <TextAlignStart class="mr-1.5 inline-block size-4" />
+      <TextAlignStartIcon class="mr-1.5 inline-block size-4" />
       {title}
     </div>
     <div class="relative" bind:this={tocContainer}>
