@@ -50,7 +50,13 @@
     let cancelled = false
     const reveal = async () => {
       if (animate) {
-        await document.activeViewTransition?.finished.catch(() => {})
+        const viewTransition = document.activeViewTransition
+        try {
+          await node.decode()
+        } catch {
+          if (!node.complete || node.naturalWidth === 0) return
+        }
+        await viewTransition?.finished.catch(() => {})
         await nextFrame()
         await nextFrame()
       }
@@ -58,15 +64,11 @@
       node.classList.remove('opacity-0')
       node.classList.add('opacity-100')
     }
-    const handleLoad = () => void reveal()
-
-    if (node.complete && node.naturalWidth > 0) handleLoad()
-    else node.addEventListener('load', handleLoad, {once: true})
+    void reveal()
 
     return {
       destroy() {
         cancelled = true
-        node.removeEventListener('load', handleLoad)
       },
     }
   }
