@@ -34,14 +34,8 @@
   const image4K = $derived(
     data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 3840}, isProd) : '',
   )
-  const thumbnail1x = $derived(
-    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 88}, isProd) : '',
-  )
-  const thumbnail2x = $derived(
-    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 176}, isProd) : '',
-  )
-  const thumbnailImage = $derived(
-    `image-set(url('${thumbnail1x}') 1x, url('${thumbnail2x}') 2x), -webkit-image-set(url('${thumbnail1x}') 1x, url('${thumbnail2x}') 2x)`,
+  const heroSrcset = $derived(
+    isPixelImage ? undefined : `${imageMobile} 1280w, ${imageDesktop} 2560w, ${image4K} 3840w`,
   )
   const ogImageUrl = $derived(absoluteUrl(`/api/og/${data.category}/${data.slug}.png`))
   const articleImageUrl = $derived(imageDesktop ? absoluteUrl(imageDesktop) : ogImageUrl)
@@ -225,14 +219,21 @@
 
 {#if imageMobile}
   <div class="hero bg" use:transition={`post-image-${data.slug}`}>
-    <div
-      class={['hero-image-inner', isPixelImage && 'pixel-image']}
-      style:--image-mobile={`url('${imageMobile}')`}
-      style:--image-desktop={`url('${imageDesktop}')`}
-      style:--image-4k={`url('${image4K}')`}
-      style:--thumbnail-image={thumbnailImage}
-      style:background-position={`center ${data.imageVerticalAlign ?? 50}%`}
-    ></div>
+    <div class="hero-image-inner">
+      <img
+        class:pixel-image={isPixelImage}
+        src={imageDesktop}
+        srcset={heroSrcset}
+        sizes={heroSrcset ? '100vw' : undefined}
+        alt=""
+        aria-hidden="true"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        draggable="false"
+        style:object-position={`center ${data.imageVerticalAlign ?? 50}%`}
+      />
+    </div>
   </div>
   <div
     class={['hero title', data.outline && 'line']}
@@ -298,14 +299,9 @@
   .hero
     @apply inset-0 absolute! [print-color-adjust:exact]
     &.bg
-      @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-(--hero-height) print:h-[56.25vw] overflow-hidden inner-b-border print:bg-center!
+      @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-(--hero-height) print:h-[56.25vw] overflow-hidden inner-b-border
       .hero-image-inner
-        @apply absolute inset-0 w-full h-full bg-cover -z-10
-        background-image: var(--image-desktop), var(--thumbnail-image)
-        @media (max-width: 1024px)
-          background-image: var(--image-mobile), var(--thumbnail-image)
-        @media (min-width: 2560px)
-          background-image: var(--image-4k), var(--thumbnail-image)
+        @apply absolute inset-0 w-full h-full -z-10
         @supports (animation-timeline: scroll())
           will-change: transform
           animation: hero-parallax linear both
@@ -314,6 +310,8 @@
         @media (prefers-reduced-motion: reduce)
           animation: none
           will-change: auto
+        img
+          @apply block size-full object-cover
     &.title
       @apply justify-center items-end flex z-10 h-[calc(var(--hero-height)-var(--header-height))] print:h-[calc(56.25vw-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-(--hero-height) print:md:h-[56.25vw] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
       & > div
