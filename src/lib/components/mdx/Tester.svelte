@@ -5,6 +5,8 @@
   import * as Select from '$lib/components/ui/select/index.js'
   import {Slider} from '$lib/components/ui/slider/index.js'
   import {Textarea} from '$lib/components/ui/textarea/index.js'
+  import ALargeSmallIcon from '@lucide/svelte/icons/a-large-small'
+  import ListChevronsUpDownIcon from '@lucide/svelte/icons/list-chevrons-up-down'
 
   let {font}: {font?: string} = $props()
   let selectedFontValue = $state('g11')
@@ -232,6 +234,9 @@
 <div class="grid w-full print:gap-1.5">
   <div class="flex gap-2">
     <Label for="tester">사용해 보기</Label>
+    <Button variant="ghost" size="icon-sm" onclick={shuffle} class="-mx-1.5">
+      <Shuffle />
+    </Button>
     {#if font === 'galmuri'}
       <Select.Root type="single" name="favoriteFruit" bind:value={selectedFontValue}>
         <Select.Trigger size="sm">
@@ -250,7 +255,10 @@
     {/if}
   </div>
   <div class="flex items-center gap-1.5 tabular-nums print:hidden">
-    <Label for="font-size" class="text-muted-foreground">{previewFontSize}px</Label>
+    <Label for="font-size" class="gap-1 text-muted-foreground">
+      <ALargeSmallIcon class="size-4" />
+      {previewFontSize}px
+    </Label>
     <Slider
       id="font-size"
       type="single"
@@ -259,13 +267,10 @@
       max={previewFontSizeMax}
       step={fontSize}
     />
-    <Button variant="ghost" size="icon-sm" onclick={shuffle} class="-mx-1.5">
-      <Shuffle />
-    </Button>
   </div>
   <Textarea
     id="tester"
-    class="pt-[calc(1em/12*4)] pr-[calc(1em/12*3)] pb-[calc(1em/12*3)] pl-[calc(1em/12*4)] leading-none"
+    class="mt-2 pt-[calc(1em/12*4)] pr-[calc(1em/12*3)] pb-[calc(1em/12*3)] pl-[calc(1em/12*4)] leading-none"
     style="font-size: {previewFontSize}px; font-family: {fontProps.family}; font-weight: {fontProps.weight}; font-stretch: {fontProps.stretch}"
     spellcheck="false"
     bind:value={exampleText}
