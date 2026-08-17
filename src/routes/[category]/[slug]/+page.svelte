@@ -45,56 +45,28 @@
     data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 176}, isProd) : '',
   )
 
-  type RevealImageOptions = {source: string; animate: boolean}
-
-  const revealImage: Action<HTMLImageElement, RevealImageOptions> = (node, options) => {
-    let currentSource = options.source
-    let shouldAnimate = options.animate
-    let destroyed = false
-    let revealId = 0
-    let loadHandler: (() => void) | undefined
-
-    const show = () => {
+  const nextFrame = () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
+  const revealImage: Action<HTMLImageElement, boolean> = (node, animate) => {
+    let cancelled = false
+    const reveal = async () => {
+      if (animate) {
+        await document.activeViewTransition?.finished.catch(() => {})
+        await nextFrame()
+        await nextFrame()
+      }
+      if (cancelled) return
       node.classList.remove('opacity-0')
       node.classList.add('opacity-100')
     }
-    const reveal = async (id: number) => {
-      if (!shouldAnimate) {
-        show()
-        return
-      }
+    const handleLoad = () => void reveal()
 
-      await document.activeViewTransition?.finished.catch(() => {})
-      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
-      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
-
-      if (!destroyed && id === revealId) show()
-    }
-    const prepare = () => {
-      if (destroyed) return
-      const id = ++revealId
-      if (loadHandler) node.removeEventListener('load', loadHandler)
-      node.classList.remove('opacity-100')
-      node.classList.add('opacity-0')
-
-      loadHandler = () => void reveal(id)
-      if (node.complete && node.naturalWidth > 0) loadHandler()
-      else node.addEventListener('load', loadHandler, {once: true})
-    }
-
-    prepare()
+    if (node.complete && node.naturalWidth > 0) handleLoad()
+    else node.addEventListener('load', handleLoad, {once: true})
 
     return {
-      update(nextOptions) {
-        if (nextOptions.source === currentSource && nextOptions.animate === shouldAnimate) return
-        currentSource = nextOptions.source
-        shouldAnimate = nextOptions.animate
-        queueMicrotask(prepare)
-      },
       destroy() {
-        destroyed = true
-        revealId++
-        if (loadHandler) node.removeEventListener('load', loadHandler)
+        cancelled = true
+        node.removeEventListener('load', handleLoad)
       },
     }
   }
@@ -294,21 +266,23 @@
           style:object-position={`center ${data.imageVerticalAlign ?? 50}%`}
         />
       {/if}
-      <img
-        class="hero-image-full opacity-0 transition-opacity"
-        class:pixel-image={isPixelImage}
-        src={imageDesktop}
-        srcset={heroSrcset}
-        sizes={heroSrcset ? '100vw' : undefined}
-        alt=""
-        aria-hidden="true"
-        loading="eager"
-        decoding="async"
-        fetchpriority="high"
-        draggable="false"
-        style:object-position={`center ${data.imageVerticalAlign ?? 50}%`}
-        use:revealImage={{source: imageDesktop, animate: !isPixelImage}}
-      />
+      {#key data.slug}
+        <img
+          class="hero-image-full opacity-0 transition-opacity"
+          class:pixel-image={isPixelImage}
+          src={imageDesktop}
+          srcset={heroSrcset}
+          sizes={heroSrcset ? '100vw' : undefined}
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
+          fetchpriority="high"
+          draggable="false"
+          style:object-position={`center ${data.imageVerticalAlign ?? 50}%`}
+          use:revealImage={!isPixelImage}
+        />
+      {/key}
     </div>
   </div>
   <div
