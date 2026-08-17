@@ -268,6 +268,20 @@
       step={fontSize}
     />
   </div>
+  <div class="flex items-center gap-1.5 tabular-nums print:hidden">
+    <Label for="font-size" class="gap-1 text-muted-foreground">
+      <ListChevronsUpDownIcon class="size-4" />
+      {previewFontSize}px
+    </Label>
+    <Slider
+      id="font-size"
+      type="single"
+      bind:value={previewFontSize}
+      min={fontSize}
+      max={previewFontSizeMax}
+      step={fontSize}
+    />
+  </div>
   <Textarea
     id="tester"
     class="mt-2 pt-[calc(1em/12*4)] pr-[calc(1em/12*3)] pb-[calc(1em/12*3)] pl-[calc(1em/12*4)] leading-none"
