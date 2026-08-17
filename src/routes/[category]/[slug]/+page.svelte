@@ -8,6 +8,7 @@
   import {absoluteUrl, jsonLd as stringifyJsonLd, SITE_AUTHOR, SITE_NAME, toKstDateTime} from '$lib/seo'
   import {getCategoryName, getImageUrl} from '$lib/utils'
   import {mode} from 'mode-watcher'
+  import type {Action} from 'svelte/action'
   import type {PageProps} from './$types'
   import 'remark-github-alerts/styles/github-colors-light.css'
   import 'remark-github-alerts/styles/github-colors-dark-class.css'
@@ -37,6 +38,45 @@
   const heroSrcset = $derived(
     isPixelImage ? undefined : `${imageMobile} 1280w, ${imageDesktop} 2560w, ${image4K} 3840w`,
   )
+  const thumbnail1x = $derived(
+    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 88}, isProd) : '',
+  )
+  const thumbnail2x = $derived(
+    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 176}, isProd) : '',
+  )
+
+  const revealImage: Action<HTMLImageElement, string> = (node, source) => {
+    let currentSource = source
+    let destroyed = false
+
+    const reveal = () => {
+      node.classList.remove('opacity-0')
+      node.classList.add('opacity-100')
+    }
+    const prepare = () => {
+      if (destroyed) return
+      node.removeEventListener('load', reveal)
+      node.classList.remove('opacity-100')
+      node.classList.add('opacity-0')
+
+      if (node.complete && node.naturalWidth > 0) reveal()
+      else node.addEventListener('load', reveal, {once: true})
+    }
+
+    prepare()
+
+    return {
+      update(nextSource) {
+        if (nextSource === currentSource) return
+        currentSource = nextSource
+        queueMicrotask(prepare)
+      },
+      destroy() {
+        destroyed = true
+        node.removeEventListener('load', reveal)
+      },
+    }
+  }
   const ogImageUrl = $derived(absoluteUrl(`/api/og/${data.category}/${data.slug}.png`))
   const articleImageUrl = $derived(imageDesktop ? absoluteUrl(imageDesktop) : ogImageUrl)
   const publishedDate = $derived(data.origDate ?? data.pubDate)
@@ -220,7 +260,21 @@
 {#if imageMobile}
   <div class="hero bg" use:transition={`post-image-${data.slug}`}>
     <div class="hero-image-inner">
+      {#if !isPixelImage}
+        <img
+          class="hero-image-fallback"
+          src={thumbnail1x}
+          srcset={`${thumbnail1x} 1x, ${thumbnail2x} 2x`}
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
+          draggable="false"
+          style:object-position={`center ${data.imageVerticalAlign ?? 50}%`}
+        />
+      {/if}
       <img
+        class="hero-image-full opacity-0 transition-opacity"
         class:pixel-image={isPixelImage}
         src={imageDesktop}
         srcset={heroSrcset}
@@ -232,6 +286,7 @@
         fetchpriority="high"
         draggable="false"
         style:object-position={`center ${data.imageVerticalAlign ?? 50}%`}
+        use:revealImage={imageDesktop}
       />
     </div>
   </div>
@@ -311,7 +366,7 @@
           animation: none
           will-change: auto
         img
-          @apply block size-full object-cover
+          @apply absolute inset-0 block size-full object-cover
     &.title
       @apply justify-center items-end flex z-10 h-[calc(var(--hero-height)-var(--header-height))] print:h-[calc(56.25vw-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-(--hero-height) print:md:h-[56.25vw] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
       & > div
