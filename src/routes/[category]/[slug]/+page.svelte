@@ -48,27 +48,43 @@
   const nextFrame = () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
   const revealImage: Action<HTMLImageElement, boolean> = (node, animate) => {
     let cancelled = false
+    const releaseLayer = () => node.style.removeProperty('will-change')
+
     const reveal = async () => {
-      if (animate) {
-        const viewTransition = document.activeViewTransition
+      if (!animate) {
+        node.classList.replace('opacity-0', 'opacity-100')
+        return
+      }
+
+      const viewTransition = document.activeViewTransition
+      try {
         try {
           await node.decode()
         } catch {
           if (!node.complete || node.naturalWidth === 0) return
         }
         await viewTransition?.finished.catch(() => {})
+        if (cancelled) return
+
+        node.style.willChange = 'opacity'
         await nextFrame()
         await nextFrame()
+        if (cancelled) return
+
+        node.classList.replace('opacity-0', 'opacity-100')
+
+        await nextFrame()
+        await Promise.allSettled(node.getAnimations().map((animation) => animation.finished))
+      } finally {
+        releaseLayer()
       }
-      if (cancelled) return
-      node.classList.remove('opacity-0')
-      node.classList.add('opacity-100')
     }
     void reveal()
 
     return {
       destroy() {
         cancelled = true
+        releaseLayer()
       },
     }
   }
