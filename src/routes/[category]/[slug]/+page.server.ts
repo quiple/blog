@@ -32,6 +32,7 @@ const isProd = import.meta.env.PROD
 const imageSizeMap = imageSizes as Record<string, {width: number; height: number}>
 const widthClassRegex = /(^|\s)w-/
 const maxHeightClassRegex = /\bmax-h-(\d+(?:\.\d+)?)\b/
+const SPACING_REM = 0.25
 const IMAGE_WIDTHS = [343, 576, 672, 686, 1152, 1344]
 const DEFAULT_SIZES = '(min-width: 1536px) 672px, (min-width: calc(576px + 32px)) 576px, calc(100vw - 32px)'
 
@@ -64,6 +65,17 @@ function imageFrameStyle(width: unknown, height: unknown, style?: unknown) {
   ]
     .filter(Boolean)
     .join('; ')
+}
+
+function skeletonWidthFromMaxHeight(maxHeight: string | undefined, width: unknown, height: unknown) {
+  const maxHeightValue = Number(maxHeight)
+  const widthValue = Number(width)
+  const heightValue = Number(height)
+
+  if (![maxHeightValue, widthValue, heightValue].every(Number.isFinite) || heightValue <= 0) return
+
+  const widthRem = (SPACING_REM * maxHeightValue * widthValue) / heightValue
+  return `${Number(widthRem.toFixed(6))}rem`
 }
 
 function imageFrameHtml({
@@ -266,6 +278,7 @@ function figure() {
           const hasWidthClass = widthClassRegex.test(className)
           const maxHeight = className.match(maxHeightClassRegex)?.[1]
           const hasHeightClass = Boolean(maxHeight)
+          const skeletonWidth = skeletonWidthFromMaxHeight(maxHeight, widthVal, heightVal)
           const constrainedWidth =
             maxHeight && widthVal && heightVal
               ? `min(100%, calc(var(--spacing, 0.25rem) * ${(Number(maxHeight) * Number(widthVal)) / Number(heightVal)}))`
@@ -280,10 +293,21 @@ function figure() {
             alt: attributes.alt ?? '',
             width: widthAttr ? widthVal : undefined,
             height: heightAttr ? heightVal : undefined,
-            className: cn('mx-auto self-center shadow-xs', mdxImageClass, className),
+            className: cn(
+              'mx-auto self-center shadow-xs',
+              mdxImageClass,
+              skeletonWidth && 'mdx-skeleton-sized',
+              className,
+            ),
             style:
               !hasWidthClass && widthVal && heightVal
-                ? `width: ${constrainedWidth ?? `${widthVal}px`}; max-width: 100%`
+                ? [
+                    `width: ${constrainedWidth ?? `${widthVal}px`}`,
+                    'max-width: 100%',
+                    skeletonWidth && `--mdx-skeleton-width: ${skeletonWidth}`,
+                  ]
+                    .filter(Boolean)
+                    .join('; ')
                 : undefined,
             imgClassName: hasWidthClass || hasHeightClass ? 'h-full w-full' : 'h-auto max-h-full',
             loading: 'lazy',
