@@ -352,6 +352,9 @@
     to
       transform: translate3d(0, 25svh, 0)
 
+  :global(html:has(.hero.bg))
+    overscroll-behavior-y: none
+
   .hero
     @apply inset-0 absolute! [print-color-adjust:exact]
     &.bg
