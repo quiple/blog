@@ -235,7 +235,7 @@
 <div class="grid w-full print:gap-1.5">
   <div class="flex gap-2">
     <Label for="tester">사용해 보기</Label>
-    <Button variant="ghost" size="icon-sm" onclick={shuffle} class="-mx-1.5">
+    <Button variant="ghost" size="icon-sm" onclick={shuffle} class="-mx-1.5" aria-label="무작위 예문 표시">
       <Shuffle />
     </Button>
     {#if font === 'galmuri'}
