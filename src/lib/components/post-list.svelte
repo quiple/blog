@@ -182,6 +182,8 @@
     @apply flex flex-col before:rounded-[1rem] py-2 pl-3.25 -ml-3.25 pr-2 -mr-2 rounded-[1rem] hover-bg-muted
     .img
       @apply relative shrink-0 size-22 overflow-hidden bg-cover bg-center rounded-md shadow-xs
+      &.animate-pulse
+        box-shadow: none
       > img
         @apply rounded-[inherit] inner-border
 

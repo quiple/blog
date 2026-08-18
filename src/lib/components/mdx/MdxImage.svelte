@@ -44,7 +44,7 @@
   const mergedStyle = $derived([aspectRatioStyle, style].filter(Boolean).join(' '))
 </script>
 
-<div class={cn('relative block', className)} style={mergedStyle}>
+<div class={cn('relative block', className, (!loaded || error) && 'shadow-none')} style={mergedStyle}>
   {#if !loaded || error}
     <Skeleton class="absolute inset-0 h-full w-full rounded-lg" />
   {/if}

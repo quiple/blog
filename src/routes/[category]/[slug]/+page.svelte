@@ -390,6 +390,8 @@
     contain-intrinsic-size: auto 24rem
     :global(img)
       @apply block max-w-full rounded-[inherit] object-cover inner-border
+  :global(.mdx-image-frame.animate-pulse)
+    box-shadow: none
   :global(article iframe.mdx-embed-frame)
     @apply rounded-lg inner-border
   :global(article iframe)
