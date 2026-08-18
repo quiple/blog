@@ -28,11 +28,8 @@ export function getCategoryName(category: string) {
 export function getImageUrl(
   path: string,
   options: {w?: number; h?: number; q?: number; f?: string; absolute?: boolean; original?: boolean} = {},
-  isProd = false,
 ) {
   const baseUrl = options.absolute ? 'https://quiple.dev' : ''
-
-  if (!isProd && !options.original) return `${baseUrl}/img/${path}`
 
   // Base64 encode and make it URL safe
   const b64 = typeof btoa !== 'undefined' ? btoa(path) : Buffer.from(path).toString('base64')

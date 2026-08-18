@@ -18,32 +18,20 @@
 
   let {data}: PageProps = $props()
 
-  const isProd = import.meta.env.PROD
-
   const {transition} = setupViewTransition()
   const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
   const isArticle = $derived(data.category === 'article')
   const isFont = $derived(data.category === 'font')
   const isPixelImage = $derived(data.imageType === 'pixel')
 
-  const imageMobile = $derived(
-    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 1280}, isProd) : '',
-  )
-  const imageDesktop = $derived(
-    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 2560}, isProd) : '',
-  )
-  const image4K = $derived(
-    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 3840}, isProd) : '',
-  )
+  const imageMobile = $derived(data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 1280}) : '')
+  const imageDesktop = $derived(data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 2560}) : '')
+  const image4K = $derived(data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 3840}) : '')
   const heroSrcset = $derived(
     isPixelImage ? undefined : `${imageMobile} 1280w, ${imageDesktop} 2560w, ${image4K} 3840w`,
   )
-  const thumbnail1x = $derived(
-    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 88}, isProd) : '',
-  )
-  const thumbnail2x = $derived(
-    data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 176}, isProd) : '',
-  )
+  const thumbnail1x = $derived(data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 88}) : '')
+  const thumbnail2x = $derived(data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 176}) : '')
 
   const nextFrame = () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
   const revealImage: Action<HTMLImageElement, boolean> = (node, animate) => {

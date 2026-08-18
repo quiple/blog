@@ -29,7 +29,7 @@ export const GET: RequestHandler = async () => {
           ...((post.thumbnail ?? post.image)
             ? {
                 'image:image': {
-                  'image:loc': getImageUrl(post.thumbnail ?? post.image ?? '', {w: 1200, absolute: true}, true),
+                  'image:loc': getImageUrl(post.thumbnail ?? post.image ?? '', {w: 1200, absolute: true}),
                   'image:title': post.title,
                 },
               }

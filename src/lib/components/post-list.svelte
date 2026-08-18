@@ -20,7 +20,6 @@
     showCategory?: boolean
   } = $props()
 
-  const isProd = import.meta.env.PROD
   const dateFormatter = new Intl.DateTimeFormat('ko-KR', {dateStyle: 'long'})
   const paginationSkeletons = Array.from({length: 15})
 
@@ -144,8 +143,8 @@
             </div>
             {#if post.image}
               {@const isPixelImage = post.imageType === 'pixel'}
-              {@const src1x = getImageUrl(post.image, isPixelImage ? {original: true} : {h: 88}, isProd)}
-              {@const src2x = getImageUrl(post.image, isPixelImage ? {original: true} : {h: 176}, isProd)}
+              {@const src1x = getImageUrl(post.image, isPixelImage ? {original: true} : {h: 88})}
+              {@const src2x = getImageUrl(post.image, isPixelImage ? {original: true} : {h: 176})}
               <div class="img animate-pulse bg-muted" use:transition={postTransition(post.slug, 'image')}>
                 <img
                   alt=""

@@ -109,8 +109,8 @@ function imageFrameHtml({
   })}></span>`
 }
 
-function generateSrcSet(src: string, isProd: boolean) {
-  return IMAGE_WIDTHS.map((w) => `${getImageUrl(src, {w}, isProd)} ${w}w`).join(', ')
+function generateSrcSet(src: string) {
+  return IMAGE_WIDTHS.map((w) => `${getImageUrl(src, {w})} ${w}w`).join(', ')
 }
 
 export const load: PageServerLoad = async ({params}) => {
@@ -185,8 +185,8 @@ function rehypeImageSizes() {
         if (srcClean.charCodeAt(0) === 47) srcClean = srcClean.slice(1)
 
         // 이미지 주소를 프록시 주소로 교체
-        const imageSrc = getImageUrl(srcClean, {w: 1344}, isProd)
-        const imageSrcset = generateSrcSet(srcClean, isProd)
+        const imageSrc = getImageUrl(srcClean, {w: 1344})
+        const imageSrcset = generateSrcSet(srcClean)
         const imageSizesAttr = DEFAULT_SIZES
         const imageAlt = node.properties.alt
         const imageClassName = node.properties.className
@@ -247,8 +247,8 @@ function figure() {
         const data = node.data || (node.data = {})
         const attributes = node.attributes || {}
         const srcClean = attributes.src?.replace('\\_', '_') || ''
-        const src = getImageUrl(srcClean, {w: 1344}, isProd)
-        const srcset = generateSrcSet(srcClean, isProd)
+        const src = getImageUrl(srcClean, {w: 1344})
+        const srcset = generateSrcSet(srcClean)
         const sizes = attributes.sizes || DEFAULT_SIZES
         const id = attributes.id
         const className = attributes.class ?? ''

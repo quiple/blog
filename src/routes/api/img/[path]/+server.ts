@@ -49,6 +49,7 @@ function assertSafeImagePath(path: string, origin: string) {
 export const GET: RequestHandler = async ({params, url, platform}) => {
   const {path} = params
   if (!path) throw error(400, 'Missing path')
+  if (dev) throw error(404, 'Image delivery disabled in development')
 
   const decodedPath = decodeImagePath(path)
   const imageUrl = assertSafeImagePath(decodedPath, url.origin)
@@ -59,10 +60,6 @@ export const GET: RequestHandler = async ({params, url, platform}) => {
 
   if (isOriginal) {
     if (!originalImagePaths.has(decodedPath)) throw error(403, 'Original image access denied')
-
-    if (dev) {
-      return globalThis.fetch(new URL(imageUrl.pathname, 'https://quiple.dev'), {headers})
-    }
 
     const bucket = platform?.env.R2
     if (!bucket) throw error(500, 'R2 bucket not available')
