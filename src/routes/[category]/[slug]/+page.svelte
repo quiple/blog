@@ -392,8 +392,8 @@
       @apply block max-w-full rounded-[inherit] object-cover inner-border
   :global(.mdx-image-frame.animate-pulse)
     box-shadow: none
-  :global(.mdx-image-frame.animate-pulse.mdx-skeleton-sized)
-    width: var(--mdx-skeleton-width) !important
+  :global(.mdx-image-frame.animate-pulse.mdx-constrained-width)
+    width: var(--mdx-constrained-width) !important
   :global(article iframe.mdx-embed-frame)
     @apply rounded-lg inner-border
   :global(article iframe)
