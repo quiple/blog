@@ -44,6 +44,7 @@
   let isPostPage = $derived(isPostPath(page.url.pathname))
   let overrideScrollY = $state<number | null>(null)
   let hasHeroImage = $derived(isPostPage && !!page.data?.image)
+  let tracksHeaderScroll = $state(false)
 
   let heroForeground = $derived(hasHeroImage ? `#${page.data?.imageForeground?.toString() ?? '09090b'}` : null)
   let heroOutline = $derived(isPostPage && page.data?.outline ? `#${page.data.outline.toString()}` : null)
@@ -55,6 +56,12 @@
   let isH1Visible = $state(true)
   let isHeroVisible = $state(true)
   let actualHeaderClassName = $derived.by(() => {
+    if (!tracksHeaderScroll) {
+      if (hasHeroImage) return 'hero'
+      if (isPostPage) return 'title-hidden'
+      return ''
+    }
+
     if (hasHeroImage && (isHeroVisible || overrideScrollY === 0)) return 'hero'
     if (!hasHeroImage && isPostPage && (isH1Visible || overrideScrollY === 0)) return 'title-hidden'
     return ''
@@ -79,10 +86,7 @@
   })
 
   $effect(() => {
-    if (!isPostPage || !hasHeroImage) {
-      isHeroVisible = false
-      return
-    }
+    if (!tracksHeaderScroll || !isPostPage || !hasHeroImage) return
 
     const hero = document.querySelector('.hero.bg')
     if (!hero) return
@@ -98,10 +102,7 @@
   })
 
   $effect(() => {
-    if (!isPostPage || hasHeroImage) {
-      isH1Visible = false
-      return
-    }
+    if (!tracksHeaderScroll || !isPostPage || hasHeroImage) return
 
     const h1 = document.querySelector('article h1')
     if (h1) {
@@ -138,8 +139,18 @@
   })
 
   onMount(() => {
+    const media = window.matchMedia('(min-width: 768px)')
+    const updateHeaderScrollTracking = () => {
+      tracksHeaderScroll = media.matches
+    }
+
+    updateHeaderScrollTracking()
+    media.addEventListener('change', updateHeaderScrollTracking)
+
     const savedFontFamilyMode = localStorage.getItem(fontFamilyStorageKey)
     setFontFamilyMode(savedFontFamilyMode === 'system' ? 'system' : 'theme')
+
+    return () => media.removeEventListener('change', updateHeaderScrollTracking)
   })
 
   onDestroy(() => clearTimeout(overrideTimer))
