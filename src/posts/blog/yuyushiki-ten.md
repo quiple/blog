@@ -50,7 +50,8 @@ pubDate: 2026-04-22T00:49
 :::figure{src="photo/DSC_0277_Original.JPG"}
 
 > 10주년 고마워!!
-> :::
+
+:::
 
 ::figure{src="photo/DSC_0303_Original.JPG"}
 
