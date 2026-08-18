@@ -19,14 +19,7 @@ Adobe-KR-0 및 Adobe-KR-1의 한글 음절 4,358자와 일본 한자 640자를 �
 
 ## 라이선스
 
-| 범주               | 설명                                                                                                                                                                                                                                      |
-| ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 상업적 이용        | **<Check class="[print-color-adjust:exact] inline-block size-4 bg-green-500 text-white rounded-full stroke-4 p-0.5" /> 가능**<br />폰트를 상업적으로 이용할 수 있습니다. 표현하는 내용이나 매체 등도 상관하지 않습니다.                   |
-| 임베드             | **<Check class="[print-color-adjust:exact] inline-block size-4 bg-green-500 text-white rounded-full stroke-4 p-0.5" /> 가능**<br />폰트 파일을 문서&middot;게임&middot;소프트웨어 등에 포함시키거나 웹 폰트로 이용할 수 있습니다.         |
-| 출처 표기          | **<Check class="[print-color-adjust:exact] inline-block size-4 bg-green-500 text-white rounded-full stroke-4 p-0.5" /> 필수 아님**<br />폰트의 출처 및 저작자명을 표시하지 않아도 됩니다.                                                 |
-| 수정 및 재배포     | **<Check class="[print-color-adjust:exact] inline-block size-4 bg-green-500 text-white rounded-full stroke-4 p-0.5" /> 가능**<br />폰트를 수정하거나 재배포할 수 있습니다. 수정하여 재배포할 경우 OFL-1.1을 채택해야 합니다.              |
-| 단독 판매          | **<X class="[print-color-adjust:exact] inline-block size-4 bg-red-500 text-white rounded-full stroke-4 p-0.5" /> 금지**<br />폰트 파일만을 유료 판매하는 경우. 문서&middot;게임&middot;소프트웨어 등에 포함시켜 판매하는 것은 가능합니다. |
-| 이용으로 인한 피해 | **<X class="[print-color-adjust:exact] inline-block size-4 bg-red-500 text-white rounded-full stroke-4 p-0.5" /> 책임 안 짐**<br />폰트의 이용으로 인한 피해나 손해가 생기더라도 일절 책임지지 않습니다.                                  |
+<FontLicenseTable />
 
 &copy; 2026 Lee Minseo ([quiple&#8203;@&#8203;quiple&#8203;.&#8203;dev](mailto:quiple@quiple.dev))
 

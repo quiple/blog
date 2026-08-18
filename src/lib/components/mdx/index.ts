@@ -1,5 +1,5 @@
 import type {Component} from 'svelte'
-import {Check, X} from '@lucide/svelte'
+import FontLicenseTable from './FontLicenseTable.svelte'
 import MdxImage from './MdxImage.svelte'
 import Tester from './Tester.svelte'
 
@@ -15,8 +15,7 @@ import Tester from './Tester.svelte'
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const components: Record<string, Component<any>> = {
   Tester,
-  Check,
-  X,
+  FontLicenseTable,
   MdxImage,
 }
 

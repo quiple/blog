@@ -5,8 +5,8 @@
 
   const componentLoaders: Record<string, () => Promise<MdxComponent>> = {
     Tester: () => import('./Tester.svelte').then((module) => module.default as unknown as MdxComponent),
-    Check: () => import('@lucide/svelte/icons/check').then((module) => module.default as unknown as MdxComponent),
-    X: () => import('@lucide/svelte/icons/x').then((module) => module.default as unknown as MdxComponent),
+    FontLicenseTable: () =>
+      import('./FontLicenseTable.svelte').then((module) => module.default as unknown as MdxComponent),
     MdxImage: () => import('./MdxImage.svelte').then((module) => module.default as unknown as MdxComponent),
   }
   const componentPromises = new Map<string, Promise<MdxComponent>>()
