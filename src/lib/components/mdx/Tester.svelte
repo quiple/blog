@@ -31,6 +31,7 @@
   const selectedFont = $derived(galmuris.find((entry) => entry.value === selectedFontValue) ?? galmuris[1])
   const fontSize = $derived(selectedFont.size)
   let previewFontSize = $state(24)
+  let previewLineHeight = $state(1)
   const previewFontSizeMax = $derived(fontSize * 8)
   $effect(() => {
     previewFontSize = fontSize * 2
@@ -269,23 +270,16 @@
     />
   </div>
   <div class="flex items-center gap-1.5 tabular-nums print:hidden">
-    <Label for="font-size" class="gap-1 text-muted-foreground">
+    <Label for="line-height" class="gap-1 text-muted-foreground">
       <ListChevronsUpDownIcon class="size-4" />
-      {previewFontSize}px
+      {Math.round(previewLineHeight * 100)}%
     </Label>
-    <Slider
-      id="font-size"
-      type="single"
-      bind:value={previewFontSize}
-      min={fontSize}
-      max={previewFontSizeMax}
-      step={fontSize}
-    />
+    <Slider id="line-height" type="single" bind:value={previewLineHeight} min={1} max={2} step={0.01} />
   </div>
   <Textarea
     id="tester"
-    class="mt-2 pt-[calc(1em/12*4)] pr-[calc(1em/12*3)] pb-[calc(1em/12*3)] pl-[calc(1em/12*4)] leading-none"
-    style="font-size: {previewFontSize}px; font-family: {fontProps.family}; font-weight: {fontProps.weight}; font-stretch: {fontProps.stretch}"
+    class="mt-2 pt-[calc(1em/12*4)] pr-[calc(1em/12*3)] pb-[calc(1em/12*3)] pl-[calc(1em/12*4)]"
+    style="font-size: {previewFontSize}px; line-height: {previewLineHeight}; font-family: {fontProps.family}; font-weight: {fontProps.weight}; font-stretch: {fontProps.stretch}"
     spellcheck="false"
     bind:value={exampleText}
   />
