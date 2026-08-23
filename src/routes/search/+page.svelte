@@ -88,12 +88,13 @@
   {/if}
 </div>
 
-<style lang="sass">
-  @reference '#app.css'
+<style>
+  @reference '#app.css';
+  .empty-state {
+    @apply py-16 text-center text-muted-foreground;
+  }
 
-  .empty-state
-    @apply text-muted-foreground text-center py-16
-
-  .result-count
-    @apply text-sm text-muted-foreground mb-2
+  .result-count {
+    @apply mb-2 text-sm text-muted-foreground;
+  }
 </style>

@@ -1,4 +1,4 @@
-import {renderLanguageTemplates} from './language-template'
+import {renderLanguageTemplates} from './language-template.ts'
 
 /**
  * Set of all standard HTML element tag names.

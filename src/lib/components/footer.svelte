@@ -9,17 +9,21 @@
   </section>
 </footer>
 
-<style lang="sass">
-  @reference '#app.css'
-
-  footer
-    @apply py-6
-    section
-      @apply container-x flex justify-between items-start gap-8
-      .detail
-        @apply flex flex-col py-1 text-muted-foreground
-      .sns
-        @apply flex items-center
-        :global(a)
-          @apply size-8 fill-current
+<style>
+  @reference '#app.css';
+  footer {
+    @apply py-6;
+  }
+  footer section {
+    @apply container-x flex items-start justify-between gap-8;
+  }
+  footer section .detail {
+    @apply flex flex-col py-1 text-muted-foreground;
+  }
+  footer section .sns {
+    @apply flex items-center;
+  }
+  footer section .sns :global(a) {
+    @apply size-8 fill-current;
+  }
 </style>

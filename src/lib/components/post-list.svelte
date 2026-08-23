@@ -175,23 +175,29 @@
 
 {@html transitionStyles}
 
-<style lang="sass">
-  @reference '#app.css'
+<style>
+  @reference '#app.css';
+  .list-item {
+    @apply hover-bg-muted -mr-2 -ml-3.25 flex flex-col rounded-[1rem] py-2 pr-2 pl-3.25 before:rounded-[1rem];
+  }
+  .list-item .img {
+    @apply relative size-22 shrink-0 overflow-hidden rounded-md bg-cover bg-center shadow-xs;
+  }
+  .list-item .img.animate-pulse {
+    box-shadow: none;
+  }
+  .list-item .img > img {
+    @apply rounded-[inherit] inner-border;
+  }
 
-  .list-item
-    @apply flex flex-col before:rounded-[1rem] py-2 pl-3.25 -ml-3.25 pr-2 -mr-2 rounded-[1rem] hover-bg-muted
-    .img
-      @apply relative shrink-0 size-22 overflow-hidden bg-cover bg-center rounded-md shadow-xs
-      &.animate-pulse
-        box-shadow: none
-      > img
-        @apply rounded-[inherit] inner-border
-
-  @keyframes -global-zoom-out
-    from
-      opacity: var(--zoom-out-opacity)
-      height: var(--hero-height)
-    to
-      opacity: calc(1 - var(--zoom-out-opacity))
-      height: 5.5rem
+  @keyframes -global-zoom-out {
+    from {
+      opacity: var(--zoom-out-opacity);
+      height: var(--hero-height);
+    }
+    to {
+      opacity: calc(1 - var(--zoom-out-opacity));
+      height: 5.5rem;
+    }
+  }
 </style>

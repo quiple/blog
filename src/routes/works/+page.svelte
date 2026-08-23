@@ -227,85 +227,174 @@
   </div>
 </section>
 
-<style lang="sass">
-  .grid-item
-    opacity: 0
-    animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards
+<style>
+  .grid-item {
+    opacity: 0;
+    animation: fade-in-up 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  .grid-item:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  .grid-item:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  .grid-item:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+  .grid-item:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+  .grid-item:nth-child(5) {
+    animation-delay: 0.25s;
+  }
+  .grid-item:nth-child(6) {
+    animation-delay: 0.3s;
+  }
+  .grid-item:nth-child(7) {
+    animation-delay: 0.35s;
+  }
+  .grid-item:nth-child(8) {
+    animation-delay: 0.4s;
+  }
+  .grid-item:nth-child(9) {
+    animation-delay: 0.45s;
+  }
+  .grid-item:nth-child(10) {
+    animation-delay: 0.5s;
+  }
+  .grid-item:nth-child(11) {
+    animation-delay: 0.55s;
+  }
+  .grid-item:nth-child(12) {
+    animation-delay: 0.6s;
+  }
+  .grid-item:nth-child(13) {
+    animation-delay: 0.65s;
+  }
+  .grid-item:nth-child(14) {
+    animation-delay: 0.7s;
+  }
+  .grid-item:nth-child(15) {
+    animation-delay: 0.75s;
+  }
+  .grid-item:nth-child(16) {
+    animation-delay: 0.8s;
+  }
+  .grid-item:nth-child(17) {
+    animation-delay: 0.85s;
+  }
+  .grid-item:nth-child(18) {
+    animation-delay: 0.9s;
+  }
+  .grid-item:nth-child(19) {
+    animation-delay: 0.95s;
+  }
+  .grid-item:nth-child(20) {
+    animation-delay: 1s;
+  }
 
-    @for $i from 1 through 20
-      &:nth-child(#{$i})
-        animation-delay: #{$i * 0.05}s
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  :global(.card-dynamic) {
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    -webkit-font-smoothing: antialiased;
+    backface-visibility: hidden;
+    transition:
+      transform 0.15s ease-out,
+      box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.4s ease;
+    transform: translateZ(0) translateY(0) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  }
+  :global(.card-dynamic)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at var(--mx, 0%) var(--my, 0%), rgba(255, 255, 255, 0.15), transparent 80%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+  :global(.card-dynamic)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 150%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1) 30%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.1) 70%,
+      transparent
+    );
+    transform: skewX(-25deg);
+    pointer-events: none;
+    z-index: 10;
+  }
 
-  @keyframes fade-in-up
-    from
-      opacity: 0
-      transform: translateY(30px)
-    to
-      opacity: 1
-      transform: translateY(0)
+  :global(.dark .card-dynamic)::before {
+    background: radial-gradient(circle at var(--mx, 0%) var(--my, 0%), rgba(255, 255, 255, 0.1), transparent 80%);
+  }
+  :global(.dark .card-dynamic)::after {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.02) 30%,
+      rgba(255, 255, 255, 0.15) 50%,
+      rgba(255, 255, 255, 0.02) 70%,
+      transparent
+    );
+  }
 
-  :global(.card-dynamic)
-    position: relative
-    overflow: hidden
-    transform-style: preserve-3d
-    -webkit-font-smoothing: antialiased
-    backface-visibility: hidden
-    transition: transform 0.15s ease-out, box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease
-    transform: translateZ(0) translateY(0) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
+  :global(a.group) {
+    position: relative;
+    z-index: 1;
+  }
 
-    &::before
-      content: ''
-      position: absolute
-      inset: 0
-      background: radial-gradient(circle at var(--mx, 0%) var(--my, 0%), rgba(255, 255, 255, 0.15), transparent 80%)
-      opacity: 0
-      transition: opacity 0.4s ease
-      pointer-events: none
-      z-index: 1
+  :global(a.group:hover) {
+    z-index: 50;
+  }
 
-    &::after
-      content: ''
-      position: absolute
-      top: 0
-      left: -150%
-      width: 150%
-      height: 100%
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.1) 70%, transparent)
-      transform: skewX(-25deg)
-      pointer-events: none
-      z-index: 10
+  :global(a.group:hover .card-dynamic) {
+    will-change: transform, box-shadow;
+    transform: translateZ(0) translateY(-8px) scale(1.02) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    box-shadow:
+      0 30px 60px -12px rgba(0, 0, 0, 0.15),
+      0 18px 36px -18px rgba(0, 0, 0, 0.2);
+  }
+  :global(a.group:hover .card-dynamic)::before {
+    opacity: 1;
+  }
 
-  :global(.dark .card-dynamic)
-    &::before
-      background: radial-gradient(circle at var(--mx, 0%) var(--my, 0%), rgba(255, 255, 255, 0.1), transparent 80%)
-    &::after
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.02) 30%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.02) 70%, transparent)
+  :global(.dark a.group:hover .card-dynamic) {
+    box-shadow:
+      0 40px 80px -15px rgba(0, 0, 0, 0.5),
+      0 0 30px -5px rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
 
-  :global(a.group)
-    position: relative
-    z-index: 1
-
-  :global(a.group:hover)
-    z-index: 50
-
-  :global(a.group:hover .card-dynamic)
-    will-change: transform, box-shadow
-    transform: translateZ(0) translateY(-8px) scale(1.02) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15), 0 18px 36px -18px rgba(0, 0, 0, 0.2)
-
-    &::before
-      opacity: 1
-
-  :global(.dark a.group:hover .card-dynamic)
-    box-shadow: 0 40px 80px -15px rgba(0, 0, 0, 0.5), 0 0 30px -5px rgba(255, 255, 255, 0.04)
-    border-color: rgba(255, 255, 255, 0.1)
-
-  @media (prefers-reduced-motion: reduce)
-    .grid-item
-      opacity: 1
-      animation: none
-
-    :global(.card-dynamic), :global(a.group:hover .card-dynamic)
-      transform: none
-      transition: border-color 0.4s ease
+  @media (prefers-reduced-motion: reduce) {
+    .grid-item {
+      opacity: 1;
+      animation: none;
+    }
+    :global(.card-dynamic),
+    :global(a.group:hover .card-dynamic) {
+      transform: none;
+      transition: border-color 0.4s ease;
+    }
+  }
 </style>

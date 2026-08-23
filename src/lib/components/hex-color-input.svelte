@@ -36,13 +36,15 @@
   </div>
 </div>
 
-<style lang="sass">
-  @reference '#app.css'
-
-  .color-input
-    @apply relative
-    .hash
-      @apply absolute left-3 top-1/2 -translate-y-1/2 text-sm text-muted-foreground z-1 pointer-events-none
-    .color-swatch
-      @apply absolute right-1.5 top-1/2 -translate-y-1/2 size-5 rounded inner-border
+<style>
+  @reference '#app.css';
+  .color-input {
+    @apply relative;
+  }
+  .color-input .hash {
+    @apply pointer-events-none absolute top-1/2 left-3 z-1 -translate-y-1/2 text-sm text-muted-foreground;
+  }
+  .color-input .color-swatch {
+    @apply absolute top-1/2 right-1.5 size-5 -translate-y-1/2 rounded inner-border;
+  }
 </style>

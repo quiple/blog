@@ -44,9 +44,9 @@
   lang="ko"
 />
 
-<style lang="sass">
-  @reference '#app.css'
-
-  :global(#comments)
-    @apply block mt-8 border-t pt-4
+<style>
+  @reference '#app.css';
+  :global(#comments) {
+    @apply mt-8 block border-t pt-4;
+  }
 </style>

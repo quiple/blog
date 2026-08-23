@@ -668,42 +668,55 @@
   </aside>
 </div>
 
-<style lang="sass">
-  @reference '#app.css'
+<style>
+  @reference '#app.css';
+  :global(main:has(> .generator)) {
+    @apply -mt-(--header-height) pt-4 sm:pt-6;
+  }
 
-  :global(main:has(> .generator))
-    @apply pt-4 sm:pt-6 -mt-(--header-height)
+  .generator {
+    @apply flex flex-col items-start gap-4 lg:flex-row;
+  }
 
-  .generator
-    @apply flex flex-col lg:flex-row items-start gap-4
+  .preview-area {
+    @apply top-6 block h-[calc(100dvh-3rem)] min-h-40 w-full flex-1 overflow-hidden rounded-lg bg-muted/50 lg:sticky;
+  }
+  .preview-area .placeholder {
+    @apply pointer-events-none absolute inset-0 flex items-center justify-center p-6 text-center text-sm text-muted-foreground;
+  }
+  .preview-area .canvas-wrapper {
+    @apply flex h-max min-h-full w-max min-w-full items-center justify-center p-6 [&.hidden]:hidden;
+  }
+  .preview-area .canvas-wrapper .preview-canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
 
-  .preview-area
-    @apply block flex-1 w-full min-h-40 bg-muted/50 rounded-lg h-[calc(100dvh-3rem)] overflow-hidden lg:sticky top-6
-    .placeholder
-      @apply absolute inset-0 text-sm text-muted-foreground p-6 flex items-center justify-center text-center pointer-events-none
-    .canvas-wrapper
-      @apply flex items-center justify-center min-w-full min-h-full w-max h-max p-6 [&.hidden]:hidden
-      .preview-canvas
-        image-rendering: pixelated
-        image-rendering: crisp-edges
+  .sidebar {
+    @apply sticky top-5 flex w-full shrink-0 flex-col lg:w-2xs;
+  }
 
-  .sidebar
-    @apply sticky top-5 flex flex-col w-full lg:w-2xs shrink-0
+  .input-pairs {
+    @apply flex flex-col gap-2;
+  }
+  .input-pairs .input-pair {
+    @apply flex items-center gap-2 text-sm [&_span]:text-muted-foreground;
+  }
 
-  .input-pairs
-    @apply flex flex-col gap-2
-    .input-pair
-      @apply flex items-center gap-2 text-sm [&_span]:text-muted-foreground
+  .shadow-grid {
+    @apply grid w-fit grid-cols-3 gap-0;
+  }
+  .shadow-grid input[type='checkbox'] {
+    @apply size-4 cursor-pointer accent-primary;
+  }
+  .shadow-grid input[type='checkbox']:disabled {
+    @apply cursor-not-allowed opacity-30;
+  }
 
-  .shadow-grid
-    @apply grid grid-cols-3 gap-0 w-fit
-    input[type='checkbox']
-      @apply size-4 accent-primary cursor-pointer
-      &:disabled
-        @apply opacity-30 cursor-not-allowed
-
-  .charset-info
-    @apply prose-shadcn text-xs mb-6 prose-h2:text-sm! prose-h2:border-b-0! prose-h2:pb-0! prose-h2:mb-0! prose-h2:mt-6! prose-ul:mt-0!
-    small
-      @apply text-xs text-muted-foreground
+  .charset-info {
+    @apply prose-shadcn mb-6 text-xs prose-h2:mt-6! prose-h2:mb-0! prose-h2:border-b-0! prose-h2:pb-0! prose-h2:text-sm! prose-ul:mt-0!;
+  }
+  .charset-info small {
+    @apply text-xs text-muted-foreground;
+  }
 </style>

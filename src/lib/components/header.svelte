@@ -285,61 +285,97 @@
   </section>
 </header>
 
-<style lang="sass">
-  @reference '#app.css'
-
-  header
-    @apply relative md:sticky top-0 py-4 sm:py-6 z-1 [print-color-adjust:exact] print:text-(--hero-foreground)
-    &.hero, &.title-hidden
-      @apply text-(--hero-foreground)
-      :global(Button)
-        @apply hover:text-(--hero-foreground) hover:bg-(--hero-foreground)/5
-      .logo, :global(.menu)
-        @apply before:opacity-100
-      .post-title
-        @apply lg:invisible lg:opacity-0
-    &.grade-down-logo, :global(.dark) &:not(.hero)
-      :global(.q-logo)
-        @apply hidden
-      .q-logo-grade-down
-        @apply block
-      .wordmark-light
-        @apply hidden
-      .wordmark-grade-down
-        @apply block
-    &.hero
-      .logo
-        @apply text-(--hero-foreground)
-    section
-      @apply relative container-x !max-w-full px-4 sm:!px-6 flex justify-between items-start gap-4
-      .logo
-        @apply flex items-center self-center transition relative before:mask-size-[54px] p-1 -m-1 text-primary
-        .logo-symbol
-          @apply relative block size-9 shrink-0
-        .wordmark-symbol, .wordmark-rest
-          @apply hidden overflow-hidden
-        .wordmark-image
-          @apply absolute top-0 left-0 h-9 w-[210px] max-w-none
-        .wordmark-light
-          @apply bg-current mask-(--wordmark) mask-size-[210px_36px] mask-top-left mask-no-repeat
-        .wordmark-grade-down
-          @apply bg-current mask-(--wordmark-grade-down) mask-size-[210px_36px] mask-top-left mask-no-repeat
-        &.wordmark-logo
-          @apply xl:gap-0
-          .logo-symbol
-            @apply xl:size-9
-          :global(.q-logo), .q-logo-grade-down
-            @apply xl:hidden
-          .wordmark-symbol
-            @apply xl:block xl:absolute xl:inset-0
-          .wordmark-rest
-            @apply xl:relative xl:block xl:h-9 xl:w-[174px]
-            .wordmark-image
-              @apply xl:-left-9
-      .post-title
-        @apply invisible opacity-0 lg:visible lg:opacity-100 transition-all font-bold line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)] leading-5 -my-0.5 text-pretty break-keep
-      :global(.menu)
-        @apply relative before:mask-size-[24px] print:hidden size-9
-      .logo, :global(.menu)
-        @apply before:bg-(--outline-color) before:absolute before:inset-0 before:-z-1 before:opacity-0 before:transition before:mask-(--svg-outline) before:mask-center before:mask-no-repeat
+<style>
+  @reference '#app.css';
+  header {
+    @apply relative top-0 z-1 py-4 [print-color-adjust:exact] sm:py-6 md:sticky print:text-(--hero-foreground);
+  }
+  header.hero,
+  header.title-hidden {
+    @apply text-(--hero-foreground);
+  }
+  header.hero :global(Button),
+  header.title-hidden :global(Button) {
+    @apply hover:bg-(--hero-foreground)/5 hover:text-(--hero-foreground);
+  }
+  header.hero .logo,
+  header.hero :global(.menu),
+  header.title-hidden .logo,
+  header.title-hidden :global(.menu) {
+    @apply before:opacity-100;
+  }
+  header.hero .post-title,
+  header.title-hidden .post-title {
+    @apply lg:invisible lg:opacity-0;
+  }
+  header.grade-down-logo :global(.q-logo),
+  :global(.dark) header:not(.hero) :global(.q-logo) {
+    @apply hidden;
+  }
+  header.grade-down-logo .q-logo-grade-down,
+  :global(.dark) header:not(.hero) .q-logo-grade-down {
+    @apply block;
+  }
+  header.grade-down-logo .wordmark-light,
+  :global(.dark) header:not(.hero) .wordmark-light {
+    @apply hidden;
+  }
+  header.grade-down-logo .wordmark-grade-down,
+  :global(.dark) header:not(.hero) .wordmark-grade-down {
+    @apply block;
+  }
+  header.hero .logo {
+    @apply text-(--hero-foreground);
+  }
+  header section {
+    @apply relative container-x flex !max-w-full items-start justify-between gap-4 px-4 sm:!px-6;
+  }
+  header section .logo {
+    @apply relative -m-1 flex items-center self-center p-1 text-primary transition before:mask-size-[54px];
+  }
+  header section .logo .logo-symbol {
+    @apply relative block size-9 shrink-0;
+  }
+  header section .logo .wordmark-symbol,
+  header section .logo .wordmark-rest {
+    @apply hidden overflow-hidden;
+  }
+  header section .logo .wordmark-image {
+    @apply absolute top-0 left-0 h-9 w-[210px] max-w-none;
+  }
+  header section .logo .wordmark-light {
+    @apply bg-current mask-(--wordmark) mask-size-[210px_36px] mask-top-left mask-no-repeat;
+  }
+  header section .logo .wordmark-grade-down {
+    @apply bg-current mask-(--wordmark-grade-down) mask-size-[210px_36px] mask-top-left mask-no-repeat;
+  }
+  header section .logo.wordmark-logo {
+    @apply xl:gap-0;
+  }
+  header section .logo.wordmark-logo .logo-symbol {
+    @apply xl:size-9;
+  }
+  header section .logo.wordmark-logo :global(.q-logo),
+  header section .logo.wordmark-logo .q-logo-grade-down {
+    @apply xl:hidden;
+  }
+  header section .logo.wordmark-logo .wordmark-symbol {
+    @apply xl:absolute xl:inset-0 xl:block;
+  }
+  header section .logo.wordmark-logo .wordmark-rest {
+    @apply xl:relative xl:block xl:h-9 xl:w-[174px];
+  }
+  header section .logo.wordmark-logo .wordmark-rest .wordmark-image {
+    @apply xl:-left-9;
+  }
+  header section .post-title {
+    @apply invisible -my-0.5 line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] leading-5 font-bold text-pretty break-keep opacity-0 transition-all lg:visible lg:opacity-100 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)];
+  }
+  header section :global(.menu) {
+    @apply relative size-9 before:mask-size-[24px] print:hidden;
+  }
+  header section .logo,
+  header section :global(.menu) {
+    @apply before:absolute before:inset-0 before:-z-1 before:bg-(--outline-color) before:mask-(--svg-outline) before:mask-center before:mask-no-repeat before:opacity-0 before:transition;
+  }
 </style>

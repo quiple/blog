@@ -1,9 +1,7 @@
 <script lang="ts">
   import '#app.css'
-  import '#fonts.sass'
+  import '#fonts.css'
   import '@quiple/blog-fonts'
-  import {browser} from '$app/environment'
-  import {onNavigate} from '$app/navigation'
   import appleTouchIcon from '$lib/assets/apple-touch-icon.png'
   import astaSansUrl from '@quiple/blog-fonts/fonts/AstaSans.woff2?url'
   import Header from '$lib/components/header.svelte'
@@ -11,23 +9,6 @@
   import {setupViewTransition} from '$lib/view-transition'
 
   let {children} = $props()
-
-  if (browser) {
-    onNavigate((navigation) => {
-      if (navigation.type === 'popstate') {
-        const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent)
-        if (isIOS) {
-          const original = document.startViewTransition
-          // @ts-ignore
-          document.startViewTransition = undefined
-          setTimeout(() => {
-            // @ts-ignore
-            document.startViewTransition = original
-          }, 0)
-        }
-      }
-    })
-  }
 
   setupViewTransition()
 </script>
@@ -49,33 +30,46 @@
   {@render children()}
 </main>
 
-<style lang="sass">
-  @reference '#app.css'
+<style>
+  @charset "UTF-8";
+  @reference '#app.css';
+  :root {
+    --hero-height: calc(100svh / 3 * 2);
+    @apply [--header-height:68px] sm:[--header-height:84px];
+  }
 
-  :root
-    --hero-height: calc(100svh / 3 * 2)
-    @apply [--header-height:68px] sm:[--header-height:84px]
-  main
-    @apply px-4 sm:px-6 min-h-[calc(100dvh-var(--header-height)-var(--footer-height))] pb-6 md:-mt-(--header-height) md:pt-6
-    :global(section)
-      @apply [.hero+&]:pt-[calc(var(--hero-height)-var(--header-height))] md:[.hero+&]:pt-[calc(var(--hero-height)-1.5rem)] print:[.hero+&]:pt-[calc(56.25vw-var(--header-height))] print:md:[.hero+&]:pt-[calc(56.25vw-1.5rem)]
-      :global(article)
-        @apply z-10 prose-shadcn max-w-xl 2xl:max-w-2xl w-full shrink-0
-        :global(.metadata)
-          @apply text-muted-foreground text-sm inline-block
-          :global(a)
-            @apply text-muted-foreground font-normal no-underline hover:text-foreground transition
-        :global(figure)
-          @apply mx-auto [blockquote_&]:mx-0 max-w-fit flex flex-col items-start
-        :global([target=_blank]:not(.metadata [target=_blank]))
-          @apply after:content-['↗'] after:pr-px
-        :global(.twitter-tweet)
-          @apply mx-auto my-0!
-        :global(iframe)
-          @apply max-w-full w-xl 2xl:w-2xl
-          color-scheme: initial
-        :global(.footnotes)
-          @apply text-sm 2xl:text-base leading-6 border-t pt-4 mt-6
-          :global(p)
-            @apply leading-6 my-2 2xl:text-base
+  main {
+    @apply min-h-[calc(100dvh-var(--header-height)-var(--footer-height))] px-4 pb-6 sm:px-6 md:-mt-(--header-height) md:pt-6;
+  }
+  main :global(section) {
+    @apply [.hero+&]:pt-[calc(var(--hero-height)-var(--header-height))] md:[.hero+&]:pt-[calc(var(--hero-height)-1.5rem)] print:[.hero+&]:pt-[calc(56.25vw-var(--header-height))] print:md:[.hero+&]:pt-[calc(56.25vw-1.5rem)];
+  }
+  main :global(section) :global(article) {
+    @apply prose-shadcn z-10 w-full max-w-xl shrink-0 2xl:max-w-2xl;
+  }
+  main :global(section) :global(article) :global(.metadata) {
+    @apply inline-block text-sm text-muted-foreground;
+  }
+  main :global(section) :global(article) :global(.metadata) :global(a) {
+    @apply font-normal text-muted-foreground no-underline transition hover:text-foreground;
+  }
+  main :global(section) :global(article) :global(figure) {
+    @apply mx-auto flex max-w-fit flex-col items-start [blockquote_&]:mx-0;
+  }
+  main :global(section) :global(article) :global([target='_blank']:not(.metadata [target='_blank'])) {
+    @apply after:pr-px after:content-['↗'];
+  }
+  main :global(section) :global(article) :global(.twitter-tweet) {
+    @apply mx-auto my-0!;
+  }
+  main :global(section) :global(article) :global(iframe) {
+    @apply w-xl max-w-full 2xl:w-2xl;
+    color-scheme: initial;
+  }
+  main :global(section) :global(article) :global(.footnotes) {
+    @apply mt-6 border-t pt-4 text-sm leading-6 2xl:text-base;
+  }
+  main :global(section) :global(article) :global(.footnotes) :global(p) {
+    @apply my-2 leading-6 2xl:text-base;
+  }
 </style>

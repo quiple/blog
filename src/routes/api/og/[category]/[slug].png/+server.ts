@@ -3,10 +3,9 @@ import {read} from '$app/server'
 import astaSansFontPath from '$lib/assets/fonts/AstaSans-ExtraBold.ttf?url'
 import geistaFontPath from '$lib/assets/fonts/Geista-SemiBold.otf?url'
 import plexSansJPFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
+import {getCompiledContent} from '$lib/compiled-content'
 import OgImage from '$lib/components/og/post.svelte'
-import {blogArticles, blogFonts, blogPosts} from '$lib/content'
-import {processTitle} from '$lib/markdown'
-import matter from 'gray-matter'
+import {blogArticles, blogFonts, blogPosts, parseMatter} from '$lib/content'
 import type {EntryGenerator, RequestHandler} from './$types'
 
 export const entries: EntryGenerator = () => {
@@ -51,11 +50,12 @@ export const GET: RequestHandler = async ({params}) => {
 
   const matchPath = `/src/posts/${params.category}/${params.slug}.md`
   const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
-  if (!rawContent) return new Response(null, {status: 404})
-  const {data} = matter(rawContent as string)
+  const compiledContent = getCompiledContent(matchPath)
+  if (!rawContent || !compiledContent) return new Response(null, {status: 404})
+  const {data} = parseMatter(rawContent as string)
 
   const props: ComponentProps<typeof OgImage> = {
-    title: await processTitle(data.title as string),
+    title: compiledContent.title,
     category: params.category as string,
     image: (data.originalImage as string) ?? (data.image as string),
     imageForeground: (data.imageForeground as string) ?? '09090b',

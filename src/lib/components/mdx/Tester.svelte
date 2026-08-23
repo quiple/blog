@@ -285,39 +285,91 @@
   />
 </div>
 
-<style lang="sass">
-  $fonts: 14 14, 11 11, 11 11-Bold, 11 11-Condensed, 9 9, 7 7, Mono11 Mono11, Mono9 Mono9, Mono7 Mono7
-  $path: 'fonts/galmuri'
-
-  @font-face
-    font:
-      family: x12y12pxMaruMinyaHangul-web
-      style: normal
-      weight: 400
-      display: block
-    src: url('/fonts/x12y12pxMaruMinyaHangul.woff2') format('woff2')
-
-  @font-face
-    font:
-      family: x10y12pxDenkiChipHangul-web
-      style: normal
-      weight: 400
-      display: block
-    src: url('/fonts/x10y12pxDenkiChipHangul.woff2') format('woff2')
-
-  @each $family, $file in $fonts
-    @font-face
-      font:
-        family: Galmuri#{$family}-web
-        style: normal
-        @if $file == 11-Condensed
-          stretch: condensed
-        @else
-          stretch: normal
-        @if $file == 11-Bold
-          weight: 700
-        @else
-          weight: 400
-        display: block
-      src: url('/#{$path}/Galmuri#{$file}.woff2') format('woff2')
+<style>
+  @font-face {
+    font-family: x12y12pxMaruMinyaHangul-web;
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/x12y12pxMaruMinyaHangul.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: x10y12pxDenkiChipHangul-web;
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/x10y12pxDenkiChipHangul.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Galmuri14-web;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/galmuri/Galmuri14.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Galmuri11-web;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/galmuri/Galmuri11.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Galmuri11-web;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 700;
+    font-display: block;
+    src: url('/fonts/galmuri/Galmuri11-Bold.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Galmuri11-web;
+    font-style: normal;
+    font-stretch: condensed;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/galmuri/Galmuri11-Condensed.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Galmuri9-web;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/galmuri/Galmuri9.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: Galmuri7-web;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/galmuri/Galmuri7.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: GalmuriMono11-web;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/galmuri/GalmuriMono11.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: GalmuriMono9-web;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/galmuri/GalmuriMono9.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: GalmuriMono7-web;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url('/fonts/galmuri/GalmuriMono7.woff2') format('woff2');
+  }
 </style>

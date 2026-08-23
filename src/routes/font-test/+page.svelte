@@ -47,9 +47,9 @@
   <h2 class="font-serif text-xl" style="font-weight: 450">한0O아123요.</h2>
 </section>
 
-<style lang="sass">
-  @reference '#app.css'
-
-  section
-    @apply my-4
+<style>
+  @reference '#app.css';
+  section {
+    @apply my-4;
+  }
 </style>

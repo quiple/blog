@@ -285,9 +285,9 @@
   </div>
 {/if}
 
-<style lang="sass">
-  @reference '#app.css'
-
-  .toc
-    @apply hidden lg:block noscript:hidden font-medium text-pretty break-keep sticky pt-2 mt-5
+<style>
+  @reference '#app.css';
+  .toc {
+    @apply sticky mt-5 hidden pt-2 font-medium text-pretty break-keep lg:block noscript:hidden;
+  }
 </style>

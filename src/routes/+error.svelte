@@ -11,11 +11,12 @@
   <p>{page.error?.message}</p>
 </section>
 
-<style lang="sass">
-  @reference '#app.css'
-
-  section
-    @apply h-[calc(100dvh-var(--header-height)-2rem)] md:h-[calc(100dvh-3.5rem)] flex items-center justify-center gap-6
-    h1
-      @apply font-semibold border-r-2 pr-6
+<style>
+  @reference '#app.css';
+  section {
+    @apply flex h-[calc(100dvh-var(--header-height)-2rem)] items-center justify-center gap-6 md:h-[calc(100dvh-3.5rem)];
+  }
+  section h1 {
+    @apply border-r-2 pr-6 font-semibold;
+  }
 </style>

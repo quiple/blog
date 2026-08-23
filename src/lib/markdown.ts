@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
 import smartypants from 'remark-smartypants'
 import strip from 'strip-markdown'
-import {stripLanguageTemplates} from './language-template'
+import {stripLanguageTemplates} from './language-template.ts'
 
 // --- Reusable remark processors ---
 // Processors are frozen via .freeze() on first use, so creating them once is efficient.

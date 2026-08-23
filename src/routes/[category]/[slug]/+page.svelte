@@ -335,71 +335,103 @@
   </div>
 </section>
 
-<style lang="sass">
-  @reference '#app.css'
+<style>
+  @reference '#app.css';
+  @keyframes -global-zoom-in {
+    from {
+      opacity: var(--zoom-in-opacity);
+      height: 5.5rem;
+    }
+    to {
+      opacity: calc(1 - var(--zoom-in-opacity));
+      height: var(--hero-height);
+    }
+  }
+  @keyframes hero-parallax {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(0, 25svh, 0);
+    }
+  }
+  :global(html:has(.hero.bg)) {
+    overscroll-behavior-y: none;
+  }
 
-  @keyframes -global-zoom-in
-    from
-      opacity: var(--zoom-in-opacity)
-      height: 5.5rem
-    to
-      opacity: calc(1 - var(--zoom-in-opacity))
-      height: var(--hero-height)
+  .hero {
+    @apply absolute! inset-0 [print-color-adjust:exact];
+  }
+  .hero.bg {
+    @apply inner-b-border -z-10 h-(--hero-height) w-[calc(100vw-var(--scrollbar-width))] overflow-hidden print:h-[56.25vw];
+  }
+  .hero.bg .hero-image-inner {
+    @apply absolute inset-0 -z-10 h-full w-full;
+  }
+  @supports (animation-timeline: scroll()) {
+    .hero.bg .hero-image-inner {
+      will-change: transform;
+      animation: hero-parallax linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 var(--hero-height);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero.bg .hero-image-inner {
+      animation: none;
+      will-change: auto;
+    }
+  }
+  .hero.bg .hero-image-inner img {
+    @apply absolute inset-0 block size-full object-cover;
+  }
+  .hero.title {
+    @apply top-(--header-height) z-10 mx-auto flex h-[calc(var(--hero-height)-var(--header-height))] w-[calc(36rem+2rem)] max-w-full items-end justify-center px-4 sm:w-[calc(36rem+4rem)] sm:px-8 md:top-0 md:left-1/2 md:mx-0 md:h-(--hero-height) md:w-xl md:-translate-x-1/2 md:px-0 md:2xl:w-2xl print:h-[calc(56.25vw-var(--header-height))] print:md:h-[56.25vw];
+  }
+  .hero.title > div {
+    @apply prose-shadcn mx-auto w-full pr-(--scrollbar-width) [--tw-prose-body:var(--hero-foreground)] [--tw-prose-headings:var(--hero-foreground)] md:-translate-x-[calc(var(--scrollbar-width)/2)] md:pr-0 dark:[--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)];
+  }
+  .hero.title > div .metadata {
+    @apply relative mb-5 inline-block text-sm;
+  }
+  .hero.title > div .metadata a {
+    @apply font-normal text-(--hero-foreground)! no-underline;
+  }
+  .hero.title.line h1 {
+    @apply relative;
+  }
+  .hero.title.line h1::before {
+    @apply absolute inset-0 -z-1 content-(--content);
+    -webkit-text-stroke: 6px var(--outline-color);
+  }
+  .hero.title.line .metadata::before {
+    @apply absolute inset-0 -z-1 content-(--content);
+    -webkit-text-stroke: 6px var(--outline-color);
+  }
 
-  @keyframes hero-parallax
-    from
-      transform: translate3d(0, 0, 0)
-    to
-      transform: translate3d(0, 25svh, 0)
+  :global(.mdx-image-frame) {
+    @apply relative block overflow-hidden rounded-lg;
+    content-visibility: auto;
+    contain-intrinsic-size: auto 24rem;
+  }
+  :global(.mdx-image-frame) :global(img) {
+    @apply block max-w-full rounded-[inherit] object-cover inner-border;
+  }
 
-  :global(html:has(.hero.bg))
-    overscroll-behavior-y: none
+  :global(.mdx-image-frame.animate-pulse) {
+    box-shadow: none;
+  }
 
-  .hero
-    @apply inset-0 absolute! [print-color-adjust:exact]
-    &.bg
-      @apply w-[calc(100vw-var(--scrollbar-width))] -z-10 h-(--hero-height) print:h-[56.25vw] overflow-hidden inner-b-border
-      .hero-image-inner
-        @apply absolute inset-0 w-full h-full -z-10
-        @supports (animation-timeline: scroll())
-          will-change: transform
-          animation: hero-parallax linear both
-          animation-timeline: scroll(root)
-          animation-range: 0 var(--hero-height)
-        @media (prefers-reduced-motion: reduce)
-          animation: none
-          will-change: auto
-        img
-          @apply absolute inset-0 block size-full object-cover
-    &.title
-      @apply justify-center items-end flex z-10 h-[calc(var(--hero-height)-var(--header-height))] print:h-[calc(56.25vw-var(--header-height))] w-[calc(36rem+2rem)] sm:w-[calc(36rem+4rem)] max-w-full px-4 sm:px-8 md:px-0 mx-auto md:mx-0 top-(--header-height) md:top-0 md:h-(--hero-height) print:md:h-[56.25vw] md:w-xl md:2xl:w-2xl md:left-1/2 md:-translate-x-1/2
-      & > div
-        @apply w-full prose-shadcn mx-auto [--tw-prose-headings:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)] [--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-body:var(--hero-foreground)] md:-translate-x-[calc(var(--scrollbar-width)/2)] pr-(--scrollbar-width) md:pr-0
-        .metadata
-          @apply relative text-sm mb-5 inline-block
-          a
-            @apply font-normal text-(--hero-foreground)! no-underline
-      &.line h1
-        @apply relative
-        &::before
-          @apply content-(--content) absolute inset-0 -z-1
-          -webkit-text-stroke: 6px var(--outline-color)
-      &.line .metadata::before
-        @apply content-(--content) absolute inset-0 -z-1
-        -webkit-text-stroke: 6px var(--outline-color)
-  :global(.mdx-image-frame)
-    @apply relative block overflow-hidden rounded-lg
-    content-visibility: auto
-    contain-intrinsic-size: auto 24rem
-    :global(img)
-      @apply block max-w-full rounded-[inherit] object-cover inner-border
-  :global(.mdx-image-frame.animate-pulse)
-    box-shadow: none
-  :global(.mdx-image-frame.animate-pulse.mdx-constrained-width)
-    width: var(--mdx-constrained-width) !important
-  :global(article iframe.mdx-embed-frame)
-    @apply rounded-lg inner-border
-  :global(article iframe)
-    content-visibility: auto
-    contain-intrinsic-size: auto 24rem
+  :global(.mdx-image-frame.animate-pulse.mdx-constrained-width) {
+    width: var(--mdx-constrained-width) !important;
+  }
+
+  :global(article iframe.mdx-embed-frame) {
+    @apply rounded-lg inner-border;
+  }
+
+  :global(article iframe) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 24rem;
+  }
 </style>
