@@ -35,7 +35,7 @@
     "bits-ui": "^2.19.0",
     "clsx": "^2.1.1",
     "gray-matter": "^4.0.3",
-    "lefthook": "^2.1.9",
+    "lefthook": "^2.1.10",
     "mode-watcher": "^1.1.0",
     "oxfmt": "^0.64.0",
     "oxlint": "^1.79.0",
@@ -52,6 +52,7 @@
     "remark-rehype": "^11.1.2",
     "remark-smartypants": "github:quiple/remark-smartypants",
     "shadcn-svelte": "^1.5.0",
+    "sharp": "^0.35.3",
     "strip-markdown": "^6.0.0",
     "svelte": "^5.56.10",
     "svelte-check": "^4.7.6",
@@ -74,7 +75,6 @@
     "@giscus/svelte": "^3.1.0",
     "@quiple/blog-fonts": "^1.2.1",
     "bdfparser": "^2.2.5",
-    "fetchline": "^1.0.1",
-    "sharp": "^0.35.3"
+    "fetchline": "^1.0.1"
   }
 }

@@ -3,6 +3,7 @@ packages:
 allowBuilds:
   '@parcel/watcher': true
   esbuild: true
+  lefthook: set this to true or false
   remark-github-alerts: true
   remark-github-alerts@https://codeload.github.com/quiple/remark-github-alerts/tar.gz/14adca9688a3b48034a1832ed4bbc7ba8decf54d: true
   sharp: true
