@@ -135,11 +135,11 @@
                     >
                   </div>
                 {/if}
-                <strong class="line-clamp-1 grow" use:transition={postTransition(post.slug, 'title')}
+                <strong class="line-clamp-1 grow font-medium" use:transition={postTransition(post.slug, 'title')}
                   >{post.title}</strong
                 >
               </div>
-              <p class="mb-1 line-clamp-3 text-justify text-sm">{post.description}</p>
+              <p class="mb-1 line-clamp-3 text-justify text-sm font-light">{post.description}</p>
             </div>
             {#if post.image}
               {@const isPixelImage = post.imageType === 'pixel'}
