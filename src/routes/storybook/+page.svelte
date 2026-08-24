@@ -43,7 +43,7 @@
 
         <div class="divide-y divide-border">
           {#each sizes as size}
-            <article class="grid grid-cols-[3.5rem_minmax(0,1fr)] gap-4 py-4 sm:grid-cols-[5rem_minmax(0,1fr)]">
+            <div class="grid grid-cols-[3.5rem_minmax(0,1fr)] gap-4 py-4 sm:grid-cols-[5rem_minmax(0,1fr)]">
               <div class="pt-1 font-mono text-[11px] leading-4 text-muted-foreground tabular-nums">
                 <div>{size.name}</div>
                 <div>{size.value}px</div>
@@ -61,7 +61,7 @@
                   <span lang="ja">素早い狐は怠けた犬を飛び越える。</span>
                 </p>
               </div>
-            </article>
+            </div>
           {/each}
         </div>
       </section>
