@@ -3,7 +3,7 @@
   import '#fonts.css'
   import '@quiple/aster'
   import appleTouchIcon from '$lib/assets/apple-touch-icon.png'
-  import asterUrl from '@quiple/aster/fonts/webfonts/Aster[opsz,wght].woff2?url'
+  import asterUrl from '@quiple/aster/fonts/Aster[opsz,wght].woff2?url'
   import Header from '$lib/components/header.svelte'
   import {ModeWatcher} from 'mode-watcher'
   import {setupViewTransition} from '$lib/view-transition'
