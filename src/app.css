@@ -267,7 +267,7 @@
     @apply text-sm text-muted-foreground;
   }
   blockquote {
-    @apply border-s-2 ps-4 not-italic sm:ps-6 [&>p]:before:content-none [&>p]:after:content-none;
+    @apply border-s-2 ps-4 font-normal not-italic sm:ps-6 [&>*]:font-normal [&>p]:before:content-none [&>p]:after:content-none;
   }
   blockquote,
   .markdown-alert,
