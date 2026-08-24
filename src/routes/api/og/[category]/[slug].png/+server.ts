@@ -1,6 +1,6 @@
 import type {ComponentProps} from 'svelte'
 import {read} from '$app/server'
-import asterFontPath from '$lib/assets/fonts/Aster-SemiBold.ttf?url'
+import asterFontPath from '$lib/assets/fonts/Aster-SemiBold.otf?url'
 import plexSansJPFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
 import {getCompiledContent} from '$lib/compiled-content'
 import OgImage from '$lib/components/og/post.svelte'
