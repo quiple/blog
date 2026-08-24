@@ -1,9 +1,9 @@
 <script lang="ts">
   import '#app.css'
   import '#fonts.css'
-  import '@quiple/blog-fonts'
+  import '@quiple/aster'
   import appleTouchIcon from '$lib/assets/apple-touch-icon.png'
-  import astaSansUrl from '@quiple/blog-fonts/fonts/AstaSans.woff2?url'
+  import asterUrl from '@quiple/aster/fonts/webfonts/Aster[opsz,wght].woff2?url'
   import Header from '$lib/components/header.svelte'
   import {ModeWatcher} from 'mode-watcher'
   import {setupViewTransition} from '$lib/view-transition'
@@ -17,7 +17,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
   <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
   <link rel="apple-touch-icon" type="image/png" href={appleTouchIcon} />
-  <link rel="preload" href={astaSansUrl} as="font" type="font/woff2" crossorigin="anonymous" />
+  <link rel="preload" href={asterUrl} as="font" type="font/woff2" crossorigin="anonymous" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:site_name" content="quiple" />
 </svelte:head>
