@@ -225,18 +225,18 @@
   <div
     class="metadata"
     style={isOutline
-      ? `--content: '${data.media ? `${data.media} • ` : ''}${data.author ? `${data.author} • ` : ''}${formattedDate}'`
+      ? `--content: '${data.media ? `${data.media} · ` : ''}${data.author ? `${data.author} · ` : ''}${formattedDate}'`
       : null}
     use:transition={`post-metadata-${data.slug}`}
   >
     {#if data.media}
       <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>
         {data.media}
-      </a>&#8194;&bullet;&#8194;
+      </a>&#8194;&middot;&#8194;
     {/if}{#if data.author}
       <a target="_blank" rel="nofollow noreferrer noopener" href={data.authorURL}
         >{data.author}
-      </a>&#8194;&bullet;&#8194;
+      </a>&#8194;&middot;&#8194;
     {/if}{#if typeof publishedDate === 'object'}
       <time datetime={(publishedDate as Date).toISOString().split('T')[0]}>
         {formattedDate}
