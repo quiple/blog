@@ -1,7 +1,6 @@
 import type {ComponentProps} from 'svelte'
 import {read} from '$app/server'
-import astaSansFontPath from '$lib/assets/fonts/AstaSans-ExtraBold.ttf?url'
-import geistaFontPath from '$lib/assets/fonts/Geista-SemiBold.otf?url'
+import asterFontPath from '$lib/assets/fonts/Aster-SemiBold.ttf?url'
 import plexSansJPFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
 import {getCompiledContent} from '$lib/compiled-content'
 import OgImage from '$lib/components/og/post.svelte'
@@ -27,19 +26,15 @@ function getResolvedFontOptions() {
   resolvedFontOptionsPromise ??= (async () => {
     const {CustomFont, resolveFonts} = await import('@ethercorps/sveltekit-og/fonts')
 
-    const geista = new CustomFont('Geista', () => read(geistaFontPath).arrayBuffer(), {
-      weight: 800,
-    })
-
-    const astaSans = new CustomFont('IBM Plex Sans KR', () => read(astaSansFontPath).arrayBuffer(), {
-      weight: 800,
+    const aster = new CustomFont('Geista', () => read(asterFontPath).arrayBuffer(), {
+      weight: 600,
     })
 
     const plexSansJP = new CustomFont('IBM Plex Sans JP', () => read(plexSansJPFontPath).arrayBuffer(), {
-      weight: 800,
+      weight: 600,
     })
 
-    return resolveFonts([geista, astaSans, plexSansJP])
+    return resolveFonts([aster, plexSansJP])
   })()
   return resolvedFontOptionsPromise
 }
