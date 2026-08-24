@@ -201,7 +201,7 @@
   </a>
 {/snippet}
 
-<PageTitle class="mb-8 text-3xl font-bold tracking-tight">Works</PageTitle>
+<PageTitle class="mb-8 text-3xl">Works</PageTitle>
 
 <section class="container-x mb-4">
   <div class="mb-12">
@@ -214,7 +214,7 @@
     </div>
   </div>
 
-  <h2 class="mb-6 text-2xl font-bold tracking-tight">Contributions</h2>
+  <h2 class="mb-6 text-2xl">Contributions</h2>
 
   <div>
     <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">

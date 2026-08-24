@@ -202,7 +202,7 @@
     clip-path: polygon(0 0, 0 0, 0 0);
   }
   strong {
-    @apply font-bold;
+    @apply font-semibold;
   }
 }
 

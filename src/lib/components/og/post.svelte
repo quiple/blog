@@ -39,7 +39,7 @@
       <span class="-mb-2.5 rounded-full px-3 py-0.5 text-2xl text-white" style:background-color="#27272a"
         >{getCategoryName(category)}</span
       >
-      <h1 class="-mb-3 text-6xl leading-tight font-bold" style="word-break: keep-all">
+      <h1 class="-mb-3 text-6xl leading-tight font-semibold" style="word-break: keep-all">
         {title}
       </h1>
     </div>
