@@ -28,10 +28,10 @@
   --font-weight-extrabold: var(--font-weight-extrabold-theme);
   --font-serif-weight: var(--font-serif-weight-theme);
   --font-sans-theme:
-    Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
-    Meiryo, MS Gothic, Asta Sans, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
+    Aster, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
+    Meiryo, MS Gothic, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
   --font-sans-ja-theme:
-    Geista, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
+    Aster, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
     Meiryo, MS Gothic, ui-sans-serif, system-ui, sans-serif;
   --font-sans-system:
     -apple-system, BlinkMacSystemFont, InterVariable, Inter, Helvetica Neue, Roboto, Arial, Apple SD Gothic Neo,
