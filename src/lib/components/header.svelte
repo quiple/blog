@@ -369,7 +369,7 @@
     @apply xl:-left-9;
   }
   header section .post-title {
-    @apply invisible -my-0.5 line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] leading-5 font-bold text-pretty break-keep opacity-0 transition-all lg:visible lg:opacity-100 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)];
+    @apply invisible -my-0.5 line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] leading-5 font-medium text-pretty break-keep opacity-0 transition-all lg:visible lg:opacity-100 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)];
   }
   header section :global(.menu) {
     @apply relative size-9 before:mask-size-[24px] print:hidden;
