@@ -164,7 +164,7 @@
           <div class="mt-px flex items-start justify-between gap-2">
             <small class="text-muted-foreground" use:transition={postTransition(post.slug, 'metadata')}>
               {#if post.media}
-                {post.media}&#8194;&#8226;&#8194;{/if}{dateFormatter.format(displayDate)}
+                {post.media}&#8194;&middot;&#8194;{/if}{dateFormatter.format(displayDate)}
             </small>
           </div>
         </a>
