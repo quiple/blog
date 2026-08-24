@@ -12,21 +12,6 @@
 }
 
 :root {
-  --font-weight-normal-theme: var(--font-sans-weight-normal);
-  --font-weight-medium-theme: var(--font-sans-weight-medium);
-  --font-weight-bold-theme: var(--font-sans-weight-bold);
-  --font-weight-extrabold-theme: var(--font-sans-weight-extrabold);
-  --font-serif-weight-theme: var(--font-serif-weight-bold);
-  --font-weight-normal-system: 400;
-  --font-weight-medium-system: 500;
-  --font-weight-bold-system: 600;
-  --font-weight-extrabold-system: 800;
-  --font-serif-weight-system: 700;
-  --font-weight-normal: var(--font-weight-normal-theme);
-  --font-weight-medium: var(--font-weight-medium-theme);
-  --font-weight-bold: var(--font-weight-bold-theme);
-  --font-weight-extrabold: var(--font-weight-extrabold-theme);
-  --font-serif-weight: var(--font-serif-weight-theme);
   --font-sans-theme:
     Aster, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
     Meiryo, MS Gothic, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
@@ -89,11 +74,6 @@
 }
 
 :root[data-font-family='system'] {
-  --font-weight-normal: var(--font-weight-normal-system);
-  --font-weight-medium: var(--font-weight-medium-system);
-  --font-weight-bold: var(--font-weight-bold-system);
-  --font-weight-extrabold: var(--font-weight-extrabold-system);
-  --font-serif-weight: var(--font-serif-weight-system);
   --font-sans-active: var(--font-sans-system);
   --font-sans-ja-active: var(--font-sans-ja-system);
   --font-serif-active: var(--font-serif-system);
@@ -266,19 +246,19 @@
     @apply border-border;
   }
   h1 {
-    @apply scroll-m-5.5 text-2xl leading-tight font-extrabold tracking-tight text-pretty break-keep md:text-3xl lg:text-4xl;
+    @apply scroll-m-5.5 text-2xl leading-tight font-semibold tracking-tight text-pretty break-keep md:text-3xl lg:text-4xl;
   }
   h2 {
-    @apply scroll-m-5.5 border-b pb-3 font-serif text-xl leading-snug font-(--font-serif-weight) tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
+    @apply scroll-m-5.5 border-b pb-3 text-xl leading-snug font-medium tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
   }
   h3 {
-    @apply scroll-m-5.5 text-lg font-bold tracking-tight md:text-xl lg:text-2xl;
+    @apply scroll-m-5.5 text-lg font-medium tracking-tight md:text-xl lg:text-2xl;
   }
   h4 {
-    @apply scroll-m-5.5 text-base font-bold tracking-tight md:text-lg lg:text-xl;
+    @apply scroll-m-5.5 text-base font-medium tracking-tight md:text-lg lg:text-xl;
   }
   p {
-    @apply my-3 text-justify text-base leading-6 sm:my-4 sm:leading-7 2xl:text-lg 2xl:leading-8;
+    @apply my-3 text-justify text-base leading-6 font-light sm:my-4 sm:leading-7 2xl:text-lg 2xl:leading-8;
   }
   p.lead {
     @apply text-xl text-muted-foreground;
@@ -301,7 +281,7 @@
     @apply list-disc [&>li]:mt-2;
   }
   code {
-    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold before:content-none after:content-none;
+    @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium before:content-none after:content-none;
   }
   small {
     @apply text-sm leading-none;
@@ -327,7 +307,7 @@
       @apply mb-0;
     }
     strong {
-      @apply font-extrabold text-foreground;
+      @apply font-semibold text-foreground;
     }
   }
   thead {
@@ -340,7 +320,7 @@
     @apply h-auto max-w-full;
   }
   strong {
-    @apply font-bold;
+    @apply font-semibold;
   }
 }
 
