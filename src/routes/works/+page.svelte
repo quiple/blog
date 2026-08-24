@@ -154,7 +154,7 @@
 
 <svelte:head>
   <title>Works – quiple</title>
-  <meta name="robots" content="noindex" />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
 </svelte:head>
 
 {#snippet workCard(work: Work)}
