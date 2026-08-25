@@ -32,12 +32,17 @@
   const fontSize = $derived(selectedFont.size)
   let previewFontSize = $state(24)
   let previewLineHeight = $state(1)
+  let previewFontWeight = $state(400)
+  let previewOpticalSize = $state(14)
   const previewFontSizeMax = $derived(fontSize * 8)
   $effect(() => {
     previewFontSize = fontSize * 2
   })
 
   const fontProps = $derived.by(() => {
+    if (font === 'aster') {
+      return {family: 'Aster', weight: previewFontWeight, stretch: 'normal'}
+    }
     if (font === 'maruminya') {
       return {family: 'x12y12pxMaruMinyaHangul-web', weight: 400, stretch: 'normal'}
     }
@@ -46,6 +51,21 @@
     }
     return {family: selectedFont.family, weight: selectedFont.weight, stretch: selectedFont.stretch}
   })
+  const testerStyle = $derived(
+    [
+      `font-size: ${previewFontSize}px`,
+      `line-height: ${previewLineHeight}`,
+      `font-family: ${fontProps.family}`,
+      `font-weight: ${fontProps.weight}`,
+      `font-stretch: ${fontProps.stretch}`,
+      ...(font === 'aster'
+        ? [
+            'font-optical-sizing: none',
+            `font-variation-settings: 'wght' ${previewFontWeight}, 'opsz' ${previewOpticalSize}`,
+          ]
+        : []),
+    ].join('; '),
+  )
 
   const triggerContent = $derived(selectedFont.label)
 
@@ -276,10 +296,26 @@
     </Label>
     <Slider id="line-height" type="single" bind:value={previewLineHeight} min={1} max={2} step={0.01} />
   </div>
+  {#if font === 'aster'}
+    <div class="flex items-center gap-1.5 tabular-nums print:hidden">
+      <Label for="font-weight" class="gap-1 text-muted-foreground">
+        <span class="font-mono text-xs">wght</span>
+        {previewFontWeight}
+      </Label>
+      <Slider id="font-weight" type="single" bind:value={previewFontWeight} min={200} max={600} step={1} />
+    </div>
+    <div class="flex items-center gap-1.5 tabular-nums print:hidden">
+      <Label for="optical-size" class="gap-1 text-muted-foreground">
+        <span class="font-mono text-xs">opsz</span>
+        {previewOpticalSize}
+      </Label>
+      <Slider id="optical-size" type="single" bind:value={previewOpticalSize} min={14} max={32} step={0.1} />
+    </div>
+  {/if}
   <Textarea
     id="tester"
     class="mt-1 pt-[calc(1em/12*4)] pr-[calc(1em/12*3)] pb-[calc(1em/12*3)] pl-[calc(1em/12*4)]"
-    style="font-size: {previewFontSize}px; line-height: {previewLineHeight}; font-family: {fontProps.family}; font-weight: {fontProps.weight}; font-stretch: {fontProps.stretch}"
+    style={testerStyle}
     spellcheck="false"
     bind:value={exampleText}
   />
