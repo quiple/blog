@@ -1,9 +1,10 @@
-@import url('https://cdn.jsdelivr.net/npm/@quiple/aster@1.0.0/dist/fonts.css');
+@import url('https://cdn.jsdelivr.net/npm/@quiple/aster@1/fonts/webfonts/aster.css');
 
 :root {
-  --font-weight-normal: 375;
-  --font-weight-bold: 675;
-  --font-sans: var(--font-sans-quiple);
+  --font-weight-bold: 600;
+  --font-sans:
+    Aster, 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Hiragino Sans',
+    'Noto Sans JP', Meiryo, sans-serif;
   --default-font-feature-settings: 'palt' 1;
   --radius: 0.625rem;
 }
@@ -15,7 +16,6 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-weight: var(--font-weight-normal);
 }
 
 .gsc-comments {

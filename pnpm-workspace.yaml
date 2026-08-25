@@ -49,10 +49,10 @@ minimumReleaseAgeExclude:
   - '@oxlint/binding-win32-arm64-msvc@1.67.0 || 1.75.0 || 1.80.0'
   - '@oxlint/binding-win32-ia32-msvc@1.67.0 || 1.75.0 || 1.80.0'
   - '@oxlint/binding-win32-x64-msvc@1.67.0 || 1.75.0 || 1.80.0'
-  - miniflare@4.20260526.0 || 4.20260706.0 || 4.20260708.1 || 5.20260811.0-alpha || 5.20260811.1-alpha
+  - miniflare@4.20260526.0 || 4.20260706.0 || 4.20260708.1 || 5.20260811.0-alpha || 5.20260811.1-alpha || 5.20260825.0-alpha
   - oxfmt@0.52.0 || 0.60.0 || 0.65.0
   - oxlint@1.67.0 || 1.75.0 || 1.80.0
-  - wrangler@4.95.0 || 4.108.0 || 4.110.0 || 4.122.0 || 4.123.0
+  - wrangler@4.95.0 || 4.108.0 || 4.110.0 || 4.122.0 || 4.123.0 || 4.126.0
   - '@quiple/blog-fonts@1.2.1'
   - '@sveltejs/vite-plugin-svelte@7.2.0'
   - svelte-check@4.7.2 || 4.7.5 || 4.7.6
@@ -87,3 +87,9 @@ minimumReleaseAgeExclude:
   - '@sveltejs/load-config@0.2.2'
   - vite@8.2.1
   - '@quiple/aster@1.0.0 || 1.0.1 || 1.0.2'
+  - '@cloudflare/workerd-darwin-64@1.20260825.1'
+  - '@cloudflare/workerd-darwin-arm64@1.20260825.1'
+  - '@cloudflare/workerd-linux-64@1.20260825.1'
+  - '@cloudflare/workerd-linux-arm64@1.20260825.1'
+  - '@cloudflare/workerd-windows-64@1.20260825.1'
+  - workerd@1.20260825.1
