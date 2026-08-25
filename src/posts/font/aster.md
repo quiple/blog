@@ -9,7 +9,6 @@ pubDate: 2026-08-25T21:16
 <Tester font="aster" />
 
 - [GitHub에서 다운로드](https://github.com/quiple/aster/releases/latest)
-- [비트맵 폰트 이미지 만들기](/font-generator)
 
 ## 라이선스
 
