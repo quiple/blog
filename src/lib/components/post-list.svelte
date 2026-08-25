@@ -139,7 +139,7 @@
                   >{post.title}</strong
                 >
               </div>
-              <p class="mb-1 line-clamp-3 text-justify text-sm font-light">{post.description}</p>
+              <p class="mb-1 line-clamp-3 text-justify text-sm">{post.description}</p>
             </div>
             {#if post.image}
               {@const isPixelImage = post.imageType === 'pixel'}
