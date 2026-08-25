@@ -21,9 +21,9 @@ Adobe-KR-0 및 Adobe-KR-1의 한글 음절 4,358자와 일본 한자 640자를 �
 
 <FontLicenseTable />
 
-&copy; 2026 Lee Minseo ([quiple&#8203;@&#8203;quiple&#8203;.&#8203;dev](mailto:quiple@quiple.dev))
+&copy; 2026 Lee Minseo ([quiple&#8203;@&#8203;quiple&#8203;.&#8203;dev](mailto:quiple@quiple.dev)).
 
-&copy; 2026 The x8&#8203;y12&#8203;px&#8203;Denki&#8203;Chip Project Authors ([https://&#8203;github&#8203;.&#8203;com&#8203;/&#8203;hicc&#8203;hicc&#8203;/&#8203;x8&#8203;y12&#8203;px&#8203;Denki&#8203;Chip](https://github.com/hicchicc/x8y12pxDenkiChip))
+&copy; 2026 The x8&#8203;y12&#8203;px&#8203;Denki&#8203;Chip Project Authors ([https://&#8203;github&#8203;.&#8203;com&#8203;/&#8203;hicc&#8203;hicc&#8203;/&#8203;x8&#8203;y12&#8203;px&#8203;Denki&#8203;Chip](https://github.com/hicchicc/x8y12pxDenkiChip)).
 
 전기칩 한글은 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 [https://&#8203;open&#8203;font&#8203;license&#8203;.&#8203;org](https://openfontlicense.org)에서 FAQ와 함께 확인할 수 있습니다.
 

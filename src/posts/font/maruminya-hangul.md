@@ -20,9 +20,9 @@ pubDate: 2026-02-27T01:09
 
 <FontLicenseTable />
 
-&copy; 2026 Lee Minseo ([quiple&#8203;@&#8203;quiple&#8203;.&#8203;dev](mailto:quiple@quiple.dev))
+&copy; 2026 Lee Minseo ([quiple&#8203;@&#8203;quiple&#8203;.&#8203;dev](mailto:quiple@quiple.dev)).
 
-&copy; 2026 The x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya Project Authors ([https://&#8203;github&#8203;.&#8203;com&#8203;/&#8203;hicc&#8203;hicc&#8203;/&#8203;x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya](https://github.com/hicchicc/x12y12pxMaruMinya))
+&copy; 2026 The x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya Project Authors ([https://&#8203;github&#8203;.&#8203;com&#8203;/&#8203;hicc&#8203;hicc&#8203;/&#8203;x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya](https://github.com/hicchicc/x12y12pxMaruMinya)).
 
 마루미냐 한글은 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 [https://&#8203;open&#8203;font&#8203;license&#8203;.&#8203;org](https://openfontlicense.org)에서 FAQ와 함께 확인할 수 있습니다.
 

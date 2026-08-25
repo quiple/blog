@@ -14,7 +14,7 @@ pubDate: 2026-08-25T21:16
 
 <FontLicenseTable />
 
-&copy; 2026 Lee Minseo ([quiple&#8203;@&#8203;quiple&#8203;.&#8203;dev](mailto:quiple@quiple.dev))
+&copy; 2026 Lee Minseo ([quiple&#8203;@&#8203;quiple&#8203;.&#8203;dev](mailto:quiple@quiple.dev)).
 
 &copy; 2024 The Asta Sans Project Authors (<https://github.com/42dot/Asta-Sans>).
 
