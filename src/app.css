@@ -247,16 +247,16 @@
     @apply border-border;
   }
   h1 {
-    @apply scroll-m-5.5 text-2xl leading-tight font-semibold tracking-tight text-pretty break-keep md:text-3xl lg:text-4xl;
+    @apply scroll-m-5.5 text-2xl leading-tight font-semibold text-pretty break-keep md:text-3xl lg:text-4xl;
   }
   h2 {
-    @apply scroll-m-5.5 border-b pb-3 text-xl leading-snug font-medium tracking-tight text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
+    @apply scroll-m-5.5 border-b pb-3 text-xl leading-snug font-medium text-pretty break-keep transition-colors first:mt-5 md:text-2xl lg:text-3xl;
   }
   h3 {
-    @apply scroll-m-5.5 text-lg font-medium tracking-tight md:text-xl lg:text-2xl;
+    @apply scroll-m-5.5 text-lg font-medium md:text-xl lg:text-2xl;
   }
   h4 {
-    @apply scroll-m-5.5 text-base font-medium tracking-tight md:text-lg lg:text-xl;
+    @apply scroll-m-5.5 text-base font-medium md:text-lg lg:text-xl;
   }
   p {
     @apply my-3 text-justify text-base leading-6 sm:my-4 sm:leading-7 2xl:text-lg 2xl:leading-8;
