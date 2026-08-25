@@ -17,9 +17,9 @@ pubDate: 2026-03-12T21:16
 
 <FontLicenseTable />
 
-&copy; 2019&ndash;2025 Lee Minseo ([quiple&#8203;@&#8203;quiple&#8203;.&#8203;dev](mailto:quiple@quiple.dev)).
+&copy; 2019&ndash;2025 Lee Minseo (<quiple@quiple.dev>).
 
-Galmuri는 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 [https://&#8203;open&#8203;font&#8203;license&#8203;.&#8203;org](https://openfontlicense.org)에서 FAQ와 함께 확인할 수 있습니다.
+Galmuri는 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 <https://openfontlicense.org>에서 FAQ와 함께 확인할 수 있습니다.
 
 [라이선스 원문](https://github.com/quiple/galmuri/blob/main/ofl.md)
 

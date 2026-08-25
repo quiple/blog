@@ -5,7 +5,7 @@ imageType: pixel
 pubDate: 2026-02-27T01:09
 ---
 
-**x12y12pxMaruMinyaHangul&#8203;(마루미냐 한글)**은 [{{ja|患者長ひっく}}](https://x.com/hicchicc) 님께서 제작한 12px 크기의 일본어 픽셀 폰트 '**[x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya&#8203;({{ja|マルミーニャ}})](https://github.com/hicchicc/x12y12pxMaruMinya)**'를 기반으로 만들어진 한국어&middot;일본어 픽셀 폰트입니다.
+**x12y12pxMaruMinyaHangul(마루미냐 한글)**은 [{{ja|患者長ひっく}}](https://x.com/hicchicc) 님께서 제작한 12px 크기의 일본어 픽셀 폰트 '**[x12y12pxMaruMinya({{ja|マルミーニャ}})](https://github.com/hicchicc/x12y12pxMaruMinya)**'를 기반으로 만들어진 한국어&middot;일본어 픽셀 폰트입니다.
 
 한글 음절 11,172자와 KS X 1001(한자 제외), KS X 1003 및 JIS X 0201, JIS X 0208의 전체 문자를 지원합니다.
 
@@ -20,11 +20,11 @@ pubDate: 2026-02-27T01:09
 
 <FontLicenseTable />
 
-&copy; 2026 Lee Minseo ([quiple&#8203;@&#8203;quiple&#8203;.&#8203;dev](mailto:quiple@quiple.dev)).
+&copy; 2026 Lee Minseo (<quiple@quiple.dev>).
 
-&copy; 2026 The x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya Project Authors ([https://&#8203;github&#8203;.&#8203;com&#8203;/&#8203;hicc&#8203;hicc&#8203;/&#8203;x12&#8203;y12&#8203;px&#8203;Maru&#8203;Minya](https://github.com/hicchicc/x12y12pxMaruMinya)).
+&copy; 2026 The x12y12pxMaruMinya Project Authors (<https://github.com/hicchicc/x12y12pxMaruMinya>).
 
-마루미냐 한글은 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 [https://&#8203;open&#8203;font&#8203;license&#8203;.&#8203;org](https://openfontlicense.org)에서 FAQ와 함께 확인할 수 있습니다.
+마루미냐 한글은 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 <https://openfontlicense.org>에서 FAQ와 함께 확인할 수 있습니다.
 
 [라이선스 원문](https://github.com/quiple/x12y12pxMaruMinyaHangul/blob/main/OFL.txt)
 

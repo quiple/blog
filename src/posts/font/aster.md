@@ -16,10 +16,10 @@ Asta Sans의 각 마스터가 놓인 굵기 좌표를 Inter와 시각적으로 �
 
 <FontLicenseTable />
 
-&copy; 2026 Lee Minseo ([quiple&#8203;@&#8203;quiple&#8203;.&#8203;dev](mailto:quiple@quiple.dev)).
+&copy; 2026 Lee Minseo (<quiple@quiple.dev>).
 
 &copy; 2024 The Asta Sans Project Authors (<https://github.com/42dot/Asta-Sans>).
 
-Aster는 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 [https://&#8203;open&#8203;font&#8203;license&#8203;.&#8203;org](https://openfontlicense.org)에서 FAQ와 함께 확인할 수 있습니다.
+Aster는 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 <https://openfontlicense.org>에서 FAQ와 함께 확인할 수 있습니다.
 
 [라이선스 원문](https://github.com/quiple/aster/blob/main/OFL.txt)
