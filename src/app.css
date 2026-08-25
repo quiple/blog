@@ -259,7 +259,7 @@
     @apply scroll-m-5.5 text-base font-medium md:text-lg lg:text-xl;
   }
   p {
-    @apply my-3 text-justify text-base leading-6 sm:my-4 sm:leading-7 2xl:text-lg 2xl:leading-8;
+    @apply my-3 text-base leading-6 sm:my-4 sm:leading-7 2xl:text-lg 2xl:leading-8;
   }
   p.lead {
     @apply text-xl text-muted-foreground;
