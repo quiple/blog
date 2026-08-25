@@ -12,8 +12,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(svelte@5.56.10)
       '@quiple/aster':
-        specifier: ^1.0.1
-        version: 1.0.1
+        specifier: ^1.0.2
+        version: 1.0.2
       bdfparser:
         specifier: ^2.2.5
         version: 2.2.5
@@ -1113,8 +1113,8 @@ packages:
   '@poppinss/exception@1.2.3':
     resolution: {integrity: sha512-dCED+QRChTVatE9ibtoaxc+WkdzOSjYTKi/+uacHWIsfodVfpsueo3+DKpgU5Px8qXjgmXkSvhXvSCz3fnP9lw==}
 
-  '@quiple/aster@1.0.1':
-    resolution: {integrity: sha512-/hIo90xHnU3wAAxN8BWR6yT6syl009lvY0kyXLRmfRrUVqyZQllXqDhHbDjntc/tAfct1HF8CjnGOjHuH/MhxQ==}
+  '@quiple/aster@1.0.2':
+    resolution: {integrity: sha512-IYt77LvH0gSUm6PtcomTSPNNir6aGGmEpHhsXEgi2WwpUsaor/YtbzaK2Rl75qGwwLZmr5Mfzfi0FXgqtwX4Uw==}
 
   '@resvg/resvg-wasm@2.6.2':
     resolution: {integrity: sha512-FqALmHI8D4o6lk/LRWDnhw95z5eO+eAa6ORjVg09YRR7BkcM6oPHU9uyC0gtQG5vpFLvgpeU4+zEAz2H8APHNw==}
@@ -3323,7 +3323,7 @@ snapshots:
 
   '@poppinss/exception@1.2.3': {}
 
-  '@quiple/aster@1.0.1': {}
+  '@quiple/aster@1.0.2': {}
 
   '@resvg/resvg-wasm@2.6.2': {}
 
