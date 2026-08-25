@@ -307,14 +307,14 @@
   {#if font === 'aster'}
     <div class="flex items-center gap-1.5 tabular-nums print:hidden">
       <Label for="font-weight" class="gap-1 text-muted-foreground">
-        <span class="font-mono text-xs">wght</span>
+        <span class="font-mono text-xs font-semibold">wght</span>
         {previewFontWeight}
       </Label>
       <Slider id="font-weight" type="single" bind:value={previewFontWeight} min={200} max={600} step={1} />
     </div>
     <div class="flex items-center gap-1.5 tabular-nums print:hidden">
       <Label for="optical-size" class="gap-1 text-muted-foreground">
-        <span class="font-mono text-xs">opsz</span>
+        <span class="font-mono text-xs font-semibold">opsz</span>
         {automaticOpticalSizing ? 'auto' : previewOpticalSize}
       </Label>
       <Slider
