@@ -10,7 +10,7 @@ pubDate: 2026-03-12T21:16
 
 <Tester font="galmuri" />
 
-- [GitHub에서 다운로드](https://github.com/quiple/galmuri/releases/download/v2.40.3/Galmuri-v2.40.3.zip)
+- [GitHub에서 다운로드](https://github.com/quiple/galmuri/releases/latest)
 - [비트맵 폰트 이미지 만들기](/font-generator)
 
 ## 라이선스
