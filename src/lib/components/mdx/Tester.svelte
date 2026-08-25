@@ -242,9 +242,15 @@
   function shuffle() {
     const en = pickRandom(pangramEn, prevEn)
     const ko = pickRandom(pangramKo, prevKo)
-    const ja = pickRandom(pangramJa, prevJa)
     prevEn = en
     prevKo = ko
+
+    if (font === 'aster') {
+      exampleText = [en, ko].join('\n')
+      return
+    }
+
+    const ja = pickRandom(pangramJa, prevJa)
     prevJa = ja
     exampleText = [en, ko, ja].join('\n')
   }
