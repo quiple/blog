@@ -1,6 +1,7 @@
 <script lang="ts">
   import {Shuffle} from '@lucide/svelte'
   import {Button} from '$lib/components/ui/button/index.js'
+  import {Checkbox} from '$lib/components/ui/checkbox/index.js'
   import {Label} from '$lib/components/ui/label/index.js'
   import * as Select from '$lib/components/ui/select/index.js'
   import {Slider} from '$lib/components/ui/slider/index.js'
@@ -34,6 +35,7 @@
   let previewLineHeight = $state(1)
   let previewFontWeight = $state(400)
   let previewOpticalSize = $state(14)
+  let automaticOpticalSizing = $state(true)
   const previewFontSizeMax = $derived(fontSize * 8)
   $effect(() => {
     previewFontSize = fontSize * 2
@@ -60,8 +62,8 @@
       `font-stretch: ${fontProps.stretch}`,
       ...(font === 'aster'
         ? [
-            'font-optical-sizing: none',
-            `font-variation-settings: 'wght' ${previewFontWeight}, 'opsz' ${previewOpticalSize}`,
+            `font-optical-sizing: ${automaticOpticalSizing ? 'auto' : 'none'}`,
+            ...(automaticOpticalSizing ? [] : [`font-variation-settings: 'opsz' ${previewOpticalSize}`]),
           ]
         : []),
     ].join('; '),
@@ -292,7 +294,7 @@
       bind:value={previewFontSize}
       min={fontSize}
       max={previewFontSizeMax}
-      step={fontSize}
+      step={font === 'aster' ? 1 : fontSize}
     />
   </div>
   <div class="flex items-center gap-1.5 tabular-nums print:hidden">
@@ -313,9 +315,21 @@
     <div class="flex items-center gap-1.5 tabular-nums print:hidden">
       <Label for="optical-size" class="gap-1 text-muted-foreground">
         <span class="font-mono text-xs">opsz</span>
-        {previewOpticalSize}
+        {automaticOpticalSizing ? 'auto' : previewOpticalSize}
       </Label>
-      <Slider id="optical-size" type="single" bind:value={previewOpticalSize} min={14} max={32} step={0.1} />
+      <Slider
+        id="optical-size"
+        type="single"
+        bind:value={previewOpticalSize}
+        min={14}
+        max={32}
+        step={0.1}
+        disabled={automaticOpticalSizing}
+      />
+    </div>
+    <div class="flex items-center gap-2 print:hidden">
+      <Checkbox id="automatic-optical-sizing" bind:checked={automaticOpticalSizing} />
+      <Label for="automatic-optical-sizing" class="cursor-pointer text-muted-foreground">opsz 자동 조절</Label>
     </div>
   {/if}
   <Textarea
