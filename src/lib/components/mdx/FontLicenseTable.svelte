@@ -102,8 +102,9 @@
   </tbody>
 </table>
 
-<p class="mt-2 text-xs leading-5 text-muted-foreground">
+<p class="mt-2! text-sm! leading-5! text-muted-foreground">
   이 표는 OFL-1.1의 이해를 돕기 위한 요약이며 법적 효력이 있는 번역이 아닙니다. 해석이 다른 경우
-  <a href="https://openfontlicense.org/documents/OFL.md" target="_blank" rel="noreferrer noopener">영문 원문</a>이
-  우선합니다.
+  <a href="https://openfontlicense.org/open-font-license-official-text/" target="_blank" rel="noreferrer noopener"
+    >영문 원문</a
+  >이 우선합니다.
 </p>
