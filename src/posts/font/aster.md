@@ -6,7 +6,7 @@ pubDate: 2026-08-25T21:16
 
 **Aster**는 Asta Sans와 Inter를 합친 한글&middot;라틴 폰트입니다.
 
-<Tester font="galmuri" />
+<Tester font="aster" />
 
 - [GitHub에서 다운로드](https://github.com/quiple/aster/releases/latest)
 - [비트맵 폰트 이미지 만들기](/font-generator)
