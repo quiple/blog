@@ -76,7 +76,7 @@
         <td>
           <strong>
             <span
-              class="inline-block size-4 rounded-full p-0.5 text-white [print-color-adjust:exact] [&>svg]:size-3 {row.tone ===
+              class="inline-block size-4 rounded-full p-0.5 align-sub text-white [print-color-adjust:exact] [&>svg]:size-3 {row.tone ===
               'positive'
                 ? 'bg-green-500'
                 : row.tone === 'caution'
