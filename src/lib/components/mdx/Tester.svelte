@@ -323,7 +323,7 @@
         bind:value={previewOpticalSize}
         min={14}
         max={32}
-        step={0.1}
+        step={1}
         disabled={automaticOpticalSizing}
       />
     </div>
