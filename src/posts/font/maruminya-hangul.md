@@ -20,7 +20,7 @@ pubDate: 2026-02-27T01:09
 
 <FontLicenseTable />
 
-&copy; 2026 Lee Minseo (<quiple@quiple.dev>).
+&copy; 2026 Lee Minseo ([quiple@quiple.dev](mailto:quiple@quiple.dev)).
 
 &copy; 2026 The x12y12pxMaruMinya Project Authors (<https://github.com/hicchicc/x12y12pxMaruMinya>).
 

@@ -16,7 +16,7 @@ Asta Sans의 각 마스터가 놓인 굵기 좌표를 Inter와 시각적으로 �
 
 <FontLicenseTable />
 
-&copy; 2026 Lee Minseo (<quiple@quiple.dev>).
+&copy; 2026 Lee Minseo ([quiple@quiple.dev](mailto:quiple@quiple.dev)).
 
 &copy; 2024 The Asta Sans Project Authors (<https://github.com/42dot/Asta-Sans>).
 

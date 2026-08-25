@@ -21,7 +21,7 @@ Adobe-KR-0 및 Adobe-KR-1의 한글 음절 4,358자와 일본 한자 640자를 �
 
 <FontLicenseTable />
 
-&copy; 2026 Lee Minseo (<quiple@quiple.dev>).
+&copy; 2026 Lee Minseo ([quiple@quiple.dev](mailto:quiple@quiple.dev)).
 
 &copy; 2026 The x8y12pxDenkiChip Project Authors (<https://github.com/hicchicc/x8y12pxDenkiChip>).
 
