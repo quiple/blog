@@ -19,7 +19,7 @@
       category: '제작물 출처 표기',
       status: '필수 아님',
       tone: 'positive',
-      description: '폰트로 만든 제작물에는 폰트명·출처·저작자명을 표시할 필요가 없습니다.',
+      description: '폰트로 만든 제작물에 폰트명·출처·저작자명을 표시할 필요가 없습니다.',
     },
     {
       category: '수정',
@@ -86,7 +86,7 @@
               {#if row.tone === 'positive'}
                 <Check class="mt-[0.5px] stroke-4" aria-hidden="true" />
               {:else if row.tone === 'caution'}
-                <TriangleAlert class="-mt-[0.5px] stroke-3" aria-hidden="true" />
+                <TriangleAlert class="mt-[-0.5px] stroke-3" aria-hidden="true" />
               {:else}
                 <X class="stroke-4" aria-hidden="true" />
               {/if}
