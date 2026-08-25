@@ -73,7 +73,7 @@
   },
   "dependencies": {
     "@giscus/svelte": "^3.1.0",
-    "@quiple/aster": "^1.0.1",
+    "@quiple/aster": "^1.0.2",
     "bdfparser": "^2.2.5",
     "fetchline": "^1.0.1"
   }
