@@ -75,13 +75,20 @@
         <td class="whitespace-nowrap">{row.category}</td>
         <td>
           <strong>
-            <span class="inline-block size-4 rounded-full p-0.5 text-white [print-color-adjust:exact]">
+            <span
+              class="inline-block size-4 rounded-full p-0.5 text-white [print-color-adjust:exact] {row.tone ===
+              'positive'
+                ? 'bg-green-500'
+                : row.tone === 'caution'
+                  ? 'bg-amber-500'
+                  : 'bg-red-500'}"
+            >
               {#if row.tone === 'positive'}
-                <Check class=" bg-green-500 stroke-4" aria-hidden="true" />
+                <Check class="stroke-4" aria-hidden="true" />
               {:else if row.tone === 'caution'}
-                <TriangleAlert class="bg-amber-500 stroke-3" aria-hidden="true" />
+                <TriangleAlert class="stroke-3" aria-hidden="true" />
               {:else}
-                <X class="bg-red-500 stroke-4" aria-hidden="true" />
+                <X class="stroke-4" aria-hidden="true" />
               {/if}
             </span>
             {row.status}
