@@ -1,10 +1,12 @@
 ---
 title: Aster
-origDate: 2026-08-25
+origDate: 2026-08-25T17:43
 pubDate: 2026-08-25T21:16
 ---
 
 **Aster**는 Asta Sans와 Inter를 합친 한글&middot;라틴 폰트입니다.
+
+Asta Sans의 각 마스터가 놓인 굵기 좌표를 Inter와 시각적으로 어울리도록 재정의한 뒤, 같은 굵기와 광학 크기에서 생성한 Inter의 라틴 자형을 결합해 만듭니다.
 
 <Tester font="aster" />
 
