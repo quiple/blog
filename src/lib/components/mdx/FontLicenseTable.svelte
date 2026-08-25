@@ -84,9 +84,9 @@
                   : 'bg-red-500'}"
             >
               {#if row.tone === 'positive'}
-                <Check class="stroke-4" aria-hidden="true" />
+                <Check class="mt-[0.5px] stroke-4" aria-hidden="true" />
               {:else if row.tone === 'caution'}
-                <TriangleAlert class="stroke-3" aria-hidden="true" />
+                <TriangleAlert class="-mt-[0.5px] stroke-3" aria-hidden="true" />
               {:else}
                 <X class="stroke-4" aria-hidden="true" />
               {/if}
