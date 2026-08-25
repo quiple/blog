@@ -287,7 +287,7 @@
     @apply text-sm leading-none;
   }
   a {
-    @apply scroll-m-5.5 font-normal decoration-muted-foreground transition hover:decoration-foreground;
+    @apply scroll-m-5.5 decoration-muted-foreground transition hover:decoration-foreground;
   }
   figcaption {
     @apply m-0;
