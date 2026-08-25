@@ -54,7 +54,10 @@
     @apply font-normal text-muted-foreground no-underline transition hover:text-foreground;
   }
   main :global(section) :global(article) :global(figure) {
-    @apply mx-auto flex max-w-fit flex-col items-start [blockquote_&]:mx-0;
+    @apply mx-auto flex w-fit max-w-full min-w-0 flex-col items-start [blockquote_&]:mx-0;
+  }
+  main :global(section) :global(article) :global(figure > figcaption) {
+    @apply w-full max-w-full min-w-0;
   }
   main :global(section) :global(article) :global([target='_blank']:not(.metadata [target='_blank'])) {
     @apply after:pr-px after:content-['↗'];
