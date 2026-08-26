@@ -22,11 +22,3 @@ pubDate: 2026-03-12T21:16
 Galmuri는 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다. 이 라이선스는 <https://openfontlicense.org>에서 FAQ와 함께 확인할 수 있습니다.
 
 [라이선스 원문](https://github.com/quiple/galmuri/blob/main/ofl.md)
-
-## 제작에 사용된 도구
-
-- [CrystalTile2](https://www.romhacking.net/utilities/818)
-- [hexdraw](https://czyborra.com/unifont)
-- [Bits'N'Picas](https://github.com/kreativekorp/bitsnpicas)
-- [Adobe Font Development Kit for OpenType](https://adobe-type-tools.github.io/afdko/)
-- [fontTools](https://github.com/fonttools/fonttools)
