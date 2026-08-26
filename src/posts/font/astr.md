@@ -30,8 +30,8 @@ Astr는 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다.
 
 ## 크레딧
 
-- 한글: **[Asta Sans](https://github.com/42dot/Asta-Sans)** --- [42dot Inc.](https://42dot.ai)
 - 라틴: **[Inter](https://rsms.me/inter)** --- [Rasmus Andersson](https://rsms.me)
+- 한글: **[Asta Sans](https://github.com/42dot/Asta-Sans)** --- [42dot Inc.](https://42dot.ai)
 - 조정 및 제작: 이민서
 
 Inter는 Rasmus Andersson의 상표입니다.
