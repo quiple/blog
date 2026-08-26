@@ -381,6 +381,9 @@
   :global(html:has(.hero.bg)) {
     overscroll-behavior-y: none;
   }
+  :global(html:has(.astr-preview)) {
+    overflow-x: clip;
+  }
 
   .hero {
     @apply absolute! inset-0 [print-color-adjust:exact];
@@ -451,6 +454,10 @@
       animation: none;
       font-weight: 400;
     }
+  }
+
+  :global(article .astr-preview) {
+    @apply relative left-1/2 z-20 my-8 w-screen -translate-x-1/2 columns-1 gap-6 bg-background px-4 sm:px-10 md:columns-2 lg:columns-3 xl:columns-4;
   }
 
   :global(.mdx-image-frame) {
