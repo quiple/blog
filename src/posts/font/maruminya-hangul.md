@@ -5,7 +5,7 @@ imageType: pixel
 pubDate: 2026-02-27T01:09
 ---
 
-**x12y12pxMaruMinyaHangul(마루미냐 한글)**은 [{{ja|患者長ひっく}}](https://x.com/hicchicc) 님께서 제작한 12px 크기의 일본어 픽셀 폰트 '**[x12y12pxMaruMinya({{ja|マルミーニャ}})](https://github.com/hicchicc/x12y12pxMaruMinya)**'를 기반으로 만들어진 한국어&middot;일본어 픽셀 폰트입니다.
+**x12y12pxMaruMinyaHangul(마루미냐 한글)**은 12px 크기의 일본어 픽셀 폰트 '**[x12y12pxMaruMinya({{ja|マルミーニャ}})](https://github.com/hicchicc/x12y12pxMaruMinya)**'를 기반으로 만들어진 한국어&middot;일본어 픽셀 폰트입니다.
 
 한글 완성자 11,172자와 KS X 1001(한자 제외), KS X 1003 및 JIS X 0201, JIS X 0208의 전체 문자를 지원합니다.
 
@@ -28,12 +28,10 @@ pubDate: 2026-02-27T01:09
 
 [라이선스 원문](https://github.com/quiple/x12y12pxMaruMinyaHangul/blob/main/OFL.txt)
 
-## 제작에 사용된 도구
+## 크레딧
 
-- [BitHangul](https://bithangul.quiple.dev)
-- [Bits'N'Picas](https://github.com/kreativekorp/bitsnpicas)
-- [FontForge](https://fontforge.org)
-- [fontTools](https://github.com/fonttools/fonttools)
+- 라틴&middot;일본어: [x12y12pxMaruMinya({{ja|マルミーニャ}})](https://github.com/hicchicc/x12y12pxMaruMinya) --- [{{ja|患者長ひっく}}](https://hicchicc.github.io)
+- 한글: 이민서
 
 ## 다른 파생 폰트
 
