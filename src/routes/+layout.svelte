@@ -70,9 +70,9 @@
     color-scheme: initial;
   }
   main :global(section) :global(article) :global(.footnotes) {
-    @apply mt-6 border-t pt-4 text-sm leading-6 2xl:text-base;
+    @apply mt-6 border-t pt-4 text-sm leading-5 sm:leading-6 2xl:text-base;
   }
   main :global(section) :global(article) :global(.footnotes) :global(p) {
-    @apply my-2 leading-6 2xl:text-base;
+    @apply my-2 leading-5 sm:leading-6 2xl:text-base;
   }
 </style>
