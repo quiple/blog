@@ -138,9 +138,11 @@
   const viewTransitionStyle = $derived(`
     <style>
       ::view-transition-group(post-title-${data.slug}),
-      ::view-transition-group(post-category-${data.slug}),
       ::view-transition-group(post-metadata-${data.slug}) {
         z-index: 10;
+      }
+      ::view-transition-group(post-category-${data.slug}) {
+        z-index: 20;
       }
       ::view-transition-old(post-image-${data.slug}) {
         --zoom-in-opacity: 1;
@@ -301,7 +303,7 @@
     style:--outline-color={data.outline ? `#${data.outline.toString()}` : undefined}
   >
     <div>
-      <div class="mb-1.25 inline-block" use:transition={`post-category-${data.slug}`}>
+      <div class="relative z-20 mb-1.25 inline-block" use:transition={`post-category-${data.slug}`}>
         <Badge href={`/${data.category}`} class="no-underline!" variant="secondary"
           >{getCategoryName(data.category)}</Badge
         >

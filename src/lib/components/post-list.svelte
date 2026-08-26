@@ -39,8 +39,8 @@
       .map(
         ({slug}) => `
           ::view-transition-group(post-title-${slug}),
-          ::view-transition-group(post-category-${slug}),
           ::view-transition-group(post-metadata-${slug}) { z-index: 10; }
+          ::view-transition-group(post-category-${slug}) { z-index: 20; }
           ::view-transition-old(post-image-${slug}) { --zoom-out-opacity: 1; animation-name: zoom-out; }
           ::view-transition-new(post-image-${slug}) { --zoom-out-opacity: 0; animation-name: zoom-out; }
         `,
