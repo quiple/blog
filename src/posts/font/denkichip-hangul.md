@@ -6,7 +6,7 @@ imageForeground: fff
 pubDate: 2026-06-21T00:48
 ---
 
-**x10y12pxDenkiChipHangul(전기칩 한글)**은 [{{ja|患者長ひっく}}](https://x.com/hicchicc) 님께서 제작한 12px 크기의 일본어 픽셀 폰트 '**[x8y12pxDenkiChip({{ja|でんきチップ}})](https://github.com/hicchicc/x8y12pxDenkiChip)**'을 기반으로 만들어진 한국어&middot;일본어 픽셀 폰트입니다.
+**x10y12pxDenkiChipHangul(전기칩 한글)**은 12px 크기의 일본어 픽셀 폰트 '**[x8y12pxDenkiChip({{ja|でんきチップ}})](https://github.com/hicchicc/x8y12pxDenkiChip)**'을 기반으로 만들어진 한국어&middot;일본어 픽셀 폰트입니다.
 
 Adobe-KR-0 및 Adobe-KR-1의 한글 완성자 4,358자와 일본 한자 640자를 지원합니다.
 
@@ -29,9 +29,10 @@ Adobe-KR-0 및 Adobe-KR-1의 한글 완성자 4,358자와 일본 한자 640자�
 
 [라이선스 원문](https://github.com/quiple/x10y12pxDenkiChipHangul/blob/main/OFL.txt)
 
-## 제작에 사용된 도구
+## 크레딧
 
-- [Glyphs 3](https://glyphsapp.com/)
+- 라틴&middot;일본어: [x8y12pxDenkiChip({{ja|でんきチップ}})](https://github.com/hicchicc/x8y12pxDenkiChip) --- [{{ja|患者長ひっく}}](https://hicchicc.github.io)
+- 한글: 이민서
 
 ## 다른 파생 폰트
 
