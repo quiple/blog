@@ -430,7 +430,7 @@
   }
   .astr-title span {
     font-variation-settings: 'opsz' 32;
-    animation: astr-weight-wave 4s cubic-bezier(0.4, 0.2, 0.6, 0.8) calc(var(--astr-letter-index) * -0.3s) infinite both;
+    animation: astr-weight-wave 4s ease-in-out calc(var(--astr-letter-index) * 1s - 4s) infinite both;
   }
   .hero.title.line h1 {
     @apply relative;
