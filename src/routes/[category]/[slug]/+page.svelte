@@ -424,7 +424,7 @@
   .hero.title .astr-title {
     @apply flex;
     font-family: Astr, sans-serif;
-    font-size: clamp(4.5rem, 18vw, 10rem);
+    font-size: clamp(4.5rem, 24vw, 12rem);
     line-height: 1;
     font-feature-settings: normal;
   }
