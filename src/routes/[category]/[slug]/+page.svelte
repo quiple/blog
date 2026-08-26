@@ -370,14 +370,10 @@
   @keyframes astr-weight-wave {
     0%,
     100% {
-      font-variation-settings:
-        'opsz' 32,
-        'wght' 200;
+      font-weight: 200;
     }
     50% {
-      font-variation-settings:
-        'opsz' 32,
-        'wght' 600;
+      font-weight: 600;
     }
   }
   :global(html:has(.hero.bg)) {
@@ -433,7 +429,7 @@
     font-feature-settings: normal;
   }
   .astr-title span {
-    animation: astr-weight-wave 4s ease-in-out calc(var(--astr-letter-index) * -0.6s) infinite both;
+    animation: astr-weight-wave 4s ease calc(var(--astr-letter-index) * 0.3s) infinite both;
   }
   .hero.title.line h1 {
     @apply relative;
@@ -450,9 +446,7 @@
   @media (prefers-reduced-motion: reduce) {
     .astr-title span {
       animation: none;
-      font-variation-settings:
-        'opsz' 32,
-        'wght' 400;
+      font-weight: 400;
     }
   }
 
