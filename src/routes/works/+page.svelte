@@ -60,8 +60,8 @@
       stack: ['TypeScript', 'Svelte', 'SvelteKit', 'Sass', 'Tailwind CSS', 'Cloudflare'],
     },
     {
-      title: 'Aster',
-      url: '/font/aster',
+      title: 'Astr',
+      url: '/font/astr',
       description: 'Asta Sans와 Inter를 결합한 UI용 아웃라인 폰트.',
       type: '폰트',
     },

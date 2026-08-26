@@ -86,7 +86,7 @@ minimumReleaseAgeExclude:
   - '@lucide/svelte@1.29.0 || 1.34.0'
   - '@sveltejs/load-config@0.2.2'
   - vite@8.2.1
-  - '@quiple/aster@1.0.0 || 1.0.1 || 1.0.2'
+  - '@quiple/aster@1.0.0 || 1.0.1 || 1.0.2 || 1.0.3'
   - '@cloudflare/workerd-darwin-64@1.20260825.1'
   - '@cloudflare/workerd-darwin-arm64@1.20260825.1'
   - '@cloudflare/workerd-linux-64@1.20260825.1'

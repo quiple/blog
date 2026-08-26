@@ -1,6 +1,6 @@
 import type {ComponentProps} from 'svelte'
 import {read} from '$app/server'
-import asterFontPath from '$lib/assets/fonts/Aster-SemiBold.otf?url'
+import astrFontPath from '$lib/assets/fonts/Astr-SemiBold.otf?url'
 import plexSansJPFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
 import {getCompiledContent} from '$lib/compiled-content'
 import OgImage from '$lib/components/og/post.svelte'
@@ -26,7 +26,7 @@ function getResolvedFontOptions() {
   resolvedFontOptionsPromise ??= (async () => {
     const {CustomFont, resolveFonts} = await import('@ethercorps/sveltekit-og/fonts')
 
-    const aster = new CustomFont('Geista', () => read(asterFontPath).arrayBuffer(), {
+    const astr = new CustomFont('Geista', () => read(astrFontPath).arrayBuffer(), {
       weight: 600,
     })
 
@@ -34,7 +34,7 @@ function getResolvedFontOptions() {
       weight: 600,
     })
 
-    return resolveFonts([aster, plexSansJP])
+    return resolveFonts([astr, plexSansJP])
   })()
   return resolvedFontOptionsPromise
 }

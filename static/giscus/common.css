@@ -1,9 +1,9 @@
-@import url('https://cdn.jsdelivr.net/npm/@quiple/aster@1/fonts/webfonts/aster.css');
+@import url('https://cdn.jsdelivr.net/npm/@quiple/aster@1/fonts/webfonts/astr.css');
 
 :root {
   --font-weight-bold: 600;
   --font-sans:
-    Aster, 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Hiragino Sans',
+    Astr, 'Helvetica Neue', Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Hiragino Sans',
     'Noto Sans JP', Meiryo, sans-serif;
   --default-font-feature-settings: 'palt' 1;
   --radius: 0.625rem;

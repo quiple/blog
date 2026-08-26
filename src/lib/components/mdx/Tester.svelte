@@ -42,8 +42,8 @@
   })
 
   const fontProps = $derived.by(() => {
-    if (font === 'aster') {
-      return {family: 'Aster', weight: previewFontWeight, stretch: 'normal'}
+    if (font === 'astr') {
+      return {family: 'Astr', weight: previewFontWeight, stretch: 'normal'}
     }
     if (font === 'maruminya') {
       return {family: 'x12y12pxMaruMinyaHangul-web', weight: 400, stretch: 'normal'}
@@ -60,7 +60,7 @@
       `font-family: ${fontProps.family}`,
       `font-weight: ${fontProps.weight}`,
       `font-stretch: ${fontProps.stretch}`,
-      ...(font === 'aster'
+      ...(font === 'astr'
         ? [
             `font-optical-sizing: ${automaticOpticalSizing ? 'auto' : 'none'}`,
             ...(automaticOpticalSizing ? [] : [`font-variation-settings: 'opsz' ${previewOpticalSize}`]),
@@ -247,7 +247,7 @@
     prevEn = en
     prevKo = ko
 
-    if (font === 'aster') {
+    if (font === 'astr') {
       exampleText = [en, ko].join('\n')
       return
     }
@@ -294,7 +294,7 @@
       bind:value={previewFontSize}
       min={fontSize}
       max={previewFontSizeMax}
-      step={font === 'aster' ? 1 : fontSize}
+      step={font === 'astr' ? 1 : fontSize}
     />
   </div>
   <div class="flex items-center gap-1.5 tabular-nums print:hidden">
@@ -304,7 +304,7 @@
     </Label>
     <Slider id="line-height" type="single" bind:value={previewLineHeight} min={1} max={2} step={0.01} />
   </div>
-  {#if font === 'aster'}
+  {#if font === 'astr'}
     <div class="flex items-center gap-1.5 tabular-nums print:hidden">
       <Label for="font-weight" class="gap-1 text-muted-foreground">
         <span class="font-mono text-xs font-semibold">wght</span>

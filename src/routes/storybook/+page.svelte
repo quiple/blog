@@ -29,7 +29,7 @@
 <div class="mx-auto max-w-[96rem]">
   <header class="mb-8 border-b pb-6">
     <p class="max-w-2xl text-sm leading-6 text-muted-foreground">
-      Aster의 라틴·한국어·일본어 조화를 굵기와 크기별로 확인하는 비공개 타입 스케일입니다.
+      Astr의 라틴·한국어·일본어 조화를 굵기와 크기별로 확인하는 비공개 타입 스케일입니다.
     </p>
   </header>
 
