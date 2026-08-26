@@ -22,6 +22,7 @@
   const isContainTwitter = $derived(data.contentHtml.search(/\btwitter-tweet\b/g) !== -1)
   const isArticle = $derived(data.category === 'article')
   const isFont = $derived(data.category === 'font')
+  const isAstr = $derived(data.category === 'font' && data.slug === 'astr')
   const isPixelImage = $derived(data.imageType === 'pixel')
 
   const imageMobile = $derived(data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {w: 1280}) : '')
@@ -32,6 +33,7 @@
   )
   const thumbnail1x = $derived(data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 88}) : '')
   const thumbnail2x = $derived(data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 176}) : '')
+  const hasHero = $derived(Boolean(imageMobile) || isAstr)
 
   const nextFrame = () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
   const revealImage: Action<HTMLImageElement, boolean> = (node, animate) => {
@@ -256,44 +258,46 @@
   </div>
 {/snippet}
 
-{#if imageMobile}
-  <div class="hero bg" use:transition={`post-image-${data.slug}`}>
-    <div class="hero-image-inner">
-      {#if !isPixelImage}
-        <img
-          class="hero-image-fallback"
-          src={thumbnail1x}
-          srcset={`${thumbnail1x} 1x, ${thumbnail2x} 2x`}
-          alt=""
-          aria-hidden="true"
-          loading="eager"
-          decoding="async"
-          draggable="false"
-          style:object-position={`center ${data.imageVerticalAlign ?? 50}%`}
-        />
-      {/if}
-      {#key data.slug}
-        <img
-          class="hero-image-full opacity-0 transition-opacity"
-          class:pixel-image={isPixelImage}
-          src={imageDesktop}
-          srcset={heroSrcset}
-          sizes={heroSrcset ? '100vw' : undefined}
-          alt=""
-          aria-hidden="true"
-          loading="eager"
-          decoding="async"
-          fetchpriority="high"
-          draggable="false"
-          style:object-position={`center ${data.imageVerticalAlign ?? 50}%`}
-          use:revealImage={!isPixelImage}
-        />
-      {/key}
-    </div>
+{#if hasHero}
+  <div class={['hero bg', isAstr && 'astr']} use:transition={`post-image-${data.slug}`}>
+    {#if imageMobile}
+      <div class="hero-image-inner">
+        {#if !isPixelImage}
+          <img
+            class="hero-image-fallback"
+            src={thumbnail1x}
+            srcset={`${thumbnail1x} 1x, ${thumbnail2x} 2x`}
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async"
+            draggable="false"
+            style:object-position={`center ${data.imageVerticalAlign ?? 50}%`}
+          />
+        {/if}
+        {#key data.slug}
+          <img
+            class="hero-image-full opacity-0 transition-opacity"
+            class:pixel-image={isPixelImage}
+            src={imageDesktop}
+            srcset={heroSrcset}
+            sizes={heroSrcset ? '100vw' : undefined}
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            draggable="false"
+            style:object-position={`center ${data.imageVerticalAlign ?? 50}%`}
+            use:revealImage={!isPixelImage}
+          />
+        {/key}
+      </div>
+    {/if}
   </div>
   <div
     class={['hero title', data.outline && 'line']}
-    style:--hero-foreground={`#${data.imageForeground?.toString() ?? '09090b'}`}
+    style:--hero-foreground={isAstr ? '#fff' : `#${data.imageForeground?.toString() ?? '09090b'}`}
     style:--outline-color={data.outline ? `#${data.outline.toString()}` : undefined}
   >
     <div>
@@ -302,9 +306,17 @@
           >{getCategoryName(data.category)}</Badge
         >
       </div>
-      <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
-        {data.title}
-      </h1>
+      {#if isAstr}
+        <h1 class="astr-title mb-2!" aria-label={data.title} use:transition={`post-title-${data.slug}`}>
+          {#each Array.from(data.title) as character, index}
+            <span aria-hidden="true" style:--astr-letter-index={index}>{character}</span>
+          {/each}
+        </h1>
+      {:else}
+        <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
+          {data.title}
+        </h1>
+      {/if}
       {@render metadata(Boolean(data.outline))}
     </div>
   </div>
@@ -313,7 +325,7 @@
 <section class="flex lg:gap-6 xl:gap-12 2xl:gap-18">
   <div class="flex-1"></div>
   <article>
-    {#if !imageMobile}
+    {#if !hasHero}
       <div class="mb-1.25 inline-block" use:transition={`post-category-${data.slug}`}>
         <Badge href={`/${data.category}`} class="no-underline!" variant="secondary"
           >{getCategoryName(data.category)}</Badge
@@ -355,6 +367,19 @@
       transform: translate3d(0, 25svh, 0);
     }
   }
+  @keyframes astr-weight-wave {
+    0%,
+    100% {
+      font-variation-settings:
+        'opsz' 32,
+        'wght' 200;
+    }
+    50% {
+      font-variation-settings:
+        'opsz' 32,
+        'wght' 600;
+    }
+  }
   :global(html:has(.hero.bg)) {
     overscroll-behavior-y: none;
   }
@@ -364,6 +389,9 @@
   }
   .hero.bg {
     @apply inner-b-border -z-10 h-(--hero-height) w-[calc(100vw-var(--scrollbar-width))] overflow-hidden print:h-[56.25vw];
+  }
+  .hero.bg.astr {
+    @apply bg-primary;
   }
   .hero.bg .hero-image-inner {
     @apply absolute inset-0 -z-10 h-full w-full;
@@ -397,6 +425,16 @@
   .hero.title > div .metadata a {
     @apply font-normal text-(--hero-foreground)! no-underline;
   }
+  .hero.title .astr-title {
+    @apply flex;
+    font-family: Astr, sans-serif;
+    font-size: clamp(4.5rem, 18vw, 10rem);
+    line-height: 1;
+    font-feature-settings: normal;
+  }
+  .astr-title span {
+    animation: astr-weight-wave 6s ease-in-out calc(var(--astr-letter-index) * -0.35s) infinite both;
+  }
   .hero.title.line h1 {
     @apply relative;
   }
@@ -407,6 +445,15 @@
   .hero.title.line .metadata::before {
     @apply absolute inset-0 -z-1 content-(--content);
     -webkit-text-stroke: 6px var(--outline-color);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .astr-title span {
+      animation: none;
+      font-variation-settings:
+        'opsz' 32,
+        'wght' 400;
+    }
   }
 
   :global(.mdx-image-frame) {
