@@ -1,9 +1,9 @@
 <script lang="ts">
   import '#app.css'
   import '#fonts.css'
-  import '@quiple/astr/astr.css'
+  import '@quiple/aster/astr.css'
   import appleTouchIcon from '$lib/assets/apple-touch-icon.png'
-  import astrUrl from '@quiple/astr/fonts/Astr[opsz,wght].woff2?url'
+  import astrUrl from '@quiple/aster/fonts/Astr[opsz,wght].woff2?url'
   import Header from '$lib/components/header.svelte'
   import {ModeWatcher} from 'mode-watcher'
   import {setupViewTransition} from '$lib/view-transition'
