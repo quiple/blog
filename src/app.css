@@ -285,7 +285,10 @@
     @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium before:content-none after:content-none;
   }
   small {
-    @apply text-sm leading-none;
+    @apply text-sm leading-6 font-medium;
+  }
+  p > small:only-child {
+    @apply block;
   }
   a {
     @apply scroll-m-5.5 decoration-muted-foreground transition hover:decoration-foreground;
