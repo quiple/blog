@@ -52,7 +52,7 @@
     "remark-rehype": "^11.1.2",
     "remark-smartypants": "github:quiple/remark-smartypants",
     "shadcn-svelte": "^1.5.0",
-    "sharp": "^0.35.3",
+    "sharp": "^0.35.4",
     "strip-markdown": "^6.0.0",
     "svelte": "^5.56.10",
     "svelte-check": "^4.7.6",
