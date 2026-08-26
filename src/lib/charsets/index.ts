@@ -12,12 +12,12 @@ export interface CharsetEntry {
 }
 
 export const charsetEntries: CharsetEntry[] = [
-  // 한글 음절
-  {key: 'set2350', label: '2,350자', group: '한글 음절', lang: 'ko'},
-  {key: 'set2355', label: '2,355자', group: '한글 음절', lang: 'ko'},
-  {key: 'set2780', label: '2,780자', group: '한글 음절', lang: 'ko'},
-  {key: 'set4358', label: '4,358자', group: '한글 음절', lang: 'ko'},
-  {key: 'set11172', label: '11,172자', group: '한글 음절', lang: 'ko'},
+  // 한글 완성자
+  {key: 'set2350', label: '2,350자', group: '한글 완성자', lang: 'ko'},
+  {key: 'set2355', label: '2,355자', group: '한글 완성자', lang: 'ko'},
+  {key: 'set2780', label: '2,780자', group: '한글 완성자', lang: 'ko'},
+  {key: 'set4358', label: '4,358자', group: '한글 완성자', lang: 'ko'},
+  {key: 'set11172', label: '11,172자', group: '한글 완성자', lang: 'ko'},
   // 한자
   {key: 'ks4888', label: '4,888자 (KS 순서)', group: '한자', lang: 'ko'},
   {key: 'unicode4888', label: '4,888자 (Unicode 순서)', group: '한자', lang: 'ko'},

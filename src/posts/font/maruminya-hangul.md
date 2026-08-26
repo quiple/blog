@@ -7,7 +7,7 @@ pubDate: 2026-02-27T01:09
 
 **x12y12pxMaruMinyaHangul(마루미냐 한글)**은 [{{ja|患者長ひっく}}](https://x.com/hicchicc) 님께서 제작한 12px 크기의 일본어 픽셀 폰트 '**[x12y12pxMaruMinya({{ja|マルミーニャ}})](https://github.com/hicchicc/x12y12pxMaruMinya)**'를 기반으로 만들어진 한국어&middot;일본어 픽셀 폰트입니다.
 
-한글 음절 11,172자와 KS X 1001(한자 제외), KS X 1003 및 JIS X 0201, JIS X 0208의 전체 문자를 지원합니다.
+한글 완성자 11,172자와 KS X 1001(한자 제외), KS X 1003 및 JIS X 0201, JIS X 0208의 전체 문자를 지원합니다.
 
 한글 및 추가 문자를 제외한 원본에 존재한 문자의 모양은 x12y12pxMaruMinya와 완전히 동일합니다.
 

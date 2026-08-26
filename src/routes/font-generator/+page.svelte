@@ -117,7 +117,7 @@
       ? entry.group === entry.label
         ? entry.label
         : `${entry.group} – ${entry.label}`
-      : '한글 음절 – 2,350자'
+      : '한글 완성자 – 2,350자'
   })
 
   // ── State ───────────────────────────────────────────────────────────
@@ -594,27 +594,27 @@
 
     <!-- 문자 집합 설명 -->
     <article class="charset-info">
-      <h2>한글 음절</h2>
+      <h2>한글 완성자</h2>
       <ul>
         <li>
           2,350자: <a
             href="https://www.unicode.org/Public/MAPPINGS/OBSOLETE/EASTASIA/KSC/KSX1001.TXT"
             target="_blank"
             rel="noopener noreferrer">KS X 1001</a
-          >의 모든 한글 음절.
+          >의 모든 한글 완성자.
         </li>
         <li>
-          2,355자: KS X 1001의 모든 한글 음절에
+          2,355자: KS X 1001의 모든 한글 완성자에
           <abbr title="KS X 1001에 포함된 뢨, 썅, 쏀, 쓩, 쭁을 입력하기 위한 보충 문자.">뢔, 쌰, 쎼, 쓔, 쬬</abbr>
           5자가 추가된 집합.
         </li>
         <li>
           2,780자: <a href="https://github.com/adobe-type-tools/Adobe-KR" target="_blank" rel="noopener noreferrer"
             >Adobe-KR-0</a
-          >의 모든 한글 음절. KS X 1001의 2,350자를 포함합니다.
+          >의 모든 한글 완성자. KS X 1001의 2,350자를 포함합니다.
         </li>
         <li>
-          4,358자: Adobe-KR-0과 Adobe-KR-1의 모든 한글 음절. KS X 1001,
+          4,358자: Adobe-KR-0과 Adobe-KR-1의 모든 한글 완성자. KS X 1001,
           <a href="https://en.wikipedia.org/wiki/KS_X_1002" target="_blank" rel="noopener noreferrer">KS X 1002</a>,
           <a
             href="https://www.unicode.org/L2/L2018/18011-info-kps9566-2011.pdf"
@@ -625,9 +625,9 @@
             href="https://ccjktype.fonts.adobe.com/wp-content/uploads/2014/12/gb12052-uni.txt"
             target="_blank"
             rel="noopener noreferrer">GB/T 12052</a
-          >의 모든 한글 음절을 포함합니다.
+          >의 모든 한글 완성자를 포함합니다.
         </li>
-        <li>11,172자: 현대 한글의 모든 음절.</li>
+        <li>11,172자: 현대 한글의 모든 완성자.</li>
       </ul>
       <h2>한자</h2>
       <ul>
