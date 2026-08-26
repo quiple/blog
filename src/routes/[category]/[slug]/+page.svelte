@@ -459,6 +459,12 @@
   :global(article .astr-preview) {
     @apply relative left-1/2 z-20 my-8 w-screen -translate-x-1/2 columns-1 gap-6 bg-background px-4 sm:px-10 md:columns-2 lg:columns-3 xl:columns-4;
   }
+  :global(article .astr-preview > :first-child) {
+    @apply mt-0!;
+  }
+  :global(article .astr-preview > :last-child) {
+    @apply mb-0!;
+  }
 
   :global(.mdx-image-frame) {
     @apply relative block overflow-hidden rounded-lg;
