@@ -86,6 +86,13 @@
     }
   }
 
+  const onMenuOpenAutoFocus = (event: Event) => {
+    if (page.url.pathname === '/search') return
+
+    event.preventDefault()
+    requestAnimationFrame(() => inputElement?.focus({preventScroll: true}))
+  }
+
   $effect(() => {
     const q = page.url.searchParams.get('q')
     query = q?.replaceAll('+', ' ') || ''
@@ -223,7 +230,12 @@
             </Button>
           {/snippet}
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content align="end" class="[--bits-floating-anchor-width:auto]">
+        <DropdownMenu.Content
+          align="end"
+          preventScroll={false}
+          onOpenAutoFocus={onMenuOpenAutoFocus}
+          class="[--bits-floating-anchor-width:auto]"
+        >
           {#if page.url.pathname !== '/search'}
             <div class="relative m-1.5 flex items-center">
               <Search class="absolute left-2 size-4" />
@@ -294,7 +306,7 @@
 <style>
   @reference '#app.css';
   header {
-    @apply relative top-0 z-1 py-4 [print-color-adjust:exact] sm:py-6 md:sticky print:text-(--hero-foreground);
+    @apply relative top-0 z-30 py-4 [print-color-adjust:exact] sm:py-6 md:sticky print:text-(--hero-foreground);
   }
   header.hero,
   header.title-hidden {
