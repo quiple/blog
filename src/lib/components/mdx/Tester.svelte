@@ -60,6 +60,7 @@
       `font-family: ${fontProps.family}`,
       `font-weight: ${fontProps.weight}`,
       `font-stretch: ${fontProps.stretch}`,
+      'font-feature-settings: normal',
       ...(font === 'astr'
         ? [
             `font-optical-sizing: ${automaticOpticalSizing ? 'auto' : 'none'}`,
