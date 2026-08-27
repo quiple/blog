@@ -13,8 +13,9 @@
 
 :root {
   --font-sans-theme:
-    Astr, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
-    Meiryo, MS Gothic, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
+    Astr, InterVariable, Inter, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro,
+    Noto Sans JP, Osaka, Meiryo, MS Gothic, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui,
+    sans-serif;
   --font-sans-ja-theme:
     InterVariable, Inter, -apple-system, BlinkMacSystemFont, Helvetica Neue, Roboto, Arial, IBMPlexSansJP-web,
     Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka, Meiryo, MS Gothic, ui-sans-serif, system-ui,
