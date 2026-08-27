@@ -51,7 +51,7 @@
     "remark-mdx": "^3.1.1",
     "remark-rehype": "^11.1.2",
     "remark-smartypants": "github:quiple/remark-smartypants",
-    "shadcn-svelte": "^1.5.0",
+    "shadcn-svelte": "^1.5.1",
     "sharp": "^0.35.4",
     "strip-markdown": "^6.0.0",
     "svelte": "^5.56.10",
