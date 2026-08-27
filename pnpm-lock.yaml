@@ -20,6 +20,9 @@ importers:
       fetchline:
         specifier: ^1.0.1
         version: 1.0.1
+      inter-ui:
+        specifier: ^4.1.1
+        version: 4.1.1
     devDependencies:
       '@ethercorps/sveltekit-og':
         specifier: github:quiple/sveltekit-og
@@ -1675,6 +1678,10 @@ packages:
 
   inline-style-parser@0.2.7:
     resolution: {integrity: sha512-Nb2ctOyNR8DqQoR0OwRG95uNWIC0C1lCgf5Naz5H6Ji72KZ8OcFZLz2P5sNgwlyoJ8Yif11oMuYs5pBQa86csA==}
+
+  inter-ui@4.1.1:
+    resolution: {integrity: sha512-451h0J29HyOmA+JXgSi/6M12tL7ZCZ8arYKZUXiOXTJpJbAKqJvFh3k5SiV3x7tKe0C0KyrKUUiQIvvZ2PQDcA==}
+    engines: {node: '>=16.0.0'}
 
   is-absolute-url@4.0.1:
     resolution: {integrity: sha512-/51/TKE88Lmm7Gc4/8btclNXWS+g50wXhYJq8HWIBAGUBnoAdRu1aXeh364t/O7wXDAcTJDP8PNuNKWUDWie+A==}
@@ -3775,6 +3782,8 @@ snapshots:
     optional: true
 
   inline-style-parser@0.2.7: {}
+
+  inter-ui@4.1.1: {}
 
   is-absolute-url@4.0.1: {}
 
