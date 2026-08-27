@@ -79,6 +79,7 @@
   --font-sans-active: var(--font-sans-system);
   --font-sans-ja-active: var(--font-sans-ja-system);
   --font-serif-active: var(--font-serif-system);
+  --default-font-feature-settings: 'palt' 1;
 }
 
 @media not print {
