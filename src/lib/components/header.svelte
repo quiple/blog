@@ -306,7 +306,7 @@
 <style>
   @reference '#app.css';
   header {
-    @apply relative top-0 z-30 py-4 [print-color-adjust:exact] sm:py-6 md:sticky print:text-(--hero-foreground);
+    @apply pointer-events-none relative top-0 z-30 py-4 [print-color-adjust:exact] sm:py-6 md:sticky print:text-(--hero-foreground);
   }
   header.hero,
   header.title-hidden {
@@ -349,7 +349,7 @@
     @apply relative container-x flex !max-w-full items-start justify-between gap-4 px-4 sm:!px-6;
   }
   header section .logo {
-    @apply relative -m-1 flex items-center self-center p-1 text-primary transition before:mask-size-[54px];
+    @apply pointer-events-auto relative -m-1 flex items-center self-center p-1 text-primary transition before:mask-size-[54px];
   }
   header section .logo .logo-symbol {
     @apply relative block size-9 shrink-0;
@@ -390,7 +390,7 @@
     @apply invisible -my-0.5 line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] leading-6 font-medium text-pretty break-keep opacity-0 transition-all lg:visible lg:opacity-100 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)];
   }
   header section :global(.menu) {
-    @apply relative size-9 before:mask-size-[24px] print:hidden;
+    @apply pointer-events-auto relative size-9 before:mask-size-[24px] print:hidden;
   }
   header section .logo,
   header section :global(.menu) {
