@@ -16,8 +16,7 @@
   let pathD = $state('')
   let clipPath = $state('polygon(0px 0px, 100% 0px, 100% 0px, 0px 0px)')
 
-  // Optimize scroll by avoiding layout reads and proxies
-  let headingPositions: {id: string; top: number; layoutTop: number; layoutBottom: number}[] = []
+  let headingPositions: {id: string; element: HTMLElement; layoutTop: number; layoutBottom: number}[] = []
 
   const updateHeadings = () => {
     if (!shouldRender) {
@@ -77,7 +76,10 @@
     if (headings.length === 0 || !tocContainer) return
 
     let scrollFrame = 0
-    let documentHeight = document.documentElement.scrollHeight
+    let pendingIds: string[] = []
+    let stableFrames = 0
+
+    const sameIds = (a: string[], b: string[]) => a.length === b.length && a.every((id, index) => id === b[index])
 
     const calculateLayout = () => {
       if (!tocContainer) return
@@ -128,69 +130,54 @@
       }
       pathD = d
 
-      const windowScrollY = window.scrollY
-      headingPositions = items.map((item) => {
-        const el = document.getElementById(item.id)
-        return {
-          id: item.id,
-          top: el ? el.getBoundingClientRect().top + windowScrollY : 0,
-          layoutTop: item.top,
-          layoutBottom: item.bottom,
-        }
-      })
-      documentHeight = document.documentElement.scrollHeight
+      headingPositions = items.map((item) => ({
+        id: item.id,
+        element: document.getElementById(item.id) as HTMLElement,
+        layoutTop: item.top,
+        layoutBottom: item.bottom,
+      }))
       onScroll()
     }
 
-    const _nextActiveIds: string[] = []
+    const visibleIds = () => {
+      const tops = headingPositions.map(({element}) => element.getBoundingClientRect().top)
+      return headingPositions
+        .filter((_, index) => tops[index] < window.innerHeight && (tops[index + 1] ?? Infinity) > 100)
+        .map(({id}) => id)
+    }
+
+    const updateActiveIds = () => {
+      const nextIds = visibleIds()
+      if (sameIds(nextIds, pendingIds)) {
+        stableFrames++
+      } else {
+        pendingIds = nextIds
+        stableFrames = 1
+      }
+
+      if (stableFrames < 2) {
+        scrollFrame = requestAnimationFrame(updateActiveIds)
+        return
+      }
+      scrollFrame = 0
+
+      if (!sameIds(nextIds, activeIds)) {
+        activeIds = nextIds
+        if (nextIds.length > 0) {
+          const first = headingPositions.find(({id}) => id === nextIds[0])!
+          const last = headingPositions.find(({id}) => id === nextIds.at(-1))!
+          clipPath = `polygon(-10px ${first.layoutTop}px, 200% ${first.layoutTop}px, 200% ${last.layoutBottom}px, -10px ${last.layoutBottom}px)`
+        } else {
+          clipPath = 'polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)'
+        }
+        if (!isReady) isReady = true
+      }
+    }
 
     const onScroll = () => {
       if (scrollFrame) return
-
-      scrollFrame = requestAnimationFrame(() => {
-        const y = window.scrollY
-        const innerHeight = window.innerHeight
-        const topViewport = y + 100
-        const bottomViewport = y + innerHeight
-
-        _nextActiveIds.length = 0
-        for (let i = 0; i < headingPositions.length; i++) {
-          const curr = headingPositions[i]
-          const next = headingPositions[i + 1]
-
-          const top = curr.top
-          const bottom = next ? next.top : documentHeight
-
-          if (top < bottomViewport && bottom > topViewport) {
-            _nextActiveIds.push(curr.id)
-          }
-        }
-
-        let isChanged = _nextActiveIds.length !== activeIds.length
-        if (!isChanged) {
-          for (let i = 0; i < _nextActiveIds.length; i++) {
-            if (_nextActiveIds[i] !== activeIds[i]) {
-              isChanged = true
-              break
-            }
-          }
-        }
-
-        if (isChanged) {
-          activeIds = [..._nextActiveIds]
-          if (_nextActiveIds.length > 0) {
-            const first = headingPositions.find((x) => x.id === _nextActiveIds[0])
-            const last = headingPositions.find((x) => x.id === _nextActiveIds[_nextActiveIds.length - 1])
-            if (first && last) {
-              clipPath = `polygon(-10px ${first.layoutTop}px, 200% ${first.layoutTop}px, 200% ${last.layoutBottom}px, -10px ${last.layoutBottom}px)`
-            }
-          } else {
-            clipPath = `polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)`
-          }
-          if (!isReady) isReady = true
-        }
-        scrollFrame = 0
-      })
+      stableFrames = 0
+      scrollFrame = requestAnimationFrame(updateActiveIds)
     }
 
     let resizeTimeout: ReturnType<typeof setTimeout>
