@@ -14,6 +14,8 @@ Asta Sans의 각 마스터가 놓인 굵기 좌표를 Inter와 시각적으로 �
 
 ## 미리보기
 
+Astr는 Inter Italic과 섞어 짜기에도 적합합니다.
+
 <div class="astr-preview [font-feature-settings:normal]">
 1947\~1948년도의 시즌에 상연된 희곡 중에서 퓰리처상에는 테네시 윌리엄스(Tennessee Williams)의 『욕망이라는 이름의 전차(*A Streetcar Named Desire*)』가 선택되었다. 이 작품은 또한 뉴욕 극평가 서클상도 받고 있으며 이후 아메리카의 최고의 작품으로 되었다.
 
