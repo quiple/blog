@@ -41,8 +41,7 @@ Astr는 Inter Italic과 섞어 짜기에도 적합합니다.
 
 윌리엄스의 전 저작은 뉴다이렉션(New Directions)에서 간행되고 있다. 그것을 주재하는 제임스 라후턴은 우리나라 시인 김경린(현재 도미 중)의 친우이며 1948년 여름 필자가 처음으로 「욕망이라는 이름의 전차」의 명성을 들은 것도 김경린 씨로부터였다. 참고삼아 뉴다이렉션사의 어드레스를 여기에 적기로 한다.
 
-New Directions, 347 Adams Street Brooklyn, N.Y. (「욕망이라는 이름의
-전차」의 역자)
+New Directions, 347 Adams Street Brooklyn, N.Y. (「욕망이라는 이름의 전차」의 역자)
 
 <small class="text-muted-foreground">--- 「한국일보」 (1955년 8월 24일)</small>
 </div>
