@@ -285,7 +285,7 @@
     @apply relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-medium before:content-none after:content-none;
   }
   small {
-    @apply text-sm leading-5 font-medium sm:leading-6;
+    @apply text-sm leading-5 sm:leading-6;
   }
   p > small:only-child {
     @apply block;
