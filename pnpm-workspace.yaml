@@ -56,7 +56,7 @@ minimumReleaseAgeExclude:
   - '@quiple/blog-fonts@1.2.1'
   - '@sveltejs/vite-plugin-svelte@7.2.0'
   - svelte-check@4.7.2 || 4.7.5 || 4.7.6
-  - '@types/node@26.1.1 || 26.3.0'
+  - '@types/node@26.1.1 || 26.3.0 || 26.4.0'
   - '@typescript/typescript-aix-ppc64@7.0.2'
   - '@typescript/typescript-darwin-arm64@7.0.2'
   - '@typescript/typescript-darwin-x64@7.0.2'
