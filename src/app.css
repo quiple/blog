@@ -167,7 +167,7 @@
 
 @layer base {
   ::selection {
-    @apply bg-[#007aff4d];
+    @apply bg-muted text-primary;
   }
   * {
     @apply border-border text-wrap underline-offset-[.15em] outline-ring/50;
