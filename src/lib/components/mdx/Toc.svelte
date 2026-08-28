@@ -315,12 +315,11 @@
           bind:this={railElement}
           d={railPath}
           fill="none"
-          stroke="currentColor"
+          stroke="var(--border)"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
           vector-effect="non-scaling-stroke"
-          style="stroke: color-mix(in oklab, var(--muted-foreground) 55%, transparent);"
         />
 
         <path
