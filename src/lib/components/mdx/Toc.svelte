@@ -1,65 +1,107 @@
 <script lang="ts">
-  import {onMount} from 'svelte'
   import TextAlignStartIcon from '@lucide/svelte/icons/text-align-start'
   import {afterNavigate, pushState} from '$app/navigation'
+  import {onMount} from 'svelte'
 
   let {selector = 'article', title = '목차'} = $props<{selector?: string; title?: string}>()
 
-  type Heading = {id: string; text: string; level: number}
+  type Heading = {
+    id: string
+    text: string
+    level: number
+    element: HTMLElement
+  }
+
+  type RailItem = {
+    id: string
+    x: number
+    top: number
+    bottom: number
+  }
+
+  type RailStop = {
+    start: number
+    end: number
+  }
+
+  const VIEWPORT_TOP = 100
+  const RAIL_X = 4
+  const LEVEL_OFFSET = 14
+  const RAIL_INSET = 5
+
+  let enabled = $state(false)
   let headings = $state<Heading[]>([])
   let activeIds = $state<string[]>([])
+  let railItems = $state<RailItem[]>([])
+  let railPath = $state('')
+  let railLength = $state(0)
+  let railStops = $state<Record<string, RailStop>>({})
+  let railElement = $state<SVGPathElement | null>(null)
+  let tocList = $state<HTMLUListElement | null>(null)
 
-  let tocContainer = $state<HTMLElement | null>(null)
-  let shouldRender = $state(false)
+  const sameHeadings = (next: Heading[]) =>
+    next.length === headings.length &&
+    next.every(
+      (heading, index) =>
+        heading.element === headings[index]?.element &&
+        heading.id === headings[index]?.id &&
+        heading.text === headings[index]?.text &&
+        heading.level === headings[index]?.level,
+    )
 
-  let isReady = $state(false)
-  let pathD = $state('')
-  let clipPath = $state('polygon(0px 0px, 100% 0px, 100% 0px, 0px 0px)')
-
-  let headingPositions: {id: string; element: HTMLElement; layoutTop: number; layoutBottom: number}[] = []
-
-  const updateHeadings = () => {
-    if (!shouldRender) {
-      headings = []
-      return
-    }
-
-    const article = document.querySelector(selector)
-    if (!article) {
-      headings = []
-      return
-    }
-
-    const elements = Array.from(
-      article.querySelectorAll('h2:not(.toc-exclude):not(.sr-only), h3:not(.toc-exclude):not(.sr-only)'),
-    ) as HTMLElement[]
-
-    headings = elements.map((el, i) => {
-      if (!el.id) {
-        const safeId = el.innerText
+  const ensureId = (element: HTMLElement, index: number, usedIds: Set<string>) => {
+    let id = element.id
+    if (!id) {
+      const base =
+        element.innerText
+          .trim()
           .toLowerCase()
           .replace(/\s+/g, '-')
           .replace(/[^a-z0-9가-힣-]/g, '')
-          .replace(/^-+|-+$/g, '')
-        el.id = safeId || `heading-${i}`
+          .replace(/^-+|-+$/g, '') || `heading-${index + 1}`
+
+      id = base
+      let suffix = 2
+      while (usedIds.has(id) || (document.getElementById(id) && document.getElementById(id) !== element)) {
+        id = `${base}-${suffix++}`
       }
-      return {
-        id: el.id,
-        text: el.innerText,
-        level: parseInt(el.tagName[1]),
-      }
-    })
+      element.id = id
+    }
+    usedIds.add(id)
+    return id
+  }
+
+  const collectHeadings = () => {
+    if (!enabled) {
+      headings = []
+      return
+    }
+
+    const root = document.querySelector(selector)
+    if (!root) {
+      headings = []
+      return
+    }
+
+    const usedIds = new Set<string>()
+    const elements = Array.from(
+      root.querySelectorAll('h2:not(.toc-exclude):not(.sr-only), h3:not(.toc-exclude):not(.sr-only)'),
+    ) as HTMLElement[]
+    const next = elements.map((element, index) => ({
+      id: ensureId(element, index, usedIds),
+      text: element.innerText.trim(),
+      level: Number(element.tagName.slice(1)),
+      element,
+    }))
+
+    if (!sameHeadings(next)) headings = next
   }
 
   onMount(() => {
     const media = window.matchMedia('(min-width: 1024px)')
     const update = () => {
-      shouldRender = media.matches
-      if (shouldRender) {
-        queueMicrotask(updateHeadings)
-      } else {
-        headings = []
-      }
+      enabled = media.matches
+      queueMicrotask(collectHeadings)
     }
 
     update()
@@ -68,199 +110,251 @@
   })
 
   afterNavigate(() => {
-    updateHeadings()
+    queueMicrotask(collectHeadings)
   })
 
-  // Unified layout, scroll, and resize observer
   $effect(() => {
-    if (headings.length === 0 || !tocContainer) return
+    const list = tocList
+    const currentHeadings = headings
+    const root = document.querySelector(selector)
+    if (!enabled || !list || !root || currentHeadings.length === 0) return
 
-    let scrollFrame = 0
-    let pendingIds: string[] = []
-    let stableFrames = 0
+    let activeFrame = 0
+    let layoutFrame = 0
+    let prepareVersion = 0
+    let ready = false
+    let disposed = false
 
-    const sameIds = (a: string[], b: string[]) => a.length === b.length && a.every((id, index) => id === b[index])
+    activeIds = []
+    railItems = []
+    railPath = ''
 
-    const calculateLayout = () => {
-      if (!tocContainer) return
+    const sameIds = (next: string[]) =>
+      next.length === activeIds.length && next.every((id, index) => id === activeIds[index])
 
-      const liNodes = Array.from(tocContainer.querySelectorAll('li'))
-      if (liNodes.length !== headings.length) return
+    const hasPendingComponents = () =>
+      (Array.from(root.querySelectorAll('[data-mdx-component]')) as HTMLElement[]).some(
+        (placeholder) => !placeholder.hasChildNodes(),
+      )
 
-      const containerRect = tocContainer.getBoundingClientRect()
-      const minLevel = Math.min(...headings.map((h) => h.level))
+    const updateActive = () => {
+      activeFrame = 0
+      if (!ready) return
 
-      type LayoutItem = {top: number; bottom: number; centerY: number; x: number; id: string}
-      const items: LayoutItem[] = []
+      const tops = currentHeadings.map(({element}) => element.getBoundingClientRect().top)
+      const next = currentHeadings
+        .filter((_, index) => tops[index] < window.innerHeight && (tops[index + 1] ?? Infinity) > VIEWPORT_TOP)
+        .map(({id}) => id)
 
-      for (let i = 0; i < headings.length; i++) {
-        const h = headings[i]
-        const node = liNodes[i]
-        if (!node) continue
+      if (!sameIds(next)) activeIds = next
+    }
 
-        const rect = node.getBoundingClientRect()
-        const top = rect.top - containerRect.top
-        items.push({
-          top,
-          bottom: rect.bottom - containerRect.top,
-          centerY: top + rect.height / 2,
-          x: 1 + (h.level - minLevel) * 14,
-          id: h.id,
-        })
-      }
+    const scheduleActive = () => {
+      if (!activeFrame) activeFrame = requestAnimationFrame(updateActive)
+    }
 
-      let d = ''
-      const corner = 6
-      if (items.length > 0) {
-        d += `M ${items[0].x} ${items[0].top}`
-        for (let i = 0; i < items.length - 1; i++) {
-          const curr = items[i]
-          const next = items[i + 1]
-          if (curr.x !== next.x) {
-            const midY = (curr.bottom + next.top) / 2
-            d += ` L ${curr.x} ${midY - corner}`
-            if (next.x > curr.x) {
-              d += ` Q ${curr.x} ${midY} ${curr.x + corner} ${midY} L ${next.x - corner} ${midY} Q ${next.x} ${midY} ${next.x} ${midY + corner}`
-            } else {
-              d += ` Q ${curr.x} ${midY} ${curr.x - corner} ${midY} L ${next.x + corner} ${midY} Q ${next.x} ${midY} ${next.x} ${midY + corner}`
-            }
+    const measureRail = () => {
+      layoutFrame = 0
+      const rows = Array.from(list.querySelectorAll<HTMLElement>('li[data-toc-id]'))
+      if (rows.length !== currentHeadings.length) return
+
+      const listRect = list.getBoundingClientRect()
+      const minLevel = Math.min(...currentHeadings.map(({level}) => level))
+      const nextItems = rows.map((row, index) => {
+        const rect = row.getBoundingClientRect()
+        return {
+          id: currentHeadings[index].id,
+          x: RAIL_X + (currentHeadings[index].level - minLevel) * LEVEL_OFFSET,
+          top: rect.top - listRect.top + RAIL_INSET,
+          bottom: rect.bottom - listRect.top - RAIL_INSET,
+        }
+      })
+
+      let path = ''
+      const first = nextItems[0]
+      if (first) {
+        path = `M ${first.x} ${first.top} L ${first.x} ${first.bottom}`
+        for (let index = 1; index < nextItems.length; index++) {
+          const previous = nextItems[index - 1]
+          const current = nextItems[index]
+
+          if (previous.x === current.x) {
+            path += ` L ${current.x} ${current.bottom}`
+          } else {
+            const middle = (previous.bottom + current.top) / 2
+            path += ` C ${previous.x} ${middle}, ${current.x} ${middle}, ${current.x} ${current.top}`
+            path += ` L ${current.x} ${current.bottom}`
           }
         }
-        d += ` L ${items[items.length - 1].x} ${items[items.length - 1].bottom}`
-      }
-      pathD = d
-
-      headingPositions = items.map((item) => ({
-        id: item.id,
-        element: document.getElementById(item.id) as HTMLElement,
-        layoutTop: item.top,
-        layoutBottom: item.bottom,
-      }))
-      onScroll()
-    }
-
-    const visibleIds = () => {
-      const tops = headingPositions.map(({element}) => element.getBoundingClientRect().top)
-      return headingPositions
-        .filter((_, index) => tops[index] < window.innerHeight && (tops[index + 1] ?? Infinity) > 100)
-        .map(({id}) => id)
-    }
-
-    const updateActiveIds = () => {
-      const nextIds = visibleIds()
-      if (sameIds(nextIds, pendingIds)) {
-        stableFrames++
-      } else {
-        pendingIds = nextIds
-        stableFrames = 1
       }
 
-      if (stableFrames < 2) {
-        scrollFrame = requestAnimationFrame(updateActiveIds)
+      railItems = nextItems
+      railPath = path
+      scheduleActive()
+    }
+
+    const scheduleLayout = () => {
+      if (!layoutFrame) layoutFrame = requestAnimationFrame(measureRail)
+    }
+
+    const prepare = async () => {
+      const version = ++prepareVersion
+      if (hasPendingComponents()) {
+        ready = false
+        activeIds = []
         return
       }
-      scrollFrame = 0
 
-      if (!sameIds(nextIds, activeIds)) {
-        activeIds = nextIds
-        if (nextIds.length > 0) {
-          const first = headingPositions.find(({id}) => id === nextIds[0])!
-          const last = headingPositions.find(({id}) => id === nextIds.at(-1))!
-          clipPath = `polygon(-10px ${first.layoutTop}px, 200% ${first.layoutTop}px, 200% ${last.layoutBottom}px, -10px ${last.layoutBottom}px)`
-        } else {
-          clipPath = 'polygon(-10px 0px, 200% 0px, 200% 0px, -10px 0px)'
-        }
-        if (!isReady) isReady = true
+      await document.fonts.ready
+      await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
+      if (disposed || version !== prepareVersion || hasPendingComponents()) return
+
+      ready = true
+      scheduleLayout()
+    }
+
+    const mutationObserver = new MutationObserver(() => {
+      if (hasPendingComponents()) {
+        prepareVersion++
+        ready = false
+        activeIds = []
+      } else if (ready) {
+        scheduleLayout()
+      } else {
+        void prepare()
       }
-    }
+    })
+    mutationObserver.observe(root, {subtree: true, childList: true, characterData: true})
 
-    const onScroll = () => {
-      if (scrollFrame) return
-      stableFrames = 0
-      scrollFrame = requestAnimationFrame(updateActiveIds)
-    }
+    const resizeObserver = new ResizeObserver(scheduleLayout)
+    resizeObserver.observe(root)
+    resizeObserver.observe(list)
 
-    let resizeTimeout: ReturnType<typeof setTimeout>
-    const debouncedLayout = () => {
-      clearTimeout(resizeTimeout)
-      resizeTimeout = setTimeout(calculateLayout, 100)
-    }
-
-    const timer = setTimeout(calculateLayout, 50)
-    window.addEventListener('resize', debouncedLayout, {passive: true})
-    window.addEventListener('scroll', onScroll, {passive: true})
-
-    let resizeObserver: ResizeObserver | null = null
-    const articleNode = document.querySelector(selector)
-    if (articleNode) {
-      resizeObserver = new ResizeObserver(() => {
-        debouncedLayout()
-      })
-      resizeObserver.observe(articleNode)
-    }
+    window.addEventListener('scroll', scheduleActive, {passive: true})
+    window.addEventListener('resize', scheduleLayout, {passive: true})
+    document.fonts.addEventListener('loadingdone', scheduleLayout)
+    void prepare()
 
     return () => {
-      if (scrollFrame) cancelAnimationFrame(scrollFrame)
-      clearTimeout(timer)
-      clearTimeout(resizeTimeout)
-      window.removeEventListener('resize', debouncedLayout)
-      window.removeEventListener('scroll', onScroll)
-      if (resizeObserver) resizeObserver.disconnect()
+      disposed = true
+      prepareVersion++
+      if (activeFrame) cancelAnimationFrame(activeFrame)
+      if (layoutFrame) cancelAnimationFrame(layoutFrame)
+      mutationObserver.disconnect()
+      resizeObserver.disconnect()
+      window.removeEventListener('scroll', scheduleActive)
+      window.removeEventListener('resize', scheduleLayout)
+      document.fonts.removeEventListener('loadingdone', scheduleLayout)
     }
   })
 
-  const minLevel = $derived(headings.length > 0 ? Math.min(...headings.map((h) => h.level)) : 2)
+  $effect(() => {
+    const path = railElement
+    const pathData = railPath
+    const items = railItems
+    if (!path || !pathData || items.length === 0) {
+      railLength = 0
+      railStops = {}
+      return
+    }
+
+    const frame = requestAnimationFrame(() => {
+      const length = path.getTotalLength()
+      const distanceAtY = (targetY: number) => {
+        let start = 0
+        let end = length
+
+        for (let index = 0; index < 24; index++) {
+          const middle = (start + end) / 2
+          if (path.getPointAtLength(middle).y < targetY) start = middle
+          else end = middle
+        }
+
+        return (start + end) / 2
+      }
+
+      railLength = length
+      railStops = Object.fromEntries(
+        items.map((item) => [
+          item.id,
+          {
+            start: distanceAtY(item.top),
+            end: distanceAtY(item.bottom),
+          },
+        ]),
+      )
+    })
+
+    return () => cancelAnimationFrame(frame)
+  })
+
+  const minLevel = $derived(headings.length ? Math.min(...headings.map(({level}) => level)) : 2)
   const activeIdSet = $derived(new Set(activeIds))
+  const activeRange = $derived.by(() => {
+    const first = railStops[activeIds[0]]
+    const last = railStops[activeIds.at(-1) ?? '']
+    if (!first || !last) return {start: 0, length: 0}
+
+    return {
+      start: first.start,
+      length: Math.max(0, last.end - first.start),
+    }
+  })
 </script>
 
-{#if shouldRender && headings.length > 0}
-  <div class="toc" style="top: var(--header-height, 4rem);">
+{#if enabled && headings.length}
+  <nav class="toc" style="top: var(--header-height, 4rem);" aria-label={title}>
     <div class="mb-4 flex flex-wrap items-center text-sm font-semibold text-muted-foreground">
       <TextAlignStartIcon class="mr-1.5 inline-block size-4" />
       {title}
     </div>
-    <div class="relative" bind:this={tocContainer}>
-      <!-- Background SVG Lines -->
-      <svg class="pointer-events-none absolute top-0 left-0 h-full w-full" style="z-index: 0">
+
+    <div class="relative">
+      <svg class="pointer-events-none absolute inset-0 size-full overflow-visible" aria-hidden="true">
         <path
-          d={pathD}
-          fill="none"
-          stroke="var(--border)"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-        <path
-          d={pathD}
+          bind:this={railElement}
+          d={railPath}
           fill="none"
           stroke="currentColor"
-          class="text-orange-600 dark:text-orange-400 {isReady ? 'transition-all ease-out' : ''}"
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          style:clip-path={clipPath}
+          vector-effect="non-scaling-stroke"
+          style="stroke: color-mix(in oklab, var(--muted-foreground) 55%, transparent);"
+        />
+
+        <path
+          d={railPath}
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          vector-effect="non-scaling-stroke"
+          class="active-rail text-primary"
+          style={`stroke-dasharray: ${activeRange.length} ${Math.max(railLength, 1)}; stroke-dashoffset: ${-activeRange.start}; opacity: ${activeRange.length ? 1 : 0};`}
         />
       </svg>
 
-      <ul class="relative z-10 m-0 flex w-full list-none flex-col p-0 text-sm 2xl:text-base">
+      <ul bind:this={tocList} class="relative m-0 flex w-full list-none flex-col p-0 text-sm 2xl:text-base">
         {#each headings as heading}
-          <li class="relative m-0 w-full p-0">
+          <li data-toc-id={heading.id} class="relative m-0 w-full p-0">
             <a
               href="#{heading.id}"
-              class="block py-1.5 no-underline transition-colors
-                {heading.level - minLevel === 0 ? 'pl-4' : ''}
-                {heading.level - minLevel === 1 ? 'pl-8' : ''}
-                {heading.level - minLevel === 2 ? 'pl-12' : ''}
-                {activeIdSet.has(heading.id)
-                ? 'text-orange-600 hover:text-foreground dark:text-orange-400 dark:hover:text-foreground'
-                : 'text-muted-foreground hover:text-foreground'}"
-              onclick={(e) => {
-                e.preventDefault()
+              style={`padding-inline-start: ${16 + (heading.level - minLevel) * LEVEL_OFFSET}px`}
+              class={[
+                'block py-1.5 no-underline transition-colors',
+                activeIdSet.has(heading.id)
+                  ? 'text-primary hover:text-foreground'
+                  : 'text-muted-foreground hover:text-foreground',
+              ]}
+              onclick={(event) => {
+                event.preventDefault()
                 const target = document.getElementById(heading.id)
-                if (target) {
-                  pushState(`#${heading.id}`, {})
-                  target.scrollIntoView({behavior: 'smooth'})
-                }
+                if (!target) return
+
+                pushState(`#${heading.id}`, {})
+                target.scrollIntoView({behavior: 'smooth'})
               }}
             >
               {heading.text}
@@ -269,12 +363,25 @@
         {/each}
       </ul>
     </div>
-  </div>
+  </nav>
 {/if}
 
 <style>
   @reference '#app.css';
   .toc {
     @apply sticky mt-5 hidden pt-2 font-medium text-pretty break-keep lg:block noscript:hidden;
+  }
+
+  .active-rail {
+    transition:
+      stroke-dasharray 220ms cubic-bezier(0.2, 0, 0, 1),
+      stroke-dashoffset 220ms cubic-bezier(0.2, 0, 0, 1),
+      opacity 120ms linear;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .active-rail {
+      transition: none;
+    }
   }
 </style>
