@@ -40,7 +40,7 @@
   --font-sans-active: var(--font-sans-theme);
   --font-sans-ja-active: var(--font-sans-ja-theme);
   --font-serif-active: var(--font-serif-theme);
-  --default-font-feature-settings: 'ss07' 1, 'ss08' 1, 'cv01' 1, 'cv10' 1, 'palt' 1;
+  --default-font-feature-settings: 'ss03' 1, 'cv10' 1, 'palt' 1;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.141 0.005 285.823);
