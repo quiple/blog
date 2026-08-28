@@ -8,7 +8,7 @@ pubDate: 2026-08-25T21:16
 
 Asta Sans의 각 마스터가 놓인 굵기 좌표를 Inter와 시각적으로 어울리도록 재정의한 뒤, 같은 굵기와 광학 크기에서 생성한 Inter의 라틴 자형이 한글과 자연스럽게 정렬되도록 베이스라인을 조정해 결합했습니다.
 
-Asta Sans와 Inter의 자형 및 기능을 그대로 유지하고 있기 때문에 모든 장단점을 Asta Sans 및 Inter와 공유합니다.
+Asta Sans와 Inter의 자형과 기능을 그대로 유지하고 있기 때문에 모든 장단점을 Asta Sans 및 Inter와 공유합니다.
 
 <Tester font="astr" />
 
