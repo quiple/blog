@@ -3,7 +3,7 @@ packages:
 allowBuilds:
   '@parcel/watcher': true
   esbuild: true
-  lefthook: set this to true or false
+  lefthook: true
   remark-github-alerts: true
   remark-github-alerts@https://codeload.github.com/quiple/remark-github-alerts/tar.gz/14adca9688a3b48034a1832ed4bbc7ba8decf54d: true
   sharp: true
@@ -83,10 +83,10 @@ minimumReleaseAgeExclude:
   - sass@1.102.0 || 1.103.1
   - svelte@5.56.8 || 5.56.9 || 5.56.10
   - tailwind-variants@3.3.0
-  - '@lucide/svelte@1.29.0 || 1.34.0'
+  - '@lucide/svelte@1.29.0 || 1.34.0 || 1.35.0'
   - '@sveltejs/load-config@0.2.2'
   - vite@8.2.1
-  - '@quiple/aster@1.0.0 || 1.0.1 || 1.0.2 || 1.0.3 || 1.0.4'
+  - '@quiple/aster@1.0.0 || 1.0.1 || 1.0.2 || 1.0.3 || 1.0.4 || 1.0.5'
   - '@cloudflare/workerd-darwin-64@1.20260825.1'
   - '@cloudflare/workerd-darwin-arm64@1.20260825.1'
   - '@cloudflare/workerd-linux-64@1.20260825.1'
@@ -120,3 +120,14 @@ minimumReleaseAgeExclude:
   - '@img/sharp-win32-ia32@0.35.4'
   - '@img/sharp-win32-x64@0.35.4'
   - sharp@0.35.4
+  - lefthook-darwin-arm64@2.1.12
+  - lefthook-darwin-x64@2.1.12
+  - lefthook-freebsd-arm64@2.1.12
+  - lefthook-freebsd-x64@2.1.12
+  - lefthook-linux-arm64@2.1.12
+  - lefthook-linux-x64@2.1.12
+  - lefthook-openbsd-arm64@2.1.12
+  - lefthook-openbsd-x64@2.1.12
+  - lefthook-windows-arm64@2.1.12
+  - lefthook-windows-x64@2.1.12
+  - lefthook@2.1.12
