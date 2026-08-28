@@ -14,6 +14,7 @@
   import {Textarea} from '$lib/components/ui/textarea'
   import {onDestroy} from 'svelte'
   import {browser} from '$app/environment'
+  import {getRenderSize, isRenderSizeAllowed} from './font-render-limits'
 
   interface FontDef {
     name: string
@@ -245,6 +246,17 @@
       return
     }
 
+    const font = fontsByValue.get(fontValue) ?? fontsByValue.get('maruminyahangul')!
+    const fontPath = `/fonts/bdfs/${font.file}.bdf`
+    const __charset = charsetKey === 'custom' ? customCharset : getCharset(charsetKey)
+    let characterCount = 0
+    for (const _ of __charset) characterCount++
+    const {width, height} = getRenderSize(characterCount, Number(tileWidth), Number(tileHeight), Number(tileColumn))
+    if (!isRenderSizeAllowed(width, height)) {
+      toast.error('이미지가 너무 큽니다. 타일 크기 또는 열 수를 줄여 주세요.')
+      return
+    }
+
     drawing = true
     canvasReady = false
 
@@ -266,10 +278,6 @@
       drawing = false
       return
     }
-
-    const font = fontsByValue.get(fontValue) ?? fontsByValue.get('maruminyahangul')!
-    const fontPath = `/fonts/bdfs/${font.file}.bdf`
-    const __charset = charsetKey === 'custom' ? customCharset : getCharset(charsetKey)
 
     const payload = {
       fontValue,
@@ -371,8 +379,12 @@
 
   onDestroy(() => {
     destroyed = true
-    workerReject?.(new Error('페이지를 떠나 이미지 생성을 중단했습니다.'))
+    const reject = workerReject
+    workerResolve = undefined
+    workerReject = undefined
+    reject?.(new Error('페이지를 떠나 이미지 생성을 중단했습니다.'))
     worker?.terminate()
+    worker = undefined
     if (downloadHref) URL.revokeObjectURL(downloadHref)
     if (canvasEl) {
       canvasEl.width = 0

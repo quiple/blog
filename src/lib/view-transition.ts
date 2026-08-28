@@ -52,6 +52,19 @@ function finishTransition() {
   transitionFinishedCallbacks.clear()
 }
 
+function addTransitionCleanup(cleanup: () => void) {
+  let pending = true
+  const trackedCleanup = () => {
+    if (!pending) return
+    pending = false
+    transitionFinishedCallbacks.delete(trackedCleanup)
+    cleanup()
+  }
+
+  transitionFinishedCallbacks.add(trackedCleanup)
+  return trackedCleanup
+}
+
 function registerNavigationHook() {
   if (!browser || navigationHookRegistered) return
   navigationHookRegistered = true
@@ -89,18 +102,17 @@ function applyTransitionName(node: TransitionNode, options: TransitionActionOpti
   node.style.setProperty('view-transition-name', name)
   if (classes?.length) document.documentElement.classList.add(...classes)
 
-  const cleanup = () => {
+  return addTransitionCleanup(() => {
     node.style.removeProperty('view-transition-name')
     if (classes?.length) document.documentElement.classList.remove(...classes)
-  }
-  transitionFinishedCallbacks.add(cleanup)
-  return cleanup
+  })
 }
 
 export function setupViewTransition() {
   registerNavigationHook()
 
   const componentCleanups = new Set<() => void>()
+  const pendingTransitionCleanups = new Set<() => void>()
 
   const transition: Action<TransitionNode, TransitionActionParameter> = (node, initialOptions) => {
     let options = initialOptions
@@ -162,7 +174,12 @@ export function setupViewTransition() {
       if (!classNames?.length) return
 
       document.documentElement.classList.add(...classNames)
-      transitionFinishedCallbacks.add(() => document.documentElement.classList.remove(...classNames))
+      let cleanup: () => void
+      cleanup = addTransitionCleanup(() => {
+        pendingTransitionCleanups.delete(cleanup)
+        document.documentElement.classList.remove(...classNames)
+      })
+      pendingTransitionCleanups.add(cleanup)
     }
 
     beforeTransitionCallbacks.add(beforeTransition)
@@ -171,6 +188,7 @@ export function setupViewTransition() {
 
   onDestroy(() => {
     for (const cleanup of componentCleanups) cleanup()
+    for (const cleanup of pendingTransitionCleanups) cleanup()
   })
 
   return {transition, classes}

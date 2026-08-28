@@ -125,6 +125,7 @@
     let prepareVersion = 0
     let ready = false
     let disposed = false
+    let headingTops: number[] = []
 
     activeIds = []
     railItems = []
@@ -140,12 +141,16 @@
 
     const updateActive = () => {
       activeFrame = 0
-      if (!ready) return
+      if (!ready || headingTops.length !== currentHeadings.length) return
 
-      const tops = currentHeadings.map(({element}) => element.getBoundingClientRect().top)
-      const next = currentHeadings
-        .filter((_, index) => tops[index] < window.innerHeight && (tops[index + 1] ?? Infinity) > VIEWPORT_TOP)
-        .map(({id}) => id)
+      const viewportTop = window.scrollY + VIEWPORT_TOP
+      const viewportBottom = window.scrollY + window.innerHeight
+      const next: string[] = []
+      for (let index = 0; index < currentHeadings.length; index++) {
+        if (headingTops[index] < viewportBottom && (headingTops[index + 1] ?? Infinity) > viewportTop) {
+          next.push(currentHeadings[index].id)
+        }
+      }
 
       if (!sameIds(next)) activeIds = next
     }
@@ -161,6 +166,7 @@
 
       const listRect = list.getBoundingClientRect()
       const minLevel = Math.min(...currentHeadings.map(({level}) => level))
+      headingTops = currentHeadings.map(({element}) => element.getBoundingClientRect().top + window.scrollY)
       const nextItems = rows.map((row, index) => {
         const rect = row.getBoundingClientRect()
         return {
@@ -212,6 +218,7 @@
 
       ready = true
       scheduleLayout()
+      mutationObserver.disconnect()
     }
 
     const mutationObserver = new MutationObserver(() => {
@@ -225,7 +232,7 @@
         void prepare()
       }
     })
-    mutationObserver.observe(root, {subtree: true, childList: true, characterData: true})
+    mutationObserver.observe(root, {subtree: true, childList: true})
 
     const resizeObserver = new ResizeObserver(scheduleLayout)
     resizeObserver.observe(root)

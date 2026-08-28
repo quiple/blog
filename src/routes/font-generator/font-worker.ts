@@ -1,9 +1,17 @@
 import {$Bitmap as createBitmap, $Font as createFont} from 'bdfparser'
 import type {Font} from 'bdfparser'
 import fetchline from 'fetchline'
+import {getRenderSize, isRenderSizeAllowed} from './font-render-limits'
 
 const fontCache = new Map<string, Font>()
-const MAX_FONT_CACHE_SIZE = 2
+const MAX_FONT_CACHE_SIZE = 1
+const FONT_CACHE_TTL = 60_000
+let fontCacheTimer: ReturnType<typeof setTimeout> | undefined
+
+function scheduleFontCacheCleanup() {
+  clearTimeout(fontCacheTimer)
+  fontCacheTimer = setTimeout(() => fontCache.clear(), FONT_CACHE_TTL)
+}
 
 interface RenderPayload {
   fontValue: string
@@ -58,6 +66,16 @@ workerScope.onmessage = async (e: MessageEvent<RenderPayload>) => {
   } = e.data
 
   try {
+    const tWidth = Number(tileWidth)
+    const tHeight = Number(tileHeight)
+    const tCol = Number(tileColumn)
+    let characterCount = 0
+    for (const _ of charset) characterCount++
+
+    const {width, height} = getRenderSize(characterCount, tWidth, tHeight, tCol)
+    if (!isRenderSizeAllowed(width, height)) throw new Error('이미지 크기가 브라우저 처리 한도를 초과합니다.')
+    const pixelCount = width * height
+
     // 1. Load & Parse Font (with Caching)
     let font = fontCache.get(fontValue)
     if (!font) {
@@ -72,6 +90,7 @@ workerScope.onmessage = async (e: MessageEvent<RenderPayload>) => {
       }
       fontCache.set(fontValue, font)
     }
+    scheduleFontCacheCleanup()
 
     // 2. Prepare canvas boundaries & offset adjustments
     const positions: [number, number][] = []
@@ -85,21 +104,11 @@ workerScope.onmessage = async (e: MessageEvent<RenderPayload>) => {
     if (positions.some(([dx]) => dx === -1)) xOff++
     if (positions.some(([, dy]) => dy === 1)) yOff++
 
-    const tWidth = Number(tileWidth)
-    const tHeight = Number(tileHeight)
-    const tCol = Number(tileColumn)
     const bbX = -Number(xOff)
     const bbY = -(tHeight - fontSize) + Number(yOff)
     const bb: [number, number, number, number] = [tWidth, tHeight, bbX, bbY]
 
     const emptyTile = createBitmap(Array.from({length: tHeight}).fill('0'.repeat(tWidth)) as string[])
-    let characterCount = 0
-    for (const _ of charset) characterCount++
-
-    const width = tWidth * tCol
-    const height = tHeight * Math.ceil(characterCount / tCol)
-    const pixelCount = width * height
-    if (!Number.isSafeInteger(pixelCount) || pixelCount <= 0) throw new Error('이미지 크기가 올바르지 않습니다.')
 
     // 3. Allocate pixel buffer (RGBA)
     const buffer = new Uint8ClampedArray(pixelCount * 4)

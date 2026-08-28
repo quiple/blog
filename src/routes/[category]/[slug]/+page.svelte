@@ -41,6 +41,47 @@
   )
 
   const nextFrame = () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
+  const manageHeroParallax: Action<HTMLElement> = (node) => {
+    const desktop = window.matchMedia('(min-width: 768px)')
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const navigatorInfo = navigator as Navigator & {deviceMemory?: number; hardwareConcurrency?: number}
+    const lowPowerDevice =
+      (navigatorInfo.deviceMemory !== undefined && navigatorInfo.deviceMemory <= 2) ||
+      (navigatorInfo.hardwareConcurrency !== undefined && navigatorInfo.hardwareConcurrency <= 2)
+    let observer: IntersectionObserver | undefined
+
+    const setActive = (active: boolean) => node.classList.toggle('parallax-active', active)
+    const update = () => {
+      observer?.disconnect()
+      observer = undefined
+      setActive(false)
+
+      if (!desktop.matches || reducedMotion.matches || lowPowerDevice) return
+      if (!('IntersectionObserver' in window)) {
+        setActive(true)
+        return
+      }
+
+      observer = new IntersectionObserver(([entry]) => setActive(Boolean(entry?.isIntersecting)), {
+        rootMargin: '100% 0px',
+      })
+      observer.observe(node)
+    }
+
+    update()
+    desktop.addEventListener('change', update)
+    reducedMotion.addEventListener('change', update)
+
+    return {
+      destroy() {
+        observer?.disconnect()
+        desktop.removeEventListener('change', update)
+        reducedMotion.removeEventListener('change', update)
+        setActive(false)
+      },
+    }
+  }
+
   const revealImage: Action<HTMLImageElement, boolean> = (node, animate) => {
     let cancelled = false
     const releaseLayer = () => node.style.removeProperty('will-change')
@@ -275,7 +316,7 @@
 {#if hasHero}
   <div class={['hero bg', isAstr && 'astr']} use:transition={`post-image-${data.slug}`}>
     {#if imageMobile}
-      <div class="hero-image-inner">
+      <div class="hero-image-inner" use:manageHeroParallax>
         {#if !isPixelImage}
           <img
             class="hero-image-fallback"
@@ -400,17 +441,11 @@
     @apply absolute inset-0 -z-10 h-full w-full;
   }
   @supports (animation-timeline: scroll()) {
-    .hero.bg .hero-image-inner {
+    .hero.bg :global(.hero-image-inner.parallax-active) {
       will-change: transform;
       animation: hero-parallax linear both;
       animation-timeline: scroll(root);
       animation-range: 0 var(--hero-height);
-    }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .hero.bg .hero-image-inner {
-      animation: none;
-      will-change: auto;
     }
   }
   .hero.bg .hero-image-inner img {
