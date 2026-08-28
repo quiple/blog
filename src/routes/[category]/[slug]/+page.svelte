@@ -232,7 +232,7 @@
 
 {#snippet metadata(isOutline: boolean = false)}
   <div class="metadata">
-    <span class="inline-flex shrink-0" use:transition={`post-category-${data.slug}`}>
+    <span class="-ml-px inline-flex shrink-0" use:transition={`post-category-${data.slug}`}>
       <Badge href={`/${data.category}`} class="no-underline!" variant="secondary" style={categoryBadgeStyle}
         >{getCategoryName(data.category)}</Badge
       >
