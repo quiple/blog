@@ -31,7 +31,7 @@ Adobe-KR-0 및 Adobe-KR-1의 한글 완성자 4,358자와 일본 한자 640자�
 
 ## 크레딧
 
-- [{{ja|患者長ひっく}}](https://hicchicc.github.io) --- [x8y12pxDenkiChip({{ja|でんきチップ}})](https://github.com/hicchicc/x8y12pxDenkiChip) 원본 디자인
+- [{{ja|患者長ひっく}}](https://hicchicc.github.io) --- [x8y12pxDenkiChip](https://github.com/hicchicc/x8y12pxDenkiChip) 원본 디자인
 - 이민서 --- 한글 확장 및 추가 글리프 디자인
 
 ## 다른 파생 폰트

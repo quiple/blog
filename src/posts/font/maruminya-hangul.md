@@ -30,7 +30,7 @@ pubDate: 2026-02-27T01:09
 
 ## 크레딧
 
-- [{{ja|患者長ひっく}}](https://hicchicc.github.io) --- [x12y12pxMaruMinya({{ja|マルミーニャ}})](https://github.com/hicchicc/x12y12pxMaruMinya) 원본 디자인
+- [{{ja|患者長ひっく}}](https://hicchicc.github.io) --- [x12y12pxMaruMinya](https://github.com/hicchicc/x12y12pxMaruMinya) 원본 디자인
 - 이민서 --- 한글 확장 및 추가 글리프 디자인
 
 ## 다른 파생 폰트
