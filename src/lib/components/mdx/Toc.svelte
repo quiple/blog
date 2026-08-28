@@ -27,7 +27,8 @@
   const VIEWPORT_TOP = 100
   const RAIL_X = 2
   const LEVEL_OFFSET = 14
-  const RAIL_INSET = 8
+  const RAIL_INSET = 6
+  const ITEM_PADDING = 20
 
   let enabled = $state(false)
   let headings = $state<Heading[]>([])
@@ -340,9 +341,9 @@
           <li data-toc-id={heading.id} class="relative m-0 w-full p-0">
             <a
               href="#{heading.id}"
-              style={`padding-inline-start: ${16 + (heading.level - minLevel) * LEVEL_OFFSET}px`}
+              style={`padding-inline-start: ${ITEM_PADDING + (heading.level - minLevel) * LEVEL_OFFSET}px`}
               class={[
-                'block py-1.5 no-underline transition-colors',
+                'block py-1 no-underline transition-colors',
                 activeIdSet.has(heading.id)
                   ? 'text-primary hover:text-foreground'
                   : 'text-muted-foreground hover:text-foreground',
