@@ -25,9 +25,9 @@
   }
 
   const VIEWPORT_TOP = 100
-  const RAIL_X = 4
+  const RAIL_X = 2
   const LEVEL_OFFSET = 14
-  const RAIL_INSET = 5
+  const RAIL_INSET = 0
 
   let enabled = $state(false)
   let headings = $state<Heading[]>([])
