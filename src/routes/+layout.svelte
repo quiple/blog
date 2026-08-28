@@ -49,9 +49,9 @@
     @apply prose-shadcn z-10 w-full max-w-xl shrink-0 2xl:max-w-2xl;
   }
   main :global(section) :global(article) :global(.metadata) {
-    @apply inline-block text-sm text-muted-foreground;
+    @apply text-sm text-muted-foreground;
   }
-  main :global(section) :global(article) :global(.metadata) :global(a) {
+  main :global(section) :global(article) :global(.metadata-content) :global(a) {
     @apply font-normal text-muted-foreground no-underline transition hover:text-foreground;
   }
   main :global(section) :global(article) :global(figure) {
