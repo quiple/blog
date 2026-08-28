@@ -34,6 +34,11 @@
   const thumbnail1x = $derived(data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 88}) : '')
   const thumbnail2x = $derived(data.image ? getImageUrl(data.image, isPixelImage ? {original: true} : {h: 176}) : '')
   const hasHero = $derived(Boolean(imageMobile) || isAstr)
+  const heroForeground = $derived(isAstr ? '#fff' : `#${data.imageForeground?.toString() ?? '09090b'}`)
+  const outlineColor = $derived(data.outline ? `#${data.outline.toString()}` : undefined)
+  const categoryBadgeStyle = $derived(
+    outlineColor ? `background-color: ${outlineColor}; color: ${heroForeground};` : undefined,
+  )
 
   const nextFrame = () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
   const revealImage: Action<HTMLImageElement, boolean> = (node, animate) => {
@@ -226,37 +231,44 @@
 </svelte:head>
 
 {#snippet metadata(isOutline: boolean = false)}
-  <div
-    class="metadata"
-    style={isOutline
-      ? `--content: '${data.media ? `${data.media} · ` : ''}${data.author ? `${data.author} · ` : ''}${formattedDate}'`
-      : null}
-    use:transition={`post-metadata-${data.slug}`}
-  >
-    {#if data.media}
-      <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>
-        {data.media}
-      </a>&#8194;&middot;&#8194;
-    {/if}{#if data.author}
-      <a target="_blank" rel="nofollow noreferrer noopener" href={data.authorURL}
-        >{data.author}
-      </a>&#8194;&middot;&#8194;
-    {/if}{#if typeof publishedDate === 'object'}
-      <time datetime={(publishedDate as Date).toISOString().split('T')[0]}>
-        {formattedDate}
-      </time>
-    {:else}
-      <Tooltip.Provider>
-        <Tooltip.Root>
-          <Tooltip.Trigger>
-            {#snippet child({props: {type, ...props}})}
-              <time {...props} class="cursor-default" datetime={`${publishedDate}+09:00`}>{formattedDate}</time>
-            {/snippet}
-          </Tooltip.Trigger>
-          <Tooltip.Content>{formattedDateTime}</Tooltip.Content>
-        </Tooltip.Root>
-      </Tooltip.Provider>
-    {/if}
+  <div class="metadata">
+    <span class="inline-flex shrink-0" use:transition={`post-category-${data.slug}`}>
+      <Badge href={`/${data.category}`} class="no-underline!" variant="secondary" style={categoryBadgeStyle}
+        >{getCategoryName(data.category)}</Badge
+      >
+    </span>
+    <span
+      class="metadata-content"
+      style={isOutline
+        ? `--content: '${data.media ? `${data.media} · ` : ''}${data.author ? `${data.author} · ` : ''}${formattedDate}'`
+        : null}
+      use:transition={`post-metadata-${data.slug}`}
+    >
+      {#if data.media}
+        <a target="_blank" rel="nofollow noreferrer noopener" href={data.source}>
+          {data.media}
+        </a>&#8194;&middot;&#8194;
+      {/if}{#if data.author}
+        <a target="_blank" rel="nofollow noreferrer noopener" href={data.authorURL}
+          >{data.author}
+        </a>&#8194;&middot;&#8194;
+      {/if}{#if typeof publishedDate === 'object'}
+        <time datetime={(publishedDate as Date).toISOString().split('T')[0]}>
+          {formattedDate}
+        </time>
+      {:else}
+        <Tooltip.Provider>
+          <Tooltip.Root>
+            <Tooltip.Trigger>
+              {#snippet child({props: {type, ...props}})}
+                <time {...props} class="cursor-default" datetime={`${publishedDate}+09:00`}>{formattedDate}</time>
+              {/snippet}
+            </Tooltip.Trigger>
+            <Tooltip.Content>{formattedDateTime}</Tooltip.Content>
+          </Tooltip.Root>
+        </Tooltip.Provider>
+      {/if}
+    </span>
   </div>
 {/snippet}
 
@@ -299,23 +311,18 @@
   </div>
   <div
     class={['hero title', data.outline && 'line']}
-    style:--hero-foreground={isAstr ? '#fff' : `#${data.imageForeground?.toString() ?? '09090b'}`}
-    style:--outline-color={data.outline ? `#${data.outline.toString()}` : undefined}
+    style:--hero-foreground={heroForeground}
+    style:--outline-color={outlineColor}
   >
     <div>
-      <div class="relative z-20 mb-1.25 inline-block" use:transition={`post-category-${data.slug}`}>
-        <Badge href={`/${data.category}`} class="no-underline!" variant="secondary"
-          >{getCategoryName(data.category)}</Badge
-        >
-      </div>
       {#if isAstr}
-        <h1 class="astr-title mb-2!" aria-label={data.title} use:transition={`post-title-${data.slug}`}>
+        <h1 class="astr-title mb-3!" aria-label={data.title} use:transition={`post-title-${data.slug}`}>
           {#each Array.from(data.title) as character, index}
             <span aria-hidden="true" style:--astr-letter-index={index}>{character}</span>
           {/each}
         </h1>
       {:else}
-        <h1 class="mb-2!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
+        <h1 class="mb-3!" use:transition={`post-title-${data.slug}`} style={`--content: '${data.title}'`}>
           {data.title}
         </h1>
       {/if}
@@ -328,12 +335,7 @@
   <div class="flex-1"></div>
   <article>
     {#if !hasHero}
-      <div class="mb-1.25 inline-block" use:transition={`post-category-${data.slug}`}>
-        <Badge href={`/${data.category}`} class="no-underline!" variant="secondary"
-          >{getCategoryName(data.category)}</Badge
-        >
-      </div>
-      <h1 class="mb-2!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
+      <h1 class="mb-3!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
       {@render metadata()}
     {/if}
 
@@ -421,9 +423,15 @@
     @apply prose-shadcn mx-auto w-full pr-(--scrollbar-width) [--tw-prose-body:var(--hero-foreground)] [--tw-prose-headings:var(--hero-foreground)] md:-translate-x-[calc(var(--scrollbar-width)/2)] md:pr-0 dark:[--tw-prose-body:var(--hero-foreground)] dark:[--tw-prose-headings:var(--hero-foreground)];
   }
   .hero.title > div .metadata {
-    @apply relative mb-5 inline-block text-sm;
+    @apply relative mb-5 text-sm;
   }
-  .hero.title > div .metadata a {
+  .metadata {
+    @apply flex flex-wrap items-center gap-x-2 gap-y-1;
+  }
+  .metadata-content {
+    @apply relative min-w-0;
+  }
+  .hero.title > div .metadata-content a {
     @apply font-normal text-(--hero-foreground)! no-underline;
   }
   .hero.title .astr-title {
@@ -444,7 +452,7 @@
     @apply absolute inset-0 -z-1 content-(--content);
     -webkit-text-stroke: 6px var(--outline-color);
   }
-  .hero.title.line .metadata::before {
+  .hero.title.line .metadata-content::before {
     @apply absolute inset-0 -z-1 content-(--content);
     -webkit-text-stroke: 6px var(--outline-color);
   }
