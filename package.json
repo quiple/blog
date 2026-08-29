@@ -54,7 +54,7 @@
     "shadcn-svelte": "^1.5.1",
     "sharp": "^0.35.4",
     "strip-markdown": "^6.0.0",
-    "svelte": "^5.56.10",
+    "svelte": "^5.57.0",
     "svelte-check": "^4.7.6",
     "svelte-sonner": "^1.2.1",
     "tailwind-merge": "^3.6.0",
@@ -73,7 +73,7 @@
   },
   "dependencies": {
     "@giscus/svelte": "^3.1.0",
-    "@quiple/aster": "^1.0.5",
+    "@quiple/aster": "^1.0.6",
     "bdfparser": "^2.2.5",
     "fetchline": "^1.0.1",
     "inter-ui": "^4.1.1"
