@@ -503,7 +503,7 @@
     @apply relative left-1/2 z-20 mt-10 w-screen -translate-x-1/2 bg-background px-4 sm:px-6;
   }
   :global(article .astr-preview-title) {
-    @apply text-base! text-muted-foreground!;
+    @apply mt-8! text-base! text-muted-foreground!;
   }
   :global(article .astr-preview-big) {
     @apply mt-[-0.125em]! ml-[calc(1em/-18)] cursor-text text-[10vw]! leading-none! text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:tracking-tight;
