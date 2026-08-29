@@ -500,10 +500,13 @@
   }
 
   :global(article .astr-preview-section) {
-    @apply relative left-1/2 z-20 w-screen -translate-x-1/2 bg-background px-4 sm:px-10;
+    @apply relative left-1/2 z-20 w-screen -translate-x-1/2 bg-background px-4 sm:px-6;
+  }
+  :global(article .astr-preview-title) {
+    @apply text-base! text-muted-foreground!;
   }
   :global(article .astr-preview) {
-    @apply my-8 columns-1 gap-6 *:text-base! *:leading-6! sm:*:leading-7! md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5;
+    @apply columns-1 gap-6 *:text-base! *:leading-6! sm:*:leading-7! md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5;
   }
   :global(article .astr-preview > :first-child) {
     @apply mt-0!;
