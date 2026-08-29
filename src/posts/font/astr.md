@@ -18,20 +18,20 @@ Asta Sans와 Inter의 자형과 기능을 그대로 유지하고 있기 때문�
 
 ## 미리보기
 
-<p class="astr-preview-title">ExtraLight</p>
-<p class="astr-preview-big font-extralight">The quick brown fox jumps over the lazy dog</p>
+<p class="astr-preview-title">ExtraLight (가장 가는 굵기, Inter보다 굵음)</p>
+<p class="astr-preview-big font-extralight">The quick brown fox</p>
 
 <p class="astr-preview-title">Light</p>
-<p class="astr-preview-big font-light">The quick brown fox jumps over the lazy dog</p>
+<p class="astr-preview-big font-light">The quick brown fox</p>
 
 <p class="astr-preview-title">Regular</p>
-<p class="astr-preview-big font-normal">The quick brown fox jumps over the lazy dog</p>
+<p class="astr-preview-big font-normal">The quick brown fox</p>
 
 <p class="astr-preview-title">Medium</p>
-<p class="astr-preview-big font-medium">The quick brown fox jumps over the lazy dog</p>
+<p class="astr-preview-big font-medium">The quick brown fox</p>
 
-<p class="astr-preview-title">SemiBold</p>
-<p class="astr-preview-big font-semibold">The quick brown fox jumps over the lazy dog</p>
+<p class="astr-preview-title">SemiBold (가장 굵은 굵기, Inter보다 가늚)</p>
+<p class="astr-preview-big font-semibold">The quick brown fox</p>
 
 <p class="astr-preview-title">Regular 16px</p>
 <div class="astr-preview">
