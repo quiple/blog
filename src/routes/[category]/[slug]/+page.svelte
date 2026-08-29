@@ -506,7 +506,7 @@
     @apply text-base! text-muted-foreground!;
   }
   :global(article .astr-preview-big) {
-    @apply mt-[-0.125em]! cursor-text text-[10vw]! leading-none! tracking-tight outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary;
+    @apply mt-[-0.125em]! cursor-text text-[10vw]! leading-none! tracking-tight text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary;
   }
   :global(article .astr-preview) {
     @apply columns-1 gap-6 font-features-[normal] *:text-base! *:leading-6! sm:*:leading-7! md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5;
