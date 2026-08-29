@@ -14,6 +14,8 @@ Asta Sans와 Inter의 자형과 기능을 그대로 유지하고 있기 때문�
 
 - [GitHub에서 다운로드](https://github.com/quiple/astr/releases/latest)
 
+<section class="astr-preview-section">
+
 ## 미리보기
 
 Astr는 Inter Italic과 섞어 짜기에도 적합합니다.
@@ -47,6 +49,8 @@ New Directions, 347 Adams Street Brooklyn, N.Y. (「욕망이라는 이름의 �
 
 <small class="text-muted-foreground">--- 「한국일보」 (1955년 8월 24일)</small>
 </div>
+
+</section>
 
 ## 라이선스
 
