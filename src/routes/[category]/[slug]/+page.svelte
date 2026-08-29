@@ -506,7 +506,7 @@
     @apply text-base! text-muted-foreground!;
   }
   :global(article .astr-preview) {
-    @apply columns-1 gap-6 *:text-base! *:leading-6! sm:*:leading-7! md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5;
+    @apply columns-1 gap-6 [font-feature-settings:normal] *:text-base! *:leading-6! sm:*:leading-7! md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5;
   }
   :global(article .astr-preview > :first-child) {
     @apply mt-0!;
