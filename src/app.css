@@ -13,6 +13,9 @@
 
 :root {
   --font-sans-theme:
+    Astr, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro, Noto Sans JP, Osaka,
+    Meiryo, MS Gothic, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui, sans-serif;
+  --font-sans-emphasis-theme:
     InterVariable, Inter, Astr, Helvetica Neue, Arial, IBMPlexSansJP-web, Hiragino Sans, Hiragino Kaku Gothic Pro,
     Noto Sans JP, Osaka, Meiryo, MS Gothic, Apple SD Gohic Neo, Noto Sans KR, Malgun Gothic, ui-sans-serif, system-ui,
     sans-serif;
@@ -39,6 +42,7 @@
   --font-serif-system: serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --font-sans-active: var(--font-sans-theme);
   --font-sans-ja-active: var(--font-sans-ja-theme);
+  --font-sans-emphasis-active: var(--font-sans-emphasis-theme);
   --font-serif-active: var(--font-serif-theme);
   --default-font-feature-settings: 'ss03' 1, 'cv10' 1, 'palt' 1;
   --radius: 0.625rem;
@@ -78,6 +82,7 @@
 :root[data-font-family='system'] {
   --font-sans-active: var(--font-sans-system);
   --font-sans-ja-active: var(--font-sans-ja-system);
+  --font-sans-emphasis-active: var(--font-sans-system);
   --font-serif-active: var(--font-serif-system);
   --default-font-feature-settings: 'palt' 1;
 }
@@ -176,6 +181,9 @@
   }
   html {
     font-family: var(--font-sans-active);
+  }
+  :root :is(em, i) {
+    font-family: var(--font-sans-emphasis-active);
   }
   body {
     @apply bg-background font-normal text-foreground;
