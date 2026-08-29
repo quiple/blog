@@ -506,7 +506,7 @@
     @apply text-base! text-muted-foreground!;
   }
   :global(article .astr-preview-big) {
-    @apply -mt-4! text-[10vw]! leading-none! tracking-tight;
+    @apply mt-[-0.125em]! text-[10vw]! leading-none! tracking-tight;
   }
   :global(article .astr-preview) {
     @apply columns-1 gap-6 font-features-[normal] *:text-base! *:leading-6! sm:*:leading-7! md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5;
