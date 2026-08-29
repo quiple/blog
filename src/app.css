@@ -178,7 +178,7 @@
   }
   @media not print {
     :root.dark ::selection {
-      @apply bg-foreground;
+      @apply bg-foreground/12.5;
     }
   }
   * {
