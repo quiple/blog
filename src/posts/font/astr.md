@@ -19,19 +19,19 @@ Asta Sans와 Inter의 자형과 기능을 그대로 유지하고 있기 때문�
 ## 미리보기
 
 <p class="astr-preview-title">ExtraLight (가장 가는 굵기, Inter보다 굵음)</p>
-<p class="astr-preview-big font-extralight" contenteditable="plaintext-only" spellcheck="false" aria-label="ExtraLight 미리보기 문구">The quick brown fox</p>
+<p class="astr-preview-big font-extralight" contenteditable="plaintext-only" spellcheck="false" aria-label="ExtraLight 미리보기 문구">Ingredients 원재료명</p>
 
 <p class="astr-preview-title">Light</p>
-<p class="astr-preview-big font-light" contenteditable="plaintext-only" spellcheck="false" aria-label="Light 미리보기 문구">The quick brown fox</p>
+<p class="astr-preview-big font-light" contenteditable="plaintext-only" spellcheck="false" aria-label="Light 미리보기 문구">Synecdoche 제유법</p>
 
 <p class="astr-preview-title">Regular</p>
-<p class="astr-preview-big font-normal" contenteditable="plaintext-only" spellcheck="false" aria-label="Regular 미리보기 문구">The quick brown fox</p>
+<p class="astr-preview-big font-normal" contenteditable="plaintext-only" spellcheck="false" aria-label="Regular 미리보기 문구">Arrivals 도착</p>
 
 <p class="astr-preview-title">Medium</p>
-<p class="astr-preview-big font-medium" contenteditable="plaintext-only" spellcheck="false" aria-label="Medium 미리보기 문구">The quick brown fox</p>
+<p class="astr-preview-big font-medium" contenteditable="plaintext-only" spellcheck="false" aria-label="Medium 미리보기 문구">Idempotence 멱등성</p>
 
 <p class="astr-preview-title">SemiBold (가장 굵은 굵기, Inter보다 가늚)</p>
-<p class="astr-preview-big font-semibold" contenteditable="plaintext-only" spellcheck="false" aria-label="SemiBold 미리보기 문구">The quick brown fox</p>
+<p class="astr-preview-big font-semibold" contenteditable="plaintext-only" spellcheck="false" aria-label="SemiBold 미리보기 문구">Entrance 입구</p>
 
 <p class="astr-preview-title">Regular 16px</p>
 <div class="astr-preview">
