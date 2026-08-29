@@ -174,7 +174,12 @@
 
 @layer base {
   ::selection {
-    @apply bg-muted text-primary;
+    @apply bg-foreground/4.5 text-primary;
+  }
+  @media not print {
+    :root.dark ::selection {
+      @apply bg-foreground;
+    }
   }
   * {
     @apply border-border text-wrap underline-offset-[.15em] outline-ring/50;
