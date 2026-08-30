@@ -258,7 +258,15 @@ async function compilePost(rawContent: string, isProduction: boolean): Promise<C
       .use(remarkGfm)
       .use(remarkCjkFriendly)
       .use(remarkCjkFriendlyGfmStrikethrough)
-      .use(remarkGithubAlerts)
+      .use(remarkGithubAlerts, {
+        titles: {
+          note: '참고',
+          tip: '팁',
+          important: '중요',
+          warning: '경고',
+          caution: '주의',
+        },
+      })
       // @ts-expect-error Custom MDX handlers produce valid HAST but use narrower local types.
       .use(remarkRehype, {allowDangerousHtml: true, handlers: mdxHandlers()})
       .use(() => rehypeImageSizes(isProduction))

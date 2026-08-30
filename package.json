@@ -47,7 +47,7 @@
     "remark-cjk-friendly-gfm-strikethrough": "^2.3.1",
     "remark-directive": "^4.0.0",
     "remark-gfm": "^4.0.1",
-    "remark-github-alerts": "github:quiple/remark-github-alerts",
+    "remark-github-alerts": "0.1.1",
     "remark-mdx": "^3.1.1",
     "remark-rehype": "^11.1.2",
     "remark-smartypants": "github:quiple/remark-smartypants",
