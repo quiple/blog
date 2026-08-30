@@ -311,7 +311,7 @@
   figcaption {
     @apply m-0;
     * {
-      @apply text-sm leading-5 font-medium text-muted-foreground sm:leading-6;
+      @apply text-sm leading-5 text-muted-foreground sm:leading-6;
     }
     > * {
       @apply my-2;
