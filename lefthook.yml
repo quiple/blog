@@ -2,14 +2,14 @@ pre-commit:
   jobs:
     - name: format
       glob: '*.{css,html,js,json,jsonc,jsx,md,mjs,svelte,ts,tsx,yaml,yml}'
-      run: pnpm exec oxfmt --no-error-on-unmatched-pattern {staged_files}
+      run: nubx oxfmt --no-error-on-unmatched-pattern {staged_files}
       stage_fixed: true
 
     - name: lint
       glob: '*.{js,jsx,mjs,svelte,ts,tsx}'
-      run: pnpm exec oxlint --type-aware {staged_files}
+      run: nubx oxlint --type-aware {staged_files}
 
     - name: sync image sizes
       glob: 'src/posts/**/*.md'
-      run: pnpm sync-images
+      run: nub sync-images
       stage_fixed: true

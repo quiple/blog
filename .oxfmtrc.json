@@ -11,7 +11,15 @@
     "stylesheet": "./src/app.css"
   },
   "sortPackageJson": false,
-  "ignorePatterns": ["package-lock.json", "pnpm-lock.yaml", "yarn.lock", "bun.lock", "bun.lockb", "/static/"],
+  "ignorePatterns": [
+    "package-lock.json",
+    "pnpm-lock.yaml",
+    "yarn.lock",
+    "bun.lock",
+    "bun.lockb",
+    "nub.lock",
+    "/static/"
+  ],
   "embeddedLanguageFormatting": "auto",
   "svelte": true
 }
