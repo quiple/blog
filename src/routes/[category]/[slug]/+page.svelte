@@ -500,7 +500,7 @@
   }
 
   :global(article .astr-preview-section) {
-    @apply relative left-1/2 z-20 mt-10 w-screen -translate-x-1/2 bg-background px-4 sm:px-6;
+    @apply relative left-1/2 z-20 mt-10 w-screen -translate-x-1/2 bg-background px-4 sm:px-6 xl:px-8;
   }
   :global(article .astr-preview-title) {
     @apply mt-8! text-base! text-muted-foreground!;
