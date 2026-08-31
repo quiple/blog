@@ -1,5 +1,6 @@
 ---
 title: x10y12pxDenkiChipHangul
+downloadURL: https://github.com/quiple/x10y12pxDenkiChipHangul/releases/latest
 image: font/x10y12pxDenkiChipHangul.png
 imageType: pixel
 imageForeground: fff
@@ -14,7 +15,6 @@ Adobe-KR-0 및 Adobe-KR-1의 한글 완성자 4,358자와 일본 한자 640자�
 
 <Tester font="denkichip" />
 
-- [GitHub에서 다운로드](https://github.com/quiple/x10y12pxDenkiChipHangul/releases/latest)
 - [비트맵 폰트 이미지 만들기](/font-generator?font=denkichiphangul)
 
 ## 라이선스

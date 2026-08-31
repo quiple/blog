@@ -1,5 +1,6 @@
 ---
 title: x12y12pxMaruMinyaHangul
+downloadURL: https://github.com/quiple/x12y12pxMaruMinyaHangul/tree/main/fonts
 image: font/x12y12pxMaruMinyaHangul.png
 imageType: pixel
 pubDate: 2026-02-27T01:09
@@ -13,7 +14,6 @@ pubDate: 2026-02-27T01:09
 
 <Tester font="maruminya" />
 
-- [GitHub에서 다운로드](https://github.com/quiple/x12y12pxMaruMinyaHangul/tree/main/fonts)
 - [비트맵 폰트 이미지 만들기](/font-generator)
 
 ## 라이선스

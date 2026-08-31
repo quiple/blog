@@ -75,6 +75,7 @@ export const blogArticleMetadataSchema = v.object({
 
 export const blogFontMetadataSchema = v.object({
   ...baseMetadataFields,
+  downloadURL: v.pipe(v.string(), v.url(), v.trim()),
   origDate: v.optional(v.union([v.pipe(v.date()), v.pipe(v.string(), v.trim())])),
 })
 

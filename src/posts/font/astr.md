@@ -1,5 +1,6 @@
 ---
 title: Astr
+downloadURL: https://github.com/quiple/astr/releases/latest
 origDate: 2026-08-25T17:43
 pubDate: 2026-08-25T21:16
 ---
@@ -11,8 +12,6 @@ Asta Sans의 각 마스터가 놓인 굵기 좌표를 Inter와 시각적으로 �
 Asta Sans와 Inter의 자형과 기능을 그대로 유지하고 있기 때문에 모든 장단점을 Asta Sans 및 Inter와 공유합니다.
 
 <Tester font="astr" />
-
-- [GitHub에서 다운로드](https://github.com/quiple/astr/releases/latest)
 
 <section class="astr-preview-section">
 

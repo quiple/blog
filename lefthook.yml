@@ -11,5 +11,5 @@ pre-commit:
 
     - name: sync image sizes
       glob: 'src/posts/**/*.md'
-      run: nub sync-images
+      run: nub run sync-images
       stage_fixed: true

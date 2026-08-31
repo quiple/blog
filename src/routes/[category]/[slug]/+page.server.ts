@@ -42,5 +42,6 @@ export const load: PageServerLoad = async ({params}) => {
     source: articleData?.source,
     author: articleData?.author,
     authorURL: articleData?.authorURL,
+    downloadURL: fontData?.downloadURL,
   }
 }

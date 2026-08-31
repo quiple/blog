@@ -1,5 +1,6 @@
 <script lang="ts">
   import {onMount} from 'svelte'
+  import GitHubDownloadButton from '$lib/components/github-download-button.svelte'
   import LazyGiscus from '$lib/components/lazy-giscus.svelte'
   import MdxContent from '$lib/components/mdx/MdxContent.svelte'
   import {Badge} from '$lib/components/ui/badge/index.js'
@@ -380,6 +381,12 @@
       {@render metadata()}
     {/if}
 
+    {#if data.downloadURL}
+      <div class="not-prose my-5 sm:my-6 lg:hidden">
+        <GitHubDownloadButton href={data.downloadURL} class="w-full" />
+      </div>
+    {/if}
+
     <MdxContent html={data.contentHtml} />
 
     {#if isContainTwitter}
@@ -388,7 +395,13 @@
     <LazyGiscus />
   </article>
   <div class="flex-1">
-    <Toc title="목차" selector="article" />
+    <Toc title="목차" selector="article">
+      {#snippet footer()}
+        {#if data.downloadURL}
+          <GitHubDownloadButton href={data.downloadURL} class="mt-4" />
+        {/if}
+      {/snippet}
+    </Toc>
   </div>
 </section>
 
