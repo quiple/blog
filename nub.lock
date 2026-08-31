@@ -12,8 +12,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(svelte@5.57.0)
       '@quiple/aster':
-        specifier: ^1.0.9
-        version: 1.0.9
+        specifier: ^1.0.10
+        version: 1.0.10
       bdfparser:
         specifier: ^2.2.5
         version: 2.2.5
@@ -31,8 +31,8 @@ importers:
         specifier: ^3.12.3
         version: 3.12.3
       '@lucide/svelte':
-        specifier: ^1.37.0
-        version: 1.37.0(svelte@5.57.0)
+        specifier: ^1.38.0
+        version: 1.38.0(svelte@5.57.0)
       '@sveltejs/adapter-cloudflare':
         specifier: ^7.2.9
         version: 7.2.9(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0)(vite@8.2.2(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.0)(typescript@6.0.3)(vite@8.2.2(@types/node@26.4.0)(esbuild@0.28.1)(jiti@2.7.0)))(wrangler@4.127.1)
@@ -737,8 +737,8 @@ packages:
   '@lit/reactive-element@2.1.2':
     resolution: {integrity: sha512-pbCDiVMnne1lYUIaYNN5wrwQXDtHaYtg7YEFPeW+hws6U47WeFvISGUWekPGKWOP1ygrs0ef0o1VJMk1exos5A==}
 
-  '@lucide/svelte@1.37.0':
-    resolution: {integrity: sha512-AxaiSxeuErlt4fNmmN28oaL5R7yVoQLsfSeiAONxCEK+l0/SrLAjRktQ0DkTQpomv1oRzOA3hohWY0ZHTZCMmw==}
+  '@lucide/svelte@1.38.0':
+    resolution: {integrity: sha512-x7pHfNAqArsjCbxgMxWoGEM25AXY1vl7P9ooGvY/DxbzNGK6vrfsFFoSw4yyv1ajfHY2jGBgi7lbSExya15ABA==}
     peerDependencies:
       svelte: ^5
 
@@ -1031,8 +1031,8 @@ packages:
   '@poppinss/exception@1.2.3':
     resolution: {integrity: sha512-dCED+QRChTVatE9ibtoaxc+WkdzOSjYTKi/+uacHWIsfodVfpsueo3+DKpgU5Px8qXjgmXkSvhXvSCz3fnP9lw==}
 
-  '@quiple/aster@1.0.9':
-    resolution: {integrity: sha512-9PHCRK7jVThkweZcWe9ufPaC/nmIw8bAxb9DifkPDfm7+ElQ2+wiFiZh5rAVCu4o+Ji0ZZODlzKmr9ebuca6Ew==}
+  '@quiple/aster@1.0.10':
+    resolution: {integrity: sha512-GLEPu7JRJLWxVMIQaD1qCTAXpl+V/oHhcZ5ZmkUIX/LnK3atzJ7rpEdYDAxmDW0vhug20rU3NlfYW4enLMIz7A==}
 
   '@resvg/resvg-wasm@2.6.2':
     resolution: {integrity: sha512-FqALmHI8D4o6lk/LRWDnhw95z5eO+eAa6ORjVg09YRR7BkcM6oPHU9uyC0gtQG5vpFLvgpeU4+zEAz2H8APHNw==}
@@ -2998,7 +2998,7 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.6.0
 
-  '@lucide/svelte@1.37.0(svelte@5.57.0)':
+  '@lucide/svelte@1.38.0(svelte@5.57.0)':
     dependencies:
       svelte: 5.57.0
 
@@ -3150,7 +3150,7 @@ snapshots:
 
   '@poppinss/exception@1.2.3': {}
 
-  '@quiple/aster@1.0.9': {}
+  '@quiple/aster@1.0.10': {}
 
   '@resvg/resvg-wasm@2.6.2': {}
 
