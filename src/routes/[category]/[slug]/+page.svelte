@@ -561,7 +561,7 @@
 
   :global(article .astr-preview-section) {
     @apply relative left-1/2 z-20 mt-10 w-screen -translate-x-1/2 bg-background;
-    :global(*) {
+    :global(& > *) {
       @apply mx-4 sm:mx-6 xl:mx-8;
     }
   }
