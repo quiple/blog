@@ -566,7 +566,7 @@
     @apply mt-8! text-base! text-muted-foreground!;
   }
   :global(article .astr-preview-big) {
-    @apply mt-[-0.25em]! ml-[calc(1em/-18)] cursor-text text-[10vw]! leading-tight! text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:tracking-tight;
+    @apply mt-[-0.25em]! ml-[calc(1em/-18)] max-w-full cursor-text overflow-x-auto overflow-y-hidden text-[10vw]! leading-tight! whitespace-nowrap text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:tracking-tight;
   }
   :global(article .astr-preview-mid) {
     @apply mt-[-0.125em]! ml-[calc(1em/-18)] cursor-text text-[6vw]! leading-tight! text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary;
