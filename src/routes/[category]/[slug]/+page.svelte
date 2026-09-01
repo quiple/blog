@@ -41,6 +41,50 @@
     outlineColor ? `background-color: ${outlineColor}; color: ${heroForeground};` : undefined,
   )
 
+  const astrPreviewSelectors = ['.astr-preview-big', '.astr-preview-mid'] as const
+
+  function shuffle<T>(items: readonly T[]) {
+    const shuffled = [...items]
+    for (let index = shuffled.length - 1; index > 0; index--) {
+      const swapIndex = Math.floor(Math.random() * (index + 1))
+      ;[shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]]
+    }
+    return shuffled
+  }
+
+  const randomizeAstrPreviews: Action<HTMLElement, boolean> = (node, enabled) => {
+    let active = enabled
+    let frame = 0
+
+    const schedule = () => {
+      if (frame) cancelAnimationFrame(frame)
+      if (!active) return
+
+      frame = requestAnimationFrame(() => {
+        frame = 0
+        for (const selector of astrPreviewSelectors) {
+          const elements = [...node.querySelectorAll<HTMLElement>(selector)]
+          const pool = elements.map((element) => element.textContent?.trim() ?? '')
+          if (!pool.length || new Set(pool).size !== pool.length) continue
+
+          const next = shuffle(pool)
+          elements.forEach((element, index) => (element.textContent = next[index]))
+        }
+      })
+    }
+
+    schedule()
+    return {
+      update(nextEnabled) {
+        active = nextEnabled
+        schedule()
+      },
+      destroy() {
+        if (frame) cancelAnimationFrame(frame)
+      },
+    }
+  }
+
   const nextFrame = () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
   const manageHeroParallax: Action<HTMLElement> = (node) => {
     const desktop = window.matchMedia('(min-width: 768px)')
@@ -375,7 +419,7 @@
 
 <section class="flex lg:gap-6 xl:gap-12 2xl:gap-18">
   <div class="flex-1"></div>
-  <article>
+  <article use:randomizeAstrPreviews={isAstr}>
     {#if !hasHero}
       <h1 class="mb-3!" use:transition={`post-title-${data.slug}`}>{data.title}</h1>
       {@render metadata()}
