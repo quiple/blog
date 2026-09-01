@@ -7,6 +7,7 @@
   import * as Tooltip from '$lib/components/ui/tooltip/index.js'
 
   import {absoluteUrl, jsonLd as stringifyJsonLd, SITE_AUTHOR, SITE_NAME, toKstDateTime} from '$lib/seo'
+  import {astrPreviewTextPools} from '$lib/astr-preview-texts'
   import {getCategoryName, getImageUrl} from '$lib/utils'
   import {mode} from 'mode-watcher'
   import type {Action} from 'svelte/action'
@@ -41,7 +42,10 @@
     outlineColor ? `background-color: ${outlineColor}; color: ${heroForeground};` : undefined,
   )
 
-  const astrPreviewSelectors = ['.astr-preview-big', '.astr-preview-mid'] as const
+  const astrPreviewGroups = [
+    {selector: '.astr-preview-big', texts: astrPreviewTextPools.big},
+    {selector: '.astr-preview-mid', texts: astrPreviewTextPools.mid},
+  ] as const
 
   function shuffle<T>(items: readonly T[]) {
     const shuffled = [...items]
@@ -62,12 +66,11 @@
 
       frame = requestAnimationFrame(() => {
         frame = 0
-        for (const selector of astrPreviewSelectors) {
+        for (const {selector, texts} of astrPreviewGroups) {
           const elements = [...node.querySelectorAll<HTMLElement>(selector)]
-          const pool = elements.map((element) => element.textContent?.trim() ?? '')
-          if (!pool.length || new Set(pool).size !== pool.length) continue
+          if (!elements.length || texts.length < elements.length || new Set(texts).size !== texts.length) continue
 
-          const next = shuffle(pool)
+          const next = shuffle(texts).slice(0, elements.length)
           elements.forEach((element, index) => (element.textContent = next[index]))
         }
       })
