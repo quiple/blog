@@ -43,7 +43,6 @@ export const astrPreviewTextPools = {
     'Model v2.4는 128K 문맥을 읽고, temperature를 0.7로 설정해 UTF-8 토큰을 샘플링한다.',
     '2026년 9월 1일 14:32:08 KST를 ISO 8601 형식으로 기록했다.',
     '12px 본문과 32pt 표제 사이에서 opsz 축은 14에서 32로 변한다.',
-    'x-height는 0.52 em, baseline 보정값은 −18 units로 설정했다.',
     'HTTP 429: 요청이 너무 많습니다 — 60초 뒤에 다시 시도하십시오.',
     'Layer 12의 attention head #08은 ‘서울 → Seoul’ 쌍에 0.91의 가중치를 두었다.',
     'Gate C3 → Transfer Desk / Exit 2; 00:15 이후에는 야간 통로를 이용하십시오.',
