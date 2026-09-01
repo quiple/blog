@@ -560,16 +560,19 @@
   }
 
   :global(article .astr-preview-section) {
-    @apply relative left-1/2 z-20 mt-10 w-screen -translate-x-1/2 bg-background px-4 sm:px-6 xl:px-8;
+    @apply relative left-1/2 z-20 mt-10 w-screen -translate-x-1/2 bg-background;
+    :global(*) {
+      @apply mx-4 sm:mx-6 xl:mx-8;
+    }
   }
   :global(article .astr-preview-title) {
     @apply mt-8! text-base! text-muted-foreground!;
   }
   :global(article .astr-preview-big) {
-    @apply mt-[-0.25em]! ml-[calc(1em/-18)] max-w-full cursor-text overflow-x-auto overflow-y-hidden text-[10vw]! leading-tight! whitespace-nowrap text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:tracking-tight;
+    @apply mt-[-0.25em]! max-w-full cursor-text overflow-x-auto overflow-y-hidden text-[10vw]! leading-tight! whitespace-nowrap text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:tracking-tight;
   }
   :global(article .astr-preview-mid) {
-    @apply mt-[-0.125em]! ml-[calc(1em/-18)] cursor-text text-[6vw]! leading-tight! text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary;
+    @apply mt-[-0.125em]! cursor-text text-[6vw]! leading-tight! text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary;
   }
   :global(article .astr-preview) {
     @apply columns-1 gap-6 font-features-[normal] *:text-base! *:leading-6! sm:*:leading-7! md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5;
