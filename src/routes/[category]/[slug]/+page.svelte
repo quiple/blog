@@ -569,7 +569,7 @@
     @apply mt-8! text-base! text-muted-foreground!;
   }
   :global(article .astr-preview-big) {
-    @apply mx-0 mt-[-0.25em]! max-w-full cursor-text overflow-x-auto overflow-y-hidden px-[calc(1rem-(1em/18))] text-[10vw]! leading-tight! whitespace-nowrap text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-[calc(1.5rem-(1em/18))] sm:tracking-tight xl:px-[calc(2rem-(1em/18))];
+    @apply mx-0 mt-[-0.25em]! max-w-full cursor-text overflow-x-auto overflow-y-hidden px-4 text-[10vw]! leading-tight! whitespace-nowrap text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary sm:px-6 sm:tracking-tight xl:px-8;
   }
   :global(article .astr-preview-mid) {
     @apply mt-[-0.125em]! cursor-text text-[6vw]! leading-tight! text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary;
