@@ -32,6 +32,21 @@ Asta Sans와 Inter의 자형과 기능을 그대로 유지하고 있기 때문�
 <p class="astr-preview-title">SemiBold (가장 굵은 굵기, Inter보다 가늚)</p>
 <p class="astr-preview-big font-semibold" contenteditable="plaintext-only" spellcheck="false" aria-label="SemiBold 미리보기 문구">Entrance 입구</p>
 
+<p class="astr-preview-title">ExtraLight (가장 가는 굵기, Inter보다 굵음)</p>
+<p class="astr-preview-mid font-extralight" contenteditable="plaintext-only" spellcheck="false" aria-label="ExtraLight 미리보기 문구">보고 계십니까, 들리십니까! 당신이 꿈꾸어 왔던 그 순간! 2011년 챔피언! 삼성 라이온즈입니다!</p>
+
+<p class="astr-preview-title">Light</p>
+<p class="astr-preview-mid font-light" contenteditable="plaintext-only" spellcheck="false" aria-label="Light 미리보기 문구">1972년 11월 21일, 김두한은 오랜 지병이었던 고혈압으로 쓰러졌다</p>
+
+<p class="astr-preview-title">Regular</p>
+<p class="astr-preview-mid font-normal" contenteditable="plaintext-only" spellcheck="false" aria-label="Regular 미리보기 문구">걔는 진짜 딱 오잖아? 지 혼자! 이렇게 해 가지고, 진짜! 이러면서 막 새치기하면서 들어가고! 뭔 느낌인지 알죠?</p>
+
+<p class="astr-preview-title">Medium</p>
+<p class="astr-preview-mid font-medium" contenteditable="plaintext-only" spellcheck="false" aria-label="Medium 미리보기 문구">아까도 그 5/5 도발 왜 하냐고 아주 그냥 눈 뒤집어 까가... 5/5 도발 왜, 왜 하냐고</p>
+
+<p class="astr-preview-title">SemiBold (가장 굵은 굵기, Inter보다 가늚)</p>
+<p class="astr-preview-mid font-semibold" contenteditable="plaintext-only" spellcheck="false" aria-label="SemiBold 미리보기 문구">그러니까 내가 누군가를 이제 좋아한다는 사실이 그 사람에게는 상처가 될 수도 있잖아요...</p>
+
 <p class="astr-preview-title">Regular 16px</p>
 <div class="astr-preview">
 1947\~1948년도의 시즌에 상연된 희곡 중에서 퓰리처상에는 테네시 윌리엄스(Tennessee Williams)의 『욕망이라는 이름의 전차(*A Streetcar Named Desire*)』가 선택되었다. 이 작품은 또한 뉴욕 극평가 서클상도 받고 있으며 이후 아메리카의 최고의 작품으로 되었다.
