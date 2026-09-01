@@ -101,6 +101,8 @@ pubDate: 2026-04-22T01:45
 
 ::figure{src="photo/IMG_1244.HEIC"}
 
+혼자 여행하는 중국인 여자가 벤치에 앉은 자신을 사진 찍어 달라고 영어로 이야기하기에 찍어 준 뒤에 사람이 줄어들고 나도 이어서 찍었다.
+
 ::figure{src="photo/IMG_1248.HEIC"}
 
 ::figure{src="photo/IMG_1249.HEIC" class="max-h-200"}
