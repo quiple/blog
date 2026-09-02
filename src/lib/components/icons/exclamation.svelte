@@ -28,5 +28,6 @@
   class={cn('lucide lucide-chevron-up-icon lucide-chevron-up', className)}
   {...restProps}
 >
-  <path d="m18 15-6-6-6 6" />
+  <path d="M12 4L12 13" />
+  <path d="M12 20H12.01" />
 </svg>
