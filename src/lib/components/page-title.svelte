@@ -12,7 +12,7 @@
 
 <h1
   bind:this={ref}
-  class={cn('mb-4 line-clamp-1 h-9 px-12 text-center text-lg leading-9 font-semibold sm:mb-6', className)}
+  class={cn('mb-4 line-clamp-1 h-9 px-12 text-center text-lg leading-9 font-semibold break-all sm:mb-6', className)}
   {...restProps}
 >
   {@render children?.()}

@@ -135,8 +135,9 @@
                     >
                   </div>
                 {/if}
-                <strong class="line-clamp-1 grow font-medium" use:transition={postTransition(post.slug, 'title')}
-                  >{post.title}</strong
+                <strong
+                  class="line-clamp-1 grow font-medium break-all"
+                  use:transition={postTransition(post.slug, 'title')}>{post.title}</strong
                 >
               </div>
               <p class="mb-1 line-clamp-3 text-sm text-chart-4 dark:text-chart-1">{post.description}</p>
