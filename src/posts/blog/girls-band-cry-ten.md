@@ -173,7 +173,7 @@ pubDate: 2026-04-22T14:22
 
 ::figure{src="photo/IMG_2490.HEIC" class="max-h-200"}
 
-걸즈 밴드 크라이 작중 등장하는 카페 에쿠푸리(えくぷり).
+《걸즈 밴드 크라이》 작중 등장하는 카페 '에쿠푸리(えくぷり)'.
 
 ::figure{src="photo/IMG_2491.HEIC" class="max-h-200"}
 
@@ -197,6 +197,8 @@ pubDate: 2026-04-22T14:22
 
 ::figure{src="photo/IMG_2503.HEIC" class="max-h-200"}
 
+하는 김에 《봇치 더 록!》 성지순례도.
+
 ::figure{src="photo/IMG_2505.HEIC"}
 
 ::figure{src="photo/IMG_2507.HEIC"}
@@ -204,6 +206,8 @@ pubDate: 2026-04-22T14:22
 ::figure{src="photo/IMG_2508.HEIC"}
 
 ::figure{src="photo/IMG_2510.HEIC"}
+
+타워 레코드 가와사키점(タワーレコード川崎店).
 
 ::figure{src="photo/IMG_2511.HEIC" class="max-h-200"}
 
