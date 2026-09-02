@@ -368,23 +368,23 @@
     @apply bg-current mask-(--wordmark-grade-down) mask-size-[210px_36px] mask-top-left mask-no-repeat;
   }
   header section .logo.wordmark-logo {
-    @apply xl:gap-0;
+    @apply gap-0;
   }
   header section .logo.wordmark-logo .logo-symbol {
-    @apply xl:size-9;
+    @apply size-9;
   }
   header section .logo.wordmark-logo :global(.q-logo),
   header section .logo.wordmark-logo .q-logo-grade-down {
-    @apply xl:hidden;
+    @apply hidden;
   }
   header section .logo.wordmark-logo .wordmark-symbol {
-    @apply xl:absolute xl:inset-0 xl:block;
+    @apply absolute inset-0 block;
   }
   header section .logo.wordmark-logo .wordmark-rest {
-    @apply xl:relative xl:block xl:h-9 xl:w-[174px];
+    @apply relative block h-9 w-[174px];
   }
   header section .logo.wordmark-logo .wordmark-rest .wordmark-image {
-    @apply xl:-left-9;
+    @apply -left-9;
   }
   header section .post-title {
     @apply invisible -my-1 line-clamp-2 w-[calc((100%-36px-1rem-36rem)/2-1.5rem)] leading-5.5 font-medium text-pretty break-keep opacity-0 transition-all lg:visible lg:opacity-100 2xl:w-[calc((100%-36px-1rem-42rem)/2-1.5rem)];
