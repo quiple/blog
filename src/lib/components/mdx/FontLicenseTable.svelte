@@ -77,7 +77,7 @@
         <td>
           <strong>
             <span
-              class="inline-block size-4 rounded-full p-0.5 align-sub text-white [print-color-adjust:exact] [&>svg]:size-3 {row.tone ===
+              class="inline-block size-4 rounded-full p-0.5 align-sub text-white [print-color-adjust:exact] [&>svg]:size-3 [&>svg]:stroke-4 {row.tone ===
               'positive'
                 ? 'bg-green-500'
                 : row.tone === 'caution'
@@ -85,11 +85,11 @@
                   : 'bg-red-500'}"
             >
               {#if row.tone === 'positive'}
-                <Check class="mt-[0.5px] stroke-4" aria-hidden="true" />
+                <Check class="mt-[0.5px]" aria-hidden="true" />
               {:else if row.tone === 'caution'}
-                <Exclamation class="stroke-4" aria-hidden="true" />
+                <Exclamation aria-hidden="true" />
               {:else}
-                <X class="stroke-4" aria-hidden="true" />
+                <X aria-hidden="true" />
               {/if}
             </span>
             {row.status}
