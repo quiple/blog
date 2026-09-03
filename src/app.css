@@ -313,6 +313,10 @@
     * {
       @apply text-sm leading-5 text-muted-foreground sm:leading-6;
     }
+    rt {
+      font-size: revert;
+      line-height: revert;
+    }
     > * {
       @apply my-2;
     }
