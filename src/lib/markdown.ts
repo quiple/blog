@@ -1,29 +1,15 @@
 import type {ElementContent} from 'hast'
-import type {Node, Root, Text} from 'mdast'
+import type {Root, Text} from 'mdast'
 import rehypeStringify from 'rehype-stringify'
 import {remark} from 'remark'
 import remarkCjkFriendly from 'remark-cjk-friendly'
 import remarkCjkFriendlyGfmStrikethrough from 'remark-cjk-friendly-gfm-strikethrough'
 import remarkGfm from 'remark-gfm'
 import remarkRehype from 'remark-rehype'
-import remarkRuby from 'remark-ruby'
 import smartypants from 'remark-smartypants'
 import strip from 'strip-markdown'
 import {stripLanguageTemplates} from './language-template.ts'
-
-interface RubyNode extends Node {
-  type: 'ruby'
-  data: {hChildren: ElementContent[]}
-}
-
-declare module 'mdast' {
-  interface RootContentMap {
-    ruby: RubyNode
-  }
-  interface PhrasingContentMap {
-    ruby: RubyNode
-  }
-}
+import remarkRuby, {type RubyNode} from './remark-ruby.ts'
 
 function fallbackText(nodes: ElementContent[]): string {
   return nodes
@@ -44,6 +30,8 @@ export const titleProcessor = remark().use(strip).use(smartypants, {dashes: 'old
 
 /** Strips markdown (with GFM support) to plain text for description generation. */
 export const descriptionProcessor = remark()
+  // Descriptions are plain text; do not re-escape brackets when serializing stripped ruby.
+  .data('toMarkdownExtensions', [{handlers: {text: (node) => node.value}}])
   .use(remarkGfm)
   .use(remarkCjkFriendly)
   .use(remarkCjkFriendlyGfmStrikethrough)
