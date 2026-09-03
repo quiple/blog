@@ -1,5 +1,5 @@
 import type {ElementContent} from 'hast'
-import type {Node, Text} from 'mdast'
+import type {Node, Root, Text} from 'mdast'
 import rehypeStringify from 'rehype-stringify'
 import {remark} from 'remark'
 import remarkCjkFriendly from 'remark-cjk-friendly'
@@ -71,7 +71,7 @@ export async function processTitle(title: string): Promise<string> {
 /** Generates a description from raw markdown content (max 200 chars + ellipsis). */
 export async function generateDescription(content: string): Promise<string> {
   const tree = descriptionParser.parse(stripLanguageTemplates(content))
-  const plainTextTree = await descriptionProcessor.run(tree)
+  const plainTextTree = (await descriptionProcessor.run(tree)) as Root
   const stripped = descriptionProcessor
     .stringify(plainTextTree)
     .replaceAll('\n', ' ')
