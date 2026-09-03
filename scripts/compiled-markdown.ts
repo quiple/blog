@@ -274,6 +274,8 @@ async function compilePost(rawContent: string, isProduction: boolean): Promise<C
   const {content, data} = matter(rawContent)
   const contentHtml = (
     await remark()
+      // MDX expressions are not rendered; let line-leading ruby be parsed as inline content.
+      .data('micromarkExtensions', [{disable: {null: ['mdxFlowExpression']}}])
       .use(remarkDirective)
       .use(remarkMdx)
       .use(remarkRuby)
