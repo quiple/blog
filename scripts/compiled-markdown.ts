@@ -1,6 +1,7 @@
 import {readFile} from 'node:fs/promises'
 import {fileURLToPath} from 'node:url'
 import matter from 'gray-matter'
+import type {Root as HastRoot} from 'hast'
 import type {Root} from 'mdast'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeStringify from 'rehype-stringify'
@@ -16,6 +17,7 @@ import remarkRuby from 'remark-ruby'
 import smartypants from 'remark-smartypants'
 import {visit} from 'unist-util-visit'
 import type {Plugin} from 'vite'
+import {parseRenderedLanguageTemplate} from '../src/lib/language-template.ts'
 import {generateDescription, processTitle} from '../src/lib/markdown.ts'
 import {mdxHandlers, preprocessMdx} from '../src/lib/mdx.ts'
 import {cn, getImageUrl} from '../src/lib/utils.ts'
@@ -113,6 +115,25 @@ function imageFrameHtml({
 
 function generateSrcSet(src: string) {
   return IMAGE_WIDTHS.map((width) => `${getImageUrl(src, {w: width})} ${width}w`).join(', ')
+}
+
+function rehypeRubyLanguageTemplates() {
+  return (tree: HastRoot) => {
+    visit(tree, 'element', (node, _index, parent) => {
+      if (node.tagName !== 'rt' || parent?.type !== 'element' || parent.tagName !== 'ruby') return
+
+      const text = node.children[0]
+      if (node.children.length !== 1 || text?.type !== 'text') return
+
+      // remark-ruby flattens the preprocessed language span into annotation text.
+      // Move its language to <rt>, keeping the contents as text for safe serialization.
+      const template = parseRenderedLanguageTemplate(text.value)
+      if (!template) return
+
+      node.properties = {...node.properties, lang: template.lang}
+      text.value = template.text
+    })
+  }
 }
 
 function rehypeImageSizes(isProduction: boolean) {
@@ -271,6 +292,7 @@ async function compilePost(rawContent: string, isProduction: boolean): Promise<C
       })
       // @ts-expect-error Custom MDX handlers produce valid HAST but use narrower local types.
       .use(remarkRehype, {allowDangerousHtml: true, handlers: mdxHandlers()})
+      .use(rehypeRubyLanguageTemplates)
       .use(() => rehypeImageSizes(isProduction))
       .use(smartypants, {dashes: 'oldschool'})
       .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow', 'noreferrer', 'noopener']})
