@@ -30,13 +30,17 @@ export const titleProcessor = remark().use(strip).use(smartypants, {dashes: 'old
 
 /** Strips markdown (with GFM support) to plain text for description generation. */
 export const descriptionProcessor = remark()
-  // Descriptions are plain text; do not re-escape brackets when serializing stripped ruby.
-  .data('toMarkdownExtensions', [{handlers: {text: (node) => node.value}}])
   .use(remarkGfm)
   .use(remarkCjkFriendly)
   .use(remarkCjkFriendlyGfmStrikethrough)
   .use(strip, {remove: [['ruby', stripRuby]]})
   .use(smartypants, {dashes: 'oldschool'})
+  .use(function () {
+    // Descriptions are plain text; override the Markdown serializers' escaping rules.
+    const extensions = this.data('toMarkdownExtensions') ?? []
+    extensions.push({handlers: {text: (node) => node.value}})
+    this.data('toMarkdownExtensions', extensions)
+  })
 
 // Parse ruby without using its Markdown serializer, which also escapes ordinary braces.
 const descriptionParser = descriptionProcessor().use(remarkRuby)
