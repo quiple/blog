@@ -50,6 +50,7 @@
     "remark-github-alerts": "0.1.1",
     "remark-mdx": "^3.1.1",
     "remark-rehype": "^11.1.2",
+    "remark-ruby": "^0.4.0",
     "remark-smartypants": "github:quiple/remark-smartypants",
     "shadcn-svelte": "^1.6.0",
     "sharp": "^0.35.4",

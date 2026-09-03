@@ -12,6 +12,7 @@ import remarkGfm from 'remark-gfm'
 import remarkGithubAlerts from 'remark-github-alerts'
 import remarkMdx from 'remark-mdx'
 import remarkRehype from 'remark-rehype'
+import remarkRuby from 'remark-ruby'
 import smartypants from 'remark-smartypants'
 import {visit} from 'unist-util-visit'
 import type {Plugin} from 'vite'
@@ -254,6 +255,7 @@ async function compilePost(rawContent: string, isProduction: boolean): Promise<C
     await remark()
       .use(remarkDirective)
       .use(remarkMdx)
+      .use(remarkRuby)
       .use(figure)
       .use(remarkGfm)
       .use(remarkCjkFriendly)
