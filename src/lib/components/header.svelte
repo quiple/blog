@@ -375,13 +375,13 @@
   }
   header section .logo.wordmark-logo :global(.q-logo),
   header section .logo.wordmark-logo .q-logo-grade-down {
-    @apply hidden;
+    @apply max-md:hidden xl:hidden;
   }
   header section .logo.wordmark-logo .wordmark-symbol {
-    @apply absolute inset-0 block;
+    @apply absolute inset-0 max-md:block xl:block;
   }
   header section .logo.wordmark-logo .wordmark-rest {
-    @apply relative block h-9 w-[174px];
+    @apply relative h-9 w-[174px] max-md:block xl:block;
   }
   header section .logo.wordmark-logo .wordmark-rest .wordmark-image {
     @apply -left-9;
