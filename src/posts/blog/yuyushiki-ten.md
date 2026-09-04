@@ -80,7 +80,8 @@ pubDate: 2026-04-22T00:49
 :::figure{src="photo/DSC_0288_Original.JPG"}
 
 > 정리: 유카리, 청보라색, 처진 눈. 5,000엔.
-> :::
+
+:::
 
 ::figure{src="photo/DSC_0289_Original.JPG"}
 
