@@ -102,7 +102,7 @@ pubDate: 2026-04-22T00:49
 ::figure{src="photo/DSC_0294_Original.JPG"}
 
 :::figure{src="photo/DSC_0298_Original.JPG" class="max-h-200"}
-히노야카레 아키하바라점({{ja|日乃屋カレー 秋葉原店}}).
+{히노야카레 아키하바라점}^({{ja|日乃屋カレー 秋葉原店}}).
 :::
 
 ::figure{src="photo/DSC_0299_Original.JPG"}
