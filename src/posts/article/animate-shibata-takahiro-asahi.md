@@ -5,6 +5,7 @@ source: https://www.animatetimes.com/news/details.php?id=1787721996
 author: 사카이 마리 (逆井マリ)
 authorURL: https://x.com/mari_sakasai
 image: article/2775ccae8d03bd3df3cf6a4b21f885126a8e803d0e79d9_51783384_8f109c017b08cdfaf93002e8b8fd2d5fe829ef2b.png
+imageVerticalAlign: 25
 imageForeground: fff
 origDate: 2026-09-03T12:00
 pubDate: 2026-09-04T18:36
