@@ -74,8 +74,7 @@
     "@giscus/svelte": "^3.1.0",
     "@quiple/aster": "^1.0.10",
     "bdfparser": "^2.2.5",
-    "cn": "^0.2.4",
-    "fetchline": "^1.0.1",
+    "cn": "^0.2.5",
     "inter-ui": "^4.1.1"
   },
   "devEngines": {

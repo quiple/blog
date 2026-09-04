@@ -1,12 +1,45 @@
 import {$Bitmap as createBitmap, $Font as createFont} from 'bdfparser'
 import type {Font} from 'bdfparser'
-import fetchline from 'fetchline'
 import {getRenderSize, isRenderSizeAllowed} from './font-render-limits'
 
 const fontCache = new Map<string, Font>()
 const MAX_FONT_CACHE_SIZE = 1
 const FONT_CACHE_TTL = 60_000
 let fontCacheTimer: ReturnType<typeof setTimeout> | undefined
+
+async function* fetchLines(url: string) {
+  const response = await fetch(url)
+  if (!response.ok) throw new Error(`폰트 파일을 불러오지 못했습니다. (${response.status})`)
+  if (!response.body) throw new Error('폰트 파일을 읽을 수 없습니다.')
+
+  const reader = response.body.getReader()
+  const decoder = new TextDecoder()
+  let remainder = ''
+  let completed = false
+
+  try {
+    while (true) {
+      const {done, value} = await reader.read()
+      if (done) break
+
+      remainder += decoder.decode(value, {stream: true})
+      let newlineIndex = remainder.indexOf('\n')
+      while (newlineIndex !== -1) {
+        const line = remainder.slice(0, newlineIndex)
+        yield line.endsWith('\r') ? line.slice(0, -1) : line
+        remainder = remainder.slice(newlineIndex + 1)
+        newlineIndex = remainder.indexOf('\n')
+      }
+    }
+
+    remainder += decoder.decode()
+    yield remainder
+    completed = true
+  } finally {
+    if (!completed) await reader.cancel().catch(() => {})
+    reader.releaseLock()
+  }
+}
 
 function scheduleFontCacheCleanup() {
   clearTimeout(fontCacheTimer)
@@ -81,7 +114,7 @@ workerScope.onmessage = async (e: MessageEvent<RenderPayload>) => {
     if (!font) {
       font = await createFont(
         (async function* () {
-          yield* fetchline(fontPath)
+          yield* fetchLines(fontPath)
         })(),
       )
       if (fontCache.size >= MAX_FONT_CACHE_SIZE) {

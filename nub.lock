@@ -18,11 +18,8 @@ importers:
         specifier: ^2.2.5
         version: 2.2.5
       cn:
-        specifier: ^0.2.4
-        version: 0.2.4
-      fetchline:
-        specifier: ^1.0.1
-        version: 1.0.1
+        specifier: ^0.2.5
+        version: 0.2.5
       inter-ui:
         specifier: ^4.1.1
         version: 4.1.1
@@ -1410,8 +1407,8 @@ packages:
     resolution: {integrity: sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==}
     engines: {node: '>=6'}
 
-  cn@0.2.4:
-    resolution: {integrity: sha512-SzQvoh5FwizWtQg9+JueKdjWhlfCZMdu5DqNHm9q1wUlRVmKb9WXlepR9bTTbPwzEOyX1ujJ6lcCppmn3bNUCg==}
+  cn@0.2.5:
+    resolution: {integrity: sha512-OCjZtMeQfXbI4Es1+EIjkd77gvWzaE689gD8KhfexlqjClC06qR1MQBR+Z35ZMSPNEBWyHiItW1Soy0UvwNv9w==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -1554,10 +1551,6 @@ packages:
     peerDependenciesMeta:
       picomatch:
         optional: true
-
-  fetchline@1.0.1:
-    resolution: {integrity: sha512-I+rjYRXNpG8Ncl+8KOVcWAoony2Az6WnXiIdqingnVQmWSFDvmniBTFtZReYlqHhKcxH/+rYr2rMhgzJEnE9Sg==}
-    engines: {deno: '>= 1.2.0'}
 
   fflate@0.7.5:
     resolution: {integrity: sha512-QieYf//cis6ywHNi5qW1+PXPQ4bC+XVJAtS4AXIML8P76GroEiOxm/oQtn1f02UkJY1+KsXMJcC+R2v/Eg4G3g==}
@@ -3495,7 +3488,7 @@ snapshots:
 
   clsx@2.1.1: {}
 
-  cn@0.2.4: {}
+  cn@0.2.5: {}
 
   color-name@1.1.4: {}
 
@@ -3617,8 +3610,6 @@ snapshots:
   fdir@6.5.0(picomatch@4.0.7):
     dependencies:
       picomatch: 4.0.7
-
-  fetchline@1.0.1: {}
 
   fflate@0.7.5: {}
 

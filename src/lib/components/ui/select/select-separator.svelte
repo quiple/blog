@@ -1,9 +1,9 @@
 <script lang="ts">
+  import type {ComponentProps} from 'svelte'
   import {Separator} from '$lib/components/ui/separator/index.js'
   import {cn} from 'cn'
-  import type {Separator as SeparatorPrimitive} from 'bits-ui'
 
-  let {ref = $bindable(null), class: className, ...restProps}: SeparatorPrimitive.RootProps = $props()
+  let {ref = $bindable(null), class: className, ...restProps}: ComponentProps<typeof Separator> = $props()
 </script>
 
 <Separator
