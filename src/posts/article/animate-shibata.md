@@ -38,7 +38,7 @@ pubDate: 2026-09-04T16:12
 
 **柴田：**そこに忘れらんねえよを並べてくれるの!? ありがとう。
 
-::figure{src="https://img2.animatetimes.com/2026/08/07557df381dd4a7de55a7aa946cc07966a8e7ee1673375_91282271_06ef2f64d7ab375f55c780d0ac39bd205baffd32.jpg"}
+::figure{src="article/07557df381dd4a7de55a7aa946cc07966a8e7ee1673375_91282271_06ef2f64d7ab375f55c780d0ac39bd205baffd32.png"}
 
 **朝日：**自分の中から溢れるものを表現するだけじゃなくて、そこからさらに「これでいいのか？」ってずっと悩んでそうな...。そういう苦悩みたいな、苦い汁が出ているような人だと思っていて。なんというか、柴田さんって辛そうじゃないですか（笑）。
 
@@ -58,7 +58,7 @@ pubDate: 2026-09-04T16:12
 
 **柴田：**やった、褒められました（笑）。
 
-::figure{src="https://img2.animatetimes.com/2026/08/468ef69752bb0ee0e9090be9228b16bb6a8e7ef9b70e25_28759770_02cbdff9004088d7e96c3018961e8ac4d959c311.jpg"}
+::figure{src="article/468ef69752bb0ee0e9090be9228b16bb6a8e7ef9b70e25_28759770_02cbdff9004088d7e96c3018961e8ac4d959c311.png"}
 
 > 今回『ヤニねこ』でご一緒されると知ったときはいかがでしたか？
 
@@ -122,7 +122,7 @@ pubDate: 2026-09-04T16:12
 
 **朝日：**そうなんですよ。度々、作者さんのリアルな体験なんじゃないか、と思うところがあって。水道水割りウイスキーも「金がない時代にめっちゃやってそう」「やってたんだろうな」って。そんなエピソードを見ると、ちょっと嬉しくなっちゃいますね。
 
-::figure{src="https://img2.animatetimes.com/2026/08/be03086300e645b28f73c02d183a60876a8e7f48b3f332_05448003_d7f8e8f91d20688c4d8a7c4f9360832b7db7cb1e.jpg"}
+::figure{src="article/be03086300e645b28f73c02d183a60876a8e7f48b3f332_05448003_d7f8e8f91d20688c4d8a7c4f9360832b7db7cb1e.png"}
 
 > ちなみに柴田さんは、とりわけ好きなエピソードがあるとか。
 
@@ -196,7 +196,7 @@ pubDate: 2026-09-04T16:12
 
 **朝日：**本当に素晴らしいです。
 
-::figure{src="https://img2.animatetimes.com/2026/08/85ba89cec989f538a47126fb3ce322e56a8e7f6e87fc06_94948748_b9022b83897df60849380011d52f528fdc5d94b2.jpg"}
+::figure{src="article/85ba89cec989f538a47126fb3ce322e56a8e7f6e87fc06_94948748_b9022b83897df60849380011d52f528fdc5d94b2.png"}
 
 > 漫画家さんが一人でさまざまなキャラクターを生み出すのがすごいという話がありましたが、お二人も曲によって色々な脳みそを使って書かれているのでは？
 
@@ -230,7 +230,7 @@ pubDate: 2026-09-04T16:12
 
 **柴田：**そう（笑）。あれだけ人の文句言ってたときに限って。俺、そういうことがたまにあるのよ。
 
-::figure{src="https://img2.animatetimes.com/2026/08/7e1aae45452a5ad6ec5cba658a0a1e4c6a8e7f5ba86bb3_52236710_e5d52520c046b7862870fcba8440ef2377628c1b.jpg"}
+::figure{src="article/7e1aae45452a5ad6ec5cba658a0a1e4c6a8e7f5ba86bb3_52236710_e5d52520c046b7862870fcba8440ef2377628c1b.png"}
 
 ## 「やっぱり愛してほしかったから」
 
@@ -284,7 +284,7 @@ pubDate: 2026-09-04T16:12
 
 **柴田：**ね。しっかり丁寧に考えてあるんだろうな。勉強にもなりますね。やっぱりそういう気持ちは伝わるんだなって。
 
-::figure{src="https://img2.animatetimes.com/2026/08/09777ee941bbc530b5316aeac695650b6a8e7fccad67f4_29950090_d1a14032006d2471bea379e6b04b6d21b8f85dfd.jpg"}
+::figure{src="article/09777ee941bbc530b5316aeac695650b6a8e7fccad67f4_29950090_d1a14032006d2471bea379e6b04b6d21b8f85dfd.png"}
 
 > エンディングの映像もおしゃれで、色合いもかわいいですよね。
 
@@ -332,7 +332,7 @@ pubDate: 2026-09-04T16:12
 
 **朝日：**やっぱりハマるタイアップってすごく大事だなって。今回はめちゃくちゃいい恵まれ方をしたなと思います。
 
-::figure{src="https://img2.animatetimes.com/2026/08/e6ca1ea3bd3b79a12dd681634e52eb2f6a8e7fe60cdac3_19541752_2f721ace3d33853d25abc0947ca5a75b7548e2ac.jpg"}
+::figure{src="article/e6ca1ea3bd3b79a12dd681634e52eb2f6a8e7fe60cdac3_19541752_2f721ace3d33853d25abc0947ca5a75b7548e2ac.png"}
 
 > エンディングについてももう少し伺いたいのですが、先ほど少しお話に出たように、サビの〈嫌に〉が“ヤニ”に重なっていたり、〈怠すぎたり〉の中に“タール”がさりげなく潜んでいたりと、そうした言葉の忍ばせ方もたまらないなと。
 
@@ -386,7 +386,7 @@ pubDate: 2026-09-04T16:12
 
 **柴田：**そうですね。作中にもアルねことかいますし、タバコ以外で終わってる人たちもいるじゃないですか。俺は恋愛がまるでできないクズですから、特に大家さんには結構感情移入しています。
 
-::figure{src="https://img2.animatetimes.com/2026/08/d9f8aea57f87e769ae8689ccc10ca9b46a8e8022bce567_31319661_f0c5c3ecea49278598fe6333673d7b3fb8210a9a.jpg"}
+::figure{src="article/d9f8aea57f87e769ae8689ccc10ca9b46a8e8022bce567_31319661_f0c5c3ecea49278598fe6333673d7b3fb8210a9a.png"}
 
 > 具体的には、どのような感情移入を？
 
@@ -452,7 +452,7 @@ pubDate: 2026-09-04T16:12
 
 **柴田：**そうっすね。もう何も考えなくていいんすよ。
 
-::figure{src="https://img2.animatetimes.com/2026/08/f9e9deed684a50cf21d24efacfe6e0d16a8e8031c56878_36869683_9a2e86180a2d591ef0bd10b0224be8eb8424ae39.jpg"}
+::figure{src="article/f9e9deed684a50cf21d24efacfe6e0d16a8e8031c56878_36869683_9a2e86180a2d591ef0bd10b0224be8eb8424ae39.png"}
 
 > ネクライトーキーはこれからツアーも控えています。「煙とブルー」はその中でどのように育っていきそうですか？
 
@@ -486,7 +486,7 @@ pubDate: 2026-09-04T16:12
 
 **柴田：**いいこといっぱいだよね！ 『ヤニねこ』に関わってから、いいことがいっぱい起きてる。ラッキー！（笑）
 
-::figure{src="https://img2.animatetimes.com/2026/08/2775ccae8d03bd3df3cf6a4b21f885126a8e803d0e79d9_51783384_8f109c017b08cdfaf93002e8b8fd2d5fe829ef2b.jpg"}
+::figure{src="article/2775ccae8d03bd3df3cf6a4b21f885126a8e803d0e79d9_51783384_8f109c017b08cdfaf93002e8b8fd2d5fe829ef2b.png"}
 
 \[インタビュー・逆井マリ　撮影：鳥谷部宏平　編集：西澤駿太郎\]
 
