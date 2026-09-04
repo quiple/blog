@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {cn} from '$lib/utils.js'
+  import {cn} from 'cn'
   import {Tabs as TabsPrimitive} from 'bits-ui'
 
   let {ref = $bindable(null), value = $bindable(''), class: className, ...restProps}: TabsPrimitive.RootProps = $props()

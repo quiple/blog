@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {cn} from '$lib/utils'
+  import {cn} from 'cn'
 
   let {class: className, style, fill}: {class?: string; style?: string; fill?: string} = $props()
 </script>

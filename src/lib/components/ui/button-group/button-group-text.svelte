@@ -1,6 +1,7 @@
 <script lang="ts">
   import type {Snippet} from 'svelte'
-  import {cn, type WithElementRef} from '$lib/utils.js'
+  import type {WithElementRef} from '$lib/utils.js'
+  import {cn} from 'cn'
   import type {HTMLAttributes} from 'svelte/elements'
 
   let {

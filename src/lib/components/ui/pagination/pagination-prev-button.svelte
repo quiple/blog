@@ -1,6 +1,6 @@
 <script lang="ts">
   import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left'
-  import {cn} from '$lib/utils.js'
+  import {cn} from 'cn'
   import {Pagination as PaginationPrimitive} from 'bits-ui'
   import {buttonVariants} from '../button/index.js'
 

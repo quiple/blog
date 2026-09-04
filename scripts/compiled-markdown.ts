@@ -20,7 +20,8 @@ import {parseRenderedLanguageTemplate} from '../src/lib/language-template.ts'
 import {generateDescription, processTitle} from '../src/lib/markdown.ts'
 import {mdxHandlers, preprocessMdx} from '../src/lib/mdx.ts'
 import remarkRuby from '../src/lib/remark-ruby.ts'
-import {cn, getImageUrl} from '../src/lib/utils.ts'
+import {getImageUrl} from '../src/lib/utils.ts'
+import {cn} from 'cn'
 
 const COMPILED_MARKDOWN_QUERY = '?compiled-post'
 const imageSizesPath = fileURLToPath(new URL('../src/lib/image-sizes.json', import.meta.url))

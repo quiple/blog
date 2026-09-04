@@ -1,6 +1,7 @@
 <script lang="ts">
   import type {ComponentProps} from 'svelte'
-  import {cn, type WithoutChild} from '$lib/utils.js'
+  import type {WithoutChild} from '$lib/utils.js'
+  import {cn} from 'cn'
   import type {WithoutChildrenOrChild} from '$lib/utils.js'
   import {Select as SelectPrimitive} from 'bits-ui'
   import SelectPortal from './select-portal.svelte'
