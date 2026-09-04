@@ -63,9 +63,6 @@ importers:
       bits-ui:
         specifier: ^2.19.0
         version: 2.19.0(@internationalized/date@3.12.4)(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.0)(typescript@6.0.3)(vite@8.2.2(@types/node@26.4.1)(esbuild@0.28.1)(jiti@2.7.0)))(svelte@5.57.0)
-      clsx:
-        specifier: ^2.1.1
-        version: 2.1.1
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -138,9 +135,6 @@ importers:
       svelte-sonner:
         specifier: ^1.2.1
         version: 1.2.1(svelte@5.57.0)
-      tailwind-merge:
-        specifier: ^3.6.0
-        version: 3.6.0
       tailwind-variants:
         specifier: ^3.3.1
         version: 3.3.1(tailwind-merge@3.6.0)(tailwindcss@4.3.3)
