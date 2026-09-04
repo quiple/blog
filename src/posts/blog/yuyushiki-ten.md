@@ -22,10 +22,10 @@ pubDate: 2026-04-22T00:49
 ::figure{src="photo/DSC_0264_Original.JPG" class="max-h-200"}
 
 :::figure{src="photo/DSC_0265_Original.JPG"}
-이른 새벽 셔터가 닫힌 아키바 CO 갤러리({{ja|アキバCOギャラリー}}).
+이른 새벽 셔터가 닫힌 {아키바 CO 갤러리}^({{ja|アキバCOギャラリー}}).
 :::
 
-2018년 11월 30일 도쿄 아키하바라에 위치한 아키바 CO 갤러리에서 〈유유시키 10주년 기념전({{ja|ゆゆ式10周年記念展}})〉이 개최되었다.
+2018년 11월 30일 도쿄 아키하바라에 위치한 아키바 CO 갤러리에서 〈{유유시키 10주년 기념전}^({{ja|ゆゆ式10周年記念展}})〉이 개최되었다.
 
 ::figure{src="photo/DSC_0266_Original.JPG"}
 
@@ -78,8 +78,9 @@ pubDate: 2026-04-22T00:49
 ::figure{src="photo/DSC_0287_Original.JPG"}
 
 :::figure{src="photo/DSC_0288_Original.JPG"}
-정리: 유카리, 청보라색, 처진 눈. 5,000엔.
-:::
+
+> 정리: 유카리, 청보라색, 처진 눈. 5,000엔.
+> :::
 
 ::figure{src="photo/DSC_0289_Original.JPG"}
 
