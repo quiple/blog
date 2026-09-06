@@ -48,6 +48,8 @@
   --font-serif-system: serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
   --font-sans-active: var(--font-sans-theme);
   --font-sans-ja-active: var(--font-sans-ja-theme);
+  --font-sans-zh-cn-active: var(--font-sans-zh-cn-theme);
+  --font-sans-zh-tw-active: var(--font-sans-zh-tw-theme);
   --font-sans-emphasis-active: var(--font-sans-emphasis-theme);
   --font-serif-active: var(--font-serif-theme);
   --default-font-feature-settings: 'palt' 1;
@@ -88,6 +90,8 @@
 :root[data-font-family='system'] {
   --font-sans-active: var(--font-sans-system);
   --font-sans-ja-active: var(--font-sans-ja-system);
+  --font-sans-zh-cn-active: var(--font-sans-zh-cn-system);
+  --font-sans-zh-tw-active: var(--font-sans-zh-tw-system);
   --font-sans-emphasis-active: var(--font-sans-system);
   --font-serif-active: var(--font-serif-system);
   --default-font-feature-settings: 'palt' 1;
@@ -136,8 +140,8 @@
   --font-sans-ja-theme: var(--font-sans-ja-theme);
   --font-sans-system: var(--font-sans-system);
   --font-sans-ja-system: var(--font-sans-ja-system);
-  --font-sans-zh-cn: var(--font-sans-zh-cn);
-  --font-sans-zh-tw: var(--font-sans-zh-tw);
+  --font-sans-zh-cn: var(--font-sans-zh-cn-active);
+  --font-sans-zh-tw: var(--font-sans-zh-tw-active);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
