@@ -1,5 +1,5 @@
-<script lang="ts">
-  import {mount, unmount, type Component} from 'svelte'
+<script module lang="ts">
+  import type {Component} from 'svelte'
 
   type MdxComponent = Component<Record<string, unknown>>
 
@@ -17,11 +17,18 @@
 
     let promise = componentPromises.get(name)
     if (!promise) {
-      promise = loader()
+      promise = loader().catch((error) => {
+        componentPromises.delete(name)
+        throw error
+      })
       componentPromises.set(name, promise)
     }
     return promise
   }
+</script>
+
+<script lang="ts">
+  import {mount, unmount} from 'svelte'
 
   let {html}: {html: string} = $props()
   let container: HTMLElement | undefined = $state()
@@ -75,7 +82,9 @@
       }
     }
 
-    mountComponents()
+    void mountComponents().catch((error) => {
+      if (!cancelled) console.error('[MDX] Failed to load components', error)
+    })
 
     return () => {
       cancelled = true
@@ -86,9 +95,11 @@
   })
 </script>
 
-<div bind:this={container}>
-  {@html html}
-</div>
+{#key html}
+  <div bind:this={container}>
+    {@html html}
+  </div>
+{/key}
 
 <style>
   div {

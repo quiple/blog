@@ -86,9 +86,20 @@ function registerNavigationHook() {
   })
 }
 
-function isInViewport(node: TransitionNode) {
-  const {top, bottom} = node.getBoundingClientRect()
-  return top < window.innerHeight && bottom > 0
+function createActionContext(navigation: OnNavigate, node: TransitionNode): TransitionActionContext {
+  let visible: boolean | undefined
+  return {
+    navigation,
+    node,
+    // Most transitions only inspect the destination route. Avoid forcing layout for them.
+    get isInViewport() {
+      if (visible === undefined) {
+        const {top, bottom} = node.getBoundingClientRect()
+        visible = top < window.innerHeight && bottom > 0
+      }
+      return visible
+    },
+  }
 }
 
 function resolveOption<T>(value: T | ((context: TransitionActionContext) => T), context: TransitionActionContext) {
@@ -138,14 +149,14 @@ export function setupViewTransition() {
       const objectOptions = options
 
       const beforeTransition: NavigationCallback = ({navigation}) => {
-        const context = {navigation, node, isInViewport: isInViewport(node)}
+        const context = createActionContext(navigation, node)
         const shouldApply =
           objectOptions.shouldApply === undefined ? true : resolveOption(objectOptions.shouldApply, context)
         if (shouldApply) activeCleanup = applyTransitionName(node, objectOptions, context)
       }
 
       const afterNavigation: NavigationCallback = ({navigation}) => {
-        const context = {navigation, node, isInViewport: isInViewport(node)}
+        const context = createActionContext(navigation, node)
         const applyImmediately =
           objectOptions.applyImmediately === undefined ? false : resolveOption(objectOptions.applyImmediately, context)
         if (applyImmediately) activeCleanup = applyTransitionName(node, objectOptions, context)

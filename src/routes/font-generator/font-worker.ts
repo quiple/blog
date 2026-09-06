@@ -1,5 +1,6 @@
 import {$Bitmap as createBitmap, $Font as createFont} from 'bdfparser'
 import type {Font} from 'bdfparser'
+import type {RenderPayload, WorkerMessage} from './font-render-types'
 import {getRenderSize, isRenderSizeAllowed} from './font-render-limits'
 
 const fontCache = new Map<string, Font>()
@@ -46,26 +47,9 @@ function scheduleFontCacheCleanup() {
   fontCacheTimer = setTimeout(() => fontCache.clear(), FONT_CACHE_TTL)
 }
 
-interface RenderPayload {
-  fontValue: string
-  fontPath: string
-  charset: string
-  tileWidth: number
-  tileHeight: number
-  tileColumn: number
-  xOffset: number
-  yOffset: number
-  fontSize: number
-  background: string
-  foreground: string
-  shadowColor: string
-  shadowPositions: Record<string, boolean>
-  shadowValues: Record<string, [number, number]>
-}
-
 const workerScope = self as unknown as {
   onmessage: ((event: MessageEvent<RenderPayload>) => void) | null
-  postMessage: (message: unknown, transfer?: Transferable[]) => void
+  postMessage: (message: WorkerMessage, transfer?: Transferable[]) => void
 }
 
 function parseHexColor(hex: string, defaultAlpha = 255): [number, number, number, number] {
@@ -145,9 +129,9 @@ workerScope.onmessage = async (e: MessageEvent<RenderPayload>) => {
 
     // 3. Allocate pixel buffer (RGBA)
     const buffer = new Uint8ClampedArray(pixelCount * 4)
-    const foregroundMask = new Uint8Array(pixelCount)
+    const foregroundMask = new Uint8Array(Math.ceil(pixelCount / 8))
 
-    // Keep only a compact 1-byte mask instead of retaining every glyph bitmap.
+    // One bit per pixel; do not retain the glyph bitmaps.
     let characterIndex = 0
     for (const character of charset) {
       const glyph = font.glyphbycp(character.codePointAt(0) ?? 8203) || font.glyphbycp(8203)
@@ -162,7 +146,10 @@ workerScope.onmessage = async (e: MessageEvent<RenderPayload>) => {
 
         for (let x = 0; x < row.length; x++) {
           const px = offsetX + x
-          if (row.charCodeAt(x) === 49 && px >= 0 && px < width) foregroundMask[py * width + px] = 1
+          if (row.charCodeAt(x) === 49 && px >= 0 && px < width) {
+            const index = py * width + px
+            foregroundMask[index >>> 3] |= 1 << (index & 7)
+          }
         }
       }
       characterIndex++
@@ -191,7 +178,7 @@ workerScope.onmessage = async (e: MessageEvent<RenderPayload>) => {
     if (positions.length > 0 && shadowColor) {
       const [shR, shG, shB, shA] = parseHexColor(shadowColor, 255)
       for (let pixelIndex = 0; pixelIndex < pixelCount; pixelIndex++) {
-        if (foregroundMask[pixelIndex] === 0) continue
+        if ((foregroundMask[pixelIndex >>> 3] & (1 << (pixelIndex & 7))) === 0) continue
         const x = pixelIndex % width
         const y = Math.floor(pixelIndex / width)
 
@@ -212,7 +199,7 @@ workerScope.onmessage = async (e: MessageEvent<RenderPayload>) => {
     // Pass 2: Draw foregrounds
     const [fgR, fgG, fgB, fgA] = parseHexColor(foreground, 255)
     for (let pixelIndex = 0; pixelIndex < pixelCount; pixelIndex++) {
-      if (foregroundMask[pixelIndex] === 0) continue
+      if ((foregroundMask[pixelIndex >>> 3] & (1 << (pixelIndex & 7))) === 0) continue
       const index = pixelIndex * 4
       buffer[index] = fgR
       buffer[index + 1] = fgG
@@ -220,7 +207,28 @@ workerScope.onmessage = async (e: MessageEvent<RenderPayload>) => {
       buffer[index + 3] = fgA
     }
 
-    // 4. Return results with Transferable Object (avoid copying buffer)
+    // Encode off the main thread and transfer the preview without copying RGBA data.
+    if (typeof OffscreenCanvas !== 'undefined' && typeof OffscreenCanvas.prototype.convertToBlob === 'function') {
+      const canvas = new OffscreenCanvas(width, height)
+      try {
+        const context = canvas.getContext('2d')
+        if (!context) throw new Error('캔버스를 초기화하지 못했습니다.')
+        context.putImageData(new ImageData(buffer, width, height), 0, 0)
+        const blob = await canvas.convertToBlob({type: 'image/png'})
+        const bitmap = canvas.transferToImageBitmap()
+        try {
+          workerScope.postMessage({success: true, width, height, blob, bitmap}, [bitmap])
+        } finally {
+          bitmap.close()
+        }
+        return
+      } finally {
+        canvas.width = 0
+        canvas.height = 0
+      }
+    }
+
+    // Fallback for browsers without worker canvas encoding.
     workerScope.postMessage(
       {
         success: true,

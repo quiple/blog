@@ -40,9 +40,9 @@
   const ITEM_PADDING = 20
 
   let enabled = $state(false)
-  let headings = $state<Heading[]>([])
+  let headings = $state.raw<Heading[]>([])
   let activeIds = $state<string[]>([])
-  let railItems = $state<RailItem[]>([])
+  let railItems = $state.raw<RailItem[]>([])
   let railPath = $state('')
   let railLength = $state(0)
   let railStops = $state<Record<string, RailStop>>({})
@@ -135,6 +135,7 @@
     let ready = false
     let disposed = false
     let headingTops: number[] = []
+    let previousItems: RailItem[] = []
 
     activeIds = []
     railItems = []
@@ -155,8 +156,17 @@
       const viewportTop = window.scrollY + VIEWPORT_TOP
       const viewportBottom = window.scrollY + window.innerHeight
       const next: string[] = []
-      for (let index = 0; index < currentHeadings.length; index++) {
-        if (headingTops[index] < viewportBottom && (headingTops[index + 1] ?? Infinity) > viewportTop) {
+      // Find the first visible section without scanning the entire article on every scroll.
+      let low = 0
+      let high = headingTops.length
+      while (low < high) {
+        const middle = (low + high) >>> 1
+        if (headingTops[middle] <= viewportTop) low = middle + 1
+        else high = middle
+      }
+      for (let index = Math.max(0, low - 1); index < currentHeadings.length; index++) {
+        if (headingTops[index] >= viewportBottom) break
+        if ((headingTops[index + 1] ?? Infinity) > viewportTop) {
           next.push(currentHeadings[index].id)
         }
       }
@@ -185,6 +195,22 @@
           bottom: rect.bottom - listRect.top - RAIL_INSET,
         }
       })
+
+      scheduleActive()
+      if (
+        nextItems.length === previousItems.length &&
+        nextItems.every((item, index) => {
+          const previous = previousItems[index]
+          return (
+            item.id === previous.id &&
+            item.x === previous.x &&
+            item.top === previous.top &&
+            item.bottom === previous.bottom
+          )
+        })
+      )
+        return
+      previousItems = nextItems
 
       let path = ''
       const first = nextItems[0]

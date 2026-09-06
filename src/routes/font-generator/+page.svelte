@@ -14,6 +14,7 @@
   import {Textarea} from '$lib/components/ui/textarea'
   import {onDestroy} from 'svelte'
   import {browser} from '$app/environment'
+  import type {RenderPayload, RenderResult, WorkerMessage} from './font-render-types'
   import {getRenderSize, isRenderSizeAllowed} from './font-render-limits'
 
   interface FontDef {
@@ -178,6 +179,7 @@
   let previewAreaEl: HTMLDivElement | undefined = $state()
   let downloadHref = $state('')
   let downloadName = $state('')
+  let downloadBlob: Blob | undefined
 
   let isDragging = $state(false)
   let startX = 0
@@ -201,9 +203,6 @@
   let workerReject: ((reason: Error) => void) | undefined
   let destroyed = false
 
-  type RenderResult = {width: number; height: number; buffer: Uint8ClampedArray<ArrayBuffer>}
-  type WorkerMessage = ({success: true} & RenderResult) | {success: false; error: string}
-
   function getWorker() {
     if (worker) return worker
     if (!browser) return
@@ -215,19 +214,24 @@
       workerResolve = undefined
       workerReject = undefined
 
-      if (data.success) resolve?.(data)
-      else reject?.(new Error(data.error || 'Worker error'))
+      if (data.success) {
+        if (resolve) resolve(data)
+        else if ('bitmap' in data) data.bitmap.close()
+      } else reject?.(new Error(data.error || 'Worker error'))
     }
     worker.onerror = () => {
       workerReject?.(new Error('워커에서 이미지를 만들지 못했습니다.'))
       workerResolve = undefined
       workerReject = undefined
+      worker?.terminate()
+      worker = undefined
     }
     return worker
   }
 
   async function handleSubmit(e: SubmitEvent) {
     e.preventDefault()
+    if (drawing || destroyed) return
 
     if (charsetKey === 'custom' && !customCharset) {
       alert('사용자 지정 문자 집합을 입력하세요.')
@@ -259,6 +263,7 @@
 
     drawing = true
     canvasReady = false
+    downloadBlob = undefined
 
     if (downloadHref) {
       URL.revokeObjectURL(downloadHref)
@@ -272,6 +277,8 @@
     // Wait for the DOM to update the spinner visibility
     await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
 
+    if (destroyed) return
+
     const renderWorker = getWorker()
     if (!renderWorker) {
       alert('워커가 로드되지 않았습니다.')
@@ -279,7 +286,7 @@
       return
     }
 
-    const payload = {
+    const payload: RenderPayload = {
       fontValue,
       fontPath,
       charset: __charset,
@@ -303,48 +310,50 @@
         renderWorker.postMessage(payload)
       })
 
-      const {width, height, buffer} = await renderPromise
+      const result = await renderPromise
+      let blob: Blob
+      try {
+        if (destroyed) return
+        const cvs = canvasEl
+        if (!cvs) throw new Error('캔버스를 초기화하지 못했습니다.')
+        cvs.width = result.width
+        cvs.height = result.height
+        const ctx = cvs.getContext('2d')
+        if (!ctx) throw new Error('캔버스를 초기화하지 못했습니다.')
+
+        if ('bitmap' in result) {
+          ctx.drawImage(result.bitmap, 0, 0)
+          blob = result.blob
+        } else {
+          ctx.putImageData(new ImageData(result.buffer, result.width, result.height), 0, 0)
+          blob = await new Promise<Blob>((resolve, reject) => {
+            cvs.toBlob((value) => {
+              if (value) resolve(value)
+              else reject(new Error('PNG 파일을 만들지 못했습니다.'))
+            })
+          })
+        }
+      } finally {
+        if ('bitmap' in result) result.bitmap.close()
+      }
       if (destroyed) return
 
-      const cvs = canvasEl
-      if (!cvs) throw new Error('캔버스를 초기화하지 못했습니다.')
-      cvs.width = width
-      cvs.height = height
-      const ctx = cvs.getContext('2d')
-      if (!ctx) throw new Error('캔버스를 초기화하지 못했습니다.')
-
-      const imgData = new ImageData(buffer, width, height)
-      ctx.putImageData(imgData, 0, 0)
-
-      const blob = await new Promise<Blob>((resolve, reject) => {
-        cvs.toBlob((result) => {
-          if (result) resolve(result)
-          else reject(new Error('PNG 파일을 만들지 못했습니다.'))
-        })
-      })
-      if (destroyed) return
-
+      downloadBlob = blob
       downloadHref = URL.createObjectURL(blob)
       canvasReady = true
-      downloadName = `${fontValue}_${tileWidth}x${tileHeight}`
+      downloadName = `${payload.fontValue}_${payload.tileWidth}x${payload.tileHeight}`
       drawing = false
     } catch (error) {
+      if (destroyed) return
       toast.error(`이미지 생성 실패: ${error instanceof Error ? error.message : String(error)}`)
       drawing = false
     }
   }
 
   async function handleCopy() {
-    if (!canvasEl) return
+    if (!downloadBlob || !canvasReady) return
     try {
-      const blobPromise = new Promise<Blob>((resolve, reject) => {
-        canvasEl!.toBlob((blob) => {
-          if (blob) resolve(blob)
-          else reject(new Error('Canvas to Blob failed'))
-        })
-      })
-
-      const item = new ClipboardItem({'image/png': blobPromise})
+      const item = new ClipboardItem({'image/png': downloadBlob})
       await navigator.clipboard.write([item])
 
       toast.success('이미지를 클립보드에 복사했습니다')
@@ -379,6 +388,7 @@
 
   onDestroy(() => {
     destroyed = true
+    downloadBlob = undefined
     const reject = workerReject
     workerResolve = undefined
     workerReject = undefined

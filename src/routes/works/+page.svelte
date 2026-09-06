@@ -109,19 +109,18 @@
     if (!canTilt || reduceMotion) return
 
     let frameId = 0
-    let rect: DOMRect | undefined
-
-    const handlePointerEnter = () => {
-      rect = node.getBoundingClientRect()
-    }
+    let clientX = 0
+    let clientY = 0
 
     const handlePointerMove = (e: PointerEvent) => {
-      if (frameId) cancelAnimationFrame(frameId)
+      clientX = e.clientX
+      clientY = e.clientY
+      if (frameId) return
 
       frameId = requestAnimationFrame(() => {
-        if (!rect) return
-        const x = e.clientX - rect.left
-        const y = e.clientY - rect.top
+        const rect = (node.parentElement ?? node).getBoundingClientRect()
+        const x = clientX - rect.left
+        const y = clientY - rect.top
         const centerX = rect.width / 2
         const centerY = rect.height / 2
         const rotateX = (y - centerY) / 20
@@ -138,19 +137,16 @@
     const handlePointerLeave = () => {
       if (frameId) cancelAnimationFrame(frameId)
       frameId = 0
-      rect = undefined
       node.style.setProperty('--rx', '0deg')
       node.style.setProperty('--ry', '0deg')
     }
 
-    node.addEventListener('pointerenter', handlePointerEnter)
     node.addEventListener('pointermove', handlePointerMove)
     node.addEventListener('pointerleave', handlePointerLeave)
 
     return {
       destroy() {
         if (frameId) cancelAnimationFrame(frameId)
-        node.removeEventListener('pointerenter', handlePointerEnter)
         node.removeEventListener('pointermove', handlePointerMove)
         node.removeEventListener('pointerleave', handlePointerLeave)
       },
