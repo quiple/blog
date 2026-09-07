@@ -10,7 +10,7 @@ pubDate: 2026-03-08T17:53
 
 ## 좋아하는 곡이 너무 많아서 어렵다
 
-:::figure{src="article/jacket01.png" class="w-100"}
+:::figure{src="cover/kizuna-song.png" class="w-100"}
 싱글 《{키즈나 송}^({{ja|キズナソング}})》.
 :::
 
@@ -22,7 +22,7 @@ pubDate: 2026-03-08T17:53
 
 **{오카미네}^({{ja|岡峰}})**　〈수상〉은 그 프레이즈를 쓰고 싶어서 만든 곡이라 기쁘네요.
 
-:::figure{src="article/jacket02.png" class="w-100"}
+:::figure{src="cover/unmei-kaika.png" class="w-100"}
 앨범 《{운명개화}^({{ja|運命開花}})》. (〈수상〉 수록)
 :::
 
@@ -32,7 +32,7 @@ pubDate: 2026-03-08T17:53
 
 **스미노**　MV 중에서 에이준 씨가 의자 같은 것에 머리를 엄청나게 들이받는 장면이 있잖아요. 거기를 항상 '인간이 이렇게 주저 없이 물건에 머리를 부딪힐 수 있구나'라고 생각하며 보고 있습니다. (웃음)
 
-:::figure{src="article/jacket03.png" class="w-100"}
+:::figure{src="cover/tatakau-kimi-yo.png" class="w-100"}
 싱글 《싸우는 그대여》.
 :::
 
@@ -50,7 +50,7 @@ pubDate: 2026-03-08T17:53
 
 **마츠다**　그것도 지시였습니다. (웃음)
 
-:::figure{src="article/jacket04.png" class="w-100"}
+:::figure{src="cover/best-the-back-horn-2.png" class="w-100"}
 앨범 《{베스트 더백혼 Ⅱ}^(BEST THE BACK HORN Ⅱ)》. (재녹음판 〈{무한한 황야}^({{ja|無限の荒野}})〉 수록)
 :::
 
@@ -108,7 +108,7 @@ pubDate: 2026-03-08T17:53
 
 **오카미네**　그렇네요, 저는 곡마다 꽤 다른 방식을 취하고 있습니다.
 
-:::figure{src="article/jacket05.png" class="w-100"}
+:::figure{src="cover/jokei-dorobo.png" class="w-100"}
 앨범 《{정경도둑}^({{ja|情景泥棒}})》.
 :::
 
@@ -116,7 +116,7 @@ pubDate: 2026-03-08T17:53
 
 다만 그건 좀 특수한 패턴이고, 다른 곡들은 과거에 보았던 것, 원풍경 같은 것이 투영되어 가사가 되는 경우가 가장 많습니다. 〈{꿈의 꽃}^({{ja|夢の花}})〉이나 〈{수파초}^({{ja|水芭蕉}})〉, 〈{반딧불이}^({{ja|蛍}})〉처럼요. 원풍경이라고 해도 구체적으로 어디라고 말할 수는 없지만... 어쩌면 어릴 적 보았던 후쿠시마의 풍경일지도 모르겠는데, 그런 막연한 색채나 냄새 같은 것이 바탕이 됩니다. 그렇다고 그것만으로는 막연해지니까, 거기에 내가 전하고 싶은 메시지 같은 것이 들어가면 가사로서 완성되는 기분이 듭니다. 말로 잘 설명할 수는 없지만 이런 느낌이지 싶은 막연하고 술렁이는 감각을 가사에 잘 반영했을 때는 제 안에서도 '왔다!' 싶어집니다. 〈{가지}^({{ja|枝}})〉 같은 곡도 그렇죠. 가사를 쓸 때는 듣는 이가 상상하게 하면서도 가슴을 찌르는 무언가를 어떻게 그려낼 것인가를 중요하게 생각합니다.
 
-:::figure{src="article/jacket06.png" class="w-100"}
+:::figure{src="cover/the-back-horn.png" class="w-100"}
 앨범 《THE BACK HORN》. (〈가지〉 수록)
 :::
 
@@ -130,7 +130,7 @@ pubDate: 2026-03-08T17:53
 
 **야마다**　그렇다는 걸 나중에 이야기를 듣고 깨달았습니다.
 
-:::figure{src="article/jacket07.png" class="w-100"}
+:::figure{src="cover/kodoku-o-tsunaide.png" class="w-100"}
 싱글 《{고독을 이어서}^({{ja|孤独を繋いで}})》.
 :::
 
