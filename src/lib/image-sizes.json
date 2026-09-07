@@ -2902,5 +2902,33 @@
   "article/2775ccae8d03bd3df3cf6a4b21f885126a8e803d0e79d9_51783384_8f109c017b08cdfaf93002e8b8fd2d5fe829ef2b.png": {
     "width": 1280,
     "height": 853
+  },
+  "cover/kizuna-song.png": {
+    "width": 526,
+    "height": 598
+  },
+  "cover/unmei-kaika.png": {
+    "width": 1410,
+    "height": 1400
+  },
+  "cover/tatakau-kimi-yo.png": {
+    "width": 600,
+    "height": 614
+  },
+  "cover/best-the-back-horn-2.png": {
+    "width": 1400,
+    "height": 1237
+  },
+  "cover/jokei-dorobo.png": {
+    "width": 1400,
+    "height": 1400
+  },
+  "cover/the-back-horn.png": {
+    "width": 600,
+    "height": 600
+  },
+  "cover/kodoku-o-tsunaide.png": {
+    "width": 1400,
+    "height": 1400
   }
 }
