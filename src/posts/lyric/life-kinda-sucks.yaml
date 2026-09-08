@@ -1,0 +1,63 @@
+# 아래 가사와 타이밍은 기능 확인용 창작 예문이며 실제 곡의 내용이 아닙니다.
+title: Life kinda sucks ft. Kasane Teto
+titleLang: en
+lang: ko
+translationLang: en
+pronunciationLang: ko-Latn
+example: true
+youtube:
+  mv: https://www.youtube.com/watch?v=oT-G1wS-57c
+
+lines:
+  - text: 창문 너머 아침이 천천히 걸어와
+    time: [0, 6]
+    translation: Morning walks slowly past the window
+    pronunciation: changmun neomeo achimi cheoncheonhi georeowa
+
+  - text: 식어 버린 커피에 오늘을 비춰 봐
+    time: [6, 12]
+    duet: true
+    translation: See today reflected in the cold coffee
+
+  # words가 있으면 줄의 text와 time은 자동으로 합쳐집니다.
+  - words:
+      - text: '조금 '
+        time: [12, 14]
+        pronunciation: jogeum
+      - text: '늦어도 '
+        time: [14, 16]
+        pronunciation: neujeodo
+      - text: 괜찮아
+        time: [16, 18]
+        pronunciation: gwaenchana
+    translation: It's okay to be a little late
+    background:
+      text: 괜찮아
+      time: [16, 19]
+      pronunciation: gwaenchana
+      translation: It's okay
+
+  - text: 우리의 발걸음엔 다른 박자가 있어
+    time: [18, 25]
+    duet: true
+
+  - 잠깐 숨을 고르고
+
+  - text: 길을 잃은 저녁도 노래가 될 테니
+    time: [30, 37]
+
+  - words:
+      - text: '작은 '
+        time: [37, 39]
+      - text: 光
+        time: [39, 41]
+        ruby: 빛
+      - text: ' 하나를 주머니에 담아'
+        time: [41, 44]
+
+  - text: 다시 한 걸음, 내일을 향해
+    time: [44, 52]
+    duet: true
+
+  - text: 오늘의 끝에서 나를 기다려 줘
+    time: [52, 60]
