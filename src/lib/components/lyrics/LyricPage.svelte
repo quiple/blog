@@ -86,7 +86,7 @@
 <div
   class="mx-auto grid max-w-[1500px] items-start gap-8 pt-8 md:pt-20 lg:grid-cols-[minmax(320px,0.85fr)_minmax(0,1.15fr)] lg:gap-12"
 >
-  <aside class="min-w-0 lg:sticky lg:top-24">
+  <aside class="min-w-0 lg:sticky lg:top-26">
     {#if source}
       {#if sources.length > 1}
         <div class="mb-3 flex flex-wrap gap-2" role="group" aria-label="음악 소스 선택">
