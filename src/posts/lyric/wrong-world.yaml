@@ -2,8 +2,9 @@
 # Original timing, Japanese lyrics, English/Chinese translations and romanization retained.
 # Offsets are media seconds minus lyric seconds; both are 0 for this song.
 
-title: Wrong World
-titleLang: en
+title: 雑踏、僕らの街
+titleTranslation: 붐비는 길, 우리들의 거리
+titleLang: ja
 artist: トゲナシトゲアリ
 lang: ja
 pronunciationLang: ja-Latn
