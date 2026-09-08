@@ -32,7 +32,19 @@ const lineSchema = v.union([
     background: v.optional(backgroundSchema),
   }),
 ])
-const url = v.pipe(v.string(), v.url())
+const youtubeId = v.pipe(v.string(), v.regex(/^[A-Za-z0-9_-]{11}$/, 'YouTube 동영상 ID 11자만 입력하세요.'))
+const spotifyId = v.pipe(v.string(), v.regex(/^[A-Za-z0-9]{22}$/, 'Spotify 트랙 ID 22자만 입력하세요.'))
+const appleMusicId = v.pipe(
+  v.union([v.string(), v.pipe(v.number(), v.safeInteger(), v.minValue(1))]),
+  v.transform(String),
+  v.regex(/^[1-9][0-9]*$/, 'Apple Music 곡의 숫자 ID만 입력하세요.'),
+)
+const mediaEntries = {
+  youtube: v.optional(v.strictObject({mv: v.optional(youtubeId), audio: v.optional(youtubeId)})),
+  appleMusic: v.optional(appleMusicId),
+  spotify: v.optional(spotifyId),
+}
+const mediaSchema = v.object(mediaEntries)
 const offset = v.optional(v.pipe(v.number(), v.finite()), 0)
 const songSchema = v.strictObject({
   title: v.optional(v.pipe(v.string(), v.minLength(1))),
@@ -43,9 +55,7 @@ const songSchema = v.strictObject({
   translationLang: v.optional(v.string()),
   pronunciationLang: v.optional(v.string()),
   example: v.optional(v.boolean(), false),
-  youtube: v.optional(v.strictObject({mv: v.optional(url), audio: v.optional(url)})),
-  appleMusic: v.optional(url),
-  spotify: v.optional(url),
+  ...mediaEntries,
   offsets: v.optional(v.strictObject({youtubeMV: offset, youtubeAudio: offset, appleMusic: offset, spotify: offset})),
   lines: v.optional(v.array(lineSchema), []),
 })
@@ -60,50 +70,40 @@ export type Song = Omit<SongInput, 'title' | 'lines'> & {title: string; lines: S
 export type Provider = 'youtube' | 'appleMusic' | 'spotify'
 export type SourceKey = 'youtubeMV' | 'youtubeAudio' | 'appleMusic' | 'spotify'
 export type Source = {key: SourceKey; provider: Provider; label: string; url: string; id: string; embedUrl: string}
-export function getSources(song: Pick<SongInput, 'youtube' | 'appleMusic' | 'spotify'>): Source[] {
+export function getSources(input: v.InferInput<typeof mediaSchema>): Source[] {
+  const song = v.parse(mediaSchema, input)
   const sources: Source[] = []
   for (const key of ['youtubeMV', 'youtubeAudio', 'appleMusic', 'spotify'] as const) {
     const provider: Provider = key.startsWith('youtube') ? 'youtube' : (key as Provider)
     const value = key === 'youtubeMV' ? song.youtube?.mv : key === 'youtubeAudio' ? song.youtube?.audio : song[key]
     if (!value) continue
-    const url = new URL(value)
-    if (url.protocol !== 'https:') throw new Error(`${provider}: HTTPS 링크를 사용하세요.`)
     if (provider === 'youtube') {
-      const host = url.hostname.replace(/^www\./, '')
-      const id =
-        host === 'youtu.be'
-          ? url.pathname.slice(1)
-          : ['youtube.com', 'm.youtube.com'].includes(host)
-            ? url.pathname === '/watch'
-              ? url.searchParams.get('v')
-              : url.pathname.match(/^\/(?:embed|shorts)\/([^/]+)$/)?.[1]
-            : null
-      if (!id || !/^[\w-]{11}$/.test(id)) throw new Error('YouTube 동영상 링크가 올바르지 않습니다.')
       sources.push({
         key,
         provider,
         label: key === 'youtubeMV' ? 'YouTube 뮤비' : 'YouTube 음원',
-        url: value,
-        id,
-        embedUrl: `https://www.youtube.com/embed/${id}`,
+        url: `https://www.youtube.com/watch?v=${value}`,
+        id: value,
+        embedUrl: `https://www.youtube.com/embed/${value}`,
       })
     } else if (provider === 'spotify') {
-      const match = url.pathname.match(/^\/(?:intl-[a-z]+\/)?track\/([a-zA-Z0-9]+)\/?$/)
-      if (url.hostname !== 'open.spotify.com' || !match) throw new Error('Spotify track 링크를 사용하세요.')
       sources.push({
         key,
         provider,
         label: 'Spotify',
-        url: value,
-        id: `spotify:track:${match[1]}`,
-        embedUrl: `https://open.spotify.com/embed/track/${match[1]}`,
+        url: `https://open.spotify.com/track/${value}`,
+        id: `spotify:track:${value}`,
+        embedUrl: `https://open.spotify.com/embed/track/${value}`,
       })
     } else {
-      if (url.hostname !== 'music.apple.com' || !/^\/[a-z]{2}\/(?:album|song)\//.test(url.pathname)) {
-        throw new Error('Apple Music 곡 또는 앨범 링크를 사용하세요.')
-      }
-      url.hostname = 'embed.music.apple.com'
-      sources.push({key, provider, label: 'Apple Music', url: value, id: url.href, embedUrl: url.href})
+      sources.push({
+        key,
+        provider,
+        label: 'Apple Music',
+        url: `https://music.apple.com/kr/song/${value}`,
+        id: value,
+        embedUrl: `https://embed.music.apple.com/kr/song/${value}`,
+      })
     }
   }
   return sources

@@ -24,10 +24,7 @@ export const artists: Record<string, Artist> = Object.fromEntries(
 
 export function songArtists(artist?: string | string[]): Artist[] {
   return (typeof artist === 'string' ? [artist] : (artist ?? [])).map((slug) => {
-    if (Object.hasOwn(artists, slug)) return artists[slug]
-    // Accept names from existing song files while authoring moves to slug references.
-    const matches = Object.values(artists).filter((entry) => entry.name === slug || entry.translation === slug)
-    if (matches.length !== 1) throw new Error(`아티스트 슬러그를 확인하세요: ${slug}`)
-    return matches[0]
+    if (!Object.hasOwn(artists, slug)) throw new Error(`아티스트 슬러그를 확인하세요: ${slug}`)
+    return artists[slug]
   })
 }

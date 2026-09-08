@@ -5,30 +5,37 @@ import {getSources, isTimed, lyricLanguages, parseSong, toLyricLines} from './mo
 import {parseSongYaml} from './yaml.server.ts'
 import {playbackTime} from './players.ts'
 
-void test('metadata is optional; independent YouTube sources have distinct keys', () => {
+void test('service IDs generate playback and external URLs without URL metadata', () => {
   assert.equal(parseSong({}, 'untitled').title, 'untitled')
   assert.deepEqual(getSources({}), [])
-  const sources = getSources({
-    youtube: {
-      mv: 'https://www.youtube.com/watch?v=oT-G1wS-57c',
-      audio: 'https://youtu.be/oT-G1wS-57c',
-    },
-  })
+  const sources = getSources({youtube: {mv: 'oT-G1wS-57c', audio: 'MSmfAa_oSqE'}})
   assert.deepEqual(
-    sources.map(({key, provider, id}) => ({key, provider, id})),
+    sources.map(({key, id}) => ({key, id})),
     [
-      {key: 'youtubeMV', provider: 'youtube', id: 'oT-G1wS-57c'},
-      {key: 'youtubeAudio', provider: 'youtube', id: 'oT-G1wS-57c'},
+      {key: 'youtubeMV', id: 'oT-G1wS-57c'},
+      {key: 'youtubeAudio', id: 'MSmfAa_oSqE'},
     ],
   )
-  assert.equal(getSources({youtube: {audio: 'https://youtube.com/shorts/oT-G1wS-57c'}})[0].key, 'youtubeAudio')
-  assert.equal(
-    getSources({appleMusic: 'https://music.apple.com/kr/album/example/123?i=456'})[0].embedUrl,
-    'https://embed.music.apple.com/kr/album/example/123?i=456',
-  )
-  assert.equal(getSources({spotify: 'https://open.spotify.com/intl-ko/track/abc123'})[0].id, 'spotify:track:abc123')
-  assert.throws(() => getSources({youtube: {mv: 'https://youtube.com.evil.test/watch?v=oT-G1wS-57c'}}))
-  assert.throws(() => getSources({spotify: 'https://open.spotify.com/playlist/abc123'}))
+  assert.equal(sources[0].url, 'https://www.youtube.com/watch?v=oT-G1wS-57c')
+  assert.equal(sources[1].embedUrl, 'https://www.youtube.com/embed/MSmfAa_oSqE')
+  const apple = getSources({appleMusic: 1502503864})[0]
+  assert.equal(apple.embedUrl, 'https://embed.music.apple.com/kr/song/1502503864')
+  assert.equal(apple.url, 'https://music.apple.com/kr/song/1502503864')
+  assert.equal(parseSongYaml('appleMusic: 1502503864').appleMusic, '1502503864')
+  const spotify = getSources({spotify: '0123456789ABCDEFGHIJKL'})[0]
+  assert.equal(spotify.id, 'spotify:track:0123456789ABCDEFGHIJKL')
+  assert.equal(spotify.embedUrl, 'https://open.spotify.com/embed/track/0123456789ABCDEFGHIJKL')
+  for (const input of [
+    {youtube: {mv: 'https://youtu.be/oT-G1wS-57c'}},
+    {youtube: {audio: 'short'}},
+    {spotify: 'https://open.spotify.com/track/0123456789ABCDEFGHIJKL'},
+    {spotify: 'spotify:track:0123456789ABCDEFGHIJKL'},
+    {appleMusic: 'https://music.apple.com/kr/song/1502503864'},
+    {appleMusic: -1},
+    {appleMusic: 1.5},
+    {appleMusic: Number.MAX_SAFE_INTEGER + 1},
+  ])
+    assert.throws(() => parseSong(input))
 })
 
 void test('YAML shorthand, inferred seconds, timed ruby, duet overlap, background, multilingual annotations', () => {

@@ -5,7 +5,7 @@ import {milliseconds, parseSong, toLyricLines} from './model.ts'
 import {parseSongYaml} from './yaml.server.ts'
 import {canPlayTime, sourceOffset, switchPosition} from './timeline.ts'
 
-const youtube = {mv: 'https://youtu.be/YDLafQ-Rg-k', audio: 'https://youtu.be/MSmfAa_oSqE'}
+const youtube = {mv: 'YDLafQ-Rg-k', audio: 'MSmfAa_oSqE'}
 
 void test('millisecond precision survives YAML and AMLL conversion', () => {
   const song = parseSongYaml(
