@@ -180,6 +180,19 @@
   .lyric-player :global([data-bottom-line]) {
     display: none;
   }
+  .lyric-player :global(.lyric-interlude-slot) {
+    display: flex;
+    align-items: center;
+    min-height: 2em;
+    pointer-events: none;
+  }
+  .lyric-player :global(.lyric-interlude-slot.duet) {
+    justify-content: flex-end;
+  }
+  .lyric-player :global(.lyric-interlude-slot > [class*='_interludeDots']) {
+    position: relative;
+    inset: auto;
+  }
   .lyric-player :global([class*='_lyricLine']) {
     content-visibility: visible;
   }
