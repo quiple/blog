@@ -54,7 +54,7 @@
         element.setAttribute('aria-hidden', 'true')
         container.append(element)
         player.setEnableBlur(false)
-        player.setAlignPosition(0.35)
+        player.setAlignPosition(0)
         player.setOptimizeOptions({
           resetLineTimestamps: false,
           normalizeSpaces: false,
@@ -172,39 +172,15 @@
     overflow: visible;
     position: relative;
   }
-  .lyric-player :global([class*='_lyricLineWrapper']) {
-    position: relative;
-    padding-block: 0.4em;
-    margin-block: 0.6em;
-  }
   .lyric-player :global([data-bottom-line]) {
     display: none;
   }
-  .lyric-player :global(.lyric-interlude-slot) {
-    display: flex;
-    align-items: center;
-    min-height: 2em;
-    pointer-events: none;
-  }
-  .lyric-player :global(.lyric-interlude-slot.duet) {
-    justify-content: flex-end;
-  }
-  .lyric-player :global(.lyric-interlude-slot > [class*='_interludeDots']) {
-    position: relative;
-    inset: auto;
+  /* AMLL sizes the dots separately from their padding; the global reset uses border-box. */
+  .lyric-player :global([class*='_interludeDots']) {
+    box-sizing: content-box;
   }
   .lyric-player :global([class*='_lyricLine']) {
     content-visibility: visible;
-  }
-  .lyric-player :global([class*='_bgWrapper']) {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    z-index: auto;
-    opacity: 1;
-    visibility: visible;
-    transform: none !important;
-    margin-top: 0 !important;
   }
   .lyric-player :global([class*='_romanWord']) {
     line-height: 1.5;

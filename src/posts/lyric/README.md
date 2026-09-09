@@ -10,7 +10,7 @@ lines:
   - 두 번째 가사
 ```
 
-메타데이터는 **모두 선택 사항**입니다. 제목을 생략하면 파일명을 사용합니다. 음악 링크가 없어도 가사를 읽을 수 있습니다.
+메타데이터는 **모두 선택 사항**입니다. 제목을 생략하면 파일명을 사용합니다. 음악 ID가 없어도 가사를 읽을 수 있습니다.
 
 ```yaml
 title: 곡 제목
@@ -19,11 +19,11 @@ titleLang: ja
 artist: togenashi-togeari
 lang: ja
 youtube:
-  mv: https://www.youtube.com/watch?v=oT-G1wS-57c
-  audio: https://www.youtube.com/watch?v=oT-G1wS-57c
-appleMusic: https://music.apple.com/kr/album/example/123?i=456
-spotify: https://open.spotify.com/track/곡ID
-# 각 링크는 실제 원하는 영상·음원 링크로 교체하세요.
+  mv: oT-G1wS-57c
+  audio: oT-G1wS-57c
+appleMusic: 1502503864
+spotify: 0123456789ABCDEFGHIJKL
+# 각 ID는 실제 원하는 영상·곡 ID로 교체하세요.
 offsets:
   youtubeMV: 3
   youtubeAudio: 0
@@ -42,6 +42,8 @@ lines:
 
 - `time: [시작, 종료]`는 **초 단위 소수점 셋째 자리(0.001초)**까지 사용할 수 있습니다. 예를 들어 `12.345`는 12초 345밀리초입니다. AMLL에는 정수 밀리초로 전달합니다. 모든 시간은 곡 시작 기준의 절대 시간입니다.
 - `offsets`도 초 단위입니다. `youtubeMV: 3`이면 뮤비 3초가 가사 0초입니다. `youtubeMV`, `youtubeAudio`, `appleMusic`, `spotify`를 각각 생략하거나 지정할 수 있습니다.
+- 음악 서비스에는 전체 URL 대신 고유 ID만 입력합니다. YouTube는 동영상 ID 11자, Spotify는 트랙 ID 22자입니다. Spotify의 `spotify:track:` 접두사도 제외합니다.
+- Apple Music은 **곡 ID**를 입력합니다. `/song/123456` 링크라면 마지막 숫자, `/album/…/앨범ID?i=곡ID` 링크라면 `i=` 뒤의 숫자입니다. 숫자 또는 따옴표로 감싼 문자열 모두 지원하며, 한국 스토어의 곡 링크와 임베드 주소를 자동 생성합니다.
 - YouTube `mv`와 `audio`는 독립적입니다. 하나만 있어도 되고 둘 다 없어도 됩니다. 있는 소스만 선택 버튼에 표시됩니다.
 - `duet: true`인 줄은 오른쪽에 표시됩니다. 여러 목소리의 시간 범위는 겹칠 수 있습니다. 줄은 시작 시간 순서로 작성하세요.
 - `background`는 해당 줄의 배경 보컬입니다. 문자열로 쓰면 본 가사의 시간을 따릅니다. 별도 시간이 필요하면 아래처럼 객체로 씁니다.
@@ -60,7 +62,7 @@ lang: ja
 translation: 토게나시 토게아리
 ```
 
-곡에서 `artist: togenashi-togeari` 또는 `artist: [togenashi-togeari, another-artist]`처럼 참조합니다. 각 슬러그의 아티스트 파일을 먼저 추가하세요. 가사 페이지에서는 한국어 번역명만 표시하며, 번역명이 없으면 원명을 표시합니다. 이름을 누르면 `/artist/{슬러그}`로 이동하여 원명, 번역명, 곡 목록을 볼 수 있습니다.
+곡에서 `artist: togenashi-togeari` 또는 `artist: [togenashi-togeari, another-artist]`처럼 참조합니다. 각 슬러그의 아티스트 파일을 먼저 추가하세요. 원명·번역명으로 검색하는 호환 처리는 없으며, 등록되지 않은 슬러그는 오류로 처리됩니다. 가사 페이지에서는 한국어 번역명만 표시하며, 번역명이 없으면 원명을 표시합니다. 이름을 누르면 `/artist/{슬러그}`로 이동하여 원명, 번역명, 곡 목록을 볼 수 있습니다.
 
 YouTube 음원 임베드는 정사각형, 뮤비는 16:9입니다. 동기화 가사는 별도 스크롤 영역 없이 문서 전체에 펼쳐지며 재생 중인 줄을 따라 페이지가 스크롤됩니다. 직접 휠·터치·키보드로 스크롤하면 5초 동안 자동 따라가기를 멈춥니다.
 
@@ -132,3 +134,37 @@ YouTube 뮤비↔음원 전환은 소스별 보정값을 적용해 같은 가사
 - [AMLL 가사 기능](https://amll.dev/en/guides/lyric/ttml)
 - [YouTube IFrame API](https://developers.google.com/youtube/iframe_api_reference)
 - [Spotify iFrame API](https://developer.spotify.com/documentation/embeds/references/iframe-api)
+
+## 명령어로 가사 가져오기
+
+프로젝트 루트에서 실행합니다. Node.js 22.18 이상 또는 현재 프로젝트의 Node.js 26을 사용하세요.
+
+```sh
+# YouTube 동영상 ID: AMLL 가사와 제공되는 자막 중 선택
+nub run import -y YDLafQ-Rg-k --slug wrong-world-new --artist togenashi-togeari
+
+# Apple Music / Spotify ID: 공식 AMLL DB의 대응 가사 가져오기
+nub run import -a 1737842246 --slug wrong-world-new
+nub run import -s 0tNSVPZeJjpNH7Q9VqrbyJ --slug wrong-world-new
+
+# AMLL DB 검색 / 파일명 / 다운로드 링크 / 로컬 TTML
+nub run import --search '雑踏、僕らの街' --slug wrong-world-new
+nub run import --amll 1779284741800-68000793-I1W5DuF4.ttml --slug wrong-world-new
+nub run import --amll 'https://amlldb.bikonoo.com/raw-lyrics/1779284741800-68000793-I1W5DuF4.ttml' --slug wrong-world-new
+nub run import --file ./lyrics.ttml --slug music-title
+```
+
+`node import.ts …`로도 실행할 수 있습니다. `nubx import.ts`는 패키지 실행용 명령이어서 로컬 TypeScript 파일을 찾지 못하므로 위 명령을 사용하세요.
+
+후보가 여러 개면 **↑/↓ 방향키로 이동하고 Enter로 선택**합니다. Esc 또는 Ctrl+C로 취소할 수 있습니다. 비대화형 실행에서는 `--select 2`처럼 후보 번호(1부터)를 지정하세요. 후보가 여러 개인데 번호를 지정하지 않으면 목록을 출력하고 파일을 만들지 않습니다.
+
+결과는 `src/posts/lyric/{슬러그}.yaml`에 저장됩니다. 맨 위 주석에는 원본 출처 URL 또는 로컬 경로, TTML 기여자(제공된 경우), 선택한 자막 종류·언어, 가져온 시각이 기록됩니다. 기존 파일은 덮어쓰지 않습니다. `--stdout`은 파일 생성 없이 결과를 출력하고 `--out-dir 경로`는 출력 폴더를 지정합니다. 슬러그는 제목의 영문·숫자 또는 서비스 ID로 기본 생성되며, `--slug`로 직접 정할 수 있습니다.
+
+- `--artist`에는 이미 등록된 아티스트 슬러그를 입력합니다. 여러 번 지정하면 배열로 저장합니다. 원본의 아티스트명을 임의로 슬러그로 바꾸거나 아티스트 파일을 자동 생성하지 않습니다.
+- `--title`, `--lang`으로 제목과 원문 언어를 지정할 수 있습니다. YouTube는 기본 `youtube.mv`에 저장하며 `--audio`를 붙이면 `youtube.audio`에 저장합니다.
+- YouTube에는 별도로 **yt-dlp**가 필요합니다(macOS: `brew install yt-dlp`). 미디어는 다운로드하지 않고 메타데이터와 선택한 자막만 가져옵니다. 기본 후보는 등록 자막이며 `--auto`를 붙이면 자동 생성 자막도 표시합니다. 자동 자막은 노래 가사와 다를 수 있습니다.
+- YouTube 자막은 제공된 행별 타이밍을 사용하며 단어별 타이밍을 임의 생성하지 않습니다. TTML은 단어·루비 타이밍, 번역·발음, 듀엣·배경 보컬을 YAML로 변환합니다. 타이밍은 0.001초 단위로 유지합니다.
+- Apple Music·Spotify는 **해당 서비스에서 비공개 가사를 추출하는 기능이 아닙니다**. 입력한 곡 ID에 연결된 공식 AMLL DB 가사를 검색합니다. DB에 없는 곡은 `--search`, `--file` 또는 직접 다운로드한 TTML을 사용하세요. 로그인 쿠키나 토큰을 요구하지 않습니다.
+- AMLL에서 가져온 타이밍과 YouTube 뮤비의 편집 시점은 다를 수 있으므로 `offsets`를 확인하세요. 출처의 언어별 번역은 보존되며, 사이트에서는 기존 규칙대로 한국어만 표시합니다.
+
+관련 명세: [AMLL HTTP API](https://amll.dev/reference/http-api/native), [AMLL DB](https://github.com/amll-dev/amll-ttml-db), [yt-dlp 자막 옵션](https://github.com/yt-dlp/yt-dlp#subtitle-options).

@@ -3,39 +3,37 @@ import type {LocalizedLyricLine} from './model'
 
 export class AnnotatedLyricPlayer extends LyricPlayer {
   private hasWordAnnotations = false
-  private interludeSlots = new Map<HTMLElement, HTMLElement>()
 
   constructor() {
     super()
     this.scrollState.allowScroll = false
   }
 
-  // Preserve AMLL's presentation and interlude timeline; only replace its scroll coordinates.
+  // Keep AMLL's absolute layout, including its interlude spacing and springs.
+  // Only cancel the internal viewport offset so the document scrolls instead.
   override async calcLayout(sync = false, force = false) {
-    void super.calcLayout(sync, force)
-    let previousEnd = 0
     for (const group of this.currentLyricGroups) {
-      group.posY.setTargetPosition(0)
-      group.posY.setPosition(0)
-      group.element.style.transform = 'translateY(0px)'
       group.show()
-      // Reserve the gap in document flow, so the dots never overlap lyric rows.
-      if (group.startTime - 250 - previousEnd >= 4000 && !this.interludeSlots.has(group.element)) {
-        const slot = document.createElement('div')
-        slot.className = 'lyric-interlude-slot'
-        slot.classList.toggle('duet', group.mainLine.getLine().isDuet)
-        group.element.before(slot)
-        this.interludeSlots.set(group.element, slot)
+      if (!this.lyricGroupSize.has(group)) {
+        this.lyricGroupSize.set(group, [group.element.clientWidth, group.element.clientHeight])
       }
-      previousEnd = group.endTime
     }
-    const next = this.currentLyricGroups.find((group) => group.startTime > this.timelineState.currentTime + 20)
-    const slot = next && this.interludeSlots.get(next.element)
-    if (slot) {
-      const dots = this.interludeDots.getElement()
-      if (dots.parentElement !== slot) slot.append(dots)
-      this.interludeDots.setTransform(0, 0)
+    void super.calcLayout(sync, force)
+    const first = this.currentLyricGroups[0]
+    if (!first) {
+      this.getElement().style.height = '0px'
+      return
     }
+    const intro = this.layoutState.lastInterludeState && first.startTime > this.timelineState.currentTime + 20
+    const introHeight = intro ? this.layoutState.interludeDotsSize[1] + (this.baseFontSize || 24) * 0.8 : 0
+    const origin = first.top - introHeight
+    if (Math.abs(origin) > 0.01) {
+      this.scrollState.scrollOffset += origin
+      void super.calcLayout(sync, force)
+    }
+    const last = this.currentLyricGroups[this.currentLyricGroups.length - 1]
+    const height = `${last.top + (this.lyricGroupSize.get(last)?.[1] ?? 0)}px`
+    if (this.getElement().style.height !== height) this.getElement().style.height = height
   }
 
   activeElement(time: number) {
@@ -46,9 +44,6 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   }
 
   override setLyricLines(lines: LocalizedLyricLine[], initialTime = 0) {
-    this.getElement().append(this.interludeDots.getElement())
-    for (const slot of this.interludeSlots.values()) slot.remove()
-    this.interludeSlots.clear()
     this.hasWordAnnotations = lines.some((line) =>
       line.words.some((word) => word.ruby?.length || word.romanWord?.trim()),
     )

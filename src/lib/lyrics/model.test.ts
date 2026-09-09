@@ -21,7 +21,7 @@ void test('service IDs generate playback and external URLs without URL metadata'
   const apple = getSources({appleMusic: 1502503864})[0]
   assert.equal(apple.embedUrl, 'https://embed.music.apple.com/kr/song/1502503864')
   assert.equal(apple.url, 'https://music.apple.com/kr/song/1502503864')
-  assert.equal(parseSongYaml('appleMusic: 1502503864').appleMusic, '1502503864')
+  assert.equal(parseSongYaml('appleMusic: 1502503864', 'id-test').appleMusic, '1502503864')
   const spotify = getSources({spotify: '0123456789ABCDEFGHIJKL'})[0]
   assert.equal(spotify.id, 'spotify:track:0123456789ABCDEFGHIJKL')
   assert.equal(spotify.embedUrl, 'https://open.spotify.com/embed/track/0123456789ABCDEFGHIJKL')
