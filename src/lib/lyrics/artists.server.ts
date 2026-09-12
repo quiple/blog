@@ -1,5 +1,6 @@
 import * as v from 'valibot'
 import {parse} from 'yaml'
+import {smartText} from './typography.server'
 
 const schema = v.strictObject({
   name: v.string(),
@@ -18,7 +19,16 @@ export const artists: Record<string, Artist> = Object.fromEntries(
       .split('/')
       .at(-1)!
       .replace(/\.ya?ml$/, '')
-    return [slug, {...v.parse(schema, parse(source)), slug}]
+    const artist = v.parse(schema, parse(source))
+    return [
+      slug,
+      {
+        ...artist,
+        name: smartText(artist.name),
+        translation: artist.translation === undefined ? undefined : smartText(artist.translation),
+        slug,
+      },
+    ]
   }),
 )
 
