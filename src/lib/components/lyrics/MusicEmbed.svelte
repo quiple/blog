@@ -187,7 +187,7 @@
   })
 </script>
 
-<div class="overflow-hidden rounded-xl bg-muted inner-border">
+<div class="overflow-hidden rounded-lg bg-muted shadow-xs inner-border">
   {#if source.provider === 'appleMusic'}
     <iframe
       title="Apple Music 플레이어"
