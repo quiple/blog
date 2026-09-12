@@ -6,7 +6,9 @@
 
 title: Life kinda sucks
 titleLang: en
-artist: [roma, kasane-teto]
+artist:
+  - roma
+  - kasane-teto
 lang: en
 youtube:
   audio: 5JrhAsNH-lw
