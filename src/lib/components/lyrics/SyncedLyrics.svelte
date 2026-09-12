@@ -49,6 +49,7 @@
         let visible = true
         let lastFollowed: HTMLElement | undefined
         let followAfter = 0
+        let appliedLines: LocalizedLyricLine[] | undefined
         const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)')
         const element = player.getElement()
         element.setAttribute('aria-hidden', 'true')
@@ -97,8 +98,13 @@
         }
         updateLines = (value) => {
           if (disposed) return
+          // Media duration updates may create a new array containing the same lines.
+          if (appliedLines?.length === value.length && value.every((line, index) => line === appliedLines![index]))
+            return
           try {
             player.setLyricLines(value, Math.max(0, playbackTime(sample, performance.now()) - offset))
+            appliedLines = value.slice()
+            lastFollowed = undefined
             schedule()
           } catch {
             onfailure()
