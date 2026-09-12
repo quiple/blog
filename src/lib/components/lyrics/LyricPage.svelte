@@ -135,12 +135,6 @@
         {/each}
       </div>
     {/if}
-    {#if source}<a
-        href={externalUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mt-3 inline-block text-sm text-muted-foreground underline">{source.label} ↗</a
-      >{/if}
   </aside>
 
   <section class="min-w-0 pb-16" aria-label="가사">
