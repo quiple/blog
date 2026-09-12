@@ -3,6 +3,7 @@ import type {LocalizedLyricLine} from './model'
 
 export class AnnotatedLyricPlayer extends LyricPlayer {
   private hasWordAnnotations = false
+  private settingLines = false
 
   constructor() {
     super()
@@ -12,6 +13,9 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   // Keep AMLL's absolute layout, including its interlude spacing and springs.
   // Only cancel the internal viewport offset so the document scrolls instead.
   override async calcLayout(sync = false, force = false) {
+    // Initial data and size measurements are layout corrections, not lyric transitions.
+    force ||= sync || this.settingLines
+    if (force) sync = true
     for (const group of this.currentLyricGroups) {
       group.show()
       if (!this.lyricGroupSize.has(group)) {
@@ -31,6 +35,13 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
       this.scrollState.scrollOffset += origin
       void super.calcLayout(sync, force)
     }
+    if (force) {
+      // setPosition alone does not clear AMLL's delayed spring targets.
+      for (const group of this.currentLyricGroups) {
+        group.posY.setTargetPosition(group.top)
+        group.posY.setPosition(group.top)
+      }
+    }
     const last = this.currentLyricGroups[this.currentLyricGroups.length - 1]
     const height = `${last.top + (this.lyricGroupSize.get(last)?.[1] ?? 0)}px`
     if (this.getElement().style.height !== height) this.getElement().style.height = height
@@ -47,7 +58,12 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     this.hasWordAnnotations = lines.some((line) =>
       line.words.some((word) => word.ruby?.length || word.romanWord?.trim()),
     )
-    super.setLyricLines(lines, initialTime)
+    this.settingLines = true
+    try {
+      super.setLyricLines(lines, initialTime)
+    } finally {
+      this.settingLines = false
+    }
     if (this.hasWordAnnotations) this.isNonDynamic = false
     // AMLL keeps these three containers when virtualizing each line's contents.
     for (const group of this.currentLyricGroups) {
