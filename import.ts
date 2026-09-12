@@ -97,10 +97,12 @@ async function main() {
     v.select ? Number(v.select) : undefined,
   )
   const result = await candidates[selected].load()
+  const lang = v.lang || result.song.lang
   const song = parseSong({
     ...result.song,
     ...(v.title ? {title: v.title} : {}),
-    ...(v.lang ? {lang: v.lang} : {}),
+    lang,
+    titleLang: lang,
     ...(v.artist ? {artist: v.artist.length === 1 ? v.artist[0] : v.artist} : {}),
     ...(v.youtube ? {youtube: {[v.audio ? 'audio' : 'mv']: v.youtube}} : {}),
     ...(v.apple ? {appleMusic: v.apple} : {}),

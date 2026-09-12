@@ -1,63 +1,508 @@
-# 아래 가사와 타이밍은 기능 확인용 창작 예문이며 실제 곡의 내용이 아닙니다.
+# https://www.youtube.com/watch?v=oT-G1wS-57c
+# YouTube 등록 자막: en (json3, 행별 타이밍)
+# 선택 항목: YouTube 등록 자막 · en · English
+# 가져온 시각: 2026-09-12T18:51:07.149Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
 title: Life kinda sucks ft. Kasane Teto
 titleLang: en
-lang: ko
-translationLang: en
-pronunciationLang: ko-Latn
-example: true
+lang: en
 youtube:
   mv: oT-G1wS-57c
-
 lines:
-  - text: 창문 너머 아침이 천천히 걸어와
-    time: [0, 6]
-    translation: Morning walks slowly past the window
-    pronunciation: changmun neomeo achimi cheoncheonhi georeowa
-
-  - text: 식어 버린 커피에 오늘을 비춰 봐
-    time: [6, 12]
-    duet: true
-    translation: See today reflected in the cold coffee
-
-  # words가 있으면 줄의 text와 time은 자동으로 합쳐집니다.
-  - words:
-      - text: '조금 '
-        time: [12, 14]
-        pronunciation: jogeum
-      - text: '늦어도 '
-        time: [14, 16]
-        pronunciation: neujeodo
-      - text: 괜찮아
-        time: [16, 18]
-        pronunciation: gwaenchana
-    translation: It's okay to be a little late
-    background:
-      text: 괜찮아
-      time: [16, 19]
-      pronunciation: gwaenchana
-      translation: It's okay
-
-  - text: 우리의 발걸음엔 다른 박자가 있어
-    time: [18, 25]
-    duet: true
-
-  - 잠깐 숨을 고르고
-
-  - text: 길을 잃은 저녁도 노래가 될 테니
-    time: [30, 37]
-
-  - words:
-      - text: '작은 '
-        time: [37, 39]
-      - text: 光
-        time: [39, 41]
-        ruby: 빛
-      - text: ' 하나를 주머니에 담아'
-        time: [41, 44]
-
-  - text: 다시 한 걸음, 내일을 향해
-    time: [44, 52]
-    duet: true
-
-  - text: 오늘의 끝에서 나를 기다려 줘
-    time: [52, 60]
+  - text: F*ck this thing ╭∩╮( ＾◡＾)╭∩╮
+    time:
+      - 0.25
+      - 1.084
+  - text: called life ( ꩜ ᯅ ꩜;)⁭ ⁭
+    time:
+      - 1.084
+      - 1.959
+  - text: I tried (つ╥﹏╥)つ
+    time:
+      - 1.959
+      - 2.583
+  - text: to make (ó﹏ò｡)
+    time:
+      - 2.583
+      - 3.292
+  - text: it end (×_×)
+    time:
+      - 3.292
+      - 3.917
+  - text: But here I am ¯\_(ツ)_/¯
+    time:
+      - 3.917
+      - 5
+  - text: Once again  "( – ⌓ – )
+    time:
+      - 5
+      - 5.625
+  - text: Let's congratulate myself ✧｡٩(ˊᗜˋ )و✧*｡
+    time:
+      - 5.625
+      - 7.083
+  - text: See no one's gonna clap  ┐(´～｀ˇ)┌
+    time:
+      - 7.083
+      - 8.124
+  - text: for a mediocre health  ꜀( ꜆-ࡇ-)꜆
+    time:
+      - 8.124
+      - 9.458
+  - text: or a medium ( ._. )""
+    time:
+      - 9.458
+      - 10.438
+  - text: size on my biceps ( ◡̀_◡́)ᕤ
+    time:
+      - 10.438
+      - 11.729
+  - text: I've been in the gym ᕙ(⇀‸↼‶)ᕗ
+    time:
+      - 11.729
+      - 12.832
+  - text: And sigh... "( - ⌓ - )
+    time:
+      - 12.832
+      - 13.332
+  - text: Pinterest said ( っ º - º ς)
+    time:
+      - 13.332
+      - 13.957
+  - text: I will never be like him ( ｡ •̀ ⤙ •́ ｡ )
+    time:
+      - 13.957
+      - 15.207
+  - text: So many years (ᴗ˳ᴗ) ᶻ𝗓𐰁
+    time:
+      - 15.207
+      - 16.498
+  - text: To be mid ¯\_(- > -)_/¯
+    time:
+      - 16.498
+      - 17.29
+  - text: See people climb a cliff   ᨒ↟ 𖠰 ৻(  •̀ ᗜ •́  ৻)
+    time:
+      - 17.29
+      - 18.373
+  - text: While I'm crawling out a pit   _(´ཀ`」 ∠) _
+    time:
+      - 18.373
+      - 19.581
+  - text: 🎀                          🚪
+    time:
+      - 19.581
+      - 20.664
+  - text: F*ck this thing ( ︶︿︶)_╭∩╮
+    time:
+      - 20.748
+      - 21.623
+  - text: They say dating now is cooked ( ;´ - `;)
+    time:
+      - 21.623
+      - 23.206
+  - text: And evidence is (╭ರ_•́)
+    time:
+      - 23.206
+      - 23.872
+  - text: People that are 𖠋𖠋𖠋𖠋𖠋
+    time:
+      - 23.872
+      - 24.581
+  - text: F*cking by the books  ⭑.ᐟ  (ꐦㅍ _ㅍ) 🕮
+    time:
+      - 24.581
+      - 25.664
+  - text: And everyone's so pretty (*ᴗ͈ˬᴗ͈)ꕤ*.ﾟ
+    time:
+      - 25.664
+      - 26.789
+  - text: And they're sitting in their rooms (⸝⸝ᵕᴗᵕ⸝⸝)
+    time:
+      - 26.789
+      - 28.288
+  - text: You're also in a room 🔻( ㅇㅡㅇ )🔻
+    time:
+      - 28.288
+      - 29.163
+  - text: That means you're 🔻(◔ _ ◔)🔻
+    time:
+      - 29.163
+      - 29.83
+  - text: Failing in your youth 🔻(◉ _ ◉)🔻
+    time:
+      - 29.83
+      - 30.871
+  - text: Somebody asked  (╹ -╹)
+    time:
+      - 30.871
+      - 31.455
+  - text: What's stopping you from flying to hotels?  ╮ ( °ヮ° ) ╭
+    time:
+      - 31.455
+      - 33.438
+  - text: My bowl of instant ramen  ( ⚆_⚆ )𓎩
+    time:
+      - 33.438
+      - 34.371
+  - text: Couldn't answer this as well  “(ノ _ <,, )𓎩
+    time:
+      - 34.371
+      - 35.454
+  - text: Couldn't answer this aswell  “(ノ _ <,, )𓎩
+    time:
+      - 35.496
+      - 36
+  - text: The media consumed  (っ º - º ς)
+    time:
+      - 36
+      - 36.829
+  - text: Is likely pushed to some extreme  ( ꩜ ᯅ ꩜;)⁭ ⁭
+    time:
+      - 36.829
+      - 38.537
+  - text: You never left your home  (,,¬﹏¬,,)
+    time:
+      - 38.537
+      - 39.37
+  - text: And there is  (≖⩊≖)
+    time:
+      - 39.37
+      - 40.037
+  - text: Nothing you ain't seen ┐( ʘ̆ ᗜ ʘ̆ )┌ 🎀                                                   🚪
+    time:
+      - 40.037
+      - 41.037
+  - text: Fuck this thing ╭∩╮( •̀_•́ )╭∩╮
+    time:
+      - 41.328
+      - 42.203
+  - text: I been sipping on a smoothie  (๑ᵔ⤙ᵔ๑)
+    time:
+      - 42.203
+      - 43.786
+  - text: 700 Calories（՞•Ꙫ•՞）
+    time:
+      - 43.786
+      - 44.87
+  - text: Why am I being stupid? (｡ᵕ ◞ _◟)
+    time:
+      - 44.87
+      - 46.369
+  - text: People on the internet say (╭ರ_•́)
+    time:
+      - 46.369
+      - 47.619
+  - text: '"This is not ideal"  (ㆆ_ㆆ)'
+    time:
+      - 47.619
+      - 48.744
+  - text: Now everytime I drink a smoothie  ( ｡ •̀ ⤙ •́ ｡ )
+    time:
+      - 48.744
+      - 50.161
+  - text: This is how I feel  "( – ⌓ – )
+    time:
+      - 50.161
+      - 51.285
+  - text: F*ck this thing  ( ︶◡︶)_╭∩╮
+    time:
+      - 51.577
+      - 52.452
+  - text: Called life  (︶︿︶)_╭∩╮
+    time:
+      - 52.452
+      - 53.327
+  - text: I swear  (¬_¬ᵕ)
+    time:
+      - 53.327
+      - 53.952
+  - text: One more (¬`‸´¬)
+    time:
+      - 53.952
+      - 54.604
+  - text: Complaint ( ᵕ•_•)
+    time:
+      - 54.604
+      - 55.194
+  - text: And I'll go  ( •ᴗ•)
+    time:
+      - 55.194
+      - 56.035
+  - text: Punch someone's kid  (っ•ᴗ•)╮=͟͟͞   )`-' )
+    time:
+      - 56.035
+      - 57.042
+  - text: I'm this close to  (..◜ᴗ◝..)
+    time:
+      - 57.042
+      - 57.535
+  - text: Crashing out  ⁽⁽(੭ꐦ •̀Д•́ )੭*⁾⁾
+    time:
+      - 57.535
+      - 58.479
+  - text: They're lying to get clout  (≖_≖ )
+    time:
+      - 58.479
+      - 59.534
+  - text: Fill the unaware with doubt  (,,•᷄‎ࡇ•᷅ ,,)
+    time:
+      - 59.534
+      - 60.868
+  - text: That's a profitable crowd  (ᴗ_ ᴗ。)
+    time:
+      - 60.868
+      - 61.992
+  - text: F*ck things that  ╭∩╮( ＾◡＾)╭∩╮
+    time:
+      - 61.992
+      - 63.146
+  - text: Changed to be subscribed  .·°՞(っ-ᯅ-ς)՞°·.
+    time:
+      - 63.146
+      - 64.229
+  - text: More money for a company  ($‿$ )
+    time:
+      - 64.229
+      - 65.45
+  - text: For customer, less rights (｡ᵕ ◞ _◟)
+    time:
+      - 65.45
+      - 66.617
+  - text: So many arts  (っ º - º ς)
+    time:
+      - 66.617
+      - 67.825
+  - text: Gotten stale  "( – ⌓ – )
+    time:
+      - 67.825
+      - 68.658
+  - text: New movies got no balls  (¬⤙¬ )
+    time:
+      - 68.658
+      - 69.783
+  - text: It's no wonder that they fail  (¬_ ´¬ )
+    time:
+      - 69.783
+      - 71.201
+  - text: Levels of anxiety ( ꩜ ᯅ ꩜;)⁭ ⁭
+    time:
+      - 72.116
+      - 73.366
+  - text: Getting fed inside of me (,,>﹏<,,)
+    time:
+      - 73.366
+      - 74.657
+  - text: Charismatic people  (¬ ₃ ͡¬)
+    time:
+      - 74.657
+      - 75.532
+  - text: Having fun  ٩(^ᗜ^ )و ´-
+    time:
+      - 75.532
+      - 76.032
+  - text: I'm thinking "Why not me?"  (๑﹏๑//)
+    time:
+      - 76.032
+      - 77.24
+  - text: Is it cause I'm silently  ( • - • )
+    time:
+      - 77.24
+      - 78.449
+  - text: Miserable in privacy  (╥‸╥)
+    time:
+      - 78.449
+      - 79.782
+  - text: Mirroring a pattern  ( •̯́ ^ •̯̀)  𓊈𓊉
+    time:
+      - 79.782
+      - 80.74
+  - text: I'm afraid to be the same as  (ó﹏ò｡)
+    time:
+      - 80.74
+      - 82.156
+  - text: F*ck this thing called life 🖕😠🖕
+    time:
+      - 82.448
+      - 84.031
+  - text: I tried 🙏
+    time:
+      - 84.031
+      - 84.746
+  - text: To make 🛠️
+    time:
+      - 84.746
+      - 85.323
+  - text: It end 🪦
+    time:
+      - 85.323
+      - 85.989
+  - text: But here I am 😵‍💫
+    time:
+      - 85.989
+      - 87.114
+  - text: Once again 🫩
+    time:
+      - 87.114
+      - 87.697
+  - text: Let's congratulate myself ✨🙌✨
+    time:
+      - 87.697
+      - 89.312
+  - text: See no one's gonna clap 🙅‍♀️👏
+    time:
+      - 89.312
+      - 90.364
+  - text: For a medal on my shelf 🏅
+    time:
+      - 90.364
+      - 91.655
+  - text: Or a medium 🤏
+    time:
+      - 91.655
+      - 92.572
+  - text: Size on my biceps 💪
+    time:
+      - 92.572
+      - 93.905
+  - text: Maybe I can chill 🫠
+    time:
+      - 93.905
+      - 95.071
+  - text: If nobody cares 🥱
+    time:
+      - 95.071
+      - 96.071
+  - text: I will be the one who will 🔥😤🔥
+    time:
+      - 96.071
+      - 97.363
+  - text: So many years ⏳
+    time:
+      - 97.363
+      - 98.654
+  - text: Gone to waste 🤦‍♀️
+    time:
+      - 98.654
+      - 99.446
+  - text: To satisfy a crowd 👥👥👥
+    time:
+      - 99.446
+      - 100.571
+  - text: From a made-up f*cking place 📖
+    time:
+      - 100.571
+      - 101.979
+  - text: It all comes down (  ｡•̀ ᵕ •́｡ )
+    time:
+      - 103.271
+      - 104.487
+  - text: To what I chase  三三ᕕ( ᐛ )ᕗ
+    time:
+      - 104.487
+      - 106.195
+  - text: OOO ooo~  ♪┏( ･o･)┛♪
+    time:
+      - 106.195
+      - 107.486
+  - text: OO ooo~  ♪┏(･o･ )┛♪
+    time:
+      - 107.486
+      - 108.361
+  - text: Sometimes it's not  (ᴗ_ ᴗ。)
+    time:
+      - 108.361
+      - 109.611
+  - text: The time and place  ╮ (. ❛ ᴗ ❛.) ╭
+    time:
+      - 109.611
+      - 111.319
+  - text: OOOoo~ OOOoo~  (づ ᴗ _ᴗ)づ♡
+    time:
+      - 111.319
+      - 112.486
+  - text: OOooo~ OOooo~  ♡"৻( ᴗ _ᴗ "৻)
+    time:
+      - 112.486
+      - 113.486
+  - text: I feel like shit  (╥﹏╥)
+    time:
+      - 113.486
+      - 114.694
+  - text: But I'm okay  ദ്ദി ༎ຶ‿༎ຶ )
+    time:
+      - 114.694
+      - 116.36
+  - text: WOOOooo~ OOOooH~ ◝(╥ᗜ╥)◜
+    time:
+      - 116.36
+      - 118.61
+  - text: I'll fake a color  ✧ ദ്ദി(˵ •̀ ᴗ - ˵ )
+    time:
+      - 118.61
+      - 120.068
+  - text: Out of gray  (˵• ̀⩊•́˵)
+    time:
+      - 120.068
+      - 121.526
+  - text: WOOOooo~  (˘▾˘  )
+    time:
+      - 121.526
+      - 122.776
+  - text: OOOooH~  (  ˘▾˘)
+    time:
+      - 122.776
+      - 123.526
+  - text: ˚˖𓍢ִ໋`🌿:✧˚.✋︎⋆𖧧
+    time:
+      - 123.688
+      - 125.942
+  - text: ༄˖°.🌱🌱.ೃ࿔✋︎*:･🌱
+    time:
+      - 126.187
+      - 128.525
+  - text: ༄˖°.🍃.ೃ࿔✋︎*:･🌳
+    time:
+      - 128.692
+      - 131.15
+  - text: 'Music: ROMA Art: Also ROMA (Subtitles: JakeAt3AMV)'
+    time:
+      - 131.4
+      - 133.733
+  - text: Thank you <3 (🎀Naaa NAAA naaa~🎀)
+    time:
+      - 133.733
+      - 135.608
+  - text: Thank you <3 (🎀Naa naa naa~🎀)
+    time:
+      - 135.608
+      - 136.896
+  - text: Thank you <3 (🎀Naaaaa naaaa~🎀)
+    time:
+      - 136.896
+      - 138.149
+  - text: Thank you <3 (🎀Naaa naaa naa~🎀)
+    time:
+      - 138.149
+      - 139.532
+  - text: Thank you <3 (🎀Naaaaa naaaa~🎀)
+    time:
+      - 139.532
+      - 140.232
+  - text: See u next time ;) (🎀Naaaaa naaaa~🎀)
+    time:
+      - 140.232
+      - 140.774
+  - text: See u next time ;) (🎀Naaa naaa naaa~🎀)
+    time:
+      - 140.774
+      - 142.026
+  - text: See u next time ;) (🎀Naaaaa naaaa~🎀)
+    time:
+      - 142.026
+      - 143.273
+  - text: See u next time ;) (🎀Naa naa~🎀)
+    time:
+      - 143.273
+      - 144.107

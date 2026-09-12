@@ -152,10 +152,7 @@ export async function youtubeCandidates(id: string, includeAuto: boolean) {
       candidates.push({
         label: `YouTube ${automatic ? '자동 생성' : '등록 자막'} · ${language} · ${subtitle.name ?? info.title}`,
         load: async () => ({
-          song: {
-            ...fromJSON3(JSON.parse(await fetchText(subtitle.url)), info.title, language),
-            titleLang: info.language ?? '',
-          },
+          song: fromJSON3(JSON.parse(await fetchText(subtitle.url)), info.title, language),
           sources: [url, `YouTube ${automatic ? '자동 생성' : '등록'} 자막: ${language} (json3, 행별 타이밍)`],
         }),
       })
