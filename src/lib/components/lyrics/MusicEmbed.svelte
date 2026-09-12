@@ -1,5 +1,6 @@
 <script lang="ts">
   import {untrack} from 'svelte'
+  import {Skeleton} from '$lib/components/ui/skeleton'
   import type {Source} from '$lib/lyrics/model'
   import {
     loadSpotify,
@@ -36,7 +37,7 @@
     const current = source
     const initial = request
     void retry
-    loading = current.provider !== 'appleMusic'
+    loading = true
     message = ''
     autoplayBlocked = false
     resume = undefined
@@ -187,28 +188,33 @@
   })
 </script>
 
-<div class="overflow-hidden rounded-lg bg-muted shadow-xs inner-border">
+<div class="relative overflow-hidden rounded-lg shadow-xs inner-border" class:bg-muted={!loading} aria-busy={loading}>
   {#if source.provider === 'appleMusic'}
     <iframe
       title="Apple Music 플레이어"
       src={source.embedUrl}
       height="175"
       class="block w-full border-0"
+      class:invisible={loading}
+      onload={() => (loading = false)}
       allow="autoplay; encrypted-media; fullscreen"
       sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
     ></iframe>
   {/if}
   <div
     bind:this={host}
+    class:invisible={loading}
     class:youtube={source.provider === 'youtube'}
     class:spotify={source.provider === 'spotify'}
     class:audio={source.key === 'youtubeAudio'}
   ></div>
+  {#if loading}
+    <Skeleton class="absolute inset-0 size-full rounded-lg" role="status" aria-label="플레이어 로딩 중" />
+  {/if}
 </div>
 {#if autoplayBlocked}
   <button type="button" class="mt-3 rounded-md border px-3 py-2 text-sm" onclick={() => resume?.()}>이어서 재생</button>
 {/if}
-{#if loading}<p class="mt-3 text-sm text-muted-foreground" role="status">플레이어를 불러오는 중…</p>{/if}
 {#if message}
   <p class="mt-3 text-sm text-muted-foreground" role="status">{message}</p>
   <button type="button" class="mt-2 text-sm underline" onclick={() => retry++}>다시 시도</button>
