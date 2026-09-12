@@ -168,3 +168,27 @@ nub run import --file ./lyrics.ttml --slug music-title
 - AMLL에서 가져온 타이밍과 YouTube 뮤비의 편집 시점은 다를 수 있으므로 `offsets`를 확인하세요. 출처의 언어별 번역은 보존되며, 사이트에서는 기존 규칙대로 한국어만 표시합니다.
 
 관련 명세: [AMLL HTTP API](https://amll.dev/reference/http-api/native), [AMLL DB](https://github.com/amll-dev/amll-ttml-db), [yt-dlp 자막 옵션](https://github.com/yt-dlp/yt-dlp#subtitle-options).
+
+## 음원 간 오프셋 비교
+
+```sh
+nub run diff life-kinda-sucks
+nub run diff life-kinda-sucks --reference youtubeMV
+nub run diff life-kinda-sucks --seconds 60
+nub run diff song-slug --file appleMusic=/path/to/full-song.m4a --file spotify=/path/to/full-song.flac
+```
+
+`yt-dlp`와 `ffmpeg`가 필요합니다(macOS: `brew install yt-dlp ffmpeg`). 등록된 YouTube 오디오를 임시로 내려받아 비교하고 실행이 끝나면 임시 파일을 삭제합니다. Apple Music·Spotify는 전체 스트림을 자동 추출하지 않으며, 해당 서비스 버전의 **처음부터 시작하는 전체 음원**을 `--file 소스=경로`로 지정합니다. 중간부터 시작하는 미리듣기 파일은 전체 음원의 오프셋을 구하는 데 사용할 수 없습니다. 로컬 파일은 YouTube 소스에도 지정할 수 있습니다.
+
+기본 기준은 접근 가능한 소스 중 YouTube 음원 → YouTube 뮤비 → Apple Music → Spotify 순서입니다. `--reference youtubeMV` 등으로 바꿀 수 있습니다. 기본적으로 처음 180초를 분석하며 `--seconds`로 6~900초를 지정합니다. 결과는 분석한 범위에만 해당합니다.
+
+여러 구간의 음량 패턴으로 대응 위치를 찾고 파형 상관도로 시간 차이를 세밀하게 추정합니다. 양수는 대상 소스에서 같은 소리가 기준보다 늦게 나온다는 뜻입니다. 일치 구간이 부족하거나 구간별 차이가 달라지면 시간 차이를 확정하지 않고 짧은 오류를 출력합니다. 다른 믹스·대사·반복 구간 때문에 추정이 실패할 수도 있습니다. 소수점 셋째 자리까지 출력하지만 1ms 정확도를 보장하는 것은 아닙니다.
+
+출력은 기준 소스를 `0.000초 (기준)`으로 두고 각 소스의 상대 시간 차이만 표시합니다. YAML의 기존 `offsets` 값은 계산에 사용하지 않으며 추천값·구간별 분석·진행 메시지는 출력하지 않습니다.
+
+```text
+youtubeAudio: 0.000초 (기준)
+youtubeMV: -0.333초
+```
+
+YAML은 수정하지 않습니다. 종료 코드는 성공 `0`, 입력·기준 음원 오류 `1`, 일부 소스 비교 실패·불확실 `2`입니다.

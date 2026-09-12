@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "import": "node import.ts",
+    "diff": "node diff.ts",
     "build": "VITE_PRERENDER_OG_IMAGES=true vite build",
     "build:fast": "vite build",
     "preview": "wrangler pages dev ./.svelte-kit/cloudflare",
