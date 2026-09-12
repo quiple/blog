@@ -17,178 +17,90 @@ offsets:
   youtubeAudio: 0.333
 lines:
   - text: Fuck this thing called life
-    time:
-      - 0.25
-      - 1.959
+    time: [0.25, 1.959]
   - text: I tried to make it end, but here I am once again
-    time:
-      - 1.959
-      - 5.625
+    time: [1.959, 5.625]
   - text: Let's congratulate myself
-    time:
-      - 5.625
-      - 7.083
+    time: [5.625, 7.083]
   - text: See, no one's gonna clap for a mediocre health
-    time:
-      - 7.083
-      - 9.458
+    time: [7.083, 9.458]
   - text: Or a medium size on my biceps, I've been in the gym
-    time:
-      - 9.458
-      - 12.832
+    time: [9.458, 12.832]
   - text: And sigh, Pinterest said I will never be like him
-    time:
-      - 12.832
-      - 15.207
+    time: [12.832, 15.207]
   - text: So many years to be mid
-    time:
-      - 15.207
-      - 17.29
+    time: [15.207, 17.29]
   - text: See people climb a cliff, while I'm crawling out a pit
-    time:
-      - 17.29
-      - 19.581
+    time: [17.29, 19.581]
   - text: Fuck this thing, they say dating now is cooked
-    time:
-      - 20.748
-      - 23.206
+    time: [20.748, 23.206]
   - text: And evidence is people that are fucking by the books
-    time:
-      - 23.206
-      - 25.664
+    time: [23.206, 25.664]
   - text: And everyone's so pretty and they're sitting in their rooms
-    time:
-      - 25.664
-      - 28.288
+    time: [25.664, 28.288]
   - text: You're also in a room, that means you're failing in your youth
-    time:
-      - 28.288
-      - 30.871
+    time: [28.288, 30.871]
   - text: 'Somebody asked: "What''s stopping you from flying to hotels?"'
-    time:
-      - 30.871
-      - 33.438
+    time: [30.871, 33.438]
   - text: My bowl of instant ramen couldn't answer this as well
-    time:
-      - 33.438
-      - 36
+    time: [33.438, 36]
   - text: The media consumed is likely pushed to some extreme
-    time:
-      - 36
-      - 38.537
+    time: [36, 38.537]
   - text: You never left your home, and there is nothing you ain't seen
-    time:
-      - 38.537
-      - 41.037
+    time: [38.537, 41.037]
   - text: Fuck this thing, I been sipping on a smoothie
-    time:
-      - 41.328
-      - 43.786
+    time: [41.328, 43.786]
   - text: 700 calories, why am I being stupid?
-    time:
-      - 43.786
-      - 46.369
+    time: [43.786, 46.369]
   - text: People on the internet say this is not ideal
-    time:
-      - 46.369
-      - 48.744
+    time: [46.369, 48.744]
   - text: Now, every time I drink a smoothie, this is how I feel
-    time:
-      - 48.744
-      - 51.285
+    time: [48.744, 51.285]
   - text: Fuck this thing called life
-    time:
-      - 51.577
-      - 53.327
+    time: [51.577, 53.327]
   - text: I swear, one more complaint and I'll go punch someone's kid
-    time:
-      - 53.327
-      - 57.042
+    time: [53.327, 57.042]
   - text: I'm this close to crashing out, they're lying to get clout
-    time:
-      - 57.042
-      - 59.534
+    time: [57.042, 59.534]
   - text: Fill the unaware with doubt, that's a profitable crowd
-    time:
-      - 59.534
-      - 61.992
+    time: [59.534, 61.992]
   - text: Fuck things that changed to be subscribed
-    time:
-      - 61.992
-      - 64.229
+    time: [61.992, 64.229]
   - text: More money for a company for customer---less rights
-    time:
-      - 64.229
-      - 66.617
+    time: [64.229, 66.617]
   - text: So many arts gotten stale
-    time:
-      - 66.617
-      - 68.658
+    time: [66.617, 68.658]
   - text: New movies got no balls, it's no wonder that they fail
-    time:
-      - 68.658
-      - 71.201
+    time: [68.658, 71.201]
   - text: Levels of anxiety getting fed inside of me
-    time:
-      - 72.116
-      - 74.657
+    time: [72.116, 74.657]
   - text: 'Charismatic people having fun, I''m thinking: "Why not me?"'
-    time:
-      - 74.657
-      - 77.24
+    time: [74.657, 77.24]
   - text: Is it ’cause I'm silently miserable in privacy?
-    time:
-      - 77.24
-      - 79.782
+    time: [77.24, 79.782]
   - text: Mirroring a pattern I'm afraid to be the same as
-    time:
-      - 79.782
-      - 82.156
+    time: [79.782, 82.156]
   - text: Fuck this thing called life
-    time:
-      - 82.448
-      - 84.031
+    time: [82.448, 84.031]
   - text: I tried to make it end, but here I am once again
-    time:
-      - 84.031
-      - 87.697
+    time: [84.031, 87.697]
   - text: Let's congratulate myself
-    time:
-      - 87.697
-      - 89.312
+    time: [87.697, 89.312]
   - text: See, no one's gonna clap for a medal on my shelf
-    time:
-      - 89.312
-      - 91.655
+    time: [89.312, 91.655]
   - text: Or a medium size on my biceps, maybe I can chill
-    time:
-      - 91.655
-      - 95.071
+    time: [91.655, 95.071]
   - text: If nobody cares, I will be the one who will
-    time:
-      - 95.071
-      - 97.363
+    time: [95.071, 97.363]
   - text: So many years gone to waste
-    time:
-      - 97.363
-      - 99.446
+    time: [97.363, 99.446]
   - text: To satisfy a crowd from a made-up fucking place
-    time:
-      - 99.446
-      - 101.979
+    time: [99.446, 101.979]
   - text: It all comes down to what I chase
-    time:
-      - 103.271
-      - 106.195
+    time: [103.271, 106.195]
   - text: Sometimes it's not the time and place
-    time:
-      - 108.361
-      - 111.319
+    time: [108.361, 111.319]
   - text: I feel like shit, but I'm okay
-    time:
-      - 113.486
-      - 116.36
+    time: [113.486, 116.36]
   - text: I'll fake a color out of gray
-    time:
-      - 118.61
-      - 121.526
+    time: [118.61, 121.526]
