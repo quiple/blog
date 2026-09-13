@@ -73,6 +73,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
         const [main, translation, pronunciation] = view.getElement().children
         main.setAttribute('lang', line.lang ?? '')
         translation.setAttribute('lang', line.translationLang ?? '')
+        translation.classList.add('text-muted-foreground')
         pronunciation.setAttribute('lang', line.pronunciationLang ?? '')
       }
     }
