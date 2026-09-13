@@ -171,21 +171,16 @@
         onfailure={() => (failed = true)}
       />
       <div class="sr-only">
-        {#each visibleTimed as line}<LyricText {line} />{/each}
+        {#each visibleTimed as line}<LyricText {line} /><br />{/each}
       </div>
       {#if untimed.length}
-        <div class="mt-6 space-y-6">
-          {#each untimed as line}<LyricText {line} />{/each}
+        <div class="mt-6 leading-relaxed">
+          {#each untimed as line}<LyricText {line} /><br />{/each}
         </div>
       {/if}
     {:else}
-      <div class="space-y-6 py-6">
-        {#each lines as line}<LyricText
-            {line}
-            onseek={seek && source && canPlayTime(song, source.key, line.startTime, durations[source.key])
-              ? seekLyric
-              : undefined}
-          />{/each}
+      <div class="py-6 leading-relaxed font-normal">
+        {#each lines as line, index}{#if index > 0}<br />{/if}<LyricText {line} />{/each}
       </div>
     {/if}
   </section>

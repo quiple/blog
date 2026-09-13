@@ -194,6 +194,9 @@
   .lyric-player :global([class*='_lyricLine']) {
     content-visibility: visible;
   }
+  .lyric-player :global([class*='_lyricMainLine']) {
+    font-weight: 600;
+  }
   .lyric-player :global([class*='_romanWord']) {
     line-height: 1.5;
     padding-bottom: 0.15em;
