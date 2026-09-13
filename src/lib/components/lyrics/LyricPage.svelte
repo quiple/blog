@@ -105,9 +105,8 @@
                 <svg viewBox="0 0 24 24" fill="currentColor" class="size-4" aria-hidden="true">
                   <path d={item.key === 'youtubeAudio' ? siYoutubemusic.path : siYoutube.path} />
                 </svg>
-              {:else}{item.label}{/if}{#if restart}
-                · 처음부터{/if}</Button
-            >
+              {:else}{item.label}{/if}
+            </Button>
           {/each}
         </div>
       {/if}
