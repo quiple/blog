@@ -138,7 +138,7 @@
     >
       {song.title}
     </h1>
-    {#if song.titleTranslation}<p lang="ko" class="mt-2 text-xl text-muted-foreground">{song.titleTranslation}</p>{/if}
+    {#if song.titleTranslation}<p lang="ko" class="text-xl text-muted-foreground">{song.titleTranslation}</p>{/if}
     {#if artists.length}
       <div class="mt-3 text-muted-foreground">
         {#each artists as artist, index (artist.slug)}
