@@ -4,7 +4,7 @@
   let {data}: PageProps = $props()
 </script>
 
-<svelte:head><title>가사 – quiple</title><meta name="description" content="음악과 함께 읽는 가사" /></svelte:head>
+<svelte:head><title>가사 – quiple</title></svelte:head>
 <PageTitle>가사</PageTitle>
 <div class="mx-auto max-w-2xl py-8">
   <ul class="divide-y">
