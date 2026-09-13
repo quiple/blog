@@ -40,6 +40,7 @@ interface YouTubeAPI {
 }
 export interface SpotifyController {
   destroy(): void
+  restart(): void
   seek(seconds: number): void
   addListener(
     name: 'playback_update',

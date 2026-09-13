@@ -155,7 +155,12 @@
           clearTimeout(readyTimeout)
           loading = false
           message = ''
-          onseekready((time) => controller.seek(time / 1000))
+          onseekready((time) => {
+            // Spotify only seeks to whole seconds; retain the start of the selected line.
+            const seconds = Math.max(0, Math.floor(time / 1000))
+            if (seconds === 0) controller.restart()
+            else controller.seek(seconds)
+          })
           controller.addListener('playback_update', ({data}) => {
             if (disposed) return
             if (data.playingURI && data.playingURI !== current.id) {
