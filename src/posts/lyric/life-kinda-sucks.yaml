@@ -17,7 +17,7 @@ offsets:
   youtubeAudio: 0.333
 lines:
   - text: Fuck this thing called life
-    translation: '인생이란 거, 좆같네'
+    translation: '인생이란 거 좆같네'
     time: [0.25, 1.959]
   - text: I tried to make it end, but here I am once again
     translation: '끝내 보려 했는데, 또 이렇게 살아 있네'
@@ -38,7 +38,7 @@ lines:
     translation: '고작 평범해지려고 그렇게 오랜 세월을 썼네'
     time: [15.207, 17.29]
   - text: See people climb a cliff, while I'm crawling out a pit
-    translation: '남들은 절벽을 오르는데, 난 구덩이에서 기어 나오고 있어'
+    translation: '남들은 절벽을 오르는데 난 구덩이에서 기어 나오고 있어'
     time: [17.29, 19.581]
   - text: Fuck this thing, they say dating now is cooked
     translation: '좆같네, 요즘 연애는 글렀다더라'
@@ -77,7 +77,7 @@ lines:
     translation: '이제 스무디를 마실 때마다 이런 기분이 들어'
     time: [48.744, 51.285]
   - text: Fuck this thing called life
-    translation: '인생이란 거, 좆같네'
+    translation: '인생이란 거 좆같네'
     time: [51.577, 53.327]
   - text: I swear, one more complaint and I'll go punch someone's kid
     translation: '진짜, 불평 한 번만 더 들으면 누구네 애라도 한 대 칠 것 같아'
@@ -89,7 +89,7 @@ lines:
     translation: '아무것도 모르는 사람들을 의심으로 채워, 돈이 되는 고객들이니까'
     time: [59.534, 61.992]
   - text: Fuck things that changed to be subscribed
-    translation: '죄다 구독제로 바뀌는 것들, 좆같네'
+    translation: '죄다 구독제로 바뀌는 것들 좆같네'
     time: [61.992, 64.229]
   - text: More money for a company for customer---less rights
     translation: '회사는 돈을 더 벌고, 고객의 권리는 줄어들고'
@@ -98,7 +98,7 @@ lines:
     translation: '예술도 참 많이 진부해졌어'
     time: [66.617, 68.658]
   - text: New movies got no balls, it's no wonder that they fail
-    translation: '새 영화들은 배짱이 없으니, 망하는 것도 당연하지'
+    translation: '새 영화들은 배짱이 없으니 망하는 것도 당연하지'
     time: [68.658, 71.201]
   - text: Levels of anxiety getting fed inside of me
     translation: '내 안에 불안이 자꾸만 쌓여 가'
@@ -113,10 +113,10 @@ lines:
     translation: '닮을까 봐 두려워하던 모습을 그대로 되풀이하고 있어'
     time: [79.782, 82.156]
   - text: Fuck this thing called life
-    translation: '인생이란 거, 좆같네'
+    translation: '인생이란 거 좆같네'
     time: [82.448, 84.031]
   - text: I tried to make it end, but here I am once again
-    translation: '끝내 보려 했는데, 또 이렇게 살아 있네'
+    translation: '끝내 보려 했는데 또 이렇게 살아 있네'
     time: [84.031, 87.697]
   - text: Let's congratulate myself
     translation: '나라도 나를 축하해 주자'
@@ -128,7 +128,7 @@ lines:
     translation: '적당히 붙은 팔 근육도 마찬가지, 그냥 좀 편하게 살아도 되겠지'
     time: [91.655, 95.071]
   - text: If nobody cares, I will be the one who will
-    translation: '아무도 신경 안 쓴다면, 나라도 나를 챙길래'
+    translation: '아무도 신경 안 쓴다면 나라도 나를 챙길래'
     time: [95.071, 97.363]
   - text: So many years gone to waste
     translation: '그렇게 오랜 세월을 허비했네'
@@ -143,7 +143,7 @@ lines:
     translation: '때로는 지금이 그럴 때도, 그럴 곳도 아닌 거지'
     time: [108.361, 113.486]
   - text: I feel like shit, but I'm okay
-    translation: '기분은 좆같지만, 난 괜찮아'
+    translation: '기분은 좆같지만 난 괜찮아'
     time: [113.486, 118.61]
   - text: I'll fake a color out of gray
     translation: '잿빛 속에서라도 색을 만들어 낼 거야'
