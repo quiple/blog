@@ -134,7 +134,7 @@
     {/if}
     <h1
       lang={song.titleLang ?? song.lang ?? ''}
-      class="mt-6 text-3xl leading-tight font-semibold text-balance sm:text-4xl"
+      class="mt-5 text-3xl leading-tight font-semibold text-balance sm:text-4xl"
     >
       {song.title}
     </h1>
