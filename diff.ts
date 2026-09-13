@@ -16,7 +16,7 @@ const help = `음원 시간 차이 비교
   nub run diff life-kinda-sucks --reference youtubeMV
   nub run diff song-slug --file spotify=/path/to/full-song.flac
 
---reference 소스   기준 소스 (기본: YouTube 음원 → 뮤비 → Spotify)
+--reference 소스   기준 소스 (기본: Spotify → YouTube 뮤비 → 음원)
 --seconds 초       처음부터 분석할 길이 (기본 180, 최대 900)
 --file 소스=경로   해당 서비스의 전체 음원 파일 사용 (여러 번 지정 가능)
 YouTube는 yt-dlp로 오디오를 받아 ffmpeg로 비교합니다.

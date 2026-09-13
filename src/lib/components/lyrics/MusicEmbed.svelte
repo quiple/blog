@@ -187,7 +187,12 @@
   })
 </script>
 
-<div class="relative overflow-hidden rounded-lg shadow-xs inner-border" class:bg-muted={!loading} aria-busy={loading}>
+<div
+  class="relative overflow-hidden rounded-lg shadow-xs inner-border"
+  class:bg-muted={!loading}
+  style:border-radius={source.provider === 'spotify' ? '.75rem' : undefined}
+  aria-busy={loading}
+>
   <div
     bind:this={host}
     class:invisible={loading}
@@ -196,7 +201,7 @@
     class:audio={source.key === 'youtubeAudio'}
   ></div>
   {#if loading}
-    <Skeleton class="absolute inset-0 size-full rounded-lg" role="status" aria-label="플레이어 로딩 중" />
+    <Skeleton class="absolute inset-0 size-full rounded-[inherit]" role="status" aria-label="플레이어 로딩 중" />
   {/if}
 </div>
 {#if autoplayBlocked}
