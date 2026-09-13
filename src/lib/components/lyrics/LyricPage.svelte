@@ -100,12 +100,11 @@
           {#each sources as item (item.key)}
             {@const restart = restarts(item)}
             {@const label = `${item.label}${restart ? ' · 처음부터' : ''}`}
+            {@const color = item.provider === 'spotify' ? '#1ED760' : '#FF0000'}
             <Button
               size="icon-sm"
               variant={source.key === item.key ? 'default' : 'outline'}
-              style={source.key === item.key
-                ? `background-color: ${item.provider === 'spotify' ? '#1ED760' : '#FF0000'}`
-                : undefined}
+              style={source.key === item.key ? `background-color: ${color}; border-color: ${color}` : undefined}
               aria-pressed={source.key === item.key}
               aria-label={label}
               title={label}
