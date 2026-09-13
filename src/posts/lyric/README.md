@@ -44,6 +44,7 @@ lines:
 - `offsets`도 초 단위입니다. `youtubeMV: 3`이면 뮤비 3초가 가사 0초입니다. `youtubeMV`, `youtubeAudio`, `appleMusic`, `spotify`를 각각 생략하거나 지정할 수 있습니다.
 - 음악 서비스에는 전체 URL 대신 고유 ID만 입력합니다. YouTube는 동영상 ID 11자, Spotify는 트랙 ID 22자입니다. Spotify의 `spotify:track:` 접두사도 제외합니다.
 - Apple Music은 **곡 ID**를 입력합니다. `/song/123456` 링크라면 마지막 숫자, `/album/…/앨범ID?i=곡ID` 링크라면 `i=` 뒤의 숫자입니다. 숫자 또는 따옴표로 감싼 문자열 모두 지원하며, 한국 스토어의 곡 링크와 임베드 주소를 자동 생성합니다.
+  예를 들어 `Life kinda sucks`의 앨범 링크는 `/album/life-kinda-sucks/6788722208?i=6788722483`이므로 `appleMusic: 6788722483`을 입력합니다. 앨범 ID를 넣으면 Apple 임베드가 로고 화면에 멈출 수 있습니다.
 - YouTube `mv`와 `audio`는 독립적입니다. 하나만 있어도 되고 둘 다 없어도 됩니다. 있는 소스만 선택 버튼에 표시됩니다.
 - `duet: true`인 줄은 오른쪽에 표시됩니다. 여러 목소리의 시간 범위는 겹칠 수 있습니다. 줄은 시작 시간 순서로 작성하세요.
 - `background`는 해당 줄의 배경 보컬입니다. 문자열로 쓰면 본 가사의 시간을 따릅니다. 별도 시간이 필요하면 아래처럼 객체로 씁니다.
