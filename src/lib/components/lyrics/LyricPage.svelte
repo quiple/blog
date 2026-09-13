@@ -103,22 +103,15 @@
             <Button
               size="icon-sm"
               variant={source.key === item.key ? 'default' : 'outline'}
+              style={source.key === item.key
+                ? `background-color: ${item.provider === 'spotify' ? '#1ED760' : '#FF0000'}`
+                : undefined}
               aria-pressed={source.key === item.key}
               aria-label={label}
               title={label}
               onclick={() => select(item.key)}
             >
-              <svg
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                class="size-4"
-                style:color={source.key === item.key
-                  ? item.provider === 'spotify'
-                    ? '#1ED760'
-                    : '#FF0000'
-                  : undefined}
-                aria-hidden="true"
-              >
+              <svg viewBox="0 0 24 24" fill="currentColor" class="size-4" aria-hidden="true">
                 <path d={sourceIcons[item.key]} />
               </svg>
             </Button>
