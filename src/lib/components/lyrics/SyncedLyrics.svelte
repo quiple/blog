@@ -4,6 +4,9 @@
   import '@applemusic-like-lyrics/core/style.css'
   import {playbackTime, type Playback} from '$lib/lyrics/players'
 
+  // AMLL's line opacity transition is 400ms with no delay.
+  const colorTransitionLead = 200
+
   let {
     lines,
     sample,
@@ -75,7 +78,7 @@
             lastFrame = 0
             return
           }
-          const time = Math.max(0, playbackTime(sample, now) - offset)
+          const time = Math.max(0, playbackTime(sample, now) - offset + colorTransitionLead)
           const seek = Math.abs(time - lastTime) > 1000
           player.setCurrentTime(time, seek)
           player.update(lastFrame ? Math.min(now - lastFrame, 50) : 0)
@@ -102,7 +105,10 @@
           if (appliedLines?.length === value.length && value.every((line, index) => line === appliedLines![index]))
             return
           try {
-            player.setLyricLines(value, Math.max(0, playbackTime(sample, performance.now()) - offset))
+            player.setLyricLines(
+              value,
+              Math.max(0, playbackTime(sample, performance.now()) - offset + colorTransitionLead),
+            )
             appliedLines = value.slice()
             lastFollowed = undefined
             schedule()
