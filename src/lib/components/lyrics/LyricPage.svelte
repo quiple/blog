@@ -8,7 +8,14 @@
   import MusicEmbed from './MusicEmbed.svelte'
   import SyncedLyrics from './SyncedLyrics.svelte'
   import LyricText from './LyricText.svelte'
-  import {siYoutube, siYoutubemusic} from 'simple-icons'
+  import {siApplemusic, siSpotify, siYoutube, siYoutubemusic} from 'simple-icons'
+
+  const sourceIcons = {
+    youtubeAudio: siYoutubemusic.path,
+    youtubeMV: siYoutube.path,
+    appleMusic: siApplemusic.path,
+    spotify: siSpotify.path,
+  }
 
   let {song, sources, artists}: {song: Song; sources: Source[]; artists: Artist[]} = $props()
   let selected = $state<SourceKey | undefined>()
@@ -95,17 +102,16 @@
             {@const restart = restarts(item)}
             {@const label = `${item.label}${restart ? ' · 처음부터' : ''}`}
             <Button
-              size={item.provider === 'youtube' && !restart ? 'icon-sm' : 'sm'}
+              size="icon-sm"
               variant={source.key === item.key ? 'default' : 'outline'}
               aria-pressed={source.key === item.key}
               aria-label={label}
               title={label}
               onclick={() => select(item.key)}
-              >{#if item.provider === 'youtube'}
-                <svg viewBox="0 0 24 24" fill="currentColor" class="size-4" aria-hidden="true">
-                  <path d={item.key === 'youtubeAudio' ? siYoutubemusic.path : siYoutube.path} />
-                </svg>
-              {:else}{item.label}{/if}
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" class="size-4" aria-hidden="true">
+                <path d={sourceIcons[item.key]} />
+              </svg>
             </Button>
           {/each}
         </div>
