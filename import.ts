@@ -3,7 +3,7 @@ import {parseArgs} from 'node:util'
 import {readFile, writeFile, mkdir, access} from 'node:fs/promises'
 import {resolve, join, dirname} from 'node:path'
 import {fileURLToPath} from 'node:url'
-import {stringify} from 'yaml'
+import {Document, isScalar, isSeq, visit} from 'yaml'
 import {parseSong} from './src/lib/lyrics/model.ts'
 import {compactSong, fromTTML} from './scripts/lyrics/convert.ts'
 import {choose, terminalText} from './scripts/lyrics/select.ts'
@@ -130,10 +130,16 @@ async function main() {
     `가져온 시각: ${new Date().toISOString()}`,
     '원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.',
   ]
+  const document = new Document(compactSong(song))
+  visit(document, {
+    Pair(_, pair) {
+      if (isScalar(pair.key) && pair.key.value === 'time' && isSeq(pair.value)) pair.value.flow = true
+    },
+  })
   const output =
     sources.flatMap((source) => source.split(/\r?\n/).map((line) => `# ${line}`)).join('\n') +
     '\n\n' +
-    stringify(compactSong(song), {lineWidth: 0})
+    document.toString({lineWidth: 0, flowCollectionPadding: false})
   if (v.stdout) {
     console.log(output)
     return
