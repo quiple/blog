@@ -58,6 +58,7 @@
     "remark-smartypants": "github:quiple/remark-smartypants",
     "shadcn-svelte": "^1.6.1",
     "sharp": "^0.35.4",
+    "simple-icons": "^16.31.0",
     "strip-markdown": "^6.0.0",
     "svelte": "^5.57.0",
     "svelte-check": "^4.7.6",

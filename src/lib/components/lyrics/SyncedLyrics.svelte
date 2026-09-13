@@ -171,6 +171,7 @@
 
 <style>
   .lyric-player {
+    font-weight: 600;
     min-height: 1px;
     padding-bottom: 70svh;
     --amll-lp-color: var(--foreground);
@@ -193,9 +194,6 @@
   }
   .lyric-player :global([class*='_lyricLine']) {
     content-visibility: visible;
-  }
-  .lyric-player :global([class*='_lyricMainLine']) {
-    font-weight: 600;
   }
   .lyric-player :global([class*='_romanWord']) {
     line-height: 1.5;

@@ -8,6 +8,7 @@
   import MusicEmbed from './MusicEmbed.svelte'
   import SyncedLyrics from './SyncedLyrics.svelte'
   import LyricText from './LyricText.svelte'
+  import {siYoutube, siYoutubemusic} from 'simple-icons'
 
   let {song, sources, artists}: {song: Song; sources: Source[]; artists: Artist[]} = $props()
   let selected = $state<SourceKey | undefined>()
@@ -91,12 +92,20 @@
       {#if sources.length > 1}
         <div class="mb-3 flex flex-wrap gap-2" role="group" aria-label="음악 소스 선택">
           {#each sources as item (item.key)}
+            {@const restart = restarts(item)}
+            {@const label = `${item.label}${restart ? ' · 처음부터' : ''}`}
             <Button
-              size="sm"
+              size={item.provider === 'youtube' && !restart ? 'icon-sm' : 'sm'}
               variant={source.key === item.key ? 'default' : 'outline'}
               aria-pressed={source.key === item.key}
+              aria-label={label}
+              title={label}
               onclick={() => select(item.key)}
-              >{item.label}{#if restarts(item)}
+              >{#if item.provider === 'youtube'}
+                <svg viewBox="0 0 24 24" fill="currentColor" class="size-4" aria-hidden="true">
+                  <path d={item.key === 'youtubeAudio' ? siYoutubemusic.path : siYoutube.path} />
+                </svg>
+              {:else}{item.label}{/if}{#if restart}
                 · 처음부터{/if}</Button
             >
           {/each}
@@ -177,7 +186,7 @@
       {#if untimed.length}
         <div class="mt-6 leading-relaxed">
           {#each untimed as line, index}{#if index > 0 && !line.translatedLyric && !untimed[index - 1].translatedLyric}<br
-              />{/if}<LyricText {line} />{/each}
+              />{/if}<LyricText {line} semibold />{/each}
         </div>
       {/if}
     {:else}

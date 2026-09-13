@@ -1,9 +1,13 @@
 <script lang="ts">
   import type {LocalizedLyricLine} from '$lib/lyrics/model'
-  let {line}: {line: LocalizedLyricLine} = $props()
+  let {line, semibold = false}: {line: LocalizedLyricLine; semibold?: boolean} = $props()
 </script>
 
-<svelte:element this={line.translatedLyric ? 'p' : 'span'} class="font-normal" class:opacity-70={line.isBG}>
+<svelte:element
+  this={line.translatedLyric ? 'p' : 'span'}
+  class={semibold ? 'font-semibold' : 'font-normal'}
+  class:opacity-70={line.isBG}
+>
   <span lang={line.lang ?? ''} class="whitespace-pre-wrap">
     {#each line.words as word}<span class="inline-flex flex-col align-top">
         <span
