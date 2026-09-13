@@ -193,9 +193,8 @@
 </script>
 
 <div
-  class="relative overflow-hidden rounded-lg shadow-xs inner-border"
+  class="relative overflow-hidden rounded-[.75rem] shadow-xs inner-border"
   class:bg-muted={!loading}
-  style:border-radius={source.provider === 'spotify' ? '.75rem' : undefined}
   aria-busy={loading}
 >
   <div
