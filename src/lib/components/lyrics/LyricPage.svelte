@@ -140,8 +140,9 @@
     </h1>
     {#if song.titleTranslation}<p lang="ko" class="mt-2 text-xl text-muted-foreground">{song.titleTranslation}</p>{/if}
     {#if artists.length}
-      <div class="mt-3 flex flex-wrap gap-x-3 gap-y-2">
-        {#each artists as artist (artist.slug)}
+      <div class="mt-3 text-muted-foreground">
+        {#each artists as artist, index (artist.slug)}
+          {#if index > 0}{', '}{/if}
           <a href={`/artist/${artist.slug}`} class="hover:underline">
             <span lang={artist.translation ? 'ko' : (artist.lang ?? '')}>{artist.translation || artist.name}</span>
           </a>
