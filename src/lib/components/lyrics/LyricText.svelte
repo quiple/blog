@@ -3,7 +3,7 @@
   let {line}: {line: LocalizedLyricLine} = $props()
 </script>
 
-<span class="font-normal" class:opacity-70={line.isBG}>
+<svelte:element this={line.translatedLyric ? 'p' : 'span'} class="font-normal" class:opacity-70={line.isBG}>
   <span lang={line.lang ?? ''} class="whitespace-pre-wrap">
     {#each line.words as word}<span class="inline-flex flex-col align-top">
         <span
@@ -25,4 +25,4 @@
       lang={line.pronunciationLang ?? ''}
       class="text-sm whitespace-pre-line text-muted-foreground">{line.romanLyric}</span
     >{/if}
-</span>
+</svelte:element>

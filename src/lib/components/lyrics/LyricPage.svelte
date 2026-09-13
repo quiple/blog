@@ -171,16 +171,19 @@
         onfailure={() => (failed = true)}
       />
       <div class="sr-only">
-        {#each visibleTimed as line}<LyricText {line} /><br />{/each}
+        {#each visibleTimed as line, index}{#if index > 0 && !line.translatedLyric && !visibleTimed[index - 1].translatedLyric}<br
+            />{/if}<LyricText {line} />{/each}
       </div>
       {#if untimed.length}
         <div class="mt-6 leading-relaxed">
-          {#each untimed as line}<LyricText {line} /><br />{/each}
+          {#each untimed as line, index}{#if index > 0 && !line.translatedLyric && !untimed[index - 1].translatedLyric}<br
+              />{/if}<LyricText {line} />{/each}
         </div>
       {/if}
     {:else}
       <div class="py-6 leading-relaxed font-normal">
-        {#each lines as line, index}{#if index > 0}<br />{/if}<LyricText {line} />{/each}
+        {#each lines as line, index}{#if index > 0 && !line.translatedLyric && !lines[index - 1].translatedLyric}<br
+            />{/if}<LyricText {line} />{/each}
       </div>
     {/if}
   </section>
