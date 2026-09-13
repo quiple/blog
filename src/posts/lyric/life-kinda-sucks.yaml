@@ -13,8 +13,11 @@ lang: en
 youtube:
   audio: 5JrhAsNH-lw
   mv: oT-G1wS-57c
+appleMusic: 6788722208
+spotify: 7DiqNuCd9qbLbeg9HX7kO0
 offsets:
   youtubeAudio: 0.333
+  spotify: 0.333
 lines:
   - text: Fuck this thing called life
     translation: '인생이란 거 좆같네'
