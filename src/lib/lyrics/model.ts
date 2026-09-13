@@ -34,14 +34,8 @@ const lineSchema = v.union([
 ])
 const youtubeId = v.pipe(v.string(), v.regex(/^[A-Za-z0-9_-]{11}$/, 'YouTube 동영상 ID 11자만 입력하세요.'))
 const spotifyId = v.pipe(v.string(), v.regex(/^[A-Za-z0-9]{22}$/, 'Spotify 트랙 ID 22자만 입력하세요.'))
-const appleMusicId = v.pipe(
-  v.union([v.string(), v.pipe(v.number(), v.safeInteger(), v.minValue(1))]),
-  v.transform(String),
-  v.regex(/^[1-9][0-9]*$/, 'Apple Music 곡의 숫자 ID만 입력하세요.'),
-)
 const mediaEntries = {
   youtube: v.optional(v.strictObject({mv: v.optional(youtubeId), audio: v.optional(youtubeId)})),
-  appleMusic: v.optional(appleMusicId),
   spotify: v.optional(spotifyId),
 }
 const mediaSchema = v.object(mediaEntries)
@@ -56,7 +50,7 @@ const songSchema = v.strictObject({
   pronunciationLang: v.optional(v.string()),
   example: v.optional(v.boolean(), false),
   ...mediaEntries,
-  offsets: v.optional(v.strictObject({youtubeMV: offset, youtubeAudio: offset, appleMusic: offset, spotify: offset})),
+  offsets: v.optional(v.strictObject({youtubeMV: offset, youtubeAudio: offset, spotify: offset})),
   lines: v.optional(v.array(lineSchema), []),
 })
 type SongInput = v.InferOutput<typeof songSchema>
@@ -67,13 +61,13 @@ export type LocalizedLyricLine = LyricLine & LyricLanguages
 export type Annotation = v.InferOutput<typeof annotationSchema>
 export type SongLine = BaseLine & {text: string; duet?: boolean; background?: SongLine}
 export type Song = Omit<SongInput, 'title' | 'lines'> & {title: string; lines: SongLine[]}
-export type Provider = 'youtube' | 'appleMusic' | 'spotify'
-export type SourceKey = 'youtubeMV' | 'youtubeAudio' | 'appleMusic' | 'spotify'
+export type Provider = 'youtube' | 'spotify'
+export type SourceKey = 'youtubeMV' | 'youtubeAudio' | 'spotify'
 export type Source = {key: SourceKey; provider: Provider; label: string; url: string; id: string; embedUrl: string}
 export function getSources(input: v.InferInput<typeof mediaSchema>): Source[] {
   const song = v.parse(mediaSchema, input)
   const sources: Source[] = []
-  for (const key of ['youtubeAudio', 'youtubeMV', 'appleMusic', 'spotify'] as const) {
+  for (const key of ['youtubeAudio', 'youtubeMV', 'spotify'] as const) {
     const provider: Provider = key.startsWith('youtube') ? 'youtube' : (key as Provider)
     const value = key === 'youtubeMV' ? song.youtube?.mv : key === 'youtubeAudio' ? song.youtube?.audio : song[key]
     if (!value) continue
@@ -86,7 +80,7 @@ export function getSources(input: v.InferInput<typeof mediaSchema>): Source[] {
         id: value,
         embedUrl: `https://www.youtube.com/embed/${value}`,
       })
-    } else if (provider === 'spotify') {
+    } else {
       sources.push({
         key,
         provider,
@@ -94,15 +88,6 @@ export function getSources(input: v.InferInput<typeof mediaSchema>): Source[] {
         url: `https://open.spotify.com/track/${value}`,
         id: `spotify:track:${value}`,
         embedUrl: `https://open.spotify.com/embed/track/${value}`,
-      })
-    } else {
-      sources.push({
-        key,
-        provider,
-        label: 'Apple Music',
-        url: `https://music.apple.com/kr/song/${value}`,
-        id: value,
-        embedUrl: `https://embed.music.apple.com/kr/song/${value}`,
       })
     }
   }

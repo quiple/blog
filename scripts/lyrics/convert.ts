@@ -74,7 +74,6 @@ export function fromTTML(xml: string) {
   const song = parseSong({
     title: result.metadata.title?.[0],
     lang: result.metadata.language,
-    appleMusic: result.metadata.platformIds?.appleMusicId?.[0],
     spotify: result.metadata.platformIds?.spotifyId?.[0],
     lines: result.lines.map(line).sort((a, b) => (a.time?.[0] ?? 0) - (b.time?.[0] ?? 0)),
   })

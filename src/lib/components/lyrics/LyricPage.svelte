@@ -8,12 +8,11 @@
   import MusicEmbed from './MusicEmbed.svelte'
   import SyncedLyrics from './SyncedLyrics.svelte'
   import LyricText from './LyricText.svelte'
-  import {siApplemusic, siSpotify, siYoutube, siYoutubemusic} from 'simple-icons'
+  import {siSpotify, siYoutube, siYoutubemusic} from 'simple-icons'
 
   const sourceIcons = {
     youtubeAudio: siYoutubemusic.path,
     youtubeMV: siYoutube.path,
-    appleMusic: siApplemusic.path,
     spotify: siSpotify.path,
   }
 
@@ -36,7 +35,7 @@
   let fullText = $state(false)
   let failed = $state(false)
   let mediaFailed = $state(false)
-  const canSync = $derived(!!source && source.provider !== 'appleMusic' && !mediaFailed && visibleTimed.length > 0)
+  const canSync = $derived(!!source && !mediaFailed && visibleTimed.length > 0)
   const animated = $derived(mounted && canSync && !fullText && !failed)
   const offset = $derived(source ? sourceOffset(song, source.key) : 0)
   onMount(() => {

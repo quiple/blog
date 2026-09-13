@@ -46,7 +46,6 @@
       onseekready(undefined)
       onunavailable?.(false)
     })
-    if (current.provider === 'appleMusic') return
     let disposed = false
     let youtube: YouTubePlayer | undefined
     let spotify: SpotifyController | undefined
@@ -189,18 +188,6 @@
 </script>
 
 <div class="relative overflow-hidden rounded-lg shadow-xs inner-border" class:bg-muted={!loading} aria-busy={loading}>
-  {#if source.provider === 'appleMusic'}
-    <iframe
-      title="Apple Music 플레이어"
-      src={source.embedUrl}
-      height="175"
-      class="block w-full border-0"
-      class:invisible={loading}
-      onload={() => (loading = false)}
-      allow="autoplay; encrypted-media; fullscreen"
-      sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-    ></iframe>
-  {/if}
   <div
     bind:this={host}
     class:invisible={loading}

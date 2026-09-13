@@ -21,7 +21,6 @@ lang: ja
 youtube:
   mv: oT-G1wS-57c
   audio: oT-G1wS-57c
-appleMusic: 1502503864
 spotify: 0123456789ABCDEFGHIJKL
 # 각 ID는 실제 원하는 영상·곡 ID로 교체하세요.
 offsets:
@@ -41,10 +40,8 @@ lines:
 ```
 
 - `time: [시작, 종료]`는 **초 단위 소수점 셋째 자리(0.001초)**까지 사용할 수 있습니다. 예를 들어 `12.345`는 12초 345밀리초입니다. AMLL에는 정수 밀리초로 전달합니다. 모든 시간은 곡 시작 기준의 절대 시간입니다.
-- `offsets`도 초 단위입니다. `youtubeMV: 3`이면 뮤비 3초가 가사 0초입니다. `youtubeMV`, `youtubeAudio`, `appleMusic`, `spotify`를 각각 생략하거나 지정할 수 있습니다.
+- `offsets`도 초 단위입니다. `youtubeMV: 3`이면 뮤비 3초가 가사 0초입니다. `youtubeMV`, `youtubeAudio`, `spotify`를 각각 생략하거나 지정할 수 있습니다.
 - 음악 서비스에는 전체 URL 대신 고유 ID만 입력합니다. YouTube는 동영상 ID 11자, Spotify는 트랙 ID 22자입니다. Spotify의 `spotify:track:` 접두사도 제외합니다.
-- Apple Music은 **곡 ID**를 입력합니다. `/song/123456` 링크라면 마지막 숫자, `/album/…/앨범ID?i=곡ID` 링크라면 `i=` 뒤의 숫자입니다. 숫자 또는 따옴표로 감싼 문자열 모두 지원하며, 한국 스토어의 곡 링크와 임베드 주소를 자동 생성합니다.
-  예를 들어 `Life kinda sucks`의 앨범 링크는 `/album/life-kinda-sucks/6788722208?i=6788722483`이므로 `appleMusic: 6788722483`을 입력합니다. 앨범 ID를 넣으면 Apple 임베드가 로고 화면에 멈출 수 있습니다.
 - YouTube `mv`와 `audio`는 독립적입니다. 하나만 있어도 되고 둘 다 없어도 됩니다. 있는 소스만 선택 버튼에 표시됩니다.
 - `duet: true`인 줄은 오른쪽에 표시됩니다. 여러 목소리의 시간 범위는 겹칠 수 있습니다. 줄은 시작 시간 순서로 작성하세요.
 - `background`는 해당 줄의 배경 보컬입니다. 문자열로 쓰면 본 가사의 시간을 따릅니다. 별도 시간이 필요하면 아래처럼 객체로 씁니다.
@@ -126,7 +123,7 @@ pronunciation:
 
 ## 재생 연동
 
-YouTube는 IFrame API, Spotify는 iFrame API의 `playback_update`로 동기화합니다. Spotify는 계정·지역·곡에 따라 미리듣기와 시간 전달 동작이 달라질 수 있습니다. Apple Music 일반 임베드에는 공개된 시간 연동 API가 없어 전체 가사 보기로 표시합니다. Apple Music 자동 동기화에는 별도 MusicKit 플레이어와 인증 구성이 필요합니다.
+YouTube는 IFrame API, Spotify는 iFrame API의 `playback_update`로 동기화합니다. Spotify는 계정·지역·곡에 따라 미리듣기와 시간 전달 동작이 달라질 수 있습니다.
 
 YouTube 뮤비↔음원 전환은 소스별 보정값을 적용해 같은 가사 위치와 재생·일시정지 상태를 유지합니다. 다른 서비스로 전환하면 새 플레이어를 정지 상태로 불러옵니다. 화면 밖·백그라운드에서는 AMLL 프레임 루프를 멈추고 페이지 이동 시 플레이어·관찰자·타이머를 정리합니다. YAML 파싱과 유효성 검사는 서버에서만 실행합니다.
 
@@ -144,8 +141,7 @@ YouTube 뮤비↔음원 전환은 소스별 보정값을 적용해 같은 가사
 # YouTube 동영상 ID: AMLL 가사와 제공되는 자막 중 선택
 nub run import -y YDLafQ-Rg-k --slug wrong-world-new --artist togenashi-togeari
 
-# Apple Music / Spotify ID: 공식 AMLL DB의 대응 가사 가져오기
-nub run import -a 1737842246 --slug wrong-world-new
+# Spotify ID: 공식 AMLL DB의 대응 가사 가져오기
 nub run import -s 0tNSVPZeJjpNH7Q9VqrbyJ --slug wrong-world-new
 
 # AMLL DB 검색 / 파일명 / 다운로드 링크 / 로컬 TTML
@@ -165,7 +161,7 @@ nub run import --file ./lyrics.ttml --slug music-title
 - `--title`, `--lang`으로 제목과 원문 언어를 지정할 수 있습니다. 제목 언어(`titleLang`)에는 가사 언어(`lang`)와 같은 값을 저장합니다. YouTube는 기본 `youtube.mv`에 저장하며 `--audio`를 붙이면 `youtube.audio`에 저장합니다.
 - YouTube에는 별도로 **yt-dlp**가 필요합니다(macOS: `brew install yt-dlp`). 미디어는 다운로드하지 않고 메타데이터와 선택한 자막만 가져옵니다. 기본 후보는 등록 자막이며 `--auto`를 붙이면 자동 생성 자막도 표시합니다. 자동 자막은 노래 가사와 다를 수 있습니다.
 - YouTube 자막은 제공된 행별 타이밍을 사용하며 단어별 타이밍을 임의 생성하지 않습니다. TTML은 단어·루비 타이밍, 번역·발음, 듀엣·배경 보컬을 YAML로 변환합니다. 타이밍은 0.001초 단위로 유지합니다.
-- Apple Music·Spotify는 **해당 서비스에서 비공개 가사를 추출하는 기능이 아닙니다**. 입력한 곡 ID에 연결된 공식 AMLL DB 가사를 검색합니다. DB에 없는 곡은 `--search`, `--file` 또는 직접 다운로드한 TTML을 사용하세요. 로그인 쿠키나 토큰을 요구하지 않습니다.
+- Spotify는 **해당 서비스에서 비공개 가사를 추출하는 기능이 아닙니다**. 입력한 곡 ID에 연결된 공식 AMLL DB 가사를 검색합니다. DB에 없는 곡은 `--search`, `--file` 또는 직접 다운로드한 TTML을 사용하세요. 로그인 쿠키나 토큰을 요구하지 않습니다.
 - AMLL에서 가져온 타이밍과 YouTube 뮤비의 편집 시점은 다를 수 있으므로 `offsets`를 확인하세요. 출처의 언어별 번역은 보존되며, 사이트에서는 기존 규칙대로 한국어만 표시합니다.
 
 관련 명세: [AMLL HTTP API](https://amll.dev/reference/http-api/native), [AMLL DB](https://github.com/amll-dev/amll-ttml-db), [yt-dlp 자막 옵션](https://github.com/yt-dlp/yt-dlp#subtitle-options).
@@ -176,12 +172,12 @@ nub run import --file ./lyrics.ttml --slug music-title
 nub run diff life-kinda-sucks
 nub run diff life-kinda-sucks --reference youtubeMV
 nub run diff life-kinda-sucks --seconds 60
-nub run diff song-slug --file appleMusic=/path/to/full-song.m4a --file spotify=/path/to/full-song.flac
+nub run diff song-slug --file spotify=/path/to/full-song.flac
 ```
 
-`yt-dlp`와 `ffmpeg`가 필요합니다(macOS: `brew install yt-dlp ffmpeg`). 등록된 YouTube 오디오를 임시로 내려받아 비교하고 실행이 끝나면 임시 파일을 삭제합니다. Apple Music·Spotify는 전체 스트림을 자동 추출하지 않으며, 해당 서비스 버전의 **처음부터 시작하는 전체 음원**을 `--file 소스=경로`로 지정합니다. 중간부터 시작하는 미리듣기 파일은 전체 음원의 오프셋을 구하는 데 사용할 수 없습니다. 로컬 파일은 YouTube 소스에도 지정할 수 있습니다.
+`yt-dlp`와 `ffmpeg`가 필요합니다(macOS: `brew install yt-dlp ffmpeg`). 등록된 YouTube 오디오를 임시로 내려받아 비교하고 실행이 끝나면 임시 파일을 삭제합니다. Spotify는 전체 스트림을 자동 추출하지 않으며, 해당 서비스 버전의 **처음부터 시작하는 전체 음원**을 `--file 소스=경로`로 지정합니다. 중간부터 시작하는 미리듣기 파일은 전체 음원의 오프셋을 구하는 데 사용할 수 없습니다. 로컬 파일은 YouTube 소스에도 지정할 수 있습니다.
 
-기본 기준은 접근 가능한 소스 중 YouTube 음원 → YouTube 뮤비 → Apple Music → Spotify 순서입니다. `--reference youtubeMV` 등으로 바꿀 수 있습니다. 기본적으로 처음 180초를 분석하며 `--seconds`로 6~900초를 지정합니다. 결과는 분석한 범위에만 해당합니다.
+기본 기준은 접근 가능한 소스 중 YouTube 음원 → YouTube 뮤비 → Spotify 순서입니다. `--reference youtubeMV` 등으로 바꿀 수 있습니다. 기본적으로 처음 180초를 분석하며 `--seconds`로 6~900초를 지정합니다. 결과는 분석한 범위에만 해당합니다.
 
 여러 구간의 음량 패턴으로 대응 위치를 찾고 파형 상관도로 시간 차이를 세밀하게 추정합니다. 양수는 대상 소스에서 같은 소리가 기준보다 늦게 나온다는 뜻입니다. 일치 구간이 부족하거나 구간별 차이가 달라지면 시간 차이를 확정하지 않고 짧은 오류를 출력합니다. 다른 믹스·대사·반복 구간 때문에 추정이 실패할 수도 있습니다. 소수점 셋째 자리까지 출력하지만 1ms 정확도를 보장하는 것은 아닙니다.
 

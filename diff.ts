@@ -14,13 +14,13 @@ const root = dirname(fileURLToPath(import.meta.url))
 const help = `음원 시간 차이 비교
   nub run diff life-kinda-sucks
   nub run diff life-kinda-sucks --reference youtubeMV
-  nub run diff song-slug --file appleMusic=/path/to/full-song.m4a
+  nub run diff song-slug --file spotify=/path/to/full-song.flac
 
---reference 소스   기준 소스 (기본: YouTube 음원 → 뮤비 → Apple Music → Spotify)
+--reference 소스   기준 소스 (기본: YouTube 음원 → 뮤비 → Spotify)
 --seconds 초       처음부터 분석할 길이 (기본 180, 최대 900)
 --file 소스=경로   해당 서비스의 전체 음원 파일 사용 (여러 번 지정 가능)
 YouTube는 yt-dlp로 오디오를 받아 ffmpeg로 비교합니다.
-Apple Music/Spotify는 --file로 해당 버전의 전체 음원을 제공해야 합니다.
+Spotify는 --file로 해당 버전의 전체 음원을 제공해야 합니다.
 양수 차이: 대상 소스에서 같은 소리가 더 늦게 나옵니다.
 YAML은 수정하지 않습니다. 0.001초로 출력하지만 실제 정확도는 음원에 따라 달라집니다.`
 async function main() {
