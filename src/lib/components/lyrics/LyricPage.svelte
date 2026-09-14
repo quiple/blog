@@ -104,9 +104,9 @@
 {/snippet}
 
 <div
-  class="mx-auto grid max-w-400 items-start gap-8 pt-8 md:pt-20 lg:grid-cols-[minmax(320px,0.85fr)_minmax(0,1.15fr)] lg:gap-12"
+  class="mx-auto grid max-w-400 items-start gap-4 pt-0 sm:gap-6 md:grid-cols-[minmax(320px,0.85fr)_minmax(0,1.15fr)] md:pt-15"
 >
-  <aside class="min-w-0 lg:sticky lg:top-26">
+  <aside class="min-w-0 md:sticky md:top-21">
     {#if source}
       {#if sources.length > 1}
         <div class="mb-3 flex flex-wrap gap-2" role="group" aria-label="음악 소스 선택">
