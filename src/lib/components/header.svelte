@@ -250,7 +250,7 @@
               />
             </div>
           {/if}
-          <DropdownMenu.Item onclick={() => goto('/lyric')}>가사</DropdownMenu.Item>
+          <DropdownMenu.Item onclick={() => goto('/lyric')}>가사 번역</DropdownMenu.Item>
           <DropdownMenu.Item onclick={() => goto('/font-generator')}>비트맵 폰트 이미지 생성기</DropdownMenu.Item>
           <DropdownMenu.Separator />
           <div class="flex items-center justify-between px-1.5 py-1 text-sm">
