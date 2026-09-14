@@ -87,7 +87,7 @@
         interval = setInterval(sampleYouTube, 200)
       }
     }
-    document.addEventListener('visibilitychange', visibility)
+    if (current.provider === 'youtube') document.addEventListener('visibilitychange', visibility)
     async function connect() {
       if (current.provider === 'youtube') {
         const api = await loadYouTube()

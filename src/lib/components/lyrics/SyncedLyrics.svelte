@@ -52,6 +52,7 @@
         let visible = true
         let lastFollowed: HTMLElement | undefined
         let lastFollowedTop: number | undefined
+        let followedLayout = -1
         let pendingFollow: {element: HTMLElement; top: number} | undefined
         let preserveFollow = false
         let scrollHold: {element: HTMLElement; top: number} | undefined
@@ -78,6 +79,8 @@
           player.setEnableScale(!reducedMotion.matches)
         }
         motion()
+        const lyricTime = (now = performance.now()) =>
+          Math.max(0, playbackTime(sample, now) - offset + colorTransitionLead)
         const releaseScroll = () => {
           scrollHold = undefined
           container.style.minHeight = ''
@@ -88,7 +91,7 @@
             lastFrame = 0
             return
           }
-          const time = Math.max(0, playbackTime(sample, now) - offset + colorTransitionLead)
+          const time = lyricTime(now)
           const seek = Math.abs(time - lastTime) > 1000
           if (time !== lastTime) player.setCurrentTime(time, seek)
           player.update(lastFrame ? Math.min(now - lastFrame, 50) : 0)
@@ -110,8 +113,16 @@
               window.scrollTo({top, left: window.scrollX, behavior: 'instant'})
             }
           }
-          if (!scrollHold && sample.playing && active && active.style.visibility !== 'hidden' && now >= followAfter) {
+          if (
+            !scrollHold &&
+            sample.playing &&
+            active &&
+            active.style.visibility !== 'hidden' &&
+            now >= followAfter &&
+            (active !== lastFollowed || (lastFollowedTop !== undefined && followedLayout !== player.layoutVersion))
+          ) {
             const target = player.scrollTarget(active)
+            followedLayout = player.layoutVersion
             const moved =
               active === lastFollowed && lastFollowedTop !== undefined && Math.abs(target - lastFollowedTop) >= 0.5
             // Let ResizeObserver commit row-height changes before following.
@@ -126,7 +137,10 @@
               pendingFollow = undefined
               const top = target - Math.max(96, window.innerHeight * 0.18)
               window.scrollTo({top: Math.max(0, top), behavior: reducedMotion.matches ? 'instant' : 'smooth'})
-            } else if (active !== lastFollowed) pendingFollow = {element: active, top: target}
+            } else if (active !== lastFollowed) {
+              if (pendingFollow?.element === active) pendingFollow.top = target
+              else pendingFollow = {element: active, top: target}
+            }
           } else pendingFollow = undefined
           lastFrame = now
           lastTime = time
@@ -136,7 +150,7 @@
           if (disposed) return
           if (playbackPlaying !== sample.playing) {
             window.scrollTo({top: window.scrollY, left: window.scrollX, behavior: 'instant'})
-            const time = Math.max(0, playbackTime(sample, performance.now()) - offset + colorTransitionLead)
+            const time = lyricTime()
             const active = player.activeElement(time)
             const top = active?.getBoundingClientRect().top
             releaseScroll()
@@ -159,10 +173,7 @@
           if (appliedLines?.length === value.length && value.every((line, index) => line === appliedLines![index]))
             return
           try {
-            player.setLyricLines(
-              value,
-              Math.max(0, playbackTime(sample, performance.now()) - offset + colorTransitionLead),
-            )
+            player.setLyricLines(value, lyricTime())
             appliedLines = value
             lastTime = Number.NaN
             lastFollowed = undefined
@@ -220,7 +231,6 @@
           reducedMotion.removeEventListener('change', motion)
           player.removeEventListener('line-click', click)
           player.dispose()
-          element.remove()
         }
       })
       .catch(() => {

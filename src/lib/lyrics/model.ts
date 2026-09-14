@@ -152,13 +152,12 @@ export function annotationText(value: Annotation | undefined, language?: string)
 
 export function lyricLanguages(lines: SongLine[], field: 'translation' | 'pronunciation'): string[] {
   const languages = new Set<string>()
+  function collectAnnotation(value: Annotation | undefined) {
+    if (value && typeof value !== 'string') for (const language of Object.keys(value)) languages.add(language)
+  }
   function collect(line: SongLine) {
-    const values = [
-      line[field],
-      ...(field === 'pronunciation' ? (line.words?.map((word) => word.pronunciation) ?? []) : []),
-    ]
-    for (const value of values)
-      if (value && typeof value !== 'string') for (const language of Object.keys(value)) languages.add(language)
+    collectAnnotation(line[field])
+    if (field === 'pronunciation') for (const word of line.words ?? []) collectAnnotation(word.pronunciation)
     if (line.background) collect(line.background)
   }
   lines.forEach(collect)
@@ -217,10 +216,12 @@ export function toLyricLines(
       romanLyric: annotationText(line.pronunciation, pronunciationLanguage),
     }
   }
-  return lines.flatMap((line) => [
-    convert(line, false, line.duet ?? false),
-    ...(line.background ? [convert(line.background, true, line.duet ?? false)] : []),
-  ])
+  const converted: LocalizedLyricLine[] = []
+  for (const line of lines) {
+    converted.push(convert(line, false, line.duet ?? false))
+    if (line.background) converted.push(convert(line.background, true, line.duet ?? false))
+  }
+  return converted
 }
 
 export function milliseconds(seconds: number) {

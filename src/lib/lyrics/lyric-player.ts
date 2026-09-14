@@ -13,6 +13,12 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   private hasStarted = false
   private interludeEnd: number | undefined
   private interludeTop = 0
+  private interludeIndex = -1
+  private activeFrom = 0
+  private activeUntil = 0
+  private activeMain: HTMLElement | undefined
+  private mainGroups = new WeakMap<HTMLElement, (typeof this.currentLyricGroups)[number]>()
+  layoutVersion = 0
   private readonly groupTransforms: (typeof this.currentLyricGroups)[number]['setTransform'][] = []
 
   constructor() {
@@ -58,11 +64,11 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   private positionInterlude() {
     const style = this.interludeDots.getElement().style
     if (this.interludeEnd === undefined) {
-      style.visibility = ''
-      style.translate = ''
+      if (style.visibility) style.visibility = ''
+      if (style.translate) style.translate = ''
       return
     }
-    const index = this.currentLyricGroups.findIndex((group) => group.top > this.interludeTop)
+    const index = this.interludeIndex
     const next = this.currentLyricGroups[index]
     if (!next) return
     const previous = this.currentLyricGroups[index - 1]
@@ -71,8 +77,10 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const required = this.layoutState.interludeDotsSize[1] + (this.baseFontSize || 24) * 0.8
     // Rows have delayed springs; dots must follow their rendered position and
     // wait for the gap to open rather than appearing over the following row.
-    style.visibility = nextTop - bottom >= required - 1 ? '' : 'hidden'
-    style.translate = `0 ${(nextTop - next.top).toFixed(2)}px`
+    const visibility = nextTop - bottom >= required - 1 ? '' : 'hidden'
+    const translate = `0 ${(nextTop - next.top).toFixed(2)}px`
+    if (style.visibility !== visibility) style.visibility = visibility
+    if (style.translate !== translate) style.translate = translate
   }
 
   private layoutNative(sync: boolean, force: boolean) {
@@ -144,31 +152,48 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const last = this.currentLyricGroups[this.currentLyricGroups.length - 1]
     const height = `${last.top + (this.lyricGroupSize.get(last)?.[1] ?? 0)}px`
     if (this.getElement().style.height !== height) this.getElement().style.height = height
+    this.interludeIndex =
+      this.interludeEnd === undefined ? -1 : this.currentLyricGroups.findIndex((group) => group.top > this.interludeTop)
+    this.layoutVersion++
     this.positionInterlude()
   }
 
   activeElement(time: number) {
-    for (const group of this.currentLyricGroups) {
-      if (time >= group.startTime && time < group.endTime) return group.mainLine.getElement()
+    // The first matching group can change only at a start/end boundary.
+    // Check all boundaries to preserve overlap/duet precedence and backward seeks.
+    if (time < this.activeFrom || time >= this.activeUntil) {
+      this.activeFrom = -Infinity
+      this.activeUntil = Infinity
+      this.activeMain = undefined
+      for (const group of this.currentLyricGroups) {
+        const start = group.startTime
+        const end = group.endTime
+        if (!this.activeMain && time >= start && time < end) this.activeMain = group.mainLine.getElement()
+        if (start <= time) this.activeFrom = Math.max(this.activeFrom, start)
+        else this.activeUntil = Math.min(this.activeUntil, start)
+        if (end <= time) this.activeFrom = Math.max(this.activeFrom, end)
+        else this.activeUntil = Math.min(this.activeUntil, end)
+      }
     }
-    const dots = this.interludeDots.getElement()
-    for (const name of dots.classList) if (name.endsWith('_enabled')) return dots
-    return undefined
+    return this.activeMain ?? (this.interludeEnd === undefined ? undefined : this.interludeDots.getElement())
   }
 
   scrollTarget(element: HTMLElement) {
-    for (const group of this.currentLyricGroups) {
-      if (group.mainLine.getElement() === element) {
-        // The screen rect includes the current spring position and scale.
-        // Scroll to the final layout, after preceding background rows collapse.
-        return this.getElement().getBoundingClientRect().top + window.scrollY + group.top + element.offsetTop
-      }
+    const group = this.mainGroups.get(element)
+    if (group) {
+      // The screen rect includes the current spring position and scale.
+      // Scroll to the final layout, after preceding background rows collapse.
+      return this.getElement().getBoundingClientRect().top + window.scrollY + group.top + element.offsetTop
     }
     return this.getElement().getBoundingClientRect().top + window.scrollY + this.interludeTop
   }
 
   override setLyricLines(lines: LocalizedLyricLine[], initialTime = 0) {
     this.interludeEnd = undefined
+    this.interludeIndex = -1
+    this.activeFrom = this.activeUntil = 0
+    this.activeMain = undefined
+    this.mainGroups = new WeakMap()
     this.hasWordAnnotations = lines.some((line) =>
       line.words.some((word) => word.ruby?.length || word.romanWord?.trim()),
     )
@@ -181,6 +206,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     if (this.hasWordAnnotations) this.isNonDynamic = false
     // AMLL keeps these three containers when virtualizing each line's contents.
     for (const group of this.currentLyricGroups) {
+      this.mainGroups.set(group.mainLine.getElement(), group)
       for (const view of [group.mainLine, group.bgLine]) {
         if (!view) continue
         const line = view.getLine() as LocalizedLyricLine
