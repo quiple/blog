@@ -21,311 +21,311 @@ offsets:
   spotify: -2.900
 lines:
   - text: Unemployed
-    translation: '백수'
+    translation: 백수
     time: [15.936, 17.099]
   - text: No house, no pay
-    translation: '집도 없고, 월급도 없어'
+    translation: 집도 없고 월급도 없어
     time: [17.099, 18.456]
   - text: Gonna waste the day away
-    translation: '오늘도 하루를 허비할 거야'
+    translation: 오늘도 하루를 허비할 거야
     time: [18.456, 21.084]
   - text: I'm chilling for free
-    translation: '돈 한 푼 없이 빈둥대'
+    translation: 돈 한 푼 없이 빈둥대
     time: [21.561, 23.561]
   - text: Just my debt and me
-    translation: '빚과 나, 단둘이서'
+    translation: 빚과 나, 단둘이서
     time: [24.315, 26.315]
   - text: Can't relax
-    translation: '마음 편히 쉴 수가 없어'
+    translation: 마음 편히 쉴 수가 없어
     time: [27.476, 28.654]
   - text: My life's a cruel gag
-    translation: '내 인생은 잔인한 농담 같아'
+    translation: 내 인생은 잔인한 농담 같아
     time: [28.655, 29.93]
   - text: Put the fries in the god damn bag
-    translation: '씨발, 감자튀김이나 봉투에 담아'
+    translation: 씨발, 감자튀김이나 봉투에 담아
     time: [29.93, 32.505]
   - text: Yeah I'm chilling for free
-    translation: '그래, 돈 한 푼 없이 빈둥대'
+    translation: 그래, 돈 한 푼 없이 빈둥대
     time: [32.898, 34.898]
   - text: Just my baguette and me
-    translation: '바게트와 나, 단둘이서'
+    translation: 바게트와 나, 단둘이서
     time: [35.785, 37.667]
   - text: I'm poor as shit
-    translation: '난 존나 가난해'
+    translation: 난 존나 가난해
     time: [38.536, 39.513]
   - text: I admit
-    translation: '인정해'
+    translation: 인정해
     time: [39.513, 40.878]
   - text: But I make hits
-    translation: '그래도 히트곡은 만들잖아'
+    translation: 그래도 히트곡은 만들잖아
     time: [40.878, 42.43]
   - text: And the internet's where I sit
-    translation: '인터넷에 눌러앉아 살고 있어'
+    translation: 인터넷에 눌러앉아 살고 있어
     time: [42.431, 44.237]
   - text: I'm a broke ass bitch
-    translation: '난 좆도 없는 빈털터리야'
+    translation: 난 좆도 없는 빈털터리야
     time: [44.237, 45.273]
   - text: Hooked on Twitch
-    translation: '트위치에 푹 빠져 살아'
+    translation: 트위치에 푹 빠져 살아
     time: [45.273, 46.593]
   - text: But I got perfect pitch
-    translation: '그래도 절대음감은 있잖아'
+    translation: 그래도 절대음감은 있잖아
     time: [46.593, 48.19]
   - text: Just trying to find my niche
-    translation: '그냥 내가 설 자리를 찾는 중이야'
+    translation: 그냥 내가 설 자리를 찾는 중이야
     time: [48.191, 50.191]
   - text: My retirement's getting destroyed
-    translation: '내 노후는 박살 나고 있어'
+    translation: 내 노후는 박살 나고 있어
     time: [50.356, 51.564]
   - text: From sitting on my ass like a hemorrhoid
-    translation: '치질처럼 엉덩이에 붙어 사느라'
+    translation: 치질처럼 엉덩이에 붙어 사느라
     time: [51.564, 53.205]
   - text: Stop calling me a motherfucking Walmart vocaloid
-    translation: '씨발, 월마트표 싸구려 보컬로이드라고 좀 부르지 마'
+    translation: 씨발, 월마트표 싸구려 보컬로이드라고 부르지 좀 마
     time: [53.206, 56.1]
   - text: I'm just unemployed
-    translation: '난 그냥 백수일 뿐이야'
+    translation: 난 그냥 백수일 뿐이야
     time: [56.1, 57.428]
   - text: I got no house
-    translation: '집도 없어'
+    translation: 집도 없어
     time: [57.428, 58.113]
   - text: I get no pay
-    translation: '월급도 못 받아'
+    translation: 월급도 못 받아
     time: [58.113, 58.91]
   - text: Gonna waste my days away
-    translation: '이렇게 하루하루 허비할 거야'
+    translation: 이렇게 하루하루 허비할 거야
     time: [58.911, 60.835]
     background:
       text: (ナマケモノ)
-      translation: '(게으름뱅이)'
+      translation: (게으름뱅이)
       time: [60.835, 61.804]
   - text: Yeah I'm chilling for free
-    translation: '그래, 돈 한 푼 없이 빈둥대'
+    translation: 그래, 돈 한 푼 없이 빈둥대
     time: [61.804, 63.401]
     background:
       text: (しゃっきんづけ)
-      translation: '(빚에 절었어)'
+      translation: (빚에 절었어)
       time: [63.401, 64.833]
   - text: Just my debt and me
-    translation: '빚과 나, 단둘이서'
+    translation: 빚과 나, 단둘이서
     time: [64.833, 66.504]
   - text: Can't unwind
-    translation: '긴장을 풀 수가 없어'
+    translation: 긴장을 풀 수가 없어
     time: [67.985, 69.066]
   - text: Almost lost my mind
-    translation: '거의 미쳐 버릴 뻔했어'
+    translation: 거의 미쳐 버릴 뻔했어
     time: [69.067, 70.447]
   - text: Viral star but I'm still unsigned
-    translation: '인터넷 스타지만 아직 계약한 데는 없어'
+    translation: 인터넷 스타지만 아직 계약한 데는 없어
     time: [70.447, 72.4]
     background:
       text: (仕方がない)
-      translation: '(어쩔 수 없지)'
+      translation: (어쩔 수 없지)
       time: [72.401, 73.277]
   - text: I guess I'm chilling for free
-    translation: '결국 돈 한 푼 없이 빈둥대는 거지'
+    translation: 결국 돈 한 푼 없이 빈둥대는 거지
     time: [73.277, 74.933]
     background:
       text: (むだなじんせい)
-      translation: '(헛된 인생)'
+      translation: (헛된 인생)
       time: [74.933, 76.261]
   - text: Just my baguette and me
-    translation: '바게트와 나, 단둘이서'
+    translation: 바게트와 나, 단둘이서
     time: [76.261, 78]
   - text: I'm poor as hell
-    translation: '난 더럽게 가난해'
+    translation: 난 더럽게 가난해
     time: [78.96, 80]
   - text: Not doing well
-    translation: '잘 지내지도 못해'
+    translation: 잘 지내지도 못해
     time: [80, 81.193]
   - text: Locked in a mental cell
-    translation: '마음속 감옥에 갇혀 있어'
+    translation: 마음속 감옥에 갇혀 있어
     time: [81.193, 82.924]
   - text: My bed is where I dwell
-    translation: '내가 사는 곳은 침대 위야'
+    translation: 내가 사는 곳은 침대 위야
     time: [82.924, 84.73]
   - text: I'm broke as fuck
-    translation: '난 씨발, 돈이 한 푼도 없어'
+    translation: 난 씨발, 돈이 한 푼도 없어
     time: [84.731, 85.767]
   - text: Just my shitty luck
-    translation: '그냥 내 운이 좆같은 거지'
+    translation: 그냥 내 운이 좆같은 거지
     time: [85.768, 87.133]
   - text: I'm a sitting duck
-    translation: '난 꼼짝없이 당할 신세야'
+    translation: 난 꼼짝없이 당할 신세야
     time: [87.133, 88.685]
   - text: Just want to get unstuck
-    translation: '그냥 이 신세에서 벗어나고 싶어'
+    translation: 그냥 이 신세에서 벗어나고 싶어
     time: [88.685, 90.872]
   - text: My retirement's getting destroyed
-    translation: '내 노후는 박살 나고 있어'
+    translation: 내 노후는 박살 나고 있어
     time: [90.873, 92.089]
   - text: From sitting on my ass like a hemorrhoid
-    translation: '치질처럼 엉덩이에 붙어 사느라'
+    translation: 치질처럼 엉덩이에 붙어 사느라
     time: [92.089, 93.668]
   - text: Stop telling me to get a life
-    translation: '제발 제대로 좀 살라는 말은 그만해'
+    translation: 제발 제대로 좀 살라는 말은 그만해
     time: [93.668, 94.884]
   - text: I'd rather live one I enjoyed
-    translation: '난 내가 즐거운 삶을 살고 싶어'
+    translation: 난 내가 즐거운 삶을 살고 싶어
     time: [94.885, 96.885]
   - text: My life feels like it's flying by
-    translation: '내 인생이 쏜살같이 지나가는 것 같아'
+    translation: 내 인생이 쏜살같이 지나가는 것 같아
     time: [163.034, 164.75]
   - text: My future's gone and my dreams have died
-    translation: '미래는 사라졌고 꿈도 죽어 버렸어'
+    translation: 미래는 사라졌고 꿈도 죽어 버렸어
     time: [164.75, 166.175]
   - text: This song is just an outcry
-    translation: '이 노래는 그저 절규일 뿐이야'
+    translation: 이 노래는 그저 절규일 뿐이야
     time: [166.175, 167.555]
   - text: Just need some space to occupy
-    translation: '그냥 내가 있을 자리만 있으면 돼'
+    translation: 그냥 내가 있을 자리만 있으면 돼
     time: [167.556, 169.085]
   - text: I'm losing all my assets
-    translation: '가진 걸 전부 잃어 가고 있어'
+    translation: 가진 걸 전부 잃어 가고 있어
     time: [169.085, 170.368]
   - text: So I spend my time in deficit
-    translation: '그래서 적자 인생을 보내고 있지'
+    translation: 그래서 적자 인생을 보내고 있지
     time: [170.368, 172]
   - text: I'm waking in a cold sweat
-    translation: '식은땀을 흘리며 잠에서 깨'
+    translation: 식은땀을 흘리며 잠에서 깨
     time: [172, 173.253]
   - text: Can barely afford the internet
-    translation: '인터넷 요금조차 내기 빠듯해'
+    translation: 인터넷 요금조차 내기 빠듯해
     time: [173.253, 174.865]
   - text: I need some help
-    translation: '도움이 좀 필요해'
+    translation: 도움이 좀 필요해
     time: [174.865, 175.46]
   - text: Just need some time
-    translation: '시간이 조금만 있으면 돼'
+    translation: 시간이 조금만 있으면 돼
     time: [175.46, 176.324]
   - text: My Spotify doesn't make a dime
-    translation: '스포티파이로는 한 푼도 못 벌어'
+    translation: 스포티파이로는 한 푼도 못 벌어
     time: [176.324, 177.577]
   - text: But my stream has a record uptime
-    translation: '그런데 방송 켜 둔 시간은 신기록이야'
+    translation: 그런데 방송 켜 둔 시간은 신기록이야
     time: [177.577, 179.091]
   - text: (Go sub to me with your free Twitch Prime)
-    translation: '(무료 트위치 프라임으로 내 채널 구독 좀 해 줘)'
+    translation: (무료 트위치 프라임으로 내 채널 구독 좀 해 줘)
     time: [179.092, 180.472]
   - text: Please play me in your ears
-    translation: '제발 내 노래 좀 들어 줘'
+    translation: 제발 내 노래 좀 들어 줘
     time: [180.472, 181.77]
   - text: I don't want a real career
-    translation: '제대로 된 직장은 갖기 싫어'
+    translation: 제대로 된 직장은 갖기 싫어
     time: [181.771, 183.285]
-  - text: Oh please play me in your ears
-    translation: '아, 제발 내 노래 좀 들어 줘'
+  - text: Oh, please play me in your ears
+    translation: 아, 제발 내 노래 좀 들어 줘
     time: [183.285, 184.717]
   - text: I don't want a real career
-    translation: '제대로 된 직장은 갖기 싫어'
+    translation: 제대로 된 직장은 갖기 싫어
     time: [184.717, 186.717]
   - text: Unemployed
-    translation: '백수'
+    translation: 백수
     time: [189.529, 190.595]
   - text: No house, no pay
-    translation: '집도 없고, 월급도 없어'
+    translation: 집도 없고, 월급도 없어
     time: [190.596, 191.901]
   - text: Gonna waste the day away
-    translation: '오늘도 하루를 허비할 거야'
+    translation: 오늘도 하루를 허비할 거야
     time: [191.901, 195.037]
   - text: I'm chilling for free
-    translation: '돈 한 푼 없이 빈둥대'
+    translation: 돈 한 푼 없이 빈둥대
     time: [195.037, 196.678]
   - text: Just my debt and me
-    translation: '빚과 나, 단둘이서'
+    translation: 빚과 나, 단둘이서
     time: [197.864, 199.55]
   - text: Can't relax
-    translation: '마음 편히 쉴 수가 없어'
+    translation: 마음 편히 쉴 수가 없어
     time: [200.928, 202.196]
   - text: My life's a cruel gag
-    translation: '내 인생은 잔인한 농담 같아'
+    translation: 내 인생은 잔인한 농담 같아
     time: [202.197, 203.502]
   - text: Put the fries in the god damn bag
-    translation: '씨발, 감자튀김이나 봉투에 담아'
+    translation: 씨발, 감자튀김이나 봉투에 담아
     time: [203.502, 206.339]
   - text: Yeah I'm chilling for free
-    translation: '그래, 돈 한 푼 없이 빈둥대'
+    translation: 그래, 돈 한 푼 없이 빈둥대
     time: [206.339, 208.175]
   - text: Just my baguette and me
-    translation: '바게트와 나, 단둘이서'
+    translation: 바게트와 나, 단둘이서
     time: [209.229, 211.752]
   - text: Motherfucker I'm unemployed
-    translation: '씨발, 나 백수라고'
+    translation: 씨발, 나 백수라고
     time: [212.35, 213.871]
   - text: I got no house
-    translation: '집도 없어'
+    translation: 집도 없어
     time: [213.871, 214.541]
   - text: I get no pay
-    translation: '월급도 못 받아'
+    translation: 월급도 못 받아
     time: [214.541, 215.398]
   - text: Gonna waste my days away
-    translation: '이렇게 하루하루 허비할 거야'
+    translation: 이렇게 하루하루 허비할 거야
     time: [215.399, 217.267]
     background:
       text: (ナマケモノ)
-      translation: '(게으름뱅이)'
+      translation: (게으름뱅이)
       time: [217.267, 218.468]
   - text: Just chilling for free
-    translation: '그냥 돈 한 푼 없이 빈둥대'
+    translation: 그냥 돈 한 푼 없이 빈둥대
     time: [218.469, 219.871]
     background:
       text: (しゃっきんづけ)
-      translation: '(빚에 절었어)'
+      translation: (빚에 절었어)
       time: [219.872, 221.364]
   - text: Just my debt and me
-    translation: '빚과 나, 단둘이서'
+    translation: 빚과 나, 단둘이서
     time: [221.364, 223.29]
     background:
       text: (テトテトテトテトテト)
-      translation: '(테토 테토 테토 테토 테토)'
+      translation: (테토테토테토테토테토)
       time: [223.291, 224.103]
-  - text: Yeah I can't unwind
-    translation: '그래, 긴장을 풀 수가 없어'
+  - text: Yeah, I can't unwind
+    translation: 그래, 긴장을 풀 수가 없어
     time: [224.103, 225.453]
   - text: I've almost lost my god damn mind
-    translation: '씨발, 거의 미쳐 버릴 뻔했어'
+    translation: 씨발, 거의 미쳐 버릴 뻔했어
     time: [225.453, 226.848]
   - text: I'm a viral star but I'm still unsigned
-    translation: '난 인터넷 스타인데 아직 계약한 데는 없어'
+    translation: 난 인터넷 스타인데 아직 계약한 데는 없어
     time: [226.848, 228.908]
     background:
       text: (仕方がない)
-      translation: '(어쩔 수 없지)'
+      translation: (어쩔 수 없지)
       time: [228.908, 229.84]
   - text: I guess I'm chilling for free
-    translation: '결국 돈 한 푼 없이 빈둥대는 거지'
+    translation: 결국 돈 한 푼 없이 빈둥대는 거지
     time: [229.841, 231.445]
     background:
       text: (むだなじんせい)
-      translation: '(헛된 인생)'
+      translation: (헛된 인생)
       time: [231.445, 232.705]
   - text: Just my baguette and me
-    translation: '바게트와 나, 단둘이서'
+    translation: 바게트와 나, 단둘이서
     time: [232.706, 234.392]
     background:
       text: (テト・バゲット)
-      translation: '(테토·바게트)'
+      translation: (테토 바게트)
       time: [234.392, 235.585]
   - text: Forever chilling for free
-    translation: '영원히 돈 한 푼 없이 빈둥대'
+    translation: 영원히 돈 한 푼 없이 빈둥대
     time: [235.585, 237.264]
     background:
       text: (ずっといっしょに)
-      translation: '(언제까지나 함께)'
+      translation: (언제까지나 함께)
       time: [237.264, 238.554]
   - text: My immense debt and me
-    translation: '어마어마한 빚과 나'
+    translation: 어마어마한 빚과 나
     time: [238.554, 240.106]
     background:
       text: (きんけつ)
-      translation: '(돈이 없어)'
+      translation: (돈이 없어)
       time: [240.106, 241.419]
   - text: We'll be chilling for free
-    translation: '우린 돈 한 푼 없이 빈둥댈 거야'
+    translation: 우린 돈 한 푼 없이 빈둥댈 거야
     time: [241.419, 244.196]
     background:
       text: (ずっといっしょに)
-      translation: '(언제까지나 함께)'
+      translation: (언제까지나 함께)
   - text: Forever chilling for free
-    translation: '영원히 돈 한 푼 없이 빈둥대'
+    translation: 영원히 돈 한 푼 없이 빈둥대
     time: [244.197, 246.197]
