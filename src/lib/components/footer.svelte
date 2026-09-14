@@ -1,10 +1,9 @@
-<script lang="ts">
-  import {Button} from '$lib/components/ui/button'
-</script>
-
 <footer>
   <section>
-    <div class="detail">© 2025 Lee Minseo</div>
+    <div class="detail">
+      <span>© 2025 Lee Minseo</span>
+      <a href="https://github.com/quiple/blog" class="text-sm hover:underline">소스 코드 · AGPL-3.0</a>
+    </div>
     <div class="sns"></div>
   </section>
 </footer>

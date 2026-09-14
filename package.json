@@ -1,9 +1,11 @@
 {
   "name": "blog",
   "private": true,
+  "license": "AGPL-3.0-only",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "licenses": "node scripts/license-notices.mjs",
     "dev": "vite dev",
     "import": "node import.ts",
     "diff": "node diff.ts",
