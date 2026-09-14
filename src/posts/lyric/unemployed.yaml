@@ -44,7 +44,7 @@ lines:
   - text: Put the fries in the god damn bag
     translation: 씨발, 감자튀김이나 봉투에 담아
     time: [29.93, 32.505]
-  - text: Yeah I'm chilling for free
+  - text: Yeah, I'm chilling for free
     translation: 그래, 돈 한 푼 없이 빈둥대
     time: [32.898, 34.898]
   - text: Just my baguette and me
@@ -99,7 +99,7 @@ lines:
       text: (ナマケモノ)
       translation: (게으름뱅이)
       time: [60.835, 61.804]
-  - text: Yeah I'm chilling for free
+  - text: Yeah, I'm chilling for free
     translation: 그래, 돈 한 푼 없이 빈둥대
     time: [61.804, 63.401]
     background:
