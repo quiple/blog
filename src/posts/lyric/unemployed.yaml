@@ -14,11 +14,10 @@ spotify: 3PhU0OuSgWOa4bg73vWhv3
 youtube:
   audio: fiVl8xWgniE
   mv: mo3mYgFElJQ
+offsets:
+  youtubeAudio: -2.900
+  spotify: -2.900
 lines:
-  - text: (Seizure Warning!)
-    time: [0.581, 2.581]
-  - text: '*Kasane Teto*'
-    time: [12.999, 14.999]
   - text: Unemployed
     time: [15.936, 17.099]
   - text: No house, no pay
