@@ -2,7 +2,7 @@ import {LyricPlayer} from '@applemusic-like-lyrics/core'
 import type {LocalizedLyricLine} from './model'
 
 export class AnnotatedLyricPlayer extends LyricPlayer {
-  private hasWordAnnotations = false
+  private needsWordRenderer = false
   private settingLines = false
   private layoutWidth = -1
 
@@ -76,8 +76,8 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   }
 
   override setLyricLines(lines: LocalizedLyricLine[], initialTime = 0) {
-    this.hasWordAnnotations = lines.some((line) =>
-      line.words.some((word) => word.ruby?.length || word.romanWord?.trim()),
+    this.needsWordRenderer = lines.some(
+      (line) => line.isBG || line.words.some((word) => word.ruby?.length || word.romanWord?.trim()),
     )
     this.settingLines = true
     try {
@@ -85,7 +85,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     } finally {
       this.settingLines = false
     }
-    if (this.hasWordAnnotations) this.isNonDynamic = false
+    if (this.needsWordRenderer) this.isNonDynamic = false
     // AMLL keeps these three containers when virtualizing each line's contents.
     for (const group of this.currentLyricGroups) {
       for (const view of [group.mainLine, group.bgLine]) {
@@ -100,9 +100,9 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     }
   }
 
-  // AMLL 0.5.2 skips word annotations when every line contains only one word.
-  // Keep its word renderer enabled for annotated line-level lyrics as well.
+  // AMLL's single-word shortcut skips annotations and independent background
+  // timing. The word renderer preserves both, even for line-level lyrics.
   override _getIsNonDynamic() {
-    return !this.hasWordAnnotations && super._getIsNonDynamic()
+    return !this.needsWordRenderer && super._getIsNonDynamic()
   }
 }
