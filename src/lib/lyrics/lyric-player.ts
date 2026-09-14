@@ -69,10 +69,11 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   override setCurrentTime(time: number, seek = false) {
     // AMLL detects interludes 20ms ahead, but does not request a layout at
     // their end. Close the gap then, without waiting for the next hot line.
-    const interludeEnded = this.interludeEnd !== undefined && Math.round(time) + 20 >= this.interludeEnd
     if (seek) this.interludeEnd = undefined
     super.setCurrentTime(time, seek)
-    if (!seek && interludeEnded && this.interludeEnd !== undefined) void this.calcLayout()
+    if (!seek && this.interludeEnd !== undefined && this.timelineState.currentTime + 20 >= this.interludeEnd) {
+      void this.calcLayout()
+    }
   }
 
   resetPlayback() {
@@ -108,17 +109,6 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     if (style.translate !== translate) style.translate = translate
   }
 
-  private layoutNative(sync: boolean, force: boolean) {
-    const time = this.timelineState.currentTime
-    // Native gap detection adds 20ms; zero prevents an intro before first play.
-    if (!this.hasStarted) this.timelineState.currentTime = -20
-    try {
-      void super.calcLayout(sync, force)
-    } finally {
-      this.timelineState.currentTime = time
-    }
-  }
-
   // Keep AMLL's absolute layout, including its interlude spacing and springs.
   // Only cancel the internal viewport offset so the document scrolls instead.
   override async calcLayout(sync = false, force = false) {
@@ -139,7 +129,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     // Record its output, then translate only the positions into document space.
     this.scrollState.scrollOffset = 0
     const transforms = this.groupTransforms
-    transforms.length = 0
+    const time = this.timelineState.currentTime
     try {
       this.measuring = true
       for (const group of this.currentLyricGroups) {
@@ -147,8 +137,11 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
         transforms.push(group.setTransform)
         group.setTransform = measureGroupLayout
       }
-      this.layoutNative(sync, force)
+      // Native gap detection adds 20ms; suppress the intro before first play.
+      if (!this.hasStarted) this.timelineState.currentTime = -20
+      void super.calcLayout(sync, force)
     } finally {
+      this.timelineState.currentTime = time
       this.measuring = false
       for (let index = 0; index < transforms.length; index++) {
         this.currentLyricGroups[index].setTransform = transforms[index]
@@ -205,12 +198,9 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
 
   scrollTarget(element: HTMLElement) {
     const group = this.mainGroups.get(element)
-    if (group) {
-      // The screen rect includes the current spring position and scale.
-      // Scroll to the final layout, after preceding background rows collapse.
-      return this.getElement().getBoundingClientRect().top + window.scrollY + group.top + element.offsetTop
-    }
-    return this.getElement().getBoundingClientRect().top + window.scrollY + this.interludeTop
+    // Use the final layout, not the current spring position or scale.
+    const top = group ? group.top + element.offsetTop : this.interludeTop
+    return this.getElement().getBoundingClientRect().top + window.scrollY + top
   }
 
   override setLyricLines(lines: LocalizedLyricLine[], initialTime = 0) {
