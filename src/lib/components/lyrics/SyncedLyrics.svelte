@@ -188,6 +188,10 @@
   .lyric-player :global([data-bottom-line]) {
     display: none;
   }
+  .lyric-player :global(.text-muted-foreground) {
+    color: var(--muted-foreground);
+    opacity: 1;
+  }
   /* AMLL sizes the dots separately from their padding; the global reset uses border-box. */
   .lyric-player :global([class*='_interludeDots']) {
     box-sizing: content-box;
