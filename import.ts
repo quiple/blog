@@ -7,17 +7,25 @@ import {Document, isScalar, isSeq, visit} from 'yaml'
 import {parseSong} from './src/lib/lyrics/model.ts'
 import {compactSong, fromTTML} from './scripts/lyrics/convert.ts'
 import {choose, terminalText} from './scripts/lyrics/select.ts'
-import {fromDatabase, fromSpotify, searchDatabase, youtubeCandidates, type Candidate} from './scripts/lyrics/sources.ts'
+import {
+  fromDatabase,
+  fromPlatform,
+  searchDatabase,
+  youtubeCandidates,
+  type Candidate,
+} from './scripts/lyrics/sources.ts'
 
 const root = dirname(fileURLToPath(import.meta.url))
 const help = `가사 가져오기
   nub run import -y YDLafQ-Rg-k
+  nub run import -a 1737842246 --slug wrong-world
   nub run import -s 0tNSVPZeJjpNH7Q9VqrbyJ
   nub run import --search '雑踏、僕らの街'
   nub run import --amll 1779284741800-68000793-I1W5DuF4.ttml
   nub run import --file ./lyrics.ttml --slug music-title
 
 -y, --youtube ID       YouTube ID (yt-dlp 필요)
+-a, --apple ID         Apple Music 곡 ID로 AMLL DB 검색
 -s, --spotify ID       Spotify 트랙 ID로 AMLL DB 검색
     --amll 값         AMLL 파일명 / API ID / TTML 직접 URL
     --search 곡명     AMLL DB 곡명 검색
@@ -38,6 +46,7 @@ async function main() {
     args: process.argv.slice(process.argv[2] === '--' ? 3 : 2),
     options: {
       youtube: {type: 'string', short: 'y'},
+      apple: {type: 'string', short: 'a'},
       spotify: {type: 'string', short: 's'},
       amll: {type: 'string'},
       search: {type: 'string'},
@@ -58,10 +67,12 @@ async function main() {
     console.log(help)
     return
   }
-  if ([v.youtube, v.spotify, v.amll, v.search, v.file].filter(Boolean).length !== 1)
+  if ([v.youtube, v.apple, v.spotify, v.amll, v.search, v.file].filter(Boolean).length !== 1)
     throw new Error('입력 소스를 하나만 지정하세요. --help로 사용법을 볼 수 있습니다.')
   // Validate identifiers before interpolating them into requests or starting yt-dlp.
   parseSong({youtube: v.youtube ? {mv: v.youtube} : undefined, spotify: v.spotify})
+  if (v.apple !== undefined && !/^[1-9]\d*$/.test(v.apple))
+    throw new Error('Apple Music 곡 ID는 양의 정수 숫자만 입력하세요.')
   for (const slug of v.artist ?? []) {
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error(`아티스트 슬러그 형식이 잘못되었습니다: ${slug}`)
     const exists = await Promise.any(
@@ -79,7 +90,8 @@ async function main() {
       {label: path, load: async () => ({song: fromTTML(await readFile(path, 'utf8')).song, sources: [path]})},
     ]
   } else if (v.youtube) candidates = await youtubeCandidates(v.youtube, !!v.auto)
-  else if (v.spotify) candidates = await fromSpotify(v.spotify)
+  else if (v.apple) candidates = await fromPlatform('appleMusic', v.apple)
+  else if (v.spotify) candidates = await fromPlatform('spotify', v.spotify)
   else if (v.amll) candidates = await fromDatabase(v.amll)
   else candidates = await searchDatabase(v.search!)
   const selected = await choose(
@@ -101,7 +113,9 @@ async function main() {
     ? `youtube-${v.youtube.toLowerCase()}`
     : v.spotify
       ? `spotify-${v.spotify.toLowerCase()}`
-      : 'imported-lyrics'
+      : v.apple
+        ? `apple-${v.apple}`
+        : 'imported-lyrics'
   const slug =
     v.slug ??
     (song.title
@@ -113,6 +127,7 @@ async function main() {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw new Error('--slug에는 영문 소문자·숫자·하이픈만 사용하세요.')
   const sources = [
     ...result.sources,
+    ...(v.apple ? [`Apple Music 곡: https://music.apple.com/song/${v.apple}`] : []),
     `선택 항목: ${terminalText(candidates[selected].label)}`,
     `가져온 시각: ${new Date().toISOString()}`,
     '원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.',

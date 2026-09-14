@@ -11,6 +11,7 @@ type Item = {
   filename: string
   musicNames: string[]
   artistNames: string[]
+  appleMusicIds?: string[]
   spotifyIds?: string[]
   authorUsernames?: string[]
   lyrics?: string
@@ -82,10 +83,13 @@ export async function searchDatabase(query: string, filter?: (item: Item) => boo
   }
   throw new Error('검색 결과가 너무 많습니다. --search에 더 구체적인 곡명을 입력하세요.')
 }
-export async function fromSpotify(id: string) {
-  const item = await api<Item>('get', {spotifyId: id})
+export async function fromPlatform(platform: 'appleMusic' | 'spotify', id: string) {
+  const item = await api<Item>('get', {[`${platform}Id`]: id})
   try {
-    const candidates = await searchDatabase(item.musicNames[0], (row) => row.spotifyIds?.includes(id) ?? false)
+    const candidates = await searchDatabase(
+      item.musicNames[0],
+      (row) => (platform === 'appleMusic' ? row.appleMusicIds : row.spotifyIds)?.includes(id) ?? false,
+    )
     if (candidates.length) return candidates
   } catch (error) {
     console.error(`이전 가사 버전 검색 실패: ${error instanceof Error ? error.message : '알 수 없는 오류'}`)

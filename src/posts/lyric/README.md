@@ -142,7 +142,8 @@ YouTube 뮤비↔음원 전환은 소스별 보정값을 적용해 같은 가사
 # YouTube 동영상 ID: AMLL 가사와 제공되는 자막 중 선택
 nub run import -y YDLafQ-Rg-k --slug wrong-world-new --artist togenashi-togeari
 
-# Spotify ID: 공식 AMLL DB의 대응 가사 가져오기
+# Apple Music / Spotify ID: 공식 AMLL DB의 대응 가사 가져오기
+nub run import -a 1737842246 --slug wrong-world-new
 nub run import -s 0tNSVPZeJjpNH7Q9VqrbyJ --slug wrong-world-new
 
 # AMLL DB 검색 / 파일명 / 다운로드 링크 / 로컬 TTML
@@ -162,7 +163,8 @@ nub run import --file ./lyrics.ttml --slug music-title
 - `--title`, `--lang`으로 제목과 원문 언어를 지정할 수 있습니다. 제목 언어(`titleLang`)에는 가사 언어(`lang`)와 같은 값을 저장합니다. YouTube는 기본 `youtube.mv`에 저장하며 `--audio`를 붙이면 `youtube.audio`에 저장합니다.
 - YouTube에는 별도로 **yt-dlp**가 필요합니다(macOS: `brew install yt-dlp`). 미디어는 다운로드하지 않고 메타데이터와 선택한 자막만 가져옵니다. 기본 후보는 등록 자막이며 `--auto`를 붙이면 자동 생성 자막도 표시합니다. 자동 자막은 노래 가사와 다를 수 있습니다.
 - YouTube 자막은 제공된 행별 타이밍을 사용하며 단어별 타이밍을 임의 생성하지 않습니다. TTML은 단어·루비 타이밍, 번역·발음, 듀엣·배경 보컬을 YAML로 변환합니다. 타이밍은 0.001초 단위로 유지합니다.
-- Spotify는 **해당 서비스에서 비공개 가사를 추출하는 기능이 아닙니다**. 입력한 곡 ID에 연결된 공식 AMLL DB 가사를 검색합니다. DB에 없는 곡은 `--search`, `--file` 또는 직접 다운로드한 TTML을 사용하세요. 로그인 쿠키나 토큰을 요구하지 않습니다.
+- Apple Music·Spotify는 입력한 곡 ID에 연결된 공식 AMLL DB 가사를 검색합니다. DB에 없는 곡은 `--search`, `--file` 또는 직접 다운로드한 TTML을 사용하세요. 로그인 쿠키나 토큰을 요구하지 않습니다.
+- `-a` / `--apple`에는 Apple Music 곡 ID를 입력합니다. `/song/곡ID`의 마지막 숫자 또는 `/album/…/앨범ID?i=곡ID`의 `i` 값을 사용합니다. Apple Music 링크는 YAML 상단 출처 주석에만 기록하며, 재생 제공자로 추가하지 않습니다.
 - AMLL에서 가져온 타이밍과 YouTube 뮤비의 편집 시점은 다를 수 있으므로 `offsets`를 확인하세요. 출처의 언어별 번역은 보존되며, 사이트에서는 기존 규칙대로 한국어만 표시합니다.
 
 관련 명세: [AMLL HTTP API](https://amll.dev/reference/http-api/native), [AMLL DB](https://github.com/amll-dev/amll-ttml-db), [yt-dlp 자막 옵션](https://github.com/yt-dlp/yt-dlp#subtitle-options).
