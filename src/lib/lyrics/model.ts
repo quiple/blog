@@ -67,7 +67,7 @@ export type Source = {key: SourceKey; provider: Provider; label: string; url: st
 export function getSources(input: v.InferInput<typeof mediaSchema>): Source[] {
   const song = v.parse(mediaSchema, input)
   const sources: Source[] = []
-  for (const key of ['spotify', 'youtubeMV', 'youtubeAudio'] as const) {
+  for (const key of ['spotify', 'youtubeAudio', 'youtubeMV'] as const) {
     const provider: Provider = key.startsWith('youtube') ? 'youtube' : (key as Provider)
     const value = key === 'youtubeMV' ? song.youtube?.mv : key === 'youtubeAudio' ? song.youtube?.audio : song[key]
     if (!value) continue
