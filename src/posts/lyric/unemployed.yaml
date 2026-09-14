@@ -116,7 +116,7 @@ lines:
     time: [92.089, 93.668]
   - text: Stop telling me to get a life
     time: [93.668, 94.884]
-  - text: I'd rather live one I enjoy
+  - text: I'd rather live one I enjoyed
     time: [94.885, 96.885]
   - text: My life feels like it's flying by
     time: [163.034, 164.75]
@@ -142,7 +142,7 @@ lines:
     time: [176.324, 177.577]
   - text: But my stream has a record uptime
     time: [177.577, 179.091]
-  - text: (go sub to me with your free Twitch Prime)
+  - text: (Go sub to me with your free Twitch Prime)
     time: [179.092, 180.472]
   - text: Please play me in your ears
     time: [180.472, 181.77]
@@ -172,22 +172,22 @@ lines:
     time: [206.339, 208.175]
   - text: Just my baguette and me
     time: [209.229, 211.752]
-  - text: Motherfucker I'm
-    time: [212.35, 212.871]
-  - text: Unemployed
-    time: [212.871, 213.871]
+  - text: Motherfucker I'm unemployed
+    time: [212.35, 213.871]
   - text: I got no house
     time: [213.871, 214.541]
   - text: I get no pay
     time: [214.541, 215.398]
   - text: Gonna waste my days away
     time: [215.399, 217.267]
-  - text: (ナマケモノ)
-    time: [217.267, 218.468]
+    background:
+      text: (ナマケモノ)
+      time: [217.267, 218.468]
   - text: Just chilling for free
     time: [218.469, 219.871]
-  - text: (しゃっきんづけ)
-    time: [219.872, 221.364]
+    background:
+      text: (しゃっきんづけ)
+      time: [219.872, 221.364]
   - text: Just my debt and me
     time: [221.364, 223.29]
   - text: (テトテトテトテトテト)
