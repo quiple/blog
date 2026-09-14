@@ -214,7 +214,7 @@
         </div>
       {/if}
     {:else}
-      <div class="py-6 leading-relaxed font-normal">
+      <div class="leading-relaxed font-normal">
         {@render textLines(lines)}
       </div>
     {/if}
