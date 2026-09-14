@@ -1,8 +1,22 @@
 import {LyricPlayer} from '@applemusic-like-lyrics/core'
 import type {LocalizedLyricLine} from './model'
 
-function measureGroupTop(this: {top: number}, top: number) {
+type GroupLayout = {top: number; delay: number; isActive: boolean; opacity: number; blur: number}
+
+function measureGroupLayout(
+  this: GroupLayout,
+  top: number,
+  _force: boolean,
+  delay: number,
+  isActive: boolean,
+  opacity: number,
+  blur: number,
+) {
   this.top = top
+  this.delay = delay
+  this.isActive = isActive
+  this.opacity = opacity
+  this.blur = blur
 }
 
 export class AnnotatedLyricPlayer extends LyricPlayer {
@@ -12,6 +26,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   private measuring = false
   private hasStarted = false
   private interludeEnd: number | undefined
+  private interludeLeft = 0
   private interludeTop = 0
   private interludeIndex = -1
   private activeFrom = 0
@@ -28,8 +43,9 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const transform = dots.setTransform.bind(dots)
     const interlude = dots.setInterlude.bind(dots)
     dots.setTransform = (left = 0, top = 0) => {
-      if (this.measuring) return
+      this.interludeLeft = left
       this.interludeTop = top
+      if (this.measuring) return
       transform(left, top)
       // AMLL skips all dot style updates while paused, including positioning.
       if (!this.getIsPlaying()) {
@@ -39,7 +55,6 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
       }
     }
     dots.setInterlude = (value) => {
-      if (this.measuring) return
       if (value && value[1] === this.interludeEnd) return
       this.interludeEnd = value?.[1]
       interlude(value)
@@ -57,9 +72,13 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const interludeEnded = this.interludeEnd !== undefined && Math.round(time) + 20 >= this.interludeEnd
     if (seek) this.interludeEnd = undefined
     super.setCurrentTime(time, seek)
-    // Document-relative rows otherwise accumulate a stagger for every preceding
-    // line. Remove that delay when closing the gap, while keeping the springs.
-    if (!seek && interludeEnded) void this.calcLayout(true)
+    if (!seek && interludeEnded && this.interludeEnd !== undefined) void this.calcLayout()
+  }
+
+  resetPlayback() {
+    if (!this.hasStarted) return
+    this.hasStarted = false
+    void this.calcLayout(true, true)
   }
 
   override update(delta = 0) {
@@ -115,9 +134,10 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
         this.lyricGroupSize.set(group, [group.element.clientWidth, group.element.clientHeight])
       }
     }
-    // Measure the native positions without sending temporary viewport-relative
-    // targets to the springs. Only the corrected pass should animate the groups.
-    // Restore each method to its original receiver without invoking it unbound.
+    // Run AMLL once in its own viewport coordinates. Converting coordinates
+    // before this calculation changes native stagger delays and spring settings.
+    // Record its output, then translate only the positions into document space.
+    this.scrollState.scrollOffset = 0
     const transforms = this.groupTransforms
     transforms.length = 0
     try {
@@ -125,7 +145,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
       for (const group of this.currentLyricGroups) {
         // oxlint-disable-next-line typescript/unbound-method
         transforms.push(group.setTransform)
-        group.setTransform = measureGroupTop
+        group.setTransform = measureGroupLayout
       }
       this.layoutNative(sync, force)
     } finally {
@@ -143,17 +163,16 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const intro = this.layoutState.lastInterludeState && first.startTime > this.timelineState.currentTime + 20
     const introHeight = intro ? this.layoutState.interludeDotsSize[1] + (this.baseFontSize || 24) * 0.8 : 0
     const origin = first.top - introHeight
-    if (Math.abs(origin) > 0.01) {
-      this.scrollState.scrollOffset += origin
-    }
-    this.layoutNative(sync, force)
-    if (force) {
-      // setPosition alone does not clear AMLL's delayed spring targets.
-      for (const group of this.currentLyricGroups) {
+    for (const group of this.currentLyricGroups) {
+      group.setTransform(group.top - origin, force, group.delay, group.isActive, group.opacity, group.blur)
+      if (force) {
+        // AMLL's immediate positioning does not discard older delayed targets.
         group.posY.setTargetPosition(group.top)
-        group.posY.setPosition(group.top)
         group.bgSlideY.setTargetPosition(group.bgSlideY.getCurrentPosition())
       }
+    }
+    if (this.interludeEnd !== undefined) {
+      this.interludeDots.setTransform(this.interludeLeft, this.interludeTop - origin)
     }
     const last = this.currentLyricGroups[this.currentLyricGroups.length - 1]
     const height = `${last.top + (this.lyricGroupSize.get(last)?.[1] ?? 0)}px`

@@ -148,6 +148,7 @@
         }
         const schedule = () => {
           if (disposed) return
+          if (!sample.playing && sample.position === 0) player.resetPlayback()
           if (playbackPlaying !== sample.playing) {
             window.scrollTo({top: window.scrollY, left: window.scrollX, behavior: 'instant'})
             const time = lyricTime()
