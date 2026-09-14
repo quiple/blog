@@ -170,7 +170,7 @@
 
   <section class="min-w-0 pb-16" aria-label="가사">
     {#if canSync || pronunciations.length > 1}
-      <div class="mb-4 flex min-h-9 flex-wrap items-center justify-end gap-3">
+      <div class="mb-3 flex min-h-7 flex-wrap items-center justify-end gap-3">
         {#if pronunciations.length > 1}
           <label class="text-sm text-muted-foreground"
             >발음
@@ -184,8 +184,12 @@
           </label>
         {/if}
         {#if canSync}
-          <Button size="sm" variant="ghost" aria-pressed={fullText} onclick={() => (fullText = !fullText)}
-            >{fullText ? '동기화 보기' : '전체 가사 보기'}</Button
+          <Button
+            size="sm"
+            variant="outline"
+            class="z-100 bg-background! md:fixed md:top-21"
+            aria-pressed={fullText}
+            onclick={() => (fullText = !fullText)}>{fullText ? '동기화 보기' : '전체 가사 보기'}</Button
           >
         {/if}
       </div>
