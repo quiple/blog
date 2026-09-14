@@ -58,6 +58,11 @@
         let scrollHold: {element: HTMLElement; top: number} | undefined
         let followAfter = 0
         let appliedLines: LocalizedLyricLine[] | undefined
+        let spacingDirty = true
+        let spacingLayout = -1
+        let spacingHeight = 0
+        let bottomSpace = 0
+        const followInset = () => Math.max(96, window.innerHeight * 0.18)
         const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)')
         const element = player.getElement()
         element.setAttribute('aria-hidden', 'true')
@@ -95,6 +100,26 @@
           const seek = Math.abs(time - lastTime) > 1000
           if (time !== lastTime) player.setCurrentTime(time, seek)
           player.update(lastFrame ? Math.min(now - lastFrame, 50) : 0)
+          if (spacingDirty || spacingLayout !== player.layoutVersion || spacingHeight !== window.innerHeight) {
+            spacingDirty = false
+            spacingLayout = player.layoutVersion
+            spacingHeight = window.innerHeight
+            const lastTarget = player.lastScrollTarget()
+            if (lastTarget !== undefined) {
+              // Include the footer and surrounding page spacing in the scroll
+              // range, so the final row's follow position is the page bottom.
+              const space = Math.max(
+                0,
+                Math.round(
+                  bottomSpace + lastTarget - followInset() + window.innerHeight - document.documentElement.scrollHeight,
+                ),
+              )
+              if (space !== bottomSpace) {
+                bottomSpace = space
+                container.style.paddingBottom = `${space}px`
+              }
+            }
+          }
           const active = player.activeElement(time)
           if (preserveFollow) {
             lastFollowed = active
@@ -135,7 +160,7 @@
               lastFollowed = active
               lastFollowedTop = target
               pendingFollow = undefined
-              const top = target - Math.max(96, window.innerHeight * 0.18)
+              const top = target - followInset()
               window.scrollTo({top: Math.max(0, top), behavior: reducedMotion.matches ? 'instant' : 'smooth'})
             } else if (active !== lastFollowed) {
               if (pendingFollow?.element === active) pendingFollow.top = target
@@ -197,8 +222,12 @@
           schedule()
         })
         observer.observe(container)
-        const resize = new ResizeObserver(schedule)
+        const resize = new ResizeObserver(() => {
+          spacingDirty = true
+          schedule()
+        })
         resize.observe(container)
+        resize.observe(document.body)
         const manualScroll = () => {
           releaseScroll()
           followAfter = performance.now() + 5000
@@ -211,10 +240,15 @@
         const scrollbarPointer = (event: PointerEvent) => {
           if (event.target === document.documentElement) manualScroll()
         }
+        const viewportResize = () => {
+          releaseScroll()
+          spacingDirty = true
+          schedule()
+        }
         window.addEventListener('wheel', manualScroll, {passive: true})
         window.addEventListener('touchmove', manualScroll, {passive: true})
         window.addEventListener('pointerdown', scrollbarPointer, {passive: true})
-        window.addEventListener('resize', releaseScroll)
+        window.addEventListener('resize', viewportResize)
         window.addEventListener('keydown', scrollKey)
         document.addEventListener('visibilitychange', schedule)
         reducedMotion.addEventListener('change', motion)
@@ -226,7 +260,7 @@
           window.removeEventListener('wheel', manualScroll)
           window.removeEventListener('touchmove', manualScroll)
           window.removeEventListener('pointerdown', scrollbarPointer)
-          window.removeEventListener('resize', releaseScroll)
+          window.removeEventListener('resize', viewportResize)
           window.removeEventListener('keydown', scrollKey)
           document.removeEventListener('visibilitychange', schedule)
           reducedMotion.removeEventListener('change', motion)
@@ -255,7 +289,6 @@
   .lyric-player {
     font-weight: 600;
     min-height: 1px;
-    padding-bottom: 70svh;
     --amll-lp-color: var(--foreground);
     --amll-lp-font-size: clamp(1.5rem, 3vw, 2.5rem);
     --amll-lp-hover-bg-color: var(--muted);
