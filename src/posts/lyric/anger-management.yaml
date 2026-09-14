@@ -15,6 +15,9 @@ spotify: 5ZdSDJ6pkMfaaG3TJ1WtaS
 youtube:
   audio: maBLb6BgLJM
   mv: L9Yob_ylEAQ
+offsets:
+  youtubeAudio: -3.558
+  spotify: -3.558
 lines:
   - text: 労働ライフ
     time: [12.17, 13.575]
