@@ -4,6 +4,7 @@ import type {LocalizedLyricLine} from './model'
 export class AnnotatedLyricPlayer extends LyricPlayer {
   private hasWordAnnotations = false
   private settingLines = false
+  private layoutWidth = -1
 
   constructor() {
     super()
@@ -13,8 +14,11 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   // Keep AMLL's absolute layout, including its interlude spacing and springs.
   // Only cancel the internal viewport offset so the document scrolls instead.
   override async calcLayout(sync = false, force = false) {
-    // Initial data and size measurements are layout corrections, not lyric transitions.
-    force ||= sync || this.settingLines
+    // sync removes the stagger between rows; it must not disable their springs.
+    // Background rows resize when playback changes, including during animation.
+    const width = this.getElement().clientWidth
+    force ||= this.settingLines || width !== this.layoutWidth
+    this.layoutWidth = width
     if (force) sync = true
     for (const group of this.currentLyricGroups) {
       group.show()
@@ -56,6 +60,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
       for (const group of this.currentLyricGroups) {
         group.posY.setTargetPosition(group.top)
         group.posY.setPosition(group.top)
+        group.bgSlideY.setTargetPosition(group.bgSlideY.getCurrentPosition())
       }
     }
     const last = this.currentLyricGroups[this.currentLyricGroups.length - 1]

@@ -67,6 +67,7 @@
           tryAdvanceStartTime: false,
         })
         player.pause()
+        let playerPlaying = false
         const motion = () => {
           player.setEnableSpring(!reducedMotion.matches)
           player.setEnableScale(!reducedMotion.matches)
@@ -94,8 +95,12 @@
         }
         const schedule = () => {
           if (disposed) return
-          if (sample.playing && !document.hidden && visible) player.resume()
-          else player.pause()
+          const playing = sample.playing && !document.hidden && visible
+          if (playing !== playerPlaying) {
+            playerPlaying = playing
+            if (playing) player.resume()
+            else player.pause()
+          }
           settleUntil = performance.now() + 1200
           if (!frame && !document.hidden && visible) frame = requestAnimationFrame(draw)
         }
