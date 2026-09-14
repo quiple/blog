@@ -211,10 +211,11 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
         if (!view) continue
         const line = view.getLine() as LocalizedLyricLine
         const [main, translation, pronunciation] = view.getElement().children
-        main.setAttribute('lang', line.lang ?? '')
-        translation.setAttribute('lang', line.translationLang ?? '')
+        if (line.lang === 'ko') main.removeAttribute('lang')
+        else main.setAttribute('lang', line.lang ?? '')
         translation.classList.add('text-muted-foreground')
-        pronunciation.setAttribute('lang', line.pronunciationLang ?? '')
+        if (line.pronunciationLang === 'ko') pronunciation.removeAttribute('lang')
+        else pronunciation.setAttribute('lang', line.pronunciationLang ?? '')
       }
     }
   }

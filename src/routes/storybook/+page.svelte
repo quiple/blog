@@ -120,7 +120,7 @@
                 >
                   <span lang="en">Hamburgefontsiv 0123456789</span>
                   <span aria-hidden="true"> · </span>
-                  <span lang="ko">다람쥐 헌 쳇바퀴에 타고파</span>
+                  <span>다람쥐 헌 쳇바퀴에 타고파</span>
                   <span aria-hidden="true"> · </span>
                   <span lang="ja">素早い狐は怠けた犬を飛び越える。</span>
                 </p>

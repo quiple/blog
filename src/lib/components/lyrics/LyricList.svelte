@@ -10,16 +10,20 @@
     <li>
       <a href={`/lyric/${song.slug}`} class="list-item">
         <div class="flex items-center gap-1">
-          <strong lang={song.lang ?? ''} class="line-clamp-1 grow font-medium break-all">{song.title}</strong>
+          <strong
+            lang={song.lang === 'ko' ? undefined : (song.lang ?? '')}
+            class="line-clamp-1 grow font-medium break-all">{song.title}</strong
+          >
         </div>
         {#if song.translation}
-          <p lang="ko" class="mb-1 line-clamp-3 text-sm text-chart-4 dark:text-chart-1">{song.translation}</p>
+          <p class="mb-1 line-clamp-3 text-sm text-chart-4 dark:text-chart-1">{song.translation}</p>
         {/if}
         {#if song.artists?.length}
           <div class="mt-px flex items-start justify-between gap-2">
             <small class="text-muted-foreground">
               {#each song.artists as artist, index (artist.slug)}
-                {#if index > 0}{', '}{/if}<span lang={artist.translation ? 'ko' : (artist.lang ?? '')}
+                {#if index > 0}{', '}{/if}<span
+                  lang={artist.translation || artist.lang === 'ko' ? undefined : (artist.lang ?? '')}
                   >{artist.translation || artist.name}</span
                 >
               {/each}

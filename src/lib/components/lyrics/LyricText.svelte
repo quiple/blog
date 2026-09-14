@@ -8,7 +8,7 @@
   class={semibold ? 'font-semibold' : 'font-normal'}
   class:opacity-70={line.isBG}
 >
-  <span lang={line.lang ?? ''} class="whitespace-pre-wrap">
+  <span lang={line.lang === 'ko' ? undefined : (line.lang ?? '')} class="whitespace-pre-wrap">
     {#each line.words as word}<span class="inline-flex flex-col align-top">
         <span
           >{#if word.ruby?.length}<ruby
@@ -21,12 +21,10 @@
           >{/if}
       </span>{/each}
   </span>
-  {#if line.translatedLyric}<br /><span
-      lang={line.translationLang ?? ''}
-      class="whitespace-pre-line text-muted-foreground">{line.translatedLyric}</span
+  {#if line.translatedLyric}<br /><span class="whitespace-pre-line text-muted-foreground">{line.translatedLyric}</span
     >{/if}
   {#if line.romanLyric}<br /><span
-      lang={line.pronunciationLang ?? ''}
+      lang={line.pronunciationLang === 'ko' ? undefined : (line.pronunciationLang ?? '')}
       class="text-sm whitespace-pre-line text-muted-foreground">{line.romanLyric}</span
     >{/if}
 </svelte:element>

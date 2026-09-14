@@ -46,7 +46,6 @@ const songSchema = v.strictObject({
   titleTranslation: v.optional(v.string()),
   artist: v.optional(v.union([v.string(), v.array(v.string())])),
   lang: v.optional(v.string()),
-  translationLang: v.optional(v.string()),
   pronunciationLang: v.optional(v.string()),
   example: v.optional(v.boolean(), false),
   ...mediaEntries,
@@ -56,7 +55,7 @@ const songSchema = v.strictObject({
 type SongInput = v.InferOutput<typeof songSchema>
 type BaseLine = Exclude<v.InferOutput<typeof backgroundSchema>, string>
 type Time = v.InferOutput<typeof timeSchema>
-export type LyricLanguages = {lang?: string; translationLang?: string; pronunciationLang?: string}
+export type LyricLanguages = {lang?: string; pronunciationLang?: string}
 export type LocalizedLyricLine = LyricLine & LyricLanguages
 export type Annotation = v.InferOutput<typeof annotationSchema>
 export type SongLine = BaseLine & {text: string; duet?: boolean; background?: SongLine}
@@ -170,7 +169,6 @@ export function isTimed(line: LyricLine) {
 
 export function toLyricLines(
   lines: SongLine[],
-  translationLanguage?: string,
   pronunciationLanguage?: string,
   languages: LyricLanguages = {},
 ): LocalizedLyricLine[] {
@@ -200,19 +198,8 @@ export function toLyricLines(
       isBG,
       isDuet,
       lang: languages.lang,
-      translationLang: annotationLanguage(
-        line.translation,
-        translationLanguage,
-        languages.translationLang ?? translationLanguage,
-      ),
       pronunciationLang: annotationLanguage(line.pronunciation, pronunciationLanguage, languages.pronunciationLang),
-      translatedLyric:
-        typeof line.translation === 'string' &&
-        translationLanguage &&
-        languages.translationLang &&
-        languages.translationLang !== translationLanguage
-          ? ''
-          : annotationText(line.translation, translationLanguage),
+      translatedLyric: annotationText(line.translation, 'ko'),
       romanLyric: annotationText(line.pronunciation, pronunciationLanguage),
     }
   }

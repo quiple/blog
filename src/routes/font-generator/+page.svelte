@@ -497,7 +497,7 @@
                 <Textarea
                   id="charset-preview"
                   value={charsetPreview}
-                  lang={charsetLang}
+                  lang={charsetLang === 'ko' ? undefined : charsetLang}
                   readonly
                   class="h-20 min-h-20 text-xs! break-all"
                   spellcheck="false"
