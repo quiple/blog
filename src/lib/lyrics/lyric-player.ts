@@ -203,6 +203,11 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     return this.getElement().getBoundingClientRect().top + window.scrollY + top
   }
 
+  lastScrollTarget() {
+    const last = this.currentLyricGroups.at(-1)
+    return last ? this.scrollTarget(last.mainLine.getElement()) : undefined
+  }
+
   override setLyricLines(lines: LocalizedLyricLine[], initialTime = 0) {
     this.interludeEnd = undefined
     this.interludeIndex = -1
