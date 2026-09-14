@@ -222,7 +222,8 @@ lines:
     background:
       text: (きんけつ)
       time: [240.106, 241.419]
-  - text: We'll be chilling for free (ずっといっしょに)
+  - text: We'll be chilling for free
     time: [241.419, 244.196]
+    background: (ずっといっしょに)
   - text: Forever chilling for free
     time: [244.197, 246.197]
