@@ -62,7 +62,7 @@
         player.setOptimizeOptions({
           resetLineTimestamps: false,
           normalizeSpaces: false,
-          syncMainAndBackgroundLines: false,
+          syncMainAndBackgroundLines: true,
           cleanUnintentionalOverlaps: false,
           tryAdvanceStartTime: false,
         })
