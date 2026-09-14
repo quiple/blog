@@ -22,7 +22,23 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
         this.lyricGroupSize.set(group, [group.element.clientWidth, group.element.clientHeight])
       }
     }
-    void super.calcLayout(sync, force)
+    // Measure the native positions without sending temporary viewport-relative
+    // targets to the springs. Only the corrected pass should animate the groups.
+    // Restore each method to its original receiver without invoking it unbound.
+    // oxlint-disable-next-line typescript/unbound-method
+    const transforms = this.currentLyricGroups.map((group) => group.setTransform)
+    try {
+      for (const group of this.currentLyricGroups) {
+        group.setTransform = (top) => {
+          group.top = top
+        }
+      }
+      void super.calcLayout(sync, force)
+    } finally {
+      this.currentLyricGroups.forEach((group, index) => {
+        group.setTransform = transforms[index]
+      })
+    }
     const first = this.currentLyricGroups[0]
     if (!first) {
       this.getElement().style.height = '0px'
@@ -33,8 +49,8 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const origin = first.top - introHeight
     if (Math.abs(origin) > 0.01) {
       this.scrollState.scrollOffset += origin
-      void super.calcLayout(sync, force)
     }
+    void super.calcLayout(sync, force)
     if (force) {
       // setPosition alone does not clear AMLL's delayed spring targets.
       for (const group of this.currentLyricGroups) {
