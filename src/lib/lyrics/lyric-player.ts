@@ -9,11 +9,54 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   private hasWordAnnotations = false
   private settingLines = false
   private layoutWidth = -1
+  private measuring = false
+  private hasStarted = false
+  private interludeEnd: number | undefined
   private readonly groupTransforms: (typeof this.currentLyricGroups)[number]['setTransform'][] = []
 
   constructor() {
     super()
     this.scrollState.allowScroll = false
+    const dots = this.interludeDots
+    const transform = dots.setTransform.bind(dots)
+    const interlude = dots.setInterlude.bind(dots)
+    dots.setTransform = (left = 0, top = 0) => {
+      if (this.measuring) return
+      transform(left, top)
+      // AMLL skips all dot style updates while paused, including positioning.
+      if (!this.getIsPlaying()) {
+        const style = dots.getElement().style
+        const scale = style.transform.match(/scale\([^)]*\)/)?.[0] ?? ''
+        style.transform = `translate(${left.toFixed(2)}px, ${top.toFixed(2)}px) ${scale}`
+      }
+    }
+    dots.setInterlude = (value) => {
+      if (this.measuring) return
+      if (value && value[1] === this.interludeEnd) return
+      this.interludeEnd = value?.[1]
+      interlude(value)
+    }
+  }
+
+  override resume() {
+    this.hasStarted = true
+    super.resume()
+  }
+
+  override setCurrentTime(time: number, seek = false) {
+    if (seek) this.interludeEnd = undefined
+    super.setCurrentTime(time, seek)
+  }
+
+  private layoutNative(sync: boolean, force: boolean) {
+    const time = this.timelineState.currentTime
+    // Native gap detection adds 20ms; zero prevents an intro before first play.
+    if (!this.hasStarted) this.timelineState.currentTime = -20
+    try {
+      void super.calcLayout(sync, force)
+    } finally {
+      this.timelineState.currentTime = time
+    }
   }
 
   // Keep AMLL's absolute layout, including its interlude spacing and springs.
@@ -37,13 +80,15 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const transforms = this.groupTransforms
     transforms.length = 0
     try {
+      this.measuring = true
       for (const group of this.currentLyricGroups) {
         // oxlint-disable-next-line typescript/unbound-method
         transforms.push(group.setTransform)
         group.setTransform = measureGroupTop
       }
-      void super.calcLayout(sync, force)
+      this.layoutNative(sync, force)
     } finally {
+      this.measuring = false
       for (let index = 0; index < transforms.length; index++) {
         this.currentLyricGroups[index].setTransform = transforms[index]
       }
@@ -60,7 +105,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     if (Math.abs(origin) > 0.01) {
       this.scrollState.scrollOffset += origin
     }
-    void super.calcLayout(sync, force)
+    this.layoutNative(sync, force)
     if (force) {
       // setPosition alone does not clear AMLL's delayed spring targets.
       for (const group of this.currentLyricGroups) {
@@ -84,6 +129,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   }
 
   override setLyricLines(lines: LocalizedLyricLine[], initialTime = 0) {
+    this.interludeEnd = undefined
     this.hasWordAnnotations = lines.some((line) =>
       line.words.some((word) => word.ruby?.length || word.romanWord?.trim()),
     )

@@ -68,6 +68,7 @@
         })
         player.pause()
         let playerPlaying = false
+        let playbackPlaying = false
         const motion = () => {
           player.setEnableSpring(!reducedMotion.matches)
           player.setEnableScale(!reducedMotion.matches)
@@ -95,6 +96,10 @@
         }
         const schedule = () => {
           if (disposed) return
+          if (playbackPlaying && !sample.playing) {
+            window.scrollTo({top: window.scrollY, left: window.scrollX, behavior: 'instant'})
+          }
+          playbackPlaying = sample.playing
           const playing = sample.playing && !document.hidden && visible
           if (playing !== playerPlaying) {
             playerPlaying = playing
@@ -177,6 +182,7 @@
 
 <style>
   .lyric-player {
+    overflow-anchor: none;
     font-weight: 600;
     min-height: 1px;
     padding-bottom: 70svh;
