@@ -68,12 +68,14 @@ lines:
     time: [58.113, 58.91]
   - text: Gonna waste my days away
     time: [58.911, 60.835]
-  - text: (ナマケモノ)
-    time: [60.835, 61.804]
+    background:
+      text: (ナマケモノ)
+      time: [60.835, 61.804]
   - text: Yeah I'm chilling for free
     time: [61.804, 63.401]
-  - text: (しゃっきんづけ)
-    time: [63.401, 64.833]
+    background:
+      text: (しゃっきんづけ)
+      time: [63.401, 64.833]
   - text: Just my debt and me
     time: [64.833, 66.504]
   - text: Can't unwind
@@ -82,12 +84,14 @@ lines:
     time: [69.067, 70.447]
   - text: Viral star but I'm still unsigned
     time: [70.447, 72.4]
-  - text: (仕方がない)
-    time: [72.401, 73.277]
+    background:
+      text: (仕方がない)
+      time: [72.401, 73.277]
   - text: I guess I'm chilling for free
     time: [73.277, 74.933]
-  - text: (むだなじんせい)
-    time: [74.933, 76.261]
+    background:
+      text: (むだなじんせい)
+      time: [74.933, 76.261]
   - text: Just my baguette and me
     time: [76.261, 78]
   - text: I'm poor as hell
