@@ -1,8 +1,7 @@
 import {error} from '@sveltejs/kit'
 import {dev} from '$app/environment'
+import {env} from '$env/dynamic/private'
 import type {RequestHandler} from './$types'
-
-const SECRET_HEADER = 'fb5328098e2fab0277635ff61df13870'
 
 const MIME_TYPES: Record<string, string> = {
   '.avif': 'image/avif',
@@ -23,12 +22,14 @@ export const GET: RequestHandler = async ({params, platform}) => {
   const path = `img/${params.path}`
 
   if (dev) {
+    const secret = env.INTERNAL_IMAGE_SECRET
+    if (!secret) error(503, 'Image access is not configured')
     // 개발 환경: 로컬 static 파일을 직접 반환
     // Vite가 static 디렉토리를 자동으로 서빙하므로 여기에 도달하면 static에 없는 경우
     // 프로덕션 사이트에서 fallback
     try {
       const res = await fetch(`https://quiple.dev/${path}`, {
-        headers: {'x-internal-secret': SECRET_HEADER},
+        headers: {'x-internal-secret': secret},
       })
       if (!res.ok) error(404, 'Not found')
       return new Response(res.body, {

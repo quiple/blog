@@ -3,7 +3,6 @@ import {dev} from '$app/environment'
 import {getAllBlogContentMetadata} from '$lib/content'
 import type {RequestHandler} from './$types'
 
-const SECRET_HEADER = 'fb5328098e2fab0277635ff61df13870'
 const originalImagePaths = new Set(
   getAllBlogContentMetadata()
     .filter(({image, imageType}) => image && imageType === 'pixel')
@@ -54,9 +53,6 @@ export const GET: RequestHandler = async ({params, url, platform}) => {
   const decodedPath = decodeImagePath(path)
   const imageUrl = assertSafeImagePath(decodedPath, url.origin)
   const isOriginal = url.searchParams.get('original') === 'true'
-  const headers = {
-    'x-internal-secret': SECRET_HEADER,
-  }
 
   if (isOriginal) {
     if (!originalImagePaths.has(decodedPath)) throw error(403, 'Original image access denied')
@@ -75,6 +71,9 @@ export const GET: RequestHandler = async ({params, url, platform}) => {
     return new Response(object.body as ReadableStream, {headers: responseHeaders})
   }
 
+  const secret = platform?.env.INTERNAL_IMAGE_SECRET
+  if (!secret) error(503, 'Image access is not configured')
+
   const width = url.searchParams.get('w') || '1280'
   const height = url.searchParams.get('h')
   const quality = url.searchParams.get('q')
@@ -88,7 +87,7 @@ export const GET: RequestHandler = async ({params, url, platform}) => {
   if (height) options.height = +height
 
   return globalThis.fetch(imageUrl, {
-    headers,
+    headers: {'x-internal-secret': secret},
     cf: {
       image: options,
     },

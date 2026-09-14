@@ -29,7 +29,7 @@ async function getMarkdownFiles(dir: string): Promise<string[]> {
 async function probeImageSize(url: string): Promise<{width: number; height: number} | null> {
   const res = await fetch(url, {
     headers: {
-      'x-internal-secret': 'fb5328098e2fab0277635ff61df13870',
+      'x-internal-secret': process.env.INTERNAL_IMAGE_SECRET!,
     },
   })
   if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`)
@@ -69,6 +69,9 @@ async function probeImageSize(url: string): Promise<{width: number; height: numb
 }
 
 async function run() {
+  if (!process.env.INTERNAL_IMAGE_SECRET) {
+    throw new Error('INTERNAL_IMAGE_SECRET을 .env.local 또는 실행 환경에 설정하세요.')
+  }
   let sizes: Record<string, {width: number; height: number}> = {}
 
   try {
@@ -137,4 +140,7 @@ async function run() {
   }
 }
 
-run().catch(console.error)
+run().catch((error: unknown) => {
+  console.error(error instanceof Error ? error.message : 'Image size sync failed')
+  process.exitCode = 1
+})

@@ -20,7 +20,7 @@
     "lint:fix": "oxlint --type-aware --fix",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
-    "sync-images": "node scripts/sync-image-sizes.ts",
+    "sync-images": "node --env-file-if-exists=.env.local scripts/sync-image-sizes.ts",
     "obfuscate-fonts": "node scripts/obfuscate-fonts.ts"
   },
   "devDependencies": {

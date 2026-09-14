@@ -9,6 +9,7 @@ declare global {
     interface Platform {
       env: {
         R2: R2Bucket
+        INTERNAL_IMAGE_SECRET?: string
       }
       context: {
         waitUntil(promise: Promise<unknown>): void
