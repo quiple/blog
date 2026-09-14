@@ -190,8 +190,9 @@ lines:
       time: [219.872, 221.364]
   - text: Just my debt and me
     time: [221.364, 223.29]
-  - text: (テトテトテトテトテト)
-    time: [223.291, 224.103]
+    background:
+      text: (テトテトテトテトテト)
+      time: [223.291, 224.103]
   - text: Yeah I can't unwind
     time: [224.103, 225.453]
   - text: I've almost lost my god damn mind
