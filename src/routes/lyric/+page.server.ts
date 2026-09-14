@@ -5,6 +5,7 @@ export const load = () => ({
   songs: Object.entries(songs).map(([slug, song]) => ({
     slug,
     title: song.title,
+    translation: song.titleTranslation,
     artists: songArtists(song.artist),
     lang: song.titleLang ?? song.lang,
     example: song.example,
