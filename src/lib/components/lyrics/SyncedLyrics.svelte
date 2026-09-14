@@ -51,6 +51,10 @@
         let settleUntil = 0
         let visible = true
         let lastFollowed: HTMLElement | undefined
+        let lastFollowedTop: number | undefined
+        let pendingFollow: {element: HTMLElement; top: number} | undefined
+        let preserveFollow = false
+        let scrollHold: {element: HTMLElement; top: number} | undefined
         let followAfter = 0
         let appliedLines: LocalizedLyricLine[] | undefined
         const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)')
@@ -74,6 +78,10 @@
           player.setEnableScale(!reducedMotion.matches)
         }
         motion()
+        const releaseScroll = () => {
+          scrollHold = undefined
+          container.style.minHeight = ''
+        }
         const draw = (now: number) => {
           frame = 0
           if (disposed || document.hidden || !visible) {
@@ -85,19 +93,55 @@
           if (time !== lastTime) player.setCurrentTime(time, seek)
           player.update(lastFrame ? Math.min(now - lastFrame, 50) : 0)
           const active = player.activeElement(time)
-          if (sample.playing && active && active !== lastFollowed && now >= followAfter) {
+          if (preserveFollow) {
             lastFollowed = active
-            const top = active.getBoundingClientRect().top + window.scrollY - Math.max(96, window.innerHeight * 0.18)
-            window.scrollTo({top: Math.max(0, top), behavior: reducedMotion.matches ? 'instant' : 'smooth'})
+            lastFollowedTop = undefined
+            preserveFollow = false
           }
+          // Preserve the active row's viewport position, not the document's
+          // scroll offset, while background rows change the layout above it.
+          if (scrollHold && active !== scrollHold.element) releaseScroll()
+          if (scrollHold) {
+            const delta = scrollHold.element.getBoundingClientRect().top - scrollHold.top
+            if (Math.abs(delta) >= 0.5) {
+              const top = Math.max(0, window.scrollY + delta)
+              const missingHeight = top + window.innerHeight - document.documentElement.scrollHeight
+              if (missingHeight > 0) container.style.minHeight = `${container.offsetHeight + missingHeight}px`
+              window.scrollTo({top, left: window.scrollX, behavior: 'instant'})
+            }
+          }
+          if (!scrollHold && sample.playing && active && active.style.visibility !== 'hidden' && now >= followAfter) {
+            const target = player.scrollTarget(active)
+            const moved =
+              active === lastFollowed && lastFollowedTop !== undefined && Math.abs(target - lastFollowedTop) >= 0.5
+            // Let ResizeObserver commit row-height changes before following.
+            if (
+              moved ||
+              (active !== lastFollowed &&
+                pendingFollow?.element === active &&
+                Math.abs(pendingFollow.top - target) < 0.5)
+            ) {
+              lastFollowed = active
+              lastFollowedTop = target
+              pendingFollow = undefined
+              const top = target - Math.max(96, window.innerHeight * 0.18)
+              window.scrollTo({top: Math.max(0, top), behavior: reducedMotion.matches ? 'instant' : 'smooth'})
+            } else if (active !== lastFollowed) pendingFollow = {element: active, top: target}
+          } else pendingFollow = undefined
           lastFrame = now
           lastTime = time
           if (sample.playing || now < settleUntil) frame = requestAnimationFrame(draw)
         }
         const schedule = () => {
           if (disposed) return
-          if (playbackPlaying && !sample.playing) {
+          if (playbackPlaying !== sample.playing) {
             window.scrollTo({top: window.scrollY, left: window.scrollX, behavior: 'instant'})
+            const time = Math.max(0, playbackTime(sample, performance.now()) - offset + colorTransitionLead)
+            const active = player.activeElement(time)
+            const top = active?.getBoundingClientRect().top
+            releaseScroll()
+            scrollHold = active && top !== undefined ? {element: active, top} : undefined
+            preserveFollow = true
           }
           playbackPlaying = sample.playing
           const playing = sample.playing && !document.hidden && visible
@@ -122,6 +166,7 @@
             appliedLines = value
             lastTime = Number.NaN
             lastFollowed = undefined
+            lastFollowedTop = undefined
             schedule()
           } catch {
             onfailure()
@@ -129,6 +174,7 @@
         }
         wake = schedule
         const click = (event: Event) => {
+          releaseScroll()
           const index = (event as Event & {lineIndex: number}).lineIndex
           const line = lines[index]
           if (line) onseek(Math.max(0, line.startTime + offset))
@@ -142,14 +188,21 @@
         const resize = new ResizeObserver(schedule)
         resize.observe(container)
         const manualScroll = () => {
+          releaseScroll()
           followAfter = performance.now() + 5000
           lastFollowed = undefined
+          lastFollowedTop = undefined
         }
         const scrollKey = (event: KeyboardEvent) => {
           if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) manualScroll()
         }
+        const scrollbarPointer = (event: PointerEvent) => {
+          if (event.target === document.documentElement) manualScroll()
+        }
         window.addEventListener('wheel', manualScroll, {passive: true})
         window.addEventListener('touchmove', manualScroll, {passive: true})
+        window.addEventListener('pointerdown', scrollbarPointer, {passive: true})
+        window.addEventListener('resize', releaseScroll)
         window.addEventListener('keydown', scrollKey)
         document.addEventListener('visibilitychange', schedule)
         reducedMotion.addEventListener('change', motion)
@@ -160,6 +213,8 @@
           resize.disconnect()
           window.removeEventListener('wheel', manualScroll)
           window.removeEventListener('touchmove', manualScroll)
+          window.removeEventListener('pointerdown', scrollbarPointer)
+          window.removeEventListener('resize', releaseScroll)
           window.removeEventListener('keydown', scrollKey)
           document.removeEventListener('visibilitychange', schedule)
           reducedMotion.removeEventListener('change', motion)
@@ -181,8 +236,12 @@
 <div bind:this={host} class="lyric-player"></div>
 
 <style>
-  .lyric-player {
+  /* The document scrolls, so anchors outside the player (e.g. the footer)
+     must not compensate for the opening and closing interlude gap either. */
+  :global(html:has(.lyric-player)) {
     overflow-anchor: none;
+  }
+  .lyric-player {
     font-weight: 600;
     min-height: 1px;
     padding-bottom: 70svh;

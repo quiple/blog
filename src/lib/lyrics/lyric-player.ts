@@ -12,6 +12,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   private measuring = false
   private hasStarted = false
   private interludeEnd: number | undefined
+  private interludeTop = 0
   private readonly groupTransforms: (typeof this.currentLyricGroups)[number]['setTransform'][] = []
 
   constructor() {
@@ -22,6 +23,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const interlude = dots.setInterlude.bind(dots)
     dots.setTransform = (left = 0, top = 0) => {
       if (this.measuring) return
+      this.interludeTop = top
       transform(left, top)
       // AMLL skips all dot style updates while paused, including positioning.
       if (!this.getIsPlaying()) {
@@ -46,6 +48,31 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   override setCurrentTime(time: number, seek = false) {
     if (seek) this.interludeEnd = undefined
     super.setCurrentTime(time, seek)
+  }
+
+  override update(delta = 0) {
+    super.update(delta)
+    this.positionInterlude()
+  }
+
+  private positionInterlude() {
+    const style = this.interludeDots.getElement().style
+    if (this.interludeEnd === undefined) {
+      style.visibility = ''
+      style.translate = ''
+      return
+    }
+    const index = this.currentLyricGroups.findIndex((group) => group.top > this.interludeTop)
+    const next = this.currentLyricGroups[index]
+    if (!next) return
+    const previous = this.currentLyricGroups[index - 1]
+    const bottom = previous ? previous.posY.getCurrentPosition() + (this.lyricGroupSize.get(previous)?.[1] ?? 0) : 0
+    const nextTop = next.posY.getCurrentPosition()
+    const required = this.layoutState.interludeDotsSize[1] + (this.baseFontSize || 24) * 0.8
+    // Rows have delayed springs; dots must follow their rendered position and
+    // wait for the gap to open rather than appearing over the following row.
+    style.visibility = nextTop - bottom >= required - 1 ? '' : 'hidden'
+    style.translate = `0 ${(nextTop - next.top).toFixed(2)}px`
   }
 
   private layoutNative(sync: boolean, force: boolean) {
@@ -117,6 +144,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const last = this.currentLyricGroups[this.currentLyricGroups.length - 1]
     const height = `${last.top + (this.lyricGroupSize.get(last)?.[1] ?? 0)}px`
     if (this.getElement().style.height !== height) this.getElement().style.height = height
+    this.positionInterlude()
   }
 
   activeElement(time: number) {
@@ -126,6 +154,17 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const dots = this.interludeDots.getElement()
     for (const name of dots.classList) if (name.endsWith('_enabled')) return dots
     return undefined
+  }
+
+  scrollTarget(element: HTMLElement) {
+    for (const group of this.currentLyricGroups) {
+      if (group.mainLine.getElement() === element) {
+        // The screen rect includes the current spring position and scale.
+        // Scroll to the final layout, after preceding background rows collapse.
+        return this.getElement().getBoundingClientRect().top + window.scrollY + group.top + element.offsetTop
+      }
+    }
+    return this.getElement().getBoundingClientRect().top + window.scrollY + this.interludeTop
   }
 
   override setLyricLines(lines: LocalizedLyricLine[], initialTime = 0) {
