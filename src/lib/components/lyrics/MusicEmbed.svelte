@@ -146,30 +146,34 @@
       } else {
         const api = await loadSpotify()
         if (disposed) return
-        api.createController(mountPoint, {uri: current.id, width: '100%', height: 352}, (controller) => {
-          if (disposed) {
-            controller.destroy()
-            return
-          }
-          spotify = controller
-          clearTimeout(readyTimeout)
-          loading = false
-          message = ''
-          onseekready((time) => {
-            // Spotify only seeks to whole seconds; retain the start of the selected line.
-            const seconds = Math.max(0, Math.floor(time / 1000))
-            if (seconds === 0) controller.restart()
-            else controller.seek(seconds)
-          })
-          controller.addListener('playback_update', ({data}) => {
-            if (disposed) return
-            if (data.playingURI && data.playingURI !== current.id) {
-              onplayback(stopped)
+        api.createController(
+          mountPoint,
+          {url: `${current.url}?locale=ko`, width: '100%', height: 352},
+          (controller) => {
+            if (disposed) {
+              controller.destroy()
               return
             }
-            publish(data.position, data.duration, !data.isPaused && !data.isBuffering)
-          })
-        })
+            spotify = controller
+            clearTimeout(readyTimeout)
+            loading = false
+            message = ''
+            onseekready((time) => {
+              // Spotify only seeks to whole seconds; retain the start of the selected line.
+              const seconds = Math.max(0, Math.floor(time / 1000))
+              if (seconds === 0) controller.restart()
+              else controller.seek(seconds)
+            })
+            controller.addListener('playback_update', ({data}) => {
+              if (disposed) return
+              if (data.playingURI && data.playingURI !== current.id) {
+                onplayback(stopped)
+                return
+              }
+              publish(data.position, data.duration, !data.isPaused && !data.isBuffering)
+            })
+          },
+        )
       }
     }
     void connect().catch((error) => {

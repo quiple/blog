@@ -58,7 +58,7 @@ export interface SpotifyController {
 interface SpotifyAPI {
   createController(
     element: HTMLElement,
-    options: {uri: string; width: string; height: number},
+    options: {url: string; width: string; height: number},
     callback: (controller: SpotifyController) => void,
   ): void
 }

@@ -87,7 +87,7 @@ export function getSources(input: v.InferInput<typeof mediaSchema>): Source[] {
         label: 'Spotify',
         url: `https://open.spotify.com/track/${value}`,
         id: `spotify:track:${value}`,
-        embedUrl: `https://open.spotify.com/embed/track/${value}`,
+        embedUrl: `https://open.spotify.com/embed/track/${value}?locale=ko`,
       })
     }
   }
