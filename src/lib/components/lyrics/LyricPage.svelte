@@ -2,7 +2,15 @@
   import type {Artist} from '$lib/lyrics/artists.server'
   import {onMount} from 'svelte'
   import {Button} from '$lib/components/ui/button'
-  import {isTimed, lyricLanguages, toLyricLines, type Song, type Source, type SourceKey} from '$lib/lyrics/model'
+  import {
+    isTimed,
+    lyricLanguages,
+    toLyricLines,
+    type LocalizedLyricLine,
+    type Song,
+    type Source,
+    type SourceKey,
+  } from '$lib/lyrics/model'
   import {playbackTime, stopped, type Playback, type PlaybackRequest} from '$lib/lyrics/players'
   import {canPlayTime, sourceOffset, switchPosition} from '$lib/lyrics/timeline'
   import MusicEmbed from './MusicEmbed.svelte'
@@ -22,14 +30,22 @@
   const pronunciations = $derived(lyricLanguages(song.lines, 'pronunciation'))
   let pronunciation = $state('')
   const lines = $derived(toLyricLines(song.lines, 'ko', pronunciation || pronunciations[0], song))
-  const timed = $derived(lines.filter(isTimed))
-  const untimed = $derived(lines.filter((line) => !isTimed(line)))
+  const partitioned = $derived.by(() => {
+    const timed: LocalizedLyricLine[] = []
+    const untimed: LocalizedLyricLine[] = []
+    for (const line of lines) (isTimed(line) ? timed : untimed).push(line)
+    return {timed, untimed}
+  })
+  const {timed, untimed} = $derived(partitioned)
   let sample = $state.raw<Playback>(stopped)
   let request = $state.raw<PlaybackRequest>({position: 0, playing: false})
   let durations = $state.raw<Partial<Record<SourceKey, number>>>({})
-  const visibleTimed = $derived(
-    source ? timed.filter((line) => canPlayTime(song, source.key, line.startTime, durations[source.key])) : timed,
-  )
+  const visibleTimed = $derived.by(() => {
+    const duration = source && durations[source.key]
+    if (!duration) return timed
+    const limit = duration - offset
+    return timed.filter((line) => line.startTime < limit)
+  })
   let seek = $state<((time: number) => void) | undefined>()
   let mounted = $state(false)
   let fullText = $state(false)
@@ -72,14 +88,6 @@
     if (source && canPlayTime(song, source.key, time, durations[source.key])) seek?.(Math.max(0, time + offset))
   }
 
-  const externalUrl = $derived.by(() => {
-    if (!source) return ''
-    if (!mediaFailed || source.provider !== 'youtube') return source.url
-    const url = new URL(source.url)
-    url.searchParams.set('t', String(Math.floor(sample.position / 1000)))
-    return url.href
-  })
-
   function restarts(item: Source) {
     return (
       item.key !== source?.key &&
@@ -89,6 +97,11 @@
     )
   }
 </script>
+
+{#snippet textLines(value: LocalizedLyricLine[], semibold = false)}
+  {#each value as line, index}{#if index > 0 && !line.translatedLyric && !value[index - 1].translatedLyric}<br
+      />{/if}<LyricText {line} {semibold} />{/each}
+{/snippet}
 
 <div
   class="mx-auto grid max-w-400 items-start gap-8 pt-8 md:pt-20 lg:grid-cols-[minmax(320px,0.85fr)_minmax(0,1.15fr)] lg:gap-12"
@@ -189,19 +202,16 @@
         onfailure={() => (failed = true)}
       />
       <div class="sr-only">
-        {#each visibleTimed as line, index}{#if index > 0 && !line.translatedLyric && !visibleTimed[index - 1].translatedLyric}<br
-            />{/if}<LyricText {line} />{/each}
+        {@render textLines(visibleTimed)}
       </div>
       {#if untimed.length}
         <div class="mt-6 leading-relaxed">
-          {#each untimed as line, index}{#if index > 0 && !line.translatedLyric && !untimed[index - 1].translatedLyric}<br
-              />{/if}<LyricText {line} semibold />{/each}
+          {@render textLines(untimed, true)}
         </div>
       {/if}
     {:else}
       <div class="py-6 leading-relaxed font-normal">
-        {#each lines as line, index}{#if index > 0 && !line.translatedLyric && !lines[index - 1].translatedLyric}<br
-            />{/if}<LyricText {line} />{/each}
+        {@render textLines(lines)}
       </div>
     {/if}
   </section>

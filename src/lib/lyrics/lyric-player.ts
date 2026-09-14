@@ -1,10 +1,15 @@
 import {LyricPlayer} from '@applemusic-like-lyrics/core'
 import type {LocalizedLyricLine} from './model'
 
+function measureGroupTop(this: {top: number}, top: number) {
+  this.top = top
+}
+
 export class AnnotatedLyricPlayer extends LyricPlayer {
   private hasWordAnnotations = false
   private settingLines = false
   private layoutWidth = -1
+  private readonly groupTransforms: (typeof this.currentLyricGroups)[number]['setTransform'][] = []
 
   constructor() {
     super()
@@ -29,19 +34,20 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     // Measure the native positions without sending temporary viewport-relative
     // targets to the springs. Only the corrected pass should animate the groups.
     // Restore each method to its original receiver without invoking it unbound.
-    // oxlint-disable-next-line typescript/unbound-method
-    const transforms = this.currentLyricGroups.map((group) => group.setTransform)
+    const transforms = this.groupTransforms
+    transforms.length = 0
     try {
       for (const group of this.currentLyricGroups) {
-        group.setTransform = (top) => {
-          group.top = top
-        }
+        // oxlint-disable-next-line typescript/unbound-method
+        transforms.push(group.setTransform)
+        group.setTransform = measureGroupTop
       }
       void super.calcLayout(sync, force)
     } finally {
-      this.currentLyricGroups.forEach((group, index) => {
-        group.setTransform = transforms[index]
-      })
+      for (let index = 0; index < transforms.length; index++) {
+        this.currentLyricGroups[index].setTransform = transforms[index]
+      }
+      transforms.length = 0
     }
     const first = this.currentLyricGroups[0]
     if (!first) {
@@ -69,10 +75,12 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   }
 
   activeElement(time: number) {
-    const active = this.currentLyricGroups.find((group) => time >= group.startTime && time < group.endTime)
-    if (active) return active.mainLine.getElement()
+    for (const group of this.currentLyricGroups) {
+      if (time >= group.startTime && time < group.endTime) return group.mainLine.getElement()
+    }
     const dots = this.interludeDots.getElement()
-    return [...dots.classList].some((name) => name.endsWith('_enabled')) ? dots : undefined
+    for (const name of dots.classList) if (name.endsWith('_enabled')) return dots
+    return undefined
   }
 
   override setLyricLines(lines: LocalizedLyricLine[], initialTime = 0) {

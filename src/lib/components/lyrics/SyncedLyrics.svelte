@@ -47,7 +47,7 @@
         const player = new AnnotatedLyricPlayer()
         let frame = 0
         let lastFrame = 0
-        let lastTime = 0
+        let lastTime = Number.NaN
         let settleUntil = 0
         let visible = true
         let lastFollowed: HTMLElement | undefined
@@ -61,7 +61,7 @@
         player.setAlignPosition(0)
         player.setOptimizeOptions({
           resetLineTimestamps: false,
-          normalizeSpaces: false,
+          normalizeSpaces: true,
           syncMainAndBackgroundLines: true,
           cleanUnintentionalOverlaps: false,
           tryAdvanceStartTime: false,
@@ -81,7 +81,7 @@
           }
           const time = Math.max(0, playbackTime(sample, now) - offset + colorTransitionLead)
           const seek = Math.abs(time - lastTime) > 1000
-          player.setCurrentTime(time, seek)
+          if (time !== lastTime) player.setCurrentTime(time, seek)
           player.update(lastFrame ? Math.min(now - lastFrame, 50) : 0)
           const active = player.activeElement(time)
           if (sample.playing && active && active !== lastFollowed && now >= followAfter) {
@@ -114,7 +114,8 @@
               value,
               Math.max(0, playbackTime(sample, performance.now()) - offset + colorTransitionLead),
             )
-            appliedLines = value.slice()
+            appliedLines = value
+            lastTime = Number.NaN
             lastFollowed = undefined
             schedule()
           } catch {
