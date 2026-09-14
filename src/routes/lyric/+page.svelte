@@ -5,8 +5,8 @@
   let {data}: PageProps = $props()
 </script>
 
-<svelte:head><title>가사 – quiple</title></svelte:head>
-<PageTitle>가사</PageTitle>
+<svelte:head><title>가사 번역 – quiple</title></svelte:head>
+<PageTitle>가사 번역</PageTitle>
 
 <div class="relative z-10 mx-auto max-w-xl 2xl:max-w-2xl">
   <LyricList songs={data.songs} />
