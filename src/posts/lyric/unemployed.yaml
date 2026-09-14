@@ -17,8 +17,8 @@ youtube:
   audio: fiVl8xWgniE
   mv: mo3mYgFElJQ
 offsets:
-  youtubeAudio: -2.900
-  spotify: -2.900
+  youtubeAudio: -2.9
+  spotify: -2.9
 lines:
   - text: Unemployed
     translation: 백수
