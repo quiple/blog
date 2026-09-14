@@ -52,8 +52,14 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
   }
 
   override setCurrentTime(time: number, seek = false) {
+    // AMLL detects interludes 20ms ahead, but does not request a layout at
+    // their end. Close the gap then, without waiting for the next hot line.
+    const interludeEnded = this.interludeEnd !== undefined && Math.round(time) + 20 >= this.interludeEnd
     if (seek) this.interludeEnd = undefined
     super.setCurrentTime(time, seek)
+    // Document-relative rows otherwise accumulate a stagger for every preceding
+    // line. Remove that delay when closing the gap, while keeping the springs.
+    if (!seek && interludeEnded) void this.calcLayout(true)
   }
 
   override update(delta = 0) {
