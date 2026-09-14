@@ -56,12 +56,10 @@ lines:
     time: [48.191, 50.191]
   - text: My retirement's getting destroyed
     time: [50.356, 51.564]
-  - text: from sitting on my ass like a hemorrhoid
+  - text: From sitting on my ass like a hemorrhoid
     time: [51.564, 53.205]
-  - text: Stop calling me a
-    time: [53.206, 54.197]
-  - text: motherfucking Walmart vocaloid
-    time: [54.197, 56.1]
+  - text: Stop calling me a motherfucking Walmart vocaloid
+    time: [53.206, 56.1]
   - text: I'm just unemployed
     time: [56.1, 57.428]
   - text: I got no house
@@ -110,10 +108,8 @@ lines:
     time: [88.685, 90.872]
   - text: My retirement's getting destroyed
     time: [90.873, 92.089]
-  - text: from sitting on my ass
-    time: [92.089, 92.684]
-  - text: like a hemorrhoid
-    time: [92.684, 93.668]
+  - text: From sitting on my ass like a hemorrhoid
+    time: [92.089, 93.668]
   - text: Stop telling me to get a life
     time: [93.668, 94.884]
   - text: I'd rather live one I enjoy
