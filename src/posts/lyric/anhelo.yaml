@@ -18,117 +18,115 @@ offsets:
   youtubeAudio: -2.83
   spotify: -2.83
 lines:
-  - text: un dia veras que lo que pasó acabó,
+  - text: Un dia veras que lo que pasó acabó,
     time: [3.876, 9.307]
-  - text: y que extraño es vivir
+  - text: Y que extraño es vivir
     time: [9.307, 14.11]
-  - text: una canción busca una solución,
+  - text: Una canción busca una solución,
     time: [15, 20.022]
-  - text: el camino hacia el amor
+  - text: El camino hacia el amor
     time: [20.022, 25.148]
-  - text: no aguanto un minuto más
+  - text: No aguanto un minuto más
     time: [26.31, 27.793]
-  - text: quiero imaginar sin más
+  - text: Quiero imaginar sin más
     time: [27.793, 29.121]
-  - text: dulces pesadillas que me atacan
+  - text: Dulces pesadillas que me atacan
     time: [29.121, 31.868]
-  - text: quiero ser normal
+  - text: Quiero ser normal
     time: [31.868, 33]
-  - text: cumplir mi sueño ideal
+  - text: Cumplir mi sueño ideal
     time: [33, 34.664]
-  - text: ser capaz, poder volar
+  - text: Ser capaz, poder volar
     time: [34.664, 35.876]
-  - text: por una noche mas
+  - text: Por una noche mas
     time: [35.876, 37.256]
-  - text: tengo una duda existencial
+  - text: Tengo una duda existencial
     time: [37.256, 40.083]
-  - text: que se salga ya de mi cabeza
+  - text: Que se salga ya de mi cabeza
     time: [40.083, 42.755]
-  - text: quiero conocer todo lo que puedo anhelar
+  - text: Quiero conocer todo lo que puedo anhelar
     time: [42.755, 47.114]
-  - text: soy sideral, soy irreal
+  - text: Soy sideral, soy irreal
     time: [48, 50.526]
-  - text: y sin embargo no soy ideal
+  - text: Y sin embargo no soy ideal
     time: [50.526, 53.314]
-  - text: la cinosura que pienso que soy
+  - text: La cinosura que pienso que soy
     time: [53.314, 55.932]
-  - text: su hermosura nunca seré yo
+  - text: Su hermosura nunca seré yo
     time: [55.932, 58.734]
-  - text: como loca escribo una canción
+  - text: Como loca escribo una canción
     time: [58.902, 61.676]
-  - text: desemboca una desolación
+  - text: Desemboca una desolación
     time: [61.676, 64.216]
-  - text: y yo quiero ver lo que hay por ver
+  - text: Y yo quiero ver lo que hay por ver
     time: [64.216, 67.273]
-  - text: resolver, entender lo que hay por saber
+  - text: Resolver, entender lo que hay por saber
     time: [67.273, 69.827]
-  - text: yo adoro mi vanidad
+  - text: Yo adoro mi vanidad
     time: [70.401, 73.807]
-  - text: por favor ten piedad
+  - text: Por favor ten piedad
     time: [73.807, 76.846]
-  - text: acepta tu destino
+  - text: Acepta tu destino
     time: [76.846, 79.612]
-  - text: algo divino
+  - text: Algo divino
     time: [79.612, 81.371]
-  - text: bien hay que perseverar ante la distancia
-    time: [81.371, 85.195]
-  - text: que separa a el alma de una solución inmediata
-    time: [85.195, 90]
-  - text: que no piensa anhelar
+  - text: Bien hay que perseverar ante la distancia que separa a el alma de una solución inmediata
+    time: [81.371, 90]
+  - text: Que no piensa anhelar
     time: [90, 91.66]
-  - text: si en verdad tu crees en mi
+  - text: Si en verdad tu crees en mi
     time: [92.01, 94.469]
-  - text: te entenderé si dejas de mentir
+  - text: Te entenderé si dejas de mentir
     time: [94.469, 97.202]
-  - text: esta locura acabará con mi
+  - text: Esta locura acabará con mi
     time: [97.202, 99.966]
-  - text: una pintura trazaré en mi ser
+  - text: Una pintura trazaré en mi ser
     time: [99.967, 102.787]
-  - text: soy capaz, ¡yo sé que soy!
+  - text: Soy capaz, ¡yo sé que soy!
     time: [103.115, 105.368]
-  - text: y lucharé tenaz por lo que soy, ¡mi amor!
+  - text: Y lucharé tenaz por lo que soy, ¡mi amor!
     time: [105.368, 108.568]
-  - text: brillare más que la osa menor
+  - text: Brillare más que la osa menor
     time: [108.568, 110.896]
-  - text: y guiaré a todo aquel en mi constelación
+  - text: Y guiaré a todo aquel en mi constelación
     time: [110.896, 113.741]
-  - text: una vez más me he aferrado a mi pasado
+  - text: Una vez más me he aferrado a mi pasado
     time: [114.101, 119.466]
-  - text: vaya desgracia, yo debería expirar
+  - text: Vaya desgracia, yo debería expirar
     time: [119.466, 124.642]
-  - text: pero no, no lo haré, no me rendiré así
+  - text: Pero no, no lo haré, no me rendiré así
     time: [124.642, 130.588]
-  - text: y pelearé mi amor, buscaré y cantaré todo mi sentir!
+  - text: Y pelearé mi amor, buscaré y cantaré todo mi sentir!
     time: [130.588, 135.723]
-  - text: soy sideral, soy irreal
+  - text: Soy sideral, soy irreal
     time: [179.648, 182.074]
-  - text: y sin embargo no soy ideal
+  - text: Y sin embargo no soy ideal
     time: [182.074, 184.993]
-  - text: la cinosura que pienso que soy
+  - text: La cinosura que pienso que soy
     time: [184.993, 187.485]
-  - text: su hermosura nunca seré yo
+  - text: Su hermosura nunca seré yo
     time: [187.485, 190.47]
-  - text: como loca escribo una canción
+  - text: Como loca escribo una canción
     time: [190.47, 193.185]
-  - text: desemboca una desolación
+  - text: Desemboca una desolación
     time: [193.185, 195.83]
-  - text: y yo quiero ver lo que hay por ver
+  - text: Y yo quiero ver lo que hay por ver
     time: [195.83, 198.769]
-  - text: resolver, entender lo que hay por saber
+  - text: Resolver, entender lo que hay por saber
     time: [198.769, 201.261]
-  - text: si en verdad tu crees en mi
+  - text: Si en verdad tu crees en mi
     time: [201.85, 204]
-  - text: te entenderé si dejas de mentir
+  - text: Te entenderé si dejas de mentir
     time: [204, 206.858]
-  - text: esta locura acabará con mi
+  - text: Esta locura acabará con mi
     time: [206.858, 209.566]
-  - text: una pintura trazaré en mi ser
+  - text: Una pintura trazaré en mi ser
     time: [209.566, 212.43]
-  - text: soy capaz, ¡yo sé que soy!
+  - text: Soy capaz, ¡yo sé que soy!
     time: [212.946, 215.173]
-  - text: y lucharé tenaz por lo que soy, ¡mi amor!
+  - text: Y lucharé tenaz por lo que soy, ¡mi amor!
     time: [215.173, 218.363]
-  - text: brillare más que la osa menor
+  - text: Brillare más que la osa menor
     time: [218.363, 220.789]
-  - text: y guiaré a todo aquel en mi constelación
+  - text: Y guiaré a todo aquel en mi constelación
     time: [220.789, 223.555]
