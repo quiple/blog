@@ -20,37 +20,37 @@ offsets:
   spotify: -3.558
 lines:
   - text: 労働ライフ
-    translation: '일하는 인생'
+    translation: '노동 라이프'
     time: [12.17, 13.575]
   - text: 心、此処に在らずだね
-    translation: '마음은 딴 데 가 있네'
+    translation: '마음은 여기에 없네'
     time: [13.575, 19.088]
   - text: ここでオーバーフロー
-    translation: '여기서 감정이 넘쳐 버리면'
+    translation: '여기서 오버플로'
     time: [19.174, 21.616]
   - text: それは未熟者だね
-    translation: '그건 미숙한 사람이라네'
+    translation: '그건 미숙한 사람이네'
     time: [21.616, 27.107]
   - text: はぁ
     translation: '하아'
     time: [27.484, 28.051]
   - text: 定時て概念知らんでしょ
-    translation: '정시 퇴근이란 개념 모르지?'
+    translation: '정시라는 개념 모르지?'
     time: [28.051, 29.706]
   - text: そんな逆立ちしたっても無理でしょ
     translation: '그건 물구나무를 서 봐도 무리잖아'
     time: [29.706, 31.706]
   - text: だけど言うしかないよね「はい」でも
-    translation: '그래도 대답할 수밖에 없지, "네"라고, 하지만'
+    translation: '그래도 말할 수밖에 없지, "네"라고, 하지만'
     time: [31.706, 33.706]
   - text: いいわ それなら
     translation: '좋아, 그렇다면'
     time: [33.706, 36.062]
   - text: 肩肘ついてもいいでしょ
-    translation: '팔꿈치 좀 괴어도 되잖아'
+    translation: '팔꿈치를 괴어도 되잖아'
     time: [36.062, 38.062]
   - text: それで胡座もかいてもいいでしょ
-    translation: '양반다리 좀 해도 되잖아'
+    translation: '그러고 양반다리도 해도 되잖아'
     time: [38.062, 40.049]
   - text: そして6秒待ったらいいでしょ
     translation: '그리고 6초만 기다리면 되잖아'
@@ -59,22 +59,22 @@ lines:
     translation: '분노야, 안녕!'
     time: [41.693, 45.762]
   - text: オーバーワーク
-    translation: '과로'
+    translation: '오버워크'
     time: [53.71, 55.324]
   - text: 今日もキリキリ舞だね
     translation: '오늘도 정신없이 휘둘리네'
     time: [55.324, 60.977]
   - text: ここで憤慨しちゃう
-    translation: '여기서 분통을 터뜨리면'
+    translation: '여기서 분개해 버려'
     time: [60.977, 63.3]
   - text: それは愚か者だね
-    translation: '그건 어리석은 사람이라네'
+    translation: '그건 어리석은 사람이네'
     time: [63.3, 68.789]
   - text: はぁ
     translation: '하아'
     time: [69.198, 69.698]
   - text: コンプラって概念知らんでしょ
-    translation: '준법이란 개념 모르지?'
+    translation: '컴플라이언스라는 개념 모르지?'
     time: [69.698, 71.383]
   - text: それはやるって言ったんアンタでしょ
     translation: '그거 하겠다고 한 건 당신이잖아'
@@ -98,16 +98,16 @@ lines:
     translation: '분노야, 안녕!'
     time: [83.357, 87.447]
   - text: サイレントナイト
-    translation: '고요한 밤'
+    translation: '사일런트 나이트'
     time: [95.44, 96.752]
   - text: 弊社はもうお仕舞だね
     translation: '우리 회사는 이제 끝장이네'
     time: [96.752, 101.834]
   - text: あわや発狂しちゃう?
-    translation: '하마터면 미쳐 버리겠어?'
+    translation: '금방이라도 미쳐 버리겠어?'
     time: [101.834, 103.92]
   - text: それは笑い者だね
-    translation: '그러면 웃음거리가 된다네'
+    translation: '그건 웃음거리네'
     time: [103.92, 109.185]
   - text: はぁ
     translation: '하아'
@@ -116,10 +116,10 @@ lines:
     translation: '근로기준법이란 개념 모르지?'
     time: [109.685, 111.049]
   - text: てかさ課長の姿が見えんけど
-    translation: '그나저나 과장님이 안 보이는데'
+    translation: '그나저나 과장의 모습이 안 보이는데'
     time: [111.049, 112.661]
   - text: まさか部長と華金ランデヴー
-    translation: '설마 부장님이랑 불금의 랑데부'
+    translation: '설마 부장이랑 불금의 랑데부'
     time: [112.661, 114.295]
   - text: もう限界だわ
     translation: '이젠 한계야'
@@ -155,23 +155,23 @@ lines:
     translation: '후회하게 만들어 주겠어!'
     time: [141.097, 144]
   - text: 社会人としてOUT
-    translation: '사회인으로서 실격'
+    translation: '사회인으로서 아웃'
     time: [144, 145.483]
   - text: 人間としてもOUT?
-    translation: '인간으로서도 실격?'
+    translation: '인간으로서도 아웃?'
     time: [145.483, 147.041]
   - text: そんなのだってどうでもいいや!
     translation: '그런 건 아무래도 상관없어!'
     time: [147.041, 149.935]
   - text: 辞表をぶつけるくらいじゃさ
-    translation: '사표나 집어 던지는 정도로는'
+    translation: '사표를 집어 던지는 정도로는'
     time: [149.935, 152.948]
   - text: ヌルいから
-    translation: '너무 시시하니까'
+    translation: '시시하니까'
     time: [152.948, 154.485]
   - text: すべて破壊したい!
     translation: '전부 부숴 버리고 싶어!'
     time: [154.485, 159.134]
   - text: アンガーマネジメントよ、失敗!
-    translation: '분노 조절이여, 실패!'
+    translation: '앵거 매니지먼트여, 실패!'
     time: [159.134, 165.013]
