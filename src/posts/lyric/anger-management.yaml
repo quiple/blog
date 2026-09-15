@@ -29,7 +29,7 @@ lines:
     translation: 여기서 오버플로
     time: [19.174, 21.616]
   - text: それは未熟者だね
-    translation: 그건 미숙한 사람이네
+    translation: 그건 미숙한 사람이지
     time: [21.616, 27.107]
   - text: はぁ
     translation: 하아
@@ -56,7 +56,7 @@ lines:
     translation: 그리고 6초만 기다리면 되잖아
     time: [40.049, 41.693]
   - text: 怒り、サヨナラだ!
-    translation: 분노야, 안녕!
+    translation: 분노와는 작별이야!
     time: [41.693, 45.762]
   - text: オーバーワーク
     translation: 오버워크
@@ -68,7 +68,7 @@ lines:
     translation: 여기서 분개해 버려
     time: [60.977, 63.3]
   - text: それは愚か者だね
-    translation: 그건 어리석은 사람이네
+    translation: 그건 어리석은 사람이지
     time: [63.3, 68.789]
   - text: はぁ
     translation: 하아
@@ -95,7 +95,7 @@ lines:
     translation: 그리고 6초만 기다리면 되는 거잖아
     time: [81.37, 83.357]
   - text: 怒り、サヨナラだ!
-    translation: 분노야, 안녕!
+    translation: 분노와는 작별이야!
     time: [83.357, 87.447]
   - text: サイレントナイト
     translation: 사일런트 나이트
@@ -134,7 +134,7 @@ lines:
     translation: 일단 6초만 기다리면 되는 거잖아!!
     time: [119.394, 120.51]
   - text: 怒り、サヨナラか?
-    translation: 분노야, 안녕인가?
+    translation: 분노와는 작별인가?
     time: [120.51, 130.434]
   - text: 嗚呼
     translation: 아아
@@ -155,10 +155,10 @@ lines:
     translation: 후회하게 만들어 주겠어!
     time: [141.097, 144]
   - text: 社会人としてOUT
-    translation: 사회인으로서 아웃
+    translation: 사회인으로서 OUT
     time: [144, 145.483]
   - text: 人間としてもOUT?
-    translation: 인간으로서도 아웃?
+    translation: 인간으로서도 OUT?
     time: [145.483, 147.041]
   - text: そんなのだってどうでもいいや!
     translation: 그런 건 아무래도 상관없어!
