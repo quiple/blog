@@ -23,7 +23,7 @@ lines:
     translation: 노동 라이프
     time: [12.17, 13.575]
   - text: 心、此処に在らずだね
-    translation: 마음은 여기에 없네
+    translation: 마음은 여기에 없구나
     time: [13.575, 19.088]
   - text: ここでオーバーフロー
     translation: 여기서 오버플로
@@ -62,7 +62,7 @@ lines:
     translation: 오버워크
     time: [53.71, 55.324]
   - text: 今日もキリキリ舞だね
-    translation: 오늘도 정신없이 휘둘리네
+    translation: 오늘도 정신없이 휘둘리는구나
     time: [55.324, 60.977]
   - text: ここで憤慨しちゃう
     translation: 여기서 분개해 버려
@@ -107,7 +107,7 @@ lines:
     translation: 금방이라도 미쳐 버리겠어?
     time: [101.834, 103.92]
   - text: それは笑い者だね
-    translation: 그건 웃음거리네
+    translation: 그건 웃음거리지
     time: [103.92, 109.185]
   - text: はぁ
     translation: 하아
