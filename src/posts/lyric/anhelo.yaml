@@ -106,17 +106,15 @@ lines:
     time: [182.074, 184.993]
   - text: la cinosura que pienso que soy
     time: [184.993, 187.485]
-  - text: it's charming beauty i will never be!
-    time: [187.485, 190.229]
-  - text: like a birdbrain i'm writing my song
+  - text: su hermosura nunca seré yo
+    time: [187.485, 190.47]
+  - text: como loca escribo una canción
     time: [190.47, 193.185]
-  - text: leaving out completely my desolation
+  - text: desemboca una desolación
     time: [193.185, 195.83]
-  - text: and i
-    time: [195.83, 196.33]
-  - text: want to see what there is to see
-    time: [196.33, 198.769]
-  - text: and to solve, or to learn what is there to know
+  - text: y yo quiero ver lo que hay por ver
+    time: [195.83, 198.769]
+  - text: resolver, entender lo que hay por saber
     time: [198.769, 201.261]
   - text: if you truly believe in me
     time: [201.85, 204]
