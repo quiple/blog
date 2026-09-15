@@ -100,7 +100,10 @@ lines:
   - text: サイレントナイト
     translation: 사일런트 나이트
     time: [95.44, 96.752]
-  - text: 弊社はもうお仕舞だね
+  - words:
+      - text: 弊社
+        ruby: ここ
+      - text: はもうお仕舞だね
     translation: 여기는 이제 끝장이네
     time: [96.752, 101.834]
   - text: あわや発狂しちゃう?
