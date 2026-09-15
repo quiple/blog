@@ -6,7 +6,7 @@
 <svelte:element
   this={line.translatedLyric ? 'p' : 'span'}
   class={semibold ? 'font-semibold' : 'font-normal'}
-  class:opacity-70={line.isBG}
+  class:text-muted-foreground={line.isBG}
 >
   <span lang={line.lang === 'ko' ? undefined : (line.lang ?? '')} class="whitespace-pre-wrap">
     {#each line.words as word}<span class="inline-flex flex-col align-baseline">
