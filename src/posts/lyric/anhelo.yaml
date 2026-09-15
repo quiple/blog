@@ -18,49 +18,39 @@ offsets:
   youtubeAudio: -2.83
   spotify: -2.83
 lines:
-  - text: once you look back
-    time: [3.876, 6.419]
-  - text: you'll realize what's done is done
-    time: [6.419, 9.307]
-  - text: and how living is so weird
+  - text: un dia veras que lo que pasó acabó,
+    time: [3.876, 9.307]
+  - text: y que extraño es vivir
     time: [9.307, 14.11]
-  - text: a little song
-    time: [15, 17.336]
-  - text: calling for a solution
-    time: [17.336, 20.022]
-  - text: and the path towards our love
+  - text: una canción busca una solución,
+    time: [15, 20.022]
+  - text: el camino hacia el amor
     time: [20.022, 25.148]
-  - text: i can't handle one more minute
+  - text: no aguanto un minuto más
     time: [26.31, 27.793]
-  - text: i want to freely imagine
+  - text: quiero imaginar sin más
     time: [27.793, 29.121]
-  - text: these sweet little nightmares
-    time: [29.121, 30.876]
-  - text: that attack me
-    time: [30.876, 31.868]
-  - text: i want to be real
+  - text: dulces pesadillas que me atacan
+    time: [29.121, 31.868]
+  - text: quiero ser normal
     time: [31.868, 33]
-  - text: get to my ideal dream
+  - text: cumplir mi sueño ideal
     time: [33, 34.664]
-  - text: be capable, and fly up high
+  - text: ser capaz, poder volar
     time: [34.664, 35.876]
-  - text: for just another night
+  - text: por una noche mas
     time: [35.876, 37.256]
-  - text: now i'm having an existential doubt
+  - text: tengo una duda existencial
     time: [37.256, 40.083]
-  - text: please it get the hell out of my mind
+  - text: que se salga ya de mi cabeza
     time: [40.083, 42.755]
-  - text: i want to know everything and meet
-    time: [42.755, 44.534]
-  - text: what i've yearned for years
-    time: [44.534, 47.114]
-  - text: i'm sidereal
-    time: [48, 49.287]
-  - text: i'm unreal
-    time: [49.287, 50.526]
-  - text: but then again i am not ideal
+  - text: quiero conocer todo lo que puedo anhelar
+    time: [42.755, 47.114]
+  - text: soy sideral, soy irreal
+    time: [48, 50.526]
+  - text: y sin embargo no soy ideal
     time: [50.526, 53.314]
-  - text: the "cynosura" which i think i am
+  - text: la cinosura que pienso que soy
     time: [53.314, 55.932]
   - text: it's charming beauty i will never be
     time: [55.932, 58.734]
