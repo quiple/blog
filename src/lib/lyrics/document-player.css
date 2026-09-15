@@ -1,4 +1,8 @@
 /* AMLL DOM integration: scoped to the document player only. */
+.lyric-player .amll-lyric-player [class*='_lyricBgLine'] {
+  color: var(--muted-foreground);
+  opacity: 1;
+}
 .lyric-player .amll-lyric-player [class*='_lyricLine'] {
   contain: layout style;
   content-visibility: visible;
