@@ -2,8 +2,6 @@
   import {onMount, untrack} from 'svelte'
   import type {LocalizedLyricLine} from '$lib/lyrics/model'
   import {playbackTime, type Playback} from '$lib/lyrics/players'
-  // Half of AMLL's 400ms row opacity transition, shared by playback and seeking.
-  const transitionLead = 200
   let {
     lines,
     sample,
@@ -62,7 +60,8 @@
           spacingVersion = -1,
           spacingDirty = true
         const inset = () => Math.max(96, innerHeight * 0.18)
-        const time = () => Math.max(0, playbackTime(sample, performance.now()) - offset + transitionLead)
+        // Preserve the requested 200ms lead for the native 400ms color transition.
+        const time = () => Math.max(0, playbackTime(sample, performance.now()) - offset + 200)
         const release = () => {
           anchor = undefined
           host.style.minHeight = ''
@@ -179,7 +178,7 @@
             release()
             followed = undefined
             userUntil = 0
-            onseek(Math.max(0, line.startTime + offset - transitionLead))
+            onseek(Math.max(0, line.startTime + offset))
           }
         }
         const sizes = new ResizeObserver(() => {
