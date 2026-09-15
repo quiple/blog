@@ -70,8 +70,10 @@ lines:
     time: [76.846, 79.612]
   - text: Algo divino
     time: [79.612, 81.371]
-  - text: Bien hay que perseverar ante la distancia que separa a el alma de una solución inmediata
-    time: [81.371, 90]
+  - text: Bien hay que perseverar ante la distancia
+    time: [81.371, 85.195]
+  - text: Que separa a el alma de una solución inmediata
+    time: [85.195, 90]
   - text: Que no piensa anhelar
     time: [90, 91.66]
   - text: Si en verdad tu crees en mi
