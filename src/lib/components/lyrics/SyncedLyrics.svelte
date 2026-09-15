@@ -323,4 +323,12 @@
     display: block;
     text-align: center;
   }
+  /* Line-timed words use the group's opacity, just like plain text lines.
+     Karaoke masks clip glyph overhangs and are unnecessary without word timing. */
+  .lyric-player :global([data-line-timed] [class*='_lyricMainLine'] span) {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    transform: none !important;
+    text-shadow: none !important;
+  }
 </style>

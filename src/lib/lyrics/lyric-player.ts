@@ -156,8 +156,10 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
     const intro = this.layoutState.lastInterludeState && first.startTime > this.timelineState.currentTime + 20
     const introHeight = intro ? this.layoutState.interludeDotsSize[1] + (this.baseFontSize || 24) * 0.8 : 0
     const origin = first.top - introHeight
-    for (const group of this.currentLyricGroups) {
-      group.setTransform(group.top - origin, force, group.delay, group.isActive, group.opacity, group.blur)
+    for (const [index, group] of this.currentLyricGroups.entries()) {
+      const lineTimed = group.mainLine.getElement().hasAttribute('data-line-timed')
+      const opacity = lineTimed && !this.timelineState.bufferedGroups.has(index) ? 0.2 : group.opacity
+      group.setTransform(group.top - origin, force, group.delay, group.isActive, opacity, group.blur)
       if (force) {
         // AMLL's immediate positioning does not discard older delayed targets.
         group.posY.setTargetPosition(group.top)
@@ -230,6 +232,15 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
       for (const view of [group.mainLine, group.bgLine]) {
         if (!view) continue
         const line = view.getLine() as LocalizedLyricLine
+        // Splitting a line to attach ruby does not make it word-timed karaoke.
+        const lineTimed = line.words.every(
+          (word) =>
+            word.startTime === line.startTime &&
+            word.endTime === line.endTime &&
+            (!word.ruby ||
+              word.ruby.every((part) => part.startTime === line.startTime && part.endTime === line.endTime)),
+        )
+        view.getElement().toggleAttribute('data-line-timed', lineTimed)
         const [main, translation, pronunciation] = view.getElement().children
         if (line.lang === 'ko') main.removeAttribute('lang')
         else main.setAttribute('lang', line.lang ?? '')
@@ -238,6 +249,7 @@ export class AnnotatedLyricPlayer extends LyricPlayer {
         else pronunciation.setAttribute('lang', line.pronunciationLang ?? '')
       }
     }
+    void this.calcLayout(true, true)
   }
 
   // AMLL's single-word shortcut skips ruby and word pronunciation annotations.
