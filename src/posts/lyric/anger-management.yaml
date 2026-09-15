@@ -92,7 +92,7 @@ lines:
     translation: 아연이랑 칼슘 좀 섭취하면 어떨까
     time: [79.37, 81.37]
   - text: そして6秒待ったらいいんでしょ
-    translation: 그리고 6초만 기다리면 되는 거잖아
+    translation: 그리고 6초만 기다리면 되잖아
     time: [81.37, 83.357]
   - text: 怒り、サヨナラだ!
     translation: 분노와는 작별이야!
@@ -131,7 +131,7 @@ lines:
     translation: 이젠 원할 때 그만둬도 되잖아
     time: [117.825, 119.394]
   - text: とりま6秒待ったらいいんでしょ!!
-    translation: 일단 6초만 기다리면 되는 거잖아!!
+    translation: 일단 6초만 기다리면 되잖아!!
     time: [119.394, 120.51]
   - text: 怒り、サヨナラか?
     translation: 분노와는 작별인가?
