@@ -9,7 +9,7 @@
   class:opacity-70={line.isBG}
 >
   <span lang={line.lang === 'ko' ? undefined : (line.lang ?? '')} class="whitespace-pre-wrap">
-    {#each line.words as word}<span class="inline-flex flex-col align-top">
+    {#each line.words as word}<span class="inline-flex flex-col align-baseline">
         <span
           >{#if word.ruby?.length}<ruby
               >{word.word}<rp>(</rp><rt>{word.ruby.map((part) => part.word).join('')}</rt><rp>)</rp></ruby
