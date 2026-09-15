@@ -1,12 +1,7 @@
 <script lang="ts">
   import {onMount, untrack} from 'svelte'
   import type {LocalizedLyricLine} from '$lib/lyrics/model'
-  import '@applemusic-like-lyrics/core/style.css'
   import {playbackTime, type Playback} from '$lib/lyrics/players'
-
-  // AMLL's line opacity transition is 400ms with no delay.
-  const colorTransitionLead = 200
-
   let {
     lines,
     sample,
@@ -21,54 +16,26 @@
     onfailure: () => void
   } = $props()
   let host: HTMLDivElement
-  let wake = $state<(() => void) | undefined>()
-
-  let updateLines = $state<((value: LocalizedLyricLine[]) => void) | undefined>()
-
+  let refresh = $state<(() => void) | undefined>()
   $effect(() => {
-    const apply = updateLines
-    const value = lines
-    untrack(() => apply?.(value))
-  })
-
-  $effect(() => {
+    void lines
     void sample
     void offset
-    wake?.()
+    untrack(() => refresh?.())
   })
 
   onMount(() => {
-    const container = host
     let disposed = false
     let cleanup = () => {}
-    void import('$lib/lyrics/lyric-player')
-      .then(({AnnotatedLyricPlayer}) => {
+    void import('$lib/lyrics/document-player')
+      .then(({DocumentLyricPlayer}) => {
         if (disposed) return
-        const player = new AnnotatedLyricPlayer()
-        let frame = 0
-        let lastFrame = 0
-        let lastTime = Number.NaN
-        let settleUntil = 0
-        let visible = true
-        let lastFollowed: HTMLElement | undefined
-        let lastFollowedTop: number | undefined
-        let followedLayout = -1
-        let pendingFollow: {element: HTMLElement; top: number} | undefined
-        let preserveFollow = false
-        let scrollHold: {element: HTMLElement; top: number} | undefined
-        let followAfter = 0
-        let appliedLines: LocalizedLyricLine[] | undefined
-        let spacingDirty = true
-        let spacingLayout = -1
-        let spacingHeight = 0
-        let bottomSpace = 0
-        const followInset = () => Math.max(96, window.innerHeight * 0.18)
-        const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)')
+        const player = new DocumentLyricPlayer()
         const element = player.getElement()
         element.setAttribute('aria-hidden', 'true')
-        container.append(element)
-        player.setEnableBlur(false)
+        host.append(element)
         player.setAlignPosition(0)
+        player.setEnableBlur(false)
         player.setOptimizeOptions({
           resetLineTimestamps: false,
           normalizeSpaces: true,
@@ -77,198 +44,181 @@
           tryAdvanceStartTime: false,
         })
         player.pause()
-        let playerPlaying = false
-        let playbackPlaying = false
-        const motion = () => {
-          player.setEnableSpring(!reducedMotion.matches)
-          player.setEnableScale(!reducedMotion.matches)
+        const motion = matchMedia('(prefers-reduced-motion: reduce)')
+        let frame = 0,
+          previousFrame = 0,
+          previousTime = NaN,
+          settleUntil = 0
+        let applied: LocalizedLyricLine[] | undefined
+        let playing = false,
+          visible = true,
+          userUntil = 0
+        let followed: HTMLElement | undefined,
+          followedTop = NaN
+        let anchor: {line: HTMLElement; top: number} | undefined
+        let padding = 0,
+          spacingVersion = -1,
+          spacingDirty = true
+        const inset = () => Math.max(96, innerHeight * 0.18)
+        // Preserve the requested 200ms lead for the native 400ms color transition.
+        const time = () => Math.max(0, playbackTime(sample, performance.now()) - offset + 200)
+        const release = () => {
+          anchor = undefined
+          host.style.minHeight = ''
+          spacingDirty = true
         }
-        motion()
-        const lyricTime = (now = performance.now()) =>
-          Math.max(0, playbackTime(sample, now) - offset + colorTransitionLead)
-        const releaseScroll = () => {
-          scrollHold = undefined
-          container.style.minHeight = ''
+        const wake = () => {
+          settleUntil = performance.now() + 1200
+          if (!frame && visible && !document.hidden) frame = requestAnimationFrame(draw)
         }
-        const draw = (now: number) => {
+        function draw(now: number) {
           frame = 0
-          if (disposed || document.hidden || !visible) {
-            lastFrame = 0
+          if (disposed || !visible || document.hidden) {
+            previousFrame = 0
             return
           }
-          const time = lyricTime(now)
-          const seek = Math.abs(time - lastTime) > 1000
-          if (time !== lastTime) player.setCurrentTime(time, seek)
-          player.update(lastFrame ? Math.min(now - lastFrame, 50) : 0)
-          if (spacingDirty || spacingLayout !== player.layoutVersion || spacingHeight !== window.innerHeight) {
+          const current = time()
+          player.setCurrentTime(current, Math.abs(current - previousTime) > 1000)
+          player.update(previousFrame ? Math.min(50, now - previousFrame) : 0)
+          previousTime = current
+          previousFrame = now
+          const active = player.activeLine(current)
+          if (anchor && active !== anchor.line) release()
+          if (!anchor && (spacingDirty || spacingVersion !== player.layoutVersion)) {
             spacingDirty = false
-            spacingLayout = player.layoutVersion
-            spacingHeight = window.innerHeight
-            const lastTarget = player.lastScrollTarget()
-            if (lastTarget !== undefined) {
-              // Include the footer and surrounding page spacing in the scroll
-              // range, so the final row's follow position is the page bottom.
-              const space = Math.max(
+            spacingVersion = player.layoutVersion
+            const last = player.lastLine()
+            if (last) {
+              const next = Math.max(
                 0,
                 Math.round(
-                  bottomSpace + lastTarget - followInset() + window.innerHeight - document.documentElement.scrollHeight,
+                  padding + player.lineTop(last) - inset() + innerHeight - document.documentElement.scrollHeight,
                 ),
               )
-              if (space !== bottomSpace) {
-                bottomSpace = space
-                container.style.paddingBottom = `${space}px`
+              if (next !== padding) {
+                padding = next
+                host.style.paddingBottom = `${padding}px`
               }
             }
           }
-          const active = player.activeElement(time)
-          if (preserveFollow) {
-            lastFollowed = active
-            lastFollowedTop = undefined
-            preserveFollow = false
-          }
-          // Preserve the active row's viewport position, not the document's
-          // scroll offset, while background rows change the layout above it.
-          if (scrollHold && active !== scrollHold.element) releaseScroll()
-          if (scrollHold) {
-            const delta = scrollHold.element.getBoundingClientRect().top - scrollHold.top
-            if (Math.abs(delta) >= 0.5) {
-              const top = Math.max(0, window.scrollY + delta)
-              const missingHeight = top + window.innerHeight - document.documentElement.scrollHeight
-              if (missingHeight > 0) container.style.minHeight = `${container.offsetHeight + missingHeight}px`
-              window.scrollTo({top, left: window.scrollX, behavior: 'instant'})
+          if (anchor) {
+            const delta = anchor.line.getBoundingClientRect().top - anchor.top
+            if (Math.abs(delta) > 0.5) {
+              const target = Math.max(0, scrollY + delta)
+              const missing = target + innerHeight - document.documentElement.scrollHeight
+              if (missing > 0) host.style.minHeight = `${host.offsetHeight + missing}px`
+              window.scrollTo({top: target, behavior: 'instant'})
+            }
+          } else if (sample.playing && active && active.style.visibility !== 'hidden' && now >= userUntil) {
+            const target = player.lineTop(active)
+            if (active !== followed || Math.abs(target - followedTop) > 0.5) {
+              followed = active
+              followedTop = target
+              window.scrollTo({top: Math.max(0, target - inset()), behavior: motion.matches ? 'instant' : 'smooth'})
             }
           }
-          if (
-            !scrollHold &&
-            sample.playing &&
-            active &&
-            active.style.visibility !== 'hidden' &&
-            now >= followAfter &&
-            (active !== lastFollowed || (lastFollowedTop !== undefined && followedLayout !== player.layoutVersion))
-          ) {
-            const target = player.scrollTarget(active)
-            followedLayout = player.layoutVersion
-            const moved =
-              active === lastFollowed && lastFollowedTop !== undefined && Math.abs(target - lastFollowedTop) >= 0.5
-            // Let ResizeObserver commit row-height changes before following.
-            if (
-              moved ||
-              (active !== lastFollowed &&
-                pendingFollow?.element === active &&
-                Math.abs(pendingFollow.top - target) < 0.5)
-            ) {
-              lastFollowed = active
-              lastFollowedTop = target
-              pendingFollow = undefined
-              const top = target - followInset()
-              window.scrollTo({top: Math.max(0, top), behavior: reducedMotion.matches ? 'instant' : 'smooth'})
-            } else if (active !== lastFollowed) {
-              if (pendingFollow?.element === active) pendingFollow.top = target
-              else pendingFollow = {element: active, top: target}
-            }
-          } else pendingFollow = undefined
-          lastFrame = now
-          lastTime = time
           if (sample.playing || now < settleUntil) frame = requestAnimationFrame(draw)
         }
-        const schedule = () => {
+        const sync = () => {
           if (disposed) return
-          if (!sample.playing && sample.position === 0) player.resetPlayback()
-          if (playbackPlaying !== sample.playing) {
-            window.scrollTo({top: window.scrollY, left: window.scrollX, behavior: 'instant'})
-            const time = lyricTime()
-            const active = player.activeElement(time)
-            const top = active?.getBoundingClientRect().top
-            releaseScroll()
-            scrollHold = active && top !== undefined ? {element: active, top} : undefined
-            preserveFollow = true
+          if (applied?.length !== lines.length || lines.some((line, index) => line !== applied?.[index])) {
+            release()
+            player.setLyricLines(lines, time())
+            applied = lines
+            previousTime = NaN
+            followed = undefined
           }
-          playbackPlaying = sample.playing
-          const playing = sample.playing && !document.hidden && visible
-          if (playing !== playerPlaying) {
-            playerPlaying = playing
+          if (!sample.playing && sample.position === 0) player.resetPlayback()
+          const running = sample.playing && visible && !document.hidden
+          if (running !== playing) {
+            const active = player.activeLine(time())
+            const top = active?.getBoundingClientRect().top
+            release()
+            if (active && top !== undefined && followed === active) anchor = {line: active, top}
+            window.scrollTo({top: scrollY, behavior: 'instant'})
+            playing = running
             if (playing) player.resume()
             else player.pause()
           }
-          settleUntil = performance.now() + 1200
-          if (!frame && !document.hidden && visible) frame = requestAnimationFrame(draw)
+          wake()
         }
-        updateLines = (value) => {
-          if (disposed) return
-          // Media duration updates may create a new array containing the same lines.
-          if (appliedLines?.length === value.length && value.every((line, index) => line === appliedLines![index]))
-            return
+        refresh = () => {
           try {
-            player.setLyricLines(value, lyricTime())
-            appliedLines = value
-            lastTime = Number.NaN
-            lastFollowed = undefined
-            lastFollowedTop = undefined
-            schedule()
-          } catch {
+            sync()
+          } catch (error) {
+            console.error(error)
             onfailure()
           }
         }
-        wake = schedule
+        const manual = () => {
+          release()
+          userUntil = performance.now() + 5000
+          followed = undefined
+          wake()
+        }
+        const key = (event: KeyboardEvent) => {
+          if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) manual()
+        }
+        const pointer = (event: PointerEvent) => {
+          if (event.target === document.documentElement) manual()
+        }
+        const resize = () => {
+          release()
+          spacingDirty = true
+          sync()
+        }
+        const changeMotion = () => {
+          player.setEnableSpring(!motion.matches)
+          player.setEnableScale(!motion.matches)
+          wake()
+        }
         const click = (event: Event) => {
-          releaseScroll()
-          const index = (event as Event & {lineIndex: number}).lineIndex
-          const line = lines[index]
-          if (line) onseek(Math.max(0, line.startTime + offset))
+          const line = lines[(event as Event & {lineIndex: number}).lineIndex]
+          if (line) {
+            release()
+            followed = undefined
+            userUntil = 0
+            onseek(Math.max(0, line.startTime + offset))
+          }
         }
-        player.addEventListener('line-click', click)
-        const observer = new IntersectionObserver(([entry]) => {
+        const sizes = new ResizeObserver(() => {
+          spacingDirty = true
+          wake()
+        })
+        sizes.observe(host)
+        sizes.observe(document.body)
+        const visibility = new IntersectionObserver(([entry]) => {
           visible = entry.isIntersecting
-          schedule()
+          sync()
         })
-        observer.observe(container)
-        const resize = new ResizeObserver(() => {
-          spacingDirty = true
-          schedule()
-        })
-        resize.observe(container)
-        resize.observe(document.body)
-        const manualScroll = () => {
-          releaseScroll()
-          followAfter = performance.now() + 5000
-          lastFollowed = undefined
-          lastFollowedTop = undefined
-        }
-        const scrollKey = (event: KeyboardEvent) => {
-          if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) manualScroll()
-        }
-        const scrollbarPointer = (event: PointerEvent) => {
-          if (event.target === document.documentElement) manualScroll()
-        }
-        const viewportResize = () => {
-          releaseScroll()
-          spacingDirty = true
-          schedule()
-        }
-        window.addEventListener('wheel', manualScroll, {passive: true})
-        window.addEventListener('touchmove', manualScroll, {passive: true})
-        window.addEventListener('pointerdown', scrollbarPointer, {passive: true})
-        window.addEventListener('resize', viewportResize)
-        window.addEventListener('keydown', scrollKey)
-        document.addEventListener('visibilitychange', schedule)
-        reducedMotion.addEventListener('change', motion)
-        schedule()
+        visibility.observe(host)
+        window.addEventListener('wheel', manual, {passive: true})
+        window.addEventListener('touchmove', manual, {passive: true})
+        window.addEventListener('keydown', key)
+        window.addEventListener('pointerdown', pointer)
+        window.addEventListener('resize', resize)
+        document.addEventListener('visibilitychange', sync)
+        motion.addEventListener('change', changeMotion)
+        player.addEventListener('line-click', click)
+        changeMotion()
+        sync()
         cleanup = () => {
           cancelAnimationFrame(frame)
-          observer.disconnect()
-          resize.disconnect()
-          window.removeEventListener('wheel', manualScroll)
-          window.removeEventListener('touchmove', manualScroll)
-          window.removeEventListener('pointerdown', scrollbarPointer)
-          window.removeEventListener('resize', viewportResize)
-          window.removeEventListener('keydown', scrollKey)
-          document.removeEventListener('visibilitychange', schedule)
-          reducedMotion.removeEventListener('change', motion)
-          player.removeEventListener('line-click', click)
+          sizes.disconnect()
+          visibility.disconnect()
           player.dispose()
+          window.removeEventListener('wheel', manual)
+          window.removeEventListener('touchmove', manual)
+          window.removeEventListener('keydown', key)
+          window.removeEventListener('pointerdown', pointer)
+          window.removeEventListener('resize', resize)
+          document.removeEventListener('visibilitychange', sync)
+          motion.removeEventListener('change', changeMotion)
+          refresh = undefined
         }
       })
-      .catch(() => {
+      .catch((error) => {
+        console.error(error)
         if (!disposed) onfailure()
       })
     return () => {
@@ -281,8 +231,6 @@
 <div bind:this={host} class="lyric-player"></div>
 
 <style>
-  /* The document scrolls, so anchors outside the player (e.g. the footer)
-     must not compensate for the opening and closing interlude gap either. */
   :global(html:has(.lyric-player)) {
     overflow-anchor: none;
   }
@@ -294,11 +242,10 @@
     --amll-lp-hover-bg-color: var(--muted);
   }
   .lyric-player :global(.amll-lyric-player) {
-    mix-blend-mode: normal;
-    height: auto;
+    position: relative;
     contain: none;
     overflow: visible;
-    position: relative;
+    mix-blend-mode: normal;
   }
   .lyric-player :global([data-bottom-line]) {
     display: none;
@@ -306,29 +253,5 @@
   .lyric-player :global(.text-muted-foreground) {
     color: var(--muted-foreground);
     opacity: 1;
-  }
-  /* AMLL sizes the dots separately from their padding; the global reset uses border-box. */
-  .lyric-player :global([class*='_interludeDots']) {
-    box-sizing: content-box;
-  }
-  .lyric-player :global([class*='_lyricLine']) {
-    content-visibility: visible;
-  }
-  .lyric-player :global([class*='_romanWord']) {
-    line-height: 1.5;
-    padding-bottom: 0.15em;
-  }
-  /* AMLL 0.5.2 stacks the individual emphasis characters in ruby word bodies. */
-  .lyric-player :global([class*='_wordBody']) {
-    display: block;
-    text-align: center;
-  }
-  /* Line-timed words use the group's opacity, just like plain text lines.
-     Karaoke masks clip glyph overhangs and are unnecessary without word timing. */
-  .lyric-player :global([data-line-timed] [class*='_lyricMainLine'] span) {
-    mask-image: none !important;
-    -webkit-mask-image: none !important;
-    transform: none !important;
-    text-shadow: none !important;
   }
 </style>

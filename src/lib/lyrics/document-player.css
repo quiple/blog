@@ -1,0 +1,24 @@
+/* AMLL DOM integration: scoped to the document player only. */
+.lyric-player .amll-lyric-player [class*='_lyricLine'] {
+  contain: layout style;
+  content-visibility: visible;
+}
+.lyric-player .amll-lyric-player [class*='_interludeDots'] {
+  box-sizing: content-box;
+}
+.lyric-player .amll-lyric-player [class*='_romanWord'] {
+  line-height: 1.5;
+  padding-bottom: 0.15em;
+}
+.lyric-player .amll-lyric-player [class*='_wordBody'] {
+  display: block;
+  text-align: center;
+}
+.lyric-player .amll-lyric-player [class*='_rubyWord'] {
+  align-self: stretch;
+}
+.lyric-player .amll-lyric-player [class*='_rubyWord'] > span {
+  display: flex;
+  flex: 1;
+  justify-content: space-around;
+}

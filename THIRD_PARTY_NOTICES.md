@@ -6,7 +6,7 @@ These packages retain their own licenses and copyright notices. The project’s 
 
 This inventory covers npm packages only. Fonts, BDF files, content, artwork, trademarks, and third-party source copied into the repository require their own notices and permissions. An absent notice below is not a grant of permission; review the upstream package before redistribution.
 
-AMLL source: https://github.com/amll-dev/applemusic-like-lyrics (core and TTML packages: AGPL-3.0-only). Project integration changes are maintained in src/lib/lyrics/lyric-player.ts and src/lib/components/lyrics/.
+AMLL source: https://github.com/amll-dev/applemusic-like-lyrics (core and TTML packages: AGPL-3.0-only). Project integration changes are maintained in scripts/amll/ and src/lib/lyrics/document-player.ts and src/lib/components/lyrics/.
 
 | Package                                                     | Declared license  | Bundled notices                   |
 | ----------------------------------------------------------- | ----------------- | --------------------------------- |
