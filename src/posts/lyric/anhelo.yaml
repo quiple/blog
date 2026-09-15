@@ -1,0 +1,180 @@
+# https://www.youtube.com/watch?v=MWppmcAHdGs
+# YouTube 등록 자막: en-US (json3, 행별 타이밍)
+# 선택 항목: YouTube 등록 자막 · en-US · English (United States)
+# 가져온 시각: 2026-09-15T19:48:41.419Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: ANHELO
+titleLang: es
+artist:
+  - joni
+  - kasane-teto
+lang: es
+spotify: 57wPvPbioLYHQDxU6rV0on
+youtube:
+  audio: irwshgxLQDQ
+  mv: MWppmcAHdGs
+offsets:
+  youtubeAudio: -2.83
+  spotify: -2.83
+lines:
+  - text: once you look back
+    time: [3.876, 6.419]
+  - text: you'll realize what's done is done
+    time: [6.419, 9.307]
+  - text: and how living is so weird
+    time: [9.307, 14.11]
+  - text: a little song
+    time: [15, 17.336]
+  - text: calling for a solution
+    time: [17.336, 20.022]
+  - text: and the path towards our love
+    time: [20.022, 25.148]
+  - text: i can't handle one more minute
+    time: [26.31, 27.793]
+  - text: i want to freely imagine
+    time: [27.793, 29.121]
+  - text: these sweet little nightmares
+    time: [29.121, 30.876]
+  - text: that attack me
+    time: [30.876, 31.868]
+  - text: i want to be real
+    time: [31.868, 33]
+  - text: get to my ideal dream
+    time: [33, 34.664]
+  - text: be capable, and fly up high
+    time: [34.664, 35.876]
+  - text: for just another night
+    time: [35.876, 37.256]
+  - text: now i'm having an existential doubt
+    time: [37.256, 40.083]
+  - text: please it get the hell out of my mind
+    time: [40.083, 42.755]
+  - text: i want to know everything and meet
+    time: [42.755, 44.534]
+  - text: what i've yearned for years
+    time: [44.534, 47.114]
+  - text: i'm sidereal
+    time: [48, 49.287]
+  - text: i'm unreal
+    time: [49.287, 50.526]
+  - text: but then again i am not ideal
+    time: [50.526, 53.314]
+  - text: the "cynosura" which i think i am
+    time: [53.314, 55.932]
+  - text: it's charming beauty i will never be
+    time: [55.932, 58.734]
+  - text: like a birdbrain i'm writing my song
+    time: [58.902, 61.676]
+  - text: leaving out completely my desolation
+    time: [61.676, 64.216]
+  - text: and i
+    time: [64.216, 64.821]
+  - text: want to see what is there to see
+    time: [64.821, 67.273]
+  - text: and to solve, or to learn what is there to know
+    time: [67.273, 69.827]
+  - text: i adore my vanity
+    time: [70.401, 73.807]
+  - text: so please have mercy on me
+    time: [73.807, 76.846]
+  - text: and proceed to your destiny
+    time: [76.846, 79.612]
+  - text: mantically divine
+    time: [79.612, 81.371]
+  - text: one has to persevere against the distance
+    time: [81.371, 85.195]
+  - text: separating the soul from reaching an inmediate solution
+    time: [85.195, 90]
+  - text: and can not even yearn
+    time: [90, 91.66]
+  - text: if you truly believe in me
+    time: [92.01, 94.469]
+  - text: i'll comprehend you once your lying stops
+    time: [94.469, 97.202]
+  - text: this fancy madness will destroy my heart
+    time: [97.202, 99.966]
+  - text: a sunny picture i'll draw with my blood
+    time: [99.967, 102.787]
+  - text: i'm able, i know i am!
+    time: [103.115, 105.368]
+  - text: and i will fight forever through my soul
+    time: [105.368, 108.068]
+  - text: my love!
+    time: [108.068, 108.568]
+  - text: so i will shine brighter than the ursa minor
+    time: [108.568, 110.896]
+  - text: guiding those looking deep for my constellation
+    time: [110.896, 113.741]
+  - text: yet here i am
+    time: [114.101, 116.143]
+  - text: i'm still holding on to my past
+    time: [116.143, 119.466]
+  - text: such a disgrace!
+    time: [119.466, 121.88]
+  - text: maybe i should just expire...
+    time: [121.88, 124.142]
+  - text: ...
+    time: [124.142, 124.642]
+  - text: but i won't.
+    time: [124.642, 125.891]
+  - text: i won't FALL
+    time: [125.891, 127.071]
+  - text: NO,
+    time: [127.071, 127.757]
+  - text: i will NOT die HERE.
+    time: [127.757, 130.588]
+  - text: and i will fight, my love
+    time: [130.588, 132.851]
+  - text: then i'll search
+    time: [132.851, 133.582]
+  - text: and will sing
+    time: [133.582, 134.215]
+  - text: what i feel for YOU.
+    time: [134.215, 135.723]
+  - text: 'song by: joni'
+    time: [135.964, 139.898]
+  - text: '3D by: joni'
+    time: [140.073, 143.941]
+  - text: 'art by: @pomodor-o (gato baboso)'
+    time: [144.095, 148.816]
+  - text: the 43 seconds solo !!!
+    time: [149.024, 151.318]
+  - text: i'm sidereal
+    time: [179.648, 180.85]
+  - text: i'm unreal
+    time: [180.85, 182.074]
+  - text: but then again i am not ideal
+    time: [182.074, 184.993]
+  - text: the "cynosura" which i think i am
+    time: [184.993, 187.485]
+  - text: it's charming beauty i will never be!
+    time: [187.485, 190.229]
+  - text: like a birdbrain i'm writing my song
+    time: [190.47, 193.185]
+  - text: leaving out completely my desolation
+    time: [193.185, 195.83]
+  - text: and i
+    time: [195.83, 196.33]
+  - text: want to see what there is to see
+    time: [196.33, 198.769]
+  - text: and to solve, or to learn what is there to know
+    time: [198.769, 201.261]
+  - text: if you truly believe in me
+    time: [201.85, 204]
+  - text: i'll comprehend you once your lying stops
+    time: [204, 206.858]
+  - text: this fancy madness will destroy my heart
+    time: [206.858, 209.566]
+  - text: a sunny picture i'll draw with my blood
+    time: [209.566, 212.43]
+  - text: i'm able, i know i am!
+    time: [212.946, 215.173]
+  - text: and i will fight forever through my soul
+    time: [215.173, 217.708]
+  - text: my love!
+    time: [217.708, 218.363]
+  - text: so i will shine brighter than the ursa minor
+    time: [218.363, 220.789]
+  - text: guiding those looking deep for my constellation
+    time: [220.789, 223.555]
