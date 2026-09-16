@@ -248,11 +248,11 @@ lines:
     translation: 인터넷 요금조차 내기 빠듯해
     time: [173.253, 174.865]
   - text: I need some help
-    pronunciation: 데
+    pronunciation: 아이 니드 섬 헬프
     translation: 도움이 좀 필요해
     time: [174.865, 175.46]
   - text: Just need some time
-    pronunciation: 데
+    pronunciation: 저스트 니드 섬 타임
     translation: 시간이 조금만 있으면 돼
     time: [175.46, 176.324]
   - text: My Spotify doesn't make a dime
@@ -268,19 +268,19 @@ lines:
     translation: (무료 트위치 프라임으로 내 채널 구독 좀 해 줘)
     time: [179.092, 180.472]
   - text: Please play me in your ears
-    pronunciation: 데
+    pronunciation: 플리즈 플레이 미 인 유어 이어즈
     translation: 제발 내 노래 좀 들어 줘
     time: [180.472, 181.77]
   - text: I don't want a real career
-    pronunciation: 데
+    pronunciation: 아이 돈트 원트 어 리얼 커리어
     translation: 제대로 된 직장은 갖기 싫어
     time: [181.771, 183.285]
   - text: Oh, please play me in your ears
-    pronunciation: 데
+    pronunciation: 오, 플리즈 플레이 미 인 유어 이어즈
     translation: 아, 제발 내 노래 좀 들어 줘
     time: [183.285, 184.717]
   - text: I don't want a real career
-    pronunciation: 데
+    pronunciation: 아이 돈트 원트 어 리얼 커리어
     translation: 제대로 된 직장은 갖기 싫어
     time: [184.717, 186.717]
   - text: Unemployed
