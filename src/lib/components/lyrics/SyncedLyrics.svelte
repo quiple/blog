@@ -164,7 +164,6 @@
         }
         const resize = () => {
           release()
-          spacingDirty = true
           sync()
         }
         const changeMotion = () => {

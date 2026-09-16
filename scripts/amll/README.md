@@ -16,6 +16,9 @@ and measuring rows outside a fixed viewport, maintaining document content height
 and positioning interlude dots between animated rows. Layout still uses native
 viewport coordinates to calculate stagger delays before translating final DOM
 positions. The native wheel/touch scroll adapter is not attached.
+Unused internal scroll-boundary updates and hidden bottom-line positioning are
+omitted. Patch entries retain only the changed code and enough unique context;
+unchanged upstream method bodies are not duplicated in the patch.
 
 The app also fixes the reported ruby/line-timing issues: line timing is determined
 before background timestamp normalization; line-timed annotated words use native

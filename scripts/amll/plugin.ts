@@ -19,18 +19,18 @@ export function documentLyrics(): Plugin {
     },
     async load(name) {
       if (name !== id) return
-      let code = await readFile(source, 'utf8')
-      if (createHash('sha256').update(code).digest('hex') !== patch.sha256) {
-        throw new Error(`AMLL changed: review the document adapter for core ${patch.version} before upgrading.`)
-      }
-      for (const {label, before, after} of patch.changes) {
-        if (code.indexOf(before) < 0 || code.indexOf(before) !== code.lastIndexOf(before))
-          throw new Error(`AMLL patch mismatch: ${label}`)
-        code = code.replace(before, after)
-      }
-      // Bundle the DOM export so development also handles AMLL's CommonJS
-      // dependencies. Unused renderer exports are tree-shaken by Vite.
       bundle ??= (async () => {
+        let code = await readFile(source, 'utf8')
+        if (createHash('sha256').update(code).digest('hex') !== patch.sha256) {
+          throw new Error(`AMLL changed: review the document adapter for core ${patch.version} before upgrading.`)
+        }
+        for (const {label, before, after} of patch.changes) {
+          if (code.indexOf(before) < 0 || code.indexOf(before) !== code.lastIndexOf(before))
+            throw new Error(`AMLL patch mismatch: ${label}`)
+          code = code.replace(before, after)
+        }
+        // Bundle the DOM export so development also handles AMLL's CommonJS
+        // dependencies. Unused renderer exports are tree-shaken by Vite.
         const result = await build({
           configFile: false,
           publicDir: false,
