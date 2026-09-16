@@ -211,14 +211,26 @@
         {@render textLines(visibleTimed)}
       </div>
       {#if untimed.length}
-        <div class="mt-6 leading-relaxed">
+        <div class="plain-lyrics mt-6 leading-relaxed">
           {@render textLines(untimed, true)}
         </div>
       {/if}
     {:else}
-      <div class="leading-relaxed font-normal">
+      <div class="plain-lyrics leading-relaxed font-normal">
         {@render textLines(lines)}
       </div>
     {/if}
   </section>
 </div>
+
+<style>
+  .plain-lyrics {
+    /* AMLL row padding is 1em at the synced lyric font size, not the plain text size. */
+    padding-inline: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  @media (width <= 500px) {
+    .plain-lyrics {
+      padding-inline: 20px;
+    }
+  }
+</style>
