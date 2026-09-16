@@ -123,6 +123,7 @@ lines:
     pronunciation: 돈나바카데모
     translation: 어떤 바보라도
     time: [134.424, 135.775]
+    duet: true
   - text: 愛を歌うんだって
     pronunciation: 아이오우타운닷테
     translation: 사랑을 노래한다며
@@ -131,6 +132,7 @@ lines:
     pronunciation: 츠카레킷테
     translation: 완전히 지쳐서
     time: [137.701, 139.266]
+    duet: true
   - text: 会いに行こうとして
     pronunciation: 아이니이코토시테
     translation: 만나러 가려다가
@@ -139,6 +141,7 @@ lines:
     pronunciation: 토자캇테모
     translation: 멀어져도
     time: [141.195, 142.632]
+    duet: true
   - text: 承認欲求が足りないだけ
     pronunciation: 쇼닌욧큐가타리나이다케
     translation: 인정받고 싶은 욕구가 부족할 뿐
