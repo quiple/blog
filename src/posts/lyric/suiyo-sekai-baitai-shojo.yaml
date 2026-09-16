@@ -14,6 +14,9 @@ lang: ja
 spotify: 6hYumNC96mdyjOg0qeZEFY
 youtube:
   audio: a_vC3_UQu7E
+offsets:
+  youtubeAudio: 0.1
+  spotify: 0.1
 lines:
   - text: 「ねぇ似合ってる?」って
     time: [28.876, 31.423]
