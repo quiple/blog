@@ -40,10 +40,10 @@ lines:
   - text: Dulces pesadillas que me atacan
     translation: 나를 덮치는 달콤한 악몽들
     time: [29.121, 31.868]
-  - text: Quiero ser normal
+  - text: Quiero ser normal,
     translation: 평범해지고 싶어
     time: [31.868, 33]
-  - text: Cumplir mi sueño ideal
+  - text: Cumplir mi sueño ideal,
     translation: 내 이상적인 꿈을 이루고
     time: [33, 34.664]
   - text: Ser capaz, poder volar
@@ -64,7 +64,7 @@ lines:
   - text: Soy sideral, soy irreal
     translation: 나는 별의 존재, 비현실적인 존재
     time: [48, 50.526]
-  - text: Y sin embargo no soy ideal
+  - text: Y, sin embargo, no soy ideal
     translation: 하지만 이상적이지는 않아
     time: [50.526, 53.314]
   - text: La cinosura que pienso que soy
@@ -73,7 +73,7 @@ lines:
   - text: Su hermosura nunca seré yo
     translation: 그 아름다움을 나는 결코 지닐 수 없어
     time: [55.932, 58.734]
-  - text: Como loca escribo una canción
+  - text: Como loca, escribo una canción
     translation: 미친 듯이 노래 한 곡을 써
     time: [58.902, 61.676]
   - text: Desemboca una desolación
@@ -88,7 +88,7 @@ lines:
   - text: Yo adoro mi vanidad
     translation: 나는 내 허영을 사랑해
     time: [70.401, 73.807]
-  - text: Por favor ten piedad
+  - text: Por favor, ten piedad
     translation: 제발 자비를 베풀어 줘
     time: [73.807, 76.846]
   - text: Acepta tu destino
@@ -97,7 +97,7 @@ lines:
   - text: Algo divino
     translation: 어떤 신성한 것을
     time: [79.612, 81.371]
-  - text: Bien hay que perseverar ante la distancia
+  - text: Bien, hay que perseverar ante la distancia
     translation: 자, 그 거리를 견뎌 내야 해
     time: [81.371, 85.195]
   - text: Que separa a el alma de una solución inmediata
@@ -106,7 +106,7 @@ lines:
   - text: Que no piensa anhelar
     translation: 갈망할 생각조차 하지 않는
     time: [90, 92.01]
-  - text: Si en verdad tu crees en mi
+  - text: Si en verdad tu crees en mi,
     translation: 네가 정말 나를 믿는다면
     time: [92.01, 94.469]
   - text: Te entenderé si dejas de mentir
@@ -139,13 +139,13 @@ lines:
   - text: Pero no, no lo haré, no me rendiré así
     translation: 하지만 아니, 그러지 않을 거야, 이렇게 포기하진 않아
     time: [124.642, 130.588]
-  - text: Y pelearé mi amor, buscaré y cantaré todo mi sentir!
+  - text: ¡Y pelearé, mi amor, buscaré y cantaré todo mi sentir!
     translation: 그리고 싸울 거야, 내 사랑, 찾고 내 모든 감정을 노래할 거야!
     time: [130.588, 135.723]
   - text: Soy sideral, soy irreal
     translation: 나는 별의 존재, 비현실적인 존재
     time: [179.648, 182.074]
-  - text: Y sin embargo no soy ideal
+  - text: Y, sin embargo, no soy ideal
     translation: 하지만 이상적이지는 않아
     time: [182.074, 184.993]
   - text: La cinosura que pienso que soy
@@ -154,7 +154,7 @@ lines:
   - text: Su hermosura nunca seré yo
     translation: 그 아름다움을 나는 결코 지닐 수 없어
     time: [187.485, 190.47]
-  - text: Como loca escribo una canción
+  - text: Como loca, escribo una canción
     translation: 미친 듯이 노래 한 곡을 써
     time: [190.47, 193.185]
   - text: Desemboca una desolación
@@ -166,7 +166,7 @@ lines:
   - text: Resolver, entender lo que hay por saber
     translation: 풀어내고, 알아야 할 것들을 이해하고 싶어
     time: [198.769, 201.261]
-  - text: Si en verdad tu crees en mi
+  - text: Si en verdad tu crees en mi,
     translation: 네가 정말 나를 믿는다면
     time: [201.85, 204]
   - text: Te entenderé si dejas de mentir
