@@ -256,15 +256,15 @@ lines:
     translation: 시간이 조금만 있으면 돼
     time: [175.46, 176.324]
   - text: My Spotify doesn't make a dime
-    pronunciation: 데
+    pronunciation: 마이 스포티파이 더즌트 메이크 어 다임
     translation: 스포티파이로는 한 푼도 못 벌어
     time: [176.324, 177.577]
   - text: But my stream has a record uptime
-    pronunciation: 데
+    pronunciation: 벗 마이 스트림 해즈 어 레코드 업타임
     translation: 그런데 방송 켜 둔 시간은 신기록이야
     time: [177.577, 179.091]
   - text: (Go sub to me with your free Twitch Prime)
-    pronunciation: 데
+    pronunciation: (고 섭 투 미 위드 유어 프리 트위치 프라임)
     translation: (무료 트위치 프라임으로 내 채널 구독 좀 해 줘)
     time: [179.092, 180.472]
   - text: Please play me in your ears
