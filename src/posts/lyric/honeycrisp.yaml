@@ -70,8 +70,8 @@ lines:
   - text: I'm better off alone
     translation: 난 혼자인 편이 나아
     time: [85.191, 87.191]
-  - text: Don't you know
-    translation: 모르겠어
+  - text: Don't you know?
+    translation: 모르겠어?
     time: [87.191, 88.694]
   - text: I don't want to be alone
     translation: 혼자 있고 싶진 않아
