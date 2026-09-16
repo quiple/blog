@@ -1,0 +1,87 @@
+# https://music.apple.com/kr/song/1614620301
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1614620301?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1614620301
+# 선택 항목: Apple Music · Re:start · 음절별 가사 · 1614620301
+# 가져온 시각: 2026-09-16T18:57:38.221Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: Re:start
+titleLang: ja
+lang: ja
+spotify: 2jkXVyRtKKpatyjMhbPHao
+youtube:
+  audio: uFZlSuZOiZs
+lines:
+  - text: 止まっていた時を
+    time: [15.052, 18.06]
+  - text: 空っぽな心を
+    time: [21.238, 23.548]
+  - text: 優しく動かしたの
+    time: [27.636, 31.841]
+  - text: あなたの温かさが
+    time: [32.775, 36.446]
+  - text: もし今あなたが
+    time: [40.278, 43.231]
+  - text: 深い闇にいて
+    time: [46.411, 48.848]
+  - text: ひとりで泣いてるなら
+    time: [52.871, 57.041]
+  - text: 助けてあげたいから
+    time: [58.043, 61.487]
+  - text: 手伸ばして
+    time: [64.812, 67.802]
+  - text: ひとりじゃ
+    time: [71.125, 74.28]
+  - text: 抱えきれないでしょ?
+    time: [76.469, 79.453]
+  - text: Are you empty?
+    time: [79.753, 81.443]
+  - text: あなたがしてくれたように
+    time: [83.271, 90.205]
+  - text: 暗い未来から
+    time: [92.296, 94.793]
+  - text: あなたの手を引きたいのに
+    time: [95.98, 102.776]
+  - text: 自分を許せなくて
+    time: [115.851, 119.107]
+  - text: 未来を閉ざすこと
+    time: [122.194, 124.567]
+  - text: それで楽になるなら
+    time: [128.587, 132.795]
+  - text: 止めたりはしないけど
+    time: [133.837, 137.345]
+  - text: 寂しい
+    time: [140.524, 143.575]
+  - text: 1人じゃ
+    time: [146.961, 150.056]
+  - text: 歩き出せないから
+    time: [152.184, 155.074]
+  - text: Are you empty?
+    time: [155.538, 157.271]
+  - text: あなたにもらったものを
+    time: [159.054, 165.943]
+  - text: たったひとつだけを持って
+    time: [168.062, 173.944]
+  - text: 歩いてるのに
+    time: [175.029, 178.695]
+  - text: Are you empty?
+    time: [202.863, 204.575]
+  - text: それでも
+    time: [206.473, 208.621]
+  - text: あなたはまた歩き出すんでしょう?
+    time: [209.654, 215.109]
+  - text: でも涙がこぼれてしまう時は
+    time: [215.622, 221.15]
+  - text: 傍にいるから
+    time: [221.765, 224.321]
+  - text: Are you empty?
+    time: [224.991, 226.867]
+  - text: 少しずつ歩けばいい
+    time: [228.666, 235.472]
+  - text: 綺麗じゃなくていい弱くていい
+    time: [237.485, 243.486]
+  - text: だから生きてて
+    time: [244.34, 248.08]
+  - text: 笑い合っていたいから
+    time: [261.997, 265.523]
