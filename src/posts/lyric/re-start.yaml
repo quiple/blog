@@ -14,8 +14,8 @@ spotify: 2jkXVyRtKKpatyjMhbPHao
 youtube:
   audio: uFZlSuZOiZs
 offsets:
-  youtubeAudio: 0.1
-  spotify: 0.1
+  youtubeAudio: -0.7
+  spotify: -0.7
 lines:
   - text: 止まっていた時を
     time: [15.052, 18.06]
