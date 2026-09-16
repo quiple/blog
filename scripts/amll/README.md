@@ -26,6 +26,8 @@ ruby DOM without karaoke masks; kana are distributed within the original timed
 ruby span. These are rendering fixes, not replacements for AMLL's word renderer.
 The remaining masks, word emphasis, springs, grouping, duet, pronunciation,
 translation, timeline and background animations remain upstream implementations.
+The app displays pronunciation before translation (upstream 0.5.2 places it
+after translation), with the same muted color for both annotations.
 
 `src/lib/lyrics/document-player.ts` exposes coordinates.
 `src/lib/components/lyrics/SyncedLyrics.svelte` handles document scrolling,

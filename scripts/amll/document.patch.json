@@ -91,6 +91,26 @@
       "label": "Line language and translated color",
       "before": "\t\ttrans.setAttribute(\"class\", lyric_player_module_default.lyricSubLine);",
       "after": "\t\ttrans.setAttribute(\"class\", lyric_player_module_default.lyricSubLine);\n if(this.lyricLine.lang && this.lyricLine.lang!=='ko') main.setAttribute('lang',this.lyricLine.lang);\n if(this.lyricLine.pronunciationLang && this.lyricLine.pronunciationLang!=='ko') roman.setAttribute('lang',this.lyricLine.pronunciationLang);\n trans.classList.add('text-muted-foreground');"
+    },
+    {
+      "label": "Pronunciation before translation: constructor",
+      "before": "\t\tthis.element.appendChild(document.createElement(\"div\"));\n\t\tconst main = this.element.children[0];\n\t\tconst trans = this.element.children[1];\n\t\tconst roman = this.element.children[2];",
+      "after": "\t\tthis.element.appendChild(document.createElement(\"div\"));\n\t\tconst main = this.element.children[0];\n\t\tconst trans = this.element.children[2];\n\t\tconst roman = this.element.children[1];"
+    },
+    {
+      "label": "Pronunciation before translation: rebuild",
+      "before": "\trebuildElement() {\n\t\tthis.disposeElements();\n\t\tconst main = this.element.children[0];\n\t\tconst trans = this.element.children[1];\n\t\tconst roman = this.element.children[2];",
+      "after": "\trebuildElement() {\n\t\tthis.disposeElements();\n\t\tconst main = this.element.children[0];\n\t\tconst trans = this.element.children[2];\n\t\tconst roman = this.element.children[1];"
+    },
+    {
+      "label": "Pronunciation before translation: dispose",
+      "before": "\t\tthis.splittedWords = [];\n\t\tconst main = this.element.children[0];\n\t\tconst trans = this.element.children[1];\n\t\tconst roman = this.element.children[2];",
+      "after": "\t\tthis.splittedWords = [];\n\t\tconst main = this.element.children[0];\n\t\tconst trans = this.element.children[2];\n\t\tconst roman = this.element.children[1];"
+    },
+    {
+      "label": "Muted pronunciation",
+      "before": "\t\troman.setAttribute(\"class\", lyric_player_module_default.lyricSubLine);",
+      "after": "\t\troman.setAttribute(\"class\", lyric_player_module_default.lyricSubLine);\n\t\troman.classList.add(\"text-muted-foreground\");"
     }
   ]
 }

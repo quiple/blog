@@ -69,7 +69,8 @@ export async function addPronunciation(
     const pronunciation = node.get('pronunciation')
     if (
       !options.force &&
-      ((typeof pronunciation === 'string' && pronunciation.trim()) || (isMap(pronunciation) && pronunciation.has('ko')))
+      ((typeof pronunciation === 'string' && pronunciation.trim()) ||
+        (isMap(pronunciation) && pronunciation.items.length > 0))
     )
       return
     const words = node.get('words')
@@ -116,9 +117,7 @@ export async function addPronunciation(
   const converted = new Map(texts.map((text, i) => [text, results[i]]))
   for (const {node, text} of pending) {
     const value = converted.get(text)!
-    const pronunciation = node.get('pronunciation')
-    if (isMap(pronunciation)) pronunciation.set('ko', value)
-    else node.set('pronunciation', doc.createNode({ko: value}))
+    node.set('pronunciation', value)
   }
   return {yaml: doc.toString({lineWidth: 0, flowCollectionPadding: false}), count: pending.length}
 }

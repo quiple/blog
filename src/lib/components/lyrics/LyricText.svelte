@@ -21,10 +21,10 @@
           >{/if}
       </span>{/each}
   </span>
-  {#if line.translatedLyric}<br /><span class="whitespace-pre-line text-muted-foreground">{line.translatedLyric}</span
-    >{/if}
   {#if line.romanLyric}<br /><span
       lang={line.pronunciationLang === 'ko' ? undefined : (line.pronunciationLang ?? '')}
       class="text-sm whitespace-pre-line text-muted-foreground">{line.romanLyric}</span
+    >{/if}
+  {#if line.translatedLyric}<br /><span class="whitespace-pre-line text-muted-foreground">{line.translatedLyric}</span
     >{/if}
 </svelte:element>

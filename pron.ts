@@ -14,9 +14,9 @@ const help = `가사에 한글 발음 추가 (로컬 Hangulize)
   nub run pron anhelo --lang spa
 
 --dry-run  저장하지 않고 결과 YAML 출력
---force    기존 한글 발음/문자열 발음 덮어쓰기 (다른 언어의 발음은 유지)
+--force    기존 발음을 한글 발음 문자열로 덮어쓰기
 --lang     원문 언어 지정 (기본: YAML의 lang, es → spa, pt-BR → por-br)
-기존 문자열 발음과 pronunciation.ko는 기본적으로 보존합니다.
+기존 발음은 기본적으로 보존하고, 새 발음은 pronunciation 문자열로 저장합니다.
 설치: go install github.com/hangulize/hangulize/cmd/hangulize@v0.5.0
 설치한 hangulize를 PATH에 추가하거나 HANGULIZE_BIN으로 경로를 지정하세요.
 영어는 지원하지 않습니다. 결과는 외래어 표기 규칙에 따른 초안입니다.`
