@@ -397,7 +397,7 @@ lines:
       translation: (테토 바게트)
       time: [234.392, 235.585]
   - text: Forever chilling for free
-    pronunciation: 데
+    pronunciation: 포에버 칠링 포 프리
     translation: 영원히 돈 한 푼 없이 빈둥대
     time: [235.585, 237.264]
     background:
@@ -406,7 +406,7 @@ lines:
       translation: (언제까지나 함께)
       time: [237.264, 238.554]
   - text: My immense debt and me
-    pronunciation: 데
+    pronunciation: 마이 이멘스 뎃 앤드 미
     translation: 어마어마한 빚과 나
     time: [238.554, 240.106]
     background:
@@ -415,7 +415,7 @@ lines:
       translation: (돈이 없어)
       time: [240.106, 241.419]
   - text: We'll be chilling for free
-    pronunciation: 데
+    pronunciation: 윌 비 칠링 포 프리
     translation: 우린 돈 한 푼 없이 빈둥댈 거야
     time: [241.419, 244.196]
     background:
@@ -423,6 +423,6 @@ lines:
       pronunciation: (즛토잇쇼니)
       translation: (언제까지나 함께)
   - text: Forever chilling for free
-    pronunciation: 데
+    pronunciation: 포에버 칠링 포 프리
     translation: 영원히 돈 한 푼 없이 빈둥대
     time: [244.197, 246.197]
