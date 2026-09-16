@@ -7,13 +7,9 @@ import {Document, isScalar, isSeq, visit} from 'yaml'
 import {parseSong} from './src/lib/lyrics/model.ts'
 import {compactSong, fromTTML} from './scripts/lyrics/convert.ts'
 import {choose, terminalText} from './scripts/lyrics/select.ts'
-import {
-  fromDatabase,
-  fromPlatform,
-  searchDatabase,
-  youtubeCandidates,
-  type Candidate,
-} from './scripts/lyrics/sources.ts'
+import {fromDatabase, searchDatabase, youtubeCandidates, type Candidate} from './scripts/lyrics/sources.ts'
+
+import {appleCandidates, spotifyCandidates} from './scripts/lyrics/platforms.ts'
 
 const root = dirname(fileURLToPath(import.meta.url))
 const help = `가사 가져오기
@@ -25,8 +21,8 @@ const help = `가사 가져오기
   nub run import --file ./lyrics.ttml --slug music-title
 
 -y, --youtube ID       YouTube ID (yt-dlp 필요)
--a, --apple ID         Apple Music 곡 ID로 AMLL DB 검색
--s, --spotify ID       Spotify 트랙 ID로 AMLL DB 검색
+-a, --apple ID         Apple Music에서 직접 가사 가져오기 (로그인 토큰 필요)
+-s, --spotify ID       Spotify에서 직접 가사 가져오기 (웹 플레이어 토큰 필요)
     --amll 값         AMLL 파일명 / API ID / TTML 직접 URL
     --search 곡명     AMLL DB 곡명 검색
     --file 경로       로컬 TTML 가져오기
@@ -90,8 +86,8 @@ async function main() {
       {label: path, load: async () => ({song: fromTTML(await readFile(path, 'utf8')).song, sources: [path]})},
     ]
   } else if (v.youtube) candidates = await youtubeCandidates(v.youtube, !!v.auto)
-  else if (v.apple) candidates = await fromPlatform('appleMusic', v.apple)
-  else if (v.spotify) candidates = await fromPlatform('spotify', v.spotify)
+  else if (v.apple) candidates = await appleCandidates(v.apple)
+  else if (v.spotify) candidates = await spotifyCandidates(v.spotify)
   else if (v.amll) candidates = await fromDatabase(v.amll)
   else candidates = await searchDatabase(v.search!)
   const selected = await choose(

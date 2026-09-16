@@ -11,19 +11,25 @@ type Item = {
   filename: string
   musicNames: string[]
   artistNames: string[]
-  appleMusicIds?: string[]
-  spotifyIds?: string[]
   authorUsernames?: string[]
   lyrics?: string
 }
 
-export async function fetchText(url: string) {
+export async function fetchText(url: string, headers: Record<string, string> = {}) {
   if (new URL(url).protocol !== 'https:') throw new Error('HTTPS 주소만 사용할 수 있습니다.')
   const response = await fetch(url, {
     signal: AbortSignal.timeout(30000),
-    headers: {'User-Agent': 'quiple-lyric-import/1.0'},
+    redirect: headers.Authorization ? 'error' : 'follow',
+    headers: {'User-Agent': 'quiple-lyric-import/1.0', ...headers},
   })
-  if (!response.ok) throw new Error(`가사 요청 실패: HTTP ${response.status} (${new URL(url).hostname})`)
+  if (!response.ok) {
+    const hint = [401, 403].includes(response.status)
+      ? ' 로그인 토큰 만료·계정의 접근 권한을 확인하세요.'
+      : response.status === 404
+        ? ' 해당 곡 또는 가사가 없습니다.'
+        : ''
+    throw new Error(`가사 요청 실패: HTTP ${response.status} (${new URL(url).hostname}).${hint}`)
+  }
   const reader = response.body!.getReader()
   const chunks: Uint8Array[] = []
   let size = 0
@@ -70,7 +76,7 @@ function databaseCandidate(item: Item): Candidate {
     },
   }
 }
-export async function searchDatabase(query: string, filter?: (item: Item) => boolean) {
+export async function searchDatabase(query: string) {
   const candidates: Candidate[] = []
   for (let page = 1; page <= 10; page++) {
     const result = await api<{items: Item[]; pagination: {hasMore: boolean}}>('search', {
@@ -78,23 +84,10 @@ export async function searchDatabase(query: string, filter?: (item: Item) => boo
       page: String(page),
       pageSize: '100',
     })
-    candidates.push(...result.items.filter((item) => !filter || filter(item)).map(databaseCandidate))
+    candidates.push(...result.items.map(databaseCandidate))
     if (!result.pagination.hasMore) return candidates
   }
   throw new Error('검색 결과가 너무 많습니다. --search에 더 구체적인 곡명을 입력하세요.')
-}
-export async function fromPlatform(platform: 'appleMusic' | 'spotify', id: string) {
-  const item = await api<Item>('get', {[`${platform}Id`]: id})
-  try {
-    const candidates = await searchDatabase(
-      item.musicNames[0],
-      (row) => (platform === 'appleMusic' ? row.appleMusicIds : row.spotifyIds)?.includes(id) ?? false,
-    )
-    if (candidates.length) return candidates
-  } catch (error) {
-    console.error(`이전 가사 버전 검색 실패: ${error instanceof Error ? error.message : '알 수 없는 오류'}`)
-  }
-  return [databaseCandidate(item)]
 }
 export async function fromDatabase(identifier: string) {
   if (/^\d+$/.test(identifier)) return [databaseCandidate(await api<Item>('get', {id: identifier}))]

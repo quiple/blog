@@ -7,7 +7,7 @@
   "scripts": {
     "licenses": "node scripts/license-notices.mjs",
     "dev": "vite dev",
-    "import": "node import.ts",
+    "import": "node --env-file-if-exists=.env.local import.ts",
     "diff": "node diff.ts",
     "build": "VITE_PRERENDER_OG_IMAGES=true vite build",
     "build:fast": "vite build",

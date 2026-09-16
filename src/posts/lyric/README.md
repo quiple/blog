@@ -142,7 +142,7 @@ YouTube 뮤비↔음원 전환은 소스별 보정값을 적용해 같은 가사
 # YouTube 동영상 ID: AMLL 가사와 제공되는 자막 중 선택
 nub run import -y YDLafQ-Rg-k --slug wrong-world-new --artist togenashi-togeari
 
-# Apple Music / Spotify ID: 공식 AMLL DB의 대응 가사 가져오기
+# Apple Music / Spotify ID: 해당 서비스에서 직접 가사 가져오기 (.env.local 인증 필요)
 nub run import -a 1737842246 --slug wrong-world-new
 nub run import -s 0tNSVPZeJjpNH7Q9VqrbyJ --slug wrong-world-new
 
@@ -153,7 +153,7 @@ nub run import --amll 'https://amlldb.bikonoo.com/raw-lyrics/1779284741800-68000
 nub run import --file ./lyrics.ttml --slug music-title
 ```
 
-`node import.ts …`로도 실행할 수 있습니다. `nubx import.ts`는 패키지 실행용 명령이어서 로컬 TypeScript 파일을 찾지 못하므로 위 명령을 사용하세요.
+`node --env-file-if-exists=.env.local import.ts …`로도 실행할 수 있습니다. `nubx import.ts`는 패키지 실행용 명령이어서 로컬 TypeScript 파일을 찾지 못하므로 위 명령을 사용하세요.
 
 후보가 여러 개면 **↑/↓ 방향키로 이동하고 Enter로 선택**합니다. Esc 또는 Ctrl+C로 취소할 수 있습니다. 비대화형 실행에서는 `--select 2`처럼 후보 번호(1부터)를 지정하세요. 후보가 여러 개인데 번호를 지정하지 않으면 목록을 출력하고 파일을 만들지 않습니다.
 
@@ -163,11 +163,24 @@ nub run import --file ./lyrics.ttml --slug music-title
 - `--title`, `--lang`으로 제목과 원문 언어를 지정할 수 있습니다. 제목 언어(`titleLang`)에는 가사 언어(`lang`)와 같은 값을 저장합니다. YouTube는 기본 `youtube.mv`에 저장하며 `--audio`를 붙이면 `youtube.audio`에 저장합니다.
 - YouTube에는 별도로 **yt-dlp**가 필요합니다(macOS: `brew install yt-dlp`). 미디어는 다운로드하지 않고 메타데이터와 선택한 자막만 가져옵니다. 기본 후보는 등록 자막이며 `--auto`를 붙이면 자동 생성 자막도 표시합니다. 자동 자막은 노래 가사와 다를 수 있습니다.
 - YouTube 자막은 제공된 행별 타이밍을 사용하며 단어별 타이밍을 임의 생성하지 않습니다. TTML은 단어·루비 타이밍, 번역·발음, 듀엣·배경 보컬을 YAML로 변환합니다. 타이밍은 0.001초 단위로 유지합니다.
-- Apple Music·Spotify는 입력한 곡 ID에 연결된 공식 AMLL DB 가사를 검색합니다. DB에 없는 곡은 `--search`, `--file` 또는 직접 다운로드한 TTML을 사용하세요. 로그인 쿠키나 토큰을 요구하지 않습니다.
+- Apple Music·Spotify는 로그인된 웹 플레이어의 비공개 API에 직접 요청합니다. 공식 공개 가사 API가 아니므로 서비스 변경, 구독·지역·곡의 가사 제공 여부에 따라 실패할 수 있습니다. AMLL DB로 자동 대체하지 않습니다. DB 가사는 `--search` 또는 `--amll`로 가져오세요.
 - `-a` / `--apple`에는 Apple Music 곡 ID를 입력합니다. `/song/곡ID`의 마지막 숫자 또는 `/album/…/앨범ID?i=곡ID`의 `i` 값을 사용합니다. Apple Music 링크는 YAML 상단 출처 주석에만 기록하며, 재생 제공자로 추가하지 않습니다.
 - AMLL에서 가져온 타이밍과 YouTube 뮤비의 편집 시점은 다를 수 있으므로 `offsets`를 확인하세요. 출처의 언어별 번역은 보존되며, 사이트에서는 기존 규칙대로 한국어만 표시합니다.
 
 관련 명세: [AMLL HTTP API](https://amll.dev/reference/http-api/native), [AMLL DB](https://github.com/amll-dev/amll-ttml-db), [yt-dlp 자막 옵션](https://github.com/yt-dlp/yt-dlp#subtitle-options).
+
+### Apple Music·Spotify 인증
+
+`nub run import`는 Git에서 제외된 `.env.local`을 읽습니다. `.env.example`의 빈 항목을 참고해 필요한 서비스의 값만 추가하세요. 토큰은 코드·YAML·명령행 인자에 넣지 않습니다. 이 설정은 로컬 import 전용이며 배포 환경에 설정할 필요가 없습니다.
+
+- **Spotify:** 로그인한 `open.spotify.com`에서 가사를 연 뒤 브라우저 개발자 도구 → Network에서 `color-lyrics` 요청을 찾습니다. Request Headers의 `authorization: Bearer …`에서 토큰 부분을 `SPOTIFY_ACCESS_TOKEN`에 넣으세요. 일반 Spotify 개발자 API용 Client Credentials 토큰과 다릅니다. 만료되면 새 값을 넣어야 합니다.
+- **Apple Music:** 로그인한 `music.apple.com`에서 가사를 연 뒤 Network의 `amp-api.music.apple.com` 요청에서 `authorization`의 Bearer 토큰을 `APPLE_MUSIC_TOKEN`, `media-user-token`을 `APPLE_MUSIC_USER_TOKEN`에 넣으세요. 후자는 브라우저의 같은 이름 쿠키에서도 확인할 수 있습니다. `APPLE_MUSIC_STOREFRONT`는 생략하면 계정에서 조회하며, 직접 지정할 경우 `kr`, `us`, `jp`처럼 입력합니다.
+
+Apple Music은 제공된 음절별·행별 TTML을 후보로 표시하므로 여러 개면 기존 방향키 선택창에서 고릅니다. TTML에 포함된 타이밍과 주석 데이터를 기존 변환기로 처리합니다. Spotify는 제공된 행별 타이밍을 사용합니다. 종료 시각이 0/누락이면 다음 큐(빈 행 포함)의 시작 또는 곡 길이로 보완하고 이 사실을 출처 주석에 기록합니다. 비동기화 가사는 시간을 만들지 않습니다. Spotify 곡명과 마지막 행의 종료 시각을 위해 트랙 메타데이터도 요청합니다.
+
+인증값이 없거나 HTTP 401/403이면 저장하지 않고 오류를 표시합니다. 인증된 요청은 리디렉션을 따라가지 않고, 인증값을 출처 주석이나 오류 응답 본문에 기록하지 않습니다. `--stdout`으로 결과를 확인한 뒤 저장할 수 있습니다.
+
+요청 형식 참고: [Apple Music 가사 클라이언트](https://github.com/dropcreations/Manzana-Apple-Music-Lyrics), [Spotify 가사 클라이언트](https://github.com/akashrchandran/spotify-lyrics-api). 외부 클라이언트를 설치하거나 그 코드·인증 토큰 발급기를 포함하지 않습니다.
 
 ## 음원 간 오프셋 비교
 
