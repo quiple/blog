@@ -56,7 +56,7 @@ lines:
     translation: 그래, 돈 한 푼 없이 빈둥대
     time: [32.898, 34.898]
   - text: Just my baguette and me
-    pronunciation: 저스트 마이 배겟 앤드 미
+    pronunciation: 저스트 마이 배게트 앤드 미
     translation: 바게트와 나, 단둘이서
     time: [35.785, 37.667]
   - text: I'm poor as shit
@@ -164,7 +164,7 @@ lines:
       translation: (헛된 인생)
       time: [74.933, 76.261]
   - text: Just my baguette and me
-    pronunciation: 저스트 마이 배겟 앤드 미
+    pronunciation: 저스트 마이 배게트 앤드 미
     translation: 바게트와 나, 단둘이서
     time: [76.261, 78]
   - text: I'm poor as hell
@@ -320,7 +320,7 @@ lines:
     translation: 그래, 돈 한 푼 없이 빈둥대
     time: [206.339, 208.175]
   - text: Just my baguette and me
-    pronunciation: 저스트 마이 배겟 앤드 미
+    pronunciation: 저스트 마이 배게트 앤드 미
     translation: 바게트와 나, 단둘이서
     time: [209.229, 211.752]
   - text: Motherfucker, I'm unemployed
@@ -388,7 +388,7 @@ lines:
       translation: (헛된 인생)
       time: [231.445, 232.705]
   - text: Just my baguette and me
-    pronunciation: 저스트 마이 배겟 앤드 미
+    pronunciation: 저스트 마이 배게트 앤드 미
     translation: 바게트와 나, 단둘이서
     time: [232.706, 234.392]
     background:
