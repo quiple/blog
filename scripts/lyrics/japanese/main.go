@@ -1,4 +1,4 @@
-// Uses Hangulize's Japanese rules and furigana tokenizer, changing only four rules.
+// Uses Hangulize's Japanese rules and furigana tokenizer with the site's spelling adjustments.
 package main
 
 import (
@@ -28,6 +28,8 @@ func run() error {
 		{`"^t"      -> "d"`, ``},
 		{`"^c{a|i}" -> "z"`, ``},
 		{`"cu" -> "쓰"`, `"cu" -> "츠"`},
+		// Small vowels and small ya/yu/yo are already 'a/'i/etc. and ja/ju/jo.
+		{`"ヴ" -> "b"`, "\"ヴ'\" -> \"b'\"\n    \"ヴj\" -> \"bj\"\n    \"ヴ\" -> \"bu\""},
 	} {
 		if strings.Count(source, edit[0]) != 1 {
 			return fmt.Errorf("Japanese rule mismatch: %s", edit[0])

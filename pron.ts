@@ -19,7 +19,7 @@ const help = `가사에 한글 발음 추가 (로컬 Hangulize)
 기존 발음은 기본적으로 보존하고, 새 발음은 pronunciation 문자열로 저장합니다.
 설치: go install github.com/hangulize/hangulize/cmd/hangulize@v0.5.0
 설치한 hangulize를 PATH에 추가하거나 HANGULIZE_BIN으로 경로를 지정하세요.
-일본어는 カ행·タ행을 항상 거센소리로, ツ를 츠로 적습니다 (Go 필요).
+일본어는 カ행·タ행을 항상 거센소리로, ツ를 츠로, 단독 ヴ를 부로 적습니다 (Go 필요).
 영어는 지원하지 않습니다. 결과는 외래어 표기 규칙에 따른 초안입니다.`
 async function main() {
   const {values, positionals} = parseArgs({

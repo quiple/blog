@@ -34,7 +34,7 @@ lines:
   - text: それは未熟者だね
     translation: 그건 미숙한 사람이지
     time: [21.616, 27.107]
-    pronunciation: 소레하미주쿠모노다네
+    pronunciation: 소레와미주쿠모노다네
   - text: はぁ
     translation: 하아
     time: [27.484, 28.051]
@@ -98,7 +98,7 @@ lines:
   - text: それはやるって言ったんアンタでしょ
     translation: 그거 하겠다고 한 건 당신이잖아
     time: [71.383, 73.437]
-    pronunciation: 소레하야룻테잇탄안타데쇼
+    pronunciation: 소레와야룻테잇탄안타데쇼
   - text: まるで話の辻褄合わんでしょ
     translation: 도무지 말의 앞뒤가 안 맞잖아
     time: [73.437, 75.435]
@@ -133,7 +133,7 @@ lines:
       - text: はもうお仕舞だね
     translation: 여기는 이제 끝장이구나
     time: [96.752, 101.834]
-    pronunciation: 헤이샤하모오시마이다네
+    pronunciation: 코코와모오시마이다네
   - text: あわや発狂しちゃう?
     translation: 금방이라도 미쳐 버리겠어?
     time: [101.834, 103.92]
@@ -141,7 +141,7 @@ lines:
   - text: それは笑い者だね
     translation: 그건 웃음거리지
     time: [103.92, 109.185]
-    pronunciation: 소레하와라이샤다네
+    pronunciation: 소레와와라이모노다네
   - text: はぁ
     translation: 하아
     time: [109.185, 109.685]
@@ -149,7 +149,7 @@ lines:
   - text: 労基って概念知らんでしょ
     translation: 근로기준법이란 개념 모르지?
     time: [109.685, 111.049]
-    pronunciation: 로모톳테가이넨시란데쇼
+    pronunciation: 로킷테가이넨시란데쇼
   - text: てかさ課長の姿が見えんけど
     translation: 그나저나 과장의 모습이 안 보이는데
     time: [111.049, 112.661]
@@ -157,7 +157,7 @@ lines:
   - text: まさか部長と華金ランデヴー
     translation: 설마 부장이랑 불금의 랑데부
     time: [112.661, 114.295]
-    pronunciation: 마사카부초토하나킨란데브
+    pronunciation: 마사카부초토하나킨란데부
   - text: もう限界だわ
     translation: 이젠 한계야
     time: [114.295, 116.267]
@@ -205,11 +205,11 @@ lines:
   - text: 社会人としてOUT
     translation: 사회인으로서 OUT
     time: [144, 145.483]
-    pronunciation: 샤카이진토시테OUT
+    pronunciation: 샤카이진토시테아우토
   - text: 人間としてもOUT?
     translation: 인간으로서도 OUT?
     time: [145.483, 147.041]
-    pronunciation: 닌겐토시테모OUT?
+    pronunciation: 닌겐토시테모아우토?
   - text: そんなのだってどうでもいいや!
     translation: 그런 건 아무래도 상관없어!
     time: [147.041, 149.935]
