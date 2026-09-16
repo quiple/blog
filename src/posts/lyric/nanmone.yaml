@@ -15,100 +15,149 @@ youtube:
   mv: aRiVUVNUhIs
 lines:
   - text: なんもねえ なんもねえ
+    translation: 아무것도 없어, 아무것도 없어
     time: [0.44, 3.4]
   - text: なんもねえよ俺ら
+    translation: 아무것도 없다고, 우린
     time: [3.4, 6.2]
   - text: 終わってる 終わってる
+    translation: 끝장났어, 끝장났어
     time: [6.2, 8.88]
   - text: 笑ったら殺すぞ
+    translation: 웃으면 죽여 버린다
     time: [8.88, 12.12]
   - text: なんもねえ なんもねえ
+    translation: 아무것도 없어, 아무것도 없어
     time: [12.12, 14.92]
   - text: なんもねえから俺ら
+    translation: 아무것도 없으니까 우린
     time: [14.92, 17.543]
   - text: オナってる オナってる
+    translation: 딸치고 있어, 딸치고 있어
     time: [17.543, 20.393]
   - text: 泣きながらオナってる
+    translation: 울면서 딸치고 있어
     time: [20.393, 24.406]
   - text: サン!サン!ゼロワン!
+    translation: 삼! 삼! 제로 원!
     time: [24.406, 28.582]
   - text: ゼロワン!ゼロワン!
+    translation: 제로 원! 제로 원!
     time: [28.582, 30.483]
   - text: あつまれポンコツの森
+    translation: 모여봐요 얼간이의 숲
     time: [30.483, 33.328]
   - text: 力を集めて 迷惑かけるぜ
+    translation: 힘을 모아서 민폐 좀 끼칠 거야
     time: [33.328, 38.631]
   - text: あらかじめ言う すめん
+    translation: 미리 말할게, 미안
     time: [38.631, 42]
   - text: テヘペロって舐めた指が臭え
+    translation: 데헷 하며 핥은 손가락에서 냄새가 나
     time: [42, 46.915]
   - text: ありがとう神様!孤独にしてくれて!
+    translation: 고마워요, 신이시여! 외롭게 해 줘서!
     time: [46.915, 52.575]
   - text: なんもねえ なんもねえ
+    translation: 아무것도 없어, 아무것도 없어
     time: [52.575, 55.4]
   - text: なんもねえよ俺ら
+    translation: 아무것도 없다고, 우린
     time: [55.4, 58.16]
   - text: 終わってる 終わってる
+    translation: 끝장났어, 끝장났어
     time: [58.16, 61.04]
   - text: 笑ってろ脇役
+    translation: 웃고 있어라, 조연아
     time: [61.04, 64]
   - text: なんもねえ なんもねえ
+    translation: 아무것도 없어, 아무것도 없어
     time: [64, 66.96]
   - text: なんもねえけど俺ら
+    translation: 아무것도 없지만 우린
     time: [66.96, 69.709]
   - text: 胸んなか 胸んなか
+    translation: 가슴속에, 가슴속에
     time: [69.709, 72.64]
   - text: あなたが笑ってる
+    translation: 네가 웃고 있어
     time: [72.64, 78.12]
   - text: ああ
+    translation: 아아
     time: [79.25, 82.095]
   - text: ヘイ!
+    translation: 헤이!
     time: [87.448, 88]
   - text: 123ゴー!
+    translation: 원 투 쓰리 고!
     time: [92.06, 94.08]
   - text: イエー!
+    translation: 예!
     time: [99.88, 100.883]
   - text: イエー!
+    translation: 예!
     time: [101.243, 102.333]
   - text: なんもねえ なんもねえ
+    translation: 아무것도 없어, 아무것도 없어
     time: [104.565, 107.48]
   - text: なんもねえのに俺ら
+    translation: 아무것도 없는데도 우린
     time: [107.48, 110.18]
   - text: 夢みる 夢みる
+    translation: 꿈을 꿔, 꿈을 꿔
     time: [110.18, 113.09]
   - text: 笑ったら殺すぞ
+    translation: 웃으면 죽여 버린다
     time: [113.09, 116.054]
   - text: なんもねえ なんもねえ
+    translation: 아무것도 없어, 아무것도 없어
     time: [116.054, 118.876]
   - text: なんもねえから俺ら
+    translation: 아무것도 없으니까 우린
     time: [118.876, 121.82]
   - text: オナってる オナってる
+    translation: 딸치고 있어, 딸치고 있어
     time: [121.82, 124.583]
   - text: 今日もあなたで
+    translation: 오늘도 널 생각하며
     time: [124.583, 127.697]
   - text: はんぱねえ はんぱねえ
+    translation: 장난 아냐, 장난 아냐
     time: [127.697, 130.538]
   - text: はんぱねえよ俺ら さあ!
+    translation: 장난 아니라고, 우린 자!
     time: [130.538, 134.224]
   - text: サン!サン!ゼロワン!
+    translation: 삼! 삼! 제로 원!
     time: [134.224, 136.628]
   - text: いつかきっと叶うから
+    translation: 언젠가 꼭 이뤄질 테니까
     time: [136.628, 139.311]
   - text: がんばれ がんばれ
+    translation: 힘내, 힘내
     time: [139.311, 142.084]
   - text: がんばれよ俺ら
+    translation: 힘내자, 우리
     time: [142.084, 144.9]
   - text: 終わったら 終わったら
+    translation: 끝나면, 끝나면
     time: [144.9, 147.702]
   - text: 灰になるだけ
+    translation: 재가 될 뿐
     time: [147.702, 150.66]
   - text: 欲しいもの それしかいらねえから
+    translation: 원하는 건 그것밖엔 필요 없으니까
     time: [150.66, 156.584]
   - text: なんもねえ
+    translation: 아무것도 없어
     time: [156.584, 157.397]
   - text: サン!ヨン!ゼロワン!
+    translation: 삼! 사! 제로 원!
     time: [157.397, 161.616]
   - text: ゼロワン!ゼロワン!
+    translation: 제로 원! 제로 원!
     time: [161.616, 163.52]
   - text: イエー!
+    translation: 예!
     time: [163.52, 164.835]
