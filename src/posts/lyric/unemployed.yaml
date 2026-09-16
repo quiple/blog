@@ -359,7 +359,7 @@ lines:
     time: [221.364, 223.29]
     background:
       text: (テトテトテトテトテト)
-      translation: (테토테토테토테토테토)
+      pronunciation: (테토테토테토테토테토)
       time: [223.291, 224.103]
   - text: Yeah, I can't unwind
     pronunciation: 예, 아이 캔트 언와인드
