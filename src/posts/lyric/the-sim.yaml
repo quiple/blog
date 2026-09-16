@@ -54,8 +54,9 @@ lines:
     time: [60.932, 63.931]
   - text: Staying quiet and aloof
     time: [64.27, 67.299]
-  - text: I wish this house could feel like home ( 𝙷𝚘𝚖𝚎 )
+  - text: I wish this house could feel like home
     time: [67.789, 70.84]
+    background: (Home)
   - text: But someone's taken off the roof
     time: [70.991, 73.76]
   - text: It always feels like something's wrong
@@ -64,7 +65,7 @@ lines:
     time: [77.874, 81]
   - text: But if this winds up my swan song
     time: [81.276, 84.067]
-  - text: ( 𝐚 𝐚 𝐚 𝐚 𝐚 𝐚 𝐚 𝐚 )  At least the reapers kind of cute ( 𝐚 𝐚 𝐚 𝐚 𝐚 𝐚 𝐚 𝐚 )
+  - text: At least the reapers kind of cute
     time: [84.067, 87.385]
   - text: Take a breath now
     time: [88.289, 90.665]
