@@ -56,7 +56,7 @@ lines:
     time: [72.14, 75.476]
   - text: Preserved and primed, each muscle divvied up to dine
     time: [75.543, 78.721]
-  - text: And in the high 我存在 Tasting血淋淋的爱
+  - text: And in the high 我存在 Tasting 血淋淋的爱
     time: [78.721, 82.101]
   - text: I'll devour all of you in time
     time: [82.101, 85.576]
@@ -74,8 +74,9 @@ lines:
     time: [103.204, 105.948]
   - text: But dear, you should be grateful that I won't waste a good meal
     time: [105.948, 109.348]
-  - text: That all my love's precision carves a cut to simply die for (Huh?)
+  - text: That all my love's precision carves a cut to simply die for
     time: [109.348, 113.225]
+    background: (Huh?)
   - text: To snap the sinew, I want to get within you, I want
     time: [113.349, 116.721]
   - text: To scar the tissue, butterfly and rectify you
