@@ -5,12 +5,12 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Unemployed
-titleLang: en
+titleLang: en-US
 titleTranslation: 백수
 artist:
   - mason-c-music
   - kasane-teto
-lang: en
+lang: en-US
 spotify: 3PhU0OuSgWOa4bg73vWhv3
 youtube:
   audio: fiVl8xWgniE
