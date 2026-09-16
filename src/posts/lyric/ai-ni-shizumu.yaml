@@ -13,6 +13,9 @@ lang: ja
 spotify: 6wsN8FWnleEq7oTvVbnJJq
 youtube:
   audio: 3ABBxm0UWD8
+offsets:
+  youtubeAudio: 0.3
+  spotify: 0.3
 lines:
   - text: あぁ手足が冷たくなっていく
     time: [0.761, 6.828]
