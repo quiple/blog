@@ -36,7 +36,7 @@ lines:
     translation: 돈 한 푼 없이 빈둥대
     time: [21.561, 23.561]
   - text: Just my debt and me
-    pronunciation: 저스트 마이 뎃 앤드 미
+    pronunciation: 저스트 마이 데트 앤드 미
     translation: 빚과 나, 단둘이서
     time: [24.315, 26.315]
   - text: Can't relax
@@ -134,7 +134,7 @@ lines:
       translation: (빚에 절었어)
       time: [63.401, 64.833]
   - text: Just my debt and me
-    pronunciation: 저스트 마이 뎃 앤드 미
+    pronunciation: 저스트 마이 데트 앤드 미
     translation: 빚과 나, 단둘이서
     time: [64.833, 66.504]
   - text: Can't unwind
@@ -300,7 +300,7 @@ lines:
     translation: 돈 한 푼 없이 빈둥대
     time: [195.037, 196.678]
   - text: Just my debt and me
-    pronunciation: 저스트 마이 뎃 앤드 미
+    pronunciation: 저스트 마이 데트 앤드 미
     translation: 빚과 나, 단둘이서
     time: [197.864, 199.55]
   - text: Can't relax
@@ -354,7 +354,7 @@ lines:
       translation: (빚에 절었어)
       time: [219.872, 221.364]
   - text: Just my debt and me
-    pronunciation: 저스트 마이 뎃 앤드 미
+    pronunciation: 저스트 마이 데트 앤드 미
     translation: 빚과 나, 단둘이서
     time: [221.364, 223.29]
     background:
@@ -406,7 +406,7 @@ lines:
       translation: (언제까지나 함께)
       time: [237.264, 238.554]
   - text: My immense debt and me
-    pronunciation: 마이 이멘스 뎃 앤드 미
+    pronunciation: 마이 이멘스 데트 앤드 미
     translation: 어마어마한 빚과 나
     time: [238.554, 240.106]
     background:
