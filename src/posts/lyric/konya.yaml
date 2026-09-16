@@ -18,7 +18,7 @@ lines:
     pronunciation: 나츠노조쇼키류가보쿠오스코시무시반데테
     time: [0.26, 4.277]
   - text: 君は不機嫌そうにね
-    pronunciation: 키미하후키겐소니네
+    pronunciation: 키미와후키겐소니네
     time: [4.287, 5.974]
   - text: 僕の手を突っぱねて行く
     pronunciation: 보쿠노테오츳파네테이쿠
@@ -30,7 +30,7 @@ lines:
     pronunciation: 사요나라모시나이데
     time: [14.371, 16.805]
   - text: 夏の上昇気流で僕は雨に打たれて
-    pronunciation: 나츠노조쇼키류데보쿠하아메니우타레테
+    pronunciation: 나츠노조쇼키류데보쿠와아메니우타레테
     time: [31.844, 35.651]
   - text: 染まっていく空に不確かな愛を求めて
     pronunciation: 소맛테이쿠소라니후타시카나아이오모토메테
@@ -39,7 +39,7 @@ lines:
     pronunciation: 이로아세루코토오타노신데이루요니
     time: [39.63, 43.674]
   - text: ｢さよなら｣だとか
-    pronunciation: ｢사요나라｣다토카
+    pronunciation: '"사요나라"다토카'
     time: [45.365, 47.66]
   - text: ぐだぐた泣いて喚いたりしたら
     pronunciation: 구다구타나이테와메이타리시타라
@@ -48,7 +48,7 @@ lines:
     pronunciation: 바카니사레테시마우카라사
     time: [51.634, 55.302]
   - text: ｢こんな日々に嫌気が刺した｣と
-    pronunciation: ｢콘나히비니이야케가사시타｣토
+    pronunciation: '"콘나히비니이야케가사시타"토'
     time: [55.542, 59.376]
   - text: ぱっと立ち去って
     pronunciation: 팟토타치삿테
@@ -69,7 +69,7 @@ lines:
     pronunciation: 나츠노조쇼키류데
     time: [93.746, 95.24]
   - text: 僕はずっと雨に打たれてる
-    pronunciation: 보쿠하즛토아메니우타레테루
+    pronunciation: 보쿠와즛토아메니우타레테루
     time: [95.25, 97.374]
   - text: 否定しないでって夏の空に歌うのに
     pronunciation: 히테이시나이뎃테나츠노소라니우타우노니
@@ -81,16 +81,16 @@ lines:
     pronunciation: 키에삿텟테시마우노나라
     time: [103.541, 105.905]
   - text: ｢さよなら｣だとか
-    pronunciation: ｢사요나라｣다토카
+    pronunciation: '"사요나라"다토카'
     time: [107.37, 109.59]
   - text: ぐるぐる回る君の頭では
-    pronunciation: 구루구루마와루키미노아타마데하
+    pronunciation: 구루구루마와루키미노아타마데와
     time: [109.6, 113.464]
   - text: 何も出来やしないのにさ
     pronunciation: 나니모데키야시나이노니사
     time: [113.474, 116.565]
   - text: ｢ああこんな明日は嫌｣なんて言って
-    pronunciation: ｢아콘나아시타하이야｣난테잇테
+    pronunciation: '"아콘나아스와이야"난테잇테'
     time: [116.575, 121.32]
   - text: ぱっと逃げ出した
     pronunciation: 팟토니게다시타
@@ -114,7 +114,7 @@ lines:
     pronunciation: 젠부모토도리니낫테이나이카나
     time: [152.32, 156.137]
   - text: 君はほんとにずるい人だなあ
-    pronunciation: 키미하혼토니즈루이히토다나
+    pronunciation: 키미와혼토니즈루이히토다나
     time: [156.147, 159.974]
   - text: ぱっと目を開けて
     pronunciation: 팟토메오아케테
