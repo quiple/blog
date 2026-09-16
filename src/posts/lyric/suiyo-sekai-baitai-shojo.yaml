@@ -64,13 +64,13 @@ lines:
     pronunciation: '"아, 니앗테루"읏테'
     time: [72.26, 74.654]
   - text: 言ったのに君は少し
-    pronunciation: 잇타노니키미하스코시
+    pronunciation: 잇타노니키미와스코시
     time: [74.792, 77.773]
   - text: 赤い目をして見てきたよね
     pronunciation: 아카이메오시테미테키타요네
     time: [79.56, 83.855]
   - text: 君が泣く姿はそれはもう綺麗で
-    pronunciation: 키미가나쿠스가타하소레하모키레이데
+    pronunciation: 키미가나쿠스가타와소레와모키레이데
     time: [86.766, 90.278]
   - text: なんてほんと馬鹿みたい
     pronunciation: 난테혼토바카미타이
@@ -103,13 +103,13 @@ lines:
     pronunciation: 토카시테시마오
     time: [113.57, 115.488]
   - text: 夏の終わりにしては暑くて
-    pronunciation: 나츠노오와리니시테하아츠쿠테
+    pronunciation: 나츠노오와리니시테와아츠쿠테
     time: [129.885, 132.714]
   - text: むせ返る気がもうどうもならないの
     pronunciation: 무세카에루키가모도모나라나이노
     time: [133, 137.169]
   - text: 「どうなったっていいよ」なんて
-    pronunciation: "'도낫탓테이이요' 난테"
+    pronunciation: '"도낫탓테이이요"난테'
     time: [137.172, 138.996]
   - text: そんなこと言わないで
     pronunciation: 손나코토이와나이데
