@@ -53,7 +53,7 @@ export async function appleCandidates(id: string): Promise<Candidate[]> {
       candidates.push({
         label: `Apple Music · ${title ?? id} · ${type === 'syllable-lyrics' ? '음절별' : '행별'} 가사 · ${item.id ?? candidates.length + 1}`,
         load: async () => {
-          const {song} = fromTTML(xml)
+          const {song} = fromTTML(xml, type === 'lyrics' ? 'Line' : 'Word')
           return {
             song: parseSong({...song, title: title || song.title}),
             sources: [`https://music.apple.com/${storefront}/song/${id}`, `Apple Music ${type} (TTML)`, endpoint],

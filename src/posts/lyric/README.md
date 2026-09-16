@@ -176,7 +176,7 @@ nub run import --file ./lyrics.ttml --slug music-title
 - **Spotify:** 로그인한 `open.spotify.com`에서 가사를 연 뒤 브라우저 개발자 도구 → Network에서 `color-lyrics` 요청을 찾습니다. Request Headers의 `authorization: Bearer …`에서 토큰 부분을 `SPOTIFY_ACCESS_TOKEN`에 넣으세요. 일반 Spotify 개발자 API용 Client Credentials 토큰과 다릅니다. 만료되면 새 값을 넣어야 합니다.
 - **Apple Music:** 로그인한 `music.apple.com`에서 가사를 연 뒤 Network의 `amp-api.music.apple.com` 요청에서 `authorization`의 Bearer 토큰을 `APPLE_MUSIC_TOKEN`, `media-user-token`을 `APPLE_MUSIC_USER_TOKEN`에 넣으세요. 후자는 브라우저의 같은 이름 쿠키에서도 확인할 수 있습니다. `APPLE_MUSIC_STOREFRONT`는 생략하면 계정에서 조회하며, 직접 지정할 경우 `kr`, `us`, `jp`처럼 입력합니다.
 
-Apple Music은 제공된 음절별·행별 TTML을 후보로 표시하므로 여러 개면 기존 방향키 선택창에서 고릅니다. TTML에 포함된 타이밍과 주석 데이터를 기존 변환기로 처리합니다. Spotify는 제공된 행별 타이밍을 사용합니다. 종료 시각이 0/누락이면 다음 큐(빈 행 포함)의 시작 또는 곡 길이로 보완하고 이 사실을 출처 주석에 기록합니다. 비동기화 가사는 시간을 만들지 않습니다. Spotify 곡명과 마지막 행의 종료 시각을 위해 트랙 메타데이터도 요청합니다.
+Apple Music은 제공된 음절별·행별 TTML을 후보로 표시하므로 여러 개면 기존 방향키 선택창에서 고릅니다. 행별 가사는 `text`로 저장합니다. 타이밍 방식이 명시되지 않은 TTML은 행마다 서로 다른 시간을 가진 여러 조각인지 판별하며, 행 전체를 감싼 단일 조각이나 같은 시간을 공유하는 조각은 `text`로 합칩니다. 루비 등 단어 단위 정보가 있으면 정보 보존을 위해 `words`를 유지합니다. TTML에 포함된 타이밍과 주석 데이터를 기존 변환기로 처리합니다. Spotify는 제공된 행별 타이밍을 사용합니다. 종료 시각이 0/누락이면 다음 큐(빈 행 포함)의 시작 또는 곡 길이로 보완하고 이 사실을 출처 주석에 기록합니다. 비동기화 가사는 시간을 만들지 않습니다. Spotify 곡명과 마지막 행의 종료 시각을 위해 트랙 메타데이터도 요청합니다.
 
 인증값이 없거나 HTTP 401/403이면 저장하지 않고 오류를 표시합니다. 인증된 요청은 리디렉션을 따라가지 않고, 인증값을 출처 주석이나 오류 응답 본문에 기록하지 않습니다. `--stdout`으로 결과를 확인한 뒤 저장할 수 있습니다.
 

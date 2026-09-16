@@ -13,7 +13,7 @@ function annotations(entries: Line['translations']) {
   return Object.fromEntries(entries.map((entry) => [entry.language ?? 'und', entry.text]))
 }
 
-export function fromTTML(xml: string) {
+export function fromTTML(xml: string, timing?: 'Line' | 'Word') {
   if (/<!DOCTYPE|<!ENTITY/i.test(xml)) throw new Error('DTD와 외부 엔티티가 포함된 TTML은 지원하지 않습니다.')
   const document = new DOMParser({
     onError: (level, message) => {
@@ -33,7 +33,26 @@ export function fromTTML(xml: string) {
     }
   }
   const result = TTMLParser.parse(xml, {domParser: {parseFromString: () => document}})
+  // Read the declared mode, not metadata.timingMode: the parser infers that from word count alone.
+  const lineTiming = (timing ?? document.documentElement?.getAttributeNS(namespace, 'timing')) === 'Line'
   function line(input: Line): SongLine {
+    const parts = input.words ?? []
+    const first = parts[0]
+    const wordsCoverLine =
+      parts
+        .map((word) => word.text + (word.endsWithSpace ? ' ' : ''))
+        .join('')
+        .trim() === input.text.trim()
+    const wordTiming =
+      wordsCoverLine &&
+      !lineTiming &&
+      parts.length > 1 &&
+      parts.every((word) => word.endTime > word.startTime) &&
+      parts.some((word) => word.startTime !== first.startTime || word.endTime !== first.endTime)
+    // Ruby and per-word annotations cannot be represented by the plain text field.
+    const keepWords =
+      wordTiming || parts.some((word) => word.ruby?.length || word.obscene || word.emptyBeat !== undefined)
+
     const words = input.words?.map((word) => {
       const pronunciation = Object.fromEntries(
         (input.romanizations ?? []).flatMap((roman) => {
@@ -63,9 +82,9 @@ export function fromTTML(xml: string) {
     return {
       text: input.text,
       time: time(input.startTime, input.endTime),
-      words: words?.length ? words : undefined,
+      words: keepWords && words?.length ? words : undefined,
       translation: annotations(input.translations),
-      pronunciation: annotations(input.romanizations?.filter((roman) => !roman.words?.length)),
+      pronunciation: annotations(input.romanizations?.filter((roman) => !keepWords || !roman.words?.length)),
       ...(input.agentId === 'v2' ? {duet: true} : {}),
       ...(input.backgroundVocal ? {background: line(input.backgroundVocal)} : {}),
     }
