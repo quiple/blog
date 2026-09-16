@@ -52,7 +52,7 @@ lines:
     time: [58.043, 61.487]
   - text: 手伸ばして
     pronunciation: 테노바시테
-    translation: 손을 뻗어 줘
+    translation: 손을 뻗어
     time: [64.812, 67.802]
   - text: ひとりじゃ
     pronunciation: 히토리자
@@ -63,7 +63,7 @@ lines:
     translation: 다 감당할 수 없잖아?
     time: [76.469, 79.453]
   - text: Are you empty?
-    translation: 마음이 텅 비었니?
+    pronunciation: 아 유 엠프티?
     time: [79.753, 81.443]
   - text: あなたがしてくれたように
     pronunciation: 아나타가시테쿠레타요니
@@ -106,7 +106,7 @@ lines:
     translation: 걸음을 내디딜 수 없으니까
     time: [152.184, 155.074]
   - text: Are you empty?
-    translation: 마음이 텅 비었니?
+    pronunciation: 아 유 엠프티?
     time: [155.538, 157.271]
   - text: あなたにもらったものを
     pronunciation: 아나타니모랏타모노오
@@ -121,7 +121,7 @@ lines:
     translation: 걷고 있는데
     time: [175.029, 178.695]
   - text: Are you empty?
-    translation: 마음이 텅 비었니?
+    pronunciation: 아 유 엠프티?
     time: [202.863, 204.575]
   - text: それでも
     pronunciation: 소레데모
@@ -140,7 +140,7 @@ lines:
     translation: 곁에 있을 테니까
     time: [221.765, 224.321]
   - text: Are you empty?
-    translation: 마음이 텅 비었니?
+    pronunciation: 아 유 엠프티?
     time: [224.991, 226.867]
   - text: 少しずつ歩けばいい
     pronunciation: 스코시즈츠아루케바이이
