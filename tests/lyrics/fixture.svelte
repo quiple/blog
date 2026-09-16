@@ -74,7 +74,8 @@
     set(26500, true)
     await wait(1400)
     const afterGap = main()[6],
-      gapTop = rect(afterGap).top
+      gapTop = rect(afterGap).top,
+      precedingTop = rect(main()[5]).top
     assert('interlude visible', getComputedStyle(dots()).opacity === '1')
     assert('interlude does not overlap next row', rect(dots()).bottom <= rect(afterGap).top + 1, {
       dots: rect(dots()).bottom,
@@ -86,6 +87,10 @@
       await wait(50)
     }
     await wait(1800)
+    assert('interlude exit preserves preceding row position', Math.abs(rect(main()[5]).top - precedingTop) < 1, {
+      before: precedingTop,
+      after: rect(main()[5]).top,
+    })
     assert('natural interlude exit', getComputedStyle(dots()).opacity === '0')
     const gap =
       rect(main()[6].closest('[class*=lyricLineWrapper]')!).top -

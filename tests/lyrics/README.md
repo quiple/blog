@@ -9,7 +9,8 @@ Checks include 320 comparisons of native AMLL 0.5.2 and the document adapter (ro
 positions modulo the document origin, active states, opacity and stagger delay),
 ruby baselines and absence of masks on line-timed ruby, initial/ended dots,
 pause/resume anchoring with an inactive background row above the active row,
-interlude overlap and natural gap removal, and last-row document alignment.
+interlude overlap and natural gap removal, stable preceding-row positions across
+interlude exit, and last-row document alignment.
 
 `native.ts` gives both engines the same measured row heights to distinguish
 layout behavior from native viewport virtualization. The fixture is not included
