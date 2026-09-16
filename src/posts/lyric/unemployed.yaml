@@ -48,11 +48,11 @@ lines:
     translation: 내 인생은 잔인한 농담 같아
     time: [28.655, 29.93]
   - text: Put the fries in the god damn bag
-    pronunciation: 풋 더 프라이스 인 더 갓 댐 백
+    pronunciation: 풋 더 프라이즈 인 더 갓 댐 백
     translation: 씨발, 감자튀김이나 봉투에 담아
     time: [29.93, 32.505]
   - text: Yeah, I'm chilling for free
-    pronunciation: 데
+    pronunciation: 예, 아임 칠링 포 프리
     translation: 그래, 돈 한 푼 없이 빈둥대
     time: [32.898, 34.898]
   - text: Just my baguette and me
@@ -299,23 +299,23 @@ lines:
     translation: 돈 한 푼 없이 빈둥대
     time: [195.037, 196.678]
   - text: Just my debt and me
-    pronunciation: 데
+    pronunciation: 저스트 마이 뎃 앤드 미
     translation: 빚과 나, 단둘이서
     time: [197.864, 199.55]
   - text: Can't relax
-    pronunciation: 데
+    pronunciation: 캔트 릴랙스
     translation: 마음 편히 쉴 수가 없어
     time: [200.928, 202.196]
   - text: My life's a cruel gag
-    pronunciation: 데
+    pronunciation: 마이 라이프스 어 크루얼 개그
     translation: 내 인생은 잔인한 농담 같아
     time: [202.197, 203.502]
   - text: Put the fries in the god damn bag
-    pronunciation: 데
+    pronunciation: 풋 더 프라이즈 인 더 갓 댐 백
     translation: 씨발, 감자튀김이나 봉투에 담아
     time: [203.502, 206.339]
   - text: Yeah, I'm chilling for free
-    pronunciation: 데
+    pronunciation: 예, 아임 칠링 포 프리
     translation: 그래, 돈 한 푼 없이 빈둥대
     time: [206.339, 208.175]
   - text: Just my baguette and me
@@ -344,7 +344,7 @@ lines:
       translation: (게으름뱅이)
       time: [217.267, 218.468]
   - text: Just chilling for free
-    pronunciation: 데
+    pronunciation: 저스트 칠링 포 프리
     translation: 그냥 돈 한 푼 없이 빈둥대
     time: [218.469, 219.871]
     background:
@@ -353,7 +353,7 @@ lines:
       translation: (빚에 절었어)
       time: [219.872, 221.364]
   - text: Just my debt and me
-    pronunciation: 데
+    pronunciation: 저스트 마이 뎃 앤드 미
     translation: 빚과 나, 단둘이서
     time: [221.364, 223.29]
     background:
