@@ -154,7 +154,7 @@ lines:
       translation: (어쩔 수 없지)
       time: [72.401, 73.277]
   - text: I guess I'm chilling for free
-    pronunciation: 데
+    pronunciation: 아이 게스 아임 칠링 포 프리
     translation: 결국 돈 한 푼 없이 빈둥대는 거지
     time: [73.277, 74.933]
     background:
@@ -287,15 +287,15 @@ lines:
     translation: 백수
     time: [189.529, 190.595]
   - text: No house, no pay
-    pronunciation: 데
+    pronunciation: 노 하우스, 노 페이
     translation: 집도 없고 월급도 없어
     time: [190.596, 191.901]
   - text: Gonna waste the day away
-    pronunciation: 데
+    pronunciation: 거너 웨이스트 더 데이 어웨이
     translation: 오늘도 하루를 허비할 거야
     time: [191.901, 195.037]
   - text: I'm chilling for free
-    pronunciation: 데
+    pronunciation: 아임 칠링 포 프리
     translation: 돈 한 푼 없이 빈둥대
     time: [195.037, 196.678]
   - text: Just my debt and me
@@ -378,7 +378,7 @@ lines:
       translation: (어쩔 수 없지)
       time: [228.908, 229.84]
   - text: I guess I'm chilling for free
-    pronunciation: 데
+    pronunciation: 아이 게스 아임 칠링 포 프리
     translation: 결국 돈 한 푼 없이 빈둥대는 거지
     time: [229.841, 231.445]
     background:
