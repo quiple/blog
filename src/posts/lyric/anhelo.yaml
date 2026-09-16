@@ -22,171 +22,228 @@ lines:
   - text: Un dia veras que lo que pasó acabó,
     translation: 언젠가 지난 일은 끝났다는 걸 알게 될 거야
     time: [3.876, 9.307]
+    pronunciation: 운 디아 베라스 케 로 케 파소 아카보,
   - text: Y que extraño es vivir
     translation: 그리고 살아간다는 건 참 이상해
     time: [9.307, 14.11]
+    pronunciation: 이 케 엑스트라뇨 에스 비비르
   - text: Una canción busca una solución,
     translation: 노래 한 곡이 해답을 찾아
     time: [15, 20.022]
+    pronunciation: 우나 칸시온 부스카 우나 솔루시온,
   - text: El camino hacia el amor
     translation: 사랑으로 향하는 길을
     time: [20.022, 25.148]
+    pronunciation: 엘 카미노 아시아 엘 아모르
   - text: No aguanto un minuto más
     translation: 이젠 일 분도 더 못 견디겠어
     time: [26.31, 27.793]
+    pronunciation: 노 아관토 운 미누토 마스
   - text: Quiero imaginar sin más
     translation: 그저 상상하고 싶어
     time: [27.793, 29.121]
+    pronunciation: 키에로 이마히나르 신 마스
   - text: Dulces pesadillas que me atacan
     translation: 나를 덮치는 달콤한 악몽들
     time: [29.121, 31.868]
+    pronunciation: 둘세스 페사디야스 케 메 아타칸
   - text: Quiero ser normal,
     translation: 평범해지고 싶어
     time: [31.868, 33]
+    pronunciation: 키에로 세르 노르말,
   - text: Cumplir mi sueño ideal,
     translation: 내 이상적인 꿈을 이루고
     time: [33, 34.664]
+    pronunciation: 쿰플리르 미 수에뇨 이데알,
   - text: Ser capaz, poder volar
     translation: 해낼 수 있기를, 날 수 있기를
     time: [34.664, 35.876]
+    pronunciation: 세르 카파스, 포데르 볼라르
   - text: Por una noche mas
     translation: 하룻밤만 더
     time: [35.876, 37.256]
+    pronunciation: 포르 우나 노체 마스
   - text: Tengo una duda existencial
     translation: 내 존재에 대한 의문이 있어
     time: [37.256, 40.083]
+    pronunciation: 텡고 우나 두다 엑시스텐시알
   - text: Que se salga ya de mi cabeza
     translation: 이제 내 머릿속에서 나가 줘
     time: [40.083, 42.755]
+    pronunciation: 케 세 살가 야 데 미 카베사
   - text: Quiero conocer todo lo que puedo anhelar
     translation: 내가 갈망할 수 있는 모든 걸 알고 싶어
     time: [42.755, 47.114]
+    pronunciation: 키에로 코노세르 토도 로 케 푸에도 아넬라르
   - text: Soy sideral, soy irreal
     translation: 나는 별의 존재, 비현실적인 존재
     time: [48, 50.526]
+    pronunciation: 소이 시데랄, 소이 이레알
   - text: Y, sin embargo, no soy ideal
     translation: 하지만 이상적이지는 않아
     time: [50.526, 53.314]
+    pronunciation: 이, 신 엠바르고, 노 소이 이데알
   - text: La cinosura que pienso que soy
     translation: 내가 작은곰자리라 생각해도
     time: [53.314, 55.932]
+    pronunciation: 라 시노수라 케 피엔소 케 소이
   - text: Su hermosura nunca seré yo
     translation: 그 아름다움을 나는 결코 지닐 수 없어
     time: [55.932, 58.734]
+    pronunciation: 수 에르모수라 눙카 세레 요
   - text: Como loca, escribo una canción
     translation: 미친 듯이 노래 한 곡을 써
     time: [58.902, 61.676]
+    pronunciation: 코모 로카, 에스크리보 우나 칸시온
   - text: Desemboca una desolación
     translation: 끝내 쓸쓸함으로 흘러가
     time: [61.676, 64.216]
+    pronunciation: 데셈보카 우나 데솔라시온
   - text: Y yo quiero ver lo que hay por ver
     translation: 그리고 나는 볼 수 있는 것들을 보고 싶어
     time: [64.216, 67.273]
+    pronunciation: 이 요 키에로 베르 로 케 아이 포르 베르
   - text: Resolver, entender lo que hay por saber
     translation: 풀어내고, 알아야 할 것들을 이해하고 싶어
     time: [67.273, 69.827]
+    pronunciation: 레솔베르, 엔텐데르 로 케 아이 포르 사베르
   - text: Yo adoro mi vanidad
     translation: 나는 내 허영을 사랑해
     time: [70.401, 73.807]
+    pronunciation: 요 아도로 미 바니다드
   - text: Por favor, ten piedad
     translation: 제발 자비를 베풀어 줘
     time: [73.807, 76.846]
+    pronunciation: 포르 파보르, 텐 피에다드
   - text: Acepta tu destino
     translation: 네 운명을 받아들여
     time: [76.846, 79.612]
+    pronunciation: 아셉타 투 데스티노
   - text: Algo divino
     translation: 어떤 신성한 것을
     time: [79.612, 81.371]
+    pronunciation: 알고 디비노
   - text: Bien, hay que perseverar ante la distancia
     translation: 자, 그 거리를 견뎌 내야 해
     time: [81.371, 85.195]
+    pronunciation: 비엔, 아이 케 페르세베라르 안테 라 디스탄시아
   - text: Que separa a el alma de una solución inmediata
     translation: 영혼과 즉각적인 해답 사이를 갈라놓는
     time: [85.195, 90]
+    pronunciation: 케 세파라 아 엘 알마 데 우나 솔루시온 인메디아타
   - text: Que no piensa anhelar
     translation: 갈망할 생각조차 하지 않는
     time: [90, 92.01]
+    pronunciation: 케 노 피엔사 아넬라르
   - text: Si en verdad tu crees en mi,
     translation: 네가 정말 나를 믿는다면
     time: [92.01, 94.469]
+    pronunciation: 시 엔 베르다드 투 크레스 엔 미,
   - text: Te entenderé si dejas de mentir
     translation: 거짓말을 멈추면 널 이해할게
     time: [94.469, 97.202]
+    pronunciation: 테 엔텐데레 시 데하스 데 멘티르
   - text: Esta locura acabará con mi
     translation: 이 광기가 나를 끝장낼 거야
     time: [97.202, 99.966]
+    pronunciation: 에스타 로쿠라 아카바라 콘 미
   - text: Una pintura trazaré en mi ser
     translation: 내 안에 그림 한 폭을 그릴 거야
     time: [99.967, 102.787]
+    pronunciation: 우나 핀투라 트라사레 엔 미 세르
   - text: Soy capaz, ¡yo sé que soy!
     translation: 난 할 수 있어, 나도 알고 있어!
     time: [103.115, 105.368]
+    pronunciation: 소이 카파스, ¡요 세 케 소이!
   - text: Y lucharé tenaz por lo que soy, ¡mi amor!
     translation: 그리고 나 자신을 위해 끈질기게 싸울 거야, 내 사랑!
     time: [105.368, 108.568]
+    pronunciation: 이 루차레 테나스 포르 로 케 소이, ¡미 아모르!
   - text: Brillare más que la osa menor
     translation: 작은곰자리보다 더 밝게 빛날 거야
     time: [108.568, 110.896]
+    pronunciation: 브리야레 마스 케 라 오사 메노르
   - text: Y guiaré a todo aquel en mi constelación
     translation: 그리고 내 별자리 안의 모두를 이끌 거야
     time: [110.896, 113.741]
+    pronunciation: 이 기아레 아 토도 아켈 엔 미 콘스텔라시온
   - text: Una vez más me he aferrado a mi pasado
     translation: 또다시 내 과거에 매달리고 말았어
     time: [114.101, 119.466]
+    pronunciation: 우나 베스 마스 메 에 아페라도 아 미 파사도
   - text: Vaya desgracia, yo debería expirar
     translation: 참 비참해, 난 숨을 거둬야 할 텐데
     time: [119.466, 124.642]
+    pronunciation: 바야 데스그라시아, 요 데베리아 엑스피라르
   - text: Pero no, no lo haré, no me rendiré así
     translation: 하지만 아니, 그러지 않을 거야, 이렇게 포기하진 않아
     time: [124.642, 130.588]
+    pronunciation: 페로 노, 노 로 아레, 노 메 렌디레 아시
   - text: ¡Y pelearé, mi amor, buscaré y cantaré todo mi sentir!
     translation: 그리고 싸울 거야, 내 사랑, 찾고 내 모든 감정을 노래할 거야!
     time: [130.588, 135.723]
+    pronunciation: ¡이 펠레아레, 미 아모르, 부스카레 이 칸타레 토도 미 센티르!
   - text: Soy sideral, soy irreal
     translation: 나는 별의 존재, 비현실적인 존재
     time: [179.648, 182.074]
+    pronunciation: 소이 시데랄, 소이 이레알
   - text: Y, sin embargo, no soy ideal
     translation: 하지만 이상적이지는 않아
     time: [182.074, 184.993]
+    pronunciation: 이, 신 엠바르고, 노 소이 이데알
   - text: La cinosura que pienso que soy
     translation: 내가 작은곰자리라 생각해도
     time: [184.993, 187.485]
+    pronunciation: 라 시노수라 케 피엔소 케 소이
   - text: Su hermosura nunca seré yo
     translation: 그 아름다움을 나는 결코 지닐 수 없어
     time: [187.485, 190.47]
+    pronunciation: 수 에르모수라 눙카 세레 요
   - text: Como loca, escribo una canción
     translation: 미친 듯이 노래 한 곡을 써
     time: [190.47, 193.185]
+    pronunciation: 코모 로카, 에스크리보 우나 칸시온
   - text: Desemboca una desolación
     translation: 끝내 쓸쓸함으로 흘러가
     time: [193.185, 195.83]
+    pronunciation: 데셈보카 우나 데솔라시온
   - text: Y yo quiero ver lo que hay por ver
     translation: 그리고 나는 볼 수 있는 것들을 보고 싶어
     time: [195.83, 198.769]
+    pronunciation: 이 요 키에로 베르 로 케 아이 포르 베르
   - text: Resolver, entender lo que hay por saber
     translation: 풀어내고, 알아야 할 것들을 이해하고 싶어
     time: [198.769, 201.261]
+    pronunciation: 레솔베르, 엔텐데르 로 케 아이 포르 사베르
   - text: Si en verdad tu crees en mi,
     translation: 네가 정말 나를 믿는다면
     time: [201.85, 204]
+    pronunciation: 시 엔 베르다드 투 크레스 엔 미,
   - text: Te entenderé si dejas de mentir
     translation: 거짓말을 멈추면 널 이해할게
     time: [204, 206.858]
+    pronunciation: 테 엔텐데레 시 데하스 데 멘티르
   - text: Esta locura acabará con mi
     translation: 이 광기가 나를 끝장낼 거야
     time: [206.858, 209.566]
+    pronunciation: 에스타 로쿠라 아카바라 콘 미
   - text: Una pintura trazaré en mi ser
     translation: 내 안에 그림 한 폭을 그릴 거야
     time: [209.566, 212.43]
+    pronunciation: 우나 핀투라 트라사레 엔 미 세르
   - text: Soy capaz, ¡yo sé que soy!
     translation: 난 할 수 있어, 나도 알고 있어!
     time: [212.946, 215.173]
+    pronunciation: 소이 카파스, ¡요 세 케 소이!
   - text: Y lucharé tenaz por lo que soy, ¡mi amor!
     translation: 그리고 나 자신을 위해 끈질기게 싸울 거야, 내 사랑!
     time: [215.173, 218.363]
+    pronunciation: 이 루차레 테나스 포르 로 케 소이, ¡미 아모르!
   - text: Brillare más que la osa menor
     translation: 작은곰자리보다 더 밝게 빛날 거야
     time: [218.363, 220.789]
+    pronunciation: 브리야레 마스 케 라 오사 메노르
   - text: Y guiaré a todo aquel en mi constelación
     translation: 그리고 내 별자리 안의 모두를 이끌 거야
     time: [220.789, 223.555]
+    pronunciation: 이 기아레 아 토도 아켈 엔 미 콘스텔라시온
