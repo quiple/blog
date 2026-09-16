@@ -1,0 +1,97 @@
+# https://www.youtube.com/watch?v=d6__N5X6C2M
+# YouTube 등록 자막: en-US (json3, 행별 타이밍)
+# 선택 항목: YouTube 등록 자막 · en-US · English (United States)
+# 가져온 시각: 2026-09-16T03:34:02.801Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: Honeycrisp
+titleLang: en-US
+artist:
+  - jam-2-go
+  - kasane-teto
+lang: en-US
+youtube:
+  mv: d6__N5X6C2M
+lines:
+  - text: Close one eye, bite your lip
+    time: [21.977, 23.977]
+  - text: Balance on my head a honeycrisp
+    time: [25.187, 27.898]
+  - text: Notch an arrow, hold your breath
+    time: [28.77, 31.192]
+  - text: And shoot me right here in my chest
+    time: [31.776, 35.465]
+  - text: Because I’m hanging on to hope
+    time: [35.465, 38.34]
+  - text: And every word that you say
+    time: [39.437, 41.791]
+  - text: I’m bracing for it
+    time: [42.896, 44.446]
+  - text: I’m better off alone
+    time: [44.446, 46.789]
+  - text: Don’t you know?
+    time: [46.789, 48.242]
+  - text: Take a turn onto oncoming traffic
+    time: [62.085, 64.961]
+  - text: You know I've the knack for dramatics
+    time: [65.706, 68.443]
+  - text: What’s the point in you being suspicious?
+    time: [68.837, 71.713]
+  - text: The flags are all red delicious
+    time: [72.716, 75.31]
+  - text: And I don't want this to end
+    time: [76.758, 80.037]
+  - text: No, I don’t want to be friends
+    time: [80.037, 82.353]
+  - text: I’m bracing for it
+    time: [83.534, 85.191]
+  - text: I’m better off alone
+    time: [85.191, 87.191]
+  - text: Don’t you know
+    time: [87.191, 88.694]
+  - text: I don't want to be alone
+    time: [116.271, 117.941]
+  - text: But I don't try
+    time: [117.941, 119.217]
+  - text: I'm just better off alone
+    time: [119.623, 121.177]
+  - text: And I don't know why
+    time: [121.177, 123.404]
+  - text: How can I be sad
+    time: [123.404, 124.552]
+  - text: If I don't cry?
+    time: [124.552, 125.916]
+  - text: maybe I'm rotten to the core...
+    time: [126.069, 127.929]
+  - text: and I
+    time: [127.929, 128.517]
+  - text: DON'T KNOW
+    time: [128.517, 129.226]
+  - text: WHŸ̴̡̛̮͔͍̟̱̞̦̖̜̱́̊̐̋̌̈́̏͝Y̴̡̨̢̘̘͙̮̪̺̲̗̭̝͉̑̽̀̈͂̏̅̂̈́͊Ỳ̸̢͙̲͎͆͛́̀͗͝͝
+    time: [129.226, 129.726]
+  - text: I don't want to be alone
+    time: [129.726, 131.395]
+  - text: But I don't try
+    time: [131.395, 132.81]
+  - text: I'm just better off alone
+    time: [133.153, 134.784]
+  - text: And I don't know why
+    time: [134.784, 136.897]
+  - text: How can I be sad
+    time: [136.897, 138.083]
+  - text: If I don't cry?
+    time: [138.083, 139.461]
+  - text: maybe I'm rotten to the core
+    time: [139.626, 141.524]
+  - text: and I don't know why...
+    time: [141.524, 143.345]
+  - text: Crash Test!
+    time: [151.701, 152.722]
+  - text: Nice one!
+    time: [156.934, 157.551]
+  - text: You've passed this test
+    time: [157.716, 158.8]
+  - text: Click the magnifying glass to learn more!
+    time: [159.092, 161.129]
+  - text: Or click the apple to replay the test!
+    time: [161.485, 163.712]
