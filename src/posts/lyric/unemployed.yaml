@@ -183,15 +183,15 @@ lines:
     translation: 내가 사는 곳은 침대 위야
     time: [82.924, 84.73]
   - text: I'm broke as fuck
-    pronunciation: 데
+    pronunciation: 아임 브로크 애즈 퍽
     translation: 난 씨발, 돈이 한 푼도 없어
     time: [84.731, 85.767]
   - text: Just my shitty luck
-    pronunciation: 데
+    pronunciation: 저스트 마이 시티 럭
     translation: 그냥 내 운이 좆같은 거지
     time: [85.768, 87.133]
   - text: I'm a sitting duck
-    pronunciation: 데
+    pronunciation: 아임 어 시팅 덕
     translation: 난 꼼짝없이 당할 신세야
     time: [87.133, 88.685]
   - text: Just want to get unstuck
