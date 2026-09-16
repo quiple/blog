@@ -176,11 +176,12 @@ lines:
     translation: 그렇게 오랜 세월을 허비했네
     time: [97.363, 99.446]
   - text: To satisfy a crowd from a made-up fucking place
-    pronunciation: 데
+    pronunciation: 투 새티스파이 크라우드 프롬 어 메이드업 퍼킹 플레이스
     translation: 그 빌어먹을 가상의 공간 속 사람들을 만족시키려고
     time: [99.446, 101.979]
     background:
       text: (From a made-up fucking place)
+      pronunciation: (프롬 어 메이드업 퍼킹 플레이스)
       time: [101.979, 103.271]
   - text: It all comes down to what I chase, oh-oh, oh
     pronunciation: 데
