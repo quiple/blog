@@ -8,5 +8,5 @@
     "allowImportingTsExtensions": true,
     "noEmit": true
   },
-  "include": ["../../import.ts", "../../diff.ts", "./*.ts"]
+  "include": ["../../import.ts", "../../diff.ts", "../../pron.ts", "./*.ts"]
 }

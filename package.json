@@ -23,7 +23,8 @@
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "sync-images": "node --env-file-if-exists=.env.local scripts/sync-image-sizes.ts",
-    "obfuscate-fonts": "node scripts/obfuscate-fonts.ts"
+    "obfuscate-fonts": "node scripts/obfuscate-fonts.ts",
+    "pron": "node pron.ts"
   },
   "devDependencies": {
     "@applemusic-like-lyrics/ttml": "1.0.1",
