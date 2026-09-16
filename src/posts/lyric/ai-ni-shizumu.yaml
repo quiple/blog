@@ -36,7 +36,7 @@ lines:
     pronunciation: 본야리시타나미노요니키이타
     time: [50.141, 54.633]
   - text: 今日もみんなとは違う方へ歩く
-    pronunciation: 쿄모민나토하치가우호헤아루쿠
+    pronunciation: 쿄모민나토와치가우호헤아루쿠
     time: [55.234, 60.198]
   - text: 広く青い海を見ながら
     pronunciation: 히로쿠아오이우미오미나가라
@@ -54,13 +54,13 @@ lines:
     pronunciation: 시센오칸신오오토스라젠부
     time: [81.591, 86.089]
   - text: 日々は変わる中で
-    pronunciation: 히비하카와루나카데
+    pronunciation: 히비와카와루나카데
     time: [86.413, 88.269]
   - text: 止まるわたしを置いて行く
     pronunciation: 토마루와타시오오이테이쿠
     time: [88.269, 90.747]
   - text: あぁもう動くなよ繰り返す日々には
-    pronunciation: 아모우고쿠나요쿠리카에스히비니하
+    pronunciation: 아모우고쿠나요쿠리카에스히비니와
     time: [90.945, 94.229]
   - text: 飽き飽きしていたの
     pronunciation: 아키아키시테이타노
@@ -75,16 +75,16 @@ lines:
     pronunciation: 나니히토츠코레히토츠
     time: [103.454, 105.257]
   - text: やってこなかった私は
-    pronunciation: 얏테코나캇타와타시하
+    pronunciation: 얏테코나캇타와타시와
     time: [105.257, 108.229]
   - text: 何にもできずに時間を無駄にして
-    pronunciation: 나니니모데키즈니지칸오무다니시테
+    pronunciation: 난니모데키즈니지칸오무다니시테
     time: [108.646, 112.787]
   - text: 無意味な日々を繰り返して
     pronunciation: 무이미나히비오쿠리카에시테
     time: [112.98, 116.826]
   - text: もういいか全部疲れてしまったんだ
-    pronunciation: 모이이카젠부츠카레테시맛탄다
+    pronunciation: 모이카젠부츠카레테시맛탄다
     time: [134.538, 139.387]
   - text: 荒くなった波を見てるから
     pronunciation: 아라쿠낫타나미오미테루카라
@@ -114,7 +114,7 @@ lines:
     pronunciation: 난테오모이나얀닷테
     time: [193.884, 197]
   - text: 変わりはしない
-    pronunciation: 카와리하시나이
+    pronunciation: 카와리와시나이
     time: [197.047, 199.093]
   - text: 遅すぎた思いを払って
     pronunciation: 오소스기타오모이오하랏테
@@ -123,10 +123,10 @@ lines:
     pronunciation: 마요이토코카이오누기스테테
     time: [209.707, 212.061]
   - text: きっと元には戻れない
-    pronunciation: 킷토모토니하모도레나이
+    pronunciation: 킷토모토니와모도레나이
     time: [212.264, 214.6]
   - text: もう一回?
-    pronunciation: 모이치카이?
+    pronunciation: 모잇카이?
     time: [214.94, 215.744]
   - text: 何回やったって同じだったよな
     pronunciation: 난카이얏탓테오나지닷타요나
@@ -135,7 +135,7 @@ lines:
     pronunciation: 사요나라오와리오네갓타세카이니
     time: [219.843, 224.201]
   - text: 未練はないから
-    pronunciation: 미렌하나이카라
+    pronunciation: 미렌와나이카라
     time: [224.586, 226.28]
   - text: ほら藍に沈んで
     pronunciation: 호라아이니시즌데
