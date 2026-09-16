@@ -61,7 +61,7 @@ lines:
   - text: And the internet's where I sit
     translation: 인터넷에 눌러앉아 살고 있어
     time: [42.431, 44.237]
-  - text: I'm a broke ass bitch
+  - text: I'm a broke-ass bitch
     translation: 난 좆도 없는 빈털터리야
     time: [44.237, 45.273]
   - text: Hooked on Twitch
@@ -114,7 +114,7 @@ lines:
   - text: Almost lost my mind
     translation: 거의 미쳐 버릴 뻔했어
     time: [69.067, 70.447]
-  - text: Viral star but I'm still unsigned
+  - text: Viral star, but I'm still unsigned
     translation: 인터넷 스타지만 아직 계약한 데는 없어
     time: [70.447, 72.4]
     background:
@@ -170,7 +170,7 @@ lines:
   - text: My life feels like it's flying by
     translation: 내 인생이 쏜살같이 지나가는 것 같아
     time: [163.034, 164.75]
-  - text: My future's gone and my dreams have died
+  - text: My future's gone, and my dreams have died
     translation: 미래는 사라졌고 꿈도 죽어 버렸어
     time: [164.75, 166.175]
   - text: This song is just an outcry
@@ -248,7 +248,7 @@ lines:
   - text: Just my baguette and me
     translation: 바게트와 나, 단둘이서
     time: [209.229, 211.752]
-  - text: Motherfucker I'm unemployed
+  - text: Motherfucker, I'm unemployed
     translation: 씨발, 나 백수라고
     time: [212.35, 213.871]
   - text: I got no house
@@ -284,7 +284,7 @@ lines:
   - text: I've almost lost my god damn mind
     translation: 씨발, 거의 미쳐 버릴 뻔했어
     time: [225.453, 226.848]
-  - text: I'm a viral star but I'm still unsigned
+  - text: I'm a viral star, but I'm still unsigned
     translation: 난 인터넷 스타인데 아직 계약한 데는 없어
     time: [226.848, 228.908]
     background:
