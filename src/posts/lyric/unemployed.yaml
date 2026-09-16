@@ -328,15 +328,16 @@ lines:
     translation: 집도 없어
     time: [213.871, 214.541]
   - text: I get no pay
-    pronunciation: 데
+    pronunciation: 아이 겟 노 페이
     translation: 월급도 못 받아
     time: [214.541, 215.398]
   - text: Gonna waste my days away
-    pronunciation: 데
+    pronunciation: 거너 웨이스트 마이 데이즈 어웨이
     translation: 이렇게 하루하루 허비할 거야
     time: [215.399, 217.267]
     background:
       text: (ナマケモノ)
+      pronunciation: (나마케모노)
       translation: (게으름뱅이)
       time: [217.267, 218.468]
   - text: Just chilling for free
@@ -345,6 +346,7 @@ lines:
     time: [218.469, 219.871]
     background:
       text: (しゃっきんづけ)
+      pronunciation: (샷킨즈케)
       translation: (빚에 절었어)
       time: [219.872, 221.364]
   - text: Just my debt and me
@@ -356,7 +358,7 @@ lines:
       translation: (테토테토테토테토테토)
       time: [223.291, 224.103]
   - text: Yeah, I can't unwind
-    pronunciation: 데
+    pronunciation: 예, 아이 캔트 언와인드
     translation: 그래, 긴장을 풀 수가 없어
     time: [224.103, 225.453]
   - text: I've almost lost my god damn mind
