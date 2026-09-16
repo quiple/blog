@@ -14,6 +14,9 @@ spotify: 5c5TjEBse6ltTnAJ0zG479
 youtube:
   audio: ztk2ukz3CBE
   mv: xC6caW7n-VQ
+offsets:
+  youtubeAudio: -0.021
+  spotify: -0.021
 lines:
   - text: (2... 3... 4...)
     time: [0.326, 1.774]
