@@ -33,7 +33,7 @@ lines:
   - text: Unsatisfied until I've got you flayed alive
     time: [31.607, 34.747]
   - text: So grab a plate, have a taste, 这口味让我沉醉
-    pronunciation: 소 그랩 어 플레이트, 해브 어 테이스트 저커우웨이랑워천쭈이
+    pronunciation: 소 그랩 어 플레이트, 해브 어 테이스트, 저커우웨이랑워천쭈이
     time: [34.747, 38.155]
   - text: I'm still preying on a butcher's vein
     time: [38.155, 41.041]
@@ -57,7 +57,8 @@ lines:
     time: [72.14, 75.476]
   - text: Preserved and primed, each muscle divvied up to dine
     time: [75.543, 78.721]
-  - text: And in the high, 我存在 Tasting, 血淋淋的爱
+  - text: And in the high, 我存在, Tasting, 血淋淋的爱
+    pronunciation: 앤드 인 더 하이, 워춘짜이, 테이스팅, 쉐린린더아이
     time: [78.721, 82.101]
   - text: I'll devour all of you in time
     time: [82.101, 85.576]
@@ -66,6 +67,7 @@ lines:
   - text: My love, my knife to carve it out, your life
     time: [89.246, 92.169]
   - text: So grab a plate, have a taste, 这口味让我沉醉
+    pronunciation: 소 그랩 어 플레이트, 해브 어 테이스트, 저커우웨이랑워천쭈이
     time: [92.169, 95.627]
   - text: I'm still preying on a butcher's vein
     time: [95.627, 98.518]
@@ -91,6 +93,7 @@ lines:
   - text: Unsatisfied until I've got you flayed alive
     time: [134.704, 137.851]
   - text: So grab a plate, have a taste, 这口味让我沉醉
+    pronunciation: 소 그랩 어 플레이트, 해브 어 테이스트, 저커우웨이랑워천쭈이
     time: [137.851, 141.269]
   - text: I'm still preying on a butcher's vein
     time: [141.269, 144.643]
@@ -99,6 +102,7 @@ lines:
   - text: Your broken pride, a cut so perfect in its prime
     time: [148.241, 151.402]
   - text: All that I see, sixty-three, 为让我心醉的你
+    pronunciation: 올 댓 아이 시, 식스티스리, 웨이랑워신쭈이더니
     time: [151.402, 154.803]
   - text: I'll be waiting so impatiently
     time: [154.803, 158.079]
@@ -107,6 +111,7 @@ lines:
   - text: My love, my knife to carve it out, your life
     time: [161.923, 164.881]
   - text: So grab a plate, have a taste, 这口味让我沉醉
+    pronunciation: 소 그랩 어 플레이트, 해브 어 테이스트, 저커우웨이랑워천쭈이
     time: [164.881, 168.303]
   - text: I'm still preying on a butcher's vein
     time: [168.303, 172.004]
