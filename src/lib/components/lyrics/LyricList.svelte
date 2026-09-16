@@ -16,7 +16,9 @@
           >
         </div>
         {#if song.translation}
-          <p class="mb-1 line-clamp-3 text-sm text-chart-4 dark:text-chart-1">{song.translation}</p>
+          <p class:mb-1={!!song.artists?.length} class="line-clamp-3 text-sm text-chart-4 dark:text-chart-1">
+            {song.translation}
+          </p>
         {/if}
         {#if song.artists?.length}
           <div class="mt-px flex items-start justify-between gap-2">
