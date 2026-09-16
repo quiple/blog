@@ -13,6 +13,9 @@ spotify: 3XNnq2oo1zmHDseKZKaYEF
 youtube:
   audio: f_78K8u7QIU
   mv: aRiVUVNUhIs
+offsets:
+  youtubeAudio: 0.229
+  spotify: 0.229
 lines:
   - text: なんもねえ なんもねえ
     translation: 아무것도 없어, 아무것도 없어
