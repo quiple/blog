@@ -1,5 +1,15 @@
 import {isMap, isScalar, isSeq, parseDocument, type YAMLMap} from 'yaml'
 
+export function orderPronunciation(node: YAMLMap) {
+  const index = node.items.findIndex((pair) => (isScalar(pair.key) ? pair.key.value : pair.key) === 'pronunciation')
+  if (index < 0) return
+  const [pair] = node.items.splice(index, 1)
+  const source = node.items.findIndex(
+    (pair) => (isScalar(pair.key) ? pair.key.value : pair.key) === (node.has('words') ? 'words' : 'text'),
+  )
+  node.items.splice(source < 0 ? index : source + 1, 0, pair)
+}
+
 const languages: Record<string, string> = {
   az: 'aze',
   be: 'bel',
@@ -118,6 +128,7 @@ export async function addPronunciation(
   for (const {node, text} of pending) {
     const value = converted.get(text)!
     node.set('pronunciation', value)
+    orderPronunciation(node)
   }
   return {yaml: doc.toString({lineWidth: 0, flowCollectionPadding: false}), count: pending.length}
 }
