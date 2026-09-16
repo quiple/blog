@@ -18,20 +18,39 @@ export function smartText(value: string): string {
   return smartTexts([value])[0]
 }
 
-function translation(value: Annotation | undefined): Annotation | undefined {
+function annotation(value: Annotation | undefined): Annotation | undefined {
   if (value === undefined) return undefined
   return typeof value === 'string'
     ? smartText(value)
     : Object.fromEntries(Object.entries(value).map(([lang, text]) => [lang, smartText(text)]))
 }
 
+function wordPronunciations(words: NonNullable<SongLine['words']>) {
+  const values = words.map((word) => word.pronunciation)
+  const plain = smartTexts(values.map((value) => (typeof value === 'string' ? value : '')))
+  const languages = new Set(values.flatMap((value) => (value && typeof value !== 'string' ? Object.keys(value) : [])))
+  const localized = new Map(
+    [...languages].map((lang) => [
+      lang,
+      smartTexts(values.map((value) => (value && typeof value !== 'string' ? (value[lang] ?? '') : ''))),
+    ]),
+  )
+  return values.map((value, index) =>
+    typeof value === 'string'
+      ? plain[index]
+      : value && Object.fromEntries(Object.keys(value).map((lang) => [lang, localized.get(lang)![index]])),
+  )
+}
+
 function displayLine(line: SongLine): SongLine {
   const text = line.words && smartTexts(line.words.map((word) => word.text))
+  const pronunciation = line.words && wordPronunciations(line.words)
   return {
     ...line,
     text: smartText(line.text),
-    words: line.words?.map((word, index) => ({...word, text: text![index]})),
-    translation: translation(line.translation),
+    words: line.words?.map((word, index) => ({...word, text: text![index], pronunciation: pronunciation![index]})),
+    translation: annotation(line.translation),
+    pronunciation: annotation(line.pronunciation),
     background: line.background && displayLine(line.background),
   }
 }
