@@ -20,127 +20,169 @@ offsets:
 lines:
   - text: 「ねぇ似合ってる?」って
     pronunciation: '"네니앗테루?"읏테'
+    translation: '"있지, 잘 어울려?" 하고'
     time: [28.876, 31.423]
   - text: 聞いてくる君が少し
     pronunciation: 키이테쿠루키미가스코시
+    translation: 물어오는 네가 조금
     time: [31.45, 34.462]
   - text: 赤い顔して背を向けてく
     pronunciation: 아카이카오시테세오무케테쿠
+    translation: 붉어진 얼굴로 등을 돌려
     time: [36.358, 40.521]
   - text: 長い髪が揺れて揺れる袖が
     pronunciation: 나가이카미가유레테유레루소데가
+    translation: 긴 머리가 흔들리고, 흔들리는 소매가
     time: [43.445, 46.501]
   - text: 綺麗であぁもう見惚れてる
     pronunciation: 키레이데아모미호레테루
+    translation: 아름다워서, 아, 벌써 넋을 잃고 바라봐
     time: [46.58, 49.245]
   - text: 君のいない世界に
     pronunciation: 키미노이나이세카이니
+    translation: 네가 없는 세상에
     time: [50.652, 52.417]
   - text: 僕の居場所などないから
     pronunciation: 보쿠노이바쇼나도나이카라
+    translation: 내가 있을 곳 따위 없으니까
     time: [52.417, 56.173]
   - text: だからさ
     pronunciation: 다카라사
+    translation: 그러니까 말이야
     time: [56.961, 57.808]
   - text: 水溶世界媒体少女
     pronunciation: 스이요세카이바이타이쇼조
+    translation: 수용세계매체소녀
     time: [57.808, 59.708]
   - text: 運命だって抗って
     pronunciation: 운메이닷테아라갓테
+    translation: 운명이라도 거슬러
     time: [59.717, 61.285]
   - text: 妄想も現実も騙し騙しで生きてる
     pronunciation: 모소모겐지츠모다마시다마시데이키테루
+    translation: 망상도 현실도 속이고 속이며 살아가
     time: [61.435, 64.864]
   - text: 水溶世界媒体少女
     pronunciation: 스이요세카이바이타이쇼조
+    translation: 수용세계매체소녀
     time: [65.063, 66.861]
   - text: 運命なんて形ないけれど
     pronunciation: 운메이난테카타치나이케레도
+    translation: 운명 따위 형태는 없지만
     time: [66.876, 69.085]
   - text: 壊してしまおう
     pronunciation: 코와시테시마오
+    translation: 부숴 버리자
     time: [70.349, 72.124]
   - text: 「ああ、似合ってる」って
     pronunciation: '"아, 니앗테루"읏테'
+    translation: '"응, 잘 어울려" 하고'
     time: [72.26, 74.654]
   - text: 言ったのに君は少し
     pronunciation: 잇타노니키미와스코시
+    translation: 말했는데 너는 조금
     time: [74.792, 77.773]
   - text: 赤い目をして見てきたよね
     pronunciation: 아카이메오시테미테키타요네
+    translation: 붉어진 눈으로 나를 바라봤지
     time: [79.56, 83.855]
   - text: 君が泣く姿はそれはもう綺麗で
     pronunciation: 키미가나쿠스가타와소레와모키레이데
+    translation: 네가 우는 모습은 정말이지 아름다워서
     time: [86.766, 90.278]
   - text: なんてほんと馬鹿みたい
     pronunciation: 난테혼토바카미타이
+    translation: 라니, 정말 바보 같아
     time: [90.278, 92.448]
   - text: 振袖から見えた
     pronunciation: 후리소데카라미에타
+    translation: 후리소데 사이로 보인
     time: [94.045, 95.767]
   - text: 震えるその手掴みたい
     pronunciation: 후루에루소노테츠카미타이
+    translation: 떨리는 그 손을 잡고 싶어
     time: [95.767, 99.538]
   - text: だからさ
     pronunciation: 다카라사
+    translation: 그러니까 말이야
     time: [100.289, 101.176]
   - text: 水溶世界媒体少女
     pronunciation: 스이요세카이바이타이쇼조
+    translation: 수용세계매체소녀
     time: [101.207, 102.984]
   - text: 運命なんて抜け出して
     pronunciation: 운메이난테누케다시테
+    translation: 운명 따위 벗어나
     time: [103.022, 104.591]
   - text: 妄想も現実も騙し騙しで生きてる
     pronunciation: 모소모겐지츠모다마시다마시데이키테루
+    translation: 망상도 현실도 속이고 속이며 살아가
     time: [104.798, 108.142]
   - text: 水溶世界媒体少女
     pronunciation: 스이요세카이바이타이쇼조
+    translation: 수용세계매체소녀
     time: [108.438, 110.184]
   - text: 運命なんて形ないけれど
     pronunciation: 운메이난테카타치나이케레도
+    translation: 운명 따위 형태는 없지만
     time: [110.184, 112.412]
   - text: 溶かしてしまおう
     pronunciation: 토카시테시마오
+    translation: 녹여 버리자
     time: [113.57, 115.488]
   - text: 夏の終わりにしては暑くて
     pronunciation: 나츠노오와리니시테와아츠쿠테
+    translation: 여름의 끝치고는 더워서
     time: [129.885, 132.714]
   - text: むせ返る気がもうどうもならないの
     pronunciation: 무세카에루키가모도모나라나이노
+    translation: 숨이 턱 막히는 기분을 이젠 어찌할 수 없어
     time: [133, 137.169]
   - text: 「どうなったっていいよ」なんて
     pronunciation: '"도낫탓테이이요"난테'
+    translation: '"어떻게 되든 상관없어"라니'
     time: [137.172, 138.996]
   - text: そんなこと言わないで
     pronunciation: 손나코토이와나이데
+    translation: 그런 말 하지 마
     time: [138.996, 141.205]
   - text: ねぇ行かないで
     pronunciation: 네이카나이데
+    translation: 제발 가지 마
     time: [141.318, 143.012]
   - text: 水溶世界媒体少女
     pronunciation: 스이요세카이바이타이쇼조
+    translation: 수용세계매체소녀
     time: [144.478, 146.315]
   - text: 水溶世界媒体少女
     pronunciation: 스이요세카이바이타이쇼조
+    translation: 수용세계매체소녀
     time: [151.643, 153.54]
   - text: 水溶世界媒体少女
     pronunciation: 스이요세카이바이타이쇼조
+    translation: 수용세계매체소녀
     time: [158.895, 160.67]
   - text: 運命なんて抗って
     pronunciation: 운메이난테아라갓테
+    translation: 운명 따위 거슬러
     time: [160.703, 162.17]
   - text: 妄想も現実も騙し騙しで
     pronunciation: 모소모겐지츠모다마시다마시데
+    translation: 망상도 현실도 속이고 속이며
     time: [162.471, 165.131]
   - text: 生きてんだから
     pronunciation: 이키텐다카라
+    translation: 살아가고 있으니까
     time: [165.131, 166.175]
   - text: 水溶世界媒体少女
     pronunciation: 스이요세카이바이타이쇼조
+    translation: 수용세계매체소녀
     time: [166.175, 167.867]
   - text: 運命なんて形ないけれど
     pronunciation: 운메이난테카타치나이케레도
+    translation: 운명 따위 형태는 없지만
     time: [167.884, 170.115]
   - text: 壊してしまおうよ
     pronunciation: 코와시테시마오요
+    translation: 부숴 버리자
     time: [171.498, 173.52]

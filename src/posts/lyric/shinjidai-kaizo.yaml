@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: 新時代壊造
+titleTranslation: 신시대 괴조
 titleLang: ja
 artist: fuminnikki
 lang: ja
@@ -16,133 +17,177 @@ youtube:
 lines:
   - text: 秒刻みなハイテンション
     pronunciation: 뵤키자미나하이텐숀
+    translation: 초 단위로 치솟는 하이 텐션
     time: [28.056, 29.654]
   - text: こんなんじゃ疲れるの相当
     pronunciation: 콘난자츠카레루노소토
+    translation: 이래서야 꽤나 지치겠어
     time: [29.818, 31.444]
   - text: 味気ないけど気分はとぅるっとぅー
     pronunciation: 아지케나이케도키분와투룻투
+    translation: 재미없지만 기분은 뚜룻뚜
     time: [31.565, 34.653]
   - text: あーもうぐずったいビート刻んだ血小板で
     pronunciation: 아모구즛타이비토키잔다켓쇼반데
+    translation: 아, 정말 느려터진 비트를 새긴 혈소판으로
     time: [34.66, 38.126]
   - text: みんな食べてしまえたらな
     pronunciation: 민나타베테시마에타라나
+    translation: 모두 먹어 버릴 수 있다면 좋을 텐데
     time: [38.38, 41.335]
   - text: 合えない気持ちの性でも1等賞だって
     pronunciation: 아에나이키모치노세이데모잇토쇼닷테
+    translation: 서로 맞지 않는 마음의 성질도 1등상이라니
     time: [41.557, 47.735]
   - text: だから最低限の荷物をまとめて
     pronunciation: 다카라사이테이겐노니모츠오마토메테
+    translation: 그러니 최소한의 짐을 챙겨
     time: [47.831, 51.858]
   - text: 君の元に歩き出せばいいの
     pronunciation: 키미노모토니아루키다세바이이노
+    translation: 네 곁으로 걸음을 내디디면 되는 거야
     time: [52.037, 55.582]
   - text: もういっちょ教えてやるよ
     pronunciation: 모잇초오시에테야루요
+    translation: 한 번 더 가르쳐 줄게
     time: [55.693, 58.619]
   - text: 新時代の歩き方をさ
     pronunciation: 신지다이노아루키카타오사
+    translation: 신시대를 걷는 법을 말이야
     time: [58.941, 62.693]
   - text: 秒刻みなハイテンション
     pronunciation: 뵤키자미나하이텐숀
+    translation: 초 단위로 치솟는 하이 텐션
     time: [76.078, 77.729]
   - text: こんなんじゃ逃げるのも戦争
     pronunciation: 콘난자니게루노모센소
+    translation: 이래서야 도망치는 것도 전쟁이야
     time: [77.765, 79.409]
   - text: 味気ないけど気分はとぅるっとぅー
     pronunciation: 아지케나이케도키분와투룻투
+    translation: 재미없지만 기분은 뚜룻뚜
     time: [79.541, 82.711]
   - text: あーもうぐずったいビート刻んだ血小板で
     pronunciation: 아모구즛타이비토키잔다켓쇼반데
+    translation: 아, 정말 느려터진 비트를 새긴 혈소판으로
     time: [82.796, 86.187]
   - text: みんな食べてしまえたらな
     pronunciation: 민나타베테시마에타라나
+    translation: 모두 먹어 버릴 수 있다면 좋을 텐데
     time: [86.42, 89.121]
   - text: あーなんて言ったってナンセンスな解答
     pronunciation: 아난테잇탓테난센스나카이토
+    translation: 아, 뭐라 해도 넌센스인 해답
     time: [89.129, 91.362]
   - text: 巧妙な罠を考えても
     pronunciation: 코묘나와나오칸가에테모
+    translation: 교묘한 덫을 생각해 내도
     time: [91.472, 93.228]
   - text: きっと君にはバレてしまうからさ
     pronunciation: 킷토키미니와바레테시마우카라사
+    translation: 분명 너한테는 들켜 버릴 테니까
     time: [93.238, 96.786]
   - text: もう何も言わないで
     pronunciation: 모나니모이와나이데
+    translation: 이젠 아무 말도 하지 마
     time: [96.897, 98.297]
   - text: 考えてもわかんないことでしょ
     pronunciation: 칸가에테모와칸나이코토데쇼
+    translation: 생각해 봐도 모르는 일이잖아
     time: [98.398, 100.066]
   - text: さよならくらいはさせてよね
     pronunciation: 사요나라쿠라이와사세테요네
+    translation: 작별 인사 정도는 하게 해 줘
     time: [100.091, 103.558]
   - text: さらば殺伐としたこんな世の中じゃ
     pronunciation: 사라바사츠바츠토시타콘나요노나카자
+    translation: 안녕, 이렇게 살벌한 세상은
     time: [104.329, 108.385]
   - text: 君にはもう窮屈すぎるから
     pronunciation: 키미니와모큐쿠츠스기루카라
+    translation: 너에게는 이제 너무 갑갑하니까
     time: [108.642, 112.151]
   - text: もういっちょ教えてやるよ
     pronunciation: 모잇초오시에테야루요
+    translation: 한 번 더 가르쳐 줄게
     time: [112.276, 115.357]
   - text: 新時代の歩き方をさ
     pronunciation: 신지다이노아루키카타오사
+    translation: 신시대를 걷는 법을 말이야
     time: [115.467, 119.298]
   - text: 愛されたいんだって
     pronunciation: 아이사레타인닷테
+    translation: 사랑받고 싶다며
     time: [132.284, 134.338]
   - text: どんな馬鹿でも
     pronunciation: 돈나바카데모
+    translation: 어떤 바보라도
     time: [134.424, 135.775]
   - text: 愛を歌うんだって
     pronunciation: 아이오우타운닷테
+    translation: 사랑을 노래한다며
     time: [135.907, 137.651]
   - text: 疲れきって
     pronunciation: 츠카레킷테
+    translation: 완전히 지쳐서
     time: [137.701, 139.266]
   - text: 会いに行こうとして
     pronunciation: 아이니이코토시테
+    translation: 만나러 가려다가
     time: [139.348, 141.049]
   - text: 遠ざかっても
     pronunciation: 토자캇테모
+    translation: 멀어져도
     time: [141.195, 142.632]
   - text: 承認欲求が足りないだけ
     pronunciation: 쇼닌욧큐가타리나이다케
+    translation: 인정받고 싶은 욕구가 부족할 뿐
     time: [142.789, 145.541]
   - text: だからさもういいよ後悔は捨てて
     pronunciation: 다카라사모이이요코카이와스테테
+    translation: 그러니까 이제 됐어, 후회는 버려
     time: [145.576, 149.918]
   - text: 君以外は愛せないから
     pronunciation: 키미이가이와아이세나이카라
+    translation: 너 말고는 사랑할 수 없으니까
     time: [150.046, 153.309]
   - text: 思い描いていたその先に
     pronunciation: 오모이에가이테이타소노사키니
+    translation: 마음속에 그리던 그 앞날에
     time: [153.648, 157.036]
   - text: 君の姿がないとしたら
     pronunciation: 키미노스가타가나이토시타라
+    translation: 네 모습이 없다면
     time: [157.154, 160.366]
   - text: 最低限の荷物をまとめて
     pronunciation: 사이테이겐노니모츠오마토메테
+    translation: 최소한의 짐을 챙겨
     time: [160.391, 163.972]
   - text: 君の元に歩き出すんだほら
     pronunciation: 키미노모토니아루키다슨다호라
+    translation: 네 곁으로 걸음을 내딛는 거야, 자
     time: [164.15, 167.674]
   - text: もういっちょ教えてやるよ
     pronunciation: 모잇초오시에테야루요
+    translation: 한 번 더 가르쳐 줄게
     time: [167.785, 170.825]
   - text: 新時代の歩き方を
     pronunciation: 신지다이노아루키카타오
+    translation: 신시대를 걷는 법을
     time: [170.972, 174.052]
   - text: 殺伐としたこんな世の中じゃ
     pronunciation: 사츠바츠토시타콘나요노나카자
+    translation: 이렇게 살벌한 세상은
     time: [174.067, 177.751]
   - text: 君にはもう窮屈すぎるから
     pronunciation: 키미니와모큐쿠츠스기루카라
+    translation: 너에게는 이제 너무 갑갑하니까
     time: [177.879, 181.335]
   - text: もういっちょ教えてやるよ
     pronunciation: 모잇초오시에테야루요
+    translation: 한 번 더 가르쳐 줄게
     time: [181.481, 184.554]
   - text: 新時代の歩き方をさ
     pronunciation: 신지다이노아루키카타오사
+    translation: 신시대를 걷는 법을 말이야
     time: [184.683, 190.489]

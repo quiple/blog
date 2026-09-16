@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: 藍に沈む
+titleTranslation: 쪽빛에 잠기다
 titleLang: ja
 artist: fuminnikki
 lang: ja
@@ -19,124 +20,165 @@ offsets:
 lines:
   - text: あぁ手足が冷たくなっていく
     pronunciation: 아테아시가츠메타쿠낫테이쿠
+    translation: 아아, 손발이 차가워져 가
     time: [0.761, 6.828]
   - text: 止めた呼吸吐き出した憂いを
     pronunciation: 토메타코큐하키다시타우레이오
+    translation: 멈춘 호흡, 내뱉은 근심을
     time: [7.302, 12.815]
   - text: 浮かんで弾ける水泡が見てる
     pronunciation: 우칸데하지케루스이호가미테루
+    translation: 떠올라 터지는 물거품이 보고 있어
     time: [13.779, 19.868]
   - text: 深い青に落ちてく中で
     pronunciation: 후카이아오니오치테쿠나카데
+    translation: 깊은 푸름 속으로 떨어져 가면서
     time: [20.874, 26.56]
   - text: 暑いな今日もニュースが謳っていた
     pronunciation: 아츠이나쿄모뉴스가우탓테이타
+    translation: 덥네, 오늘도 뉴스가 떠들어 댔어
     time: [45.106, 49.834]
   - text: ぼんやりした波のように聞いた
     pronunciation: 본야리시타나미노요니키이타
+    translation: 희미한 파도 소리처럼 들었어
     time: [50.141, 54.633]
   - text: 今日もみんなとは違う方へ歩く
     pronunciation: 쿄모민나토와치가우호헤아루쿠
+    translation: 오늘도 모두와는 다른 쪽으로 걸어
     time: [55.234, 60.198]
   - text: 広く青い海を見ながら
     pronunciation: 히로쿠아오이우미오미나가라
+    translation: 넓고 푸른 바다를 바라보면서
     time: [60.915, 65.046]
   - text: 別世界にさ来た気になってんだ
     pronunciation: 벳세카이니사키타키니낫텐다
+    translation: 다른 세상에 온 기분이 들어
     time: [65.752, 70.584]
   - text: ゆったりした波を見てるから
     pronunciation: 윳타리시타나미오미테루카라
+    translation: 느긋한 파도를 보고 있으니까
     time: [71.013, 75.361]
   - text: 忙しなく動く世界から逸らす
     pronunciation: 세와시나쿠우고쿠세카이카라소라스
+    translation: 분주하게 움직이는 세상에서 돌려
     time: [75.968, 80.971]
   - text: 視線を関心を音すら全部
     pronunciation: 시센오칸신오오토스라젠부
+    translation: 시선도 관심도 소리마저 전부
     time: [81.591, 86.089]
   - text: 日々は変わる中で
     pronunciation: 히비와카와루나카데
+    translation: 나날은 변해 가는 가운데
     time: [86.413, 88.269]
   - text: 止まるわたしを置いて行く
     pronunciation: 토마루와타시오오이테이쿠
+    translation: 멈춰 선 나를 두고 떠나가
     time: [88.269, 90.747]
   - text: あぁもう動くなよ繰り返す日々には
     pronunciation: 아모우고쿠나요쿠리카에스히비니와
+    translation: 아아, 이제 움직이지 마, 반복되는 나날에는
     time: [90.945, 94.229]
   - text: 飽き飽きしていたの
     pronunciation: 아키아키시테이타노
+    translation: 진절머리가 났어
     time: [94.229, 95.962]
   - text: ならあんな時間があったのに
     pronunciation: 나라안나지칸가앗타노니
+    translation: 그렇다면 그만한 시간이 있었는데도
     time: [96.965, 100.556]
   - text: こんなに日々が過ぎたのに
     pronunciation: 콘나니히비가스기타노니
+    translation: 이렇게나 많은 날이 지났는데도
     time: [100.789, 103.163]
   - text: 何一つこれ一つ
     pronunciation: 나니히토츠코레히토츠
+    translation: 무엇 하나, 이것 하나
     time: [103.454, 105.257]
   - text: やってこなかった私は
     pronunciation: 얏테코나캇타와타시와
+    translation: 해 오지 않은 나는
     time: [105.257, 108.229]
   - text: 何にもできずに時間を無駄にして
     pronunciation: 난니모데키즈니지칸오무다니시테
+    translation: 아무것도 못 한 채 시간을 낭비하고
     time: [108.646, 112.787]
   - text: 無意味な日々を繰り返して
     pronunciation: 무이미나히비오쿠리카에시테
+    translation: 무의미한 나날을 반복하고
     time: [112.98, 116.826]
   - text: もういいか全部疲れてしまったんだ
     pronunciation: 모이이카젠부츠카레테시맛탄다
+    translation: 이제 됐나, 모든 것에 지쳐 버렸어
     time: [134.538, 139.387]
   - text: 荒くなった波を見てるから
     pronunciation: 아라쿠낫타나미오미테루카라
+    translation: 거칠어진 파도를 보고 있으니
     time: [139.744, 144.157]
   - text: 野蛮で単純な答えが過る
     pronunciation: 야반데탄준나코타에가요기루
+    translation: 야만적이고 단순한 답이 스쳐 가
     time: [144.69, 149.742]
   - text: そうだな、
     pronunciation: 소다나,
+    translation: 그렇지,
     time: [150.378, 151.45]
   - text: もういっそ終わりにしようか
     pronunciation: 모잇소오와리니시요카
+    translation: 이제 차라리 끝내 버릴까
     time: [151.677, 154.98]
   - text: もしも逃げ続けなければ
     pronunciation: 모시모니게츠즈케나케레바
+    translation: 만약 계속 도망치지 않았다면
     time: [180.996, 183.657]
   - text: 別の日々を歩めたかな
     pronunciation: 베츠노히비오아유메타카나
+    translation: 다른 나날을 걸을 수 있었을까
     time: [184.114, 186.92]
   - text: 平凡でありふれた日々を
     pronunciation: 헤이본데아리후레타히비오
+    translation: 평범하고 흔한 나날을
     time: [187.418, 190.636]
   - text: 送れてたかな
     pronunciation: 오쿠레테타카나
+    translation: 보낼 수 있었을까
     time: [190.642, 193.45]
   - text: なんて思い悩んだって
     pronunciation: 난테오모이나얀닷테
+    translation: 그런 고민을 해 봐도
     time: [193.884, 197]
   - text: 変わりはしない
     pronunciation: 카와리와시나이
+    translation: 달라지지는 않아
     time: [197.047, 199.093]
   - text: 遅すぎた思いを払って
     pronunciation: 오소스기타오모이오하랏테
+    translation: 너무 늦어 버린 생각을 떨쳐 내고
     time: [199.723, 204.245]
   - text: 迷いと後悔を脱ぎ捨てて
     pronunciation: 마요이토코카이오누기스테테
+    translation: 망설임과 후회를 벗어던지고
     time: [209.707, 212.061]
   - text: きっと元には戻れない
     pronunciation: 킷토모토니와모도레나이
+    translation: 분명 원래대로는 돌아갈 수 없어
     time: [212.264, 214.6]
   - text: もう一回?
     pronunciation: 모잇카이?
+    translation: 한 번 더?
     time: [214.94, 215.744]
   - text: 何回やったって同じだったよな
     pronunciation: 난카이얏탓테오나지닷타요나
+    translation: 몇 번을 해 봐도 똑같았잖아
     time: [215.744, 219.708]
   - text: さようなら終わりを願った世界に
     pronunciation: 사요나라오와리오네갓타세카이니
+    translation: 안녕, 끝나기를 바랐던 세상에
     time: [219.843, 224.201]
   - text: 未練はないから
     pronunciation: 미렌와나이카라
+    translation: 미련은 없으니까
     time: [224.586, 226.28]
   - text: ほら藍に沈んで
     pronunciation: 호라아이니시즌데
+    translation: 자, 쪽빛에 잠겨
     time: [226.42, 230.887]
