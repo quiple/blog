@@ -86,13 +86,3 @@ lines:
     time: [139.626, 141.524]
   - text: And I don't know why
     time: [141.524, 143.345]
-  - text: Crash Test!
-    time: [151.701, 152.722]
-  - text: Nice one!
-    time: [156.934, 157.551]
-  - text: You've passed this test
-    time: [157.716, 158.8]
-  - text: Click the magnifying glass to learn more!
-    time: [159.092, 161.129]
-  - text: Or click the apple to replay the test!
-    time: [161.485, 163.712]
