@@ -19,7 +19,7 @@ offsets:
   spotify: 0.1
 lines:
   - text: 「ねぇ似合ってる?」って
-    pronunciation: '"네니앗테루?" 테'
+    pronunciation: '"네니앗테루?"읏테'
     time: [28.876, 31.423]
   - text: 聞いてくる君が少し
     pronunciation: 키이테쿠루키미가스코시
@@ -61,7 +61,7 @@ lines:
     pronunciation: 코와시테시마오
     time: [70.349, 72.124]
   - text: 「ああ、似合ってる」って
-    pronunciation: "'아, 니앗테루' 읏테"
+    pronunciation: '"아, 니앗테루"읏테'
     time: [72.26, 74.654]
   - text: 言ったのに君は少し
     pronunciation: 잇타노니키미하스코시
