@@ -66,14 +66,10 @@ lines:
     time: [123.404, 124.552]
   - text: If I don't cry?
     time: [124.552, 125.916]
-  - text: maybe I'm rotten to the core...
+  - text: Maybe I'm rotten to the core
     time: [126.069, 127.929]
-  - text: and I
-    time: [127.929, 128.517]
-  - text: DON'T KNOW
-    time: [128.517, 129.226]
-  - text: WHŸ̴̡̛̮͔͍̟̱̞̦̖̜̱́̊̐̋̌̈́̏͝Y̴̡̨̢̘̘͙̮̪̺̲̗̭̝͉̑̽̀̈͂̏̅̂̈́͊Ỳ̸̢͙̲͎͆͛́̀͗͝͝
-    time: [129.226, 129.726]
+  - text: And I don't know why
+    time: [127.929, 129.726]
   - text: I don't want to be alone
     time: [129.726, 131.395]
   - text: But I don't try
