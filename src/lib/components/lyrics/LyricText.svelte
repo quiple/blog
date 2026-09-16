@@ -7,6 +7,7 @@
   this={line.translatedLyric ? 'p' : 'span'}
   class={semibold ? 'font-semibold' : 'font-normal'}
   class:text-muted-foreground={line.isBG}
+  class:my-4={!!line.translatedLyric}
 >
   <span lang={line.lang === 'ko' ? undefined : (line.lang ?? '')} class="whitespace-pre-wrap">
     {#each line.words as word}<span class="inline-flex flex-col align-baseline">
