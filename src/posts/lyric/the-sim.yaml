@@ -5,6 +5,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: The Sim
+titleTranslation: 심
 titleLang: en-US
 artist:
   - jam-2-go
@@ -19,83 +20,123 @@ offsets:
   spotify: -0.021
 lines:
   - text: I burned my kitchen down
+    translation: 부엌을 홀랑 태워 버렸어
     time: [2.624, 5.225]
   - text: Just cooking an autumn salad
+    translation: 그저 가을 샐러드를 만들다가
     time: [5.84, 8.606]
   - text: I feel like such a clown
+    translation: 내가 정말 바보 같아
     time: [9.5, 11.5]
   - text: Finding a path that's valid
+    translation: 갈 수 있는 길을 찾고 있자니
     time: [12.913, 15.5]
   - text: I tried to climb out of the pool
+    translation: 수영장에서 기어 나오려 했어
     time: [16.25, 18.745]
   - text: But someone removed all the ladders
+    translation: 그런데 누가 사다리를 전부 치웠어
     time: [19.568, 22.324]
   - text: I'll be your April Fool
+    translation: 네 만우절 바보가 되어 줄게
     time: [23.202, 25.624]
   - text: If you tell me if any of this matters
+    translation: 이 모든 게 의미가 있는지 말해 준다면
     time: [26.238, 28.75]
   - text: Hold your breath now
+    translation: 이제 숨을 참아
     time: [30.065, 33.062]
   - text: It's all a simulation
+    translation: 전부 시뮬레이션이야
     time: [33.338, 36]
   - text: Keep your head down
+    translation: 고개를 숙이고 있어
     time: [36.917, 39.469]
   - text: It's someone's machination
+    translation: 누군가의 계략이야
     time: [39.921, 42.888]
   - text: There's a faint chance
+    translation: 아주 희박한 가능성은 있어
     time: [43.769, 46.395]
   - text: That this is real
+    translation: 이게 현실일 가능성이
     time: [46.784, 48.47]
   - text: But I don't want to wager with those odds
+    translation: 하지만 그런 확률에 걸고 싶진 않아
     time: [48.671, 51.607]
   - text: No, I don't want to anger the gods
+    translation: 아니, 신들을 화나게 하고 싶진 않아
     time: [52.046, 56.337]
   - text: I've found ways to survive this long
+    translation: 여태껏 살아남을 방법을 찾아왔어
     time: [60.932, 63.931]
   - text: Staying quiet and aloof
+    translation: 조용히 거리를 두고 지내면서
     time: [64.27, 67.299]
   - text: I wish this house could feel like home
+    translation: 이 집이 마음 붙일 곳처럼 느껴지면 좋겠어
     time: [67.789, 70.84]
     background: (Home)
   - text: But someone's taken off the roof
+    translation: 그런데 누가 지붕을 떼어 갔어
     time: [70.991, 73.76]
   - text: It always feels like something's wrong
+    translation: 늘 뭔가 잘못된 것만 같아
     time: [74.438, 77.579]
   - text: Like falling with no parachute
+    translation: 낙하산도 없이 떨어지는 것처럼
     time: [77.874, 81]
   - text: But if this winds up my swan song
+    translation: 하지만 이게 결국 내 마지막 노래가 된다면
     time: [81.276, 84.067]
   - text: At least the reapers kind of cute
+    translation: 그래도 사신은 좀 귀엽네
     time: [84.067, 87.385]
   - text: Take a breath now
+    translation: 이제 숨을 쉬어
     time: [88.289, 90.665]
   - text: If that's a simulation
+    translation: 저게 시뮬레이션이라면
     time: [91.594, 94.363]
   - text: Then it's a good one
+    translation: 꽤 잘 만든 거네
     time: [94.97, 97.723]
   - text: Just an observation
+    translation: 그냥 보고 느낀 거야
     time: [98.539, 101.167]
   - text: There's a faint chance
+    translation: 아주 희박한 가능성은 있어
     time: [102, 104.615]
   - text: That this is real
+    translation: 이게 현실일 가능성이
     time: [105, 106.868]
   - text: But I don't want to wager with those odds
+    translation: 하지만 그런 확률에 걸고 싶진 않아
     time: [106.868, 110.111]
   - text: No, I don't want to anger the gods
+    translation: 아니, 신들을 화나게 하고 싶진 않아
     time: [110.324, 114.875]
   - text: Hold your breath now
+    translation: 이제 숨을 참아
     time: [115.666, 118.118]
   - text: It's all a simulation
+    translation: 전부 시뮬레이션이야
     time: [118.985, 121.798]
   - text: Keep your head down
+    translation: 고개를 숙이고 있어
     time: [122.619, 125.261]
   - text: It's someone's machination
+    translation: 누군가의 계략이야
     time: [125.675, 128.679]
   - text: There's a faint chance
+    translation: 아주 희박한 가능성은 있어
     time: [129.471, 132]
   - text: That this is real
+    translation: 이게 현실일 가능성이
     time: [132.515, 134.157]
   - text: But I don't want to wager with those odds
+    translation: 하지만 그런 확률에 걸고 싶진 않아
     time: [134.471, 137.62]
   - text: No, I don't want to anger the gods
+    translation: 아니, 신들을 화나게 하고 싶진 않아
     time: [137.821, 141.99]
