@@ -104,14 +104,16 @@ lines:
     pronunciation: 벗 디어, 유 슈드 비 그레이트풀 댓 아이 원트 웨이스트 어 굿 밀
     time: [105.948, 109.348]
   - text: That all my love's precision carves a cut to simply die for
-    pronunciation: '0'
+    pronunciation: 댓 올 마이 러브스 프리시전 카브스 어 컷 투 심플리 다이 포
     time: [109.348, 113.225]
-    background: (Huh?)
+    background:
+      text: (Huh?)
+      pronunciation: (허?)
   - text: To snap the sinew, I want to get within you, I want
-    pronunciation: '0'
+    pronunciation: 투 스냅 더 시뉴, 아이 원트 투 겟 위딘 유, 아이 원트
     time: [113.349, 116.721]
   - text: To scar the tissue, butterfly and rectify you
-    pronunciation: '0'
+    pronunciation: 투 스카 더 티슈, 버터플라이 앤드 렉터파이 유
     time: [116.721, 119.487]
   - text: I need to be your afterlife, Eucharist, I deify
     pronunciation: '0'
