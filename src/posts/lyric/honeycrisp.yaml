@@ -14,6 +14,9 @@ spotify: 7BZEJetfbyKDnKuTb7l6D8
 youtube:
   audio: mbBXldM5g8c
   mv: d6__N5X6C2M
+offsets:
+  youtubeAudio: -0.771
+  spotify: -0.771
 lines:
   - text: Close one eye, bite your lip
     time: [21.977, 23.977]
