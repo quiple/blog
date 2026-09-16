@@ -116,7 +116,7 @@ lines:
     translation: 월급도 못 받아
     time: [58.113, 58.91]
   - text: Gonna waste my days away
-    pronunciation: 데
+    pronunciation: 거너 웨이스트 마이 데이즈 어웨이
     translation: 이렇게 하루하루 허비할 거야
     time: [58.911, 60.835]
     background:
@@ -130,6 +130,7 @@ lines:
     time: [61.804, 63.401]
     background:
       text: (しゃっきんづけ)
+      pronunciation: (샷킨즈케)
       translation: (빚에 절었어)
       time: [63.401, 64.833]
   - text: Just my debt and me
@@ -141,7 +142,7 @@ lines:
     translation: 긴장을 풀 수가 없어
     time: [67.985, 69.066]
   - text: Almost lost my mind
-    pronunciation: 데
+    pronunciation: 올모스트 로스트 마이 마인드
     translation: 거의 미쳐 버릴 뻔했어
     time: [69.067, 70.447]
   - text: Viral star, but I'm still unsigned
@@ -365,7 +366,7 @@ lines:
     translation: 그래, 긴장을 풀 수가 없어
     time: [224.103, 225.453]
   - text: I've almost lost my god damn mind
-    pronunciation: 데
+    pronunciation: 아이브 올모스트 로스트 마이 갓 댐 마인드
     translation: 씨발, 거의 미쳐 버릴 뻔했어
     time: [225.453, 226.848]
   - text: I'm a viral star, but I'm still unsigned
