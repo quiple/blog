@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: BUTCHER VANITY
+titleTranslation: 도살자의 허영
 titleLang: zh-Hans
 artist:
   - flavor-foley
@@ -21,145 +22,193 @@ offsets:
 lines:
   - text: They say my hunger's a problem
     pronunciation: 데이 세이 마이 헝거스 어 프라블럼
+    translation: 사람들은 내 허기가 문제라고 해
     time: [1.785, 3.933]
   - text: They tell me to curb my appetite
     pronunciation: 데이 텔 미 투 커브 마이 애퍼타이트
+    translation: 내 식욕을 억누르라고 하지
     time: [4.727, 7.178]
   - text: They say I can't keep myself from trying a bite of every plate in sight
     pronunciation: 데이 세이 아이 캔트 킵 마이셀프 프럼 트라잉 어 바이트 오브 에브리 플레이트 인 사이트
+    translation: 눈에 보이는 모든 접시를 한 입씩 맛보지 않고는 못 배긴대
     time: [8.56, 14.047]
   - text: They worship patience, a virtue
     pronunciation: 데이 워십 페이션스, 어 버추
+    translation: 그들은 인내라는 미덕을 숭배해
     time: [15.32, 17.672]
   - text: Oh, they tell me gluttony's a sin
     pronunciation: 오, 데이 텔 미 글러터니스 어 신
+    translation: 오, 탐식은 죄라고 내게 말하지
     time: [18.082, 20.752]
   - text: But my desire is bottomless, I wanna slit your throat and eat till I get sick!
     pronunciation: 벗 마이 디자이어 이즈 바텀러스, 아이 워너 슬릿 유어 스로트 앤드 잇 틸 아이 겟 식!
+    translation: 하지만 내 욕망은 끝이 없어, 네 목을 그어 속이 뒤집힐 때까지 먹고 싶어!
     time: [22.088, 27.541]
   - text: The slaughter's on, I'd love to see you come undone
     pronunciation: 더 슬로터스 온, 아이드 러브 투 시 유 컴 언던
+    translation: 도살이 시작돼, 네가 무너져 내리는 걸 보고 싶어
     time: [28.187, 31.469]
   - text: Unsatisfied until I've got you flayed alive
     pronunciation: 언새티스파이드 언틸 아이브 갓 유 플레이드 얼라이브
+    translation: 네 산가죽을 벗겨 놓기 전까진 만족 못 해
     time: [31.607, 34.747]
   - text: So grab a plate, have a taste, 这口味让我沉醉
     pronunciation: 소 그랩 어 플레이트, 해브 어 테이스트, 저커우웨이랑워천쭈이
+    translation: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해 버려
     time: [34.747, 38.155]
   - text: I'm still preying on a butcher's vein
     pronunciation: 아임 스틸 프레잉 온 어 부처스 베인
+    translation: 난 아직 도살자의 핏줄을 노리고 있어
     time: [38.155, 41.041]
   - text: To truss you up in pretty patterns
     pronunciation: 투 트러스 유 업 인 프리티 패턴스
+    translation: 너를 예쁜 모양으로 묶어 두고
     time: [45.703, 47.823]
   - text: Oh, to dress your flesh up with the works
     pronunciation: 오, 투 드레스 유어 플레시 업 위드 더 워크스
+    translation: 오, 온갖 것을 곁들여 네 살을 차려 내고 싶어
     time: [48.664, 51.042]
   - text: Perfectly portioned by a dagger
     pronunciation: 퍼픽틀리 포션드 바이 어 대거
+    translation: 단검으로 완벽하게 나눈 몫
     time: [52.488, 54.546]
   - text: Serving the finest leftover dessert
     pronunciation: 서빙 더 파이너스트 레프트오버 디저트
+    translation: 남은 것으로 만든 최고의 디저트를 내놓아
     time: [54.546, 57.954]
   - text: Why would I desecrate a carcass?
     pronunciation: 와이 우드 아이 데시크레이트 어 카커스?
+    translation: 내가 왜 시체를 훼손하겠어?
     time: [59.221, 61.352]
   - text: Oh, why let the offal go to waste?
     pronunciation: 오, 와이 렛 디 오펄 고 투 웨이스트?
+    translation: 오, 왜 내장을 버리겠어?
     time: [62.04, 64.672]
   - text: It's love that guides my cleaver with such tenderness
     pronunciation: 이츠 러브 댓 가이즈 마이 클리버 위드 서치 텐더너스
+    translation: 내 식칼을 이토록 부드럽게 이끄는 건 사랑이야
     time: [65.184, 68.558]
   - text: A perfect strike to fix the horror on your face!
     pronunciation: 어 퍼펙트 스트라이크 투 픽스 더 호러 온 유어 페이스!
+    translation: 네 얼굴에 공포를 새겨 둘 완벽한 일격!
     time: [68.558, 71.363]
   - text: The slaughter's mine, oh, blood and viscera divine
     pronunciation: 더 슬로터스 마인, 오, 블러드 앤드 비서러 디바인
+    translation: 도살은 내 몫, 오, 성스러운 피와 내장
     time: [72.14, 75.476]
   - text: Preserved and primed, each muscle divvied up to dine
     pronunciation: 프리저브 앤드 프라임드, 이치 머슬 디비드 업 투 다인
+    translation: 보존하고 손질해, 근육마다 먹기 좋게 나눠
     time: [75.543, 78.721]
   - text: And in the high, 我存在, Tasting, 血淋淋的爱
     pronunciation: 앤드 인 더 하이, 워춘짜이, 테이스팅, 쉐린린더아이
+    translation: 그리고 그 황홀함 속에 난 존재해, 피가 뚝뚝 흐르는 사랑을 맛보며
     time: [78.721, 82.101]
   - text: I'll devour all of you in time
     pronunciation: 아일 디바워 올 오브 유 인 타임
+    translation: 결국엔 너를 남김없이 먹어 치울 거야
     time: [82.101, 85.576]
   - text: Oh, your heart, aortic work of art
     pronunciation: 오, 유어 하트, 에이오틱 워크 오브 아트
+    translation: 오, 네 심장, 대동맥이 빚은 예술품
     time: [85.907, 89.144]
   - text: My love, my knife to carve it out, your life
     pronunciation: 마이 러브, 마이 나이프 투 카브 잇 아웃, 유어 라이프
+    translation: 내 사랑, 그걸 도려낼 내 칼, 네 생명
     time: [89.246, 92.169]
   - text: So grab a plate, have a taste, 这口味让我沉醉
     pronunciation: 소 그랩 어 플레이트, 해브 어 테이스트, 저커우웨이랑워천쭈이
+    translation: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해 버려
     time: [92.169, 95.627]
   - text: I'm still preying on a butcher's vein
     pronunciation: 아임 스틸 프레잉 온 어 부처스 베인
+    translation: 난 아직 도살자의 핏줄을 노리고 있어
     time: [95.627, 98.518]
   - text: To snap the sinew, I want to get within you, I want
     pronunciation: 투 스냅 더 시뉴, 아이 원트 투 겟 위딘 유, 아이 원트
+    translation: 힘줄을 끊고 싶어, 네 안으로 들어가고 싶어, 난
     time: [99.761, 103.204]
   - text: To not forgive you, rigor mortis, mold, and mildew
     pronunciation: 투 낫 포기브 유, 리거 모티스, 몰드, 앤드 밀두
+    translation: 너를 용서하지 않고 싶어, 사후 경직, 곰팡이와 흰곰팡이
     time: [103.204, 105.948]
   - text: But dear, you should be grateful that I won't waste a good meal
     pronunciation: 벗 디어, 유 슈드 비 그레이트풀 댓 아이 원트 웨이스트 어 굿 밀
+    translation: 하지만 그대여, 내가 좋은 식사를 낭비하지 않는 걸 고마워해야지
     time: [105.948, 109.348]
   - text: That all my love's precision carves a cut to simply die for
     pronunciation: 댓 올 마이 러브스 프리시전 카브스 어 컷 투 심플리 다이 포
+    translation: 내 사랑의 정교함으로 죽을 만큼 탐나는 한 점을 도려내는 걸
     time: [109.348, 113.225]
     background:
       text: (Huh?)
       pronunciation: (허?)
+      translation: (응?)
   - text: To snap the sinew, I want to get within you, I want
     pronunciation: 투 스냅 더 시뉴, 아이 원트 투 겟 위딘 유, 아이 원트
+    translation: 힘줄을 끊고 싶어, 네 안으로 들어가고 싶어, 난
     time: [113.349, 116.721]
   - text: To scar the tissue, butterfly and rectify you
     pronunciation: 투 스카 더 티슈, 버터플라이 앤드 렉터파이 유
+    translation: 살에 흉터를 내고 싶어, 널 나비 모양으로 갈라 바로잡고 싶어
     time: [116.721, 119.487]
   - text: I need to be your afterlife, Eucharist, I deify
     pronunciation: 아이 니드 투 비 유어 애프터라이프, 유커러스트, 아이 디어파이
+    translation: 난 네 사후 세계가 되어야 해, 성찬, 난 널 신격화해
     time: [119.487, 123.055]
   - text: God, oh, fuck the fork and knife, I'll rip in hands and teeth and take a bite!
     pronunciation: 갓, 오, 퍽 더 포크 앤드 나이프, 아일 립 인 핸즈 앤드 티스 앤드 테이크 어 바이트!
+    translation: 맙소사, 오, 포크와 나이프 따위 집어치워, 손과 이로 찢어 한 입 베어 물겠어!
     time: [123.055, 127.137]
   - text: The slaughter's on, I'd love to see you come undone
     pronunciation: 더 슬로터스 온, 아이드 러브 투 시 유 컴 언던
+    translation: 도살이 시작돼, 네가 무너져 내리는 걸 보고 싶어
     time: [131.32, 134.555]
   - text: Unsatisfied until I've got you flayed alive
     pronunciation: 언새티스파이드 언틸 아이브 갓 유 플레이드 얼라이브
+    translation: 네 산가죽을 벗겨 놓기 전까진 만족 못 해
     time: [134.704, 137.851]
   - text: So grab a plate, have a taste, 这口味让我沉醉
     pronunciation: 소 그랩 어 플레이트, 해브 어 테이스트, 저커우웨이랑워천쭈이
+    translation: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해 버려
     time: [137.851, 141.269]
   - text: I'm still preying on a butcher's vein
     pronunciation: 아임 스틸 프레잉 온 어 부처스 베인
+    translation: 난 아직 도살자의 핏줄을 노리고 있어
     time: [141.269, 144.643]
   - text: And now the slaughter's mine, my darling, get under the knife
     pronunciation: 앤드 나우 더 슬로터스 마인, 마이 달링, 겟 언더 더 나이프
+    translation: 이제 도살은 내 몫, 내 사랑, 칼 아래로 와
     time: [144.643, 148.141]
   - text: Your broken pride, a cut so perfect in its prime
     pronunciation: 유어 브로큰 프라이드, 어 컷 소 퍼펙트 인 이츠 프라임
+    translation: 네 꺾인 자존심, 가장 좋은 때의 완벽한 한 점
     time: [148.241, 151.402]
   - text: All that I see, sixty-three, 为让我心醉的你
     pronunciation: 올 댓 아이 시, 식스티스리, 웨이랑워신쭈이더니
+    translation: 내 눈에 보이는 전부, 육십삼, 내 마음을 취하게 하는 너를 위해
     time: [151.402, 154.803]
   - text: I'll be waiting so impatiently
     pronunciation: 아일 비 웨이팅 소 임페이션틀리
+    translation: 난 안달하며 기다릴 거야
     time: [154.803, 158.079]
   - text: Oh, your heart, aortic work of art
     pronunciation: 오, 유어 하트, 에이오틱 워크 오브 아트
+    translation: 오, 네 심장, 대동맥이 빚은 예술품
     time: [158.603, 161.84]
   - text: My love, my knife to carve it out, your life
     pronunciation: 마이 러브, 마이 나이프 투 카브 잇 아웃, 유어 라이프
+    translation: 내 사랑, 그걸 도려낼 내 칼, 네 생명
     time: [161.923, 164.881]
   - text: So grab a plate, have a taste, 这口味让我沉醉
     pronunciation: 소 그랩 어 플레이트, 해브 어 테이스트, 저커우웨이랑워천쭈이
+    translation: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해 버려
     time: [164.881, 168.303]
   - text: I'm still preying on a butcher's vein
     pronunciation: 아임 스틸 프레잉 온 어 부처스 베인
+    translation: 난 아직 도살자의 핏줄을 노리고 있어
     time: [168.303, 172.004]
   - text: Still praying, hopeless and in vain
     pronunciation: 스틸 프레잉, 호플러스 앤드 인 베인
+    translation: 아직 기도하고 있어, 희망도 없이 헛되이
     time: [182.109, 184.697]
