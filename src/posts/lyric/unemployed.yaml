@@ -56,7 +56,7 @@ lines:
     translation: 그래, 돈 한 푼 없이 빈둥대
     time: [32.898, 34.898]
   - text: Just my baguette and me
-    pronunciation: 데
+    pronunciation: 저스트 마이 배겟 앤드 미
     translation: 바게트와 나, 단둘이서
     time: [35.785, 37.667]
   - text: I'm poor as shit
@@ -104,15 +104,15 @@ lines:
     translation: 씨발, 월마트표 싸구려 보컬로이드라고 부르지 좀 마
     time: [53.206, 56.1]
   - text: I'm just unemployed
-    pronunciation: 데
+    pronunciation: 아임 저스트 언임플로이드
     translation: 난 그냥 백수일 뿐이야
     time: [56.1, 57.428]
   - text: I got no house
-    pronunciation: 데
+    pronunciation: 아이 갓 노 하우스
     translation: 집도 없어
     time: [57.428, 58.113]
   - text: I get no pay
-    pronunciation: 데
+    pronunciation: 아이 겟 노 페이
     translation: 월급도 못 받아
     time: [58.113, 58.91]
   - text: Gonna waste my days away
@@ -121,10 +121,11 @@ lines:
     time: [58.911, 60.835]
     background:
       text: (ナマケモノ)
+      pronunciation: (나마케모노)
       translation: (게으름뱅이)
       time: [60.835, 61.804]
   - text: Yeah, I'm chilling for free
-    pronunciation: 데
+    pronunciation: 예, 아임 칠링 포 프리
     translation: 그래, 돈 한 푼 없이 빈둥대
     time: [61.804, 63.401]
     background:
@@ -132,11 +133,11 @@ lines:
       translation: (빚에 절었어)
       time: [63.401, 64.833]
   - text: Just my debt and me
-    pronunciation: 데
+    pronunciation: 저스트 마이 뎃 앤드 미
     translation: 빚과 나, 단둘이서
     time: [64.833, 66.504]
   - text: Can't unwind
-    pronunciation: 데
+    pronunciation: 캔트 언와인드
     translation: 긴장을 풀 수가 없어
     time: [67.985, 69.066]
   - text: Almost lost my mind
@@ -149,6 +150,7 @@ lines:
     time: [70.447, 72.4]
     background:
       text: (仕方がない)
+      pronunciation: (시카타가나이)
       translation: (어쩔 수 없지)
       time: [72.401, 73.277]
   - text: I guess I'm chilling for free
@@ -157,10 +159,11 @@ lines:
     time: [73.277, 74.933]
     background:
       text: (むだなじんせい)
+      pronunciation: (무다나진세이)
       translation: (헛된 인생)
       time: [74.933, 76.261]
   - text: Just my baguette and me
-    pronunciation: 데
+    pronunciation: 저스트 마이 배겟 앤드 미
     translation: 바게트와 나, 단둘이서
     time: [76.261, 78]
   - text: I'm poor as hell
@@ -316,7 +319,7 @@ lines:
     translation: 그래, 돈 한 푼 없이 빈둥대
     time: [206.339, 208.175]
   - text: Just my baguette and me
-    pronunciation: 데
+    pronunciation: 저스트 마이 배겟 앤드 미
     translation: 바게트와 나, 단둘이서
     time: [209.229, 211.752]
   - text: Motherfucker, I'm unemployed
@@ -324,7 +327,7 @@ lines:
     translation: 씨발, 나 백수라고
     time: [212.35, 213.871]
   - text: I got no house
-    pronunciation: 데
+    pronunciation: 아이 갓 노 하우스
     translation: 집도 없어
     time: [213.871, 214.541]
   - text: I get no pay
@@ -366,11 +369,12 @@ lines:
     translation: 씨발, 거의 미쳐 버릴 뻔했어
     time: [225.453, 226.848]
   - text: I'm a viral star, but I'm still unsigned
-    pronunciation: 데
+    pronunciation: 아임 어 바이럴 스타, 벗 아임 스틸 언사인드
     translation: 난 인터넷 스타인데 아직 계약한 데는 없어
     time: [226.848, 228.908]
     background:
       text: (仕方がない)
+      pronunciation: (시카타가나이)
       translation: (어쩔 수 없지)
       time: [228.908, 229.84]
   - text: I guess I'm chilling for free
@@ -379,14 +383,16 @@ lines:
     time: [229.841, 231.445]
     background:
       text: (むだなじんせい)
+      pronunciation: (무다나진세이)
       translation: (헛된 인생)
       time: [231.445, 232.705]
   - text: Just my baguette and me
-    pronunciation: 데
+    pronunciation: 저스트 마이 배겟 앤드 미
     translation: 바게트와 나, 단둘이서
     time: [232.706, 234.392]
     background:
       text: (テト・バゲット)
+      pronunciation: (테토 바겟토)
       translation: (테토 바게트)
       time: [234.392, 235.585]
   - text: Forever chilling for free
@@ -395,6 +401,7 @@ lines:
     time: [235.585, 237.264]
     background:
       text: (ずっといっしょに)
+      pronunciation: (즛토잇쇼니)
       translation: (언제까지나 함께)
       time: [237.264, 238.554]
   - text: My immense debt and me
@@ -403,6 +410,7 @@ lines:
     time: [238.554, 240.106]
     background:
       text: (きんけつ)
+      pronunciation: (킨케츠)
       translation: (돈이 없어)
       time: [240.106, 241.419]
   - text: We'll be chilling for free
@@ -411,6 +419,7 @@ lines:
     time: [241.419, 244.196]
     background:
       text: (ずっといっしょに)
+      pronunciation: (즛토잇쇼니)
       translation: (언제까지나 함께)
   - text: Forever chilling for free
     pronunciation: 데
