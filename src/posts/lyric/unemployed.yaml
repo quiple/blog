@@ -145,7 +145,7 @@ lines:
     translation: 거의 미쳐 버릴 뻔했어
     time: [69.067, 70.447]
   - text: Viral star, but I'm still unsigned
-    pronunciation: 데
+    pronunciation: 바이럴 스타, 벗 아임 스틸 언사인드
     translation: 인터넷 스타지만 아직 계약한 데는 없어
     time: [70.447, 72.4]
     background:
@@ -167,15 +167,15 @@ lines:
     translation: 바게트와 나, 단둘이서
     time: [76.261, 78]
   - text: I'm poor as hell
-    pronunciation: 데
+    pronunciation: 아임 푸어 애즈 헬
     translation: 난 더럽게 가난해
     time: [78.96, 80]
   - text: Not doing well
-    pronunciation: 데
+    pronunciation: 낫 두잉 웰
     translation: 잘 지내지도 못해
     time: [80, 81.193]
   - text: Locked in a mental cell
-    pronunciation: 데
+    pronunciation: 락트 인 어 멘틀 셀
     translation: 마음속 감옥에 갇혀 있어
     time: [81.193, 82.924]
   - text: My bed is where I dwell
