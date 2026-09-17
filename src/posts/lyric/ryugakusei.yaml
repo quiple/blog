@@ -52,7 +52,7 @@ lines:
   - text: Hey, I need you here, babe
     time: [65.625, 67.166]
     background: (部屋20平米)
-  - text: It's better never talkin' 'cause it's no good
+  - text: It's better never talkin' ’cause it's no good
     time: [67.906, 70.835]
     background: (ベッドに寝るとき靴脱ぐ)
   - text: You gotta stay
@@ -115,7 +115,7 @@ lines:
   - text: Hey, I need you here, babe
     time: [129.635, 131.117]
     background: (部屋20平米)
-  - text: It's better never talkin' 'cause it's no good
+  - text: It's better never talkin' ’cause it's no good
     time: [131.915, 134.884]
     background: (ベッドに寝るとき靴脱ぐ)
   - text: You gotta stay
@@ -153,7 +153,7 @@ lines:
   - text: Hey, I need you here babe
     time: [177.67, 179.086]
     background: (部屋20平米)
-  - text: It's better never talkin' 'cause it's no good
+  - text: It's better never talkin' ’cause it's no good
     time: [179.899, 182.776]
     background: (ベッドに寝るとき靴脱ぐ)
   - text: You gotta stay
@@ -171,7 +171,7 @@ lines:
   - text: Hey, I need you here babe
     time: [193.633, 195.062]
     background: (部屋20平米)
-  - text: It's better never talkin' 'cause it's no good
+  - text: It's better never talkin' ’cause it's no good
     time: [195.915, 198.76]
     background: (ベッドに寝るとき靴脱ぐ)
   - text: You gotta stay
