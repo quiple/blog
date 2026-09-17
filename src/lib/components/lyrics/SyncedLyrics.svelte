@@ -254,6 +254,6 @@
   }
   .lyric-player :global(.text-muted-foreground) {
     color: var(--muted-foreground);
-    opacity: 1;
+    opacity: var(--amll-annotation-opacity, 1);
   }
 </style>

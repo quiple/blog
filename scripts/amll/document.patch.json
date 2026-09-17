@@ -90,7 +90,7 @@
     {
       "label": "Line language and translated color",
       "before": "\t\ttrans.setAttribute(\"class\", lyric_player_module_default.lyricSubLine);",
-      "after": "\t\ttrans.setAttribute(\"class\", lyric_player_module_default.lyricSubLine);\n if(this.lyricLine.lang && this.lyricLine.lang!=='ko') main.setAttribute('lang',this.lyricLine.lang);\n if(this.lyricLine.pronunciationLang && this.lyricLine.pronunciationLang!=='ko') roman.setAttribute('lang',this.lyricLine.pronunciationLang);\n trans.classList.add('text-muted-foreground');"
+      "after": "\t\ttrans.setAttribute(\"class\", lyric_player_module_default.lyricSubLine);\n if(this.lyricLine.lang && this.lyricLine.lang!=='ko') main.setAttribute('lang',this.lyricLine.lang);\n if(this.lyricLine.pronunciationLang && this.lyricLine.pronunciationLang!=='ko') roman.setAttribute('lang',this.lyricLine.pronunciationLang);\n trans.classList.add('text-muted-foreground');\n for (const annotation of [roman, trans]) annotation.style.setProperty('--amll-annotation-opacity', this.isLineTimed ? '1' : 'var(--bright-mask-alpha, 0.4)');"
     },
     {
       "label": "Pronunciation before translation: constructor",
