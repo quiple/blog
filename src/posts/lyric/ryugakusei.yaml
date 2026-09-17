@@ -39,13 +39,13 @@ lines:
       text: (ご飯出ない)
       translation: (밥이 안 나와)
   - text: Walked around the world
-    translation: 세상을 돌아다녔어
+    translation: 세상을 돌아다녔고
     time: [39.577, 41.577]
     background:
       text: (わからんわ)
       translation: (모르겠어)
   - text: And now I gotcha
-    translation: 이제 널 찾았어
+    translation: 이제 널 찾았지
     time: [41.587, 43.707]
     background:
       text: (えらいこっちゃ)
