@@ -16,6 +16,8 @@ spotify: 7LVW5oLXvUoGu1JqxBNUly
 youtube:
   audio: uaHCBY8bh8Y
   mv: uj4xPl7HVCM
+offsets:
+  youtubeMV: 0.914
 lines:
   - text: All the time that you were standing by my side
     time: [19.548, 23.684]
