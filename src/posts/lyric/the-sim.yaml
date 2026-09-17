@@ -113,39 +113,51 @@ lines:
     translation: 하지만 이게 결국 내 마지막 노래가 된다면
     time: [81.276, 84.067]
   - text: At least the reapers kind of cute
+    pronunciation: 앳 리스트 더 리퍼즈 카인드 오브 큐트
     translation: 그래도 사신은 좀 귀엽네
     time: [84.067, 87.385]
   - text: Take a breath now
+    pronunciation: 테이크 어 브레스 나우
     translation: 이제 숨을 쉬어
     time: [88.289, 90.665]
   - text: If that's a simulation
+    pronunciation: 이프 대츠 어 시뮬레이션
     translation: 저게 시뮬레이션이라면
     time: [91.594, 94.363]
   - text: Then it's a good one
+    pronunciation: 덴 이츠 어 굿 원
     translation: 꽤 잘 만든 거네
     time: [94.97, 97.723]
   - text: Just an observation
+    pronunciation: 저스트 언 압저베이션
     translation: 그냥 보고 느낀 거야
     time: [98.539, 101.167]
   - text: There's a faint chance
+    pronunciation: 데어즈 어 페인트 챈스
     translation: 아주 희박한 가능성은 있어
     time: [102, 104.615]
   - text: That this is real
+    pronunciation: 댓 디스 이즈 리얼
     translation: 이게 현실일 가능성이
     time: [105, 106.868]
   - text: But I don't want to wager with those odds
+    pronunciation: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
     translation: 하지만 그런 확률에 걸고 싶진 않아
     time: [106.868, 110.111]
   - text: No, I don't want to anger the gods
+    pronunciation: 노, 아이 돈트 원트 투 앵거 더 가즈
     translation: 아니, 신들을 화나게 하고 싶진 않아
     time: [110.324, 114.875]
   - text: Hold your breath now
+    pronunciation: 홀드 유어 브레스 나우
     translation: 이제 숨을 참아
     time: [115.666, 118.118]
   - text: It's all a simulation
+    pronunciation: 이츠 올 어 시뮬레이션
     translation: 전부 시뮬레이션이야
     time: [118.985, 121.798]
   - text: Keep your head down
+    pronunciation: 킵 유어 헤드 다운
     translation: 고개를 숙이고 있어
     time: [122.619, 125.261]
   - text: It's someone's machination
@@ -153,14 +165,18 @@ lines:
     translation: 누군가의 계략이야
     time: [125.675, 128.679]
   - text: There's a faint chance
+    pronunciation: 데어즈 어 페인트 챈스
     translation: 아주 희박한 가능성은 있어
     time: [129.471, 132]
   - text: That this is real
+    pronunciation: 댓 디스 이즈 리얼
     translation: 이게 현실일 가능성이
     time: [132.515, 134.157]
   - text: But I don't want to wager with those odds
+    pronunciation: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
     translation: 하지만 그런 확률에 걸고 싶진 않아
     time: [134.471, 137.62]
   - text: No, I don't want to anger the gods
+    pronunciation: 노, 아이 돈트 원트 투 앵거 더 가즈
     translation: 아니, 신들을 화나게 하고 싶진 않아
     time: [137.821, 141.99]
