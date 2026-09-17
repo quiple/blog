@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Picture Perfect
+titleTranslation: 그림처럼 완벽한
 titleLang: en
 artist:
   - monkey-majik
@@ -20,176 +21,255 @@ offsets:
   youtubeMV: 0.914
 lines:
   - text: All the time that you were standing by my side
+    translation: 네가 내 곁을 지켜 주던 그 모든 시간
     time: [19.548, 23.684]
   - text: She's that picture-perfect kind
+    translation: 그녀는 그림처럼 완벽한 사람이야
     time: [23.694, 25.911]
   - text: I can't believe I was so blind
+    translation: 내가 그토록 눈이 멀어 있었다니 믿기지 않아
     time: [25.921, 28.453]
   - text: Do you remember the time?
+    translation: 그때를 기억해?
     time: [28.463, 30.736]
   - text: You know, I stepped across that line
+    translation: 있잖아, 난 그 선을 넘었어
     time: [30.746, 33.08]
   - text: I made you cry, and that's my crime
+    translation: 널 울렸고, 그게 내 죄야
     time: [33.09, 35.624]
   - text: I wish that I could just rewind
+    translation: 그저 시간을 되감을 수 있다면 좋겠어
     time: [35.634, 38.333]
   - text: It's the evening, and you've been complaining
+    translation: 저녁이 되고, 넌 줄곧 불평하고 있어
     time: [38.343, 41.155]
   - text: About our situation and all my deceiving
+    translation: 우리 상황과 내가 속여 온 모든 일에 대해
     time: [41.165, 43.591]
   - text: I know that everything is going slow
+    translation: 모든 게 더디게 흘러간다는 걸 알아
     time: [43.601, 48.559]
   - text: And if you want to feel better
+    translation: 네 기분이 나아지길 원한다면
     time: [48.569, 50.024]
   - text: I can tell you that it's going to be great
+    translation: 아주 잘될 거라고 말해 줄 수 있어
     time: [50.034, 51.839]
   - text: Yeah, it's going to be good
+    translation: 그래, 잘될 거야
     time: [51.849, 53.081]
   - text: Oh! But I would be lying to you
+    translation: 아! 하지만 그건 네게 거짓말하는 거겠지
     time: [53.091, 56.697]
   - text: But these days, I'm changing
+    translation: 하지만 요즘 난 변하고 있어
     time: [57.107, 60.095]
   - text: Meeting new faces
+    translation: 새로운 사람들을 만나며
     time: [60.105, 62.39]
   - text: Now, how am I supposed to be?
+    translation: 이제 난 어떻게 해야 할까?
     time: [62.4, 66.492]
   - text: My feelings for you seem to be changing
+    translation: 널 향한 내 마음이 변하는 것 같아
     time: [66.502, 71.854]
   - text: Looking back, don't look back on me
+    translation: 돌아보지만, 넌 날 돌아보지 마
     time: [71.864, 76.901]
   - text: All the time that you were standing by my side
+    translation: 네가 내 곁을 지켜 주던 그 모든 시간
     time: [77.211, 81.247]
   - text: She's that picture-perfect kind
+    translation: 그녀는 그림처럼 완벽한 사람이야
     time: [81.257, 83.434]
   - text: I can't believe I was so blind
+    translation: 내가 그토록 눈이 멀어 있었다니 믿기지 않아
     time: [83.444, 86.026]
   - text: Do you remember the time?
+    translation: 그때를 기억해?
     time: [86.036, 88.293]
   - text: You know, I stepped across that line
+    translation: 있잖아, 난 그 선을 넘었어
     time: [88.303, 90.729]
   - text: I made you cry, and that's my crime
+    translation: 널 울렸고, 그게 내 죄야
     time: [90.739, 93.219]
   - text: I wish that I could just rewind
+    translation: 그저 시간을 되감을 수 있다면 좋겠어
     time: [93.229, 96.323]
   - text: いなくてもいい I wanted to be free
+    translation: 없어도 괜찮아, 난 자유롭고 싶었어
     time: [96.333, 98.661]
     duet: true
   - text: いなくなってもいい I wanted her to leave
+    translation: 사라져도 괜찮아, 그녀가 떠나길 바랐어
     time: [98.671, 101.262]
     duet: true
   - text: It's kind of hard to see when the world tunnel-visioned me
+    translation: 세상이 내 시야를 좁혀 놓으니 알아보기 힘들어
     time: [101.272, 104.08]
     duet: true
   - text: 求めてた愛の形
+    translation: 찾고 있던 사랑의 모습
     time: [104.09, 105.755]
     duet: true
   - text: They say, "Believe in what you can't see"
+    translation: 사람들은 말해, "눈에 보이지 않는 것을 믿어"
     time: [105.765, 107.984]
     duet: true
   - text: でも周りのcandyがsweetで hard to think
+    translation: 하지만 주변의 사탕이 달아서 생각하기 힘들어
     time: [107.994, 110.528]
     duet: true
   - text: 頭ではcomprehendしても行動に移せん
+    translation: 머리로는 이해해도 행동으로 옮길 수 없어
     time: [110.538, 113.171]
     duet: true
   - text: My eyes on the 理屈、the truth's here, listen
+    translation: 내 눈은 이치에, 진실은 여기에 있어, 들어 봐
     time: [113.181, 115.673]
     duet: true
   - text: Chaseしてもchaseしても things keep fleeting
+    translation: 쫓고 또 쫓아도 계속 달아나
     time: [115.683, 117.905]
     duet: true
   - text: 変な夢見てた I must have been sleeping
+    translation: 이상한 꿈을 꿨어, 잠들어 있었나 봐
     time: [117.915, 120.246]
     duet: true
   - text: 遠くさまよう前に近くを seek it
+    translation: 멀리 헤매기 전에 가까이서 찾아봐
     time: [120.256, 122.577]
     duet: true
   - text: よく見てみれば 心にはbeacon
+    translation: 자세히 보면 마음속에는 등불이
     time: [122.587, 124.913]
     duet: true
   - text: Of light 射して、探してた thing's here
+    translation: 빛을 비춰, 찾던 건 여기 있어
     time: [124.923, 127.455]
     duet: true
   - text: 思ったよりnear, close to your hemisphere
+    translation: 생각보다 가까워, 네 반구 가까이에
     time: [127.465, 129.734]
     duet: true
   - text: 今ではclear, 20/20, ’cuz I'mma share
+    translation: 지금은 선명해, 시력은 20/20, 나눌 거니까
     time: [129.744, 132.186]
     duet: true
   - text: 全て and I don't care if they think I'm weird
+    translation: 모든 걸, 사람들이 날 이상하게 봐도 상관없어
     time: [132.196, 134.631]
     duet: true
   - text: There, there, nobody thinks you're weird
+    translation: 자, 자, 아무도 널 이상하게 생각하지 않아
     time: [134.641, 136.037]
   - text: Ya see, I've been through it all before
+    translation: 있잖아, 나도 전에 다 겪어 봤어
     time: [136.047, 138.007]
   - text: And the same thing happened to me
+    translation: 나한테도 같은 일이 있었지
     time: [138.017, 139.615]
   - text: きにしない "Wounds heal with time"
+    translation: 신경 쓰지 마, "상처는 시간이 지나면 아물어"
     time: [139.625, 141.513]
   - text: But in the meanwhile
+    translation: 하지만 그동안
     time: [141.523, 143.171]
   - text: I'll show what I mean
+    translation: 내 말이 무슨 뜻인지 보여 줄게
     time: [143.181, 144.158]
   - text: Let's think of it another way
+    translation: 다른 식으로 생각해 보자
     time: [144.168, 145.664]
   - text: Everything we do and say defines who we are
+    translation: 우리의 모든 행동과 말이 우리가 누구인지 정해
     time: [145.674, 147.09]
   - text: As we live out each day
+    translation: 하루하루 살아가는 동안
     time: [147.1, 148.073]
   - text: What we did was wrong at the time
+    translation: 그때 우리가 한 일은 잘못이었어
     time: [148.083, 149.442]
   - text: But it helps us go back and rewind
+    translation: 하지만 그 덕에 돌아가 되짚어 볼 수 있어
     time: [149.452, 150.509]
   - text: It's a mistake, but it ain't no crime
+    translation: 실수이긴 해도 범죄는 아니야
     time: [150.519, 151.868]
   - text: 重なり合うのさ つまりそれが愛
+    translation: 서로 겹쳐지는 거야, 그게 바로 사랑이야
     time: [151.878, 154.075]
   - text: All the time that you were standing by my side
+    translation: 네가 내 곁을 지켜 주던 그 모든 시간
     time: [154.085, 157.715]
   - text: She's that picture-perfect kind
+    translation: 그녀는 그림처럼 완벽한 사람이야
     time: [157.725, 160.348]
   - text: I can't believe I was so blind
+    translation: 내가 그토록 눈이 멀어 있었다니 믿기지 않아
     time: [160.358, 162.592]
   - text: Do you remember the time?
+    translation: 그때를 기억해?
     time: [162.602, 165.099]
   - text: You know, I stepped across that line
+    translation: 있잖아, 난 그 선을 넘었어
     time: [165.109, 167.5]
   - text: I made you cry, and that's my crime
+    translation: 널 울렸고, 그게 내 죄야
     time: [167.51, 169.957]
   - text: I wish that I could just rewind
+    translation: 그저 시간을 되감을 수 있다면 좋겠어
     time: [169.967, 172.34]
   - text: I said goodbye
+    translation: 난 작별을 말했어
     time: [172.65, 176.855]
   - text: I didn't know
+    translation: 난 몰랐어
     time: [176.865, 179.399]
   - text: That it would all turn out this way
+    translation: 모든 게 이렇게 될 줄은
     time: [179.409, 182.611]
   - text: But now I know, I realise
+    translation: 하지만 이젠 알아, 깨달았어
     time: [182.621, 188.906]
   - text: And I can learn from my mistakes
+    translation: 그리고 내 실수에서 배울 수 있어
     time: [188.916, 191.543]
   - text: But these days, I'm changing
+    translation: 하지만 요즘 난 변하고 있어
     time: [191.553, 194.33]
   - text: Meeting new faces
+    translation: 새로운 사람들을 만나며
     time: [194.34, 196.664]
   - text: Now, how am I supposed to be?
+    translation: 이제 난 어떻게 해야 할까?
     time: [196.674, 200.921]
   - text: My feelings for you seem to be changing
+    translation: 널 향한 내 마음이 변하는 것 같아
     time: [200.931, 206.364]
   - text: Looking back, don't look back on me
+    translation: 돌아보지만, 넌 날 돌아보지 마
     time: [206.374, 211.19]
   - text: All the time that you were standing by my side
+    translation: 네가 내 곁을 지켜 주던 그 모든 시간
     time: [211.2, 215.488]
   - text: She's that picture-perfect kind
+    translation: 그녀는 그림처럼 완벽한 사람이야
     time: [215.498, 218.022]
   - text: I can't believe I was so blind
+    translation: 내가 그토록 눈이 멀어 있었다니 믿기지 않아
     time: [218.032, 220.311]
   - text: Do you remember the time?
+    translation: 그때를 기억해?
     time: [220.321, 222.806]
   - text: You know, I stepped across that line
+    translation: 있잖아, 난 그 선을 넘었어
     time: [222.816, 225.091]
   - text: I made you cry, and that's my crime
+    translation: 널 울렸고, 그게 내 죄야
     time: [225.101, 227.58]
   - text: I wish that I could just rewind
+    translation: 그저 시간을 되감을 수 있다면 좋겠어
     time: [227.59, 230.135]

@@ -21,167 +21,286 @@ offsets:
   youtubeMV: 65.54
 lines:
   - text: You're out a sight
+    translation: 넌 정말 멋져
     time: [31.37, 33.335]
-    background: (うるさい)
+    background:
+      text: (うるさい)
+      translation: (시끄러워)
   - text: Yeah, hold me tight
+    translation: 그래, 날 꽉 안아 줘
     time: [33.422, 35.154]
-    background: (アホみたい)
+    background:
+      text: (アホみたい)
+      translation: (바보 같아)
   - text: Yeah, why don't you and me go home tonight?
+    translation: 그래, 오늘 밤 나랑 집에 가지 않을래?
     time: [35.916, 39.519]
-    background: (ご飯出ない)
+    background:
+      text: (ご飯出ない)
+      translation: (밥이 안 나와)
   - text: Walked around the world
+    translation: 세상을 돌아다녔어
     time: [39.577, 41.577]
-    background: (わからんわ)
+    background:
+      text: (わからんわ)
+      translation: (모르겠어)
   - text: And now I gotcha
+    translation: 이제 널 찾았어
     time: [41.587, 43.707]
-    background: (えらいこっちゃ)
+    background:
+      text: (えらいこっちゃ)
+      translation: (큰일이네)
   - text: Gonna be with you, chill down all through the night
+    translation: 너와 함께 밤새 느긋하게 있을 거야
     time: [43.916, 48.136]
-    background: (冗談通じない)
+    background:
+      text: (冗談通じない)
+      translation: (농담이 안 통해)
   - text: All I know is that I love you, babe
+    translation: 내가 아는 건 널 사랑한다는 것뿐이야, 자기야
     time: [48.146, 51.247]
   - text: 不安な日々送る 捨て猫のように
+    translation: 불안한 나날을 보내, 버려진 고양이처럼
     time: [51.691, 54.879]
     duet: true
   - text: I never forget you, never, babe
+    translation: 널 절대 잊지 않아, 절대로, 자기야
     time: [55.913, 58.882]
   - text: 人見知り いつもしてんな もったいない
+    translation: 늘 낯가림만 하고 있네, 아깝게
     time: [59.892, 63.666]
     duet: true
   - text: You gotta stay
+    translation: 넌 머물러야 해
     time: [63.671, 65.117]
-    background: (留学生)
+    background:
+      text: (留学生)
+      translation: (유학생)
   - text: Hey, I need you here, babe
+    translation: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [65.625, 67.166]
-    background: (部屋20平米)
+    background:
+      text: (部屋20平米)
+      translation: (방은 20제곱미터)
   - text: It's better never talkin' ’cause it's no good
+    translation: 말하지 않는 편이 나아, 좋을 게 없으니까
     time: [67.906, 70.835]
-    background: (ベッドに寝るとき靴脱ぐ)
+    background:
+      text: (ベッドに寝るとき靴脱ぐ)
+      translation: (침대에 누울 때 신발을 벗어)
   - text: You gotta stay
+    translation: 넌 머물러야 해
     time: [71.664, 72.846]
-    background: (留学生)
+    background:
+      text: (留学生)
+      translation: (유학생)
   - text: Hey, I need you here, babe
+    translation: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [73.626, 75.256]
-    background: (部屋20平米)
+    background:
+      text: (部屋20平米)
+      translation: (방은 20제곱미터)
   - text: I messed up, should've known last time I met ya!
+    translation: 내가 망쳤어, 지난번 널 만났을 때 알았어야 했는데!
     time: [75.942, 78.918]
-    background: (味噌汁飲みたいわ めっちゃ)
+    background:
+      text: (味噌汁飲みたいわ めっちゃ)
+      translation: (된장국이 너무 먹고 싶어)
   - text: Hey, ho
+    translation: 헤이, 호
     time: [80.181, 81.798]
   - text: 風呂場なんてない
+    translation: 욕실 같은 건 없어
     time: [82.088, 83.478]
     duet: true
   - text: かまへんよー
+    translation: 상관없어
     time: [83.65, 85.61]
   - text: でもシンクはめちゃでかい
+    translation: 그런데 싱크대는 엄청 커
     time: [85.878, 87.498]
     duet: true
   - text: Hey, ho
+    translation: 헤이, 호
     time: [88.153, 89.668]
   - text: 風呂場なんてない
+    translation: 욕실 같은 건 없어
     time: [90.092, 91.484]
     duet: true
   - text: かまへんよー
+    translation: 상관없어
     time: [91.621, 93.655]
   - text: でもシンクはめちゃでかい
+    translation: 그런데 싱크대는 엄청 커
     time: [93.918, 95.611]
     duet: true
   - text: 陽気な愛を拒んだ でも泣き寝入りはもう御免だ
+    translation: 명랑한 사랑을 거부했어, 하지만 속으로만 우는 건 이제 싫어
     time: [96.176, 99.641]
     duet: true
   - text: しょうがない まぁいいかで片付けんな 立ちはだかる言葉の壁
+    translation: 어쩔 수 없지, 뭐 됐어, 하고 넘기지 마, 앞을 가로막는 언어의 벽
     time: [99.661, 103.197]
     duet: true
   - text: そもそも何で俺ここにおんねん
+    translation: 애초에 내가 왜 여기 있는 건데
     time: [103.732, 105.661]
     duet: true
   - text: 呑気に退屈な毎日 とても充実してるとは言えんがな
+    translation: 태평하고 지루한 하루하루, 아주 알차다고는 못 하겠네
     time: [105.674, 109.16]
     duet: true
   - text: こんなもん望んでた理想とは違うんだもん
+    translation: 이런 건 내가 바라던 이상과 다르단 말이야
     time: [109.17, 111.966]
     duet: true
   - text: All I know is that I love you, babe
+    translation: 내가 아는 건 널 사랑한다는 것뿐이야, 자기야
     time: [112.208, 115.006]
   - text: いいんや ひとりでもやったるがな
+    translation: 됐어, 혼자서라도 해내고 말 거야
     time: [115.662, 118.799]
     duet: true
   - text: I never forget you, never, babe
+    translation: 널 절대 잊지 않아, 절대로, 자기야
     time: [119.9, 122.837]
   - text: でもやっぱ不安だもん 気まじぃな 辛ぇ
+    translation: 그래도 역시 불안한걸, 어색해, 힘들어
     time: [123.672, 127.629]
     duet: true
   - text: You gotta stay
+    translation: 넌 머물러야 해
     time: [127.639, 128.869]
-    background: (留学生)
+    background:
+      text: (留学生)
+      translation: (유학생)
   - text: Hey, I need you here, babe
+    translation: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [129.635, 131.117]
-    background: (部屋20平米)
+    background:
+      text: (部屋20平米)
+      translation: (방은 20제곱미터)
   - text: It's better never talkin' ’cause it's no good
+    translation: 말하지 않는 편이 나아, 좋을 게 없으니까
     time: [131.915, 134.884]
-    background: (ベッドに寝るとき靴脱ぐ)
+    background:
+      text: (ベッドに寝るとき靴脱ぐ)
+      translation: (침대에 누울 때 신발을 벗어)
   - text: You gotta stay
+    translation: 넌 머물러야 해
     time: [135.66, 136.783]
-    background: (留学生)
+    background:
+      text: (留学生)
+      translation: (유학생)
   - text: Hey, I need you here, babe
+    translation: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [137.651, 139.171]
-    background: (部屋20平米)
+    background:
+      text: (部屋20平米)
+      translation: (방은 20제곱미터)
   - text: I messed up, should've known last time I met ya!
+    translation: 내가 망쳤어, 지난번 널 만났을 때 알았어야 했는데!
     time: [139.897, 143.228]
-    background: (味噌汁飲みたいわ めっちゃ)
+    background:
+      text: (味噌汁飲みたいわ めっちゃ)
+      translation: (된장국이 너무 먹고 싶어)
   - text: Hey, ho
+    translation: 헤이, 호
     time: [144.173, 145.716]
   - text: ハンバーガーめちゃでかい
+    translation: 햄버거가 엄청 커
     time: [145.873, 147.448]
     duet: true
   - text: 食えへんよー
+    translation: 다 못 먹겠어
     time: [147.641, 149.611]
   - text: しかもチップも取るんかい
+    translation: 게다가 팁까지 받는 거야?
     time: [149.865, 151.617]
     duet: true
   - text: Hey, ho
+    translation: 헤이, 호
     time: [152.173, 153.645]
   - text: ハンバーガーめちゃでかい
+    translation: 햄버거가 엄청 커
     time: [153.908, 155.563]
     duet: true
   - text: 食えへんよー
+    translation: 다 못 먹겠어
     time: [155.654, 157.607]
   - text: しかもチップも取るんかい
+    translation: 게다가 팁까지 받는 거야?
     time: [157.851, 160.062]
     duet: true
   - text: You gotta stay
+    translation: 넌 머물러야 해
     time: [175.645, 176.781]
-    background: (留学生)
+    background:
+      text: (留学生)
+      translation: (유학생)
   - text: Hey, I need you here, babe
+    translation: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [177.67, 179.086]
-    background: (部屋20平米)
+    background:
+      text: (部屋20平米)
+      translation: (방은 20제곱미터)
   - text: It's better never talkin' ’cause it's no good
+    translation: 말하지 않는 편이 나아, 좋을 게 없으니까
     time: [179.899, 182.776]
-    background: (ベッドに寝るとき靴脱ぐ)
+    background:
+      text: (ベッドに寝るとき靴脱ぐ)
+      translation: (침대에 누울 때 신발을 벗어)
   - text: You gotta stay
+    translation: 넌 머물러야 해
     time: [183.632, 184.748]
-    background: (留学生)
+    background:
+      text: (留学生)
+      translation: (유학생)
   - text: Hey, I need you here, babe
+    translation: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [185.622, 187.04]
-    background: (部屋20平米)
+    background:
+      text: (部屋20平米)
+      translation: (방은 20제곱미터)
   - text: I messed up, should've known last time I met ya!
+    translation: 내가 망쳤어, 지난번 널 만났을 때 알았어야 했는데!
     time: [187.89, 190.926]
-    background: (味噌汁飲みたいわ めっちゃ)
+    background:
+      text: (味噌汁飲みたいわ めっちゃ)
+      translation: (된장국이 너무 먹고 싶어)
   - text: You gotta stay
+    translation: 넌 머물러야 해
     time: [191.612, 192.783]
-    background: (留学生)
+    background:
+      text: (留学生)
+      translation: (유학생)
   - text: Hey, I need you here, babe
+    translation: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [193.633, 195.062]
-    background: (部屋20平米)
+    background:
+      text: (部屋20平米)
+      translation: (방은 20제곱미터)
   - text: It's better never talkin' ’cause it's no good
+    translation: 말하지 않는 편이 나아, 좋을 게 없으니까
     time: [195.915, 198.76]
-    background: (ベッドに寝るとき靴脱ぐ)
+    background:
+      text: (ベッドに寝るとき靴脱ぐ)
+      translation: (침대에 누울 때 신발을 벗어)
   - text: You gotta stay
+    translation: 넌 머물러야 해
     time: [199.609, 200.739]
-    background: (留学生)
+    background:
+      text: (留学生)
+      translation: (유학생)
   - text: Hey, I need you here, babe
+    translation: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [201.634, 203.026]
-    background: (部屋20平米)
+    background:
+      text: (部屋20平米)
+      translation: (방은 20제곱미터)
   - text: I messed up, should've known last time I met ya!
+    translation: 내가 망쳤어, 지난번 널 만났을 때 알았어야 했는데!
     time: [203.874, 206.969]
-    background: (味噌汁飲みたいわ めっちゃ)
+    background:
+      text: (味噌汁飲みたいわ めっちゃ)
+      translation: (된장국이 너무 먹고 싶어)

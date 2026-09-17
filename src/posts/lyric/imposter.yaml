@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Imposter
+titleTranslation: 사기꾼
 titleLang: en
 artist: monkey-majik
 lang: ja
@@ -30,6 +31,7 @@ lines:
         time: [2.902, 3.348]
       - text: り
         time: [3.348, 3.773]
+    translation: 장난하지 마, 거짓말뿐이잖아
     time: [1.539, 3.773]
   - words:
       - text: 許せない
@@ -38,6 +40,7 @@ lines:
         time: [5.353, 5.957]
       - text: 事
         time: [5.957, 6.782]
+    translation: 용서할 수 없는 숨긴 일들
     time: [4.472, 6.782]
   - words:
       - text: 心
@@ -48,6 +51,7 @@ lines:
         time: [8.54, 9.015]
       - text: 態度
         time: [9.015, 9.87]
+    translation: 진심 없는 그 태도
     time: [7.456, 9.87]
   - words:
       - text: "Can't keep up "
@@ -56,6 +60,7 @@ lines:
         time: [10.751, 11.132]
       - text: lies
         time: [11.132, 11.922]
+    translation: 네 거짓말을 따라갈 수가 없어
     time: [10.123, 11.922]
   - words:
       - text: くだら
@@ -68,6 +73,7 @@ lines:
         time: [14.899, 15.337]
       - text: り
         time: [15.337, 16.022]
+    translation: 시시한 거짓말뿐이야
     time: [13.504, 16.022]
   - words:
       - text: 頼り
@@ -78,6 +84,7 @@ lines:
         time: [17.387, 18.318]
       - text: も
         time: [18.318, 18.741]
+    translation: 믿음직하지 못한 그 말들도
     time: [16.472, 18.741]
   - words:
       - text: つまら
@@ -90,6 +97,7 @@ lines:
         time: [20.725, 21.735]
       - text: ド
         time: [21.735, 22.093]
+    translation: 하찮은 허세와 자존심
     time: [19.461, 22.093]
   - words:
       - text: 'Yeah, '
@@ -100,6 +108,7 @@ lines:
         time: [22.994, 23.208]
       - text: you
         time: [23.208, 23.76]
+    translation: 그래, 널 잡으러 가고 있어
     time: [22.069, 23.76]
   - words:
       - text: 後に回し
@@ -114,6 +123,7 @@ lines:
         time: [29.478, 29.733]
       - text: tainted
         time: [29.733, 30.744]
+    translation: 뒷전으로 밀리고 멸시받아, 넌 더럽혀졌어
     time: [24.76, 30.744]
   - words:
       - text: 追い
@@ -128,6 +138,7 @@ lines:
         time: [33.521, 33.938]
       - text: ner
         time: [33.938, 35.286]
+    translation: 궁지에 몰려, 네 구석에서
     time: [30.744, 35.286]
   - words:
       - text: 情
@@ -136,6 +147,7 @@ lines:
         time: [35.744, 36.351]
       - text: ね
         time: [36.351, 36.67]
+    translation: 한심하네
     time: [35.404, 36.67]
   - words:
       - text: 'Turn me in, '
@@ -150,6 +162,7 @@ lines:
         time: [41.44, 42.261]
       - text: の
         time: [42.261, 42.715]
+    translation: 날 신고해, 날 신고해, 죄와 벌을 비트는 거야
     time: [37.075, 42.715]
   - words:
       - text: 'Turn me in, '
@@ -160,6 +173,7 @@ lines:
         time: [44.404, 44.672]
       - text: an imposter
         time: [44.672, 46.013]
+    translation: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [43.109, 46.013]
   - words:
       - text: 'Hiding, '
@@ -172,6 +186,7 @@ lines:
         time: [47.987, 48.392]
       - text: on
         time: [48.392, 48.909]
+    translation: 숨어도 우린 눈치채고 있어
     time: [47.075, 48.909]
   - words:
       - text: 'Turn me in, '
@@ -188,6 +203,7 @@ lines:
         time: [53.105, 54.015]
       - text: 待つの
         time: [54.015, 54.925]
+    translation: 날 신고해, 날 신고해, 죄와 벌, 언제까지 기다릴 거야?
     time: [49.141, 54.925]
   - words:
       - text: 'Turn me in, '
@@ -198,6 +214,7 @@ lines:
         time: [56.404, 56.672]
       - text: an imposter
         time: [56.672, 58.013]
+    translation: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [55.109, 58.013]
   - words:
       - text: 'No, '
@@ -210,6 +227,7 @@ lines:
         time: [59.955, 60.177]
       - text: it go
         time: [60.177, 60.759]
+    translation: 아니, 절대 그냥 넘기지 않을 거야
     time: [59.059, 60.759]
   - words:
       - text: わ
@@ -222,6 +240,7 @@ lines:
         time: [62.03, 62.957]
       - text: か
         time: [62.957, 63.59]
+    translation: 조금 남은 양심이 가책을 느끼나요?
     time: [60.759, 63.59]
   - words:
       - text: 栄光の
@@ -236,6 +255,7 @@ lines:
         time: [65.621, 66.01]
       - text: far?
         time: [66.01, 66.49]
+    translation: 영광의 나날, 거기까지 밀어붙일 수 있어?
     time: [63.755, 66.49]
   - words:
       - text: 哀れ望み
@@ -246,6 +266,7 @@ lines:
         time: [68.587, 69.009]
       - text: て
         time: [69.009, 69.616]
+    translation: 가련한 바람이 꿈과 함께 흩어져
     time: [66.884, 69.616]
   - words:
       - text: '愛を知らずに '
@@ -254,6 +275,7 @@ lines:
         time: [71.951, 72.348]
       - text: on
         time: [72.348, 72.763]
+    translation: 사랑을 모른 채 나아가
     time: [69.907, 72.763]
   - words:
       - text: さりげ
@@ -266,6 +288,7 @@ lines:
         time: [74.658, 74.882]
       - text: ばかり
         time: [74.882, 75.771]
+    translation: 아무렇지도 않게 거짓말뿐이야
     time: [73.423, 75.771]
   - words:
       - text: だらし
@@ -276,6 +299,7 @@ lines:
         time: [77.353, 77.963]
       - text: 事
         time: [77.963, 78.783]
+    translation: 칠칠치 못하게 숨긴 일들
     time: [76.419, 78.783]
   - words:
       - text: 不甲斐な
@@ -286,6 +310,7 @@ lines:
         time: [80.585, 81.378]
       - text: 度
         time: [81.378, 81.854]
+    translation: 한심한 그 태도
     time: [79.406, 81.854]
   - words:
       - text: 'Now your '
@@ -294,6 +319,7 @@ lines:
         time: [82.43, 83.283]
       - text: out
         time: [83.283, 83.809]
+    translation: 이제 네 비밀이 드러났어
     time: [82.072, 83.809]
   - words:
       - text: 止めど
@@ -308,6 +334,7 @@ lines:
         time: [86.932, 87.442]
       - text: り
         time: [87.442, 87.758]
+    translation: 끝도 없이 거짓말뿐이야
     time: [85.427, 87.758]
   - words:
       - text: やるせ
@@ -320,6 +347,7 @@ lines:
         time: [89.776, 90.347]
       - text: も
         time: [90.347, 90.782]
+    translation: 답답한 그 말들도
     time: [88.438, 90.782]
   - words:
       - text: 譲れ
@@ -332,6 +360,7 @@ lines:
         time: [92.735, 93.69]
       - text: ド
         time: [93.69, 94.047]
+    translation: 버릴 수 없는 허세와 자존심
     time: [91.422, 94.047]
   - words:
       - text: 'Yeah, '
@@ -340,6 +369,7 @@ lines:
         time: [94.465, 95.108]
       - text: it stop?
         time: [95.108, 96.014]
+    translation: 그래, 언제쯤 끝날까?
     time: [94.107, 96.014]
   - words:
       - text: はぐら
@@ -356,6 +386,7 @@ lines:
         time: [100.717, 101.767]
       - text: shadows
         time: [101.767, 102.779]
+    translation: 말을 돌리며 그림자 밟기, 그래, 그림자가 날 쫓아와
     time: [96.729, 102.779]
   - words:
       - text: 追い
@@ -368,12 +399,14 @@ lines:
         time: [105.578, 105.923]
       - text: ner
         time: [105.923, 107.3]
+    translation: 점점 몰리는구나, 구석으로
     time: [102.879, 107.3]
   - words:
       - text: 苦し
         time: [107.384, 107.89]
       - text: 紛れ
         time: [107.89, 108.649]
+    translation: 괴로운 나머지
     time: [107.384, 108.649]
   - words:
       - text: 'Turn me in, '
@@ -388,6 +421,7 @@ lines:
         time: [113.472, 114.287]
       - text: し
         time: [114.287, 114.753]
+    translation: 날 신고해, 날 신고해, 죄와 벌의 반복
     time: [109.087, 114.753]
   - words:
       - text: 'Turn me in, '
@@ -398,6 +432,7 @@ lines:
         time: [116.382, 116.65]
       - text: an imposter
         time: [116.65, 117.991]
+    translation: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [115.087, 117.991]
   - words:
       - text: 'Hiding, '
@@ -410,6 +445,7 @@ lines:
         time: [119.948, 120.353]
       - text: on
         time: [120.353, 120.87]
+    translation: 숨어도 우린 눈치채고 있어
     time: [119.036, 120.87]
   - words:
       - text: 'Turn me in, '
@@ -426,6 +462,7 @@ lines:
         time: [125.917, 126.4]
       - text: の
         time: [126.4, 126.887]
+    translation: 날 신고해, 날 신고해, 죄와 벌, 언제까지 할 거야?
     time: [121.121, 126.887]
   - words:
       - text: 'Turn me in, '
@@ -436,6 +473,7 @@ lines:
         time: [128.402, 128.661]
       - text: an imposter
         time: [128.661, 129.975]
+    translation: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [127.071, 129.975]
   - words:
       - text: 'No, '
@@ -448,6 +486,7 @@ lines:
         time: [131.936, 132.158]
       - text: it go
         time: [132.158, 132.74]
+    translation: 아니, 절대 그냥 넘기지 않을 거야
     time: [131.04, 132.74]
   - words:
       - text: 傾
@@ -464,6 +503,7 @@ lines:
         time: [134.619, 135.017]
       - text: た
         time: [135.017, 135.473]
+    translation: 기울어진 세상을 만들어 냈어
     time: [132.335, 135.473]
   - words:
       - text: 後悔
@@ -478,6 +518,7 @@ lines:
         time: [137.416, 137.93]
       - text: far?
         time: [137.93, 138.608]
+    translation: 후회의 나날로, 거기까지 밀어붙일 거야?
     time: [135.676, 138.608]
   - words:
       - text: 人は
@@ -494,6 +535,7 @@ lines:
         time: [142.36, 142.862]
       - text: て
         time: [142.862, 143.392]
+    translation: 사람은 거기서부터 바뀌는 거야, 사랑을 알고
     time: [138.875, 143.392]
   - words:
       - text: 'Turn me in, '
@@ -506,6 +548,7 @@ lines:
         time: [158.744, 158.923]
       - text: 罰
         time: [158.923, 159.941]
+    translation: 날 신고해, 날 신고해, 죄와 벌
     time: [157.086, 159.941]
   - words:
       - text: 'Turn me in, '
@@ -516,6 +559,7 @@ lines:
         time: [164.391, 164.659]
       - text: an imposter
         time: [164.659, 166]
+    translation: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [163.096, 166]
   - words:
       - text: 'Turn me in, '
@@ -528,6 +572,7 @@ lines:
         time: [170.767, 170.946]
       - text: 罰
         time: [170.946, 171.964]
+    translation: 날 신고해, 날 신고해, 죄와 벌
     time: [169.109, 171.964]
   - words:
       - text: 'Turn me in, '
@@ -538,6 +583,7 @@ lines:
         time: [176.394, 176.711]
       - text: an imposter
         time: [176.711, 177.963]
+    translation: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [175.059, 177.963]
   - words:
       - text: 'No, '
@@ -550,4 +596,5 @@ lines:
         time: [179.995, 180.146]
       - text: it go
         time: [180.146, 180.799]
+    translation: 아니, 절대 그냥 넘기지 않을 거야
     time: [179.099, 180.799]

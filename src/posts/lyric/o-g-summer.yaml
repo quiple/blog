@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: O.G. Summer
+titleTranslation: O.G. 서머
 titleLang: en
 artist:
   - monkey-majik
@@ -20,206 +21,293 @@ offsets:
   youtubeMV: 2.497
 lines:
   - text: To the beach
+    translation: 해변으로
     time: [16.759, 17.56]
   - text: Music on
+    translation: 음악을 틀고
     time: [17.642, 18.375]
   - text: Brand new shades from Amazon
+    translation: 아마존에서 산 새 선글라스
     time: [18.576, 20.225]
   - text: Been working out for about a week
+    translation: 한 일주일쯤 운동했어
     time: [20.225, 22.039]
   - text: Takes time to keep this sexy physique
+    translation: 이 섹시한 몸매를 유지하려면 시간이 들지
     time: [22.039, 24.104]
   - text: Throw me the ball
+    translation: 공 좀 던져 줘
     time: [24.104, 24.906]
   - text: But not too hard
+    translation: 너무 세게는 말고
     time: [24.906, 25.704]
   - text: Kinda pulled my back working in the Vineyard
+    translation: 포도밭에서 일하다 허리를 좀 삐끗했거든
     time: [25.704, 27.688]
   - text: Ooh lala, what do I see?
+    translation: 울라라, 이게 뭐야?
     time: [27.804, 29.421]
   - text: Def Majik with a beer for me
+    translation: 날 위한 맥주를 든 데프 매직
     time: [29.421, 31.322]
   - text: It's definitively magic in the waves we play
+    translation: 우리가 노니는 파도 속, 그건 분명 마법이야
     time: [31.322, 33.157]
     duet: true
   - text: Feeling the way ’cuz the city's insane
+    translation: 도시가 미쳐 있으니 감각을 따라가
     time: [33.322, 35.072]
     duet: true
   - text: We take it in stride as the moment flies by
+    translation: 순간이 흘러가도 우린 여유롭게 받아들여
     time: [35.072, 36.889]
     duet: true
   - text: Shooting the moon, soaring high, red eye
+    translation: 달을 노리고 높이 날아올라, 충혈된 눈
     time: [37.028, 38.655]
     duet: true
   - text: We definitely Old School
+    translation: 우린 확실히 올드스쿨
     time: [38.755, 40.604]
     duet: true
   - text: Ocean Grown and so cool
+    translation: 바다에서 자라 정말 멋지지
     time: [40.723, 42.407]
     duet: true
   - text: Recognize the game, fool
+    translation: 뭘 좀 알아봐, 바보야
     time: [42.523, 44.256]
     duet: true
   - text: Aligned into the breathe of the Divine pool
+    translation: 신성한 물의 숨결과 하나가 돼
     time: [44.272, 46.231]
     duet: true
   - text: Breakdown to the beat
+    translation: 비트에 맞춰 춤을 춰
     time: [46.231, 47.78]
     duet: true
   - text: まさにアリとキリギリスの
+    translation: 그야말로 개미와 베짱이의
     time: [47.78, 49.029]
     duet: true
   - text: シンフォニー
+    translation: 심포니
     time: [49.031, 49.747]
     duet: true
   - text: Get down to the sea
+    translation: 바다로 내려가
     time: [49.98, 51.43]
     duet: true
   - text: 次の夏までに脱げる体に
+    translation: 다음 여름엔 옷을 벗을 수 있는 몸으로
     time: [51.43, 53.448]
     duet: true
   - text: 踊るアホに見るアホ
+    translation: 춤추는 바보, 구경하는 바보
     time: [53.448, 55.28]
     duet: true
   - text: 同じアホなら踊らにゃソンソン
+    translation: 같은 바보라면 춤 안 추면 손해지
     time: [55.18, 57.131]
     duet: true
   - text: えらいやっちゃ えらいやっちゃ
+    translation: 얼쑤, 얼쑤
     time: [57.332, 59.164]
     duet: true
   - text: I feel no pain
+    translation: 아픔은 느껴지지 않아
     time: [58.492, 60.293]
   - text: ヨイヨイヨイヨイ
+    translation: 어이, 어이, 어이, 어이
     time: [59.181, 61.114]
     duet: true
   - text: It's just a game
+    translation: 그냥 놀이일 뿐이야
     time: [60.377, 62.226]
   - text: Now say my name
+    translation: 자, 내 이름을 불러
     time: [62.126, 64.827]
   - text: I'm getting ready for the summer
+    translation: 난 여름을 맞을 준비를 하고 있어
     time: [64.986, 67.233]
   - text: I'm getting ready for the summer
+    translation: 난 여름을 맞을 준비를 하고 있어
     time: [68.6, 70.884]
   - text: It's just the way I move my body
+    translation: 그냥 이렇게 몸을 움직이는 거야
     time: [72.266, 75.548]
   - text: Shake it like nobody
+    translation: 누구보다 신나게 흔들어
     time: [75.599, 77.184]
   - text: I'm aging, but I'm still young at heart
+    translation: 나이는 들어도 마음은 아직 젊어
     time: [77.4, 79.756]
   - text: I'm getting ready for the summer
+    translation: 난 여름을 맞을 준비를 하고 있어
     time: [79.766, 81.932]
   - text: 裸の王様
+    translation: 벌거벗은 임금님
     time: [83.4, 85.517]
   - text: 俺はこれしか似合わない
+    translation: 난 이런 차림밖에 안 어울려
     time: [87.1, 89.433]
   - text: 3-piece setup
+    translation: 세 가지로 맞춘 한 벌
     time: [89.433, 90.284]
   - text: ビーサン 短パン タンクトップ
+    translation: 쪼리, 반바지, 민소매
     time: [90.566, 92.151]
   - text: 誰もいない海
+    translation: 아무도 없는 바다
     time: [92.408, 94.41]
   - text: Sandals, socks, towels drop
+    translation: 샌들, 양말, 수건을 내려놓고
     time: [110.84, 112.489]
   - text: I'mma get up early, gotta hold my spot
+    translation: 일찍 일어나서 내 자리를 맡아야지
     time: [112.691, 114.374]
   - text: Truth be known, I've got unusual hobbies
+    translation: 사실 내겐 별난 취미가 있어
     time: [114.49, 116.356]
   - text: Metal detectors and a thing for beach hockey
+    translation: 금속 탐지기, 그리고 비치 하키에 대한 애착
     time: [116.452, 118.236]
   - text: Neon shades and well behaved
+    translation: 네온색 선글라스에 얌전한 태도
     time: [118.237, 119.885]
   - text: It's the humpty hump when I'm outa my cave
+    translation: 굴 밖에 나오면 험프티 험프 댄스
     time: [119.885, 121.72]
   - text: The rizz is on, yeah, feel the groove
+    translation: 매력을 발산해, 그래, 그루브를 느껴 봐
     time: [121.742, 123.528]
   - text: Like Young MC, I gotta bust a move
+    translation: 영 엠시처럼 춤을 춰야지
     time: [123.61, 125.46]
   - text: We definitely Old School
+    translation: 우린 확실히 올드스쿨
     time: [125.56, 127.293]
     duet: true
   - text: Ocean Grown and so cool
+    translation: 바다에서 자라 정말 멋지지
     time: [127.476, 129.226]
     duet: true
   - text: Recognize the game, fool
+    translation: 뭘 좀 알아봐, 바보야
     time: [129.342, 131.043]
     duet: true
   - text: Aligned into the breathe of the Divine pool
+    translation: 신성한 물의 숨결과 하나가 돼
     time: [131.059, 133.061]
     duet: true
   - text: Breakdown to the beat
+    translation: 비트에 맞춰 춤을 춰
     time: [133.061, 134.495]
     duet: true
   - text: まさにアリとキリギリスの
+    translation: 그야말로 개미와 베짱이의
     time: [134.495, 135.799]
     duet: true
   - text: シンフォニー
+    translation: 심포니
     time: [135.799, 136.62]
     duet: true
   - text: Get down to the sea
+    translation: 바다로 내려가
     time: [136.75, 138.218]
     duet: true
   - text: 次の夏までに脱げる体に
+    translation: 다음 여름엔 옷을 벗을 수 있는 몸으로
     time: [138.218, 140.217]
     duet: true
   - text: 踊るアホに見るアホ
+    translation: 춤추는 바보, 구경하는 바보
     time: [140.217, 141.936]
     duet: true
   - text: 同じアホなら踊らにゃソンソン
+    translation: 같은 바보라면 춤 안 추면 손해지
     time: [141.936, 143.902]
     duet: true
   - text: えらいやっちゃ えらいやっちゃ
+    translation: 얼쑤, 얼쑤
     time: [144.12, 145.918]
     duet: true
   - text: I feel no pain
+    translation: 아픔은 느껴지지 않아
     time: [145.278, 147.153]
   - text: ヨイヨイヨイヨイ
+    translation: 어이, 어이, 어이, 어이
     time: [145.919, 147.803]
     duet: true
   - text: It's just a game
+    translation: 그냥 놀이일 뿐이야
     time: [147.153, 148.943]
   - text: Now say my name
+    translation: 자, 내 이름을 불러
     time: [148.943, 151.687]
   - text: I'm getting ready for the summer
+    translation: 난 여름을 맞을 준비를 하고 있어
     time: [151.687, 153.854]
   - text: I'm getting ready for the summer
+    translation: 난 여름을 맞을 준비를 하고 있어
     time: [155.402, 157.669]
   - text: It's just the way I move my body
+    translation: 그냥 이렇게 몸을 움직이는 거야
     time: [159.165, 162.267]
   - text: Shake it like nobody
+    translation: 누구보다 신나게 흔들어
     time: [162.365, 163.931]
   - text: I'm aging, but I'm still young at heart
+    translation: 나이는 들어도 마음은 아직 젊어
     time: [164.116, 166.455]
   - text: I'm getting ready for the summer
+    translation: 난 여름을 맞을 준비를 하고 있어
     time: [166.455, 168.641]
   - text: Crazy, sexy おじさま
+    translation: 엉뚱하고 섹시한 아저씨
     time: [170.144, 172.273]
   - text: 冷えたビールを飲みたい 踊りたい
+    translation: 시원한 맥주가 마시고 싶어, 춤추고 싶어
     time: [173.857, 176.989]
   - text: 奥さんから着信 帰ります
+    translation: 아내에게 전화가 와, 집에 갈게요
     time: [177.105, 178.974]
   - text: ビーサン履いたシンデレラ
+    translation: 쪼리를 신은 신데렐라
     time: [178.989, 181.157]
   - text: Dance tonight
+    translation: 오늘 밤 춤을 춰
     time: [182.872, 184.722]
   - text: Groove tonight
+    translation: 오늘 밤 리듬을 타
     time: [184.738, 186.474]
   - text: Feel the vibe
+    translation: 분위기를 느껴 봐
     time: [186.59, 189.855]
   - text: I'm feeling the moment
+    translation: 이 순간을 느끼고 있어
     time: [188.173, 190.279]
   - text: Dance tonight
+    translation: 오늘 밤 춤을 춰
     time: [190.279, 192.032]
   - text: Groove tonight
+    translation: 오늘 밤 리듬을 타
     time: [192.131, 193.863]
   - text: I gotta wear my headphones
+    translation: 헤드폰을 써야겠어
     time: [193.971, 195.847]
   - text: I'm getting ready for the summer
+    translation: 난 여름을 맞을 준비를 하고 있어
     time: [196.006, 198.305]
   - text: I'm getting ready for the summer
+    translation: 난 여름을 맞을 준비를 하고 있어
     time: [199.747, 201.944]
   - text: It's just the way I move my body
+    translation: 그냥 이렇게 몸을 움직이는 거야
     time: [203.427, 206.49]
   - text: Shake it like nobody
+    translation: 누구보다 신나게 흔들어
     time: [206.661, 208.244]
   - text: こたつで夏を待つ
+    translation: 고타쓰에서 여름을 기다려
     time: [208.472, 210.71]
