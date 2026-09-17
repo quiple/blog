@@ -71,36 +71,52 @@ lines:
     time: [93.229, 96.323]
   - text: いなくてもいい I wanted to be free
     time: [96.333, 98.661]
+    duet: true
   - text: いなくなってもいい I wanted her to leave
     time: [98.671, 101.262]
+    duet: true
   - text: It's kind of hard to see when the world tunnel-visioned me
     time: [101.272, 104.08]
+    duet: true
   - text: 求めてた愛の形
     time: [104.09, 105.755]
+    duet: true
   - text: They say, "Believe in what you can't see"
     time: [105.765, 107.984]
+    duet: true
   - text: でも周りのcandyがsweetで hard to think
     time: [107.994, 110.528]
+    duet: true
   - text: 頭ではcomprehendしても行動に移せん
     time: [110.538, 113.171]
+    duet: true
   - text: My eyes on the 理屈、the truth's here, listen
     time: [113.181, 115.673]
+    duet: true
   - text: Chaseしてもchaseしても things keep fleeting
     time: [115.683, 117.905]
+    duet: true
   - text: 変な夢見てた I must have been sleeping
     time: [117.915, 120.246]
+    duet: true
   - text: 遠くさまよう前に近くを seek it
     time: [120.256, 122.577]
+    duet: true
   - text: よく見てみれば 心にはbeacon
     time: [122.587, 124.913]
+    duet: true
   - text: Of light 射して、探してた thing's here
     time: [124.923, 127.455]
-  - text: 思ったより near, close to your hemisphere
+    duet: true
+  - text: 思ったよりnear, close to your hemisphere
     time: [127.465, 129.734]
-  - text: 今では clear, 20/20, 'cuz I'mma share
+    duet: true
+  - text: 今ではclear, 20/20, 'cuz I'mma share
     time: [129.744, 132.186]
+    duet: true
   - text: 全て and I don't care if they think I'm weird
     time: [132.196, 134.631]
+    duet: true
   - text: There, there, nobody thinks you're weird
     time: [134.641, 136.037]
   - text: Ya see, I've been through it all before
