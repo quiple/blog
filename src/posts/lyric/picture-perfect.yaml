@@ -1,0 +1,177 @@
+# https://music.apple.com/kr/song/213827496
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/213827496?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/213827496
+# 선택 항목: Apple Music · Picture Perfect · 음절별 가사 · 213827496
+# 가져온 시각: 2026-09-17T11:59:52.487Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: Picture Perfect
+titleLang: ja
+artist:
+  - monkey-majik
+  - m-flo
+lang: ja
+spotify: 7LVW5oLXvUoGu1JqxBNUly
+youtube:
+  audio: uaHCBY8bh8Y
+  mv: uj4xPl7HVCM
+lines:
+  - text: ALL THE TIME THAT YOU WERE STANDING BY MY SIDE
+    time: [19.548, 23.684]
+  - text: SHE'S THAT PICTURE PERFECT KIND
+    time: [23.694, 25.911]
+  - text: I CAN'T BELIEVE I WAS SO BLIND
+    time: [25.921, 28.453]
+  - text: DO YOU REMEMBER THE TIME
+    time: [28.463, 30.736]
+  - text: YOU KNOW I STEPPED ACROSS THAT LINE
+    time: [30.746, 33.08]
+  - text: I MADE YOU CRY AND THAT'S MY CRIME
+    time: [33.09, 35.624]
+  - text: I WISH THAT I COULD JUST REWIND
+    time: [35.634, 38.333]
+  - text: IT'S THE EVENING, AND YOU'VE BEEN COMPLAINING
+    time: [38.343, 41.155]
+  - text: ABOUT OUR SITUATION AND ALL MY DECEIVING
+    time: [41.165, 43.591]
+  - text: I KNOW THAT EVERYTHING IS GOING SLOW
+    time: [43.601, 48.559]
+  - text: AND IF YOU WANT TO FEEL BETTER
+    time: [48.569, 50.024]
+  - text: I CAN TELL YOU THAT IT'S GOING TO BE GREAT
+    time: [50.034, 51.839]
+  - text: YEAH IT'S GOING TO BE GOOD
+    time: [51.849, 53.081]
+  - text: OH! BUT I WOULD BE LYING TO YOU
+    time: [53.091, 56.697]
+  - text: BUT THESE DAYS, I'M CHANGING
+    time: [57.107, 60.095]
+  - text: MEETING NEW FACES
+    time: [60.105, 62.39]
+  - text: NOW HOW AM I SUPPOSED TO BE?
+    time: [62.4, 66.492]
+  - text: MY FEELINGS FOR YOU SEEM TO BE CHANGING
+    time: [66.502, 71.854]
+  - text: LOOKING BACK, DON'T LOOK BACK ON ME
+    time: [71.864, 76.901]
+  - text: ALL THE TIME THAT YOU WERE STANDING BY MY SIDE
+    time: [77.211, 81.247]
+  - text: SHE'S THAT PICTURE PERFECT KIND
+    time: [81.257, 83.434]
+  - text: I CAN'T BELIEVE I WAS SO BLIND
+    time: [83.444, 86.026]
+  - text: DO YOU REMEMBER THE TIME
+    time: [86.036, 88.293]
+  - text: YOU KNOW I STEPPED ACROSS THAT LINE
+    time: [88.303, 90.729]
+  - text: I MADE YOU CRY AND THAT'S MY CRIME
+    time: [90.739, 93.219]
+  - text: I WISH THAT I COULD JUST REWIND
+    time: [93.229, 96.323]
+  - text: いなくてもいい I wanted to be FREE
+    time: [96.333, 98.661]
+  - text: いなくなってもいい I wanted her to LEAVE
+    time: [98.671, 101.262]
+  - text: It's kind of hard to see, when the WORLD Tunnel-visioned me
+    time: [101.272, 104.08]
+  - text: 求めてた愛の形
+    time: [104.09, 105.755]
+  - text: They say BELIEVE In what you can't SEE
+    time: [105.765, 107.984]
+  - text: でも周りのCANDYがSWEETで HARD to THINK
+    time: [107.994, 110.528]
+  - text: 頭ではCOMPREHENDしても行動に移せん
+    time: [110.538, 113.171]
+  - text: My eyes on the 理屈、The TRUTH's here LISTEN
+    time: [113.181, 115.673]
+  - text: CHASEしてもCHASEしても Things keep FLEETING
+    time: [115.683, 117.905]
+  - text: 変な夢見てた I must have been SLEEPING
+    time: [117.915, 120.246]
+  - text: 遠くさまよう前に近くを SEEK IT
+    time: [120.256, 122.577]
+  - text: よく見てみれば 心にはBEACON
+    time: [122.587, 124.913]
+  - text: Of LIGHT 射して、探してた thing's HERE
+    time: [124.923, 127.455]
+  - text: 思ったより NEAR, Close to your HEMISPHERE
+    time: [127.465, 129.734]
+  - text: 今では CLEAR 20/20 Cuz I'mma SHARE
+    time: [129.744, 132.186]
+  - text: 全て and I don't CARE If they think I'm WEIRD
+    time: [132.196, 134.631]
+  - text: THERE THERE NOBODY THINKS YOU'RE WEIRD
+    time: [134.641, 136.037]
+  - text: YA SEE, I'VE BEEN THROUGH IT ALL BEFORE
+    time: [136.047, 138.007]
+  - text: AND THE SAME THING HAPPENED TO ME
+    time: [138.017, 139.615]
+  - text: 'きにしない "WOUNDS HEAL WITH TIME"'
+    time: [139.625, 141.513]
+  - text: BUT IN THE MEANWHILE
+    time: [141.523, 143.171]
+  - text: I'LL SHOW WHAT I MEAN
+    time: [143.181, 144.158]
+  - text: LET'S THINK OF IT ANOTHER WAY
+    time: [144.168, 145.664]
+  - text: EVERYTHING WE DO AND SAY DEFINES WHO WE ARE
+    time: [145.674, 147.09]
+  - text: AS WE LIVE OUT EACH DAY
+    time: [147.1, 148.073]
+  - text: WHAT WE DID WAS WRONG AT THE TIME
+    time: [148.083, 149.442]
+  - text: BUT IT HELPS US GO BACK AND REWIND
+    time: [149.452, 150.509]
+  - text: IT'S A MISTAKE BUT IT AIN'T NO CRIME
+    time: [150.519, 151.868]
+  - text: 重なり合うのさ つまりそれが愛
+    time: [151.878, 154.075]
+  - text: ALL THE TIME THAT YOU WERE STANDING BY MY SIDE
+    time: [154.085, 157.715]
+  - text: SHE'S THAT PICTURE PERFECT KIND
+    time: [157.725, 160.348]
+  - text: I CAN'T BELIEVE I WAS SO BLIND
+    time: [160.358, 162.592]
+  - text: DO YOU REMEMBER THE TIME
+    time: [162.602, 165.099]
+  - text: YOU KNOW I STEPPED ACROSS THAT LINE
+    time: [165.109, 167.5]
+  - text: I MADE YOU CRY AND THAT'S MY CRIME
+    time: [167.51, 169.957]
+  - text: I WISH THAT I COULD JUST REWIND
+    time: [169.967, 172.34]
+  - text: I SAID GOODBYE
+    time: [172.65, 176.855]
+  - text: I DIDN'T KNOW
+    time: [176.865, 179.399]
+  - text: THAT IT WOULD ALL TURN OUT THIS WAY
+    time: [179.409, 182.611]
+  - text: BUT NOW I KNOW I REALISE
+    time: [182.621, 188.906]
+  - text: AND I CAN LEARN FROM MY MISTAKES
+    time: [188.916, 191.543]
+  - text: BUT THESE DAYS, I'M CHANGING
+    time: [191.553, 194.33]
+  - text: MEETING NEW FACES
+    time: [194.34, 196.664]
+  - text: NOW HOW AM I SUPPOSED TO BE?
+    time: [196.674, 200.921]
+  - text: MY FEELINGS FOR YOU SEEM TO BE CHANGING
+    time: [200.931, 206.364]
+  - text: LOOKING BACK, DON'T LOOK BACK ON ME
+    time: [206.374, 211.19]
+  - text: ALL THE TIME THAT YOU WERE STANDING BY MY SIDE
+    time: [211.2, 215.488]
+  - text: SHE'S THAT PICTURE PERFECT KIND
+    time: [215.498, 218.022]
+  - text: I CAN'T BELIEVE I WAS SO BLIND
+    time: [218.032, 220.311]
+  - text: DO YOU REMEMBER THE TIME
+    time: [220.321, 222.806]
+  - text: YOU KNOW I STEPPED ACROSS THAT LINE
+    time: [222.816, 225.091]
+  - text: I MADE YOU CRY AND THAT'S MY CRIME
+    time: [225.101, 227.58]
+  - text: I WISH THAT I COULD JUST REWIND
+    time: [227.59, 230.135]
