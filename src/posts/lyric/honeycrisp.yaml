@@ -56,77 +56,102 @@ lines:
     translation: 모르겠어?
     time: [46.789, 48.242]
   - text: Take a turn onto oncoming traffic
+    pronunciation: 테이크 어 턴 온투 온커밍 트래픽
     translation: 맞은편 차들이 오는 쪽으로 꺾어
     time: [62.085, 64.961]
   - text: You know I've the knack for dramatics
+    pronunciation: 유 노 아이브 더 낵 포 드러매틱스
     translation: 내가 유난 떠는 데 소질 있는 거 알잖아
     time: [65.706, 68.443]
   - text: What's the point in you being suspicious?
+    pronunciation: 와츠 더 포인트 인 유 빙 서스피셔스?
     translation: 이제 와서 의심한들 무슨 소용이야?
     time: [68.837, 71.713]
   - text: The flags are all red delicious
+    pronunciation: 더 플래그스 어 레드 딜리셔스
     translation: 경고 깃발은 온통 레드 딜리셔스
     time: [72.716, 75.31]
   - text: And I don't want this to end
+    pronunciation: 앤드 아이 돈트 원트 디스 투 엔드
     translation: 그리고 난 이게 끝나길 원치 않아
     time: [76.758, 80.037]
   - text: No, I don't want to be friends
+    pronunciation: 노, 아이 돈트 원트 투 비 프렌즈
     translation: 아니, 친구가 되고 싶은 건 아냐
     time: [80.037, 82.353]
   - text: I'm bracing for it
+    pronunciation: 아임 브레이싱 포 잇
     translation: 마음의 준비를 하고 있어
     time: [83.534, 85.191]
   - text: I'm better off alone
+    pronunciation: 아임 베터 오프 얼론
     translation: 난 혼자인 편이 나아
     time: [85.191, 87.191]
   - text: Don't you know?
+    pronunciation: 돈트 유 노?
     translation: 모르겠어?
     time: [87.191, 88.694]
   - text: I don't want to be alone
+    pronunciation: 아이 돈트 원트 투 비 얼론
     translation: 혼자 있고 싶진 않아
     time: [116.271, 117.941]
   - text: But I don't try
+    pronunciation: 벗 아이 돈트 트라이
     translation: 그렇다고 노력하지도 않아
     time: [117.941, 119.217]
   - text: I'm just better off alone
+    pronunciation: 아임 저스트 베터 오프 얼론
     translation: 난 그냥 혼자인 편이 나아
     time: [119.623, 121.177]
   - text: And I don't know why
+    pronunciation: 앤드 아이 돈트 노 와이
     translation: 왜인지는 나도 몰라
     time: [121.177, 123.404]
   - text: How can I be sad
+    pronunciation: 하우 캔 아이 비 새드
     translation: 내가 어떻게 슬플 수 있겠어
     time: [123.404, 124.552]
   - text: If I don't cry?
+    pronunciation: 이프 아이 돈트 크라이?
     translation: 울지도 않는데?
     time: [124.552, 125.916]
   - text: Maybe I'm rotten to the core
+    pronunciation: 메이비 아임 로튼 투 더 코어
     translation: 어쩌면 난 속까지 썩었나 봐
     time: [126.069, 127.929]
   - text: And I don't know why
+    pronunciation: 앤드 아이 돈트 노 와이
     translation: 왜인지는 나도 몰라
     time: [127.929, 129.726]
   - text: I don't want to be alone
+    pronunciation: 아이 돈트 원트 투 비 얼론
     translation: 혼자 있고 싶진 않아
     time: [129.726, 131.395]
   - text: But I don't try
+    pronunciation: 벗 아이 돈트 트라이
     translation: 그렇다고 노력하지도 않아
     time: [131.395, 132.81]
   - text: I'm just better off alone
+    pronunciation: 아임 저스트 베터 오프 얼론
     translation: 난 그냥 혼자인 편이 나아
     time: [133.153, 134.784]
   - text: And I don't know why
+    pronunciation: 앤드 아이 돈트 노 와이
     translation: 왜인지는 나도 몰라
     time: [134.784, 136.897]
   - text: How can I be sad
+    pronunciation: 하우 캔 아이 비 새드
     translation: 내가 어떻게 슬플 수 있겠어
     time: [136.897, 138.083]
   - text: If I don't cry?
+    pronunciation: 이프 아이 돈트 크라이?
     translation: 울지도 않는데?
     time: [138.083, 139.461]
   - text: Maybe I'm rotten to the core
+    pronunciation: 메이비 아임 로튼 투 더 코어
     translation: 어쩌면 난 속까지 썩었나 봐
     time: [139.626, 141.524]
   - text: And I don't know why
+    pronunciation: 앤드 아이 돈트 노 와이
     translation: 왜인지는 나도 몰라
     time: [141.524, 143.345]
