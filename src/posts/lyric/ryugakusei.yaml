@@ -1,0 +1,138 @@
+# https://music.apple.com/kr/song/1453562440
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1453562440?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1453562440
+# 선택 항목: Apple Music · 留学生 · 음절별 가사 · 1453562440
+# 가져온 시각: 2026-09-17T10:14:50.633Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: 留学生
+titleTranslation: 유학생
+titleLang: ja
+artist:
+  - monkey-majik
+  - okazaki-taiiku
+lang: ja
+spotify: 6Fv9M9nUKvuMD7roafIm8j
+youtube:
+  audio: 0fcQXtB74Ks
+  mv: lvEVP7NPklU
+lines:
+  - text: You're out a sight (うるさい)
+    time: [31.37, 33.335]
+  - text: Yeah, hold me tight (アホみたい)
+    time: [33.422, 35.154]
+  - text: Yeah, why don't you and me go home tonight (ご飯出ない)
+    time: [35.916, 39.519]
+  - text: Walked around the world (わからんわ)
+    time: [39.577, 41.577]
+  - text: And now I gotcha (えらいこっちゃ)
+    time: [41.587, 43.707]
+  - text: Gonna be with you, chill down all through the night (冗談通じない)
+    time: [43.916, 48.136]
+  - text: All I know is that I love you babe
+    time: [48.146, 51.247]
+  - text: 不安な日々送る 捨て猫のように
+    time: [51.691, 54.879]
+  - text: I never forget you, never babe
+    time: [55.913, 58.882]
+  - text: 人見知り いつもしてんな もったいない
+    time: [59.892, 63.666]
+  - text: You gotta stay (留学生)
+    time: [63.671, 65.117]
+  - text: Hey, I need you here, babe (部屋20平米)
+    time: [65.625, 67.166]
+  - text: It's better never talkin' 'cause it's no good (ベッドに寝るとき靴脱ぐ)
+    time: [67.906, 70.835]
+  - text: You gotta stay (留学生)
+    time: [71.664, 72.846]
+  - text: Hey, I need you here, babe (部屋20平米)
+    time: [73.626, 75.256]
+  - text: I messed up, should've known last time I met ya! (味噌汁飲みたいわ めっちゃ)
+    time: [75.942, 78.918]
+  - text: Hey ho
+    time: [80.181, 81.798]
+  - text: 風呂場なんてない
+    time: [82.088, 83.478]
+  - text: かまへんよー
+    time: [83.65, 85.61]
+  - text: でもシンクはめちゃでかい
+    time: [85.878, 87.498]
+  - text: Hey ho
+    time: [88.153, 89.668]
+  - text: 風呂場なんてない
+    time: [90.092, 91.484]
+  - text: かまへんよー
+    time: [91.621, 93.655]
+  - text: でもシンクはめちゃでかい
+    time: [93.918, 95.611]
+  - text: 陽気な愛を拒んだ でも泣き寝入りはもう御免だ
+    time: [96.176, 99.641]
+  - text: しょうがない まぁいいかで片付けんな 立ちはだかる言葉の壁
+    time: [99.661, 103.197]
+  - text: そもそも何で俺ここにおんねん
+    time: [103.732, 105.661]
+  - text: 呑気に退屈な毎日 とても充実してるとは言えんがな
+    time: [105.674, 109.16]
+  - text: こんなもん望んでた理想とは違うんだもん
+    time: [109.17, 111.966]
+  - text: All I know is that I love you, babe
+    time: [112.208, 115.006]
+  - text: いいんや ひとりでもやったるがな
+    time: [115.662, 118.799]
+  - text: I never forget you, never, babe
+    time: [119.9, 122.837]
+  - text: でもやっぱ不安だもん 気まじぃな 辛ぇ
+    time: [123.672, 127.629]
+  - text: You gotta stay (留学生)
+    time: [127.639, 128.869]
+  - text: Hey, I need you here, babe (部屋20平米)
+    time: [129.635, 131.117]
+  - text: It's better never talkin' 'cause it's no good (ベッドに寝るとき靴脱ぐ)
+    time: [131.915, 134.884]
+  - text: You gotta stay (留学生)
+    time: [135.66, 136.783]
+  - text: Hey, I need you here babe (部屋20平米)
+    time: [137.651, 139.171]
+  - text: I messed up, should've known last time I met ya! (味噌汁飲みたいわ めっちゃ)
+    time: [139.897, 143.228]
+  - text: Hey ho
+    time: [144.173, 145.716]
+  - text: ハンバーガーめちゃでかい
+    time: [145.873, 147.448]
+  - text: 食えへんよー
+    time: [147.641, 149.611]
+  - text: しかもチップも取るんかい
+    time: [149.865, 151.617]
+  - text: Hey ho
+    time: [152.173, 153.645]
+  - text: ハンバーガーめちゃでかい
+    time: [153.908, 155.563]
+  - text: 食えへんよー
+    time: [155.654, 157.607]
+  - text: しかもチップも取るんかい
+    time: [157.851, 160.062]
+  - text: You gotta stay (留学生)
+    time: [175.645, 176.781]
+  - text: Hey, I need you here babe (部屋20平米)
+    time: [177.67, 179.086]
+  - text: It's better never talkin' 'cause it's no good (ベッドに寝るとき靴脱ぐ)
+    time: [179.899, 182.776]
+  - text: You gotta stay (留学生)
+    time: [183.632, 184.748]
+  - text: Hey, I need you here babe (部屋20平米)
+    time: [185.622, 187.04]
+  - text: I messed up, should've known last time I met ya! (味噌汁飲みたいわ めっちゃ)
+    time: [187.89, 190.926]
+  - text: You gotta stay (留学生)
+    time: [191.612, 192.783]
+  - text: Hey, I need you here babe (部屋20平米)
+    time: [193.633, 195.062]
+  - text: It's better never talkin' 'cause it's no good (ベッドに寝るとき靴脱ぐ)
+    time: [195.915, 198.76]
+  - text: You gotta stay (留学生)
+    time: [199.609, 200.739]
+  - text: Hey, I need you here babe (部屋20平米)
+    time: [201.634, 203.026]
+  - text: I messed up, should've known last time I met ya! (味噌汁飲みたいわ めっちゃ)
+    time: [203.874, 206.969]
