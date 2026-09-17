@@ -17,6 +17,8 @@ spotify: 6Fv9M9nUKvuMD7roafIm8j
 youtube:
   audio: 0fcQXtB74Ks
   mv: lvEVP7NPklU
+offsets:
+  youtubeMV: 65.54
 lines:
   - text: You're out a sight
     time: [31.37, 33.335]
