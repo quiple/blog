@@ -46,7 +46,7 @@ lines:
     pronunciation: 시오카사네테이키루세카이오코와시타이
     time: [105.148, 117.041]
   - text: 最高は今
-    pronunciation: 사이코하이마
+    pronunciation: 사이코와이마
     time: [117.541, 120.541]
   - text: 最悪でも幸せでいようね
     pronunciation: 사이아쿠데모시아와세데이요네
@@ -58,7 +58,7 @@ lines:
     pronunciation: 아마리나가쿠나이에이엔니이존스루
     time: [153.06, 165.929]
   - text: 願いは叶えば消えるかしら
-    pronunciation: 네가이하카나에바키에루카시라
+    pronunciation: 네가이와카나에바키에루카시라
     time: [165.951, 172.91]
   - text: 消えても 愛して
     pronunciation: 키에테모 아이시테
@@ -70,7 +70,7 @@ lines:
     pronunciation: 보류무아게타히토노코에다케토도쿠코노후헤이나아소비데스스모
     time: [187.32, 199.72]
   - text: ぼくはぼくになっては死に生まれる
-    pronunciation: 보쿠하보쿠니낫테하시니우마레루
+    pronunciation: 보쿠와보쿠니낫테와시니우마레루
     time: [199.83, 207.988]
   - text: 身を重ねて生きた世界を確かめる
     pronunciation: 미오카사네테이키타세카이오타시카메루
@@ -82,10 +82,10 @@ lines:
     pronunciation: 치오나가스코토 헤이키니나루나토 아라갓타
     time: [232.888, 244.648]
   - text: 手癖で君を幸せにはしないさ
-    pronunciation: 테쿠세데키미오시아와세니하시나이사
+    pronunciation: 테쿠세데키미오시아와세니와시나이사
     time: [245.263, 253.893]
   - text: この部屋をぶち抜いてくれたら 待ち合わせはもうしない
-    pronunciation: 코노헤야오부치누이테쿠레타라 마치아와세하모시나이
+    pronunciation: 코노헤야오부치누이테쿠레타라 마치아와세와모시나이
     time: [253.903, 276.804]
   - text: 色を重ねて 滲む世界を 抱きしめた
     pronunciation: 이로오카사네테 니지무세카이오 다키시메타
@@ -97,7 +97,7 @@ lines:
     pronunciation: 시오카사네테이키루세카이오코와시타이
     time: [310.8, 323.043]
   - text: 最高は今
-    pronunciation: 사이코하이마
+    pronunciation: 사이코와이마
     time: [323.121, 326.169]
   - text: 最悪でも幸せでいようね
     pronunciation: 사이아쿠데모시아와세데이요네
