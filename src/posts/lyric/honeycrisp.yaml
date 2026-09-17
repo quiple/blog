@@ -20,30 +20,39 @@ offsets:
   spotify: -0.771
 lines:
   - text: Close one eye, bite your lip
+    pronunciation: 클로즈 원 아이, 바이트 유어 립
     translation: 한쪽 눈을 감고 입술을 깨물어
     time: [21.977, 23.977]
   - text: Balance on my head a honeycrisp
+    pronunciation: 밸런스 온 마이 헤드 어 허니크리스프
     translation: 내 머리 위에 허니크리스프 하나를 올려
     time: [25.187, 27.898]
   - text: Notch an arrow, hold your breath
+    pronunciation: 노치 언 애로, 홀드 유어 브레스
     translation: 화살을 메기고 숨을 참아
     time: [28.77, 31.192]
   - text: And shoot me right here in my chest
+    pronunciation: 앤드 슈트 미 라이트 히어 인 마이 체스트
     translation: 그리고 바로 여기 내 가슴을 쏴
     time: [31.776, 35.465]
   - text: Because I'm hanging on to hope
+    pronunciation: 비코즈 아임 행잉 온 투 호프
     translation: 난 희망을 붙들고 있으니까
     time: [35.465, 38.34]
   - text: And every word that you say
+    pronunciation: 앤드 에브리 워드 댓 유 세이
     translation: 네가 하는 말 한마디 한마디도
     time: [39.437, 41.791]
   - text: I'm bracing for it
+    pronunciation: 아임 브레이싱 포 잇
     translation: 마음의 준비를 하고 있어
     time: [42.896, 44.446]
   - text: I'm better off alone
+    pronunciation: 아임 베터 오프 얼론
     translation: 난 혼자인 편이 나아
     time: [44.446, 46.789]
   - text: Don't you know?
+    pronunciation: 돈트 유 노?
     translation: 모르겠어?
     time: [46.789, 48.242]
   - text: Take a turn onto oncoming traffic
