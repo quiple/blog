@@ -52,18 +52,23 @@ lines:
     translation: 이 모든 게 의미가 있는지 말해 준다면
     time: [26.238, 28.75]
   - text: Hold your breath now
+    pronunciation: 홀드 유어 브레스 나우
     translation: 이제 숨을 참아
     time: [30.065, 33.062]
   - text: It's all a simulation
+    pronunciation: 이츠 올 어 시뮬레이션
     translation: 전부 시뮬레이션이야
     time: [33.338, 36]
   - text: Keep your head down
+    pronunciation: 킵 유어 헤드 다운
     translation: 고개를 숙이고 있어
     time: [36.917, 39.469]
   - text: It's someone's machination
+    pronunciation: 이츠 섬원스 매커네이션
     translation: 누군가의 계략이야
     time: [39.921, 42.888]
   - text: There's a faint chance
+    pronunciation: 데어즈 어 페인트 챈스
     translation: 아주 희박한 가능성은 있어
     time: [43.769, 46.395]
   - text: That this is real
