@@ -138,7 +138,7 @@ lines:
   - words:
       - text: 'Turn me in, '
         time: [37.075, 37.686]
-      - text: 'Turn me in, '
+      - text: 'turn me in, '
         time: [37.763, 38.435]
       - text: 罪
         time: [38.435, 38.779]
@@ -174,7 +174,7 @@ lines:
   - words:
       - text: 'Turn me in, '
         time: [49.141, 49.774]
-      - text: 'Turn me in, '
+      - text: 'turn me in, '
         time: [49.812, 50.429]
       - text: 罪
         time: [50.429, 50.781]
@@ -376,7 +376,7 @@ lines:
   - words:
       - text: 'Turn me in, '
         time: [109.087, 109.791]
-      - text: 'Turn me in, '
+      - text: 'turn me in, '
         time: [109.853, 110.445]
       - text: 罪
         time: [110.445, 110.783]
@@ -412,7 +412,7 @@ lines:
   - words:
       - text: 'Turn me in, '
         time: [121.121, 121.709]
-      - text: 'Turn me in, '
+      - text: 'turn me in, '
         time: [121.768, 122.414]
       - text: 罪
         time: [122.414, 122.763]
@@ -496,7 +496,7 @@ lines:
   - words:
       - text: 'Turn me in, '
         time: [157.086, 157.743]
-      - text: 'Turn me in, '
+      - text: 'turn me in, '
         time: [157.764, 158.407]
       - text: 罪
         time: [158.431, 158.744]
@@ -518,7 +518,7 @@ lines:
   - words:
       - text: 'Turn me in, '
         time: [169.109, 169.766]
-      - text: 'Turn me in, '
+      - text: 'turn me in, '
         time: [169.787, 170.43]
       - text: 罪
         time: [170.454, 170.767]
