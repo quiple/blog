@@ -63,24 +63,33 @@ lines:
     duet: true
   - text: Breakdown to the beat
     time: [46.231, 47.78]
+    duet: true
   - text: まさにアリとキリギリスの
     time: [47.78, 49.029]
+    duet: true
   - text: シンフォニー
     time: [49.031, 49.747]
+    duet: true
   - text: Get down to the sea
     time: [49.98, 51.43]
+    duet: true
   - text: 次の夏までに脱げる体に
     time: [51.43, 53.448]
+    duet: true
   - text: 踊るアホに見るアホ
     time: [53.448, 55.28]
+    duet: true
   - text: 同じアホなら踊らにゃソンソン
     time: [55.18, 57.131]
+    duet: true
   - text: えらいやっちゃ えらいやっちゃ
     time: [57.332, 59.164]
+    duet: true
   - text: I feel no pain
     time: [58.492, 60.293]
   - text: ヨイヨイヨイヨイ
     time: [59.181, 61.114]
+    duet: true
   - text: It's just a game
     time: [60.377, 62.226]
   - text: Now say my name
@@ -125,32 +134,45 @@ lines:
     time: [123.61, 125.46]
   - text: We definitely Old School
     time: [125.56, 127.293]
+    duet: true
   - text: Ocean Grown and so cool
     time: [127.476, 129.226]
+    duet: true
   - text: Recognize the game fool
     time: [129.342, 131.043]
+    duet: true
   - text: Aligned into the breathe of the Divine pool
     time: [131.059, 133.061]
+    duet: true
   - text: Breakdown to the beat
     time: [133.061, 134.495]
+    duet: true
   - text: まさにアリとキリギリスの
     time: [134.495, 135.799]
+    duet: true
   - text: シンフォニー
     time: [135.799, 136.62]
+    duet: true
   - text: Get down to the sea
     time: [136.75, 138.218]
+    duet: true
   - text: 次の夏までに脱げる体に
     time: [138.218, 140.217]
+    duet: true
   - text: 踊るアホに見るアホ
     time: [140.217, 141.936]
+    duet: true
   - text: 同じアホなら踊らにゃソンソン
     time: [141.936, 143.902]
+    duet: true
   - text: えらいやっちゃ えらいやっちゃ
     time: [144.12, 145.918]
+    duet: true
   - text: I feel no pain
     time: [145.278, 147.153]
   - text: ヨイヨイヨイヨイ
     time: [145.919, 147.803]
+    duet: true
   - text: It's just a game
     time: [147.153, 148.943]
   - text: Now say my name
