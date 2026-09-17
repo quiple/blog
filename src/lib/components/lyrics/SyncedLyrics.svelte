@@ -255,5 +255,7 @@
   .lyric-player :global(.text-muted-foreground) {
     color: var(--muted-foreground);
     opacity: var(--amll-annotation-opacity, 1);
+    /* AMLL already animates the mask alpha every frame. */
+    transition: none;
   }
 </style>
