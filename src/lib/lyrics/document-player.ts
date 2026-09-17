@@ -33,6 +33,13 @@ export class DocumentLyricPlayer extends DomLyricPlayer {
     return this.getElement().getBoundingClientRect().top + window.scrollY + top
   }
 
+  refreshMasks() {
+    for (const group of this.currentLyricGroups) {
+      group.mainLine.updateMaskImageSync()
+      group.bgLine?.updateMaskImageSync()
+    }
+  }
+
   lastLine() {
     return this.currentLyricGroups.at(-1)?.mainLine.getElement()
   }

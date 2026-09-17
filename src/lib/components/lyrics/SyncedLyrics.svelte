@@ -201,6 +201,9 @@
         player.addEventListener('line-click', click)
         changeMotion()
         sync()
+        void document.fonts.ready.then(() => {
+          if (!disposed) player.refreshMasks()
+        })
         cleanup = () => {
           cancelAnimationFrame(frame)
           sizes.disconnect()
