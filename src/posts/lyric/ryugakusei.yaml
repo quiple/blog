@@ -34,10 +34,12 @@ lines:
     time: [48.146, 51.247]
   - text: 不安な日々送る 捨て猫のように
     time: [51.691, 54.879]
+    duet: true
   - text: I never forget you, never babe
     time: [55.913, 58.882]
   - text: 人見知り いつもしてんな もったいない
     time: [59.892, 63.666]
+    duet: true
   - text: You gotta stay (留学生)
     time: [63.671, 65.117]
   - text: Hey, I need you here, babe (部屋20平米)
@@ -54,36 +56,47 @@ lines:
     time: [80.181, 81.798]
   - text: 風呂場なんてない
     time: [82.088, 83.478]
+    duet: true
   - text: かまへんよー
     time: [83.65, 85.61]
   - text: でもシンクはめちゃでかい
     time: [85.878, 87.498]
+    duet: true
   - text: Hey ho
     time: [88.153, 89.668]
   - text: 風呂場なんてない
     time: [90.092, 91.484]
+    duet: true
   - text: かまへんよー
     time: [91.621, 93.655]
   - text: でもシンクはめちゃでかい
     time: [93.918, 95.611]
+    duet: true
   - text: 陽気な愛を拒んだ でも泣き寝入りはもう御免だ
     time: [96.176, 99.641]
+    duet: true
   - text: しょうがない まぁいいかで片付けんな 立ちはだかる言葉の壁
     time: [99.661, 103.197]
+    duet: true
   - text: そもそも何で俺ここにおんねん
     time: [103.732, 105.661]
+    duet: true
   - text: 呑気に退屈な毎日 とても充実してるとは言えんがな
     time: [105.674, 109.16]
+    duet: true
   - text: こんなもん望んでた理想とは違うんだもん
     time: [109.17, 111.966]
+    duet: true
   - text: All I know is that I love you, babe
     time: [112.208, 115.006]
   - text: いいんや ひとりでもやったるがな
     time: [115.662, 118.799]
+    duet: true
   - text: I never forget you, never, babe
     time: [119.9, 122.837]
   - text: でもやっぱ不安だもん 気まじぃな 辛ぇ
     time: [123.672, 127.629]
+    duet: true
   - text: You gotta stay (留学生)
     time: [127.639, 128.869]
   - text: Hey, I need you here, babe (部屋20平米)
@@ -100,18 +113,22 @@ lines:
     time: [144.173, 145.716]
   - text: ハンバーガーめちゃでかい
     time: [145.873, 147.448]
+    duet: true
   - text: 食えへんよー
     time: [147.641, 149.611]
   - text: しかもチップも取るんかい
     time: [149.865, 151.617]
+    duet: true
   - text: Hey ho
     time: [152.173, 153.645]
   - text: ハンバーガーめちゃでかい
     time: [153.908, 155.563]
+    duet: true
   - text: 食えへんよー
     time: [155.654, 157.607]
   - text: しかもチップも取るんかい
     time: [157.851, 160.062]
+    duet: true
   - text: You gotta stay (留学生)
     time: [175.645, 176.781]
   - text: Hey, I need you here babe (部屋20平米)
