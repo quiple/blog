@@ -1,0 +1,550 @@
+# https://music.apple.com/kr/song/1756445817
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1756445817?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1756445817
+# 선택 항목: Apple Music · Imposter · 음절별 가사 · 1756445817
+# 가져온 시각: 2026-09-17T10:43:21.121Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: Imposter
+titleLang: ja
+lang: ja
+spotify: 2rySwdBNpt6sbB8e1CQLFH
+youtube:
+  audio: rDSd7VfEi40
+  mv: hxqcjwIGmsQ
+lines:
+  - words:
+      - text: ふざけ
+        time: [1.539, 2.019]
+      - text: ない
+        time: [2.019, 2.397]
+      - text: で
+        time: [2.397, 2.598]
+      - text: 嘘
+        time: [2.598, 2.902]
+      - text: ばか
+        time: [2.902, 3.348]
+      - text: り
+        time: [3.348, 3.773]
+    time: [1.539, 3.773]
+  - words:
+      - text: 許せない
+        time: [4.472, 5.325]
+      - text: 隠し
+        time: [5.353, 5.957]
+      - text: 事
+        time: [5.957, 6.782]
+    time: [4.472, 6.782]
+  - words:
+      - text: 心
+        time: [7.456, 7.998]
+      - text: ない
+        time: [7.998, 8.54]
+      - text: その
+        time: [8.54, 9.015]
+      - text: 態度
+        time: [9.015, 9.87]
+    time: [7.456, 9.87]
+  - words:
+      - text: "Can't keep up "
+        time: [10.123, 10.751]
+      - text: 'with your '
+        time: [10.751, 11.132]
+      - text: lies
+        time: [11.132, 11.922]
+    time: [10.123, 11.922]
+  - words:
+      - text: くだら
+        time: [13.504, 13.992]
+      - text: ない
+        time: [13.992, 14.655]
+      - text: 嘘
+        time: [14.655, 14.899]
+      - text: ばか
+        time: [14.899, 15.337]
+      - text: り
+        time: [15.337, 16.022]
+    time: [13.504, 16.022]
+  - words:
+      - text: 頼り
+        time: [16.472, 17.013]
+      - text: ない
+        time: [17.013, 17.352]
+      - text: その言葉
+        time: [17.387, 18.318]
+      - text: も
+        time: [18.318, 18.741]
+    time: [16.472, 18.741]
+  - words:
+      - text: つまら
+        time: [19.461, 20.038]
+      - text: 'ない '
+        time: [20.038, 20.355]
+      - text: 見栄
+        time: [20.405, 20.725]
+      - text: プライ
+        time: [20.725, 21.735]
+      - text: ド
+        time: [21.735, 22.093]
+    time: [19.461, 22.093]
+  - words:
+      - text: 'Yeah, '
+        time: [22.069, 22.265]
+      - text: "we're coming "
+        time: [22.265, 22.968]
+      - text: 'for '
+        time: [22.994, 23.208]
+      - text: you
+        time: [23.208, 23.76]
+    time: [22.069, 23.76]
+  - words:
+      - text: 後に回し
+        time: [24.76, 26.796]
+      - text: 'て '
+        time: [26.796, 27.541]
+      - text: 蔑ま
+        time: [27.77, 29.057]
+      - text: 'れ '
+        time: [29.057, 29.478]
+      - text: "You're "
+        time: [29.478, 29.733]
+      - text: tainted
+        time: [29.733, 30.744]
+    time: [24.76, 30.744]
+  - words:
+      - text: 追い
+        time: [30.744, 31.186]
+      - text: 詰め
+        time: [31.186, 32.062]
+      - text: 'られ '
+        time: [32.062, 32.756]
+      - text: 'In your '
+        time: [32.756, 33.521]
+      - text: cor
+        time: [33.521, 33.938]
+      - text: ner
+        time: [33.938, 35.286]
+    time: [30.744, 35.286]
+  - words:
+      - text: 情
+        time: [35.404, 35.744]
+      - text: けない
+        time: [35.744, 36.351]
+      - text: ね
+        time: [36.351, 36.67]
+    time: [35.404, 36.67]
+  - words:
+      - text: 'Turn me in, '
+        time: [37.075, 37.686]
+      - text: 'Turn me in, '
+        time: [37.763, 38.435]
+      - text: 罪
+        time: [38.435, 38.779]
+      - text: 'と罰 '
+        time: [38.779, 39.819]
+      - text: 捻じ曲げる
+        time: [41.44, 42.261]
+      - text: の
+        time: [42.261, 42.715]
+    time: [37.075, 42.715]
+  - words:
+      - text: 'Turn me in, '
+        time: [43.109, 43.716]
+      - text: 'turn me in, '
+        time: [43.811, 44.404]
+      - text: "I'm "
+        time: [44.404, 44.672]
+      - text: an imposter
+        time: [44.672, 46.013]
+    time: [43.109, 46.013]
+  - words:
+      - text: 'Hiding '
+        time: [47.075, 47.608]
+      - text: 'but '
+        time: [47.608, 47.798]
+      - text: "we're "
+        time: [47.798, 47.987]
+      - text: "catchin' "
+        time: [47.987, 48.392]
+      - text: on
+        time: [48.392, 48.909]
+    time: [47.075, 48.909]
+  - words:
+      - text: 'Turn me in, '
+        time: [49.141, 49.774]
+      - text: 'Turn me in, '
+        time: [49.812, 50.429]
+      - text: 罪
+        time: [50.429, 50.781]
+      - text: と
+        time: [50.781, 50.952]
+      - text: '罰 '
+        time: [50.952, 51.969]
+      - text: いつまで
+        time: [53.105, 54.015]
+      - text: 待つの
+        time: [54.015, 54.925]
+    time: [49.141, 54.925]
+  - words:
+      - text: 'Turn me in, '
+        time: [55.109, 55.716]
+      - text: 'turn me in, '
+        time: [55.811, 56.404]
+      - text: "I'm "
+        time: [56.404, 56.672]
+      - text: an imposter
+        time: [56.672, 58.013]
+    time: [55.109, 58.013]
+  - words:
+      - text: 'No, '
+        time: [59.059, 59.448]
+      - text: "I'll "
+        time: [59.448, 59.596]
+      - text: 'never '
+        time: [59.596, 59.955]
+      - text: 'let '
+        time: [59.955, 60.177]
+      - text: it go
+        time: [60.177, 60.759]
+    time: [59.059, 60.759]
+  - words:
+      - text: わ
+        time: [60.759, 60.946]
+      - text: ずかな
+        time: [60.946, 61.465]
+      - text: 良心
+        time: [61.465, 61.996]
+      - text: 咎めます
+        time: [62.03, 62.957]
+      - text: か
+        time: [62.957, 63.59]
+    time: [60.759, 63.59]
+  - words:
+      - text: 栄光の
+        time: [63.755, 64.433]
+      - text: '日々 '
+        time: [64.433, 64.798]
+      - text: 'Can '
+        time: [64.836, 65.044]
+      - text: 'you push it '
+        time: [65.044, 65.621]
+      - text: 'that '
+        time: [65.621, 66.01]
+      - text: far?
+        time: [66.01, 66.49]
+    time: [63.755, 66.49]
+  - words:
+      - text: 哀れ望み
+        time: [66.884, 68.098]
+      - text: 夢と
+        time: [68.098, 68.587]
+      - text: 散っ
+        time: [68.587, 69.009]
+      - text: て
+        time: [69.009, 69.616]
+    time: [66.884, 69.616]
+  - words:
+      - text: '愛を知らずに '
+        time: [69.907, 71.4]
+      - text: "Movin' "
+        time: [71.951, 72.348]
+      - text: on
+        time: [72.348, 72.763]
+    time: [69.907, 72.763]
+  - words:
+      - text: さりげ
+        time: [73.423, 74.088]
+      - text: な
+        time: [74.088, 74.406]
+      - text: く
+        time: [74.406, 74.658]
+      - text: 嘘
+        time: [74.658, 74.882]
+      - text: ばかり
+        time: [74.882, 75.771]
+    time: [73.423, 75.771]
+  - words:
+      - text: だらし
+        time: [76.419, 76.997]
+      - text: ない
+        time: [76.997, 77.311]
+      - text: 隠し
+        time: [77.353, 77.963]
+      - text: 事
+        time: [77.963, 78.783]
+    time: [76.419, 78.783]
+  - words:
+      - text: 不甲斐な
+        time: [79.406, 80.324]
+      - text: い
+        time: [80.324, 80.585]
+      - text: その態
+        time: [80.585, 81.378]
+      - text: 度
+        time: [81.378, 81.854]
+    time: [79.406, 81.854]
+  - words:
+      - text: 'Now your '
+        time: [82.072, 82.43]
+      - text: 'secret is '
+        time: [82.43, 83.283]
+      - text: out
+        time: [83.283, 83.809]
+    time: [82.072, 83.809]
+  - words:
+      - text: 止めど
+        time: [85.427, 86.033]
+      - text: な
+        time: [86.033, 86.366]
+      - text: く
+        time: [86.366, 86.629]
+      - text: 嘘
+        time: [86.629, 86.932]
+      - text: ばか
+        time: [86.932, 87.442]
+      - text: り
+        time: [87.442, 87.758]
+    time: [85.427, 87.758]
+  - words:
+      - text: やるせ
+        time: [88.438, 89.065]
+      - text: ない
+        time: [89.065, 89.302]
+      - text: その
+        time: [89.331, 89.776]
+      - text: 言葉
+        time: [89.776, 90.347]
+      - text: も
+        time: [90.347, 90.782]
+    time: [88.438, 90.782]
+  - words:
+      - text: 譲れ
+        time: [91.422, 92.003]
+      - text: 'ない '
+        time: [92.003, 92.334]
+      - text: 見栄
+        time: [92.402, 92.735]
+      - text: プライ
+        time: [92.735, 93.69]
+      - text: ド
+        time: [93.69, 94.047]
+    time: [91.422, 94.047]
+  - words:
+      - text: 'Yeah, '
+        time: [94.107, 94.465]
+      - text: 'when will '
+        time: [94.465, 95.108]
+      - text: it stop
+        time: [95.108, 96.014]
+    time: [94.107, 96.014]
+  - words:
+      - text: はぐら
+        time: [96.729, 97.667]
+      - text: 'かして '
+        time: [97.667, 98.829]
+      - text: 影踏
+        time: [98.829, 99.889]
+      - text: 'み '
+        time: [99.889, 100.276]
+      - text: 'Yeah '
+        time: [100.276, 100.717]
+      - text: "I'm chased by "
+        time: [100.717, 101.767]
+      - text: shadows
+        time: [101.767, 102.779]
+    time: [96.729, 102.779]
+  - words:
+      - text: 追い
+        time: [102.879, 103.351]
+      - text: 込まれて
+        time: [103.351, 104.736]
+      - text: 'くね '
+        time: [104.736, 105.534]
+      - text: Cor
+        time: [105.578, 105.923]
+      - text: ner
+        time: [105.923, 107.3]
+    time: [102.879, 107.3]
+  - words:
+      - text: 苦し
+        time: [107.384, 107.89]
+      - text: 紛れ
+        time: [107.89, 108.649]
+    time: [107.384, 108.649]
+  - words:
+      - text: 'Turn me in, '
+        time: [109.087, 109.791]
+      - text: 'Turn me in, '
+        time: [109.853, 110.445]
+      - text: 罪
+        time: [110.445, 110.783]
+      - text: と罰
+        time: [110.783, 111.784]
+      - text: のくり返
+        time: [113.472, 114.287]
+      - text: し
+        time: [114.287, 114.753]
+    time: [109.087, 114.753]
+  - words:
+      - text: 'Turn me in, '
+        time: [115.087, 115.694]
+      - text: 'turn me in, '
+        time: [115.789, 116.382]
+      - text: "I'm "
+        time: [116.382, 116.65]
+      - text: an imposter
+        time: [116.65, 117.991]
+    time: [115.087, 117.991]
+  - words:
+      - text: 'Hiding '
+        time: [119.036, 119.569]
+      - text: 'but '
+        time: [119.569, 119.759]
+      - text: "we're "
+        time: [119.759, 119.948]
+      - text: "catchin' "
+        time: [119.948, 120.353]
+      - text: on
+        time: [120.353, 120.87]
+    time: [119.036, 120.87]
+  - words:
+      - text: 'Turn me in, '
+        time: [121.121, 121.709]
+      - text: 'Turn me in, '
+        time: [121.768, 122.414]
+      - text: 罪
+        time: [122.414, 122.763]
+      - text: 'と罰 '
+        time: [122.763, 123.817]
+      - text: いつまで
+        time: [125.113, 125.917]
+      - text: やる
+        time: [125.917, 126.4]
+      - text: の
+        time: [126.4, 126.887]
+    time: [121.121, 126.887]
+  - words:
+      - text: 'Turn me in, '
+        time: [127.071, 127.669]
+      - text: 'turn me in, '
+        time: [127.822, 128.402]
+      - text: "I'm "
+        time: [128.402, 128.661]
+      - text: an imposter
+        time: [128.661, 129.975]
+    time: [127.071, 129.975]
+  - words:
+      - text: 'No, '
+        time: [131.04, 131.434]
+      - text: "I'll "
+        time: [131.434, 131.577]
+      - text: 'never '
+        time: [131.577, 131.936]
+      - text: 'let '
+        time: [131.936, 132.158]
+      - text: it go
+        time: [132.158, 132.74]
+    time: [131.04, 132.74]
+  - words:
+      - text: 傾
+        time: [132.335, 133.033]
+      - text: い
+        time: [133.033, 133.18]
+      - text: た
+        time: [133.18, 133.387]
+      - text: 世界
+        time: [133.387, 133.973]
+      - text: 作り
+        time: [134.008, 134.619]
+      - text: 出し
+        time: [134.619, 135.017]
+      - text: た
+        time: [135.017, 135.473]
+    time: [132.335, 135.473]
+  - words:
+      - text: 後悔
+        time: [135.676, 136.192]
+      - text: の日々
+        time: [136.192, 136.884]
+      - text: 'へ '
+        time: [136.884, 137.088]
+      - text: 'Push '
+        time: [137.205, 137.416]
+      - text: 'it that '
+        time: [137.416, 137.93]
+      - text: far?
+        time: [137.93, 138.608]
+    time: [135.676, 138.608]
+  - words:
+      - text: 人は
+        time: [138.875, 139.404]
+      - text: そこから
+        time: [139.404, 140.197]
+      - text: 変わるの
+        time: [140.197, 140.934]
+      - text: 'さ '
+        time: [140.934, 141.838]
+      - text: 愛を
+        time: [141.913, 142.36]
+      - text: 知っ
+        time: [142.36, 142.862]
+      - text: て
+        time: [142.862, 143.392]
+    time: [138.875, 143.392]
+  - words:
+      - text: 'Turn me in, '
+        time: [157.086, 157.743]
+      - text: 'Turn me in, '
+        time: [157.764, 158.407]
+      - text: 罪
+        time: [158.431, 158.744]
+      - text: と
+        time: [158.744, 158.923]
+      - text: 罰
+        time: [158.923, 159.941]
+    time: [157.086, 159.941]
+  - words:
+      - text: 'Turn me in, '
+        time: [163.096, 163.703]
+      - text: 'turn me in, '
+        time: [163.753, 164.391]
+      - text: "I'm "
+        time: [164.391, 164.659]
+      - text: an imposter
+        time: [164.659, 166]
+    time: [163.096, 166]
+  - words:
+      - text: 'Turn me in, '
+        time: [169.109, 169.766]
+      - text: 'Turn me in, '
+        time: [169.787, 170.43]
+      - text: 罪
+        time: [170.454, 170.767]
+      - text: と
+        time: [170.767, 170.946]
+      - text: 罰
+        time: [170.946, 171.964]
+    time: [169.109, 171.964]
+  - words:
+      - text: 'Turn me in, '
+        time: [175.059, 175.666]
+      - text: 'turn me in, '
+        time: [175.761, 176.394]
+      - text: "I'm "
+        time: [176.394, 176.711]
+      - text: an imposter
+        time: [176.711, 177.963]
+    time: [175.059, 177.963]
+  - words:
+      - text: 'No, '
+        time: [179.099, 179.488]
+      - text: "I'll "
+        time: [179.488, 179.636]
+      - text: 'never '
+        time: [179.636, 179.995]
+      - text: 'let '
+        time: [179.995, 180.146]
+      - text: it go
+        time: [180.146, 180.799]
+    time: [179.099, 180.799]
