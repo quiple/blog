@@ -109,7 +109,7 @@
               if (missing > 0) host.style.minHeight = `${host.offsetHeight + missing}px`
               window.scrollTo({top: target, behavior: 'instant'})
             }
-          } else if (sample.playing && active && active.style.visibility !== 'hidden' && now >= userUntil) {
+          } else if (sample.playing && active && now >= userUntil) {
             const target = player.lineTop(active)
             if (active !== followed || Math.abs(target - followedTop) > 0.5) {
               followed = active
