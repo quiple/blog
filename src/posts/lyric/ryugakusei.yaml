@@ -208,7 +208,7 @@ lines:
     translation: 헤이, 호
     time: [144.173, 145.716]
   - text: ハンバーガーめちゃでかい
-    translation: 햄버거가 엄청 커
+    translation: 햄버거 엄청 커
     time: [145.873, 147.448]
     duet: true
   - text: 食えへんよー
@@ -222,7 +222,7 @@ lines:
     translation: 헤이, 호
     time: [152.173, 153.645]
   - text: ハンバーガーめちゃでかい
-    translation: 햄버거가 엄청 커
+    translation: 햄버거 엄청 커
     time: [153.908, 155.563]
     duet: true
   - text: 食えへんよー
