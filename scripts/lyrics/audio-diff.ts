@@ -35,9 +35,8 @@ export function compareAudio(reference: Float32Array, target: Float32Array) {
     b = envelope(target)
   const length = Math.min(800, Math.floor(Math.min(a.length, b.length) / 3))
   if (length < 200) throw new Error('비교하려면 양쪽에 최소 6초의 오디오가 필요합니다.')
-  const matches: {at: number; offset: number; score: number}[] = []
-  for (const fraction of [0.05, 0.25, 0.45, 0.65, 0.85]) {
-    const start = Math.floor((Math.min(a.length, b.length) - length) * fraction)
+  type Match = {at: number; offset: number; score: number}
+  function match(start: number): Match | undefined {
     let best = -1,
       bestIndex = 0
     const scores: number[] = []
@@ -50,7 +49,7 @@ export function compareAudio(reference: Float32Array, target: Float32Array) {
       }
     }
     const alternative = Math.max(-1, ...scores.filter((_, i) => Math.abs(i - bestIndex) > 50))
-    if (best < 0.65 || best - alternative < 0.025) continue
+    if (best < 0.65 || best - alternative < 0.025) return
     let fineScore = 0,
       fineIndex = bestIndex * hop
     const samples = length * hop
@@ -65,8 +64,26 @@ export function compareAudio(reference: Float32Array, target: Float32Array) {
         fineIndex = i
       }
     }
-    if (fineScore < 0.35) continue
-    matches.push({at: start / 100, offset: (fineIndex - start * hop) / sampleRate, score: fineScore})
+    if (fineScore < 0.35) return
+    return {at: start / 100, offset: (fineIndex - start * hop) / sampleRate, score: fineScore}
+  }
+  function scan(from: number, to: number) {
+    return [0.05, 0.25, 0.45, 0.65, 0.85]
+      .map((fraction) => match(Math.floor(from + (to - from) * fraction)))
+      .filter((value): value is Match => value !== undefined)
+  }
+  let matches = scan(0, Math.min(a.length, b.length) - length)
+  // A long intro leaves some initial probes outside the shared audio. Use a
+  // consensus only to locate that overlap, then independently verify across it.
+  const cluster = matches
+    .map((candidate) => matches.filter((other) => Math.abs(other.offset - candidate.offset) <= 0.025))
+    .sort((left, right) => right.length - left.length)[0]
+  if (cluster && cluster.length >= 2) {
+    const offsets = cluster.map((value) => value.offset).sort((left, right) => left - right)
+    const shift = offsets[Math.floor(offsets.length / 2)] * 100
+    const from = Math.ceil(Math.max(0, -shift))
+    const to = Math.floor(Math.min(a.length, b.length - shift) - length)
+    if (to - from >= length * 2) matches = scan(from, to)
   }
   const ordered = matches.map((match) => match.offset).sort((a, b) => a - b)
   const spread = ordered.length ? ordered.at(-1)! - ordered[0] : Infinity

@@ -1,14 +1,14 @@
 import {test} from 'node:test'
 import assert from 'node:assert/strict'
 import {compareAudio, sampleRate} from './audio-diff.ts'
-function signal(seed: number) {
+function signal(seed: number, seconds = 32) {
   let state = seed
   const random = () => {
     state = (Math.imul(state, 1664525) + 1013904223) | 0
     return (state >>> 0) / 2 ** 32
   }
   let amplitude = 0
-  return Float32Array.from({length: sampleRate * 32}, (_, i) => {
+  return Float32Array.from({length: sampleRate * seconds}, (_, i) => {
     if (i % 400 === 0) amplitude = 0.01 + random() ** 2
     return (random() - 0.5) * amplitude
   })
@@ -32,4 +32,15 @@ void test('does not recommend a single offset when an edit changes alignment', (
   target.set(source.subarray(0, 64000))
   target.set(source.subarray(64000), 68000)
   assert.equal(compareAudio(source, target).offset, undefined)
+})
+
+void test('handles a minute-long unrelated intro with equally truncated downloads in either direction', () => {
+  const song = signal(29, 180)
+  // A repeated outro can falsely match an earlier chorus outside the real overlap.
+  song.set(song.subarray(40000, 100000), sampleRate * 144)
+  const mv = signal(71, 180)
+  const shift = Math.round(60.371 * sampleRate)
+  mv.set(song.subarray(0, mv.length - shift), shift)
+  assert.equal(compareAudio(song, mv).offset, 60.371)
+  assert.equal(compareAudio(mv, song).offset, -60.371)
 })
