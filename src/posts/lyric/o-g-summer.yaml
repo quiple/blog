@@ -14,6 +14,8 @@ spotify: 6WBbXiyOIWLAqlUcNpbzlf
 youtube:
   audio: HGiMKYN2JAU
   mv: 7J9-h4gmJpg
+offsets:
+  youtubeMV: 2.497
 lines:
   - text: To the beach
     time: [16.759, 17.56]

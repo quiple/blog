@@ -14,6 +14,8 @@ spotify: 2rySwdBNpt6sbB8e1CQLFH
 youtube:
   audio: rDSd7VfEi40
   mv: hxqcjwIGmsQ
+offsets:
+  youtubeMV: 2.315
 lines:
   - words:
       - text: ふざけ
