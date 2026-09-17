@@ -95,7 +95,9 @@ lines:
     pronunciation: 아이 위시 디스 하우스 쿠드 필 라이크 홈
     translation: 이 집이 마음 붙일 곳처럼 느껴지면 좋겠어
     time: [67.789, 70.84]
-    background: (Home)
+    background:
+      text: (Home)
+      pronunciation: (홈)
   - text: But someone's taken off the roof
     pronunciation: 벗 섬원즈 테이큰 오프 더 루프
     translation: 그런데 누가 지붕을 떼어 갔어
