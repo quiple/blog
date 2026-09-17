@@ -71,8 +71,23 @@
       paused,
       resumed: rect(backgroundMain).top,
     })
-    set(26500, true)
-    await wait(1400)
+    // Dots stay hidden while rows open their gap; scrolling must not wait for them.
+    const originalScrollTo = window.scrollTo.bind(window)
+    let scrolledWhileDotsHidden = false
+    window.scrollTo = (optionsOrX?: ScrollToOptions | number, y?: number) => {
+      if (typeof optionsOrX === 'number') originalScrollTo(optionsOrX, y ?? 0)
+      else {
+        if (dots().style.visibility === 'hidden') scrolledWhileDotsHidden = true
+        originalScrollTo(optionsOrX)
+      }
+    }
+    try {
+      set(26500, true)
+      await wait(1400)
+    } finally {
+      window.scrollTo = originalScrollTo
+    }
+    assert('interlude scroll starts while gap opens', scrolledWhileDotsHidden)
     const afterGap = main()[6],
       gapTop = rect(afterGap).top,
       precedingTop = rect(main()[5]).top
