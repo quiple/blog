@@ -35,14 +35,14 @@ lines:
     time: [24.906, 25.704]
   - text: Kinda pulled my back working in the Vineyard
     time: [25.704, 27.688]
-  - text: Ooh lala what do I see?
+  - text: Ooh lala, what do I see?
     time: [27.804, 29.421]
   - text: Def Majik with a beer for me
     time: [29.421, 31.322]
   - text: It's definitively magic in the waves we play
     time: [31.322, 33.157]
     duet: true
-  - text: Feeling the way cuz the city's insane
+  - text: Feeling the way ’cuz the city's insane
     time: [33.322, 35.072]
     duet: true
   - text: We take it in stride as the moment flies by
@@ -57,7 +57,7 @@ lines:
   - text: Ocean Grown and so cool
     time: [40.723, 42.407]
     duet: true
-  - text: Recognize the game fool
+  - text: Recognize the game, fool
     time: [42.523, 44.256]
     duet: true
   - text: Aligned into the breathe of the Divine pool
@@ -96,15 +96,15 @@ lines:
     time: [60.377, 62.226]
   - text: Now say my name
     time: [62.126, 64.827]
-  - text: I'ｍ getting ready for the summer
+  - text: I'm getting ready for the summer
     time: [64.986, 67.233]
-  - text: I'ｍ getting ready for the summer
+  - text: I'm getting ready for the summer
     time: [68.6, 70.884]
   - text: It's just the way I move my body
     time: [72.266, 75.548]
   - text: Shake it like nobody
     time: [75.599, 77.184]
-  - text: I'm aging but I'm still young at heart
+  - text: I'm aging, but I'm still young at heart
     time: [77.4, 79.756]
   - text: I'm getting ready for the summer
     time: [79.766, 81.932]
@@ -112,7 +112,7 @@ lines:
     time: [83.4, 85.517]
   - text: 俺はこれしか似合わない
     time: [87.1, 89.433]
-  - text: 3 piece setup
+  - text: 3-piece setup
     time: [89.433, 90.284]
   - text: ビーサン 短パン タンクトップ
     time: [90.566, 92.151]
@@ -120,7 +120,7 @@ lines:
     time: [92.408, 94.41]
   - text: Sandals, socks, towels drop
     time: [110.84, 112.489]
-  - text: I'mma get up early gotta hold my spot
+  - text: I'mma get up early, gotta hold my spot
     time: [112.691, 114.374]
   - text: Truth be known, I've got unusual hobbies
     time: [114.49, 116.356]
@@ -130,9 +130,9 @@ lines:
     time: [118.237, 119.885]
   - text: It's the humpty hump when I'm outa my cave
     time: [119.885, 121.72]
-  - text: The rizz is on yeah feel the groove
+  - text: The rizz is on, yeah, feel the groove
     time: [121.742, 123.528]
-  - text: Like Young MC I gotta bust a move
+  - text: Like Young MC, I gotta bust a move
     time: [123.61, 125.46]
   - text: We definitely Old School
     time: [125.56, 127.293]
@@ -140,7 +140,7 @@ lines:
   - text: Ocean Grown and so cool
     time: [127.476, 129.226]
     duet: true
-  - text: Recognize the game fool
+  - text: Recognize the game, fool
     time: [129.342, 131.043]
     duet: true
   - text: Aligned into the breathe of the Divine pool
@@ -179,19 +179,19 @@ lines:
     time: [147.153, 148.943]
   - text: Now say my name
     time: [148.943, 151.687]
-  - text: I'ｍ getting ready for the summer
+  - text: I'm getting ready for the summer
     time: [151.687, 153.854]
-  - text: I'ｍ getting ready for the summer
+  - text: I'm getting ready for the summer
     time: [155.402, 157.669]
   - text: It's just the way I move my body
     time: [159.165, 162.267]
   - text: Shake it like nobody
     time: [162.365, 163.931]
-  - text: I'm aging but I'm still young at heart
+  - text: I'm aging, but I'm still young at heart
     time: [164.116, 166.455]
-  - text: I'ｍ getting ready for the summer
+  - text: I'm getting ready for the summer
     time: [166.455, 168.641]
-  - text: Crazy sexy おじさま
+  - text: Crazy, sexy おじさま
     time: [170.144, 172.273]
   - text: 冷えたビールを飲みたい 踊りたい
     time: [173.857, 176.989]
@@ -213,9 +213,9 @@ lines:
     time: [192.131, 193.863]
   - text: I gotta wear my headphones
     time: [193.971, 195.847]
-  - text: I'ｍ getting ready for the summer
+  - text: I'm getting ready for the summer
     time: [196.006, 198.305]
-  - text: I'ｍ getting ready for the summer
+  - text: I'm getting ready for the summer
     time: [199.747, 201.944]
   - text: It's just the way I move my body
     time: [203.427, 206.49]

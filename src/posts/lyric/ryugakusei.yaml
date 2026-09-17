@@ -26,7 +26,7 @@ lines:
   - text: Yeah, hold me tight
     time: [33.422, 35.154]
     background: (アホみたい)
-  - text: Yeah, why don't you and me go home tonight
+  - text: Yeah, why don't you and me go home tonight?
     time: [35.916, 39.519]
     background: (ご飯出ない)
   - text: Walked around the world
@@ -38,12 +38,12 @@ lines:
   - text: Gonna be with you, chill down all through the night
     time: [43.916, 48.136]
     background: (冗談通じない)
-  - text: All I know is that I love you babe
+  - text: All I know is that I love you, babe
     time: [48.146, 51.247]
   - text: 不安な日々送る 捨て猫のように
     time: [51.691, 54.879]
     duet: true
-  - text: I never forget you, never babe
+  - text: I never forget you, never, babe
     time: [55.913, 58.882]
   - text: 人見知り いつもしてんな もったいない
     time: [59.892, 63.666]
@@ -66,7 +66,7 @@ lines:
   - text: I messed up, should've known last time I met ya!
     time: [75.942, 78.918]
     background: (味噌汁飲みたいわ めっちゃ)
-  - text: Hey ho
+  - text: Hey, ho
     time: [80.181, 81.798]
   - text: 風呂場なんてない
     time: [82.088, 83.478]
@@ -76,7 +76,7 @@ lines:
   - text: でもシンクはめちゃでかい
     time: [85.878, 87.498]
     duet: true
-  - text: Hey ho
+  - text: Hey, ho
     time: [88.153, 89.668]
   - text: 風呂場なんてない
     time: [90.092, 91.484]
@@ -123,13 +123,13 @@ lines:
   - text: You gotta stay
     time: [135.66, 136.783]
     background: (留学生)
-  - text: Hey, I need you here babe
+  - text: Hey, I need you here, babe
     time: [137.651, 139.171]
     background: (部屋20平米)
   - text: I messed up, should've known last time I met ya!
     time: [139.897, 143.228]
     background: (味噌汁飲みたいわ めっちゃ)
-  - text: Hey ho
+  - text: Hey, ho
     time: [144.173, 145.716]
   - text: ハンバーガーめちゃでかい
     time: [145.873, 147.448]
@@ -139,7 +139,7 @@ lines:
   - text: しかもチップも取るんかい
     time: [149.865, 151.617]
     duet: true
-  - text: Hey ho
+  - text: Hey, ho
     time: [152.173, 153.645]
   - text: ハンバーガーめちゃでかい
     time: [153.908, 155.563]
@@ -152,7 +152,7 @@ lines:
   - text: You gotta stay
     time: [175.645, 176.781]
     background: (留学生)
-  - text: Hey, I need you here babe
+  - text: Hey, I need you here, babe
     time: [177.67, 179.086]
     background: (部屋20平米)
   - text: It's better never talkin' ’cause it's no good
@@ -161,7 +161,7 @@ lines:
   - text: You gotta stay
     time: [183.632, 184.748]
     background: (留学生)
-  - text: Hey, I need you here babe
+  - text: Hey, I need you here, babe
     time: [185.622, 187.04]
     background: (部屋20平米)
   - text: I messed up, should've known last time I met ya!
@@ -170,7 +170,7 @@ lines:
   - text: You gotta stay
     time: [191.612, 192.783]
     background: (留学生)
-  - text: Hey, I need you here babe
+  - text: Hey, I need you here, babe
     time: [193.633, 195.062]
     background: (部屋20平米)
   - text: It's better never talkin' ’cause it's no good
@@ -179,7 +179,7 @@ lines:
   - text: You gotta stay
     time: [199.609, 200.739]
     background: (留学生)
-  - text: Hey, I need you here babe
+  - text: Hey, I need you here, babe
     time: [201.634, 203.026]
     background: (部屋20平米)
   - text: I messed up, should've known last time I met ya!

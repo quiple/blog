@@ -162,7 +162,7 @@ lines:
         time: [44.672, 46.013]
     time: [43.109, 46.013]
   - words:
-      - text: 'Hiding '
+      - text: 'Hiding, '
         time: [47.075, 47.608]
       - text: 'but '
         time: [47.608, 47.798]
@@ -338,7 +338,7 @@ lines:
         time: [94.107, 94.465]
       - text: 'when will '
         time: [94.465, 95.108]
-      - text: it stop
+      - text: it stop?
         time: [95.108, 96.014]
     time: [94.107, 96.014]
   - words:
@@ -350,7 +350,7 @@ lines:
         time: [98.829, 99.889]
       - text: 'み '
         time: [99.889, 100.276]
-      - text: 'Yeah '
+      - text: 'Yeah, '
         time: [100.276, 100.717]
       - text: "I'm chased by "
         time: [100.717, 101.767]
@@ -400,7 +400,7 @@ lines:
         time: [116.65, 117.991]
     time: [115.087, 117.991]
   - words:
-      - text: 'Hiding '
+      - text: 'Hiding, '
         time: [119.036, 119.569]
       - text: 'but '
         time: [119.569, 119.759]

@@ -19,11 +19,11 @@ offsets:
   youtubeAudio: -2.83
   spotify: -2.83
 lines:
-  - text: Un dia veras que lo que pasó acabó,
+  - text: Un día verás que lo que pasó acabó,
     pronunciation: 운 디아 베라스 케 로 케 파소 아카보,
     translation: 언젠가 지난 일은 끝났다는 걸 알게 될 거야
     time: [3.876, 9.307]
-  - text: Y que extraño es vivir
+  - text: Y qué extraño es vivir
     pronunciation: 이 케 엑스트라뇨 에스 비비르
     translation: 그리고 살아간다는 건 참 이상해
     time: [9.307, 14.11]
@@ -59,7 +59,7 @@ lines:
     pronunciation: 세르 카파스, 포데르 볼라르
     translation: 해낼 수 있기를, 날 수 있기를
     time: [34.664, 35.876]
-  - text: Por una noche mas
+  - text: Por una noche más
     pronunciation: 포르 우나 노체 마스
     translation: 하룻밤만 더
     time: [35.876, 37.256]
@@ -135,7 +135,7 @@ lines:
     pronunciation: 케 노 피엔사 아넬라르
     translation: 갈망할 생각조차 하지 않는
     time: [90, 92.01]
-  - text: Si en verdad tu crees en mi,
+  - text: Si en verdad tú crees en mí,
     pronunciation: 시 엔 베르다드 투 크레스 엔 미,
     translation: 네가 정말 나를 믿는다면
     time: [92.01, 94.469]
@@ -143,7 +143,7 @@ lines:
     pronunciation: 테 엔텐데레 시 데하스 데 멘티르
     translation: 거짓말을 멈추면 널 이해할게
     time: [94.469, 97.202]
-  - text: Esta locura acabará con mi
+  - text: Esta locura acabará con mí
     pronunciation: 에스타 로쿠라 아카바라 콘 미
     translation: 이 광기가 나를 끝장낼 거야
     time: [97.202, 99.966]
@@ -159,7 +159,7 @@ lines:
     pronunciation: 이 루차레 테나스 포르 로 케 소이, 미 아모르!
     translation: 그리고 나 자신을 위해 끈질기게 싸울 거야, 내 사랑!
     time: [105.368, 108.568]
-  - text: Brillare más que la osa menor
+  - text: Brillaré más que la osa menor
     pronunciation: 브리야레 마스 케 라 오사 메노르
     translation: 작은곰자리보다 더 밝게 빛날 거야
     time: [108.568, 110.896]
@@ -215,7 +215,7 @@ lines:
     pronunciation: 레솔베르, 엔텐데르 로 케 아이 포르 사베르
     translation: 풀어내고, 알아야 할 것들을 이해하고 싶어
     time: [198.769, 201.261]
-  - text: Si en verdad tu crees en mi,
+  - text: Si en verdad tú crees en mí,
     pronunciation: 시 엔 베르다드 투 크레스 엔 미,
     translation: 네가 정말 나를 믿는다면
     time: [201.85, 204]
@@ -223,7 +223,7 @@ lines:
     pronunciation: 테 엔텐데레 시 데하스 데 멘티르
     translation: 거짓말을 멈추면 널 이해할게
     time: [204, 206.858]
-  - text: Esta locura acabará con mi
+  - text: Esta locura acabará con mí
     pronunciation: 에스타 로쿠라 아카바라 콘 미
     translation: 이 광기가 나를 끝장낼 거야
     time: [206.858, 209.566]
@@ -239,7 +239,7 @@ lines:
     pronunciation: 이 루차레 테나스 포르 로 케 소이, 미 아모르!
     translation: 그리고 나 자신을 위해 끈질기게 싸울 거야, 내 사랑!
     time: [215.173, 218.363]
-  - text: Brillare más que la osa menor
+  - text: Brillaré más que la osa menor
     pronunciation: 브리야레 마스 케 라 오사 메노르
     translation: 작은곰자리보다 더 밝게 빛날 거야
     time: [218.363, 220.789]
