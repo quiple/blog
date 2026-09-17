@@ -1,0 +1,190 @@
+# https://music.apple.com/kr/song/1756445815
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1756445815?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1756445815
+# 선택 항목: Apple Music · O.G. Summer · 음절별 가사 · 1756445815
+# 가져온 시각: 2026-09-17T10:48:14.499Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: O.G. Summer
+titleLang: ja
+lang: ja
+spotify: 6WBbXiyOIWLAqlUcNpbzlf
+youtube:
+  audio: HGiMKYN2JAU
+  mv: 7J9-h4gmJpg
+lines:
+  - text: To the beach
+    time: [16.759, 17.56]
+  - text: Music on
+    time: [17.642, 18.375]
+  - text: Brand new shades from Amazon
+    time: [18.576, 20.225]
+  - text: Been working out for about a week
+    time: [20.225, 22.039]
+  - text: Takes time to keep this sexy physique
+    time: [22.039, 24.104]
+  - text: Throw me the ball
+    time: [24.104, 24.906]
+  - text: But not too hard
+    time: [24.906, 25.704]
+  - text: Kinda pulled my back working in the Vineyard
+    time: [25.704, 27.688]
+  - text: Ooh lala what do I see?
+    time: [27.804, 29.421]
+  - text: Def Majik with a beer for me
+    time: [29.421, 31.322]
+  - text: It's definitively magic in the waves we play
+    time: [31.322, 33.157]
+  - text: Feeling the way cuz the city's insane
+    time: [33.322, 35.072]
+  - text: We take it in stride as the moment flies by
+    time: [35.072, 36.889]
+  - text: Shooting the moon, soaring high, red eye
+    time: [37.028, 38.655]
+  - text: We definitely Old School
+    time: [38.755, 40.604]
+  - text: Ocean Grown and so cool
+    time: [40.723, 42.407]
+  - text: Recognize the game fool
+    time: [42.523, 44.256]
+  - text: Aligned into the breathe of the Divine pool
+    time: [44.272, 46.231]
+  - text: Breakdown to the beat
+    time: [46.231, 47.78]
+  - text: まさにアリとキリギリスの
+    time: [47.78, 49.029]
+  - text: シンフォニー
+    time: [49.031, 49.747]
+  - text: Get down to the sea
+    time: [49.98, 51.43]
+  - text: 次の夏までに脱げる体に
+    time: [51.43, 53.448]
+  - text: 踊るアホに見るアホ
+    time: [53.448, 55.28]
+  - text: 同じアホなら踊らにゃソンソン
+    time: [55.18, 57.131]
+  - text: えらいやっちゃ えらいやっちゃ
+    time: [57.332, 59.164]
+  - text: I feel no pain
+    time: [58.492, 60.293]
+  - text: ヨイヨイヨイヨイ
+    time: [59.181, 61.114]
+  - text: It's just a game
+    time: [60.377, 62.226]
+  - text: Now say my name
+    time: [62.126, 64.827]
+  - text: I'ｍ getting ready for the summer
+    time: [64.986, 67.233]
+  - text: I'ｍ getting ready for the summer
+    time: [68.6, 70.884]
+  - text: It's just the way I move my body
+    time: [72.266, 75.548]
+  - text: Shake it like nobody
+    time: [75.599, 77.184]
+  - text: I'm aging but I'm still young at heart
+    time: [77.4, 79.756]
+  - text: I'm getting ready for the summer
+    time: [79.766, 81.932]
+  - text: 裸の王様
+    time: [83.4, 85.517]
+  - text: 俺はこれしか似合わない
+    time: [87.1, 89.433]
+  - text: 3 piece setup
+    time: [89.433, 90.284]
+  - text: ビーサン 短パン タンクトップ
+    time: [90.566, 92.151]
+  - text: 誰もいない海
+    time: [92.408, 94.41]
+  - text: Sandals, socks, towels drop
+    time: [110.84, 112.489]
+  - text: I'mma get up early gotta hold my spot
+    time: [112.691, 114.374]
+  - text: Truth be known, I've got unusual hobbies
+    time: [114.49, 116.356]
+  - text: Metal detectors and a thing for beach hockey
+    time: [116.452, 118.236]
+  - text: Neon shades and well behaved
+    time: [118.237, 119.885]
+  - text: It's the humpty hump when I'm outa my cave
+    time: [119.885, 121.72]
+  - text: The rizz is on yeah feel the groove
+    time: [121.742, 123.528]
+  - text: Like Young MC I gotta bust a move
+    time: [123.61, 125.46]
+  - text: We definitely Old School
+    time: [125.56, 127.293]
+  - text: Ocean Grown and so cool
+    time: [127.476, 129.226]
+  - text: Recognize the game fool
+    time: [129.342, 131.043]
+  - text: Aligned into the breathe of the Divine pool
+    time: [131.059, 133.061]
+  - text: Breakdown to the beat
+    time: [133.061, 134.495]
+  - text: まさにアリとキリギリスの
+    time: [134.495, 135.799]
+  - text: シンフォニー
+    time: [135.799, 136.62]
+  - text: Get down to the sea
+    time: [136.75, 138.218]
+  - text: 次の夏までに脱げる体に
+    time: [138.218, 140.217]
+  - text: 踊るアホに見るアホ
+    time: [140.217, 141.936]
+  - text: 同じアホなら踊らにゃソンソン
+    time: [141.936, 143.902]
+  - text: えらいやっちゃ えらいやっちゃ
+    time: [144.12, 145.918]
+  - text: I feel no pain
+    time: [145.278, 147.153]
+  - text: ヨイヨイヨイヨイ
+    time: [145.919, 147.803]
+  - text: It's just a game
+    time: [147.153, 148.943]
+  - text: Now say my name
+    time: [148.943, 151.687]
+  - text: I'ｍ getting ready for the summer
+    time: [151.687, 153.854]
+  - text: I'ｍ getting ready for the summer
+    time: [155.402, 157.669]
+  - text: It's just the way I move my body
+    time: [159.165, 162.267]
+  - text: Shake it like nobody
+    time: [162.365, 163.931]
+  - text: I'm aging but I'm still young at heart
+    time: [164.116, 166.455]
+  - text: I'ｍ getting ready for the summer
+    time: [166.455, 168.641]
+  - text: Crazy sexy おじさま
+    time: [170.144, 172.273]
+  - text: 冷えたビールを飲みたい 踊りたい
+    time: [173.857, 176.989]
+  - text: 奥さんから着信 帰ります
+    time: [177.105, 178.974]
+  - text: ビーサン履いたシンデレラ
+    time: [178.989, 181.157]
+  - text: Dance tonight
+    time: [182.872, 184.722]
+  - text: Groove tonight
+    time: [184.738, 186.474]
+  - text: Feel the vibe
+    time: [186.59, 189.855]
+  - text: I'm feeling the moment
+    time: [188.173, 190.279]
+  - text: Dance tonight
+    time: [190.279, 192.032]
+  - text: Groove tonight
+    time: [192.131, 193.863]
+  - text: I gotta wear my headphones
+    time: [193.971, 195.847]
+  - text: I'ｍ getting ready for the summer
+    time: [196.006, 198.305]
+  - text: I'ｍ getting ready for the summer
+    time: [199.747, 201.944]
+  - text: It's just the way I move my body
+    time: [203.427, 206.49]
+  - text: Shake it like nobody
+    time: [206.661, 208.244]
+  - text: こたつで夏を待つ
+    time: [208.472, 210.71]
