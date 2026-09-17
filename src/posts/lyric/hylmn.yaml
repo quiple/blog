@@ -22,21 +22,21 @@ lines:
     time: [27.791, 31.16]
   - text: Lookin' like nothing back in gym class
     time: [31.182, 34.414]
-  - text: Now that I've been gone I'm feelin' so good
+  - text: Now that I've been gone, I'm feelin' so good
     time: [34.414, 38.302]
   - text: If you could see me now
     time: [39.76, 41.265]
-  - text: I don't need to prove myself gotta play it cool
+  - text: I don't need to prove myself, gotta play it cool
     time: [41.265, 46.261]
   - text: How ya like me now?
     time: [46.763, 48.209]
   - text: I know I look so cool
     time: [49.997, 52.501]
-  - text: You wanna get me get me
+  - text: You wanna get me, get me
     time: [53.43, 54.982]
   - text: You better step in line
     time: [56.882, 58.451]
-  - text: How ya like me now
+  - text: How ya like me now?
     time: [60.483, 61.921]
   - text: You know I look so good
     time: [63.747, 65.828]
@@ -44,15 +44,15 @@ lines:
     time: [67.137, 68.835]
   - text: I bet you wish you could
     time: [70.646, 72.861]
-  - text: How ya like me now
+  - text: How ya like me now?
     time: [74.21, 75.565]
-  - text: Oh, No matter if it rains or shines
+  - text: Oh, no matter if it rains or shines
     time: [75.565, 79.661]
-  - text: Cuz I'll be by your side
+  - text: "’Cuz I'll be by your side"
     time: [79.661, 82.64]
   - text: No worries about tomorrow
     time: [82.851, 86.048]
-  - text: Cuz I'll be looking fine
+  - text: "’Cuz I'll be looking fine"
     time: [86.058, 88.244]
   - text: Now here's another story
     time: [96.224, 98.015]
@@ -60,25 +60,25 @@ lines:
     time: [98.035, 99.683]
   - text: That dirty puppy brought in all hell
     time: [99.743, 102.741]
-  - text: He wanted this and that they gave him this and that
+  - text: He wanted this and that, they gave him this and that
     time: [103.201, 106.568]
   - text: But then he started living too well
     time: [106.568, 109.458]
-  - text: Now that I've been gone I'm feelin' so good
+  - text: Now that I've been gone, I'm feelin' so good
     time: [109.814, 113.893]
   - text: If you could see me now
     time: [115.188, 116.648]
-  - text: I don't need to prove myself gotta I play it cool
+  - text: I don't need to prove myself, gotta I play it cool
     time: [116.648, 121.838]
   - text: How ya like me now?
     time: [122.129, 123.682]
   - text: I know I look so cool
     time: [125.496, 127.915]
-  - text: You wanna get me get me
+  - text: You wanna get me, get me
     time: [128.836, 130.382]
   - text: You better step in line
     time: [132.262, 133.844]
-  - text: How ya like me now
+  - text: How ya like me now?
     time: [135.924, 137.314]
   - text: You know I look so good
     time: [139.172, 141.271]
@@ -86,9 +86,9 @@ lines:
     time: [142.551, 144.272]
   - text: I bet you wish you could
     time: [146.04, 148.286]
-  - text: How ya like me now
+  - text: How ya like me now?
     time: [149.655, 151.067]
-  - text: How ya like me now
+  - text: How ya like me now?
     time: [166.768, 168.239]
   - text: You know I look so good
     time: [170.01, 172.128]
@@ -96,15 +96,15 @@ lines:
     time: [173.43, 175.149]
   - text: I bet you wish you could
     time: [176.867, 179.15]
-  - text: How ya like me now
+  - text: How ya like me now?
     time: [180.56, 181.853]
-  - text: Oh, No matter if it rains or shines
+  - text: Oh, no matter if it rains or shines
     time: [181.853, 185.924]
-  - text: Cuz I'll be by your side
+  - text: "’Cuz I'll be by your side"
     time: [185.924, 188.974]
   - text: No worries about tomorrow
     time: [189.065, 192.363]
-  - text: Cuz I'll be looking fine
+  - text: "’Cuz I'll be looking fine"
     time: [192.363, 194.637]
-  - text: Yes I'll be looking fine
+  - text: Yes, I'll be looking fine
     time: [195.756, 198.193]
