@@ -215,7 +215,7 @@ lines:
     translation: 다 못 먹겠어
     time: [147.641, 149.611]
   - text: しかもチップも取るんかい
-    translation: 게다가 팁까지 받는 거야?
+    translation: 게다가 팁까지 받는 거냐
     time: [149.865, 151.617]
     duet: true
   - text: Hey, ho
@@ -229,7 +229,7 @@ lines:
     translation: 다 못 먹겠어
     time: [155.654, 157.607]
   - text: しかもチップも取るんかい
-    translation: 게다가 팁까지 받는 거야?
+    translation: 게다가 팁까지 받는 거냐
     time: [157.851, 160.062]
     duet: true
   - text: You gotta stay
