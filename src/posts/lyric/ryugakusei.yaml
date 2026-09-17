@@ -18,18 +18,24 @@ youtube:
   audio: 0fcQXtB74Ks
   mv: lvEVP7NPklU
 lines:
-  - text: You're out a sight (うるさい)
+  - text: You're out a sight
     time: [31.37, 33.335]
-  - text: Yeah, hold me tight (アホみたい)
+    background: (うるさい)
+  - text: Yeah, hold me tight
     time: [33.422, 35.154]
-  - text: Yeah, why don't you and me go home tonight (ご飯出ない)
+    background: (アホみたい)
+  - text: Yeah, why don't you and me go home tonight
     time: [35.916, 39.519]
-  - text: Walked around the world (わからんわ)
+    background: (ご飯出ない)
+  - text: Walked around the world
     time: [39.577, 41.577]
-  - text: And now I gotcha (えらいこっちゃ)
+    background: (わからんわ)
+  - text: And now I gotcha
     time: [41.587, 43.707]
-  - text: Gonna be with you, chill down all through the night (冗談通じない)
+    background: (えらいこっちゃ)
+  - text: Gonna be with you, chill down all through the night
     time: [43.916, 48.136]
+    background: (冗談通じない)
   - text: All I know is that I love you babe
     time: [48.146, 51.247]
   - text: 不安な日々送る 捨て猫のように
@@ -40,18 +46,24 @@ lines:
   - text: 人見知り いつもしてんな もったいない
     time: [59.892, 63.666]
     duet: true
-  - text: You gotta stay (留学生)
+  - text: You gotta stay
     time: [63.671, 65.117]
-  - text: Hey, I need you here, babe (部屋20平米)
+    background: (留学生)
+  - text: Hey, I need you here, babe
     time: [65.625, 67.166]
-  - text: It's better never talkin' 'cause it's no good (ベッドに寝るとき靴脱ぐ)
+    background: (部屋20平米)
+  - text: It's better never talkin' 'cause it's no good
     time: [67.906, 70.835]
-  - text: You gotta stay (留学生)
+    background: (ベッドに寝るとき靴脱ぐ)
+  - text: You gotta stay
     time: [71.664, 72.846]
-  - text: Hey, I need you here, babe (部屋20平米)
+    background: (留学生)
+  - text: Hey, I need you here, babe
     time: [73.626, 75.256]
-  - text: I messed up, should've known last time I met ya! (味噌汁飲みたいわ めっちゃ)
+    background: (部屋20平米)
+  - text: I messed up, should've known last time I met ya!
     time: [75.942, 78.918]
+    background: (味噌汁飲みたいわ めっちゃ)
   - text: Hey ho
     time: [80.181, 81.798]
   - text: 風呂場なんてない
@@ -97,18 +109,24 @@ lines:
   - text: でもやっぱ不安だもん 気まじぃな 辛ぇ
     time: [123.672, 127.629]
     duet: true
-  - text: You gotta stay (留学生)
+  - text: You gotta stay
     time: [127.639, 128.869]
-  - text: Hey, I need you here, babe (部屋20平米)
+    background: (留学生)
+  - text: Hey, I need you here, babe
     time: [129.635, 131.117]
-  - text: It's better never talkin' 'cause it's no good (ベッドに寝るとき靴脱ぐ)
+    background: (部屋20平米)
+  - text: It's better never talkin' 'cause it's no good
     time: [131.915, 134.884]
-  - text: You gotta stay (留学生)
+    background: (ベッドに寝るとき靴脱ぐ)
+  - text: You gotta stay
     time: [135.66, 136.783]
-  - text: Hey, I need you here babe (部屋20平米)
+    background: (留学生)
+  - text: Hey, I need you here babe
     time: [137.651, 139.171]
-  - text: I messed up, should've known last time I met ya! (味噌汁飲みたいわ めっちゃ)
+    background: (部屋20平米)
+  - text: I messed up, should've known last time I met ya!
     time: [139.897, 143.228]
+    background: (味噌汁飲みたいわ めっちゃ)
   - text: Hey ho
     time: [144.173, 145.716]
   - text: ハンバーガーめちゃでかい
@@ -129,27 +147,39 @@ lines:
   - text: しかもチップも取るんかい
     time: [157.851, 160.062]
     duet: true
-  - text: You gotta stay (留学生)
+  - text: You gotta stay
     time: [175.645, 176.781]
-  - text: Hey, I need you here babe (部屋20平米)
+    background: (留学生)
+  - text: Hey, I need you here babe
     time: [177.67, 179.086]
-  - text: It's better never talkin' 'cause it's no good (ベッドに寝るとき靴脱ぐ)
+    background: (部屋20平米)
+  - text: It's better never talkin' 'cause it's no good
     time: [179.899, 182.776]
-  - text: You gotta stay (留学生)
+    background: (ベッドに寝るとき靴脱ぐ)
+  - text: You gotta stay
     time: [183.632, 184.748]
-  - text: Hey, I need you here babe (部屋20平米)
+    background: (留学生)
+  - text: Hey, I need you here babe
     time: [185.622, 187.04]
-  - text: I messed up, should've known last time I met ya! (味噌汁飲みたいわ めっちゃ)
+    background: (部屋20平米)
+  - text: I messed up, should've known last time I met ya!
     time: [187.89, 190.926]
-  - text: You gotta stay (留学生)
+    background: (味噌汁飲みたいわ めっちゃ)
+  - text: You gotta stay
     time: [191.612, 192.783]
-  - text: Hey, I need you here babe (部屋20平米)
+    background: (留学生)
+  - text: Hey, I need you here babe
     time: [193.633, 195.062]
-  - text: It's better never talkin' 'cause it's no good (ベッドに寝るとき靴脱ぐ)
+    background: (部屋20平米)
+  - text: It's better never talkin' 'cause it's no good
     time: [195.915, 198.76]
-  - text: You gotta stay (留学生)
+    background: (ベッドに寝るとき靴脱ぐ)
+  - text: You gotta stay
     time: [199.609, 200.739]
-  - text: Hey, I need you here babe (部屋20平米)
+    background: (留学生)
+  - text: Hey, I need you here babe
     time: [201.634, 203.026]
-  - text: I messed up, should've known last time I met ya! (味噌汁飲みたいわ めっちゃ)
+    background: (部屋20平米)
+  - text: I messed up, should've known last time I met ya!
     time: [203.874, 206.969]
+    background: (味噌汁飲みたいわ めっちゃ)
