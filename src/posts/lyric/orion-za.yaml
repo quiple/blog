@@ -16,8 +16,7 @@ youtube:
   audio: yRKjj4ISn4g
   mv: 06-iSV6nZ1E
 offsets:
-  youtubeAudio: 7.371
-  spotify: 7.371
+  youtubeMV: 7.371
 lines:
   - text: 穢れさえ武器に明朝体を空へ投げたら
     time: [0.46, 15.586]
