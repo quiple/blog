@@ -27,7 +27,7 @@ lines:
     pronunciation: 와카리킷타코토사
     time: [35.5, 41.27]
   - text: 生まれたくて生まれたんじゃないと
-    pronunciation: 우마레타쿠테우마레탄자나이토
+    pronunciation: 우마레타쿠테우마레탄자네토
     time: [41.27, 43.95]
   - text: 拗ねて世界に唾を吐いて
     pronunciation: 스네테세카이니츠바오하이테
@@ -54,34 +54,34 @@ lines:
     pronunciation: 톤네루오누케킷타토
     time: [75.74, 77.71]
   - text: 思ったらそこは真夜中だった
-    pronunciation: 오못타라소코하마요나카닷타
+    pronunciation: 오못타라소코와마요나카닷타
     time: [77.71, 80.61]
   - text: 一切合切、終わりか？
     pronunciation: 잇사이갓사이, 오와리카?
     time: [80.61, 83.15]
   - text: 終わりでも何でも構わない
-    pronunciation: 오와리데모나니데모카마와나이
+    pronunciation: 오와리데모난데모카마와나이
     time: [83.15, 86.86]
   - text: 沸点は掌に
-    pronunciation: 훗텐하타나고코로니
+    pronunciation: 훗텐와타나고코로니
     time: [86.86, 89.62]
   - text: 沸点は首筋に
-    pronunciation: 훗텐하쿠비스지니
+    pronunciation: 훗텐와쿠비스지니
     time: [89.62, 92.31]
   - text: 沸点は足の裏
-    pronunciation: 훗텐하아시노우라
+    pronunciation: 훗텐와아시노우라
     time: [92.31, 95.68]
   - text: それだけがある
     pronunciation: 소레다케가아루
     time: [95.68, 97.99]
   - text: 沸点は青い空
-    pronunciation: 훗텐하아오이소라
+    pronunciation: 훗텐와아오이소라
     time: [97.99, 100.82]
   - text: 沸点は白い雲
-    pronunciation: 훗텐하시로이쿠모
+    pronunciation: 훗텐와시로이쿠모
     time: [100.82, 103.62]
   - text: 沸点はビルの影
-    pronunciation: 훗텐하비루노카게
+    pronunciation: 훗텐와비루노카게
     time: [103.62, 106.52]
   - text: 汗に塗れている
     pronunciation: 아세니마미레테이루
@@ -123,25 +123,25 @@ lines:
     pronunciation: 미치난테도데모카마와나이
     time: [185.8, 189.23]
   - text: 沸点は掌に
-    pronunciation: 훗텐하타나고코로니
+    pronunciation: 훗텐와타나고코로니
     time: [189.23, 191.97]
   - text: 沸点は首筋に
-    pronunciation: 훗텐하쿠비스지니
+    pronunciation: 훗텐와쿠비스지니
     time: [191.97, 194.92]
   - text: 沸点は足の裏
-    pronunciation: 훗텐하아시노우라
+    pronunciation: 훗텐와아시노우라
     time: [194.92, 198.24]
   - text: それだけがある
     pronunciation: 소레다케가아루
     time: [198.24, 200.33]
   - text: 沸点は青い空
-    pronunciation: 훗텐하아오이소라
+    pronunciation: 훗텐와아오이소라
     time: [200.33, 203.22]
   - text: 沸点は白い雲
-    pronunciation: 훗텐하시로이쿠모
+    pronunciation: 훗텐와시로이쿠모
     time: [203.22, 206.2]
   - text: 沸点はビルの影
-    pronunciation: 훗텐하비루노카게
+    pronunciation: 훗텐와비루노카게
     time: [206.2, 209.11]
   - text: 汗に塗れている
     pronunciation: 아세니마미레테이루
