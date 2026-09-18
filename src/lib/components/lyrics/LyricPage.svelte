@@ -171,33 +171,31 @@
   </aside>
 
   <section class="min-w-0 pb-16" aria-label="가사">
-    {#if canSync || pronunciations.length > 1}
-      <div class="mb-3 flex min-h-7 flex-wrap items-center justify-end gap-3">
-        {#if pronunciations.length > 1}
-          <label class="text-sm text-muted-foreground"
-            >발음
-            <select
-              class="ml-1 rounded-md border bg-background p-1 text-foreground"
-              value={pronunciation || pronunciations[0]}
-              onchange={(event) => (pronunciation = event.currentTarget.value)}
-            >
-              {#each pronunciations as language}<option value={language}>{language}</option>{/each}
-            </select>
-          </label>
-        {/if}
-        {#if canSync}
-          <Button
-            size="sm"
-            variant="outline"
-            class="z-20 bg-background! hover:bg-muted! md:fixed md:top-21 dark:hover:bg-[#181819]!"
-            aria-pressed={fullText}
-            onclick={() => (fullText = !fullText)}
+    <div class="mb-3 flex min-h-7 flex-wrap items-center justify-end gap-3">
+      {#if pronunciations.length > 1}
+        <label class="text-sm text-muted-foreground"
+          >발음
+          <select
+            class="ml-1 rounded-md border bg-background p-1 text-foreground"
+            value={pronunciation || pronunciations[0]}
+            onchange={(event) => (pronunciation = event.currentTarget.value)}
           >
-            {fullText ? '동기화 보기' : '전체 가사 보기'}
-          </Button>
-        {/if}
-      </div>
-    {/if}
+            {#each pronunciations as language}<option value={language}>{language}</option>{/each}
+          </select>
+        </label>
+      {/if}
+      {#if canSync}
+        <Button
+          size="sm"
+          variant="outline"
+          class="z-20 bg-background! hover:bg-muted! md:fixed md:top-21 dark:hover:bg-[#181819]!"
+          aria-pressed={fullText}
+          onclick={() => (fullText = !fullText)}
+        >
+          {fullText ? '동기화 보기' : '전체 가사 보기'}
+        </Button>
+      {/if}
+    </div>
     {#if failed}<p class="mb-4 text-sm text-muted-foreground" role="status">
         동기화 보기를 불러오지 못해 전체 가사를 표시합니다.
       </p>{/if}
