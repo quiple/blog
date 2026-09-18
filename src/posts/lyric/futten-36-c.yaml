@@ -14,6 +14,8 @@ spotify: 3ycK3HVXqDSyo11xgHtiv7
 youtube:
   audio: vU9XzTT8_Fk
   mv: adl9WR5aIOI
+offsets:
+  youtubeMV: 6.272
 lines:
   - text: 後手にバタンとドアを閉めて
     time: [30.01, 32.95]
