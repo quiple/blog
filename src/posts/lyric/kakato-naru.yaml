@@ -32,9 +32,15 @@ lines:
     pronunciation: 유케바카에라자루쿠모가유캬
   - text: 俺は口笛を吹きまくるさ
     pronunciation: 오레와쿠치부에오후키마쿠루사
-  - text: 解答は知らない
+  - words:
+      - text: 解答
+        ruby: こたえ
+      - text: は知らない
     pronunciation: 코타에와시라네
-  - text: 教典はいらない
+  - words:
+      - text: 教典
+        ruby: おしえ
+      - text: はいらない
     pronunciation: 오시에와이라네
   - text: 歩く踵がそれを識るだろう
     pronunciation: 아루쿠카카토가소레오시루다로
@@ -66,9 +72,15 @@ lines:
     pronunciation: 유케바카에라자루쿠모가유캬
   - text: 俺は口笛を吹きまくるさ
     pronunciation: 오레와쿠치부에오후키마쿠루사
-  - text: 解答は知らない
+  - words:
+      - text: 解答
+        ruby: こたえ
+      - text: は知らない
     pronunciation: 코타에와시라네
-  - text: 教典はいらない
+  - words:
+      - text: 教典
+        ruby: おしえ
+      - text: はいらない
     pronunciation: 오시에와이라네
   - text: 歩く踵がそれを識るだろう
     pronunciation: 아루쿠카카토가소레오시루다로
