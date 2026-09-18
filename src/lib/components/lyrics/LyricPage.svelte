@@ -191,8 +191,10 @@
             variant="outline"
             class="z-20 bg-background! hover:bg-muted! md:fixed md:top-21 dark:hover:bg-[#181819]!"
             aria-pressed={fullText}
-            onclick={() => (fullText = !fullText)}>{fullText ? '동기화 보기' : '전체 가사 보기'}</Button
+            onclick={() => (fullText = !fullText)}
           >
+            {fullText ? '동기화 보기' : '전체 가사 보기'}
+          </Button>
         {/if}
       </div>
     {/if}
