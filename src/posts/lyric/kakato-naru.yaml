@@ -60,9 +60,15 @@ lines:
     pronunciation: 소레오다레히토리타즈네도모
   - text: 血巡り季巡り撃ち放つさ
     pronunciation: 치메구리키메구리우치하나츠사
-  - text: 道程など知らない
+  - words:
+      - text: 道程
+        ruby: みち
+      - text: など知らない
     pronunciation: 미치나도시라네
-  - text: 標識はいらない
+  - words:
+      - text: 標識
+        ruby: しるべ
+      - text: はいらない
     pronunciation: 시루베와이라네
   - text: 微笑を湛えて闇と遊べば
     pronunciation: 비쇼오타타에테야미토아소베바
