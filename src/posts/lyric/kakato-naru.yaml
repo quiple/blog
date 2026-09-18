@@ -14,33 +14,63 @@ spotify: 7aETU8v4vh76wmxZHu8z8q
 youtube:
   audio: vF-nmZHevcg
 lines:
-  - 窓を叩く空は
-  - 割れる様に笑うよ
-  - 汚れ眼鏡が青く染まれば
-  - 足を鳴らして俺も笑うよ
-  - どうもこうも無い
-  - 只、それだけだ
-  - 一握の生命のカケラだ
-  - 行けば帰らざる雲が行きゃ
-  - 俺は口笛を吹きまくるさ
-  - 解答は知らない
-  - 教典はいらない
-  - 歩く踵がそれを識るだろう
-  - 朝の地鳴りが告げるだろう
-  - 怠く横たわる川面の憂鬱を
-  - 赤く煮え立つ空が染めれば
-  - 俺は涙をそこに捨てるよ
-  - 日も暮れた帰ろうかな
-  - 午後六時 全てが遠いが
-  - それを誰一人尋ねども
-  - 血巡り季巡り撃ち放つさ
-  - 道程など知らない
-  - 標識はいらない
-  - 微笑を湛えて闇と遊べば
-  - 誰ぞ知り得ぬ灯も点る
-  - 行けば帰らざる雲が行きゃ
-  - 俺は口笛を吹きまくるさ
-  - 解答は知らない
-  - 教典はいらない
-  - 歩く踵がそれを識るだろう
-  - 朝の地鳴りが告げるだろう
+  - text: 窓を叩く空は
+    pronunciation: 마도오타타쿠소라하
+  - text: 割れる様に笑うよ
+    pronunciation: 와레루요니와라우요
+  - text: 汚れ眼鏡が青く染まれば
+    pronunciation: 요고레메가네가아오쿠소마레바
+  - text: 足を鳴らして俺も笑うよ
+    pronunciation: 아시오나라시테오레모와라우요
+  - text: どうもこうも無い
+    pronunciation: 도모코모나이
+  - text: 只、それだけだ
+    pronunciation: 타다, 소레다케다
+  - text: 一握の生命のカケラだ
+    pronunciation: 이치니기노세이메이노카케라다
+  - text: 行けば帰らざる雲が行きゃ
+    pronunciation: 이케바카에라자루쿠모가이캬
+  - text: 俺は口笛を吹きまくるさ
+    pronunciation: 오레하쿠치부에오후키마쿠루사
+  - text: 解答は知らない
+    pronunciation: 카이토하시라나이
+  - text: 教典はいらない
+    pronunciation: 쿄텐하이라나이
+  - text: 歩く踵がそれを識るだろう
+    pronunciation: 아루쿠카카토가소레오識루다로
+  - text: 朝の地鳴りが告げるだろう
+    pronunciation: 아사노지나리가츠게루다로
+  - text: 怠く横たわる川面の憂鬱を
+    pronunciation: 오코타쿠요코타와루카와모노유우츠오
+  - text: 赤く煮え立つ空が染めれば
+    pronunciation: 아카쿠니에타츠소라가소메레바
+  - text: 俺は涙をそこに捨てるよ
+    pronunciation: 오레하나미다오소코니스테루요
+  - text: 日も暮れた帰ろうかな
+    pronunciation: 히모쿠레타카에로카나
+  - text: 午後六時 全てが遠いが
+    pronunciation: 고고로쿠지 스베테가토이가
+  - text: それを誰一人尋ねども
+    pronunciation: 소레오다레이치닌타즈네도모
+  - text: 血巡り季巡り撃ち放つさ
+    pronunciation: 치메구리키메구리우치하나츠사
+  - text: 道程など知らない
+    pronunciation: 도테이나도시라나이
+  - text: 標識はいらない
+    pronunciation: 효시키하이라나이
+  - text: 微笑を湛えて闇と遊べば
+    pronunciation: 비쇼오타타에테야미토아소베바
+  - text: 誰ぞ知り得ぬ灯も点る
+    pronunciation: 다레조시리에누아카리모토모루
+  - text: 行けば帰らざる雲が行きゃ
+    pronunciation: 이케바카에라자루쿠모가이캬
+  - text: 俺は口笛を吹きまくるさ
+    pronunciation: 오레하쿠치부에오후키마쿠루사
+  - text: 解答は知らない
+    pronunciation: 카이토하시라나이
+  - text: 教典はいらない
+    pronunciation: 쿄텐하이라나이
+  - text: 歩く踵がそれを識るだろう
+    pronunciation: 아루쿠카카토가소레오識루다로
+  - text: 朝の地鳴りが告げるだろう
+    pronunciation: 아사노지나리가츠게루다로
