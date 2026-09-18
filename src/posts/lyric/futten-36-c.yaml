@@ -1,0 +1,102 @@
+# https://music.apple.com/kr/song/266709499
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/266709499?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/266709499
+# 선택 항목: Apple Music · Futten 36℃ · 음절별 가사 · 266709499
+# 가져온 시각: 2026-09-18T09:34:05.825Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: 沸点36℃
+titleLang: ja
+lang: ja
+spotify: 3ycK3HVXqDSyo11xgHtiv7
+youtube:
+  audio: vU9XzTT8_Fk
+  mv: adl9WR5aIOI
+lines:
+  - text: 後手にバタンとドアを閉めて
+    time: [30.01, 32.95]
+  - text: もう後には退けないなんて
+    time: [32.95, 35.5]
+  - text: 分かり切った事さ
+    time: [35.5, 41.27]
+  - text: 生まれたくて生まれたんじゃないと
+    time: [41.27, 43.95]
+  - text: 拗ねて世界に唾を吐いて
+    time: [43.95, 46.72]
+  - text: 楽になったか？
+    time: [46.72, 53.28]
+  - text: 相変わらずさ
+    time: [53.28, 56.09]
+  - text: 風が人々を
+    time: [56.09, 59.2]
+  - text: 連れ去るのを見てる
+    time: [59.2, 64.45]
+  - text: 気付かないふりで
+    time: [64.45, 67.5]
+  - text: 長く変わらない信号を待っている
+    time: [67.5, 75.74]
+  - text: トンネルを抜け切ったと
+    time: [75.74, 77.71]
+  - text: 思ったらそこは真夜中だった
+    time: [77.71, 80.61]
+  - text: 一切合切、終わりか？
+    time: [80.61, 83.15]
+  - text: 終わりでも何でも構わない
+    time: [83.15, 86.86]
+  - text: 沸点は掌に
+    time: [86.86, 89.62]
+  - text: 沸点は首筋に
+    time: [89.62, 92.31]
+  - text: 沸点は足の裏
+    time: [92.31, 95.68]
+  - text: それだけがある
+    time: [95.68, 97.99]
+  - text: 沸点は青い空
+    time: [97.99, 100.82]
+  - text: 沸点は白い雲
+    time: [100.82, 103.62]
+  - text: 沸点はビルの影
+    time: [103.62, 106.52]
+  - text: 汗に塗れている
+    time: [106.52, 109.77]
+  - text: 消えるから良いんだ
+    time: [109.77, 113.62]
+  - text: 口笛も、面影も
+    time: [113.62, 120.23]
+  - text: だから今日もここに立って
+    time: [154.76, 157.56]
+  - text: 嘘と真実の風の中で
+    time: [157.56, 160.43]
+  - text: 悪あがきを続ける
+    time: [160.43, 166.14]
+  - text: だから今日もここに立って
+    time: [166.14, 169.03]
+  - text: 肩に降り積もる月明りで
+    time: [169.03, 171.58]
+  - text: 孤独を研いでいる
+    time: [171.58, 177.98]
+  - text: 漸く夜が明けたと
+    time: [177.98, 180.14]
+  - text: 思ったら辺りは砂漠だった
+    time: [180.14, 182.73]
+  - text: ここらで旅路も終わりか？
+    time: [182.73, 185.8]
+  - text: 道なんてどうでも構わない
+    time: [185.8, 189.23]
+  - text: 沸点は掌に
+    time: [189.23, 191.97]
+  - text: 沸点は首筋に
+    time: [191.97, 194.92]
+  - text: 沸点は足の裏
+    time: [194.92, 198.24]
+  - text: それだけがある
+    time: [198.24, 200.33]
+  - text: 沸点は青い空
+    time: [200.33, 203.22]
+  - text: 沸点は白い雲
+    time: [203.22, 206.2]
+  - text: 沸点はビルの影
+    time: [206.2, 209.11]
+  - text: 汗に塗れている
+    time: [209.11, 212.56]
