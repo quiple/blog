@@ -63,7 +63,7 @@ lines:
     pronunciation: 오와리데모난데모카마와나이
     time: [83.15, 86.86]
   - text: 沸点は掌に
-    pronunciation: 훗텐와타나고코로니
+    pronunciation: 훗텐와테노히라니
     time: [86.86, 89.62]
   - text: 沸点は首筋に
     pronunciation: 훗텐와쿠비스지니
@@ -114,16 +114,16 @@ lines:
     pronunciation: 요야쿠요루가아케타토
     time: [177.98, 180.14]
   - text: 思ったら辺りは砂漠だった
-    pronunciation: 오못타라아타리하사바쿠닷타
+    pronunciation: 오못타라아타리와사바쿠닷타
     time: [180.14, 182.73]
   - text: ここらで旅路も終わりか？
     pronunciation: 코코라데타비지모오와리카?
     time: [182.73, 185.8]
   - text: 道なんてどうでも構わない
-    pronunciation: 미치난테도데모카마와나이
+    pronunciation: 미치난테도데모카마와네
     time: [185.8, 189.23]
   - text: 沸点は掌に
-    pronunciation: 훗텐와타나고코로니
+    pronunciation: 훗텐와테노히라니
     time: [189.23, 191.97]
   - text: 沸点は首筋に
     pronunciation: 훗텐와쿠비스지니
@@ -144,5 +144,5 @@ lines:
     pronunciation: 훗텐와비루노카게
     time: [206.2, 209.11]
   - text: 汗に塗れている
-    pronunciation: 아세니마미레테이루
+    pronunciation: 아세니마미레테루
     time: [209.11, 212.56]
