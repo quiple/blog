@@ -30,7 +30,7 @@ lines:
     pronunciation: 난데모네야토츳탓테이루
     time: [45.34, 50.94]
   - text: 『雨曝しなら濡れるがいいさ
-    pronunciation: '"아마자라시나라누레루가이이사'
+    pronunciation: "'아마자라시나라누레루가이이사"
     time: [50.94, 57.34]
   - text: だって、どうせ傘など持って無いんだ
     pronunciation: 닷테, 도세카사나도못테나인다
@@ -105,5 +105,5 @@ lines:
     pronunciation: 소노토키, 마부타니후쿠카제모미에루다로
     time: [258.05, 268.15]
   - text: 静かに揺れるだろう』
-    pronunciation: 시즈카니유레루다로"
+    pronunciation: 시즈카니유레루다로'
     time: [268.15, 275.48]
