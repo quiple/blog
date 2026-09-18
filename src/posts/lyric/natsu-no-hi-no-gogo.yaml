@@ -63,19 +63,19 @@ lines:
     pronunciation: 아시타오요베바
     time: [132.83, 135.038]
   - text: 雲垂れ籠めて
-    pronunciation: 쿠모타레카고메테
+    pronunciation: 쿠모타레코메테
     time: [135.303, 137.693]
   - text: 甘い夢を見れば
     pronunciation: 아마이유메오미레바
     time: [137.928, 140.312]
   - text: 雷光る
-    pronunciation: 카미나리히카루
+    pronunciation: 이카즈치히카루
     time: [140.538, 142.928]
   - text: 濁り河流れ、
     pronunciation: 니고리카와나가레,
     time: [143.213, 145.593]
   - text: 水面に揺れる
-    pronunciation: 스이멘니유레루
+    pronunciation: 미나모니유레루
     time: [145.816, 148.262]
   - text: 拙い歌は
     pronunciation: 츠타나이우타와
@@ -84,13 +84,13 @@ lines:
     pronunciation: 윳쿠리토시즈미유쿠
     time: [151.167, 154.274]
   - text: 日暮れる街 風凪ぐ道
-    pronunciation: 히쿠레루마치 카제나구미치
+    pronunciation: 히구레루마치 카제나구미치
     time: [158.571, 163.307]
   - text: 灯も遠く 誘えども
-    pronunciation: 아카리모토쿠 이자나에도모
+    pronunciation: 토모시비모토쿠 이자나에도모
     time: [163.822, 168.923]
   - text: 『振り返るな』
-    pronunciation: '"후리카에루나"'
+    pronunciation: "'후리카에루나'"
     time: [169.146, 171.637]
   - text: どこかで低い声
     pronunciation: 도코카데히쿠이코에
@@ -102,7 +102,7 @@ lines:
     pronunciation: 요이시레테카에루카에리미치
     time: [185.078, 189.749]
   - text: 感じている永遠に続く闇を
-    pronunciation: 칸지테이루에이엔니츠즈쿠야미오
+    pronunciation: 칸지테이루토와니츠즈쿠야미오
     time: [190.335, 196.432]
   - text: 蝉時雨と午後の光
     pronunciation: 세미시구레토고고노히카리
@@ -114,10 +114,10 @@ lines:
     pronunciation: 츠미모아쿠모와레토토모니아리테
     time: [278.779, 285.247]
   - text: 俄雨と濡れた舗道
-    pronunciation: 니와카우토누레타호도
+    pronunciation: 니와카아메토누레타호도
     time: [289.548, 294.077]
   - text: 傘持たず走る街の角
-    pronunciation: 카사모타즈하시루마치노카쿠
+    pronunciation: 카사모타즈하시루마치노카도
     time: [294.679, 299.551]
   - text: 追い付けない
     pronunciation: 오이츠케나이
