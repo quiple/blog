@@ -27,13 +27,13 @@ lines:
     translation: 그녀는 그림처럼 완벽한 사람이야
     time: [23.694, 25.911]
   - text: I can't believe I was so blind
-    translation: 내가 그토록 눈이 멀어 있었다니 믿기지 않아
+    translation: 내가 그토록 눈이 멀어 있었다는 게 믿기지 않아
     time: [25.921, 28.453]
   - text: Do you remember the time?
     translation: 그때를 기억해?
     time: [28.463, 30.736]
   - text: You know, I stepped across that line
-    translation: 있잖아, 난 그 선을 넘었어
+    translation: 알잖아, 난 그 선을 넘었어
     time: [30.746, 33.08]
   - text: I made you cry, and that's my crime
     translation: 널 울렸고, 그게 내 죄야
@@ -66,7 +66,7 @@ lines:
     translation: 하지만 요즘 난 변하고 있어
     time: [57.107, 60.095]
   - text: Meeting new faces
-    translation: 새로운 사람들을 만나며
+    translation: 새로운 사람들을 만나고
     time: [60.105, 62.39]
   - text: Now, how am I supposed to be?
     translation: 이제 난 어떻게 해야 할까?
@@ -84,13 +84,13 @@ lines:
     translation: 그녀는 그림처럼 완벽한 사람이야
     time: [81.257, 83.434]
   - text: I can't believe I was so blind
-    translation: 내가 그토록 눈이 멀어 있었다니 믿기지 않아
+    translation: 내가 그토록 눈이 멀어 있었다는 게 믿기지 않아
     time: [83.444, 86.026]
   - text: Do you remember the time?
     translation: 그때를 기억해?
     time: [86.036, 88.293]
   - text: You know, I stepped across that line
-    translation: 있잖아, 난 그 선을 넘었어
+    translation: 알잖아, 난 그 선을 넘었어
     time: [88.303, 90.729]
   - text: I made you cry, and that's my crime
     translation: 널 울렸고, 그게 내 죄야
@@ -199,7 +199,7 @@ lines:
     translation: 실수이긴 해도 범죄는 아니야
     time: [150.519, 151.868]
   - text: 重なり合うのさ つまりそれが愛
-    translation: 서로 겹쳐지는 거야, 그게 바로 사랑이야
+    translation: 서로 겹쳐지는 거야, 그게 바로 사랑이지
     time: [151.878, 154.075]
   - text: All the time that you were standing by my side
     translation: 네가 내 곁을 지켜 주던 그 모든 시간
@@ -208,13 +208,13 @@ lines:
     translation: 그녀는 그림처럼 완벽한 사람이야
     time: [157.725, 160.348]
   - text: I can't believe I was so blind
-    translation: 내가 그토록 눈이 멀어 있었다니 믿기지 않아
+    translation: 내가 그토록 눈이 멀어 있었다는 게 믿기지 않아
     time: [160.358, 162.592]
   - text: Do you remember the time?
     translation: 그때를 기억해?
     time: [162.602, 165.099]
   - text: You know, I stepped across that line
-    translation: 있잖아, 난 그 선을 넘었어
+    translation: 알잖아, 난 그 선을 넘었어
     time: [165.109, 167.5]
   - text: I made you cry, and that's my crime
     translation: 널 울렸고, 그게 내 죄야
@@ -241,7 +241,7 @@ lines:
     translation: 하지만 요즘 난 변하고 있어
     time: [191.553, 194.33]
   - text: Meeting new faces
-    translation: 새로운 사람들을 만나며
+    translation: 새로운 사람들을 만나고
     time: [194.34, 196.664]
   - text: Now, how am I supposed to be?
     translation: 이제 난 어떻게 해야 할까?
@@ -259,13 +259,13 @@ lines:
     translation: 그녀는 그림처럼 완벽한 사람이야
     time: [215.498, 218.022]
   - text: I can't believe I was so blind
-    translation: 내가 그토록 눈이 멀어 있었다니 믿기지 않아
+    translation: 내가 그토록 눈이 멀어 있었다는 게 믿기지 않아
     time: [218.032, 220.311]
   - text: Do you remember the time?
     translation: 그때를 기억해?
     time: [220.321, 222.806]
   - text: You know, I stepped across that line
-    translation: 있잖아, 난 그 선을 넘었어
+    translation: 알잖아, 난 그 선을 넘었어
     time: [222.816, 225.091]
   - text: I made you cry, and that's my crime
     translation: 널 울렸고, 그게 내 죄야
