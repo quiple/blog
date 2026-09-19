@@ -1,0 +1,59 @@
+# https://music.apple.com/kr/song/1281878554
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1281878554?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1281878554
+# 선택 항목: Apple Music · あたし天使の堪忍袋 · 음절별 가사 · 1281878554
+# 가져온 시각: 2026-09-19T09:34:58.617Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: あたし天使の堪忍袋
+titleLang: ja
+lang: ja
+spotify: 5FjAQmQ7zfHYZ3S59U8krO
+youtube:
+  audio: 6wDoSLijkeA
+lines:
+  - text: 人違いでリンチされた少年を
+    time: [20.71, 25.23]
+  - text: 一目みて恋におちた少女
+    time: [25.23, 28.45]
+  - text: ただこの街の名もない歌は ゴミ
+    time: [28.45, 32.85]
+  - text: 黒いカラスついばむ白い袋
+    time: [32.85, 37.16]
+  - text: からっきしドツボの優しさが
+    time: [37.16, 40.54]
+  - text: 服を着てなんとかやっている
+    time: [40.54, 44.3]
+  - text: あれとそれを足して二で割ったのが
+    time: [44.3, 48.26]
+  - text: 私だってもうわかっている
+    time: [48.26, 52.17]
+  - text: 明け方の記憶は途切れ途切れ
+    time: [52.17, 56.29]
+  - text: うちに帰るために生きている身体
+    time: [56.29, 60.04]
+  - text: 愛してくれなんて言えないわけは
+    time: [60.04, 64.05]
+  - text: 朝日がまぶしい
+    time: [64.05, 66.88]
+  - text: ただそれだけ
+    time: [66.88, 83.24]
+  - text: まるっきりずれた憧れをずっと
+    time: [83.24, 86.78]
+  - text: 貫いていられれば幸せなのに
+    time: [86.78, 90.46]
+  - text: でも全部最初からわかってたし
+    time: [90.46, 94.61]
+  - text: 最初から全部失ってた
+    time: [94.61, 99.15]
+  - text: 明け方の記憶は途切れ途切れ
+    time: [99.15, 104.07]
+  - text: うちに帰るために生きている身体
+    time: [104.07, 107.96]
+  - text: 愛してくれなんて言えないだけど
+    time: [107.96, 112.27]
+  - text: 明日もちょっと
+    time: [112.27, 114.75]
+  - text: 付き合ってくれ
+    time: [114.75, 116.78]
