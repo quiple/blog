@@ -29,7 +29,7 @@ lines:
     pronunciation: 무네노우치히메타이데키고토데
     time: [23.264, 26.113]
   - text: 馴染の援助で海原へ
-    pronunciation: 나지미노엔조데우나바라헤
+    pronunciation: 나지미노엔조데우나바라에
     time: [26.283, 29.013]
   - text: You see weaker
     time: [29.259, 30.635]
@@ -38,13 +38,13 @@ lines:
   - text: You see weaker
     time: [32.1, 33.578]
   - text: In my defense 息はつけそうかい
-    pronunciation: In my defense 이키하츠케소카이
+    pronunciation: 인 마이 디휀스 이키와츠케소카이
     time: [34.747, 37.613]
   - text: ねぇ笑って ここで一切合切忘れて
     pronunciation: 네와랏테 코코데잇사이갓사이와스레테
     time: [37.623, 40.877]
   - text: Defense 今は泣けそうかい
-    pronunciation: Defense 이마하나케소카이
+    pronunciation: Defense 이마와나케소카이
     time: [40.887, 43.351]
   - text: 悪戯な愛掴んで
     pronunciation: 이타즈라나아이츠칸데
@@ -95,25 +95,25 @@ lines:
     pronunciation: 와타시노쇼신요
     time: [103.028, 108.737]
   - text: In my defense 息はつけそうかい
-    pronunciation: In my defense 이키하츠케소카이
+    pronunciation: 인 마이 디휀스 이키와츠케소카이
     time: [120.485, 123.392]
   - text: ねぇ笑って ここで一切合切忘れて
     pronunciation: 네와랏테 코코데잇사이갓사이와스레테
     time: [123.402, 126.727]
   - text: Defense 今は泣けそうかい
-    pronunciation: Defense 이마하나케소카이
+    pronunciation: 디휀스 이마와나케소카이
     time: [126.737, 129.272]
   - text: 悪戯な愛掴んで
     pronunciation: 이타즈라나아이츠칸데
     time: [129.282, 132.198]
   - text: In my defense 永遠に惚れそうかい
-    pronunciation: In my defense 에이엔니호레소카이
+    pronunciation: 인 마이 디휀스 에이엔니호레소카이
     time: [132.208, 135.033]
   - text: ねぇ笑って ここで一切合切愛して
     pronunciation: 네와랏테 코코데잇사이갓사이아이시테
     time: [135.043, 138.367]
   - text: Defense 分かち合えそうかい
-    pronunciation: Defense 와카치아에소카이
+    pronunciation: 디휀스 와카치아에소카이
     time: [138.377, 140.884]
   - text: 幻想な恩掴んで
     pronunciation: 겐소나온츠칸데
