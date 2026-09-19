@@ -15,8 +15,8 @@ spotify: 6wsN8FWnleEq7oTvVbnJJq
 youtube:
   audio: 3ABBxm0UWD8
 offsets:
-  youtubeAudio: 0.3
   spotify: 0.3
+  youtubeAudio: 0.3
 lines:
   - text: あぁ手足が冷たくなっていく
     pronunciation: 아테아시가츠메타쿠낫테유쿠

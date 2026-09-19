@@ -16,8 +16,8 @@ youtube:
   audio: ztk2ukz3CBE
   mv: xC6caW7n-VQ
 offsets:
-  youtubeAudio: -0.021
   spotify: -0.021
+  youtubeAudio: -0.021
 lines:
   - text: I burned my kitchen down
     pronunciation: 아이 번드 마이 키친 다운

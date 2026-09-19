@@ -15,8 +15,8 @@ youtube:
   audio: b4FaRHozvzw
   mv: 18oGNDVC6rg
 offsets:
-  youtubeAudio: 0.3
   youtubeMV: 0.3
+  youtubeAudio: 0.3
 lines:
   - text: 家をぬけ出して僕の部屋においで
     pronunciation: 우치오누케다시테보쿠노헤야니오이데

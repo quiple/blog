@@ -15,8 +15,8 @@ spotify: 2jkXVyRtKKpatyjMhbPHao
 youtube:
   audio: uFZlSuZOiZs
 offsets:
-  youtubeAudio: -0.7
   spotify: -0.7
+  youtubeAudio: -0.7
 lines:
   - text: 止まっていた時を
     pronunciation: 토맛테이타토키오

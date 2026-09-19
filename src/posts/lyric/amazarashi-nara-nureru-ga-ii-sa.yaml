@@ -14,8 +14,8 @@ spotify: 2JyMWLMvndFjlJHKXuGi7x
 youtube:
   audio: 7-XNy0y4P0U
 offsets:
-  youtubeAudio: 0.4
   spotify: 0.4
+  youtubeAudio: 0.4
 lines:
   - text: コンクリートの隙間から顔出した
     pronunciation: 콘쿠리토노스키마카라카오다시타

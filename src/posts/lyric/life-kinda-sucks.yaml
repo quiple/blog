@@ -16,8 +16,8 @@ youtube:
   audio: 5JrhAsNH-lw
   mv: oT-G1wS-57c
 offsets:
-  youtubeAudio: 0.333
   spotify: 0.333
+  youtubeAudio: 0.333
 lines:
   - text: Fuck this thing called life
     pronunciation: 퍽 디스 싱 콜드 라이프

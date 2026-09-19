@@ -14,8 +14,8 @@ youtube:
   audio: f_78K8u7QIU
   mv: aRiVUVNUhIs
 offsets:
-  youtubeAudio: 0.229
   spotify: 0.229
+  youtubeAudio: 0.229
 lines:
   - text: なんもねえ なんもねえ
     pronunciation: 난모네 난모네
