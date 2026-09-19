@@ -1,7 +1,9 @@
 <script lang="ts">
   import type {Artist} from '$lib/lyrics/artists.server'
 
-  let {songs}: {songs: {slug: string; title: string; lang?: string; translation?: string; artists?: Artist[]}[]} =
+  let {
+    songs,
+  }: {songs: {slug: string; title: string; year: string; lang?: string; translation?: string; artists?: Artist[]}[]} =
     $props()
 </script>
 
@@ -12,15 +14,17 @@
         <div class="flex items-center gap-1">
           <strong
             lang={song.lang === 'ko' ? undefined : (song.lang ?? '')}
-            class="line-clamp-1 grow font-medium break-all">{song.title}</strong
+            class="line-clamp-1 grow font-medium break-all"
           >
+            {song.title}
+          </strong>
         </div>
         {#if song.translation}
           <p class:mb-1={!!song.artists?.length} class="line-clamp-3 text-sm text-chart-4 dark:text-chart-1">
             {song.translation}
           </p>
         {/if}
-        {#if song.artists?.length}
+        {#if song.artists?.length || song.year}
           <div class="mt-px flex items-start justify-between gap-2">
             <small class="text-muted-foreground">
               {#each song.artists as artist, index (artist.slug)}
