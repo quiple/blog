@@ -1,0 +1,93 @@
+# https://music.apple.com/kr/song/1623105574
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1623105574?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1623105574
+# 선택 항목: Apple Music · Ami (feat. WANUKA) · 음절별 가사 · 1623105574
+# 가져온 시각: 2026-09-19T10:42:52.293Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: アミ
+titleLang: ja
+artist:
+  - ayaho
+  - wanuka
+lang: ja
+spotify: 5xd5pEwtXqZf4OFKN1w7sD
+youtube:
+  audio: H7q5mtO-bek
+  mv: 62WtfAEjssc
+offsets:
+  youtubeMV: 8.008
+lines:
+  - text: 現代社会のお零れが
+    time: [17.576, 20.401]
+  - text: あなたに振り回されたなんて
+    time: [20.476, 23.254]
+  - text: 胸の内秘めたい出来事で
+    time: [23.264, 26.113]
+  - text: 馴染の援助で海原へ
+    time: [26.283, 29.013]
+  - text: You see weaker
+    time: [29.259, 30.635]
+  - text: I'm weaker
+    time: [30.984, 32.052]
+  - text: You see weaker
+    time: [32.1, 33.578]
+  - text: In my defense 息はつけそうかい
+    time: [34.747, 37.613]
+  - text: ねぇ笑って ここで一切合切忘れて
+    time: [37.623, 40.877]
+  - text: Defense 今は泣けそうかい
+    time: [40.887, 43.351]
+  - text: 悪戯な愛掴んで
+    time: [43.461, 46.741]
+  - text: 絶えない夜に居場所あれば
+    time: [48.183, 50.865]
+  - text: くだらなくなるって躾られたら
+    time: [50.944, 53.988]
+  - text: 形を成すような出来事で
+    time: [53.998, 56.728]
+  - text: 全霊かけた後始末が
+    time: [56.798, 59.558]
+  - text: You see caesar
+    time: [59.793, 61.247]
+  - text: I'm caesar
+    time: [61.567, 62.651]
+  - text: You see caesar
+    time: [62.656, 64.08]
+  - text: In my defense 永遠に惚れそうかい
+    time: [65.246, 68.158]
+  - text: ねぇ笑って ここで一切合切愛して
+    time: [68.168, 71.45]
+  - text: Defense 分かち合えそうかい
+    time: [71.46, 73.969]
+  - text: 幻想な恩掴んで
+    time: [73.979, 77.261]
+  - text: 病弱で不確かな私のお仕置よ
+    time: [79.726, 85.544]
+  - text: 人影ない想いにも胸打たれたんよ
+    time: [85.654, 91.166]
+  - text: 我儘で身勝手なあなたにお仕置よ
+    time: [91.376, 97.203]
+  - text: まやかしの愛なら受け取る気無いよ
+    time: [97.213, 102.819]
+  - text: 私の昇進よ
+    time: [103.028, 108.737]
+  - text: In my defense 息はつけそうかい
+    time: [120.485, 123.392]
+  - text: ねぇ笑って ここで一切合切忘れて
+    time: [123.402, 126.727]
+  - text: Defense 今は泣けそうかい
+    time: [126.737, 129.272]
+  - text: 悪戯な愛掴んで
+    time: [129.282, 132.198]
+  - text: In my defense 永遠に惚れそうかい
+    time: [132.208, 135.033]
+  - text: ねぇ笑って ここで一切合切愛して
+    time: [135.043, 138.367]
+  - text: Defense 分かち合えそうかい
+    time: [138.377, 140.884]
+  - text: 幻想な恩掴んで
+    time: [140.894, 143.802]
+  - text: 華麗に返すよ シェアどうか？
+    time: [143.812, 149.167]
