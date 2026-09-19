@@ -7,8 +7,9 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Picture Perfect
-titleTranslation: 그림처럼 완벽한
 titleLang: en
+titleTranslation: 그림처럼 완벽한
+year: '2007'
 artist:
   - monkey-majik
   - m-flo

@@ -5,8 +5,9 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: The Sim
-titleTranslation: 심
 titleLang: en-US
+titleTranslation: 심
+year: '2026'
 artist:
   - jam-2-go
   - kasane-teto
