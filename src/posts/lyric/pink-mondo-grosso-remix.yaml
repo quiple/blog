@@ -15,31 +15,31 @@ youtube:
   audio: ru1InNZbIec
 lines:
   - text: PINK色の丸をくれ PINK色の三角をくれ
-    pronunciation: PINK쇼쿠노마루오쿠레 PINK쇼쿠노산카쿠오쿠레
+    pronunciation: 핀쿠이로노마루오쿠레 핀쿠이로노산카쿠오쿠레
     time: [14.256, 26.968]
   - text: わたしが少女になれるように
-    pronunciation: 와타시가쇼조니나레루요니
+    pronunciation: 아타시가쇼조니나레루요니
     time: [31.063, 34.923]
   - text: PINK色をくれ
-    pronunciation: PINK쇼쿠오쿠레
+    pronunciation: 핀쿠이로오쿠레
     time: [35.045, 37.288]
   - text: PINK色で花まるな PINK色のハートを見せてよ
-    pronunciation: PINK쇼쿠데하나마루나 PINK쇼쿠노하토오미세테요
+    pronunciation: 핀쿠이로데하나마루나 핀쿠이로노하토오미세테요
     time: [37.298, 46.569]
   - text: わたしが少女で いるためには
-    pronunciation: 와타시가쇼조데 이루타메니하
+    pronunciation: 아타시가쇼조데 이루타메니와
     time: [46.577, 49.665]
   - text: みんなが優しいことが必要だよ
     pronunciation: 민나가야사시이코토가히츠요다요
     time: [49.675, 53.45]
   - text: わたしが死ぬ程馬鹿でした
-    pronunciation: 와타시가시누호도바카데시타
+    pronunciation: 아타시가시누호도바카데시타
     time: [53.64, 64.111]
   - text: 抱きしめられて気づきました
     pronunciation: 다키시메라레테키즈키마시타
     time: [65.147, 68.408]
   - text: PINK色
-    pronunciation: PINK쇼쿠
+    pronunciation: 핀쿠이로
     time: [68.418, 70.777]
   - text: 23年も生きとんやけんわかっとって当たり前やって言われました
     pronunciation: 23넨모이키톤야켄와캇톳테아타리마에얏테이와레마시타
@@ -54,10 +54,10 @@ lines:
     pronunciation: 폿푸 판쿠 롯쿤로루 폿푸 판쿠 롯쿤로루
     time: [85.501, 89.248]
   - text: ただ ただわたしはわんわん泣きたかった吠えたかった歌いたかった
-    pronunciation: 타다 타다와타시하완완나키타캇타호에타캇타우타이타캇타
+    pronunciation: 타다 타다와타시와완완나키타캇타호에타캇타우타이타캇타
     time: [89.258, 93.166]
   - text: わたしはわたしはあんたのかわいい呪いを冷静な愛でぶち殺すように歌いたかった
-    pronunciation: 와타시하와타시하안타노카와이이노로이오레이세이나아이데부치코로스요니우타이타캇타
+    pronunciation: 와타시와와타시와안타노카와이이노로이오레이세이나아이데부치코로스요니우타이타캇타
     time: [93.176, 97.206]
   - text: 馴れ合う突き放す解き放つ
     pronunciation: 나레아우츠키하나스토키하나츠
@@ -81,16 +81,16 @@ lines:
     pronunciation: 소레오난도모쿠리카에스 난도모난도모난도모난도모 난도모난도모난도모난도모 시누마데쿠리카에스 시누마데쿠리카에스
     time: [112.072, 120.294]
   - text: そんでようやく50年後だか100年後だかに 真白な病院で
-    pronunciation: 손데요야쿠50넨고다카100넨고다카니 맛시로나뵤인데
+    pronunciation: 손데요야쿠고주넨고다카햐쿠넨고다카니 맛시로나뵤인데
     time: [120.304, 124.885]
   - text: 心から「ありがとう」って言うことが出来るでしょう
-    pronunciation: 코코로카라 '아리가토' 읏테이우코토가데키루데쇼
+    pronunciation: 코코로카라"아리가토"옷테이우코토가데키루데쇼
     time: [124.895, 128.042]
   - text: お前ごときの人間が わたしごときの人間が
     pronunciation: 오마에고토키노닌겐가 와타시고토키노닌겐가
     time: [128.147, 131.206]
   - text: 全ての人に全ての愛に全ての音楽に全ての芸術に「ありがとう」って言いたい
-    pronunciation: 스베테노히토니스베테노아이니스베테노온가쿠니스베테노게이주츠니 '아리가토' 읏테이이타이
+    pronunciation: 스베테노히토니스베테노아이니스베테노온가쿠니스베테노게이주츠니"아리가토"옷테이이타이
     time: [131.305, 137.591]
   - text: いつの日か
     pronunciation: 이츠노히카
