@@ -14,6 +14,8 @@ spotify: 6pIGhYFUZmFqVYz5z1AUPe
 youtube:
   audio: JPZG8bz0BZI
   mv: 0YFG6BCQZFU
+offsets:
+  youtubeMV: 70.65
 lines:
   - text: あたしアナウンサーになれない
     pronunciation: 아타시아나운사니나레나이
