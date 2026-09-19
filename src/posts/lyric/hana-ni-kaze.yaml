@@ -45,7 +45,7 @@ lines:
     pronunciation: 미테미누후리오스루
     time: [42.271, 44.69]
   - text: 行かないで!ないで!
-    pronunciation: 이카나이데!나이데!
+    pronunciation: 이카나이데! 나이데!
     time: [45.342, 47.325]
   - text: 先なんて見据えないで
     pronunciation: 사키난테미스에나이데
@@ -60,10 +60,10 @@ lines:
     pronunciation: 코큐와아라이마마
     time: [54.974, 58.291]
   - text: 知らないで!ないで!
-    pronunciation: 시라나이데!나이데!
+    pronunciation: 시라나이데! 나이데!
     time: [58.291, 60.259]
   - text: 他なんてどうだっていいのさ
-    pronunciation: 타난테도닷테이이노사
+    pronunciation: 호카난테도닷테이이노사
     time: [60.37, 63.45]
   - text: わかるかしら
     pronunciation: 와카루카시라
@@ -72,13 +72,16 @@ lines:
     pronunciation: 히토리요가리노아이데모이이
     time: [65.036, 68.132]
   - text: 暗い方へ行こうぜ
-    pronunciation: 쿠라이호헤이코제
+    pronunciation: 쿠라이호에이코제
     time: [68.132, 71.83]
   - text: 煩わしくて
     pronunciation: 와즈라와시쿠테
     time: [84.08, 85.766]
-  - text: 天を見てた
-    pronunciation: 텐오미테타
+  - words:
+      - text: 天
+        ruby: そら
+      - text: を見てた
+    pronunciation: 소라오미테타
     time: [87.274, 88.973]
   - text: あなた何度も
     pronunciation: 아나타난도모
