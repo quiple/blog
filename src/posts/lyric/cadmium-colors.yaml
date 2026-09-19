@@ -1,0 +1,164 @@
+# https://music.apple.com/kr/song/1759251260
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1759251260?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1759251260
+# 선택 항목: Apple Music · Cadmium Colors · 음절별 가사 · 1759251260
+# 가져온 시각: 2026-09-19T10:45:03.024Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: Cadmium Colors
+titleLang: en
+lang: en
+spotify: 7hsgOIUsCbQvONoUmw9U5C
+youtube:
+  audio: qjEGMvJgv0E
+  mv: 1U6qefKcOrg
+lines:
+  - text: I spend my hours doing alchemy
+    time: [0.708, 2.96]
+  - text: I mix my yellows and my blues to make a shade of green
+    time: [3.842, 6.919]
+  - text: Prosaic practice of depravity
+    time: [7.093, 9.473]
+  - text: Suspending innocents above their disbelief
+    time: [9.914, 12.236]
+  - text: I wish that I could paint a pretty picture onto everything
+    time: [12.329, 15.905]
+  - text: And leave a mark upon the world that felt like anything
+    time: [16.149, 18.692]
+  - text: But maybe that's the essence of an artist and their legacy
+    time: [18.808, 22.418]
+  - text: Just chasing down a sense of infamy
+    time: [23.254, 25.75]
+  - text: Put brush to canvas with a pirouette
+    time: [26.517, 28.955]
+  - text: A simple motion makes the consequence intricate
+    time: [29.756, 32.542]
+  - text: All the little nothings and my parapet
+    time: [32.635, 35.538]
+  - text: I hope it's something that you don't forget
+    time: [37.883, 40.762]
+  - text: Cadmium red is the ground beneath
+    time: [42.422, 45.395]
+  - text: Cadmium orange, everything I see
+    time: [45.638, 48.645]
+  - text: Cadmium yellow is the air I breathe
+    time: [48.854, 51.884]
+  - text: Cadmium colors painted inside me
+    time: [52.105, 55.159]
+  - text: I can make autumn from a single leaf
+    time: [55.367, 58.351]
+  - text: Steal a fine picture like a first class thief
+    time: [58.549, 61.602]
+  - text: Make the water work like you won't believe
+    time: [61.857, 64.899]
+  - text: Find a new world that can set you free
+    time: [65.05, 68.08]
+  - text: How could anybody ever live like me
+    time: [68.324, 71.343]
+  - text: I spend my hours doing alchemy
+    time: [71.935, 74.35]
+  - text: I make a life refining zinc inside the smeltery
+    time: [75.151, 78.367]
+  - text: It's not exactly where I want to be
+    time: [78.483, 80.7]
+  - text: But wanting doesn't matter when there's mouths to feed
+    time: [81.293, 83.638]
+  - text: I wish that I could paint a pretty picture of a fantasy
+    time: [83.707, 87.248]
+  - text: And turn a feeling to a living for my family
+    time: [87.353, 90.046]
+  - text: Instead I make the metals in the pigments in my reverie
+    time: [90.139, 93.889]
+  - text: And maybe that can be enough for me
+    time: [94.574, 97.059]
+  - text: Oh, isn't it funny facing destiny
+    time: [97.535, 100.286]
+  - text: It's like a knife inside twisting my arteries
+    time: [101.088, 103.874]
+  - text: God, I want for nothing but identity
+    time: [103.967, 106.835]
+  - text: I think that something might be wrong with me
+    time: [109.215, 112.117]
+  - text: Cadmium red is the ground beneath
+    time: [113.719, 116.691]
+  - text: Cadmium orange, everything I see
+    time: [116.982, 119.989]
+  - text: Cadmium yellow is the air I breathe
+    time: [120.174, 123.309]
+  - text: Cadmium colors painted inside me
+    time: [123.46, 126.467]
+  - text: Antegrade fever, 101 degrees
+    time: [126.699, 129.776]
+  - text: Shatter my body with a gentle breeze
+    time: [129.915, 133.027]
+  - text: Dammit, I am real and I have my dreams
+    time: [133.178, 136.231]
+  - text: Watch me burn brighter 'til I fail to breathe
+    time: [136.37, 139.447]
+  - text: How could anybody ever live like me
+    time: [139.644, 142.698]
+  - text: Baby, do you know what it's like to die
+    time: [143.696, 146.03]
+  - text: To see the sparkle fade from inside your eye
+    time: [146.134, 148.363]
+  - text: I can't remember what it's like to feel autonomy
+    time: [148.479, 151.045]
+  - text: Can't even feel it in the moments that you left to me
+    time: [151.127, 154.029]
+  - text: I don't wanna leave with a work undone
+    time: [154.308, 156.641]
+  - text: The paint can barely dry 'fore it fills my lungs
+    time: [156.781, 158.952]
+  - text: I keep a bullet in the chamber, mocking me
+    time: [159.033, 161.738]
+  - text: But I don't wanna feel it coming out of me
+    time: [162.063, 164.466]
+  - text: I don't want-
+    time: [164.745, 165.314]
+  - text: I spend my hours doing alchemy
+    time: [191.518, 193.816]
+  - text: I mix my yellows and my blues to make a shade of green
+    time: [194.676, 197.775]
+  - text: Chasing impossible philosophy
+    time: [197.961, 200.295]
+  - text: And hoping that this poison ain't the death of me
+    time: [200.724, 204.091]
+  - text: Cadmium red is the ground beneath
+    time: [207.423, 210.465]
+  - text: Cadmium orange, everything I see
+    time: [210.663, 213.716]
+  - text: Cadmium yellow is the air I breathe
+    time: [213.925, 217.048]
+  - text: Cadmium colors painted inside me
+    time: [217.176, 220.218]
+  - text: I can make autumn from a single leaf
+    time: [220.427, 223.445]
+  - text: Steal a fine picture like a first class thief
+    time: [223.631, 226.673]
+  - text: Make the water work like you won't believe
+    time: [226.905, 229.889]
+  - text: Find a new world that can set you free
+    time: [230.121, 233.221]
+  - text: How could anybody ever live like-
+    time: [233.418, 236.17]
+  - text: Baby, do you know what you wanna hear
+    time: [237.551, 240.465]
+  - text: "'Cause you can say the word, make it oh so clear"
+    time: [240.674, 243.368]
+  - text: We're all just searching for a sense of solidarity
+    time: [243.484, 246.607]
+  - text: To hold each other close and confiscate our destiny
+    time: [246.758, 250.218]
+  - text: No one wants to leave with a work undone
+    time: [250.589, 253.434]
+  - text: We only need a brush we can pass along
+    time: [253.654, 256.406]
+  - text: I kept a bullet in the chamber for a rainy day
+    time: [256.476, 259.935]
+  - text: But what's the point in planning for it anyway
+    time: [260.121, 263.058]
+  - text: I've got too many colors for a shade of grey
+    time: [263.372, 266.286]
+  - text: And I can make it Autumn every single day
+    time: [266.599, 269.792]
