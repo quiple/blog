@@ -16,6 +16,7 @@ youtube:
   mv: 18oGNDVC6rg
 offsets:
   youtubeAudio: 0.3
+  youtubeMV: 0.3
 lines:
   - text: 家をぬけ出して僕の部屋においで
     time: [7.731, 11.649]
