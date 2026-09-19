@@ -14,6 +14,8 @@ spotify: 4EyjvMJ6llJ5stWDlwo8v6
 youtube:
   audio: cwTP7alllVM
   mv: egGAWaRwJgo
+offsets:
+  youtubeMV: 0.014
 lines:
   - text: Well yes I know I'm perfection
     time: [7.611, 10.318]
