@@ -54,7 +54,7 @@ lines:
     pronunciation: 아이시테쿠레난테이에나이와케와
     time: [60.04, 64.05]
   - text: 朝日がまぶしい
-    pronunciation: 아사히가마부시이
+    pronunciation: 아사히가마부시
     time: [64.05, 66.88]
   - text: ただそれだけ
     pronunciation: 타다소레다케
@@ -74,8 +74,11 @@ lines:
   - text: 明け方の記憶は途切れ途切れ
     pronunciation: 아케가타노키오쿠와토기레토기레
     time: [99.15, 104.07]
-  - text: うちに帰るために生きている身体
-    pronunciation: 우치니카에루타메니이키테이루신타이
+  - words:
+      - text: うちに帰るために生きている
+      - text: 身体
+        ruby: からだ
+    pronunciation: 우치니카에루타메니이키테이루카라다
     time: [104.07, 107.96]
   - text: 愛してくれなんて言えないだけど
     pronunciation: 아이시테쿠레난테이에나이다케도
