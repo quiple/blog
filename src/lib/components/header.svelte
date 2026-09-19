@@ -38,7 +38,7 @@
 
   const isPostPath = (pathname: string) =>
     pathname.startsWith('/blog/') || pathname.startsWith('/article/') || pathname.startsWith('/font/')
-  const categoryPaths = new Set(['/blog', '/article', '/font'])
+  const categoryPaths = new Set(['/blog', '/article', '/font', '/lyric'])
 
   let usesWordmarkLogo = $derived(page.url.pathname === '/' || categoryPaths.has(page.url.pathname))
   let isPostPage = $derived(isPostPath(page.url.pathname))
