@@ -439,370 +439,494 @@ lines:
     time: [105.752, 108.178]
   - words:
       - text: こん
+        pronunciation: 콘
         time: [108.604, 109.06]
       - text: な
+        pronunciation: 나
         time: [109.06, 109.466]
       - text: ちっぽ
+        pronunciation: 칫포
         time: [109.677, 110.246]
       - text: け
+        pronunciation: 케
         time: [110.246, 110.647]
       - text: な
+        pronunciation: 나
         time: [110.647, 110.852]
       - text: 僕
+        pronunciation: 보쿠
         time: [110.852, 111.424]
       - text: の
+        pronunciation: 노
         time: [111.424, 111.851]
-    pronunciation: 콘나칫포케나보쿠노
     time: [108.604, 111.851]
   - words:
       - text: 背
+        pronunciation: 세
         time: [112.643, 112.956]
       - text: 中
+        pronunciation: 나카
         time: [112.956, 113.377]
       - text: を
+        pronunciation: 오
         time: [113.377, 113.772]
       - text: 包んで
+        pronunciation: 츠츤데
         time: [113.772, 114.51]
       - text: く
+        pronunciation: 쿠
         time: [114.51, 115.076]
-    pronunciation: 세나카오츠츤데쿠
     time: [112.643, 115.076]
   - words:
       - text: 透明
+        pronunciation: 토메이
         time: [115.27, 116.101]
       - text: な
+        pronunciation: 나
         time: [116.101, 116.46]
       - text: この
+        pronunciation: 코노
         time: [116.46, 116.892]
       - text: 体
+        pronunciation: 카라다
         time: [116.892, 117.711]
       - text: は
+        pronunciation: 와
         time: [117.711, 118.272]
-    pronunciation: 토메이나코노카라다하
     time: [115.27, 118.272]
   - words:
       - text: 何色
+        pronunciation: 나니이로
         time: [118.336, 119.201]
       - text: に
+        pronunciation: 니
         time: [119.201, 119.391]
       - text: 成れる
+        pronunciation: 나레루
         time: [119.391, 119.981]
-      - text: の？
+      - text: の?
+        pronunciation: 노?
         time: [119.981, 121]
-    pronunciation: 나니쇼쿠니나레루노?
     time: [118.336, 121]
   - words:
       - text: た
+        pronunciation: 타
         time: [121.068, 121.373]
       - text: 'だ '
+        pronunciation: 다
         time: [121.373, 122.033]
       - text: 水
+        pronunciation: 미즈
         time: [122.141, 122.486]
       - text: のように
+        pronunciation: 노요니
         time: [122.486, 123.331]
       - text: 流
+        pronunciation: 나가
         time: [123.331, 123.912]
       - text: れ
+        pronunciation: 레
         time: [123.912, 124.434]
-    pronunciation: 타다 미즈노요니나가레
     time: [121.068, 124.434]
   - words:
       - text: 消
+        pronunciation: 키
         time: [124.783, 125.061]
       - text: えて
+        pronunciation: 에테
         time: [125.061, 125.705]
       - text: ゆく
+        pronunciation: 유쿠
         time: [125.705, 126.219]
       - text: だ
+        pronunciation: 다
         time: [126.219, 126.433]
-      - text: 'け？ '
+      - text: 'け? '
+        pronunciation: 케?
         time: [126.433, 127.168]
       - text: ねぇ
+        pronunciation: 네
         time: [127.385, 128.057]
-    pronunciation: 키에테유쿠다케? 네
     time: [124.783, 128.057]
   - words:
       - text: 「ぼやけたままの
+        pronunciation: '"보야케타마마노'
         time: [128.057, 129.529]
       - text: フォー
+        pronunciation: 훠
         time: [129.529, 129.914]
       - text: カス
+        pronunciation: 카스
         time: [129.914, 130.286]
       - text: じゃ
+        pronunciation: 자
         time: [130.286, 130.686]
-    pronunciation: "'보야케타마마노포카스자"
     time: [128.057, 130.686]
   - words:
       - text: 君
+        pronunciation: 키미
         time: [130.721, 131.139]
       - text: の
+        pronunciation: 노
         time: [131.139, 131.32]
       - text: ホンモノ
+        pronunciation: 혼모노
         time: [131.32, 132.037]
       - text: は
+        pronunciation: 와
         time: [132.037, 132.47]
       - text: 写
+        pronunciation: 우츠
         time: [132.47, 133.192]
       - text: せ
+        pronunciation: 세
         time: [133.192, 133.439]
       - text: ない
+        pronunciation: 나이
         time: [133.439, 134.478]
       - text: よ」
+        pronunciation: 요"
         time: [134.478, 135.373]
-    pronunciation: 키미노혼모노하우츠세나이요'
     time: [130.721, 135.373]
   - words:
       - text: 寂
+        pronunciation: 사비
         time: [135.514, 136.299]
       - text: しげな
+        pronunciation: 시게나
         time: [136.299, 137.416]
       - text: 顔
+        pronunciation: 카오
         time: [137.416, 138.29]
       - text: 'で '
+        pronunciation: 데
         time: [138.29, 138.777]
       - text: 君
+        pronunciation: 키미
         time: [138.918, 139.381]
       - text: が
+        pronunciation: 가
         time: [139.381, 139.666]
       - text: 笑う
+        pronunciation: 와라우
         time: [139.666, 140.866]
-    pronunciation: 사비시게나카오데 키미가와라우
     time: [135.514, 140.866]
   - words:
       - text: 光
+        pronunciation: 히카
         time: [141.334, 142.981]
       - text: る
+        pronunciation: 루
         time: [142.981, 143.589]
       - text: 朝
+        pronunciation: 아사
         time: [143.751, 144.109]
       - text: 'が '
+        pronunciation: 가
         time: [144.109, 144.794]
       - text: 朝
+        pronunciation: 아사
         time: [144.928, 145.35]
       - text: が
+        pronunciation: 가
         time: [145.35, 145.948]
-    pronunciation: 히카루아사가 아사가
     time: [141.334, 145.948]
   - words:
       - text: あまりに
+        pronunciation: 아마리니
         time: [146.093, 146.863]
       - text: 眩
+        pronunciation: 마부
         time: [146.863, 147.237]
       - text: 'しい '
+        pronunciation: 시
         time: [147.237, 147.853]
       - text: 眩
+        pronunciation: 마부
         time: [148.066, 148.431]
       - text: しい
+        pronunciation: 시
         time: [148.431, 149.197]
       - text: から
+        pronunciation: 카라
         time: [149.197, 149.592]
       - text: さ
+        pronunciation: 사
         time: [149.592, 149.958]
-    pronunciation: 아마리니마부시이 마부시이카라사
     time: [146.093, 149.958]
   - words:
       - text: ちょっと
+        pronunciation: 촛토
         time: [150.18, 150.784]
       - text: 'さ '
+        pronunciation: 사
         time: [150.784, 151.312]
       - text: らしく
+        pronunciation: 라시쿠
         time: [151.348, 152.113]
       - text: は
+        pronunciation: 와
         time: [152.113, 152.363]
       - text: ない
+        pronunciation: 나이
         time: [152.363, 152.862]
-    pronunciation: 촛토사 라시쿠하나이
+    pronunciation:
     time: [150.18, 152.862]
   - words:
       - text: 未
+        pronunciation: 미
         time: [152.9, 153.157]
       - text: 来
+        pronunciation: 라이
         time: [153.157, 153.905]
       - text: も
+        pronunciation: 모
         time: [153.905, 154.207]
       - text: 信
+        pronunciation: 신
         time: [154.207, 154.96]
       - text: じ
+        pronunciation: 지
         time: [154.96, 155.475]
       - text: ちゃう
+        pronunciation: 차우
         time: [155.475, 155.863]
       - text: よ
+        pronunciation: 요
         time: [155.863, 156.277]
-    pronunciation: 미라이모신지차우요
     time: [152.9, 156.277]
   - words:
       - text: 君
+        pronunciation: 키미
         time: [156.546, 156.993]
       - text: の
+        pronunciation: 노
         time: [156.993, 157.627]
       - text: 言葉
+        pronunciation: 코토바
         time: [157.766, 158.38]
       - text: が
+        pronunciation: 가
         time: [158.38, 158.541]
       - text: ずっ
+        pronunciation: 즛
         time: [158.541, 158.958]
       - text: と
+        pronunciation: 토
         time: [158.958, 159.117]
-    pronunciation: 키미노코토바가즛토
     time: [156.546, 159.117]
   - words:
       - text: 離
+        pronunciation: 하나
         time: [159.137, 159.556]
       - text: れ
+        pronunciation: 레
         time: [159.556, 159.745]
       - text: 'ない '
+        pronunciation: 나이
         time: [159.745, 160.309]
       - text: 離
+        pronunciation: 하나
         time: [160.508, 161.292]
       - text: れ
+        pronunciation: 레
         time: [161.292, 161.534]
       - text: ない
+        pronunciation: 나이
         time: [161.534, 162.229]
-    pronunciation: 하나레나이 하나레나이
     time: [159.137, 162.229]
   - words:
       - text: フ
+        pronunciation: 후
         time: [162.36, 162.537]
       - text: ラッ
+        pronunciation: 랏
         time: [162.537, 163.052]
       - text: シュ
+        pronunciation: 슈
         time: [163.18, 163.619]
       - text: バッ
+        pronunciation: 밧
         time: [163.619, 164.268]
       - text: カー
+        pronunciation: 카
         time: [164.268, 165.126]
-    pronunciation: 후랏슈밧카
+    pronunciation:
     time: [162.36, 165.126]
   - words:
       - text: 今
+        pronunciation: 이마
         time: [165.217, 165.644]
       - text: も
+        pronunciation: 모
         time: [165.644, 166.71]
       - text: 思
+        pronunciation: 오모
         time: [167.003, 167.523]
       - text: い
+        pronunciation: 이
         time: [167.523, 167.803]
       - text: 出して
+        pronunciation: 다시테
         time: [167.803, 168.296]
       - text: る
+        pronunciation: 루
         time: [168.296, 169.319]
-    pronunciation: 이마모오모이다시테루
     time: [165.217, 169.319]
   - words:
       - text: 光
+        pronunciation: 히카
         time: [194.266, 195.948]
       - text: る
+        pronunciation: 루
         time: [195.948, 196.683]
       - text: 朝
+        pronunciation: 아사
         time: [196.683, 197.2]
       - text: 'が '
+        pronunciation: 가
         time: [197.2, 197.726]
       - text: 朝
+        pronunciation: 아사
         time: [197.92, 198.332]
       - text: が
+        pronunciation: 가
         time: [198.332, 198.88]
-    pronunciation: 히카루아사가 아사가
     time: [194.266, 198.88]
   - words:
       - text: あまりに
+        pronunciation: 아마리니
         time: [199.076, 199.878]
       - text: 眩
+        pronunciation: 마부
         time: [199.878, 200.229]
       - text: 'しい '
+        pronunciation: 시
         time: [200.229, 200.836]
       - text: 眩
+        pronunciation: 마부
         time: [200.996, 201.414]
       - text: しい
+        pronunciation: 시
         time: [201.414, 202.18]
       - text: から
+        pronunciation: 카라
         time: [202.18, 202.546]
       - text: さ
+        pronunciation: 사
         time: [202.546, 202.884]
-    pronunciation: 아마리니마부시이 마부시이카라사
     time: [199.076, 202.884]
   - words:
       - text: なんか
+        pronunciation: 난카
         time: [203.117, 203.773]
       - text: 'もう '
+        pronunciation: 모
         time: [203.773, 204.276]
       - text: それ
+        pronunciation: 소레
         time: [204.379, 204.798]
       - text: だけ
+        pronunciation: 다케
         time: [204.798, 205.359]
       - text: で
+        pronunciation: 데
         time: [205.359, 205.795]
-    pronunciation: 난카모 소레다케데
     time: [203.117, 205.795]
   - words:
       - text: 心
+        pronunciation: 코코로
         time: [205.871, 206.838]
       - text: が
+        pronunciation: 가
         time: [206.838, 207.206]
       - text: 宙
+        pronunciation: 추
         time: [207.206, 207.982]
       - text: に
+        pronunciation: 니
         time: [207.982, 208.4]
       - text: 舞
+        pronunciation: 마
         time: [208.4, 208.683]
       - text: う
+        pronunciation: 우
         time: [208.683, 209.243]
-    pronunciation: 코코로가추니마우
     time: [205.871, 209.243]
   - words:
       - text: 君
+        pronunciation: 키미
         time: [209.529, 209.983]
       - text: の
+        pronunciation: 노
         time: [209.983, 210.623]
       - text: 言葉
+        pronunciation: 코토바
         time: [210.806, 211.33]
       - text: を
+        pronunciation: 오
         time: [211.33, 211.526]
       - text: ぎゅっ
+        pronunciation: 귯
         time: [211.526, 211.92]
       - text: と
+        pronunciation: 토
         time: [211.92, 212.124]
-    pronunciation: 키미노코토바오귯토
     time: [209.529, 212.124]
   - words:
       - text: 離
+        pronunciation: 하나
         time: [212.146, 212.512]
       - text: さ
+        pronunciation: 사
         time: [212.512, 212.712]
       - text: 'ない '
+        pronunciation: 나이
         time: [212.712, 213.271]
       - text: 離
+        pronunciation: 하나
         time: [213.429, 214.267]
       - text: さ
+        pronunciation: 사
         time: [214.267, 214.517]
       - text: ない
+        pronunciation: 나이
         time: [214.517, 215.123]
-    pronunciation: 하나사나이 하나사나이
     time: [212.146, 215.123]
   - words:
       - text: フ
+        pronunciation: 후
         time: [215.188, 215.449]
       - text: ラッ
+        pronunciation: 랏
         time: [215.449, 215.958]
       - text: シュ
+        pronunciation: 슈
         time: [216.124, 216.557]
       - text: バッ
+        pronunciation: 밧
         time: [216.557, 217.224]
       - text: カー
+        pronunciation: 카
         time: [217.224, 218.003]
-    pronunciation: 후랏슈밧카
     time: [215.188, 218.003]
   - words:
       - text: 今
+        pronunciation: 이마
         time: [218.135, 218.549]
       - text: も
+        pronunciation: 모
         time: [218.549, 219.82]
       - text: 思
+        pronunciation: 오모
         time: [219.94, 220.52]
       - text: い
+        pronunciation: 이
         time: [220.52, 220.724]
       - text: 出して
+        pronunciation: 다시테
         time: [220.724, 221.268]
       - text: る
+        pronunciation: 루
         time: [221.268, 223.457]
-    pronunciation: 이마모오모이다시테루
     time: [218.135, 223.457]
