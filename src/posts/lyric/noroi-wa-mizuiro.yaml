@@ -15,60 +15,89 @@ youtube:
   audio: LBAmh0SrJ-Q
 lines:
   - text: あとすこし そばにいて
+    pronunciation: 아토스코시 소바니이테
     time: [11.563, 16.309]
   - text: 読みたい漫画がみつかるまで
+    pronunciation: 요미타이만가가미츠카루마데
     time: [16.319, 22.889]
   - text: 片足の折れたテーブルと
+    pronunciation: 카타아시노오레타테부루토
     time: [22.999, 27.805]
   - text: 水滴の音をどうにかするまで
+    pronunciation: 스이테키노오토오도니카스루마데
     time: [27.815, 33.866]
   - text: 秘密の公園 同じ約束を
+    pronunciation: 히미츠노코엔 오나지야쿠소쿠오
     time: [34.057, 39.847]
   - text: あの人ともしたのね
+    pronunciation: 아노히토토모시타노네
     time: [40.086, 43.986]
   - text: 最後の手紙は赤く染めるわ
+    pronunciation: 사이고노테가미와아카쿠소메루와
     time: [45.468, 50.865]
   - text: 全部台無しにさせてよ
+    pronunciation: 젠부다이나시니사세테요
     time: [50.975, 56.268]
   - text: 生きている 生きてゆく
+    pronunciation: 이키테이루 이키테유쿠
     time: [56.278, 61.946]
   - text: 生きてきた 愛の隣で
+    pronunciation: 이키테키타 아이노토나리데
     time: [61.956, 68.118]
   - text: 私達はいつか死ぬのよ
+    pronunciation: 와타시타치와이츠카시누노요
     time: [68.128, 74.456]
   - text: 夜を越えても
+    pronunciation: 요루오코에테모
     time: [75.826, 80.227]
   - text: 追いかけて バカみたい
+    pronunciation: 오이카케테 바카미타이
     time: [105.866, 110.649]
   - text: ベンチの二人がひらく青春
+    pronunciation: 벤치노후타리가히라쿠세이슌
     time: [110.659, 117.246]
   - text: 私との夢の続きなら
+    pronunciation: 와타시토노유메노츠즈키나라
     time: [117.357, 122.11]
   - text: 笑いに行くわよ はやくお逃げなさい
+    pronunciation: 와라이니이쿠와요 하야쿠오니게나사이
     time: [122.12, 128.009]
   - text: あなたは正しい それでもやっぱり
+    pronunciation: 아나타와타다시 소레데모얏파리
     time: [128.428, 134.087]
   - text: 私だって正しい
+    pronunciation: 와타시닷테타다시이
     time: [134.42, 138.336]
   - text: そんな喧嘩もできなくなるの
+    pronunciation: 손나켄카모데키나쿠나루노
     time: [140.089, 145.168]
   - text: 春なんて来なければいい
+    pronunciation: 하루난테코나케레바이이
     time: [145.256, 150.649]
   - text: 生きている 生きてゆく
+    pronunciation: 이키테이루 이키테유쿠
     time: [150.659, 156.239]
   - text: 生きてきた 愛はただれて
+    pronunciation: 이키테키타 아이와타다레테
     time: [156.266, 162.257]
   - text: この体を蝕んでゆく
+    pronunciation: 코노카라다오무시반데유쿠
     time: [162.267, 168.841]
   - text: 呪いは水色
+    pronunciation: 노로이와미즈이로
     time: [169.947, 175.157]
   - text: 生きている 生きてゆく
+    pronunciation: 이키테이루 이키테유쿠
     time: [177.637, 183.467]
   - text: 生きてきた 愛の隣で
+    pronunciation: 이키테키타 아이노토나리데
     time: [183.477, 189.398]
   - text: 私達はいつか死ぬのよ
+    pronunciation: 와타시타치와이츠카시누노요
     time: [189.408, 196.458]
   - text: 夜を越えても
+    pronunciation: 요루오코에테모
     time: [197.213, 202.007]
   - text: 夜を越えても
+    pronunciation: 요루오코에테모
     time: [202.927, 207.617]
