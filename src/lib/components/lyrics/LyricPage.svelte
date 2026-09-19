@@ -153,11 +153,16 @@
     >
       {song.title}
     </h1>
-    {#if song.titleTranslation}<p class="text-xl font-semibold text-muted-foreground">
+    {#if song.titleTranslation}
+      <p class="text-xl font-semibold text-muted-foreground">
         {song.titleTranslation}
-      </p>{/if}
-    {#if artists.length}
+      </p>
+    {/if}
+    {#if artists.length || song.year}
       <div class="mt-3 text-muted-foreground">
+        {#if song.year}
+          {song.year}년
+        {/if} &middot;
         {#each artists as artist, index (artist.slug)}
           {#if index > 0}{', '}{/if}
           <a href={`/artist/${artist.slug}`} class="hover:underline">
@@ -173,8 +178,8 @@
   <section class="min-w-0 pb-16" aria-label="가사">
     <div class="mb-3 flex min-h-7 flex-wrap items-center justify-end gap-3">
       {#if pronunciations.length > 1}
-        <label class="text-sm text-muted-foreground"
-          >발음
+        <label class="text-sm text-muted-foreground">
+          발음
           <select
             class="ml-1 rounded-md border bg-background p-1 text-foreground"
             value={pronunciation || pronunciations[0]}
