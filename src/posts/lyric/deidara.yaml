@@ -36,7 +36,7 @@ lines:
     pronunciation: 게인오아게테미미이타이나신세사이자
     time: [50.761, 53.158]
   - text: 15時入りの15時間待ち
-    pronunciation: 15지이리노15지칸마치
+    pronunciation: 주고지이리노주고지칸마치
     time: [53.158, 55.515]
   - text: 心躍るはずの今日はロードショー
     pronunciation: 코코로오도루하즈노쿄와로도쇼
@@ -57,13 +57,13 @@ lines:
     pronunciation: 즈이분요쿠데키타쿠루진구나이토
     time: [67.478, 69.742]
   - text: 1984パラレルにゴーイング
-    pronunciation: 1984파라레루니고인구
+    pronunciation: 이치큐하치욘파라레루니고인구
     time: [69.742, 72.328]
   - text: 膨れ上がれ全能感
     pronunciation: 후쿠레아가레젠노칸
     time: [72.328, 79.242]
   - text: 堪えきれないや
-    pronunciation: 코타에키레나이야
+    pronunciation: 코라에키레나이야
     time: [79.642, 81.035]
   - text: 溢れ出す 薄暗い部屋からステージの上
     pronunciation: 아후레다스 우스구라이헤야카라스테지노우에
@@ -117,13 +117,13 @@ lines:
     pronunciation: 이마다니키리후다와미세테나이몬스타
     time: [132.141, 134.777]
   - text: 10, 9, 8で飛び降りる直下行
-    pronunciation: 10, 9, 8데토비오리루촛카유키
+    pronunciation: 주, 큐, 하치데토비오리루촛카코
     time: [134.777, 137.797]
   - text: どうかお願いだ
     pronunciation: 도카오네가이다
     time: [156.468, 157.849]
   - text: 僕のこと 高いとこまで連れてってちょうだい
-    pronunciation: 보쿠노코토 코이토코마데츠레텟테초다이
+    pronunciation: 보쿠노코토 타카이토코마데츠레텟테초다이
     time: [157.849, 161.268]
   - text: 深い森の中
     pronunciation: 후카이모리노나카
@@ -144,7 +144,7 @@ lines:
     pronunciation: 보쿠라루자 미오로시타마치오후미츠부슨다
     time: [172.232, 175.749]
   - text: 堪えきれないや
-    pronunciation: 코타에키레나이야
+    pronunciation: 코라에키레나이야
     time: [177.998, 179.452]
   - text: 溢れ出す 薄暗い部屋からステージの上
     pronunciation: 아후레다스 우스구라이헤야카라스테지노우에
