@@ -13,19 +13,22 @@ lang: ja
 spotify: 6NrFFHxh2hWxpaRldOeCf4
 youtube:
   audio: fqUwaQjMeCs
+offsets:
+  youtubeAudio: -0.4
+  spotify: -0.4
 lines:
   - text: 漆黒の深き闇より
-    time: [1.182, 4.453]
+    time: [1.182, 7.453]
   - text: 生命が脈動をあげて
-    time: [7.809, 11.984]
+    time: [7.809, 13.984]
   - text: あの日ひとつの宇宙だった
-    time: [15.483, 19.183]
+    time: [15.483, 21.183]
   - text: 今宵君が産声をあげた
-    time: [22.631, 26.567]
+    time: [22.631, 28.567]
   - text: 火を熾し街を照らせ
-    time: [30.053, 35.777]
+    time: [30.053, 36.777]
   - text: 君が生き迷わぬ様に
-    time: [37.087, 41.19]
+    time: [37.087, 44.19]
   - text: 弦を鳴らし歌を唄え
     time: [44.628, 50.384]
   - text: 君が泣き止み笑う様に
