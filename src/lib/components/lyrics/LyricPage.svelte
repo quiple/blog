@@ -161,8 +161,8 @@
     {#if artists.length || song.year}
       <div class="mt-3 text-muted-foreground">
         {#if song.year}
-          {song.year}년
-        {/if} &middot;
+          {song.year}년 &middot;
+        {/if}
         {#each artists as artist, index (artist.slug)}
           {#if index > 0}{', '}{/if}
           <a href={`/artist/${artist.slug}`} class="hover:underline">
