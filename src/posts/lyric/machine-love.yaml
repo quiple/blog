@@ -102,7 +102,7 @@ lines:
     time: [141.68, 147.16]
   - text: It hurts my eyes, and I'm without an alibi
     time: [147.16, 152.77]
-  - text: "'Cause all this time, I've been alive"
+  - text: ’Cause all this time, I've been alive
     time: [152.77, 158.07]
   - text: And all that I could want is to be living by your side
     time: [158.07, 163.23]
@@ -112,7 +112,7 @@ lines:
     time: [165, 167.73]
   - text: Can we wander for a spell and live in parallel?
     time: [167.73, 171.3]
-  - text: "'Cause now I know it's true, I'll be like you"
+  - text: ’Cause now I know it's true, I'll be like you
     time: [171.3, 173.92]
   - text: My heart beats a rhythm just for you
     time: [173.92, 178.73]
