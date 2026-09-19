@@ -1,0 +1,69 @@
+# https://music.apple.com/kr/song/1714546963
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1714546963?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1714546963
+# 선택 항목: Apple Music · Kawaii Yunachan · 음절별 가사 · 1714546963
+# 가져온 시각: 2026-09-19T10:35:22.927Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: 可愛いユナちゃん
+titleLang: ja
+artist: super-social-sandal
+lang: ja
+spotify: 51Wglv2PINrDBmgjFBZAet
+youtube:
+  audio: wSHsmLKisbY
+  mv: rgUPCGHxWYc
+offsets:
+  youtubeMV: -0.017
+lines:
+  - text: 小学3年生 可愛いユナちゃんリレーで1番
+    time: [20.602, 28.054]
+  - text: 街で出会った やっぱり可愛い何でかな
+    time: [30.634, 38.71]
+  - text: 小学3年生 可愛いユナちゃんテストで100点
+    time: [50.788, 58.474]
+  - text: 街で出会って 髪の毛金髪何でかな？
+    time: [60.728, 68.796]
+  - text: アタシは変わらず黒髪メガネ お揃いストラップ
+    time: [70.811, 75.667]
+  - text: イルカは今頃海の底かな
+    time: [75.867, 80.453]
+  - text: ユナちゃん可愛い
+    time: [82.1, 84.762]
+  - text: (可愛いユナちゃん)
+    time: [84.762, 87.215]
+  - text: ユナちゃん可愛い
+    time: [87.215, 91.446]
+  - text: 今でも可愛い
+    time: [92.189, 94.831]
+  - text: アタシよりもずっとずっとずっとずっとずっと
+    time: [95.966, 102.278]
+  - text: ユナちゃん可愛い
+    time: [102.278, 104.812]
+  - text: (可愛いユナちゃん)
+    time: [104.812, 107.332]
+  - text: ユナちゃん可愛い
+    time: [107.332, 111.242]
+  - text: 小学3年生アタシはずっとこのままずっとずっとずっとずっと
+    time: [112.276, 120.322]
+  - text: 小学3年生 可愛いユナちゃんリレーで1番
+    time: [142.471, 150.196]
+  - text: 街で出会った タバコを吸ってたなんでなの
+    time: [152.455, 160.688]
+  - text: ユナちゃん可愛い
+    time: [162.513, 165.951]
+  - text: ユナちゃん可愛い
+    time: [167.595, 171.615]
+  - text: 今でも可愛い
+    time: [172.664, 175.799]
+  - text: アタシよりもずっとずっとずっとずっとずっと
+    time: [176.362, 182.716]
+  - text: ユナちゃん可愛い
+    time: [182.716, 185.241]
+  - text: (可愛いユナちゃん)
+    time: [185.241, 187.752]
+  - text: ユナちゃん可愛い
+    time: [187.752, 191.625]
+  - text: 小学3年生アタシはずっとこのままずっとずっとずっとずっと
+    time: [192.728, 200.439]
