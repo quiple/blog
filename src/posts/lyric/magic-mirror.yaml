@@ -79,7 +79,7 @@ lines:
     pronunciation: 아타시노유메와
     time: [105.479, 108.459]
   - text: 君が蹴散らしたブサイクでボロボロのLIFEを
-    pronunciation: 키미가케치라시타부사이쿠데보로보로노LIFE오
+    pronunciation: 키미가케치라시타부사이쿠데보로보로노라이후오
     time: [108.469, 118.443]
   - text: 掻き集めて大きな鏡をつくること
     pronunciation: 카키아츠메테오키나카가미오츠쿠루코토
@@ -111,7 +111,7 @@ lines:
   - text: まだ
     pronunciation: 마다
     time: [160.988, 161.657]
-  - text: みじめかな？
+  - text: みじめかな?
     pronunciation: 미지메카나?
     time: [162.457, 164.247]
   - text: モテたいモテたい女子力ピンクに
@@ -127,7 +127,7 @@ lines:
     pronunciation: 요고사레루타메노세이슌자나이와
     time: [187.99, 192.601]
   - text: ピンチはみせられない
-    pronunciation: 핀치하미세라레나이
+    pronunciation: 핀치와미세라레나이
     time: [192.611, 198.512]
   - text: いままでのこと
     pronunciation: 이마마데노코토
@@ -142,7 +142,7 @@ lines:
     pronunciation: 야쿠소쿠요
     time: [207.249, 211.218]
   - text: あたしの有名は
-    pronunciation: 아타시노유메이하
+    pronunciation: 아타시노유메이와
     time: [213.392, 216.343]
   - text: 君の孤独のためにだけ光るよ
     pronunciation: 키미노코도쿠노타메니다케히카루요
@@ -154,16 +154,16 @@ lines:
     pronunciation: 아이타이노
     time: [233.021, 237.402]
   - text: あたしのゆめは
-    pronunciation: 아타시노유메하
+    pronunciation: 아타시노유메와
     time: [237.412, 240.387]
   - text: 君が蹴散らしたブサイクでボロボロのLIFEを
-    pronunciation: 키미가케치라시타부사이쿠데보로보로노LIFE오
+    pronunciation: 키미가케치라시타부사이쿠데보로보로노라이후오
     time: [240.397, 250.473]
   - text: 掻き集めて大きな鏡をつくること
     pronunciation: 카키아츠메테오키나카가미오츠쿠루코토
     time: [251.084, 262.937]
   - text: 君がつくった美しい日々を
-    pronunciation: 키미가츠쿳타우츠쿠시이히비오
+    pronunciation: 키미가츠쿳타우츠쿠시히비오
     time: [263.035, 268.985]
   - text: 歌いたい
     pronunciation: 우타이타이
