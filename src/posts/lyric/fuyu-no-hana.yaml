@@ -1,0 +1,87 @@
+# https://music.apple.com/kr/song/1451684198
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1451684198?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1451684198
+# 선택 항목: Apple Music · Fuyu No Hana · 음절별 가사 · 1451684198
+# 가져온 시각: 2026-09-19T10:29:12.806Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: 冬の花
+titleLang: ja
+artist: miyamoto-hiroji
+lang: ja
+spotify: 35v73tm1YCmyLPd5vfiEaj
+youtube:
+  audio: jYuub_92xJg
+  mv: iQhRmQWwDYs
+offsets:
+  youtubeMV: 7.141
+lines:
+  - text: いずれ花と散る わたしの生命
+    time: [0.26, 4.74]
+  - text: 帰らぬ時 指おり数えても
+    time: [5.317, 9.498]
+  - text: 涙と笑い 過去と未来
+    time: [10.03, 14.366]
+  - text: 引き裂かれしわたしは 冬の花
+    time: [14.824, 19.252]
+  - text: あなたは太陽 わたしは月
+    time: [24.584, 28.87]
+  - text: 光と闇が交じり合わぬように
+    time: [29.198, 33.521]
+  - text: 涙にけむる ふたりの未来
+    time: [33.921, 38.532]
+  - text: 美しすぎる過去は蜃気楼
+    time: [38.744, 45.471]
+  - text: 旅みたいだね
+    time: [47.099, 50.842]
+  - text: 生きるってどんな時でも
+    time: [51.002, 55.28]
+  - text: 木枯らしの中 ぬくもり求め 彷徨う
+    time: [56.662, 64.952]
+  - text: 泣かないで わたしの恋心
+    time: [66.23, 71.176]
+  - text: 涙は“お前”にはにあわない
+    time: [71.587, 75.621]
+  - text: ゆけ ただゆけ いっそわたしがゆくよ
+    time: [75.662, 80.781]
+  - text: ああ 心が笑いたがっている
+    time: [81.024, 89.768]
+  - text: なんか悲しいね 生きてるって
+    time: [94.691, 99.242]
+  - text: 重ねし約束 あなたとふたり
+    time: [99.601, 103.883]
+  - text: 時のまにまに たゆたいながら
+    time: [104.384, 108.748]
+  - text: 涙を隠した しあわせ芝居
+    time: [109.18, 113.673]
+  - text: さらば思い出たちよ
+    time: [117.447, 120.647]
+  - text: ひとり歩く摩天楼
+    time: [121.458, 126.307]
+  - text: わたしという名の物語は 最終章
+    time: [127.096, 136.183]
+  - text: 悲しくって泣いてるわけじゃあない
+    time: [136.645, 141.571]
+  - text: 生きてるから涙が出るの
+    time: [142.065, 146.087]
+  - text: こごえる季節に鮮やかに咲くよ
+    time: [146.193, 151.06]
+  - text: ああ わたしが 負けるわけがない
+    time: [151.476, 161.201]
+  - text: 泣かないで わたしの恋心
+    time: [184.322, 189.27]
+  - text: 涙は“お前”にはにあわない
+    time: [189.845, 193.67]
+  - text: ゆけ ただゆけ いっそわたしがゆくよ
+    time: [193.982, 198.967]
+  - text: ああ 心が笑いたがっている
+    time: [199.321, 208.074]
+  - text: ひと知れず されど誇らかに咲け
+    time: [208.241, 213.268]
+  - text: ああ わたしは 冬の花
+    time: [213.525, 224.577]
+  - text: 胸には涙 顔には笑顔で
+    time: [226.575, 229.895]
+  - text: 今日もわたしは出かける
+    time: [230.566, 234.497]
