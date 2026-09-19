@@ -27,12 +27,11 @@
         {#if song.artists?.length || song.year}
           <div class="mt-px flex items-start justify-between gap-2">
             <small class="text-muted-foreground">
-              {#if song.year}{song.year}년 &middot;{/if}
-              {#each song.artists as artist, index (artist.slug)}
-                {#if index > 0}{', '}{/if}<span
+              {#if song.year}{song.year}년&#8194;&middot;&#8194;{/if}{#each song.artists as artist, index (artist.slug)}{#if index > 0}{', '}{/if}<span
                   lang={artist.translation || artist.lang === 'ko' ? undefined : (artist.lang ?? '')}
-                  >{artist.translation || artist.name}</span
                 >
+                  {artist.translation || artist.name}
+                </span>
               {/each}
             </small>
           </div>
