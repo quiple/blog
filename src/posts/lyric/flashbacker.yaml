@@ -590,7 +590,7 @@ lines:
     time: [130.721, 135.373]
   - words:
       - text: 寂
-        pronunciation: 사비
+        pronunciation: 사미
         time: [135.514, 136.299]
       - text: しげな
         pronunciation: 시게나
@@ -670,7 +670,6 @@ lines:
       - text: ない
         pronunciation: 나이
         time: [152.363, 152.862]
-    pronunciation:
     time: [150.18, 152.862]
   - words:
       - text: 未
@@ -751,7 +750,6 @@ lines:
       - text: カー
         pronunciation: 카
         time: [164.268, 165.126]
-    pronunciation:
     time: [162.36, 165.126]
   - words:
       - text: 今
