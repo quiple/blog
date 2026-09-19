@@ -44,9 +44,7 @@ const songSchema = v.strictObject({
   title: v.optional(v.pipe(v.string(), v.minLength(1))),
   titleLang: v.optional(v.string()),
   titleTranslation: v.optional(v.string()),
-  year: v.optional(
-    v.pipe(v.string(), v.digits('숫자만 입력해 주세요.'), v.length(4, '연도는 정확히 4자리여야 합니다.')),
-  ),
+  year: v.optional(v.pipe(v.string(), v.digits(), v.length(4))),
   artist: v.optional(v.union([v.string(), v.array(v.string())])),
   lang: v.optional(v.string()),
   pronunciationLang: v.optional(v.string()),
