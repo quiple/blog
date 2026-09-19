@@ -1,0 +1,108 @@
+# https://music.apple.com/kr/song/1495934856
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1495934856?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1495934856
+# 선택 항목: Apple Music · Metamorphose · 음절별 가사 · 1495934856
+# 가져온 시각: 2026-09-19T06:59:45.642Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: Metamorphose
+titleLang: ja
+artist: monkey-majik
+lang: ja
+spotify: 5FLcleuB3DQg0w6PVWlvPe
+youtube:
+  audio: vWnlZAJax8Y
+lines:
+  - text: 姿形を巧みに変えて
+    time: [4.57, 9.17]
+  - text: 自由自在に on and on and on
+    time: [9.18, 13.699]
+  - text: 幼き日のある夏 心を奪われた
+    time: [32.519, 40.969]
+  - text: 優雅に舞う妖しげなソレを
+    time: [41.627, 46.2]
+  - text: 無我夢中で追いかけた
+    time: [46.21, 49.578]
+  - text: まるで神の悪戯だね
+    time: [50.877, 55.405]
+  - text: そうやって play the fool
+    time: [55.516, 58.755]
+  - text: この世の神秘 Metamorphose
+    time: [60.041, 64.559]
+  - text: 新世界への扉に立って
+    time: [64.569, 68.561]
+  - text: 姿形を巧みに変えて
+    time: [68.571, 73.123]
+  - text: 自由自在に何処だって Freedom calling
+    time: [73.133, 77.741]
+  - text: I don't know where I went wrong
+    time: [77.851, 79.922]
+  - text: Sorry for the things I've done
+    time: [80.032, 82.331]
+  - text: Lift me up and keep me strong
+    time: [82.43, 84.514]
+  - text: On and on and on
+    time: [84.583, 86.903]
+  - text: Who's got the best
+    time: [86.913, 88.75]
+  - text: I don't care
+    time: [88.76, 90.631]
+  - text: I won't contest I'm movin' on
+    time: [91.661, 94.723]
+  - text: Yeah, who's got the best
+    time: [95.642, 97.839]
+  - text: Leave it, I don't care
+    time: [97.849, 99.766]
+  - text: No, no, there's nothing left worth holding on
+    time: [99.776, 103.946]
+  - text: まるで神の悪戯だね
+    time: [105.463, 110.252]
+  - text: Coming out of my cocoon
+    time: [110.362, 113.427]
+  - text: この世の神秘 Metamorphose
+    time: [114.851, 119.318]
+  - text: 新世界への扉に立って
+    time: [119.328, 123.456]
+  - text: 姿形を巧みに変えて
+    time: [123.466, 128.054]
+  - text: 自由自在に何処だって Freedom calling
+    time: [128.064, 132.575]
+  - text: I don't know where I went wrong
+    time: [132.668, 134.763]
+  - text: Sorry for the things I've done
+    time: [134.868, 137.213]
+  - text: Lift me up and keep me strong
+    time: [137.223, 139.326]
+  - text: On and on and on
+    time: [139.425, 141.269]
+  - text: It seems right
+    time: [141.279, 143.16]
+  - text: But it feels wrong
+    time: [143.438, 145.755]
+  - text: Yeah, it seems right
+    time: [145.765, 148.679]
+  - text: 姿形を巧みに変えて
+    time: [169.186, 173.772]
+  - text: 自由自在に何処だって Freedom calling
+    time: [173.782, 178.34]
+  - text: I don't know where I went wrong
+    time: [178.427, 180.471]
+  - text: Sorry for the things I've done
+    time: [180.569, 182.961]
+  - text: Lift me up and keep me strong
+    time: [183.048, 185.057]
+  - text: On and on and on
+    time: [185.149, 187.513]
+  - text: 姿形を巧みに変えて
+    time: [187.523, 191.998]
+  - text: 自由自在に何処だって Freedom calling
+    time: [192.103, 196.59]
+  - text: I don't know where I went wrong
+    time: [196.689, 198.721]
+  - text: Sorry for the things I've done
+    time: [198.842, 201.164]
+  - text: Lift me up and keep me strong
+    time: [201.269, 203.312]
+  - text: On and on and on
+    time: [203.423, 205.919]

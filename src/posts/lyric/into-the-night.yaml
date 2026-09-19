@@ -1,0 +1,94 @@
+# https://music.apple.com/kr/song/1495934858
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1495934858?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1495934858
+# 선택 항목: Apple Music · Into The Night · 음절별 가사 · 1495934858
+# 가져온 시각: 2026-09-19T07:00:52.658Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: Into The Night
+titleLang: ja
+artist: monkey-majik
+lang: ja
+spotify: 78Jd2x1lH4FvLJnPfDQi0I
+youtube:
+  audio: yU8x8guuzVA
+lines:
+  - text: 嫌になるほど 愛してた
+    time: [13.614, 24.555]
+  - text: ボタンどこかで掛け違えたままで モヤモヤ
+    time: [26.253, 37.355]
+  - text: 人と人とが認め合って
+    time: [38.839, 51.264]
+  - text: 結びつくこと 当たり前すぎて
+    time: [51.904, 57.718]
+  - text: まるで空気のように
+    time: [57.728, 62.555]
+  - text: Into the night
+    time: [62.565, 65.548]
+  - text: She dances with the light
+    time: [65.558, 68.655]
+  - text: Look how she shines the skies
+    time: [68.665, 70.956]
+  - text: A part of her is within you
+    time: [70.966, 74.515]
+  - text: There's a part of you in me
+    time: [74.525, 77.558]
+  - text: Everything's how it should be
+    time: [77.656, 81.865]
+  - text: I miss you
+    time: [82.476, 84.071]
+  - text: I kiss you goodbye
+    time: [84.081, 87.98]
+  - text: What would the world be like
+    time: [90.096, 95.776]
+  - text: If you were never born
+    time: [96.448, 101.819]
+  - text: Would all of history change
+    time: [102.819, 105.836]
+  - text: Would all the lives you saved
+    time: [106.07, 108.858]
+  - text: Fade away just like your name
+    time: [108.868, 114.59]
+  - text: I guess it's a story
+    time: [116.041, 120.97]
+  - text: A song never sung
+    time: [122.319, 128.087]
+  - text: Were all extraordinary
+    time: [128.666, 131.448]
+  - text: So never mind the worries
+    time: [131.776, 134.558]
+  - text: Come and play
+    time: [134.568, 137.05]
+  - text: Or stay away
+    time: [137.307, 139.257]
+  - text: あなたのその笑顔も その声も
+    time: [139.267, 147.774]
+  - text: 忘れられるかな
+    time: [147.784, 151.177]
+  - text: 静かに溶けるこの雪のように
+    time: [151.187, 158.901]
+  - text: I miss you
+    time: [159.295, 160.885]
+  - text: I kiss you goodbye
+    time: [160.895, 166.066]
+  - text: I guess we just don't know what we're looking for
+    time: [166.39, 172.152]
+  - text: We got lost in a moment parted out the door
+    time: [172.963, 179.089]
+  - text: 君は優しすぎるから 突然姿を
+    time: [179.975, 190.858]
+  - text: あなたのその笑顔も その声も
+    time: [191.209, 198.961]
+  - text: 忘れられるかな
+    time: [198.971, 202.318]
+  - text: 静かに溶けるこの雪のように
+    time: [202.428, 210.159]
+  - text: I miss you
+    time: [210.43, 212.018]
+  - text: I kiss you goodbye
+    time: [212.028, 216.832]
+  - text: I miss you
+    time: [216.842, 218.316]
+  - text: I kiss you goodbye
+    time: [218.533, 223.048]

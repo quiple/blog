@@ -1,0 +1,122 @@
+# https://music.apple.com/kr/song/1495934639
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1495934639?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1495934639
+# 선택 항목: Apple Music · Please Don't Stop The Music · 음절별 가사 · 1495934639
+# 가져온 시각: 2026-09-19T07:00:14.083Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: Please Don't Stop The Music
+titleLang: en
+artist: monkey-majik
+lang: en
+spotify: 25UE7tv0U5iqgKwGAh1iyA
+youtube:
+  audio: k8UGcwvp8YQ
+lines:
+  - text: I woke up right beside you
+    time: [35.209, 38.024]
+  - text: A feeling that's so blue
+    time: [38.034, 40.193]
+  - text: You know you got me running 'round in circles
+    time: [40.244, 43.845]
+  - text: Just one night
+    time: [44.65, 47.286]
+  - text: Every moment you arrive
+    time: [47.419, 49.637]
+  - text: And you take over my life
+    time: [49.73, 51.748]
+  - text: Oh baby
+    time: [51.758, 53.102]
+  - text: Can't live without you baby
+    time: [53.112, 55.357]
+  - text: I give it up for you
+    time: [55.372, 58.098]
+  - text: You know I love you
+    time: [58.108, 59.962]
+  - text: Please don't stop the music
+    time: [59.972, 61.954]
+  - text: Please don't stop the music
+    time: [64.432, 66.625]
+  - text: We belong together
+    time: [68.753, 70.906]
+  - text: And that won't change forever
+    time: [73.108, 75.149]
+  - text: "'Cause I love you, I love you, I love"
+    time: [76.106, 78.678]
+  - text: I'm just a slave to you
+    time: [78.864, 81.344]
+  - text: But I just can't stop the groove with you
+    time: [81.354, 85.714]
+  - text: Don't you walk out that door
+    time: [85.724, 88.986]
+  - text: You knew from the beginning she'd be there
+    time: [90.264, 93.356]
+  - text: But I never thought she'd take me over
+    time: [93.366, 95.846]
+  - text: Baby what did I do
+    time: [95.856, 99.09]
+  - text: Can't control the rhythm, the rhythm, the rhythm
+    time: [99.174, 104.73]
+  - text: Oh baby
+    time: [104.14, 105.529]
+  - text: Can't live without you baby
+    time: [105.539, 107.715]
+  - text: I give it up for you
+    time: [107.725, 110.424]
+  - text: You know I love you
+    time: [110.434, 112.324]
+  - text: Please don't stop the music
+    time: [112.334, 114.337]
+  - text: Please don't stop the music
+    time: [116.755, 118.975]
+  - text: We belong together
+    time: [121.094, 123.175]
+  - text: And that won't change forever
+    time: [125.443, 127.462]
+  - text: "'Cause I love you, I love you, I love"
+    time: [128.434, 130.924]
+  - text: I don't need to travel far
+    time: [130.93, 133.069]
+  - text: No need for a miracle
+    time: [133.179, 135.251]
+  - text: I'm singing in the rain
+    time: [137.15, 139.641]
+  - text: Got me on a high ya see
+    time: [139.651, 141.903]
+  - text: Orchestrate my life all year round
+    time: [141.913, 144.662]
+  - text: "'Cause I love this"
+    time: [145.879, 147.189]
+  - text: Please don't stop the music
+    time: [147.271, 149.227]
+  - text: Please don't stop the music
+    time: [151.613, 153.888]
+  - text: We belong together
+    time: [156.037, 158.091]
+  - text: And that won't change forever
+    time: [160.409, 162.387]
+  - text: "'Cause I love you, I love you, I love"
+    time: [163.356, 165.841]
+  - text: Please don't stop the music
+    time: [164.673, 166.652]
+  - text: Please don't stop the music
+    time: [169.061, 171.325]
+  - text: We belong together
+    time: [173.449, 175.588]
+  - text: And that won't change forever
+    time: [177.867, 179.846]
+  - text: "'Cause I love you, I love you, I love"
+    time: [180.765, 183.198]
+  - text: (Please don't stop the music)
+    time: [182.153, 184.076]
+  - text: (Please don't stop the music)
+    time: [186.567, 188.406]
+  - text: (Please don't stop the music)
+    time: [190.846, 192.754]
+  - text: (Please don't stop the music)
+    time: [195.169, 197.085]
+  - text: (Please don't stop the music)
+    time: [199.545, 201.254]
+  - text: (We're making the music, we're making the music, we're making the music, we're making the music, ...)
+    time: [201.264, 236.716]
