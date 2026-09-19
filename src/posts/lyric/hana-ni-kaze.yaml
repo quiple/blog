@@ -17,6 +17,8 @@ spotify: 3SOSqAmO4m7rzC2zbnqwU6
 youtube:
   audio: rw2e0vpMw7E
   mv: ixLrlhthgHs
+offsets:
+  youtubeMV: 1.231
 lines:
   - text: 憎たらしくて
     time: [19.138, 21.013]
