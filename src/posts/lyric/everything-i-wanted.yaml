@@ -108,7 +108,7 @@ lines:
         pronunciation: 투
         time: [34.771, 35.052]
       - text: 'anyone '
-        pronunciation: 애니원
+        pronunciation: 에니원
         time: [35.052, 35.787]
       - text: 'who '
         pronunciation: 후
@@ -592,7 +592,7 @@ lines:
         pronunciation: 렛
         time: [141.11, 141.542]
       - text: 'anybody '
-        pronunciation: 애니바디
+        pronunciation: 에니바디
         time: [141.542, 142.608]
       - text: know
         pronunciation: 노
