@@ -48,6 +48,7 @@ lines:
     pronunciation: 아이시타후리시테 다키시메테쿠레타라
     time: [42.298, 45.048]
   - text: VOID ME VOID ME VOID ME
+    pronunciation: 보이도 미 보이도 미 보이도 미
     time: [45.058, 49.357]
   - text: 友達でもない 恋人でもない
     pronunciation: 토모다치데모나이 코이비토데모나이
@@ -56,6 +57,7 @@ lines:
     pronunciation: 모시카시타라모니도토아우코토모나이
     time: [51.859, 54.779]
   - text: VOID LOVE VOID LOVE
+    pronunciation: 보이도 라부 보이도 라부
     time: [54.789, 57.047]
   - text: 何もなかったかのように
     pronunciation: 나니모나캇타카노요니
@@ -76,6 +78,7 @@ lines:
     pronunciation: 운메이붓타나사케나이보쿠라와
     time: [83.395, 86.298]
   - text: VOID ME VOID ME VOID ME
+    pronunciation: 보이도 미 보이도 미 보이도 미
     time: [86.308, 90.646]
   - text: 嫌われたくない ひとりになりたい
     pronunciation: 키라와레타쿠나이 히토리니나리타이
@@ -84,6 +87,7 @@ lines:
     pronunciation: 다케도사미시 키즈츠카레타쿠나이
     time: [93.135, 96.016]
   - text: VOID LOVE VOID LOVE
+    pronunciation: 보이도 라부 보이도 라부
     time: [96.026, 98.384]
   - text: これが僕らの幸せさ
     pronunciation: 코레가보쿠라노시아와세사
@@ -92,6 +96,7 @@ lines:
     pronunciation: 이에오누케다시테보쿠노헤야니오이데
     time: [109.975, 114.169]
   - text: VOID LOVE VOID LOVE
+    pronunciation: 보이도 라부 보이도 라부
     time: [114.185, 116.66]
   - text: 本当は本当に何もできない
     pronunciation: 혼토와혼토니나니모데키나이
@@ -103,6 +108,7 @@ lines:
     pronunciation: 아이시타후리시테 다키시메테쿠레타라
     time: [122.33, 125.216]
   - text: VOID ME VOID ME VOID ME
+    pronunciation: 보이도 미 보이도 미 보이도 미
     time: [125.226, 129.576]
   - text: 友達でもない 恋人でもない
     pronunciation: 토모다치데모나이 코이비토데모나이
@@ -111,6 +117,7 @@ lines:
     pronunciation: 모시카시타라모니도토아우코토모나이
     time: [132.136, 135.009]
   - text: VOID LOVE VOID LOVE
+    pronunciation: 보이도 라부 보이도 라부
     time: [135.108, 137.529]
   - text: 何もないよりマシだから
     pronunciation: 난모나이요리마시다카라
