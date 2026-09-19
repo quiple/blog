@@ -19,44 +19,62 @@ offsets:
 lines:
   - words:
       - text: 転換
+        pronunciation: 텐칸
         time: [24.917, 25.702]
       - text: '点 '
+        pronunciation: 텐
         time: [25.702, 26.113]
       - text: いつか
+        pronunciation: 이츠카
         time: [26.113, 26.707]
       - text: ノート
+        pronunciation: 노토
         time: [26.707, 27.249]
       - text: に
+        pronunciation: 니
         time: [27.249, 27.736]
     time: [24.917, 27.736]
   - words:
       - text: 書いた
+        pronunciation: 카이타
         time: [27.771, 28.43]
       - text: あの
+        pronunciation: 아노
         time: [28.43, 28.803]
       - text: 言葉
+        pronunciation: 코토바
         time: [28.803, 29.451]
       - text: たち
+        pronunciation: 타치
         time: [29.451, 29.812]
       - text: は
+        pronunciation: 와
         time: [29.812, 30.312]
     time: [27.771, 30.312]
   - words:
       - text: きっ
+        pronunciation: 킷
         time: [30.734, 31.14]
       - text: 'と '
+        pronunciation: 토
         time: [31.14, 31.648]
       - text: 泡
+        pronunciation: 아와
         time: [31.762, 32.179]
       - text: になっ
+        pronunciation: 니낫
         time: [32.179, 32.737]
       - text: て
+        pronunciation: 테
         time: [32.737, 32.94]
       - text: 消
+        pronunciation: 키
         time: [32.94, 33.296]
       - text: え
+        pronunciation: 에
         time: [33.296, 33.506]
       - text: た
+        pronunciation: 타
         time: [33.506, 34.148]
     time: [30.734, 34.148]
   - words:
@@ -72,6 +90,7 @@ lines:
         time: [36.469, 36.672]
       - text: ない
         time: [36.672, 37.2]
+    pronunciation: 유쿠에난테시라나이
     time: [34.822, 37.2]
   - words:
       - text: 擦り
@@ -88,6 +107,7 @@ lines:
         time: [39.171, 39.705]
       - text: が
         time: [39.705, 40.185]
+    pronunciation: 스리킷타시로이초쿠가
     time: [37.318, 40.185]
   - words:
       - text: はらはらと
@@ -98,6 +118,7 @@ lines:
         time: [41.942, 42.324]
       - text: た
         time: [42.324, 42.79]
+    pronunciation: 하라하라토오치테잇타
     time: [40.185, 42.79]
   - words:
       - text: まる
@@ -114,6 +135,7 @@ lines:
         time: [45.787, 45.993]
       - text: と
         time: [45.993, 46.414]
+    pronunciation: 마루데 호시쿠즈미타이다토
     time: [43.218, 46.414]
   - words:
       - text: 見とれ
@@ -124,6 +146,7 @@ lines:
         time: [48.543, 49.204]
       - text: 嗚呼
         time: [49.428, 50.21]
+    pronunciation: 미토레테이탄다 아
     time: [46.867, 50.21]
   - words:
       - text: いつかは
@@ -134,6 +157,7 @@ lines:
         time: [51.589, 52.184]
       - text: けど
         time: [52.184, 52.76]
+    pronunciation: 이츠카하키에테시마우케도
     time: [50.251, 52.76]
   - words:
       - text: 誰
@@ -156,6 +180,7 @@ lines:
         time: [56.152, 56.478]
       - text: な
         time: [56.478, 57.359]
+    pronunciation: 다레카노키오쿠니하노코레루카나
     time: [52.829, 57.359]
   - words:
       - text: この
@@ -174,6 +199,7 @@ lines:
         time: [61.713, 61.94]
       - text: さ
         time: [61.94, 62.77]
+    pronunciation: 코노슌칸오키리톳테사
     time: [57.588, 62.77]
   - words:
       - text: 光
@@ -188,6 +214,7 @@ lines:
         time: [67.007, 67.408]
       - text: が
         time: [67.408, 68.006]
+    pronunciation: 히카루아사가 아사가
     time: [63.392, 68.006]
   - words:
       - text: あまりに
@@ -204,6 +231,7 @@ lines:
         time: [71.275, 71.641]
       - text: さ
         time: [71.641, 72.186]
+    pronunciation: 아마리니마부시이 마부시이카라사
     time: [68.171, 72.186]
   - words:
       - text: なんか
@@ -216,6 +244,7 @@ lines:
         time: [73.879, 74.44]
       - text: で
         time: [74.44, 74.899]
+    pronunciation: 난카모 소레다케데
     time: [72.198, 74.899]
   - words:
       - text: 心
@@ -230,6 +259,7 @@ lines:
         time: [77.514, 77.752]
       - text: う
         time: [77.752, 78.274]
+    pronunciation: 코코로가추니마우
     time: [74.985, 78.274]
   - words:
       - text: 君
@@ -244,6 +274,7 @@ lines:
         time: [80.62, 81.037]
       - text: と
         time: [81.037, 81.196]
+    pronunciation: 키미노코토바가즛토
     time: [78.625, 81.196]
   - words:
       - text: 離
@@ -258,6 +289,7 @@ lines:
         time: [83.351, 83.593]
       - text: ない
         time: [83.593, 84.288]
+    pronunciation: 하나레나이 하나레나이
     time: [81.196, 84.288]
   - words:
       - text: フ
@@ -270,6 +302,7 @@ lines:
         time: [85.722, 86.389]
       - text: カー
         time: [86.389, 87.133]
+    pronunciation: 후랏슈밧카
     time: [84.353, 87.133]
   - words:
       - text: 今
@@ -284,6 +317,7 @@ lines:
         time: [89.846, 90.38]
       - text: る
         time: [90.38, 91.362]
+    pronunciation: 이마모오모이다시테루
     time: [87.26, 91.362]
   - words:
       - text: 薄明
@@ -296,6 +330,7 @@ lines:
         time: [104.601, 105.148]
       - text: が
         time: [105.148, 105.677]
+    pronunciation: 하쿠메이니소마루소라가
     time: [102.774, 105.677]
   - words:
       - text: 淡
@@ -310,6 +345,7 @@ lines:
         time: [107.1, 107.706]
       - text: て
         time: [107.706, 108.178]
+    pronunciation: 아와이이로도리코보시테
     time: [105.752, 108.178]
   - words:
       - text: こん
@@ -326,6 +362,7 @@ lines:
         time: [110.852, 111.424]
       - text: の
         time: [111.424, 111.851]
+    pronunciation: 콘나칫포케나보쿠노
     time: [108.604, 111.851]
   - words:
       - text: 背
@@ -338,6 +375,7 @@ lines:
         time: [113.772, 114.51]
       - text: く
         time: [114.51, 115.076]
+    pronunciation: 세나카오츠츤데쿠
     time: [112.643, 115.076]
   - words:
       - text: 透明
@@ -350,6 +388,7 @@ lines:
         time: [116.892, 117.711]
       - text: は
         time: [117.711, 118.272]
+    pronunciation: 토메이나코노카라다하
     time: [115.27, 118.272]
   - words:
       - text: 何色
@@ -360,6 +399,7 @@ lines:
         time: [119.391, 119.981]
       - text: の？
         time: [119.981, 121]
+    pronunciation: 나니쇼쿠니나레루노?
     time: [118.336, 121]
   - words:
       - text: た
@@ -374,6 +414,7 @@ lines:
         time: [123.331, 123.912]
       - text: れ
         time: [123.912, 124.434]
+    pronunciation: 타다 미즈노요니나가레
     time: [121.068, 124.434]
   - words:
       - text: 消
@@ -388,6 +429,7 @@ lines:
         time: [126.433, 127.168]
       - text: ねぇ
         time: [127.385, 128.057]
+    pronunciation: 키에테유쿠다케? 네
     time: [124.783, 128.057]
   - words:
       - text: 「ぼやけたままの
@@ -398,6 +440,7 @@ lines:
         time: [129.914, 130.286]
       - text: じゃ
         time: [130.286, 130.686]
+    pronunciation: "'보야케타마마노포카스자"
     time: [128.057, 130.686]
   - words:
       - text: 君
@@ -416,6 +459,7 @@ lines:
         time: [133.439, 134.478]
       - text: よ」
         time: [134.478, 135.373]
+    pronunciation: 키미노혼모노하우츠세나이요'
     time: [130.721, 135.373]
   - words:
       - text: 寂
@@ -432,6 +476,7 @@ lines:
         time: [139.381, 139.666]
       - text: 笑う
         time: [139.666, 140.866]
+    pronunciation: 사비시게나카오데 키미가와라우
     time: [135.514, 140.866]
   - words:
       - text: 光
@@ -446,6 +491,7 @@ lines:
         time: [144.928, 145.35]
       - text: が
         time: [145.35, 145.948]
+    pronunciation: 히카루아사가 아사가
     time: [141.334, 145.948]
   - words:
       - text: あまりに
@@ -462,6 +508,7 @@ lines:
         time: [149.197, 149.592]
       - text: さ
         time: [149.592, 149.958]
+    pronunciation: 아마리니마부시이 마부시이카라사
     time: [146.093, 149.958]
   - words:
       - text: ちょっと
@@ -474,6 +521,7 @@ lines:
         time: [152.113, 152.363]
       - text: ない
         time: [152.363, 152.862]
+    pronunciation: 촛토사 라시쿠하나이
     time: [150.18, 152.862]
   - words:
       - text: 未
@@ -490,6 +538,7 @@ lines:
         time: [155.475, 155.863]
       - text: よ
         time: [155.863, 156.277]
+    pronunciation: 미라이모신지차우요
     time: [152.9, 156.277]
   - words:
       - text: 君
@@ -504,6 +553,7 @@ lines:
         time: [158.541, 158.958]
       - text: と
         time: [158.958, 159.117]
+    pronunciation: 키미노코토바가즛토
     time: [156.546, 159.117]
   - words:
       - text: 離
@@ -518,6 +568,7 @@ lines:
         time: [161.292, 161.534]
       - text: ない
         time: [161.534, 162.229]
+    pronunciation: 하나레나이 하나레나이
     time: [159.137, 162.229]
   - words:
       - text: フ
@@ -530,6 +581,7 @@ lines:
         time: [163.619, 164.268]
       - text: カー
         time: [164.268, 165.126]
+    pronunciation: 후랏슈밧카
     time: [162.36, 165.126]
   - words:
       - text: 今
@@ -544,6 +596,7 @@ lines:
         time: [167.803, 168.296]
       - text: る
         time: [168.296, 169.319]
+    pronunciation: 이마모오모이다시테루
     time: [165.217, 169.319]
   - words:
       - text: 光
@@ -558,6 +611,7 @@ lines:
         time: [197.92, 198.332]
       - text: が
         time: [198.332, 198.88]
+    pronunciation: 히카루아사가 아사가
     time: [194.266, 198.88]
   - words:
       - text: あまりに
@@ -574,6 +628,7 @@ lines:
         time: [202.18, 202.546]
       - text: さ
         time: [202.546, 202.884]
+    pronunciation: 아마리니마부시이 마부시이카라사
     time: [199.076, 202.884]
   - words:
       - text: なんか
@@ -586,6 +641,7 @@ lines:
         time: [204.798, 205.359]
       - text: で
         time: [205.359, 205.795]
+    pronunciation: 난카모 소레다케데
     time: [203.117, 205.795]
   - words:
       - text: 心
@@ -600,6 +656,7 @@ lines:
         time: [208.4, 208.683]
       - text: う
         time: [208.683, 209.243]
+    pronunciation: 코코로가추니마우
     time: [205.871, 209.243]
   - words:
       - text: 君
@@ -614,6 +671,7 @@ lines:
         time: [211.526, 211.92]
       - text: と
         time: [211.92, 212.124]
+    pronunciation: 키미노코토바오귯토
     time: [209.529, 212.124]
   - words:
       - text: 離
@@ -628,6 +686,7 @@ lines:
         time: [214.267, 214.517]
       - text: ない
         time: [214.517, 215.123]
+    pronunciation: 하나사나이 하나사나이
     time: [212.146, 215.123]
   - words:
       - text: フ
@@ -640,6 +699,7 @@ lines:
         time: [216.557, 217.224]
       - text: カー
         time: [217.224, 218.003]
+    pronunciation: 후랏슈밧카
     time: [215.188, 218.003]
   - words:
       - text: 今
@@ -654,4 +714,5 @@ lines:
         time: [220.724, 221.268]
       - text: る
         time: [221.268, 223.457]
+    pronunciation: 이마모오모이다시테루
     time: [218.135, 223.457]
