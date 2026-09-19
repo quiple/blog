@@ -46,7 +46,7 @@ lines:
     time: [35.78, 37.761]
   - text: 果てなきその先に
     time: [38.171, 40.1]
-  - text: "’Cause it's all because of you"
+  - text: ’Cause it's all because of you
     time: [40.11, 42.523]
   - text: That my dreams are coming true
     time: [42.533, 44.862]
@@ -92,7 +92,7 @@ lines:
     time: [94.92, 97.158]
   - text: Even pretty pictures fade away
     time: [97.28, 99.915]
-  - text: "’Cause it's all because of you"
+  - text: ’Cause it's all because of you
     time: [99.36, 101.769]
   - text: That my dreams are coming true
     time: [101.88, 104.207]
