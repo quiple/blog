@@ -1,0 +1,93 @@
+# https://music.apple.com/kr/song/1497002662
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1497002662?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1497002662
+# 선택 항목: Apple Music · VOID -シン・ガイアズ ver.- · 음절별 가사 · 1497002662
+# 가져온 시각: 2026-09-19T08:53:22.146Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: VOID -シン・ガイアズ ver.-
+titleLang: ja
+artist: omori-seiko
+lang: ja
+spotify: 6JnP20oGH4L6mxnO4IgSmZ
+youtube:
+  audio: b4FaRHozvzw
+  mv: 18oGNDVC6rg
+offsets:
+  youtubeAudio: 0.3
+lines:
+  - text: 家をぬけ出して僕の部屋においで
+    time: [7.731, 11.649]
+  - text: 君のこと なんも聞きはしないから
+    time: [12.081, 17.75]
+  - text: 僕じゃ満足できなかったなら明日忘れていいから
+    time: [17.859, 24.437]
+  - text: I WANNA BE YOUR PINK PINK ROLLING STAR
+    time: [24.447, 27.49]
+  - text: どうせ僕のこと BABY 捨ててしまうのさ
+    time: [27.5, 31.28]
+  - text: だから僕とゲームで負けちゃう前に
+    time: [31.29, 34.807]
+  - text: リセットボタン押していいよ
+    time: [34.9, 37.21]
+  - text: 逃げるの下手な君特別ルールさ
+    time: [37.22, 39.816]
+  - text: 笑わなくっても余裕で天使さ
+    time: [39.826, 42.228]
+  - text: 愛したふりして 抱きしめてくれたら
+    time: [42.298, 45.048]
+  - text: VOID ME VOID ME VOID ME
+    time: [45.058, 49.357]
+  - text: 友達でもない 恋人でもない
+    time: [49.449, 51.766]
+  - text: もしかしたらもう二度と会うこともない
+    time: [51.859, 54.779]
+  - text: VOID LOVE VOID LOVE
+    time: [54.789, 57.047]
+  - text: 何もなかったかのように
+    time: [57.057, 60.807]
+  - text: どうせ僕のこと BABY 女友達に話さないでしょ
+    time: [68.605, 73.503]
+  - text: 生きてる意味は言葉を持たない蟲でも知っている
+    time: [73.513, 78.308]
+  - text: 確かめあうのはナンセンスだよな
+    time: [78.395, 80.895]
+  - text: ロマンチックな夜の飾りで
+    time: [80.905, 83.326]
+  - text: 運命ぶった情けない僕らは
+    time: [83.395, 86.298]
+  - text: VOID ME VOID ME VOID ME
+    time: [86.308, 90.646]
+  - text: 嫌われたくない ひとりになりたい
+    time: [90.668, 93.125]
+  - text: だけどさみしい 傷つかれたくない
+    time: [93.135, 96.016]
+  - text: VOID LOVE VOID LOVE
+    time: [96.026, 98.384]
+  - text: これが僕らの幸せさ
+    time: [98.394, 101.454]
+  - text: 家をぬけ出して僕の部屋においで
+    time: [109.975, 114.169]
+  - text: VOID LOVE VOID LOVE
+    time: [114.185, 116.66]
+  - text: 本当は本当に何もできない
+    time: [116.747, 119.888]
+  - text: 笑わなくっても余裕で天使さ
+    time: [119.898, 122.32]
+  - text: 愛したふりして 抱きしめてくれたら
+    time: [122.33, 125.216]
+  - text: VOID ME VOID ME VOID ME
+    time: [125.226, 129.576]
+  - text: 友達でもない 恋人でもない
+    time: [129.68, 132.049]
+  - text: もしかしたらもう二度と会うこともない
+    time: [132.136, 135.009]
+  - text: VOID LOVE VOID LOVE
+    time: [135.108, 137.529]
+  - text: 何もないよりマシだから
+    time: [137.539, 141.901]
+  - text: 何もない=なんかしたい
+    time: [141.911, 146.493]
+  - text: 何もない=なんかしたい
+    time: [146.861, 153.941]
