@@ -19,6 +19,7 @@ youtube:
 offsets:
   spotify: -0.3
   youtubeAudio: -0.3
+  youtubeMV: 0.526
 lines:
   - text: うーわ 最悪 もうだめだ
     time: [41.406, 43.576]
