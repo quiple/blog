@@ -44,8 +44,11 @@ lines:
   - text: 明け方の記憶は途切れ途切れ
     pronunciation: 아케가타노키오쿠와토기레토기레
     time: [52.17, 56.29]
-  - text: うちに帰るために生きている身体
-    pronunciation: 우치니카에루타메니이키테이루신타이
+  - words:
+      - text: うちに帰るために生きている
+      - text: 身体
+        ruby: からだ
+    pronunciation: 우치니카에루타메니이키테이루카라다
     time: [56.29, 60.04]
   - text: 愛してくれなんて言えないわけは
     pronunciation: 아이시테쿠레난테이에나이와케와
