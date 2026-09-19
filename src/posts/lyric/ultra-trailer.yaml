@@ -25,7 +25,7 @@ lines:
     pronunciation: 우와 사이아쿠 모다메다
     time: [41.406, 43.576]
   - text: お前はいつもそうだ
-    pronunciation: 오마에하이츠모소다
+    pronunciation: 오마에와이츠모소다
     time: [43.909, 45.091]
   - text: ずっとなにやってんだ
     pronunciation: 즛토나니얏텐다
@@ -34,7 +34,7 @@ lines:
     pronunciation: 하...하...하...하...
     time: [46.878, 48.161]
   - text: 最低の感情は
-    pronunciation: 사이테이노칸조하
+    pronunciation: 사이테이노칸조와
     time: [48.754, 49.704]
   - text: 常識の反対が
     pronunciation: 조시키노한타이가
@@ -43,7 +43,7 @@ lines:
     pronunciation: 젠부붓코와시테잇타.
     time: [51.614, 52.831]
   - text: それは
-    pronunciation: 소레하
+    pronunciation: 소레와
     time: [53.857, 54.256]
   - text: '"お化け"のような'
     pronunciation: '"오바케"노요나'
@@ -78,13 +78,13 @@ lines:
     pronunciation: 나니시데카스카와칸네조!
     time: [70.195, 71.53]
   - text: 親には見せられない、
-    pronunciation: 오야니하미세라레나이,
+    pronunciation: 오야니와미세라레나이,
     time: [72.313, 75.217]
   - text: 恥に塗れた生き方──。
     pronunciation: 하지니마미레타이키카타──.
     time: [75.629, 78.8]
   - text: 広大な空は逆さになって
-    pronunciation: 코다이나소라하사카사니낫테
+    pronunciation: 코다이나소라와사카사니낫테
     time: [80.029, 83.329]
   - text: 無限の底になった
     pronunciation: 무겐노소코니낫타
@@ -99,7 +99,7 @@ lines:
     pronunciation: 이마니낫테 얏테키타!
     time: [89.874, 92.293]
   - text: ここから先の展開は想像できない
-    pronunciation: 코코카라사키노텐카이하소조데키나이
+    pronunciation: 코코카라사키노텐카이와소조데키나이
     time: [92.635, 97.857]
   - text: 感動も業も熱狂も絶望も希望も
     pronunciation: 칸도모고모넷쿄모제츠보모키보모
@@ -168,7 +168,7 @@ lines:
     pronunciation: 도레다케라쿠나노카
     time: [151.713, 154.246]
   - text: 過去には戻れない
-    pronunciation: 카코니하모도레나이
+    pronunciation: 카코니와모도레나이
     time: [154.766, 157.352]
   - text: 前にしか進めない
     pronunciation: 마에니시카스스메나이
@@ -227,8 +227,8 @@ lines:
   - text: ダッダッダッダーッダッダッ
     pronunciation: 닷닷닷닷닷닷
     time: [229.579, 230.997]
-  - text: ”ウルトラトレーラー”
-    pronunciation: ”우루토라토레라”
+  - text: '"ウルトラトレーラー"'
+    pronunciation: '"우루토라토레라"'
     time: [231.132, 232.119]
   - text: さぁ、幕が上がるぜ──。
     pronunciation: 사, 마쿠가아가루제──.
@@ -249,7 +249,7 @@ lines:
     pronunciation: 닷닷닷닷닷닷
     time: [242.024, 243.375]
   - text: ”ウルトラトレーラー”
-    pronunciation: ”우루토라토레라”
+    pronunciation: '"우루토라토레라"'
     time: [243.436, 244.422]
   - text: 想像を超えて──。
     pronunciation: 소조오코에테──.
