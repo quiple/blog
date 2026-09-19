@@ -13,6 +13,9 @@ lang: ja
 spotify: 5FjAQmQ7zfHYZ3S59U8krO
 youtube:
   audio: 6wDoSLijkeA
+offsets:
+  youtubeAudio: -0.2
+  spotify: -0.2
 lines:
   - text: 人違いでリンチされた少年を
     pronunciation: 히토치가이데린치사레타쇼넨오
