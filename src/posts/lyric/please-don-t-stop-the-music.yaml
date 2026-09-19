@@ -42,7 +42,7 @@ lines:
     time: [68.753, 70.906]
   - text: And that won't change forever
     time: [73.108, 75.149]
-  - text: "'Cause I love you, I love you, I love"
+  - text: '’Cause I love you, I love you, I love'
     time: [76.106, 78.678]
   - text: I'm just a slave to you
     time: [78.864, 81.344]
@@ -74,7 +74,7 @@ lines:
     time: [121.094, 123.175]
   - text: And that won't change forever
     time: [125.443, 127.462]
-  - text: "'Cause I love you, I love you, I love"
+  - text: '’Cause I love you, I love you, I love'
     time: [128.434, 130.924]
   - text: I don't need to travel far
     time: [130.93, 133.069]
@@ -86,7 +86,7 @@ lines:
     time: [139.651, 141.903]
   - text: Orchestrate my life all year round
     time: [141.913, 144.662]
-  - text: "'Cause I love this"
+  - text: '’Cause I love this'
     time: [145.879, 147.189]
   - text: Please don't stop the music
     time: [147.271, 149.227]
@@ -96,7 +96,7 @@ lines:
     time: [156.037, 158.091]
   - text: And that won't change forever
     time: [160.409, 162.387]
-  - text: "'Cause I love you, I love you, I love"
+  - text: '’Cause I love you, I love you, I love'
     time: [163.356, 165.841]
   - text: Please don't stop the music
     time: [164.673, 166.652]
@@ -106,7 +106,7 @@ lines:
     time: [173.449, 175.588]
   - text: And that won't change forever
     time: [177.867, 179.846]
-  - text: "'Cause I love you, I love you, I love"
+  - text: '’Cause I love you, I love you, I love'
     time: [180.765, 183.198]
   - text: (Please don't stop the music)
     time: [182.153, 184.076]
