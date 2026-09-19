@@ -38,9 +38,10 @@ lines:
   - text: ユナちゃん可愛い
     pronunciation: 유나찬카와이이
     time: [82.1, 84.762]
-  - text: (可愛いユナちゃん)
-    pronunciation: (카와이이유나찬)
-    time: [84.762, 87.215]
+    background:
+      text: (可愛いユナちゃん)
+      pronunciation: (카와이이유나찬)
+      time: [84.762, 87.215]
   - text: ユナちゃん可愛い
     pronunciation: 유나찬카와이이
     time: [87.215, 91.446]
@@ -53,9 +54,10 @@ lines:
   - text: ユナちゃん可愛い
     pronunciation: 유나찬카와이이
     time: [102.278, 104.812]
-  - text: (可愛いユナちゃん)
-    pronunciation: (카와이이유나찬)
-    time: [104.812, 107.332]
+    background:
+      text: (可愛いユナちゃん)
+      pronunciation: (카와이이유나찬)
+      time: [104.812, 107.332]
   - text: ユナちゃん可愛い
     pronunciation: 유나찬카와이이
     time: [107.332, 111.242]
@@ -83,9 +85,10 @@ lines:
   - text: ユナちゃん可愛い
     pronunciation: 유나찬카와이이
     time: [182.716, 185.241]
-  - text: (可愛いユナちゃん)
-    pronunciation: (카와이이유나찬)
-    time: [185.241, 187.752]
+    background:
+      text: (可愛いユナちゃん)
+      pronunciation: (카와이이유나찬)
+      time: [185.241, 187.752]
   - text: ユナちゃん可愛い
     pronunciation: 유나찬카와이이
     time: [187.752, 191.625]
