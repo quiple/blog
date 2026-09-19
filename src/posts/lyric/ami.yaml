@@ -20,12 +20,16 @@ offsets:
   youtubeMV: 8.008
 lines:
   - text: 現代社会のお零れが
+    pronunciation: 겐다이샤카이노오코보레가
     time: [17.576, 20.401]
   - text: あなたに振り回されたなんて
+    pronunciation: 아나타니후리마와사레타난테
     time: [20.476, 23.254]
   - text: 胸の内秘めたい出来事で
+    pronunciation: 무네노우치히메타이데키고토데
     time: [23.264, 26.113]
   - text: 馴染の援助で海原へ
+    pronunciation: 나지미노엔조데우나바라헤
     time: [26.283, 29.013]
   - text: You see weaker
     time: [29.259, 30.635]
@@ -34,20 +38,28 @@ lines:
   - text: You see weaker
     time: [32.1, 33.578]
   - text: In my defense 息はつけそうかい
+    pronunciation: In my defense 이키하츠케소카이
     time: [34.747, 37.613]
   - text: ねぇ笑って ここで一切合切忘れて
+    pronunciation: 네와랏테 코코데잇사이갓사이와스레테
     time: [37.623, 40.877]
   - text: Defense 今は泣けそうかい
+    pronunciation: Defense 이마하나케소카이
     time: [40.887, 43.351]
   - text: 悪戯な愛掴んで
+    pronunciation: 이타즈라나아이츠칸데
     time: [43.461, 46.741]
   - text: 絶えない夜に居場所あれば
+    pronunciation: 타에나이요루니이바쇼아레바
     time: [48.183, 50.865]
   - text: くだらなくなるって躾られたら
+    pronunciation: 쿠다라나쿠나룻테시츠케라레타라
     time: [50.944, 53.988]
   - text: 形を成すような出来事で
+    pronunciation: 카타치오나스요나데키고토데
     time: [53.998, 56.728]
   - text: 全霊かけた後始末が
+    pronunciation: 젠레이카케타아토시마츠가
     time: [56.798, 59.558]
   - text: You see caesar
     time: [59.793, 61.247]
@@ -56,38 +68,56 @@ lines:
   - text: You see caesar
     time: [62.656, 64.08]
   - text: In my defense 永遠に惚れそうかい
+    pronunciation: In my defense 에이엔니호레소카이
     time: [65.246, 68.158]
   - text: ねぇ笑って ここで一切合切愛して
+    pronunciation: 네와랏테 코코데잇사이갓사이아이시테
     time: [68.168, 71.45]
   - text: Defense 分かち合えそうかい
+    pronunciation: Defense 와카치아에소카이
     time: [71.46, 73.969]
   - text: 幻想な恩掴んで
+    pronunciation: 겐소나온츠칸데
     time: [73.979, 77.261]
   - text: 病弱で不確かな私のお仕置よ
+    pronunciation: 뵤자쿠데후타시카나와타시노오시오키요
     time: [79.726, 85.544]
   - text: 人影ない想いにも胸打たれたんよ
+    pronunciation: 히토카게나이오모이니모무네우타레탄요
     time: [85.654, 91.166]
   - text: 我儘で身勝手なあなたにお仕置よ
+    pronunciation: 와가마마데미갓테나아나타니오시오키요
     time: [91.376, 97.203]
   - text: まやかしの愛なら受け取る気無いよ
+    pronunciation: 마야카시노아이나라우케토루키나이요
     time: [97.213, 102.819]
   - text: 私の昇進よ
+    pronunciation: 와타시노쇼신요
     time: [103.028, 108.737]
   - text: In my defense 息はつけそうかい
+    pronunciation: In my defense 이키하츠케소카이
     time: [120.485, 123.392]
   - text: ねぇ笑って ここで一切合切忘れて
+    pronunciation: 네와랏테 코코데잇사이갓사이와스레테
     time: [123.402, 126.727]
   - text: Defense 今は泣けそうかい
+    pronunciation: Defense 이마하나케소카이
     time: [126.737, 129.272]
   - text: 悪戯な愛掴んで
+    pronunciation: 이타즈라나아이츠칸데
     time: [129.282, 132.198]
   - text: In my defense 永遠に惚れそうかい
+    pronunciation: In my defense 에이엔니호레소카이
     time: [132.208, 135.033]
   - text: ねぇ笑って ここで一切合切愛して
+    pronunciation: 네와랏테 코코데잇사이갓사이아이시테
     time: [135.043, 138.367]
   - text: Defense 分かち合えそうかい
+    pronunciation: Defense 와카치아에소카이
     time: [138.377, 140.884]
   - text: 幻想な恩掴んで
+    pronunciation: 겐소나온츠칸데
     time: [140.894, 143.802]
   - text: 華麗に返すよ シェアどうか?
+    pronunciation: 카레이니카에스요 셰아도카?
     time: [143.812, 149.167]
