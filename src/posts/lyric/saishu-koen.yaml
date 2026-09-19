@@ -1,0 +1,84 @@
+# https://music.apple.com/kr/song/966104514
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/966104514?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/966104514
+# 선택 항목: Apple Music · 最終公演 · 음절별 가사 · 966104514
+# 가져온 시각: 2026-09-19T07:22:57.921Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: 最終公演
+titleLang: ja
+lang: ja
+spotify: 5gmXbiwGY6TgjcwOBJPs1H
+youtube:
+  audio: XPscs1KK14w
+  mv: z9ZTFmryLe4
+offsets:
+  youtubeMV: 0.038
+lines:
+  - text: west side おじいさんが
+    time: [25.177, 27.483]
+  - text: 飛んだり跳ねたりするという
+    time: [27.513, 29.989]
+  - text: 僕はもうbabyじゃないよ
+    time: [30.019, 32.286]
+  - text: 飛んだり跳ねたりできないという
+    time: [32.296, 34.924]
+  - text: 目覚めても芋虫じゃない
+    time: [34.934, 37.371]
+  - text: 食べてすぐ寝てもウシにならないし
+    time: [37.401, 41.704]
+  - text: モウ
+    time: [41.714, 43.819]
+  - text: 歯ブラシ鼻の穴に突っ込んで
+    time: [44.517, 47.193]
+  - text: それなりに痛かった
+    time: [47.223, 49.666]
+  - text: そういえば恋の終わりも
+    time: [49.696, 52.08]
+  - text: それなりに痛かった
+    time: [52.11, 54.619]
+  - text: 街一番の泣き虫は午後
+    time: [54.649, 57.174]
+  - text: 街中の悲しみをあつめて
+    time: [57.184, 63.04]
+  - text: 歌をうたえば
+    time: [64.004, 68.698]
+  - text: 最後の祭
+    time: [68.728, 73.694]
+  - text: west side おじいさんが
+    time: [84.113, 86.693]
+  - text: 飛んだり跳ねたりするという
+    time: [86.723, 89.448]
+  - text: 東京の犬も真似して
+    time: [89.478, 92.122]
+  - text: 飛んだり跳ねたりする踊りは
+    time: [92.152, 95.119]
+  - text: disco!
+    time: [95.129, 95.733]
+  - text: life is dead
+    time: [97.843, 101.051]
+  - text: 地球の掌おどらされて
+    time: [106.099, 108.737]
+  - text: こんな辱めないけど
+    time: [108.767, 111.48]
+  - text: 愚かな過去もステージの上
+    time: [111.49, 114.354]
+  - text: 誰かが笑ってくれるのさ
+    time: [114.364, 117.067]
+  - text: life is this 猛る音楽
+    time: [117.077, 119.442]
+  - text: on the stage, in the kitchen, of ur head is alright!
+    time: [119.452, 122.617]
+  - text: 猛る想い
+    time: [122.627, 123.932]
+  - text: 猛る想い
+    time: [123.942, 125.238]
+  - text: 猛る想い
+    time: [125.248, 126.567]
+  - text: 猛る想い
+    time: [126.577, 131.061]
+  - text: 歌をうたえば
+    time: [149.622, 154.442]
+  - text: 最後の祭
+    time: [154.472, 158.111]

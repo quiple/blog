@@ -1,0 +1,73 @@
+# https://music.apple.com/kr/song/937655414
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/937655414?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/937655414
+# 선택 항목: Apple Music · 呪いは水色 · 음절별 가사 · 937655414
+# 가져온 시각: 2026-09-19T07:21:28.459Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: 呪いは水色
+titleLang: ja
+lang: ja
+spotify: 2RwG8rVgJjnrxLza1Zo5IE
+youtube:
+  audio: LBAmh0SrJ-Q
+lines:
+  - text: あとすこし そばにいて
+    time: [11.563, 16.309]
+  - text: 読みたい漫画がみつかるまで
+    time: [16.319, 22.889]
+  - text: 片足の折れたテーブルと
+    time: [22.999, 27.805]
+  - text: 水滴の音をどうにかするまで
+    time: [27.815, 33.866]
+  - text: 秘密の公園 同じ約束を
+    time: [34.057, 39.847]
+  - text: あの人ともしたのね
+    time: [40.086, 43.986]
+  - text: 最後の手紙は赤く染めるわ
+    time: [45.468, 50.865]
+  - text: 全部台無しにさせてよ
+    time: [50.975, 56.268]
+  - text: 生きている 生きてゆく
+    time: [56.278, 61.946]
+  - text: 生きてきた 愛の隣で
+    time: [61.956, 68.118]
+  - text: 私達はいつか死ぬのよ
+    time: [68.128, 74.456]
+  - text: 夜を越えても
+    time: [75.826, 80.227]
+  - text: 追いかけて バカみたい
+    time: [105.866, 110.649]
+  - text: ベンチの二人がひらく青春
+    time: [110.659, 117.246]
+  - text: 私との夢の続きなら
+    time: [117.357, 122.11]
+  - text: 笑いに行くわよ はやくお逃げなさい
+    time: [122.12, 128.009]
+  - text: あなたは正しい それでもやっぱり
+    time: [128.428, 134.087]
+  - text: 私だって正しい
+    time: [134.42, 138.336]
+  - text: そんな喧嘩もできなくなるの
+    time: [140.089, 145.168]
+  - text: 春なんて来なければいい
+    time: [145.256, 150.649]
+  - text: 生きている 生きてゆく
+    time: [150.659, 156.239]
+  - text: 生きてきた 愛はただれて
+    time: [156.266, 162.257]
+  - text: この体を蝕んでゆく
+    time: [162.267, 168.841]
+  - text: 呪いは水色
+    time: [169.947, 175.157]
+  - text: 生きている 生きてゆく
+    time: [177.637, 183.467]
+  - text: 生きてきた 愛の隣で
+    time: [183.477, 189.398]
+  - text: 私達はいつか死ぬのよ
+    time: [189.408, 196.458]
+  - text: 夜を越えても
+    time: [197.213, 202.007]
+  - text: 夜を越えても
+    time: [202.927, 207.617]
