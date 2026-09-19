@@ -13,6 +13,9 @@ lang: ja
 spotify: 2qdPWFrknWyLXYIPpbtAgD
 youtube:
   audio: ecVnw_SiREQ
+offsets:
+  spotify: 0.1
+  youtubeAudio: 0.1
 lines:
   - words:
       - text: 転換
