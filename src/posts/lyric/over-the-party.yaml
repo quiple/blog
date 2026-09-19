@@ -21,16 +21,16 @@ lines:
     pronunciation: 하이니낫테테바나스베비카
     time: [11.928, 13.928]
   - text: 大事にしてたのは嘘ではないよ
-    pronunciation: 다이지니시테타노하우소데하나이요
+    pronunciation: 다이지니시테타노와우소데와나이요
     time: [14.088, 16.208]
   - text: わかって欲しい わかんないよね
-    pronunciation: 와캇테호시이 와칸나이요네
+    pronunciation: 와캇테호시 와칸나이요네
     time: [16.328, 18.528]
   - text: あたしのブログを悪意でもやして
     pronunciation: 아타시노부로구오아쿠이데모야시테
     time: [18.848, 21.128]
   - text: 火サス見終わって2階にあがって
-    pronunciation: 히사스미오왓테니카이니아갓테
+    pronunciation: 카사스미오왓테니카이니아갓테
     time: [21.238, 23.338]
   - text: ごはんできたよと息子に触って
     pronunciation: 고한데키타요토무스코니사왓테
@@ -39,7 +39,7 @@ lines:
     pronunciation: 슈마츠카조쿠데디즈니 바쿠와라
     time: [25.728, 28.088]
   - text: 散らばった夢は全部捨てた
-    pronunciation: 치라밧타유메하젠부스테타
+    pronunciation: 치라밧타유메와젠부스테타
     time: [28.368, 30.248]
   - text: 試してダメだった美容器具
     pronunciation: 타메시테다메닷타비요키구
@@ -48,7 +48,7 @@ lines:
     pronunciation: 뵤쿠노뮤짓쿠 마요나카노스쿠란부루엣구
     time: [32.328, 34.918]
   - text: 私もこんな風になりたかった
-    pronunciation: 와타시모콘나카제니나리타캇타
+    pronunciation: 와타시모콘나후니나리타캇타
     time: [35.008, 37.158]
   - text: Over 30 おばさん
     pronunciation: 오바 사티 오바산
@@ -66,7 +66,7 @@ lines:
     pronunciation: 메아도가헨다카라스키자나이
     time: [55.604, 60.824]
   - text: 桜が終わって40デニール
-    pronunciation: 사쿠라가오왓테40데니루
+    pronunciation: 사쿠라가오왓테욘주데니루
     time: [72.534, 74.454]
   - text: 愛情のないホイコーロー
     pronunciation: 아이조노나이호이코로
@@ -123,16 +123,16 @@ lines:
     pronunciation: 이마사라다케도촛토마지니낫테이루
     time: [123.527, 128.077]
   - text: 散らばった夢は全部捨てた
-    pronunciation: 치라밧타유메하젠부스테타
+    pronunciation: 치라밧타유메와젠부스테타
     time: [130.307, 132.187]
   - text: 試してダメだった美容器具
     pronunciation: 타메시테다메닷타비요키구
     time: [132.267, 134.147]
-  - text: ビョークのミュージック真夜中のスクランブルエッグ
-    pronunciation: 뵤쿠노뮤짓쿠마요나카노스쿠란부루엣구
+  - text: ビョークのミュージック 真夜中のスクランブルエッグ
+    pronunciation: 뵤쿠노뮤짓쿠 마요나카노스쿠란부루엣구
     time: [134.297, 137.027]
   - text: 私も誰かとこんな風になりたかった
-    pronunciation: 와타시모다레카토콘나카제니나리타캇타
+    pronunciation: 와타시모다레카토콘나후니나리타캇타
     time: [137.087, 141.707]
   - text: Over 30 おばさん
     pronunciation: 오바 사티 오바산
@@ -146,11 +146,11 @@ lines:
   - text: 今更だけどちょっとマジになっている
     pronunciation: 이마사라다케도촛토마지니낫테이루
     time: [164.537, 169.997]
-  - text: Over 30 おばさん
-    pronunciation: 오바 사티 오바산
+  - text: Over 30 おばさんを
+    pronunciation: 오바 사티 오바산오
     time: [170.281, 173.983]
-  - text: をからかわないですぐに飽きてしまうから
-    pronunciation: 오카라카와나이데스구니아키테시마우카라
+  - text: からかわないですぐに飽きてしまうから
+    pronunciation: 카라카와나이데스구니아키테시마우카라
     time: [174.103, 179.293]
   - text: 進化する豚
     pronunciation: 신카스루부타
