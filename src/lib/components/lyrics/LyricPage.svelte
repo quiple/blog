@@ -160,13 +160,13 @@
     {/if}
     {#if artists.length || song.year}
       <div class="mt-3 text-muted-foreground">
-        {#if song.year}{song.year}년 &middot;{/if}
-        {#each artists as artist, index (artist.slug)}
-          {#if index > 0}{', '}{/if}
-          <a href={`/artist/${artist.slug}`} class="hover:underline">
-            <span lang={artist.translation || artist.lang === 'ko' ? undefined : (artist.lang ?? '')}
-              >{artist.translation || artist.name}</span
-            >
+        {#if song.year}{song.year}년&#8194;&middot;&#8194;{/if}{#each artists as artist, index (artist.slug)}{#if index > 0}{', '}{/if}<a
+            href={`/artist/${artist.slug}`}
+            class="hover:underline"
+          >
+            <span lang={artist.translation || artist.lang === 'ko' ? undefined : (artist.lang ?? '')}>
+              {artist.translation || artist.name}
+            </span>
           </a>
         {/each}
       </div>
