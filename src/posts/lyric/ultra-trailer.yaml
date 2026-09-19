@@ -52,7 +52,7 @@ lines:
     pronunciation: '"카게"노요나'
     time: [55.675, 56.775]
   - text: '"鏡"のような姿をしていて'
-    pronunciation: '"쿄"노요나스가타오시테이테'
+    pronunciation: '"카가미"노요나스가타오시테이테'
     time: [57.218, 60.236]
   - text: ハードラックの因果
     pronunciation: 하도랏쿠노인가
@@ -64,6 +64,7 @@ lines:
     pronunciation: 아바이테잇탄다
     time: [63.946, 64.928]
   - text: BANG! BANG! BANG!
+    pronunciation: 방! 방! 방!
     time: [65.102, 66.069]
   - text: 崩壊!
     pronunciation: 호카이!
@@ -201,10 +202,10 @@ lines:
     pronunciation: 후코나시코오우밧타
     time: [206.076, 208.461]
   - text: 二人で笑って
-    pronunciation: 니닌데와랏테
+    pronunciation: 후타리데와랏테
     time: [208.948, 210.465]
   - text: 一人で泣いて
-    pronunciation: 이치닌데나이테
+    pronunciation: 히토리데나이테
     time: [210.607, 211.99]
   - text: ゼロになって 始まった!
     pronunciation: 제로니낫테 하지맛타!
