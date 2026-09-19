@@ -63,20 +63,20 @@ lines:
   - text: ゴクリ響く喉の音
     pronunciation: 고쿠리히비쿠노도노오토
     time: [44.791, 48.032]
-  - text: 合図に始まる 1話完結の DAYS
+  - text: 合図に始まる 1話完結のDAYS
     pronunciation: 아이즈니하지마루 이치와칸케츠노 데이즈
     time: [48.071, 51.705]
   - text: あの燃える街を敵に回した
     pronunciation: 아노모에루마치오테키니마와시타
     time: [51.815, 53.531]
   - text: 2人だけの部屋を作ろうか
-    pronunciation: 2닌다케노헤야오츠쿠로카
+    pronunciation: 후타리다케노헤야오츠쿠로카
     time: [53.567, 55.436]
   - text: 君を傷つける物だけは
     pronunciation: 키미오키즈츠케루모노다케와
     time: [55.464, 56.963]
   - text: 僕が先に除けてやるんだ
-    pronunciation: 보쿠가사키니노케테야룬다
+    pronunciation: 보쿠가사키니요케테야룬다
     time: [57.012, 58.804]
   - text: ひとつだけひとつだけ 言っておきたいことがあるよ
     pronunciation: 히토츠다케히토츠다케 잇테오키타이코토가아루요
@@ -91,10 +91,10 @@ lines:
     pronunciation: 보쿠라와얏파리시리메츠레츠니아이시아이사레요자나이카
     time: [78.336, 81.744]
   - text: 不安を総決算癖になる
-    pronunciation: 후안오소켓산헤키니나루
+    pronunciation: 후안오소켓산쿠세니나루
     time: [81.775, 85.164]
   - text: 1人で平気と強がる日々は
-    pronunciation: 1닌데헤이키토츠요가루히비와
+    pronunciation: 히토리데헤이키토츠요가루히비와
     time: [85.275, 88.528]
   - text: ダサいよ! 喪失感振り回す
     pronunciation: 다사이요! 소시츠칸후리마와스
@@ -103,7 +103,7 @@ lines:
     pronunciation: 보쿠라와얏파리시리메츠레츠니아이시아이사레요자나이카
     time: [92.257, 95.687]
   - text: 暗闇でもう一回手を伸ばす
-    pronunciation: 쿠라야미데모이치카이슈오노바스
+    pronunciation: 쿠라야미데모잇카이테오노바스
     time: [95.725, 99.129]
   - text: 会わなきゃよかったなんて思わないように
     pronunciation: 아와나캬요캇타난테오모와나이요니
@@ -133,7 +133,7 @@ lines:
     pronunciation: 아시타모킷토마타코코데
     time: [136.055, 137.411]
   - text: もやる気持ちを楽しめ wonder! それも全て踏み締めちゃいな
-    pronunciation: 모야루키모치오타노시메 wonder! 소레모스베테후미시메차이나
+    pronunciation: 모야루키모치오타노시메 완다! 소레모스베테후미시메차이나
     time: [137.447, 141.163]
   - text: いけないことを積み重ね作った踏切台踏切台
     pronunciation: 이케나이코토오츠미카사네츠쿳타후미키리다이후미키리다이
@@ -142,7 +142,7 @@ lines:
     pronunciation: 히토츠다케히토츠다케 카쿠시테타코토가아루요
     time: [144.789, 151.735]
   - text: 胸の昂まりよ鎮まっててててて
-    pronunciation: 무네노노보루마리요시즈맛테테테테테
+    pronunciation: 무네노타카마리요시즈맛테테테테테
     time: [151.883, 158.6]
   - text: フライト! 超越感今を生きる
     pronunciation: 후라이토! 초에츠칸이마오이키루
