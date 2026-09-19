@@ -110,7 +110,11 @@ lines:
   - text: 千乱の華が咲いたら
     pronunciation: 센란노하나가사이타라
     time: [192.108, 197.432]
-  - text: 僕が生まれたこの故郷の
+  - words:
+      - text: 僕が生まれたこの
+      - text: 故郷
+        ruby: くに
+      - text: の
     pronunciation: 보쿠가우마레타코노쿠니노
     time: [199.223, 205.626]
   - text: 一番美しい花を君に
