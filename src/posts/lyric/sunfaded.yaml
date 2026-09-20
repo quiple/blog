@@ -6,9 +6,14 @@
 # 가져온 시각: 2026-09-19T10:37:02.280Z
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
-title: Sunfaded
+title: サンフェーデッド
 titleLang: ja
+year: '2025'
 lang: ja
+spotify: 5w4MocA1VIaahP49TlJ3w6
+youtube:
+  audio: oi0foyZWgUo
+  mv: XLwmEuM0dIw
 lines:
   - text: あ, 日焼け止め 塗らないままでいたな
     time: [20.981, 28.92]
