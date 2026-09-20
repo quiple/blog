@@ -19,31 +19,40 @@ offsets:
 lines:
   - words:
       - text: 描き
+        pronunciation: 에가키
         time: [34.159, 34.762]
       - text: 続けて
+        pronunciation: 츠즈케테
         time: [34.762, 35.781]
       - text: 擦り
+        pronunciation: 스리
         time: [35.781, 36.212]
       - text: 切れた
+        pronunciation: 키레타
         time: [36.212, 37.189]
       - text: 願い
+        pronunciation: 네가이
         time: [37.189, 37.888]
       - text: は
+        pronunciation: 와
         time: [37.888, 38.417]
-    pronunciation: 에가키츠즈케테스리키레타네가이와
     time: [34.159, 38.417]
   - words:
       - text: とっくに
+        pronunciation: 톳쿠니
         time: [39.617, 40.331]
       - text: 消えた
+        pronunciation: 키에타
         time: [40.331, 41.004]
       - text: けど
+        pronunciation: 케도
         time: [41.004, 41.697]
       - text: 歩いて
+        pronunciation: 아루이테
         time: [41.697, 42.713]
       - text: みた
+        pronunciation: 미타
         time: [42.713, 43.665]
-    pronunciation: 톳쿠니키에타케도아루이테미타
     time: [39.617, 43.665]
   - words:
       - text: カーテンの
