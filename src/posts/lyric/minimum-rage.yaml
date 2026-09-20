@@ -1,0 +1,134 @@
+# https://music.apple.com/kr/song/1826173313
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1826173313?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1826173313
+# 선택 항목: Apple Music · MINIMUM RAGE (feat. Kasane Teto) · 음절별 가사 · 1826173313
+# 가져온 시각: 2026-09-19T10:51:53.488Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: MINIMUM RAGE
+titleLang: en
+year: '2025'
+artist:
+  - monochro-menace
+  - kasane-teto
+lang: en
+spotify: 5WIHM3sAiArCXH3xZ3eym2
+youtube:
+  audio: ULMeksBGv0
+  mv: J8vjHOyVxUA
+lines:
+  - text: Hi, how can I help you?
+    time: [0.92, 12.8]
+  - text: Thanks for checking in, I'm not doing well
+    time: [12.8, 14.95]
+  - text: I'm the new face of management, it's basically hell
+    time: [14.95, 18.01]
+  - text: There's coffee on my shirt and burns on my arm
+    time: [18.01, 20.37]
+  - text: I guess hot oil really hurts a lot
+    time: [20.37, 23.41]
+  - text: Working overtime 'cause someone called out
+    time: [23.41, 25.56]
+  - text: And now we're running out of ice, can you tell me how?
+    time: [25.56, 28.48]
+  - text: To make everything worse, the lights just went dark
+    time: [28.48, 31.19]
+  - text: Oh, won't you tell me when it's gonna stop?
+    time: [31.19, 33.97]
+  - text: Please step back
+    time: [33.97, 36.11]
+  - text: If you keep yelling, I am gonna have a panic attack
+    time: [36.11, 39.13]
+  - text: Please understand
+    time: [39.13, 41.21]
+  - text: Given thе circumstances, I'm doing the very bеst I can
+    time: [41.21, 45.71]
+  - text: Smile, baby, smile for the corporation
+    time: [45.71, 48.38]
+  - text: Vital, baby, vital to the operation
+    time: [48.38, 51]
+  - text: Working for an hour costs as much as a sandwich
+    time: [51, 53.75]
+  - text: There's gotta be more than this, there's gotta be more than this
+    time: [53.75, 56.45]
+  - text: Smile, baby, smile through the aggravation
+    time: [56.45, 59.15]
+  - text: One day, they'll appreciate your dedication
+    time: [59.15, 61.65]
+  - text: Never-ending orders and I don't have the bandwidth
+    time: [61.65, 64.28]
+  - text: There's gotta be more than this, there's gotta be more than this
+    time: [64.28, 66.82]
+  - text: There's gotta be more than this, there's gotta be more than this
+    time: [66.82, 80.12]
+  - text: Thanks for checking in, the shit hit the shit
+    time: [80.12, 82.23]
+  - text: A lot of money is missing from during my shift
+    time: [82.23, 85.18]
+  - text: There's ringing from the phone, a call from my boss
+    time: [85.18, 87.53]
+  - text: She said that corporate's gonna call the cops
+    time: [87.53, 90.5]
+  - text: When the cops arrived, I figured it out
+    time: [90.5, 92.72]
+  - text: The totals in the safe were right, I can't fucking count
+    time: [92.72, 95.53]
+  - text: I'm desperate to go home, but reading the clock
+    time: [95.53, 98.18]
+  - text: Made me cry so hard that I need a mop
+    time: [98.18, 101.27]
+  - text: Please look away
+    time: [101.27, 103.35]
+  - text: I need a second to reset, today I don't get a break
+    time: [103.35, 106.49]
+  - text: Please let me go
+    time: [106.49, 108.63]
+  - text: I'm out of sick days, so I can't afford to break another bone
+    time: [108.63, 112.97]
+  - text: Smile, baby, smile for the corporation
+    time: [112.97, 115.66]
+  - text: Vital, baby, vital to the operation
+    time: [115.66, 118.25]
+  - text: Working for an hour costs as much as a sandwich
+    time: [118.25, 120.83]
+  - text: There's gotta be more than this, there's gotta be more than this
+    time: [120.83, 123.55]
+  - text: Smile, baby, smile through the aggravation
+    time: [123.55, 126.14]
+  - text: One day, they'll appreciate your dedication
+    time: [126.14, 128.8]
+  - text: Never-ending orders and I don't have the bandwidth
+    time: [128.8, 131.36]
+  - text: There's gotta be more than this, there's gotta be more than this
+    time: [131.36, 133.98]
+  - text: There's gotta be more than this, there's gotta be more than this
+    time: [133.98, 139.61]
+  - text: I'm reaching my limit, red-hot fever like a sickness
+    time: [139.61, 144.28]
+  - text: At the maximum, it's pain, and at minimum, it's rage
+    time: [144.28, 150.16]
+  - text: I'm reaching my limit, red-hot fever like a sickness
+    time: [150.16, 154.61]
+  - text: At the maximum, it's pain, and at minimum, it's rage
+    time: [154.61, 164.63]
+  - text: I'm not gonna smile, fuck the corporation
+    time: [164.63, 167.11]
+  - text: Cycle, it's a cycle, not an operation
+    time: [167.11, 169.67]
+  - text: All they're ever gonna do is take me for granted
+    time: [169.67, 172.29]
+  - text: There's gotta be more than this, there's gotta be more than this
+    time: [172.29, 175.09]
+  - text: I'm not gonna smile through the aggravation
+    time: [175.09, 177.59]
+  - text: They'll never appreciate my dedication
+    time: [177.59, 180.32]
+  - text: Never-ending orders that I think I'll abandon
+    time: [180.32, 182.73]
+  - text: There's gotta be more than this, there's gotta be more than this
+    time: [182.73, 185.48]
+  - text: There's gotta be more than this, I know that there's more
+    time: [185.48, 192.95]
+  - text: Yeah
+    time: [192.95, 194.94]
