@@ -446,97 +446,130 @@ lines:
     time: [200.29, 205.132]
   - words:
       - text: その向
+        pronunciation: 소노무
         time: [205.826, 206.541]
       - text: こう
+        pronunciation: 코
         time: [206.541, 207.242]
       - text: 'へ '
+        pronunciation: 에
         time: [207.242, 208.071]
       - text: その向
+        pronunciation: 소노무
         time: [208.474, 209.293]
       - text: こう
+        pronunciation: 코
         time: [209.293, 209.991]
       - text: へ
+        pronunciation: 에
         time: [209.991, 210.725]
-    pronunciation: 소노무코헤 소노무코헤
     time: [205.826, 210.725]
   - words:
       - text: 君の
+        pronunciation: 키미노
         time: [211.355, 212.032]
       - text: 声
+        pronunciation: 코에
         time: [212.032, 212.699]
       - text: 'も '
+        pronunciation: 모
         time: [212.699, 213.637]
       - text: その向
+        pronunciation: 소노무
         time: [214.13, 214.8]
       - text: こう
+        pronunciation: 코
         time: [214.8, 215.498]
       - text: へ
+        pronunciation: 에
         time: [215.498, 216.325]
-    pronunciation: 키미노코에모 소노무코헤
     time: [211.355, 216.325]
   - words:
       - text: 風に
+        pronunciation: 카제니
         time: [218.248, 218.995]
       - text: 乗れないまま
+        pronunciation: 노레나이마마
         time: [218.995, 220.669]
       - text: 季節の
+        pronunciation: 키세츠노
         time: [220.847, 222.012]
       - text: 途中で
+        pronunciation: 토추데
         time: [222.012, 223.435]
       - text: 渡り
+        pronunciation: 와타리
         time: [223.564, 224.447]
       - text: 鳥は
+        pronunciation: 도리와
         time: [224.447, 225.568]
       - text: 眠っ
+        pronunciation: 네뭇
         time: [225.861, 226.528]
       - text: た
+        pronunciation: 타
         time: [226.528, 227.25]
-    pronunciation: 카제니노레나이마마키세츠노토추데와타리도리와네뭇타
     time: [218.248, 227.25]
   - words:
       - text: 夢の
+        pronunciation: 유메노
         time: [229.189, 230.04]
       - text: 中の
+        pronunciation: 나카노
         time: [230.04, 230.973]
       - text: '空 '
+        pronunciation: 소라
         time: [230.973, 231.719]
       - text: はばたき
+        pronunciation: 하바타키
         time: [231.882, 233.015]
       - text: 尽くして
+        pronunciation: 츠쿠시테
         time: [233.015, 234.503]
       - text: その向
+        pronunciation: 소노무
         time: [236.164, 236.898]
       - text: こう
+        pronunciation: 코
         time: [236.898, 237.58]
       - text: へ
+        pronunciation: 에
         time: [237.58, 238.491]
-    pronunciation: 유메노나카노소라 하바타키츠쿠시테소노무코헤
     time: [229.189, 238.491]
   - words:
       - text: 描き
+        pronunciation: 에가키
         time: [241.01, 241.613]
       - text: 続けて
+        pronunciation: 츠즈케테
         time: [241.613, 242.632]
       - text: 擦り
+        pronunciation: 스리
         time: [242.632, 243.063]
       - text: 切れた
+        pronunciation: 키레타
         time: [243.063, 244.04]
       - text: 願い
+        pronunciation: 네가이
         time: [244.04, 244.739]
       - text: は
+        pronunciation: 와
         time: [244.739, 245.268]
-    pronunciation: 에가키츠즈케테스리키레타네가이와
     time: [241.01, 245.268]
   - words:
       - text: どこかに
+        pronunciation: 도코카니
         time: [246.508, 247.244]
       - text: 消えた
+        pronunciation: 키에타
         time: [247.244, 247.892]
       - text: けど
+        pronunciation: 케도
         time: [247.892, 248.609]
       - text: 歩いて
+        pronunciation: 아루이테
         time: [248.609, 249.593]
       - text: みた
+        pronunciation: 미타
         time: [249.593, 250.689]
-    pronunciation: 도코카니키에타케도아루이테미타
     time: [246.508, 250.689]
