@@ -56,60 +56,76 @@ lines:
     time: [39.617, 43.665]
   - words:
       - text: カーテンの
+        pronunciation: 카텐노
         time: [45.127, 46.015]
       - text: '隙間 '
+        pronunciation: 스키마
         time: [46.015, 46.85]
       - text: 灰色の
+        pronunciation: 하이이로노
         time: [46.85, 47.933]
       - text: 朝が
+        pronunciation: 아사가
         time: [47.933, 49.045]
-    pronunciation: 카텐노스키마 하이이로노아사가
     time: [45.127, 49.045]
   - words:
       - text: 顔色も
+        pronunciation: 카오이로모
         time: [50.637, 51.525]
       - text: 変えずに
+        pronunciation: 카에즈니
         time: [51.525, 52.709]
       - text: 迎えに
+        pronunciation: 무카에니
         time: [52.709, 53.725]
       - text: きた
+        pronunciation: 키타
         time: [53.725, 54.725]
-    pronunciation: 카오이로모카에즈니무카에니키타
     time: [50.637, 54.725]
   - words:
       - text: さよならも
+        pronunciation: 사요나라모
         time: [55.205, 56.218]
       - text: 醜さ
+        pronunciation: 미니쿠사
         time: [56.376, 57.21]
       - text: も
+        pronunciation: 모
         time: [57.21, 57.647]
-    pronunciation: 사요나라모미니쿠사모
     time: [55.205, 57.647]
   - words:
       - text: 清らかな
+        pronunciation: 키요라카나
         time: [57.906, 58.922]
       - text: '卑しさも '
+        pronunciation: 이야시사모
         time: [58.922, 60.055]
       - text: 小さな
+        pronunciation: 치사나
         time: [60.055, 60.741]
       - text: 愛も
+        pronunciation: 아이모
         time: [60.741, 61.826]
-    pronunciation: 키요라카나이야시사모 치사나아이모
     time: [57.906, 61.826]
   - words:
       - text: その向
+        pronunciation: 소노무
         time: [65.167, 65.882]
       - text: こう
+        pronunciation: 코
         time: [65.882, 66.583]
       - text: 'へ '
+        pronunciation: 에
         time: [66.583, 67.412]
       - text: その向
+        pronunciation: 소노무
         time: [67.815, 68.634]
       - text: こう
+        pronunciation: 코
         time: [68.634, 69.332]
       - text: へ
+        pronunciation: 에
         time: [69.332, 70.066]
-    pronunciation: 소노무코헤 소노무코헤
     time: [65.167, 70.066]
   - words:
       - text: 君の
