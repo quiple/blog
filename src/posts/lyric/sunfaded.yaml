@@ -21,44 +21,65 @@ offsets:
   youtubeMV: 0.021
 lines:
   - text: あ, 日焼け止め 塗らないままでいたな
+    pronunciation: 아, 히야케토메 누라나이마마데이타나
     time: [20.981, 28.92]
   - text: あんなにも大きな声が肌すれすれに来ることも,
+    pronunciation: 안나니모오키나코에가하다스레스레니쿠루코토모,
     time: [29.209, 39.675]
   - text: 光は指輪みたいになること, も
+    pronunciation: 히카리하유비와미타이니나루코토, 모
     time: [39.675, 47.718]
   - text: いずれ全部 明るい道の秘密のように思い出す
+    pronunciation: 이즈레젠부 아카루이미치노히미츠노요니오모이다스
     time: [47.936, 59.165]
   - text: 僕たちは (いつ出会うだろう?)
+    pronunciation: 보쿠타치하 (이츠데아우다로?)
     time: [61.693, 68.41]
   - text: 出会うときは
+    pronunciation: 데아우토키하
     time: [68.737, 70.972]
   - text: 僕にとって正しい人の
+    pronunciation: 보쿠니톳테타다시이히토노
     time: [71.355, 75.846]
   - text: 僕にとって正しい声でいる
+    pronunciation: 보쿠니톳테타다시이코에데이루
     time: [76.04, 81.349]
   - text: 游ぶ指先や睫毛や
+    pronunciation: 유부유비사키야마츠게야
     time: [100.613, 106.293]
   - text: 髪留めがあなたたちの姿を覚えている
+    pronunciation: 카미토메가아나타타치노스가타오오보에테이루
     time: [106.453, 118.194]
   - text: 煌きと暗やみの層に躍り入る僕のことを誰かが見てる
+    pronunciation: 煌키토쿠라야미노소니오도리하이루보쿠노코토오다레카가미테루
     time: [118.415, 132.532]
   - text: 安心して, 僕は帰らない, ほらね
+    pronunciation: 안신시테, 보쿠하카에라나이, 호라네
     time: [133.107, 138.163]
   - text: どこでも ああ, 何度でも目を瞑るほど日が差す方で
+    pronunciation: 도코데모 아, 난도데모메오츠무루호도히가사스호데
     time: [155.372, 169.383]
   - text: 僕は言う
+    pronunciation: 보쿠하이우
     time: [169.683, 171.883]
   - text: 僕は禁じる
+    pronunciation: 보쿠하킨지루
     time: [172.047, 174.202]
   - text: 僕は覚える
+    pronunciation: 보쿠하오보에루
     time: [174.378, 176.535]
   - text: 僕は慄く
+    pronunciation: 보쿠하慄쿠
     time: [176.718, 178.859]
   - text: 僕は踊る
+    pronunciation: 보쿠하오도루
     time: [179.055, 181.138]
   - text: 僕は生れる
+    pronunciation: 보쿠하우마레루
     time: [181.394, 183.487]
   - text: 僕は褪せる
+    pronunciation: 보쿠하아세루
     time: [183.749, 185.752]
   - text: 僕は判断する
+    pronunciation: 보쿠하한단스루
     time: [186.076, 189.278]
