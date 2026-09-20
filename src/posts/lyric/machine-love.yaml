@@ -54,7 +54,8 @@ lines:
     time: [51.36, 54.71]
   - text: But nothing could conceal the things I feel
     time: [54.71, 57.29]
-  - text: My love, can you teach me to be real? (Can you teach me to be real?)
+  - text: My love, can you teach me to be real?
+    background: (Can you teach me to be real?)
     time: [57.29, 65.83]
   - text: 恋をして 振られ また 捨てられて
     pronunciation: 코이오시테 후라레 마타 스테라레테
@@ -95,7 +96,8 @@ lines:
     time: [122.58, 125.8]
   - text: But nothing could conceal the things I feel
     time: [125.8, 128.54]
-  - text: My love, can you teach me to be real? (Can you teach me to be real?)
+  - text: My love, can you teach me to be real?
+    background: (Can you teach me to be real?)
     time: [128.54, 136.8]
   - text: 泣きたくなっても それでも かき集め
     pronunciation: 나키타쿠낫테모 소레데모 카키아츠메
