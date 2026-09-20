@@ -17,6 +17,8 @@ spotify: 5WIHM3sAiArCXH3xZ3eym2
 youtube:
   audio: -ULMeksBGv0
   mv: J8vjHOyVxUA
+offsets:
+  youtubeMV: 1.123
 lines:
   - text: Hi, how can I help you?
     time: [0.92, 12.8]
