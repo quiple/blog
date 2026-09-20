@@ -17,9 +17,6 @@ spotify: 0Gfjd7AXoOR0jCrZsB2B1H
 youtube:
   audio: vG5_bwL7UkI
   # mv: DLkNQgh4Ons
-offsets:
-  spotify: 0.2
-  youtubeAudio: 0.2
 lines:
   - text: めくる 見つめる そっと唱える
     pronunciation: 메쿠루 미츠메루 솟토토나에루
@@ -37,7 +34,7 @@ lines:
     pronunciation: 소레가메쿠루메
     time: [12.065, 13.175]
   - text: 落下していく電波 しょせん箱庭の実験 (あーあ)
-    pronunciation: 랏카시테이쿠덴파 쇼센하코니와노짓켄 (아아)
+    pronunciation: 랏카시테유쿠덴파 쇼센하코니와노짓켄 (아아)
     time: [25.096, 28.064]
   - text: 繰り返しのサイン波がそっと数字を減らしてる
     pronunciation: 쿠리카에시노사인하가솟토스지오헤라시테루
@@ -52,10 +49,10 @@ lines:
     pronunciation: 닷테
     time: [36.293, 36.885]
   - text: 溶けた甘い甘い妄想 解けない
-    pronunciation: 토케타아마이아마이모소 토케나이
+    pronunciation: 토케타아마이아마이모소 호도케나이
     time: [36.895, 39.32]
   - text: この熟れた古い古い本能 離れない
-    pronunciation: 코노나레타후루이후루이혼노 하나레나이
+    pronunciation: 코노우레타후루이후루이혼노 하나레나이
     time: [39.33, 42.306]
   - text: でも秘める深い深い衝動 暴きたい
     pronunciation: 데모히메루후카이후카이쇼도 아바키타이
@@ -88,7 +85,7 @@ lines:
     pronunciation: 마도니츠메오타테루
     time: [63.915, 66.032]
   - text: 嘯く 割れた鏡も愛おしい
-    pronunciation: 우소부쿠 와레타카가미모아이오시이
+    pronunciation: 우소부쿠 와레타카가미모이토오시
     time: [66.042, 69.231]
   - text: 世界/私 どっちか壊れてるみたい
     pronunciation: 세카이/와타시 돗치카코와레테루미타이
@@ -100,13 +97,17 @@ lines:
     pronunciation: 미기테노스켓치와 신카이샤쿠노카노세이
     time: [89.612, 91.982]
   - text: ありきたりな世界観も 断面は疑問形
-    pronunciation: 아리키타리나세카이칸모 단멘와기몬가타
+    pronunciation: 아리키타리나세카이칸모 단멘와기몬케이
     time: [92.458, 95.04]
   - text: 狭い皮膚の中抜け出して
     pronunciation: 세마이히후노나카누케다시테
     time: [95.05, 99.272]
-  - text: 動かすほどに遠ざかる身体は
-    pronunciation: 우고카스호도니토자카루신타이와
+  - words:
+      - text: 動かすほどに遠ざかる
+      - text: 身体
+        ruby: からだ
+      - text: は
+    pronunciation: 우고카스호도니토자카루카라다와
     time: [100.329, 103.424]
   - text: ぶれて重なって定まらないけど
     pronunciation: 부레테카사낫테사다마라나이케도
@@ -118,7 +119,7 @@ lines:
     pronunciation: 히라이타테데마다무스베루네
     time: [109.449, 111.985]
   - text: って 心臓の拍動に抗うように歌った
-    pronunciation: 읏테 신조노하쿠도니아라가우요니우탓타
+    pronunciation: 엣테 신조노하쿠도니아라가우요니우탓타
     time: [111.995, 115.366]
   - text: 心臓の拍動に抗うように踊った
     pronunciation: 신조노하쿠도니아라가우요니오돗타
@@ -147,20 +148,20 @@ lines:
   - text: 振り向く 瞬きするたび 波打つ景色は 別世界
     pronunciation: 후리무쿠 마바타키스루타비 나미우츠케시키와 벳세카이
     time: [143.84, 148.599]
-  - text: 孵化待っていた......
-    pronunciation: 후카맛테이타......
+  - text: 孵化待っていた...
+    pronunciation: 후카맛테이타...
     time: [148.609, 150.279]
   - text: 季節は待ち侘びたと
     pronunciation: 키세츠와마치와비타토
     time: [151.275, 153.279]
   - text: いまさざめき出し解く秘密のフィロソフィア
-    pronunciation: 이마사자메키다시토쿠히미츠노피로소피아
+    pronunciation: 이마사자메키다시토쿠히미츠노휘로소휘아
     time: [153.289, 157.286]
   - text: 旅した 春夏秋また
     pronunciation: 타비시타 하루나츠아키마타
     time: [157.296, 159.632]
   - text: 目の眼差すまま新世界
-    pronunciation: 메노메사스마마신세카이
+    pronunciation: 메노마나자스마마신세카이
     time: [159.642, 162.08]
   - text: 孵化/開花する銀河
     pronunciation: 후카/카이카스루긴가
@@ -172,7 +173,7 @@ lines:
     pronunciation: 와타시니후레루스베테가에코스루
     time: [165.842, 169.286]
   - text: ときめく 返す波々も眩しい
-    pronunciation: 토키메쿠 카에스나미々모마부시이
+    pronunciation: 토키메쿠 카에스나미나미모마부시
     time: [169.296, 172.536]
   - text: 世界/私 まだ語り合えるみたいね
     pronunciation: 세카이/와타시 마다카타리아에루미타이네
