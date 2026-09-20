@@ -1,0 +1,67 @@
+# https://music.apple.com/kr/song/1840122667
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1840122667?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1840122667
+# 선택 항목: Apple Music · Blue Youth · 음절별 가사 · 1840122667
+# 가져온 시각: 2026-09-19T10:23:59.242Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: ブルーユース
+titleLang: ja
+artist: hikari-no-naka-ni
+lang: ja
+spotify: 4QTiyXgk7oOc2I6GrTOkDF
+youtube:
+  audio: oGms4o_Fql8
+  mv: JPhEkto2YV8
+lines:
+  - text: 昨日話してた話題ばかりが
+    time: [20.393, 24.893]
+  - text: 頭をよぎるこの部屋で
+    time: [25.155, 29.185]
+  - text: みるみるうちに
+    time: [29.982, 32.074]
+  - text: 置いてけぼりになるようだ
+    time: [32.239, 34.596]
+  - text: つまんねえなでも
+    time: [34.803, 37.1]
+  - text: 捨てられないまま
+    time: [37.253, 38.741]
+  - text: 爆音ステレオ怒鳴る声
+    time: [39.532, 41.611]
+  - text: 頭が腐る毎日です
+    time: [41.977, 44.15]
+  - text: 隣の席だったあの子だんだん
+    time: [44.357, 47.205]
+  - text: 遠のいてゆく
+    time: [47.367, 48.906]
+  - text: 良きか悪きか
+    time: [49.165, 51.201]
+  - text: ひとりぼっちな窓の外
+    time: [51.354, 53.682]
+  - text: 星がいつもより綺麗だった
+    time: [53.997, 56.903]
+  - text: ブルーユース、ブルーユース
+    time: [59.327, 62.951]
+  - text: 間違ってなんかいないって
+    time: [63.104, 65.61]
+  - text: 言っておくれ
+    time: [65.763, 67.487]
+  - text: 最低で、でも最高な
+    time: [69.591, 73.453]
+  - text: 安心だけどどこか不安な
+    time: [73.769, 78.312]
+  - text: 掻き乱してまたたじろいで、
+    time: [78.902, 83.085]
+  - text: ねえなにやってんだろう?
+    time: [83.402, 85.609]
+  - text: 愛したいものほど疑い深んだ
+    time: [85.763, 88.607]
+  - text: 泣きながら笑っている
+    time: [88.697, 92.634]
+  - text: 徐々に自信は無くなってゆく
+    time: [92.975, 97.676]
+  - text: けど情けなくて頼りないままの
+    time: [97.829, 102.274]
+  - text: 僕たちはブルーユース
+    time: [103.138, 106.454]
