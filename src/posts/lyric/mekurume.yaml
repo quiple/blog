@@ -16,7 +16,10 @@ lang: ja
 spotify: 0Gfjd7AXoOR0jCrZsB2B1H
 youtube:
   audio: vG5_bwL7UkI
-  mv: DLkNQgh4Ons
+  # mv: DLkNQgh4Ons
+offsets:
+  spotify: 0.2
+  youtubeAudio: 0.2
 lines:
   - text: めくる 見つめる そっと唱える
     time: [0.96, 3.866]
