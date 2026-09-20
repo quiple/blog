@@ -277,94 +277,122 @@ lines:
     time: [118.635, 125.314]
   - words:
       - text: その向
+        pronunciation: 소노무
         time: [128.517, 129.232]
       - text: こう
+        pronunciation: 코
         time: [129.232, 129.933]
       - text: 'へ '
+        pronunciation: 에
         time: [129.933, 130.762]
       - text: その向
+        pronunciation: 소노무
         time: [131.165, 131.984]
       - text: こう
+        pronunciation: 코
         time: [131.984, 132.682]
       - text: へ
+        pronunciation: 에
         time: [132.682, 133.566]
-    pronunciation: 소노무코헤 소노무코헤
     time: [128.517, 133.566]
   - words:
       - text: 君の
+        pronunciation: 키미노
         time: [134.107, 134.753]
       - text: 声
+        pronunciation: 코에
         time: [134.753, 135.468]
       - text: 'も '
+        pronunciation: 모
         time: [135.468, 136.292]
       - text: その
+        pronunciation: 소노
         time: [136.785, 137.185]
       - text: 想い
+        pronunciation: 오모이
         time: [137.185, 138.22]
       - text: も
+        pronunciation: 모
         time: [138.22, 139.105]
-    pronunciation: 키미노코에모 소노오모이모
     time: [134.107, 139.105]
   - words:
       - text: 別れも
+        pronunciation: 와카레모
         time: [140.998, 142.086]
       - text: 記憶も
+        pronunciation: 키오쿠모
         time: [142.086, 143.505]
       - text: その
+        pronunciation: 소노
         time: [143.505, 144.203]
       - text: 清
+        pronunciation: 키요
         time: [144.203, 144.819]
       - text: らかさも
+        pronunciation: 라카사모
         time: [144.819, 146.32]
-    pronunciation: 와카레모키오쿠모소노키요라카사모
     time: [140.998, 146.32]
   - words:
       - text: その向
+        pronunciation: 소노무
         time: [147.817, 148.597]
       - text: こう
+        pronunciation: 코
         time: [148.597, 149.376]
       - text: へ
+        pronunciation: 에
         time: [149.376, 150.156]
-    pronunciation: 소노무코헤
     time: [147.817, 150.156]
   - words:
       - text: さよならも
+        pronunciation: 사요나라모
         time: [173.741, 174.754]
       - text: 醜さ
+        pronunciation: 미니쿠사
         time: [174.97, 175.773]
       - text: も
+        pronunciation: 모
         time: [175.773, 176.183]
-    pronunciation: 사요나라모미니쿠사모
     time: [173.741, 176.183]
   - words:
       - text: 清らかな
+        pronunciation: 키요라카나
         time: [176.512, 177.528]
       - text: '卑しさも '
+        pronunciation: 이야시사모
         time: [177.528, 178.661]
       - text: 小さな
+        pronunciation: 치사나
         time: [178.661, 179.347]
       - text: 愛も
+        pronunciation: 아이모
         time: [179.347, 180.432]
-    pronunciation: 키요라카나이야시사모 치사나아이모
     time: [176.512, 180.432]
   - words:
       - text: 寂し
+        pronunciation: 사비시
         time: [184.777, 185.23]
       - text: さも
+        pronunciation: 사모
         time: [185.23, 185.942]
       - text: 虚しさも
+        pronunciation: 무나시사모
         time: [185.942, 187.214]
       - text: 一雨
+        pronunciation: 히토아메
         time: [187.523, 188.257]
       - text: ごとにその
+        pronunciation: 고토니소노
         time: [188.257, 189.39]
       - text: 姿を
+        pronunciation: 스가타오
         time: [189.39, 190.374]
       - text: 変え
+        pronunciation: 카에
         time: [190.374, 190.796]
       - text: て
+        pronunciation: 테
         time: [190.796, 191.456]
-    pronunciation: 사비시사모무나시사모히토아메고토니소노스가타오카에테
     time: [184.777, 191.456]
   - words:
       - text: 'Alone '
