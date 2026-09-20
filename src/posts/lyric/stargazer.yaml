@@ -17,100 +17,149 @@ youtube:
   mv: jS4FWbkR7Io
 lines:
   - text: 拝啓 神様
+    pronunciation: 하이케이 카미사마
     time: [0.734, 2.44]
   - text: 聞こえてますか
+    pronunciation: 키코에테마스카
     time: [2.475, 4.283]
   - text: この手紙届いてますか
+    pronunciation: 코노테가미토도이테마스카
     time: [4.315, 7.941]
   - text: 空を黒く塗り広げたなら
+    pronunciation: 소라오쿠로쿠누리히로게타나라
     time: [7.942, 11.617]
   - text: 灯りともしておくれ
+    pronunciation: 아카리토모시테오쿠레
     time: [11.642, 14.76]
   - text: 長い夜に 独りで
+    pronunciation: 나가이요루니 히토리데
     time: [15.194, 18.878]
   - text: 寂しいと感じたのなら
+    pronunciation: 사비시이토칸지타노나라
     time: [18.878, 22.46]
   - text: 夜空を見上げたら彗星が
+    pronunciation: 요조라오미아게타라스이세이가
     time: [22.5, 26.081]
   - text: 便りを運んできた
+    pronunciation: 타요리오하콘데키타
     time: [26.165, 30.609]
   - text: 星が降る夜 世界と
+    pronunciation: 호시가후루요루 세카이토
     time: [30.683, 33.355]
   - text: 君を踊らせてる ミュージック
+    pronunciation: 키미오오도라세테루 뮤짓쿠
     time: [33.422, 37.01]
   - text: この針が示す方
+    pronunciation: 코노하리가시메스호
     time: [37.055, 39.666]
   - text: 君がいる 未来 未来 未来
+    pronunciation: 키미가이루 미라이 미라이 미라이
     time: [39.707, 45.147]
   - text: イメージしても分からない
+    pronunciation: 이메지시테모와카라나이
     time: [45.225, 47.874]
   - text: 未来に怯えている 君を
+    pronunciation: 미라이니오비에테이루 키미오
     time: [47.917, 51.514]
   - text: 救えるミュージック 鳴らせるように
+    pronunciation: 스쿠에루뮤짓쿠 나라세루요니
     time: [51.559, 55.611]
-  - text: 君との約束を覚えてる？
+  - text: 君との約束を覚えてる?
+    pronunciation: 키미토노야쿠소쿠오오보에테루?
     time: [55.699, 60.196]
   - text: 形のない怪獣が
+    pronunciation: 카타치노나이카이주가
     time: [60.234, 63.319]
   - text: はびこっている 世界で
+    pronunciation: 하비콧테이루 세카이데
     time: [63.414, 66.152]
   - text: なにも感じなくなってるのは
+    pronunciation: 나니모칸지나쿠낫테루노와
     time: [66.179, 69.777]
   - text: 強くなったからかな
+    pronunciation: 츠요쿠낫타카라카나
     time: [69.85, 73.281]
   - text: 例えば僕が神様なら
+    pronunciation: 타토에바보쿠가카미사마나라
     time: [73.367, 77.017]
   - text: きっと誰も救えないだろう
+    pronunciation: 킷토다레모스쿠에나이다로
     time: [77.041, 80.681]
   - text: 永遠という不幸はいらない
+    pronunciation: 에이엔토유우후코와이라나이
     time: [80.683, 84.303]
   - text: ならなにが欲しいか考えてみるの
+    pronunciation: 나라나니가호시이카칸가에테미루노
     time: [84.331, 88.834]
   - text: 2人で船を出してさ
+    pronunciation: 2닌데후네오다시테사
     time: [88.872, 91.502]
   - text: 君と旅にでたら きっと
+    pronunciation: 키미토타비니데타라 킷토
     time: [91.573, 95.166]
   - text: この針が示す方
+    pronunciation: 코노하리가시메스호
     time: [95.214, 97.919]
   - text: 新しい 世界 世界 世界
+    pronunciation: 아타라시이 세카이 세카이 세카이
     time: [97.968, 103.375]
   - text: イメージしても分からない
+    pronunciation: 이메지시테모와카라나이
     time: [103.421, 106.153]
   - text: 未来に怯えている 君を
+    pronunciation: 미라이니오비에테이루 키미오
     time: [106.155, 109.673]
   - text: 救えるミュージック
+    pronunciation: 스쿠에루뮤짓쿠
     time: [109.75, 111.807]
   - text: 鳴らせるように
+    pronunciation: 나라세루요니
     time: [111.808, 113.854]
-  - text: 約束の意味を知ってる？
+  - text: 約束の意味を知ってる?
+    pronunciation: 야쿠소쿠노이미오싯테루?
     time: [113.873, 119.104]
   - text: 星に願う そのわけを
+    pronunciation: 호시니네가우 소노와케오
     time: [132.559, 135.19]
   - text: 誰も知らないけど 祈ってる
+    pronunciation: 다레모시라나이케도 이놋테루
     time: [135.222, 139.501]
   - text: ノンフィクションの中で
+    pronunciation: 논피쿠숀노나카데
     time: [139.546, 142.012]
   - text: 物語を描いてる
+    pronunciation: 모노가타리오에가이테루
     time: [142.085, 146.789]
   - text: 終わりがくるその時に
+    pronunciation: 오와리가쿠루소노토키니
     time: [147.009, 149.766]
   - text: ページをめくったら 思い出す
+    pronunciation: 페지오메쿳타라 오모이다스
     time: [149.801, 154.725]
   - text: 足跡 残して
+    pronunciation: 아시아토 노코시테
     time: [154.781, 158.64]
   - text: 星が降る夜 世界と
+    pronunciation: 호시가후루요루 세카이토
     time: [161.618, 164.25]
   - text: 君を 踊らせてる ミュージック
+    pronunciation: 키미오 오도라세테루 뮤짓쿠
     time: [164.308, 167.944]
   - text: この針が示す方
+    pronunciation: 코노하리가시메스호
     time: [167.955, 170.672]
   - text: 君がいる 未来 未来 未来
+    pronunciation: 키미가이루 미라이 미라이 미라이
     time: [170.712, 174.699]
   - text: 時々 霧が かかって道が
+    pronunciation: 토키도키 키리가 카캇테미치가
     time: [174.74, 178.359]
   - text: 分からなくなっても
+    pronunciation: 와카라나쿠낫테모
     time: [178.424, 182.506]
   - text: この心が 選ぶ先で
+    pronunciation: 코노코코로가 에라부사키데
     time: [182.525, 189.227]
   - text: 待ってる
+    pronunciation: 맛테루
     time: [189.281, 191.257]
