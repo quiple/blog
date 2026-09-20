@@ -12,85 +12,125 @@ artist: kessoku-band
 lang: ja
 spotify: 1alnCCvoaTx5r0IhqXU3Ru
 youtube:
-  audio: 0Xe8PvgfmoY
+  audio: FnhedPLxksQ
 lines:
   - text: ずっとそうだ そうだった
+    pronunciation: 즛토소다 소닷타
     time: [20.929, 22.966]
   - text: 届きそうで届かない
+    pronunciation: 토도키소데토도카나이
     time: [22.966, 25.411]
   - text: 引き出しの痛みをギュッと
+    pronunciation: 히키다시노이타미오귯토
     time: [25.508, 27.734]
   - text: されるこの時刻
+    pronunciation: 사레루코노지코쿠
     time: [27.814, 29.855]
   - text: きっとそうだ そうなんだ
+    pronunciation: 킷토소다 소난다
     time: [30.735, 32.739]
   - text: 動き出しそうなファンタジー
+    pronunciation: 우고키다시소나판타지
     time: [32.815, 35.313]
   - text: 剥き出しの光がずっと
+    pronunciation: 무키다시노히카리가즛토
     time: [35.393, 37.432]
   - text: 輝き 疼き出すよ
+    pronunciation: 카가야키 우즈키다스요
     time: [37.432, 39.733]
   - text: 繋いでどんな星を見つける
+    pronunciation: 츠나이데돈나호시오미츠케루
     time: [39.793, 43.116]
   - text: 繋いでどんな風を集める
+    pronunciation: 츠나이데돈나카제오아츠메루
     time: [44.574, 47.973]
   - text: 繋いでどんな完成を待つ 待ち続ける
+    pronunciation: 츠나이데돈나칸세이오마츠 마치츠즈케루
     time: [49.404, 54.18]
   - text: 繋いでもっと君に届ける
+    pronunciation: 츠나이데못토키미니토도케루
     time: [54.199, 57.399]
   - text: きっとそうだ そうなんだ
+    pronunciation: 킷토소다 소난다
     time: [67.017, 68.918]
   - text: 忘れられない 光
+    pronunciation: 와스레라레나이 히카리
     time: [68.918, 71.539]
   - text: 引き出しの痛みがすっと
+    pronunciation: 히키다시노이타미가슷토
     time: [71.54, 73.72]
   - text: 消える この時刻
+    pronunciation: 키에루 코노지코쿠
     time: [73.887, 75.82]
   - text: ずっとそうだ そうだった
+    pronunciation: 즛토소다 소닷타
     time: [76.878, 78.76]
   - text: 数えきれない 気付き
+    pronunciation: 카조에키레나이 키즈키
     time: [78.778, 81.278]
   - text: 星達は騒ぎ出し
+    pronunciation: 호시타치하사와기다시
     time: [81.4, 83.34]
   - text: 瞬き 降り注ぐよ
+    pronunciation: 마바타키 후리소소구요
     time: [83.384, 85.783]
   - text: 繋いでどんな星を見つける
+    pronunciation: 츠나이데돈나호시오미츠케루
     time: [85.884, 89.161]
   - text: 繋いでどんな風を見つける
+    pronunciation: 츠나이데돈나카제오미츠케루
     time: [90.663, 94.003]
   - text: 繋いでどんな感性を目指し 突き抜ける
+    pronunciation: 츠나이데돈나칸세이오메자시 츠키누케루
     time: [95.452, 100.164]
   - text: 繋いでもっと君に届ける
+    pronunciation: 츠나이데못토키미니토도케루
     time: [100.213, 103.484]
   - text: ノック ノック ノック まだ 夢見てる
+    pronunciation: 놋쿠 놋쿠 놋쿠 마다 유메미테루
     time: [113.233, 117.442]
   - text: まだ 無いかな 無いね 繰り返す
+    pronunciation: 마다 나이카나 나이네 쿠리카에스
     time: [117.563, 122.022]
   - text: ドク ドク ドク まだ 夢 見てる
+    pronunciation: 도쿠 도쿠 도쿠 마다 유메 미테루
     time: [123.043, 127.122]
   - text: まだ 会いたくなるよ
+    pronunciation: 마다 아이타쿠나루요
     time: [127.323, 130.243]
   - text: 繋いでもっと君を見つける
+    pronunciation: 츠나이데못토키미오미츠케루
     time: [142.017, 145.255]
   - text: 繋いだ僕を 君に届ける
+    pronunciation: 츠나이다보쿠오 쿤니토도케루
     time: [146.975, 150.378]
   - text: 生まれた 僕の中にあり
+    pronunciation: 우마레타 보쿠노나카니아리
     time: [151.817, 154.657]
   - text: あり続ける 照らして どんな陰も
+    pronunciation: 아리츠즈케루 테라시테 돈나카게모
     time: [154.657, 159.157]
   - text: 繋いでどんな星を見つける
+    pronunciation: 츠나이데돈나호시오미츠케루
     time: [159.196, 162.455]
   - text: 繋いでどんな風を集める
+    pronunciation: 츠나이데돈나카제오아츠메루
     time: [163.977, 167.317]
   - text: 繋いでどんな歓声を待つ 待ち続ける
+    pronunciation: 츠나이데돈나칸세이오마츠 마치츠즈케루
     time: [168.756, 173.454]
   - text: 繋いでもっと君に届ける
+    pronunciation: 츠나이데못토키미니토도케루
     time: [173.597, 176.916]
   - text: きっとそうだ そうなんだ
+    pronunciation: 킷토소다 소난다
     time: [186.636, 188.595]
   - text: 忘れられない響き
+    pronunciation: 와스레라레나이히비키
     time: [188.596, 191.075]
   - text: 僕達の光がスッと
+    pronunciation: 보쿠타치노히카리가슷토
     time: [191.176, 193.377]
   - text: 君に届く
+    pronunciation: 키미니토도쿠
     time: [193.656, 195.456]
