@@ -397,36 +397,51 @@ lines:
     time: [184.777, 191.456]
   - words:
       - text: 'Alone '
+        pronunciation: 얼론
         time: [194.882, 195.455]
       - text: 'in '
+        pronunciation: 인
         time: [195.455, 195.789]
       - text: 'my '
+        pronunciation: 마이
         time: [195.789, 196.103]
       - text: 'room, '
+        pronunciation: 룸,
         time: [196.103, 196.915]
       - text: 'my '
+        pronunciation: 마이
         time: [197.655, 197.922]
       - text: 'knees '
+        pronunciation: 니즈
         time: [197.922, 198.255]
       - text: 'arm '
+        pronunciation: 암
         time: [198.255, 198.621]
       - text: surround
+        pronunciation: 서라운드
         time: [198.621, 199.792]
     time: [194.882, 199.792]
   - words:
       - text: 'To '
+        pronunciation: 투
         time: [200.29, 200.677]
       - text: 'days '
+        pronunciation: 데이즈
         time: [200.677, 200.994]
       - text: 'that '
+        pronunciation: 댓
         time: [200.994, 201.378]
       - text: 'recede, '
+        pronunciation: 리시드
         time: [201.378, 202.387]
       - text: 'I '
+        pronunciation: 아이
         time: [203.838, 204.072]
       - text: 'can '
+        pronunciation: 캔
         time: [204.072, 204.39]
       - text: see
+        pronunciation: 시
         time: [204.39, 205.132]
     time: [200.29, 205.132]
   - words:
