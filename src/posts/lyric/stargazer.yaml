@@ -15,6 +15,8 @@ spotify: 3R19lcZUchX4Hl8XihoR3m
 youtube:
   audio: d9C6Q6esDCE
   mv: jS4FWbkR7Io
+offsets:
+  youtubeMV: 1.038
 lines:
   - text: 拝啓 神様
     pronunciation: 하이케이 카미사마
