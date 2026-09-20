@@ -16,8 +16,8 @@ youtube:
   audio: 0kOYZ3EVdwk
   mv: Qd5scOAs-iw
 offsets:
-  spotify: 0
-  youtubeAudio: 0
+  spotify: -0.4
+  youtubeAudio: -0.4
 lines:
   - text: コーヒーの缶に吸い殻
     time: [33.794, 35.134]
