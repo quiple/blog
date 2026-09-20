@@ -21,7 +21,7 @@ offsets:
   youtubeMV: 1.123
 lines:
   - text: Hi, how can I help you?
-    time: [0.92, 12.8]
+    time: [0.92, 2.3]
   - text: Thanks for checking in, I'm not doing well
     time: [12.8, 14.95]
   - text: I'm the new face of management, it's basically hell
@@ -63,7 +63,7 @@ lines:
   - text: There's gotta be more than this, there's gotta be more than this
     time: [64.28, 66.82]
   - text: There's gotta be more than this, there's gotta be more than this
-    time: [66.82, 80.12]
+    time: [66.82, 69.62]
   - text: Thanks for checking in, the shit hit the shit
     time: [80.12, 82.23]
   - text: A lot of money is missing from during my shift
