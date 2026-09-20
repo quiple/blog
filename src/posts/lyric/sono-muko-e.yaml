@@ -30,6 +30,7 @@ lines:
         time: [37.189, 37.888]
       - text: は
         time: [37.888, 38.417]
+    pronunciation: 에가키츠즈케테스리키레타네가이하
     time: [34.159, 38.417]
   - words:
       - text: とっくに
@@ -42,6 +43,7 @@ lines:
         time: [41.697, 42.713]
       - text: みた
         time: [42.713, 43.665]
+    pronunciation: 톳쿠니키에타케도아루이테미타
     time: [39.617, 43.665]
   - words:
       - text: カーテンの
@@ -52,6 +54,7 @@ lines:
         time: [46.85, 47.933]
       - text: 朝が
         time: [47.933, 49.045]
+    pronunciation: 카텐노스키마 하이이로노아사가
     time: [45.127, 49.045]
   - words:
       - text: 顔色も
@@ -62,6 +65,7 @@ lines:
         time: [52.709, 53.725]
       - text: きた
         time: [53.725, 54.725]
+    pronunciation: 카오이로모카에즈니무카에니키타
     time: [50.637, 54.725]
   - words:
       - text: さよならも
@@ -70,6 +74,7 @@ lines:
         time: [56.376, 57.21]
       - text: も
         time: [57.21, 57.647]
+    pronunciation: 사요나라모미니쿠사모
     time: [55.205, 57.647]
   - words:
       - text: 清らかな
@@ -80,6 +85,7 @@ lines:
         time: [60.055, 60.741]
       - text: 愛も
         time: [60.741, 61.826]
+    pronunciation: 키요라카나이야시사모 치사나아이모
     time: [57.906, 61.826]
   - words:
       - text: その向
@@ -94,6 +100,7 @@ lines:
         time: [68.634, 69.332]
       - text: へ
         time: [69.332, 70.066]
+    pronunciation: 소노무코헤 소노무코헤
     time: [65.167, 70.066]
   - words:
       - text: 君の
@@ -108,6 +115,7 @@ lines:
         time: [73.784, 74.819]
       - text: も
         time: [74.819, 75.704]
+    pronunciation: 키미노코에모 소노오모이모
     time: [70.656, 75.704]
   - words:
       - text: 別れも
@@ -120,6 +128,7 @@ lines:
         time: [80.724, 81.34]
       - text: らかさも
         time: [81.34, 82.841]
+    pronunciation: 와카레모키오쿠모소노키요라카사모
     time: [77.519, 82.841]
   - words:
       - text: その向
@@ -128,6 +137,7 @@ lines:
         time: [85.177, 85.894]
       - text: へ
         time: [85.894, 86.78]
+    pronunciation: 소노무코헤
     time: [84.422, 86.78]
   - words:
       - text: 悲しみの
@@ -144,6 +154,7 @@ lines:
         time: [101.011, 101.293]
       - text: て
         time: [101.293, 101.941]
+    pronunciation: 카나시미노오쿠니나니카가아루난테
     time: [97.541, 101.941]
   - words:
       - text: 聞きたくない
@@ -156,6 +167,7 @@ lines:
         time: [105.822, 106.489]
       - text: た
         time: [106.489, 107.102]
+    pronunciation: 키키타쿠나이케레도시가미츠이타
     time: [103.122, 107.102]
   - words:
       - text: 小さな
@@ -166,6 +178,7 @@ lines:
         time: [110.269, 111.335]
       - text: 煽って
         time: [111.335, 112.581]
+    pronunciation: 치사나지유하무나시사아옷테
     time: [108.53, 112.581]
   - words:
       - text: 忘れてた
@@ -180,6 +193,7 @@ lines:
         time: [117.253, 117.888]
       - text: た
         time: [117.888, 118.501]
+    pronunciation: 와스레테타히비가노도마데코미아게타
     time: [114.139, 118.501]
   - words:
       - text: 寂し
@@ -198,6 +212,7 @@ lines:
         time: [124.232, 124.654]
       - text: て
         time: [124.654, 125.314]
+    pronunciation: 사비시사모무나시사모히토아메고토니소노스가타오카에테
     time: [118.635, 125.314]
   - words:
       - text: その向
@@ -212,6 +227,7 @@ lines:
         time: [131.984, 132.682]
       - text: へ
         time: [132.682, 133.566]
+    pronunciation: 소노무코헤 소노무코헤
     time: [128.517, 133.566]
   - words:
       - text: 君の
@@ -226,6 +242,7 @@ lines:
         time: [137.185, 138.22]
       - text: も
         time: [138.22, 139.105]
+    pronunciation: 키미노코에모 소노오모이모
     time: [134.107, 139.105]
   - words:
       - text: 別れも
@@ -238,6 +255,7 @@ lines:
         time: [144.203, 144.819]
       - text: らかさも
         time: [144.819, 146.32]
+    pronunciation: 와카레모키오쿠모소노키요라카사모
     time: [140.998, 146.32]
   - words:
       - text: その向
@@ -246,6 +264,7 @@ lines:
         time: [148.597, 149.376]
       - text: へ
         time: [149.376, 150.156]
+    pronunciation: 소노무코헤
     time: [147.817, 150.156]
   - words:
       - text: さよならも
@@ -254,6 +273,7 @@ lines:
         time: [174.97, 175.773]
       - text: も
         time: [175.773, 176.183]
+    pronunciation: 사요나라모미니쿠사모
     time: [173.741, 176.183]
   - words:
       - text: 清らかな
@@ -264,6 +284,7 @@ lines:
         time: [178.661, 179.347]
       - text: 愛も
         time: [179.347, 180.432]
+    pronunciation: 키요라카나이야시사모 치사나아이모
     time: [176.512, 180.432]
   - words:
       - text: 寂し
@@ -282,6 +303,7 @@ lines:
         time: [190.374, 190.796]
       - text: て
         time: [190.796, 191.456]
+    pronunciation: 사비시사모무나시사모히토아메고토니소노스가타오카에테
     time: [184.777, 191.456]
   - words:
       - text: 'Alone '
@@ -330,6 +352,7 @@ lines:
         time: [209.293, 209.991]
       - text: へ
         time: [209.991, 210.725]
+    pronunciation: 소노무코헤 소노무코헤
     time: [205.826, 210.725]
   - words:
       - text: 君の
@@ -344,6 +367,7 @@ lines:
         time: [214.8, 215.498]
       - text: へ
         time: [215.498, 216.325]
+    pronunciation: 키미노코에모 소노무코헤
     time: [211.355, 216.325]
   - words:
       - text: 風に
@@ -362,6 +386,7 @@ lines:
         time: [225.861, 226.528]
       - text: た
         time: [226.528, 227.25]
+    pronunciation: 카제니노레나이마마키세츠노토추데와타리도리하네뭇타
     time: [218.248, 227.25]
   - words:
       - text: 夢の
@@ -380,6 +405,7 @@ lines:
         time: [236.898, 237.58]
       - text: へ
         time: [237.58, 238.491]
+    pronunciation: 유메노나카노소라 하바타키츠쿠시테소노무코헤
     time: [229.189, 238.491]
   - words:
       - text: 描き
@@ -394,6 +420,7 @@ lines:
         time: [244.04, 244.739]
       - text: は
         time: [244.739, 245.268]
+    pronunciation: 에가키츠즈케테스리키레타네가이하
     time: [241.01, 245.268]
   - words:
       - text: どこかに
@@ -406,4 +433,5 @@ lines:
         time: [248.609, 249.593]
       - text: みた
         time: [249.593, 250.689]
+    pronunciation: 도코카니키에타케도아루이테미타
     time: [246.508, 250.689]
