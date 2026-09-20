@@ -17,6 +17,8 @@ spotify: 5w4MocA1VIaahP49TlJ3w6
 youtube:
   audio: oi0foyZWgUo
   mv: XLwmEuM0dIw
+offsets:
+  youtubeMV: 0.021
 lines:
   - text: あ, 日焼け止め 塗らないままでいたな
     time: [20.981, 28.92]
