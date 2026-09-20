@@ -1,0 +1,54 @@
+# https://music.apple.com/kr/song/1825279997
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1825279997?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1825279997
+# 선택 항목: Apple Music · Sunfaded · 음절별 가사 · 1825279997
+# 가져온 시각: 2026-09-19T10:37:02.280Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: Sunfaded
+titleLang: ja
+lang: ja
+lines:
+  - text: あ, 日焼け止め 塗らないままでいたな
+    time: [20.981, 28.92]
+  - text: あんなにも大きな声が肌すれすれに来ることも,
+    time: [29.209, 39.675]
+  - text: 光は指輪みたいになること, も
+    time: [39.675, 47.718]
+  - text: いずれ全部 明るい道の秘密のように思い出す
+    time: [47.936, 59.165]
+  - text: 僕たちは (いつ出会うだろう?)
+    time: [61.693, 68.41]
+  - text: 出会うときは
+    time: [68.737, 70.972]
+  - text: 僕にとって正しい人の
+    time: [71.355, 75.846]
+  - text: 僕にとって正しい声でいる
+    time: [76.04, 81.349]
+  - text: 游ぶ指先や睫毛や
+    time: [100.613, 106.293]
+  - text: 髪留めがあなたたちの姿を覚えている
+    time: [106.453, 118.194]
+  - text: 煌きと暗やみの層に躍り入る僕のことを誰かが見てる
+    time: [118.415, 132.532]
+  - text: 安心して, 僕は帰らない, ほらね
+    time: [133.107, 138.163]
+  - text: どこでも ああ, 何度でも目を瞑るほど日が差す方で
+    time: [155.372, 169.383]
+  - text: 僕は言う
+    time: [169.683, 171.883]
+  - text: 僕は禁じる
+    time: [172.047, 174.202]
+  - text: 僕は覚える
+    time: [174.378, 176.535]
+  - text: 僕は慄く
+    time: [176.718, 178.859]
+  - text: 僕は踊る
+    time: [179.055, 181.138]
+  - text: 僕は生れる
+    time: [181.394, 183.487]
+  - text: 僕は褪せる
+    time: [183.749, 185.752]
+  - text: 僕は判断する
+    time: [186.076, 189.278]
