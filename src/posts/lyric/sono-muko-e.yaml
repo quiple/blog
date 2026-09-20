@@ -30,7 +30,7 @@ lines:
         time: [37.189, 37.888]
       - text: は
         time: [37.888, 38.417]
-    pronunciation: 에가키츠즈케테스리키레타네가이하
+    pronunciation: 에가키츠즈케테스리키레타네가이와
     time: [34.159, 38.417]
   - words:
       - text: とっくに
@@ -178,7 +178,7 @@ lines:
         time: [110.269, 111.335]
       - text: 煽って
         time: [111.335, 112.581]
-    pronunciation: 치사나지유하무나시사아옷테
+    pronunciation: 치사나지유와무나시사아옷테
     time: [108.53, 112.581]
   - words:
       - text: 忘れてた
@@ -386,7 +386,7 @@ lines:
         time: [225.861, 226.528]
       - text: た
         time: [226.528, 227.25]
-    pronunciation: 카제니노레나이마마키세츠노토추데와타리도리하네뭇타
+    pronunciation: 카제니노레나이마마키세츠노토추데와타리도리와네뭇타
     time: [218.248, 227.25]
   - words:
       - text: 夢の
@@ -420,7 +420,7 @@ lines:
         time: [244.04, 244.739]
       - text: は
         time: [244.739, 245.268]
-    pronunciation: 에가키츠즈케테스리키레타네가이하
+    pronunciation: 에가키츠즈케테스리키레타네가이와
     time: [241.01, 245.268]
   - words:
       - text: どこかに
