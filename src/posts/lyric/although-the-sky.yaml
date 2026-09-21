@@ -16,99 +16,673 @@ youtube:
   audio: plUoKMsRp3I
   mv: tVGH-g6OQhg
 lines:
-  - text: Although the sky might be gray
+  - words:
+      - text: 'Although '
+        time: [4.06, 4.56]
+      - text: 'the '
+        time: [4.56, 4.72]
+      - text: 'sky '
+        time: [4.72, 5.66]
+      - text: 'might '
+        time: [5.66, 5.88]
+      - text: 'be '
+        time: [5.88, 6.36]
+      - text: gray
+        time: [6.36, 6.84]
     time: [4.06, 6.84]
-  - text: I found a way
+  - words:
+      - text: 'I '
+        time: [8.98, 9.46]
+      - text: 'found '
+        time: [9.46, 9.96]
+      - text: 'a '
+        time: [9.96, 10.14]
+      - text: way
+        time: [10.14, 10.64]
     time: [8.98, 10.64]
-  - text: I'm seein' sunbeams all the time now
+  - words:
+      - text: 'I’m '
+        time: [12.7, 13.14]
+      - text: 'seein’ '
+        time: [13.14, 13.9]
+      - text: 'sunbeams '
+        time: [13.9, 15.06]
+      - text: 'all '
+        time: [15.06, 15.34]
+      - text: 'the '
+        time: [15.34, 15.98]
+      - text: 'time '
+        time: [15.98, 16.72]
+      - text: now
+        time: [16.72, 17.2]
     time: [12.7, 17.2]
-  - text: Although the grass might be wet
+  - words:
+      - text: 'Although '
+        time: [19.06, 19.56]
+      - text: 'the '
+        time: [19.56, 19.74]
+      - text: 'grass '
+        time: [19.74, 20.7]
+      - text: 'might '
+        time: [20.7, 20.94]
+      - text: 'be '
+        time: [20.94, 21.36]
+      - text: wet
+        time: [21.36, 21.74]
     time: [19.06, 21.74]
-  - text: Don't give up yet
+  - words:
+      - text: 'Don’t '
+        time: [23.98, 24.44]
+      - text: 'give '
+        time: [24.44, 24.7]
+      - text: 'up '
+        time: [24.7, 25.06]
+      - text: yet
+        time: [25.06, 25.42]
     time: [23.98, 25.42]
-  - text: You'll miss the rainbow if you run now
+  - words:
+      - text: 'You’ll '
+        time: [27.7, 28.2]
+      - text: 'miss '
+        time: [28.2, 28.66]
+      - text: 'the '
+        time: [28.66, 28.92]
+      - text: 'rainbow '
+        time: [28.92, 30.1]
+      - text: 'if '
+        time: [30.1, 30.32]
+      - text: 'you '
+        time: [30.32, 31.02]
+      - text: 'run '
+        time: [31.02, 31.7]
+      - text: now
+        time: [31.7, 32.4]
     time: [27.7, 32.4]
-  - text: Soon you'll see it, see it shinin'
+  - words:
+      - text: 'Soon '
+        time: [34.72, 35.22]
+      - text: 'you’ll '
+        time: [35.22, 35.66]
+      - text: 'see '
+        time: [35.66, 36.02]
+      - text: 'it, '
+        time: [36.02, 36.38]
+      - text: 'see '
+        time: [36.38, 36.94]
+      - text: 'it '
+        time: [36.94, 37.3]
+      - text: shinin’
+        time: [37.3, 38.179]
     time: [34.72, 38.179]
-  - text: Hand in hand, the colors vibrant
-    time: [38.439, 41.959]
-  - text: Fleeting beauty isn't silent
-    time: [42.239, 45.519]
-  - text: I know sometimes it really feels that way
-    time: [45.559, 50.119]
-  - text: And when the stars want to talk
-    time: [52.759, 55.619]
-  - text: Don't be in shock
-    time: [57.719, 59.359]
-  - text: The constellations are good-hearted
-    time: [61.459, 65.939]
-  - text: Despite the dark, we can rock
-    time: [67.799, 70.579]
-  - text: Ignore the clock
-    time: [72.759, 74.319]
-  - text: We'll have a good time never charted
-    time: [76.459, 80.959]
-  - text: Even during all the bad days
-    time: [83.519, 87.159]
-  - text: Cloudy skies can't stop the sun rays
-    time: [87.219, 90.759]
-  - text: This could never be a sad place
-    time: [91.019, 94.459]
-  - text: If you check it out, I know you'll
-    time: [94.779, 98.239]
-  - text: Soon you'll see it, see it shinin'
-    time: [98.479, 101.939]
-  - text: Hand in hand, the colors vibrant
-    time: [102.199, 105.699]
-  - text: Fleeting beauty isn't silent
-    time: [105.999, 109.279]
-  - text: I know sometimes it really feels that way
-    time: [109.319, 113.878]
-  - text: And though it may not seem like much
-    time: [116.498, 119.398]
-  - text: The slightest touch
-    time: [121.498, 123.178]
-  - text: Could make a difference
-    time: [125.238, 127.318]
-  - text: At the right time
-    time: [127.838, 130.778]
-  - text: And when it seems that you're done
-    time: [131.598, 134.458]
-  - text: Know that you've won
-    time: [136.458, 139.178]
-  - text: Take time to rest up
-    time: [140.218, 142.158]
-  - text: For tomorrow
-    time: [142.778, 145.718]
-  - text: Even during all the bad days
-    time: [147.278, 150.918]
-  - text: Cloudy skies can't stop the sun rays
-    time: [150.958, 154.518]
-  - text: This could never be a sad place
-    time: [154.798, 158.198]
-  - text: If you check it out, I know you'll
-    time: [158.518, 161.998]
-  - text: Soon you'll see it, see it shinin'
-    time: [162.238, 165.658]
-  - text: Hand in hand, the colors vibrant
-    time: [165.958, 169.438]
-  - text: Fleeting beauty isn't silent
-    time: [169.738, 173.018]
-  - text: I know sometimes it really feels that
-    time: [173.078, 176.898]
-  - text: Even during all the bad days
-    time: [177.278, 180.898]
-  - text: Cloudy skies can't stop the sun rays
-    time: [180.958, 184.518]
-  - text: This could never be a sad place
-    time: [184.778, 188.197]
-  - text: If you check it out, I know you'll
-    time: [188.517, 191.997]
-  - text: Soon you'll see it, see it shinin'
-    time: [192.237, 195.677]
-  - text: Hand in hand, the colors vibrant
-    time: [195.937, 199.437]
-  - text: Fleeting beauty isn't silent
-    time: [199.737, 203.017]
-  - text: I know sometimes it really feels that way
-    time: [203.057, 207.637]
+  - words:
+      - text: 'Hand '
+        time: [38.44, 39.02]
+      - text: 'in '
+        time: [39.02, 39.2]
+      - text: 'hand, '
+        time: [39.2, 39.68]
+      - text: 'the '
+        time: [39.68, 40.16]
+      - text: 'colors '
+        time: [40.16, 41.08]
+      - text: vibrant
+        time: [41.08, 41.959]
+    time: [38.44, 41.959]
+  - words:
+      - text: 'Fleeting '
+        time: [42.24, 43.18]
+      - text: 'beauty '
+        time: [43.18, 43.96]
+      - text: 'isn’t '
+        time: [43.96, 44.82]
+      - text: silent
+        time: [44.82, 45.519]
+    time: [42.24, 45.519]
+  - words:
+      - text: 'I '
+        time: [45.56, 45.96]
+      - text: 'know '
+        time: [45.96, 46.42]
+      - text: 'sometimes '
+        time: [46.42, 47.22]
+      - text: 'it '
+        time: [47.22, 47.86]
+      - text: 'really '
+        time: [47.86, 48.58]
+      - text: 'feels '
+        time: [48.58, 49.04]
+      - text: 'that '
+        time: [49.04, 49.48]
+      - text: way
+        time: [49.48, 50.119]
+    time: [45.56, 50.119]
+  - words:
+      - text: 'And '
+        time: [52.76, 53.02]
+      - text: 'when '
+        time: [53.02, 53.28]
+      - text: 'the '
+        time: [53.28, 53.44]
+      - text: 'stars '
+        time: [53.44, 54.42]
+      - text: 'want '
+        time: [54.42, 54.68]
+      - text: 'to '
+        time: [54.68, 55.12]
+      - text: talk
+        time: [55.12, 55.619]
+    time: [52.76, 55.619]
+  - words:
+      - text: 'Don’t '
+        time: [57.72, 58.2]
+      - text: 'be '
+        time: [58.2, 58.68]
+      - text: 'in '
+        time: [58.68, 58.88]
+      - text: shock
+        time: [58.88, 59.359]
+    time: [57.72, 59.359]
+  - words:
+      - text: 'The '
+        time: [61.46, 61.92]
+      - text: 'constellations '
+        time: [61.92, 63.82]
+      - text: 'are '
+        time: [63.82, 64.08]
+      - text: 'good- '
+        time: [64.08, 64.74]
+      - text: hearted
+        time: [64.74, 65.939]
+    time: [61.46, 65.939]
+  - words:
+      - text: 'Despite '
+        time: [67.8, 68.28]
+      - text: 'the '
+        time: [68.28, 68.48]
+      - text: 'dark, '
+        time: [68.48, 69.44]
+      - text: 'we '
+        time: [69.44, 69.64]
+      - text: 'can '
+        time: [69.64, 70.18]
+      - text: rock
+        time: [70.18, 70.579]
+    time: [67.8, 70.579]
+  - words:
+      - text: 'Ignore '
+        time: [72.76, 73.64]
+      - text: 'the '
+        time: [73.64, 73.82]
+      - text: clock
+        time: [73.82, 74.319]
+    time: [72.76, 74.319]
+  - words:
+      - text: 'We’ll '
+        time: [76.46, 76.92]
+      - text: 'have '
+        time: [76.92, 77.46]
+      - text: 'a '
+        time: [77.46, 77.64]
+      - text: 'good '
+        time: [77.64, 78.04]
+      - text: 'time '
+        time: [78.04, 78.84]
+      - text: 'never '
+        time: [78.84, 79.72]
+      - text: charted
+        time: [79.72, 80.959]
+    time: [76.46, 80.959]
+  - words:
+      - text: 'Even '
+        time: [83.52, 84.42]
+      - text: 'during '
+        time: [84.42, 85.2]
+      - text: 'all '
+        time: [85.2, 85.64]
+      - text: 'the '
+        time: [85.64, 86.1]
+      - text: 'bad '
+        time: [86.1, 86.54]
+      - text: days
+        time: [86.54, 87.159]
+    time: [83.52, 87.159]
+  - words:
+      - text: 'Cloudy '
+        time: [87.22, 87.9]
+      - text: 'skies '
+        time: [87.9, 88.4]
+      - text: 'can’t '
+        time: [88.4, 88.82]
+      - text: 'stop '
+        time: [88.82, 89.34]
+      - text: 'the '
+        time: [89.34, 89.8]
+      - text: 'sun '
+        time: [89.8, 90.28]
+      - text: rays
+        time: [90.28, 90.759]
+    time: [87.22, 90.759]
+  - words:
+      - text: 'This '
+        time: [91.02, 91.46]
+      - text: 'could '
+        time: [91.46, 91.92]
+      - text: 'never '
+        time: [91.92, 92.66]
+      - text: 'be '
+        time: [92.66, 93.14]
+      - text: 'a '
+        time: [93.14, 93.54]
+      - text: 'sad '
+        time: [93.54, 94.02]
+      - text: place
+        time: [94.02, 94.459]
+    time: [91.02, 94.459]
+  - words:
+      - text: 'If '
+        time: [94.78, 95.2]
+      - text: 'you '
+        time: [95.2, 95.66]
+      - text: 'check '
+        time: [95.66, 95.98]
+      - text: 'it '
+        time: [95.98, 96.6]
+      - text: 'out, '
+        time: [96.6, 96.94]
+      - text: 'I '
+        time: [96.94, 97.32]
+      - text: 'know '
+        time: [97.32, 97.74]
+      - text: you’ll
+        time: [97.74, 98.239]
+    time: [94.78, 98.239]
+  - words:
+      - text: 'Soon '
+        time: [98.48, 98.96]
+      - text: 'you’ll '
+        time: [98.96, 99.42]
+      - text: 'see '
+        time: [99.42, 99.78]
+      - text: 'it, '
+        time: [99.78, 100.14]
+      - text: 'see '
+        time: [100.14, 100.7]
+      - text: 'it '
+        time: [100.7, 101.04]
+      - text: shinin’
+        time: [101.04, 101.939]
+    time: [98.48, 101.939]
+  - words:
+      - text: 'Hand '
+        time: [102.2, 102.76]
+      - text: 'in '
+        time: [102.76, 102.96]
+      - text: 'hand, '
+        time: [102.96, 103.44]
+      - text: 'the '
+        time: [103.44, 103.9]
+      - text: 'colors '
+        time: [103.9, 104.82]
+      - text: vibrant
+        time: [104.82, 105.699]
+    time: [102.2, 105.699]
+  - words:
+      - text: 'Fleeting '
+        time: [105.1, 106.92]
+      - text: 'beauty '
+        time: [106.92, 107.72]
+      - text: 'isn’t '
+        time: [107.72, 108.56]
+      - text: silent
+        time: [108.56, 109.279]
+    time: [105.1, 109.279]
+  - words:
+      - text: 'I '
+        time: [109.32, 109.7]
+      - text: 'know '
+        time: [109.7, 110.18]
+      - text: 'sometimes '
+        time: [110.18, 110.98]
+      - text: 'it '
+        time: [110.98, 111.6]
+      - text: 'really '
+        time: [111.6, 112.34]
+      - text: 'feels '
+        time: [112.34, 112.8]
+      - text: 'that '
+        time: [112.8, 113.22]
+      - text: way
+        time: [113.22, 113.878]
+    time: [109.32, 113.878]
+  - words:
+      - text: 'And '
+        time: [116.5, 116.72]
+      - text: 'though '
+        time: [116.72, 117.02]
+      - text: 'it '
+        time: [117.02, 117.2]
+      - text: 'may '
+        time: [117.2, 117.7]
+      - text: 'not '
+        time: [117.7, 118.12]
+      - text: 'seem '
+        time: [118.12, 118.4]
+      - text: 'like '
+        time: [118.4, 118.88]
+      - text: much
+        time: [118.88, 119.398]
+    time: [116.5, 119.398]
+  - words:
+      - text: 'The '
+        time: [121.5, 121.68]
+      - text: 'slightest '
+        time: [121.68, 122.66]
+      - text: touch
+        time: [122.66, 123.178]
+    time: [121.5, 123.178]
+  - words:
+      - text: 'Could '
+        time: [125.24, 125.68]
+      - text: 'make '
+        time: [125.68, 126.22]
+      - text: 'a '
+        time: [126.22, 126.42]
+      - text: difference
+        time: [126.42, 127.318]
+    time: [125.24, 127.318]
+  - words:
+      - text: 'At '
+        time: [127.84, 128.04]
+      - text: 'the '
+        time: [128.04, 128.26]
+      - text: 'right '
+        time: [128.26, 130.14]
+      - text: time
+        time: [130.14, 130.778]
+    time: [127.84, 130.778]
+  - words:
+      - text: 'And '
+        time: [131.6, 131.82]
+      - text: 'when '
+        time: [131.82, 132.1]
+      - text: 'it '
+        time: [132.1, 132.26]
+      - text: 'seems '
+        time: [132.26, 133.16]
+      - text: 'that '
+        time: [133.16, 133.42]
+      - text: 'you’re '
+        time: [133.42, 133.9]
+      - text: done
+        time: [133.9, 134.458]
+    time: [131.6, 134.458]
+  - words:
+      - text: 'Know '
+        time: [136.46, 136.94]
+      - text: 'that '
+        time: [136.94, 137.16]
+      - text: 'you’ve '
+        time: [137.16, 137.66]
+      - text: won
+        time: [137.66, 139.178]
+    time: [136.46, 139.178]
+  - words:
+      - text: 'Take '
+        time: [140.22, 140.64]
+      - text: 'time '
+        time: [140.64, 141.16]
+      - text: 'to '
+        time: [141.16, 141.4]
+      - text: 'rest '
+        time: [141.4, 141.88]
+      - text: up
+        time: [141.88, 142.158]
+    time: [140.22, 142.158]
+  - words:
+      - text: 'For '
+        time: [142.78, 143.02]
+      - text: tomorrow
+        time: [143.02, 145.718]
+    time: [142.78, 145.718]
+  - words:
+      - text: 'Even '
+        time: [147.28, 148.18]
+      - text: 'during '
+        time: [148.18, 148.94]
+      - text: 'all '
+        time: [148.94, 149.38]
+      - text: 'the '
+        time: [149.38, 149.84]
+      - text: 'bad '
+        time: [149.84, 150.3]
+      - text: days
+        time: [150.3, 150.918]
+    time: [147.28, 150.918]
+  - words:
+      - text: 'Cloudy '
+        time: [150.96, 151.64]
+      - text: 'skies '
+        time: [151.64, 152.18]
+      - text: 'can’t '
+        time: [152.18, 152.58]
+      - text: 'stop '
+        time: [152.58, 153.1]
+      - text: 'the '
+        time: [153.1, 153.56]
+      - text: 'sun '
+        time: [153.56, 154.04]
+      - text: rays
+        time: [154.04, 154.518]
+    time: [150.96, 154.518]
+  - words:
+      - text: 'This '
+        time: [154.8, 155.22]
+      - text: 'could '
+        time: [155.22, 155.68]
+      - text: 'never '
+        time: [155.68, 156.4]
+      - text: 'be '
+        time: [156.4, 156.9]
+      - text: 'a '
+        time: [156.9, 157.3]
+      - text: 'sad '
+        time: [157.3, 157.8]
+      - text: place
+        time: [157.8, 158.198]
+    time: [154.8, 158.198]
+  - words:
+      - text: 'If '
+        time: [158.52, 158.94]
+      - text: 'you '
+        time: [158.94, 159.42]
+      - text: 'check '
+        time: [159.42, 159.76]
+      - text: 'it '
+        time: [159.76, 160.34]
+      - text: 'out, '
+        time: [160.34, 160.68]
+      - text: 'I '
+        time: [160.68, 161.08]
+      - text: 'know '
+        time: [161.08, 161.5]
+      - text: you’ll
+        time: [161.5, 161.998]
+    time: [158.52, 161.998]
+  - words:
+      - text: 'Soon '
+        time: [162.24, 162.7]
+      - text: 'you’ll '
+        time: [162.7, 163.16]
+      - text: 'see '
+        time: [163.16, 163.54]
+      - text: 'it, '
+        time: [163.54, 163.88]
+      - text: 'see '
+        time: [163.88, 164.44]
+      - text: 'it '
+        time: [164.44, 164.8]
+      - text: shinin’
+        time: [164.8, 165.658]
+    time: [162.24, 165.658]
+  - words:
+      - text: 'Hand '
+        time: [165.96, 166.52]
+      - text: 'in '
+        time: [166.52, 166.72]
+      - text: 'hand, '
+        time: [166.72, 167.18]
+      - text: 'the '
+        time: [167.18, 167.64]
+      - text: 'colors '
+        time: [167.64, 168.58]
+      - text: vibrant
+        time: [168.58, 169.438]
+    time: [165.96, 169.438]
+  - words:
+      - text: 'Fleeting '
+        time: [169.74, 170.68]
+      - text: 'beauty '
+        time: [170.68, 171.46]
+      - text: 'isn’t '
+        time: [171.46, 172.32]
+      - text: silent
+        time: [172.32, 173.018]
+    time: [169.74, 173.018]
+  - words:
+      - text: 'I '
+        time: [173.08, 173.46]
+      - text: 'know '
+        time: [173.46, 173.94]
+      - text: 'sometimes '
+        time: [173.94, 174.72]
+      - text: 'it '
+        time: [174.72, 175.36]
+      - text: 'really '
+        time: [175.36, 176.08]
+      - text: 'feels '
+        time: [176.08, 176.54]
+      - text: that
+        time: [176.54, 176.898]
+    time: [173.08, 176.898]
+  - words:
+      - text: 'Even '
+        time: [177.28, 178.16]
+      - text: 'during '
+        time: [178.16, 178.94]
+      - text: 'all '
+        time: [178.94, 179.38]
+      - text: 'the '
+        time: [179.38, 179.84]
+      - text: 'bad '
+        time: [179.84, 180.28]
+      - text: days
+        time: [180.28, 180.898]
+    time: [177.28, 180.898]
+  - words:
+      - text: 'Cloudy '
+        time: [180.96, 181.64]
+      - text: 'skies '
+        time: [181.64, 182.16]
+      - text: 'can’t '
+        time: [182.16, 182.58]
+      - text: 'stop '
+        time: [182.58, 183.1]
+      - text: 'the '
+        time: [183.1, 183.54]
+      - text: 'sun '
+        time: [183.54, 184.04]
+      - text: rays
+        time: [184.04, 184.518]
+    time: [180.96, 184.518]
+  - words:
+      - text: 'This '
+        time: [184.78, 185.22]
+      - text: 'could '
+        time: [185.22, 185.66]
+      - text: 'never '
+        time: [185.66, 186.4]
+      - text: 'be '
+        time: [186.4, 186.9]
+      - text: 'a '
+        time: [186.9, 187.28]
+      - text: 'sad '
+        time: [187.28, 187.76]
+      - text: place
+        time: [187.76, 188.197]
+    time: [184.78, 188.197]
+  - words:
+      - text: 'If '
+        time: [188.52, 188.96]
+      - text: 'you '
+        time: [188.96, 189.42]
+      - text: 'check '
+        time: [189.42, 189.74]
+      - text: 'it '
+        time: [189.74, 190.34]
+      - text: 'out, '
+        time: [190.34, 190.68]
+      - text: 'I '
+        time: [190.68, 191.08]
+      - text: 'know '
+        time: [191.08, 191.48]
+      - text: you’ll
+        time: [191.48, 191.997]
+    time: [188.52, 191.997]
+  - words:
+      - text: 'Soon '
+        time: [192.24, 192.7]
+      - text: 'you’ll '
+        time: [192.7, 193.16]
+      - text: 'see '
+        time: [193.16, 193.54]
+      - text: 'it, '
+        time: [193.54, 193.88]
+      - text: 'see '
+        time: [193.88, 194.44]
+      - text: 'it '
+        time: [194.44, 194.8]
+      - text: shinin’
+        time: [194.8, 195.677]
+    time: [192.24, 195.677]
+  - words:
+      - text: 'Hand '
+        time: [195.94, 196.52]
+      - text: 'in '
+        time: [196.52, 196.7]
+      - text: 'hand, '
+        time: [196.7, 197.18]
+      - text: 'the '
+        time: [197.18, 197.66]
+      - text: 'colors '
+        time: [197.66, 198.58]
+      - text: vibrant
+        time: [198.58, 199.437]
+    time: [195.94, 199.437]
+  - words:
+      - text: 'Fleeting '
+        time: [199.74, 200.68]
+      - text: 'beauty '
+        time: [200.68, 201.48]
+      - text: 'isn’t '
+        time: [201.48, 202.32]
+      - text: silent
+        time: [202.32, 203.017]
+    time: [199.74, 203.017]
+  - words:
+      - text: 'I '
+        time: [203.06, 203.46]
+      - text: 'know '
+        time: [203.46, 203.94]
+      - text: 'sometimes '
+        time: [203.94, 204.72]
+      - text: 'it '
+        time: [204.72, 205.36]
+      - text: 'really '
+        time: [205.36, 206.08]
+      - text: 'feels '
+        time: [206.08, 206.54]
+      - text: 'that '
+        time: [206.54, 206.98]
+      - text: way
+        time: [206.98, 207.637]
+    time: [203.06, 207.637]
