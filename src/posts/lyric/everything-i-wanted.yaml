@@ -51,7 +51,7 @@ lines:
       - text: wanted
         pr: 원티드
         time: [22.083, 23.037]
-    tl: 원했던 모든 걸 얻었어
+    tl: 원했던 모든 걸 얻었지
     time: [20.53, 23.037]
   - words:
       - text: 'Not '
@@ -144,7 +144,7 @@ lines:
       - text: (fly)
         pr: (플라이)
         time: [42.576, 43.125]
-    tl: 날 수 있을 줄 알았어 (날 수 있을 줄)
+    tl: 날 수 있을 줄 알았어
     time: [41.27, 43.125]
   - words:
       - text: 'So '
@@ -165,7 +165,7 @@ lines:
       - text: golden
         pr: 골든
         time: [46.116, 47.156]
-    tl: 그래서 금문교에서 발을 내디뎠어
+    tl: 그래서 금문교에서 발을 내디뎠는데
     time: [44.74, 47.156]
   - words:
       - text: 'Nobody '
@@ -177,7 +177,7 @@ lines:
       - text: (cried)
         pr: (크라이드)
         time: [50.581, 51.019]
-    tl: 아무도 울지 않았어 (울지 않았어)
+    tl: 아무도 울지 않았어
     time: [49.286, 51.019]
   - words:
       - text: 'Nobody '
@@ -267,7 +267,7 @@ lines:
       - text: wanted
         pr: 원티드
         time: [70.086, 70.994]
-    tl: 원했던 모든 걸 얻었어
+    tl: 원했던 모든 걸 얻었지
     time: [68.504, 70.994]
   - words:
       - text: 'But '
@@ -495,7 +495,7 @@ lines:
       - text: water
         pr: 워터
         time: [118.123, 119.076]
-    tl: 하지만 내 머리는 물속에 있었어
+    tl: 하지만 내 머리는 물속에 있었지
     time: [116.608, 119.076]
   - words:
       - text: 'They '
@@ -714,7 +714,7 @@ lines:
       - text: wanted
         pr: 원티드
         time: [158.122, 159.056]
-    tl: 원했던 모든 걸 얻었어
+    tl: 원했던 모든 걸 얻었지
     time: [156.541, 159.056]
   - words:
       - text: 'But '
