@@ -21,7 +21,7 @@ yt:
 lines:
   - text: I spend my hours doing alchemy
     pr: 아이 스펜드 마이 아워즈 두잉 앨커미
-    tl: 시간을 보내며 연금술을 해
+    tl: 연금술을 하며 시간을 보내
     time: [0.708, 2.96]
   - text: I mix my yellows and my blues to make a shade of green
     pr: 아이 믹스 마이 옐로즈 앤드 마이 블루즈 투 메이크 어 셰이드 오브 그린
@@ -105,7 +105,7 @@ lines:
     time: [68.324, 71.343]
   - text: I spend my hours doing alchemy
     pr: 아이 스펜드 마이 아워즈 두잉 앨커미
-    tl: 시간을 보내며 연금술을 해
+    tl: 연금술을 하며 시간을 보내
     time: [71.935, 74.35]
   - text: I make a life refining zinc inside the smeltery
     pr: 아이 메이크 어 라이프 리파이닝 징크 인사이드 더 스멜터리
@@ -225,7 +225,7 @@ lines:
     time: [164.745, 165.314]
   - text: I spend my hours doing alchemy
     pr: 아이 스펜드 마이 아워즈 두잉 앨커미
-    tl: 시간을 보내며 연금술을 해
+    tl: 연금술을 하며 시간을 보내
     time: [191.518, 193.816]
   - text: I mix my yellows and my blues to make a shade of green
     pr: 아이 믹스 마이 옐로즈 앤드 마이 블루즈 투 메이크 어 셰이드 오브 그린
