@@ -4,7 +4,8 @@ import {readFile, writeFile} from 'node:fs/promises'
 import {resolve, parse as parsePath, join} from 'node:path'
 import {fileURLToPath} from 'node:url'
 import {updateLyricsYaml} from './scripts/lyrics/update-yaml.ts'
-import {Document, isScalar, isSeq, visit} from 'yaml'
+import {Document} from 'yaml'
+import {formatLyricsYaml} from './scripts/lyrics/format-yaml.ts'
 import {fromTTML} from './scripts/lyrics/convert.ts'
 import {fromLRC} from './scripts/lyrics/lrc.ts'
 import {parseSong} from './src/lib/lyrics/model.ts'
@@ -62,11 +63,7 @@ try {
       : join(dir, name + '.yaml')
     const original = slug ? await readFile(output, 'utf8') : undefined
     const doc = original === undefined ? new Document(song) : updateLyricsYaml(original, song, values.force, mode)
-    visit(doc, {
-      Pair(_, pair) {
-        if (isScalar(pair.key) && pair.key.value === 'time' && isSeq(pair.value)) pair.value.flow = true
-      },
-    })
+    formatLyricsYaml(doc)
     const comment =
       '# 출처: ' +
       input.replace(/[\r\n]/g, ' ') +
