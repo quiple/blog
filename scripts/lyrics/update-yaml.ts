@@ -1,6 +1,6 @@
 import {isMap, isScalar, isSeq, parseDocument, YAMLMap} from 'yaml'
 import {parseSongYaml} from '../../src/lib/lyrics/yaml.server.ts'
-import type {fromLRC} from './lrc.ts'
+import type {ConversionMode, fromLRC} from './lrc.ts'
 
 const normalize = (text: string) =>
   text
@@ -31,7 +31,12 @@ function splitOriginal(text: string, parts: string[]) {
   })
 }
 
-export function updateLyricsYaml(source: string, converted: ReturnType<typeof fromLRC>, force = false) {
+export function updateLyricsYaml(
+  source: string,
+  converted: ReturnType<typeof fromLRC>,
+  force = false,
+  mode: ConversionMode = 'auto',
+) {
   const doc = parseDocument(source)
   const original = parseSongYaml(source, '갱신 대상')
   const lines = doc.get('lines')
@@ -50,7 +55,25 @@ export function updateLyricsYaml(source: string, converted: ReturnType<typeof fr
     }
     if (!isMap(node)) throw Error(`${i + 1}행은 객체 형식이어야 합니다.`)
     const words = node.get('words')
-    if (isSeq(words)) {
+    if (mode === 'line') {
+      if (
+        isSeq(words) &&
+        old.words?.some((word) => word.pronunciation || word.ruby || word.obscene || word.emptyBeat)
+      ) {
+        for (const word of words.items) {
+          if (!isMap(word)) throw Error('단어 객체가 필요합니다.')
+          word.set('time', doc.createNode(line.time))
+          const ruby = word.get('ruby')
+          if (isSeq(ruby))
+            for (const part of ruby.items) {
+              if (isMap(part) && part.has('time')) part.set('time', doc.createNode(line.time))
+            }
+        }
+      } else {
+        if (isSeq(words)) node.set('text', old.text)
+        node.delete('words')
+      }
+    } else if (isSeq(words)) {
       if (!line.words || words.items.length !== line.words.length)
         throw Error(`${i + 1}행의 단어 구분이 달라 타이밍을 대응시킬 수 없습니다.`)
       line.words.forEach((word, j) => {

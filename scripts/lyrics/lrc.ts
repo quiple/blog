@@ -1,3 +1,4 @@
+export type ConversionMode = 'auto' | 'line' | 'syllable'
 type Word = {text: string; time: [number, number]}
 const stamp = String.raw`(\d+):([0-5]\d)(?:[.:](\d{1,3}))?`
 const ms = (m: string, s: string, fraction = '') =>
@@ -5,7 +6,12 @@ const ms = (m: string, s: string, fraction = '') =>
 const seconds = (n: number) => n / 1000
 
 /** LRC has starts, not necessarily ends; use the next line or the configured tail. */
-export function fromLRC(source: string, tail = 2, reference?: {text: string; time?: [number, number]}[]) {
+export function fromLRC(
+  source: string,
+  tail = 2,
+  reference?: {text: string; time?: [number, number]}[],
+  mode: ConversionMode = 'auto',
+) {
   if (!Number.isFinite(tail) || tail <= 0) throw Error('tail은 0보다 큰 초 단위 숫자여야 합니다.')
   let title: string | undefined
   let offset = 0
@@ -72,7 +78,11 @@ export function fromLRC(source: string, tail = 2, reference?: {text: string; tim
     })
     if (!words.length || !words.some((w) => w.text.trim())) return []
     const time: [number, number] = [shift(start), shift(end)]
-    return [words.length === 1 ? {text: words[0].text, time} : {words, time}]
+    return [
+      mode === 'line' || (mode === 'auto' && words.length === 1)
+        ? {text: words.map((word) => word.text).join(''), time}
+        : {words, time},
+    ]
   })
   if (reference && referenceIndex !== reference.length) throw Error('TTML과 LRC의 가사 행 수가 다릅니다.')
   return {...(title ? {title} : {}), lines}
