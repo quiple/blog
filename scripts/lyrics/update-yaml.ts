@@ -1,4 +1,4 @@
-import {isMap, isSeq, parseDocument} from 'yaml'
+import {isMap, isScalar, isSeq, parseDocument, YAMLMap} from 'yaml'
 import {parseSongYaml} from '../../src/lib/lyrics/yaml.server.ts'
 import type {fromLRC} from './lrc.ts'
 
@@ -18,7 +18,12 @@ export function updateLyricsYaml(source: string, converted: ReturnType<typeof fr
     const text = line.words?.map((w) => w.text).join('') ?? line.text ?? ''
     if (!force && normalize(old.text) !== normalize(text))
       throw Error(`${i + 1}행 원문이 다릅니다. 대응하는 행이 맞다면 --force로 갱신하세요.`)
-    const node = lines.items[i]
+    let node = lines.items[i]
+    if (isScalar(node) && typeof node.value === 'string') {
+      const entry = new YAMLMap()
+      entry.set('text', node)
+      lines.items[i] = node = entry
+    }
     if (!isMap(node)) throw Error(`${i + 1}행은 객체 형식이어야 합니다.`)
     const words = node.get('words')
     if (isSeq(words)) {
