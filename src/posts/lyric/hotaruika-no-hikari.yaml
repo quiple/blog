@@ -15,6 +15,8 @@ spotify: 5tSv4DJGwFKZeNmiQkJpsO
 youtube:
   audio: xY3bv8sFp64
   mv: CSyESyfAoW8
+offsets:
+  youtubeMV: 0.033
 lines:
   - text: 卒業してから十年間誰からも
     time: [9.43, 13.325]
