@@ -11,6 +11,7 @@
   box-sizing: content-box;
 }
 .lyric-player .amll-lyric-player [class*='_romanWord'] {
+  font-family: var(--font-sans-active);
   color: var(--muted-foreground);
   opacity: 1;
   line-height: 1.5;
