@@ -1,0 +1,81 @@
+# https://music.apple.com/kr/song/1398301323
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1398301323?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1398301323
+# 선택 항목: Apple Music · 暗夜光路 · 음절별 가사 · 1398301323
+# 가져온 시각: 2026-09-19T10:27:29.056Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: 暗夜光路
+titleLang: ja
+year: '2018'
+artist: puss-in-boots
+lang: ja
+sp: 71ctvrLqgP3uF5dTbHII3K
+yt:
+  audio: HA3NTjDhNRo
+lines:
+  - text: ライトはもう消えた
+    time: [32.377, 34.354]
+  - text: 汗ばむ風と夜
+    time: [34.836, 37.164]
+  - text: ああ、なんだかもう言えない
+    time: [37.185, 39.678]
+  - text: 背中追いかけていく
+    time: [39.968, 42.494]
+  - text: 赤いまま 泳いでいく
+    time: [42.707, 44.817]
+  - text: 兵児帯捕まえたんだ
+    time: [45.11, 48.009]
+  - text: あの暑さ
+    time: [48.517, 49.881]
+  - text: いつのことだったか
+    time: [50.362, 52.79]
+  - text: 重なるように 触れないように
+    time: [52.795, 57.694]
+  - text: 遠く 目で 繋いだ 右手
+    time: [57.889, 62.246]
+  - text: 今
+    time: [62.806, 63.038]
+  - text: 結んで開く 君の側へ
+    time: [63.477, 67.4]
+  - text: 掻き毟る喉 あの月夜へ飛べ!
+    time: [67.966, 72.603]
+  - text: 夢の後先 波を照らしていく
+    time: [73.142, 77.844]
+  - text: 二つ雫 火花 ずっと消えないで
+    time: [78.348, 84.022]
+  - text: 迷子なんだ 見つけて
+    time: [105.009, 107.021]
+  - text: 帰る確証もない
+    time: [107.243, 109.836]
+  - text: なんだかもう聞けない
+    time: [110.197, 112.277]
+  - text: 表情もわからないよ
+    time: [112.583, 115.046]
+  - text: 最後はまだ見えない
+    time: [115.329, 117.456]
+  - text: 目線は伏せて笑う
+    time: [117.8, 120.623]
+  - text: あの夜はいつのことだった?
+    time: [121.176, 125.447]
+  - text: 重なるように 触れないように
+    time: [146.162, 151.148]
+  - text: 空っぽの手
+    time: [151.391, 153.103]
+  - text: あと少し 伸ばして
+    time: [153.592, 155.648]
+  - text: 今
+    time: [156.28, 156.379]
+  - text: 結んで開く 君の側へ
+    time: [156.839, 160.762]
+  - text: 掻き毟る喉 あの月夜へ飛べ!
+    time: [161.367, 166.025]
+  - text: 夢の後先 波を照らしていく
+    time: [166.576, 171.189]
+  - text: 二つ雫 火花 ずっと消えないで
+    time: [171.839, 177.445]
+  - text: 一つ 続く道は
+    time: [177.506, 179.908]
+  - text: 君と共に 行ける所まで
+    time: [180.19, 182.34]
