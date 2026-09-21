@@ -351,7 +351,7 @@ lines:
     time: [102.2, 105.699]
   - words:
       - text: 'Fleeting '
-        time: [105.1, 106.92]
+        time: [106, 106.92]
       - text: 'beauty '
         time: [106.92, 107.72]
       - text: "isn't "
@@ -359,7 +359,7 @@ lines:
       - text: silent
         time: [108.56, 109.279]
     tl: 덧없는 아름다움은 침묵하지 않아
-    time: [105.1, 109.279]
+    time: [106, 109.279]
   - words:
       - text: 'I '
         time: [109.32, 109.7]
