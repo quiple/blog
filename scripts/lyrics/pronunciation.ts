@@ -94,6 +94,12 @@ export async function addPronunciation(
         .join('')
     if (typeof text !== 'string') throw Error('가사에 text 또는 words가 필요합니다.')
     const normalized = text.replace(/\s+/g, ' ').trim()
+    // Latin-only refrains and punctuation have no Japanese reading to transliterate.
+    if (
+      (language === 'jpn' || language === 'jpn-ck') &&
+      !/[\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Han}]/u.test(normalized)
+    )
+      return
     if (normalized) pending.push({node, text: normalized})
   }
   function asLine(node: unknown) {
