@@ -1,7 +1,7 @@
 import {isMap, isScalar, isSeq, parseDocument, type YAMLMap} from 'yaml'
 
 export function orderPronunciation(node: YAMLMap) {
-  const index = node.items.findIndex((pair) => (isScalar(pair.key) ? pair.key.value : pair.key) === 'pronunciation')
+  const index = node.items.findIndex((pair) => (isScalar(pair.key) ? pair.key.value : pair.key) === 'pr')
   if (index < 0) return
   const [pair] = node.items.splice(index, 1)
   const source = node.items.findIndex(
@@ -76,7 +76,7 @@ export async function addPronunciation(
   const pending: {node: YAMLMap; text: string}[] = []
   function visit(node: unknown) {
     if (!isMap(node)) throw Error('가사는 문자열 또는 객체여야 합니다.')
-    const pronunciation = node.get('pronunciation')
+    const pronunciation = node.get('pr')
     if (
       !options.force &&
       ((typeof pronunciation === 'string' && pronunciation.trim()) ||
@@ -127,7 +127,7 @@ export async function addPronunciation(
   const converted = new Map(texts.map((text, i) => [text, results[i]]))
   for (const {node, text} of pending) {
     const value = converted.get(text)!
-    node.set('pronunciation', value)
+    node.set('pr', value)
     orderPronunciation(node)
   }
   return {yaml: doc.toString({lineWidth: 0, flowCollectionPadding: false}), count: pending.length}

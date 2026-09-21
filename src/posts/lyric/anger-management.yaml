@@ -6,228 +6,228 @@
 
 title: アンガーマネジメント
 titleLang: ja
-titleTranslation: 앵거 매니지먼트
+titleTl: 앵거 매니지먼트
 year: '2026'
 artist:
   - adeliae
   - miyamai-moka
 lang: ja
-spotify: 5ZdSDJ6pkMfaaG3TJ1WtaS
-youtube:
+sp: 5ZdSDJ6pkMfaaG3TJ1WtaS
+yt:
   audio: maBLb6BgLJM
   mv: L9Yob_ylEAQ
 offsets:
-  spotify: -3.558
+  sp: -3.558
   youtubeAudio: -3.558
 lines:
   - text: 労働ライフ
-    pronunciation: 로도라이후
-    translation: 노동 라이프
+    pr: 로도라이후
+    tl: 노동 라이프
     time: [12.17, 13.575]
   - text: 心、此処に在らずだね
-    pronunciation: 코코로, 코코니아라즈다네
-    translation: 마음은 여기에 없어
+    pr: 코코로, 코코니아라즈다네
+    tl: 마음은 여기에 없어
     time: [13.575, 19.088]
   - text: ここでオーバーフロー
-    pronunciation: 코코데오바후로
-    translation: 여기서 오버플로
+    pr: 코코데오바후로
+    tl: 여기서 오버플로
     time: [19.174, 21.616]
   - text: それは未熟者だね
-    pronunciation: 소레와미주쿠모노다네
-    translation: 그건 미숙한 사람이지
+    pr: 소레와미주쿠모노다네
+    tl: 그건 미숙한 사람이지
     time: [21.616, 27.107]
   - text: はぁ
-    pronunciation: 하
-    translation: 하아
+    pr: 하
+    tl: 하아
     time: [27.484, 28.051]
   - text: 定時て概念知らんでしょ
-    pronunciation: 테이지테가이넨시란데쇼
-    translation: 정시라는 개념 모르지?
+    pr: 테이지테가이넨시란데쇼
+    tl: 정시라는 개념 모르지?
     time: [28.051, 29.706]
   - text: そんな逆立ちしたっても無理でしょ
-    pronunciation: 손나사카다치시탓테모무리데쇼
-    translation: 그건 물구나무를 서 봐도 무리잖아
+    pr: 손나사카다치시탓테모무리데쇼
+    tl: 그건 물구나무를 서 봐도 무리잖아
     time: [29.706, 31.706]
   - text: だけど言うしかないよね「はい」でも
-    pronunciation: 다케도유시카나이요네 "하이" 데모
-    translation: 그래도 말할 수밖에 없지, "네"라고, 하지만
+    pr: 다케도유시카나이요네 "하이" 데모
+    tl: 그래도 말할 수밖에 없지, "네"라고, 하지만
     time: [31.706, 33.706]
   - text: いいわ それなら
-    pronunciation: 이이와 소레나라
-    translation: 좋아, 그렇다면
+    pr: 이이와 소레나라
+    tl: 좋아, 그렇다면
     time: [33.706, 36.062]
   - text: 肩肘ついてもいいでしょ
-    pronunciation: 카타히지츠이테모이이데쇼
-    translation: 팔꿈치를 괴어도 되잖아
+    pr: 카타히지츠이테모이이데쇼
+    tl: 팔꿈치를 괴어도 되잖아
     time: [36.062, 38.062]
   - text: それで胡座もかいてもいいでしょ
-    pronunciation: 소레데아구라모카이테모이이데쇼
-    translation: 그러고 양반다리도 해도 되잖아
+    pr: 소레데아구라모카이테모이이데쇼
+    tl: 그러고 양반다리도 해도 되잖아
     time: [38.062, 40.049]
   - text: そして6秒待ったらいいでしょ
-    pronunciation: 소시테로쿠뵤맛타라이이데쇼
-    translation: 그리고 6초만 기다리면 되잖아
+    pr: 소시테로쿠뵤맛타라이이데쇼
+    tl: 그리고 6초만 기다리면 되잖아
     time: [40.049, 41.693]
   - text: 怒り、サヨナラだ!
-    pronunciation: 이카리, 사요나라다!
-    translation: 분노와는 작별이야!
+    pr: 이카리, 사요나라다!
+    tl: 분노와는 작별이야!
     time: [41.693, 45.762]
   - text: オーバーワーク
-    pronunciation: 오바와쿠
-    translation: 오버워크
+    pr: 오바와쿠
+    tl: 오버워크
     time: [53.71, 55.324]
   - text: 今日もキリキリ舞だね
-    pronunciation: 쿄모키리키리마이다네
-    translation: 오늘도 정신없이 휘둘리는구나
+    pr: 쿄모키리키리마이다네
+    tl: 오늘도 정신없이 휘둘리는구나
     time: [55.324, 60.977]
   - text: ここで憤慨しちゃう
-    pronunciation: 코코데훈가이시차우
-    translation: 여기서 분개해 버려
+    pr: 코코데훈가이시차우
+    tl: 여기서 분개해 버려
     time: [60.977, 63.3]
   - text: それは愚か者だね
-    pronunciation: 소레와오로카모노다네
-    translation: 그건 어리석은 사람이지
+    pr: 소레와오로카모노다네
+    tl: 그건 어리석은 사람이지
     time: [63.3, 68.789]
   - text: はぁ
-    pronunciation: 하
-    translation: 하아
+    pr: 하
+    tl: 하아
     time: [69.198, 69.698]
   - text: コンプラって概念知らんでしょ
-    pronunciation: 콘푸랏테가이넨시란데쇼
-    translation: 컴플라이언스라는 개념 모르지?
+    pr: 콘푸랏테가이넨시란데쇼
+    tl: 컴플라이언스라는 개념 모르지?
     time: [69.698, 71.383]
   - text: それはやるって言ったんアンタでしょ
-    pronunciation: 소레와야룻테잇탄안타데쇼
-    translation: 그거 하겠다고 한 건 당신이잖아
+    pr: 소레와야룻테잇탄안타데쇼
+    tl: 그거 하겠다고 한 건 당신이잖아
     time: [71.383, 73.437]
   - text: まるで話の辻褄合わんでしょ
-    pronunciation: 마루데하나시노츠지츠마아완데쇼
-    translation: 도무지 말의 앞뒤가 안 맞잖아
+    pr: 마루데하나시노츠지츠마아완데쇼
+    tl: 도무지 말의 앞뒤가 안 맞잖아
     time: [73.437, 75.435]
   - text: 私が悪いのか?
-    pronunciation: 와타시가와루이노카?
-    translation: 내가 잘못한 건가?
+    pr: 와타시가와루이노카?
+    tl: 내가 잘못한 건가?
     time: [75.435, 77.747]
   - text: 糖分摂ったらどうだろう
-    pronunciation: 토분톳타라도다로
-    translation: 당분 좀 섭취하면 어떨까
+    pr: 토분톳타라도다로
+    tl: 당분 좀 섭취하면 어떨까
     time: [77.747, 79.37]
   - text: 亜鉛・カルシウム摂ったらどうだろう
-    pronunciation: 아엔카루슈무톳타라도다로
-    translation: 아연이랑 칼슘 좀 섭취하면 어떨까
+    pr: 아엔카루슈무톳타라도다로
+    tl: 아연이랑 칼슘 좀 섭취하면 어떨까
     time: [79.37, 81.37]
   - text: そして6秒待ったらいいんでしょ
-    pronunciation: 소시테로쿠뵤맛타라이인데쇼
-    translation: 그리고 6초만 기다리면 되잖아
+    pr: 소시테로쿠뵤맛타라이인데쇼
+    tl: 그리고 6초만 기다리면 되잖아
     time: [81.37, 83.357]
   - text: 怒り、サヨナラだ!
-    pronunciation: 이카리, 사요나라다!
-    translation: 분노와는 작별이야!
+    pr: 이카리, 사요나라다!
+    tl: 분노와는 작별이야!
     time: [83.357, 87.447]
   - text: サイレントナイト
-    pronunciation: 사이렌토나이토
-    translation: 사일런트 나이트
+    pr: 사이렌토나이토
+    tl: 사일런트 나이트
     time: [95.44, 96.752]
   - words:
       - text: 弊社
         ruby: ここ
       - text: はもうお仕舞だね
-    pronunciation: 코코와모오시마이다네
-    translation: 여기는 이제 끝장이구나
+    pr: 코코와모오시마이다네
+    tl: 여기는 이제 끝장이구나
     time: [96.752, 101.834]
   - text: あわや発狂しちゃう?
-    pronunciation: 아와야핫쿄시차우?
-    translation: 금방이라도 미쳐 버리겠어?
+    pr: 아와야핫쿄시차우?
+    tl: 금방이라도 미쳐 버리겠어?
     time: [101.834, 103.92]
   - text: それは笑い者だね
-    pronunciation: 소레와와라이모노다네
-    translation: 그건 웃음거리지
+    pr: 소레와와라이모노다네
+    tl: 그건 웃음거리지
     time: [103.92, 109.185]
   - text: はぁ
-    pronunciation: 하
-    translation: 하아
+    pr: 하
+    tl: 하아
     time: [109.185, 109.685]
   - text: 労基って概念知らんでしょ
-    pronunciation: 로킷테가이넨시란데쇼
-    translation: 근로기준법이란 개념 모르지?
+    pr: 로킷테가이넨시란데쇼
+    tl: 근로기준법이란 개념 모르지?
     time: [109.685, 111.049]
   - text: てかさ課長の姿が見えんけど
-    pronunciation: 테카사카초노스가타가미엔케도
-    translation: 그나저나 과장의 모습이 안 보이는데
+    pr: 테카사카초노스가타가미엔케도
+    tl: 그나저나 과장의 모습이 안 보이는데
     time: [111.049, 112.661]
   - text: まさか部長と華金ランデヴー
-    pronunciation: 마사카부초토하나킨란데부
-    translation: 설마 부장이랑 불금의 랑데부
+    pr: 마사카부초토하나킨란데부
+    tl: 설마 부장이랑 불금의 랑데부
     time: [112.661, 114.295]
   - text: もう限界だわ
-    pronunciation: 모겐카이다와
-    translation: 이젠 한계야
+    pr: 모겐카이다와
+    tl: 이젠 한계야
     time: [114.295, 116.267]
   - text: もう完璧じゃなくてもいいでしょ
-    pronunciation: 모칸페키자나쿠테모이이데쇼
-    translation: 이젠 완벽하지 않아도 되잖아
+    pr: 모칸페키자나쿠테모이이데쇼
+    tl: 이젠 완벽하지 않아도 되잖아
     time: [116.267, 117.825]
   - text: もう好きな時辞めたらいいでしょ
-    pronunciation: 모스키나토키야메타라이이데쇼
-    translation: 이젠 원할 때 그만둬도 되잖아
+    pr: 모스키나토키야메타라이이데쇼
+    tl: 이젠 원할 때 그만둬도 되잖아
     time: [117.825, 119.394]
   - text: とりま6秒待ったらいいんでしょ!!
-    pronunciation: 토리마로쿠뵤맛타라이인데쇼!!
-    translation: 일단 6초만 기다리면 되잖아!!
+    pr: 토리마로쿠뵤맛타라이인데쇼!!
+    tl: 일단 6초만 기다리면 되잖아!!
     time: [119.394, 120.51]
   - text: 怒り、サヨナラか?
-    pronunciation: 이카리, 사요나라카?
-    translation: 분노와는 작별인가?
+    pr: 이카리, 사요나라카?
+    tl: 분노와는 작별인가?
     time: [120.51, 130.434]
   - text: 嗚呼
-    pronunciation: 아
-    translation: 아아
+    pr: 아
+    tl: 아아
     time: [131.218, 131.935]
   - text: 辛抱ならない
-    pronunciation: 신보나라나이
-    translation: 참을 수가 없어
+    pr: 신보나라나이
+    tl: 참을 수가 없어
     time: [131.935, 133.323]
   - text: もう擁護できない
-    pronunciation: 모요고데키나이
-    translation: 더는 감싸 줄 수 없어
+    pr: 모요고데키나이
+    tl: 더는 감싸 줄 수 없어
     time: [133.323, 134.935]
   - text: 堪忍袋なんて捨てた
-    pronunciation: 칸닌부쿠로난테스테타
-    translation: 인내심 따위 내다 버렸어
+    pr: 칸닌부쿠로난테스테타
+    tl: 인내심 따위 내다 버렸어
     time: [134.935, 138.235]
   - text: 法に触れないくらいでさ
-    pronunciation: 호니후레나이쿠라이데사
-    translation: 법에 걸리지 않을 정도로만
+    pr: 호니후레나이쿠라이데사
+    tl: 법에 걸리지 않을 정도로만
     time: [138.235, 141.097]
   - text: 後悔させてやるんだ!
-    pronunciation: 코카이사세테야룬다!
-    translation: 후회하게 만들어 주겠어!
+    pr: 코카이사세테야룬다!
+    tl: 후회하게 만들어 주겠어!
     time: [141.097, 144]
   - text: 社会人としてOUT
-    pronunciation: 샤카이진토시테아우토
-    translation: 사회인으로서 OUT
+    pr: 샤카이진토시테아우토
+    tl: 사회인으로서 OUT
     time: [144, 145.483]
   - text: 人間としてもOUT?
-    pronunciation: 닌겐토시테모아우토?
-    translation: 인간으로서도 OUT?
+    pr: 닌겐토시테모아우토?
+    tl: 인간으로서도 OUT?
     time: [145.483, 147.041]
   - text: そんなのだってどうでもいいや!
-    pronunciation: 손나노닷테도데모이이야!
-    translation: 그런 건 아무래도 상관없어!
+    pr: 손나노닷테도데모이이야!
+    tl: 그런 건 아무래도 상관없어!
     time: [147.041, 149.935]
   - text: 辞表をぶつけるくらいじゃさ
-    pronunciation: 지효오부츠케루쿠라이자사
-    translation: 사표를 집어 던지는 정도로는
+    pr: 지효오부츠케루쿠라이자사
+    tl: 사표를 집어 던지는 정도로는
     time: [149.935, 152.948]
   - text: ヌルいから
-    pronunciation: 누루이카라
-    translation: 시시하니까
+    pr: 누루이카라
+    tl: 시시하니까
     time: [152.948, 154.485]
   - text: すべて破壊したい!
-    pronunciation: 스베테하카이시타이!
-    translation: 전부 부숴 버리고 싶어!
+    pr: 스베테하카이시타이!
+    tl: 전부 부숴 버리고 싶어!
     time: [154.485, 159.134]
   - text: アンガーマネジメントよ、失敗!
-    pronunciation: 안가마네지멘토요, 싯파이!
-    translation: 앵거 매니지먼트여, 실패!
+    pr: 안가마네지멘토요, 싯파이!
+    tl: 앵거 매니지먼트여, 실패!
     time: [159.134, 165.013]

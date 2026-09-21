@@ -11,85 +11,85 @@ titleLang: ja
 year: '2020'
 artist: hikari-no-naka-ni
 lang: ja
-spotify: 4QTiyXgk7oOc2I6GrTOkDF
-youtube:
+sp: 4QTiyXgk7oOc2I6GrTOkDF
+yt:
   audio: oGms4o_Fql8
   mv: JPhEkto2YV8
 offsets:
   youtubeMV: 0.051
 lines:
   - text: 昨日話してた話題ばかりが
-    pronunciation: 키노하나시테타와다이바카리가
+    pr: 키노하나시테타와다이바카리가
     time: [20.393, 24.893]
   - text: 頭をよぎるこの部屋で
-    pronunciation: 아타마오요기루코노헤야데
+    pr: 아타마오요기루코노헤야데
     time: [25.155, 29.685]
   - text: みるみるうちに
-    pronunciation: 미루미루우치니
+    pr: 미루미루우치니
     time: [29.982, 32.074]
   - text: 置いてけぼりになるようだ
-    pronunciation: 오이테케보리니나루요다
+    pr: 오이테케보리니나루요다
     time: [32.239, 34.596]
   - text: つまんねえなでも
-    pronunciation: 츠만네나데모
+    pr: 츠만네나데모
     time: [34.803, 37.1]
   - text: 捨てられないまま
-    pronunciation: 스테라레나이마마
+    pr: 스테라레나이마마
     time: [37.253, 38.741]
   - text: 爆音ステレオ怒鳴る声
-    pronunciation: 바쿠온스테레오도나루코에
+    pr: 바쿠온스테레오도나루코에
     time: [39.532, 41.611]
   - text: 頭が腐る毎日です
-    pronunciation: 아타마가쿠사루마이니치데스
+    pr: 아타마가쿠사루마이니치데스
     time: [41.977, 44.15]
   - text: 隣の席だったあの子だんだん
-    pronunciation: 토나리노세키닷타아노코단단
+    pr: 토나리노세키닷타아노코단단
     time: [44.357, 46.667]
   - text: 遠のいてゆく
-    pronunciation: 토노이테유쿠
+    pr: 토노이테유쿠
     time: [46.667, 48.906]
   - text: 良きか悪きか
-    pronunciation: 요키카와루키카
+    pr: 요키카와루키카
     time: [49.165, 51.201]
   - text: ひとりぼっちな窓の外
-    pronunciation: 히토리봇치나마도노소토
+    pr: 히토리봇치나마도노소토
     time: [51.354, 53.682]
   - text: 星がいつもより綺麗だった
-    pronunciation: 호시가이츠모요리키레이닷타
+    pr: 호시가이츠모요리키레이닷타
     time: [53.997, 56.903]
   - text: ブルーユース、ブルーユース
-    pronunciation: 부루유스, 부루유스
+    pr: 부루유스, 부루유스
     time: [58.827, 62.951]
   - text: 間違ってなんかいないって
-    pronunciation: 마치갓테난카이나잇테
+    pr: 마치갓테난카이나잇테
     time: [63.104, 65.61]
   - text: 言っておくれ
-    pronunciation: 잇테오쿠레
+    pr: 잇테오쿠레
     time: [65.763, 68.987]
   - text: 最低で、でも最高な
-    pronunciation: 사이테이데, 데모사이코나
+    pr: 사이테이데, 데모사이코나
     time: [69.591, 73.453]
   - text: 安心だけどどこか不安な
-    pronunciation: 안신다케도도코카후안나
+    pr: 안신다케도도코카후안나
     time: [73.769, 78.312]
   - text: 掻き乱してまたたじろいで、
-    pronunciation: 카키미다시테마타타지로이데,
+    pr: 카키미다시테마타타지로이데,
     time: [78.902, 83.085]
   - text: ねえなにやってんだろう?
-    pronunciation: 네나니얏텐다로?
+    pr: 네나니얏텐다로?
     time: [83.402, 85.609]
   - text: 愛したいものほど疑い深いんだ
-    pronunciation: 아이시타이모노호도우타가이부카인다
+    pr: 아이시타이모노호도우타가이부카인다
     time: [85.763, 88.607]
   - text: 泣きながら笑っている
-    pronunciation: 나키나가라와랏테이루
+    pr: 나키나가라와랏테이루
     time: [88.697, 92.634]
   - text: 徐々に自信は無くなってゆく
-    pronunciation: 조조니지신와나쿠낫테유쿠
+    pr: 조조니지신와나쿠낫테유쿠
     time: [92.975, 97.676]
   - text: けど情けなくて頼りないままの
-    pronunciation: 케도나사케나쿠테타요리나이마마노
+    pr: 케도나사케나쿠테타요리나이마마노
     time: [97.829, 102.774]
   - text: 僕たちはブルーユース
-    pronunciation: 보쿠타치와부루유스
+    pr: 보쿠타치와부루유스
     time: [103.138, 106.954]

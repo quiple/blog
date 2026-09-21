@@ -13,8 +13,8 @@ artist:
   - jamie-paige
   - kasane-teto
 lang: ja
-spotify: 4sz2bObYc0FqcqxSIb5ZKu
-youtube:
+sp: 4sz2bObYc0FqcqxSIb5ZKu
+yt:
   audio: Ebrk8n8QYpc
   mv: sqK-jh4TDXo
 offsets:
@@ -58,7 +58,7 @@ lines:
     background: (Can you teach me to be real?)
     time: [57.29, 65.83]
   - text: 恋をして 振られ また 捨てられて
-    pronunciation: 코이오시테 후라레 마타 스테라레테
+    pr: 코이오시테 후라레 마타 스테라레테
     time: [65.83, 70.62]
   - text: I've been constant, at your beck and call
     time: [70.62, 73.17]
@@ -100,7 +100,7 @@ lines:
     background: (Can you teach me to be real?)
     time: [128.54, 136.8]
   - text: 泣きたくなっても それでも かき集め
-    pronunciation: 나키타쿠낫테모 소레데모 카키아츠메
+    pr: 나키타쿠낫테모 소레데모 카키아츠메
     time: [136.8, 141.68]
   - text: And though I try, I can't reply
     time: [141.68, 147.16]
@@ -111,7 +111,7 @@ lines:
   - text: And all that I could want is to be living by your side
     time: [158.07, 163.23]
   - text: 恋をして
-    pronunciation: 코이오시테
+    pr: 코이오시테
     time: [163.23, 165]
   - text: (I think I'm in love)
     time: [165, 167.73]
@@ -132,10 +132,10 @@ lines:
   - text: I am definite and real
     time: [196.76, 199.88]
   - text: 恋をして 恋をして
-    pronunciation: 코이오시테 코이오시테
+    pr: 코이오시테 코이오시테
     time: [199.88, 204.36]
   - text: その過去を 捨てて ここまでおいで
-    pronunciation: 소노카코오 스테테 코코마데오이데
+    pr: 소노카코오 스테테 코코마데오이데
     time: [204.36, 209.49]
   - text: As long as there are stars up above
     time: [209.49, 212.27]

@@ -11,85 +11,85 @@ titleLang: ja
 year: '2001'
 artist: eastern-youth
 lang: ja
-spotify: 7aETU8v4vh76wmxZHu8z8q
-youtube:
+sp: 7aETU8v4vh76wmxZHu8z8q
+yt:
   audio: vF-nmZHevcg
 lines:
   - text: 窓を叩く空は
-    pronunciation: 마도오타타쿠소라와
+    pr: 마도오타타쿠소라와
   - text: 割れる様に笑うよ
-    pronunciation: 와레루요니와라우요
+    pr: 와레루요니와라우요
   - text: 汚れ眼鏡が青く染まれば
-    pronunciation: 요고레메가네가아오쿠소마레바
+    pr: 요고레메가네가아오쿠소마레바
   - text: 足を鳴らして俺も笑うよ
-    pronunciation: 아시오나라시테오레모와라우요
+    pr: 아시오나라시테오레모와라우요
   - text: どうもこうも無い
-    pronunciation: 도모코모네
+    pr: 도모코모네
   - text: 只、それだけだ
-    pronunciation: 타다, 소레다케다
+    pr: 타다, 소레다케다
   - text: 一握の生命のカケラだ
-    pronunciation: 이치아쿠노이노치노카케라다
+    pr: 이치아쿠노이노치노카케라다
   - text: 行けば帰らざる雲が行きゃ
-    pronunciation: 유케바카에라자루쿠모가유캬
+    pr: 유케바카에라자루쿠모가유캬
   - text: 俺は口笛を吹きまくるさ
-    pronunciation: 오레와쿠치부에오후키마쿠루사
+    pr: 오레와쿠치부에오후키마쿠루사
   - words:
       - text: 解答
         ruby: こたえ
       - text: は知らない
-    pronunciation: 코타에와시라네
+    pr: 코타에와시라네
   - words:
       - text: 教典
         ruby: おしえ
       - text: はいらない
-    pronunciation: 오시에와이라네
+    pr: 오시에와이라네
   - text: 歩く踵がそれを識るだろう
-    pronunciation: 아루쿠카카토가소레오시루다로
+    pr: 아루쿠카카토가소레오시루다로
   - text: 朝の地鳴りが告げるだろう
-    pronunciation: 아사노지나리가츠게루다로
+    pr: 아사노지나리가츠게루다로
   - text: 怠く横たわる川面の憂鬱を
-    pronunciation: 다루쿠요코타와루카와모노유우츠오
+    pr: 다루쿠요코타와루카와모노유우츠오
   - text: 赤く煮え立つ空が染めれば
-    pronunciation: 아카쿠니에타츠소라가소메레바
+    pr: 아카쿠니에타츠소라가소메레바
   - text: 俺は涙をそこに捨てるよ
-    pronunciation: 오레와나미다오소코니스테루요
+    pr: 오레와나미다오소코니스테루요
   - text: 日も暮れた帰ろうかな
-    pronunciation: 히모쿠레타카에로카나
+    pr: 히모쿠레타카에로카나
   - text: 午後六時 全てが遠いが
-    pronunciation: 고고로쿠지 스베테가토이가
+    pr: 고고로쿠지 스베테가토이가
   - text: それを誰一人尋ねども
-    pronunciation: 소레오다레히토리타즈네도모
+    pr: 소레오다레히토리타즈네도모
   - text: 血巡り季巡り撃ち放つさ
-    pronunciation: 치메구리키메구리우치하나츠사
+    pr: 치메구리키메구리우치하나츠사
   - words:
       - text: 道程
         ruby: みち
       - text: など知らない
-    pronunciation: 미치나도시라네
+    pr: 미치나도시라네
   - words:
       - text: 標識
         ruby: しるべ
       - text: はいらない
-    pronunciation: 시루베와이라네
+    pr: 시루베와이라네
   - text: 微笑を湛えて闇と遊べば
-    pronunciation: 에미오타타에테야미토아소베바
+    pr: 에미오타타에테야미토아소베바
   - text: 誰ぞ知り得ぬ灯も点る
-    pronunciation: 다레조시리에누히모토모루
+    pr: 다레조시리에누히모토모루
   - text: 行けば帰らざる雲が行きゃ
-    pronunciation: 유케바카에라자루쿠모가유캬
+    pr: 유케바카에라자루쿠모가유캬
   - text: 俺は口笛を吹きまくるさ
-    pronunciation: 오레와쿠치부에오후키마쿠루사
+    pr: 오레와쿠치부에오후키마쿠루사
   - words:
       - text: 解答
         ruby: こたえ
       - text: は知らない
-    pronunciation: 코타에와시라네
+    pr: 코타에와시라네
   - words:
       - text: 教典
         ruby: おしえ
       - text: はいらない
-    pronunciation: 오시에와이라네
+    pr: 오시에와이라네
   - text: 歩く踵がそれを識るだろう
-    pronunciation: 아루쿠카카토가소레오시루다로
+    pr: 아루쿠카카토가소레오시루다로
   - text: 朝の地鳴りが告げるだろう
-    pronunciation: 아사노지나리가츠게루다로
+    pr: 아사노지나리가츠게루다로

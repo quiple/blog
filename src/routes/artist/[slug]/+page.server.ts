@@ -14,6 +14,7 @@ export const load: PageServerLoad = ({params}) => {
       .map(([slug, song]) => ({
         slug,
         title: song.title,
+        year: song.year,
         lang: song.titleLang ?? song.lang,
         translation: song.titleTranslation,
       })),

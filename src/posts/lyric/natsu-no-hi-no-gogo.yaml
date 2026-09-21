@@ -11,118 +11,118 @@ titleLang: ja
 year: '1998'
 artist: eastern-youth
 lang: ja
-spotify: 0EjdWwzbKRIb3xoyVyzLXP
-youtube:
+sp: 0EjdWwzbKRIb3xoyVyzLXP
+yt:
   audio: _WEjG9oBNlY
 lines:
   - text: 神様あなたは
-    pronunciation: 카미사마아나타와
+    pr: 카미사마아나타와
     time: [63.767, 66.193]
   - text: 何でも知っていて
-    pronunciation: 난데모싯테이테
+    pr: 난데모싯테이테
     time: [66.475, 68.884]
   - text: 心悪しき人を
-    pronunciation: 코코로아시키히토오
+    pr: 코코로아시키히토오
     time: [69.051, 71.346]
   - text: 打ち負かすんだろう
-    pronunciation: 우치마카슨다로
+    pr: 우치마카슨다로
     time: [71.69, 74.018]
   - text: でも真夏の太陽は
-    pronunciation: 데모마나츠노타이요와
+    pr: 데모마나츠노타이요와
     time: [74.155, 76.622]
   - text: 罪を溶かして
-    pronunciation: 츠미오토카시테
+    pr: 츠미오토카시테
     time: [76.927, 79.221]
   - text: 見えないが確かに
-    pronunciation: 미에나이가타시카니
+    pr: 미에나이가타시카니
     time: [79.667, 81.961]
   - text: 背中にそれを焼き付ける
-    pronunciation: 세나카니소레오야키츠케루
+    pr: 세나카니소레오야키츠케루
     time: [82.268, 85.466]
   - text: 蝉時雨と午後の光
-    pronunciation: 세미시구레토고고노히카리
+    pr: 세미시구레토고고노히카리
     time: [89.82, 94.015]
   - text: まだ生きて果てぬ この身なら
-    pronunciation: 마다이키테하테누 코노미나라
+    pr: 마다이키테하테누 코노미나라
     time: [94.962, 99.962]
   - text: 罪も悪も我と共に在りて
-    pronunciation: 츠미모아쿠모와레토토모니아리테
+    pr: 츠미모아쿠모와레토토모니아리테
     time: [100.178, 106.829]
   - text: 俄雨と濡れた舗道
-    pronunciation: 니와카아메토누레타호도
+    pr: 니와카아메토누레타호도
     time: [110.975, 115.555]
   - text: 傘持たず走る街の角
-    pronunciation: 카사모타즈하시루마치노카도
+    pr: 카사모타즈하시루마치노카도
     time: [116.143, 120.87]
   - text: 追い付けない
-    pronunciation: 오이츠케나이
+    pr: 오이츠케나이
     time: [121.4, 123.78]
   - text: 追えば逃げる影に
-    pronunciation: 오에바니게루카게니
+    pr: 오에바니게루카게니
     time: [123.987, 127.901]
   - text: 明日を呼べば
-    pronunciation: 아시타오요베바
+    pr: 아시타오요베바
     time: [132.83, 135.038]
   - text: 雲垂れ籠めて
-    pronunciation: 쿠모타레코메테
+    pr: 쿠모타레코메테
     time: [135.303, 137.693]
   - text: 甘い夢を見れば
-    pronunciation: 아마이유메오미레바
+    pr: 아마이유메오미레바
     time: [137.928, 140.312]
   - text: 雷光る
-    pronunciation: 이카즈치히카루
+    pr: 이카즈치히카루
     time: [140.538, 142.928]
   - text: 濁り河流れ、
-    pronunciation: 니고리카와나가레,
+    pr: 니고리카와나가레,
     time: [143.213, 145.593]
   - text: 水面に揺れる
-    pronunciation: 미나모니유레루
+    pr: 미나모니유레루
     time: [145.816, 148.262]
   - text: 拙い歌は
-    pronunciation: 츠타나이우타와
+    pr: 츠타나이우타와
     time: [148.485, 150.903]
   - text: ゆっくりと沈みゆく
-    pronunciation: 윳쿠리토시즈미유쿠
+    pr: 윳쿠리토시즈미유쿠
     time: [151.167, 154.274]
   - text: 日暮れる街 風凪ぐ道
-    pronunciation: 히구레루마치 카제나구미치
+    pr: 히구레루마치 카제나구미치
     time: [158.571, 163.307]
   - text: 灯も遠く 誘えども
-    pronunciation: 토모시비모토쿠 이자나에도모
+    pr: 토모시비모토쿠 이자나에도모
     time: [163.822, 168.923]
   - text: 『振り返るな』
-    pronunciation: "'후리카에루나'"
+    pr: "'후리카에루나'"
     time: [169.146, 171.637]
   - text: どこかで低い声
-    pronunciation: 도코카데히쿠이코에
+    pr: 도코카데히쿠이코에
     time: [171.815, 175.337]
   - text: 月の明かり 縺れる足
-    pronunciation: 츠키노아카리 모츠레루아시
+    pr: 츠키노아카리 모츠레루아시
     time: [179.813, 184.48]
   - text: 酔い痴れて帰る帰り道
-    pronunciation: 요이시레테카에루카에리미치
+    pr: 요이시레테카에루카에리미치
     time: [185.078, 189.749]
   - text: 感じている永遠に続く闇を
-    pronunciation: 칸지테이루토와니츠즈쿠야미오
+    pr: 칸지테이루토와니츠즈쿠야미오
     time: [190.335, 196.432]
   - text: 蝉時雨と午後の光
-    pronunciation: 세미시구레토고고노히카리
+    pr: 세미시구레토고고노히카리
     time: [268.575, 272.692]
   - text: まだ生きて果てぬ この身なら
-    pronunciation: 마다이키테하테누 코노미나라
+    pr: 마다이키테하테누 코노미나라
     time: [273.565, 278.553]
   - text: 罪も悪も我と共に在りて
-    pronunciation: 츠미모아쿠모와레토토모니아리테
+    pr: 츠미모아쿠모와레토토모니아리테
     time: [278.779, 285.247]
   - text: 俄雨と濡れた舗道
-    pronunciation: 니와카아메토누레타호도
+    pr: 니와카아메토누레타호도
     time: [289.548, 294.077]
   - text: 傘持たず走る街の角
-    pronunciation: 카사모타즈하시루마치노카도
+    pr: 카사모타즈하시루마치노카도
     time: [294.679, 299.551]
   - text: 追い付けない
-    pronunciation: 오이츠케나이
+    pr: 오이츠케나이
     time: [299.966, 302.352]
   - text: 追えば逃げる影に
-    pronunciation: 오에바니게루카게니
+    pr: 오에바니게루카게니
     time: [302.578, 306.02]

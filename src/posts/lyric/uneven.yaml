@@ -14,129 +14,129 @@ artist:
   - kaai-yuki
   - hatsune-miku
 lang: ja
-spotify: 4JXA8DHO10sIeWx5CaHoFe
-youtube:
+sp: 4JXA8DHO10sIeWx5CaHoFe
+yt:
   audio: kd9tOhkfmk0
   mv: jSF6eyoNxTM
 offsets:
-  spotify: -0.4
+  sp: -0.4
   youtubeAudio: -0.4
   youtubeMV: -0.379
 lines:
   - text: ※ What we really note about this work was the accident prevention at the work site
-    pronunciation: ※ 홧토 위 리아리 노토 아바우토 지스 와쿠 와즈 자 아쿠시덴토 프리벤숀 앗토 자 와쿠 사이토
+    pr: ※ 홧토 위 리아리 노토 아바우토 지스 와쿠 와즈 자 아쿠시덴토 프리벤숀 앗토 자 와쿠 사이토
     time: [11.477, 22.596]
   - text: メカニズムで大量生産
-    pronunciation: 메카니즈무데타이료세이산
+    pr: 메카니즈무데타이료세이산
     time: [22.873, 25.509]
   - text: 衰退して赤字経営
-    pronunciation: 스이타이시테아카지케이에이
+    pr: 스이타이시테아카지케이에이
     time: [25.51, 28.237]
   - text: 超最新のマシーンにおまかせ
-    pronunciation: 초사이신노마신니오마카세
+    pr: 초사이신노마신니오마카세
     time: [28.238, 31.014]
   - text: これ未来の当たり前
-    pronunciation: 코레미라이노아타리마에
+    pr: 코레미라이노아타리마에
     time: [31.015, 33.842]
   - text: 人の質に惑わされて
-    pronunciation: 히토노타치니마도와사레테
+    pr: 히토노타치니마도와사레테
     time: [33.843, 36.562]
   - text: プロトタイプから歪む等身️
-    pronunciation: 푸로토타이푸카라유가무토신️
+    pr: 푸로토타이푸카라유가무토신️
     time: [36.563, 39.255]
   - text: 微温湯で錆びたボディ
-    pronunciation: 누루마유데사비타보디
+    pr: 누루마유데사비타보디
     time: [39.256, 42.036]
   - text: 人形らしくないという価値
-    pronunciation: 닌교라시쿠나이토유카치
+    pr: 닌교라시쿠나이토유카치
     time: [42.037, 45.062]
   - text: 緩衝材を
-    pronunciation: 칸쇼자이오
+    pr: 칸쇼자이오
     time: [45.251, 46.577]
   - text: 無意味な壁紙断つ 完工️
-    pronunciation: 무이미나카베가미타츠 칸코️
+    pr: 무이미나카베가미타츠 칸코️
     time: [46.578, 47.893]
   - text: 主義見定め挨拶 悪感情
-    pronunciation: 슈기미사다메아이사츠 아쿠칸조
+    pr: 슈기미사다메아이사츠 아쿠칸조
     time: [47.894, 49.335]
   - text: 踏み板が凹む
-    pronunciation: 후미이타가헤코무
+    pr: 후미이타가헤코무
     time: [49.336, 50.009]
   - text: 爆弾ショーまだ?
-    pronunciation: 바쿠단쇼마다?
+    pr: 바쿠단쇼마다?
     time: [50.01, 50.74]
   - text: 武器品分け 炊き出す環境から
-    pronunciation: 부키시나와케 타키다스칸쿄카라
+    pr: 부키시나와케 타키다스칸쿄카라
     time: [50.741, 52.021]
   - text: 撃ち、身構え、断ち割る環境
-    pronunciation: 우치, 미가마에, 타치와루칸쿄
+    pr: 우치, 미가마에, 타치와루칸쿄
     time: [52.022, 53.342]
   - text: 今、図示して解体 ✕〇と
-    pronunciation: 이마, 즈시시테카이타이 바츠마루토
+    pr: 이마, 즈시시테카이타이 바츠마루토
     time: [53.343, 54.607]
   - text: 幅、距離、岩場選び出す担当者️
-    pronunciation: 하바, 쿄리, 이와바에라비다스탄토샤️
+    pr: 하바, 쿄리, 이와바에라비다스탄토샤️
     time: [54.608, 56.173]
   - text: 過電圧で本音点火
-    pronunciation: 카덴아츠데혼네텐카
+    pr: 카덴아츠데혼네텐카
     time: [56.174, 58.585]
   - text: 機械語の虚報を信じろ?
-    pronunciation: 키카이고노쿄호오신지로?
+    pr: 키카이고노쿄호오신지로?
     time: [58.586, 61.202]
   - text: 不燃材の音波で文字化けしてるから読めないけど^^;
-    pronunciation: 후넨자이노온파데모지카케시테루카라요메나이케도^^;
+    pr: 후넨자이노온파데모지카케시테루카라요메나이케도^^;
     time: [61.203, 67.518]
   - text: 理解度、真意を落っことして
-    pronunciation: 리카이도, 신이오옷코토시테
+    pr: 리카이도, 신이오옷코토시테
     time: [88.964, 91.671]
   - text: 天井から床下まで
-    pronunciation: 텐조카라유카시타마데
+    pr: 텐조카라유카시타마데
     time: [91.672, 94.394]
   - text: そこでようやく「聞く」作動
-    pronunciation: 소코데요야쿠"키쿠"사도
+    pr: 소코데요야쿠"키쿠"사도
     time: [94.395, 97.129]
   - text: すげー具合悪いっすわ 仮実装
-    pronunciation: 스게구아이와루잇스와 카리짓소
+    pr: 스게구아이와루잇스와 카리짓소
     time: [97.13, 100.035]
   - text: 夜の街に脅されて帯電したバランサーは
-    pronunciation: 요루노마치니오도사레테타이덴시타바란사와
+    pr: 요루노마치니오도사레테타이덴시타바란사와
     time: [100.036, 105.495]
   - text: 無欲恬淡 In one's mind
-    pronunciation: 무요쿠텐탄 In one's mind
+    pr: 무요쿠텐탄 In one's mind
     time: [105.496, 108.245]
   - text: すべからく動くべき
-    pronunciation: 스베카라쿠우고쿠베키
+    pr: 스베카라쿠우고쿠베키
     time: [108.246, 111.617]
   - text: 残業代を...
-    pronunciation: 잔교다이오...
+    pr: 잔교다이오...
     time: [122.149, 123.819]
   - text: スピード配達運送業
-    pronunciation: 스피도하이타츠운소교
+    pr: 스피도하이타츠운소교
     time: [123.82, 125.055]
   - text: 走り流れ出す すぐ凸 完了
-    pronunciation: 하시리나가레다스 스구토츠 칸료
+    pr: 하시리나가레다스 스구토츠 칸료
     time: [125.056, 126.488]
   - text: 次になだれ込む 「再配達まだ?」
-    pronunciation: 츠기니나다레코무 "사이하이타츠마다?"
+    pr: 츠기니나다레코무 "사이하이타츠마다?"
     time: [126.489, 127.981]
   - text: 踏みつけたり遇らう環境下だ
-    pronunciation: 후미츠케타리구라우칸쿄카다
+    pr: 후미츠케타리구라우칸쿄카다
     time: [127.982, 129.273]
   - text: 守旧派駄目 改革派を強化 ← は?
-    pronunciation: 슈큐하다메 카이카쿠하오쿄카 ← 하?
+    pr: 슈큐하다메 카이카쿠하오쿄카 ← 하?
     time: [129.274, 130.646]
   - text: 街に流れ再開発 夜すがら
-    pronunciation: 마치니나가레사이카이하츠 요스가라
+    pr: 마치니나가레사이카이하츠 요스가라
     time: [130.647, 132.111]
   - text: 「組織化は偉い!勝つ扇動者!」
-    pronunciation: '"소시키카와에라이! 카츠센도샤!"'
+    pr: '"소시키카와에라이! 카츠센도샤!"'
     time: [132.112, 133.245]
   - text: 「電脳化したい!」がマジョリティ
-    pronunciation: '"덴노카시타이!"가마조리티'
+    pr: '"덴노카시타이!"가마조리티'
     time: [133.381, 136.069]
   - text: 振替いらないです
-    pronunciation: 후리카에이라나이데스
+    pr: 후리카에이라나이데스
     time: [136.07, 138.572]
   - text: ゼンマイ巻く 中は脆い
-    pronunciation: 젠마이마쿠 나카와모로이
+    pr: 젠마이마쿠 나카와모로이
     time: [138.573, 160.784]

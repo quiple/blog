@@ -11,151 +11,151 @@ titleLang: ja
 year: '2016'
 artist: suichu-sore-wa-kurushi
 lang: ja
-spotify: 5tSv4DJGwFKZeNmiQkJpsO
-youtube:
+sp: 5tSv4DJGwFKZeNmiQkJpsO
+yt:
   audio: xY3bv8sFp64
   mv: CSyESyfAoW8
 offsets:
   youtubeMV: 0.033
 lines:
   - text: 卒業してから十年間 誰からも連絡がない
-    pronunciation: 소츠교시테카라주넨칸 다레카라모렌라쿠가나이
+    pr: 소츠교시테카라주넨칸 다레카라모렌라쿠가나이
     time: [9.43, 14.158]
   - text: 僕が怪しい宗教に入ったという噂のせい
-    pronunciation: 보쿠가아야시슈쿄니하잇타토유우와사노세이
+    pr: 보쿠가아야시슈쿄니하잇타토유우와사노세이
     time: [14.744, 19.871]
   - text: 出来れば好きだったあの娘にもう一度会って
-    pronunciation: 데키레바스키닷타아노코니모이치도앗테
+    pr: 데키레바스키닷타아노코니모이치도앗테
     time: [20.807, 25.501]
   - text: 謝りたいことがあるんだ
-    pronunciation: 아야마리타이코토가아룬다
+    pr: 아야마리타이코토가아룬다
     time: [26.59, 28.837]
   - text: 伝えたいことがあるんだ
-    pronunciation: 츠타에타이코토가아룬다
+    pr: 츠타에타이코토가아룬다
     time: [29.77, 31.784]
   - text: おっぱいだけさわろうとして
-    pronunciation: 옷파이다케사와로토시테
+    pr: 옷파이다케사와로토시테
     time: [33.108, 34.806]
   - text: ごめんなさい
-    pronunciation: 고멘나사이
+    pr: 고멘나사이
     time: [35.61, 36.442]
   - text: おっぱいだけさわろうとして
-    pronunciation: 옷파이다케사와로토시테
+    pr: 옷파이다케사와로토시테
     time: [38.865, 40.297]
   - text: ごめんなさい
-    pronunciation: 고멘나사이
+    pr: 고멘나사이
     time: [41.097, 42.096]
   - text: ホタルイカの光
-    pronunciation: 호타루이카노히카리
+    pr: 호타루이카노히카리
     time: [46.652, 50.164]
   - text: ホタルイカの光
-    pronunciation: 호타루이카노히카리
+    pr: 호타루이카노히카리
     time: [53.034, 56.196]
   - text: 窓の外を走れ
-    pronunciation: 마도노소토오하시레
+    pr: 마도노소토오하시레
     time: [58.564, 62.658]
   - text: ホタルイカの光
-    pronunciation: 호타루이카노히카리
+    pr: 호타루이카노히카리
     time: [64.274, 69.101]
   - text: 卒業式にも出られず数十年 誰からも忘れられた
-    pronunciation: 소츠교시키니모데라레즈스주넨 다레카라모와스레라레타
+    pr: 소츠교시키니모데라레즈스주넨 다레카라모와스레라레타
     time: [79.213, 84.007]
   - text: 僕が試合の日の朝に車にはねられて死んだせい
-    pronunciation: 보쿠가시아이노히노아사니쿠루마니하네라레테신다세이
+    pr: 보쿠가시아이노히노아사니쿠루마니하네라레테신다세이
     time: [85.162, 90.288]
   - text: 出来れば双子のアニキとその恋人に会って
-    pronunciation: 데키레바후타고노아니키토소노코이비토니앗테
+    pr: 데키레바후타고노아니키토소노코이비토니앗테
     time: [91.31, 96.004]
   - text: 謝りたいことがあるんだ
-    pronunciation: 아야마리타이코토가아룬다
+    pr: 아야마리타이코토가아룬다
     time: [97.005, 99.152]
   - text: 伝えたいことがあるんだ
-    pronunciation: 츠타에타이코토가아룬다
+    pr: 츠타에타이코토가아룬다
     time: [100.015, 102.062]
   - text: おっぱいだけさわろうとして
-    pronunciation: 옷파이다케사와로토시테
+    pr: 옷파이다케사와로토시테
     time: [103.29, 104.555]
   - text: ごめんなさい
-    pronunciation: 고멘나사이
+    pr: 고멘나사이
     time: [105.715, 106.68]
   - text: インターハイ優勝 甲子園優勝
-    pronunciation: 인타하이유쇼 코시엔유쇼
+    pr: 인타하이유쇼 코시엔유쇼
     time: [108.73, 111.01]
   - text: おめでとう
-    pronunciation: 오메데토
+    pr: 오메데토
     time: [111.742, 112.508]
   - text: ホタルイカの光
-    pronunciation: 호타루이카노히카리
+    pr: 호타루이카노히카리
     time: [117.01, 121.354]
   - text: ホタルイカの光
-    pronunciation: 호타루이카노히카리
+    pr: 호타루이카노히카리
     time: [122.945, 127.206]
   - text: 君のもとへ走れ
-    pronunciation: 키미노모토에하시레
+    pr: 키미노모토에하시레
     time: [128.542, 133.402]
   - text: ホタルイカの光 光
-    pronunciation: 호타루이카노히카리 히카리
+    pr: 호타루이카노히카리 히카리
     time: [134.585, 142.54]
   - text: 今は富とか名誉とか 権力や強い腕力が
-    pronunciation: 이마와토미토카메이요토카 켄료쿠야츠요이완료쿠가
+    pr: 이마와토미토카메이요토카 켄료쿠야츠요이완료쿠가
     time: [155.32, 160.43]
   - text: 喉から手が出るほど欲しい
-    pronunciation: 노도카라테가데루호도호시
+    pr: 노도카라테가데루호도호시
     time: [161.492, 163.905]
   - text: あればあるだけほしい
-    pronunciation: 아레바아루다케호시
+    pr: 아레바아루다케호시
     time: [164.454, 166.435]
   - text: そしてこの国のこどもたちが
-    pronunciation: 소시테코노쿠니노코도모타치가
+    pr: 소시테코노쿠니노코도모타치가
     time: [167.22, 170.133]
   - text: 誰からも洗脳されずに
-    pronunciation: 다레카라모센노사레즈니
+    pr: 다레카라모센노사레즈니
     time: [170.133, 171.88]
   - text: 誰からも凌辱されないために
-    pronunciation: 다레카라모료조쿠사레나이타메니
+    pr: 다레카라모료조쿠사레나이타메니
     time: [172.883, 175.612]
   - text: 俺は立ち上がるのだ
-    pronunciation: 오레와타치아가루노다
+    pr: 오레와타치아가루노다
     time: [176.045, 177.876]
   - text: ゆけ! ゆけ! おれのしもべ
-    pronunciation: 유케! 유케! 오레노시모베
+    pr: 유케! 유케! 오레노시모베
     time: [179.25, 182.679]
   - text: 戦え! 戦え! おれのしもべ
-    pronunciation: 타타카에! 타타카에! 오레노시모베
+    pr: 타타카에! 타타카에! 오레노시모베
     time: [184.294, 188.871]
   - text: ホタルイカの光
-    pronunciation: 호타루이카노히카리
+    pr: 호타루이카노히카리
     time: [192.93, 197.207]
   - text: ホタルイカの光
-    pronunciation: 호타루이카노히카리
+    pr: 호타루이카노히카리
     time: [198.731, 203.192]
   - text: 海の底で眠れ
-    pronunciation: 우미노소코데네무레
+    pr: 우미노소코데네무레
     time: [204.887, 209.197]
   - text: ホタルイカの光 光
-    pronunciation: 호타루이카노히카리 히카리
+    pr: 호타루이카노히카리 히카리
     time: [210.351, 218.124]
   - text: 光に
-    pronunciation: 히카리니
+    pr: 히카리니
     time: [219.346, 220.462]
   - text: 光に
-    pronunciation: 히카리니
+    pr: 히카리니
     time: [222.229, 223.76]
   - text: 光に
-    pronunciation: 히카리니
+    pr: 히카리니
     time: [225.468, 226.234]
   - text: ひかれ
-    pronunciation: 히카레
+    pr: 히카레
     time: [228.055, 229.021]
   - text: ひから
-    pronunciation: 히카라
+    pr: 히카라
     time: [231.042, 231.957]
   - text: ひから
-    pronunciation: 히카라
+    pr: 히카라
     time: [233.97, 234.785]
   - text: ひから
-    pronunciation: 히카라
+    pr: 히카라
     time: [236.867, 237.699]
   - text: ひから
-    pronunciation: 히카라
+    pr: 히카라
     time: [239.767, 240.733]

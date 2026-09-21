@@ -11,1064 +11,1064 @@ titleLang: en
 year: '2019'
 artist: billie-eilish
 lang: en
-spotify: 3ZCTVFBt2Brf31RLEnCkWJ
-youtube:
+sp: 3ZCTVFBt2Brf31RLEnCkWJ
+yt:
   audio: iuINiqxtjhI
   mv: EgBJmlPo8Xw
 lines:
   - words:
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [17.363, 17.564]
       - text: 'had '
-        pronunciation: 해드
+        pr: 해드
         time: [17.564, 17.831]
       - text: 'a '
-        pronunciation: 어
+        pr: 어
         time: [17.831, 18.147]
       - text: dream
-        pronunciation: 드림
+        pr: 드림
         time: [18.147, 19.087]
     time: [17.363, 19.087]
   - words:
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [20.53, 20.713]
       - text: 'got '
-        pronunciation: 갓
+        pr: 갓
         time: [20.713, 21.113]
       - text: every
-        pronunciation: 에브리
+        pr: 에브리
         time: [21.113, 21.521]
       - text: 'thing '
-        pronunciation: 싱
+        pr: 싱
         time: [21.521, 21.848]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [21.848, 22.083]
       - text: wanted
-        pronunciation: 원티드
+        pr: 원티드
         time: [22.083, 23.037]
     time: [20.53, 23.037]
   - words:
       - text: 'not '
-        pronunciation: 낫
+        pr: 낫
         time: [25.267, 25.583]
       - text: 'what '
-        pronunciation: 왓
+        pr: 왓
         time: [25.583, 25.85]
       - text: "you'd "
-        pronunciation: 유드
+        pr: 유드
         time: [25.85, 26.133]
       - text: think
-        pronunciation: 싱크
+        pr: 싱크
         time: [26.133, 26.871]
     time: [25.267, 26.871]
   - words:
       - text: 'and '
-        pronunciation: 앤드
+        pr: 앤드
         time: [28.807, 29.056]
       - text: 'if '
-        pronunciation: 이프
+        pr: 이프
         time: [29.056, 29.323]
       - text: "i'm "
-        pronunciation: 아임
+        pr: 아임
         time: [29.323, 29.608]
       - text: 'being '
-        pronunciation: 빙
+        pr: 빙
         time: [29.608, 30.156]
       - text: honest
-        pronunciation: 어니스트
+        pr: 어니스트
         time: [30.156, 30.851]
     time: [28.807, 30.851]
   - words:
       - text: 'it '
-        pronunciation: 잇
+        pr: 잇
         time: [30.851, 31.088]
       - text: 'might '
-        pronunciation: 마이트
+        pr: 마이트
         time: [31.088, 31.355]
       - text: 'have '
-        pronunciation: 해브
+        pr: 해브
         time: [31.355, 31.588]
       - text: 'been '
-        pronunciation: 빈
+        pr: 빈
         time: [31.588, 31.837]
       - text: 'a '
-        pronunciation: 어
+        pr: 어
         time: [31.837, 32.104]
       - text: night
-        pronunciation: 나이트
+        pr: 나이트
         time: [32.104, 32.589]
       - text: mare
-        pronunciation: 메어
+        pr: 메어
         time: [32.589, 33.322]
     time: [30.851, 33.322]
   - words:
       - text: 'to '
-        pronunciation: 투
+        pr: 투
         time: [34.771, 35.052]
       - text: 'anyone '
-        pronunciation: 에니원
+        pr: 에니원
         time: [35.052, 35.787]
       - text: 'who '
-        pronunciation: 후
+        pr: 후
         time: [35.787, 36.103]
       - text: 'might '
-        pronunciation: 마이트
+        pr: 마이트
         time: [36.103, 36.57]
       - text: care
-        pronunciation: 케어
+        pr: 케어
         time: [36.57, 37.361]
     time: [34.771, 37.361]
   - words:
       - text: 'thought '
-        pronunciation: 소트
+        pr: 소트
         time: [41.27, 41.558]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [41.558, 41.798]
       - text: 'could '
-        pronunciation: 쿠드
+        pr: 쿠드
         time: [41.798, 42.048]
       - text: 'fly '
-        pronunciation: 플라이
+        pr: 플라이
         time: [42.048, 42.576]
       - text: (fly)
-        pronunciation: (플라이)
+        pr: (플라이)
         time: [42.576, 43.125]
     time: [41.27, 43.125]
   - words:
       - text: 'so '
-        pronunciation: 소
+        pr: 소
         time: [44.74, 45.039]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [45.039, 45.341]
       - text: 'stepped '
-        pronunciation: 스텝트
+        pr: 스텝트
         time: [45.341, 45.605]
       - text: 'off '
-        pronunciation: 오프
+        pr: 오프
         time: [45.605, 45.883]
       - text: 'the '
-        pronunciation: 더
+        pr: 더
         time: [45.883, 46.116]
       - text: golden
-        pronunciation: 골든
+        pr: 골든
         time: [46.116, 47.156]
     time: [44.74, 47.156]
   - words:
       - text: 'nobody '
-        pronunciation: 노바디
+        pr: 노바디
         time: [49.286, 50.1]
       - text: 'cried '
-        pronunciation: 크라이드
+        pr: 크라이드
         time: [50.1, 50.581]
       - text: (cried)
-        pronunciation: (크라이드)
+        pr: (크라이드)
         time: [50.581, 51.019]
     time: [49.286, 51.019]
   - words:
       - text: 'nobody '
-        pronunciation: 노바디
+        pr: 노바디
         time: [52.738, 53.582]
       - text: 'even '
-        pronunciation: 이븐
+        pr: 이븐
         time: [53.582, 54.055]
       - text: no
-        pronunciation: 노
+        pr: 노
         time: [54.055, 54.482]
       - text: ticed
-        pronunciation: 티스트
+        pr: 티스트
         time: [54.482, 54.819]
     time: [52.738, 54.819]
   - words:
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [54.819, 55.022]
       - text: 'saw '
-        pronunciation: 소
+        pr: 소
         time: [55.022, 55.318]
       - text: 'them '
-        pronunciation: 뎀
+        pr: 뎀
         time: [55.318, 55.603]
       - text: 'standing '
-        pronunciation: 스탠딩
+        pr: 스탠딩
         time: [55.603, 56.12]
       - text: 'right '
-        pronunciation: 라이트
+        pr: 라이트
         time: [56.12, 56.601]
       - text: there
-        pronunciation: 데어
+        pr: 데어
         time: [56.601, 57.275]
     time: [54.819, 57.275]
   - words:
       - text: 'kinda '
-        pronunciation: 카인더
+        pr: 카인더
         time: [58.995, 59.512]
       - text: 'thought '
-        pronunciation: 소트
+        pr: 소트
         time: [59.512, 59.828]
       - text: 'they '
-        pronunciation: 데이
+        pr: 데이
         time: [59.828, 60.081]
       - text: 'might '
-        pronunciation: 마이트
+        pr: 마이트
         time: [60.081, 60.577]
       - text: care
-        pronunciation: 케어
+        pr: 케어
         time: [60.577, 61.274]
     time: [58.995, 61.274]
   - words:
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [65.273, 65.491]
       - text: 'had '
-        pronunciation: 해드
+        pr: 해드
         time: [65.491, 65.839]
       - text: 'a '
-        pronunciation: 어
+        pr: 어
         time: [65.839, 66.074]
       - text: dream
-        pronunciation: 드림
+        pr: 드림
         time: [66.074, 66.956]
     time: [65.273, 66.956]
   - words:
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [68.504, 68.803]
       - text: 'got '
-        pronunciation: 갓
+        pr: 갓
         time: [68.803, 69.119]
       - text: every
-        pronunciation: 에브리
+        pr: 에브리
         time: [69.119, 69.47]
       - text: 'thing '
-        pronunciation: 싱
+        pr: 싱
         time: [69.47, 69.784]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [69.784, 70.086]
       - text: wanted
-        pronunciation: 원티드
+        pr: 원티드
         time: [70.086, 70.994]
     time: [68.504, 70.994]
   - words:
       - text: 'but '
-        pronunciation: 벗
+        pr: 벗
         time: [71.785, 72.017]
       - text: 'when '
-        pronunciation: 웬
+        pr: 웬
         time: [72.017, 72.818]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [72.818, 73.099]
       - text: 'wake '
-        pronunciation: 웨이크
+        pr: 웨이크
         time: [73.099, 73.584]
       - text: 'up, '
-        pronunciation: 업,
+        pr: 업,
         time: [73.584, 73.851]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [73.851, 74.147]
       - text: see
-        pronunciation: 시
+        pr: 시
         time: [74.147, 74.515]
     time: [71.785, 74.515]
   - words:
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [76.075, 76.519]
       - text: 'with '
-        pronunciation: 위드
+        pr: 위드
         time: [76.822, 77.652]
       - text: me
-        pronunciation: 미
+        pr: 미
         time: [77.652, 77.956]
     time: [76.075, 77.956]
   - words:
       - text: 'and '
-        pronunciation: 앤드
+        pr: 앤드
         time: [79.29, 79.589]
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [79.589, 79.789]
       - text: say
-        pronunciation: 세이
+        pr: 세이
         time: [79.789, 80.559]
     time: [79.29, 80.559]
   - words:
       - text: 'as '
-        pronunciation: 애즈
+        pr: 애즈
         time: [80.805, 81.072]
       - text: 'long '
-        pronunciation: 롱
+        pr: 롱
         time: [81.072, 81.641]
       - text: 'as '
-        pronunciation: 애즈
+        pr: 애즈
         time: [81.641, 81.873]
       - text: "i'm "
-        pronunciation: 아임
+        pr: 아임
         time: [81.873, 82.857]
       - text: here
-        pronunciation: 히어
+        pr: 히어
         time: [82.857, 84.46]
     time: [80.805, 84.46]
   - words:
       - text: 'no '
-        pronunciation: 노
+        pr: 노
         time: [84.508, 85.144]
       - text: 'one '
-        pronunciation: 원
+        pr: 원
         time: [85.144, 85.576]
       - text: 'can '
-        pronunciation: 캔
+        pr: 캔
         time: [85.576, 85.893]
       - text: 'hurt '
-        pronunciation: 허트
+        pr: 허트
         time: [85.893, 86.374]
       - text: you
-        pronunciation: 유
+        pr: 유
         time: [86.374, 86.689]
     time: [84.508, 86.689]
   - words:
       - text: "don't "
-        pronunciation: 돈트
+        pr: 돈트
         time: [88.45, 89.083]
       - text: 'wanna '
-        pronunciation: 워너
+        pr: 워너
         time: [89.083, 89.817]
       - text: 'lie '
-        pronunciation: 라이
+        pr: 라이
         time: [89.817, 90.851]
       - text: here
-        pronunciation: 히어
+        pr: 히어
         time: [90.851, 92.521]
     time: [88.45, 92.521]
   - words:
       - text: 'but '
-        pronunciation: 벗
+        pr: 벗
         time: [92.627, 93.08]
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [93.08, 93.529]
       - text: 'can '
-        pronunciation: 캔
+        pr: 캔
         time: [93.529, 93.846]
       - text: 'learn '
-        pronunciation: 런
+        pr: 런
         time: [93.846, 94.296]
       - text: to
-        pronunciation: 투
+        pr: 투
         time: [94.296, 94.695]
     time: [92.627, 94.695]
   - words:
       - text: 'if '
-        pronunciation: 이프
+        pr: 이프
         time: [96.501, 96.983]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [96.983, 97.514]
       - text: 'could '
-        pronunciation: 쿠드
+        pr: 쿠드
         time: [97.514, 97.781]
       - text: 'change '
-        pronunciation: 체인지
+        pr: 체인지
         time: [97.781, 99.516]
       - text: 'the '
-        pronunciation: 더
+        pr: 더
         time: [99.516, 99.833]
       - text: 'way '
-        pronunciation: 웨이
+        pr: 웨이
         time: [99.833, 101.065]
       - text: 'that '
-        pronunciation: 댓
+        pr: 댓
         time: [101.065, 101.346]
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [101.346, 101.779]
       - text: 'see '
-        pronunciation: 시
+        pr: 시
         time: [101.779, 102.31]
       - text: your
-        pronunciation: 유어
+        pr: 유어
         time: [102.31, 102.577]
       - text: self
-        pronunciation: 셀프
+        pr: 셀프
         time: [102.577, 103.375]
     time: [96.501, 103.375]
   - words:
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [104.29, 104.574]
       - text: "wouldn't "
-        pronunciation: 우든트
+        pr: 우든트
         time: [104.574, 105.073]
       - text: won
-        pronunciation: 원
+        pr: 원
         time: [105.073, 105.542]
       - text: 'der '
-        pronunciation: 더
+        pr: 더
         time: [105.542, 105.822]
       - text: 'why '
-        pronunciation: 와이
+        pr: 와이
         time: [105.822, 106.539]
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [106.539, 106.855]
       - text: hear
-        pronunciation: 히어
+        pr: 히어
         time: [106.855, 108.376]
     time: [104.29, 108.376]
   - words:
       - text: '"they '
-        pronunciation: '"데이'
+        pr: '"데이'
         time: [108.53, 109.145]
       - text: "don't "
-        pronunciation: 돈트
+        pr: 돈트
         time: [109.145, 109.595]
       - text: 'deserve '
-        pronunciation: 디저브
+        pr: 디저브
         time: [109.595, 110.413]
       - text: you"
-        pronunciation: 유"
+        pr: 유"
         time: [110.413, 110.719]
     time: [108.53, 110.719]
   - words:
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [113.318, 113.568]
       - text: 'tried '
-        pronunciation: 트라이드
+        pr: 트라이드
         time: [113.568, 113.867]
       - text: 'to '
-        pronunciation: 투
+        pr: 투
         time: [113.867, 114.12]
       - text: scream
-        pronunciation: 스크림
+        pr: 스크림
         time: [114.12, 114.865]
     time: [113.318, 114.865]
   - words:
       - text: 'but '
-        pronunciation: 벗
+        pr: 벗
         time: [116.608, 116.889]
       - text: 'my '
-        pronunciation: 마이
+        pr: 마이
         time: [116.889, 117.139]
       - text: 'head '
-        pronunciation: 헤드
+        pr: 헤드
         time: [117.139, 117.406]
       - text: 'was '
-        pronunciation: 워즈
+        pr: 워즈
         time: [117.406, 117.673]
       - text: 'under '
-        pronunciation: 언더
+        pr: 언더
         time: [117.673, 118.123]
       - text: water
-        pronunciation: 워터
+        pr: 워터
         time: [118.123, 119.076]
     time: [116.608, 119.076]
   - words:
       - text: 'they '
-        pronunciation: 데이
+        pr: 데이
         time: [121.274, 121.605]
       - text: 'called '
-        pronunciation: 콜드
+        pr: 콜드
         time: [121.605, 121.924]
       - text: 'me '
-        pronunciation: 미
+        pr: 미
         time: [121.924, 122.272]
       - text: weak
-        pronunciation: 위크
+        pr: 위크
         time: [122.272, 122.983]
     time: [121.274, 122.983]
   - words:
       - text: 'like '
-        pronunciation: 라이크
+        pr: 라이크
         time: [124.272, 124.606]
       - text: "i'm "
-        pronunciation: 아임
+        pr: 아임
         time: [124.606, 124.887]
       - text: 'not '
-        pronunciation: 낫
+        pr: 낫
         time: [124.887, 125.14]
       - text: 'just '
-        pronunciation: 저스트
+        pr: 저스트
         time: [125.14, 125.389]
       - text: "somebody's "
-        pronunciation: 섬바디즈
+        pr: 섬바디즈
         time: [125.389, 126.188]
       - text: daughter
-        pronunciation: 도터
+        pr: 도터
         time: [126.188, 127.03]
     time: [124.272, 127.03]
   - words:
       - text: "could've "
-        pronunciation: 쿠더브
+        pr: 쿠더브
         time: [127.08, 127.596]
       - text: 'been '
-        pronunciation: 빈
+        pr: 빈
         time: [127.596, 127.863]
       - text: 'a '
-        pronunciation: 어
+        pr: 어
         time: [127.863, 128.116]
       - text: night
-        pronunciation: 나이트
+        pr: 나이트
         time: [128.116, 128.566]
       - text: mare
-        pronunciation: 메어
+        pr: 메어
         time: [128.566, 129.246]
     time: [127.08, 129.246]
   - words:
       - text: 'but '
-        pronunciation: 벗
+        pr: 벗
         time: [130.527, 130.811]
       - text: 'it '
-        pronunciation: 잇
+        pr: 잇
         time: [130.811, 131.061]
       - text: 'felt '
-        pronunciation: 펠트
+        pr: 펠트
         time: [131.061, 131.328]
       - text: 'like '
-        pronunciation: 라이크
+        pr: 라이크
         time: [131.328, 131.595]
       - text: 'they '
-        pronunciation: 데이
+        pr: 데이
         time: [131.595, 131.845]
       - text: 'were '
-        pronunciation: 워
+        pr: 워
         time: [131.845, 132.112]
       - text: 'right '
-        pronunciation: 라이트
+        pr: 라이트
         time: [132.112, 132.593]
       - text: there
-        pronunciation: 데어
+        pr: 데어
         time: [132.593, 133.49]
     time: [130.527, 133.49]
   - words:
       - text: 'and '
-        pronunciation: 앤드
+        pr: 앤드
         time: [135.535, 135.834]
       - text: 'it '
-        pronunciation: 잇
+        pr: 잇
         time: [135.834, 136.101]
       - text: 'feels '
-        pronunciation: 필즈
+        pr: 필즈
         time: [136.101, 136.368]
       - text: 'like '
-        pronunciation: 라이크
+        pr: 라이크
         time: [136.368, 136.617]
       - text: 'yesterday '
-        pronunciation: 예스터데이
+        pr: 예스터데이
         time: [136.617, 137.535]
       - text: 'was '
-        pronunciation: 워즈
+        pr: 워즈
         time: [137.535, 137.834]
       - text: 'a '
-        pronunciation: 어
+        pr: 어
         time: [137.834, 138.101]
       - text: 'year '
-        pronunciation: 이어
+        pr: 이어
         time: [138.101, 138.417]
       - text: ago
-        pronunciation: 어고
+        pr: 어고
         time: [138.417, 139.109]
     time: [135.535, 139.109]
   - words:
       - text: 'but '
-        pronunciation: 벗
+        pr: 벗
         time: [139.81, 140.109]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [140.109, 140.376]
       - text: "don't "
-        pronunciation: 돈트
+        pr: 돈트
         time: [140.376, 140.625]
       - text: 'wanna '
-        pronunciation: 워너
+        pr: 워너
         time: [140.625, 141.11]
       - text: 'let '
-        pronunciation: 렛
+        pr: 렛
         time: [141.11, 141.542]
       - text: 'anybody '
-        pronunciation: 에니바디
+        pr: 에니바디
         time: [141.542, 142.608]
       - text: know
-        pronunciation: 노
+        pr: 노
         time: [142.608, 142.94]
     time: [139.81, 142.94]
   - words:
       - text: '’cause '
-        pronunciation: 코즈
+        pr: 코즈
         time: [143.716, 144.082]
       - text: 'everybody '
-        pronunciation: 에브리바디
+        pr: 에브리바디
         time: [144.082, 145.048]
       - text: 'wants '
-        pronunciation: 원츠
+        pr: 원츠
         time: [145.048, 145.498]
       - text: 'something '
-        pronunciation: 섬싱
+        pr: 섬싱
         time: [145.498, 146.05]
       - text: 'from '
-        pronunciation: 프럼
+        pr: 프럼
         time: [146.05, 146.334]
       - text: 'me '
-        pronunciation: 미
+        pr: 미
         time: [146.334, 146.598]
       - text: now
-        pronunciation: 나우
+        pr: 나우
         time: [146.598, 147.161]
     time: [143.716, 147.161]
   - words:
       - text: 'and '
-        pronunciation: 앤드
+        pr: 앤드
         time: [147.79, 148.092]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [148.092, 148.341]
       - text: "don't "
-        pronunciation: 돈트
+        pr: 돈트
         time: [148.341, 148.608]
       - text: 'wanna '
-        pronunciation: 워너
+        pr: 워너
         time: [148.608, 149.09]
       - text: 'let '
-        pronunciation: 렛
+        pr: 렛
         time: [149.09, 149.392]
       - text: '’em '
-        pronunciation: 엠
+        pr: 엠
         time: [149.392, 149.659]
       - text: down
-        pronunciation: 다운
+        pr: 다운
         time: [149.659, 150.184]
     time: [147.79, 150.184]
   - words:
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [153.251, 153.451]
       - text: 'had '
-        pronunciation: 해드
+        pr: 해드
         time: [153.451, 153.817]
       - text: 'a '
-        pronunciation: 어
+        pr: 어
         time: [153.817, 154.067]
       - text: dream
-        pronunciation: 드림
+        pr: 드림
         time: [154.067, 154.867]
     time: [153.251, 154.867]
   - words:
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [156.541, 156.842]
       - text: 'got '
-        pronunciation: 갓
+        pr: 갓
         time: [156.842, 157.092]
       - text: every
-        pronunciation: 에브리
+        pr: 에브리
         time: [157.092, 157.555]
       - text: 'thing '
-        pronunciation: 싱
+        pr: 싱
         time: [157.555, 157.824]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [157.824, 158.122]
       - text: wanted
-        pronunciation: 원티드
+        pr: 원티드
         time: [158.122, 159.056]
     time: [156.541, 159.056]
   - words:
       - text: 'but '
-        pronunciation: 벗
+        pr: 벗
         time: [159.808, 160.092]
       - text: 'when '
-        pronunciation: 웬
+        pr: 웬
         time: [160.092, 160.824]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [160.824, 161.091]
       - text: 'wake '
-        pronunciation: 웨이크
+        pr: 웨이크
         time: [161.091, 161.576]
       - text: 'up, '
-        pronunciation: 업,
+        pr: 업,
         time: [161.576, 161.821]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [161.821, 162.147]
       - text: see
-        pronunciation: 시
+        pr: 시
         time: [162.147, 162.508]
     time: [159.808, 162.508]
   - words:
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [163.952, 164.382]
       - text: 'with '
-        pronunciation: 위드
+        pr: 위드
         time: [164.786, 165.39]
       - text: me
-        pronunciation: 미
+        pr: 미
         time: [165.623, 165.977]
     time: [163.952, 165.977]
   - words:
       - text: 'and '
-        pronunciation: 앤드
+        pr: 앤드
         time: [167.307, 167.574]
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [167.574, 167.792]
       - text: say
-        pronunciation: 세이
+        pr: 세이
         time: [167.792, 168.517]
     time: [167.307, 168.517]
   - words:
       - text: 'as '
-        pronunciation: 애즈
+        pr: 애즈
         time: [168.728, 169.097]
       - text: 'long '
-        pronunciation: 롱
+        pr: 롱
         time: [169.097, 169.445]
       - text: 'as '
-        pronunciation: 애즈
+        pr: 애즈
         time: [169.445, 169.845]
       - text: "i'm "
-        pronunciation: 아임
+        pr: 아임
         time: [169.845, 170.861]
       - text: here
-        pronunciation: 히어
+        pr: 히어
         time: [170.861, 172.492]
     time: [168.728, 172.492]
   - words:
       - text: 'no '
-        pronunciation: 노
+        pr: 노
         time: [172.537, 173.053]
       - text: 'one '
-        pronunciation: 원
+        pr: 원
         time: [173.053, 173.57]
       - text: 'can '
-        pronunciation: 캔
+        pr: 캔
         time: [173.57, 173.869]
       - text: 'hurt '
-        pronunciation: 허트
+        pr: 허트
         time: [173.869, 174.336]
       - text: you
-        pronunciation: 유
+        pr: 유
         time: [174.336, 174.735]
     time: [172.537, 174.735]
   - words:
       - text: "don't "
-        pronunciation: 돈트
+        pr: 돈트
         time: [176.467, 177.001]
       - text: 'wanna '
-        pronunciation: 워너
+        pr: 워너
         time: [177.001, 177.802]
       - text: 'lie '
-        pronunciation: 라이
+        pr: 라이
         time: [177.802, 178.818]
       - text: here
-        pronunciation: 히어
+        pr: 히어
         time: [178.818, 180.449]
     time: [176.467, 180.449]
   - words:
       - text: 'but '
-        pronunciation: 벗
+        pr: 벗
         time: [180.532, 181.13]
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [181.13, 181.53]
       - text: 'can '
-        pronunciation: 캔
+        pr: 캔
         time: [181.53, 181.847]
       - text: 'learn '
-        pronunciation: 런
+        pr: 런
         time: [181.847, 182.331]
       - text: to
-        pronunciation: 투
+        pr: 투
         time: [182.331, 182.716]
     time: [180.532, 182.716]
   - words:
       - text: 'if '
-        pronunciation: 이프
+        pr: 이프
         time: [184.499, 184.998]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [184.998, 185.514]
       - text: 'could '
-        pronunciation: 쿠드
+        pr: 쿠드
         time: [185.514, 185.831]
       - text: 'change '
-        pronunciation: 체인지
+        pr: 체인지
         time: [185.831, 187.497]
       - text: 'the '
-        pronunciation: 더
+        pr: 더
         time: [187.497, 187.831]
       - text: 'way '
-        pronunciation: 웨이
+        pr: 웨이
         time: [187.831, 189.047]
       - text: 'that '
-        pronunciation: 댓
+        pr: 댓
         time: [189.047, 189.363]
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [189.363, 189.764]
       - text: 'see '
-        pronunciation: 시
+        pr: 시
         time: [189.764, 190.298]
       - text: your
-        pronunciation: 유어
+        pr: 유어
         time: [190.298, 190.597]
       - text: self
-        pronunciation: 셀프
+        pr: 셀프
         time: [190.597, 191.43]
     time: [184.499, 191.43]
   - words:
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [192.272, 192.605]
       - text: "wouldn't "
-        pronunciation: 우든트
+        pr: 우든트
         time: [192.605, 193.087]
       - text: 'wonder '
-        pronunciation: 원더
+        pr: 원더
         time: [193.087, 193.839]
       - text: 'why '
-        pronunciation: 와이
+        pr: 와이
         time: [193.839, 194.605]
       - text: 'you '
-        pronunciation: 유
+        pr: 유
         time: [194.605, 194.89]
       - text: hear
-        pronunciation: 히어
+        pr: 히어
         time: [194.89, 196.533]
     time: [192.272, 196.533]
   - words:
       - text: '"they '
-        pronunciation: '"데이'
+        pr: '"데이'
         time: [196.595, 197.111]
       - text: "don't "
-        pronunciation: 돈트
+        pr: 돈트
         time: [197.111, 197.544]
       - text: 'deserve '
-        pronunciation: 디저브
+        pr: 디저브
         time: [197.544, 198.377]
       - text: you"
-        pronunciation: 유"
+        pr: 유"
         time: [198.377, 198.691]
     time: [196.595, 198.691]
   - words:
       - text: 'if '
-        pronunciation: 이프
+        pr: 이프
         time: [199.941, 200.492]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [200.492, 201.073]
       - text: 'knew '
-        pronunciation: 누
+        pr: 누
         time: [201.073, 201.34]
       - text: 'it '
-        pronunciation: 잇
+        pr: 잇
         time: [201.34, 201.656]
       - text: 'all '
-        pronunciation: 올
+        pr: 올
         time: [201.656, 201.891]
       - text: 'then, '
-        pronunciation: 덴,
+        pr: 덴,
         time: [201.891, 202.341]
       - text: 'would '
-        pronunciation: 우드
+        pr: 우드
         time: [202.341, 202.601]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [202.601, 203.05]
       - text: 'do '
-        pronunciation: 두
+        pr: 두
         time: [203.05, 203.349]
       - text: 'it '
-        pronunciation: 잇
+        pr: 잇
         time: [203.349, 203.651]
       - text: again?
-        pronunciation: 어게인?
+        pr: 어게인?
         time: [203.651, 204.296]
     time: [199.941, 204.296]
   - words:
       - text: 'would '
-        pronunciation: 우드
+        pr: 우드
         time: [204.296, 204.577]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [204.577, 205.013]
       - text: 'do '
-        pronunciation: 두
+        pr: 두
         time: [205.013, 205.294]
       - text: 'it '
-        pronunciation: 잇
+        pr: 잇
         time: [205.294, 205.529]
       - text: again?
-        pronunciation: 어게인?
+        pr: 어게인?
         time: [205.529, 206.409]
     time: [204.296, 206.409]
   - words:
       - text: 'if '
-        pronunciation: 이프
+        pr: 이프
         time: [207.98, 208.447]
       - text: 'they '
-        pronunciation: 데이
+        pr: 데이
         time: [208.447, 209.013]
       - text: 'knew '
-        pronunciation: 누
+        pr: 누
         time: [209.013, 209.341]
       - text: 'what '
-        pronunciation: 왓
+        pr: 왓
         time: [209.341, 209.608]
       - text: 'they '
-        pronunciation: 데이
+        pr: 데이
         time: [209.608, 209.91]
       - text: 'said '
-        pronunciation: 세드
+        pr: 세드
         time: [209.91, 210.374]
       - text: 'would '
-        pronunciation: 우드
+        pr: 우드
         time: [210.374, 210.609]
       - text: 'go '
-        pronunciation: 고
+        pr: 고
         time: [210.609, 211.01]
       - text: 'straight '
-        pronunciation: 스트레이트
+        pr: 스트레이트
         time: [211.01, 211.309]
       - text: 'to '
-        pronunciation: 투
+        pr: 투
         time: [211.309, 211.576]
       - text: 'my '
-        pronunciation: 마이
+        pr: 마이
         time: [211.576, 211.826]
       - text: head
-        pronunciation: 헤드
+        pr: 헤드
         time: [211.826, 212.319]
     time: [207.98, 212.319]
   - words:
       - text: 'what '
-        pronunciation: 왓
+        pr: 왓
         time: [212.352, 212.669]
       - text: 'would '
-        pronunciation: 우드
+        pr: 우드
         time: [212.669, 213.084]
       - text: 'they '
-        pronunciation: 데이
+        pr: 데이
         time: [213.084, 213.4]
       - text: 'say '
-        pronunciation: 세이
+        pr: 세이
         time: [213.4, 213.702]
       - text: instead?
-        pronunciation: 인스테드?
+        pr: 인스테드?
         time: [213.702, 214.522]
     time: [212.352, 214.522]
   - words:
       - text: 'if '
-        pronunciation: 이프
+        pr: 이프
         time: [216.053, 216.535]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [216.535, 217.02]
       - text: 'knew '
-        pronunciation: 누
+        pr: 누
         time: [217.02, 217.333]
       - text: 'it '
-        pronunciation: 잇
+        pr: 잇
         time: [217.333, 217.618]
       - text: 'all '
-        pronunciation: 올
+        pr: 올
         time: [217.618, 217.853]
       - text: 'then, '
-        pronunciation: 덴,
+        pr: 덴,
         time: [217.853, 218.285]
       - text: 'would '
-        pronunciation: 우드
+        pr: 우드
         time: [218.285, 218.594]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [218.594, 219.026]
       - text: 'do '
-        pronunciation: 두
+        pr: 두
         time: [219.026, 219.36]
       - text: 'it '
-        pronunciation: 잇
+        pr: 잇
         time: [219.36, 219.595]
       - text: again?
-        pronunciation: 어게인?
+        pr: 어게인?
         time: [219.595, 220.329]
     time: [216.053, 220.329]
   - words:
       - text: 'would '
-        pronunciation: 우드
+        pr: 우드
         time: [220.357, 220.691]
       - text: 'i '
-        pronunciation: 아이
+        pr: 아이
         time: [220.691, 221.056]
       - text: 'do '
-        pronunciation: 두
+        pr: 두
         time: [221.056, 221.341]
       - text: 'it '
-        pronunciation: 잇
+        pr: 잇
         time: [221.341, 221.59]
       - text: again?
-        pronunciation: 어게인?
+        pr: 어게인?
         time: [221.59, 222.351]
     time: [220.357, 222.351]
   - words:
       - text: 'if '
-        pronunciation: 이프
+        pr: 이프
         time: [224.035, 224.517]
       - text: 'they '
-        pronunciation: 데이
+        pr: 데이
         time: [224.517, 225.051]
       - text: 'knew '
-        pronunciation: 누
+        pr: 누
         time: [225.051, 225.318]
       - text: 'what '
-        pronunciation: 왓
+        pr: 왓
         time: [225.318, 225.585]
       - text: 'they '
-        pronunciation: 데이
+        pr: 데이
         time: [225.585, 225.834]
       - text: 'said '
-        pronunciation: 세드
+        pr: 세드
         time: [225.834, 226.316]
       - text: 'would '
-        pronunciation: 우드
+        pr: 우드
         time: [226.316, 226.601]
       - text: 'go '
-        pronunciation: 고
+        pr: 고
         time: [226.601, 227.019]
       - text: 'straight '
-        pronunciation: 스트레이트
+        pr: 스트레이트
         time: [227.019, 227.347]
       - text: 'to '
-        pronunciation: 투
+        pr: 투
         time: [227.347, 227.614]
       - text: 'my '
-        pronunciation: 마이
+        pr: 마이
         time: [227.614, 227.863]
       - text: head
-        pronunciation: 헤드
+        pr: 헤드
         time: [227.863, 228.303]
     time: [224.035, 228.303]
   - words:
       - text: 'what '
-        pronunciation: 왓
+        pr: 왓
         time: [228.336, 228.635]
       - text: 'would '
-        pronunciation: 우드
+        pr: 우드
         time: [228.635, 228.986]
       - text: 'they '
-        pronunciation: 데이
+        pr: 데이
         time: [228.986, 229.352]
       - text: 'say '
-        pronunciation: 세이
+        pr: 세이
         time: [229.352, 229.584]
       - text: instead?
-        pronunciation: 인스테드?
+        pr: 인스테드?
         time: [229.584, 230.401]
     time: [228.336, 230.401]

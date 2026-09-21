@@ -11,100 +11,100 @@ titleLang: ja
 year: '1999'
 artist: eastern-youth
 lang: ja
-spotify: 2JyMWLMvndFjlJHKXuGi7x
-youtube:
+sp: 2JyMWLMvndFjlJHKXuGi7x
+yt:
   audio: 7-XNy0y4P0U
 offsets:
-  spotify: 0.4
+  sp: 0.4
   youtubeAudio: 0.4
 lines:
   - text: コンクリートの隙間から顔出した
-    pronunciation: 콘쿠리토노스키마카라카오다시타
+    pr: 콘쿠리토노스키마카라카오다시타
     time: [26.48, 32.69]
   - text: 草の様な花の様な
-    pronunciation: 쿠사노요나하나노요나
+    pr: 쿠사노요나하나노요나
     time: [32.69, 39.15]
   - text: 「なんだってかんだったって知らないよ」
-    pronunciation: '"난닷테칸닷탓테시라네요"'
+    pr: '"난닷테칸닷탓테시라네요"'
     time: [39.15, 45.34]
   - text: なんでもねぇやと突っ立っている
-    pronunciation: 난데모네야토츳탓테이루
+    pr: 난데모네야토츳탓테이루
     time: [45.34, 50.94]
   - text: 『雨曝しなら濡れるがいいさ
-    pronunciation: "'아마자라시나라누레루가이이사"
+    pr: "'아마자라시나라누레루가이이사"
     time: [50.94, 57.34]
   - text: だって、どうせ傘など持って無いんだ
-    pronunciation: 닷테, 도세카사나도못테나인다
+    pr: 닷테, 도세카사나도못테나인다
     time: [57.34, 63.94]
   - text: 時が来たなら終わるもいいさ
-    pronunciation: 토키가키타나라오와루모이이사
+    pr: 토키가키타나라오와루모이이사
     time: [63.94, 70.08]
   - text: それが俺の最後の運命だったら
-    pronunciation: 소레가오레노사이고노운메이닷타라
+    pr: 소레가오레노사이고노운메이닷타라
     time: [70.08, 75.75]
   - text: その時、瞼に吹く風も見えるだろう
-    pronunciation: 소노토키, 마부타니후쿠카제모미에루다로
+    pr: 소노토키, 마부타니후쿠카제모미에루다로
     time: [75.75, 85.81]
   - text: 静かに揺れるだろう
-    pronunciation: 시즈카니유레루다로
+    pr: 시즈카니유레루다로
     time: [85.81, 118.57]
   - text: 吐き出した溜め息は干涸びて
-    pronunciation: 하키다시타타메이키와히카라비테
+    pr: 하키다시타타메이키와히카라비테
     time: [118.57, 124.42]
   - text: 鳥達が啄んでいったよ
-    pronunciation: 토리타치가츠이반데잇타요
+    pr: 토리타치가츠이반데잇타요
     time: [124.42, 131.22]
   - text: 雲が誘いに来るけれど
-    pronunciation: 쿠모가사소이니쿠루케레도
+    pr: 쿠모가사소이니쿠루케레도
     time: [131.22, 137.14]
   - text: 君の背中には乗れないもんな
-    pronunciation: 키미노세나카니와노레나이몬나
+    pr: 키미노세나카니와노레나이몬나
     time: [137.14, 142.76]
   - text: 雪が降ったら泣いてやるのさ
-    pronunciation: 유키가훗타라나이테야루노사
+    pr: 유키가훗타라나이테야루노사
     time: [142.76, 149.17]
   - text: 涙がちょっとの雪なら溶かしちまうだろう
-    pronunciation: 나미다가촛토노유키나라토카시치마우다로
+    pr: 나미다가촛토노유키나라토카시치마우다로
     time: [149.17, 155.59]
   - text: 凍りついたら怒りを燃やす
-    pronunciation: 코리츠이타라이카리오모야스
+    pr: 코리츠이타라이카리오모야스
     time: [155.59, 161.98]
   - text: それが全ての景色を燃やしちまうだろう
-    pronunciation: 소레가스베테노케시키오모야시치마우다로
+    pr: 소레가스베테노케시키오모야시치마우다로
     time: [161.98, 167.52]
   - text: その時、心も焼け焦げてしまうだろう
-    pronunciation: 소노토키, 코코로모야케코게테시마우다로
+    pr: 소노토키, 코코로모야케코게테시마우다로
     time: [167.52, 177.62]
   - text: 煙と変わるだろう
-    pronunciation: 케무리토카와루다로
+    pr: 케무리토카와루다로
     time: [177.62, 184.08]
   - text: 生まれた日から
-    pronunciation: 우마레타히카라
+    pr: 우마레타히카라
     time: [184.08, 190.38]
   - text: 後ろは無いさ
-    pronunciation: 우시로와나이사
+    pr: 우시로와나이사
     time: [190.38, 196.9]
   - text: 広がる世界が在るばかり
-    pronunciation: 히로가루세카이가아루바카리
+    pr: 히로가루세카이가아루바카리
     time: [196.9, 202.6]
   - text: 見据えてやるさ
-    pronunciation: 미스에테야루사
+    pr: 미스에테야루사
     time: [202.6, 234.36]
   - text: 強がりばかり並べてやれば
-    pronunciation: 츠요가리바카리나라베테야레바
+    pr: 츠요가리바카리나라베테야레바
     time: [234.36, 240.13]
   - text: ホラ雨雲さえも逃げ出す気配
-    pronunciation: 호라아마구모사에모니게다스케하이
+    pr: 호라아마구모사에모니게다스케하이
     time: [240.13, 246.26]
   - text: 時が来たなら消えるもいいさ
-    pronunciation: 토키가키타나라키에루모이이사
+    pr: 토키가키타나라키에루모이이사
     time: [246.26, 252.52]
   - text: それが俺の最後の運命だったら
-    pronunciation: 소레가오레노사이고노운메이닷타라
+    pr: 소레가오레노사이고노운메이닷타라
     time: [252.52, 258.05]
   - text: その時、瞼に吹く風も見えるだろう
-    pronunciation: 소노토키, 마부타니후쿠카제모미에루다로
+    pr: 소노토키, 마부타니후쿠카제모미에루다로
     time: [258.05, 268.15]
   - text: 静かに揺れるだろう』
-    pronunciation: 시즈카니유레루다로'
+    pr: 시즈카니유레루다로'
     time: [268.15, 275.48]

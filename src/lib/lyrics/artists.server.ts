@@ -1,5 +1,6 @@
 import * as v from 'valibot'
 import {parse} from 'yaml'
+import {mapYamlFields} from './yaml-fields'
 import {smartText} from './typography.server'
 
 const schema = v.strictObject({
@@ -19,7 +20,7 @@ export const artists: Record<string, Artist> = Object.fromEntries(
       .split('/')
       .at(-1)!
       .replace(/\.ya?ml$/, '')
-    const artist = v.parse(schema, parse(source))
+    const artist = v.parse(schema, mapYamlFields(parse(source), 'read'))
     return [
       slug,
       {

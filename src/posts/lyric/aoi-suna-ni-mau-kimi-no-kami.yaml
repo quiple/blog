@@ -11,134 +11,134 @@ titleLang: ja
 year: '2019'
 artist: cock-roach
 lang: ja
-spotify: 6NrFFHxh2hWxpaRldOeCf4
-youtube:
+sp: 6NrFFHxh2hWxpaRldOeCf4
+yt:
   audio: fqUwaQjMeCs
 offsets:
-  spotify: -0.4
+  sp: -0.4
   youtubeAudio: -0.4
 lines:
   - text: 漆黒の深き闇より
-    pronunciation: 싯코쿠노후카키야미요리
+    pr: 싯코쿠노후카키야미요리
     time: [1.182, 7.453]
   - text: 生命が脈動をあげて
-    pronunciation: 세이메이가먀쿠도오아게테
+    pr: 세이메이가먀쿠도오아게테
     time: [7.809, 13.984]
   - text: あの日ひとつの宇宙だった
-    pronunciation: 아노히히토츠노우추닷타
+    pr: 아노히히토츠노우추닷타
     time: [15.483, 21.183]
   - text: 今宵君が産声をあげた
-    pronunciation: 코요이키미가우부고에오아게타
+    pr: 코요이키미가우부고에오아게타
     time: [22.631, 28.567]
   - text: 火を熾し街を照らせ
-    pronunciation: 히오오코시마치오테라세
+    pr: 히오오코시마치오테라세
     time: [30.053, 36.777]
   - text: 君が生き迷わぬ様に
-    pronunciation: 키미가이키마요와누요니
+    pr: 키미가이키마요와누요니
     time: [37.087, 43.19]
   - text: 弦を鳴らし歌を唄え
-    pronunciation: 겐오나라시우타오우타에
+    pr: 겐오나라시우타오우타에
     time: [44.628, 51.384]
   - text: 君が泣き止み笑う様に
-    pronunciation: 키미가나키야미와라우요니
+    pr: 키미가나키야미와라우요니
     time: [51.95, 59.693]
   - text: 青い砂の大地を
-    pronunciation: 아오이스나노다이치오
+    pr: 아오이스나노다이치오
     time: [61.549, 67.717]
   - text: 旅人は歩いてゆく
-    pronunciation: 타비비토와아루이테유쿠
+    pr: 타비비토와아루이테유쿠
     time: [67.841, 73.766]
   - text: 生きる理由は何処にある
-    pronunciation: 이키루리유와도코니아루
+    pr: 이키루리유와도코니아루
     time: [74.821, 80.563]
   - text: 迷い稚魚は大海を泳ぐ
-    pronunciation: 마요이치교와타이카이오오요구
+    pr: 마요이치교와타이카이오오요구
     time: [81.675, 87.417]
   - text: 人はなぜ
-    pronunciation: 히토와나제
+    pr: 히토와나제
     time: [88.634, 91.675]
   - text: 命はなぜ
-    pronunciation: 이노치와나제
+    pr: 이노치와나제
     time: [91.91, 95.117]
   - text: 風は常に問いかける
-    pronunciation: 카제와츠네니토이카케루
+    pr: 카제와츠네니토이카케루
     time: [95.448, 100.243]
   - text: 僕はなぜ
-    pronunciation: 보쿠와나제
+    pr: 보쿠와나제
     time: [102.469, 105.472]
   - text: あなたはなぜ
-    pronunciation: 아나타와나제
+    pr: 아나타와나제
     time: [105.791, 108.959]
   - text: ここで出逢い
-    pronunciation: 코코데데아이
+    pr: 코코데데아이
     time: [109.16, 112.407]
   - text: ここで別れ
-    pronunciation: 코코데와카레
+    pr: 코코데와카레
     time: [112.642, 115.156]
   - text: 焚火の火を背景に
-    pronunciation: 타키비노히오하이케이니
+    pr: 타키비노히오하이케이니
     time: [115.156, 118.494]
   - text: うっすらと笑った
-    pronunciation: 웃스라토와랏타
+    pr: 웃스라토와랏타
     time: [118.494, 122.321]
   - text: 青い砂に舞う君の髪
-    pronunciation: 아오이스나니마우키미노카미
+    pr: 아오이스나니마우키미노카미
     time: [122.321, 128.485]
   - text: それでも人は生く
-    pronunciation: 소레데모히토와유쿠
+    pr: 소레데모히토와유쿠
     time: [128.864, 132.245]
   - text: 命を紡ぐ為
-    pronunciation: 이노치오츠무구타메
+    pr: 이노치오츠무구타메
     time: [132.245, 135.89]
   - text: 貴方から貰い受けし命を
-    pronunciation: 아나타카라모라이우케시미코토오
+    pr: 아나타카라모라이우케시미코토오
     time: [135.89, 142.613]
   - text: 唯々、燃やす為
-    pronunciation: 타다타다, 모야스타메
+    pr: 타다타다, 모야스타메
     time: [142.608, 145.676]
   - text: 唯々、澄ます為
-    pronunciation: 타다타다, 스마스타메
+    pr: 타다타다, 스마스타메
     time: [146.104, 149.636]
   - text: 綺麗な水に還帰れるまで
-    pronunciation: 키레이나미즈니카에레루마데
+    pr: 키레이나미즈니카에레루마데
     time: [149.636, 156.497]
   - text: また逢えるさ。
-    pronunciation: 마타아에루사.
+    pr: 마타아에루사.
     time: [156.497, 158.467]
   - text: いつかまたこの星に
-    pronunciation: 이츠카마타코노호시니
+    pr: 이츠카마타코노호시니
     time: [185.572, 192.108]
   - text: 千乱の華が咲いたら
-    pronunciation: 센란노하나가사이타라
+    pr: 센란노하나가사이타라
     time: [192.108, 197.432]
   - words:
       - text: 僕が生まれたこの
       - text: 故郷
         ruby: くに
       - text: の
-    pronunciation: 보쿠가우마레타코노쿠니노
+    pr: 보쿠가우마레타코노쿠니노
     time: [199.223, 205.626]
   - text: 一番美しい花を君に
-    pronunciation: 이치반우츠쿠시하나오키미니
+    pr: 이치반우츠쿠시하나오키미니
     time: [205.99, 212.676]
   - text: 命ある事
-    pronunciation: 이노치아루코토
+    pr: 이노치아루코토
     time: [212.928, 216.204]
   - text: 共に生きる事
-    pronunciation: 토모니이키루코토
+    pr: 토모니이키루코토
     time: [216.204, 219.04]
   - text: 総てを当たり前とせずに
-    pronunciation: 스베테오아타리마에토세즈니
+    pr: 스베테오아타리마에토세즈니
     time: [219.794, 226.698]
   - text: ここに有る景色
-    pronunciation: 코코니아루케시키
+    pr: 코코니아루케시키
     time: [226.698, 229.761]
   - text: ここに或る命
-    pronunciation: 코코니아루루이노치
+    pr: 코코니아루루이노치
     time: [229.958, 233.298]
   - text: ここに在る君を抱きしめ
-    pronunciation: 코코니아루키미오다키시메
+    pr: 코코니아루키미오다키시메
     time: [233.531, 239.007]
   - text: 「生きよう。」
-    pronunciation: '"이키요."'
+    pr: '"이키요."'
     time: [239.315, 247.089]

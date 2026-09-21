@@ -5,246 +5,246 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: ANHELO
-titleTranslation: 갈망
+titleTl: 갈망
 titleLang: es
 year: '2026'
 artist:
   - joni
   - kasane-teto
 lang: es
-spotify: 57wPvPbioLYHQDxU6rV0on
-youtube:
+sp: 57wPvPbioLYHQDxU6rV0on
+yt:
   audio: irwshgxLQDQ
   mv: MWppmcAHdGs
 offsets:
-  spotify: -2.83
+  sp: -2.83
   youtubeAudio: -2.83
 lines:
   - text: Un día verás que lo que pasó acabó,
-    pronunciation: 운 디아 베라스 케 로 케 파소 아카보,
-    translation: 언젠가 지난 일은 끝났다는 걸 알게 될 거야
+    pr: 운 디아 베라스 케 로 케 파소 아카보,
+    tl: 언젠가 지난 일은 끝났다는 걸 알게 될 거야
     time: [3.876, 9.307]
   - text: Y qué extraño es vivir
-    pronunciation: 이 케 엑스트라뇨 에스 비비르
-    translation: 그리고 살아간다는 건 참 이상해
+    pr: 이 케 엑스트라뇨 에스 비비르
+    tl: 그리고 살아간다는 건 참 이상해
     time: [9.307, 14.11]
   - text: Una canción busca una solución,
-    pronunciation: 우나 칸시온 부스카 우나 솔루시온,
-    translation: 노래 한 곡이 해답을 찾아
+    pr: 우나 칸시온 부스카 우나 솔루시온,
+    tl: 노래 한 곡이 해답을 찾아
     time: [15, 20.022]
   - text: El camino hacia el amor
-    pronunciation: 엘 카미노 아시아 엘 아모르
-    translation: 사랑으로 향하는 길을
+    pr: 엘 카미노 아시아 엘 아모르
+    tl: 사랑으로 향하는 길을
     time: [20.022, 25.148]
   - text: No aguanto un minuto más
-    pronunciation: 노 아관토 운 미누토 마스
-    translation: 이젠 일 분도 더 못 견디겠어
+    pr: 노 아관토 운 미누토 마스
+    tl: 이젠 일 분도 더 못 견디겠어
     time: [26.31, 27.793]
   - text: Quiero imaginar sin más
-    pronunciation: 키에로 이마히나르 신 마스
-    translation: 그저 상상하고 싶어
+    pr: 키에로 이마히나르 신 마스
+    tl: 그저 상상하고 싶어
     time: [27.793, 29.121]
   - text: Dulces pesadillas que me atacan
-    pronunciation: 둘세스 페사디야스 케 메 아타칸
-    translation: 나를 덮치는 달콤한 악몽들
+    pr: 둘세스 페사디야스 케 메 아타칸
+    tl: 나를 덮치는 달콤한 악몽들
     time: [29.121, 31.868]
   - text: Quiero ser normal,
-    pronunciation: 키에로 세르 노르말,
-    translation: 평범해지고 싶어
+    pr: 키에로 세르 노르말,
+    tl: 평범해지고 싶어
     time: [31.868, 33]
   - text: Cumplir mi sueño ideal,
-    pronunciation: 쿰플리르 미 수에뇨 이데알,
-    translation: 내 이상적인 꿈을 이루고
+    pr: 쿰플리르 미 수에뇨 이데알,
+    tl: 내 이상적인 꿈을 이루고
     time: [33, 34.664]
   - text: Ser capaz, poder volar
-    pronunciation: 세르 카파스, 포데르 볼라르
-    translation: 해낼 수 있기를, 날 수 있기를
+    pr: 세르 카파스, 포데르 볼라르
+    tl: 해낼 수 있기를, 날 수 있기를
     time: [34.664, 35.876]
   - text: Por una noche más
-    pronunciation: 포르 우나 노체 마스
-    translation: 하룻밤만 더
+    pr: 포르 우나 노체 마스
+    tl: 하룻밤만 더
     time: [35.876, 37.256]
   - text: Tengo una duda existencial
-    pronunciation: 텡고 우나 두다 엑시스텐시알
-    translation: 내 존재에 대한 의문이 있어
+    pr: 텡고 우나 두다 엑시스텐시알
+    tl: 내 존재에 대한 의문이 있어
     time: [37.256, 40.083]
   - text: Que se salga ya de mi cabeza
-    pronunciation: 케 세 살가 야 데 미 카베사
-    translation: 이제 내 머릿속에서 나가 줘
+    pr: 케 세 살가 야 데 미 카베사
+    tl: 이제 내 머릿속에서 나가 줘
     time: [40.083, 42.755]
   - text: Quiero conocer todo lo que puedo anhelar
-    pronunciation: 키에로 코노세르 토도 로 케 푸에도 아넬라르
-    translation: 내가 갈망할 수 있는 모든 걸 알고 싶어
+    pr: 키에로 코노세르 토도 로 케 푸에도 아넬라르
+    tl: 내가 갈망할 수 있는 모든 걸 알고 싶어
     time: [42.755, 47.114]
   - text: Soy sideral, soy irreal
-    pronunciation: 소이 시데랄, 소이 이레알
-    translation: 나는 별의 존재, 비현실적인 존재
+    pr: 소이 시데랄, 소이 이레알
+    tl: 나는 별의 존재, 비현실적인 존재
     time: [48, 50.526]
   - text: Y, sin embargo, no soy ideal
-    pronunciation: 이, 신 엠바르고, 노 소이 이데알
-    translation: 하지만 이상적이지는 않아
+    pr: 이, 신 엠바르고, 노 소이 이데알
+    tl: 하지만 이상적이지는 않아
     time: [50.526, 53.314]
   - text: La cinosura que pienso que soy
-    pronunciation: 라 시노수라 케 피엔소 케 소이
-    translation: 내가 작은곰자리라 생각해도
+    pr: 라 시노수라 케 피엔소 케 소이
+    tl: 내가 작은곰자리라 생각해도
     time: [53.314, 55.932]
   - text: Su hermosura nunca seré yo
-    pronunciation: 수 에르모수라 눙카 세레 요
-    translation: 그 아름다움을 나는 결코 지닐 수 없어
+    pr: 수 에르모수라 눙카 세레 요
+    tl: 그 아름다움을 나는 결코 지닐 수 없어
     time: [55.932, 58.734]
   - text: Como loca, escribo una canción
-    pronunciation: 코모 로카, 에스크리보 우나 칸시온
-    translation: 미친 듯이 노래 한 곡을 써
+    pr: 코모 로카, 에스크리보 우나 칸시온
+    tl: 미친 듯이 노래 한 곡을 써
     time: [58.902, 61.676]
   - text: Desemboca una desolación
-    pronunciation: 데셈보카 우나 데솔라시온
-    translation: 끝내 쓸쓸함으로 흘러가
+    pr: 데셈보카 우나 데솔라시온
+    tl: 끝내 쓸쓸함으로 흘러가
     time: [61.676, 64.216]
   - text: Y yo quiero ver lo que hay por ver
-    pronunciation: 이 요 키에로 베르 로 케 아이 포르 베르
-    translation: 그리고 나는 볼 수 있는 것들을 보고 싶어
+    pr: 이 요 키에로 베르 로 케 아이 포르 베르
+    tl: 그리고 나는 볼 수 있는 것들을 보고 싶어
     time: [64.216, 67.273]
   - text: Resolver, entender lo que hay por saber
-    pronunciation: 레솔베르, 엔텐데르 로 케 아이 포르 사베르
-    translation: 풀어내고, 알아야 할 것들을 이해하고 싶어
+    pr: 레솔베르, 엔텐데르 로 케 아이 포르 사베르
+    tl: 풀어내고, 알아야 할 것들을 이해하고 싶어
     time: [67.273, 69.827]
   - text: Yo adoro mi vanidad
-    pronunciation: 요 아도로 미 바니다드
-    translation: 나는 내 허영을 사랑해
+    pr: 요 아도로 미 바니다드
+    tl: 나는 내 허영을 사랑해
     time: [70.401, 73.807]
   - text: Por favor, ten piedad
-    pronunciation: 포르 파보르, 텐 피에다드
-    translation: 제발 자비를 베풀어 줘
+    pr: 포르 파보르, 텐 피에다드
+    tl: 제발 자비를 베풀어 줘
     time: [73.807, 76.846]
   - text: Acepta tu destino
-    pronunciation: 아셉타 투 데스티노
-    translation: 네 운명을 받아들여
+    pr: 아셉타 투 데스티노
+    tl: 네 운명을 받아들여
     time: [76.846, 79.612]
   - text: Algo divino
-    pronunciation: 알고 디비노
-    translation: 어떤 신성한 것을
+    pr: 알고 디비노
+    tl: 어떤 신성한 것을
     time: [79.612, 81.371]
   - text: Bien, hay que perseverar ante la distancia
-    pronunciation: 비엔, 아이 케 페르세베라르 안테 라 디스탄시아
-    translation: 자, 그 거리를 견뎌 내야 해
+    pr: 비엔, 아이 케 페르세베라르 안테 라 디스탄시아
+    tl: 자, 그 거리를 견뎌 내야 해
     time: [81.371, 85.195]
   - text: Que separa a el alma de una solución inmediata
-    pronunciation: 케 세파라 아 엘 알마 데 우나 솔루시온 인메디아타
-    translation: 영혼과 즉각적인 해답 사이를 갈라놓는
+    pr: 케 세파라 아 엘 알마 데 우나 솔루시온 인메디아타
+    tl: 영혼과 즉각적인 해답 사이를 갈라놓는
     time: [85.195, 90]
   - text: Que no piensa anhelar
-    pronunciation: 케 노 피엔사 아넬라르
-    translation: 갈망할 생각조차 하지 않는
+    pr: 케 노 피엔사 아넬라르
+    tl: 갈망할 생각조차 하지 않는
     time: [90, 92.01]
   - text: Si en verdad tú crees en mí,
-    pronunciation: 시 엔 베르다드 투 크레스 엔 미,
-    translation: 네가 정말 나를 믿는다면
+    pr: 시 엔 베르다드 투 크레스 엔 미,
+    tl: 네가 정말 나를 믿는다면
     time: [92.01, 94.469]
   - text: Te entenderé si dejas de mentir
-    pronunciation: 테 엔텐데레 시 데하스 데 멘티르
-    translation: 거짓말을 멈추면 널 이해할게
+    pr: 테 엔텐데레 시 데하스 데 멘티르
+    tl: 거짓말을 멈추면 널 이해할게
     time: [94.469, 97.202]
   - text: Esta locura acabará con mí
-    pronunciation: 에스타 로쿠라 아카바라 콘 미
-    translation: 이 광기가 나를 끝장낼 거야
+    pr: 에스타 로쿠라 아카바라 콘 미
+    tl: 이 광기가 나를 끝장낼 거야
     time: [97.202, 99.966]
   - text: Una pintura trazaré en mi ser
-    pronunciation: 우나 핀투라 트라사레 엔 미 세르
-    translation: 내 안에 그림 한 폭을 그릴 거야
+    pr: 우나 핀투라 트라사레 엔 미 세르
+    tl: 내 안에 그림 한 폭을 그릴 거야
     time: [99.967, 102.787]
   - text: Soy capaz, ¡yo sé que soy!
-    pronunciation: 소이 카파스, 요 세 케 소이!
-    translation: 난 할 수 있어, 나도 알고 있어!
+    pr: 소이 카파스, 요 세 케 소이!
+    tl: 난 할 수 있어, 나도 알고 있어!
     time: [103.115, 105.368]
   - text: Y lucharé tenaz por lo que soy, ¡mi amor!
-    pronunciation: 이 루차레 테나스 포르 로 케 소이, 미 아모르!
-    translation: 그리고 나 자신을 위해 끈질기게 싸울 거야, 내 사랑!
+    pr: 이 루차레 테나스 포르 로 케 소이, 미 아모르!
+    tl: 그리고 나 자신을 위해 끈질기게 싸울 거야, 내 사랑!
     time: [105.368, 108.568]
   - text: Brillaré más que la osa menor
-    pronunciation: 브리야레 마스 케 라 오사 메노르
-    translation: 작은곰자리보다 더 밝게 빛날 거야
+    pr: 브리야레 마스 케 라 오사 메노르
+    tl: 작은곰자리보다 더 밝게 빛날 거야
     time: [108.568, 110.896]
   - text: Y guiaré a todo aquel en mi constelación
-    pronunciation: 이 기아레 아 토도 아켈 엔 미 콘스텔라시온
-    translation: 그리고 내 별자리 안의 모두를 이끌 거야
+    pr: 이 기아레 아 토도 아켈 엔 미 콘스텔라시온
+    tl: 그리고 내 별자리 안의 모두를 이끌 거야
     time: [110.896, 113.741]
   - text: Una vez más me he aferrado a mi pasado
-    pronunciation: 우나 베스 마스 메 에 아페라도 아 미 파사도
-    translation: 또다시 내 과거에 매달리고 말았어
+    pr: 우나 베스 마스 메 에 아페라도 아 미 파사도
+    tl: 또다시 내 과거에 매달리고 말았어
     time: [114.101, 119.466]
   - text: Vaya desgracia, yo debería expirar
-    pronunciation: 바야 데스그라시아, 요 데베리아 엑스피라르
-    translation: 참 비참해, 난 숨을 거둬야 할 텐데
+    pr: 바야 데스그라시아, 요 데베리아 엑스피라르
+    tl: 참 비참해, 난 숨을 거둬야 할 텐데
     time: [119.466, 124.642]
   - text: Pero no, no lo haré, no me rendiré así
-    pronunciation: 페로 노, 노 로 아레, 노 메 렌디레 아시
-    translation: 하지만 아니, 그러지 않을 거야, 이렇게 포기하진 않아
+    pr: 페로 노, 노 로 아레, 노 메 렌디레 아시
+    tl: 하지만 아니, 그러지 않을 거야, 이렇게 포기하진 않아
     time: [124.642, 130.588]
   - text: ¡Y pelearé, mi amor, buscaré y cantaré todo mi sentir!
-    pronunciation: 이 펠레아레, 미 아모르, 부스카레 이 칸타레 토도 미 센티르!
-    translation: 그리고 싸울 거야, 내 사랑, 찾고 내 모든 감정을 노래할 거야!
+    pr: 이 펠레아레, 미 아모르, 부스카레 이 칸타레 토도 미 센티르!
+    tl: 그리고 싸울 거야, 내 사랑, 찾고 내 모든 감정을 노래할 거야!
     time: [130.588, 135.723]
   - text: Soy sideral, soy irreal
-    pronunciation: 소이 시데랄, 소이 이레알
-    translation: 나는 별의 존재, 비현실적인 존재
+    pr: 소이 시데랄, 소이 이레알
+    tl: 나는 별의 존재, 비현실적인 존재
     time: [179.648, 182.074]
   - text: Y, sin embargo, no soy ideal
-    pronunciation: 이, 신 엠바르고, 노 소이 이데알
-    translation: 하지만 이상적이지는 않아
+    pr: 이, 신 엠바르고, 노 소이 이데알
+    tl: 하지만 이상적이지는 않아
     time: [182.074, 184.993]
   - text: La cinosura que pienso que soy
-    pronunciation: 라 시노수라 케 피엔소 케 소이
-    translation: 내가 작은곰자리라 생각해도
+    pr: 라 시노수라 케 피엔소 케 소이
+    tl: 내가 작은곰자리라 생각해도
     time: [184.993, 187.485]
   - text: Su hermosura nunca seré yo
-    pronunciation: 수 에르모수라 눙카 세레 요
-    translation: 그 아름다움을 나는 결코 지닐 수 없어
+    pr: 수 에르모수라 눙카 세레 요
+    tl: 그 아름다움을 나는 결코 지닐 수 없어
     time: [187.485, 190.47]
   - text: Como loca, escribo una canción
-    pronunciation: 코모 로카, 에스크리보 우나 칸시온
-    translation: 미친 듯이 노래 한 곡을 써
+    pr: 코모 로카, 에스크리보 우나 칸시온
+    tl: 미친 듯이 노래 한 곡을 써
     time: [190.47, 193.185]
   - text: Desemboca una desolación
-    pronunciation: 데셈보카 우나 데솔라시온
-    translation: 끝내 쓸쓸함으로 흘러가
+    pr: 데셈보카 우나 데솔라시온
+    tl: 끝내 쓸쓸함으로 흘러가
     time: [193.185, 195.83]
   - text: Y yo quiero ver lo que hay por ver
-    pronunciation: 이 요 키에로 베르 로 케 아이 포르 베르
-    translation: 그리고 나는 볼 수 있는 것들을 보고 싶어
+    pr: 이 요 키에로 베르 로 케 아이 포르 베르
+    tl: 그리고 나는 볼 수 있는 것들을 보고 싶어
     time: [195.83, 198.769]
   - text: Resolver, entender lo que hay por saber
-    pronunciation: 레솔베르, 엔텐데르 로 케 아이 포르 사베르
-    translation: 풀어내고, 알아야 할 것들을 이해하고 싶어
+    pr: 레솔베르, 엔텐데르 로 케 아이 포르 사베르
+    tl: 풀어내고, 알아야 할 것들을 이해하고 싶어
     time: [198.769, 201.261]
   - text: Si en verdad tú crees en mí,
-    pronunciation: 시 엔 베르다드 투 크레스 엔 미,
-    translation: 네가 정말 나를 믿는다면
+    pr: 시 엔 베르다드 투 크레스 엔 미,
+    tl: 네가 정말 나를 믿는다면
     time: [201.85, 204]
   - text: Te entenderé si dejas de mentir
-    pronunciation: 테 엔텐데레 시 데하스 데 멘티르
-    translation: 거짓말을 멈추면 널 이해할게
+    pr: 테 엔텐데레 시 데하스 데 멘티르
+    tl: 거짓말을 멈추면 널 이해할게
     time: [204, 206.858]
   - text: Esta locura acabará con mí
-    pronunciation: 에스타 로쿠라 아카바라 콘 미
-    translation: 이 광기가 나를 끝장낼 거야
+    pr: 에스타 로쿠라 아카바라 콘 미
+    tl: 이 광기가 나를 끝장낼 거야
     time: [206.858, 209.566]
   - text: Una pintura trazaré en mi ser
-    pronunciation: 우나 핀투라 트라사레 엔 미 세르
-    translation: 내 안에 그림 한 폭을 그릴 거야
+    pr: 우나 핀투라 트라사레 엔 미 세르
+    tl: 내 안에 그림 한 폭을 그릴 거야
     time: [209.566, 212.43]
   - text: Soy capaz, ¡yo sé que soy!
-    pronunciation: 소이 카파스, 요 세 케 소이!
-    translation: 난 할 수 있어, 나도 알고 있어!
+    pr: 소이 카파스, 요 세 케 소이!
+    tl: 난 할 수 있어, 나도 알고 있어!
     time: [212.946, 215.173]
   - text: Y lucharé tenaz por lo que soy, ¡mi amor!
-    pronunciation: 이 루차레 테나스 포르 로 케 소이, 미 아모르!
-    translation: 그리고 나 자신을 위해 끈질기게 싸울 거야, 내 사랑!
+    pr: 이 루차레 테나스 포르 로 케 소이, 미 아모르!
+    tl: 그리고 나 자신을 위해 끈질기게 싸울 거야, 내 사랑!
     time: [215.173, 218.363]
   - text: Brillaré más que la osa menor
-    pronunciation: 브리야레 마스 케 라 오사 메노르
-    translation: 작은곰자리보다 더 밝게 빛날 거야
+    pr: 브리야레 마스 케 라 오사 메노르
+    tl: 작은곰자리보다 더 밝게 빛날 거야
     time: [218.363, 220.789]
   - text: Y guiaré a todo aquel en mi constelación
-    pronunciation: 이 기아레 아 토도 아켈 엔 미 콘스텔라시온
-    translation: 그리고 내 별자리 안의 모두를 이끌 거야
+    pr: 이 기아레 아 토도 아켈 엔 미 콘스텔라시온
+    tl: 그리고 내 별자리 안의 모두를 이끌 거야
     time: [220.789, 223.555]

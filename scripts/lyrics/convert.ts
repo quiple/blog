@@ -1,3 +1,4 @@
+import {mapYamlFields} from '../../src/lib/lyrics/yaml-fields.ts'
 import {TTMLParser} from '@applemusic-like-lyrics/ttml'
 import {DOMParser} from '@xmldom/xmldom'
 import {parseSong, type SongLine} from '../../src/lib/lyrics/model.ts'
@@ -130,8 +131,8 @@ export function compactSong(song: ReturnType<typeof parseSong>) {
     }
   }
   const {lines, example, ...metadata} = song
-  return JSON.parse(JSON.stringify({...metadata, ...(example ? {example} : {}), lines: lines.map(compact)})) as Record<
-    string,
-    unknown
-  >
+  return mapYamlFields(
+    JSON.parse(JSON.stringify({...metadata, ...(example ? {example} : {}), lines: lines.map(compact)})),
+    'write',
+  ) as Record<string, unknown>
 }

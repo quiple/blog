@@ -6,180 +6,180 @@
 
 title: The Sim
 titleLang: en-US
-titleTranslation: 심
+titleTl: 심
 year: '2026'
 artist:
   - jam-2-go
   - kasane-teto
 lang: en-US
-spotify: 5c5TjEBse6ltTnAJ0zG479
-youtube:
+sp: 5c5TjEBse6ltTnAJ0zG479
+yt:
   audio: ztk2ukz3CBE
   mv: xC6caW7n-VQ
 offsets:
-  spotify: -0.021
+  sp: -0.021
   youtubeAudio: -0.021
 lines:
   - text: I burned my kitchen down
-    pronunciation: 아이 번드 마이 키친 다운
-    translation: 부엌을 홀랑 태워 버렸어
+    pr: 아이 번드 마이 키친 다운
+    tl: 부엌을 홀랑 태워 버렸어
     time: [2.624, 5.225]
   - text: Just cooking an autumn salad
-    pronunciation: 저스트 쿠킹 언 어텀 샐러드
-    translation: 그저 가을 샐러드를 만들다가
+    pr: 저스트 쿠킹 언 어텀 샐러드
+    tl: 그저 가을 샐러드를 만들다가
     time: [5.84, 8.606]
   - text: I feel like such a clown
-    pronunciation: 아이 필 라이크 서치 어 클라운
-    translation: 내가 정말 바보 같아
+    pr: 아이 필 라이크 서치 어 클라운
+    tl: 내가 정말 바보 같아
     time: [9.5, 11.5]
   - text: Finding a path that's valid
-    pronunciation: 파인딩 어 패스 대츠 밸리드
-    translation: 갈 수 있는 길을 찾고 있자니
+    pr: 파인딩 어 패스 대츠 밸리드
+    tl: 갈 수 있는 길을 찾고 있자니
     time: [12.913, 15.5]
   - text: I tried to climb out of the pool
-    pronunciation: 아이 트라이드 투 클라임 아웃 오브 더 풀
-    translation: 수영장에서 기어 나오려 했어
+    pr: 아이 트라이드 투 클라임 아웃 오브 더 풀
+    tl: 수영장에서 기어 나오려 했어
     time: [16.25, 18.745]
   - text: But someone removed all the ladders
-    pronunciation: 벗 섬원 리무브드 올 더 래더즈
-    translation: 그런데 누가 사다리를 전부 치웠어
+    pr: 벗 섬원 리무브드 올 더 래더즈
+    tl: 그런데 누가 사다리를 전부 치웠어
     time: [19.568, 22.324]
   - text: I'll be your April Fool
-    pronunciation: 아일 비 유어 에이프릴 풀
-    translation: 네 만우절 바보가 되어 줄게
+    pr: 아일 비 유어 에이프릴 풀
+    tl: 네 만우절 바보가 되어 줄게
     time: [23.202, 25.624]
   - text: If you tell me if any of this matters
-    pronunciation: 이프 유 텔 미 이프 에니 오브 디스 매터즈
-    translation: 이 모든 게 의미가 있는지 말해 준다면
+    pr: 이프 유 텔 미 이프 에니 오브 디스 매터즈
+    tl: 이 모든 게 의미가 있는지 말해 준다면
     time: [26.238, 28.75]
   - text: Hold your breath now
-    pronunciation: 홀드 유어 브레스 나우
-    translation: 이제 숨을 참아
+    pr: 홀드 유어 브레스 나우
+    tl: 이제 숨을 참아
     time: [30.065, 33.062]
   - text: It's all a simulation
-    pronunciation: 이츠 올 어 시뮬레이션
-    translation: 전부 시뮬레이션이야
+    pr: 이츠 올 어 시뮬레이션
+    tl: 전부 시뮬레이션이야
     time: [33.338, 36]
   - text: Keep your head down
-    pronunciation: 킵 유어 헤드 다운
-    translation: 고개를 숙이고 있어
+    pr: 킵 유어 헤드 다운
+    tl: 고개를 숙이고 있어
     time: [36.917, 39.469]
   - text: It's someone's machination
-    pronunciation: 이츠 섬원즈 매커네이션
-    translation: 누군가의 계략이야
+    pr: 이츠 섬원즈 매커네이션
+    tl: 누군가의 계략이야
     time: [39.921, 42.888]
   - text: There's a faint chance
-    pronunciation: 데어즈 어 페인트 챈스
-    translation: 아주 희박한 가능성은 있어
+    pr: 데어즈 어 페인트 챈스
+    tl: 아주 희박한 가능성은 있어
     time: [43.769, 46.395]
   - text: That this is real
-    pronunciation: 댓 디스 이즈 리얼
-    translation: 이게 현실일 가능성이
+    pr: 댓 디스 이즈 리얼
+    tl: 이게 현실일 가능성이
     time: [46.784, 48.47]
   - text: But I don't want to wager with those odds
-    pronunciation: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
-    translation: 하지만 그런 확률에 걸고 싶진 않아
+    pr: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
+    tl: 하지만 그런 확률에 걸고 싶진 않아
     time: [48.671, 51.607]
   - text: No, I don't want to anger the gods
-    pronunciation: 노, 아이 돈트 원트 투 앵거 더 가즈
-    translation: 아니, 신들을 화나게 하고 싶진 않아
+    pr: 노, 아이 돈트 원트 투 앵거 더 가즈
+    tl: 아니, 신들을 화나게 하고 싶진 않아
     time: [52.046, 56.337]
   - text: I've found ways to survive this long
-    pronunciation: 아이브 파운드 웨이즈 투 서바이브 디스 롱
-    translation: 여태껏 살아남을 방법을 찾아왔어
+    pr: 아이브 파운드 웨이즈 투 서바이브 디스 롱
+    tl: 여태껏 살아남을 방법을 찾아왔어
     time: [60.932, 63.931]
   - text: Staying quiet and aloof
-    pronunciation: 스테잉 콰이어트 앤드 얼루프
-    translation: 조용히 거리를 두고 지내면서
+    pr: 스테잉 콰이어트 앤드 얼루프
+    tl: 조용히 거리를 두고 지내면서
     time: [64.27, 67.299]
   - text: I wish this house could feel like home
-    pronunciation: 아이 위시 디스 하우스 쿠드 필 라이크 홈
-    translation: 이 집이 마음 붙일 곳처럼 느껴지면 좋겠어
+    pr: 아이 위시 디스 하우스 쿠드 필 라이크 홈
+    tl: 이 집이 마음 붙일 곳처럼 느껴지면 좋겠어
     time: [67.789, 70.84]
     background:
       text: (Home)
-      pronunciation: (홈)
+      pr: (홈)
   - text: But someone's taken off the roof
-    pronunciation: 벗 섬원즈 테이큰 오프 더 루프
-    translation: 그런데 누가 지붕을 떼어 갔어
+    pr: 벗 섬원즈 테이큰 오프 더 루프
+    tl: 그런데 누가 지붕을 떼어 갔어
     time: [70.991, 73.76]
   - text: It always feels like something's wrong
-    pronunciation: 잇 올웨이즈 라이크 필즈 섬싱즈 롱
-    translation: 늘 뭔가 잘못된 것만 같아
+    pr: 잇 올웨이즈 라이크 필즈 섬싱즈 롱
+    tl: 늘 뭔가 잘못된 것만 같아
     time: [74.438, 77.579]
   - text: Like falling with no parachute
-    pronunciation: 라이크 폴링 위드 노 패러슈트
-    translation: 낙하산도 없이 떨어지는 것처럼
+    pr: 라이크 폴링 위드 노 패러슈트
+    tl: 낙하산도 없이 떨어지는 것처럼
     time: [77.874, 81]
   - text: But if this winds up my swan song
-    pronunciation: 벗 이프 디스 와인즈 업 마이 스완 송
-    translation: 하지만 이게 결국 내 마지막 노래가 된다면
+    pr: 벗 이프 디스 와인즈 업 마이 스완 송
+    tl: 하지만 이게 결국 내 마지막 노래가 된다면
     time: [81.276, 84.067]
   - text: At least the reaper's kind of cute
-    pronunciation: 앳 리스트 더 리퍼즈 카인드 오브 큐트
-    translation: 그래도 사신은 좀 귀엽네
+    pr: 앳 리스트 더 리퍼즈 카인드 오브 큐트
+    tl: 그래도 사신은 좀 귀엽네
     time: [84.067, 87.385]
   - text: Take a breath now
-    pronunciation: 테이크 어 브레스 나우
-    translation: 이제 숨을 쉬어
+    pr: 테이크 어 브레스 나우
+    tl: 이제 숨을 쉬어
     time: [88.289, 90.665]
   - text: If that's a simulation
-    pronunciation: 이프 대츠 어 시뮬레이션
-    translation: 저게 시뮬레이션이라면
+    pr: 이프 대츠 어 시뮬레이션
+    tl: 저게 시뮬레이션이라면
     time: [91.594, 94.363]
   - text: Then it's a good one
-    pronunciation: 덴 이츠 어 굿 원
-    translation: 꽤 잘 만든 거네
+    pr: 덴 이츠 어 굿 원
+    tl: 꽤 잘 만든 거네
     time: [94.97, 97.723]
   - text: Just an observation
-    pronunciation: 저스트 언 압저베이션
-    translation: 그냥 보고 느낀 거야
+    pr: 저스트 언 압저베이션
+    tl: 그냥 보고 느낀 거야
     time: [98.539, 101.167]
   - text: There's a faint chance
-    pronunciation: 데어즈 어 페인트 챈스
-    translation: 아주 희박한 가능성은 있어
+    pr: 데어즈 어 페인트 챈스
+    tl: 아주 희박한 가능성은 있어
     time: [102, 104.615]
   - text: That this is real
-    pronunciation: 댓 디스 이즈 리얼
-    translation: 이게 현실일 가능성이
+    pr: 댓 디스 이즈 리얼
+    tl: 이게 현실일 가능성이
     time: [105, 106.868]
   - text: But I don't want to wager with those odds
-    pronunciation: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
-    translation: 하지만 그런 확률에 걸고 싶진 않아
+    pr: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
+    tl: 하지만 그런 확률에 걸고 싶진 않아
     time: [106.868, 110.111]
   - text: No, I don't want to anger the gods
-    pronunciation: 노, 아이 돈트 원트 투 앵거 더 가즈
-    translation: 아니, 신들을 화나게 하고 싶진 않아
+    pr: 노, 아이 돈트 원트 투 앵거 더 가즈
+    tl: 아니, 신들을 화나게 하고 싶진 않아
     time: [110.324, 114.875]
   - text: Hold your breath now
-    pronunciation: 홀드 유어 브레스 나우
-    translation: 이제 숨을 참아
+    pr: 홀드 유어 브레스 나우
+    tl: 이제 숨을 참아
     time: [115.666, 118.118]
   - text: It's all a simulation
-    pronunciation: 이츠 올 어 시뮬레이션
-    translation: 전부 시뮬레이션이야
+    pr: 이츠 올 어 시뮬레이션
+    tl: 전부 시뮬레이션이야
     time: [118.985, 121.798]
   - text: Keep your head down
-    pronunciation: 킵 유어 헤드 다운
-    translation: 고개를 숙이고 있어
+    pr: 킵 유어 헤드 다운
+    tl: 고개를 숙이고 있어
     time: [122.619, 125.261]
   - text: It's someone's machination
-    pronunciation: 이츠 섬원즈 매커네이션
-    translation: 누군가의 계략이야
+    pr: 이츠 섬원즈 매커네이션
+    tl: 누군가의 계략이야
     time: [125.675, 128.679]
   - text: There's a faint chance
-    pronunciation: 데어즈 어 페인트 챈스
-    translation: 아주 희박한 가능성은 있어
+    pr: 데어즈 어 페인트 챈스
+    tl: 아주 희박한 가능성은 있어
     time: [129.471, 132]
   - text: That this is real
-    pronunciation: 댓 디스 이즈 리얼
-    translation: 이게 현실일 가능성이
+    pr: 댓 디스 이즈 리얼
+    tl: 이게 현실일 가능성이
     time: [132.515, 134.157]
   - text: But I don't want to wager with those odds
-    pronunciation: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
-    translation: 하지만 그런 확률에 걸고 싶진 않아
+    pr: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
+    tl: 하지만 그런 확률에 걸고 싶진 않아
     time: [134.471, 137.62]
   - text: No, I don't want to anger the gods
-    pronunciation: 노, 아이 돈트 원트 투 앵거 더 가즈
-    translation: 아니, 신들을 화나게 하고 싶진 않아
+    pr: 노, 아이 돈트 원트 투 앵거 더 가즈
+    tl: 아니, 신들을 화나게 하고 싶진 않아
     time: [137.821, 141.99]

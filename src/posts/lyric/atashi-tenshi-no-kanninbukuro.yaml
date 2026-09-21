@@ -11,82 +11,82 @@ titleLang: ja
 year: '2013'
 artist: omori-seiko
 lang: ja
-spotify: 5FjAQmQ7zfHYZ3S59U8krO
-youtube:
+sp: 5FjAQmQ7zfHYZ3S59U8krO
+yt:
   audio: 6wDoSLijkeA
 offsets:
-  spotify: -0.2
+  sp: -0.2
   youtubeAudio: -0.2
 lines:
   - text: 人違いでリンチされた少年を
-    pronunciation: 히토치가이데린치사레타쇼넨오
+    pr: 히토치가이데린치사레타쇼넨오
     time: [20.71, 25.23]
   - text: 一目みて恋におちた少女
-    pronunciation: 히토메미테코이니오치타쇼조
+    pr: 히토메미테코이니오치타쇼조
     time: [25.23, 28.45]
   - text: ただこの街の名もない歌は ゴミ
-    pronunciation: 타다코노마치노나모나이우타와 고미
+    pr: 타다코노마치노나모나이우타와 고미
     time: [28.45, 32.85]
   - text: 黒いカラスついばむ白い袋
-    pronunciation: 쿠로이카라스츠이바무시로이후쿠로
+    pr: 쿠로이카라스츠이바무시로이후쿠로
     time: [32.85, 37.16]
   - text: からっきしドツボの優しさが
-    pronunciation: 카랏키시도츠보노야사시사가
+    pr: 카랏키시도츠보노야사시사가
     time: [37.16, 40.54]
   - text: 服を着てなんとかやっている
-    pronunciation: 후쿠오키테난토카얏테이루
+    pr: 후쿠오키테난토카얏테이루
     time: [40.54, 44.3]
   - text: あれとそれを足して二で割ったのが
-    pronunciation: 아레토소레오타시테니데왓타노가
+    pr: 아레토소레오타시테니데왓타노가
     time: [44.3, 48.26]
   - text: 私だってもうわかっている
-    pronunciation: 아타시닷테모와캇테이루
+    pr: 아타시닷테모와캇테이루
     time: [48.26, 52.17]
   - text: 明け方の記憶は途切れ途切れ
-    pronunciation: 아케가타노키오쿠와토기레토기레
+    pr: 아케가타노키오쿠와토기레토기레
     time: [52.17, 56.29]
   - words:
       - text: うちに帰るために生きている
       - text: 身体
         ruby: からだ
-    pronunciation: 우치니카에루타메니이키테이루카라다
+    pr: 우치니카에루타메니이키테이루카라다
     time: [56.29, 60.04]
   - text: 愛してくれなんて言えないわけは
-    pronunciation: 아이시테쿠레난테이에나이와케와
+    pr: 아이시테쿠레난테이에나이와케와
     time: [60.04, 64.05]
   - text: 朝日がまぶしい
-    pronunciation: 아사히가마부시
+    pr: 아사히가마부시
     time: [64.05, 66.88]
   - text: ただそれだけ
-    pronunciation: 타다소레다케
+    pr: 타다소레다케
     time: [66.88, 83.24]
   - text: まるっきりずれた憧れをずっと
-    pronunciation: 마룻키리즈레타아코가레오즛토
+    pr: 마룻키리즈레타아코가레오즛토
     time: [83.24, 86.78]
   - text: 貫いていられれば幸せなのに
-    pronunciation: 츠라누이테이라레레바시아와세나노니
+    pr: 츠라누이테이라레레바시아와세나노니
     time: [86.78, 90.46]
   - text: でも全部最初からわかってたし
-    pronunciation: 데모젠부사이쇼카라와캇테타시
+    pr: 데모젠부사이쇼카라와캇테타시
     time: [90.46, 94.61]
   - text: 最初から全部失ってた
-    pronunciation: 사이쇼카라젠부우시낫테타
+    pr: 사이쇼카라젠부우시낫테타
     time: [94.61, 99.15]
   - text: 明け方の記憶は途切れ途切れ
-    pronunciation: 아케가타노키오쿠와토기레토기레
+    pr: 아케가타노키오쿠와토기레토기레
     time: [99.15, 104.07]
   - words:
       - text: うちに帰るために生きている
       - text: 身体
         ruby: からだ
-    pronunciation: 우치니카에루타메니이키테이루카라다
+    pr: 우치니카에루타메니이키테이루카라다
     time: [104.07, 107.96]
   - text: 愛してくれなんて言えないだけど
-    pronunciation: 아이시테쿠레난테이에나이다케도
+    pr: 아이시테쿠레난테이에나이다케도
     time: [107.96, 112.27]
   - text: 明日もちょっと
-    pronunciation: 아시타모촛토
+    pr: 아시타모촛토
     time: [112.27, 114.75]
   - text: 付き合ってくれ
-    pronunciation: 츠키앗테쿠레
+    pr: 츠키앗테쿠레
     time: [114.75, 116.78]

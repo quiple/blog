@@ -11,8 +11,8 @@ titleLang: ja
 year: '2019'
 artist: omori-seiko
 lang: ja
-spotify: 6JnP20oGH4L6mxnO4IgSmZ
-youtube:
+sp: 6JnP20oGH4L6mxnO4IgSmZ
+yt:
   audio: b4FaRHozvzw
   mv: 18oGNDVC6rg
 offsets:
@@ -20,112 +20,112 @@ offsets:
   youtubeMV: 0.3
 lines:
   - text: 家をぬけ出して僕の部屋においで
-    pronunciation: 우치오누케다시테보쿠노헤야니오이데
+    pr: 우치오누케다시테보쿠노헤야니오이데
     time: [7.731, 11.649]
   - text: 君のこと なんも聞きはしないから
-    pronunciation: 키미노코토 난모키키와시나이카라
+    pr: 키미노코토 난모키키와시나이카라
     time: [12.081, 17.75]
   - text: 僕じゃ満足できなかったなら明日忘れていいから
-    pronunciation: 보쿠자만조쿠데키나캇타나라아시타와스레테이이카라
+    pr: 보쿠자만조쿠데키나캇타나라아시타와스레테이이카라
     time: [17.859, 24.437]
   - text: I WANNA BE YOUR PINK PINK ROLLING STAR
     time: [24.447, 27.49]
   - text: どうせ僕のこと BABY 捨ててしまうのさ
-    pronunciation: 도세보쿠노코토 BABY 스테테시마우노사
+    pr: 도세보쿠노코토 BABY 스테테시마우노사
     time: [27.5, 31.28]
   - text: だから僕とゲームで負けちゃう前に
-    pronunciation: 다카라보쿠토게무데마케차우마에니
+    pr: 다카라보쿠토게무데마케차우마에니
     time: [31.29, 34.807]
   - text: リセットボタン押していいよ
-    pronunciation: 리셋토보탄오시테이이요
+    pr: 리셋토보탄오시테이이요
     time: [34.9, 37.21]
   - text: 逃げるの下手な君特別ルールさ
-    pronunciation: 니게루노헤타나키미토쿠베츠루루사
+    pr: 니게루노헤타나키미토쿠베츠루루사
     time: [37.22, 39.816]
   - text: 笑わなくっても余裕で天使さ
-    pronunciation: 와라와나쿳테모요유데텐시사
+    pr: 와라와나쿳테모요유데텐시사
     time: [39.826, 42.228]
   - text: 愛したふりして 抱きしめてくれたら
-    pronunciation: 아이시타후리시테 다키시메테쿠레타라
+    pr: 아이시타후리시테 다키시메테쿠레타라
     time: [42.298, 45.048]
   - text: VOID ME VOID ME VOID ME
-    pronunciation: 보이도 미 보이도 미 보이도 미
+    pr: 보이도 미 보이도 미 보이도 미
     time: [45.058, 49.357]
   - text: 友達でもない 恋人でもない
-    pronunciation: 토모다치데모나이 코이비토데모나이
+    pr: 토모다치데모나이 코이비토데모나이
     time: [49.449, 51.766]
   - text: もしかしたらもう二度と会うこともない
-    pronunciation: 모시카시타라모니도토아우코토모나이
+    pr: 모시카시타라모니도토아우코토모나이
     time: [51.859, 54.779]
   - text: VOID LOVE VOID LOVE
-    pronunciation: 보이도 라부 보이도 라부
+    pr: 보이도 라부 보이도 라부
     time: [54.789, 57.047]
   - text: 何もなかったかのように
-    pronunciation: 나니모나캇타카노요니
+    pr: 나니모나캇타카노요니
     time: [57.057, 60.807]
   - text: どうせ僕のこと BABY 女友達に話さないでしょ
-    pronunciation: 도세보쿠노코토 BABY 온나토모다치니하나사나이데쇼
+    pr: 도세보쿠노코토 BABY 온나토모다치니하나사나이데쇼
     time: [68.605, 73.503]
   - text: 生きてる意味は言葉を持たない蟲でも知っている
-    pronunciation: 이키테루이미와코토바오모타나이무시데모싯테이루
+    pr: 이키테루이미와코토바오모타나이무시데모싯테이루
     time: [73.513, 78.308]
   - text: 確かめあうのはナンセンスだよな
-    pronunciation: 타시카메아우노와난센스다요나
+    pr: 타시카메아우노와난센스다요나
     time: [78.395, 80.895]
   - text: ロマンチックな夜の飾りで
-    pronunciation: 로만칫쿠나요루노카자리데
+    pr: 로만칫쿠나요루노카자리데
     time: [80.905, 83.326]
   - text: 運命ぶった情けない僕らは
-    pronunciation: 운메이붓타나사케나이보쿠라와
+    pr: 운메이붓타나사케나이보쿠라와
     time: [83.395, 86.298]
   - text: VOID ME VOID ME VOID ME
-    pronunciation: 보이도 미 보이도 미 보이도 미
+    pr: 보이도 미 보이도 미 보이도 미
     time: [86.308, 90.646]
   - text: 嫌われたくない ひとりになりたい
-    pronunciation: 키라와레타쿠나이 히토리니나리타이
+    pr: 키라와레타쿠나이 히토리니나리타이
     time: [90.668, 93.125]
   - text: だけどさみしい 傷つかれたくない
-    pronunciation: 다케도사미시 키즈츠카레타쿠나이
+    pr: 다케도사미시 키즈츠카레타쿠나이
     time: [93.135, 96.016]
   - text: VOID LOVE VOID LOVE
-    pronunciation: 보이도 라부 보이도 라부
+    pr: 보이도 라부 보이도 라부
     time: [96.026, 98.384]
   - text: これが僕らの幸せさ
-    pronunciation: 코레가보쿠라노시아와세사
+    pr: 코레가보쿠라노시아와세사
     time: [98.394, 101.454]
   - text: 家をぬけ出して僕の部屋においで
-    pronunciation: 우치오누케다시테보쿠노헤야니오이데
+    pr: 우치오누케다시테보쿠노헤야니오이데
     time: [109.975, 114.169]
   - text: VOID LOVE VOID LOVE
-    pronunciation: 보이도 라부 보이도 라부
+    pr: 보이도 라부 보이도 라부
     time: [114.185, 116.66]
   - text: 本当は本当に何もできない
-    pronunciation: 혼토와혼토니나니모데키나이
+    pr: 혼토와혼토니나니모데키나이
     time: [116.747, 119.888]
   - text: 笑わなくっても余裕で天使さ
-    pronunciation: 와라와나쿳테모요유데텐시사
+    pr: 와라와나쿳테모요유데텐시사
     time: [119.898, 122.32]
   - text: 愛したふりして 抱きしめてくれたら
-    pronunciation: 아이시타후리시테 다키시메테쿠레타라
+    pr: 아이시타후리시테 다키시메테쿠레타라
     time: [122.33, 125.216]
   - text: VOID ME VOID ME VOID ME
-    pronunciation: 보이도 미 보이도 미 보이도 미
+    pr: 보이도 미 보이도 미 보이도 미
     time: [125.226, 129.576]
   - text: 友達でもない 恋人でもない
-    pronunciation: 토모다치데모나이 코이비토데모나이
+    pr: 토모다치데모나이 코이비토데모나이
     time: [129.68, 132.049]
   - text: もしかしたらもう二度と会うこともない
-    pronunciation: 모시카시타라모니도토아우코토모나이
+    pr: 모시카시타라모니도토아우코토모나이
     time: [132.136, 135.009]
   - text: VOID LOVE VOID LOVE
-    pronunciation: 보이도 라부 보이도 라부
+    pr: 보이도 라부 보이도 라부
     time: [135.108, 137.529]
   - text: 何もないよりマシだから
-    pronunciation: 난모나이요리마시다카라
+    pr: 난모나이요리마시다카라
     time: [137.539, 141.901]
   - text: 何もない=なんかしたい
-    pronunciation: 난모나이와난카시타이
+    pr: 난모나이와난카시타이
     time: [141.911, 146.493]
   - text: 何もない=なんかしたい
-    pronunciation: 난모나이와난카시타이
+    pr: 난모나이와난카시타이
     time: [146.861, 153.941]
