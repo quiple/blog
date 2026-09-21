@@ -57,8 +57,8 @@ lines:
     tl: 해 보고 싶어, 해 보고 싶어
   - text: してみたいの いろんな事
     tl: 해 보고 싶어, 여러 가지를
-  - text: City girl City girl
-    tl: 시티 걸, 시티 걸
+  # - text: City girl City girl
+  #   tl: 시티 걸, 시티 걸
   - text: City girl City girl 君と
     tl: 시티 걸, 시티 걸, 너와
   - text: してみたい してみたい
