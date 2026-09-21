@@ -18,50 +18,70 @@ yt:
   mv: cY_4rRbT3ro
 lines:
   - text: 100円宝石ピカピカシール
+    pr: 100엔호세키피카피카시루
     tl: 100엔짜리 보석, 반짝반짝 스티커
   - text: キラキラ1番素敵な君の
+    pr: 키라키라1반스테키나키미노
     tl: 반짝반짝 가장 멋진 너의
   - text: 1番汚い所も好きよ
+    pr: 1반키타나이토코로모스키요
     tl: 가장 더러운 부분도 좋아해
   - text: 美味しいとこだけ食べていたい
+    pr: 오이시이토코다케타베테이타이
     tl: 맛있는 부분만 먹고 싶어
   - text: City girl City girl
     tl: 시티 걸, 시티 걸
   - text: City girl City girl 君と
+    pr: City girl City girl 키미토
     tl: 시티 걸, 시티 걸, 너와
   - text: してみたい してみたい
+    pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
   - text: してみたいよ いろんな事
+    pr: 시테미타이요 이론나코토
     tl: 해 보고 싶어, 여러 가지를
   - text: City girl City girl
     tl: 시티 걸, 시티 걸
   - text: City girl City girl 君と
+    pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
   - text: してみたい してみたい
+    pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
   - text: 私もいつかは City girl
+    pr: 와타시모이츠카와 City girl
     tl: 나도 언젠가는 시티 걸
   - text: 100円くじ引きあたりは君さ
+    pr: 햐쿠엔쿠지비키아타리와키미사
     tl: 100엔짜리 뽑기, 당첨은 너야
   - text: ドロドロ1番汚い君の
+    pr: 도로도로이치반키타나이키미노
     tl: 질척질척 가장 더러운 너의
   - text: 1番綺麗な部分が欲しい
+    pr: 이치반키레이나부분가호시
     tl: 가장 깨끗한 부분을 원해
   - text: 美味しいとこだけ食べていたい
+    pr: 오이시이토코다케타베테이타이
     tl: 맛있는 부분만 먹고 싶어
   - text: City girl City girl
     tl: 시티 걸, 시티 걸
   - text: City girl City girl 君と
+    pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
   - text: してみたい してみたい
+    pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
   - text: してみたいの いろんな事
+    pr: 시테미타이노 이론나코토
     tl: 해 보고 싶어, 여러 가지를
-  # - text: City girl City girl
-  #   tl: 시티 걸, 시티 걸
+  - text: City girl City girl
+    tl: 시티 걸, 시티 걸
   - text: City girl City girl 君と
+    pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
   - text: してみたい してみたい
+    pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
   - text: 私もいつかは City girl
+    pr: 와타시모이츠카와 시티 가루
     tl: 나도 언젠가는 시티 걸
