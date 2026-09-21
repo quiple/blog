@@ -21,7 +21,7 @@ try {
   })
   if (values.help) {
     console.log(
-      'nub run conv <파일.lrc 또는 경로/번호> [곡-슬러그] [--ttml 파일.ttml] [--tail 2] [--force]\n원본 디렉토리에 같은 이름의 .yaml을 생성합니다. 같은 이름 또는 _enhanced를 뺀 이름의 TTML에서 행 시작·종료 시간과 첫 음절 시작 시간을 읽습니다. 곡 슬러그를 지정하면 기존 곡의 원문과 타이밍만 갱신하고 번역·메타데이터를 보존합니다. TTML이 없고 종료 태그도 없으면 다음 행 시작을 사용하며, 마지막 단어는 --tail 초로 계산합니다.',
+      'nub run conv <파일.lrc 또는 경로/번호> [곡-슬러그] [--ttml 파일.ttml] [--tail 2] [--force]\n원본 디렉토리에 같은 이름의 .yaml을 생성합니다. 같은 이름 또는 _enhanced를 뺀 이름의 TTML에서 행 시작·종료 시간과 첫 음절 시작 시간을 읽습니다. 곡 슬러그를 지정하면 기존 곡의 타이밍만 갱신하고 원문·발음·번역·메타데이터를 보존합니다. TTML이 없고 종료 태그도 없으면 다음 행 시작을 사용하며, 마지막 단어는 --tail 초로 계산합니다.',
     )
   } else {
     if (positionals.length < 1 || positionals.length > 2)
