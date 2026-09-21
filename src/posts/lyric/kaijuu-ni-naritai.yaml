@@ -1,0 +1,89 @@
+# https://music.apple.com/kr/song/1847321072
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1847321072?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1847321072
+# 선택 항목: Apple Music · Kaijuu Ni Naritai (feat. HATSUNE MIKU) · 음절별 가사 · 1847321072
+# 가져온 시각: 2026-09-19T10:50:31.453Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: 怪獣になりたい
+titleLang: ja
+year: '2025'
+lang: ja
+sp: 7rMWI2Tuw1kzevfsYIFtfq
+yt:
+  audio: qg0C0NlIzf4
+  mv: TbakFPc4ZTw
+lines:
+  - text: 怪獣になりたい
+    time: [3.808, 5.78]
+  - text: 怪獣になりたい
+    time: [5.781, 8.08]
+  - text: 全て倒して 全て壊すの
+    time: [8.081, 13.698]
+  - text: 夢は夢さ
+    time: [26.398, 28.481]
+  - text: かつては見ていた
+    time: [28.482, 30.675]
+  - text: 時と友を闇雲に失った
+    time: [30.676, 35.169]
+  - text: 今は骨を埋める場所を
+    time: [35.17, 38.801]
+  - text: 探し歩き行くだけ
+    time: [38.802, 42.738]
+  - text: 只、忘却の彼方に攫われて
+    time: [42.739, 47.983]
+  - text: それでも役立つ何かにはなりたい
+    time: [47.984, 52.449]
+  - text: いずれ最期は死ぬのなら
+    time: [52.45, 54.567]
+  - text: 爪痕をせめて刻めるなら
+    time: [54.568, 59.264]
+  - text: 怪獣になりたい
+    time: [59.265, 61.167]
+  - text: 怪獣になりたい
+    time: [61.168, 63.441]
+  - text: 全て倒して全て壊すの
+    time: [63.442, 68.751]
+  - text: どんな敵もどれだけの壁も
+    time: [68.752, 73.191]
+  - text: いずれ粉々の塵々にしてやる
+    time: [73.192, 80.082]
+  - text: これじゃダメだ
+    time: [92.029, 94.879]
+  - text: 幕切れは来ていた
+    time: [94.88, 97.185]
+  - text: 望みと期待は泡沫に消え去った
+    time: [97.186, 101.259]
+  - text: 意味が無いと見放す
+    time: [101.26, 104.263]
+  - text: 虚の優しさに酔うだけ
+    time: [104.264, 109.123]
+  - text: 只、諦めを飲み込むくらいなら
+    time: [109.124, 114.478]
+  - text: 今から全てを片付けて死にたい
+    time: [114.479, 118.926]
+  - text: いずれ最期は死ぬのなら
+    time: [118.927, 121.18]
+  - text: 爪痕をせめて刻めるなら
+    time: [121.181, 125.53]
+  - text: 怪獣になりたい
+    time: [125.531, 127.919]
+  - text: 怪獣になりたい
+    time: [127.92, 130.246]
+  - text: 全て倒して全て壊すの
+    time: [130.247, 135.383]
+  - text: こんな僕でも泥だらけの過去を
+    time: [135.384, 139.624]
+  - text: これでぐちゃぐちゃのめちゃめちゃにしてやる
+    time: [139.625, 145.562]
+  - text: 来世は美しく生きたい
+    time: [163.935, 167.971]
+  - text: 次があるなら可愛く生きたい
+    time: [167.972, 172.17]
+  - text: 怪獣になりたい
+    time: [175.841, 177.959]
+  - text: 怪獣になりたい
+    time: [177.96, 180.264]
+  - text: 全て倒して全て壊すの
+    time: [180.265, 186.219]
