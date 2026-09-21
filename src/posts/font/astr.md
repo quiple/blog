@@ -100,7 +100,7 @@ Astr는 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다.
 ## 크레딧
 
 - [Rasmus Andersson](https://rsms.me) --- [Inter](https://rsms.me/inter) 원본 디자인
-- [42dot Inc.](https://42dot.ai) --- [Asta Sans](https://github.com/42dot/Asta-Sans) 원본 디자인
+- 최성우, 이수현, 이유빈, 정현아 ([Sandoll Inc.](https://sandoll.co.kr)) --- [Asta Sans](https://github.com/42dot/Asta-Sans) 원본 디자인
 - 이민서 --- 조정 및 제작
 
 Inter는 Rasmus Andersson의 상표입니다.
