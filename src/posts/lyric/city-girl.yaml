@@ -30,9 +30,10 @@ lines:
     pr: 오이시토코다케타베테이타이
     tl: 맛있는 부분만 먹고 싶어
   - text: City girl City girl
+    pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
   - text: City girl City girl 君と
-    pr: City girl City girl 키미토
+    pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
   - text: してみたい してみたい
     pr: 시테미타이 시테미타이
@@ -41,6 +42,7 @@ lines:
     pr: 시테미타이요 이론나코토
     tl: 해 보고 싶어, 여러 가지를
   - text: City girl City girl
+    pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
   - text: City girl City girl 君と
     pr: 시티 가루 시티 가루 키미토
@@ -64,6 +66,7 @@ lines:
     pr: 오이시이토코다케타베테이타이
     tl: 맛있는 부분만 먹고 싶어
   - text: City girl City girl
+    pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
   - text: City girl City girl 君と
     pr: 시티 가루 시티 가루 키미토
@@ -75,6 +78,7 @@ lines:
     pr: 시테미타이노 이론나코토
     tl: 해 보고 싶어, 여러 가지를
   - text: City girl City girl
+    pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
   - text: City girl City girl 君と
     pr: 시티 가루 시티 가루 키미토
