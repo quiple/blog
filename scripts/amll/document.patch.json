@@ -114,8 +114,8 @@
     },
     {
       "label": "Preserve annotated input chunks",
-      "before": "\t\tif (isSpace || hasRuby) {",
-      "after": "\t\tif (isSpace || hasRuby || romanWord.trim()) {"
+      "before": "\t\tif (isSpace || hasRuby) {\n\t\t\tprocessAtom({ ...w });\n\t\t\tcontinue;\n\t\t}",
+      "after": "\t\tif (isSpace || hasRuby || romanWord.trim()) {\n            if (isSpace) processAtom({ ...w });\n            else {\n                const leading = w.word.match(/^\\s+/)?.[0];\n                const trailing = w.word.match(/\\s+$/)?.[0];\n                if (leading) processAtom({word: leading, romanWord: \"\", startTime: w.startTime, endTime: w.startTime});\n                processAtom({...w, word: w.word.trim()});\n                if (trailing) processAtom({word: trailing, romanWord: \"\", startTime: w.endTime, endTime: w.endTime});\n            }\n\t\t\tcontinue;\n\t\t}"
     }
   ]
 }
