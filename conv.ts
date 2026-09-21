@@ -2,6 +2,8 @@
 import {parseArgs} from 'node:util'
 import {readFile, writeFile} from 'node:fs/promises'
 import {resolve, parse as parsePath, join} from 'node:path'
+import {fileURLToPath} from 'node:url'
+import {updateLyricsYaml} from './scripts/lyrics/update-yaml.ts'
 import {Document, isScalar, isSeq, visit} from 'yaml'
 import {fromTTML} from './scripts/lyrics/convert.ts'
 import {fromLRC} from './scripts/lyrics/lrc.ts'
@@ -19,11 +21,16 @@ try {
   })
   if (values.help) {
     console.log(
-      'nub run conv <파일.lrc> [--ttml 파일.ttml] [--tail 2] [--force]\n원본 디렉토리에 같은 이름의 .yaml을 생성합니다. 같은 이름 또는 _enhanced를 뺀 이름의 TTML에서 행 종료 시간을 읽습니다. TTML이 없고 종료 태그도 없으면 다음 행 시작을 사용하며, 마지막 단어는 --tail 초로 계산합니다.',
+      'nub run conv <파일.lrc 또는 경로/번호> [곡-슬러그] [--ttml 파일.ttml] [--tail 2] [--force]\n원본 디렉토리에 같은 이름의 .yaml을 생성합니다. 같은 이름 또는 _enhanced를 뺀 이름의 TTML에서 행 시작·종료 시간과 첫 음절 시작 시간을 읽습니다. 곡 슬러그를 지정하면 기존 곡의 원문과 타이밍만 갱신하고 번역·메타데이터를 보존합니다. TTML이 없고 종료 태그도 없으면 다음 행 시작을 사용하며, 마지막 단어는 --tail 초로 계산합니다.',
     )
   } else {
-    if (positionals.length !== 1) throw Error('사용법: nub run conv <파일.lrc> [--tail 2]')
-    const input = resolve(positionals[0])
+    if (positionals.length < 1 || positionals.length > 2)
+      throw Error('사용법: nub run conv <파일.lrc 또는 경로/번호> [곡-슬러그] [--force]')
+    const input = resolve(
+      positionals[0].toLowerCase().endsWith('.lrc') ? positionals[0] : positionals[0] + '_enhanced.lrc',
+    )
+    const slug = positionals[1]
+    if (slug && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) throw Error('올바른 곡 슬러그를 입력하세요.')
     const {dir, name, ext} = parsePath(input)
     if (ext.toLowerCase() !== '.lrc') throw Error('.lrc 파일을 입력하세요.')
 
@@ -46,22 +53,31 @@ try {
     }
     const song = fromLRC(await readFile(input, 'utf8'), Number(values.tail), reference)
     parseSong(song, name)
-    const doc = new Document(song)
+    const output = slug
+      ? fileURLToPath(new URL('src/posts/lyric/' + slug + '.yaml', import.meta.url))
+      : join(dir, name + '.yaml')
+    const original = slug ? await readFile(output, 'utf8') : undefined
+    const doc = original === undefined ? new Document(song) : updateLyricsYaml(original, song, values.force)
     visit(doc, {
       Pair(_, pair) {
         if (isScalar(pair.key) && pair.key.value === 'time' && isSeq(pair.value)) pair.value.flow = true
       },
     })
-    const output = join(dir, name + '.yaml')
     const comment =
       '# 출처: ' +
       input.replace(/[\r\n]/g, ' ') +
       '\n' +
       (ttmlPath
-        ? '# 종료 시간 출처: ' + ttmlPath.replace(/[\r\n]/g, ' ') + '\n'
+        ? '# 행 시작·종료 시간 출처: ' + ttmlPath.replace(/[\r\n]/g, ' ') + '\n'
         : '# 종료 태그가 없는 행은 다음 행 시작으로, 마지막 단어는 ' + values.tail + '초로 종료 시간을 추정했습니다.\n')
-    await writeFile(output, comment + doc.toString({lineWidth: 0, flowCollectionPadding: false}), {
-      flag: values.force ? 'w' : 'wx',
+    const yaml = (slug ? '' : comment) + doc.toString({lineWidth: 0, flowCollectionPadding: false, singleQuote: true})
+    if (slug) {
+      const {parseSongYaml} = await import('./src/lib/lyrics/yaml.server.ts')
+      parseSongYaml(yaml, slug)
+      if ((await readFile(output, 'utf8')) !== original) throw Error('실행 중 대상 YAML이 변경되었습니다.')
+    }
+    await writeFile(output, yaml, {
+      flag: slug || values.force ? 'w' : 'wx',
     })
     console.log(output)
   }

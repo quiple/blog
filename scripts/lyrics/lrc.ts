@@ -51,6 +51,7 @@ export function fromLRC(source: string, tail = 2, reference?: {text: string; tim
     const matched = reference?.[referenceIndex++]
     if (reference && (!matched?.time || normalize(matched.text) !== normalize(text)))
       throw Error(`TTML의 ${referenceIndex}번째 행과 LRC 가사가 일치하지 않습니다.`)
+    const start = matched?.time ? Math.round(matched.time[0] * 1000) - offset : row.start
     const end = matched?.time
       ? Math.round(matched.time[1] * 1000) - offset
       : final.text.trim()
@@ -62,14 +63,15 @@ export function fromLRC(source: string, tail = 2, reference?: {text: string; tim
       return seconds(value)
     }
     const words: Word[] = row.parts.flatMap((part, j) => {
-      const until = row.parts[j + 1]?.start ?? end
-      if (part.start < row.start || until < part.start) throw Error('단어 시간이 역순이거나 행 범위 밖입니다.')
       if (!part.text) return []
-      if (until === part.start) throw Error('텍스트의 종료 시간이 시작 시간과 같습니다.')
-      return [{text: part.text, time: [shift(part.start), shift(until)]}]
+      const from = j === 0 && matched?.time ? start : part.start
+      const until = row.parts[j + 1]?.text ? row.parts[j + 1].start : end
+      if (from < start || until < from || until > end) throw Error('단어 시간이 역순이거나 행 범위 밖입니다.')
+      if (until === from) throw Error('텍스트의 종료 시간이 시작 시간과 같습니다.')
+      return [{text: part.text, time: [shift(from), shift(until)]}]
     })
     if (!words.length || !words.some((w) => w.text.trim())) return []
-    const time: [number, number] = [shift(row.start), shift(end)]
+    const time: [number, number] = [shift(start), shift(end)]
     return [words.length === 1 ? {text: words[0].text, time} : {words, time}]
   })
   if (reference && referenceIndex !== reference.length) throw Error('TTML과 LRC의 가사 행 수가 다릅니다.')

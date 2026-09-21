@@ -69,7 +69,7 @@ lines:
   - text: I can make autumn from a single leaf
     pr: 아이 캔 메이크 어텀 프럼 어 싱글 리프
     time: [55.367, 58.351]
-  - text: Steal a fine picture like a first class thief
+  - text: Steal a fine picture like a first-class thief
     pr: 스틸 어 파인 픽처 라이크 어 퍼스트 클래스 시프
     time: [58.549, 61.602]
   - text: Make the water work like you won't believe
@@ -78,7 +78,7 @@ lines:
   - text: Find a new world that can set you free
     pr: 파인드 어 누 월드 댓 캔 셋 유 프리
     time: [65.05, 68.08]
-  - text: How could anybody ever live like me
+  - text: How could anybody ever live like me?
     pr: 하우 쿠드 에니바디 에버 리브 라이크 미
     time: [68.324, 71.343]
   - text: I spend my hours doing alchemy
@@ -141,7 +141,7 @@ lines:
   - text: Watch me burn brighter ’til I fail to breathe
     pr: 워치 미 번 브라이터 틸 아이 페일 투 브리드
     time: [136.37, 139.447]
-  - text: How could anybody ever live like me
+  - text: How could anybody ever live like me?
     pr: 하우 쿠드 에니바디 에버 리브 라이크 미
     time: [139.644, 142.698]
   - text: Baby, do you know what it's like to die
@@ -198,7 +198,7 @@ lines:
   - text: I can make autumn from a single leaf
     pr: 아이 캔 메이크 어텀 프럼 어 싱글 리프
     time: [220.427, 223.445]
-  - text: Steal a fine picture like a first class thief
+  - text: Steal a fine picture like a first-class thief
     pr: 스틸 어 파인 픽처 라이크 어 퍼스트 클래스 시프
     time: [223.631, 226.673]
   - text: Make the water work like you won't believe
@@ -231,12 +231,12 @@ lines:
   - text: I kept a bullet in the chamber for a rainy day
     pr: 아이 켑트 어 불럿 인 더 체임버 포 어 레이니 데이
     time: [256.476, 259.935]
-  - text: But what's the point in planning for it anyway
+  - text: But what's the point in planning for it anyway?
     pr: 벗 와츠 더 포인트 인 플래닝 포 잇 에니웨이
     time: [260.121, 263.058]
   - text: I've got too many colors for a shade of grey
     pr: 아이브 갓 투 매니 컬러즈 포 어 셰이드 오브 그레이
     time: [263.372, 266.286]
-  - text: And I can make it Autumn every single day
+  - text: And I can make it autumn every single day
     pr: 앤드 아이 캔 메이크 잇 어텀 에브리 싱글 데이
     time: [266.599, 269.792]

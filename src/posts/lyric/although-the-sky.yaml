@@ -124,7 +124,7 @@ lines:
     time: [34.72, 38.179]
   - words:
       - text: 'Hand '
-        time: [38.44, 39.02]
+        time: [38.439, 39.02]
       - text: 'in '
         time: [39.02, 39.2]
       - text: 'hand, '
@@ -136,10 +136,10 @@ lines:
       - text: vibrant
         time: [41.08, 41.959]
     tl: 손에 손을 잡고, 빛깔은 선명해
-    time: [38.44, 41.959]
+    time: [38.439, 41.959]
   - words:
       - text: 'Fleeting '
-        time: [42.24, 43.18]
+        time: [42.239, 43.18]
       - text: 'beauty '
         time: [43.18, 43.96]
       - text: "isn't "
@@ -147,10 +147,10 @@ lines:
       - text: silent
         time: [44.82, 45.519]
     tl: 덧없는 아름다움은 침묵하지 않아
-    time: [42.24, 45.519]
+    time: [42.239, 45.519]
   - words:
       - text: 'I '
-        time: [45.56, 45.96]
+        time: [45.559, 45.96]
       - text: 'know '
         time: [45.96, 46.42]
       - text: 'sometimes '
@@ -166,10 +166,10 @@ lines:
       - text: way
         time: [49.48, 50.119]
     tl: 가끔은 정말 그렇게 느껴진다는 걸 알아
-    time: [45.56, 50.119]
+    time: [45.559, 50.119]
   - words:
       - text: 'And '
-        time: [52.76, 53.02]
+        time: [52.759, 53.02]
       - text: 'when '
         time: [53.02, 53.28]
       - text: 'the '
@@ -183,10 +183,10 @@ lines:
       - text: talk
         time: [55.12, 55.619]
     tl: 그리고 별들이 말을 걸고 싶어 할 때
-    time: [52.76, 55.619]
+    time: [52.759, 55.619]
   - words:
       - text: "Don't "
-        time: [57.72, 58.2]
+        time: [57.719, 58.2]
       - text: 'be '
         time: [58.2, 58.68]
       - text: 'in '
@@ -194,10 +194,10 @@ lines:
       - text: shock
         time: [58.88, 59.359]
     tl: 놀라지 마
-    time: [57.72, 59.359]
+    time: [57.719, 59.359]
   - words:
       - text: 'The '
-        time: [61.46, 61.92]
+        time: [61.459, 61.92]
       - text: 'constellations '
         time: [61.92, 63.82]
       - text: 'are '
@@ -207,10 +207,10 @@ lines:
       - text: hearted
         time: [64.74, 65.939]
     tl: 별자리들은 마음씨가 고와
-    time: [61.46, 65.939]
+    time: [61.459, 65.939]
   - words:
       - text: 'Despite '
-        time: [67.8, 68.28]
+        time: [67.799, 68.28]
       - text: 'the '
         time: [68.28, 68.48]
       - text: 'dark, '
@@ -222,19 +222,19 @@ lines:
       - text: rock
         time: [70.18, 70.579]
     tl: 어둠 속에서도 우린 신나게 놀 수 있어
-    time: [67.8, 70.579]
+    time: [67.799, 70.579]
   - words:
       - text: 'Ignore '
-        time: [72.76, 73.64]
+        time: [72.759, 73.64]
       - text: 'the '
         time: [73.64, 73.82]
       - text: clock
         time: [73.82, 74.319]
     tl: 시계는 신경 쓰지 마
-    time: [72.76, 74.319]
+    time: [72.759, 74.319]
   - words:
       - text: "We'll "
-        time: [76.46, 76.92]
+        time: [76.459, 76.92]
       - text: 'have '
         time: [76.92, 77.46]
       - text: 'a '
@@ -248,10 +248,10 @@ lines:
       - text: charted
         time: [79.72, 80.959]
     tl: 한 번도 없던 멋진 시간을 보낼 거야
-    time: [76.46, 80.959]
+    time: [76.459, 80.959]
   - words:
       - text: 'Even '
-        time: [83.52, 84.42]
+        time: [83.519, 84.42]
       - text: 'during '
         time: [84.42, 85.2]
       - text: 'all '
@@ -263,10 +263,10 @@ lines:
       - text: days
         time: [86.54, 87.159]
     tl: 힘겨운 날들이 이어져도
-    time: [83.52, 87.159]
+    time: [83.519, 87.159]
   - words:
       - text: 'Cloudy '
-        time: [87.22, 87.9]
+        time: [87.219, 87.9]
       - text: 'skies '
         time: [87.9, 88.4]
       - text: "can't "
@@ -280,10 +280,10 @@ lines:
       - text: rays
         time: [90.28, 90.759]
     tl: 흐린 하늘도 햇살을 막을 순 없어
-    time: [87.22, 90.759]
+    time: [87.219, 90.759]
   - words:
       - text: 'This '
-        time: [91.02, 91.46]
+        time: [91.019, 91.46]
       - text: 'could '
         time: [91.46, 91.92]
       - text: 'never '
@@ -297,10 +297,10 @@ lines:
       - text: place
         time: [94.02, 94.459]
     tl: 여기는 결코 슬픈 곳이 될 수 없어
-    time: [91.02, 94.459]
+    time: [91.019, 94.459]
   - words:
       - text: 'If '
-        time: [94.78, 95.2]
+        time: [94.779, 95.2]
       - text: 'you '
         time: [95.2, 95.66]
       - text: 'check '
@@ -316,10 +316,10 @@ lines:
       - text: you'll
         time: [97.74, 98.239]
     tl: 직접 살펴보면, 너도 분명
-    time: [94.78, 98.239]
+    time: [94.779, 98.239]
   - words:
       - text: 'Soon '
-        time: [98.48, 98.96]
+        time: [98.479, 98.96]
       - text: "you'll "
         time: [98.96, 99.42]
       - text: 'see '
@@ -333,10 +333,10 @@ lines:
       - text: shinin'
         time: [101.04, 101.939]
     tl: 곧 보게 될 거야, 반짝이는 모습을
-    time: [98.48, 101.939]
+    time: [98.479, 101.939]
   - words:
       - text: 'Hand '
-        time: [102.2, 102.76]
+        time: [102.199, 102.76]
       - text: 'in '
         time: [102.76, 102.96]
       - text: 'hand, '
@@ -348,10 +348,10 @@ lines:
       - text: vibrant
         time: [104.82, 105.699]
     tl: 손에 손을 잡고, 빛깔은 선명해
-    time: [102.2, 105.699]
+    time: [102.199, 105.699]
   - words:
       - text: 'Fleeting '
-        time: [106, 106.92]
+        time: [105.999, 106.92]
       - text: 'beauty '
         time: [106.92, 107.72]
       - text: "isn't "
@@ -359,10 +359,10 @@ lines:
       - text: silent
         time: [108.56, 109.279]
     tl: 덧없는 아름다움은 침묵하지 않아
-    time: [106, 109.279]
+    time: [105.999, 109.279]
   - words:
       - text: 'I '
-        time: [109.32, 109.7]
+        time: [109.319, 109.7]
       - text: 'know '
         time: [109.7, 110.18]
       - text: 'sometimes '
@@ -378,10 +378,10 @@ lines:
       - text: way
         time: [113.22, 113.878]
     tl: 가끔은 정말 그렇게 느껴진다는 걸 알아
-    time: [109.32, 113.878]
+    time: [109.319, 113.878]
   - words:
       - text: 'And '
-        time: [116.5, 116.72]
+        time: [116.498, 116.72]
       - text: 'though '
         time: [116.72, 117.02]
       - text: 'it '
@@ -397,19 +397,19 @@ lines:
       - text: much
         time: [118.88, 119.398]
     tl: 별것 아닌 것처럼 보여도
-    time: [116.5, 119.398]
+    time: [116.498, 119.398]
   - words:
       - text: 'The '
-        time: [121.5, 121.68]
+        time: [121.498, 121.68]
       - text: 'slightest '
         time: [121.68, 122.66]
       - text: touch
         time: [122.66, 123.178]
     tl: 아주 작은 손길이
-    time: [121.5, 123.178]
+    time: [121.498, 123.178]
   - words:
       - text: 'Could '
-        time: [125.24, 125.68]
+        time: [125.238, 125.68]
       - text: 'make '
         time: [125.68, 126.22]
       - text: 'a '
@@ -417,10 +417,10 @@ lines:
       - text: difference
         time: [126.42, 127.318]
     tl: 변화를 만들 수 있어
-    time: [125.24, 127.318]
+    time: [125.238, 127.318]
   - words:
       - text: 'At '
-        time: [127.84, 128.04]
+        time: [127.838, 128.04]
       - text: 'the '
         time: [128.04, 128.26]
       - text: 'right '
@@ -428,10 +428,10 @@ lines:
       - text: time
         time: [130.14, 130.778]
     tl: 알맞은 순간에
-    time: [127.84, 130.778]
+    time: [127.838, 130.778]
   - words:
       - text: 'And '
-        time: [131.6, 131.82]
+        time: [131.598, 131.82]
       - text: 'when '
         time: [131.82, 132.1]
       - text: 'it '
@@ -445,10 +445,10 @@ lines:
       - text: done
         time: [133.9, 134.458]
     tl: 이제 끝인 것처럼 느껴질 때는
-    time: [131.6, 134.458]
+    time: [131.598, 134.458]
   - words:
       - text: 'Know '
-        time: [136.46, 136.94]
+        time: [136.458, 136.94]
       - text: 'that '
         time: [136.94, 137.16]
       - text: "you've "
@@ -456,10 +456,10 @@ lines:
       - text: won
         time: [137.66, 139.178]
     tl: 네가 이겼다는 걸 알아 둬
-    time: [136.46, 139.178]
+    time: [136.458, 139.178]
   - words:
       - text: 'Take '
-        time: [140.22, 140.64]
+        time: [140.218, 140.64]
       - text: 'time '
         time: [140.64, 141.16]
       - text: 'to '
@@ -469,17 +469,17 @@ lines:
       - text: up
         time: [141.88, 142.158]
     tl: 시간을 내 푹 쉬어
-    time: [140.22, 142.158]
+    time: [140.218, 142.158]
   - words:
       - text: 'For '
-        time: [142.78, 143.02]
+        time: [142.778, 143.02]
       - text: tomorrow
         time: [143.02, 145.718]
     tl: 내일을 위해
-    time: [142.78, 145.718]
+    time: [142.778, 145.718]
   - words:
       - text: 'Even '
-        time: [147.28, 148.18]
+        time: [147.278, 148.18]
       - text: 'during '
         time: [148.18, 148.94]
       - text: 'all '
@@ -491,10 +491,10 @@ lines:
       - text: days
         time: [150.3, 150.918]
     tl: 힘겨운 날들이 이어져도
-    time: [147.28, 150.918]
+    time: [147.278, 150.918]
   - words:
       - text: 'Cloudy '
-        time: [150.96, 151.64]
+        time: [150.958, 151.64]
       - text: 'skies '
         time: [151.64, 152.18]
       - text: "can't "
@@ -508,10 +508,10 @@ lines:
       - text: rays
         time: [154.04, 154.518]
     tl: 흐린 하늘도 햇살을 막을 순 없어
-    time: [150.96, 154.518]
+    time: [150.958, 154.518]
   - words:
       - text: 'This '
-        time: [154.8, 155.22]
+        time: [154.798, 155.22]
       - text: 'could '
         time: [155.22, 155.68]
       - text: 'never '
@@ -525,10 +525,10 @@ lines:
       - text: place
         time: [157.8, 158.198]
     tl: 여기는 결코 슬픈 곳이 될 수 없어
-    time: [154.8, 158.198]
+    time: [154.798, 158.198]
   - words:
       - text: 'If '
-        time: [158.52, 158.94]
+        time: [158.518, 158.94]
       - text: 'you '
         time: [158.94, 159.42]
       - text: 'check '
@@ -544,10 +544,10 @@ lines:
       - text: you'll
         time: [161.5, 161.998]
     tl: 직접 살펴보면, 너도 분명
-    time: [158.52, 161.998]
+    time: [158.518, 161.998]
   - words:
       - text: 'Soon '
-        time: [162.24, 162.7]
+        time: [162.238, 162.7]
       - text: "you'll "
         time: [162.7, 163.16]
       - text: 'see '
@@ -561,10 +561,10 @@ lines:
       - text: shinin'
         time: [164.8, 165.658]
     tl: 곧 보게 될 거야, 반짝이는 모습을
-    time: [162.24, 165.658]
+    time: [162.238, 165.658]
   - words:
       - text: 'Hand '
-        time: [165.96, 166.52]
+        time: [165.958, 166.52]
       - text: 'in '
         time: [166.52, 166.72]
       - text: 'hand, '
@@ -576,10 +576,10 @@ lines:
       - text: vibrant
         time: [168.58, 169.438]
     tl: 손에 손을 잡고, 빛깔은 선명해
-    time: [165.96, 169.438]
+    time: [165.958, 169.438]
   - words:
       - text: 'Fleeting '
-        time: [169.74, 170.68]
+        time: [169.738, 170.68]
       - text: 'beauty '
         time: [170.68, 171.46]
       - text: "isn't "
@@ -587,10 +587,10 @@ lines:
       - text: silent
         time: [172.32, 173.018]
     tl: 덧없는 아름다움은 침묵하지 않아
-    time: [169.74, 173.018]
+    time: [169.738, 173.018]
   - words:
       - text: 'I '
-        time: [173.08, 173.46]
+        time: [173.078, 173.46]
       - text: 'know '
         time: [173.46, 173.94]
       - text: 'sometimes '
@@ -604,10 +604,10 @@ lines:
       - text: that
         time: [176.54, 176.898]
     tl: 가끔은 정말 그렇게 느껴진다는 걸 알아
-    time: [173.08, 176.898]
+    time: [173.078, 176.898]
   - words:
       - text: 'Even '
-        time: [177.28, 178.16]
+        time: [177.278, 178.16]
       - text: 'during '
         time: [178.16, 178.94]
       - text: 'all '
@@ -619,10 +619,10 @@ lines:
       - text: days
         time: [180.28, 180.898]
     tl: 힘겨운 날들이 이어져도
-    time: [177.28, 180.898]
+    time: [177.278, 180.898]
   - words:
       - text: 'Cloudy '
-        time: [180.96, 181.64]
+        time: [180.958, 181.64]
       - text: 'skies '
         time: [181.64, 182.16]
       - text: "can't "
@@ -636,10 +636,10 @@ lines:
       - text: rays
         time: [184.04, 184.518]
     tl: 흐린 하늘도 햇살을 막을 순 없어
-    time: [180.96, 184.518]
+    time: [180.958, 184.518]
   - words:
       - text: 'This '
-        time: [184.78, 185.22]
+        time: [184.778, 185.22]
       - text: 'could '
         time: [185.22, 185.66]
       - text: 'never '
@@ -653,10 +653,10 @@ lines:
       - text: place
         time: [187.76, 188.197]
     tl: 여기는 결코 슬픈 곳이 될 수 없어
-    time: [184.78, 188.197]
+    time: [184.778, 188.197]
   - words:
       - text: 'If '
-        time: [188.52, 188.96]
+        time: [188.517, 188.96]
       - text: 'you '
         time: [188.96, 189.42]
       - text: 'check '
@@ -672,10 +672,10 @@ lines:
       - text: you'll
         time: [191.48, 191.997]
     tl: 직접 살펴보면, 너도 분명
-    time: [188.52, 191.997]
+    time: [188.517, 191.997]
   - words:
       - text: 'Soon '
-        time: [192.24, 192.7]
+        time: [192.237, 192.7]
       - text: "you'll "
         time: [192.7, 193.16]
       - text: 'see '
@@ -689,10 +689,10 @@ lines:
       - text: shinin'
         time: [194.8, 195.677]
     tl: 곧 보게 될 거야, 반짝이는 모습을
-    time: [192.24, 195.677]
+    time: [192.237, 195.677]
   - words:
       - text: 'Hand '
-        time: [195.94, 196.52]
+        time: [195.937, 196.52]
       - text: 'in '
         time: [196.52, 196.7]
       - text: 'hand, '
@@ -704,10 +704,10 @@ lines:
       - text: vibrant
         time: [198.58, 199.437]
     tl: 손에 손을 잡고, 빛깔은 선명해
-    time: [195.94, 199.437]
+    time: [195.937, 199.437]
   - words:
       - text: 'Fleeting '
-        time: [199.74, 200.68]
+        time: [199.737, 200.68]
       - text: 'beauty '
         time: [200.68, 201.48]
       - text: "isn't "
@@ -715,10 +715,10 @@ lines:
       - text: silent
         time: [202.32, 203.017]
     tl: 덧없는 아름다움은 침묵하지 않아
-    time: [199.74, 203.017]
+    time: [199.737, 203.017]
   - words:
       - text: 'I '
-        time: [203.06, 203.46]
+        time: [203.057, 203.46]
       - text: 'know '
         time: [203.46, 203.94]
       - text: 'sometimes '
@@ -734,4 +734,4 @@ lines:
       - text: way
         time: [206.98, 207.637]
     tl: 가끔은 정말 그렇게 느껴진다는 걸 알아
-    time: [203.06, 207.637]
+    time: [203.057, 207.637]
