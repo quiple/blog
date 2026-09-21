@@ -202,7 +202,7 @@ lines:
         time: [61.92, 63.82]
       - text: 'are '
         time: [63.82, 64.08]
-      - text: 'good- '
+      - text: 'good-'
         time: [64.08, 64.74]
       - text: hearted
         time: [64.74, 65.939]
