@@ -30,8 +30,8 @@ lines:
       - text: dream
         pr: 드림
         time: [18.147, 19.087]
-    time: [17.363, 19.087]
     tl: 꿈을 꿨어
+    time: [17.363, 19.087]
   - words:
       - text: 'I '
         pr: 아이
@@ -51,8 +51,8 @@ lines:
       - text: wanted
         pr: 원티드
         time: [22.083, 23.037]
-    time: [20.53, 23.037]
     tl: 원했던 모든 걸 얻었어
+    time: [20.53, 23.037]
   - words:
       - text: 'Not '
         pr: 낫
@@ -66,8 +66,8 @@ lines:
       - text: think
         pr: 싱크
         time: [26.133, 26.871]
-    time: [25.267, 26.871]
     tl: 네가 생각하는 그런 게 아니야
+    time: [25.267, 26.871]
   - words:
       - text: 'And '
         pr: 앤드
@@ -84,8 +84,8 @@ lines:
       - text: honest
         pr: 어니스트
         time: [30.156, 30.851]
-    time: [28.807, 30.851]
     tl: 솔직히 말하면
+    time: [28.807, 30.851]
   - words:
       - text: 'It '
         pr: 잇
@@ -108,8 +108,8 @@ lines:
       - text: mare
         pr: 메어
         time: [32.589, 33.322]
-    time: [30.851, 33.322]
     tl: 악몽이었을지도 몰라
+    time: [30.851, 33.322]
   - words:
       - text: 'To '
         pr: 투
@@ -126,8 +126,8 @@ lines:
       - text: care
         pr: 케어
         time: [36.57, 37.361]
-    time: [34.771, 37.361]
     tl: 관심을 가져 줄 누군가에게는
+    time: [34.771, 37.361]
   - words:
       - text: 'Thought '
         pr: 소트
@@ -144,8 +144,8 @@ lines:
       - text: (fly)
         pr: (플라이)
         time: [42.576, 43.125]
-    time: [41.27, 43.125]
     tl: 날 수 있을 줄 알았어 (날 수 있을 줄)
+    time: [41.27, 43.125]
   - words:
       - text: 'So '
         pr: 소
@@ -165,8 +165,8 @@ lines:
       - text: golden
         pr: 골든
         time: [46.116, 47.156]
-    time: [44.74, 47.156]
     tl: 그래서 금문교에서 발을 내디뎠어
+    time: [44.74, 47.156]
   - words:
       - text: 'Nobody '
         pr: 노바디
@@ -177,8 +177,8 @@ lines:
       - text: (cried)
         pr: (크라이드)
         time: [50.581, 51.019]
-    time: [49.286, 51.019]
     tl: 아무도 울지 않았어 (울지 않았어)
+    time: [49.286, 51.019]
   - words:
       - text: 'Nobody '
         pr: 노바디
@@ -192,8 +192,8 @@ lines:
       - text: ticed
         pr: 티스트
         time: [54.482, 54.819]
-    time: [52.738, 54.819]
     tl: 아무도 알아채지도 못했어
+    time: [52.738, 54.819]
   - words:
       - text: 'I '
         pr: 아이
@@ -213,8 +213,8 @@ lines:
       - text: there
         pr: 데어
         time: [56.601, 57.275]
-    time: [54.819, 57.275]
     tl: 바로 거기 서 있는 그들을 봤어
+    time: [54.819, 57.275]
   - words:
       - text: 'Kinda '
         pr: 카인더
@@ -231,8 +231,8 @@ lines:
       - text: care
         pr: 케어
         time: [60.577, 61.274]
-    time: [58.995, 61.274]
     tl: 신경 써 줄 줄 알았는데
+    time: [58.995, 61.274]
   - words:
       - text: 'I '
         pr: 아이
@@ -246,8 +246,8 @@ lines:
       - text: dream
         pr: 드림
         time: [66.074, 66.956]
-    time: [65.273, 66.956]
     tl: 꿈을 꿨어
+    time: [65.273, 66.956]
   - words:
       - text: 'I '
         pr: 아이
@@ -267,8 +267,8 @@ lines:
       - text: wanted
         pr: 원티드
         time: [70.086, 70.994]
-    time: [68.504, 70.994]
     tl: 원했던 모든 걸 얻었어
+    time: [68.504, 70.994]
   - words:
       - text: 'But '
         pr: 벗
@@ -291,8 +291,8 @@ lines:
       - text: see
         pr: 시
         time: [74.147, 74.515]
-    time: [71.785, 74.515]
     tl: 하지만 눈을 뜨면 보여
+    time: [71.785, 74.515]
   - words:
       - text: 'You '
         pr: 유
@@ -303,8 +303,8 @@ lines:
       - text: me
         pr: 미
         time: [77.652, 77.956]
-    time: [76.075, 77.956]
     tl: 나와 함께 있는 네가
+    time: [76.075, 77.956]
   - words:
       - text: 'And '
         pr: 앤드
@@ -315,8 +315,8 @@ lines:
       - text: say
         pr: 세이
         time: [79.789, 80.559]
-    time: [79.29, 80.559]
     tl: 그리고 넌 말해
+    time: [79.29, 80.559]
   - words:
       - text: 'As '
         pr: 애즈
@@ -333,8 +333,8 @@ lines:
       - text: here
         pr: 히어
         time: [82.857, 84.46]
-    time: [80.805, 84.46]
     tl: 내가 여기 있는 한
+    time: [80.805, 84.46]
   - words:
       - text: 'No '
         pr: 노
@@ -351,8 +351,8 @@ lines:
       - text: you
         pr: 유
         time: [86.374, 86.689]
-    time: [84.508, 86.689]
     tl: 아무도 널 해칠 수 없어
+    time: [84.508, 86.689]
   - words:
       - text: "Don't "
         pr: 돈트
@@ -366,8 +366,8 @@ lines:
       - text: here
         pr: 히어
         time: [90.851, 92.521]
-    time: [88.45, 92.521]
     tl: 여기서 거짓말하고 싶진 않아
+    time: [88.45, 92.521]
   - words:
       - text: 'But '
         pr: 벗
@@ -384,8 +384,8 @@ lines:
       - text: to
         pr: 투
         time: [94.296, 94.695]
-    time: [92.627, 94.695]
     tl: 하지만 넌 배울 수 있어
+    time: [92.627, 94.695]
   - words:
       - text: 'If '
         pr: 이프
@@ -420,8 +420,8 @@ lines:
       - text: self
         pr: 셀프
         time: [102.577, 103.375]
-    time: [96.501, 103.375]
     tl: 네가 스스로를 보는 방식을 내가 바꿀 수 있다면
+    time: [96.501, 103.375]
   - words:
       - text: 'You '
         pr: 유
@@ -444,8 +444,8 @@ lines:
       - text: hear
         pr: 히어
         time: [106.855, 108.376]
-    time: [104.29, 108.376]
     tl: 왜 이런 말을 듣는지 궁금해하지 않을 거야
+    time: [104.29, 108.376]
   - words:
       - text: '"They '
         pr: '"데이'
@@ -459,8 +459,8 @@ lines:
       - text: you"
         pr: 유"
         time: [110.413, 110.719]
-    time: [108.53, 110.719]
     tl: '"그들은 널 가질 자격이 없어"'
+    time: [108.53, 110.719]
   - words:
       - text: 'I '
         pr: 아이
@@ -474,8 +474,8 @@ lines:
       - text: scream
         pr: 스크림
         time: [114.12, 114.865]
-    time: [113.318, 114.865]
     tl: 소리를 지르려 했어
+    time: [113.318, 114.865]
   - words:
       - text: 'But '
         pr: 벗
@@ -495,8 +495,8 @@ lines:
       - text: water
         pr: 워터
         time: [118.123, 119.076]
-    time: [116.608, 119.076]
     tl: 하지만 내 머리는 물속에 있었어
+    time: [116.608, 119.076]
   - words:
       - text: 'They '
         pr: 데이
@@ -510,8 +510,8 @@ lines:
       - text: weak
         pr: 위크
         time: [122.272, 122.983]
-    time: [121.274, 122.983]
     tl: 그들은 내가 약하다고 했어
+    time: [121.274, 122.983]
   - words:
       - text: 'Like '
         pr: 라이크
@@ -531,8 +531,8 @@ lines:
       - text: daughter
         pr: 도터
         time: [126.188, 127.03]
-    time: [124.272, 127.03]
     tl: 나도 누군가의 딸일 뿐이라는 건 모르는 듯이
+    time: [124.272, 127.03]
   - words:
       - text: "Could've "
         pr: 쿠더브
@@ -549,8 +549,8 @@ lines:
       - text: mare
         pr: 메어
         time: [128.566, 129.246]
-    time: [127.08, 129.246]
     tl: 악몽이었을 수도 있어
+    time: [127.08, 129.246]
   - words:
       - text: 'But '
         pr: 벗
@@ -576,8 +576,8 @@ lines:
       - text: there
         pr: 데어
         time: [132.593, 133.49]
-    time: [130.527, 133.49]
     tl: 하지만 그들이 바로 거기 있는 것 같았어
+    time: [130.527, 133.49]
   - words:
       - text: 'And '
         pr: 앤드
@@ -606,8 +606,8 @@ lines:
       - text: ago
         pr: 어고
         time: [138.417, 139.109]
-    time: [135.535, 139.109]
     tl: 어제가 일 년 전처럼 느껴져
+    time: [135.535, 139.109]
   - words:
       - text: 'But '
         pr: 벗
@@ -630,8 +630,8 @@ lines:
       - text: know
         pr: 노
         time: [142.608, 142.94]
-    time: [139.81, 142.94]
     tl: 하지만 아무에게도 알리고 싶지 않아
+    time: [139.81, 142.94]
   - words:
       - text: '’Cause '
         pr: 코즈
@@ -654,8 +654,8 @@ lines:
       - text: now
         pr: 나우
         time: [146.598, 147.161]
-    time: [143.716, 147.161]
     tl: 이제는 모두가 내게 무언가를 바라니까
+    time: [143.716, 147.161]
   - words:
       - text: 'And '
         pr: 앤드
@@ -678,8 +678,8 @@ lines:
       - text: down
         pr: 다운
         time: [149.659, 150.184]
-    time: [147.79, 150.184]
     tl: 그들을 실망시키고 싶지 않아
+    time: [147.79, 150.184]
   - words:
       - text: 'I '
         pr: 아이
@@ -693,8 +693,8 @@ lines:
       - text: dream
         pr: 드림
         time: [154.067, 154.867]
-    time: [153.251, 154.867]
     tl: 꿈을 꿨어
+    time: [153.251, 154.867]
   - words:
       - text: 'I '
         pr: 아이
@@ -714,8 +714,8 @@ lines:
       - text: wanted
         pr: 원티드
         time: [158.122, 159.056]
-    time: [156.541, 159.056]
     tl: 원했던 모든 걸 얻었어
+    time: [156.541, 159.056]
   - words:
       - text: 'But '
         pr: 벗
@@ -738,8 +738,8 @@ lines:
       - text: see
         pr: 시
         time: [162.147, 162.508]
-    time: [159.808, 162.508]
     tl: 하지만 눈을 뜨면 보여
+    time: [159.808, 162.508]
   - words:
       - text: 'You '
         pr: 유
@@ -750,8 +750,8 @@ lines:
       - text: me
         pr: 미
         time: [165.623, 165.977]
-    time: [163.952, 165.977]
     tl: 나와 함께 있는 네가
+    time: [163.952, 165.977]
   - words:
       - text: 'And '
         pr: 앤드
@@ -762,8 +762,8 @@ lines:
       - text: say
         pr: 세이
         time: [167.792, 168.517]
-    time: [167.307, 168.517]
     tl: 그리고 넌 말해
+    time: [167.307, 168.517]
   - words:
       - text: 'As '
         pr: 애즈
@@ -780,8 +780,8 @@ lines:
       - text: here
         pr: 히어
         time: [170.861, 172.492]
-    time: [168.728, 172.492]
     tl: 내가 여기 있는 한
+    time: [168.728, 172.492]
   - words:
       - text: 'No '
         pr: 노
@@ -798,8 +798,8 @@ lines:
       - text: you
         pr: 유
         time: [174.336, 174.735]
-    time: [172.537, 174.735]
     tl: 아무도 널 해칠 수 없어
+    time: [172.537, 174.735]
   - words:
       - text: "Don't "
         pr: 돈트
@@ -813,8 +813,8 @@ lines:
       - text: here
         pr: 히어
         time: [178.818, 180.449]
-    time: [176.467, 180.449]
     tl: 여기서 거짓말하고 싶진 않아
+    time: [176.467, 180.449]
   - words:
       - text: 'But '
         pr: 벗
@@ -831,8 +831,8 @@ lines:
       - text: to
         pr: 투
         time: [182.331, 182.716]
-    time: [180.532, 182.716]
     tl: 하지만 넌 배울 수 있어
+    time: [180.532, 182.716]
   - words:
       - text: 'If '
         pr: 이프
@@ -867,8 +867,8 @@ lines:
       - text: self
         pr: 셀프
         time: [190.597, 191.43]
-    time: [184.499, 191.43]
     tl: 네가 스스로를 보는 방식을 내가 바꿀 수 있다면
+    time: [184.499, 191.43]
   - words:
       - text: 'You '
         pr: 유
@@ -888,8 +888,8 @@ lines:
       - text: hear
         pr: 히어
         time: [194.89, 196.533]
-    time: [192.272, 196.533]
     tl: 왜 이런 말을 듣는지 궁금해하지 않을 거야
+    time: [192.272, 196.533]
   - words:
       - text: '"They '
         pr: '"데이'
@@ -903,8 +903,8 @@ lines:
       - text: you"
         pr: 유"
         time: [198.377, 198.691]
-    time: [196.595, 198.691]
     tl: '"그들은 널 가질 자격이 없어"'
+    time: [196.595, 198.691]
   - words:
       - text: 'If '
         pr: 이프
@@ -939,8 +939,8 @@ lines:
       - text: again?
         pr: 어게인?
         time: [203.651, 204.296]
-    time: [199.941, 204.296]
     tl: 그때 모든 걸 알았어도 다시 했을까?
+    time: [199.941, 204.296]
   - words:
       - text: 'Would '
         pr: 우드
@@ -957,8 +957,8 @@ lines:
       - text: again?
         pr: 어게인?
         time: [205.529, 206.409]
-    time: [204.296, 206.409]
     tl: 다시 했을까?
+    time: [204.296, 206.409]
   - words:
       - text: 'If '
         pr: 이프
@@ -996,8 +996,8 @@ lines:
       - text: head
         pr: 헤드
         time: [211.826, 212.319]
-    time: [207.98, 212.319]
     tl: 자신들의 말이 내 머릿속에 곧장 박힐 걸 알았다면
+    time: [207.98, 212.319]
   - words:
       - text: 'What '
         pr: 왓
@@ -1014,8 +1014,8 @@ lines:
       - text: instead?
         pr: 인스테드?
         time: [213.702, 214.522]
-    time: [212.352, 214.522]
     tl: 대신 무슨 말을 했을까?
+    time: [212.352, 214.522]
   - words:
       - text: 'If '
         pr: 이프
@@ -1050,8 +1050,8 @@ lines:
       - text: again?
         pr: 어게인?
         time: [219.595, 220.329]
-    time: [216.053, 220.329]
     tl: 그때 모든 걸 알았어도 다시 했을까?
+    time: [216.053, 220.329]
   - words:
       - text: 'Would '
         pr: 우드
@@ -1068,8 +1068,8 @@ lines:
       - text: again?
         pr: 어게인?
         time: [221.59, 222.351]
-    time: [220.357, 222.351]
     tl: 다시 했을까?
+    time: [220.357, 222.351]
   - words:
       - text: 'If '
         pr: 이프
@@ -1107,8 +1107,8 @@ lines:
       - text: head
         pr: 헤드
         time: [227.863, 228.303]
-    time: [224.035, 228.303]
     tl: 자신들의 말이 내 머릿속에 곧장 박힐 걸 알았다면
+    time: [224.035, 228.303]
   - words:
       - text: 'What '
         pr: 왓
@@ -1125,5 +1125,5 @@ lines:
       - text: instead?
         pr: 인스테드?
         time: [229.584, 230.401]
-    time: [228.336, 230.401]
     tl: 대신 무슨 말을 했을까?
+    time: [228.336, 230.401]

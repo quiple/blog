@@ -123,9 +123,9 @@ export function compactSong(song: ReturnType<typeof parseSong>) {
       return line.text
     return {
       ...(line.words ? {words: line.words} : {text: line.text}),
-      time: line.time,
-      translation: line.translation,
       pronunciation: line.pronunciation,
+      translation: line.translation,
+      time: line.time,
       duet: line.duet || undefined,
       background: line.background ? compact(line.background) : undefined,
     }

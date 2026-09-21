@@ -183,8 +183,8 @@ lines:
     background:
       text: (From a made-up fucking place)
       pr: (프럼 어 메이드업 퍼킹 플레이스)
-      time: [101.979, 103.271]
       tl: (빌어먹을 지어낸 곳에서)
+      time: [101.979, 103.271]
   - text: It all comes down to what I chase, oh-oh, oh
     pr: 잇 올 컴즈 다운 투 왓 아이 체이스, 오오, 오
     tl: 결국 중요한 건 내가 뭘 좇느냐는 거야
@@ -203,9 +203,9 @@ lines:
     time: [118.61, 123.526]
   - text: Na-na-na, na-na-na, na-na
     pr: 나나나, 나나나, 나나
-    time: [133.733, 138.149]
     tl: 나나나, 나나나, 나나
+    time: [133.733, 138.149]
   - text: Na-na-na, na-na, na-na-na, na-na, na-na
     pr: 나나나, 나나, 나나나, 나나, 나나
-    time: [138.149, 144.107]
     tl: 나나나, 나나, 나나나, 나나, 나나
+    time: [138.149, 144.107]
