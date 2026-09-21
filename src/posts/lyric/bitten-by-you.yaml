@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Bitten By You
+titleTl: 네게 물렸어
 titleLang: en
 year: '2019'
 artist: monkey-majik
@@ -20,115 +21,172 @@ offsets:
 lines:
   - text: Well, yes, I know I'm perfection
     time: [7.611, 10.318]
+    tl: 그래, 맞아, 내가 완벽하다는 건 알아
   - text: No need for reflection
     time: [10.34, 12.228]
+    tl: 돌아볼 필요도 없어
   - text: I'm happy and I ain't going back
     time: [12.361, 15.92]
+    tl: 난 행복하고 돌아가지 않을 거야
   - text: You know you lookin' so delicious
     time: [16.059, 18.642]
+    tl: 너 정말 맛있어 보이는 거 알지
   - text: Playin' superstitious
     time: [18.899, 20.877]
+    tl: 미신을 믿는 척하는 게
   - text: Only thing that's holding me back
     time: [20.993, 23.948]
+    tl: 날 붙잡는 유일한 것
   - text: You know I like the taste of you
     time: [24.298, 27.875]
+    tl: 난 네 맛이 좋잖아
   - text: The way you shake, shake, shake that life in you
     time: [28.014, 32.078]
+    tl: 네 안의 생명을 흔들고 흔들고 흔드는 모습
   - text: C'mon, c'mon now, don't let me lose control
     time: [32.194, 36.164]
+    tl: 자, 자, 이러다 내가 자제력을 잃겠어
   - text: Oh, baby, baby, don't make me beg for more
     time: [36.454, 42.062]
+    tl: 오, 자기야, 자기야, 더 달라고 애원하게 하지 마
   - text: I've been bitten by you
     time: [58.992, 61.203]
+    tl: 난 네게 물렸어
   - text: Now you're the only one I'll spend forever in bloom
     time: [61.349, 66.289]
+    tl: 이제 영원히 꽃피며 함께할 사람은 너뿐이야
   - text: Yes, I've been bitten by you
     time: [67.079, 69.452]
+    tl: 그래, 난 네게 물렸어
   - text: Who needs the sun when we look so good under the moon?
     time: [69.65, 74.538]
+    tl: 달빛 아래 우리가 이렇게 멋진데 태양이 무슨 소용이야?
   - text: I've been bit by a vampire nobody knows
     time: [75.579, 80.081]
+    tl: 아무도 모르는 뱀파이어에게 물렸어
   - text: It's my secret and I wanna be alone
     time: [80.109, 83.533]
+    tl: 내 비밀이야, 혼자 있고 싶어
   - text: Shop! I guess I can Vogue it up now
     time: [83.543, 85.755]
+    tl: 쇼핑! 이제 보그처럼 멋을 부려도 되겠네
   - text: Ever seen a Dark Lord Athleisure down
     time: [85.765, 87.774]
+    tl: 어둠의 군주가 애슬레저 차림인 걸 본 적 있어?
   - text: All day sleep in, all night fun
     time: [87.784, 89.853]
+    tl: 온종일 늦잠, 밤새 즐겨
   - text: Can I get a coffin
     time: [89.94, 91.002]
+    tl: 관 하나 살 수 있을까
   - text: On Amazon?
     time: [91.095, 92.221]
+    tl: 아마존에서?
   - text: Get my teeth done
     time: [92.314, 93.191]
+    tl: 이도 꾸며야지
   - text: With a diamond
     time: [93.301, 94.212]
+    tl: 다이아몬드로
   - text: Glasse de Bourgogne
     time: [94.334, 95.321]
+    tl: 부르고뉴 한 잔
   - text: '"With people in it!"'
     time: [95.331, 96.19]
+    tl: '"사람을 넣어서!"'
   - text: Beautiful & perfect
     time: [96.2, 98.084]
+    tl: 아름답고 완벽해
   - text: You know I deserve it
     time: [98.183, 100.104]
+    tl: 난 그럴 자격이 있잖아
   - text: I'm a vampire
     time: [100.432, 101.502]
+    tl: 난 뱀파이어야
   - text: Forever 21
     time: [101.512, 102.531]
+    tl: 영원한 스물하나
   - text: You know I like the taste of you
     time: [103.521, 107.238]
+    tl: 난 네 맛이 좋잖아
   - text: The way you shake, shake, shake that body good
     time: [107.36, 111.389]
+    tl: 그 몸을 멋지게 흔들고 흔들고 흔드는 모습
   - text: C'mon, c'mon now, let me get some more
     time: [111.51, 115.519]
+    tl: 자, 자, 이제 조금 더 줘
   - text: Now, baby, baby, don't make me beg for more
     time: [115.667, 120.7]
+    tl: 자, 자기야, 자기야, 더 달라고 애원하게 하지 마
   - text: I've been bitten by you
     time: [121.644, 123.877]
+    tl: 난 네게 물렸어
   - text: Now you're the only one I'll spend forever in bloom
     time: [123.999, 128.446]
+    tl: 이제 영원히 꽃피며 함께할 사람은 너뿐이야
   - text: Yes, I've been bitten by you
     time: [129.736, 132.097]
+    tl: 그래, 난 네게 물렸어
   - text: Who needs the sun when we look so good under the moon?
     time: [132.254, 137.345]
+    tl: 달빛 아래 우리가 이렇게 멋진데 태양이 무슨 소용이야?
   - text: I've been bitten by you
     time: [138.249, 140.52]
+    tl: 난 네게 물렸어
   - text: Now you're the only one I'll spend forever in bloom
     time: [140.654, 145.634]
+    tl: 이제 영원히 꽃피며 함께할 사람은 너뿐이야
   - text: Yes, I've been bitten by you
     time: [146.308, 148.879]
+    tl: 그래, 난 네게 물렸어
   - text: Who needs the sun when we look so good under the moon?
     time: [148.995, 153.941]
+    tl: 달빛 아래 우리가 이렇게 멋진데 태양이 무슨 소용이야?
   - text: I've been bitten by you
     time: [154.99, 157.325]
+    tl: 난 네게 물렸어
   - text: Anything that you do
     time: [157.335, 159.337]
+    tl: 네가 하는 어떤 일도
   - text: Couldn't ever replace my eternal love
     time: [159.356, 163.615]
+    tl: 내 영원한 사랑을 대신할 수 없어
   - text: You & I
     time: [163.647, 165.368]
+    tl: 너와 나
   - text: I've been bitten by you
     time: [186.282, 188.596]
+    tl: 난 네게 물렸어
   - text: Now you're the only one I'll spend forever in bloom
     time: [188.706, 193.617]
+    tl: 이제 영원히 꽃피며 함께할 사람은 너뿐이야
   - text: Yes, I've been bitten by you
     time: [194.377, 196.873]
+    tl: 그래, 난 네게 물렸어
   - text: Who needs the sun when we look so good under the moon?
     time: [196.995, 201.726]
+    tl: 달빛 아래 우리가 이렇게 멋진데 태양이 무슨 소용이야?
   - text: I've been bitten by you
     time: [202.936, 205.256]
+    tl: 난 네게 물렸어
   - text: Now you're the only one I'll spend forever in bloom
     time: [205.366, 210.318]
+    tl: 이제 영원히 꽃피며 함께할 사람은 너뿐이야
   - text: Yes, I've been bitten by you
     time: [211.072, 213.603]
+    tl: 그래, 난 네게 물렸어
   - text: Who needs the sun when we look so good under the moon?
     time: [213.825, 218.526]
+    tl: 달빛 아래 우리가 이렇게 멋진데 태양이 무슨 소용이야?
   - text: I've been bitten by you
     time: [219.672, 222.015]
+    tl: 난 네게 물렸어
   - text: I've been bitten by you
     time: [223.839, 226.723]
+    tl: 난 네게 물렸어
   - text: Yes, I've been bitten by you
     time: [227.824, 230.333]
+    tl: 그래, 난 네게 물렸어
   - text: Who needs the sun when we look so good under the moon?
     time: [230.444, 235.157]
+    tl: 달빛 아래 우리가 이렇게 멋진데 태양이 무슨 소용이야?

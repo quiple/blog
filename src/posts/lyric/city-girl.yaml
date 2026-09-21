@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: City girl
+titleTl: 시티 걸
 titleLang: ja
 year: '2025'
 artist: super-social-sandal
@@ -16,27 +17,51 @@ yt:
   audio: qa_zci0oYNI
   mv: cY_4rRbT3ro
 lines:
-  - 100円宝石ピカピカシール
-  - キラキラ1番素敵な君の
-  - 1番汚い所も好きよ
-  - 美味しいとこだけ食べていたい
-  - City girl City girl
-  - City girl City girl 君と
-  - してみたい してみたい
-  - してみたいよ いろんな事
-  - City girl City girl
-  - City girl City girl 君と
-  - してみたい してみたい
-  - 私もいつかは City girl
-  - 100円くじ引きあたりは君さ
-  - ドロドロ1番汚い君の
-  - 1番綺麗な部分が欲しい
-  - 美味しいとこだけ食べていたい
-  - City girl City girl
-  - City girl City girl 君と
-  - してみたい してみたい
-  - してみたいの いろんな事
-  - City girl City girl
-  - City girl City girl 君と
-  - してみたい してみたい
-  - 私もいつかは City girl
+  - text: 100円宝石ピカピカシール
+    tl: 100엔짜리 보석, 반짝반짝 스티커
+  - text: キラキラ1番素敵な君の
+    tl: 반짝반짝 가장 멋진 너의
+  - text: 1番汚い所も好きよ
+    tl: 가장 더러운 부분도 좋아해
+  - text: 美味しいとこだけ食べていたい
+    tl: 맛있는 부분만 먹고 싶어
+  - text: City girl City girl
+    tl: 시티 걸, 시티 걸
+  - text: City girl City girl 君と
+    tl: 시티 걸, 시티 걸, 너와
+  - text: してみたい してみたい
+    tl: 해 보고 싶어, 해 보고 싶어
+  - text: してみたいよ いろんな事
+    tl: 해 보고 싶어, 여러 가지를
+  - text: City girl City girl
+    tl: 시티 걸, 시티 걸
+  - text: City girl City girl 君と
+    tl: 시티 걸, 시티 걸, 너와
+  - text: してみたい してみたい
+    tl: 해 보고 싶어, 해 보고 싶어
+  - text: 私もいつかは City girl
+    tl: 나도 언젠가는 시티 걸
+  - text: 100円くじ引きあたりは君さ
+    tl: 100엔짜리 뽑기, 당첨은 너야
+  - text: ドロドロ1番汚い君の
+    tl: 질척질척 가장 더러운 너의
+  - text: 1番綺麗な部分が欲しい
+    tl: 가장 깨끗한 부분을 원해
+  - text: 美味しいとこだけ食べていたい
+    tl: 맛있는 부분만 먹고 싶어
+  - text: City girl City girl
+    tl: 시티 걸, 시티 걸
+  - text: City girl City girl 君と
+    tl: 시티 걸, 시티 걸, 너와
+  - text: してみたい してみたい
+    tl: 해 보고 싶어, 해 보고 싶어
+  - text: してみたいの いろんな事
+    tl: 해 보고 싶어, 여러 가지를
+  - text: City girl City girl
+    tl: 시티 걸, 시티 걸
+  - text: City girl City girl 君と
+    tl: 시티 걸, 시티 걸, 너와
+  - text: してみたい してみたい
+    tl: 해 보고 싶어, 해 보고 싶어
+  - text: 私もいつかは City girl
+    tl: 나도 언젠가는 시티 걸

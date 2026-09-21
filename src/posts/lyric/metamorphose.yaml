@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Metamorphose
+titleTl: 메타모르포즈
 titleLang: ja
 year: '2020'
 artist: monkey-majik
@@ -17,93 +18,139 @@ yt:
 lines:
   - text: 姿形を巧みに変えて
     time: [4.57, 9.17]
+    tl: 모습과 형태를 능숙하게 바꿔
   - text: 自由自在に on and on and on
     time: [9.18, 13.699]
+    tl: 자유자재로 계속, 계속, 계속
   - text: 幼き日のある夏 心を奪われた
     time: [32.519, 40.969]
+    tl: 어린 날 어느 여름, 마음을 빼앗겼어
   - text: 優雅に舞う妖しげなソレを
     time: [41.627, 46.2]
+    tl: 우아하게 춤추는 신비로운 그것을
   - text: 無我夢中で追いかけた
     time: [46.21, 49.578]
+    tl: 정신없이 쫓아갔어
   - text: まるで神の悪戯だね
     time: [50.877, 55.405]
+    tl: 마치 신의 장난 같네
   - text: そうやって play the fool
     time: [55.516, 58.755]
+    tl: 그렇게 바보처럼 굴어
   - text: この世の神秘 Metamorphose
     time: [60.041, 64.559]
+    tl: 이 세상의 신비, 메타모르포즈
   - text: 新世界への扉に立って
     time: [64.569, 68.561]
+    tl: 새로운 세계로 가는 문 앞에 서서
   - text: 姿形を巧みに変えて
     time: [68.571, 73.123]
+    tl: 모습과 형태를 능숙하게 바꿔
   - text: 自由自在に何処だって Freedom calling
     time: [73.133, 77.741]
+    tl: 자유자재로 어디든, 자유가 부르고 있어
   - text: I don't know where I went wrong
     time: [77.851, 79.922]
+    tl: 어디서 잘못됐는지 모르겠어
   - text: Sorry for the things I've done
     time: [80.032, 82.331]
+    tl: 내가 한 일들은 미안해
   - text: Lift me up and keep me strong
     time: [82.43, 84.514]
+    tl: 날 일으켜 줘, 강하게 지켜 줘
   - text: On and on and on
     time: [84.583, 86.903]
+    tl: 계속, 계속, 계속
   - text: Who's got the best
     time: [86.913, 88.75]
+    tl: 누가 최고를 가졌든
   - text: I don't care
     time: [88.76, 90.631]
+    tl: 난 상관없어
   - text: I won't contest, I'm movin' on
     time: [91.661, 94.723]
+    tl: 다투지 않을게, 난 나아갈 거야
   - text: Yeah, who's got the best
     time: [95.642, 97.839]
+    tl: 그래, 누가 최고를 가졌든
   - text: Leave it, I don't care
     time: [97.849, 99.766]
+    tl: 놔둬, 난 상관없어
   - text: No, no, there's nothing left worth holding on
     time: [99.776, 103.946]
+    tl: 아니, 아니, 붙잡을 만한 건 아무것도 남지 않았어
   - text: まるで神の悪戯だね
     time: [105.463, 110.252]
+    tl: 마치 신의 장난 같네
   - text: Coming out of my cocoon
     time: [110.362, 113.427]
+    tl: 내 고치에서 나와
   - text: この世の神秘 Metamorphose
     time: [114.851, 119.318]
+    tl: 이 세상의 신비, 메타모르포즈
   - text: 新世界への扉に立って
     time: [119.328, 123.456]
+    tl: 새로운 세계로 가는 문 앞에 서서
   - text: 姿形を巧みに変えて
     time: [123.466, 128.054]
+    tl: 모습과 형태를 능숙하게 바꿔
   - text: 自由自在に何処だって Freedom calling
     time: [128.064, 132.575]
+    tl: 자유자재로 어디든, 자유가 부르고 있어
   - text: I don't know where I went wrong
     time: [132.668, 134.763]
+    tl: 어디서 잘못됐는지 모르겠어
   - text: Sorry for the things I've done
     time: [134.868, 137.213]
+    tl: 내가 한 일들은 미안해
   - text: Lift me up and keep me strong
     time: [137.223, 139.326]
+    tl: 날 일으켜 줘, 강하게 지켜 줘
   - text: On and on and on
     time: [139.425, 141.269]
+    tl: 계속, 계속, 계속
   - text: It seems right
     time: [141.279, 143.16]
+    tl: 맞는 것 같지만
   - text: But it feels wrong
     time: [143.438, 145.755]
+    tl: 잘못된 기분이야
   - text: Yeah, it seems right
     time: [145.765, 148.679]
+    tl: 그래, 맞는 것 같아
   - text: 姿形を巧みに変えて
     time: [169.186, 173.772]
+    tl: 모습과 형태를 능숙하게 바꿔
   - text: 自由自在に何処だって Freedom calling
     time: [173.782, 178.34]
+    tl: 자유자재로 어디든, 자유가 부르고 있어
   - text: I don't know where I went wrong
     time: [178.427, 180.471]
+    tl: 어디서 잘못됐는지 모르겠어
   - text: Sorry for the things I've done
     time: [180.569, 182.961]
+    tl: 내가 한 일들은 미안해
   - text: Lift me up and keep me strong
     time: [183.048, 185.057]
+    tl: 날 일으켜 줘, 강하게 지켜 줘
   - text: On and on and on
     time: [185.149, 187.513]
+    tl: 계속, 계속, 계속
   - text: 姿形を巧みに変えて
     time: [187.523, 191.998]
+    tl: 모습과 형태를 능숙하게 바꿔
   - text: 自由自在に何処だって Freedom calling
     time: [192.103, 196.59]
+    tl: 자유자재로 어디든, 자유가 부르고 있어
   - text: I don't know where I went wrong
     time: [196.689, 198.721]
+    tl: 어디서 잘못됐는지 모르겠어
   - text: Sorry for the things I've done
     time: [198.842, 201.164]
+    tl: 내가 한 일들은 미안해
   - text: Lift me up and keep me strong
     time: [201.269, 203.312]
+    tl: 날 일으켜 줘, 강하게 지켜 줘
   - text: On and on and on
     time: [203.423, 205.919]
+    tl: 계속, 계속, 계속

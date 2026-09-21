@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: MINIMUM RAGE
+titleTl: 최소한의 분노
 titleLang: en
 year: '2025'
 artist:
@@ -22,115 +23,172 @@ offsets:
 lines:
   - text: Hi, how can I help you?
     time: [0.92, 2.3]
+    tl: 안녕하세요, 무엇을 도와드릴까요?
   - text: Thanks for checking in, I'm not doing well
     time: [12.8, 14.95]
+    tl: 물어봐 줘서 고마워, 난 잘 못 지내
   - text: I'm the new face of management, it's basically hell
     time: [14.95, 18.01]
+    tl: 새 관리자가 됐는데 그냥 지옥이야
   - text: There's coffee on my shirt and burns on my arm
     time: [18.01, 20.37]
+    tl: 셔츠에는 커피가 묻고 팔에는 화상을 입었어
   - text: I guess hot oil really hurts a lot
     time: [20.37, 23.41]
+    tl: 뜨거운 기름은 정말 많이 아프네
   - text: Working overtime ’cause someone called out
     time: [23.41, 25.56]
+    tl: 누가 결근해서 초과 근무 중이야
   - text: And now we're running out of ice, can you tell me how?
     time: [25.56, 28.48]
+    tl: 이젠 얼음도 떨어지는데, 어떻게 이러는 거야?
   - text: To make everything worse, the lights just went dark
     time: [28.48, 31.19]
+    tl: 설상가상으로 불마저 나갔어
   - text: Oh, won't you tell me when it's gonna stop?
     time: [31.19, 33.97]
+    tl: 아, 언제쯤 끝나는지 말해 줄래?
   - text: Please step back
     time: [33.97, 36.11]
+    tl: 물러서 주세요
   - text: If you keep yelling, I am gonna have a panic attack
     time: [36.11, 39.13]
+    tl: 계속 소리 지르시면 공황 발작이 올 것 같아요
   - text: Please understand
     time: [39.13, 41.21]
+    tl: 이해해 주세요
   - text: Given the circumstances, I'm doing the very best I can
     time: [41.21, 45.71]
+    tl: 이 상황에서 저는 최선을 다하고 있어요
   - text: Smile, baby, smile for the corporation
     time: [45.71, 48.38]
+    tl: 웃어, 자기야, 회사를 위해 웃어
   - text: Vital, baby, vital to the operation
     time: [48.38, 51]
+    tl: 필수야, 자기야, 운영에 꼭 필요해
   - text: Working for an hour costs as much as a sandwich
     time: [51, 53.75]
+    tl: 한 시간 일한 값은 샌드위치 하나 값
   - text: There's gotta be more than this, there's gotta be more than this
     time: [53.75, 56.45]
+    tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
   - text: Smile, baby, smile through the aggravation
     time: [56.45, 59.15]
+    tl: 웃어, 자기야, 화가 나도 웃어
   - text: One day, they'll appreciate your dedication
     time: [59.15, 61.65]
+    tl: 언젠가 네 헌신을 알아줄 거야
   - text: Never-ending orders and I don't have the bandwidth
     time: [61.65, 64.28]
+    tl: 주문은 끝이 없는데 감당할 여력이 없어
   - text: There's gotta be more than this, there's gotta be more than this
     time: [64.28, 66.82]
+    tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
   - text: There's gotta be more than this, there's gotta be more than this
     time: [66.82, 69.62]
+    tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
   - text: Thanks for checking in, the shit hit the shit
     time: [80.12, 82.23]
+    tl: 물어봐 줘서 고마워, 상황은 개판 위에 개판이야
   - text: A lot of money is missing from during my shift
     time: [82.23, 85.18]
+    tl: 내 근무 시간에 큰돈이 사라졌어
   - text: There's ringing from the phone, a call from my boss
     time: [85.18, 87.53]
+    tl: 전화가 울려, 상사한테서 온 전화야
   - text: She said that corporate's gonna call the cops
     time: [87.53, 90.5]
+    tl: 본사에서 경찰을 부르겠대
   - text: When the cops arrived, I figured it out
     time: [90.5, 92.72]
+    tl: 경찰이 왔을 때야 알아챘어
   - text: The totals in the safe were right, I can't fucking count
     time: [92.72, 95.53]
+    tl: 금고 총액은 맞았어, 내가 씨발 계산을 못한 거야
   - text: I'm desperate to go home, but reading the clock
     time: [95.53, 98.18]
+    tl: 집에 가고 싶어 죽겠는데 시계를 보니
   - text: Made me cry so hard that I need a mop
     time: [98.18, 101.27]
+    tl: 대걸레가 필요할 만큼 울었어
   - text: Please look away
     time: [101.27, 103.35]
+    tl: 다른 데를 봐 주세요
   - text: I need a second to reset, today I don't get a break
     time: [103.35, 106.49]
+    tl: 마음을 추스를 시간이 필요해요, 오늘은 쉴 틈도 없네요
   - text: Please let me go
     time: [106.49, 108.63]
+    tl: 제발 보내 주세요
   - text: I'm out of sick days, so I can't afford to break another bone
     time: [108.63, 112.97]
+    tl: 병가를 다 써서 뼈가 또 부러질 여유도 없어요
   - text: Smile, baby, smile for the corporation
     time: [112.97, 115.66]
+    tl: 웃어, 자기야, 회사를 위해 웃어
   - text: Vital, baby, vital to the operation
     time: [115.66, 118.25]
+    tl: 필수야, 자기야, 운영에 꼭 필요해
   - text: Working for an hour costs as much as a sandwich
     time: [118.25, 120.83]
+    tl: 한 시간 일한 값은 샌드위치 하나 값
   - text: There's gotta be more than this, there's gotta be more than this
     time: [120.83, 123.55]
+    tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
   - text: Smile, baby, smile through the aggravation
     time: [123.55, 126.14]
+    tl: 웃어, 자기야, 화가 나도 웃어
   - text: One day, they'll appreciate your dedication
     time: [126.14, 128.8]
+    tl: 언젠가 네 헌신을 알아줄 거야
   - text: Never-ending orders and I don't have the bandwidth
     time: [128.8, 131.36]
+    tl: 주문은 끝이 없는데 감당할 여력이 없어
   - text: There's gotta be more than this, there's gotta be more than this
     time: [131.36, 133.98]
+    tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
   - text: There's gotta be more than this, there's gotta be more than this
     time: [133.98, 137.11]
+    tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
   - text: I'm reaching my limit, red-hot fever like a sickness
     time: [139.61, 144.28]
+    tl: 한계에 다다랐어, 병처럼 시뻘건 열기
   - text: At the maximum, it's pain, and at minimum, it's rage
     time: [144.28, 150.16]
+    tl: 최대로 느끼면 고통이고, 최소한으로 느껴도 분노야
   - text: I'm reaching my limit, red-hot fever like a sickness
     time: [150.16, 154.61]
+    tl: 한계에 다다랐어, 병처럼 시뻘건 열기
   - text: At the maximum, it's pain, and at minimum, it's rage
     time: [154.61, 160.63]
+    tl: 최대로 느끼면 고통이고, 최소한으로 느껴도 분노야
   - text: I'm not gonna smile, fuck the corporation
     time: [164.63, 167.11]
+    tl: 웃지 않을 거야, 회사 따위 엿 먹어
   - text: Cycle, it's a cycle, not an operation
     time: [167.11, 169.67]
+    tl: 악순환, 이건 운영이 아니라 악순환이야
   - text: All they're ever gonna do is take me for granted
     time: [169.67, 172.29]
+    tl: 그들은 날 당연하게 여길 뿐이야
   - text: There's gotta be more than this, there's gotta be more than this
     time: [172.29, 175.09]
+    tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
   - text: I'm not gonna smile through the aggravation
     time: [175.09, 177.59]
+    tl: 화가 나는데 웃지 않을 거야
   - text: They'll never appreciate my dedication
     time: [177.59, 180.32]
+    tl: 그들은 내 헌신을 절대 알아주지 않아
   - text: Never-ending orders that I think I'll abandon
     time: [180.32, 182.73]
+    tl: 끝없는 주문, 그냥 내버려 둘까 봐
   - text: There's gotta be more than this, there's gotta be more than this
     time: [182.73, 185.48]
+    tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
   - text: There's gotta be more than this, I know that there's more
     time: [185.48, 190.95]
+    tl: 이것보다 나은 게 있을 거야, 분명 더 있다는 걸 알아
   - text: Yeah
     time: [192.95, 194.94]
+    tl: 그래

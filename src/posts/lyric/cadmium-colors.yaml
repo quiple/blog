@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Cadmium Colors
+titleTl: 카드뮴 색채
 titleLang: en
 year: '2024'
 artist:
@@ -21,222 +22,296 @@ lines:
   - text: I spend my hours doing alchemy
     pr: 아이 스펜드 마이 아워즈 두잉 앨커미
     time: [0.708, 2.96]
+    tl: 시간을 보내며 연금술을 해
   - text: I mix my yellows and my blues to make a shade of green
     pr: 아이 믹스 마이 옐로즈 앤드 마이 블루즈 투 메이크 어 셰이드 오브 그린
     time: [3.842, 6.919]
+    tl: 노랑과 파랑을 섞어 초록빛을 만들어
   - text: Prosaic practice of depravity
     pr: 프로제이크 프랙티스 오브 디프래버티
     time: [7.093, 9.473]
+    tl: 타락을 실천하는 따분한 일
   - text: Suspending innocents above their disbelief
     pr: 서스펜딩 이노센츠 어보브 데어 디스빌리프
     time: [9.914, 12.236]
+    tl: 순진한 이들을 불신 너머에 매달아
   - text: I wish that I could paint a pretty picture onto everything
     pr: 아이 위시 댓 아이 쿠드 페인트 어 프리티 픽처 안터 에브리싱
     time: [12.329, 15.905]
+    tl: 모든 것 위에 아름다운 그림을 그릴 수 있으면 좋겠어
   - text: And leave a mark upon the world that felt like anything
     pr: 앤드 리브 어 마크 어판 더 월드 댓 펠트 라이크 에니싱
     time: [16.149, 18.692]
+    tl: 세상에 무언가 느껴지는 흔적을 남기고 싶어
   - text: But maybe that's the essence of an artist and their legacy
     pr: 벗 메이비 대츠 디 에센스 오브 언 아티스트 앤드 데어 레거시
     time: [18.808, 22.418]
+    tl: 하지만 그게 예술가와 그 유산의 본질일지도 몰라
   - text: Just chasing down a sense of infamy
     pr: 저스트 체이싱 다운 어 센스 오브 인퍼미
     time: [23.254, 25.75]
+    tl: 그저 악명이라는 감각을 쫓아가는 것
   - text: Put brush to canvas with a pirouette
     pr: 풋 브러시 투 캔버스 위드 어 피루에트
     time: [26.517, 28.955]
+    tl: 피루엣을 돌며 캔버스에 붓을 대
   - text: A simple motion makes the consequence intricate
     pr: 어 심플 모션 메이크스 더 칸서퀀스 인트러컷
     time: [29.756, 32.542]
+    tl: 단순한 동작이 복잡한 결과를 만들어
   - text: All the little nothings and my parapet
     pr: 올 더 리틀 너싱즈 앤드 마이 패러핏
     time: [32.635, 35.538]
+    tl: 작고 하찮은 모든 것과 나의 난간
   - text: I hope it's something that you don't forget
     pr: 아이 호프 이츠 섬싱 댓 유 돈트 퍼겟
     time: [37.883, 40.762]
+    tl: 네가 잊지 못할 무언가가 되길 바라
   - text: Cadmium red is the ground beneath
     pr: 캐드미엄 레드 이즈 더 그라운드 비니스
     time: [42.422, 45.395]
+    tl: 카드뮴 레드는 발밑의 땅
   - text: Cadmium orange, everything I see
     pr: 캐드미엄 오렌지, 에브리싱 아이 시
     time: [45.638, 48.645]
+    tl: 카드뮴 오렌지는 눈에 보이는 모든 것
   - text: Cadmium yellow is the air I breathe
     pr: 캐드미엄 옐로 이즈 디 에어 아이 브리드
     time: [48.854, 51.884]
+    tl: 카드뮴 옐로는 내가 숨 쉬는 공기
   - text: Cadmium colors painted inside me
     pr: 캐드미엄 컬러즈 페인티드 인사이드 미
     time: [52.105, 55.159]
+    tl: 내 안에 칠해진 카드뮴 색채
   - text: I can make autumn from a single leaf
     pr: 아이 캔 메이크 어텀 프럼 어 싱글 리프
     time: [55.367, 58.351]
+    tl: 나뭇잎 하나로 가을을 만들 수 있어
   - text: Steal a fine picture like a first-class thief
     pr: 스틸 어 파인 픽처 라이크 어 퍼스트 클래스 시프
     time: [58.549, 61.602]
+    tl: 일류 도둑처럼 멋진 그림을 훔쳐
   - text: Make the water work like you won't believe
     pr: 메이크 더 워터 워크 라이크 유 원트 빌리브
     time: [61.857, 64.899]
+    tl: 믿기 힘들 만큼 물을 다뤄
   - text: Find a new world that can set you free
     pr: 파인드 어 누 월드 댓 캔 셋 유 프리
     time: [65.05, 68.08]
+    tl: 널 자유롭게 해 줄 새 세상을 찾아
   - text: How could anybody ever live like me?
     pr: 하우 쿠드 에니바디 에버 리브 라이크 미
     time: [68.324, 71.343]
+    tl: 누가 어떻게 나처럼 살 수 있겠어?
   - text: I spend my hours doing alchemy
     pr: 아이 스펜드 마이 아워즈 두잉 앨커미
     time: [71.935, 74.35]
+    tl: 시간을 보내며 연금술을 해
   - text: I make a life refining zinc inside the smeltery
     pr: 아이 메이크 어 라이프 리파이닝 징크 인사이드 더 스멜터리
     time: [75.151, 78.367]
+    tl: 제련소에서 아연을 정제하며 먹고살아
   - text: It's not exactly where I want to be
     pr: 이츠 낫 이그잭틀리 웨어 아이 원트 투 비
     time: [78.483, 80.7]
+    tl: 내가 원하던 곳은 아니야
   - text: But wanting doesn't matter when there's mouths to feed
     pr: 벗 원팅 더즌트 매터 웬 데어즈 마우스 투 피드
     time: [81.293, 83.638]
+    tl: 하지만 먹여 살릴 입이 있으면 바람 따윈 중요하지 않아
   - text: I wish that I could paint a pretty picture of a fantasy
     pr: 아이 위시 댓 아이 쿠드 페인트 어 프리티 픽처 오브 어 팬터시
     time: [83.707, 87.248]
+    tl: 환상을 아름다운 그림으로 그릴 수 있으면 좋겠어
   - text: And turn a feeling to a living for my family
     pr: 앤드 턴 어 필링 투 어 리빙 포 마이 패밀리
     time: [87.353, 90.046]
+    tl: 감정을 우리 가족의 생계로 바꿀 수 있다면
   - text: Instead I make the metals in the pigments in my reverie
     pr: 인스테드 아이 메이크 더 메틀즈 인 더 피그먼츠 인 마이 레버리
     time: [90.139, 93.889]
+    tl: 대신 꿈속에서 안료에 들어갈 금속을 만들어
   - text: And maybe that can be enough for me
     pr: 앤드 메이비 댓 캔 비 이너프 포 미
     time: [94.574, 97.059]
+    tl: 그걸로 충분할지도 몰라
   - text: Oh, isn't it funny facing destiny
     pr: 오, 이즌트 잇 퍼니 페이싱 데스티니
     time: [97.535, 100.286]
+    tl: 오, 운명과 마주한다는 건 참 우습지
   - text: It's like a knife inside twisting my arteries
     pr: 이츠 라이크 어 나이프 인사이트 트위스팅 마이 아터리즈
     time: [101.088, 103.874]
+    tl: 내 안에서 칼이 동맥을 비트는 것 같아
   - text: God, I want for nothing but identity
     pr: 갓, 아이 원트 포 너싱 벗 아이덴티티
     time: [103.967, 106.835]
+    tl: 신이여, 내가 바라는 건 정체성뿐
   - text: I think that something might be wrong with me
     pr: 아이 싱크 댓 섬싱 마이트 비 롱 위드 미
     time: [109.215, 112.117]
+    tl: 내게 뭔가 문제가 있는 것 같아
   - text: Cadmium red is the ground beneath
     pr: 캐드미엄 레드 이즈 더 그라운드 비니스
     time: [113.719, 116.691]
+    tl: 카드뮴 레드는 발밑의 땅
   - text: Cadmium orange, everything I see
     pr: 캐드미엄 오렌지, 에브리싱 아이 시
     time: [116.982, 119.989]
+    tl: 카드뮴 오렌지는 눈에 보이는 모든 것
   - text: Cadmium yellow is the air I breathe
     pr: 캐드미엄 옐로 이즈 디 에어 아이 브리드
     time: [120.174, 123.309]
+    tl: 카드뮴 옐로는 내가 숨 쉬는 공기
   - text: Cadmium colors painted inside me
     pr: 캐드미엄 컬러즈 페인티드 인사이드 미
     time: [123.46, 126.467]
+    tl: 내 안에 칠해진 카드뮴 색채
   - text: Antegrade fever, 101 degrees
     pr: 앤티그레이드 피버, 원 오 원 디그리즈
     time: [126.699, 129.776]
+    tl: 앞으로 번지는 열병, 화씨 101도
   - text: Shatter my body with a gentle breeze
     pr: 셰터 마이 바디 위드 어 젠틀 브리즈
     time: [129.915, 133.027]
+    tl: 산들바람으로 내 몸을 산산조각 내
   - text: Dammit, I am real and I have my dreams
     pr: 대밋, 아이 앰 리얼 앤드 아이 해브 마이 드림즈
     time: [133.178, 136.231]
+    tl: 젠장, 난 실재하고 내 꿈도 있어
   - text: Watch me burn brighter ’til I fail to breathe
     pr: 워치 미 번 브라이터 틸 아이 페일 투 브리드
     time: [136.37, 139.447]
+    tl: 숨이 멎을 때까지 더 밝게 타오르는 날 봐
   - text: How could anybody ever live like me?
     pr: 하우 쿠드 에니바디 에버 리브 라이크 미
     time: [139.644, 142.698]
+    tl: 누가 어떻게 나처럼 살 수 있겠어?
   - text: Baby, do you know what it's like to die
     pr: 베이비, 두 유 노 왓 이츠 라이크 투 다이
     time: [143.696, 146.03]
+    tl: 자기야, 죽는 게 어떤 건지 아니
   - text: To see the sparkle fade from inside your eye
     pr: 투 시 더 스파클 페이드 프럼 인사이드 유어 아이
     time: [146.134, 148.363]
+    tl: 네 눈 속의 반짝임이 사라지는 걸 보는 게
   - text: I can't remember what it's like to feel autonomy
     pr: 아이 캔트 리멤버 왓 이츠 라이크 투 필 오타너미
     time: [148.479, 151.045]
+    tl: 스스로 결정한다는 게 어떤 기분인지 기억나지 않아
   - text: Can't even feel it in the moments that you left to me
     pr: 캔트 이븐 필 잇 인 더 모먼츠 댓 유 레프트 투 미
     time: [151.127, 154.029]
+    tl: 네가 내게 남겨 준 순간에도 느낄 수 없어
   - text: I don't wanna leave with a work undone
     pr: 아이 돈트 워너 리브 위드 어 워크 언던
     time: [154.308, 156.641]
+    tl: 작품을 끝내지 못한 채 떠나고 싶지 않아
   - text: The paint can barely dry ’fore it fills my lungs
     pr: 더 페인트 캔 베얼리 드라이 포 잇 필즈 마이 렁즈
     time: [156.781, 158.952]
+    tl: 물감은 마르기도 전에 폐를 채워
   - text: I keep a bullet in the chamber, mocking me
     pr: 아이 킵 불럿 인 더 체임버, 마킹 미
     time: [159.033, 161.738]
+    tl: 약실 속 총알 하나가 날 비웃어
   - text: But I don't wanna feel it coming out of me
     pr: 벗 아이 돈트 워너 필 잇 커밍 아웃 오브 미
     time: [162.063, 164.466]
+    tl: 하지만 그게 내 몸을 뚫고 나오는 걸 느끼고 싶진 않아
   - text: I don't want-
     pr: 아이 돈 원트-
     time: [164.745, 165.314]
+    tl: 난 원하지 않-
   - text: I spend my hours doing alchemy
     pr: 아이 스펜드 마이 아워즈 두잉 앨커미
     time: [191.518, 193.816]
+    tl: 시간을 보내며 연금술을 해
   - text: I mix my yellows and my blues to make a shade of green
     pr: 아이 믹스 마이 옐로즈 앤드 마이 블루즈 투 메이크 어 셰이드 오브 그린
     time: [194.676, 197.775]
+    tl: 노랑과 파랑을 섞어 초록빛을 만들어
   - text: Chasing impossible philosophy
     pr: 체이싱 임파서블 펄라서피
     time: [197.961, 200.295]
+    tl: 불가능한 철학을 쫓으며
   - text: And hoping that this poison ain't the death of me
     pr: 앤드 호핑 댓 디스 포이즌 에인트 더 데스 오브 미
     time: [200.724, 204.091]
+    tl: 이 독이 내 죽음이 아니길 바라
   - text: Cadmium red is the ground beneath
     pr: 캐드미엄 레드 이즈 더 그라운드 비니스
     time: [207.423, 210.465]
+    tl: 카드뮴 레드는 발밑의 땅
   - text: Cadmium orange, everything I see
     pr: 캐드미엄 오렌지, 에브리싱 아이 시
     time: [210.663, 213.716]
+    tl: 카드뮴 오렌지는 눈에 보이는 모든 것
   - text: Cadmium yellow is the air I breathe
     pr: 캐드미엄 옐로 이즈 디 에어 아이 브리드
     time: [213.925, 217.048]
+    tl: 카드뮴 옐로는 내가 숨 쉬는 공기
   - text: Cadmium colors painted inside me
     pr: 캐드미엄 컬러즈 페인티드 인사이드 미
     time: [217.176, 220.218]
+    tl: 내 안에 칠해진 카드뮴 색채
   - text: I can make autumn from a single leaf
     pr: 아이 캔 메이크 어텀 프럼 어 싱글 리프
     time: [220.427, 223.445]
+    tl: 나뭇잎 하나로 가을을 만들 수 있어
   - text: Steal a fine picture like a first-class thief
     pr: 스틸 어 파인 픽처 라이크 어 퍼스트 클래스 시프
     time: [223.631, 226.673]
+    tl: 일류 도둑처럼 멋진 그림을 훔쳐
   - text: Make the water work like you won't believe
     pr: 메이크 더 워터 워크 라이크 유 원트 빌리브
     time: [226.905, 229.889]
+    tl: 믿기 힘들 만큼 물을 다뤄
   - text: Find a new world that can set you free
     pr: 파인드 어 누 월드 댓 캔 셋 유 프리
     time: [230.121, 233.221]
+    tl: 널 자유롭게 해 줄 새 세상을 찾아
   - text: How could anybody ever live like-
     pr: 하우 쿠드 에니바디 에버 리브 라이크-
     time: [233.418, 236.17]
+    tl: 누가 어떻게 이렇게 살 수-
   - text: Baby, do you know what you wanna hear
     pr: 베이비, 두 유 노 왓 유 워너 히어
     time: [237.551, 240.465]
+    tl: 자기야, 네가 듣고 싶은 말이 뭔지 아니
   - text: ’Cause you can say the word, make it oh so clear
     pr: 코즈 유 캔 세이 더 워드, 메이크 잇 오 소 클리어
     time: [240.674, 243.368]
+    tl: 네가 한마디면 분명하게 말할 수 있으니까
   - text: We're all just searching for a sense of solidarity
     pr: 위어 올 저스트 서칭 포 어 센스 오브 살러대러티
     time: [243.484, 246.607]
+    tl: 우리는 모두 연대감을 찾고 있을 뿐
   - text: To hold each other close and confiscate our destiny
     pr: 투 홀드 이치 아더 클로즈 앤드 칸퍼스케이트 아워 데스티니
     time: [246.758, 250.218]
+    tl: 서로를 꼭 끌어안고 운명을 빼앗아 오려고
   - text: No one wants to leave with a work undone
     pr: 노 원 원츠 투 리브 위드 어 워크 언던
     time: [250.589, 253.434]
+    tl: 누구도 작품을 끝내지 못한 채 떠나고 싶지 않아
   - text: We only need a brush we can pass along
     pr: 위 온리 니드 어 브러시 위 캔 패스 얼롱
     time: [253.654, 256.406]
+    tl: 우리에게 필요한 건 서로 건넬 붓 하나뿐
   - text: I kept a bullet in the chamber for a rainy day
     pr: 아이 켑트 어 불럿 인 더 체임버 포 어 레이니 데이
     time: [256.476, 259.935]
+    tl: 만일을 위해 약실에 총알 하나를 남겨 뒀어
   - text: But what's the point in planning for it anyway?
     pr: 벗 와츠 더 포인트 인 플래닝 포 잇 에니웨이
     time: [260.121, 263.058]
+    tl: 하지만 그걸 계획해 봤자 무슨 소용이야?
   - text: I've got too many colors for a shade of grey
     pr: 아이브 갓 투 매니 컬러즈 포 어 셰이드 오브 그레이
     time: [263.372, 266.286]
+    tl: 회색 하나로 칠하기엔 내겐 색이 너무 많아
   - text: And I can make it autumn every single day
     pr: 앤드 아이 캔 메이크 잇 어텀 에브리 싱글 데이
     time: [266.599, 269.792]
+    tl: 난 매일을 가을로 만들 수 있어

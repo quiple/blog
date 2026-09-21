@@ -66,6 +66,7 @@ lines:
   - text: Are you empty?
     pr: 아 유 엠프티?
     time: [79.753, 81.443]
+    tl: 너는 텅 비었니?
   - text: あなたがしてくれたように
     pr: 아나타가시테쿠레타요니
     tl: 네가 내게 해 줬던 것처럼
@@ -109,6 +110,7 @@ lines:
   - text: Are you empty?
     pr: 아 유 엠프티?
     time: [155.538, 157.271]
+    tl: 너는 텅 비었니?
   - text: あなたにもらったものを
     pr: 아나타니모랏타모노오
     tl: 네게 받은 것을
@@ -124,6 +126,7 @@ lines:
   - text: Are you empty?
     pr: 아 유 엠프티?
     time: [202.863, 204.575]
+    tl: 너는 텅 비었니?
   - text: それでも
     pr: 소레데모
     tl: 그래도
@@ -143,6 +146,7 @@ lines:
   - text: Are you empty?
     pr: 아 유 엠프티?
     time: [224.991, 226.867]
+    tl: 너는 텅 비었니?
   - text: 少しずつ歩けばいい
     pr: 스코시즈츠아루케바이이
     tl: 조금씩 걸으면 돼

@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Still Shining
+titleTl: 여전히 빛나
 titleLang: en
 year: '2026'
 artist:
@@ -18,72 +19,141 @@ yt:
   audio: OJMg8o2pxsg
   mv: cqmHCKDrRCM
 lines:
-  - Glittering tears are falling down on the sidewalk
-  - Time won't let me wait another day
-  - While I'm thinking of the sadness behind your smile
-  - My dreams dissolve like shining rays on the dew drops
-  - Now it's disappeared, I know that I can never hold on
-  - To who I thought I would be
-  - Even when my heart is filled with shimmering sorrow
-  - I can recall memories that last forever
-  - Feeling like a new reality in this life
-  - Without the time we spent together
-  - Time is shattering the glass of everything that you gave
-  - And it's fading away into the shadows
-  - Finally, I'm feeling like I'm ready to just move on now
-  - Thinking of
-  - My reflection, brightest sunlight, ran too far, forgot my name
-  - Falling tears still shine like dreams, turning the pain to brighter days
-  - Even if I lose my way as feelings fade, they stay the same
-  - May be beaten when I'm broken, but I know I'm still shining
-  - Waking in the morning, dreams dissolve before they wait
-  - Disappearing memories are something I just can't translate
-  - Feel the pain, but that's okay, I keep on wishing once again
-  - Just as long as I'm still here to stay, I know I'm still shining
-  - I know I'm still shining
-  - I know I'm still shining
-  - I know I'm still shining
-  - My reflection, brightest sunlight, ran too far, forgot my name
-  - Falling tears still shine like dreams, turning the pain to brighter days
-  - Even if I lose my way as feelings fade, they stay the same
-  - May be beaten when I'm broken, but I know I'm still shining
-  - Waking in the morning, dreams dissolve before they wait
-  - Disappearing memories are something I just can't translate
-  - Feel the pain, but that's okay, I keep on wishing once again
-  - Just as long as I'm still here to stay, I know I'm still shining
-  - And even if I lose my way
-  - I still know the light will keep on shining
-  - Turning pain into brighter days until the day I fade away
-  - My hopes and dreams are waking up in the morning
-  - Facing brighter days where I know I can keep moving on
-  - I won't forget you
-  - Even when my heart is filled with shimmering sorrow
-  - I can recall memories that last forever
-  - Feeling like a new reality in this life
-  - Without the time we spent together
-  - Time is shattering the glass of everything that you gave
-  - And it's fading away Into the shadows
-  - Finally, I'm feeling like I'm ready to just move on now
-  - Thinking of
-  - My reflection, brightest sunlight, ran too far, forgot my name
-  - Falling tears still shine like dreams, turning the pain to brighter days
-  - Even if I lose my way as feelings fade, they stay the same
-  - May be beaten when I'm broken, but I know I'm still shining
-  - Waking in the morning, dreams dissolve before they wait
-  - Disappearing memories are something I just can't translate
-  - Feel the pain, but that's okay, I keep on wishing once again
-  - Just as long as I'm still here to stay, I know I'm still shining
-  - I know I'm still shining
-  - I know I'm still shining
-  - I know I'm still shining
-  - I know I'm still shining
-  - My reflection, brightest sunlight, ran too far, forgot my name
-  - Falling tears still shine like dreams, turning the pain to brighter days
-  - Even if I lose my way as feelings fade, they stay the same
-  - May be beaten when I'm broken, but I know I'm still shining
-  - Waking in the morning, dreams dissolve before they wait
-  - Disappearing memories are something I just can't translate
-  - Feel the pain, but that's okay, I keep on wishing once again
-  - Just as long as I'm still here to stay, I know I'm still shining
-  - Glittering tears are falling down on the sidewalk
-  - Time won't let me wait another day while I'm thinking of
+  - text: Glittering tears are falling down on the sidewalk
+    tl: 반짝이는 눈물이 보도 위로 떨어져
+  - text: Time won't let me wait another day
+    tl: 시간은 하루 더 기다리게 해 주지 않아
+  - text: While I'm thinking of the sadness behind your smile
+    tl: 네 미소 뒤의 슬픔을 생각하는 동안
+  - text: My dreams dissolve like shining rays on the dew drops
+    tl: 내 꿈은 이슬방울 위의 빛처럼 녹아내려
+  - text: Now it's disappeared, I know that I can never hold on
+    tl: 이제 사라졌어, 더는 붙잡을 수 없다는 걸 알아
+  - text: To who I thought I would be
+    tl: 내가 될 거라 생각했던 모습을
+  - text: Even when my heart is filled with shimmering sorrow
+    tl: 마음이 반짝이는 슬픔으로 가득해도
+  - text: I can recall memories that last forever
+    tl: 영원히 남을 기억을 떠올릴 수 있어
+  - text: Feeling like a new reality in this life
+    tl: 이 삶의 새로운 현실 같은 기분
+  - text: Without the time we spent together
+    tl: 우리가 함께 보낸 시간 없이
+  - text: Time is shattering the glass of everything that you gave
+    tl: 시간이 네가 준 모든 것의 유리를 산산조각 내
+  - text: And it's fading away into the shadows
+    tl: 그리고 그림자 속으로 사라져 가
+  - text: Finally, I'm feeling like I'm ready to just move on now
+    tl: 마침내 이제 나아갈 준비가 된 것 같아
+  - text: Thinking of
+    tl: 생각하며
+  - text: My reflection, brightest sunlight, ran too far, forgot my name
+    tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
+  - text: Falling tears still shine like dreams, turning the pain to brighter days
+    tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
+  - text: Even if I lose my way as feelings fade, they stay the same
+    tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
+  - text: May be beaten when I'm broken, but I know I'm still shining
+    tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
+  - text: Waking in the morning, dreams dissolve before they wait
+    tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
+  - text: Disappearing memories are something I just can't translate
+    tl: 사라지는 기억은 도무지 풀어낼 수 없어
+  - text: Feel the pain, but that's okay, I keep on wishing once again
+    tl: 아프지만 괜찮아, 다시 한번 계속 바라
+  - text: Just as long as I'm still here to stay, I know I'm still shining
+    tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
+  - text: I know I'm still shining
+    tl: 난 여전히 빛난다는 걸 알아
+  - text: I know I'm still shining
+    tl: 난 여전히 빛난다는 걸 알아
+  - text: I know I'm still shining
+    tl: 난 여전히 빛난다는 걸 알아
+  - text: My reflection, brightest sunlight, ran too far, forgot my name
+    tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
+  - text: Falling tears still shine like dreams, turning the pain to brighter days
+    tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
+  - text: Even if I lose my way as feelings fade, they stay the same
+    tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
+  - text: May be beaten when I'm broken, but I know I'm still shining
+    tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
+  - text: Waking in the morning, dreams dissolve before they wait
+    tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
+  - text: Disappearing memories are something I just can't translate
+    tl: 사라지는 기억은 도무지 풀어낼 수 없어
+  - text: Feel the pain, but that's okay, I keep on wishing once again
+    tl: 아프지만 괜찮아, 다시 한번 계속 바라
+  - text: Just as long as I'm still here to stay, I know I'm still shining
+    tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
+  - text: And even if I lose my way
+    tl: 설령 길을 잃더라도
+  - text: I still know the light will keep on shining
+    tl: 빛은 계속 빛날 거라는 걸 알아
+  - text: Turning pain into brighter days until the day I fade away
+    tl: 내가 사라질 날까지 고통을 더 밝은 날로 바꿔
+  - text: My hopes and dreams are waking up in the morning
+    tl: 내 희망과 꿈이 아침에 깨어나
+  - text: Facing brighter days where I know I can keep moving on
+    tl: 계속 나아갈 수 있음을 아는 더 밝은 날들을 마주해
+  - text: I won't forget you
+    tl: 널 잊지 않을게
+  - text: Even when my heart is filled with shimmering sorrow
+    tl: 마음이 반짝이는 슬픔으로 가득해도
+  - text: I can recall memories that last forever
+    tl: 영원히 남을 기억을 떠올릴 수 있어
+  - text: Feeling like a new reality in this life
+    tl: 이 삶의 새로운 현실 같은 기분
+  - text: Without the time we spent together
+    tl: 우리가 함께 보낸 시간 없이
+  - text: Time is shattering the glass of everything that you gave
+    tl: 시간이 네가 준 모든 것의 유리를 산산조각 내
+  - text: And it's fading away Into the shadows
+    tl: 그리고 그림자 속으로 사라져 가
+  - text: Finally, I'm feeling like I'm ready to just move on now
+    tl: 마침내 이제 나아갈 준비가 된 것 같아
+  - text: Thinking of
+    tl: 생각하며
+  - text: My reflection, brightest sunlight, ran too far, forgot my name
+    tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
+  - text: Falling tears still shine like dreams, turning the pain to brighter days
+    tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
+  - text: Even if I lose my way as feelings fade, they stay the same
+    tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
+  - text: May be beaten when I'm broken, but I know I'm still shining
+    tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
+  - text: Waking in the morning, dreams dissolve before they wait
+    tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
+  - text: Disappearing memories are something I just can't translate
+    tl: 사라지는 기억은 도무지 풀어낼 수 없어
+  - text: Feel the pain, but that's okay, I keep on wishing once again
+    tl: 아프지만 괜찮아, 다시 한번 계속 바라
+  - text: Just as long as I'm still here to stay, I know I'm still shining
+    tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
+  - text: I know I'm still shining
+    tl: 난 여전히 빛난다는 걸 알아
+  - text: I know I'm still shining
+    tl: 난 여전히 빛난다는 걸 알아
+  - text: I know I'm still shining
+    tl: 난 여전히 빛난다는 걸 알아
+  - text: I know I'm still shining
+    tl: 난 여전히 빛난다는 걸 알아
+  - text: My reflection, brightest sunlight, ran too far, forgot my name
+    tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
+  - text: Falling tears still shine like dreams, turning the pain to brighter days
+    tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
+  - text: Even if I lose my way as feelings fade, they stay the same
+    tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
+  - text: May be beaten when I'm broken, but I know I'm still shining
+    tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
+  - text: Waking in the morning, dreams dissolve before they wait
+    tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
+  - text: Disappearing memories are something I just can't translate
+    tl: 사라지는 기억은 도무지 풀어낼 수 없어
+  - text: Feel the pain, but that's okay, I keep on wishing once again
+    tl: 아프지만 괜찮아, 다시 한번 계속 바라
+  - text: Just as long as I'm still here to stay, I know I'm still shining
+    tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
+  - text: Glittering tears are falling down on the sidewalk
+    tl: 반짝이는 눈물이 보도 위로 떨어져
+  - text: Time won't let me wait another day while I'm thinking of
+    tl: 시간은 하루 더 기다리게 해 주지 않아, 내가 생각하는 동안

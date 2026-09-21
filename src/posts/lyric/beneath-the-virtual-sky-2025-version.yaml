@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Beneath the Virtual Sky (2025 Version)
+titleTl: 가상의 하늘 아래 (2025 버전)
 titleLang: en
 year: '2025'
 artist: flanger-moose
@@ -16,77 +17,151 @@ yt:
   audio: Wnv2rC1PsiE
   mv: _Mt-Jcz7r94
 lines:
-  - Been so long since I felt a connection
-  - Cause I always feel like the exception
-  - Whenever they tell me
-  - I'm who I'm meant to be
-  - So save me your story
-  - It's all a cliche
-  - I ain't looking for a life that's flawless
-  - All I really want is something honest
-  - It's hard to begin
-  - With the doubt bottled in
-  - Silver lining is thinning
-  - I'm beginning to believe
-  - That I could stand to be less naive
-  - Just what am I trying to achieve
-  - Lost in a fable
-  - Caught up in these labels
-  - Pulling like gravity
-  - Back to reality
-  - I won't become a tragedy
-  - Beneath the virtual sky
-  - I can hear you call
-  - From the colossal heights
-  - I'm afraid to fall
-  - So I try and I try
-  - But I just cannot find a way
-  - Back to you
-  - Beneath the virtual sky
-  - Your voice will see me through
-  - Trap myself inside the same old pattern
-  - It's like nothing I do even matters
-  - A constant obsession
-  - Gives me the impression
-  - That all of my progress
-  - Has all been in vain
-  - Looking for a way to break the cycle
-  - Just to keep the dream from being stifled
-  - Still I fall back
-  - On the things that I lack
-  - Any time I lose track
-  - Of the ways in which I have grown
-  - You'd think that I would already know
-  - Yet still I've so far left to go
-  - Losing my patience
-  - With how long I'm chasing
-  - The same old stars all day
-  - Still they're so far away
-  - Promise you won't lead me astray
-  - Beneath the virtual sky
-  - I can hear you call
-  - From the colossal heights
-  - I'm afraid to fall
-  - So I try and I try
-  - But I just cannot find a way
-  - Back to you
-  - Beneath the virtual sky
-  - Your voice will see me through
-  - Beneath the virtual sky
-  - I can hear you call
-  - From the colossal heights
-  - I'm afraid to fall
-  - So I try and I try
-  - I can almost see daylight
-  - So close in view
-  - Beneath the virtual sky
-  - Your voice will see me through
-  - Beneath the virtual sky
-  - I can hear you call
-  - From the colossal heights
-  - I'm afraid to fall
-  - So I try and I try
-  - I can almost see daylight
-  - So close in view
-  - Beneath the virtual sky
-  - Your voice will see me through
+  - text: Been so long since I felt a connection
+    tl: 유대감을 느낀 지 너무 오래됐어
+  - text: Cause I always feel like the exception
+    tl: 난 언제나 예외처럼 느껴지니까
+  - text: Whenever they tell me
+    tl: 그들이 내게 말할 때마다
+  - text: I'm who I'm meant to be
+    tl: 내가 되어야 할 모습이 바로 나라고
+  - text: So save me your story
+    tl: 그러니 네 이야기는 넣어 둬
+  - text: It's all a cliche
+    tl: 전부 뻔한 말이야
+  - text: I ain't looking for a life that's flawless
+    tl: 완벽한 삶을 찾는 게 아니야
+  - text: All I really want is something honest
+    tl: 정말 원하는 건 진실한 무언가뿐
+  - text: It's hard to begin
+    tl: 시작하기는 어려워
+  - text: With the doubt bottled in
+    tl: 의심을 속에 가둔 채로는
+  - text: Silver lining is thinning
+    tl: 희망의 빛이 옅어지고 있어
+  - text: I'm beginning to believe
+    tl: 이제 믿기 시작해
+  - text: That I could stand to be less naive
+    tl: 덜 순진해져도 되겠다고
+  - text: Just what am I trying to achieve
+    tl: 난 대체 무엇을 이루려는 걸까
+  - text: Lost in a fable
+    tl: 우화 속에서 길을 잃고
+  - text: Caught up in these labels
+    tl: 이 꼬리표들에 사로잡혀
+  - text: Pulling like gravity
+    tl: 중력처럼 끌려가
+  - text: Back to reality
+    tl: 다시 현실로
+  - text: I won't become a tragedy
+    tl: 난 비극이 되지 않을 거야
+  - text: Beneath the virtual sky
+    tl: 가상의 하늘 아래
+  - text: I can hear you call
+    tl: 네 부름이 들려
+  - text: From the colossal heights
+    tl: 아득한 높이에서
+  - text: I'm afraid to fall
+    tl: 떨어질까 두려워
+  - text: So I try and I try
+    tl: 그래서 애쓰고 또 애쓰지만
+  - text: But I just cannot find a way
+    tl: 아무리 해도 길을 찾을 수 없어
+  - text: Back to you
+    tl: 네게 돌아가는 길을
+  - text: Beneath the virtual sky
+    tl: 가상의 하늘 아래
+  - text: Your voice will see me through
+    tl: 네 목소리가 날 이끌어 줄 거야
+  - text: Trap myself inside the same old pattern
+    tl: 똑같은 패턴 속에 날 가둬
+  - text: It's like nothing I do even matters
+    tl: 내가 뭘 해도 의미 없는 것 같아
+  - text: A constant obsession
+    tl: 끊임없는 집착이
+  - text: Gives me the impression
+    tl: 이런 생각을 하게 해
+  - text: That all of my progress
+    tl: 내가 이룬 모든 발전이
+  - text: Has all been in vain
+    tl: 전부 헛수고였다고
+  - text: Looking for a way to break the cycle
+    tl: 악순환을 깰 방법을 찾아
+  - text: Just to keep the dream from being stifled
+    tl: 꿈이 짓눌리지 않게 하려고
+  - text: Still I fall back
+    tl: 그래도 다시 매달려
+  - text: On the things that I lack
+    tl: 내게 부족한 것들에
+  - text: Any time I lose track
+    tl: 내가 얼마나 성장했는지를
+  - text: Of the ways in which I have grown
+    tl: 놓칠 때마다
+  - text: You'd think that I would already know
+    tl: 이미 알고 있을 법도 한데
+  - text: Yet still I've so far left to go
+    tl: 아직 갈 길이 너무 멀어
+  - text: Losing my patience
+    tl: 인내심을 잃어 가
+  - text: With how long I'm chasing
+    tl: 이렇게 오래 쫓고 있으니
+  - text: The same old stars all day
+    tl: 온종일 똑같은 별들을
+  - text: Still they're so far away
+    tl: 그런데도 여전히 너무 멀어
+  - text: Promise you won't lead me astray
+    tl: 길을 잃게 하지 않겠다고 약속해
+  - text: Beneath the virtual sky
+    tl: 가상의 하늘 아래
+  - text: I can hear you call
+    tl: 네 부름이 들려
+  - text: From the colossal heights
+    tl: 아득한 높이에서
+  - text: I'm afraid to fall
+    tl: 떨어질까 두려워
+  - text: So I try and I try
+    tl: 그래서 애쓰고 또 애쓰지만
+  - text: But I just cannot find a way
+    tl: 아무리 해도 길을 찾을 수 없어
+  - text: Back to you
+    tl: 네게 돌아가는 길을
+  - text: Beneath the virtual sky
+    tl: 가상의 하늘 아래
+  - text: Your voice will see me through
+    tl: 네 목소리가 날 이끌어 줄 거야
+  - text: Beneath the virtual sky
+    tl: 가상의 하늘 아래
+  - text: I can hear you call
+    tl: 네 부름이 들려
+  - text: From the colossal heights
+    tl: 아득한 높이에서
+  - text: I'm afraid to fall
+    tl: 떨어질까 두려워
+  - text: So I try and I try
+    tl: 그래서 애쓰고 또 애쓰지만
+  - text: I can almost see daylight
+    tl: 이제 거의 햇빛이 보여
+  - text: So close in view
+    tl: 시야에 닿을 듯 가까이
+  - text: Beneath the virtual sky
+    tl: 가상의 하늘 아래
+  - text: Your voice will see me through
+    tl: 네 목소리가 날 이끌어 줄 거야
+  - text: Beneath the virtual sky
+    tl: 가상의 하늘 아래
+  - text: I can hear you call
+    tl: 네 부름이 들려
+  - text: From the colossal heights
+    tl: 아득한 높이에서
+  - text: I'm afraid to fall
+    tl: 떨어질까 두려워
+  - text: So I try and I try
+    tl: 그래서 애쓰고 또 애쓰지만
+  - text: I can almost see daylight
+    tl: 이제 거의 햇빛이 보여
+  - text: So close in view
+    tl: 시야에 닿을 듯 가까이
+  - text: Beneath the virtual sky
+    tl: 가상의 하늘 아래
+  - text: Your voice will see me through
+    tl: 네 목소리가 날 이끌어 줄 거야

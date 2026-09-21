@@ -99,6 +99,7 @@ lines:
     background:
       text: (Home)
       pr: (홈)
+      tl: (집)
   - text: But someone's taken off the roof
     pr: 벗 섬원즈 테이큰 오프 더 루프
     tl: 그런데 누가 지붕을 떼어 갔어
