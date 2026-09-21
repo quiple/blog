@@ -7,6 +7,30 @@ const normalize = (text: string) =>
     .normalize('NFKC')
     .toLowerCase()
     .replace(/[^\p{L}\p{N}]/gu, '')
+/** Split the existing spelling at imported syllable boundaries without replacing its text. */
+function splitOriginal(text: string, parts: string[]) {
+  if (text === parts.join('')) return parts
+  if (normalize(text) !== normalize(parts.join('')))
+    throw Error('원문이 달라 음절을 대응시킬 수 없습니다. 원문을 확인하세요.')
+  const boundaries = new Map<number, number>()
+  let length = 0
+  for (const {segment, index} of new Intl.Segmenter(undefined, {granularity: 'grapheme'}).segment(text)) {
+    const normalized = normalize(segment)
+    if (normalized) boundaries.set(length, index)
+    length += normalized.length
+  }
+  let start = 0
+  let consumed = 0
+  return parts.map((part, i) => {
+    consumed += normalize(part).length
+    const end = i === parts.length - 1 ? text.length : boundaries.get(consumed)
+    if (end === undefined || end <= start) throw Error('기존 원문에서 음절 경계를 찾을 수 없습니다.')
+    const result = text.slice(start, end)
+    start = end
+    return result
+  })
+}
+
 export function updateLyricsYaml(source: string, converted: ReturnType<typeof fromLRC>, force = false) {
   const doc = parseDocument(source)
   const original = parseSongYaml(source, '갱신 대상')
@@ -36,6 +60,19 @@ export function updateLyricsYaml(source: string, converted: ReturnType<typeof fr
           throw Error(`${i + 1}행 ${j + 1}번째 단어가 다릅니다. 대응하는 단어가 맞다면 --force로 갱신하세요.`)
         entry.set('time', doc.createNode(word.time))
       })
+    } else if (line.words) {
+      const texts = splitOriginal(
+        old.text,
+        line.words.map((word) => word.text),
+      )
+      const imported = doc.createNode(line.words.map((word, j) => ({text: texts[j], time: word.time})))
+      const originalText = node.get('text', true)
+      if (isScalar(originalText)) {
+        imported.commentBefore = originalText.commentBefore
+        imported.comment = originalText.comment
+      }
+      node.set('words', imported)
+      node.delete('text')
     }
     node.set('time', doc.createNode(line.time))
   })
