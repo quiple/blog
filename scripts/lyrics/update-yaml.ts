@@ -20,30 +20,17 @@ export function updateLyricsYaml(source: string, converted: ReturnType<typeof fr
       throw Error(`${i + 1}행 원문이 다릅니다. 대응하는 행이 맞다면 --force로 갱신하세요.`)
     const node = lines.items[i]
     if (!isMap(node)) throw Error(`${i + 1}행은 객체 형식이어야 합니다.`)
-    // Preserve timed-word annotations only when the original word boundaries still match.
-    const annotated = old.words?.some((w) => w.pronunciation || w.ruby || w.obscene || w.emptyBeat)
-    if (
-      annotated &&
-      (!line.words ||
-        old.words!.length !== line.words.length ||
-        old.words!.some((w, j) => normalize(w.text) !== normalize(line.words![j].text)))
-    )
-      throw Error(`${i + 1}행의 단어 구분이 달라 발음·루비를 보존할 수 없습니다.`)
-    if (line.words) {
-      if (annotated) {
-        const words = node.get('words')
-        if (!isSeq(words)) throw Error('words 배열이 필요합니다.')
-        line.words.forEach((word, j) => {
-          const entry = words.items[j]
-          if (!isMap(entry)) throw Error('단어 객체가 필요합니다.')
-          entry.set('text', word.text)
-          entry.set('time', doc.createNode(word.time))
-        })
-      } else node.set('words', doc.createNode(line.words))
-      node.delete('text')
-    } else {
-      node.set('text', line.text)
-      node.delete('words')
+    const words = node.get('words')
+    if (isSeq(words)) {
+      if (!line.words || words.items.length !== line.words.length)
+        throw Error(`${i + 1}행의 단어 구분이 달라 타이밍을 대응시킬 수 없습니다.`)
+      line.words.forEach((word, j) => {
+        const entry = words.items[j]
+        if (!isMap(entry)) throw Error('단어 객체가 필요합니다.')
+        if (!force && normalize(String(entry.get('text') ?? '')) !== normalize(word.text))
+          throw Error(`${i + 1}행 ${j + 1}번째 단어가 다릅니다. 대응하는 단어가 맞다면 --force로 갱신하세요.`)
+        entry.set('time', doc.createNode(word.time))
+      })
     }
     node.set('time', doc.createNode(line.time))
   })
