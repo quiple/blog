@@ -115,7 +115,7 @@ lines:
     tl: 다른 데를 봐 주세요
     time: [101.27, 103.35]
   - text: I need a second to reset, today I don't get a break
-    tl: 마음을 추스를 시간이 필요해요, 오늘은 쉴 틈도 없네요
+    tl: 마음을 추스를 시간이 필요해요, 오늘은 쉴 틈도 없어요
     time: [103.35, 106.49]
   - text: Please let me go
     tl: 제발 보내 주세요
@@ -163,7 +163,7 @@ lines:
     tl: 최대로 느끼면 고통이고, 최소한으로 느껴도 분노야
     time: [154.61, 160.63]
   - text: I'm not gonna smile, fuck the corporation
-    tl: 웃지 않을 거야, 회사 따위 엿 먹어
+    tl: 웃지 않을 거야, 회사 따위 좆까라지
     time: [164.63, 167.11]
   - text: Cycle, it's a cycle, not an operation
     tl: 악순환, 이건 운영이 아니라 악순환이야
