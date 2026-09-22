@@ -13,6 +13,15 @@ export function fromLRC(
   mode: ConversionMode = 'auto',
 ) {
   if (!Number.isFinite(tail) || tail <= 0) throw Error('tail은 0보다 큰 초 단위 숫자여야 합니다.')
+  // Some centisecond exporters emit .100 instead of carrying into the next second.
+  // Only recognize this file-wide pattern; genuine millisecond files stay unchanged.
+  const fractions = [...source.matchAll(new RegExp('[\\[<]' + stamp + '[\\]>]', 'g'))].map((match) => match[3] ?? '')
+  const centisecondOverflow =
+    fractions.some((fraction) => fraction.length === 2) &&
+    fractions.some((fraction) => fraction === '100') &&
+    fractions.every((fraction) => fraction.length === 2 || fraction === '100')
+  const timestamp = (minutes: string, seconds: string, fraction?: string) =>
+    ms(minutes, seconds, fraction) + (centisecondOverflow && fraction === '100' ? 900 : 0)
   let title: string | undefined
   let offset = 0
   const rows: {start: number; parts: {text: string; start: number}[]}[] = []
@@ -33,12 +42,12 @@ export function fromLRC(
     }
     const head = new RegExp('^\\[' + stamp + '\\]').exec(line)
     if (!head) throw Error(`${index + 1}행: LRC 시간 태그가 없습니다.`)
-    const start = ms(head[1], head[2], head[3])
+    const start = timestamp(head[1], head[2], head[3])
     const body = line.slice(head[0].length)
     const marks = [...body.matchAll(new RegExp('<' + stamp + '>', 'g'))]
     const parts = marks.length
       ? marks.map((mark, i) => ({
-          start: ms(mark[1], mark[2], mark[3]),
+          start: timestamp(mark[1], mark[2], mark[3]),
           text: body.slice(mark.index! + mark[0].length, marks[i + 1]?.index),
         }))
       : [{start, text: body}]
