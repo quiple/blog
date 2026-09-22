@@ -19,141 +19,1486 @@ yt:
   audio: OJMg8o2pxsg
   mv: cqmHCKDrRCM
 lines:
-  - text: Glittering tears are falling down on the sidewalk
+  - words:
+      - text: 'Glittering '
+        time: [26.819, 27.34]
+      - text: 'tears '
+        time: [27.34, 27.54]
+      - text: 'are '
+        time: [27.54, 27.68]
+      - text: 'falling '
+        time: [27.68, 28]
+      - text: 'down '
+        time: [28, 28.22]
+      - text: 'on '
+        time: [28.22, 28.34]
+      - text: 'the '
+        time: [28.34, 28.48]
+      - text: sidewalk
+        time: [28.48, 29.099]
     tl: 반짝이는 눈물이 보도 위로 떨어져
-  - text: Time won't let me wait another day
+    time: [26.819, 29.099]
+  - words:
+      - text: 'Time '
+        time: [29.159, 29.48]
+      - text: "won't "
+        time: [29.48, 29.68]
+      - text: 'let '
+        time: [29.68, 29.84]
+      - text: 'me '
+        time: [29.84, 30]
+      - text: 'wait '
+        time: [30, 30.24]
+      - text: 'another '
+        time: [30.24, 30.68]
+      - text: day
+        time: [30.68, 30.799]
     tl: 시간은 하루 더 기다리게 해 주지 않아
-  - text: While I'm thinking of the sadness behind your smile
+    time: [29.159, 30.799]
+  - words:
+      - text: 'While '
+        time: [30.819, 31.04]
+      - text: "I'm "
+        time: [31.04, 31.16]
+      - text: 'thinking '
+        time: [31.16, 31.86]
+      - text: 'of '
+        time: [31.86, 32.66]
+      - text: 'the '
+        time: [32.66, 33.32]
+      - text: 'sadness '
+        time: [33.32, 34.68]
+      - text: 'behind '
+        time: [34.68, 36]
+      - text: 'your '
+        time: [36, 36.58]
+      - text: smile
+        time: [36.58, 37.359]
     tl: 네 미소 뒤의 슬픔을 생각하는 동안
-  - text: My dreams dissolve like shining rays on the dew drops
+    time: [30.819, 37.359]
+  - words:
+      - text: 'My '
+        time: [37.499, 37.66]
+      - text: 'dreams '
+        time: [37.66, 37.86]
+      - text: 'dissolve '
+        time: [37.86, 38.18]
+      - text: 'like '
+        time: [38.18, 38.32]
+      - text: 'shining '
+        time: [38.32, 38.68]
+      - text: 'rays '
+        time: [38.68, 38.88]
+      - text: 'on '
+        time: [38.88, 39]
+      - text: 'the '
+        time: [39, 39.16]
+      - text: 'dew '
+        time: [39.16, 39.48]
+      - text: drops
+        time: [39.48, 39.779]
     tl: 내 꿈은 이슬방울 위의 빛처럼 녹아내려
-  - text: Now it's disappeared, I know that I can never hold on
+    time: [37.499, 39.779]
+  - words:
+      - text: 'Now '
+        time: [39.839, 40.22]
+      - text: "it's "
+        time: [40.22, 40.34]
+      - text: 'disappeared, '
+        time: [40.34, 40.9]
+      - text: 'I '
+        time: [40.9, 41]
+      - text: 'know '
+        time: [41, 41.18]
+      - text: 'that '
+        time: [41.18, 41.36]
+      - text: 'I '
+        time: [41.36, 41.48]
+      - text: 'can '
+        time: [41.48, 41.68]
+      - text: 'never '
+        time: [41.68, 42.16]
+      - text: 'hold '
+        time: [42.16, 42.54]
+      - text: on
+        time: [42.54, 43.279]
     tl: 이제 사라졌어, 더는 붙잡을 수 없다는 걸 알아
-  - text: To who I thought I would be
+    time: [39.839, 43.279]
+  - words:
+      - text: 'To '
+        time: [43.319, 44.66]
+      - text: 'who '
+        time: [44.66, 45.16]
+      - text: 'I '
+        time: [45.16, 45.34]
+      - text: 'thought '
+        time: [45.34, 46.06]
+      - text: 'I '
+        time: [46.06, 46.64]
+      - text: 'would '
+        time: [46.64, 47.34]
+      - text: be
+        time: [47.34, 47.939]
     tl: 내가 될 거라 생각했던 모습을
-  - text: Even when my heart is filled with shimmering sorrow
+    time: [43.319, 47.939]
+  - words:
+      - text: 'Even '
+        time: [48.059, 48.34]
+      - text: 'when '
+        time: [48.34, 48.52]
+      - text: 'my '
+        time: [48.52, 48.7]
+      - text: 'heart '
+        time: [48.7, 48.9]
+      - text: 'is '
+        time: [48.9, 49.02]
+      - text: 'filled '
+        time: [49.02, 49.2]
+      - text: 'with '
+        time: [49.2, 49.32]
+      - text: 'shimmering '
+        time: [49.32, 49.86]
+      - text: sorrow
+        time: [49.86, 50.499]
     tl: 마음이 반짝이는 슬픔으로 가득해도
-  - text: I can recall memories that last forever
+    time: [48.059, 50.499]
+  - words:
+      - text: 'I '
+        time: [50.619, 50.84]
+      - text: 'can '
+        time: [50.84, 51.02]
+      - text: 'recall '
+        time: [51.02, 51.52]
+      - text: 'memories '
+        time: [51.52, 52.18]
+      - text: 'that '
+        time: [52.18, 52.34]
+      - text: 'last '
+        time: [52.34, 52.54]
+      - text: forever
+        time: [52.54, 53.199]
     tl: 영원히 남을 기억을 떠올릴 수 있어
-  - text: Feeling like a new reality in this life
+    time: [50.619, 53.199]
+  - words:
+      - text: 'Feeling '
+        time: [53.339, 53.68]
+      - text: 'like '
+        time: [53.68, 53.9]
+      - text: 'a '
+        time: [53.9, 54]
+      - text: 'new '
+        time: [54, 54.18]
+      - text: 'reality '
+        time: [54.18, 54.92]
+      - text: 'in '
+        time: [54.92, 55.02]
+      - text: 'this '
+        time: [55.02, 55.18]
+      - text: life
+        time: [55.18, 55.479]
     tl: 이 삶의 새로운 현실 같은 기분
-  - text: Without the time we spent together
+    time: [53.339, 55.479]
+  - words:
+      - text: 'Without '
+        time: [55.499, 56.18]
+      - text: 'the '
+        time: [56.18, 56.68]
+      - text: 'time '
+        time: [56.68, 57.02]
+      - text: 'we '
+        time: [57.02, 57.28]
+      - text: 'spent '
+        time: [57.28, 57.68]
+      - text: together
+        time: [57.68, 58.599]
     tl: 우리가 함께 보낸 시간 없이
-  - text: Time is shattering the glass of everything that you gave
+    time: [55.499, 58.599]
+  - words:
+      - text: 'Time '
+        time: [58.659, 58.88]
+      - text: 'is '
+        time: [58.88, 59]
+      - text: 'shattering '
+        time: [59, 59.52]
+      - text: 'the '
+        time: [59.52, 59.66]
+      - text: 'glass '
+        time: [59.66, 59.9]
+      - text: 'of '
+        time: [59.9, 60.04]
+      - text: 'everything '
+        time: [60.04, 60.5]
+      - text: 'that '
+        time: [60.5, 60.82]
+      - text: 'you '
+        time: [60.82, 61.18]
+      - text: gave
+        time: [61.18, 61.479]
     tl: 시간이 네가 준 모든 것의 유리를 산산조각 내
-  - text: And it's fading away into the shadows
+    time: [58.659, 61.479]
+  - words:
+      - text: 'And '
+        time: [61.559, 61.7]
+      - text: "it's "
+        time: [61.7, 61.86]
+      - text: 'fading '
+        time: [61.86, 62.4]
+      - text: 'away '
+        time: [62.4, 62.9]
+      - text: 'into '
+        time: [62.9, 63.18]
+      - text: 'the '
+        time: [63.18, 63.32]
+      - text: shadows
+        time: [63.32, 63.918]
     tl: 그리고 그림자 속으로 사라져 가
-  - text: Finally, I'm feeling like I'm ready to just move on now
+    time: [61.559, 63.918]
+  - words:
+      - text: 'Finally, '
+        time: [64.018, 64.54]
+      - text: "I'm "
+        time: [64.54, 64.68]
+      - text: 'feeling '
+        time: [64.68, 65.02]
+      - text: 'like '
+        time: [65.02, 65.2]
+      - text: "I'm "
+        time: [65.2, 65.36]
+      - text: 'ready '
+        time: [65.36, 65.7]
+      - text: 'to '
+        time: [65.7, 65.84]
+      - text: 'just '
+        time: [65.84, 66.18]
+      - text: 'move '
+        time: [66.18, 66.56]
+      - text: 'on '
+        time: [66.56, 66.86]
+      - text: now
+        time: [66.86, 67.318]
     tl: 마침내 이제 나아갈 준비가 된 것 같아
-  - text: Thinking of
+    time: [64.018, 67.318]
+  - words:
+      - text: 'Thinking '
+        time: [67.338, 68.04]
+      - text: of
+        time: [68.04, 68.978]
     tl: 생각하며
-  - text: My reflection, brightest sunlight, ran too far, forgot my name
+    time: [67.338, 68.978]
+  - words:
+      - text: 'My '
+        time: [68.998, 69.18]
+      - text: 'reflection, '
+        time: [69.18, 69.66]
+      - text: 'brightest '
+        time: [69.66, 69.98]
+      - text: 'sunlight, '
+        time: [69.98, 70.34]
+      - text: 'ran '
+        time: [70.34, 70.48]
+      - text: 'too '
+        time: [70.48, 70.66]
+      - text: 'far, '
+        time: [70.66, 70.84]
+      - text: 'forgot '
+        time: [70.84, 71.16]
+      - text: 'my '
+        time: [71.16, 71.34]
+      - text: name
+        time: [71.34, 71.638]
     tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
-  - text: Falling tears still shine like dreams, turning the pain to brighter days
+    time: [68.998, 71.638]
+  - words:
+      - text: 'Falling '
+        time: [71.658, 72]
+      - text: 'tears '
+        time: [72, 72.16]
+      - text: 'still '
+        time: [72.16, 72.34]
+      - text: 'shine '
+        time: [72.34, 72.5]
+      - text: 'like '
+        time: [72.5, 72.66]
+      - text: 'dreams, '
+        time: [72.66, 72.84]
+      - text: 'turning '
+        time: [72.84, 73.18]
+      - text: 'the '
+        time: [73.18, 73.34]
+      - text: 'pain '
+        time: [73.34, 73.5]
+      - text: 'to '
+        time: [73.5, 73.66]
+      - text: 'brighter '
+        time: [73.66, 74.02]
+      - text: days
+        time: [74.02, 74.318]
     tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
-  - text: Even if I lose my way as feelings fade, they stay the same
+    time: [71.658, 74.318]
+  - words:
+      - text: 'Even '
+        time: [74.358, 74.72]
+      - text: 'if '
+        time: [74.72, 74.88]
+      - text: 'I '
+        time: [74.88, 74.98]
+      - text: 'lose '
+        time: [74.98, 75.18]
+      - text: 'my '
+        time: [75.18, 75.34]
+      - text: 'way '
+        time: [75.34, 75.56]
+      - text: 'as '
+        time: [75.56, 75.68]
+      - text: 'feelings '
+        time: [75.68, 76]
+      - text: 'fade, '
+        time: [76, 76.18]
+      - text: 'they '
+        time: [76.18, 76.3]
+      - text: 'stay '
+        time: [76.3, 76.52]
+      - text: 'the '
+        time: [76.52, 76.66]
+      - text: same
+        time: [76.66, 76.978]
     tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
-  - text: May be beaten when I'm broken, but I know I'm still shining
+    time: [74.358, 76.978]
+  - words:
+      - text: 'May '
+        time: [77.018, 77.18]
+      - text: 'be '
+        time: [77.18, 77.34]
+      - text: 'beaten '
+        time: [77.34, 77.66]
+      - text: 'when '
+        time: [77.66, 77.86]
+      - text: "I'm "
+        time: [77.86, 78]
+      - text: 'broken, '
+        time: [78, 78.32]
+      - text: 'but '
+        time: [78.32, 78.54]
+      - text: 'I '
+        time: [78.54, 78.66]
+      - text: 'know '
+        time: [78.66, 78.86]
+      - text: "I'm "
+        time: [78.86, 79]
+      - text: 'still '
+        time: [79, 79.32]
+      - text: shining
+        time: [79.32, 79.958]
     tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
-  - text: Waking in the morning, dreams dissolve before they wait
+    time: [77.018, 79.958]
+  - words:
+      - text: 'Waking '
+        time: [79.998, 80.4]
+      - text: 'in '
+        time: [80.4, 80.52]
+      - text: 'the '
+        time: [80.52, 80.68]
+      - text: 'morning, '
+        time: [80.68, 81]
+      - text: 'dreams '
+        time: [81, 81.2]
+      - text: 'dissolve '
+        time: [81.2, 81.54]
+      - text: 'before '
+        time: [81.54, 81.84]
+      - text: 'they '
+        time: [81.84, 82]
+      - text: wait
+        time: [82, 82.298]
     tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
-  - text: Disappearing memories are something I just can't translate
+    time: [79.998, 82.298]
+  - words:
+      - text: 'Disappearing '
+        time: [82.338, 83]
+      - text: 'memories '
+        time: [83, 83.54]
+      - text: 'are '
+        time: [83.54, 83.66]
+      - text: 'something '
+        time: [83.66, 84.04]
+      - text: 'I '
+        time: [84.04, 84.16]
+      - text: 'just '
+        time: [84.16, 84.34]
+      - text: "can't "
+        time: [84.34, 84.5]
+      - text: translate
+        time: [84.5, 84.978]
     tl: 사라지는 기억은 도무지 풀어낼 수 없어
-  - text: Feel the pain, but that's okay, I keep on wishing once again
+    time: [82.338, 84.978]
+  - words:
+      - text: 'Feel '
+        time: [84.998, 85.2]
+      - text: 'the '
+        time: [85.2, 85.34]
+      - text: 'pain, '
+        time: [85.34, 85.52]
+      - text: 'but '
+        time: [85.52, 85.68]
+      - text: "that's "
+        time: [85.68, 85.88]
+      - text: 'okay, '
+        time: [85.88, 86.22]
+      - text: 'I '
+        time: [86.22, 86.34]
+      - text: 'keep '
+        time: [86.34, 86.54]
+      - text: 'on '
+        time: [86.54, 86.68]
+      - text: 'wishing '
+        time: [86.68, 87.02]
+      - text: 'once '
+        time: [87.02, 87.22]
+      - text: again
+        time: [87.22, 87.638]
     tl: 아프지만 괜찮아, 다시 한번 계속 바라
-  - text: Just as long as I'm still here to stay, I know I'm still shining
+    time: [84.998, 87.638]
+  - words:
+      - text: 'Just '
+        time: [87.658, 87.86]
+      - text: 'as '
+        time: [87.86, 88.02]
+      - text: 'long '
+        time: [88.02, 88.2]
+      - text: 'as '
+        time: [88.2, 88.38]
+      - text: "I'm "
+        time: [88.38, 88.52]
+      - text: 'still '
+        time: [88.52, 88.7]
+      - text: 'here '
+        time: [88.7, 88.86]
+      - text: 'to '
+        time: [88.86, 89]
+      - text: 'stay, '
+        time: [89, 89.22]
+      - text: 'I '
+        time: [89.22, 89.32]
+      - text: 'know '
+        time: [89.32, 89.54]
+      - text: "I'm "
+        time: [89.54, 89.66]
+      - text: 'still '
+        time: [89.66, 89.98]
+      - text: shining
+        time: [89.98, 90.678]
     tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
-  - text: I know I'm still shining
+    time: [87.658, 90.678]
+  - words:
+      - text: 'I '
+        time: [94.558, 94.66]
+      - text: 'know '
+        time: [94.66, 94.86]
+      - text: "I'm "
+        time: [94.86, 95]
+      - text: 'still '
+        time: [95, 95.32]
+      - text: shining
+        time: [95.32, 96.018]
     tl: 난 여전히 빛난다는 걸 알아
-  - text: I know I'm still shining
+    time: [94.558, 96.018]
+  - words:
+      - text: 'I '
+        time: [99.818, 99.98]
+      - text: 'know '
+        time: [99.98, 100.2]
+      - text: "I'm "
+        time: [100.2, 100.32]
+      - text: 'still '
+        time: [100.32, 100.64]
+      - text: shining
+        time: [100.64, 101.358]
     tl: 난 여전히 빛난다는 걸 알아
-  - text: I know I'm still shining
+    time: [99.818, 101.358]
+  - words:
+      - text: 'I '
+        time: [102.498, 105.32]
+      - text: 'know '
+        time: [105.32, 105.52]
+      - text: "I'm "
+        time: [105.52, 105.66]
+      - text: 'still '
+        time: [105.66, 105.98]
+      - text: shining
+        time: [105.98, 106.677]
     tl: 난 여전히 빛난다는 걸 알아
-  - text: My reflection, brightest sunlight, ran too far, forgot my name
+    time: [102.498, 106.677]
+  - words:
+      - text: 'My '
+        time: [106.837, 111.76]
+      - text: 'reflection, '
+        time: [111.76, 112.32]
+      - text: 'brightest '
+        time: [112.32, 112.66]
+      - text: 'sunlight, '
+        time: [112.66, 113.02]
+      - text: 'ran '
+        time: [113.02, 113.16]
+      - text: 'too '
+        time: [113.16, 113.34]
+      - text: 'far, '
+        time: [113.34, 113.5]
+      - text: 'forgot '
+        time: [113.5, 113.84]
+      - text: 'my '
+        time: [113.84, 113.98]
+      - text: name
+        time: [113.98, 114.317]
     tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
-  - text: Falling tears still shine like dreams, turning the pain to brighter days
+    time: [106.837, 114.317]
+  - words:
+      - text: 'Falling '
+        time: [114.337, 114.66]
+      - text: 'tears '
+        time: [114.66, 114.84]
+      - text: 'still '
+        time: [114.84, 115]
+      - text: 'shine '
+        time: [115, 115.18]
+      - text: 'like '
+        time: [115.18, 115.32]
+      - text: 'dreams, '
+        time: [115.32, 115.5]
+      - text: 'turning '
+        time: [115.5, 115.84]
+      - text: 'the '
+        time: [115.84, 116]
+      - text: 'pain '
+        time: [116, 116.18]
+      - text: 'to '
+        time: [116.18, 116.34]
+      - text: 'brighter '
+        time: [116.34, 116.68]
+      - text: days
+        time: [116.68, 116.957]
     tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
-  - text: Even if I lose my way as feelings fade, they stay the same
+    time: [114.337, 116.957]
+  - words:
+      - text: 'Even '
+        time: [117.017, 117.4]
+      - text: 'if '
+        time: [117.4, 117.54]
+      - text: 'I '
+        time: [117.54, 117.68]
+      - text: 'lose '
+        time: [117.68, 117.86]
+      - text: 'my '
+        time: [117.86, 118]
+      - text: 'way '
+        time: [118, 118.22]
+      - text: 'as '
+        time: [118.22, 118.34]
+      - text: 'feelings '
+        time: [118.34, 118.68]
+      - text: 'fade, '
+        time: [118.68, 118.86]
+      - text: 'they '
+        time: [118.86, 119]
+      - text: 'stay '
+        time: [119, 119.18]
+      - text: 'the '
+        time: [119.18, 119.32]
+      - text: same
+        time: [119.32, 119.637]
     tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
-  - text: May be beaten when I'm broken, but I know I'm still shining
+    time: [117.017, 119.637]
+  - words:
+      - text: 'May '
+        time: [119.677, 119.84]
+      - text: 'be '
+        time: [119.84, 120.02]
+      - text: 'beaten '
+        time: [120.02, 120.32]
+      - text: 'when '
+        time: [120.32, 120.54]
+      - text: "I'm "
+        time: [120.54, 120.66]
+      - text: 'broken, '
+        time: [120.66, 121]
+      - text: 'but '
+        time: [121, 121.22]
+      - text: 'I '
+        time: [121.22, 121.34]
+      - text: 'know '
+        time: [121.34, 121.52]
+      - text: "I'm "
+        time: [121.52, 121.66]
+      - text: 'still '
+        time: [121.66, 121.98]
+      - text: shining
+        time: [121.98, 122.617]
     tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
-  - text: Waking in the morning, dreams dissolve before they wait
+    time: [119.677, 122.617]
+  - words:
+      - text: 'Waking '
+        time: [122.657, 123.06]
+      - text: 'in '
+        time: [123.06, 123.18]
+      - text: 'the '
+        time: [123.18, 123.34]
+      - text: 'morning, '
+        time: [123.34, 123.68]
+      - text: 'dreams '
+        time: [123.68, 123.86]
+      - text: 'dissolve '
+        time: [123.86, 124.2]
+      - text: 'before '
+        time: [124.2, 124.52]
+      - text: 'they '
+        time: [124.52, 124.66]
+      - text: wait
+        time: [124.66, 124.977]
     tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
-  - text: Disappearing memories are something I just can't translate
+    time: [122.657, 124.977]
+  - words:
+      - text: 'Disappearing '
+        time: [124.997, 125.68]
+      - text: 'memories '
+        time: [125.68, 126.2]
+      - text: 'are '
+        time: [126.2, 126.34]
+      - text: 'something '
+        time: [126.34, 126.7]
+      - text: 'I '
+        time: [126.7, 126.84]
+      - text: 'just '
+        time: [126.84, 127]
+      - text: "can't "
+        time: [127, 127.16]
+      - text: translate
+        time: [127.16, 127.637]
     tl: 사라지는 기억은 도무지 풀어낼 수 없어
-  - text: Feel the pain, but that's okay, I keep on wishing once again
+    time: [124.997, 127.637]
+  - words:
+      - text: 'Feel '
+        time: [127.657, 127.86]
+      - text: 'the '
+        time: [127.86, 128]
+      - text: 'pain, '
+        time: [128, 128.18]
+      - text: 'but '
+        time: [128.18, 128.34]
+      - text: "that's "
+        time: [128.34, 128.56]
+      - text: 'okay, '
+        time: [128.56, 128.92]
+      - text: 'I '
+        time: [128.92, 129]
+      - text: 'keep '
+        time: [129, 129.2]
+      - text: 'on '
+        time: [129.2, 129.36]
+      - text: 'wishing '
+        time: [129.36, 129.7]
+      - text: 'once '
+        time: [129.7, 129.9]
+      - text: again
+        time: [129.9, 130.297]
     tl: 아프지만 괜찮아, 다시 한번 계속 바라
-  - text: Just as long as I'm still here to stay, I know I'm still shining
+    time: [127.657, 130.297]
+  - words:
+      - text: 'Just '
+        time: [130.317, 130.56]
+      - text: 'as '
+        time: [130.56, 130.66]
+      - text: 'long '
+        time: [130.66, 130.8]
+      - text: 'as '
+        time: [130.8, 130.86]
+      - text: "I'm "
+        time: [130.86, 131]
+      - text: 'still '
+        time: [131, 131.36]
+      - text: 'here '
+        time: [131.36, 131.52]
+      - text: 'to '
+        time: [131.52, 131.66]
+      - text: 'stay, '
+        time: [131.66, 131.88]
+      - text: 'I '
+        time: [131.88, 132]
+      - text: 'know '
+        time: [132, 132.2]
+      - text: "I'm "
+        time: [132.2, 132.34]
+      - text: 'still '
+        time: [132.34, 132.64]
+      - text: shining
+        time: [132.64, 133.277]
     tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
-  - text: And even if I lose my way
+    time: [130.317, 133.277]
+  - words:
+      - text: 'And '
+        time: [144.197, 144.38]
+      - text: 'even '
+        time: [144.38, 144.72]
+      - text: 'if '
+        time: [144.72, 144.86]
+      - text: 'I '
+        time: [144.86, 144.98]
+      - text: 'lose '
+        time: [144.98, 145.18]
+      - text: 'my '
+        time: [145.18, 145.34]
+      - text: way
+        time: [145.34, 145.496]
     tl: 설령 길을 잃더라도
-  - text: I still know the light will keep on shining
+    time: [144.197, 145.496]
+  - words:
+      - text: 'I '
+        time: [145.536, 145.64]
+      - text: 'still '
+        time: [145.64, 145.84]
+      - text: 'know '
+        time: [145.84, 146.16]
+      - text: 'the '
+        time: [146.16, 146.52]
+      - text: 'light '
+        time: [146.52, 146.84]
+      - text: 'will '
+        time: [146.84, 147]
+      - text: 'keep '
+        time: [147, 147.2]
+      - text: 'on '
+        time: [147.2, 147.32]
+      - text: shining
+        time: [147.32, 147.636]
     tl: 빛은 계속 빛날 거라는 걸 알아
-  - text: Turning pain into brighter days until the day I fade away
+    time: [145.536, 147.636]
+  - words:
+      - text: 'Turning '
+        time: [147.656, 148]
+      - text: 'pain '
+        time: [148, 148.22]
+      - text: 'into '
+        time: [148.22, 148.48]
+      - text: 'brighter '
+        time: [148.48, 149.16]
+      - text: 'days '
+        time: [149.16, 150.14]
+      - text: 'until '
+        time: [150.14, 151.32]
+      - text: 'the '
+        time: [151.32, 152]
+      - text: 'day '
+        time: [152, 152.7]
+      - text: 'I '
+        time: [152.7, 153.32]
+      - text: 'fade '
+        time: [153.32, 154.06]
+      - text: away
+        time: [154.06, 154.696]
     tl: 내가 사라질 날까지 고통을 더 밝은 날로 바꿔
-  - text: My hopes and dreams are waking up in the morning
+    time: [147.656, 154.696]
+  - words:
+      - text: 'My '
+        time: [154.836, 154.98]
+      - text: 'hopes '
+        time: [154.98, 155.22]
+      - text: 'and '
+        time: [155.22, 155.32]
+      - text: 'dreams '
+        time: [155.32, 155.54]
+      - text: 'are '
+        time: [155.54, 155.68]
+      - text: 'waking '
+        time: [155.68, 156.04]
+      - text: 'up '
+        time: [156.04, 156.2]
+      - text: 'in '
+        time: [156.2, 156.34]
+      - text: 'the '
+        time: [156.34, 156.5]
+      - text: morning
+        time: [156.5, 157.076]
     tl: 내 희망과 꿈이 아침에 깨어나
-  - text: Facing brighter days where I know I can keep moving on
+    time: [154.836, 157.076]
+  - words:
+      - text: 'Facing '
+        time: [157.156, 157.66]
+      - text: 'brighter '
+        time: [157.66, 158]
+      - text: 'days '
+        time: [158, 158.16]
+      - text: 'where '
+        time: [158.16, 158.38]
+      - text: 'I '
+        time: [158.38, 158.48]
+      - text: 'know '
+        time: [158.48, 158.72]
+      - text: 'I '
+        time: [158.72, 158.82]
+      - text: 'can '
+        time: [158.82, 158.98]
+      - text: 'keep '
+        time: [158.98, 159.22]
+      - text: 'moving '
+        time: [159.22, 159.86]
+      - text: on
+        time: [159.86, 160.656]
     tl: 계속 나아갈 수 있음을 아는 더 밝은 날들을 마주해
-  - text: I won't forget you
+    time: [157.156, 160.656]
+  - words:
+      - text: 'I '
+        time: [160.716, 161.3]
+      - text: "won't "
+        time: [161.3, 162]
+      - text: 'forget '
+        time: [162, 163.3]
+      - text: you
+        time: [163.3, 164.816]
     tl: 널 잊지 않을게
-  - text: Even when my heart is filled with shimmering sorrow
+    time: [160.716, 164.816]
+  - words:
+      - text: 'Even '
+        time: [165.376, 165.68]
+      - text: 'when '
+        time: [165.68, 165.84]
+      - text: 'my '
+        time: [165.84, 166]
+      - text: 'heart '
+        time: [166, 166.22]
+      - text: 'is '
+        time: [166.22, 166.34]
+      - text: 'filled '
+        time: [166.34, 166.54]
+      - text: 'with '
+        time: [166.54, 166.66]
+      - text: 'shimmering '
+        time: [166.66, 167.18]
+      - text: sorrow
+        time: [167.18, 167.876]
     tl: 마음이 반짝이는 슬픔으로 가득해도
-  - text: I can recall memories that last forever
+    time: [165.376, 167.876]
+  - words:
+      - text: 'I '
+        time: [167.936, 168.16]
+      - text: 'can '
+        time: [168.16, 168.36]
+      - text: 'recall '
+        time: [168.36, 168.86]
+      - text: 'memories '
+        time: [168.86, 169.52]
+      - text: 'that '
+        time: [169.52, 169.68]
+      - text: 'last '
+        time: [169.68, 169.84]
+      - text: forever
+        time: [169.84, 170.576]
     tl: 영원히 남을 기억을 떠올릴 수 있어
-  - text: Feeling like a new reality in this life
+    time: [167.936, 170.576]
+  - words:
+      - text: 'Feeling '
+        time: [170.656, 171.02]
+      - text: 'like '
+        time: [171.02, 171.24]
+      - text: 'a '
+        time: [171.24, 171.34]
+      - text: 'new '
+        time: [171.34, 171.5]
+      - text: 'reality '
+        time: [171.5, 172.24]
+      - text: 'in '
+        time: [172.24, 172.34]
+      - text: 'this '
+        time: [172.34, 172.52]
+      - text: life
+        time: [172.52, 172.796]
     tl: 이 삶의 새로운 현실 같은 기분
-  - text: Without the time we spent together
+    time: [170.656, 172.796]
+  - words:
+      - text: 'Without '
+        time: [172.836, 173.52]
+      - text: 'the '
+        time: [173.52, 174.02]
+      - text: 'time '
+        time: [174.02, 174.34]
+      - text: 'we '
+        time: [174.34, 174.62]
+      - text: 'spent '
+        time: [174.62, 175.02]
+      - text: together
+        time: [175.02, 175.916]
     tl: 우리가 함께 보낸 시간 없이
-  - text: Time is shattering the glass of everything that you gave
+    time: [172.836, 175.916]
+  - words:
+      - text: 'Time '
+        time: [175.996, 176.22]
+      - text: 'is '
+        time: [176.22, 176.34]
+      - text: 'shattering '
+        time: [176.34, 176.84]
+      - text: 'the '
+        time: [176.84, 176.98]
+      - text: 'glass '
+        time: [176.98, 177.24]
+      - text: 'of '
+        time: [177.24, 177.38]
+      - text: 'everything '
+        time: [177.38, 177.84]
+      - text: 'that '
+        time: [177.84, 178.16]
+      - text: 'you '
+        time: [178.16, 178.52]
+      - text: gave
+        time: [178.52, 178.816]
     tl: 시간이 네가 준 모든 것의 유리를 산산조각 내
-  - text: And it's fading away Into the shadows
+    time: [175.996, 178.816]
+  - words:
+      - text: 'And '
+        time: [178.896, 179.04]
+      - text: "it's "
+        time: [179.04, 179.18]
+      - text: 'fading '
+        time: [179.18, 179.74]
+      - text: 'away '
+        time: [179.74, 180.24]
+      - text: 'Into '
+        time: [180.24, 180.5]
+      - text: 'the '
+        time: [180.5, 180.66]
+      - text: shadows
+        time: [180.66, 181.256]
     tl: 그리고 그림자 속으로 사라져 가
-  - text: Finally, I'm feeling like I'm ready to just move on now
+    time: [178.896, 181.256]
+  - words:
+      - text: 'Finally, '
+        time: [181.336, 181.88]
+      - text: "I'm "
+        time: [181.88, 182]
+      - text: 'feeling '
+        time: [182, 182.36]
+      - text: 'like '
+        time: [182.36, 182.54]
+      - text: "I'm "
+        time: [182.54, 182.7]
+      - text: 'ready '
+        time: [182.7, 183.02]
+      - text: 'to '
+        time: [183.02, 183.2]
+      - text: 'just '
+        time: [183.2, 183.5]
+      - text: 'move '
+        time: [183.5, 183.9]
+      - text: 'on '
+        time: [183.9, 184.18]
+      - text: now
+        time: [184.18, 184.636]
     tl: 마침내 이제 나아갈 준비가 된 것 같아
-  - text: Thinking of
+    time: [181.336, 184.636]
+  - words:
+      - text: 'Thinking '
+        time: [184.676, 185.38]
+      - text: of
+        time: [185.38, 186.296]
     tl: 생각하며
-  - text: My reflection, brightest sunlight, ran too far, forgot my name
+    time: [184.676, 186.296]
+  - words:
+      - text: 'My '
+        time: [186.336, 186.52]
+      - text: 'reflection, '
+        time: [186.52, 186.98]
+      - text: 'brightest '
+        time: [186.98, 187.32]
+      - text: 'sunlight, '
+        time: [187.32, 187.68]
+      - text: 'ran '
+        time: [187.68, 187.82]
+      - text: 'too '
+        time: [187.82, 188]
+      - text: 'far, '
+        time: [188, 188.16]
+      - text: 'forgot '
+        time: [188.16, 188.5]
+      - text: 'my '
+        time: [188.5, 188.68]
+      - text: name
+        time: [188.68, 188.975]
     tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
-  - text: Falling tears still shine like dreams, turning the pain to brighter days
+    time: [186.336, 188.975]
+  - words:
+      - text: 'Falling '
+        time: [188.995, 189.34]
+      - text: 'tears '
+        time: [189.34, 189.46]
+      - text: 'still '
+        time: [189.46, 189.66]
+      - text: 'shine '
+        time: [189.66, 189.84]
+      - text: 'like '
+        time: [189.84, 189.98]
+      - text: 'dreams, '
+        time: [189.98, 190.18]
+      - text: 'turning '
+        time: [190.18, 190.5]
+      - text: 'the '
+        time: [190.5, 190.66]
+      - text: 'pain '
+        time: [190.66, 190.84]
+      - text: 'to '
+        time: [190.84, 191]
+      - text: 'brighter '
+        time: [191, 191.34]
+      - text: days
+        time: [191.34, 191.615]
     tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
-  - text: Even if I lose my way as feelings fade, they stay the same
+    time: [188.995, 191.615]
+  - words:
+      - text: 'Even '
+        time: [191.675, 192.06]
+      - text: 'if '
+        time: [192.06, 192.22]
+      - text: 'I '
+        time: [192.22, 192.34]
+      - text: 'lose '
+        time: [192.34, 192.52]
+      - text: 'my '
+        time: [192.52, 192.66]
+      - text: 'way '
+        time: [192.66, 192.88]
+      - text: 'as '
+        time: [192.88, 193]
+      - text: 'feelings '
+        time: [193, 193.36]
+      - text: 'fade, '
+        time: [193.36, 193.52]
+      - text: 'they '
+        time: [193.52, 193.66]
+      - text: 'stay '
+        time: [193.66, 193.84]
+      - text: 'the '
+        time: [193.84, 193.98]
+      - text: same
+        time: [193.98, 194.295]
     tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
-  - text: May be beaten when I'm broken, but I know I'm still shining
+    time: [191.675, 194.295]
+  - words:
+      - text: 'May '
+        time: [194.335, 194.54]
+      - text: 'be '
+        time: [194.54, 194.68]
+      - text: 'beaten '
+        time: [194.68, 195]
+      - text: 'when '
+        time: [195, 195.24]
+      - text: "I'm "
+        time: [195.24, 195.32]
+      - text: 'broken, '
+        time: [195.32, 195.66]
+      - text: 'but '
+        time: [195.66, 195.88]
+      - text: 'I '
+        time: [195.88, 195.98]
+      - text: 'know '
+        time: [195.98, 196.2]
+      - text: "I'm "
+        time: [196.2, 196.34]
+      - text: 'still '
+        time: [196.34, 196.66]
+      - text: shining
+        time: [196.66, 197.295]
     tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
-  - text: Waking in the morning, dreams dissolve before they wait
+    time: [194.335, 197.295]
+  - words:
+      - text: 'Waking '
+        time: [197.335, 197.72]
+      - text: 'in '
+        time: [197.72, 197.86]
+      - text: 'the '
+        time: [197.86, 198]
+      - text: 'morning, '
+        time: [198, 198.34]
+      - text: 'dreams '
+        time: [198.34, 198.52]
+      - text: 'dissolve '
+        time: [198.52, 198.86]
+      - text: 'before '
+        time: [198.86, 199.18]
+      - text: 'they '
+        time: [199.18, 199.36]
+      - text: wait
+        time: [199.36, 199.635]
     tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
-  - text: Disappearing memories are something I just can't translate
+    time: [197.335, 199.635]
+  - words:
+      - text: 'Disappearing '
+        time: [199.655, 200.34]
+      - text: 'memories '
+        time: [200.34, 200.88]
+      - text: 'are '
+        time: [200.88, 201]
+      - text: 'something '
+        time: [201, 201.38]
+      - text: 'I '
+        time: [201.38, 201.5]
+      - text: 'just '
+        time: [201.5, 201.66]
+      - text: "can't "
+        time: [201.66, 201.84]
+      - text: translate
+        time: [201.84, 202.315]
     tl: 사라지는 기억은 도무지 풀어낼 수 없어
-  - text: Feel the pain, but that's okay, I keep on wishing once again
+    time: [199.655, 202.315]
+  - words:
+      - text: 'Feel '
+        time: [202.335, 202.52]
+      - text: 'the '
+        time: [202.52, 202.68]
+      - text: 'pain, '
+        time: [202.68, 202.84]
+      - text: 'but '
+        time: [202.84, 203]
+      - text: "that's "
+        time: [203, 203.22]
+      - text: 'okay, '
+        time: [203.22, 203.58]
+      - text: 'I '
+        time: [203.58, 203.66]
+      - text: 'keep '
+        time: [203.66, 203.88]
+      - text: 'on '
+        time: [203.88, 204.02]
+      - text: 'wishing '
+        time: [204.02, 204.36]
+      - text: 'once '
+        time: [204.36, 204.54]
+      - text: again
+        time: [204.54, 204.975]
     tl: 아프지만 괜찮아, 다시 한번 계속 바라
-  - text: Just as long as I'm still here to stay, I know I'm still shining
+    time: [202.335, 204.975]
+  - words:
+      - text: 'Just '
+        time: [204.995, 205.2]
+      - text: 'as '
+        time: [205.2, 205.34]
+      - text: 'long '
+        time: [205.34, 205.56]
+      - text: 'as '
+        time: [205.56, 205.7]
+      - text: "I'm "
+        time: [205.7, 205.82]
+      - text: 'still '
+        time: [205.82, 206.04]
+      - text: 'here '
+        time: [206.04, 206.2]
+      - text: 'to '
+        time: [206.2, 206.32]
+      - text: 'stay, '
+        time: [206.32, 206.56]
+      - text: 'I '
+        time: [206.56, 206.66]
+      - text: 'know '
+        time: [206.66, 206.86]
+      - text: "I'm "
+        time: [206.86, 207]
+      - text: 'still '
+        time: [207, 207.3]
+      - text: shining
+        time: [207.3, 208.015]
     tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
-  - text: I know I'm still shining
+    time: [204.995, 208.015]
+  - words:
+      - text: 'I '
+        time: [211.875, 212.01]
+      - text: 'know '
+        time: [212.01, 212.19]
+      - text: "I'm "
+        time: [212.19, 212.31]
+      - text: 'still '
+        time: [212.31, 212.63]
+      - text: shining
+        time: [212.63, 213.295]
     tl: 난 여전히 빛난다는 걸 알아
-  - text: I know I'm still shining
+    time: [211.875, 213.295]
+  - words:
+      - text: 'I '
+        time: [214.655, 217.33]
+      - text: 'know '
+        time: [217.33, 217.51]
+      - text: "I'm "
+        time: [217.51, 217.65]
+      - text: 'still '
+        time: [217.65, 217.97]
+      - text: shining
+        time: [217.97, 218.595]
     tl: 난 여전히 빛난다는 걸 알아
-  - text: I know I'm still shining
+    time: [214.655, 218.595]
+  - words:
+      - text: 'I '
+        time: [219.995, 222.67]
+      - text: 'know '
+        time: [222.67, 222.85]
+      - text: "I'm "
+        time: [222.85, 222.99]
+      - text: 'still '
+        time: [222.99, 223.31]
+      - text: shining
+        time: [223.31, 223.975]
     tl: 난 여전히 빛난다는 걸 알아
-  - text: I know I'm still shining
+    time: [219.995, 223.975]
+  - words:
+      - text: 'I '
+        time: [227.875, 228.01]
+      - text: 'know '
+        time: [228.01, 228.17]
+      - text: "I'm "
+        time: [228.17, 228.31]
+      - text: 'still '
+        time: [228.31, 228.65]
+      - text: shining
+        time: [228.65, 229.154]
     tl: 난 여전히 빛난다는 걸 알아
-  - text: My reflection, brightest sunlight, ran too far, forgot my name
+    time: [227.875, 229.154]
+  - words:
+      - text: 'My '
+        time: [229.174, 229.25]
+      - text: 'reflection, '
+        time: [229.25, 229.65]
+      - text: 'brightest '
+        time: [229.65, 229.97]
+      - text: 'sunlight, '
+        time: [229.97, 230.31]
+      - text: 'ran '
+        time: [230.31, 230.49]
+      - text: 'too '
+        time: [230.49, 230.65]
+      - text: 'far, '
+        time: [230.65, 230.81]
+      - text: 'forgot '
+        time: [230.81, 231.15]
+      - text: 'my '
+        time: [231.15, 231.33]
+      - text: name
+        time: [231.33, 231.634]
     tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
-  - text: Falling tears still shine like dreams, turning the pain to brighter days
+    time: [229.174, 231.634]
+  - words:
+      - text: 'Falling '
+        time: [231.674, 231.99]
+      - text: 'tears '
+        time: [231.99, 232.15]
+      - text: 'still '
+        time: [232.15, 232.31]
+      - text: 'shine '
+        time: [232.31, 232.49]
+      - text: 'like '
+        time: [232.49, 232.65]
+      - text: 'dreams, '
+        time: [232.65, 232.85]
+      - text: 'turning '
+        time: [232.85, 233.17]
+      - text: 'the '
+        time: [233.17, 233.33]
+      - text: 'pain '
+        time: [233.33, 233.49]
+      - text: 'to '
+        time: [233.49, 233.65]
+      - text: 'brighter '
+        time: [233.65, 234.01]
+      - text: days
+        time: [234.01, 234.294]
     tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
-  - text: Even if I lose my way as feelings fade, they stay the same
+    time: [231.674, 234.294]
+  - words:
+      - text: 'Even '
+        time: [234.354, 234.71]
+      - text: 'if '
+        time: [234.71, 234.85]
+      - text: 'I '
+        time: [234.85, 235.01]
+      - text: 'lose '
+        time: [235.01, 235.17]
+      - text: 'my '
+        time: [235.17, 235.33]
+      - text: 'way '
+        time: [235.33, 235.53]
+      - text: 'as '
+        time: [235.53, 235.69]
+      - text: 'feelings '
+        time: [235.69, 236.01]
+      - text: 'fade, '
+        time: [236.01, 236.17]
+      - text: 'they '
+        time: [236.17, 236.31]
+      - text: 'stay '
+        time: [236.31, 236.51]
+      - text: 'the '
+        time: [236.51, 236.65]
+      - text: same
+        time: [236.65, 236.974]
     tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
-  - text: May be beaten when I'm broken, but I know I'm still shining
+    time: [234.354, 236.974]
+  - words:
+      - text: 'May '
+        time: [236.994, 237.17]
+      - text: 'be '
+        time: [237.17, 237.33]
+      - text: 'beaten '
+        time: [237.33, 237.65]
+      - text: 'when '
+        time: [237.65, 237.87]
+      - text: "I'm "
+        time: [237.87, 237.99]
+      - text: 'broken, '
+        time: [237.99, 238.31]
+      - text: 'but '
+        time: [238.31, 238.53]
+      - text: 'I '
+        time: [238.53, 238.65]
+      - text: 'know '
+        time: [238.65, 238.85]
+      - text: "I'm "
+        time: [238.85, 238.99]
+      - text: 'still '
+        time: [238.99, 239.31]
+      - text: shining
+        time: [239.31, 239.954]
     tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
-  - text: Waking in the morning, dreams dissolve before they wait
+    time: [236.994, 239.954]
+  - words:
+      - text: 'Waking '
+        time: [239.994, 240.37]
+      - text: 'in '
+        time: [240.37, 240.51]
+      - text: 'the '
+        time: [240.51, 240.67]
+      - text: 'morning, '
+        time: [240.67, 240.99]
+      - text: 'dreams '
+        time: [240.99, 241.15]
+      - text: 'dissolve '
+        time: [241.15, 241.53]
+      - text: 'before '
+        time: [241.53, 241.85]
+      - text: 'they '
+        time: [241.85, 241.99]
+      - text: wait
+        time: [241.99, 242.294]
     tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
-  - text: Disappearing memories are something I just can't translate
+    time: [239.994, 242.294]
+  - words:
+      - text: 'Disappearing '
+        time: [242.334, 243.01]
+      - text: 'memories '
+        time: [243.01, 243.53]
+      - text: 'are '
+        time: [243.53, 243.67]
+      - text: 'something '
+        time: [243.67, 244.03]
+      - text: 'I '
+        time: [244.03, 244.17]
+      - text: 'just '
+        time: [244.17, 244.33]
+      - text: "can't "
+        time: [244.33, 244.49]
+      - text: translate
+        time: [244.49, 244.974]
     tl: 사라지는 기억은 도무지 풀어낼 수 없어
-  - text: Feel the pain, but that's okay, I keep on wishing once again
+    time: [242.334, 244.974]
+  - words:
+      - text: 'Feel '
+        time: [244.994, 245.19]
+      - text: 'the '
+        time: [245.19, 245.33]
+      - text: 'pain, '
+        time: [245.33, 245.49]
+      - text: 'but '
+        time: [245.49, 245.67]
+      - text: "that's "
+        time: [245.67, 245.87]
+      - text: 'okay, '
+        time: [245.87, 246.21]
+      - text: 'I '
+        time: [246.21, 246.33]
+      - text: 'keep '
+        time: [246.33, 246.53]
+      - text: 'on '
+        time: [246.53, 246.67]
+      - text: 'wishing '
+        time: [246.67, 247.03]
+      - text: 'once '
+        time: [247.03, 247.21]
+      - text: again
+        time: [247.21, 247.634]
     tl: 아프지만 괜찮아, 다시 한번 계속 바라
-  - text: Just as long as I'm still here to stay, I know I'm still shining
+    time: [244.994, 247.634]
+  - words:
+      - text: 'Just '
+        time: [247.654, 247.87]
+      - text: 'as '
+        time: [247.87, 247.99]
+      - text: 'long '
+        time: [247.99, 248.21]
+      - text: 'as '
+        time: [248.21, 248.37]
+      - text: "I'm "
+        time: [248.37, 248.49]
+      - text: 'still '
+        time: [248.49, 248.67]
+      - text: 'here '
+        time: [248.67, 248.85]
+      - text: 'to '
+        time: [248.85, 248.99]
+      - text: 'stay, '
+        time: [248.99, 249.21]
+      - text: 'I '
+        time: [249.21, 249.31]
+      - text: 'know '
+        time: [249.31, 249.53]
+      - text: "I'm "
+        time: [249.53, 249.65]
+      - text: 'still '
+        time: [249.65, 249.97]
+      - text: shining
+        time: [249.97, 250.634]
     tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
-  - text: Glittering tears are falling down on the sidewalk
+    time: [247.654, 250.634]
+  - words:
+      - text: 'Glittering '
+        time: [261.454, 261.99]
+      - text: 'tears '
+        time: [261.99, 262.19]
+      - text: 'are '
+        time: [262.19, 262.33]
+      - text: 'falling '
+        time: [262.33, 262.67]
+      - text: 'down '
+        time: [262.67, 262.87]
+      - text: 'on '
+        time: [262.87, 262.99]
+      - text: 'the '
+        time: [262.99, 263.15]
+      - text: sidewalk
+        time: [263.15, 263.774]
     tl: 반짝이는 눈물이 보도 위로 떨어져
-  - text: Time won't let me wait another day while I'm thinking of
+    time: [261.454, 263.774]
+  - words:
+      - text: 'Time '
+        time: [263.834, 264.13]
+      - text: "won't "
+        time: [264.13, 264.35]
+      - text: 'let '
+        time: [264.35, 264.51]
+      - text: 'me '
+        time: [264.51, 264.65]
+      - text: 'wait '
+        time: [264.65, 264.87]
+      - text: 'another '
+        time: [264.87, 265.33]
+      - text: 'day '
+        time: [265.33, 265.47]
+      - text: 'while '
+        time: [265.47, 265.71]
+      - text: "I'm "
+        time: [265.71, 265.83]
+      - text: 'thinking '
+        time: [265.83, 266.53]
+      - text: of
+        time: [266.53, 268.034]
     tl: 시간은 하루 더 기다리게 해 주지 않아, 내가 생각하는 동안
+    time: [263.834, 268.034]
