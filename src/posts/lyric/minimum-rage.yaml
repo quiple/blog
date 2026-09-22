@@ -31,22 +31,22 @@ lines:
     tl: 새 관리자가 됐는데 그냥 지옥이야
     time: [14.95, 18.01]
   - text: There's coffee on my shirt and burns on my arm
-    tl: 셔츠에는 커피가 묻고 팔에는 화상을 입었어
+    tl: 셔츠에는 커피가 묻고 팔에는 화상을 입고
     time: [18.01, 20.37]
   - text: I guess hot oil really hurts a lot
-    tl: 뜨거운 기름은 정말 많이 아프네
+    tl: 뜨거운 기름은 정말 많이 아파
     time: [20.37, 23.41]
   - text: Working overtime ’cause someone called out
     tl: 누가 결근해서 초과 근무 중이야
     time: [23.41, 25.56]
   - text: And now we're running out of ice, can you tell me how?
-    tl: 이젠 얼음도 떨어지는데, 어떻게 이러는 거야?
+    tl: 이젠 얼음도 다 떨어지는데, 어떻게 이러는 거야?
     time: [25.56, 28.48]
   - text: To make everything worse, the lights just went dark
     tl: 설상가상으로 불마저 나갔어
     time: [28.48, 31.19]
   - text: Oh, won't you tell me when it's gonna stop?
-    tl: 아, 언제쯤 끝나는지 말해 줄래?
+    tl: 언제쯤 끝나는지 말해 줄래?
     time: [31.19, 33.97]
   - text: Please step back
     tl: 물러서 주세요
@@ -61,10 +61,10 @@ lines:
     tl: 이 상황에서 저는 최선을 다하고 있어요
     time: [41.21, 45.71]
   - text: Smile, baby, smile for the corporation
-    tl: 웃어, 자기야, 회사를 위해 웃어
+    tl: 웃어, 회사를 위해 웃어
     time: [45.71, 48.38]
   - text: Vital, baby, vital to the operation
-    tl: 필수야, 자기야, 운영에 꼭 필요해
+    tl: 필수야, 운영에 꼭 필요해
     time: [48.38, 51]
   - text: Working for an hour costs as much as a sandwich
     tl: 한 시간 일한 값은 샌드위치 하나 값
@@ -73,7 +73,7 @@ lines:
     tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
     time: [53.75, 56.45]
   - text: Smile, baby, smile through the aggravation
-    tl: 웃어, 자기야, 화가 나도 웃어
+    tl: 웃어, 화가 나도 웃어
     time: [56.45, 59.15]
   - text: One day, they'll appreciate your dedication
     tl: 언젠가 네 헌신을 알아줄 거야
@@ -124,10 +124,10 @@ lines:
     tl: 병가를 다 써서 뼈가 또 부러질 여유도 없어요
     time: [108.63, 112.97]
   - text: Smile, baby, smile for the corporation
-    tl: 웃어, 자기야, 회사를 위해 웃어
+    tl: 웃어, 회사를 위해 웃어
     time: [112.97, 115.66]
   - text: Vital, baby, vital to the operation
-    tl: 필수야, 자기야, 운영에 꼭 필요해
+    tl: 필수야, 운영에 꼭 필요해
     time: [115.66, 118.25]
   - text: Working for an hour costs as much as a sandwich
     tl: 한 시간 일한 값은 샌드위치 하나 값
