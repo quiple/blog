@@ -21,7 +21,7 @@ offsets:
 lines:
   - text: west side おじいさんが
     pr: 웨스토 사이도 오지산가
-    tl: 웨스트사이드의 할아버지가
+    tl: west side 할아버지가
     time: [25.177, 27.483]
   - text: 飛んだり跳ねたりするという
     pr: 톤다리하네타리스루토유
@@ -29,7 +29,7 @@ lines:
     time: [27.513, 29.989]
   - text: 僕はもうbabyじゃないよ
     pr: 보쿠와모메비자나이요
-    tl: 난 이제 아기가 아니야
+    tl: 난 이제 baby가 아니야
     time: [30.019, 32.286]
   - text: 飛んだり跳ねたりできないという
     pr: 톤다리하네타리데키나이토유
@@ -81,7 +81,7 @@ lines:
     time: [68.728, 73.694]
   - text: west side おじいさんが
     pr: 웨스토 사이도 오지산가
-    tl: 웨스트사이드의 할아버지가
+    tl: west side 할아버지가
     time: [84.113, 86.693]
   - text: 飛んだり跳ねたりするという
     pr: 톤다리하네타리스루토유
@@ -96,14 +96,12 @@ lines:
     tl: 뛰고 펄쩍 뛰는 춤은
     time: [92.152, 95.119]
   - text: disco!
-    tl: 디스코!
     time: [95.129, 95.733]
   - text: life is dead
-    tl: 삶은 죽었어
     time: [97.843, 101.051]
   - text: 地球の掌おどらされて
     pr: 치큐노테노히라오도라사레테
-    tl: 지구의 손바닥 위에서 춤추게 돼
+    tl: 지구의 손바닥 위에서 놀아나
     time: [106.099, 108.737]
   - text: こんな辱めないけど
     pr: 콘나하즈카시메나이케도
@@ -119,10 +117,9 @@ lines:
     time: [114.364, 117.067]
   - text: life is this 猛る音楽
     pr: 라이후 이즈 지스 타케루온가쿠
-    tl: 삶이란 이런 것, 사나운 음악
+    tl: life is this, 사나운 음악
     time: [117.077, 119.442]
   - text: on the stage, in the kitchen, of ur head is alright!
-    tl: 무대 위도, 부엌 안도, 네 머릿속도 괜찮아!
     time: [119.452, 122.617]
   - text: 猛る想い
     pr: 타케루오모이
