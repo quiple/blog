@@ -7,7 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Metamorphose
-titleTl: 메타모르포즈
+titleTl: 메타모르포제
 titleLang: ja
 year: '2020'
 artist: monkey-majik
@@ -38,7 +38,7 @@ lines:
     tl: 그렇게 바보처럼 굴어
     time: [55.516, 58.755]
   - text: この世の神秘 Metamorphose
-    tl: 이 세상의 신비, 메타모르포즈
+    tl: 이 세상의 신비, 메타모르포제
     time: [60.041, 64.559]
   - text: 新世界への扉に立って
     tl: 새로운 세계로 가는 문 앞에 서서
@@ -86,7 +86,7 @@ lines:
     tl: 내 고치에서 나와
     time: [110.362, 113.427]
   - text: この世の神秘 Metamorphose
-    tl: 이 세상의 신비, 메타모르포즈
+    tl: 이 세상의 신비, 메타모르포제
     time: [114.851, 119.318]
   - text: 新世界への扉に立って
     tl: 새로운 세계로 가는 문 앞에 서서
