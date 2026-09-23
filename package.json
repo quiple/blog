@@ -25,7 +25,8 @@
     "sync-images": "node --env-file-if-exists=.env.local scripts/sync-image-sizes.ts",
     "obfuscate-fonts": "node scripts/obfuscate-fonts.ts",
     "pron": "node pron.ts",
-    "conv": "node conv.ts"
+    "conv": "node conv.ts",
+    "ttml": "node ttml.ts"
   },
   "devDependencies": {
     "@applemusic-like-lyrics/ttml": "1.0.1",
