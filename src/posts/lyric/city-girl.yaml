@@ -21,481 +21,650 @@ offsets:
 lines:
   - words:
       - text: '100'
+        pr: 햐쿠
         time: [14.75, 15.713]
       - text: 円
+        pr: 엔
         time: [15.713, 16.573]
       - text: 宝
+        pr: 호
         time: [16.573, 17.441]
       - text: 石
+        pr: 세키
         time: [17.441, 18.451]
       - text: ピ
+        pr: 피
         time: [18.451, 19.141]
       - text: カ
+        pr: 카
         time: [19.141, 19.406]
       - text: ピ
+        pr: 피
         time: [19.406, 20.04]
       - text: カ
+        pr: 카
         time: [20.04, 20.228]
       - text: シ
+        pr: 시
         time: [20.228, 20.996]
       - text: ー
+        pr: 이
         time: [20.996, 21.136]
       - text: ル
+        pr: 루
         time: [21.136, 21.943]
-    pr: 햐쿠엔호세키피카피카시루
     tl: 100엔짜리 보석, 반짝반짝 스티커
     time: [14.75, 21.943]
   - words:
       - text: キ
+        pr: 키
         time: [22.119, 22.857]
       - text: ラ
+        pr: 라
         time: [22.857, 23.06]
       - text: キ
+        pr: 키
         time: [23.06, 23.767]
       - text: ラ
+        pr: 라
         time: [23.767, 23.884]
       - text: '1'
+        pr: 이치
         time: [23.884, 24.8]
       - text: 番
+        pr: 반
         time: [24.8, 25.717]
       - text: 素
+        pr: 스
         time: [25.717, 26.25]
       - text: 敵
+        pr: 테키
         time: [26.25, 27.19]
       - text: な
+        pr: 나
         time: [27.19, 27.6]
       - text: 君
+        pr: 키미
         time: [27.6, 28.582]
       - text: の
+        pr: 노
         time: [28.582, 29.259]
-    pr: 키라키라이치반스테키나키미노
     tl: 반짝반짝 가장 멋진 너의
     time: [22.119, 29.259]
   - words:
       - text: '1'
+        pr: 이치
         time: [29.484, 30.27]
       - text: 番
+        pr: 반
         time: [30.27, 31.257]
       - text: 汚
+        pr: 키타나
         time: [31.257, 32.662]
       - text: い
+        pr: 이
         time: [32.662, 33.138]
       - text: 所
+        pr: 토코로
         time: [33.138, 34.516]
       - text: も
+        pr: 모
         time: [34.516, 34.757]
       - text: 好
+        pr: 스
         time: [34.757, 35.618]
       - text: き
+        pr: 키
         time: [35.618, 35.891]
       - text: よ
+        pr: 요
         time: [35.891, 36.469]
-    pr: 이치반키타나이토코로모스키요
     tl: 가장 더러운 부분도 좋아해
     time: [29.484, 36.469]
   - words:
       - text: 美
+        pr: 오
         time: [36.804, 37.436]
       - text: 味
+        pr: 이
         time: [37.436, 37.625]
       - text: しい
+        pr: 시
         time: [37.625, 38.631]
       - text: と
+        pr: 토
         time: [38.631, 39.303]
       - text: こ
+        pr: 코
         time: [39.303, 39.473]
       - text: だ
+        pr: 다
         time: [39.473, 40.226]
       - text: け
+        pr: 케
         time: [40.226, 40.449]
       - text: 食
+        pr: 타
         time: [40.449, 41.148]
       - text: べ
+        pr: 베
         time: [41.148, 41.367]
       - text: て
+        pr: 테
         time: [41.367, 41.969]
       - text: い
+        pr: 이
         time: [41.969, 42.291]
       - text: たい
+        pr: 타이
         time: [42.291, 42.724]
-    pr: 오이시토코다케타베테이타이
     tl: 맛있는 부분만 먹고 싶어
     time: [36.804, 42.724]
   - words:
       - text: 'City '
+        pr: 시티
         time: [44.053, 44.853]
       - text: 'girl '
+        pr: 걸
         time: [44.853, 45.84]
       - text: 'City '
+        pr: 시티
         time: [45.84, 46.648]
       - text: girl
+        pr: 걸
         time: [46.648, 47.359]
-    pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
     time: [44.053, 47.359]
   - words:
       - text: 'City '
+        pr: 시티
         time: [47.717, 48.463]
       - text: 'girl '
+        pr: 걸
         time: [48.463, 49.504]
       - text: 'City '
+        pr: 시티
         time: [49.504, 50.296]
       - text: 'girl '
+        pr: 걸
         time: [50.296, 50.759]
       - text: 君
+        pr: 키미
         time: [50.759, 51.21]
       - text: と
+        pr: 토
         time: [51.21, 51.344]
-    pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
     time: [47.717, 51.344]
   - words:
       - text: し
+        pr: 시
         time: [51.344, 51.659]
       - text: て
+        pr: 테
         time: [51.659, 51.927]
       - text: み
+        pr: 미
         time: [51.927, 52.142]
       - text: 'たい '
+        pr: 타이
         time: [52.142, 53.192]
       - text: し
+        pr: 시
         time: [53.192, 53.496]
       - text: て
+        pr: 테
         time: [53.496, 53.748]
       - text: み
+        pr: 미
         time: [53.748, 53.973]
       - text: たい
+        pr: 타이
         time: [53.973, 54.584]
-    pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
     time: [51.344, 54.584]
   - words:
       - text: し
+        pr: 시
         time: [55.015, 55.323]
       - text: て
+        pr: 테
         time: [55.323, 55.56]
       - text: み
+        pr: 미
         time: [55.56, 55.775]
       - text: たい
+        pr: 타이
         time: [55.775, 56.435]
       - text: 'よ '
+        pr: 요
         time: [56.435, 56.94]
       - text: い
+        pr: 이
         time: [56.94, 57.067]
       - text: ろん
+        pr: 론
         time: [57.067, 57.643]
       - text: な
+        pr: 나
         time: [57.643, 58.058]
       - text: 事
+        pr: 코토
         time: [58.058, 58.619]
-    pr: 시테미타이요 이론나코토
     tl: 해 보고 싶어, 여러 가지를
     time: [55.015, 58.619]
   - words:
       - text: 'City '
+        pr: 시티
         time: [58.619, 59.483]
       - text: 'girl '
+        pr: 걸
         time: [59.483, 60.522]
       - text: 'City '
+        pr: 시티
         time: [60.522, 61.311]
       - text: girl
+        pr: 걸
         time: [61.311, 61.914]
     pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
     time: [58.619, 61.914]
   - words:
       - text: 'City '
+        pr: 시티
         time: [62.345, 63.148]
       - text: 'girl '
+        pr: 걸
         time: [63.148, 64.203]
       - text: 'City '
+        pr: 시티
         time: [64.203, 64.987]
       - text: 'girl '
+        pr: 걸
         time: [64.987, 65.402]
       - text: 君
+        pr: 키미
         time: [65.402, 65.86]
       - text: と
+        pr: 토
         time: [65.86, 66.051]
-    pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
     time: [62.345, 66.051]
   - words:
       - text: し
+        pr: 시
         time: [66.051, 66.329]
       - text: て
+        pr: 테
         time: [66.329, 66.585]
       - text: み
+        pr: 미
         time: [66.585, 66.792]
       - text: 'たい '
+        pr: 타이
         time: [66.792, 67.85]
       - text: し
+        pr: 시
         time: [67.85, 68.151]
       - text: て
+        pr: 테
         time: [68.151, 68.406]
       - text: み
+        pr: 미
         time: [68.406, 68.635]
       - text: たい
+        pr: 타이
         time: [68.635, 69.19]
-    pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
     time: [66.051, 69.19]
   - words:
       - text: 私
+        pr: 와타시
         time: [69.793, 70.458]
       - text: も
+        pr: 모
         time: [70.458, 70.726]
       - text: い
+        pr: 이
         time: [70.726, 70.953]
       - text: つ
+        pr: 츠
         time: [70.953, 71.16]
       - text: か
+        pr: 카
         time: [71.16, 71.38]
       - text: 'は '
+        pr: 와
         time: [71.38, 71.551]
       - text: 'City '
+        pr: 시티
         time: [71.551, 72.259]
       - text: girl
+        pr: 걸
         time: [72.259, 72.677]
-    pr: 와타시모이츠카와 City girl
     tl: 나도 언젠가는 시티 걸
     time: [69.793, 72.677]
   - words:
       - text: '100'
+        pr: 햐쿠
         time: [88.007, 88.997]
       - text: 円
+        pr: 엔
         time: [88.997, 89.897]
       - text: く
+        pr: 쿠
         time: [89.897, 90.486]
       - text: じ
+        pr: 지
         time: [90.486, 90.808]
       - text: 引
+        pr: 비
         time: [90.808, 91.492]
       - text: き
+        pr: 키
         time: [91.492, 91.742]
       - text: あ
+        pr: 아
         time: [91.742, 92.412]
       - text: た
+        pr: 타
         time: [92.412, 92.684]
       - text: り
+        pr: 리
         time: [92.684, 93.385]
       - text: は
+        pr: 와
         time: [93.385, 93.548]
       - text: 君
+        pr: 키미
         time: [93.548, 94.382]
       - text: さ
+        pr: 사
         time: [94.382, 95.099]
-    pr: 햐쿠엔쿠지비키아타리와키미사
     tl: 100엔짜리 뽑기, 당첨은 너야
     time: [88.007, 95.099]
   - words:
       - text: ド
+        pr: 도
         time: [95.372, 96.079]
       - text: ロ
+        pr: 로
         time: [96.079, 96.304]
       - text: ド
+        pr: 도
         time: [96.304, 97.039]
       - text: ロ
+        pr: 로
         time: [97.039, 97.165]
       - text: '1'
+        pr: 이치
         time: [97.165, 98.087]
       - text: 番
+        pr: 반
         time: [98.087, 99.062]
       - text: 汚
+        pr: 키타나
         time: [99.062, 100.457]
       - text: い
+        pr: 이
         time: [100.457, 100.857]
       - text: 君
+        pr: 키미
         time: [100.857, 101.802]
       - text: の
+        pr: 노
         time: [101.802, 102.312]
-    pr: 도로도로이치반키타나이키미노
     tl: 질척질척 가장 더러운 너의
     time: [95.372, 102.312]
   - words:
       - text: '1'
+        pr: 이치
         time: [102.743, 103.637]
       - text: 番
+        pr: 반
         time: [103.637, 104.572]
       - text: 綺
+        pr: 키
         time: [104.572, 104.927]
       - text: 麗
+        pr: 레이
         time: [104.927, 105.842]
       - text: な
+        pr: 나
         time: [105.842, 106.4]
       - text: 部
+        pr: 부
         time: [106.4, 106.732]
       - text: 分
+        pr: 분
         time: [106.732, 107.789]
       - text: が
+        pr: 가
         time: [107.789, 108.15]
       - text: 欲
+        pr: 호
         time: [108.15, 108.858]
       - text: しい
+        pr: 시
         time: [108.858, 109.623]
-    pr: 이치반키레이나부분가호시
     tl: 가장 깨끗한 부분을 원해
     time: [102.743, 109.623]
   - words:
       - text: 美
+        pr: 오
         time: [110.062, 110.742]
       - text: 味
+        pr: 이
         time: [110.742, 110.917]
       - text: しい
+        pr: 시
         time: [110.917, 111.913]
       - text: と
+        pr: 토
         time: [111.913, 112.569]
       - text: こ
+        pr: 코
         time: [112.569, 112.822]
       - text: だ
+        pr: 다
         time: [112.822, 113.297]
       - text: け
+        pr: 케
         time: [113.297, 113.742]
       - text: 食
+        pr: 타
         time: [113.742, 114.407]
       - text: べ
+        pr: 베
         time: [114.407, 114.652]
       - text: てい
+        pr: 테이
         time: [114.652, 115.504]
       - text: たい
+        pr: 타이
         time: [115.504, 116.199]
-    pr: 오이시토코다케타베테이타이
     tl: 맛있는 부분만 먹고 싶어
     time: [110.062, 116.199]
   - words:
       - text: 'City '
+        pr: 시티
         time: [117.376, 118.111]
       - text: 'girl '
+        pr: 걸
         time: [118.111, 119.147]
       - text: 'City '
+        pr: 시티
         time: [119.147, 119.935]
       - text: girl
+        pr: 걸
         time: [119.935, 120.617]
-    pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
     time: [117.376, 120.617]
   - words:
       - text: 'City '
+        pr: 시티
         time: [120.994, 121.779]
       - text: 'girl '
+        pr: 걸
         time: [121.779, 122.834]
       - text: 'City '
+        pr: 시티
         time: [122.834, 123.613]
       - text: 'girl '
+        pr: 걸
         time: [123.613, 124.051]
       - text: 君
+        pr: 키미
         time: [124.051, 124.521]
       - text: と
+        pr: 토
         time: [124.521, 124.646]
-    pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
     time: [120.994, 124.646]
   - words:
       - text: し
+        pr: 시
         time: [124.646, 124.976]
       - text: て
+        pr: 테
         time: [124.976, 125.195]
       - text: み
+        pr: 미
         time: [125.195, 125.41]
       - text: 'たい '
+        pr: 타이
         time: [125.41, 126.472]
       - text: し
+        pr: 시
         time: [126.472, 126.776]
       - text: て
+        pr: 테
         time: [126.776, 127.048]
       - text: み
+        pr: 미
         time: [127.048, 127.278]
       - text: たい
+        pr: 타이
         time: [127.278, 127.882]
-    pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
     time: [124.646, 127.882]
   - words:
       - text: し
+        pr: 시
         time: [128.31, 128.585]
       - text: て
+        pr: 테
         time: [128.585, 128.858]
       - text: み
+        pr: 미
         time: [128.858, 129.085]
       - text: たい
+        pr: 타이
         time: [129.085, 129.791]
       - text: 'の '
+        pr: 노
         time: [129.791, 130.194]
       - text: い
+        pr: 이
         time: [130.194, 130.402]
       - text: ろん
+        pr: 론
         time: [130.402, 130.882]
       - text: な
+        pr: 나
         time: [130.882, 131.319]
       - text: 事
+        pr: 코토
         time: [131.319, 131.895]
-    pr: 시테미타이노 이론나코토
     tl: 해 보고 싶어, 여러 가지를
     time: [128.31, 131.895]
   - words:
       - text: 'City '
+        pr: 시티
         time: [131.895, 132.745]
       - text: 'girl '
+        pr: 걸
         time: [132.745, 133.826]
       - text: 'City '
+        pr: 시티
         time: [133.826, 134.614]
       - text: girl
+        pr: 걸
         time: [134.614, 135.167]
-    pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
     time: [131.895, 135.167]
   - words:
       - text: 'City '
+        pr: 시티
         time: [135.626, 136.393]
       - text: 'girl '
+        pr: 걸
         time: [136.393, 137.481]
       - text: 'City '
+        pr: 시티
         time: [137.481, 138.263]
       - text: 'girl '
+        pr: 걸
         time: [138.263, 138.703]
       - text: 君
+        pr: 키미
         time: [138.703, 139.18]
       - text: と
+        pr: 토
         time: [139.18, 139.312]
-    pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
     time: [135.626, 139.312]
   - words:
       - text: し
+        pr: 시
         time: [139.312, 139.627]
       - text: て
+        pr: 테
         time: [139.627, 139.879]
       - text: み
+        pr: 미
         time: [139.879, 140.069]
       - text: 'たい '
+        pr: 타이
         time: [140.069, 141.114]
       - text: し
+        pr: 시
         time: [141.114, 141.439]
       - text: て
+        pr: 테
         time: [141.439, 141.691]
       - text: み
+        pr: 미
         time: [141.691, 141.923]
       - text: たい
+        pr: 타이
         time: [141.923, 142.605]
-    pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
     time: [139.312, 142.605]
   - words:
       - text: 私
+        pr: 와타시
         time: [143.066, 143.761]
       - text: も
+        pr: 모
         time: [143.761, 143.985]
       - text: い
+        pr: 이
         time: [143.985, 144.254]
       - text: つ
+        pr: 츠
         time: [144.254, 144.407]
       - text: か
+        pr: 카
         time: [144.407, 144.596]
       - text: 'は '
+        pr: 와
         time: [144.596, 144.771]
       - text: 'City '
+        pr: 시티
         time: [144.771, 145.555]
       - text: girl
+        pr: 걸
         time: [145.555, 146.06]
-    pr: 와타시모이츠카와 시티 가루
     tl: 나도 언젠가는 시티 걸
     time: [143.066, 146.06]
