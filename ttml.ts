@@ -28,7 +28,7 @@ try {
     const lines = song.lines.map((line, index) => {
       if (!line.time) throw Error(`${index + 1}행에 이식할 TTML 타이밍이 없습니다.`)
       return line.words
-        ? {time: line.time, words: line.words.map((word) => ({text: word.text, time: word.time ?? line.time!}))}
+        ? {time: line.time, words: line.words.map((word) => ({...word, time: word.time ?? line.time!}))}
         : {text: line.text, time: line.time}
     })
     const doc = formatLyricsYaml(updateLyricsYaml(original, {lines}, values.force, 'auto', true))

@@ -1,4 +1,5 @@
 import {isMap, isScalar, isSeq, parseDocument, YAMLMap} from 'yaml'
+import {mapYamlFields} from '../../src/lib/lyrics/yaml-fields.ts'
 import {parseSongYaml} from '../../src/lib/lyrics/yaml.server.ts'
 import type {ConversionMode, fromLRC} from './lrc.ts'
 
@@ -57,18 +58,27 @@ export function updateLyricsYaml(
     if (!isMap(node)) throw Error(`${i + 1}행은 객체 형식이어야 합니다.`)
     const words = node.get('words')
     if (replaceText) {
-      const sameWords = isSeq(words) && line.words && words.items.length === line.words.length
-      if (!sameWords && old.words?.some((word) => word.pronunciation || word.ruby))
-        throw Error(`${i + 1}행의 단어 구분이 달라 기존 단어 발음·루비를 보존할 수 없습니다.`)
       if (line.words) {
-        if (sameWords) {
-          line.words.forEach((word, j) => {
-            const entry = words.items[j]
-            if (!isMap(entry)) throw Error('단어 객체가 필요합니다.')
-            entry.set('text', word.text)
-            entry.set('time', doc.createNode(word.time))
-          })
-        } else node.set('words', doc.createNode(line.words))
+        let oldOffset = 0
+        const oldWords = new Map(
+          old.words?.map((word, index) => {
+            const start = oldOffset
+            oldOffset += normalize(word.text).length
+            return [`${start}:${oldOffset}`, {word, index}] as const
+          }),
+        )
+        let offset = 0
+        const imported = doc.createNode(mapYamlFields(line.words, 'write'))
+        if (!isSeq(imported)) throw Error('단어 목록이 필요합니다.')
+        line.words.forEach((word, index) => {
+          const start = offset
+          offset += normalize(word.text).length
+          const match = normalize(old.text) === normalize(text) ? oldWords.get(`${start}:${offset}`) : undefined
+          const previous = match && isSeq(words) ? words.items[match.index] : undefined
+          const entry = imported.items[index]
+          if (isMap(previous) && isMap(entry) && previous.has('pr')) entry.set('pr', previous.get('pr', true))
+        })
+        node.set('words', imported)
         node.delete('text')
       } else {
         node.set('text', text)
