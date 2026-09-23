@@ -17,75 +17,289 @@ yt:
   audio: qa_zci0oYNI
   mv: cY_4rRbT3ro
 lines:
-  - text: 100円宝石ピカピカシール
+  - words:
+      - text: '100'
+        time: [14.8, 15.8]
+      - text: 円
+        time: [15.8, 16.68]
+      - text: 宝石ピカピカシール
+        time: [16.68, 21.739]
     pr: 햐쿠엔호세키피카피카시루
     tl: 100엔짜리 보석, 반짝반짝 스티커
-  - text: キラキラ1番素敵な君の
+    time: [14.8, 21.739]
+  - words:
+      - text: キラキラ1番素敵
+        time: [22.159, 27.22]
+      - text: な
+        time: [27.22, 27.62]
+      - text: 君
+        time: [27.62, 28.6]
+      - text: の
+        time: [28.6, 29.079]
     pr: 키라키라이치반스테키나키미노
     tl: 반짝반짝 가장 멋진 너의
-  - text: 1番汚い所も好きよ
+    time: [22.159, 29.079]
+  - words:
+      - text: 1番汚い
+        time: [29.519, 33.16]
+      - text: 所
+        time: [33.16, 34.52]
+      - text: も
+        time: [34.52, 34.94]
+      - text: 好き
+        time: [34.94, 35.92]
+      - text: よ
+        time: [35.92, 36.379]
     pr: 이치반키타나이토코로모스키요
     tl: 가장 더러운 부분도 좋아해
+    time: [29.519, 36.379]
   - text: 美味しいとこだけ食べていたい
     pr: 오이시토코다케타베테이타이
     tl: 맛있는 부분만 먹고 싶어
-  - text: City girl City girl
+    time: [36.839, 42.759]
+  - words:
+      - text: 'City '
+        time: [44.139, 44.88]
+      - text: 'girl '
+        time: [44.88, 45.96]
+      - text: 'City '
+        time: [45.96, 46.68]
+      - text: girl
+        time: [46.68, 47.359]
     pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
-  - text: City girl City girl 君と
+    time: [44.139, 47.359]
+  - words:
+      - text: 'City '
+        time: [47.799, 48.48]
+      - text: 'girl '
+        time: [48.48, 49.58]
+      - text: 'City '
+        time: [49.58, 50.34]
+      - text: 'girl '
+        time: [50.34, 50.8]
+      - text: 君
+        time: [50.8, 51.26]
+      - text: と
+        time: [51.26, 51.419]
     pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
-  - text: してみたい してみたい
+    time: [47.799, 51.419]
+  - words:
+      - text: 'してみたい '
+        time: [51.439, 53.26]
+      - text: してみたい
+        time: [53.26, 54.559]
     pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
-  - text: してみたいよ いろんな事
+    time: [51.439, 54.559]
+  - words:
+      - text: してみたい
+        time: [55.119, 56.52]
+      - text: 'よ '
+        time: [56.52, 57]
+      - text: いろんな
+        time: [57, 58.12]
+      - text: 事
+        time: [58.12, 58.678]
     pr: 시테미타이요 이론나코토
     tl: 해 보고 싶어, 여러 가지를
-  - text: City girl City girl
+    time: [55.119, 58.678]
+  - words:
+      - text: 'City '
+        time: [58.738, 59.52]
+      - text: 'girl '
+        time: [59.52, 60.62]
+      - text: 'City '
+        time: [60.62, 61.34]
+      - text: girl
+        time: [61.34, 61.938]
     pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
-  - text: City girl City girl 君と
+    time: [58.738, 61.938]
+  - words:
+      - text: 'City '
+        time: [62.438, 63.18]
+      - text: 'girl '
+        time: [63.18, 64.28]
+      - text: 'City '
+        time: [64.28, 65.02]
+      - text: 'girl '
+        time: [65.02, 65.46]
+      - text: 君
+        time: [65.46, 65.9]
+      - text: と
+        time: [65.9, 66.058]
     pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
-  - text: してみたい してみたい
+    time: [62.438, 66.058]
+  - words:
+      - text: 'してみたい '
+        time: [66.098, 67.94]
+      - text: してみたい
+        time: [67.94, 69.138]
     pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
-  - text: 私もいつかは City girl
+    time: [66.098, 69.138]
+  - words:
+      - text: 私
+        time: [69.778, 70.5]
+      - text: も
+        time: [70.5, 70.8]
+      - text: いつ
+        time: [70.8, 71.16]
+      - text: か
+        time: [71.16, 71.38]
+      - text: 'は '
+        time: [71.38, 71.58]
+      - text: 'City '
+        time: [71.58, 71.86]
+      - text: girl
+        time: [71.86, 72.238]
     pr: 와타시모이츠카와 City girl
     tl: 나도 언젠가는 시티 걸
-  - text: 100円くじ引きあたりは君さ
+    time: [69.778, 72.238]
+  - words:
+      - text: '100'
+        time: [72.278, 89.06]
+      - text: 円
+        time: [89.06, 89.94]
+      - text: くじ引きあたり
+        time: [89.94, 93.36]
+      - text: は
+        time: [93.36, 93.6]
+      - text: 君さ
+        time: [93.6, 94.997]
     pr: 햐쿠엔쿠지비키아타리와키미사
     tl: 100엔짜리 뽑기, 당첨은 너야
-  - text: ドロドロ1番汚い君の
+    time: [72.278, 94.997]
+  - words:
+      - text: ドロドロ1番汚い
+        time: [95.437, 100.94]
+      - text: 君
+        time: [100.94, 101.9]
+      - text: の
+        time: [101.9, 102.297]
     pr: 도로도로이치반키타나이키미노
     tl: 질척질척 가장 더러운 너의
-  - text: 1番綺麗な部分が欲しい
+    time: [95.437, 102.297]
+  - words:
+      - text: 1番綺麗
+        time: [102.777, 105.92]
+      - text: な
+        time: [105.92, 106.4]
+      - text: 部分
+        time: [106.4, 107.82]
+      - text: が
+        time: [107.82, 108.26]
+      - text: 欲しい
+        time: [108.26, 109.517]
     pr: 이치반키레이나부분가호시
     tl: 가장 깨끗한 부분을 원해
+    time: [102.777, 109.517]
   - text: 美味しいとこだけ食べていたい
     pr: 오이시토코다케타베테이타이
     tl: 맛있는 부분만 먹고 싶어
-  - text: City girl City girl
+    time: [110.117, 116.017]
+  - words:
+      - text: 'City '
+        time: [117.437, 118.16]
+      - text: 'girl '
+        time: [118.16, 119.24]
+      - text: 'City '
+        time: [119.24, 119.96]
+      - text: girl
+        time: [119.96, 120.617]
     pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
-  - text: City girl City girl 君と
+    time: [117.437, 120.617]
+  - words:
+      - text: 'City '
+        time: [121.097, 121.82]
+      - text: 'girl '
+        time: [121.82, 122.9]
+      - text: 'City '
+        time: [122.9, 123.64]
+      - text: 'girl '
+        time: [123.64, 124.08]
+      - text: 君
+        time: [124.08, 124.54]
+      - text: と
+        time: [124.54, 124.697]
     pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
-  - text: してみたい してみたい
+    time: [121.097, 124.697]
+  - words:
+      - text: 'してみたい '
+        time: [124.717, 126.56]
+      - text: してみたい
+        time: [126.56, 127.837]
     pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
-  - text: してみたいの いろんな事
+    time: [124.717, 127.837]
+  - words:
+      - text: してみたい
+        time: [128.377, 129.8]
+      - text: 'の '
+        time: [129.8, 130.26]
+      - text: いろんな
+        time: [130.26, 131.38]
+      - text: 事
+        time: [131.38, 131.956]
     pr: 시테미타이노 이론나코토
     tl: 해 보고 싶어, 여러 가지를
-  - text: City girl City girl
+    time: [128.377, 131.956]
+  - words:
+      - text: 'City '
+        time: [131.996, 132.8]
+      - text: 'girl '
+        time: [132.8, 133.92]
+      - text: 'City '
+        time: [133.92, 134.64]
+      - text: girl
+        time: [134.64, 135.176]
     pr: 시티 가루 시티 가루
     tl: 시티 걸, 시티 걸
-  - text: City girl City girl 君と
+    time: [131.996, 135.176]
+  - words:
+      - text: 'City '
+        time: [135.716, 136.44]
+      - text: 'girl '
+        time: [136.44, 137.56]
+      - text: 'City '
+        time: [137.56, 138.3]
+      - text: 'girl '
+        time: [138.3, 138.74]
+      - text: 君
+        time: [138.74, 139.2]
+      - text: と
+        time: [139.2, 139.356]
     pr: 시티 가루 시티 가루 키미토
     tl: 시티 걸, 시티 걸, 너와
-  - text: してみたい してみたい
+    time: [135.716, 139.356]
+  - words:
+      - text: 'してみたい '
+        time: [139.376, 141.22]
+      - text: してみたい
+        time: [141.22, 142.576]
     pr: 시테미타이 시테미타이
     tl: 해 보고 싶어, 해 보고 싶어
-  - text: 私もいつかは City girl
+    time: [139.376, 142.576]
+  - words:
+      - text: 私
+        time: [143.076, 143.78]
+      - text: も
+        time: [143.78, 144.08]
+      - text: いつ
+        time: [144.08, 144.44]
+      - text: か
+        time: [144.44, 144.68]
+      - text: 'は '
+        time: [144.68, 144.88]
+      - text: 'City '
+        time: [144.88, 145.58]
+      - text: girl
+        time: [145.58, 146.056]
     pr: 와타시모이츠카와 시티 가루
     tl: 나도 언젠가는 시티 걸
+    time: [143.076, 146.056]
