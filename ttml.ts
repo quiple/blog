@@ -15,7 +15,7 @@ try {
   })
   if (values.help) {
     console.log(
-      'nub run ttml <곡-슬러그> [--force]\n현재 디렉토리의 <곡-슬러그>.ttml에서 행·음절 타이밍을 가져옵니다. 기존 YAML의 원문·발음·번역·메타데이터는 유지합니다. --force는 원문 차이 검사를 생략합니다.',
+      'nub run ttml <곡-슬러그>\n현재 디렉토리의 <곡-슬러그>.ttml에서 원문과 행·음절 타이밍을 가져옵니다. 기존 YAML의 발음·번역·메타데이터는 유지합니다. 원문 차이는 기본적으로 허용하며 --force는 필요하지 않습니다.',
     )
   } else {
     const [slug] = positionals
@@ -31,7 +31,7 @@ try {
         ? {time: line.time, words: line.words.map((word) => ({text: word.text, time: word.time ?? line.time!}))}
         : {text: line.text, time: line.time}
     })
-    const doc = formatLyricsYaml(updateLyricsYaml(original, {lines}, values.force))
+    const doc = formatLyricsYaml(updateLyricsYaml(original, {lines}, values.force, 'auto', true))
     const yaml = doc.toString({lineWidth: 0, flowCollectionPadding: false, singleQuote: true})
     parseSongYaml(yaml, slug)
     if ((await readFile(output, 'utf8')) !== original) throw Error('실행 중 대상 YAML이 변경되었습니다.')

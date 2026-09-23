@@ -36,6 +36,7 @@ export function updateLyricsYaml(
   converted: ReturnType<typeof fromLRC>,
   force = false,
   mode: ConversionMode = 'auto',
+  replaceText = false,
 ) {
   const doc = parseDocument(source)
   const original = parseSongYaml(source, '갱신 대상')
@@ -45,7 +46,7 @@ export function updateLyricsYaml(
   converted.lines.forEach((line, i) => {
     const old = original.lines[i]
     const text = line.words?.map((w) => w.text).join('') ?? line.text ?? ''
-    if (!force && normalize(old.text) !== normalize(text))
+    if (!replaceText && !force && normalize(old.text) !== normalize(text))
       throw Error(`${i + 1}행 원문이 다릅니다. 대응하는 행이 맞다면 --force로 갱신하세요.`)
     let node = lines.items[i]
     if (isScalar(node) && typeof node.value === 'string') {
@@ -55,7 +56,25 @@ export function updateLyricsYaml(
     }
     if (!isMap(node)) throw Error(`${i + 1}행은 객체 형식이어야 합니다.`)
     const words = node.get('words')
-    if (mode === 'line') {
+    if (replaceText) {
+      const sameWords = isSeq(words) && line.words && words.items.length === line.words.length
+      if (!sameWords && old.words?.some((word) => word.pronunciation || word.ruby))
+        throw Error(`${i + 1}행의 단어 구분이 달라 기존 단어 발음·루비를 보존할 수 없습니다.`)
+      if (line.words) {
+        if (sameWords) {
+          line.words.forEach((word, j) => {
+            const entry = words.items[j]
+            if (!isMap(entry)) throw Error('단어 객체가 필요합니다.')
+            entry.set('text', word.text)
+            entry.set('time', doc.createNode(word.time))
+          })
+        } else node.set('words', doc.createNode(line.words))
+        node.delete('text')
+      } else {
+        node.set('text', text)
+        node.delete('words')
+      }
+    } else if (mode === 'line') {
       if (
         isSeq(words) &&
         old.words?.some((word) => word.pronunciation || word.ruby || word.obscene || word.emptyBeat)
