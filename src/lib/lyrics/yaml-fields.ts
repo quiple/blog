@@ -4,6 +4,8 @@ const fields = {
   tl: 'translation',
   sp: 'spotify',
   yt: 'youtube',
+  ytMV: 'youtubeMV',
+  ytAudio: 'youtubeAudio',
 } as const
 
 const expandedFields = Object.fromEntries(Object.entries(fields).map(([short, full]) => [full, short]))

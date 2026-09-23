@@ -18,7 +18,7 @@ yt:
   mv: oT-G1wS-57c
 offsets:
   sp: 0.333
-  youtubeAudio: 0.333
+  ytAudio: 0.333
 lines:
   - text: Fuck this thing called life
     pr: 퍽 디스 싱 콜드 라이프

@@ -16,6 +16,8 @@ sp: 4A4Z6ijcX7diIShov3nsRh
 yt:
   audio: qa_zci0oYNI
   mv: cY_4rRbT3ro
+offsets:
+  ytMV: 23.336
 lines:
   - words:
       - text: '100'

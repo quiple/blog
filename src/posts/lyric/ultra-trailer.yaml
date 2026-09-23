@@ -20,8 +20,8 @@ yt:
   mv: Fhg3KsDkMJM
 offsets:
   sp: -0.3
-  youtubeAudio: -0.3
-  youtubeMV: 0.526
+  ytAudio: -0.3
+  ytMV: 0.526
 lines:
   - text: うーわ 最悪 もうだめだ
     pr: 우와 사이아쿠 모다메다

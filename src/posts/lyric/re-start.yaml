@@ -17,7 +17,7 @@ yt:
   audio: uFZlSuZOiZs
 offsets:
   sp: -0.7
-  youtubeAudio: -0.7
+  ytAudio: -0.7
 lines:
   - text: 止まっていた時を
     pr: 토맛테이타토키오

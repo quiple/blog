@@ -18,7 +18,7 @@ yt:
   mv: mo3mYgFElJQ
 offsets:
   sp: -2.9
-  youtubeAudio: -2.9
+  ytAudio: -2.9
 lines:
   - text: Unemployed
     pr: 언임플로이드

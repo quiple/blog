@@ -17,7 +17,7 @@ yt:
   audio: a_vC3_UQu7E
 offsets:
   sp: 0.1
-  youtubeAudio: 0.1
+  ytAudio: 0.1
 lines:
   - text: 「ねぇ似合ってる?」って
     pr: '"네니앗테루?"웃테'

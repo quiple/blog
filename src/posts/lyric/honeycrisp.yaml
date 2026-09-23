@@ -18,7 +18,7 @@ yt:
   mv: d6__N5X6C2M
 offsets:
   sp: -0.771
-  youtubeAudio: -0.771
+  ytAudio: -0.771
 lines:
   - text: Close one eye, bite your lip
     pr: 클로즈 원 아이, 바이트 유어 립

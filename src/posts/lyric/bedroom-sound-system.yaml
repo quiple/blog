@@ -18,7 +18,7 @@ yt:
   # mv: lm9PD6uYsyg
 offsets:
   sp: -0.6
-  youtubeAudio: -0.6
+  ytAudio: -0.6
 lines:
   - text: 見つからないものずっと探してる
     pr: 미츠카라나이모노즛토사가시테루

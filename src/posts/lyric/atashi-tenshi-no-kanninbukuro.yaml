@@ -17,7 +17,7 @@ yt:
   audio: 6wDoSLijkeA
 offsets:
   sp: -0.2
-  youtubeAudio: -0.2
+  ytAudio: -0.2
 lines:
   - text: 人違いでリンチされた少年を
     pr: 히토치가이데린치사레타쇼넨오
