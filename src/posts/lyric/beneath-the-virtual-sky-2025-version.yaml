@@ -17,151 +17,987 @@ yt:
   audio: Wnv2rC1PsiE
   mv: _Mt-Jcz7r94
 lines:
-  - text: Been so long since I felt a connection
+  - words:
+      - text: 'Been '
+        time: [21.16, 21.32]
+      - text: 'so '
+        time: [21.32, 21.48]
+      - text: 'long '
+        time: [21.48, 21.76]
+      - text: 'since '
+        time: [21.76, 21.98]
+      - text: 'I '
+        time: [21.98, 22.12]
+      - text: 'felt '
+        time: [22.12, 22.48]
+      - text: 'a '
+        time: [22.48, 22.58]
+      - text: connection
+        time: [22.58, 23.4]
     tl: 유대감을 느낀 지 너무 오래됐어
-  - text: Cause I always feel like the exception
+    time: [21.16, 23.4]
+  - words:
+      - text: 'Cause '
+        time: [23.66, 23.86]
+      - text: 'I '
+        time: [23.86, 24.06]
+      - text: 'always '
+        time: [24.06, 24.32]
+      - text: 'feel '
+        time: [24.32, 24.64]
+      - text: 'like '
+        time: [24.64, 24.94]
+      - text: 'the '
+        time: [24.94, 25.16]
+      - text: exception
+        time: [25.16, 25.7]
     tl: 난 언제나 예외처럼 느껴지거든
-  - text: Whenever they tell me
+    time: [23.66, 25.7]
+  - words:
+      - text: 'Whenever '
+        time: [25.74, 26.3]
+      - text: 'they '
+        time: [26.3, 26.52]
+      - text: 'tell '
+        time: [26.52, 26.74]
+      - text: me
+        time: [26.74, 26.94]
     tl: 그들이 내게 말할 때마다
-  - text: I'm who I'm meant to be
+    time: [25.74, 26.94]
+  - words:
+      - text: "I'm "
+        time: [26.98, 27.16]
+      - text: 'who '
+        time: [27.16, 27.4]
+      - text: "I'm "
+        time: [27.4, 27.58]
+      - text: 'meant '
+        time: [27.58, 27.8]
+      - text: 'to '
+        time: [27.8, 28.02]
+      - text: be
+        time: [28.02, 28.16]
     tl: 내가 되어야 할 모습이 바로 나라고
-  - text: So save me your story
+    time: [26.98, 28.16]
+  - words:
+      - text: 'So '
+        time: [28.2, 28.4]
+      - text: 'save '
+        time: [28.4, 28.64]
+      - text: 'me '
+        time: [28.64, 28.84]
+      - text: 'your '
+        time: [28.84, 29.04]
+      - text: story
+        time: [29.04, 29.5]
     tl: 그러니 네 이야기는 넣어 둬
-  - text: It's all a cliche
+    time: [28.2, 29.5]
+  - words:
+      - text: "It's "
+        time: [29.54, 29.72]
+      - text: 'all '
+        time: [29.72, 29.96]
+      - text: 'a '
+        time: [29.96, 30.06]
+      - text: cliche
+        time: [30.06, 30.72]
     tl: 전부 뻔한 말이야
-  - text: I ain't looking for a life that's flawless
+    time: [29.54, 30.72]
+  - words:
+      - text: 'I '
+        time: [31.28, 31.42]
+      - text: "ain't "
+        time: [31.42, 31.6]
+      - text: 'looking '
+        time: [31.6, 31.9]
+      - text: 'for '
+        time: [31.9, 32.1]
+      - text: 'a '
+        time: [32.1, 32.22]
+      - text: 'life '
+        time: [32.22, 32.52]
+      - text: "that's "
+        time: [32.52, 32.8]
+      - text: flawless
+        time: [32.8, 33.5]
     tl: 난 완벽한 삶을 찾는 게 아니야
-  - text: All I really want is something honest
+    time: [31.28, 33.5]
+  - words:
+      - text: 'All '
+        time: [33.8, 34]
+      - text: 'I '
+        time: [34, 34.12]
+      - text: 'really '
+        time: [34.12, 34.42]
+      - text: 'want '
+        time: [34.42, 34.64]
+      - text: 'is '
+        time: [34.64, 34.74]
+      - text: 'something '
+        time: [34.74, 35.4]
+      - text: honest
+        time: [35.4, 35.84]
     tl: 정말 원하는 건 진실한 무언가뿐
-  - text: It's hard to begin
+    time: [33.8, 35.84]
+  - words:
+      - text: "It's "
+        time: [35.88, 36.02]
+      - text: 'hard '
+        time: [36.02, 36.22]
+      - text: 'to '
+        time: [36.22, 36.44]
+      - text: begin
+        time: [36.44, 36.82]
     tl: 시작하기는 어려워
-  - text: With the doubt bottled in
+    time: [35.88, 36.82]
+  - words:
+      - text: 'With '
+        time: [36.86, 37.04]
+      - text: 'the '
+        time: [37.04, 37.28]
+      - text: 'doubt '
+        time: [37.28, 37.48]
+      - text: 'bottled '
+        time: [37.48, 37.94]
+      - text: in
+        time: [37.94, 38.06]
     tl: 의심을 속에 가둔 채로는
-  - text: Silver lining is thinning
+    time: [36.86, 38.06]
+  - words:
+      - text: 'Silver '
+        time: [38.12, 38.54]
+      - text: 'lining '
+        time: [38.54, 39]
+      - text: 'is '
+        time: [39, 39.16]
+      - text: thinning
+        time: [39.16, 39.58]
     tl: 희망의 빛이 옅어지고 있어
-  - text: I'm beginning to believe
+    time: [38.12, 39.58]
+  - words:
+      - text: "I'm "
+        time: [39.62, 39.8]
+      - text: 'beginning '
+        time: [39.8, 40.42]
+      - text: 'to '
+        time: [40.42, 40.76]
+      - text: believe
+        time: [40.76, 41.66]
     tl: 이제 믿기 시작해
-  - text: That I could stand to be less naive
+    time: [39.62, 41.66]
+  - words:
+      - text: 'That '
+        time: [43.26, 43.62]
+      - text: 'I '
+        time: [43.62, 44.04]
+      - text: 'could '
+        time: [44.04, 44.46]
+      - text: 'stand '
+        time: [44.46, 45]
+      - text: 'to '
+        time: [45, 45.18]
+      - text: 'be '
+        time: [45.18, 45.48]
+      - text: 'less '
+        time: [45.48, 45.8]
+      - text: naive
+        time: [45.8, 46.72]
     tl: 덜 순진해져도 되겠다고
-  - text: Just what am I trying to achieve
+    time: [43.26, 46.72]
+  - words:
+      - text: 'Just '
+        time: [48.3, 48.64]
+      - text: 'what '
+        time: [48.64, 49.16]
+      - text: 'am '
+        time: [49.16, 49.62]
+      - text: 'I '
+        time: [49.62, 50.04]
+      - text: 'trying '
+        time: [50.04, 50.5]
+      - text: 'to '
+        time: [50.5, 50.9]
+      - text: achieve
+        time: [50.9, 51.68]
     tl: 난 대체 무엇을 이루려는 걸까
-  - text: Lost in a fable
+    time: [48.3, 51.68]
+  - words:
+      - text: 'Lost '
+        time: [51.8, 52.04]
+      - text: 'in '
+        time: [52.04, 52.26]
+      - text: 'a '
+        time: [52.26, 52.42]
+      - text: fable
+        time: [52.42, 52.8]
     tl: 우화 속에서 길을 잃고
-  - text: Caught up in these labels
+    time: [51.8, 52.8]
+  - words:
+      - text: 'Caught '
+        time: [52.84, 53.1]
+      - text: 'up '
+        time: [53.1, 53.32]
+      - text: 'in '
+        time: [53.32, 53.48]
+      - text: 'these '
+        time: [53.48, 53.7]
+      - text: labels
+        time: [53.7, 54.26]
     tl: 이 꼬리표들에 사로잡혀
-  - text: Pulling like gravity
+    time: [52.84, 54.26]
+  - words:
+      - text: 'Pulling '
+        time: [54.32, 54.74]
+      - text: 'like '
+        time: [54.74, 54.94]
+      - text: gravity
+        time: [54.94, 55.94]
     tl: 중력처럼 끌려가
-  - text: Back to reality
+    time: [54.32, 55.94]
+  - words:
+      - text: 'Back '
+        time: [56.22, 56.42]
+      - text: 'to '
+        time: [56.42, 56.62]
+      - text: reality
+        time: [56.62, 57.82]
     tl: 다시 현실로
-  - text: I won't become a tragedy
+    time: [56.22, 57.82]
+  - words:
+      - text: 'I '
+        time: [58.12, 58.3]
+      - text: "won't "
+        time: [58.3, 58.54]
+      - text: 'become '
+        time: [58.54, 59.1]
+      - text: 'a '
+        time: [59.1, 59.34]
+      - text: tragedy
+        time: [59.34, 60.5]
     tl: 난 비극이 되지 않을 거야
-  - text: Beneath the virtual sky
+    time: [58.12, 60.5]
+  - words:
+      - text: 'Beneath '
+        time: [60.8, 61.12]
+      - text: 'the '
+        time: [61.12, 61.28]
+      - text: 'virtual '
+        time: [61.28, 62.16]
+      - text: sky
+        time: [62.16, 63.22]
     tl: 가상의 하늘 아래
-  - text: I can hear you call
+    time: [60.8, 63.22]
+  - words:
+      - text: 'I '
+        time: [63.5, 63.62]
+      - text: 'can '
+        time: [63.62, 63.8]
+      - text: 'hear '
+        time: [63.8, 64.1]
+      - text: 'you '
+        time: [64.1, 64.74]
+      - text: call
+        time: [64.74, 65.58]
     tl: 네 부름이 들려
-  - text: From the colossal heights
+    time: [63.5, 65.58]
+  - words:
+      - text: 'From '
+        time: [65.8, 66.02]
+      - text: 'the '
+        time: [66.02, 66.16]
+      - text: 'colossal '
+        time: [66.16, 67.26]
+      - text: heights
+        time: [67.26, 68.24]
     tl: 아득한 높이에서
-  - text: I'm afraid to fall
+    time: [65.8, 68.24]
+  - words:
+      - text: "I'm "
+        time: [68.52, 68.72]
+      - text: 'afraid '
+        time: [68.72, 69.14]
+      - text: 'to '
+        time: [69.14, 69.8]
+      - text: fall
+        time: [69.8, 70.8]
     tl: 떨어질까 두려워
-  - text: So I try and I try
+    time: [68.52, 70.8]
+  - words:
+      - text: 'So '
+        time: [71.04, 71.24]
+      - text: 'I '
+        time: [71.24, 71.36]
+      - text: 'try '
+        time: [71.36, 71.66]
+      - text: 'and '
+        time: [71.66, 71.82]
+      - text: 'I '
+        time: [71.82, 72]
+      - text: try
+        time: [72, 72.16]
     tl: 그래서 애쓰고 또 애쓰지만
-  - text: But I just cannot find a way
+    time: [71.04, 72.16]
+  - words:
+      - text: 'But '
+        time: [72.2, 72.46]
+      - text: 'I '
+        time: [72.46, 72.64]
+      - text: 'just '
+        time: [72.64, 72.84]
+      - text: 'cannot '
+        time: [72.84, 73.26]
+      - text: 'find '
+        time: [73.26, 73.52]
+      - text: 'a '
+        time: [73.52, 73.68]
+      - text: way
+        time: [73.68, 73.88]
     tl: 아무리 해도 길을 찾을 수 없어
-  - text: Back to you
+    time: [72.2, 73.88]
+  - words:
+      - text: 'Back '
+        time: [73.9, 74.2]
+      - text: 'to '
+        time: [74.2, 74.84]
+      - text: you
+        time: [74.84, 75.68]
     tl: 네게 돌아가는 길을
-  - text: Beneath the virtual sky
+    time: [73.9, 75.68]
+  - words:
+      - text: 'Beneath '
+        time: [75.96, 76.28]
+      - text: 'the '
+        time: [76.28, 76.42]
+      - text: 'virtual '
+        time: [76.42, 77.32]
+      - text: sky
+        time: [77.32, 77.96]
     tl: 가상의 하늘 아래
-  - text: Your voice will see me through
+    time: [75.96, 77.96]
+  - words:
+      - text: 'Your '
+        time: [78, 78.32]
+      - text: 'voice '
+        time: [78.32, 78.62]
+      - text: 'will '
+        time: [78.62, 78.94]
+      - text: 'see '
+        time: [78.94, 79.28]
+      - text: 'me '
+        time: [79.28, 79.8]
+      - text: through
+        time: [79.8, 80.9]
     tl: 네 목소리가 날 이끌어 줄 거야
-  - text: Trap myself inside the same old pattern
+    time: [78, 80.9]
+  - words:
+      - text: 'Trap '
+        time: [81.78, 81.96]
+      - text: 'myself '
+        time: [81.96, 82.3]
+      - text: 'inside '
+        time: [82.3, 82.6]
+      - text: 'the '
+        time: [82.6, 82.72]
+      - text: 'same '
+        time: [82.72, 83.1]
+      - text: 'old '
+        time: [83.1, 83.38]
+      - text: pattern
+        time: [83.38, 84.02]
     tl: 똑같은 패턴 속에 날 가둬
-  - text: It's like nothing I do even matters
+    time: [81.78, 84.02]
+  - words:
+      - text: "It's "
+        time: [84.34, 84.5]
+      - text: 'like '
+        time: [84.5, 84.66]
+      - text: 'nothing '
+        time: [84.66, 84.98]
+      - text: 'I '
+        time: [84.98, 85.14]
+      - text: 'do '
+        time: [85.14, 85.32]
+      - text: 'even '
+        time: [85.32, 85.92]
+      - text: matters
+        time: [85.92, 86.36]
     tl: 내가 뭘 해도 의미 없는 것 같아
-  - text: A constant obsession
+    time: [84.34, 86.36]
+  - words:
+      - text: 'A '
+        time: [86.42, 86.54]
+      - text: 'constant '
+        time: [86.54, 87.02]
+      - text: obsession
+        time: [87.02, 87.56]
     tl: 끊임없는 집착이
-  - text: Gives me the impression
+    time: [86.42, 87.56]
+  - words:
+      - text: 'Gives '
+        time: [87.58, 87.8]
+      - text: 'me '
+        time: [87.8, 88]
+      - text: 'the '
+        time: [88, 88.3]
+      - text: impression
+        time: [88.3, 88.82]
     tl: 이런 생각을 하게 해
-  - text: That all of my progress
+    time: [87.58, 88.82]
+  - words:
+      - text: 'That '
+        time: [88.84, 89.1]
+      - text: 'all '
+        time: [89.1, 89.32]
+      - text: 'of '
+        time: [89.32, 89.48]
+      - text: 'my '
+        time: [89.48, 89.68]
+      - text: progress
+        time: [89.68, 90.08]
     tl: 내가 이룬 모든 발전이
-  - text: Has all been in vain
+    time: [88.84, 90.08]
+  - words:
+      - text: 'Has '
+        time: [90.1, 90.34]
+      - text: 'all '
+        time: [90.34, 90.56]
+      - text: 'been '
+        time: [90.56, 90.8]
+      - text: 'in '
+        time: [90.8, 90.96]
+      - text: vain
+        time: [90.96, 91.32]
     tl: 전부 헛수고였다고
-  - text: Looking for a way to break the cycle
+    time: [90.1, 91.32]
+  - words:
+      - text: 'Looking '
+        time: [91.9, 92.22]
+      - text: 'for '
+        time: [92.22, 92.42]
+      - text: 'a '
+        time: [92.42, 92.52]
+      - text: 'way '
+        time: [92.52, 92.7]
+      - text: 'to '
+        time: [92.7, 92.84]
+      - text: 'break '
+        time: [92.84, 93.16]
+      - text: 'the '
+        time: [93.16, 93.46]
+      - text: cycle
+        time: [93.46, 94.14]
     tl: 악순환을 깰 방법을 찾아
-  - text: Just to keep the dream from being stifled
+    time: [91.9, 94.14]
+  - words:
+      - text: 'Just '
+        time: [94.401, 94.6]
+      - text: 'to '
+        time: [94.6, 94.74]
+      - text: 'keep '
+        time: [94.74, 94.9]
+      - text: 'the '
+        time: [94.9, 95.04]
+      - text: 'dream '
+        time: [95.04, 95.22]
+      - text: 'from '
+        time: [95.22, 95.38]
+      - text: 'being '
+        time: [95.38, 95.96]
+      - text: stifled
+        time: [95.96, 96.541]
     tl: 꿈이 짓눌리지 않게 하려고
-  - text: Still I fall back
+    time: [94.401, 96.541]
+  - words:
+      - text: 'Still '
+        time: [96.601, 96.9]
+      - text: 'I '
+        time: [96.9, 97.06]
+      - text: 'fall '
+        time: [97.06, 97.3]
+      - text: back
+        time: [97.3, 97.481]
     tl: 그래도 다시 매달려
-  - text: On the things that I lack
+    time: [96.601, 97.481]
+  - words:
+      - text: 'On '
+        time: [97.521, 97.7]
+      - text: 'the '
+        time: [97.7, 97.9]
+      - text: 'things '
+        time: [97.9, 98.12]
+      - text: 'that '
+        time: [98.12, 98.36]
+      - text: 'I '
+        time: [98.36, 98.54]
+      - text: lack
+        time: [98.54, 98.761]
     tl: 내게 부족한 것들에
-  - text: Any time I lose track
+    time: [97.521, 98.761]
+  - words:
+      - text: 'Any '
+        time: [98.801, 99.16]
+      - text: 'time '
+        time: [99.16, 99.4]
+      - text: 'I '
+        time: [99.4, 99.58]
+      - text: 'lose '
+        time: [99.58, 99.8]
+      - text: track
+        time: [99.8, 100.021]
     tl: 내가 얼마나 성장했는지를
-  - text: Of the ways in which I have grown
+    time: [98.801, 100.021]
+  - words:
+      - text: 'Of '
+        time: [100.041, 100.22]
+      - text: 'the '
+        time: [100.22, 100.42]
+      - text: 'ways '
+        time: [100.42, 100.68]
+      - text: 'in '
+        time: [100.68, 100.86]
+      - text: 'which '
+        time: [100.86, 101.1]
+      - text: 'I '
+        time: [101.1, 101.36]
+      - text: 'have '
+        time: [101.36, 101.68]
+      - text: grown
+        time: [101.68, 102.341]
     tl: 놓칠 때마다
-  - text: You'd think that I would already know
+    time: [100.041, 102.341]
+  - words:
+      - text: "You'd "
+        time: [103.861, 104.22]
+      - text: 'think '
+        time: [104.22, 104.68]
+      - text: 'that '
+        time: [104.68, 105.2]
+      - text: 'I '
+        time: [105.2, 105.62]
+      - text: 'would '
+        time: [105.62, 105.86]
+      - text: 'already '
+        time: [105.86, 106.72]
+      - text: know
+        time: [106.72, 107.401]
     tl: 이미 알고 있을 법도 한데
-  - text: Yet still I've so far left to go
+    time: [103.861, 107.401]
+  - words:
+      - text: 'Yet '
+        time: [108.941, 109.2]
+      - text: 'still '
+        time: [109.2, 109.78]
+      - text: "I've "
+        time: [109.78, 110.2]
+      - text: 'so '
+        time: [110.2, 110.7]
+      - text: 'far '
+        time: [110.7, 111.18]
+      - text: 'left '
+        time: [111.18, 111.48]
+      - text: 'to '
+        time: [111.48, 111.8]
+      - text: go
+        time: [111.8, 112.141]
     tl: 아직 갈 길이 너무 멀어
-  - text: Losing my patience
+    time: [108.941, 112.141]
+  - words:
+      - text: 'Losing '
+        time: [112.441, 112.84]
+      - text: 'my '
+        time: [112.84, 113.08]
+      - text: patience
+        time: [113.08, 113.441]
     tl: 인내심을 잃어 가
-  - text: With how long I'm chasing
+    time: [112.441, 113.441]
+  - words:
+      - text: 'With '
+        time: [113.481, 113.68]
+      - text: 'how '
+        time: [113.68, 113.94]
+      - text: 'long '
+        time: [113.94, 114.16]
+      - text: "I'm "
+        time: [114.16, 114.3]
+      - text: chasing
+        time: [114.3, 114.921]
     tl: 이렇게 오래 쫓고 있으니
-  - text: The same old stars all day
+    time: [113.481, 114.921]
+  - words:
+      - text: 'The '
+        time: [114.961, 115.14]
+      - text: 'same '
+        time: [115.14, 115.4]
+      - text: 'old '
+        time: [115.4, 115.56]
+      - text: 'stars '
+        time: [115.56, 115.94]
+      - text: 'all '
+        time: [115.94, 116.24]
+      - text: day
+        time: [116.24, 116.561]
     tl: 온종일 똑같은 별들을
-  - text: Still they're so far away
+    time: [114.961, 116.561]
+  - words:
+      - text: 'Still '
+        time: [116.801, 117.06]
+      - text: "they're "
+        time: [117.06, 117.26]
+      - text: 'so '
+        time: [117.26, 117.48]
+      - text: 'far '
+        time: [117.48, 117.88]
+      - text: away
+        time: [117.88, 118.461]
     tl: 그런데도 여전히 너무 멀어
-  - text: Promise you won't lead me astray
+    time: [116.801, 118.461]
+  - words:
+      - text: 'Promise '
+        time: [118.741, 119.14]
+      - text: 'you '
+        time: [119.14, 119.36]
+      - text: "won't "
+        time: [119.36, 119.68]
+      - text: 'lead '
+        time: [119.68, 120.02]
+      - text: 'me '
+        time: [120.02, 120.4]
+      - text: astray
+        time: [120.4, 120.981]
     tl: 길을 잃게 하지 않겠다고 약속해
-  - text: Beneath the virtual sky
+    time: [118.741, 120.981]
+  - words:
+      - text: 'Beneath '
+        time: [121.421, 121.76]
+      - text: 'the '
+        time: [121.76, 121.92]
+      - text: 'virtual '
+        time: [121.92, 122.82]
+      - text: sky
+        time: [122.82, 123.861]
     tl: 가상의 하늘 아래
-  - text: I can hear you call
+    time: [121.421, 123.861]
+  - words:
+      - text: 'I '
+        time: [124.141, 124.26]
+      - text: 'can '
+        time: [124.26, 124.44]
+      - text: 'hear '
+        time: [124.44, 124.74]
+      - text: 'you '
+        time: [124.74, 125.36]
+      - text: call
+        time: [125.36, 126.201]
     tl: 네 부름이 들려
-  - text: From the colossal heights
+    time: [124.141, 126.201]
+  - words:
+      - text: 'From '
+        time: [126.461, 126.66]
+      - text: 'the '
+        time: [126.66, 126.8]
+      - text: 'colossal '
+        time: [126.8, 127.9]
+      - text: heights
+        time: [127.9, 128.861]
     tl: 아득한 높이에서
-  - text: I'm afraid to fall
+    time: [126.461, 128.861]
+  - words:
+      - text: "I'm "
+        time: [129.181, 129.38]
+      - text: 'afraid '
+        time: [129.38, 129.78]
+      - text: 'to '
+        time: [129.78, 130.42]
+      - text: fall
+        time: [130.42, 131.441]
     tl: 떨어질까 두려워
-  - text: So I try and I try
+    time: [129.181, 131.441]
+  - words:
+      - text: 'So '
+        time: [131.681, 131.9]
+      - text: 'I '
+        time: [131.9, 132.02]
+      - text: 'try '
+        time: [132.02, 132.3]
+      - text: 'and '
+        time: [132.3, 132.46]
+      - text: 'I '
+        time: [132.46, 132.64]
+      - text: try
+        time: [132.64, 132.841]
     tl: 그래서 애쓰고 또 애쓰지만
-  - text: But I just cannot find a way
+    time: [131.681, 132.841]
+  - words:
+      - text: 'But '
+        time: [132.901, 133.1]
+      - text: 'I '
+        time: [133.1, 133.28]
+      - text: 'just '
+        time: [133.28, 133.48]
+      - text: 'cannot '
+        time: [133.48, 133.9]
+      - text: 'find '
+        time: [133.9, 134.18]
+      - text: 'a '
+        time: [134.18, 134.32]
+      - text: way
+        time: [134.32, 134.521]
     tl: 아무리 해도 길을 찾을 수 없어
-  - text: Back to you
+    time: [132.901, 134.521]
+  - words:
+      - text: 'Back '
+        time: [134.561, 134.84]
+      - text: 'to '
+        time: [134.84, 135.46]
+      - text: you
+        time: [135.46, 136.321]
     tl: 네게 돌아가는 길을
-  - text: Beneath the virtual sky
+    time: [134.561, 136.321]
+  - words:
+      - text: 'Beneath '
+        time: [136.601, 136.92]
+      - text: 'the '
+        time: [136.92, 137.08]
+      - text: 'virtual '
+        time: [137.08, 137.98]
+      - text: sky
+        time: [137.98, 138.601]
     tl: 가상의 하늘 아래
-  - text: Your voice will see me through
+    time: [136.601, 138.601]
+  - words:
+      - text: 'Your '
+        time: [138.641, 138.96]
+      - text: 'voice '
+        time: [138.96, 139.28]
+      - text: 'will '
+        time: [139.28, 139.58]
+      - text: 'see '
+        time: [139.58, 139.9]
+      - text: 'me '
+        time: [139.9, 140.46]
+      - text: through
+        time: [140.46, 141.541]
     tl: 네 목소리가 날 이끌어 줄 거야
-  - text: Beneath the virtual sky
+    time: [138.641, 141.541]
+  - words:
+      - text: 'Beneath '
+        time: [165.101, 165.4]
+      - text: 'the '
+        time: [165.4, 165.54]
+      - text: 'virtual '
+        time: [165.54, 166.38]
+      - text: sky
+        time: [166.38, 167.341]
     tl: 가상의 하늘 아래
-  - text: I can hear you call
+    time: [165.101, 167.341]
+  - words:
+      - text: 'I '
+        time: [167.601, 167.7]
+      - text: 'can '
+        time: [167.7, 167.88]
+      - text: 'hear '
+        time: [167.88, 168.12]
+      - text: 'you '
+        time: [168.12, 168.74]
+      - text: call
+        time: [168.74, 169.541]
     tl: 네 부름이 들려
-  - text: From the colossal heights
+    time: [167.601, 169.541]
+  - words:
+      - text: 'From '
+        time: [169.761, 169.92]
+      - text: 'the '
+        time: [169.92, 170.08]
+      - text: 'colossal '
+        time: [170.08, 171.08]
+      - text: heights
+        time: [171.08, 172.001]
     tl: 아득한 높이에서
-  - text: I'm afraid to fall
+    time: [169.761, 172.001]
+  - words:
+      - text: "I'm "
+        time: [172.261, 172.46]
+      - text: 'afraid '
+        time: [172.46, 172.84]
+      - text: 'to '
+        time: [172.84, 173.42]
+      - text: fall
+        time: [173.42, 174.381]
     tl: 떨어질까 두려워
-  - text: So I try and I try
+    time: [172.261, 174.381]
+  - words:
+      - text: 'So '
+        time: [174.581, 174.78]
+      - text: 'I '
+        time: [174.78, 174.9]
+      - text: 'try '
+        time: [174.9, 175.18]
+      - text: 'and '
+        time: [175.18, 175.32]
+      - text: 'I '
+        time: [175.32, 175.48]
+      - text: try
+        time: [175.48, 175.681]
     tl: 그래서 애쓰고 또 애쓰지만
-  - text: I can almost see daylight
+    time: [174.581, 175.681]
+  - words:
+      - text: 'I '
+        time: [175.741, 175.88]
+      - text: 'can '
+        time: [175.88, 176.1]
+      - text: 'almost '
+        time: [176.1, 176.44]
+      - text: 'see '
+        time: [176.44, 176.66]
+      - text: daylight
+        time: [176.66, 177.001]
     tl: 이제 거의 햇빛이 보여
-  - text: So close in view
+    time: [175.741, 177.001]
+  - words:
+      - text: 'So '
+        time: [177.041, 177.2]
+      - text: 'close '
+        time: [177.2, 177.56]
+      - text: 'in '
+        time: [177.56, 178.06]
+      - text: view
+        time: [178.06, 178.901]
     tl: 시야에 닿을 듯 가까이
-  - text: Beneath the virtual sky
+    time: [177.041, 178.901]
+  - words:
+      - text: 'Beneath '
+        time: [179.141, 179.44]
+      - text: 'the '
+        time: [179.44, 179.6]
+      - text: 'virtual '
+        time: [179.6, 180.42]
+      - text: sky
+        time: [180.42, 181.001]
     tl: 가상의 하늘 아래
-  - text: Your voice will see me through
+    time: [179.141, 181.001]
+  - words:
+      - text: 'Your '
+        time: [181.041, 181.34]
+      - text: 'voice '
+        time: [181.34, 181.62]
+      - text: 'will '
+        time: [181.62, 181.9]
+      - text: 'see '
+        time: [181.9, 182.22]
+      - text: 'me '
+        time: [182.22, 182.7]
+      - text: through
+        time: [182.7, 183.721]
     tl: 네 목소리가 날 이끌어 줄 거야
-  - text: Beneath the virtual sky
+    time: [181.041, 183.721]
+  - words:
+      - text: 'Beneath '
+        time: [188.841, 189.16]
+      - text: 'the '
+        time: [189.16, 189.32]
+      - text: 'virtual '
+        time: [189.32, 190.18]
+      - text: sky
+        time: [190.18, 191.241]
     tl: 가상의 하늘 아래
-  - text: I can hear you call
+    time: [188.841, 191.241]
+  - words:
+      - text: 'I '
+        time: [191.521, 191.66]
+      - text: 'can '
+        time: [191.66, 191.84]
+      - text: 'hear '
+        time: [191.84, 192.14]
+      - text: 'you '
+        time: [192.14, 192.76]
+      - text: call
+        time: [192.76, 193.621]
     tl: 네 부름이 들려
-  - text: From the colossal heights
+    time: [191.521, 193.621]
+  - words:
+      - text: 'From '
+        time: [193.861, 194.04]
+      - text: 'the '
+        time: [194.04, 194.2]
+      - text: 'colossal '
+        time: [194.2, 195.28]
+      - text: heights
+        time: [195.28, 196.261]
     tl: 아득한 높이에서
-  - text: I'm afraid to fall
+    time: [193.861, 196.261]
+  - words:
+      - text: "I'm "
+        time: [196.581, 196.78]
+      - text: 'afraid '
+        time: [196.78, 197.18]
+      - text: 'to '
+        time: [197.18, 197.82]
+      - text: fall
+        time: [197.82, 198.841]
     tl: 떨어질까 두려워
-  - text: So I try and I try
+    time: [196.581, 198.841]
+  - words:
+      - text: 'So '
+        time: [199.081, 199.28]
+      - text: 'I '
+        time: [199.28, 199.4]
+      - text: 'try '
+        time: [199.4, 199.7]
+      - text: 'and '
+        time: [199.7, 199.86]
+      - text: 'I '
+        time: [199.86, 200.02]
+      - text: try
+        time: [200.02, 200.321]
     tl: 그래서 애쓰고 또 애쓰지만
-  - text: I can almost see daylight
+    time: [199.081, 200.321]
+  - words:
+      - text: 'I '
+        time: [200.381, 200.46]
+      - text: 'can '
+        time: [200.46, 200.72]
+      - text: 'almost '
+        time: [200.72, 201.08]
+      - text: 'see '
+        time: [201.08, 201.3]
+      - text: daylight
+        time: [201.3, 201.681]
     tl: 이제 거의 햇빛이 보여
-  - text: So close in view
+    time: [200.381, 201.681]
+  - words:
+      - text: 'So '
+        time: [201.721, 201.9]
+      - text: 'close '
+        time: [201.9, 202.28]
+      - text: 'in '
+        time: [202.28, 202.86]
+      - text: view
+        time: [202.86, 203.721]
     tl: 시야에 닿을 듯 가까이
-  - text: Beneath the virtual sky
+    time: [201.721, 203.721]
+  - words:
+      - text: 'Beneath '
+        time: [204.001, 204.32]
+      - text: 'the '
+        time: [204.32, 204.48]
+      - text: 'virtual '
+        time: [204.48, 205.34]
+      - text: sky
+        time: [205.34, 206.001]
     tl: 가상의 하늘 아래
-  - text: Your voice will see me through
+    time: [204.001, 206.001]
+  - words:
+      - text: 'Your '
+        time: [206.021, 206.36]
+      - text: 'voice '
+        time: [206.36, 206.68]
+      - text: 'will '
+        time: [206.68, 206.96]
+      - text: 'see '
+        time: [206.96, 207.3]
+      - text: 'me '
+        time: [207.3, 207.86]
+      - text: through
+        time: [207.86, 209.561]
     tl: 네 목소리가 날 이끌어 줄 거야
+    time: [206.021, 209.561]
