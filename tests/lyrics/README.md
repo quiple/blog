@@ -5,7 +5,7 @@ The fixture runs automatically and shows JSON with `pass: true` when complete
 (about 25 seconds). Stop the command to remove the temporary route.
 It uses a synthetic playback clock; it does not contact a music provider.
 
-Checks include 320 comparisons of native AMLL 0.5.2 and the document adapter (row
+Checks include 320 comparisons of native AMLL 0.6.0 and the document adapter (row
 positions modulo the document origin, active states, opacity and stagger delay),
 ruby baselines and absence of masks on line-timed ruby, initial/ended dots,
 pause/resume anchoring with an inactive background row above the active row,

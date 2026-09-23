@@ -1,6 +1,6 @@
 # AMLL document-scroll adapter
 
-The app uses the installed `@applemusic-like-lyrics/core` **0.5.2** DOM engine.
+The app uses the installed `@applemusic-like-lyrics/core` **0.6.0** DOM engine.
 It does not carry a copy of AMLL's renderer, optimizer, timeline or spring library.
 
 `document.patch.json` records the exact upstream code before and after each
@@ -15,10 +15,12 @@ Document scrolling requires changing the native layout's common origin, mounting
 and measuring rows outside a fixed viewport, maintaining document content height,
 and positioning interlude dots between animated rows. Layout still uses native
 viewport coordinates to calculate stagger delays before translating final DOM
-positions. The native wheel/touch scroll adapter is not attached.
-Unused internal scroll-boundary updates and hidden bottom-line positioning are
-omitted. Patch entries retain only the changed code and enough unique context;
-unchanged upstream method bodies are not duplicated in the patch.
+positions. The native wheel/touch handlers are detached; its boundary calculator remains
+available. The native layout calculator, timeline controller and interlude state
+machine are retained. Obsolete 0.5.2 interlude and spring workarounds were removed.
+Provider timestamp interpolation and seek detection remain in SyncedLyrics;
+native automatic seek detection is disabled to avoid treating provider jitter
+as repeated seeks.
 
 The app also fixes the reported ruby/line-timing issues: line timing is determined
 before background timestamp normalization; line-timed annotated words use native
@@ -26,7 +28,7 @@ ruby DOM without karaoke masks; kana are distributed within the original timed
 ruby span. These are rendering fixes, not replacements for AMLL's word renderer.
 The remaining masks, word emphasis, springs, grouping, duet, pronunciation,
 translation, timeline and background animations remain upstream implementations.
-The app displays pronunciation before translation (upstream 0.5.2 places it
+The app displays pronunciation before translation (upstream 0.6.0 places it
 after translation), with the same muted color for both annotations.
 
 `src/lib/lyrics/document-player.ts` exposes coordinates.
@@ -37,5 +39,5 @@ manual-scroll suspension, pause/resume anchoring and bottom spacing.
 Source: https://github.com/amll-dev/applemusic-like-lyrics
 Original author: SteveXMH and AMLL contributors. Upstream code in the patch is
 AGPL-3.0-only, like the app; see the repository `LICENSE`. Modifications dated
-2026-09-16. Original implementation was inspected using the installed package's
+2026-09-23. Original implementation was inspected using the installed package's
 `dist/amll-core.mjs.map` sourcesContent. See `tests/lyrics/README.md` for checks.

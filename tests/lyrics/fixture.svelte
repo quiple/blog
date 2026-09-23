@@ -83,6 +83,11 @@
     }
     try {
       set(26500, true)
+      // 0.6 drives interlude entrance from media time, not wall-clock time.
+      for (let t = 26600; t <= 27500; t += 100) {
+        await wait(100)
+        set(t, true)
+      }
       await wait(1400)
     } finally {
       window.scrollTo = originalScrollTo
@@ -92,9 +97,13 @@
       gapTop = rect(afterGap).top,
       precedingTop = rect(main()[5]).top
     assert('interlude visible', getComputedStyle(dots()).opacity === '1')
-    assert('interlude does not overlap next row', rect(dots()).bottom <= rect(afterGap).top + 1, {
+    // Main-line boxes include negative margins and padding; compare the glyphs.
+    const nextText = document.createRange()
+    nextText.selectNodeContents(afterGap)
+    const nextTextTop = nextText.getBoundingClientRect().top
+    assert('interlude does not overlap next row', rect(dots()).bottom <= nextTextTop + 1, {
       dots: rect(dots()).bottom,
-      row: rect(afterGap).top,
+      row: nextTextTop,
     })
     // Natural clock advance, not seek: every increment is below the seek threshold.
     for (let t = 27000; t <= 31200; t += 300) {

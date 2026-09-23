@@ -36,6 +36,8 @@
         host.append(element)
         player.setAlignPosition(0)
         player.setEnableBlur(false)
+        // Provider timestamps are interpolated below; seek detection is handled there.
+        player.setEnableAutoSeekDetection(false)
         player.setOptimizeOptions({
           resetLineTimestamps: false,
           normalizeSpaces: true,
@@ -60,7 +62,7 @@
           spacingVersion = -1,
           spacingDirty = true
         const inset = () => Math.max(96, innerHeight * 0.18)
-        // Preserve the requested 200ms lead for the native 400ms color transition.
+        // Preserve the requested 200ms lead for line transitions.
         const time = () => Math.max(0, playbackTime(sample, performance.now()) - offset + 200)
         const release = () => {
           anchor = undefined
@@ -77,7 +79,9 @@
             previousFrame = 0
             return
           }
-          const current = time()
+          // Ignore small backwards corrections from embed timestamp samples.
+          let current = time()
+          if (current < previousTime && previousTime - current < 200) current = previousTime
           player.setCurrentTime(current, Math.abs(current - previousTime) > 1000)
           player.update(previousFrame ? Math.min(50, now - previousFrame) : 0)
           previousTime = current

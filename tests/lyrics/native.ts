@@ -4,6 +4,9 @@ import {DocumentLyricPlayer} from '$lib/lyrics/document-player'
 import type {LyricLine} from '@applemusic-like-lyrics/core'
 
 class MeasuredNative extends Native {
+  measureLines() {
+    this.currentLyricGroups.forEach((_, index) => this.layoutCalculator.setLineHeight(index, 80))
+  }
   measureDots() {
     this.layoutState.interludeDotsSize = [80, 30]
   }
@@ -54,14 +57,15 @@ export async function compareNative() {
     // Use equal measured row sizes so virtualized fallback heights do not affect comparison.
     for (const group of native.currentLyricGroups) native.lyricGroupSize.set(group, [800, 80])
     for (const group of port.currentLyricGroups) port.lyricGroupSize.set(group, [800, 80])
+    native.measureLines()
     native.measureDots()
     port.measureDots()
     let assertions = 0
     for (const time of [0, 5100, 7200, 11000, 17100, 31000, 59000, 62000]) {
       native.setCurrentTime(time, true)
       port.setCurrentTime(time, true)
-      await native.calcLayout(true, true)
-      await port.calcLayout(true, true)
+      await native.calcLayout('rebuild-view')
+      await port.calcLayout('rebuild-view')
       const origin = port.currentLyricGroups[0].top - native.currentLyricGroups[0].top
       for (let i = 0; i < 10; i++) {
         const a = native.currentLyricGroups[i],

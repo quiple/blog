@@ -12,11 +12,13 @@ export class DocumentLyricPlayer extends DomLyricPlayer {
   resetPlayback() {
     if (!this.hasStarted) return
     this.hasStarted = false
-    void this.calcLayout(true, true)
+    void this.calcLayout('config-change')
   }
 
   activeLine(time: number) {
-    const group = this.currentLyricGroups.find((group) => group.startTime <= time && time < group.endTime)
+    const group = this.currentLyricGroups.find(
+      (group) => group.mainLine.getLine().startTime <= time && time < group.mainLine.getLine().endTime,
+    )
     return group?.mainLine.getElement() ?? (this.interlude ? this.interludeDots.getElement() : undefined)
   }
 
