@@ -57,7 +57,7 @@ type SongInput = v.InferOutput<typeof songSchema>
 type BaseLine = Exclude<v.InferOutput<typeof backgroundSchema>, string>
 type Time = v.InferOutput<typeof timeSchema>
 export type LyricLanguages = {lang?: string; pronunciationLang?: string}
-export type LocalizedLyricLine = LyricLine & LyricLanguages
+export type LocalizedLyricLine = LyricLine & LyricLanguages & {wordTimed?: boolean}
 export type Annotation = v.InferOutput<typeof annotationSchema>
 export type SongLine = BaseLine & {text: string; duet?: boolean; background?: SongLine}
 export type Song = Omit<SongInput, 'title' | 'lines'> & {title: string; lines: SongLine[]}
@@ -194,6 +194,7 @@ export function toLyricLines(
     })
     return {
       words,
+      wordTimed: line.words?.length === 1 && !!line.words[0].time,
       startTime: milliseconds(start),
       endTime: milliseconds(end),
       isBG,

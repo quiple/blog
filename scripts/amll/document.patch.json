@@ -15,7 +15,7 @@
     {
       "label": "Input timing classification",
       "before": "\t\toptimizeLyricLines(this.processedLines, this.optimizeOptions);",
-      "after": "\t\tfor(const line of this.processedLines) lineTiming.set(line, line.words.every(word => word.startTime===line.startTime && word.endTime===line.endTime && (!word.ruby || word.ruby.every(part=>part.startTime===line.startTime && part.endTime===line.endTime))));\n\t\toptimizeLyricLines(this.processedLines, this.optimizeOptions);\n this.documentLayoutReady=false;"
+      "after": "\t\tfor(const line of this.processedLines) lineTiming.set(line, !line.wordTimed && line.words.every(word => word.startTime===line.startTime && word.endTime===line.endTime && (!word.ruby || word.ruby.every(part=>part.startTime===line.startTime && part.endTime===line.endTime))));\n\t\toptimizeLyricLines(this.processedLines, this.optimizeOptions);\n this.documentLayoutReady=false;"
     },
     {
       "label": "Per-line render mode",
@@ -116,6 +116,11 @@
       "label": "Preserve annotated input chunks",
       "before": "\t\tif (isSpace || hasRuby) {\n\t\t\tprocessAtom({ ...w });\n\t\t\tcontinue;\n\t\t}",
       "after": "\t\tif (isSpace || hasRuby || romanWord.trim()) {\n            if (isSpace) processAtom({ ...w });\n            else {\n                const leading = w.word.match(/^\\s+/)?.[0];\n                const trailing = w.word.match(/\\s+$/)?.[0];\n                if (leading) processAtom({word: leading, romanWord: \"\", startTime: w.startTime, endTime: w.startTime});\n                processAtom({...w, word: w.word.trim()});\n                if (trailing) processAtom({word: trailing, romanWord: \"\", startTime: w.endTime, endTime: w.endTime});\n            }\n\t\t\tcontinue;\n\t\t}"
+    },
+    {
+      "label": "Explicit word timing for single-word songs",
+      "before": "for (const line of this.processedLines) if (line.words.length > 1) {",
+      "after": "for (const line of this.processedLines) if (line.wordTimed || line.words.length > 1) {"
     }
   ]
 }

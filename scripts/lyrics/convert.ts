@@ -1,6 +1,6 @@
 import {mapYamlFields} from '../../src/lib/lyrics/yaml-fields.ts'
 import {TTMLParser} from '@applemusic-like-lyrics/ttml'
-import {DOMParser} from '@xmldom/xmldom'
+import {DOMParser, type Element} from '@xmldom/xmldom'
 import {parseSong, type SongLine} from '../../src/lib/lyrics/model.ts'
 
 type Parsed = ReturnType<TTMLParser['parse']>
@@ -33,6 +33,20 @@ export function fromTTML(xml: string, timing?: 'Line' | 'Word') {
       ids.add(key)
     }
   }
+  const explicitWordLines = new Set(
+    paragraphs
+      .filter((paragraph) =>
+        Array.from(paragraph.childNodes).some(
+          (child) =>
+            child.nodeType === 1 &&
+            (child as Element).localName === 'span' &&
+            (child as Element).hasAttribute('begin') &&
+            (child as Element).hasAttribute('end') &&
+            !(child as Element).hasAttributeNS('http://www.w3.org/ns/ttml#metadata', 'role'),
+        ),
+      )
+      .map((paragraph) => paragraph.getAttributeNS(namespace, 'key')),
+  )
   const result = TTMLParser.parse(xml, {domParser: {parseFromString: () => document}})
   // Read the declared mode, not metadata.timingMode: the parser infers that from word count alone.
   const lineTiming = (timing ?? document.documentElement?.getAttributeNS(namespace, 'timing')) === 'Line'
@@ -47,9 +61,10 @@ export function fromTTML(xml: string, timing?: 'Line' | 'Word') {
     const wordTiming =
       wordsCoverLine &&
       !lineTiming &&
-      parts.length > 1 &&
+      parts.length > 0 &&
       parts.every((word) => word.endTime > word.startTime) &&
-      parts.some((word) => word.startTime !== first.startTime || word.endTime !== first.endTime)
+      ((parts.length === 1 && explicitWordLines.has(input.id ?? '')) ||
+        parts.some((word) => word.startTime !== first.startTime || word.endTime !== first.endTime))
     // Ruby and per-word annotations cannot be represented by the plain text field.
     const keepWords =
       wordTiming || parts.some((word) => word.ruby?.length || word.obscene || word.emptyBeat !== undefined)
