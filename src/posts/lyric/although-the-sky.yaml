@@ -903,19 +903,19 @@ lines:
     time: [184.721, 188.241]
   - words:
       - text: 'If '
-        pr:
+        pr: 이프
         time: [188.468, 188.937]
       - text: 'you '
-        pr:
+        pr: 유
         time: [188.937, 189.366]
       - text: 'check '
-        pr:
+        pr: 체크
         time: [189.366, 189.645]
       - text: 'it '
         pr: 잇
         time: [189.645, 190.291]
       - text: 'out, '
-        pr:
+        pr: 아웃,
         time: [190.291, 190.577]
       - text: 'I '
         pr: 아이
@@ -924,46 +924,46 @@ lines:
         pr: 노
         time: [191.036, 191.457]
       - text: you'll
-        pr:
+        pr: 율
         time: [191.457, 191.997]
     tl: 직접 살펴보면, 너도 분명
     time: [188.468, 191.997]
   - words:
       - text: 'Soon '
-        pr:
+        pr: 순
         time: [192.126, 192.679]
       - text: "you'll "
-        pr:
+        pr: 율
         time: [192.679, 193.106]
       - text: 'see '
-        pr:
+        pr: 시
         time: [193.106, 193.386]
       - text: 'it, '
-        pr:
+        pr: 잇,
         time: [193.386, 193.793]
       - text: 'see '
-        pr:
+        pr: 시
         time: [193.793, 194.324]
       - text: 'it '
         pr: 잇
         time: [194.324, 194.72]
       - text: shinin'
-        pr:
+        pr: 샤이닝
         time: [194.72, 195.726]
     tl: 곧 보게 될 거야, 반짝이는 모습을
     time: [192.126, 195.726]
   - words:
       - text: 'Hand '
-        pr:
+        pr: 핸드
         time: [195.947, 196.425]
       - text: 'in '
-        pr:
+        pr: 인
         time: [196.425, 196.661]
       - text: 'hand, '
-        pr:
+        pr: 핸드,
         time: [196.661, 197.123]
       - text: 'the '
-        pr:
+        pr: 더
         time: [197.123, 197.593]
       - text: 'colors '
         pr: 컬러즈
