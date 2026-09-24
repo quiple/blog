@@ -172,7 +172,7 @@ lines:
         pr: 인
         time: [38.93, 39.167]
       - text: 'hand, '
-        pr: 핸드
+        pr: 핸드,
         time: [39.167, 39.639]
       - text: 'the '
         pr: 더
@@ -448,7 +448,7 @@ lines:
         pr: 시
         time: [99.324, 99.649]
       - text: 'it, '
-        pr: 잇
+        pr: 잇,
         time: [99.649, 100.031]
       - text: 'see '
         pr: 시
@@ -469,7 +469,7 @@ lines:
         pr: 인
         time: [102.68, 102.919]
       - text: 'hand, '
-        pr: 핸드
+        pr: 핸드,
         time: [102.919, 103.389]
       - text: 'the '
         pr: 더
@@ -757,18 +757,25 @@ lines:
     time: [158.472, 162.029]
   - words:
       - text: 'Soon '
+        pr: 순
         time: [162.171, 162.685]
       - text: "you'll "
+        pr: 율
         time: [162.685, 163.101]
       - text: 'see '
+        pr: 시
         time: [163.101, 163.388]
       - text: 'it, '
+        pr: 잇,
         time: [163.388, 163.785]
       - text: 'see '
+        pr: 시
         time: [163.785, 164.329]
       - text: 'it '
+        pr: 잇
         time: [164.329, 164.723]
       - text: shinin'
+        pr: 샤이닝
         time: [164.723, 165.74]
     tl: 곧 보게 될 거야, 반짝이는 모습을
     time: [162.171, 165.74]
@@ -780,7 +787,7 @@ lines:
         pr: 인
         time: [166.425, 166.656]
       - text: 'hand, '
-        pr: 핸드
+        pr: 핸드,
         time: [166.656, 167.129]
       - text: 'the '
         pr: 더
