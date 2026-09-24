@@ -19,121 +19,169 @@ yt:
 lines:
   - words:
       - text: 'Although '
+        pr: 올도
         time: [4.027, 4.493]
       - text: 'the '
+        pr: 더
         time: [4.493, 4.674]
       - text: 'sky '
+        pr: 스카이
         time: [4.674, 5.624]
       - text: 'might '
+        pr: 마이트
         time: [5.624, 5.865]
       - text: 'be '
+        pr: 비
         time: [5.865, 6.334]
       - text: gray
+        pr: 그레이
         time: [6.334, 6.827]
     tl: 하늘이 잿빛일지라도
     time: [4.027, 6.827]
   - words:
       - text: 'I '
+        pr: 아이
         time: [8.934, 9.409]
       - text: 'found '
+        pr: 파인드
         time: [9.409, 9.873]
       - text: 'a '
+        pr: 어
         time: [9.873, 10.086]
       - text: way
+        pr: 웨이
         time: [10.086, 10.563]
     tl: 난 길을 찾았어
     time: [8.934, 10.563]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [12.682, 13.058]
       - text: "seein' "
+        pr: 시잉
         time: [13.058, 13.768]
       - text: 'sunbeams '
+        pr: 선빔즈
         time: [13.768, 15.014]
       - text: 'all '
+        pr: 올
         time: [15.014, 15.25]
       - text: 'the '
+        pr: 더
         time: [15.25, 15.972]
       - text: 'time '
+        pr: 타임
         time: [15.972, 16.669]
       - text: now
+        pr: 나우
         time: [16.669, 17.146]
     tl: 이젠 언제나 햇살이 보여
     time: [12.682, 17.146]
   - words:
       - text: 'Although '
+        pr: 올도
         time: [19.06, 19.511]
       - text: 'the '
+        pr: 더
         time: [19.511, 19.719]
       - text: 'grass '
+        pr: 그래스
         time: [19.719, 20.643]
       - text: 'might '
+        pr: 마이트
         time: [20.643, 20.876]
       - text: 'be '
+        pr: 비
         time: [20.876, 21.347]
       - text: wet
+        pr: 웨트
         time: [21.347, 21.75]
     tl: 풀이 젖어 있을지라도
     time: [19.06, 21.75]
   - words:
       - text: "Don't "
+        pr: 돈트
         time: [23.934, 24.407]
       - text: 'give '
+        pr: 기브
         time: [24.407, 24.636]
       - text: 'up '
+        pr: 업
         time: [24.636, 25.083]
       - text: yet
+        pr: 옛
         time: [25.083, 25.469]
     tl: 아직 포기하지 마
     time: [23.934, 25.469]
   - words:
       - text: "You'll "
+        pr: 유일
         time: [27.677, 28.151]
       - text: 'miss '
+        pr: 미스
         time: [28.151, 28.621]
       - text: 'the '
+        pr: 더
         time: [28.621, 28.856]
       - text: 'rainbow '
+        pr: 레인보
         time: [28.856, 30.01]
       - text: 'if '
+        pr: 이프
         time: [30.01, 30.245]
       - text: 'you '
+        pr: 유
         time: [30.245, 30.948]
       - text: 'run '
+        pr: 런
         time: [30.948, 31.656]
       - text: now
+        pr: 나우
         time: [31.656, 32.372]
     tl: 지금 달아나면 무지개를 놓칠 거야
     time: [27.677, 32.372]
   - words:
       - text: 'Soon '
+        pr: 순
         time: [34.62, 35.169]
       - text: "you'll "
+        pr: 유일
         time: [35.169, 35.555]
       - text: 'see '
+        pr: 시
         time: [35.555, 35.876]
       - text: 'it, '
+        pr: 잇,
         time: [35.876, 36.27]
       - text: 'see '
+        pr: 시
         time: [36.27, 36.809]
       - text: 'it '
+        pr: 잇
         time: [36.809, 37.218]
       - text: shinin'
+        pr: 샤이닝
         time: [37.218, 38.151]
     tl: 곧 보게 될 거야, 반짝이는 모습을
     time: [34.62, 38.151]
   - words:
       - text: 'Hand '
+        pr: 핸드
         time: [38.455, 38.93]
       - text: 'in '
+        pr: 인
         time: [38.93, 39.167]
       - text: 'hand, '
+        pr: 핸드
         time: [39.167, 39.639]
       - text: 'the '
+        pr: 더
         time: [39.639, 40.088]
       - text: 'colors '
+        pr: 컬러즈
         time: [40.088, 41.024]
       - text: vibrant
+        pr: 바이브런트
         time: [41.024, 41.972]
     tl: 손에 손을 잡고, 빛깔은 선명해
     time: [38.455, 41.972]
