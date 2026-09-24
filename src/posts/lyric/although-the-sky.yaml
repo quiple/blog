@@ -286,16 +286,22 @@ lines:
     time: [61.42, 65.882]
   - words:
       - text: 'Despite '
+        pr: 디스파이트
         time: [67.82, 68.241]
       - text: 'the '
+        pr: 더
         time: [68.241, 68.462]
       - text: 'dark, '
+        pr: 다크,
         time: [68.462, 69.406]
       - text: 'we '
+        pr: 위
         time: [69.406, 69.64]
       - text: 'can '
+        pr: 캔
         time: [69.64, 70.09]
       - text: rock
+        pr: 락
         time: [70.09, 70.579]
     tl: 어둠 속에서도 우린 신나게 놀 수 있어
     time: [67.82, 70.579]
