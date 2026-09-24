@@ -43,7 +43,7 @@ lines:
         pr: 아이
         time: [8.934, 9.409]
       - text: 'found '
-        pr: 파인드
+        pr: 파운드
         time: [9.409, 9.873]
       - text: 'a '
         pr: 어
