@@ -774,174 +774,244 @@ lines:
     time: [162.171, 165.74]
   - words:
       - text: 'Hand '
+        pr: 핸드
         time: [165.958, 166.425]
       - text: 'in '
+        pr: 인
         time: [166.425, 166.656]
       - text: 'hand, '
+        pr: 핸드
         time: [166.656, 167.129]
       - text: 'the '
+        pr: 더
         time: [167.129, 167.596]
       - text: 'colors '
+        pr: 컬러즈
         time: [167.596, 168.539]
       - text: vibrant
+        pr: 바이브런트
         time: [168.539, 169.489]
     tl: 손에 손을 잡고, 빛깔은 선명해
     time: [165.958, 169.489]
   - words:
       - text: 'Fleeting '
+        pr: 플리팅
         time: [169.728, 170.641]
       - text: 'beauty '
+        pr: 뷰티
         time: [170.641, 171.342]
       - text: "isn't "
+        pr: 이즌트
         time: [171.342, 172.22]
       - text: silent
+        pr: 사일런트
         time: [172.22, 172.993]
     tl: 덧없는 아름다움은 침묵하지 않아
     time: [169.728, 172.993]
   - words:
       - text: 'I '
+        pr: 아이
         time: [172.993, 173.46]
       - text: 'know '
+        pr: 노
         time: [173.46, 173.865]
       - text: 'sometimes '
+        pr: 섬타임즈
         time: [173.865, 174.643]
       - text: 'it '
+        pr: 잇
         time: [174.643, 175.334]
       - text: 'really '
+        pr: 리얼리
         time: [175.334, 176.034]
       - text: 'feels '
+        pr: 필즈
         time: [176.034, 176.504]
       - text: that
+        pr: 댓
         time: [176.504, 176.854]
     tl: 가끔은 정말 그렇게 느껴진다는 걸 알아
     time: [172.993, 176.854]
   - words:
       - text: 'Even '
+        pr: 이븐
         time: [177.206, 178.142]
       - text: 'during '
+        pr: 듀어링
         time: [178.142, 178.855]
       - text: 'all '
+        pr: 올
         time: [178.855, 179.329]
       - text: 'the '
+        pr: 더
         time: [179.329, 179.794]
       - text: 'bad '
+        pr: 배드
         time: [179.794, 180.241]
       - text: days
+        pr: 데이즈
         time: [180.241, 180.95]
     tl: 힘겨운 날들이 이어져도
     time: [177.206, 180.95]
   - words:
       - text: 'Cloudy '
+        pr: 클라우디
         time: [180.95, 181.568]
       - text: 'skies '
+        pr: 스카이즈
         time: [181.568, 182.129]
       - text: "can't "
+        pr: 캔트
         time: [182.129, 182.508]
       - text: 'stop '
+        pr: 스탑
         time: [182.508, 183.072]
       - text: 'the '
+        pr: 더
         time: [183.072, 183.473]
       - text: 'sun '
+        pr: 선
         time: [183.473, 184.012]
       - text: rays
+        pr: 레이즈
         time: [184.012, 184.503]
     tl: 흐린 하늘도 햇살을 막을 순 없어
     time: [180.95, 184.503]
   - words:
       - text: 'This '
+        pr: 디스
         time: [184.721, 185.169]
       - text: 'could '
+        pr: 쿠드
         time: [185.169, 185.637]
       - text: 'never '
+        pr: 네버
         time: [185.637, 186.338]
       - text: 'be '
+        pr: 비
         time: [186.338, 186.815]
       - text: 'a '
+        pr: 어
         time: [186.815, 187.221]
       - text: 'sad '
+        pr: 새드
         time: [187.221, 187.76]
       - text: place
+        pr: 플레이스
         time: [187.76, 188.241]
     tl: 여기는 결코 슬픈 곳이 될 수 없어
     time: [184.721, 188.241]
   - words:
       - text: 'If '
+        pr:
         time: [188.468, 188.937]
       - text: 'you '
+        pr:
         time: [188.937, 189.366]
       - text: 'check '
+        pr:
         time: [189.366, 189.645]
       - text: 'it '
+        pr: 잇
         time: [189.645, 190.291]
       - text: 'out, '
+        pr:
         time: [190.291, 190.577]
       - text: 'I '
+        pr: 아이
         time: [190.577, 191.036]
       - text: 'know '
+        pr: 노
         time: [191.036, 191.457]
       - text: you'll
+        pr:
         time: [191.457, 191.997]
     tl: 직접 살펴보면, 너도 분명
     time: [188.468, 191.997]
   - words:
       - text: 'Soon '
+        pr:
         time: [192.126, 192.679]
       - text: "you'll "
+        pr:
         time: [192.679, 193.106]
       - text: 'see '
+        pr:
         time: [193.106, 193.386]
       - text: 'it, '
+        pr:
         time: [193.386, 193.793]
       - text: 'see '
+        pr:
         time: [193.793, 194.324]
       - text: 'it '
+        pr: 잇
         time: [194.324, 194.72]
       - text: shinin'
+        pr:
         time: [194.72, 195.726]
     tl: 곧 보게 될 거야, 반짝이는 모습을
     time: [192.126, 195.726]
   - words:
       - text: 'Hand '
+        pr:
         time: [195.947, 196.425]
       - text: 'in '
+        pr:
         time: [196.425, 196.661]
       - text: 'hand, '
+        pr:
         time: [196.661, 197.123]
       - text: 'the '
+        pr:
         time: [197.123, 197.593]
       - text: 'colors '
+        pr: 컬러즈
         time: [197.593, 198.541]
       - text: vibrant
+        pr: 바이브런트
         time: [198.541, 199.481]
     tl: 손에 손을 잡고, 빛깔은 선명해
     time: [195.947, 199.481]
   - words:
       - text: 'Fleeting '
+        pr: 플리팅
         time: [199.722, 200.634]
       - text: 'beauty '
+        pr: 뷰티
         time: [200.634, 201.349]
       - text: "isn't "
+        pr: 이즌트
         time: [201.349, 202.225]
       - text: silent
+        pr: 사일런트
         time: [202.225, 202.995]
     tl: 덧없는 아름다움은 침묵하지 않아
     time: [199.722, 202.995]
   - words:
       - text: 'I '
+        pr: 아이
         time: [202.995, 203.46]
       - text: 'know '
+        pr: 노
         time: [203.46, 203.86]
       - text: 'sometimes '
+        pr: 섬타임즈
         time: [203.86, 204.64]
       - text: 'it '
+        pr: 잇
         time: [204.64, 205.329]
       - text: 'really '
+        pr: 리얼리
         time: [205.329, 206.036]
       - text: 'feels '
+        pr: 필즈
         time: [206.036, 206.504]
       - text: 'that '
+        pr: 댓
         time: [206.504, 206.98]
       - text: way
+        pr: 웨이
         time: [206.98, 207.696]
     tl: 가끔은 정말 그렇게 느껴진다는 걸 알아
     time: [202.995, 207.696]
