@@ -115,7 +115,7 @@ lines:
     time: [23.934, 25.469]
   - words:
       - text: "You'll "
-        pr: 유일
+        pr: 율
         time: [27.677, 28.151]
       - text: 'miss '
         pr: 미스
@@ -145,7 +145,7 @@ lines:
         pr: 순
         time: [34.62, 35.169]
       - text: "you'll "
-        pr: 유일
+        pr: 율
         time: [35.169, 35.555]
       - text: 'see '
         pr: 시
@@ -307,95 +307,133 @@ lines:
     time: [67.82, 70.579]
   - words:
       - text: 'Ignore '
+        pr: 이그노어
         time: [72.677, 73.614]
       - text: 'the '
+        pr: 더
         time: [73.614, 73.843]
       - text: clock
+        pr: 클락
         time: [73.843, 74.327]
     tl: 시계는 신경 쓰지 마
     time: [72.677, 74.327]
   - words:
       - text: "We'll "
+        pr: 윌
         time: [76.423, 76.894]
       - text: 'have '
+        pr: 해브
         time: [76.894, 77.365]
       - text: 'a '
+        pr: 어
         time: [77.365, 77.601]
       - text: 'good '
+        pr: 굿
         time: [77.601, 77.989]
       - text: 'time '
+        pr: 타임
         time: [77.989, 78.783]
       - text: 'never '
+        pr: 네버
         time: [78.783, 79.658]
       - text: charted
+        pr: 차티드
         time: [79.658, 80.915]
     tl: 한 번도 없던 멋진 시간을 보낼 거야
     time: [76.423, 80.915]
   - words:
       - text: 'Even '
+        pr: 이븐
         time: [83.46, 84.399]
       - text: 'during '
+        pr: 듀어링
         time: [84.399, 85.087]
       - text: 'all '
+        pr: 올
         time: [85.087, 85.558]
       - text: 'the '
+        pr: 더
         time: [85.558, 86.028]
       - text: 'bad '
+        pr: 배드
         time: [86.028, 86.499]
       - text: days
+        pr: 데이즈
         time: [86.499, 87.201]
     tl: 힘겨운 날들이 이어져도
     time: [83.46, 87.201]
   - words:
       - text: 'Cloudy '
+        pr: 클라우디
         time: [87.201, 87.833]
       - text: 'skies '
+        pr: 스카이즈
         time: [87.833, 88.387]
       - text: "can't "
+        pr: 캔트
         time: [88.387, 88.769]
       - text: 'stop '
+        pr: 스탑
         time: [88.769, 89.327]
       - text: 'the '
+        pr: 더
         time: [89.327, 89.726]
       - text: 'sun '
+        pr: 선
         time: [89.726, 90.244]
       - text: rays
+        pr: 레이즈
         time: [90.244, 90.95]
     tl: 흐린 하늘도 햇살을 막을 순 없어
     time: [87.201, 90.95]
   - words:
       - text: 'This '
+        pr: 디스
         time: [90.95, 91.416]
       - text: 'could '
+        pr: 쿠드
         time: [91.416, 91.889]
       - text: 'never '
+        pr: 네버
         time: [91.889, 92.596]
       - text: 'be '
+        pr: 비
         time: [92.596, 93.068]
       - text: 'a '
+        pr: 어
         time: [93.068, 93.466]
       - text: 'sad '
+        pr: 새드
         time: [93.466, 94.012]
       - text: place
+        pr: 플레이스
         time: [94.012, 94.498]
     tl: 여기는 결코 슬픈 곳이 될 수 없어
     time: [90.95, 94.498]
   - words:
       - text: 'If '
+        pr: 이프
         time: [94.722, 95.167]
       - text: 'you '
+        pr: 유
         time: [95.167, 95.596]
       - text: 'check '
+        pr: 체크
         time: [95.596, 95.872]
       - text: 'it '
+        pr: 잇
         time: [95.872, 96.482]
       - text: 'out, '
+        pr: 아웃,
         time: [96.482, 96.845]
       - text: 'I '
+        pr: 아이
         time: [96.845, 97.297]
       - text: 'know '
+        pr: 노
         time: [97.297, 97.686]
       - text: you'll
+        pr: 율
         time: [97.686, 98.239]
     tl: 직접 살펴보면, 너도 분명
     time: [94.722, 98.239]
