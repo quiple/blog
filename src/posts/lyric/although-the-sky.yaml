@@ -187,72 +187,100 @@ lines:
     time: [38.455, 41.972]
   - words:
       - text: 'Fleeting '
+        pr: 플리팅
         time: [42.206, 43.144]
       - text: 'beauty '
+        pr: 뷰티
         time: [43.144, 43.855]
       - text: "isn't "
+        pr: 이즌트
         time: [43.855, 44.725]
       - text: silent
+        pr: 사일런트
         time: [44.725, 45.478]
     tl: 덧없는 아름다움은 침묵하지 않아
     time: [42.206, 45.478]
   - words:
       - text: 'I '
+        pr: 아이
         time: [45.478, 45.96]
       - text: 'know '
+        pr: 노
         time: [45.96, 46.345]
       - text: 'sometimes '
+        pr: 섬타임즈
         time: [46.345, 47.127]
       - text: 'it '
+        pr: 잇
         time: [47.127, 47.829]
       - text: 'really '
+        pr: 리얼리
         time: [47.829, 48.536]
       - text: 'feels '
+        pr: 필즈
         time: [48.536, 49.009]
       - text: 'that '
+        pr: 댓
         time: [49.009, 49.48]
       - text: way
+        pr: 웨이
         time: [49.48, 50.173]
     tl: 가끔은 정말 그렇게 느껴진다는 걸 알아
     time: [45.478, 50.173]
   - words:
       - text: 'And '
+        pr: 앤드
         time: [52.759, 52.997]
       - text: 'when '
+        pr: 웬
         time: [52.997, 53.182]
       - text: 'the '
+        pr: 더
         time: [53.182, 53.376]
       - text: 'stars '
+        pr: 스타즈
         time: [53.376, 54.41]
       - text: 'want '
+        pr: 원트
         time: [54.41, 54.639]
       - text: 'to '
+        pr: 투
         time: [54.639, 55.063]
       - text: talk
+        pr: 토크
         time: [55.063, 55.58]
     tl: 그리고 별들이 말을 걸고 싶어 할 때
     time: [52.759, 55.58]
   - words:
       - text: "Don't "
+        pr: 돈트
         time: [57.678, 58.143]
       - text: 'be '
+        pr: 비
         time: [58.143, 58.613]
       - text: 'in '
+        pr: 인
         time: [58.613, 58.785]
       - text: shock
+        pr: 쇼크
         time: [58.785, 59.359]
     tl: 놀라지 마
     time: [57.678, 59.359]
   - words:
       - text: 'The '
+        pr: 더
         time: [61.42, 61.871]
       - text: 'constellations '
+        pr: 칸스털레이션즈
         time: [61.871, 63.776]
       - text: 'are '
+        pr: 어
         time: [63.776, 64.016]
       - text: good-
+        pr: 굿
         time: [64.016, 64.74]
       - text: hearted
+        pr: 하티드
         time: [64.74, 65.882]
     tl: 별자리들은 마음씨가 고와
     time: [61.42, 65.882]
