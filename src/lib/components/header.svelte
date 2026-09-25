@@ -350,7 +350,7 @@
     @apply relative container-x flex !max-w-full items-start justify-between gap-4 px-4 sm:!px-6;
   }
   header section .logo {
-    @apply pointer-events-auto relative -m-1 flex items-center self-center p-1 text-primary transition before:mask-size-[54px];
+    @apply pointer-events-auto relative -m-1 flex items-center self-center rounded-l-[22px] rounded-tr-[22px] rounded-br-[12px] p-1 text-primary transition before:mask-size-[54px];
   }
   header section .logo .logo-symbol {
     @apply relative block size-9 shrink-0;
