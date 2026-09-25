@@ -16,9 +16,6 @@ sp: 0qzSduPZScDPXtmM1OsOhs
 yt:
   audio: u_adh5ZkUBQ
   # mv: lm9PD6uYsyg
-offsets:
-  sp: -0.6
-  ytAudio: -0.6
 lines:
   - words:
       - text: 見つからないもの
