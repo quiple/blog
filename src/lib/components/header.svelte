@@ -369,7 +369,7 @@
     @apply bg-current mask-(--wordmark-grade-down) mask-size-[210px_36px] mask-top-left mask-no-repeat;
   }
   header section .logo.wordmark-logo {
-    @apply gap-0;
+    @apply gap-0 rounded-tr-[16px] rounded-br-[12px];
   }
   header section .logo.wordmark-logo .logo-symbol {
     @apply size-9;
