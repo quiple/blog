@@ -2,6 +2,7 @@
   import type {Artist} from '$lib/lyrics/artists.server'
   import {onMount} from 'svelte'
   import {page} from '$app/state'
+  import DownloadIcon from '@lucide/svelte/icons/download'
   import {Button} from '$lib/components/ui/button'
   import {
     isTimed,
@@ -129,6 +130,16 @@
               </svg>
             </Button>
           {/each}
+          <Button
+            class="justify-self-end"
+            size="sm"
+            variant="outline"
+            href={`/lyric/${page.params.musicTitle}/ttml`}
+            download={`${page.params.musicTitle}.ttml`}
+          >
+            <DownloadIcon />
+            TTML 다운로드
+          </Button>
         </div>
       {/if}
       <div>
@@ -172,15 +183,6 @@
         {/each}
       </div>
     {/if}
-    <Button
-      class="mt-4"
-      size="sm"
-      variant="outline"
-      href={`/lyric/${page.params.musicTitle}/ttml`}
-      download={`${page.params.musicTitle}.ttml`}
-    >
-      TTML 다운로드
-    </Button>
   </aside>
 
   <section class="min-w-0 pb-16" aria-label="가사">
