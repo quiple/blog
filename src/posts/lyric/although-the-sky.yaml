@@ -625,7 +625,7 @@ lines:
         pr: 댓
         time: [136.889, 137.116]
       - text: "you've "
-        pr: 유어
+        pr: 윱
         time: [137.116, 137.598]
       - text: won
         pr: 원
