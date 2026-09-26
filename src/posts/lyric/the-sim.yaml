@@ -25,7 +25,7 @@ lines:
     tl: 부엌을 홀랑 태워 버렸어
     time: [2.624, 5.225]
   - text: Just cooking an autumn salad
-    pr: 저스트 쿠킹 언 어텀 샐러드
+    pr: 저스트 쿠킹 언 어텀 샐럿
     tl: 그저 가을 샐러드를 만들다가
     time: [5.84, 8.606]
   - text: I feel like such a clown
@@ -33,15 +33,15 @@ lines:
     tl: 내가 정말 바보 같아
     time: [9.5, 11.5]
   - text: Finding a path that's valid
-    pr: 파인딩 어 패스 대츠 밸리드
+    pr: 파인딩 어 패스 대츠 밸릿
     tl: 갈 수 있는 길을 찾고 있자니
     time: [12.913, 15.5]
   - text: I tried to climb out of the pool
-    pr: 아이 트라이드 투 클라임 아웃 오브 더 풀
+    pr: 아이 트라잇 투 클라임 아웃 오브 더 풀
     tl: 수영장에서 기어 나오려 했어
     time: [16.25, 18.745]
   - text: But someone removed all the ladders
-    pr: 벗 섬원 리무브드 올 더 래더즈
+    pr: 벗 섬원 리뭅드 올 더 래더즈
     tl: 그런데 누가 사다리를 전부 치웠어
     time: [19.568, 22.324]
   - text: I'll be your April Fool
@@ -61,7 +61,7 @@ lines:
     tl: 전부 시뮬레이션이야
     time: [33.338, 36]
   - text: Keep your head down
-    pr: 킵 유어 헤드 다운
+    pr: 킵 유어 헷 다운
     tl: 고개를 숙이고 있어
     time: [36.917, 39.469]
   - text: It's someone's machination
@@ -77,7 +77,7 @@ lines:
     tl: 이게 현실일 가능성이
     time: [46.784, 48.47]
   - text: But I don't want to wager with those odds
-    pr: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
+    pr: 벗 아이 돈트 원트 투 웨이저 윗 도즈 아즈
     tl: 하지만 그런 확률에 걸고 싶진 않아
     time: [48.671, 51.607]
   - text: No, I don't want to anger the gods
@@ -93,7 +93,7 @@ lines:
     tl: 조용히 거리를 두고 지내면서
     time: [64.27, 67.299]
   - text: I wish this house could feel like home
-    pr: 아이 위시 디스 하우스 쿠드 필 라익 홈
+    pr: 아이 위시 디스 하우스 쿳 필 라익 홈
     tl: 이 집이 마음 붙일 곳처럼 느껴지면 좋겠어
     time: [67.789, 70.84]
     background:
@@ -109,7 +109,7 @@ lines:
     tl: 늘 뭔가 잘못된 것만 같아
     time: [74.438, 77.579]
   - text: Like falling with no parachute
-    pr: 라익 폴링 위드 노 패러슛
+    pr: 라익 폴링 윗 노 패러슛
     tl: 낙하산도 없이 떨어지는 것처럼
     time: [77.874, 81]
   - text: But if this winds up my swan song
@@ -145,7 +145,7 @@ lines:
     tl: 이게 현실일 가능성이
     time: [105, 106.868]
   - text: But I don't want to wager with those odds
-    pr: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
+    pr: 벗 아이 돈트 원트 투 웨이저 윗 도즈 아즈
     tl: 하지만 그런 확률에 걸고 싶진 않아
     time: [106.868, 110.111]
   - text: No, I don't want to anger the gods
@@ -161,7 +161,7 @@ lines:
     tl: 전부 시뮬레이션이야
     time: [118.985, 121.798]
   - text: Keep your head down
-    pr: 킵 유어 헤드 다운
+    pr: 킵 유어 헷 다운
     tl: 고개를 숙이고 있어
     time: [122.619, 125.261]
   - text: It's someone's machination
@@ -177,7 +177,7 @@ lines:
     tl: 이게 현실일 가능성이
     time: [132.515, 134.157]
   - text: But I don't want to wager with those odds
-    pr: 벗 아이 돈트 원트 투 웨이저 위드 도즈 아즈
+    pr: 벗 아이 돈트 원트 투 웨이저 윗 도즈 아즈
     tl: 하지만 그런 확률에 걸고 싶진 않아
     time: [134.471, 137.62]
   - text: No, I don't want to anger the gods

@@ -21,7 +21,7 @@ offsets:
   ytAudio: -2.9
 lines:
   - text: Unemployed
-    pr: 언임플로이드
+    pr: 언임플로잇
     tl: 백수
     time: [15.936, 17.099]
   - text: No house, no pay
@@ -65,7 +65,7 @@ lines:
     tl: 난 존나 가난해
     time: [38.536, 39.513]
   - text: I admit
-    pr: 아이 애드밋
+    pr: 아이 앳밋
     tl: 인정해
     time: [39.513, 40.878]
   - text: But I make hits
@@ -93,19 +93,19 @@ lines:
     tl: 그냥 내가 설 자리를 찾는 중이야
     time: [48.191, 50.191]
   - text: My retirement's getting destroyed
-    pr: 마이 리타이어먼츠 게팅 디스트로이드
+    pr: 마이 리타이어먼츠 게팅 디스트로잇
     tl: 내 노후는 박살 나고 있어
     time: [50.356, 51.564]
   - text: From sitting on my ass like a hemorrhoid
-    pr: 프럼 시팅 온 마이 애스 라익 어 헤머로이드
+    pr: 프럼 시팅 온 마이 애스 라익 어 헤머로잇
     tl: 치질처럼 엉덩이에 붙어 사느라
     time: [51.564, 53.205]
   - text: Stop calling me a motherfucking Walmart Vocaloid
-    pr: 스탑 콜링 미 어 머더퍼킹 월마트 보컬로이드
+    pr: 스탑 콜링 미 어 머더퍼킹 월마트 보컬로잇
     tl: 씨발, 월마트표 싸구려 보컬로이드라고 부르지 좀 마
     time: [53.206, 56.1]
   - text: I'm just unemployed
-    pr: 아임 저스트 언임플로이드
+    pr: 아임 저스트 언임플로잇
     tl: 난 그냥 백수일 뿐이야
     time: [56.1, 57.428]
   - text: I got no house
@@ -181,7 +181,7 @@ lines:
     tl: 마음속 감옥에 갇혀 있어
     time: [81.193, 82.924]
   - text: My bed is where I dwell
-    pr: 마이 베드 이즈 웨어 아이 드웰
+    pr: 마이 벳 이즈 웨어 아이 드웰
     tl: 내가 사는 곳은 침대 위야
     time: [82.924, 84.73]
   - text: I'm broke as fuck
@@ -201,11 +201,11 @@ lines:
     tl: 그냥 이 신세에서 벗어나고 싶어
     time: [88.685, 90.872]
   - text: My retirement's getting destroyed
-    pr: 마이 리타이어먼츠 게팅 디스트로이드
+    pr: 마이 리타이어먼츠 게팅 디스트로잇
     tl: 내 노후는 박살 나고 있어
     time: [90.873, 92.089]
   - text: From sitting on my ass like a hemorrhoid
-    pr: 프럼 시팅 온 마이 애스 라익 어 헤머로이드
+    pr: 프럼 시팅 온 마이 애스 라익 어 헤머로잇
     tl: 치질처럼 엉덩이에 붙어 사느라
     time: [92.089, 93.668]
   - text: Stop telling me to get a life
@@ -213,7 +213,7 @@ lines:
     tl: 제발 제대로 좀 살라는 말은 그만해
     time: [93.668, 94.884]
   - text: I'd rather live one I enjoyed
-    pr: 아이드 래더 리브 원 아이 인조이드
+    pr: 아잇 래더 리브 원 아이 인조잇
     tl: 난 내가 즐거운 삶을 살고 싶어
     time: [94.885, 96.885]
   - text: My life feels like it's flying by
@@ -221,7 +221,7 @@ lines:
     tl: 내 인생이 쏜살같이 지나가는 것 같아
     time: [163.034, 164.75]
   - text: My future's gone, and my dreams have died
-    pr: 마이 퓨처스 곤, 앤드 마이 드림즈 해브 다이드
+    pr: 마이 퓨처스 곤, 앤드 마이 드림즈 해브 다잇
     tl: 미래는 사라졌고 꿈도 죽어 버렸어
     time: [164.75, 166.175]
   - text: This song is just an outcry
@@ -229,7 +229,7 @@ lines:
     tl: 이 노래는 그저 절규일 뿐이야
     time: [166.175, 167.555]
   - text: Just need some space to occupy
-    pr: 저스트 니드 섬 스페이스 투 아큐파이
+    pr: 저스트 닛 섬 스페이스 투 아큐파이
     tl: 그냥 내가 있을 자리만 있으면 돼
     time: [167.556, 169.085]
   - text: I'm losing all my assets
@@ -249,11 +249,11 @@ lines:
     tl: 인터넷 요금조차 내기 빠듯해
     time: [173.253, 174.865]
   - text: I need some help
-    pr: 아이 니드 섬 헬프
+    pr: 아이 닛 섬 헬프
     tl: 도움이 좀 필요해
     time: [174.865, 175.46]
   - text: Just need some time
-    pr: 저스트 니드 섬 타임
+    pr: 저스트 닛 섬 타임
     tl: 시간이 조금만 있으면 돼
     time: [175.46, 176.324]
   - text: My Spotify doesn't make a dime
@@ -265,7 +265,7 @@ lines:
     tl: 그런데 방송 켜 둔 시간은 신기록이야
     time: [177.577, 179.091]
   - text: (Go sub to me with your free Twitch Prime)
-    pr: (고 섭 투 미 위드 유어 프리 트위치 프라임)
+    pr: (고 섭 투 미 윗 유어 프리 트위치 프라임)
     tl: (무료 트위치 프라임으로 내 채널 구독 좀 해 줘)
     time: [179.092, 180.472]
   - text: Please play me in your ears
@@ -285,7 +285,7 @@ lines:
     tl: 제대로 된 직장은 갖기 싫어
     time: [184.717, 186.717]
   - text: Unemployed
-    pr: 언임플로이드
+    pr: 언임플로잇
     tl: 백수
     time: [189.529, 190.595]
   - text: No house, no pay
@@ -325,7 +325,7 @@ lines:
     tl: 바게트와 나, 단둘이서
     time: [209.229, 211.752]
   - text: Motherfucker, I'm unemployed
-    pr: 머더퍼커, 아임 언임플로이드
+    pr: 머더퍼커, 아임 언임플로잇
     tl: 씨발, 나 백수라고
     time: [212.35, 213.871]
   - text: I got no house

@@ -25,7 +25,7 @@ lines:
     tl: 인생이란 거 좆같네
     time: [0.25, 1.959]
   - text: I tried to make it end, but here I am once again
-    pr: 아이 트라이드 투 메익 잇 엔드, 벗 히어 아이 앰 원스 어게인
+    pr: 아이 트라잇 투 메익 잇 엔드, 벗 히어 아이 앰 원스 어게인
     tl: 끝내 보려 했는데 또 이렇게 살아 있어
     time: [1.959, 5.625]
   - text: Let's congratulate myself
@@ -41,11 +41,11 @@ lines:
     tl: 적당히 붙은 팔 근육도 마찬가지, 헬스장도 다녔는데
     time: [9.458, 12.832]
   - text: And, sigh, Pinterest said I will never be like him
-    pr: 앤드, 사이, 핀터레스트 세드 아이 윌 네버 비 라익 힘
+    pr: 앤드, 사이, 핀터레스트 셋 아이 윌 네버 비 라익 힘
     tl: 하, 핀터레스트는 난 절대 저 남자처럼 못 된대
     time: [12.832, 15.207]
   - text: So many years to be mid
-    pr: 소 매니 이어즈 투 비 미드
+    pr: 소 매니 이어즈 투 비 밋
     tl: 고작 평범해지려고 그렇게 오랜 세월을 썼네
     time: [15.207, 17.29]
   - text: See people climb a cliff, while I'm crawling out a pit
@@ -77,7 +77,7 @@ lines:
     tl: 내 컵라면 한 그릇도 그 말엔 대답을 못 했지
     time: [33.438, 36]
   - text: The media consumed is likely pushed to some extreme
-    pr: 더 미디어 컨숨드 이즈 라이클리 푸시드 투 섬 익스트림
+    pr: 더 미디어 컨숨드 이즈 라이클리 푸싯 투 섬 익스트림
     tl: 우리가 보는 미디어는 대개 극단으로 치닫고 있어
     time: [36, 38.537]
   - text: You never left your home, and there is nothing you ain't seen
@@ -89,7 +89,7 @@ lines:
     tl: 좆같네, 그냥 스무디 좀 마시고 있었는데
     time: [41.328, 43.786]
   - text: 700 calories, why am I being stupid?
-    pr: 세븐 헌드레드 캘러리스, 와이 앰 아이 빙 스튜피드?
+    pr: 세븐 헌드레드 캘러리스, 와이 앰 아이 빙 스튜핏?
     tl: 700칼로리라니, 난 왜 이렇게 멍청한 짓을 하지?
     time: [43.786, 46.369]
   - text: People on the internet say this is not ideal
@@ -105,7 +105,7 @@ lines:
     tl: 인생이란 거 좆같네
     time: [51.577, 53.327]
   - text: I swear, one more complaint and I'll go punch someone's kid
-    pr: 아이 스웨어, 원 모어 컴플레인트 앤드 아일 고 펀치 섬원즈 키드
+    pr: 아이 스웨어, 원 모어 컴플레인트 앤드 아일 고 펀치 섬원즈 킷
     tl: 진짜, 불평 한 번만 더 들으면 누구네 애라도 한 대 칠 것 같아
     time: [53.327, 57.042]
   - text: I'm this close to crashing out, they're lying to get clout
@@ -113,11 +113,11 @@ lines:
     tl: 폭발하기 직전이야, 저들은 관심 좀 받으려고 거짓말을 해
     time: [57.042, 59.534]
   - text: Fill the unaware with doubt, that's a profitable crowd
-    pr: 필 더 어너웨어 위드 다웃, 대츠 어 프라피터블 크라우드
+    pr: 필 더 어너웨어 윗 다웃, 대츠 어 프라피터블 크라웃
     tl: 아무것도 모르는 사람들을 의심으로 채워, 돈이 되는 고객들이니까
     time: [59.534, 61.992]
   - text: Fuck things that changed to be subscribed
-    pr: 퍽 싱스 댓 체인지드 투 비 섭스크라입드
+    pr: 퍽 싱스 댓 체인짓 투 비 섭스크라입드
     tl: 죄다 구독제로 바뀌는 것들 좆같네
     time: [61.992, 64.229]
   - text: More money for a company for customer---less rights
@@ -133,7 +133,7 @@ lines:
     tl: 새 영화들은 배짱이 없으니 망하는 것도 당연하지
     time: [68.658, 71.201]
   - text: Levels of anxiety getting fed inside of me
-    pr: 레벌 오브 앵자이어티 게팅 페드 인사이드 오브 미
+    pr: 레벌 오브 앵자이어티 게팅 펫 인사잇 오브 미
     tl: 내 안에 불안이 자꾸만 쌓여 가
     time: [72.116, 74.657]
   - text: 'Charismatic people having fun, I''m thinking: "Why not me?"'
@@ -145,7 +145,7 @@ lines:
     tl: 혼자서 말없이 불행해하고 있어서 그런 걸까?
     time: [77.24, 79.782]
   - text: Mirroring a pattern I'm afraid to be the same as
-    pr: 미러링 어 패턴 아임 어프레이드 투 비 더 세임 애즈
+    pr: 미러링 어 패턴 아임 어프레잇 투 비 더 세임 애즈
     tl: 닮을까 봐 두려워하던 모습을 그대로 되풀이하고 있어
     time: [79.782, 82.156]
   - text: Fuck this thing called life
@@ -153,7 +153,7 @@ lines:
     tl: 인생이란 거 좆같네
     time: [82.448, 84.031]
   - text: I tried to make it end, but here I am once again
-    pr: 아이 트라이드 투 메익 잇 엔드, 벗 히어 아이 앰 원스 어게인
+    pr: 아이 트라잇 투 메익 잇 엔드, 벗 히어 아이 앰 원스 어게인
     tl: 끝내 보려 했는데 또 이렇게 살아 있어
     time: [84.031, 87.697]
   - text: Let's congratulate myself
@@ -177,12 +177,12 @@ lines:
     tl: 그렇게 오랜 세월을 허비했네
     time: [97.363, 99.446]
   - text: To satisfy a crowd from a made-up fucking place
-    pr: 투 새티스파이 크라우드 프럼 어 메이드업 퍼킹 플레이스
+    pr: 투 새티스파이 크라웃 프럼 어 메이덥 퍼킹 플레이스
     tl: 그 빌어먹을 가상의 공간 속 사람들을 만족시키려고
     time: [99.446, 101.979]
     background:
       text: (From a made-up fucking place)
-      pr: (프럼 어 메이드업 퍼킹 플레이스)
+      pr: (프럼 어 메이덥 퍼킹 플레이스)
       tl: (빌어먹을 지어낸 곳에서)
       time: [101.979, 103.271]
   - text: It all comes down to what I chase, oh-oh, oh

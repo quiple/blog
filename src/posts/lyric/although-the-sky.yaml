@@ -280,7 +280,7 @@ lines:
         pr: 굿
         time: [64.016, 64.74]
       - text: hearted
-        pr: 하티드
+        pr: 하팃
         time: [64.74, 65.882]
     tl: 별자리들은 마음씨가 고와
     time: [61.42, 65.882]
@@ -337,7 +337,7 @@ lines:
         pr: 네버
         time: [78.783, 79.658]
       - text: charted
-        pr: 차티드
+        pr: 차팃
         time: [79.658, 80.915]
     tl: 한 번도 없던 멋진 시간을 보낼 거야
     time: [76.423, 80.915]
@@ -355,7 +355,7 @@ lines:
         pr: 더
         time: [85.558, 86.028]
       - text: 'bad '
-        pr: 배드
+        pr: 뱃
         time: [86.028, 86.499]
       - text: days
         pr: 데이즈
@@ -391,7 +391,7 @@ lines:
         pr: 디스
         time: [90.95, 91.416]
       - text: 'could '
-        pr: 쿠드
+        pr: 쿳
         time: [91.416, 91.889]
       - text: 'never '
         pr: 네버
@@ -403,7 +403,7 @@ lines:
         pr: 어
         time: [93.068, 93.466]
       - text: 'sad '
-        pr: 새드
+        pr: 샛
         time: [93.466, 94.012]
       - text: place
         pr: 플레이스
@@ -565,7 +565,7 @@ lines:
     time: [121.418, 123.309]
   - words:
       - text: 'Could '
-        pr: 쿠드
+        pr: 쿳
         time: [125.166, 125.639]
       - text: 'make '
         pr: 메익
@@ -673,7 +673,7 @@ lines:
         pr: 더
         time: [149.375, 149.817]
       - text: 'bad '
-        pr: 배드
+        pr: 뱃
         time: [149.817, 150.246]
       - text: days
         pr: 데이즈
@@ -709,7 +709,7 @@ lines:
         pr: 디스
         time: [154.729, 155.191]
       - text: 'could '
-        pr: 쿠드
+        pr: 쿳
         time: [155.191, 155.626]
       - text: 'never '
         pr: 네버
@@ -721,7 +721,7 @@ lines:
         pr: 어
         time: [156.836, 157.218]
       - text: 'sad '
-        pr: 새드
+        pr: 샛
         time: [157.218, 157.785]
       - text: place
         pr: 플레이스
@@ -853,7 +853,7 @@ lines:
         pr: 더
         time: [179.329, 179.794]
       - text: 'bad '
-        pr: 배드
+        pr: 뱃
         time: [179.794, 180.241]
       - text: days
         pr: 데이즈
@@ -889,7 +889,7 @@ lines:
         pr: 디스
         time: [184.721, 185.169]
       - text: 'could '
-        pr: 쿠드
+        pr: 쿳
         time: [185.169, 185.637]
       - text: 'never '
         pr: 네버
@@ -901,7 +901,7 @@ lines:
         pr: 어
         time: [186.815, 187.221]
       - text: 'sad '
-        pr: 새드
+        pr: 샛
         time: [187.221, 187.76]
       - text: place
         pr: 플레이스
