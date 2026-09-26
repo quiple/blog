@@ -74,7 +74,7 @@ lines:
     tl: 단검으로 완벽하게 나눈 몫
     time: [52.488, 54.546]
   - text: Serving the finest leftover dessert
-    pr: 서빙 더 파이너스트 레프트오버 디저트
+    pr: 서빙 더 파이너스트 렙트오버 디저트
     tl: 남은 것으로 만든 최고의 디저트를 내놓아
     time: [54.546, 57.954]
   - text: Why would I desecrate a carcass?
@@ -114,7 +114,7 @@ lines:
     tl: 네 심장, 대동맥이 빚은 예술품
     time: [85.907, 89.144]
   - text: My love, my knife to carve it out, your life
-    pr: 마이 러브, 마이 나이프 투 카브 잇 아웃, 유어 라이프
+    pr: 마이 러브, 마이 나입 투 카브 잇 아웃, 유어 라입
     tl: 내 사랑, 그걸 도려낼 내 칼, 네 생명
     time: [89.246, 92.169]
   - text: So grab a plate, have a taste, 这口味让我沉醉
@@ -154,11 +154,11 @@ lines:
     tl: 살에 흉터를 내고 싶어, 널 얇게 저며 간하고 싶어
     time: [116.721, 119.487]
   - text: I need to be your afterlife, Eucharist, I deify
-    pr: 아이 닛 투 비 유어 애프터라이프, 유커러스트, 아이 디어파이
+    pr: 아이 닛 투 비 유어 앱터라입, 유커러스트, 아이 디어파이
     tl: 난 네 사후 세계가 되어야 해, 성찬, 난 널 신격화해
     time: [119.487, 123.055]
   - text: God, oh, fuck the fork and knife, I'll rip in hands and teeth and take a bite!
-    pr: 갓, 오, 퍽 더 포크 앤드 나이프, 아일 립 인 핸즈 앤드 티스 앤드 테익 어 바잇!
+    pr: 갓, 오, 퍽 더 포크 앤드 나입, 아일 립 인 핸즈 앤드 티스 앤드 테익 어 바잇!
     tl: 맙소사, 포크와 나이프 따위 집어치워, 손과 이로 찢어 한 입 베어 물겠어!
     time: [123.055, 127.137]
   - text: The slaughter's on, I'd love to see you come undone
@@ -178,7 +178,7 @@ lines:
     tl: 난 여전히 도살자의 본능으로 잡아먹어
     time: [141.269, 144.643]
   - text: And now the slaughter's mine, my darling, get under the knife
-    pr: 앤드 나우 더 슬로터스 마인, 마이 달링, 겟 언더 더 나이프
+    pr: 앤드 나우 더 슬로터스 마인, 마이 달링, 겟 언더 더 나입
     tl: 이제 도살은 내 몫, 내 사랑, 칼 아래로 와
     time: [144.643, 148.141]
   - text: Your broken pride, a cut so perfect in its prime
@@ -198,7 +198,7 @@ lines:
     tl: 네 심장, 대동맥이 빚은 예술품
     time: [158.603, 161.84]
   - text: My love, my knife to carve it out, your life
-    pr: 마이 러브, 마이 나이프 투 카브 잇 아웃, 유어 라이프
+    pr: 마이 러브, 마이 나입 투 카브 잇 아웃, 유어 라입
     tl: 내 사랑, 그걸 도려낼 내 칼, 네 생명
     time: [161.923, 164.881]
   - text: So grab a plate, have a taste, 这口味让我沉醉

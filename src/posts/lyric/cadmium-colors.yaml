@@ -32,7 +32,7 @@ lines:
     tl: 타락을 실천하는 따분한 일
     time: [7.093, 9.473]
   - text: Suspending innocents above their disbelief
-    pr: 서스펜딩 이노센츠 어보브 데어 디스빌리프
+    pr: 서스펜딩 이노센츠 어보브 데어 디스빌립
     tl: 순진한 이들을 불신 너머에 매달아
     time: [9.914, 12.236]
   - text: I wish that I could paint a pretty picture onto everything
@@ -64,7 +64,7 @@ lines:
     tl: 작고 하찮은 모든 것과 나의 난간
     time: [32.635, 35.538]
   - text: I hope it's something that you don't forget
-    pr: 아이 호프 이츠 섬싱 댓 유 돈트 퍼겟
+    pr: 아이 홉 이츠 섬싱 댓 유 돈트 퍼겟
     tl: 네가 잊지 못할 무언가가 되길 바라
     time: [37.883, 40.762]
   - text: Cadmium red is the ground beneath
@@ -84,11 +84,11 @@ lines:
     tl: 내 안에 칠해진 카드뮴 색채
     time: [52.105, 55.159]
   - text: I can make autumn from a single leaf
-    pr: 아이 캔 메익 어텀 프럼 어 싱글 리프
+    pr: 아이 캔 메익 어텀 프럼 어 싱글 립
     tl: 나뭇잎 하나로 가을을 만들 수 있어
     time: [55.367, 58.351]
   - text: Steal a fine picture like a first-class thief
-    pr: 스틸 어 파인 픽처 라익 어 퍼스트 클래스 시프
+    pr: 스틸 어 파인 픽처 라익 어 퍼스트 클래스 십
     tl: 일류 도둑처럼 멋진 그림을 훔쳐
     time: [58.549, 61.602]
   - text: Make the water work like you won't believe
@@ -108,7 +108,7 @@ lines:
     tl: 연금술을 하며 시간을 보내
     time: [71.935, 74.35]
   - text: I make a life refining zinc inside the smeltery
-    pr: 아이 메익 어 라이프 리파이닝 징크 인사잇 더 스멜터리
+    pr: 아이 메익 어 라입 리파이닝 징크 인사잇 더 스멜터리
     tl: 제련소에서 아연을 정제하며 먹고살아
     time: [75.151, 78.367]
   - text: It's not exactly where I want to be
@@ -132,7 +132,7 @@ lines:
     tl: 대신 꿈속에서 안료에 들어갈 금속을 만들어
     time: [90.139, 93.889]
   - text: And maybe that can be enough for me
-    pr: 앤드 메이비 댓 캔 비 이너프 포 미
+    pr: 앤드 메이비 댓 캔 비 이넙 포 미
     tl: 그걸로 충분할지도 몰라
     time: [94.574, 97.059]
   - text: Oh, isn't it funny facing destiny
@@ -140,7 +140,7 @@ lines:
     tl: 운명과 마주한다는 건 참 우습지
     time: [97.535, 100.286]
   - text: It's like a knife inside twisting my arteries
-    pr: 이츠 라익 어 나이프 인사잇 트위스팅 마이 아터리즈
+    pr: 이츠 라익 어 나입 인사잇 트위스팅 마이 아터리즈
     tl: 내 안에서 칼이 동맥을 비트는 것 같아
     time: [101.088, 103.874]
   - text: God, I want for nothing but identity
@@ -200,7 +200,7 @@ lines:
     tl: 스스로 결정한다는 게 어떤 기분인지 기억나지 않아
     time: [148.479, 151.045]
   - text: Can't even feel it in the moments that you left to me
-    pr: 캔트 이븐 필 잇 인 더 모먼츠 댓 유 레프트 투 미
+    pr: 캔트 이븐 필 잇 인 더 모먼츠 댓 유 렙트 투 미
     tl: 네가 내게 남겨 준 순간에도 느낄 수 없어
     time: [151.127, 154.029]
   - text: I don't wanna leave with a work undone
@@ -256,11 +256,11 @@ lines:
     tl: 내 안에 칠해진 카드뮴 색채
     time: [217.176, 220.218]
   - text: I can make autumn from a single leaf
-    pr: 아이 캔 메익 어텀 프럼 어 싱글 리프
+    pr: 아이 캔 메익 어텀 프럼 어 싱글 립
     tl: 나뭇잎 하나로 가을을 만들 수 있어
     time: [220.427, 223.445]
   - text: Steal a fine picture like a first-class thief
-    pr: 스틸 어 파인 픽처 라익 어 퍼스트 클래스 시프
+    pr: 스틸 어 파인 픽처 라익 어 퍼스트 클래스 십
     tl: 일류 도둑처럼 멋진 그림을 훔쳐
     time: [223.631, 226.673]
   - text: Make the water work like you won't believe

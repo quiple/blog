@@ -21,7 +21,7 @@ offsets:
   ytAudio: 0.333
 lines:
   - text: Fuck this thing called life
-    pr: 퍽 디스 싱 콜드 라이프
+    pr: 퍽 디스 싱 콜드 라입
     tl: 인생이란 거 좆같네
     time: [0.25, 1.959]
   - text: I tried to make it end, but here I am once again
@@ -49,7 +49,7 @@ lines:
     tl: 고작 평범해지려고 그렇게 오랜 세월을 썼네
     time: [15.207, 17.29]
   - text: See people climb a cliff, while I'm crawling out a pit
-    pr: 시 피플 클라임 어 클리프, 와일 아임 크롤링 아웃 어 핏
+    pr: 시 피플 클라임 어 클립, 와일 아임 크롤링 아웃 어 핏
     tl: 남들은 절벽을 오르는데 난 구덩이에서 기어 나오고 있어
     time: [17.29, 19.581]
   - text: Fuck this thing, they say dating now is cooked
@@ -101,7 +101,7 @@ lines:
     tl: 이제 스무디를 마실 때마다 이런 기분이 들어
     time: [48.744, 51.285]
   - text: Fuck this thing called life
-    pr: 퍽 디스 싱 콜드 라이프
+    pr: 퍽 디스 싱 콜드 라입
     tl: 인생이란 거 좆같네
     time: [51.577, 53.327]
   - text: I swear, one more complaint and I'll go punch someone's kid
@@ -149,7 +149,7 @@ lines:
     tl: 닮을까 봐 두려워하던 모습을 그대로 되풀이하고 있어
     time: [79.782, 82.156]
   - text: Fuck this thing called life
-    pr: 퍽 디스 싱 콜드 라이프
+    pr: 퍽 디스 싱 콜드 라입
     tl: 인생이란 거 좆같네
     time: [82.448, 84.031]
   - text: I tried to make it end, but here I am once again
@@ -169,7 +169,7 @@ lines:
     tl: 적당히 붙은 팔 근육도 마찬가지, 그냥 좀 편하게 살아도 되겠지
     time: [91.655, 95.071]
   - text: If nobody cares, I will be the one who will
-    pr: 이프 노바디 케어스, 아이 윌 비 더 원 후 윌
+    pr: 입 노바디 케어스, 아이 윌 비 더 원 후 윌
     tl: 아무도 신경 안 쓴다면 나라도 나를 챙길래
     time: [95.071, 97.363]
   - text: So many years gone to waste

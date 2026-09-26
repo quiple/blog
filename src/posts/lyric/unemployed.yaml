@@ -45,7 +45,7 @@ lines:
     tl: 마음 편히 쉴 수가 없어
     time: [27.476, 28.654]
   - text: My life's a cruel gag
-    pr: 마이 라이프스 어 크루얼 객
+    pr: 마이 라입스 어 크루얼 객
     tl: 내 인생은 잔인한 농담 같아
     time: [28.655, 29.93]
   - text: Put the fries in the god damn bag
@@ -209,7 +209,7 @@ lines:
     tl: 치질처럼 엉덩이에 붙어 사느라
     time: [92.089, 93.668]
   - text: Stop telling me to get a life
-    pr: 스탑 텔링 미 투 겟 어 라이프
+    pr: 스탑 텔링 미 투 겟 어 라입
     tl: 제발 제대로 좀 살라는 말은 그만해
     time: [93.668, 94.884]
   - text: I'd rather live one I enjoyed
@@ -309,7 +309,7 @@ lines:
     tl: 마음 편히 쉴 수가 없어
     time: [200.928, 202.196]
   - text: My life's a cruel gag
-    pr: 마이 라이프스 어 크루얼 객
+    pr: 마이 라입스 어 크루얼 객
     tl: 내 인생은 잔인한 농담 같아
     time: [202.197, 203.502]
   - text: Put the fries in the god damn bag

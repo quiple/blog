@@ -37,7 +37,7 @@ lines:
     tl: 그리고 바로 여기 내 가슴을 쏴
     time: [31.776, 35.465]
   - text: Because I'm hanging on to hope
-    pr: 비코즈 아임 행잉 온 투 호프
+    pr: 비코즈 아임 행잉 온 투 홉
     tl: 난 희망을 붙들고 있으니까
     time: [35.465, 38.34]
   - text: And every word that you say
@@ -49,7 +49,7 @@ lines:
     tl: 마음의 준비를 하고 있어
     time: [42.896, 44.446]
   - text: I'm better off alone
-    pr: 아임 베터 오프 얼론
+    pr: 아임 베터 옵 얼론
     tl: 난 혼자인 편이 나아
     time: [44.446, 46.789]
   - text: Don't you know?
@@ -85,7 +85,7 @@ lines:
     tl: 마음의 준비를 하고 있어
     time: [83.534, 85.191]
   - text: I'm better off alone
-    pr: 아임 베터 오프 얼론
+    pr: 아임 베터 옵 얼론
     tl: 난 혼자인 편이 나아
     time: [85.191, 87.191]
   - text: Don't you know?
@@ -101,7 +101,7 @@ lines:
     tl: 그렇다고 노력하지도 않아
     time: [117.941, 119.217]
   - text: I'm just better off alone
-    pr: 아임 저스트 베터 오프 얼론
+    pr: 아임 저스트 베터 옵 얼론
     tl: 난 그냥 혼자인 편이 나아
     time: [119.623, 121.177]
   - text: And I don't know why
@@ -113,7 +113,7 @@ lines:
     tl: 내가 어떻게 슬플 수 있겠어
     time: [123.404, 124.552]
   - text: If I don't cry?
-    pr: 이프 아이 돈트 크라이?
+    pr: 입 아이 돈트 크라이?
     tl: 울지도 않는데?
     time: [124.552, 125.916]
   - text: Maybe I'm rotten to the core
@@ -133,7 +133,7 @@ lines:
     tl: 그렇다고 노력하지도 않아
     time: [131.395, 132.81]
   - text: I'm just better off alone
-    pr: 아임 저스트 베터 오프 얼론
+    pr: 아임 저스트 베터 옵 얼론
     tl: 난 그냥 혼자인 편이 나아
     time: [133.153, 134.784]
   - text: And I don't know why
@@ -145,7 +145,7 @@ lines:
     tl: 내가 어떻게 슬플 수 있겠어
     time: [136.897, 138.083]
   - text: If I don't cry?
-    pr: 이프 아이 돈트 크라이?
+    pr: 입 아이 돈트 크라이?
     tl: 울지도 않는데?
     time: [138.083, 139.461]
   - text: Maybe I'm rotten to the core
