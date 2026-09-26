@@ -21,7 +21,7 @@ offsets:
   ytAudio: -0.771
 lines:
   - text: Close one eye, bite your lip
-    pr: 클로즈 원 아이, 바이트 유어 립
+    pr: 클로즈 원 아이, 바잇 유어 립
     tl: 한쪽 눈을 감고 입술을 깨물어
     time: [21.977, 23.977]
   - text: Balance on my head a honeycrisp
@@ -33,7 +33,7 @@ lines:
     tl: 화살을 메기고 숨을 참아
     time: [28.77, 31.192]
   - text: And shoot me right here in my chest
-    pr: 앤드 슈트 미 라이트 히어 인 마이 체스트
+    pr: 앤드 슛 미 라잇 히어 인 마이 체스트
     tl: 그리고 바로 여기 내 가슴을 쏴
     time: [31.776, 35.465]
   - text: Because I'm hanging on to hope

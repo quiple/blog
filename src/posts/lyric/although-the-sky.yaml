@@ -28,7 +28,7 @@ lines:
         pr: 스카이
         time: [4.674, 5.624]
       - text: 'might '
-        pr: 마이트
+        pr: 마잇
         time: [5.624, 5.865]
       - text: 'be '
         pr: 비
@@ -88,13 +88,13 @@ lines:
         pr: 그래스
         time: [19.719, 20.643]
       - text: 'might '
-        pr: 마이트
+        pr: 마잇
         time: [20.643, 20.876]
       - text: 'be '
         pr: 비
         time: [20.876, 21.347]
       - text: wet
-        pr: 웨트
+        pr: 웻
         time: [21.347, 21.75]
     tl: 풀이 젖어 있을지라도
     time: [19.06, 21.75]
@@ -286,7 +286,7 @@ lines:
     time: [61.42, 65.882]
   - words:
       - text: 'Despite '
-        pr: 디스파이트
+        pr: 디스파잇
         time: [67.82, 68.241]
       - text: 'the '
         pr: 더
@@ -586,7 +586,7 @@ lines:
         pr: 더
         time: [127.989, 128.227]
       - text: 'right '
-        pr: 라이트
+        pr: 라잇
         time: [128.227, 130.14]
       - text: time
         pr: 타임

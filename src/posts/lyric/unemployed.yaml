@@ -37,7 +37,7 @@ lines:
     tl: 돈 한 푼 없이 빈둥대
     time: [21.561, 23.561]
   - text: Just my debt and me
-    pr: 저스트 마이 데트 앤드 미
+    pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
     time: [24.315, 26.315]
   - text: Can't relax
@@ -57,11 +57,11 @@ lines:
     tl: 그래, 돈 한 푼 없이 빈둥대
     time: [32.898, 34.898]
   - text: Just my baguette and me
-    pr: 저스트 마이 배게트 앤드 미
+    pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
     time: [35.785, 37.667]
   - text: I'm poor as shit
-    pr: 아임 푸어 애즈 시트
+    pr: 아임 푸어 애즈 싯
     tl: 난 존나 가난해
     time: [38.536, 39.513]
   - text: I admit
@@ -73,7 +73,7 @@ lines:
     tl: 그래도 히트곡은 만들잖아
     time: [40.878, 42.43]
   - text: And the internet's where I sit
-    pr: 앤드 디 인터네츠 웨어 아이 시트
+    pr: 앤드 디 인터네츠 웨어 아이 싯
     tl: 인터넷에 눌러앉아 살고 있어
     time: [42.431, 44.237]
   - text: I'm a broke-ass bitch
@@ -135,7 +135,7 @@ lines:
       tl: (빚에 절었어)
       time: [63.401, 64.833]
   - text: Just my debt and me
-    pr: 저스트 마이 데트 앤드 미
+    pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
     time: [64.833, 66.504]
   - text: Can't unwind
@@ -165,7 +165,7 @@ lines:
       tl: (헛된 인생)
       time: [74.933, 76.261]
   - text: Just my baguette and me
-    pr: 저스트 마이 배게트 앤드 미
+    pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
     time: [76.261, 78]
   - text: I'm poor as hell
@@ -241,7 +241,7 @@ lines:
     tl: 그래서 적자 인생을 보내고 있지
     time: [170.368, 172]
   - text: I'm waking in a cold sweat
-    pr: 아임 웨이킹 인 어 콜드 스웨트
+    pr: 아임 웨이킹 인 어 콜드 스웻
     tl: 식은땀을 흘리며 잠에서 깨
     time: [172, 173.253]
   - text: Can barely afford the internet
@@ -301,7 +301,7 @@ lines:
     tl: 돈 한 푼 없이 빈둥대
     time: [195.037, 196.678]
   - text: Just my debt and me
-    pr: 저스트 마이 데트 앤드 미
+    pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
     time: [197.864, 199.55]
   - text: Can't relax
@@ -321,7 +321,7 @@ lines:
     tl: 그래, 돈 한 푼 없이 빈둥대
     time: [206.339, 208.175]
   - text: Just my baguette and me
-    pr: 저스트 마이 배게트 앤드 미
+    pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
     time: [209.229, 211.752]
   - text: Motherfucker, I'm unemployed
@@ -355,7 +355,7 @@ lines:
       tl: (빚에 절었어)
       time: [219.872, 221.364]
   - text: Just my debt and me
-    pr: 저스트 마이 데트 앤드 미
+    pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
     time: [221.364, 223.29]
     background:
@@ -390,7 +390,7 @@ lines:
       tl: (헛된 인생)
       time: [231.445, 232.705]
   - text: Just my baguette and me
-    pr: 저스트 마이 배게트 앤드 미
+    pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
     time: [232.706, 234.392]
     background:
@@ -408,7 +408,7 @@ lines:
       tl: (언제까지나 함께)
       time: [237.264, 238.554]
   - text: My immense debt and me
-    pr: 마이 이멘스 데트 앤드 미
+    pr: 마이 이멘스 뎃 앤드 미
     tl: 어마어마한 빚과 나
     time: [238.554, 240.106]
     background:
