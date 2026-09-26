@@ -45,7 +45,7 @@ lines:
     tl: 마음 편히 쉴 수가 없어
     time: [27.476, 28.654]
   - text: My life's a cruel gag
-    pr: 마이 라이프스 어 크루얼 개그
+    pr: 마이 라이프스 어 크루얼 객
     tl: 내 인생은 잔인한 농담 같아
     time: [28.655, 29.93]
   - text: Put the fries in the god damn bag
@@ -309,7 +309,7 @@ lines:
     tl: 마음 편히 쉴 수가 없어
     time: [200.928, 202.196]
   - text: My life's a cruel gag
-    pr: 마이 라이프스 어 크루얼 개그
+    pr: 마이 라이프스 어 크루얼 객
     tl: 내 인생은 잔인한 농담 같아
     time: [202.197, 203.502]
   - text: Put the fries in the god damn bag

@@ -307,7 +307,7 @@ lines:
     time: [67.82, 70.579]
   - words:
       - text: 'Ignore '
-        pr: 이그노어
+        pr: 익노어
         time: [72.677, 73.614]
       - text: 'the '
         pr: 더
