@@ -69,7 +69,7 @@ lines:
     tl: 인정해
     time: [39.513, 40.878]
   - text: But I make hits
-    pr: 벗 아이 메이크 히츠
+    pr: 벗 아이 메익 히츠
     tl: 그래도 히트곡은 만들잖아
     time: [40.878, 42.43]
   - text: And the internet's where I sit
@@ -77,11 +77,11 @@ lines:
     tl: 인터넷에 눌러앉아 살고 있어
     time: [42.431, 44.237]
   - text: I'm a broke-ass bitch
-    pr: 아임 어 브로크애스 비치
+    pr: 아임 어 브록애스 비치
     tl: 난 좆도 없는 빈털터리야
     time: [44.237, 45.273]
   - text: Hooked on Twitch
-    pr: 후크드 온 트위치
+    pr: 훅트 온 트위치
     tl: 트위치에 푹 빠져 살아
     time: [45.273, 46.593]
   - text: But I got perfect pitch
@@ -97,7 +97,7 @@ lines:
     tl: 내 노후는 박살 나고 있어
     time: [50.356, 51.564]
   - text: From sitting on my ass like a hemorrhoid
-    pr: 프럼 시팅 온 마이 애스 라이크 어 헤머로이드
+    pr: 프럼 시팅 온 마이 애스 라익 어 헤머로이드
     tl: 치질처럼 엉덩이에 붙어 사느라
     time: [51.564, 53.205]
   - text: Stop calling me a motherfucking Walmart Vocaloid
@@ -185,7 +185,7 @@ lines:
     tl: 내가 사는 곳은 침대 위야
     time: [82.924, 84.73]
   - text: I'm broke as fuck
-    pr: 아임 브로크 애즈 퍽
+    pr: 아임 브록 애즈 퍽
     tl: 난 씨발, 돈이 한 푼도 없어
     time: [84.731, 85.767]
   - text: Just my shitty luck
@@ -205,7 +205,7 @@ lines:
     tl: 내 노후는 박살 나고 있어
     time: [90.873, 92.089]
   - text: From sitting on my ass like a hemorrhoid
-    pr: 프럼 시팅 온 마이 애스 라이크 어 헤머로이드
+    pr: 프럼 시팅 온 마이 애스 라익 어 헤머로이드
     tl: 치질처럼 엉덩이에 붙어 사느라
     time: [92.089, 93.668]
   - text: Stop telling me to get a life
@@ -217,7 +217,7 @@ lines:
     tl: 난 내가 즐거운 삶을 살고 싶어
     time: [94.885, 96.885]
   - text: My life feels like it's flying by
-    pr: 마이 필즈 라이크 이츠 플라잉 바이
+    pr: 마이 필즈 라익 이츠 플라잉 바이
     tl: 내 인생이 쏜살같이 지나가는 것 같아
     time: [163.034, 164.75]
   - text: My future's gone, and my dreams have died
@@ -257,7 +257,7 @@ lines:
     tl: 시간이 조금만 있으면 돼
     time: [175.46, 176.324]
   - text: My Spotify doesn't make a dime
-    pr: 마이 스포티파이 더즌트 메이크 어 다임
+    pr: 마이 스포티파이 더즌트 메익 어 다임
     tl: 스포티파이로는 한 푼도 못 벌어
     time: [176.324, 177.577]
   - text: But my stream has a record uptime

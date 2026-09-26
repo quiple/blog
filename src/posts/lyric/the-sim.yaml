@@ -29,7 +29,7 @@ lines:
     tl: 그저 가을 샐러드를 만들다가
     time: [5.84, 8.606]
   - text: I feel like such a clown
-    pr: 아이 필 라이크 서치 어 클라운
+    pr: 아이 필 라익 서치 어 클라운
     tl: 내가 정말 바보 같아
     time: [9.5, 11.5]
   - text: Finding a path that's valid
@@ -93,7 +93,7 @@ lines:
     tl: 조용히 거리를 두고 지내면서
     time: [64.27, 67.299]
   - text: I wish this house could feel like home
-    pr: 아이 위시 디스 하우스 쿠드 필 라이크 홈
+    pr: 아이 위시 디스 하우스 쿠드 필 라익 홈
     tl: 이 집이 마음 붙일 곳처럼 느껴지면 좋겠어
     time: [67.789, 70.84]
     background:
@@ -105,11 +105,11 @@ lines:
     tl: 그런데 누가 지붕을 떼어 갔어
     time: [70.991, 73.76]
   - text: It always feels like something's wrong
-    pr: 잇 올웨이즈 라이크 필즈 섬싱즈 롱
+    pr: 잇 올웨이즈 라익 필즈 섬싱즈 롱
     tl: 늘 뭔가 잘못된 것만 같아
     time: [74.438, 77.579]
   - text: Like falling with no parachute
-    pr: 라이크 폴링 위드 노 패러슛
+    pr: 라익 폴링 위드 노 패러슛
     tl: 낙하산도 없이 떨어지는 것처럼
     time: [77.874, 81]
   - text: But if this winds up my swan song
@@ -121,7 +121,7 @@ lines:
     tl: 그래도 사신은 좀 귀엽네
     time: [84.067, 87.385]
   - text: Take a breath now
-    pr: 테이크 어 브레스 나우
+    pr: 테익 어 브레스 나우
     tl: 이제 숨을 쉬어
     time: [88.289, 90.665]
   - text: If that's a simulation

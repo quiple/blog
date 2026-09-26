@@ -262,7 +262,7 @@ lines:
         pr: 인
         time: [58.613, 58.785]
       - text: shock
-        pr: 쇼크
+        pr: 쇽
         time: [58.785, 59.359]
     tl: 놀라지 마
     time: [57.678, 59.359]
@@ -418,7 +418,7 @@ lines:
         pr: 유
         time: [95.167, 95.596]
       - text: 'check '
-        pr: 체크
+        pr: 첵
         time: [95.596, 95.872]
       - text: 'it '
         pr: 잇
@@ -544,7 +544,7 @@ lines:
         pr: 심
         time: [118.074, 118.382]
       - text: 'like '
-        pr: 라이크
+        pr: 라익
         time: [118.382, 118.857]
       - text: much
         pr: 머치
@@ -568,7 +568,7 @@ lines:
         pr: 쿠드
         time: [125.166, 125.639]
       - text: 'make '
-        pr: 메이크
+        pr: 메익
         time: [125.639, 126.107]
       - text: 'a '
         pr: 어
@@ -634,7 +634,7 @@ lines:
     time: [136.419, 139.255]
   - words:
       - text: 'Take '
-        pr: 테이크
+        pr: 테익
         time: [140.164, 140.64]
       - text: 'time '
         pr: 타임
@@ -736,7 +736,7 @@ lines:
         pr: 유
         time: [158.917, 159.366]
       - text: 'check '
-        pr: 체크
+        pr: 첵
         time: [159.366, 159.685]
       - text: 'it '
         pr: 잇
@@ -916,7 +916,7 @@ lines:
         pr: 유
         time: [188.937, 189.366]
       - text: 'check '
-        pr: 체크
+        pr: 첵
         time: [189.366, 189.645]
       - text: 'it '
         pr: 잇
