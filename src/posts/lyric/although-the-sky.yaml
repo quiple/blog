@@ -103,7 +103,7 @@ lines:
         pr: 돈트
         time: [23.934, 24.407]
       - text: 'give '
-        pr: 기브
+        pr: 깁
         time: [24.407, 24.636]
       - text: 'up '
         pr: 업
@@ -322,7 +322,7 @@ lines:
         pr: 윌
         time: [76.423, 76.894]
       - text: 'have '
-        pr: 해브
+        pr: 햅
         time: [76.894, 77.365]
       - text: 'a '
         pr: 어

@@ -213,7 +213,7 @@ lines:
     tl: 제발 제대로 좀 살라는 말은 그만해
     time: [93.668, 94.884]
   - text: I'd rather live one I enjoyed
-    pr: 아잇 래더 리브 원 아이 인조잇
+    pr: 아잇 래더 립 원 아이 인조잇
     tl: 난 내가 즐거운 삶을 살고 싶어
     time: [94.885, 96.885]
   - text: My life feels like it's flying by
@@ -221,7 +221,7 @@ lines:
     tl: 내 인생이 쏜살같이 지나가는 것 같아
     time: [163.034, 164.75]
   - text: My future's gone, and my dreams have died
-    pr: 마이 퓨처스 곤, 앤드 마이 드림즈 해브 다잇
+    pr: 마이 퓨처스 곤, 앤드 마이 드림즈 햅 다잇
     tl: 미래는 사라졌고 꿈도 죽어 버렸어
     time: [164.75, 166.175]
   - text: This song is just an outcry
@@ -368,7 +368,7 @@ lines:
     tl: 그래, 긴장을 풀 수가 없어
     time: [224.103, 225.453]
   - text: I've almost lost my god damn mind
-    pr: 아이브 올모스트 로스트 마이 갓 댐 마인드
+    pr: 아입 올모스트 로스트 마이 갓 댐 마인드
     tl: 씨발, 거의 미쳐 버릴 뻔했어
     time: [225.453, 226.848]
   - text: I'm a viral star, but I'm still unsigned

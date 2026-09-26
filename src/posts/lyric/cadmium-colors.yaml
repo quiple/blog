@@ -24,15 +24,15 @@ lines:
     tl: 연금술을 하며 시간을 보내
     time: [0.708, 2.96]
   - text: I mix my yellows and my blues to make a shade of green
-    pr: 아이 믹스 마이 옐로즈 앤드 마이 블루즈 투 메익 어 셰잇 오브 그린
+    pr: 아이 믹스 마이 옐로즈 앤드 마이 블루즈 투 메익 어 셰잇 옵 그린
     tl: 노랑과 파랑을 섞어 초록빛을 만들어
     time: [3.842, 6.919]
   - text: Prosaic practice of depravity
-    pr: 프로제익 프랙티스 오브 디프래버티
+    pr: 프로제익 프랙티스 옵 디프래버티
     tl: 타락을 실천하는 따분한 일
     time: [7.093, 9.473]
   - text: Suspending innocents above their disbelief
-    pr: 서스펜딩 이노센츠 어보브 데어 디스빌립
+    pr: 서스펜딩 이노센츠 어봅 데어 디스빌립
     tl: 순진한 이들을 불신 너머에 매달아
     time: [9.914, 12.236]
   - text: I wish that I could paint a pretty picture onto everything
@@ -40,15 +40,15 @@ lines:
     tl: 모든 것 위에 아름다운 그림을 그릴 수 있으면 좋겠어
     time: [12.329, 15.905]
   - text: And leave a mark upon the world that felt like anything
-    pr: 앤드 리브 어 마크 어판 더 월드 댓 펠트 라익 에니싱
+    pr: 앤드 립 어 마크 어판 더 월드 댓 펠트 라익 에니싱
     tl: 세상에 무언가 느껴지는 흔적을 남기고 싶어
     time: [16.149, 18.692]
   - text: But maybe that's the essence of an artist and their legacy
-    pr: 벗 메이비 대츠 디 에센스 오브 언 아티스트 앤드 데어 레거시
+    pr: 벗 메이비 대츠 디 에센스 옵 언 아티스트 앤드 데어 레거시
     tl: 하지만 그게 예술가와 그 유산의 본질일지도 몰라
     time: [18.808, 22.418]
   - text: Just chasing down a sense of infamy
-    pr: 저스트 체이싱 다운 어 센스 오브 인퍼미
+    pr: 저스트 체이싱 다운 어 센스 옵 인퍼미
     tl: 그저 악명이라는 감각을 쫓아가는 것
     time: [23.254, 25.75]
   - text: Put brush to canvas with a pirouette
@@ -92,7 +92,7 @@ lines:
     tl: 일류 도둑처럼 멋진 그림을 훔쳐
     time: [58.549, 61.602]
   - text: Make the water work like you won't believe
-    pr: 메익 더 워터 워크 라익 유 원트 빌리브
+    pr: 메익 더 워터 워크 라익 유 원트 빌립
     tl: 믿기 힘들 만큼 물을 다뤄
     time: [61.857, 64.899]
   - text: Find a new world that can set you free
@@ -100,7 +100,7 @@ lines:
     tl: 널 자유롭게 해 줄 새 세상을 찾아
     time: [65.05, 68.08]
   - text: How could anybody ever live like me?
-    pr: 하우 쿳 에니바디 에버 리브 라익 미
+    pr: 하우 쿳 에니바디 에버 립 라익 미
     tl: 누가 어떻게 나처럼 살 수 있겠어?
     time: [68.324, 71.343]
   - text: I spend my hours doing alchemy
@@ -120,7 +120,7 @@ lines:
     tl: 하지만 먹여 살릴 입이 있으면 바람 따윈 중요하지 않아
     time: [81.293, 83.638]
   - text: I wish that I could paint a pretty picture of a fantasy
-    pr: 아이 위시 댓 아이 쿳 페인트 어 프리티 픽처 오브 어 팬터시
+    pr: 아이 위시 댓 아이 쿳 페인트 어 프리티 픽처 옵 어 팬터시
     tl: 환상을 아름다운 그림으로 그릴 수 있으면 좋겠어
     time: [83.707, 87.248]
   - text: And turn a feeling to a living for my family
@@ -176,7 +176,7 @@ lines:
     tl: 산들바람으로 내 몸을 산산조각 내
     time: [129.915, 133.027]
   - text: Dammit, I am real and I have my dreams
-    pr: 대밋, 아이 앰 리얼 앤드 아이 해브 마이 드림즈
+    pr: 대밋, 아이 앰 리얼 앤드 아이 햅 마이 드림즈
     tl: 젠장, 난 실재하고 내 꿈도 있다고
     time: [133.178, 136.231]
   - text: Watch me burn brighter ’til I fail to breathe
@@ -184,7 +184,7 @@ lines:
     tl: 숨이 멎을 때까지 더 밝게 타오르는 날 봐
     time: [136.37, 139.447]
   - text: How could anybody ever live like me?
-    pr: 하우 쿳 에니바디 에버 리브 라익 미
+    pr: 하우 쿳 에니바디 에버 립 라익 미
     tl: 누가 어떻게 나처럼 살 수 있겠어?
     time: [139.644, 142.698]
   - text: Baby, do you know what it's like to die
@@ -204,7 +204,7 @@ lines:
     tl: 네가 내게 남겨 준 순간에도 느낄 수 없어
     time: [151.127, 154.029]
   - text: I don't wanna leave with a work undone
-    pr: 아이 돈트 워너 리브 윗 어 워크 언던
+    pr: 아이 돈트 워너 립 윗 어 워크 언던
     tl: 작품을 끝내지 못한 채 떠나고 싶지 않아
     time: [154.308, 156.641]
   - text: The paint can barely dry ’fore it fills my lungs
@@ -216,7 +216,7 @@ lines:
     tl: 약실 속 총알 하나가 날 비웃어
     time: [159.033, 161.738]
   - text: But I don't wanna feel it coming out of me
-    pr: 벗 아이 돈트 워너 필 잇 커밍 아웃 오브 미
+    pr: 벗 아이 돈트 워너 필 잇 커밍 아웃 옵 미
     tl: 하지만 그게 내 몸을 뚫고 나오는 걸 느끼고 싶진 않아
     time: [162.063, 164.466]
   - text: I don't want-
@@ -228,7 +228,7 @@ lines:
     tl: 연금술을 하며 시간을 보내
     time: [191.518, 193.816]
   - text: I mix my yellows and my blues to make a shade of green
-    pr: 아이 믹스 마이 옐로즈 앤드 마이 블루즈 투 메익 어 셰잇 오브 그린
+    pr: 아이 믹스 마이 옐로즈 앤드 마이 블루즈 투 메익 어 셰잇 옵 그린
     tl: 노랑과 파랑을 섞어 초록빛을 만들어
     time: [194.676, 197.775]
   - text: Chasing impossible philosophy
@@ -236,7 +236,7 @@ lines:
     tl: 불가능한 철학을 쫓으며
     time: [197.961, 200.295]
   - text: And hoping that this poison ain't the death of me
-    pr: 앤드 호핑 댓 디스 포이즌 에인트 더 데스 오브 미
+    pr: 앤드 호핑 댓 디스 포이즌 에인트 더 데스 옵 미
     tl: 이 독이 내 죽음이 아니길 바라
     time: [200.724, 204.091]
   - text: Cadmium red is the ground beneath
@@ -264,7 +264,7 @@ lines:
     tl: 일류 도둑처럼 멋진 그림을 훔쳐
     time: [223.631, 226.673]
   - text: Make the water work like you won't believe
-    pr: 메익 더 워터 워크 라익 유 원트 빌리브
+    pr: 메익 더 워터 워크 라익 유 원트 빌립
     tl: 믿기 힘들 만큼 물을 다뤄
     time: [226.905, 229.889]
   - text: Find a new world that can set you free
@@ -272,7 +272,7 @@ lines:
     tl: 널 자유롭게 해 줄 새 세상을 찾아
     time: [230.121, 233.221]
   - text: How could anybody ever live like-
-    pr: 하우 쿳 에니바디 에버 리브 라익-
+    pr: 하우 쿳 에니바디 에버 립 라익-
     tl: 누가 어떻게 이렇게 살 수-
     time: [233.418, 236.17]
   - text: Baby, do you know what you wanna hear
@@ -284,7 +284,7 @@ lines:
     tl: 네가 한마디면 분명하게 말할 수 있으니까
     time: [240.674, 243.368]
   - text: We're all just searching for a sense of solidarity
-    pr: 위어 올 저스트 서칭 포 어 센스 오브 살러대러티
+    pr: 위어 올 저스트 서칭 포 어 센스 옵 살러대러티
     tl: 우리는 모두 연대감을 찾고 있을 뿐
     time: [243.484, 246.607]
   - text: To hold each other close and confiscate our destiny
@@ -292,7 +292,7 @@ lines:
     tl: 서로를 꼭 끌어안고 운명을 빼앗아 오려고
     time: [246.758, 250.218]
   - text: No one wants to leave with a work undone
-    pr: 노 원 원츠 투 리브 윗 어 워크 언던
+    pr: 노 원 원츠 투 립 윗 어 워크 언던
     tl: 누구도 작품을 끝내지 못한 채 떠나고 싶지 않아
     time: [250.589, 253.434]
   - text: We only need a brush we can pass along
@@ -308,7 +308,7 @@ lines:
     tl: 하지만 그걸 계획해 봤자 무슨 소용이야?
     time: [260.121, 263.058]
   - text: I've got too many colors for a shade of grey
-    pr: 아이브 갓 투 매니 컬러즈 포 어 셰잇 오브 그레이
+    pr: 아입 갓 투 매니 컬러즈 포 어 셰잇 옵 그레이
     tl: 회색 하나로 칠하기엔 내겐 색이 너무 많아
     time: [263.372, 266.286]
   - text: And I can make it autumn every single day

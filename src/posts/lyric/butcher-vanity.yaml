@@ -26,11 +26,11 @@ lines:
     tl: 사람들은 내 허기가 문제라고 해
     time: [1.785, 3.933]
   - text: They tell me to curb my appetite
-    pr: 데이 텔 미 투 커브 마이 애퍼타잇
+    pr: 데이 텔 미 투 컵 마이 애퍼타잇
     tl: 내 식욕을 억누르라고 하지
     time: [4.727, 7.178]
   - text: They say I can't keep myself from trying a bite of every plate in sight
-    pr: 데이 세이 아이 캔트 킵 마이셀프 프럼 트라잉 어 바잇 오브 에브리 플레잇 인 사잇
+    pr: 데이 세이 아이 캔트 킵 마이셀프 프럼 트라잉 어 바잇 옵 에브리 플레잇 인 사잇
     tl: 내가 눈에 보이는 모든 접시를 한 입씩 맛보지 않고는 못 배긴대
     time: [8.56, 14.047]
   - text: They worship patience, a virtue
@@ -46,15 +46,15 @@ lines:
     tl: 하지만 내 욕망은 끝이 없지, 네 목을 그어 속이 뒤집힐 때까지 먹고 싶어!
     time: [22.088, 27.541]
   - text: The slaughter's on, I'd love to see you come undone
-    pr: 더 슬로터스 온, 아잇 러브 투 시 유 컴 언던
+    pr: 더 슬로터스 온, 아잇 럽 투 시 유 컴 언던
     tl: 도살이 시작돼, 네가 무너져 내리는 걸 보고 싶어
     time: [28.187, 31.469]
   - text: Unsatisfied until I've got you flayed alive
-    pr: 언새티스파잇 언틸 아이브 갓 유 플레잇 얼라이브
+    pr: 언새티스파잇 언틸 아입 갓 유 플레잇 얼라입
     tl: 네 산가죽을 벗겨 놓기 전까진 만족 못 해
     time: [31.607, 34.747]
   - text: So grab a plate, have a taste, 这口味让我沉醉
-    pr: 소 그랩 어 플레잇, 해브 어 테이스트, 저커우웨이랑워천쭈이
+    pr: 소 그랩 어 플레잇, 햅 어 테이스트, 저커우웨이랑워천쭈이
     tl: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해
     time: [34.747, 38.155]
   - text: I'm still preying on a butcher's vein
@@ -86,7 +86,7 @@ lines:
     tl: 왜 내장을 버리겠어?
     time: [62.04, 64.672]
   - text: It's love that guides my cleaver with such tenderness
-    pr: 이츠 러브 댓 가이즈 마이 클리버 윗 서치 텐더너스
+    pr: 이츠 럽 댓 가이즈 마이 클리버 윗 서치 텐더너스
     tl: 내 식칼을 이토록 부드럽게 이끄는 건 사랑이야
     time: [65.184, 68.558]
   - text: A perfect strike to fix the horror on your face!
@@ -98,7 +98,7 @@ lines:
     tl: 도살은 내 몫, 성스러운 피와 내장
     time: [72.14, 75.476]
   - text: Preserved and primed, each muscle divvied up to dine
-    pr: 프리저브 앤드 프라임드, 이치 머슬 디빗 업 투 다인
+    pr: 프리접드 앤드 프라임드, 이치 머슬 디빗 업 투 다인
     tl: 보존하고 손질해, 근육마다 먹기 좋게 나눠
     time: [75.543, 78.721]
   - text: And in the high, 我存在 tasting 血淋淋的爱
@@ -106,19 +106,19 @@ lines:
     tl: 그리고 그 황홀함 속에 난 존재해, 피가 뚝뚝 흐르는 사랑을 맛보며
     time: [78.721, 82.101]
   - text: I'll devour all of you in time
-    pr: 아일 디바워 올 오브 유 인 타임
+    pr: 아일 디바워 올 옵 유 인 타임
     tl: 결국엔 너를 남김없이 먹어 치울 거야
     time: [82.101, 85.576]
   - text: Oh, your heart, aortic work of art
-    pr: 오, 유어 하트, 에이오틱 워크 오브 아트
+    pr: 오, 유어 하트, 에이오틱 워크 옵 아트
     tl: 네 심장, 대동맥이 빚은 예술품
     time: [85.907, 89.144]
   - text: My love, my knife to carve it out, your life
-    pr: 마이 러브, 마이 나입 투 카브 잇 아웃, 유어 라입
+    pr: 마이 럽, 마이 나입 투 캅 잇 아웃, 유어 라입
     tl: 내 사랑, 그걸 도려낼 내 칼, 네 생명
     time: [89.246, 92.169]
   - text: So grab a plate, have a taste, 这口味让我沉醉
-    pr: 소 그랩 어 플레잇, 해브 어 테이스트, 저커우웨이랑워천쭈이
+    pr: 소 그랩 어 플레잇, 햅 어 테이스트, 저커우웨이랑워천쭈이
     tl: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해
     time: [92.169, 95.627]
   - text: I'm still preying on a butcher's vein
@@ -130,7 +130,7 @@ lines:
     tl: 힘줄을 끊고 싶어, 네 안으로 들어가고 싶어, 난
     time: [99.761, 103.204]
   - text: To not forgive you, rigor mortis, mold, and mildew
-    pr: 투 낫 포기브 유, 리거 모티스, 몰드, 앤드 밀두
+    pr: 투 낫 포깁 유, 리거 모티스, 몰드, 앤드 밀두
     tl: 너를 용서하지 않고 싶어, 사후 경직, 곰팡이와 흰곰팡이
     time: [103.204, 105.948]
   - text: But, dear, you should be grateful that I won't waste a good meal
@@ -138,7 +138,7 @@ lines:
     tl: 하지만 그대, 내가 좋은 식사를 낭비하지 않는 걸 고마워해야지
     time: [105.948, 109.348]
   - text: That all my love's precision carves a cut to simply die for
-    pr: 댓 올 마이 러브스 프리시전 카브스 어 컷 투 심플리 다이 포
+    pr: 댓 올 마이 럽스 프리시전 캅스 어 컷 투 심플리 다이 포
     tl: 내 사랑의 정교함으로 죽을 만큼 탐나는 한 점을 도려내는 걸
     time: [109.348, 113.225]
     background:
@@ -162,15 +162,15 @@ lines:
     tl: 맙소사, 포크와 나이프 따위 집어치워, 손과 이로 찢어 한 입 베어 물겠어!
     time: [123.055, 127.137]
   - text: The slaughter's on, I'd love to see you come undone
-    pr: 더 슬로터스 온, 아잇 러브 투 시 유 컴 언던
+    pr: 더 슬로터스 온, 아잇 럽 투 시 유 컴 언던
     tl: 도살이 시작돼, 네가 무너져 내리는 걸 보고 싶어
     time: [131.32, 134.555]
   - text: Unsatisfied until I've got you flayed alive
-    pr: 언새티스파잇 언틸 아이브 갓 유 플레잇 얼라이브
+    pr: 언새티스파잇 언틸 아입 갓 유 플레잇 얼라입
     tl: 네 산가죽을 벗겨 놓기 전까진 만족 못 해
     time: [134.704, 137.851]
   - text: So grab a plate, have a taste, 这口味让我沉醉
-    pr: 소 그랩 어 플레잇, 해브 어 테이스트, 저커우웨이랑워천쭈이
+    pr: 소 그랩 어 플레잇, 햅 어 테이스트, 저커우웨이랑워천쭈이
     tl: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해
     time: [137.851, 141.269]
   - text: I'm still preying on a butcher's vein
@@ -194,15 +194,15 @@ lines:
     tl: 난 안달하며 기다릴 거야
     time: [154.803, 158.079]
   - text: Oh, your heart, aortic work of art
-    pr: 오, 유어 하트, 에이오틱 워크 오브 아트
+    pr: 오, 유어 하트, 에이오틱 워크 옵 아트
     tl: 네 심장, 대동맥이 빚은 예술품
     time: [158.603, 161.84]
   - text: My love, my knife to carve it out, your life
-    pr: 마이 러브, 마이 나입 투 카브 잇 아웃, 유어 라입
+    pr: 마이 럽, 마이 나입 투 캅 잇 아웃, 유어 라입
     tl: 내 사랑, 그걸 도려낼 내 칼, 네 생명
     time: [161.923, 164.881]
   - text: So grab a plate, have a taste, 这口味让我沉醉
-    pr: 소 그랩 어 플레잇, 해브 어 테이스트, 저커우웨이랑워천쭈이
+    pr: 소 그랩 어 플레잇, 햅 어 테이스트, 저커우웨이랑워천쭈이
     tl: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해
     time: [164.881, 168.303]
   - text: I'm still preying on a butcher's vein
