@@ -22,7 +22,7 @@ lines:
         pr: 아이
         time: [17.363, 17.564]
       - text: 'had '
-        pr: 해드
+        pr: 핻
         time: [17.564, 17.831]
       - text: 'a '
         pr: 어
@@ -49,7 +49,7 @@ lines:
         pr: 아이
         time: [21.848, 22.083]
       - text: wanted
-        pr: 원티드
+        pr: 원팃
         time: [22.083, 23.037]
     tl: 원했던 모든 걸 얻었지
     time: [20.53, 23.037]
@@ -61,7 +61,7 @@ lines:
         pr: 왓
         time: [25.583, 25.85]
       - text: "you'd "
-        pr: 유드
+        pr: 윳
         time: [25.85, 26.133]
       - text: think
         pr: 싱크
@@ -73,7 +73,7 @@ lines:
         pr: 앤드
         time: [28.807, 29.056]
       - text: 'if '
-        pr: 이프
+        pr: 입
         time: [29.056, 29.323]
       - text: "I'm "
         pr: 아임
@@ -91,10 +91,10 @@ lines:
         pr: 잇
         time: [30.851, 31.088]
       - text: 'might '
-        pr: 마이트
+        pr: 마잇
         time: [31.088, 31.355]
       - text: 'have '
-        pr: 해브
+        pr: 햅
         time: [31.355, 31.588]
       - text: 'been '
         pr: 빈
@@ -103,7 +103,7 @@ lines:
         pr: 어
         time: [31.837, 32.104]
       - text: night
-        pr: 나이트
+        pr: 나잇
         time: [32.104, 32.589]
       - text: mare
         pr: 메어
@@ -121,7 +121,7 @@ lines:
         pr: 후
         time: [35.787, 36.103]
       - text: 'might '
-        pr: 마이트
+        pr: 마잇
         time: [36.103, 36.57]
       - text: care
         pr: 케어
@@ -130,22 +130,24 @@ lines:
     time: [34.771, 37.361]
   - words:
       - text: 'Thought '
-        pr: 소트
+        pr: 솟
         time: [41.27, 41.558]
       - text: 'I '
         pr: 아이
         time: [41.558, 41.798]
       - text: 'could '
-        pr: 쿠드
+        pr: 쿳
         time: [41.798, 42.048]
       - text: 'fly '
         pr: 플라이
         time: [42.048, 42.576]
-      - text: (fly)
-        pr: (플라이)
-        time: [42.576, 43.125]
     tl: 날 수 있을 줄 알았어
     time: [41.27, 43.125]
+    background:
+      words:
+        - text: (fly)
+          pr: (플라이)
+          time: [42.576, 43.125]
   - words:
       - text: 'So '
         pr: 소
@@ -157,7 +159,7 @@ lines:
         pr: 스텝트
         time: [45.341, 45.605]
       - text: 'off '
-        pr: 오프
+        pr: 옵
         time: [45.605, 45.883]
       - text: 'the '
         pr: 더
@@ -172,13 +174,15 @@ lines:
         pr: 노바디
         time: [49.286, 50.1]
       - text: 'cried '
-        pr: 크라이드
+        pr: 크라잇
         time: [50.1, 50.581]
-      - text: (cried)
-        pr: (크라이드)
-        time: [50.581, 51.019]
     tl: 아무도 울지 않았어
     time: [49.286, 51.019]
+    background:
+      words:
+        - text: (cried)
+          pr: (크라잇)
+          time: [50.581, 51.019]
   - words:
       - text: 'Nobody '
         pr: 노바디
@@ -208,7 +212,7 @@ lines:
         pr: 스탠딩
         time: [55.603, 56.12]
       - text: 'right '
-        pr: 라이트
+        pr: 라잇
         time: [56.12, 56.601]
       - text: there
         pr: 데어
@@ -220,13 +224,13 @@ lines:
         pr: 카인더
         time: [58.995, 59.512]
       - text: 'thought '
-        pr: 소트
+        pr: 솟
         time: [59.512, 59.828]
       - text: 'they '
         pr: 데이
         time: [59.828, 60.081]
       - text: 'might '
-        pr: 마이트
+        pr: 마잇
         time: [60.081, 60.577]
       - text: care
         pr: 케어
@@ -238,7 +242,7 @@ lines:
         pr: 아이
         time: [65.273, 65.491]
       - text: 'had '
-        pr: 해드
+        pr: 햇
         time: [65.491, 65.839]
       - text: 'a '
         pr: 어
@@ -265,7 +269,7 @@ lines:
         pr: 아이
         time: [69.784, 70.086]
       - text: wanted
-        pr: 원티드
+        pr: 원팃
         time: [70.086, 70.994]
     tl: 원했던 모든 걸 얻었지
     time: [68.504, 70.994]
@@ -280,7 +284,7 @@ lines:
         pr: 아이
         time: [72.818, 73.099]
       - text: 'wake '
-        pr: 웨이크
+        pr: 웨익
         time: [73.099, 73.584]
       - text: 'up, '
         pr: 업,
@@ -298,7 +302,7 @@ lines:
         pr: 유
         time: [76.075, 76.519]
       - text: 'with '
-        pr: 위드
+        pr: 윗
         time: [76.822, 77.652]
       - text: me
         pr: 미
@@ -388,13 +392,13 @@ lines:
     time: [92.627, 94.695]
   - words:
       - text: 'If '
-        pr: 이프
+        pr: 입
         time: [96.501, 96.983]
       - text: 'I '
         pr: 아이
         time: [96.983, 97.514]
       - text: 'could '
-        pr: 쿠드
+        pr: 쿳
         time: [97.514, 97.781]
       - text: 'change '
         pr: 체인지
@@ -466,7 +470,7 @@ lines:
         pr: 아이
         time: [113.318, 113.568]
       - text: 'tried '
-        pr: 트라이드
+        pr: 트라잇
         time: [113.568, 113.867]
       - text: 'to '
         pr: 투
@@ -484,7 +488,7 @@ lines:
         pr: 마이
         time: [116.889, 117.139]
       - text: 'head '
-        pr: 헤드
+        pr: 헷
         time: [117.139, 117.406]
       - text: 'was '
         pr: 워즈
@@ -508,13 +512,13 @@ lines:
         pr: 미
         time: [121.924, 122.272]
       - text: weak
-        pr: 위크
+        pr: 윅
         time: [122.272, 122.983]
     tl: 그들은 내가 약하다고 했어
     time: [121.274, 122.983]
   - words:
       - text: 'Like '
-        pr: 라이크
+        pr: 라익
         time: [124.272, 124.606]
       - text: "I'm "
         pr: 아임
@@ -535,7 +539,7 @@ lines:
     time: [124.272, 127.03]
   - words:
       - text: "Could've "
-        pr: 쿠더브
+        pr: 쿠덥
         time: [127.08, 127.596]
       - text: 'been '
         pr: 빈
@@ -544,7 +548,7 @@ lines:
         pr: 어
         time: [127.863, 128.116]
       - text: night
-        pr: 나이트
+        pr: 나잇
         time: [128.116, 128.566]
       - text: mare
         pr: 메어
@@ -562,7 +566,7 @@ lines:
         pr: 펠트
         time: [131.061, 131.328]
       - text: 'like '
-        pr: 라이크
+        pr: 라익
         time: [131.328, 131.595]
       - text: 'they '
         pr: 데이
@@ -571,7 +575,7 @@ lines:
         pr: 워
         time: [131.845, 132.112]
       - text: 'right '
-        pr: 라이트
+        pr: 라잇
         time: [132.112, 132.593]
       - text: there
         pr: 데어
@@ -589,7 +593,7 @@ lines:
         pr: 필즈
         time: [136.101, 136.368]
       - text: 'like '
-        pr: 라이크
+        pr: 라익
         time: [136.368, 136.617]
       - text: 'yesterday '
         pr: 예스터데이
@@ -685,7 +689,7 @@ lines:
         pr: 아이
         time: [153.251, 153.451]
       - text: 'had '
-        pr: 해드
+        pr: 햇
         time: [153.451, 153.817]
       - text: 'a '
         pr: 어
@@ -712,7 +716,7 @@ lines:
         pr: 아이
         time: [157.824, 158.122]
       - text: wanted
-        pr: 원티드
+        pr: 원팃
         time: [158.122, 159.056]
     tl: 원했던 모든 걸 얻었지
     time: [156.541, 159.056]
@@ -727,7 +731,7 @@ lines:
         pr: 아이
         time: [160.824, 161.091]
       - text: 'wake '
-        pr: 웨이크
+        pr: 웨익
         time: [161.091, 161.576]
       - text: 'up, '
         pr: 업,
@@ -745,7 +749,7 @@ lines:
         pr: 유
         time: [163.952, 164.382]
       - text: 'with '
-        pr: 위드
+        pr: 윗
         time: [164.786, 165.39]
       - text: me
         pr: 미
@@ -835,13 +839,13 @@ lines:
     time: [180.532, 182.716]
   - words:
       - text: 'If '
-        pr: 이프
+        pr: 입
         time: [184.499, 184.998]
       - text: 'I '
         pr: 아이
         time: [184.998, 185.514]
       - text: 'could '
-        pr: 쿠드
+        pr: 쿳
         time: [185.514, 185.831]
       - text: 'change '
         pr: 체인지
@@ -907,7 +911,7 @@ lines:
     time: [196.595, 198.691]
   - words:
       - text: 'If '
-        pr: 이프
+        pr: 입
         time: [199.941, 200.492]
       - text: 'I '
         pr: 아이
@@ -925,7 +929,7 @@ lines:
         pr: 덴,
         time: [201.891, 202.341]
       - text: 'would '
-        pr: 우드
+        pr: 웃
         time: [202.341, 202.601]
       - text: 'I '
         pr: 아이
@@ -943,7 +947,7 @@ lines:
     time: [199.941, 204.296]
   - words:
       - text: 'Would '
-        pr: 우드
+        pr: 웃
         time: [204.296, 204.577]
       - text: 'I '
         pr: 아이
@@ -961,7 +965,7 @@ lines:
     time: [204.296, 206.409]
   - words:
       - text: 'If '
-        pr: 이프
+        pr: 입
         time: [207.98, 208.447]
       - text: 'they '
         pr: 데이
@@ -976,16 +980,16 @@ lines:
         pr: 데이
         time: [209.608, 209.91]
       - text: 'said '
-        pr: 세드
+        pr: 셋
         time: [209.91, 210.374]
       - text: 'would '
-        pr: 우드
+        pr: 웃
         time: [210.374, 210.609]
       - text: 'go '
         pr: 고
         time: [210.609, 211.01]
       - text: 'straight '
-        pr: 스트레이트
+        pr: 스트레잇
         time: [211.01, 211.309]
       - text: 'to '
         pr: 투
@@ -994,7 +998,7 @@ lines:
         pr: 마이
         time: [211.576, 211.826]
       - text: head
-        pr: 헤드
+        pr: 헷
         time: [211.826, 212.319]
     tl: 자신들의 말이 내 머릿속에 곧장 박힐 걸 알았다면
     time: [207.98, 212.319]
@@ -1003,7 +1007,7 @@ lines:
         pr: 왓
         time: [212.352, 212.669]
       - text: 'would '
-        pr: 우드
+        pr: 웃
         time: [212.669, 213.084]
       - text: 'they '
         pr: 데이
@@ -1012,13 +1016,13 @@ lines:
         pr: 세이
         time: [213.4, 213.702]
       - text: instead?
-        pr: 인스테드?
+        pr: 인스텟?
         time: [213.702, 214.522]
     tl: 대신 무슨 말을 했을까?
     time: [212.352, 214.522]
   - words:
       - text: 'If '
-        pr: 이프
+        pr: 입
         time: [216.053, 216.535]
       - text: 'I '
         pr: 아이
@@ -1036,7 +1040,7 @@ lines:
         pr: 덴,
         time: [217.853, 218.285]
       - text: 'would '
-        pr: 우드
+        pr: 웃
         time: [218.285, 218.594]
       - text: 'I '
         pr: 아이
@@ -1054,7 +1058,7 @@ lines:
     time: [216.053, 220.329]
   - words:
       - text: 'Would '
-        pr: 우드
+        pr: 웃
         time: [220.357, 220.691]
       - text: 'I '
         pr: 아이
@@ -1072,7 +1076,7 @@ lines:
     time: [220.357, 222.351]
   - words:
       - text: 'If '
-        pr: 이프
+        pr: 입
         time: [224.035, 224.517]
       - text: 'they '
         pr: 데이
@@ -1087,16 +1091,16 @@ lines:
         pr: 데이
         time: [225.585, 225.834]
       - text: 'said '
-        pr: 세드
+        pr: 셋
         time: [225.834, 226.316]
       - text: 'would '
-        pr: 우드
+        pr: 웃
         time: [226.316, 226.601]
       - text: 'go '
         pr: 고
         time: [226.601, 227.019]
       - text: 'straight '
-        pr: 스트레이트
+        pr: 스트레잇
         time: [227.019, 227.347]
       - text: 'to '
         pr: 투
@@ -1105,7 +1109,7 @@ lines:
         pr: 마이
         time: [227.614, 227.863]
       - text: head
-        pr: 헤드
+        pr: 헷
         time: [227.863, 228.303]
     tl: 자신들의 말이 내 머릿속에 곧장 박힐 걸 알았다면
     time: [224.035, 228.303]
@@ -1114,7 +1118,7 @@ lines:
         pr: 왓
         time: [228.336, 228.635]
       - text: 'would '
-        pr: 우드
+        pr: 웃
         time: [228.635, 228.986]
       - text: 'they '
         pr: 데이
@@ -1123,7 +1127,7 @@ lines:
         pr: 세이
         time: [229.352, 229.584]
       - text: instead?
-        pr: 인스테드?
+        pr: 인스텟?
         time: [229.584, 230.401]
     tl: 대신 무슨 말을 했을까?
     time: [228.336, 230.401]
