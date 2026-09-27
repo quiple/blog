@@ -6,7 +6,8 @@
 # 가져온 시각: 2026-09-27T09:26:44.110Z
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
-title: Brain Implosion Energy Drink (feat. Kasane Teto & Eleanor Forte)
+title: Brain Implosion Energy Drink
+titleTl: 뇌 내파 에너지 드링크
 titleLang: en
 artist:
   - flanger-moose
@@ -14,42 +15,81 @@ artist:
   - eleanor-forte
 lang: en
 lines:
-  - Brain implosion energy
-  - Ten thousand grams of pure caffeine
-  - "'Cause you can't overthink if your heart stops"
-  - Brain implosion energy
-  - Crave zero thoughts, want head empty
-  - Then drink and drink and drink until you drop
-  - I love my brain implosion juice, it makes my head go brr
-  - But will it stop the pain forever? I just can't be sure
-  - Brain implosion energy
-  - Ten thousand grams of pure caffeine
-  - "'Cause you can't overthink if your heart stops"
-  - Twenty-two pounds of caffeine in this small can? How does it fit?
-  - Just don't question it!
-  - Uh, I don't think the FDA will approve this
-  - I said, just don't question it!
-  - Everyone needs something to numb the pain
-  - As time slowly withers their life away
-  - Day by day, in an endless cycle of burnout
-  - Eat, sleep, work, repeat 'til the clock runs out
-  - Eat, sleep, work, repeat 'til the clock runs out
-  - Eat, sleep, work, repeat 'til the clock runs out
-  - Eat, sleep, work, repeat 'til the clock runs out—
-  - 'Comes in the following flavors:'
-  - Overthinking Orange, Socially Anxious Strawberry
-  - Burnout Banana, Repressed Raspberry
-  - Grieving Grape, Misery Melon
-  - Trauma Tri-Tip, Depression Durian
-  - And our newest flavor, Fu—
-  - Brain implosion energy
-  - Ten thousand grams of pure caffeine
-  - "'Cause you can't overthink if your heart stops"
-  - Brain implosion energy
-  - Crave zero thoughts, want head empty
-  - Then drink and drink and drink until you drop
-  - I love my brain implosion juice, it makes my head go brr
-  - But will it stop the pain forever? I just can't be sure
-  - Brain implosion energy
-  - Ten thousand grams of pure caffeine
-  - "'Cause you can't overthink if your heart stops"
+  - text: Brain implosion energy
+    tl: 뇌 내파 에너지
+  - text: Ten thousand grams of pure caffeine
+    tl: 순수 카페인 만 그램
+  - text: "'Cause you can't overthink if your heart stops"
+    tl: 심장이 멈추면 생각이 많아질 수 없으니까
+  - text: Brain implosion energy
+    tl: 뇌 내파 에너지
+  - text: Crave zero thoughts, want head empty
+    tl: 생각은 하나도 없이, 머릿속을 비우고 싶다면
+  - text: Then drink and drink and drink until you drop
+    tl: 쓰러질 때까지 마시고 마시고 또 마셔
+  - text: I love my brain implosion juice, it makes my head go brr
+    tl: 난 내 뇌 내파 주스가 좋아, 머리가 부르르 돌아가거든
+  - text: But will it stop the pain forever? I just can't be sure
+    tl: 하지만 고통을 영원히 멈춰 줄까? 도무지 확신이 안 서
+  - text: Brain implosion energy
+    tl: 뇌 내파 에너지
+  - text: Ten thousand grams of pure caffeine
+    tl: 순수 카페인 만 그램
+  - text: "'Cause you can't overthink if your heart stops"
+    tl: 심장이 멈추면 생각이 많아질 수 없으니까
+  - text: Twenty-two pounds of caffeine in this small can? How does it fit?
+    tl: 이 작은 캔에 카페인이 22파운드나? 어떻게 다 들어가?
+  - text: Just don't question it!
+    tl: 그냥 따지지 마!
+  - text: Uh, I don't think the FDA will approve this
+    tl: 어, FDA에서 이걸 승인해 주진 않을 것 같은데
+  - text: I said, "Just don't question it!"
+    tl: 그냥 따지지 말라니까!
+  - text: Everyone needs something to numb the pain
+    tl: 누구나 고통을 무디게 해 줄 무언가가 필요해
+  - text: As time slowly withers their life away
+    tl: 시간이 서서히 삶을 시들게 하는 동안
+  - text: Day by day, in an endless cycle of burnout
+    tl: 하루하루, 끝없이 반복되는 번아웃 속에서
+  - text: Eat, sleep, work, repeat 'til the clock runs out
+    tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
+  - text: Eat, sleep, work, repeat 'til the clock runs out
+    tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
+  - text: Eat, sleep, work, repeat 'til the clock runs out
+    tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
+  - text: Eat, sleep, work, repeat 'til the clock runs out—
+    tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해—
+  - text: 'Comes in the following flavors:'
+    tl: '다음과 같은 맛이 있습니다:'
+  - text: Overthinking Orange, Socially Anxious Strawberry
+    tl: 생각 과다 오렌지, 사회불안 딸기
+  - text: Burnout Banana, Repressed Raspberry
+    tl: 번아웃 바나나, 억눌린 라즈베리
+  - text: Grieving Grape, Misery Melon
+    tl: 비탄의 포도, 비참한 멜론
+  - text: Trauma Tri-Tip, Depression Durian
+    tl: 트라우마 트라이팁, 우울증 두리안
+  - text: And our newest flavor, Fu—
+    tl: 그리고 신제품, 푸—
+  - text: Brain implosion energy
+    tl: 뇌 내파 에너지
+  - text: Ten thousand grams of pure caffeine
+    tl: 순수 카페인 만 그램
+  - text: "'Cause you can't overthink if your heart stops"
+    tl: 심장이 멈추면 생각이 많아질 수 없으니까
+  - text: Brain implosion energy
+    tl: 뇌 내파 에너지
+  - text: Crave zero thoughts, want head empty
+    tl: 생각은 하나도 없이, 머릿속을 비우고 싶다면
+  - text: Then drink and drink and drink until you drop
+    tl: 쓰러질 때까지 마시고 마시고 또 마셔
+  - text: I love my brain implosion juice, it makes my head go brr
+    tl: 난 내 뇌 내파 주스가 좋아, 머리가 부르르 돌아가거든
+  - text: But will it stop the pain forever? I just can't be sure
+    tl: 하지만 고통을 영원히 멈춰 줄까? 도무지 확신이 안 서
+  - text: Brain implosion energy
+    tl: 뇌 내파 에너지
+  - text: Ten thousand grams of pure caffeine
+    tl: 순수 카페인 만 그램
+  - text: "'Cause you can't overthink if your heart stops"
+    tl: 심장이 멈추면 생각이 많아질 수 없으니까

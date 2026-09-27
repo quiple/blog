@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: Billionaire Buffet
+titleTl: 억만장자 뷔페
 titleLang: en
 year: '2025'
 artist:
@@ -18,76 +19,149 @@ yt:
   audio: 4e0lhK26FFY
   mv: EIyqbc10O_A
 lines:
-  - Come on down to Billionaire Buffet
-  - And have yourself an Oligarchy Omelette today
-  - Or perhaps you're in the mood for CEO Souffle
-  - No need for cash or credit
-  - It's time for corporations to pay
-  - Eat the rich
-  - Eat the rich
-  - いただきます bitch
-  - Skewer then roast them on a spit
-  - Let's all agree not to snitch
-  - Eat the rich
-  - Eat the rich
-  - Luigi please have my kids
-  - Freedom sold to the highest bidder
-  - Makes the future taste so bitter
-  - Fuck the guy who ruined Twitter
-  - We got Robber Baron Roast Beef
-  - For when you've got grief with the system
-  - Tyrant Tiramisu
-  - For when you're blue about the state of the nation
-  - Union-Bustin Bloomin' Onion
-  - Labor laws are gonna be gutted
-  - While the rich line their pockets
-  - To ride on dick shaped rockets
-  - All we wanted was healthcare
-  - All we wanted was equality
-  - All we wanted were basic rights
-  - For a functioning society
-  - All we wanted was education
-  - Wages that kept up with inflation
-  - Since that's too much to ask
-  - Guess there's no going back
-  - I summon the Mario Brothers in attack position
-  - (Yahoo!)
-  - Eat the rich
-  - Eat the rich
-  - いただきます bitch
-  - Skewer then roast them on a spit
-  - Let's all agree not to snitch
-  - Eat the rich
-  - Eat the rich
-  - Luigi please have my kids
-  - Freedom sold to the highest bidder
-  - Makes the future taste so bitter
-  - Fuck the guy who ruined Twitter
-  - There's Corruption Crème Brûlée
-  - Cause they're all bought and paid for in DC
-  - Voter Suppression Vanilla Shake
-  - Cause they don't represent you or me
-  - Crypto-Scam-Burgers
-  - With a side of Fascism Fries
-  - Democracy disappears
-  - Right before your eyes
-  - Let me address the elephant in the room
-  - The one that wants the middle class in a tomb
-  - Slicing programs that people need faster than Vergil
-  - Medicaid, social security are roadkill
-  - Devil may cry "woke" to deflect
-  - From a shadow president that we didn't elect
-  - But a storm is approaching
-  - The rich will be roasting
-  - Now we bout to put the king in checkmate
-  - Eat the rich
-  - Eat the rich
-  - いただきます bitch
-  - Skewer then roast them on a spit
-  - Let's all agree not to snitch
-  - Eat the rich
-  - Eat the rich
-  - Luigi please have my kids
-  - Freedom sold to the highest bidder
-  - Makes the future taste so bitter
-  - Fuck the guy who ruined Twitter
+  - text: Come on down to Billionaire Buffet
+    tl: 억만장자 뷔페로 어서 오세요
+  - text: And have yourself an Oligarchy Omelette today
+    tl: 오늘은 과두제 오믈렛을 드셔 보세요
+  - text: Or perhaps you're in the mood for CEO Soufflé
+    tl: 아니면 CEO 수플레가 당기시나요
+  - text: No need for cash or credit
+    tl: 현금도 카드도 필요 없어요
+  - text: It's time for corporations to pay
+    tl: 이제 기업들이 대가를 치를 차례니까요
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: いただきます, bitch
+    tl: 잘 먹겠습니다, 썅년아
+  - text: Skewer, then roast them on a spit
+    tl: 꼬챙이에 꿰어 구워 버려
+  - text: Let's all agree not to snitch
+    tl: 우리 모두 밀고하지 않기로 해
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: Luigi, please have my kids
+    tl: 루이지, 내 애를 낳아 줘
+  - text: Freedom sold to the highest bidder
+    tl: 최고가 입찰자에게 팔려 버린 자유가
+  - text: Makes the future taste so bitter
+    tl: 미래를 이토록 쓰게 만들어
+  - text: Fuck the guy who ruined Twitter
+    tl: 트위터를 망친 놈은 엿 먹어
+  - text: We got Robber Baron Roast Beef
+    tl: 악덕 자본가 로스트비프도 있어요
+  - text: For when you've got grief with the system
+    tl: 체제에 불만이 쌓였을 때 드세요
+  - text: Tyrant Tiramisu
+    tl: 폭군 티라미수는
+  - text: For when you're blue about the state of the nation
+    tl: 나라 꼴에 우울해질 때 드세요
+  - text: Union-Bustin' Bloomin' Onion
+    tl: 노조 탄압 블루밍 어니언
+  - text: Labor laws are gonna be gutted
+    tl: 노동법은 껍데기만 남게 될 거야
+  - text: While the rich line their pockets
+    tl: 부자들이 제 주머니를 불리는 동안
+  - text: To ride on dick-shaped rockets
+    tl: 좆 모양 로켓을 타려고 말이야
+  - text: All we wanted was healthcare
+    tl: 우리가 원한 건 그저 의료 서비스였어
+  - text: All we wanted was equality
+    tl: 우리가 원한 건 그저 평등이었어
+  - text: All we wanted were basic rights
+    tl: 우리가 원한 건 그저 기본권이었어
+  - text: For a functioning society
+    tl: 제대로 돌아가는 사회를 위한
+  - text: All we wanted was education
+    tl: 우리가 원한 건 그저 교육이었어
+  - text: Wages that kept up with inflation
+    tl: 물가 상승에 맞춰 오르는 임금이었어
+  - text: Since that's too much to ask
+    tl: 그런 바람조차 지나치다니
+  - text: Guess there's no going back
+    tl: 이젠 돌아갈 수 없겠네
+  - text: I summon the Mario Brothers in attack position
+    tl: 마리오 형제를 공격 표시로 소환한다
+  - text: (Yahoo!)
+    tl: (야호!)
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: いただきます, bitch
+    tl: 잘 먹겠습니다, 썅년아
+  - text: Skewer, then roast them on a spit
+    tl: 꼬챙이에 꿰어 구워 버려
+  - text: Let's all agree not to snitch
+    tl: 우리 모두 밀고하지 않기로 해
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: Luigi, please have my kids
+    tl: 루이지, 내 애를 낳아 줘
+  - text: Freedom sold to the highest bidder
+    tl: 최고가 입찰자에게 팔려 버린 자유가
+  - text: Makes the future taste so bitter
+    tl: 미래를 이토록 쓰게 만들어
+  - text: Fuck the guy who ruined Twitter
+    tl: 트위터를 망친 놈은 엿 먹어
+  - text: There's Corruption Crème Brûlée
+    tl: 부패 크렘 브륄레도 있어요
+  - text: "'Cause they're all bought and paid for in D.C."
+    tl: 워싱턴 D.C.의 그들은 죄다 돈에 팔린 자들이니까
+  - text: Voter Suppression Vanilla Shake
+    tl: 투표권 억압 바닐라 셰이크
+  - text: "'Cause they don't represent you or me"
+    tl: 그들은 너도 나도 대변하지 않으니까
+  - text: Crypto-Scam-Burgers
+    tl: 암호화폐 사기 버거에
+  - text: With a side of Fascism Fries
+    tl: 곁들여 나오는 파시즘 프라이
+  - text: Democracy disappears
+    tl: 민주주의가 사라져
+  - text: Right before your eyes
+    tl: 바로 네 눈앞에서
+  - text: Let me address the elephant in the room
+    tl: 다들 외면하는 그 코끼리 얘기 좀 할게
+  - text: The one that wants the middle class in a tomb
+    tl: 중산층을 무덤에 넣고 싶어 하는 그놈 말이야
+  - text: Slicing programs that people need faster than Vergil
+    tl: 사람들에게 필요한 제도를 버질보다 빠르게 베어 버려
+  - text: Medicaid, Social Security are roadkill
+    tl: 메디케이드와 사회보장은 로드킬 신세
+  - text: Devil may cry "woke" to deflect
+    tl: 악마는 관심을 돌리려 "워크"라고 외칠지 몰라
+  - text: From a shadow president that we didn't elect
+    tl: 우리가 뽑지도 않은 그림자 대통령에게서
+  - text: But a storm is approaching
+    tl: 하지만 폭풍이 다가오고 있어
+  - text: The rich will be roasting
+    tl: 부자들은 구워질 거야
+  - text: Now we 'bout to put the king in checkmate
+    tl: 이제 우린 왕을 체크메이트할 거야
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: いただきます, bitch
+    tl: 잘 먹겠습니다, 썅년아
+  - text: Skewer, then roast them on a spit
+    tl: 꼬챙이에 꿰어 구워 버려
+  - text: Let's all agree not to snitch
+    tl: 우리 모두 밀고하지 않기로 해
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+  - text: Luigi, please have my kids
+    tl: 루이지, 내 애를 낳아 줘
+  - text: Freedom sold to the highest bidder
+    tl: 최고가 입찰자에게 팔려 버린 자유가
+  - text: Makes the future taste so bitter
+    tl: 미래를 이토록 쓰게 만들어
+  - text: Fuck the guy who ruined Twitter
+    tl: 트위터를 망친 놈은 엿 먹어
