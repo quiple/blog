@@ -127,7 +127,7 @@ lines:
         pr: 레인보
         time: [28.856, 30.01]
       - text: 'if '
-        pr: 이프
+        pr: 입
         time: [30.01, 30.245]
       - text: 'you '
         pr: 유
@@ -412,7 +412,7 @@ lines:
     time: [90.95, 94.498]
   - words:
       - text: 'If '
-        pr: 이프
+        pr: 입
         time: [94.722, 95.167]
       - text: 'you '
         pr: 유
@@ -730,7 +730,7 @@ lines:
     time: [154.729, 158.213]
   - words:
       - text: 'If '
-        pr: 이프
+        pr: 입
         time: [158.472, 158.917]
       - text: 'you '
         pr: 유
@@ -910,7 +910,7 @@ lines:
     time: [184.721, 188.241]
   - words:
       - text: 'If '
-        pr: 이프
+        pr: 입
         time: [188.468, 188.937]
       - text: 'you '
         pr: 유
