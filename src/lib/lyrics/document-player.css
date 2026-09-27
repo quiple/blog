@@ -15,8 +15,8 @@
   color: var(--muted-foreground);
   opacity: 1;
   line-height: 1.5;
-  margin-block: 0;
-  padding-block: 0 0.15em;
+  margin: 0;
+  padding: 0 0 0.15em;
 }
 .lyric-player .amll-lyric-player [class*='_wordBody'] {
   display: block;

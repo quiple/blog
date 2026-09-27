@@ -131,7 +131,7 @@
             </Button>
           {/each}
           <Button
-            class="justify-self-end"
+            class="ms-auto"
             size="sm"
             variant="outline"
             href={`/lyric/${page.params.musicTitle}/ttml`}
