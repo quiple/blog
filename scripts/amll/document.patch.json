@@ -116,6 +116,16 @@
       "label": "Dots follow animated row edges",
       "before": "\t\tfor (const group of this.currentLyricGroups) group.commitChanges();",
       "after": "\t\tfor (const group of this.currentLyricGroups) group.commitChanges();\n        // The document does not move with the native viewport. Position the dots\n        // between the rendered row edges, while their springs open the gap.\n        const dots = this.interludeDots.getElement();\n        if (this.interlude) {\n            const index = this.interlude.anchorLineIndex;\n            const before = this.currentLyricGroups[index];\n            const after = this.currentLyricGroups[index + 1];\n            if (after) {\n                const bottom = before ? before.posY.getCurrentPosition() + (this.lyricGroupSize.get(before)?.[1] ?? 0) : 0;\n                const top = after.posY.getCurrentPosition();\n                const height = this.layoutState.interludeDotsSize[1];\n                dots.style.translate = `0 ${(top + bottom - height) / 2 - this.interludeDots.posY.getCurrentPosition()}px`;\n                dots.style.visibility = top - bottom + 1 < height + (this.baseFontSize || 24) * 0.8 ? 'hidden' : '';\n            }\n        }\n        else {\n            dots.style.translate = '';\n            dots.style.visibility = '';\n        }"
+    },
+    {
+      "label": "Mixed main/background timing opacity",
+      "before": "\t\tthis.bgLine?.setTransform(bgScale, 1, 0, delay, renderMode);",
+      "after": "\t\tthis.bgLine?.setTransform(bgScale, 1, 0, delay, renderMode);\n        if (this.bgLine && this.mainLine.isLineTimed !== this.bgLine.isLineTimed) {\n            const line = this.mainLine.isLineTimed ? this.mainLine : this.bgLine;\n            line.getElement().style.opacity = 'var(--bright-mask-alpha, .2)';\n        }"
+    },
+    {
+      "label": "Autospace within emphasized CJK words",
+      "before": "\t\tif (this.lineHasRomanWords) {\n\t\t\tconst romanWordEl = document.createElement(\"span\");",
+      "after": "        if (shouldEmphasize && /^(ja|zh)(-|$)/.test(this.lyricLine.lang ?? '')) {\n            for (let i = 1; i < subElements.length; i++) {\n                const before = subElements[i - 1].textContent;\n                const after = subElements[i].textContent;\n                const ideograph = /[\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}]/u;\n                const western = /[\\p{Script=Latin}\\p{Number}]/u;\n                if ((ideograph.test(before) && western.test(after)) || (western.test(before) && ideograph.test(after)))\n                    subElements[i].classList.add('amll-autospace');\n            }\n        }\n\t\tif (this.lineHasRomanWords) {\n\t\t\tconst romanWordEl = document.createElement(\"span\");"
     }
   ]
 }

@@ -64,7 +64,10 @@ export function compareAudio(reference: Float32Array, target: Float32Array) {
         fineIndex = i
       }
     }
-    if (fineScore < 0.35) return
+    // Different masters/codecs can preserve the energy envelope but change phase.
+    // Keep only unique envelope matches; the independent probes below must still
+    // agree within 25 ms. Envelope-only offsets have 10 ms resolution.
+    if (fineScore < 0.35) return {at: start / 100, offset: (bestIndex - start) / 100, score: best}
     return {at: start / 100, offset: (fineIndex - start * hop) / sampleRate, score: fineScore}
   }
   function scan(from: number, to: number) {
@@ -78,7 +81,7 @@ export function compareAudio(reference: Float32Array, target: Float32Array) {
   const cluster = matches
     .map((candidate) => matches.filter((other) => Math.abs(other.offset - candidate.offset) <= 0.025))
     .sort((left, right) => right.length - left.length)[0]
-  if (cluster && cluster.length >= 2) {
+  if (cluster && cluster.length >= 2 && (matches.length < 3 || cluster.length !== matches.length)) {
     const offsets = cluster.map((value) => value.offset).sort((left, right) => left - right)
     const shift = offsets[Math.floor(offsets.length / 2)] * 100
     const from = Math.ceil(Math.max(0, -shift))

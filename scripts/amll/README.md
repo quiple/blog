@@ -41,3 +41,8 @@ Original author: SteveXMH and AMLL contributors. Upstream code in the patch is
 AGPL-3.0-only, like the app; see the repository `LICENSE`. Modifications dated
 2026-09-23. Original implementation was inspected using the installed package's
 `dist/amll-core.mjs.map` sourcesContent. See `tests/lyrics/README.md` for checks.
+
+Mixed line/word-timed background groups apply mask alpha to their unmasked
+line-timed member. Pronunciation margins exclude emphasis glyph padding, and
+emphasized CJK/Latin boundaries receive the 1/8-em space lost when native
+animation splits the text into atomic spans.

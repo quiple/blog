@@ -70,12 +70,10 @@ export function songTTML(song: Song, artists: string[] = []): string {
   )
   const doc = new DOMParser().parseFromString(xml, 'application/xml')
   doc.documentElement!.setAttribute('xml:space', 'preserve')
+  // Untimed paragraphs retain 0/0 for TTML editor compatibility.
   // Keep absolute lyric times: a timed div would offset its children's begin/end.
   for (const element of Array.from(doc.getElementsByTagNameNS(tt, '*'))) {
-    if (
-      element.localName === 'div' ||
-      (element.getAttribute('begin') === '0.000' && element.getAttribute('end') === '0.000')
-    ) {
+    if (element.localName === 'div') {
       element.removeAttribute('begin')
       element.removeAttribute('end')
     }

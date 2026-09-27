@@ -44,3 +44,13 @@ void test('handles a minute-long unrelated intro with equally truncated download
   assert.equal(compareAudio(song, mv).offset, 60.371)
   assert.equal(compareAudio(mv, song).offset, -60.371)
 })
+
+void test('matches independent waveforms with the same unique energy envelope', () => {
+  const shift = 18000
+  // Preserve each sample's energy while scrambling polarity (low PCM correlation).
+  const mastered = Float32Array.from(
+    {length: source.length + shift},
+    (_, i) => (source[i - shift] ?? 0) * (Math.sin(i * 1.234567) > 0 ? 1 : -1),
+  )
+  assert.equal(compareAudio(source, mastered).offset, 4.5)
+})

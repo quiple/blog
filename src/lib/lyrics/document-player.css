@@ -10,12 +10,13 @@
 .lyric-player .amll-lyric-player [class*='_interludeDots'] {
   box-sizing: content-box;
 }
-.lyric-player .amll-lyric-player [class*='_romanWord'] {
+.lyric-player .amll-lyric-player [class*='_lyricMainLine'] [class*='_romanWord'] {
   font-family: var(--font-sans-active);
   color: var(--muted-foreground);
   opacity: 1;
   line-height: 1.5;
-  padding-bottom: 0.15em;
+  margin-block: 0;
+  padding-block: 0 0.15em;
 }
 .lyric-player .amll-lyric-player [class*='_wordBody'] {
   display: block;
@@ -28,4 +29,11 @@
   display: flex;
   flex: 1;
   justify-content: space-around;
+}
+
+/* Atomic emphasis spans interrupt the browser's ideograph/Latin autospace. */
+.lyric-player .amll-lyric-player [class*='_lyricMainLine'] span.amll-autospace::before {
+  content: '';
+  display: inline-block;
+  width: 0.125em;
 }
