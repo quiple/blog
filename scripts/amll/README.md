@@ -9,6 +9,34 @@ in memory, and bundles the DOM export through Vite. `node_modules` is unchanged.
 An AMLL update fails explicitly until this patch has been reviewed for that
 version; do not simply replace the checksum.
 
+The DOM-only entry excludes upstream `bg-render` regions and their Pixi/gl-matrix
+imports under that same checksum guard. Export-only tree-shaking is insufficient:
+those unused renderers have module-level initializers. The native comparison
+entry still loads the unmodified upstream package.
+
+## Optimization audit (2026-09-27)
+
+Measured with `npm run build:fast`, the document-player client chunk decreased
+from 373,310 to 84,331 bytes (gzip: 110,339 to 24,271 bytes). No dependency was
+removed from the manifest. AMLL remains required for its DOM engine; only the
+unused graphics implementation is excluded from this entry. This avoids its
+initialization and code retention, but browser heap savings have not been measured.
+
+The layout patch uses focused replacement hunks instead of duplicating the full
+upstream method; applying it produces byte-identical code to the previous patch.
+Row coordinates reuse AMLL's existing element-to-group WeakMap rather than scan
+all groups. No additional cache or listener is created.
+
+Validation: production build, Svelte/type checks, 10 lyric conversion/export
+tests, and the `/__amll-port` browser regression page (320 native layout comparisons
+plus ruby, playback anchoring, interlude and document-end checks).
+
+Other inspected dependencies are retained: YAML/remark parsing runs at build time
+or on the server, BDF parsing runs in its worker, and interactive components already
+use lazy loading where appropriate. Splitting validation schemas into another file
+did not reduce the client bundle and was not retained. No native API replacement
+is proposed; browser audience targets and heap measurements remain unknown.
+
 ## Scope
 
 Document scrolling requires changing the native layout's common origin, mounting

@@ -23,7 +23,7 @@ export class DocumentLyricPlayer extends DomLyricPlayer {
   }
 
   lineTop(line: HTMLElement) {
-    const group = this.currentLyricGroups.find((group) => group.mainLine.getElement() === line)
+    const group = line.parentElement ? this.lyricGroupElementMap.get(line.parentElement) : undefined
     // Match the next main line's anchor, including its inset inside the group.
     // The native dots themselves sit 0.4em inside the interlude slot.
     const nextLine = this.interlude

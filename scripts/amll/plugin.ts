@@ -29,8 +29,14 @@ export function documentLyrics(): Plugin {
             throw new Error(`AMLL patch mismatch: ${label}`)
           code = code.replace(before, after)
         }
-        // Bundle the DOM export so development also handles AMLL's CommonJS
-        // dependencies. Unused renderer exports are tree-shaken by Vite.
+        // This entry only exposes DOM lyrics. The upstream all-in-one bundle also
+        // initializes unused WebGL/Pixi renderers at module scope, defeating
+        // tree-shaking. Exclude those regions under the SHA guard above.
+        code = code
+          .replace(/^\/\/#region .*bg-render\/[^\n]*\n[\s\S]*?^\/\/#endregion\s*$/gm, '')
+          .replace(/^import .* from "(?:gl-matrix|@pixi\/[^"]+)";\n/gm, '')
+          .replace(/^export \{[^\n]+\};$/m, 'export { DomLyricPlayer };')
+        // Bundle the DOM export so development also handles AMLL's CommonJS dependencies.
         const result = await build({
           configFile: false,
           publicDir: false,
