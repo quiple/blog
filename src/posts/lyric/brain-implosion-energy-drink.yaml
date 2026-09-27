@@ -62,8 +62,8 @@ lines:
     tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
   - text: Eat, sleep, work, repeat 'til the clock runs out
     tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
-  - text: Eat, sleep, work, repeat 'til the clock runs out—
-    tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해—
+  - text: Eat, sleep, work, repeat 'til the clock runs out-
+    tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해-
   - text: 'Comes in the following flavors:'
     tl: '다음과 같은 맛이 있습니다:'
   - text: Overthinking Orange, Socially Anxious Strawberry
@@ -74,8 +74,8 @@ lines:
     tl: 비탄의 포도, 비참한 멜론
   - text: Trauma Tri-Tip, Depression Durian
     tl: 트라우마 트라이팁, 우울증 두리안
-  - text: And our newest flavor, Fu—
-    tl: 그리고 신제품, 푸—
+  - text: And our newest flavor, Fu-
+    tl: 그리고 신제품, 푸-
   - text: Brain implosion energy
     tl: 뇌 내파 에너지
   - text: Ten thousand grams of pure caffeine
