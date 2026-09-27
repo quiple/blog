@@ -35,7 +35,6 @@
         element.setAttribute('aria-hidden', 'true')
         host.append(element)
         player.setAlignPosition(0)
-        player.setEnableBlur(false)
         // Provider timestamps are interpolated below; seek detection is handled there.
         player.setEnableAutoSeekDetection(false)
         player.setOptimizeOptions({
