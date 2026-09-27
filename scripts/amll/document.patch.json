@@ -126,6 +126,11 @@
       "label": "Autospace within emphasized CJK words",
       "before": "\t\tif (this.lineHasRomanWords) {\n\t\t\tconst romanWordEl = document.createElement(\"span\");",
       "after": "        if (shouldEmphasize && /^(ja|zh)(-|$)/.test(this.lyricLine.lang ?? '')) {\n            for (let i = 1; i < subElements.length; i++) {\n                const before = subElements[i - 1].textContent;\n                const after = subElements[i].textContent;\n                const ideograph = /[\\p{Script=Han}\\p{Script=Hiragana}\\p{Script=Katakana}]/u;\n                const western = /[\\p{Script=Latin}\\p{Number}]/u;\n                if ((ideograph.test(before) && western.test(after)) || (western.test(before) && ideograph.test(after)))\n                    subElements[i].classList.add('amll-autospace');\n            }\n        }\n\t\tif (this.lineHasRomanWords) {\n\t\t\tconst romanWordEl = document.createElement(\"span\");"
+    },
+    {
+      "label": "Preserve outgoing mask progress after resize",
+      "before": "\t\tthis.maskAnimator.apply();\n\t\tif (this.isEnabled) {",
+      "after": "\t\tthis.maskAnimator.apply();\n        if (!this.isEnabled) this.maskAnimator.setCurrentTime(clampPositive(this.lyricPlayer.getCurrentTime() - this.lyricLine.startTime), false);\n\t\tif (this.isEnabled) {"
     }
   ]
 }

@@ -81,6 +81,16 @@ export async function compareNative() {
         }
       }
     }
+    // A collapsing background resizes its group during the outgoing color fade.
+    // Rebuilding the mask must not rewind a completed word to its dark side.
+    const outgoing = port.currentLyricGroups[0].mainLine
+    outgoing.updateMaskImageSync()
+    const masks = outgoing
+      .getElement()
+      .getAnimations({subtree: true})
+      .filter((a) => a.id.startsWith('fade-word-'))
+    if (!masks.length || masks.some((a) => Number(a.currentTime) !== Number(a.effect!.getComputedTiming().duration)))
+      throw Error('outgoing mask reset during resize')
     return assertions
   } finally {
     native.dispose()
