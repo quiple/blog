@@ -113,7 +113,9 @@
       observer = new IntersectionObserver(([entry]) => setActive(Boolean(entry?.isIntersecting)), {
         rootMargin: '100% 0px',
       })
-      observer.observe(node)
+      // Observe the stationary clipping box, not the translated image. Otherwise
+      // enabling/disabling parallax changes the observed bounds again.
+      observer.observe(node.parentElement ?? node)
     }
 
     update()
@@ -132,6 +134,7 @@
 
   const revealImage: Action<HTMLImageElement, boolean> = (node, animate) => {
     let cancelled = false
+    const fallback = node.parentElement?.querySelector<HTMLElement>('.hero-image-fallback')
     const releaseLayer = () => node.style.removeProperty('will-change')
 
     const reveal = async () => {
@@ -159,6 +162,9 @@
 
         await nextFrame()
         await Promise.allSettled(node.getAnimations().map((animation) => animation.finished))
+        // The decoded full image now covers the preview. Stop carrying both
+        // full-viewport image surfaces through the parallax animation.
+        if (!cancelled && fallback) fallback.style.visibility = 'hidden'
       } finally {
         releaseLayer()
       }
@@ -168,6 +174,7 @@
     return {
       destroy() {
         cancelled = true
+        if (fallback) fallback.style.removeProperty('visibility')
         releaseLayer()
       },
     }
@@ -493,6 +500,7 @@
   }
   .hero.bg {
     @apply inner-b-border -z-10 h-(--hero-height) w-[calc(100vw-var(--scrollbar-width))] overflow-hidden print:h-[56.25vw];
+    contain: paint;
   }
   .hero.bg.astr {
     @apply bg-primary;
