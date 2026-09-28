@@ -21,9 +21,11 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
     nativePause.call(this)
   }
   let last = 0
+  const layers = new Map<HTMLElement, string>()
   window.__renderAnimations = (time: number) => {
     const delta = time - last
     last = time
+    const floating = new Set<HTMLElement>()
     for (const animation of document.getAnimations()) {
       const known = states.has(animation)
       const running = known ? states.get(animation) : animation.playState === 'running'
@@ -33,6 +35,26 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
       if (running) {
         const end = Number(animation.effect?.getComputedTiming().endTime ?? Infinity)
         animation.currentTime = Math.max(0, Math.min(end, current + (known ? delta : 0) * animation.playbackRate))
+        const target = (animation.effect as KeyframeEffect | null)?.target
+        if (
+          animation.id.includes('float') &&
+          Number(animation.currentTime) > 0 &&
+          (animation.playbackRate < 0 || Number(animation.currentTime) < end) &&
+          target instanceof HTMLElement
+        ) {
+          floating.add(target)
+          if (!layers.has(target)) {
+            layers.set(target, target.style.willChange)
+            // Paused text transforms otherwise rasterize at whole CSS pixels.
+            target.style.willChange = 'transform'
+          }
+        }
+      }
+    }
+    for (const [target, original] of layers) {
+      if (!floating.has(target)) {
+        target.style.willChange = original
+        layers.delete(target)
       }
     }
   }

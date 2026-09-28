@@ -311,30 +311,38 @@ async function main() {
         )
         await page.clock.runFor(Math.round(time) - Math.round(((i - 1) * 1000) / fps))
       }
-      await page.evaluate((time) => window.__renderAnimations(time), time)
-      if (i < warmupFrames) continue
-      await withTimeout(
-        page.evaluate(async (time) => {
-          const video = document.querySelector<HTMLVideoElement>('[data-render-mv]')!
-          if (Math.abs(video.currentTime - time / 1000) < 0.0001 && video.readyState >= 2) return
-          await new Promise<void>((resolve, reject) => {
-            const cleanup = () => {
-              video.removeEventListener('seeked', done)
-              video.removeEventListener('error', fail)
-            }
-            const done = () => {
-              cleanup()
-              resolve()
-            }
-            const fail = () => {
-              cleanup()
-              reject(Error('MV 탐색 실패'))
-            }
-            video.addEventListener('seeked', done, {once: true})
-            video.addEventListener('error', fail, {once: true})
-            video.currentTime = time / 1000
-          })
-        }, time),
+      if (i < warmupFrames) {
+        await page.evaluate((time) => window.__renderAnimations(time), time)
+        continue
+      }
+      const clip = await withTimeout(
+        page.evaluate(
+          async ({time, region}) => {
+            window.__renderAnimations(time)
+            const clip = {...region, x: region.x + scrollX, y: region.y + scrollY, scale: 1}
+            const video = document.querySelector<HTMLVideoElement>('[data-render-mv]')!
+            if (Math.abs(video.currentTime - time / 1000) < 0.0001 && video.readyState >= 2) return clip
+            await new Promise<void>((resolve, reject) => {
+              const cleanup = () => {
+                video.removeEventListener('seeked', done)
+                video.removeEventListener('error', fail)
+              }
+              const done = () => {
+                cleanup()
+                resolve()
+              }
+              const fail = () => {
+                cleanup()
+                reject(Error('MV 탐색 실패'))
+              }
+              video.addEventListener('seeked', done, {once: true})
+              video.addEventListener('error', fail, {once: true})
+              video.currentTime = time / 1000
+            })
+            return clip
+          },
+          {time, region: crop},
+        ),
         'MV 프레임 탐색 시간이 초과됐습니다.',
       )
       // The page clock and media seek have already settled this frame. Avoid
@@ -344,10 +352,7 @@ async function main() {
         captureBeyondViewport: false,
         fromSurface: true,
         optimizeForSpeed: true,
-        clip: await page.evaluate(
-          (region) => ({...region, x: region.x + scrollX, y: region.y + scrollY, scale: 1}),
-          crop,
-        ),
+        clip,
       })
       const image = Buffer.from(data, 'base64')
       if (image.readUInt32BE(16) !== width || image.readUInt32BE(20) !== height)

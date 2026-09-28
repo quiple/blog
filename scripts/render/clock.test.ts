@@ -131,3 +131,43 @@ test('export frame centers left metadata and preserves the normal auto-scroll ta
     await browser.close()
   }
 })
+
+test('captured floating syllables retain subpixel motion and release their layer', async () => {
+  const browser = await chromium.launch({headless: true})
+  try {
+    const page = await browser.newPage({viewport: {width: 400, height: 200}})
+    await page.route('http://render.test/', (route) =>
+      route.fulfill({contentType: 'text/html', body: '<div id="word" style="font-size:60px;color:red">TEST</div>'}),
+    )
+    await page.addInitScript(installRenderClock, {mediaUrl: '', duration: 10000, font: 'theme'})
+    await page.goto('http://render.test/')
+    await page.evaluate(() => {
+      const animation = document
+        .querySelector('#word')!
+        .animate([{transform: 'translateY(0px)'}, {transform: 'translateY(-3px)'}], {
+          duration: 1000,
+          fill: 'both',
+          id: 'float-word',
+        })
+      animation.currentTime = 0
+      animation.play()
+      window.__renderAnimations(0)
+    })
+    const capture = await page.context().newCDPSession(page)
+    const images = new Set<string>()
+    for (let i = 1; i <= 20; i++) {
+      await page.evaluate((time) => window.__renderAnimations(time), (i * 1000) / 60)
+      const {data} = await capture.send('Page.captureScreenshot', {format: 'png', optimizeForSpeed: true})
+      images.add(data)
+    }
+    // Without a compositor layer, these 20 frames contain just two positions.
+    assert.ok(images.size >= 12, 'Subpixel movement must survive rasterization')
+    const restored = await page.evaluate(() => {
+      window.__renderAnimations(1000)
+      return (document.querySelector('#word') as HTMLElement).style.willChange
+    })
+    assert.equal(restored, '')
+  } finally {
+    await browser.close()
+  }
+})
