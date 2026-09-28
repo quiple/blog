@@ -1,6 +1,7 @@
 <script lang="ts">
   import type {Artist} from '$lib/lyrics/artists.server'
-  import {onMount} from 'svelte'
+  import {onMount, tick} from 'svelte'
+  import {lyricRender, type LyricRender} from '$lib/lyrics/render'
   import {page} from '$app/state'
   import DownloadIcon from '@lucide/svelte/icons/download'
   import {Button} from '$lib/components/ui/button'
@@ -28,6 +29,7 @@
 
   let {song, sources, artists}: {song: Song; sources: Source[]; artists: Artist[]} = $props()
   let selected = $state<SourceKey | undefined>()
+  let rendering = $state.raw<LyricRender>()
   const source = $derived(sources.find((item) => item.key === selected) ?? sources[0])
   const pronunciations = $derived(lyricLanguages(song.lines, 'pronunciation'))
   let pronunciation = $state('')
@@ -57,7 +59,19 @@
   const animated = $derived(mounted && canSync && !fullText && !failed)
   const offset = $derived(source ? sourceOffset(song, source.key) : 0)
   onMount(() => {
+    rendering = lyricRender()
+    if (rendering) {
+      selected = 'youtubeMV'
+      durations = {youtubeMV: rendering.duration}
+      rendering.setPlayback = async (position, playing) => {
+        sample = {position, playing, duration: rendering!.duration, sampledAt: performance.now()}
+        await tick()
+      }
+    }
     mounted = true
+    return () => {
+      if (rendering) delete rendering.setPlayback
+    }
   })
 
   function currentLyricTime() {
@@ -143,20 +157,31 @@
         </div>
       {/if}
       <div>
-        {#key source.key}
-          {@const activeSource = source}
-          <MusicEmbed
-            source={activeSource}
-            {request}
-            onplayback={(value) => recordPlayback(activeSource.key, value)}
-            onseekready={(value) => {
-              if (source?.key === activeSource.key) seek = value
-            }}
-            onunavailable={(value) => {
-              if (source?.key === activeSource.key) mediaFailed = value
-            }}
-          />
-        {/key}
+        {#if rendering}
+          <div class="relative overflow-hidden rounded-[.75rem] shadow-xs inner-border">
+            <video
+              data-render-mv
+              src={rendering.mediaUrl}
+              muted
+              playsinline
+              preload="auto"
+              class="block aspect-video min-h-50 w-full bg-black object-contain"
+            ></video>
+          </div>
+        {:else}{#key source.key}
+            {@const activeSource = source}
+            <MusicEmbed
+              source={activeSource}
+              {request}
+              onplayback={(value) => recordPlayback(activeSource.key, value)}
+              onseekready={(value) => {
+                if (source?.key === activeSource.key) seek = value
+              }}
+              onunavailable={(value) => {
+                if (source?.key === activeSource.key) mediaFailed = value
+              }}
+            />
+          {/key}{/if}
       </div>
     {/if}
     <h1

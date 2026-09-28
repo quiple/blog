@@ -26,7 +26,8 @@
     "obfuscate-fonts": "node scripts/obfuscate-fonts.ts",
     "pron": "node pron.ts",
     "conv": "node conv.ts",
-    "ttml": "node ttml.ts"
+    "ttml": "node ttml.ts",
+    "render": "node render.ts"
   },
   "devDependencies": {
     "@applemusic-like-lyrics/ttml": "1.0.1",
@@ -49,6 +50,7 @@
     "oxfmt": "^0.70.0",
     "oxlint": "^1.85.0",
     "oxlint-tsgolint": "^7.0.2003",
+    "playwright": "^1.63.0",
     "rehype-external-links": "^3.0.0",
     "rehype-stringify": "^10.0.1",
     "remark": "^15.0.1",

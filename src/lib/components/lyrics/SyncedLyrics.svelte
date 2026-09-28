@@ -2,6 +2,7 @@
   import {onMount, untrack} from 'svelte'
   import type {LocalizedLyricLine} from '$lib/lyrics/model'
   import {playbackTime, type Playback} from '$lib/lyrics/players'
+  import {lyricRender} from '$lib/lyrics/render'
   let {
     lines,
     sample,
@@ -35,6 +36,7 @@
         element.setAttribute('aria-hidden', 'true')
         host.append(element)
         player.setAlignPosition(0)
+        if (lyricRender()) player.setEnableBlur(false)
         // Provider timestamps are interpolated below; seek detection is handled there.
         player.setEnableAutoSeekDetection(false)
         player.setOptimizeOptions({
@@ -60,7 +62,7 @@
         let padding = 0,
           spacingVersion = -1,
           spacingDirty = true
-        const inset = () => Math.max(96, innerHeight * 0.18)
+        const inset = () => lyricRender()?.anchorY ?? Math.max(96, innerHeight * 0.18)
         // Preserve the requested 200ms lead for line transitions.
         const time = () => Math.max(0, playbackTime(sample, performance.now()) - offset + 200)
         const release = () => {
@@ -117,7 +119,10 @@
             if (active !== followed || Math.abs(target - followedTop) > 0.5) {
               followed = active
               followedTop = target
-              window.scrollTo({top: Math.max(0, target - inset()), behavior: motion.matches ? 'instant' : 'smooth'})
+              window.scrollTo({
+                top: Math.max(0, target - inset()),
+                behavior: motion.matches ? 'instant' : 'smooth',
+              })
             }
           }
           if (sample.playing || now < settleUntil) frame = requestAnimationFrame(draw)
@@ -205,7 +210,10 @@
         changeMotion()
         sync()
         void document.fonts.ready.then(() => {
-          if (!disposed) player.refreshMasks()
+          if (!disposed) {
+            player.refreshMasks()
+            host.dataset.ready = 'true'
+          }
         })
         cleanup = () => {
           cancelAnimationFrame(frame)
