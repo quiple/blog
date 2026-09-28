@@ -30,7 +30,10 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
       if (!known) states.set(animation, !!running)
       const current = known ? Number(animation.currentTime ?? 0) : 0
       nativePause.call(animation)
-      if (running) animation.currentTime = current + (known ? delta : 0)
+      if (running) {
+        const end = Number(animation.effect?.getComputedTiming().endTime ?? Infinity)
+        animation.currentTime = Math.max(0, Math.min(end, current + (known ? delta : 0) * animation.playbackRate))
+      }
     }
   }
 

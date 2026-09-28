@@ -53,6 +53,45 @@ test('export clock advances animation, respects AMLL pause and keeps scrolling o
   }
 })
 
+test('AMLL float animation reverses smoothly after reaching its end', async () => {
+  const browser = await chromium.launch({headless: true})
+  try {
+    const page = await browser.newPage()
+    await page.route('http://render.test/', (route) =>
+      route.fulfill({contentType: 'text/html', body: '<div id="word">text</div>'}),
+    )
+    await page.addInitScript(installRenderClock, {mediaUrl: 'test.mp4', duration: 10000, font: 'theme'})
+    await page.goto('http://render.test/')
+    const samples = await page.evaluate(() => {
+      const word = document.querySelector('#word')!
+      const animation = word.animate([{transform: 'translateY(0px)'}, {transform: 'translateY(-10px)'}], {
+        duration: 1000,
+        fill: 'both',
+        easing: 'linear',
+      })
+      animation.currentTime = 0
+      animation.play()
+      window.__renderAnimations(0)
+      window.__renderAnimations(1500)
+      const end = Number(animation.currentTime)
+      animation.playbackRate = -1
+      animation.play()
+      const positions: number[] = []
+      for (let i = 1; i <= 60; i++) {
+        window.__renderAnimations(1500 + (i * 1000) / 60)
+        positions.push(new DOMMatrix(getComputedStyle(word).transform).m42)
+      }
+      return {end, positions}
+    })
+    assert.equal(samples.end, 1000)
+    samples.positions.forEach((position, index) => {
+      assert.ok(Math.abs(position - (-10 + (index + 1) / 6)) < 0.01)
+    })
+  } finally {
+    await browser.close()
+  }
+})
+
 test('export frame centers left metadata and preserves the normal auto-scroll target relative to the video', async () => {
   const browser = await chromium.launch({headless: true})
   try {
