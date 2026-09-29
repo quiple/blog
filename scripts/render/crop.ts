@@ -8,9 +8,9 @@ export function prepareRenderFrame() {
   grid.style.maxWidth = 'none'
   grid.style.width = '1792px'
   const host = document.querySelector<HTMLElement>('.lyric-player')!
-  host.style.setProperty('--amll-lp-font-size', '3.75rem')
+  host.style.setProperty('--amll-lp-font-size', '4.375rem')
   for (const text of aside.querySelectorAll<HTMLElement>(':scope > h1, :scope > p, :scope > .mt-3')) {
-    text.style.fontSize = `${parseFloat(getComputedStyle(text).fontSize) * 1.5}px`
+    text.style.fontSize = `${parseFloat(getComputedStyle(text).fontSize) * 1.75}px`
   }
   const embed = video.getBoundingClientRect()
   const crop = {x: embed.x - 64, y: embed.y - 12, width: 1920, height: 1080}
