@@ -92,7 +92,7 @@ test('AMLL float animation reverses smoothly after reaching its end', async () =
   }
 })
 
-test('export frame centers left metadata and preserves the normal auto-scroll target relative to the video', async () => {
+test('export frame centers left metadata and a two-line lyric against the video', async () => {
   const browser = await chromium.launch({headless: true})
   try {
     const page = await browser.newPage({viewport: {width: 1920, height: 1200}})
@@ -101,7 +101,7 @@ test('export frame centers left metadata and preserves the normal auto-scroll ta
         contentType: 'text/html',
         body: `
       <style>body{margin:0;padding:84px 24px}#grid{max-width:1600px;margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:24px}
-      [data-render-mv]{width:100%;aspect-ratio:16/9}.lyric-player{padding-left:40px}.lyricMainLine{height:120px}</style>
+      [data-render-mv]{width:100%;aspect-ratio:16/9}.lyric-player{padding-left:40px}.lyricMainLine{font-size:var(--amll-lp-font-size);line-height:1.2;height:2lh}</style>
       <div id="grid"><aside><div aria-label="음악 소스 선택" style="height:28px;margin-bottom:12px"></div><div data-render-mv></div><div style="height:140px">Title / year / artist</div></aside>
       <div class="lyric-player"><div class="lyricMainLine">text</div></div></div>`,
       }),
@@ -115,7 +115,7 @@ test('export frame centers left metadata and preserves the normal auto-scroll ta
       return {
         videoX: video.x,
         blockCenter: (video.y + document.querySelector('aside')!.getBoundingClientRect().bottom) / 2,
-        topDifference: line.top - video.top,
+        centerDifference: line.top + line.height / 2 - (video.top + video.height / 2),
         lineTop: line.top,
         anchor: window.__lyricRender!.anchorY,
         theme: localStorage.getItem('mode-watcher-mode'),
@@ -124,8 +124,7 @@ test('export frame centers left metadata and preserves the normal auto-scroll ta
     assert.equal(rects.theme, 'dark')
     assert.equal(rects.videoX - crop.x, 64)
     assert.ok(Math.abs(rects.blockCenter - crop.y - 540) < 0.1)
-    // Normal auto-scroll targets y=216 (18% of 1200), with the embed at y=124.
-    assert.ok(Math.abs(rects.topDifference - 92) < 0.1)
+    assert.ok(Math.abs(rects.centerDifference) < 0.1)
     assert.ok(Math.abs(rects.lineTop - rects.anchor!) < 0.1)
   } finally {
     await browser.close()

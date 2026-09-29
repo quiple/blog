@@ -23,8 +23,9 @@ export function prepareRenderFrame() {
   if (controls) controls.style.visibility = 'hidden'
   const first = host.querySelector<HTMLElement>('[class*="lyricMainLine"]')!
   const rect = first.getBoundingClientRect()
-  // Match SyncedLyrics' normal auto-scroll target, not the first unscrolled row.
-  const anchor = Math.max(96, innerHeight * 0.18) + shift
+  // Use a fixed two-line reference so the anchor does not jump with line wrapping.
+  const lineHeight = parseFloat(getComputedStyle(first).lineHeight)
+  const anchor = embed.y + shift + embed.height / 2 - lineHeight
   window.__lyricRender!.anchorY = anchor
   host.style.paddingTop = `${Math.max(0, anchor - rect.top)}px`
   return crop
