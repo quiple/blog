@@ -103,7 +103,7 @@ test('export frame centers left metadata and a two-line lyric against the video'
       <style>body{margin:0;padding:84px 24px}#grid{max-width:1600px;margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:24px}
       [data-render-mv]{width:100%;aspect-ratio:16/9}.lyric-player{padding-left:40px}.lyricMainLine{font-size:var(--amll-lp-font-size);line-height:1.2;height:2lh}</style>
       <div id="grid"><aside><div aria-label="음악 소스 선택" style="height:28px;margin-bottom:12px"></div><div data-render-mv></div><div style="height:140px">Title / year / artist</div></aside>
-      <div class="lyric-player"><div class="lyricMainLine">text</div></div></div>`,
+      <div class="lyric-player"><div class="lyricLine"><div class="lyricMainLine">text</div></div></div></div>`,
       }),
     )
     await page.addInitScript(installRenderClock, {mediaUrl: 'test.mp4', duration: 10000, font: 'theme'})
@@ -117,7 +117,7 @@ test('export frame centers left metadata and a two-line lyric against the video'
         blockCenter: (video.y + document.querySelector('aside')!.getBoundingClientRect().bottom) / 2,
         centerDifference: line.top + line.height / 2 - (video.top + video.height / 2),
         lineTop: line.top,
-        anchor: window.__lyricRender!.anchorY,
+        anchor: window.__lyricRender!.anchorY!(document.querySelector<HTMLElement>('.lyricLine')!),
         theme: localStorage.getItem('mode-watcher-mode'),
       }
     })

@@ -2,7 +2,7 @@
 export interface LyricRender {
   mediaUrl: string
   duration: number
-  anchorY?: number
+  anchorY?: (line: HTMLElement) => number
   setPlayback?: (position: number, playing: boolean) => Promise<void>
 }
 

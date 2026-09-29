@@ -22,11 +22,11 @@ export function prepareRenderFrame() {
   const controls = aside.querySelector<HTMLElement>('[aria-label="음악 소스 선택"]')
   if (controls) controls.style.visibility = 'hidden'
   const first = host.querySelector<HTMLElement>('[class*="lyricMainLine"]')!
-  const rect = first.getBoundingClientRect()
-  // Use a fixed two-line reference so the anchor does not jump with line wrapping.
-  const lineHeight = parseFloat(getComputedStyle(first).lineHeight)
-  const anchor = embed.y + shift + embed.height / 2 - lineHeight
+  // Center the actual active line, including its pronunciation and translation.
+  // offsetHeight excludes AMLL's animated scale and keeps the scroll target stable.
+  const anchor = (line: HTMLElement) => embed.y + shift + embed.height / 2 - line.offsetHeight / 2
   window.__lyricRender!.anchorY = anchor
-  host.style.paddingTop = `${Math.max(0, anchor - rect.top)}px`
+  const firstLine = first.parentElement!
+  host.style.paddingTop = `${Math.max(0, anchor(firstLine) - firstLine.getBoundingClientRect().top)}px`
   return crop
 }

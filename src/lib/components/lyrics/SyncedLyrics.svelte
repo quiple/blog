@@ -62,7 +62,7 @@
         let padding = 0,
           spacingVersion = -1,
           spacingDirty = true
-        const inset = () => lyricRender()?.anchorY ?? Math.max(96, innerHeight * 0.18)
+        const inset = (line: HTMLElement) => lyricRender()?.anchorY?.(line) ?? Math.max(96, innerHeight * 0.18)
         // Preserve the requested 200ms lead for line transitions.
         const time = () => Math.max(0, playbackTime(sample, performance.now()) - offset + 200)
         const release = () => {
@@ -97,7 +97,7 @@
               const next = Math.max(
                 0,
                 Math.round(
-                  padding + player.lineTop(last) - inset() + innerHeight - document.documentElement.scrollHeight,
+                  padding + player.lineTop(last) - inset(last) + innerHeight - document.documentElement.scrollHeight,
                 ),
               )
               if (next !== padding) {
@@ -115,12 +115,12 @@
               window.scrollTo({top: target, behavior: 'instant'})
             }
           } else if (sample.playing && active && now >= userUntil) {
-            const target = player.lineTop(active)
+            const target = player.lineTop(active) - inset(active)
             if (active !== followed || Math.abs(target - followedTop) > 0.5) {
               followed = active
               followedTop = target
               window.scrollTo({
-                top: Math.max(0, target - inset()),
+                top: Math.max(0, target),
                 behavior: motion.matches ? 'instant' : 'smooth',
               })
             }
