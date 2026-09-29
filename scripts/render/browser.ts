@@ -22,6 +22,59 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
   }
   let last = 0
   const layers = new Map<HTMLElement, string>()
+  const glyphs = new Map<HTMLElement, {canvas: HTMLCanvasElement; restore: () => void}>()
+  const cacheGlyph = (target: HTMLElement) => {
+    if (glyphs.has(target) || target.childElementCount || !target.textContent) return
+    const style = getComputedStyle(target)
+    // Variable-font settings can make the computed `font` shorthand empty.
+    const font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')!
+    ctx.font = font
+    const metrics = ctx.measureText(target.textContent)
+    const height = parseFloat(style.lineHeight) || metrics.fontBoundingBoxAscent + metrics.fontBoundingBoxDescent
+    const pad = Math.ceil(parseFloat(style.fontSize) / 4)
+    const width = metrics.width + pad * 2
+    const bitmapHeight = height + pad * 2
+    // Rasterize only this glyph once. The frame itself stays at output resolution.
+    canvas.width = Math.ceil(width * 2)
+    canvas.height = Math.ceil(bitmapHeight * 2)
+    ctx.scale(2, 2)
+    ctx.font = font
+    ctx.fillStyle = style.color
+    ctx.fillText(
+      target.textContent,
+      pad,
+      pad +
+        (height - metrics.fontBoundingBoxAscent - metrics.fontBoundingBoxDescent) / 2 +
+        metrics.fontBoundingBoxAscent,
+    )
+    Object.assign(canvas.style, {
+      position: 'absolute',
+      left: `${parseFloat(style.paddingLeft) - pad}px`,
+      top: `${parseFloat(style.paddingTop) - pad}px`,
+      width: `${width}px`,
+      height: `${bitmapHeight}px`,
+      pointerEvents: 'none',
+    })
+    canvas.setAttribute('aria-hidden', 'true')
+    const text = target.firstChild!
+    const spacer = document.createElement('span')
+    spacer.style.visibility = 'hidden'
+    text.replaceWith(spacer)
+    spacer.append(text)
+    const position = target.style.position
+    target.style.position = 'relative'
+    target.append(canvas)
+    glyphs.set(target, {
+      canvas,
+      restore: () => {
+        spacer.replaceWith(text)
+        canvas.remove()
+        target.style.position = position
+      },
+    })
+  }
   window.__renderAnimations = (time: number) => {
     const delta = time - last
     last = time
@@ -37,6 +90,13 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
         animation.currentTime = Math.max(0, Math.min(end, current + (known ? delta : 0) * animation.playbackRate))
         const target = (animation.effect as KeyframeEffect | null)?.target
         if (
+          animation.id.startsWith('emphasize-word-') &&
+          !animation.id.includes('float') &&
+          Number(animation.currentTime) < end &&
+          target instanceof HTMLElement
+        )
+          cacheGlyph(target)
+        if (
           animation.id.includes('float') &&
           Number(animation.currentTime) > 0 &&
           (animation.playbackRate < 0 || Number(animation.currentTime) < end) &&
@@ -51,8 +111,23 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
         }
       }
     }
+    for (const [target, glyph] of glyphs) {
+      // Keep the same raster after the motion ends. Switching back to DOM text
+      // changes font rasterization/baseline at the final frame and causes a jump.
+      if (!target.isConnected) {
+        glyph.restore()
+        glyphs.delete(target)
+        continue
+      }
+      // Canvas pixels do not receive text-shadow. Match AMLL's single glow with
+      // a drop shadow (its blur uses sigma, half the text-shadow blur radius).
+      const shadow = getComputedStyle(target).textShadow.match(/^(.*?) (-?[\d.]+)px (-?[\d.]+)px ([\d.]+)px$/)
+      glyph.canvas.style.filter = shadow
+        ? `drop-shadow(${shadow[2]}px ${shadow[3]}px ${Number(shadow[4]) / 2}px ${shadow[1]})`
+        : 'none'
+    }
     for (const [target, original] of layers) {
-      if (!floating.has(target)) {
+      if (!floating.has(target) && !glyphs.has(target)) {
         target.style.willChange = original
         layers.delete(target)
       }

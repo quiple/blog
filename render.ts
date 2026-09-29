@@ -35,13 +35,13 @@ const help = `가사 페이지와 YouTube MV를 MP4로 렌더링
 
 --width 1920 --height 1080 --fps 60   출력 크기·프레임 수
 --font theme|system                 기본 theme
---raster-scale 1|2                  기본 2, 1은 빠른 렌더링
 --start 초 --seconds 초             테스트 구간 (기본 MV 전체)
 --file 경로                        다운로드 대신 동일한 MV 파일 사용
 --output 경로                      기본 renders/<슬러그>.mp4
 --force                            기존 출력 덮어쓰기
 필수: ffmpeg, ffprobe, yt-dlp, nub exec playwright install chromium --only-shell
-가사/오프셋/테마는 앱 그대로, MV 선택, 블러 해제. 오디오는 MV에서 가져옵니다.`
+가사/오프셋은 앱 그대로, MV 선택, 비활성 행 블러 해제. 오디오는 MV에서 가져옵니다.
+출력 해상도로 프레임당 한 번 캡처합니다.`
 
 async function main() {
   const {values, positionals} = parseArgs({
@@ -51,7 +51,6 @@ async function main() {
       height: {type: 'string'},
       fps: {type: 'string'},
       font: {type: 'string'},
-      'raster-scale': {type: 'string'},
       start: {type: 'string'},
       seconds: {type: 'string'},
       file: {type: 'string'},
@@ -71,10 +70,6 @@ async function main() {
     throw Error('크기는 320~3840 사이 짝수여야 합니다.')
   if (!Number.isInteger(fps) || fps < 24 || fps > 60) throw Error('fps는 24~60 사이 정수여야 합니다.')
   if (width * 9 !== height * 16) throw Error('출력 크기는 16:9여야 합니다.')
-  const rasterScale = Number(values['raster-scale'] ?? 2)
-  if (![1, 2].includes(rasterScale)) throw Error('raster-scale은 1 또는 2여야 합니다.')
-  const rasterWidth = width * rasterScale,
-    rasterHeight = height * rasterScale
   const font = values.font ?? 'theme',
     start = Number(values.start ?? 0)
   if (!['theme', 'system'].includes(font)) throw Error('font 옵션을 확인하세요.')
@@ -245,7 +240,7 @@ async function main() {
     await page.clock.pauseAt((await page.evaluate(() => Date.now())) + 100)
     const crop = await page.evaluate(prepareRenderFrame)
     await page.clock.runFor(100)
-    console.log(`캡처: ${rasterWidth}×${rasterHeight} → ${width}×${height} · 다크 모드 · 중앙 정렬`)
+    console.log(`캡처: ${width}×${height} · 다크 모드 · 중앙 정렬`)
     await page.mouse.move(0, 0)
     await page.evaluate(async () => {
       window.__renderAnimations(0)
@@ -253,12 +248,10 @@ async function main() {
     })
     const capture = await page.context().newCDPSession(page)
     {
-      // Supersample glyph rasterization while keeping CSS layout unchanged.
-      // Downsample before encoding, so animated font hinting moves less than
-      // one output pixel instead of visibly snapping during scale/glow effects.
+      // Capture directly at the requested output resolution.
       await capture.send('Emulation.setDeviceMetricsOverride', {
         ...viewport,
-        deviceScaleFactor: rasterWidth / crop.width,
+        deviceScaleFactor: width / crop.width,
         mobile: false,
       })
     }
@@ -278,7 +271,6 @@ async function main() {
         '-i',
         '-',
         '-an',
-        ...(rasterScale === 1 ? [] : ['-vf', `scale=${width}:${height}:flags=lanczos`]),
         '-c:v',
         'libx264',
         '-preset',
@@ -307,18 +299,18 @@ async function main() {
     const frames = Math.ceil(seconds * fps),
       warmupFrames = Math.floor(start * fps)
     console.log(`${width}×${height}, ${fps}fps · ${frames}프레임 렌더링 중…`)
+    let previousTime = 0
     for (let i = 0; i < warmupFrames + frames; i++) {
       abort.signal.throwIfAborted()
+      const outputSample = i - warmupFrames
       const time = (i * 1000) / fps
       if (i > 0) {
-        await page.evaluate(
-          async (position) => {
-            await window.__lyricRender!.setPlayback!(position, true)
-          },
-          ((i - 1) * 1000) / fps,
-        )
-        await page.clock.runFor(Math.round(time) - Math.round(((i - 1) * 1000) / fps))
+        await page.evaluate(async (position) => {
+          await window.__lyricRender!.setPlayback!(position, true)
+        }, previousTime)
+        await page.clock.runFor(Math.round(time) - Math.round(previousTime))
       }
+      previousTime = time
       if (i < warmupFrames) {
         await page.evaluate((time) => window.__renderAnimations(time), time)
         continue
@@ -363,15 +355,14 @@ async function main() {
         clip,
       })
       const image = Buffer.from(data, 'base64')
-      if (image.readUInt32BE(16) !== rasterWidth || image.readUInt32BE(20) !== rasterHeight)
+      if (image.readUInt32BE(16) !== width || image.readUInt32BE(20) !== height)
         throw Error('캡처 프레임 해상도가 출력 설정과 일치하지 않습니다.')
       if (encoder.exitCode !== null) {
         await encoding
         throw Error('인코더가 일찍 종료되었습니다.')
       }
       if (!encoder.stdin!.write(image)) await once(encoder.stdin!, 'drain')
-      if ((i - warmupFrames) % (fps * 5) === 0)
-        console.log(`${Math.floor((i - warmupFrames) / fps)} / ${seconds.toFixed(1)}초`)
+      if (outputSample % (fps * 5) === 0) console.log(`${Math.floor(outputSample / fps)} / ${seconds.toFixed(1)}초`)
       if (errors.length) throw Error(errors.join('\n'))
     }
     encoder.stdin!.end()

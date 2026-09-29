@@ -171,3 +171,88 @@ test('captured floating syllables retain subpixel motion and release their layer
     await browser.close()
   }
 })
+
+test('scaling glyphs keep their raster through return and completion, releasing it on removal', async () => {
+  const browser = await chromium.launch({headless: true})
+  try {
+    const page = await browser.newPage({viewport: {width: 320, height: 240}})
+    await page.route('http://render.test/', (route) =>
+      route.fulfill({
+        contentType: 'text/html',
+        body: '<meta charset="utf-8"><style>body{margin:0;background:black}#word{display:inline-block;padding:1em;font:60px/1.2 sans-serif;font-feature-settings:"kern";color:red}</style><span id="word">失</span>',
+      }),
+    )
+    await page.addInitScript(installRenderClock, {mediaUrl: '', duration: 10000, font: 'theme'})
+    await page.goto('http://render.test/')
+    const size = await page.evaluate(() => {
+      const word = document.querySelector<HTMLElement>('#word')!
+      const size = [word.offsetWidth, word.offsetHeight]
+      const glow = word.animate(
+        [
+          {transform: 'scale(1)', textShadow: '0 0 2px rgba(255,255,255,0)'},
+          {transform: 'scale(1.1)', textShadow: '0 0 2px rgba(255,255,255,0.2)'},
+          {transform: 'scale(1)', textShadow: '0 0 2px rgba(255,255,255,0)'},
+        ],
+        {duration: 1000, fill: 'both', id: 'emphasize-word-失-0'},
+      )
+      const float = word.animate(
+        [{transform: 'translateY(0)'}, {transform: 'translateY(-3px)'}, {transform: 'translateY(0)'}],
+        {
+          duration: 1000,
+          fill: 'both',
+          composite: 'add',
+          id: 'emphasize-word-float',
+        },
+      )
+      for (const animation of [glow, float]) {
+        animation.currentTime = 0
+        animation.play()
+      }
+      window.__renderAnimations(0)
+      return size
+    })
+    const capture = await page.context().newCDPSession(page)
+    const centers: number[] = []
+    for (let i = 1; i <= 65; i++) {
+      await page.evaluate((t) => window.__renderAnimations(t), (i * 1000) / 60)
+      const {data} = await capture.send('Page.captureScreenshot', {format: 'png'})
+      centers.push(
+        await page.evaluate(async (data) => {
+          const image = await createImageBitmap(await (await fetch(`data:image/png;base64,${data}`)).blob())
+          const canvas = document.createElement('canvas')
+          canvas.width = image.width
+          canvas.height = image.height
+          const ctx = canvas.getContext('2d')!
+          ctx.drawImage(image, 0, 0)
+          image.close()
+          const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height).data
+          let sum = 0,
+            y = 0
+          for (let p = 0; p < pixels.length; p += 4) {
+            const weight = Math.max(0, pixels[p] - pixels[p + 1])
+            sum += weight
+            y += Math.floor(p / 4 / canvas.width) * weight
+          }
+          return y / sum
+        }, data),
+      )
+    }
+    for (let i = 1; i < centers.length; i++) assert.ok(Math.abs(centers[i] - centers[i - 1]) < 0.3)
+    assert.equal(await page.locator('#word canvas').count(), 1)
+    // An empty computed font shorthand must not silently fall back to 10px.
+    assert.ok(await page.locator('#word canvas').evaluate((el) => (el as HTMLCanvasElement).width > 120))
+    assert.deepEqual(
+      await page.locator('#word').evaluate((el) => [(el as HTMLElement).offsetWidth, (el as HTMLElement).offsetHeight]),
+      size,
+    )
+    const detached = await page.locator('#word').evaluateHandle((el) => {
+      el.remove()
+      return el
+    })
+    await page.evaluate(() => window.__renderAnimations(1100))
+    assert.equal(await detached.evaluate((el) => el.querySelectorAll('canvas').length), 0)
+    assert.equal(await detached.evaluate((el) => el.textContent), '失')
+  } finally {
+    await browser.close()
+  }
+})
