@@ -1,6 +1,7 @@
 import {error} from '@sveltejs/kit'
 import {dev} from '$app/env'
 import {INTERNAL_IMAGE_SECRET} from '$app/env/private'
+import {env} from 'cloudflare:workers'
 import type {RequestHandler} from './$types'
 
 const MIME_TYPES: Record<string, string> = {
@@ -18,7 +19,7 @@ function getMimeType(path: string): string {
   return MIME_TYPES[ext] ?? 'application/octet-stream'
 }
 
-export const GET: RequestHandler = async ({params, platform}) => {
+export const GET: RequestHandler = async ({params}) => {
   const path = `img/${params.path}`
 
   if (dev) {
@@ -44,7 +45,7 @@ export const GET: RequestHandler = async ({params, platform}) => {
   }
 
   // 프로덕션 환경: Cloudflare R2에서 서빙
-  const bucket = platform?.env.R2
+  const bucket = env.R2
   if (!bucket) {
     error(500, 'R2 bucket not available')
   }
