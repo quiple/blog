@@ -35,6 +35,14 @@ export class DocumentLyricPlayer extends DomLyricPlayer {
     return this.getElement().getBoundingClientRect().top + window.scrollY + top
   }
 
+  alignmentLine(line: HTMLElement) {
+    // The interlude's document position uses the next line's inset, so its
+    // export alignment must use that same line rather than the tiny dots box.
+    return this.interlude && line === this.interludeDots.getElement()
+      ? (this.currentLyricGroups[this.interlude.anchorLineIndex + 1]?.mainLine.getElement() ?? line)
+      : line
+  }
+
   refreshMasks() {
     for (const group of this.currentLyricGroups) {
       group.mainLine.updateMaskImageSync()

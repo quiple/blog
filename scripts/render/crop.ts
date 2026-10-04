@@ -20,7 +20,11 @@ export function prepareRenderFrame() {
   // These controls used to sit outside the capture. Keep them out of the video
   // when moving the embed down, without changing their layout or selected state.
   const controls = aside.querySelector<HTMLElement>('[aria-label="음악 소스 선택"]')
-  if (controls) controls.style.visibility = 'hidden'
+  if (controls) {
+    controls.style.setProperty('transition', 'none', 'important')
+    controls.style.setProperty('opacity', '0', 'important')
+    controls.style.pointerEvents = 'none'
+  }
   const first = host.querySelector<HTMLElement>('[class*="lyricMainLine"]')!
   // Center the actual active line, including its pronunciation and translation.
   // offsetHeight excludes AMLL's animated scale and keeps the scroll target stable.

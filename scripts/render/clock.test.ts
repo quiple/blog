@@ -30,15 +30,18 @@ test('export clock advances animation, respects AMLL pause and keeps scrolling o
       return {opacity: Number(getComputedStyle(document.querySelector('#word')!).opacity), scroll: scrollY}
     })
     assert.ok(Math.abs(first.opacity - 0.2) < 0.01)
-    assert.ok(first.scroll > 180 && first.scroll < 300)
-    await page.evaluate(() => document.getAnimations()[0].pause())
+    assert.ok(first.scroll > 400 && first.scroll < 470)
+    await page.evaluate(() => {
+      document.getAnimations()[0].pause()
+      window.scrollTo({top: 600, behavior: 'smooth'})
+    })
     await page.clock.runFor(300)
     const second = await page.evaluate(() => {
       window.__renderAnimations(500)
       return {opacity: Number(getComputedStyle(document.querySelector('#word')!).opacity), scroll: scrollY}
     })
     assert.ok(Math.abs(second.opacity - 0.2) < 0.01)
-    assert.equal(second.scroll, 500)
+    assert.equal(second.scroll, 600)
     await page.evaluate(() => {
       const animation = document.getAnimations()[0]
       animation.currentTime = 600
@@ -99,10 +102,10 @@ test('export frame centers left metadata and a two-line lyric against the video'
     await page.route('http://render.test/', (route) =>
       route.fulfill({
         contentType: 'text/html',
-        body: `
+        body: `<meta charset="utf-8">
       <style>body{margin:0;padding:84px 24px}#grid{max-width:1600px;margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:24px}
       [data-render-mv]{width:100%;aspect-ratio:16/9}.lyric-player{padding-left:40px}.lyricMainLine{font-size:var(--amll-lp-font-size);line-height:1.2;height:2lh}</style>
-      <div id="grid"><aside><div aria-label="음악 소스 선택" style="height:28px;margin-bottom:12px"></div><div data-render-mv></div><div style="height:140px">Title / year / artist</div></aside>
+      <div id="grid"><aside><div aria-label="음악 소스 선택" style="height:28px;margin-bottom:12px;transition:all 150ms"></div><div data-render-mv></div><div style="height:140px">Title / year / artist</div></aside>
       <div class="lyric-player"><div class="lyricLine"><div class="lyricMainLine">text</div></div></div></div>`,
       }),
     )
@@ -121,6 +124,10 @@ test('export frame centers left metadata and a two-line lyric against the video'
         theme: localStorage.getItem('mode-watcher-mode'),
       }
     })
+    assert.equal(
+      await page.locator('[aria-label="음악 소스 선택"]').evaluate((el) => getComputedStyle(el).opacity),
+      '0',
+    )
     assert.equal(rects.theme, 'dark')
     assert.equal(rects.videoX - crop.x, 64)
     assert.ok(Math.abs(rects.blockCenter - crop.y - 540) < 0.1)

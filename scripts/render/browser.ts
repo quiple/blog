@@ -138,18 +138,26 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
   // targets, with a clocked 400ms ease, so slow frame capture cannot skip it.
   const scroll = window.scrollTo.bind(window)
   let frame = 0
+  let movement: {from: number; to: number; start: number} | undefined
   window.scrollTo = ((first: ScrollToOptions | number, y?: number) => {
     cancelAnimationFrame(frame)
-    if (typeof first === 'number') return scroll(first, y ?? 0)
-    if (first.behavior !== 'smooth') return scroll(first)
-    const from = scrollY
-    const to = Math.max(0, Math.min(first.top ?? from, document.documentElement.scrollHeight - innerHeight))
-    const start = performance.now()
+    if (typeof first === 'number' || first.behavior !== 'smooth') {
+      movement = undefined
+      return typeof first === 'number' ? scroll(first, y ?? 0) : scroll(first)
+    }
+    const to = Math.max(0, Math.min(first.top ?? scrollY, document.documentElement.scrollHeight - innerHeight))
+    // Layout springs can adjust the destination on consecutive frames. Retarget
+    // without restarting the easing and stretching one transition indefinitely.
+    movement ??= {from: scrollY, to, start: performance.now()}
+    movement.to = to
     const step = (now: number) => {
+      if (!movement) return
+      const {from, to, start} = movement
       const t = Math.min(1, (now - start) / 400)
-      const ease = t * t * (3 - 2 * t)
+      const ease = 1 - (1 - t) ** 3
       scroll({top: from + (to - from) * ease, behavior: 'instant'})
       if (t < 1) frame = requestAnimationFrame(step)
+      else movement = undefined
     }
     frame = requestAnimationFrame(step)
   }) as typeof window.scrollTo

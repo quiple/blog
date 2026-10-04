@@ -62,7 +62,8 @@
         let padding = 0,
           spacingVersion = -1,
           spacingDirty = true
-        const inset = (line: HTMLElement) => lyricRender()?.anchorY?.(line) ?? Math.max(96, innerHeight * 0.18)
+        const inset = (line: HTMLElement) =>
+          lyricRender()?.anchorY?.(player.alignmentLine(line)) ?? Math.max(96, innerHeight * 0.18)
         // Preserve the requested 200ms lead for line transitions.
         const time = () => Math.max(0, playbackTime(sample, performance.now()) - offset + 200)
         const release = () => {
