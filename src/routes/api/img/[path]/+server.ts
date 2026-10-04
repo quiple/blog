@@ -1,5 +1,6 @@
 import {error} from '@sveltejs/kit'
 import {dev} from '$app/env'
+import {env} from 'cloudflare:workers'
 import {getAllBlogContentMetadata} from '#lib/content.js'
 import type {RequestHandler} from './$types'
 
@@ -45,7 +46,7 @@ function assertSafeImagePath(path: string, origin: string) {
   return imageUrl
 }
 
-export const GET: RequestHandler = async ({params, url, platform}) => {
+export const GET: RequestHandler = async ({params, url}) => {
   const {path} = params
 
   if (!path) throw error(400, 'Missing path')
@@ -58,7 +59,7 @@ export const GET: RequestHandler = async ({params, url, platform}) => {
   if (isOriginal) {
     if (!originalImagePaths.has(decodedPath)) throw error(403, 'Original image access denied')
 
-    const bucket = platform?.env.R2
+    const bucket = env.R2
 
     if (!bucket) throw error(500, 'R2 bucket not available')
 
@@ -75,7 +76,7 @@ export const GET: RequestHandler = async ({params, url, platform}) => {
     return new Response(object.body as ReadableStream, {headers: responseHeaders})
   }
 
-  const secret = platform?.env.INTERNAL_IMAGE_SECRET
+  const secret = env.INTERNAL_IMAGE_SECRET
 
   if (!secret) error(503, 'Image access is not configured')
 
