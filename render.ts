@@ -134,6 +134,8 @@ async function main() {
       (stream: {codec_type: string; codec_name: string; pix_fmt?: string}) =>
         stream.codec_type === 'video' && stream.codec_name === 'h264' && stream.pix_fmt === 'yuv420p',
     )
+    const copyAudio =
+      probe.streams.find((stream: {codec_type: string}) => stream.codec_type === 'audio')?.codec_name === 'aac'
     await exec(
       'ffmpeg',
       [
@@ -147,10 +149,7 @@ async function main() {
         '-map',
         '0:a:0',
         ...(copyVideo ? ['-c:v', 'copy'] : ['-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-pix_fmt', 'yuv420p']),
-        '-c:a',
-        'aac',
-        '-b:a',
-        '192k',
+        ...(copyAudio ? ['-c:a', 'copy'] : ['-c:a', 'aac', '-b:a', '192k']),
         '-movflags',
         '+faststart',
         video,
