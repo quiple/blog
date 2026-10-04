@@ -1,8 +1,8 @@
 <script lang="ts">
   import {ExternalLink} from '@lucide/svelte'
-  import PageTitle from '$lib/components/page-title.svelte'
-  import {Badge} from '$lib/components/ui/badge'
-  import * as Card from '$lib/components/ui/card'
+  import PageTitle from '#lib/components/page-title.svelte'
+  import {Badge} from '#lib/components/ui/badge/index.js'
+  import * as Card from '#lib/components/ui/card/index.js'
 
   type WorkType = '웹' | '폰트'
 

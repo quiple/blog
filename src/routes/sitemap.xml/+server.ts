@@ -1,6 +1,6 @@
-import {getAllBlogContentMetadata} from '$lib/content'
-import {absoluteUrl, toSitemapDateTime} from '$lib/seo'
-import {getImageUrl} from '$lib/utils'
+import {getAllBlogContentMetadata} from '#lib/content.js'
+import {absoluteUrl, toSitemapDateTime} from '#lib/seo.js'
+import {getImageUrl} from '#lib/utils.js'
 import type {RequestHandler} from './$types'
 
 export const prerender = true

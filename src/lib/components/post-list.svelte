@@ -1,11 +1,11 @@
 <script lang="ts">
   import {navigating} from '$app/state'
-  import {Badge} from '$lib/components/ui/badge/index.js'
-  import {Skeleton} from '$lib/components/ui/skeleton/index.js'
-  import type {NavigationLike} from '$lib/navigation'
-  import type {ListedPost} from '$lib/server/cache'
-  import {getCategoryName, getImageUrl} from '$lib/utils'
-  import type {setupViewTransition} from '$lib/view-transition'
+  import {Badge} from '#lib/components/ui/badge/index.js'
+  import {Skeleton} from '#lib/components/ui/skeleton/index.js'
+  import type {NavigationLike} from '#lib/navigation.js'
+  import type {ListedPost} from '#lib/server/cache.js'
+  import {getCategoryName, getImageUrl} from '#lib/utils.js'
+  import type {setupViewTransition} from '#lib/view-transition.js'
   import type {Action} from 'svelte/action'
 
   let {

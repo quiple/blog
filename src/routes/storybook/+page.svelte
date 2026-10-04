@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Toc from '$lib/components/mdx/Toc.svelte'
-  import PageTitle from '$lib/components/page-title.svelte'
+  import Toc from '#lib/components/mdx/Toc.svelte'
+  import PageTitle from '#lib/components/page-title.svelte'
 
   const weights = [200, 300, 400, 500, 600] as const
   const sizes = [

@@ -1,7 +1,7 @@
 <script lang="ts">
   import {untrack} from 'svelte'
-  import {Skeleton} from '$lib/components/ui/skeleton'
-  import type {Source} from '$lib/lyrics/model'
+  import {Skeleton} from '#lib/components/ui/skeleton/index.js'
+  import type {Source} from '#lib/lyrics/model.js'
   import {
     loadSpotify,
     loadYouTube,
@@ -10,7 +10,7 @@
     type PlaybackRequest,
     type SpotifyController,
     type YouTubePlayer,
-  } from '$lib/lyrics/players'
+  } from '#lib/lyrics/players.js'
 
   let {
     source,

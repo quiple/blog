@@ -1,8 +1,8 @@
 <script lang="ts">
   import {onMount} from 'svelte'
-  import SyncedLyrics from '$lib/components/lyrics/SyncedLyrics.svelte'
-  import type {LocalizedLyricLine} from '$lib/lyrics/model'
-  import {stopped} from '$lib/lyrics/players'
+  import SyncedLyrics from '#lib/components/lyrics/SyncedLyrics.svelte'
+  import type {LocalizedLyricLine} from '#lib/lyrics/model.js'
+  import {stopped} from '#lib/lyrics/players.js'
   let sample = $state({...stopped})
   let result = $state('running')
   let host: HTMLDivElement

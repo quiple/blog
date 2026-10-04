@@ -1,10 +1,10 @@
 import type {ComponentProps} from 'svelte'
 import {read} from '$app/server'
-import astrFontPath from '$lib/assets/fonts/AstrDisplay-SemiBold.otf?url'
-import plexSansJPFontPath from '$lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
-import {getCompiledContent} from '$lib/compiled-content'
-import OgImage from '$lib/components/og/post.svelte'
-import {blogArticles, blogFonts, blogPosts, parseMatter} from '$lib/content'
+import astrFontPath from '#lib/assets/fonts/AstrDisplay-SemiBold.otf?url'
+import plexSansJPFontPath from '#lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
+import {getCompiledContent} from '#lib/compiled-content.js'
+import OgImage from '#lib/components/og/post.svelte'
+import {blogArticles, blogFonts, blogPosts, parseMatter} from '#lib/content.js'
 import type {EntryGenerator, RequestHandler} from './$types'
 
 export const entries: EntryGenerator = () => {

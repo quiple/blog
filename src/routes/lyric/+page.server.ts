@@ -1,5 +1,5 @@
-import {songArtists} from '$lib/lyrics/artists.server'
-import {songs} from '$lib/lyrics/catalog.server'
+import {songArtists} from '#lib/lyrics/artists.server.js'
+import {songs} from '#lib/lyrics/catalog.server.js'
 export const prerender = true
 export const load = () => ({
   songs: Object.entries(songs).map(([slug, song]) => ({

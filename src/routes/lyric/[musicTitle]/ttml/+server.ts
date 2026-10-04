@@ -1,7 +1,7 @@
 import {error} from '@sveltejs/kit'
-import {songArtists} from '$lib/lyrics/artists.server'
-import {parseSongYaml} from '$lib/lyrics/yaml.server'
-import {songTTML} from '$lib/lyrics/ttml.server'
+import {songArtists} from '#lib/lyrics/artists.server.js'
+import {parseSongYaml} from '#lib/lyrics/yaml.server.js'
+import {songTTML} from '#lib/lyrics/ttml.server.js'
 import type {RequestHandler, EntryGenerator} from './$types'
 
 const files = import.meta.glob<string>('/src/posts/lyric/*.{yaml,yml}', {query: '?raw', import: 'default', eager: true})

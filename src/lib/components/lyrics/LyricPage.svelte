@@ -1,10 +1,10 @@
 <script lang="ts">
-  import type {Artist} from '$lib/lyrics/artists.server'
+  import type {Artist} from '#lib/lyrics/artists.server.js'
   import {onMount, tick} from 'svelte'
-  import {lyricRender, type LyricRender} from '$lib/lyrics/render'
+  import {lyricRender, type LyricRender} from '#lib/lyrics/render.js'
   import {page} from '$app/state'
   import DownloadIcon from '@lucide/svelte/icons/download'
-  import {Button} from '$lib/components/ui/button'
+  import {Button} from '#lib/components/ui/button/index.js'
   import {
     isTimed,
     lyricLanguages,
@@ -13,9 +13,9 @@
     type Song,
     type Source,
     type SourceKey,
-  } from '$lib/lyrics/model'
-  import {playbackTime, stopped, type Playback, type PlaybackRequest} from '$lib/lyrics/players'
-  import {canPlayTime, sourceOffset, switchPosition} from '$lib/lyrics/timeline'
+  } from '#lib/lyrics/model.js'
+  import {playbackTime, stopped, type Playback, type PlaybackRequest} from '#lib/lyrics/players.js'
+  import {canPlayTime, sourceOffset, switchPosition} from '#lib/lyrics/timeline.js'
   import MusicEmbed from './MusicEmbed.svelte'
   import SyncedLyrics from './SyncedLyrics.svelte'
   import LyricText from './LyricText.svelte'

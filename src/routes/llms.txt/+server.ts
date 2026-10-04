@@ -1,5 +1,5 @@
-import {BASE_URL} from '$lib/constants'
-import {getAllBlogContentMetadata} from '$lib/content'
+import {BASE_URL} from '#lib/constants.js'
+import {getAllBlogContentMetadata} from '#lib/content.js'
 
 export const prerender = true
 

@@ -1,6 +1,6 @@
 import {DomLyricPlayer as Native} from '@applemusic-like-lyrics/core'
 import '@applemusic-like-lyrics/core/style.css'
-import {DocumentLyricPlayer} from '$lib/lyrics/document-player'
+import {DocumentLyricPlayer} from '#lib/lyrics/document-player.js'
 import type {LyricLine} from '@applemusic-like-lyrics/core'
 
 class MeasuredNative extends Native {

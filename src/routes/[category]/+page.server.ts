@@ -1,7 +1,7 @@
 import {error} from '@sveltejs/kit'
-import {getCachedProcessedMetadata, toListedPosts} from '$lib/server/cache'
-import {absoluteUrl} from '$lib/seo'
-import {getCategoryName} from '$lib/utils'
+import {getCachedProcessedMetadata, toListedPosts} from '#lib/server/cache.js'
+import {absoluteUrl} from '#lib/seo.js'
+import {getCategoryName} from '#lib/utils.js'
 import type {PageServerLoad} from './$types'
 
 const PER_PAGE = 15

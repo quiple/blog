@@ -1,6 +1,6 @@
 import {error} from '@sveltejs/kit'
-import {artists, songArtists} from '$lib/lyrics/artists.server'
-import {songs} from '$lib/lyrics/catalog.server'
+import {artists, songArtists} from '#lib/lyrics/artists.server.js'
+import {songs} from '#lib/lyrics/catalog.server.js'
 import type {EntryGenerator, PageServerLoad} from './$types'
 
 export const prerender = true

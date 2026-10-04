@@ -1,6 +1,6 @@
 import {error} from '@sveltejs/kit'
-import {dev} from '$app/environment'
-import {env} from '$env/dynamic/private'
+import {dev} from '$app/env'
+import {INTERNAL_IMAGE_SECRET} from '$app/env/private'
 import type {RequestHandler} from './$types'
 
 const MIME_TYPES: Record<string, string> = {
@@ -22,7 +22,7 @@ export const GET: RequestHandler = async ({params, platform}) => {
   const path = `img/${params.path}`
 
   if (dev) {
-    const secret = env.INTERNAL_IMAGE_SECRET
+    const secret = INTERNAL_IMAGE_SECRET
     if (!secret) error(503, 'Image access is not configured')
     // 개발 환경: 로컬 static 파일을 직접 반환
     // Vite가 static 디렉토리를 자동으로 서빙하므로 여기에 도달하면 static에 없는 경우

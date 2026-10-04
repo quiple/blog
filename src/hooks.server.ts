@@ -1,5 +1,6 @@
-import type {Handle} from '@sveltejs/kit'
-import {blogArticles, blogFonts, blogPosts, getAllBlogContentMetadata} from '$lib/content'
+import type {Handle} from '@sveltejs/kit/hooks'
+
+import {blogArticles, blogFonts, blogPosts, getAllBlogContentMetadata} from '#lib/content.js'
 
 function createMarkdownResponse(content: string) {
   const tokens = Math.ceil(new TextEncoder().encode(content).length / 4)

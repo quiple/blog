@@ -1,5 +1,5 @@
 import {error} from '@sveltejs/kit'
-import {getCompiledContent} from '$lib/compiled-content'
+import {getCompiledContent} from '#lib/compiled-content.js'
 import {
   blogArticles,
   blogFonts,
@@ -8,7 +8,7 @@ import {
   getFontMetadataFromMatter,
   getPostMetadataFromMatter,
   parseMatter,
-} from '$lib/content'
+} from '#lib/content.js'
 import type {PageServerLoad} from './$types'
 
 export const load: PageServerLoad = async ({params}) => {

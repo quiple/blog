@@ -3,11 +3,11 @@
   import '#fonts.css'
   import '@quiple/aster/astr.css'
   import 'inter-ui/inter-variable.css'
-  import appleTouchIcon from '$lib/assets/apple-touch-icon.png'
+  import appleTouchIcon from '#lib/assets/apple-touch-icon.png'
   import astrUrl from '@quiple/aster/fonts/Astr[opsz,wght].woff2?url'
-  import Header from '$lib/components/header.svelte'
+  import Header from '#lib/components/header.svelte'
   import {ModeWatcher} from 'mode-watcher'
-  import {setupViewTransition} from '$lib/view-transition'
+  import {setupViewTransition} from '#lib/view-transition.js'
 
   let {children} = $props()
 

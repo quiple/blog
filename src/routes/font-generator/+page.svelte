@@ -2,18 +2,18 @@
   import {Copy, Download, LoaderCircle} from '@lucide/svelte'
   import {page} from '$app/state'
   import {toast} from 'svelte-sonner'
-  import {getCharset, getCharsetGroups} from '$lib/charsets'
-  import {Button} from '$lib/components/ui/button'
-  import PageTitle from '$lib/components/page-title.svelte'
-  import * as Card from '$lib/components/ui/card/index.js'
-  import HexColorInput from '$lib/components/hex-color-input.svelte'
-  import {Input} from '$lib/components/ui/input'
-  import {Label} from '$lib/components/ui/label'
-  import * as Select from '$lib/components/ui/select/index.js'
-  import {Toaster} from '$lib/components/ui/sonner'
-  import {Textarea} from '$lib/components/ui/textarea'
+  import {getCharset, getCharsetGroups} from '#lib/charsets/index.js'
+  import {Button} from '#lib/components/ui/button/index.js'
+  import PageTitle from '#lib/components/page-title.svelte'
+  import * as Card from '#lib/components/ui/card/index.js'
+  import HexColorInput from '#lib/components/hex-color-input.svelte'
+  import {Input} from '#lib/components/ui/input/index.js'
+  import {Label} from '#lib/components/ui/label/index.js'
+  import * as Select from '#lib/components/ui/select/index.js'
+  import {Toaster} from '#lib/components/ui/sonner/index.js'
+  import {Textarea} from '#lib/components/ui/textarea/index.js'
   import {onDestroy} from 'svelte'
-  import {browser} from '$app/environment'
+  import {browser} from '$app/env'
   import type {RenderPayload, RenderResult, WorkerMessage} from './font-render-types'
   import {getRenderSize, isRenderSizeAllowed} from './font-render-limits'
 
@@ -46,9 +46,31 @@
           baseline: 11,
           file: 'x10y12pxDenkiChipHangul',
         },
-        {name: 'HBIOS-SYS', value: 'hbios-sys', size: '16px', baseline: 13, file: 'hbios-sys'},
-        {name: 'Galmuri14', value: 'Galmuri14', size: '15px', baseline: 14, file: 'Galmuri14'},
-        {name: 'Galmuri11', value: 'Galmuri11', size: '12px', baseline: 11, file: 'Galmuri11'},
+
+        {
+          name: 'HBIOS-SYS',
+          value: 'hbios-sys',
+          size: '16px',
+          baseline: 13,
+          file: 'hbios-sys',
+        },
+
+        {
+          name: 'Galmuri14',
+          value: 'Galmuri14',
+          size: '15px',
+          baseline: 14,
+          file: 'Galmuri14',
+        },
+
+        {
+          name: 'Galmuri11',
+          value: 'Galmuri11',
+          size: '12px',
+          baseline: 11,
+          file: 'Galmuri11',
+        },
+
         {
           name: 'Galmuri11 Bold',
           value: 'Galmuri11-Bold',
@@ -73,9 +95,30 @@
     {
       label: 'Num Kadoma',
       fonts: [
-        {name: 'k6x8 Gothic', value: 'k6x8-gothic', size: '8px', baseline: 7, file: 'k6x8_gothic'},
-        {name: 'k6x8 Mincho', value: 'k6x8-mincho', size: '8px', baseline: 7, file: 'k6x8_mincho'},
-        {name: 'Misaki Gothic', value: 'misaki-gothic', size: '8px', baseline: 6, file: 'misaki_gothic'},
+        {
+          name: 'k6x8 Gothic',
+          value: 'k6x8-gothic',
+          size: '8px',
+          baseline: 7,
+          file: 'k6x8_gothic',
+        },
+
+        {
+          name: 'k6x8 Mincho',
+          value: 'k6x8-mincho',
+          size: '8px',
+          baseline: 7,
+          file: 'k6x8_mincho',
+        },
+
+        {
+          name: 'Misaki Gothic',
+          value: 'misaki-gothic',
+          size: '8px',
+          baseline: 6,
+          file: 'misaki_gothic',
+        },
+
         {
           name: 'Misaki Gothic 2nd',
           value: 'misaki-gothic-2nd',
@@ -93,23 +136,44 @@
     {
       label: '기타',
       fonts: [
-        {name: 'Unifont', value: 'unifont', size: '16px', baseline: 14, file: 'unifont'},
-        {name: 'Unifont JP', value: 'unifont_jp', size: '16px', baseline: 14, file: 'unifont_jp'},
-        {name: 'Zpix', value: 'zpix', size: '12px', baseline: 9, file: 'zpix'},
+        {
+          name: 'Unifont',
+          value: 'unifont',
+          size: '16px',
+          baseline: 14,
+          file: 'unifont',
+        },
+
+        {
+          name: 'Unifont JP',
+          value: 'unifont_jp',
+          size: '16px',
+          baseline: 14,
+          file: 'unifont_jp',
+        },
+
+        {
+          name: 'Zpix',
+          value: 'zpix',
+          size: '12px',
+          baseline: 9,
+          file: 'zpix',
+        },
       ],
     },
   ]
-
   const allFonts = fontGroups.flatMap((g) => g.fonts)
   const fontsByValue = new Map(allFonts.map((font) => [font.value, font]))
 
   const fontTriggerContent = $derived.by(() => {
     const font = fontsByValue.get(fontValue)
+
     return font ? `${font.name} (${font.size})` : 'MaruMinyaHangul (12px)'
   })
 
   // ── Charset groups (from shared charsets index) ─────────────────────
   const charsetGroups = [...getCharsetGroups()]
+
   const charsetsByKey = new Map(charsetGroups.flatMap(([, entries]) => entries).map((entry) => [entry.key, entry]))
 
   const charsetTriggerContent = $derived.by(() => {
@@ -124,18 +188,16 @@
 
   // ── State ───────────────────────────────────────────────────────────
   const initialFont = page.url.searchParams.get('font')
+
   const defaultFont = initialFont && fontsByValue.has(initialFont) ? initialFont : 'maruminyahangul'
   let fontValue = $state(defaultFont)
-
   let charsetKey = $state('set2350')
   let customCharset = $state('')
-
   let xOffset = $state(0)
   let yOffset = $state(0)
   let tileWidth = $state(16)
   let tileHeight = $state(16)
   let tileColumn = $state(64)
-
   let foreground = $state('63cf63')
   let background = $state('000000')
   let shadowColor = $state('3933ff')
@@ -180,7 +242,6 @@
   let downloadHref = $state('')
   let downloadName = $state('')
   let downloadBlob: Blob | undefined
-
   let isDragging = $state(false)
   let startX = 0
   let startY = 0
@@ -189,6 +250,7 @@
 
   // Derived: current charset string for preview
   let charsetPreview = $derived(getCharset(charsetKey))
+
   let charsetLang = $derived(
     ['jis2965', 'jis6355', 'unicode2965', 'unicode6355', 'shiftjis', 'shiftjis_level1'].some((c) =>
       charsetKey.startsWith(c),
@@ -199,6 +261,7 @@
 
   // ── Draw (Web Worker delegation) ────────────────────────────────────
   let worker: Worker | undefined
+
   let workerResolve: ((value: RenderResult) => void) | undefined
   let workerReject: ((reason: Error) => void) | undefined
   let destroyed = false
@@ -208,9 +271,11 @@
     if (!browser) return
 
     worker = new Worker(new URL('./font-worker.ts', import.meta.url), {type: 'module'})
+
     worker.onmessage = ({data}: MessageEvent<WorkerMessage>) => {
       const resolve = workerResolve
       const reject = workerReject
+
       workerResolve = undefined
       workerReject = undefined
 
@@ -231,6 +296,7 @@
 
   async function handleSubmit(e: SubmitEvent) {
     e.preventDefault()
+
     if (drawing || destroyed) return
 
     if (charsetKey === 'custom' && !customCharset) {
@@ -314,11 +380,16 @@
       let blob: Blob
       try {
         if (destroyed) return
+
         const cvs = canvasEl
+
         if (!cvs) throw new Error('캔버스를 초기화하지 못했습니다.')
+
         cvs.width = result.width
         cvs.height = result.height
+
         const ctx = cvs.getContext('2d')
+
         if (!ctx) throw new Error('캔버스를 초기화하지 못했습니다.')
 
         if ('bitmap' in result) {
@@ -336,6 +407,7 @@
       } finally {
         if ('bitmap' in result) result.bitmap.close()
       }
+
       if (destroyed) return
 
       downloadBlob = blob
@@ -345,6 +417,7 @@
       drawing = false
     } catch (error) {
       if (destroyed) return
+
       toast.error(`이미지 생성 실패: ${error instanceof Error ? error.message : String(error)}`)
       drawing = false
     }
@@ -354,8 +427,8 @@
     if (!downloadBlob || !canvasReady) return
     try {
       const item = new ClipboardItem({'image/png': downloadBlob})
-      await navigator.clipboard.write([item])
 
+      await navigator.clipboard.write([item])
       toast.success('이미지를 클립보드에 복사했습니다')
     } catch {
       toast.error('이미지를 복사하지 못했습니다')
@@ -558,7 +631,9 @@
             </div>
 
             <HexColorInput id="foreground" label="전경색" bind:value={foreground} />
+
             <HexColorInput id="background" label="배경색" help="비워 두면 투명을 사용합니다." bind:value={background} />
+
             <HexColorInput id="shadow-color" label="그림자 색" bind:value={shadowColor} />
 
             <!-- 그림자 위치 -->
@@ -637,7 +712,11 @@
         </li>
         <li>
           4,358자: Adobe-KR-0과 Adobe-KR-1의 모든 한글 완성자. KS X 1001,
-          <a href="https://en.wikipedia.org/wiki/KS_X_1002" target="_blank" rel="noopener noreferrer">KS X 1002</a>,
+
+          <a href="https://en.wikipedia.org/wiki/KS_X_1002" target="_blank" rel="noopener noreferrer">KS X 1002</a>
+
+          ,
+
           <a
             href="https://www.unicode.org/L2/L2018/18011-info-kps9566-2011.pdf"
             target="_blank"
@@ -667,7 +746,7 @@
             rel="noopener noreferrer">JIS X 0208</a
           >의 제1수준 한자.
         </li>
-        <li>JIS 6,355자: JIS X 0208의 제1&middot;제2수준 한자.</li>
+        <li>JIS 6,355자: JIS X 0208의 제1·제2수준 한자.</li>
       </ul>
       <h2>EUC-KR</h2>
       <ul>
@@ -685,7 +764,7 @@
         </li>
         <li>제1수준 한자만 포함: Shift_JIS에서 JIS X 0208의 제2수준 한자 3,390자를 제외한 문자 집합.</li>
       </ul>
-      <small>&copy; 2026 Lee Minseo. 각 폰트는 해당 소유자, 저작권자 및 사용 허가자의 상표 및 저작권 자산입니다.</small>
+      <small>© 2026 Lee Minseo. 각 폰트는 해당 소유자, 저작권자 및 사용 허가자의 상표 및 저작권 자산입니다.</small>
     </article>
   </aside>
 </div>

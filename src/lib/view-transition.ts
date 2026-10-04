@@ -1,15 +1,12 @@
-import {browser} from '$app/environment'
-import {onNavigate} from '$app/navigation'
-import type {OnNavigate} from '@sveltejs/kit'
+import {browser} from '$app/env'
+import {onNavigate, type OnNavigate} from '$app/navigation'
 import {onDestroy} from 'svelte'
 import type {Action} from 'svelte/action'
 
 type NavigationEvent = {navigation: OnNavigate}
 type TransitionNode = HTMLElement | SVGElement
-type TransitionActionContext = NavigationEvent & {
-  node: TransitionNode
-  isInViewport: boolean
-}
+
+type TransitionActionContext = NavigationEvent & {node: TransitionNode; isInViewport: boolean}
 
 export interface TransitionActionOptions {
   name: string | ((context: TransitionActionContext) => string)
@@ -24,19 +21,15 @@ type NavigationCallback = (event: NavigationEvent) => void
 const beforeTransitionCallbacks = new Set<NavigationCallback>()
 const afterNavigationCallbacks = new Set<NavigationCallback>()
 const transitionFinishedCallbacks = new Set<() => void>()
-
 let navigationHookRegistered = false
 
 function shouldUseViewTransitions(navigation: OnNavigate) {
   if (!document.startViewTransition) return false
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false
-
   if (navigation.type === 'popstate' && /iPhone|iPad|iPod/.test(navigator.userAgent)) return false
 
-  const navigatorInfo = navigator as Navigator & {
-    deviceMemory?: number
-    hardwareConcurrency?: number
-  }
+  const navigatorInfo = navigator as Navigator & {deviceMemory?: number; hardwareConcurrency?: number}
+
   if (navigatorInfo.deviceMemory && navigatorInfo.deviceMemory <= 2) return false
   if (navigatorInfo.hardwareConcurrency && navigatorInfo.hardwareConcurrency <= 2) return false
 
@@ -56,20 +49,24 @@ function addTransitionCleanup(cleanup: () => void) {
   let pending = true
   const trackedCleanup = () => {
     if (!pending) return
+
     pending = false
     transitionFinishedCallbacks.delete(trackedCleanup)
     cleanup()
   }
 
   transitionFinishedCallbacks.add(trackedCleanup)
+
   return trackedCleanup
 }
 
 function registerNavigationHook() {
   if (!browser || navigationHookRegistered) return
+
   navigationHookRegistered = true
 
   onNavigate((navigation) => {
+    if (navigation.shallow) return
     if (!shouldUseViewTransitions(navigation)) return
 
     return new Promise<void>((resolve) => {
@@ -111,6 +108,7 @@ function applyTransitionName(node: TransitionNode, options: TransitionActionOpti
   const classes = options.classes ? resolveOption(options.classes, context) : undefined
 
   node.style.setProperty('view-transition-name', name)
+
   if (classes?.length) document.documentElement.classList.add(...classes)
 
   return addTransitionCleanup(() => {
@@ -132,6 +130,7 @@ export function setupViewTransition() {
 
     const clearListeners = () => {
       for (const cleanup of actionCleanups) cleanup()
+
       actionCleanups.clear()
       activeCleanup?.()
       activeCleanup = undefined
@@ -150,15 +149,19 @@ export function setupViewTransition() {
 
       const beforeTransition: NavigationCallback = ({navigation}) => {
         const context = createActionContext(navigation, node)
+
         const shouldApply =
           objectOptions.shouldApply === undefined ? true : resolveOption(objectOptions.shouldApply, context)
+
         if (shouldApply) activeCleanup = applyTransitionName(node, objectOptions, context)
       }
 
       const afterNavigation: NavigationCallback = ({navigation}) => {
         const context = createActionContext(navigation, node)
+
         const applyImmediately =
           objectOptions.applyImmediately === undefined ? false : resolveOption(objectOptions.applyImmediately, context)
+
         if (applyImmediately) activeCleanup = applyTransitionName(node, objectOptions, context)
       }
 
@@ -182,14 +185,18 @@ export function setupViewTransition() {
   function classes(resolveClasses: string[] | ((event: NavigationEvent) => string[] | undefined)) {
     const beforeTransition: NavigationCallback = (event) => {
       const classNames = typeof resolveClasses === 'function' ? resolveClasses(event) : resolveClasses
+
       if (!classNames?.length) return
 
       document.documentElement.classList.add(...classNames)
+
       let cleanup: () => void
+
       cleanup = addTransitionCleanup(() => {
         pendingTransitionCleanups.delete(cleanup)
         document.documentElement.classList.remove(...classNames)
       })
+
       pendingTransitionCleanups.add(cleanup)
     }
 

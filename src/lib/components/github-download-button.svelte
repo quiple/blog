@@ -1,6 +1,6 @@
 <script lang="ts">
   import {Download} from '@lucide/svelte'
-  import {Button} from '$lib/components/ui/button/index.js'
+  import {Button} from '#lib/components/ui/button/index.js'
   import {cn} from 'cn'
 
   let {href, class: className}: {href: string; class?: string} = $props()

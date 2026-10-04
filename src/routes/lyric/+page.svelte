@@ -1,6 +1,6 @@
 <script lang="ts">
-  import LyricList from '$lib/components/lyrics/LyricList.svelte'
-  import PageTitle from '$lib/components/page-title.svelte'
+  import LyricList from '#lib/components/lyrics/LyricList.svelte'
+  import PageTitle from '#lib/components/page-title.svelte'
   import type {PageProps} from './$types'
   let {data}: PageProps = $props()
 </script>

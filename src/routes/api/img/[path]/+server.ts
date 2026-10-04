@@ -1,6 +1,6 @@
 import {error} from '@sveltejs/kit'
-import {dev} from '$app/environment'
-import {getAllBlogContentMetadata} from '$lib/content'
+import {dev} from '$app/env'
+import {getAllBlogContentMetadata} from '#lib/content.js'
 import type {RequestHandler} from './$types'
 
 const originalImagePaths = new Set(
@@ -47,6 +47,7 @@ function assertSafeImagePath(path: string, origin: string) {
 
 export const GET: RequestHandler = async ({params, url, platform}) => {
   const {path} = params
+
   if (!path) throw error(400, 'Missing path')
   if (dev) throw error(404, 'Image delivery disabled in development')
 
@@ -58,12 +59,15 @@ export const GET: RequestHandler = async ({params, url, platform}) => {
     if (!originalImagePaths.has(decodedPath)) throw error(403, 'Original image access denied')
 
     const bucket = platform?.env.R2
+
     if (!bucket) throw error(500, 'R2 bucket not available')
 
     const object = await bucket.get(`img/${decodedPath}`)
+
     if (!object) throw error(404, 'Not found')
 
     const responseHeaders = new Headers()
+
     object.writeHttpMetadata(responseHeaders)
     responseHeaders.set('Cache-Control', 'public, max-age=31536000, immutable')
     responseHeaders.set('ETag', object.httpEtag)
@@ -72,17 +76,15 @@ export const GET: RequestHandler = async ({params, url, platform}) => {
   }
 
   const secret = platform?.env.INTERNAL_IMAGE_SECRET
+
   if (!secret) error(503, 'Image access is not configured')
 
   const width = url.searchParams.get('w') || '1280'
   const height = url.searchParams.get('h')
   const quality = url.searchParams.get('q')
   const format = url.searchParams.get('f') || 'avif'
+  const options: Record<string, string | number> = {quality: quality ? +quality : 75, format}
 
-  const options: Record<string, string | number> = {
-    quality: quality ? +quality : 75,
-    format,
-  }
   if (width) options.width = +width
   if (height) options.height = +height
 

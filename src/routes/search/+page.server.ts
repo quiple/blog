@@ -1,4 +1,4 @@
-import {getCachedProcessedMetadata, toListedPosts} from '$lib/server/cache'
+import {getCachedProcessedMetadata, toListedPosts} from '#lib/server/cache.js'
 import type {PageServerLoad} from './$types'
 
 const PER_PAGE = 15

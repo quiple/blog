@@ -2,7 +2,7 @@
   import ChevronLeftIcon from '@lucide/svelte/icons/chevron-left'
   import ChevronRightIcon from '@lucide/svelte/icons/chevron-right'
   import MoreHorizontalIcon from '@lucide/svelte/icons/more-horizontal'
-  import {Button} from '$lib/components/ui/button/index.js'
+  import {Button} from '#lib/components/ui/button/index.js'
 
   type PageItem = {type: 'page'; value: number; key: string} | {type: 'ellipsis'; key: string}
 

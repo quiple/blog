@@ -3,25 +3,24 @@
   import {afterNavigate, beforeNavigate, goto} from '$app/navigation'
   import {page} from '$app/state'
   import {onDestroy, onMount} from 'svelte'
-  import svgGradeDown from '$lib/assets/logo-grade-down.svg'
-  import svgOutline from '$lib/assets/logo-outline.svg'
-  import menu from '$lib/assets/menu.svg'
-  import wordmarkGradeDown from '$lib/assets/wordmark-gradedown.svg'
-  import wordmark from '$lib/assets/wordmark.svg'
-  import Q from '$lib/components/q.svelte'
-  import {Button} from '$lib/components/ui/button/index'
-  import * as DropdownMenu from '$lib/components/ui/dropdown-menu/index'
-  import {Input} from '$lib/components/ui/input/index'
-  import * as Tabs from '$lib/components/ui/tabs/index.js'
+  import svgGradeDown from '#lib/assets/logo-grade-down.svg'
+  import svgOutline from '#lib/assets/logo-outline.svg'
+  import menu from '#lib/assets/menu.svg'
+  import wordmarkGradeDown from '#lib/assets/wordmark-gradedown.svg'
+  import wordmark from '#lib/assets/wordmark.svg'
+  import Q from '#lib/components/q.svelte'
+  import {Button} from '#lib/components/ui/button/index.js'
+  import * as DropdownMenu from '#lib/components/ui/dropdown-menu/index.js'
+  import {Input} from '#lib/components/ui/input/index.js'
+  import * as Tabs from '#lib/components/ui/tabs/index.js'
   import {setMode, userPrefersMode} from 'mode-watcher'
-  import {setupViewTransition} from '$lib/view-transition'
+  import {setupViewTransition} from '#lib/view-transition.js'
 
   let query = $state('')
   let inputElement = $state<HTMLInputElement | null>(null)
   let menuOpen = $state(false)
   let fontFamilyMode = $state<'theme' | 'system'>('theme')
   let overrideTimer: ReturnType<typeof setTimeout> | undefined
-
   const fontFamilyStorageKey = 'font-family'
 
   const setFontFamilyMode = (mode: 'theme' | 'system') => {
@@ -39,7 +38,6 @@
   const isPostPath = (pathname: string) =>
     pathname.startsWith('/blog/') || pathname.startsWith('/article/') || pathname.startsWith('/font/')
   const categoryPaths = new Set(['/blog', '/article', '/font', '/lyric'])
-
   let usesWordmarkLogo = $derived(page.url.pathname === '/' || categoryPaths.has(page.url.pathname))
   let isPostPage = $derived(isPostPath(page.url.pathname))
   let overrideScrollY = $state<number | null>(null)
@@ -53,14 +51,16 @@
         : `#${page.data?.imageForeground?.toString() ?? '09090b'}`
       : null,
   )
+
   let heroOutline = $derived(isPostPage && page.data?.outline ? `#${page.data.outline.toString()}` : null)
 
   // Track navigation direction
   let navigatingFromNonPostToPost = $state(false)
-  let lockedHeaderClassName = $state<string | null>(null)
 
+  let lockedHeaderClassName = $state<string | null>(null)
   let isH1Visible = $state(true)
   let isHeroVisible = $state(true)
+
   let actualHeaderClassName = $derived.by(() => {
     if (!tracksHeaderScroll) {
       if (hasHero) return 'hero'
@@ -70,15 +70,17 @@
 
     if (hasHero && (isHeroVisible || overrideScrollY === 0)) return 'hero'
     if (!hasHero && isPostPage && (isH1Visible || overrideScrollY === 0)) return 'title-hidden'
+
     return ''
   })
+
   let headerClassName = $derived(lockedHeaderClassName ?? actualHeaderClassName)
   let usesHeroGradeDownLogo = $derived(
     headerClassName === 'hero' &&
       (heroForeground?.toLowerCase() === '#fff' || heroForeground?.toLowerCase() === '#ffffff'),
   )
-
   const {transition} = setupViewTransition()
+
   const onKeydown = (e: KeyboardEvent) => {
     if (e.key === 'Enter' && inputElement && document.activeElement === inputElement) {
       const trimmed = query.trim()
@@ -95,6 +97,7 @@
 
   $effect(() => {
     const q = page.url.searchParams.get('q')
+
     query = q?.replaceAll('+', ' ') || ''
   })
 
@@ -102,6 +105,7 @@
     if (!tracksHeaderScroll || !isPostPage || !hasHero) return
 
     const hero = document.querySelector('.hero.bg')
+
     if (!hero) return
 
     const observer = new IntersectionObserver(
@@ -110,7 +114,9 @@
       },
       {rootMargin: '-42px 0px 0px 0px'},
     )
+
     observer.observe(hero)
+
     return () => observer.disconnect()
   })
 
@@ -131,21 +137,27 @@
   })
 
   beforeNavigate((nav) => {
+    if (nav.shallow) return
+
     const fromPath = nav.from?.url.pathname ?? ''
     const toPath = nav.to?.url.pathname ?? ''
     const fromIsPostPath = isPostPath(fromPath)
     const toIsPostPath = isPostPath(toPath)
 
     if (nav.type !== 'popstate') overrideScrollY = toIsPostPath ? 0 : null
+
     lockedHeaderClassName = nav.type !== 'popstate' && fromIsPostPath && !toIsPostPath ? actualHeaderClassName : null
     navigatingFromNonPostToPost = !fromIsPostPath && toIsPostPath
   })
 
-  afterNavigate(() => {
+  afterNavigate(({shallow}) => {
+    if (shallow) return
+
     menuOpen = false
     lockedHeaderClassName = null
     navigatingFromNonPostToPost = false
     clearTimeout(overrideTimer)
+
     overrideTimer = setTimeout(() => {
       overrideScrollY = null
     }, 100)
@@ -161,6 +173,7 @@
     media.addEventListener('change', updateHeaderScrollTracking)
 
     const savedFontFamilyMode = localStorage.getItem(fontFamilyStorageKey)
+
     setFontFamilyMode(savedFontFamilyMode === 'system' ? 'system' : 'theme')
 
     return () => media.removeEventListener('change', updateHeaderScrollTracking)

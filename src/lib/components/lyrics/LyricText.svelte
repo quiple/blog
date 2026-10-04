@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type {LocalizedLyricLine} from '$lib/lyrics/model'
+  import type {LocalizedLyricLine} from '#lib/lyrics/model.js'
   let {line, semibold = false}: {line: LocalizedLyricLine; semibold?: boolean} = $props()
 </script>
 

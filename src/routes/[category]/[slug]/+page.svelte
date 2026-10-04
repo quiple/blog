@@ -1,22 +1,22 @@
 <script lang="ts">
   import {onMount} from 'svelte'
-  import GitHubDownloadButton from '$lib/components/github-download-button.svelte'
-  import LazyGiscus from '$lib/components/lazy-giscus.svelte'
-  import MdxContent from '$lib/components/mdx/MdxContent.svelte'
-  import {Badge} from '$lib/components/ui/badge/index.js'
-  import * as Tooltip from '$lib/components/ui/tooltip/index.js'
+  import GitHubDownloadButton from '#lib/components/github-download-button.svelte'
+  import LazyGiscus from '#lib/components/lazy-giscus.svelte'
+  import MdxContent from '#lib/components/mdx/MdxContent.svelte'
+  import {Badge} from '#lib/components/ui/badge/index.js'
+  import * as Tooltip from '#lib/components/ui/tooltip/index.js'
 
-  import {absoluteUrl, jsonLd as stringifyJsonLd, SITE_AUTHOR, SITE_NAME, toKstDateTime} from '$lib/seo'
-  import {astrPreviewTextPools} from '$lib/astr-preview-texts'
-  import {getCategoryName, getImageUrl} from '$lib/utils'
+  import {absoluteUrl, jsonLd as stringifyJsonLd, SITE_AUTHOR, SITE_NAME, toKstDateTime} from '#lib/seo.js'
+  import {astrPreviewTextPools} from '#lib/astr-preview-texts.js'
+  import {getCategoryName, getImageUrl} from '#lib/utils.js'
   import {mode} from 'mode-watcher'
   import type {Action} from 'svelte/action'
   import type {PageProps} from './$types'
   import 'remark-github-alerts/styles/github-colors-light.css'
   import 'remark-github-alerts/styles/github-colors-dark-class.css'
   import 'remark-github-alerts/styles/github-base.css'
-  import Toc from '$lib/components/mdx/Toc.svelte'
-  import {setupViewTransition} from '$lib/view-transition'
+  import Toc from '#lib/components/mdx/Toc.svelte'
+  import {setupViewTransition} from '#lib/view-transition.js'
 
   let {data}: PageProps = $props()
 

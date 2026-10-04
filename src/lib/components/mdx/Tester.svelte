@@ -1,11 +1,11 @@
 <script lang="ts">
   import {Shuffle} from '@lucide/svelte'
-  import {Button} from '$lib/components/ui/button/index.js'
-  import {Checkbox} from '$lib/components/ui/checkbox/index.js'
-  import {Label} from '$lib/components/ui/label/index.js'
-  import * as Select from '$lib/components/ui/select/index.js'
-  import {Slider} from '$lib/components/ui/slider/index.js'
-  import {Textarea} from '$lib/components/ui/textarea/index.js'
+  import {Button} from '#lib/components/ui/button/index.js'
+  import {Checkbox} from '#lib/components/ui/checkbox/index.js'
+  import {Label} from '#lib/components/ui/label/index.js'
+  import * as Select from '#lib/components/ui/select/index.js'
+  import {Slider} from '#lib/components/ui/slider/index.js'
+  import {Textarea} from '#lib/components/ui/textarea/index.js'
   import ALargeSmallIcon from '@lucide/svelte/icons/a-large-small'
   import ListChevronsUpDownIcon from '@lucide/svelte/icons/list-chevrons-up-down'
 

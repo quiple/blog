@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {browser} from '$app/environment'
+  import {browser} from '$app/env'
   import type {Component} from 'svelte'
 
   let container = $state<HTMLElement>()
@@ -7,6 +7,7 @@
 
   $effect(() => {
     if (!browser || !container || Giscus) return
+
     let cancelled = false
 
     async function loadGiscus() {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import LyricPage from '$lib/components/lyrics/LyricPage.svelte'
+  import LyricPage from '#lib/components/lyrics/LyricPage.svelte'
   import type {PageProps} from './$types'
   let {data}: PageProps = $props()
 </script>

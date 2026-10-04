@@ -1,7 +1,7 @@
 <script lang="ts">
   import CheckIcon from '@lucide/svelte/icons/check'
   import MinusIcon from '@lucide/svelte/icons/minus'
-  import type {WithElementRef} from '$lib/utils.js'
+  import type {WithElementRef} from '#lib/utils.js'
   import {cn} from 'cn'
   import type {HTMLInputAttributes} from 'svelte/elements'
 

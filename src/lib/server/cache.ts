@@ -1,6 +1,6 @@
-import {getCompiledContent} from '$lib/compiled-content'
-import {blogArticles, blogFonts, blogPosts, getAllBlogContentMetadata, parseMatter} from '$lib/content'
-import type {ContentMetadata} from '$lib/content'
+import {getCompiledContent} from '#lib/compiled-content.js'
+import {blogArticles, blogFonts, blogPosts, getAllBlogContentMetadata, parseMatter} from '#lib/content.js'
+import type {ContentMetadata} from '#lib/content.js'
 
 export type ProcessedPost = ContentMetadata & {
   searchableText: string

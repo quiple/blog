@@ -1,4 +1,4 @@
-import {BASE_URL} from '$lib/constants'
+import {BASE_URL} from '#lib/constants.js'
 
 export const SITE_NAME = 'quiple'
 export const SITE_DESCRIPTION = '이것저것 블로그.'

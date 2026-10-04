@@ -1,5 +1,5 @@
-import {getCachedProcessedMetadata, toListedPosts} from '$lib/server/cache'
-import {homeCanonicalUrl, SITE_DESCRIPTION, SITE_NAME} from '$lib/seo'
+import {getCachedProcessedMetadata, toListedPosts} from '#lib/server/cache.js'
+import {homeCanonicalUrl, SITE_DESCRIPTION, SITE_NAME} from '#lib/seo.js'
 import type {PageServerLoad} from './$types'
 
 const PER_PAGE = 15

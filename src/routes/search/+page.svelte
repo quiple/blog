@@ -1,12 +1,12 @@
 <script lang="ts">
   import {Search} from '@lucide/svelte'
   import {goto} from '$app/navigation'
-  import PostPagination from '$lib/components/post-pagination.svelte'
-  import PostList from '$lib/components/post-list.svelte'
-  import {Input} from '$lib/components/ui/input/index'
-  import {isGoingForward, isRoutePagination, type NavigationLike} from '$lib/navigation'
-  import {absoluteUrl} from '$lib/seo'
-  import {setupViewTransition} from '$lib/view-transition'
+  import PostPagination from '#lib/components/post-pagination.svelte'
+  import PostList from '#lib/components/post-list.svelte'
+  import {Input} from '#lib/components/ui/input/index.js'
+  import {isGoingForward, isRoutePagination, type NavigationLike} from '#lib/navigation.js'
+  import {absoluteUrl} from '#lib/seo.js'
+  import {setupViewTransition} from '#lib/view-transition.js'
   import {onDestroy} from 'svelte'
   import type {PageProps} from './$types'
 

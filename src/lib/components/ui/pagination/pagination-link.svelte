@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {buttonVariants, type ButtonSize} from '$lib/components/ui/button/index.js'
+  import {buttonVariants, type ButtonSize} from '#lib/components/ui/button/index.js'
   import {cn} from 'cn'
   import {Pagination as PaginationPrimitive} from 'bits-ui'
 

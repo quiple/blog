@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type {Artist} from '$lib/lyrics/artists.server'
+  import type {Artist} from '#lib/lyrics/artists.server.js'
 
   let {
     songs,

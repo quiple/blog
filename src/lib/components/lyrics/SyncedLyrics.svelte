@@ -1,8 +1,8 @@
 <script lang="ts">
   import {onMount, untrack} from 'svelte'
-  import type {LocalizedLyricLine} from '$lib/lyrics/model'
-  import {playbackTime, type Playback} from '$lib/lyrics/players'
-  import {lyricRender} from '$lib/lyrics/render'
+  import type {LocalizedLyricLine} from '#lib/lyrics/model.js'
+  import {playbackTime, type Playback} from '#lib/lyrics/players.js'
+  import {lyricRender} from '#lib/lyrics/render.js'
   let {
     lines,
     sample,
@@ -28,7 +28,7 @@
   onMount(() => {
     let disposed = false
     let cleanup = () => {}
-    void import('$lib/lyrics/document-player')
+    void import('#lib/lyrics/document-player.js')
       .then(({DocumentLyricPlayer}) => {
         if (disposed) return
         const player = new DocumentLyricPlayer()

@@ -1,9 +1,9 @@
 <svelte:options css="injected" />
 
 <script lang="ts">
-  import Q from '$lib/components/q.svelte'
-  import {BASE_URL} from '$lib/constants'
-  import {getCategoryName} from '$lib/utils'
+  import Q from '#lib/components/q.svelte'
+  import {BASE_URL} from '#lib/constants.js'
+  import {getCategoryName} from '#lib/utils.js'
 
   type Props = {
     title: string

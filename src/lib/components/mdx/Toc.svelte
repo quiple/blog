@@ -1,6 +1,6 @@
 <script lang="ts">
   import TextAlignStartIcon from '@lucide/svelte/icons/text-align-start'
-  import {afterNavigate, pushState} from '$app/navigation'
+  import {afterNavigate} from '$app/navigation'
   import {onMount} from 'svelte'
   import type {Snippet} from 'svelte'
 
@@ -21,24 +21,14 @@
     element: HTMLElement
   }
 
-  type RailItem = {
-    id: string
-    x: number
-    top: number
-    bottom: number
-  }
-
-  type RailStop = {
-    start: number
-    end: number
-  }
+  type RailItem = {id: string; x: number; top: number; bottom: number}
+  type RailStop = {start: number; end: number}
 
   const VIEWPORT_TOP = 100
   const RAIL_X = 2
   const LEVEL_OFFSET = 14
   const RAIL_INSET = 6
   const ITEM_PADDING = 20
-
   let enabled = $state(false)
   let headings = $state.raw<Heading[]>([])
   let activeIds = $state<string[]>([])
@@ -48,7 +38,6 @@
   let railStops = $state<Record<string, RailStop>>({})
   let railElement = $state<SVGPathElement | null>(null)
   let tocList = $state<HTMLUListElement | null>(null)
-
   const sameHeadings = (next: Heading[]) =>
     next.length === headings.length &&
     next.every(
@@ -61,6 +50,7 @@
 
   const ensureId = (element: HTMLElement, index: number, usedIds: Set<string>) => {
     let id = element.id
+
     if (!id) {
       const base =
         element.innerText
@@ -71,7 +61,9 @@
           .replace(/^-+|-+$/g, '') || `heading-${index + 1}`
 
       id = base
+
       let suffix = 2
+
       while (usedIds.has(id) || (document.getElementById(id) && document.getElementById(id) !== element)) {
         id = `${base}-${suffix++}`
       }
@@ -116,10 +108,13 @@
 
     update()
     media.addEventListener('change', update)
+
     return () => media.removeEventListener('change', update)
   })
 
-  afterNavigate(() => {
+  afterNavigate(({shallow}) => {
+    if (shallow) return
+
     queueMicrotask(collectHeadings)
   })
 
@@ -127,6 +122,7 @@
     const list = tocList
     const currentHeadings = headings
     const root = document.querySelector(selector)
+
     if (!enabled || !list || !root || currentHeadings.length === 0) return
 
     let activeFrame = 0
@@ -143,7 +139,6 @@
 
     const sameIds = (next: string[]) =>
       next.length === activeIds.length && next.every((id, index) => id === activeIds[index])
-
     const hasPendingComponents = () =>
       (Array.from(root.querySelectorAll('[data-mdx-component]')) as HTMLElement[]).some(
         (placeholder) => !placeholder.hasChildNodes(),
@@ -151,16 +146,19 @@
 
     const updateActive = () => {
       activeFrame = 0
+
       if (!ready || headingTops.length !== currentHeadings.length) return
 
       const viewportTop = window.scrollY + VIEWPORT_TOP
       const viewportBottom = window.scrollY + window.innerHeight
       const next: string[] = []
+
       // Find the first visible section without scanning the entire article on every scroll.
       let low = 0
       let high = headingTops.length
       while (low < high) {
         const middle = (low + high) >>> 1
+
         if (headingTops[middle] <= viewportTop) low = middle + 1
         else high = middle
       }
@@ -180,12 +178,16 @@
 
     const measureRail = () => {
       layoutFrame = 0
+
       const rows = Array.from(list.querySelectorAll<HTMLElement>('li[data-toc-id]'))
+
       if (rows.length !== currentHeadings.length) return
 
       const listRect = list.getBoundingClientRect()
       const minLevel = Math.min(...currentHeadings.map(({level}) => level))
+
       headingTops = currentHeadings.map(({element}) => element.getBoundingClientRect().top + window.scrollY)
+
       const nextItems = rows.map((row, index) => {
         const rect = row.getBoundingClientRect()
         return {
@@ -197,10 +199,12 @@
       })
 
       scheduleActive()
+
       if (
         nextItems.length === previousItems.length &&
         nextItems.every((item, index) => {
           const previous = previousItems[index]
+
           return (
             item.id === previous.id &&
             item.x === previous.x &&
@@ -210,10 +214,12 @@
         })
       )
         return
+
       previousItems = nextItems
 
       let path = ''
       const first = nextItems[0]
+
       if (first) {
         path = `M ${first.x} ${first.top} L ${first.x} ${first.bottom}`
         for (let index = 1; index < nextItems.length; index++) {
@@ -249,6 +255,7 @@
 
       await document.fonts.ready
       await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()))
+
       if (disposed || version !== prepareVersion || hasPendingComponents()) return
 
       ready = true
@@ -267,12 +274,13 @@
         void prepare()
       }
     })
+
     mutationObserver.observe(root, {subtree: true, childList: true})
 
     const resizeObserver = new ResizeObserver(scheduleLayout)
+
     resizeObserver.observe(root)
     resizeObserver.observe(list)
-
     window.addEventListener('scroll', scheduleActive, {passive: true})
     window.addEventListener('resize', scheduleLayout, {passive: true})
     document.fonts.addEventListener('loadingdone', scheduleLayout)
@@ -281,8 +289,10 @@
     return () => {
       disposed = true
       prepareVersion++
+
       if (activeFrame) cancelAnimationFrame(activeFrame)
       if (layoutFrame) cancelAnimationFrame(layoutFrame)
+
       mutationObserver.disconnect()
       resizeObserver.disconnect()
       window.removeEventListener('scroll', scheduleActive)
@@ -336,6 +346,7 @@
   const activeRange = $derived.by(() => {
     const first = railStops[activeIds[0]]
     const last = railStops[activeIds.at(-1) ?? '']
+
     if (!first || !last) return {start: 0, length: 0}
 
     return {
@@ -363,7 +374,7 @@
           stroke-linecap="round"
           stroke-linejoin="round"
           vector-effect="non-scaling-stroke"
-        />
+        ></path>
 
         <path
           d={railPath}
@@ -375,7 +386,7 @@
           vector-effect="non-scaling-stroke"
           class="active-rail text-primary"
           style={`stroke-dasharray: ${activeRange.length} ${Math.max(railLength, 1)}; stroke-dashoffset: ${-activeRange.start}; opacity: ${activeRange.length ? 1 : 0};`}
-        />
+        ></path>
       </svg>
 
       <ul bind:this={tocList} class="relative m-0 flex w-full list-none flex-col p-0 text-sm 2xl:text-base">
@@ -392,7 +403,9 @@
               ]}
               onclick={(event) => {
                 event.preventDefault()
+
                 const target = document.getElementById(heading.id)
+
                 if (!target) return
 
                 pushState(`#${heading.id}`, {})

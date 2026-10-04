@@ -1,5 +1,5 @@
-import {BASE_URL} from '$lib/constants'
-import {blogArticles, blogFonts, blogPosts, getAllBlogContentMetadata, parseMatter} from '$lib/content'
+import {BASE_URL} from '#lib/constants.js'
+import {blogArticles, blogFonts, blogPosts, getAllBlogContentMetadata, parseMatter} from '#lib/content.js'
 import type {RequestHandler} from './$types'
 
 export const prerender = true

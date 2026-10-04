@@ -1,10 +1,10 @@
 <script lang="ts">
   import {goto} from '$app/navigation'
-  import PostPagination from '$lib/components/post-pagination.svelte'
-  import PostList from '$lib/components/post-list.svelte'
-  import {isGoingForward, isRoutePagination, type NavigationLike} from '$lib/navigation'
-  import {absoluteUrl, jsonLd as stringifyJsonLd, SITE_NAME} from '$lib/seo'
-  import {setupViewTransition} from '$lib/view-transition'
+  import PostPagination from '#lib/components/post-pagination.svelte'
+  import PostList from '#lib/components/post-list.svelte'
+  import {isGoingForward, isRoutePagination, type NavigationLike} from '#lib/navigation.js'
+  import {absoluteUrl, jsonLd as stringifyJsonLd, SITE_NAME} from '#lib/seo.js'
+  import {setupViewTransition} from '#lib/view-transition.js'
   import type {PageProps} from './$types'
 
   let {data}: PageProps = $props()

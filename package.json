@@ -80,6 +80,8 @@
     "wrangler": "^4.147.0"
   },
   "imports": {
+    "#lib": "./src/lib/index.js",
+    "#lib/*": "./src/lib/*",
     "#app.css": "./src/app.css",
     "#fonts.css": "./src/fonts.css"
   },
