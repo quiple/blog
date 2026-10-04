@@ -6,15 +6,11 @@ declare global {
     // interface Locals {}
     // interface PageData {}
     // interface PageState {}
-    interface Platform {
-      env: {
-        R2: R2Bucket
-        INTERNAL_IMAGE_SECRET?: string
-      }
-      context: {
-        waitUntil(promise: Promise<unknown>): void
-      }
-      caches: CacheStorage & {default: Cache}
+  }
+  namespace Cloudflare {
+    interface Env {
+      R2: R2Bucket
+      INTERNAL_IMAGE_SECRET?: string
     }
   }
 }
