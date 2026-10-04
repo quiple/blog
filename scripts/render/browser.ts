@@ -137,6 +137,18 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
   // Native smooth scrolling follows wall-clock time. Export uses the same
   // targets, with a clocked 400ms ease, so slow frame capture cannot skip it.
   const scroll = window.scrollTo.bind(window)
+  let focus: {line: HTMLElement; from: number; start: number} | undefined
+  window.__lyricRender.follow = (line, reference, screenTop, initialTop) => {
+    const rect = reference.getBoundingClientRect()
+    const now = performance.now()
+    if (focus?.line !== line) focus = {line, from: initialTop ?? rect.top, start: now}
+    const t = Math.min(1, (now - focus.start) / 400)
+    const ease = 1 - (1 - t) ** 3
+    const top = focus.from + (screenTop - focus.from) * ease
+    // Cancel the reference line's layout spring in document space, then apply
+    // one camera transition in screen space. The two motions cannot fight.
+    scroll({top: Math.max(0, scrollY + rect.top - top), behavior: 'instant'})
+  }
   let frame = 0
   let movement: {from: number; to: number; start: number} | undefined
   window.scrollTo = ((first: ScrollToOptions | number, y?: number) => {

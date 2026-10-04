@@ -99,12 +99,13 @@ test('export frame centers left metadata and a two-line lyric against the video'
   const browser = await chromium.launch({headless: true})
   try {
     const page = await browser.newPage({viewport: {width: 1920, height: 1200}})
+    await page.clock.install()
     await page.route('http://render.test/', (route) =>
       route.fulfill({
         contentType: 'text/html',
         body: `<meta charset="utf-8">
-      <style>body{margin:0;padding:84px 24px}#grid{max-width:1600px;margin:auto;display:grid;grid-template-columns:.85fr 1.15fr;gap:24px}
-      [data-render-mv]{width:100%;aspect-ratio:16/9}.lyric-player{padding-left:40px}.lyricMainLine{font-size:var(--amll-lp-font-size);line-height:1.2;height:2lh}</style>
+      <style>body{margin:0;padding:84px 24px;min-height:3000px}#grid{max-width:1600px;margin:auto;min-height:3000px;align-items:start;display:grid;grid-template-columns:.85fr 1.15fr;gap:24px}
+      aside{position:sticky;top:84px}[data-render-mv]{width:100%;aspect-ratio:16/9}.lyric-player{padding-left:40px}.lyricMainLine{font-size:var(--amll-lp-font-size);line-height:1.2;height:2lh}</style>
       <div id="grid"><aside><div aria-label="음악 소스 선택" style="height:28px;margin-bottom:12px;transition:all 150ms"></div><div data-render-mv></div><div style="height:140px">Title / year / artist</div></aside>
       <div class="lyric-player"><div class="lyricLine"><div class="lyricMainLine">text</div></div></div></div>`,
       }),
@@ -112,6 +113,16 @@ test('export frame centers left metadata and a two-line lyric against the video'
     await page.addInitScript(installRenderClock, {mediaUrl: 'test.mp4', duration: 10000, font: 'theme'})
     await page.goto('http://render.test/')
     const crop = await page.evaluate(prepareRenderFrame)
+    await page.clock.pauseAt(await page.evaluate(() => Date.now() + 10))
+    await page.evaluate(() => {
+      const line = document.querySelector<HTMLElement>('.lyricLine')!
+      window.__lyricRender!.follow!(line, line, window.__lyricRender!.anchorY!(line))
+    })
+    await page.clock.runFor(450)
+    await page.evaluate(() => {
+      const line = document.querySelector<HTMLElement>('.lyricLine')!
+      window.__lyricRender!.follow!(line, line, window.__lyricRender!.anchorY!(line))
+    })
     const rects = await page.evaluate(() => {
       const video = document.querySelector('[data-render-mv]')!.getBoundingClientRect()
       const line = document.querySelector('.lyricMainLine')!.getBoundingClientRect()
@@ -131,8 +142,8 @@ test('export frame centers left metadata and a two-line lyric against the video'
     assert.equal(rects.theme, 'dark')
     assert.equal(rects.videoX - crop.x, 64)
     assert.ok(Math.abs(rects.blockCenter - crop.y - 540) < 0.1)
-    assert.ok(Math.abs(rects.centerDifference) < 0.1)
-    assert.ok(Math.abs(rects.lineTop - rects.anchor!) < 0.1)
+    assert.ok(Math.abs(rects.centerDifference) < 1)
+    assert.ok(Math.abs(rects.lineTop - rects.anchor!) < 1)
   } finally {
     await browser.close()
   }

@@ -62,8 +62,7 @@
         let padding = 0,
           spacingVersion = -1,
           spacingDirty = true
-        const inset = (line: HTMLElement) =>
-          lyricRender()?.anchorY?.(player.alignmentLine(line)) ?? Math.max(96, innerHeight * 0.18)
+        const inset = (line: HTMLElement) => lyricRender()?.anchorY?.(line) ?? Math.max(96, innerHeight * 0.18)
         // Preserve the requested 200ms lead for line transitions.
         const time = () => Math.max(0, playbackTime(sample, performance.now()) - offset + 200)
         const release = () => {
@@ -85,6 +84,9 @@
           let current = time()
           if (current < previousTime && previousTime - current < 200) current = previousTime
           player.setCurrentTime(current, Math.abs(current - previousTime) > 1000)
+          const render = lyricRender()
+          const upcoming = render ? player.activeLine(current) : undefined
+          const initialTop = upcoming ? player.alignmentLine(upcoming).getBoundingClientRect().top : undefined
           player.update(previousFrame ? Math.min(50, now - previousFrame) : 0)
           previousTime = current
           previousFrame = now
@@ -116,8 +118,13 @@
               window.scrollTo({top: target, behavior: 'instant'})
             }
           } else if (sample.playing && active && now >= userUntil) {
-            const target = player.lineTop(active) - inset(active)
-            if (active !== followed || Math.abs(target - followedTop) > 0.5) {
+            const target = player.lineTop(active, !!render) - inset(active)
+            if (render?.follow) {
+              const reference = player.alignmentLine(active)
+              render.follow(active, reference, player.lineTop(reference) - target, initialTop)
+              followed = active
+              followedTop = target
+            } else if (active !== followed || Math.abs(target - followedTop) > 0.5) {
               followed = active
               followedTop = target
               window.scrollTo({

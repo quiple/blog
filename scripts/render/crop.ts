@@ -25,12 +25,11 @@ export function prepareRenderFrame() {
     controls.style.setProperty('opacity', '0', 'important')
     controls.style.pointerEvents = 'none'
   }
-  const first = host.querySelector<HTMLElement>('[class*="lyricMainLine"]')!
   // Center the actual active line, including its pronunciation and translation.
   // offsetHeight excludes AMLL's animated scale and keeps the scroll target stable.
   const anchor = (line: HTMLElement) => embed.y + shift + embed.height / 2 - line.offsetHeight / 2
   window.__lyricRender!.anchorY = anchor
-  const firstLine = first.parentElement!
-  host.style.paddingTop = `${Math.max(0, anchor(firstLine) - firstLine.getBoundingClientRect().top)}px`
+  // Leave enough document space to center an opening interlude even at scrollY=0.
+  host.style.paddingTop = `${Math.max(0, embed.y + shift + embed.height / 2 - host.getBoundingClientRect().top)}px`
   return crop
 }
