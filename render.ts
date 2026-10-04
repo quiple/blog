@@ -243,6 +243,7 @@ async function main() {
     console.log(`캡처: ${width}×${height} · 다크 모드 · 중앙 정렬`)
     await page.mouse.move(0, 0)
     await page.evaluate(async () => {
+      window.__lyricRender!.preparing = true
       window.__renderAnimations(0)
       await window.__lyricRender!.setPlayback!(0, true)
     })
@@ -255,6 +256,17 @@ async function main() {
         mobile: false,
       })
     }
+    // Resolve resized rows and the opening interlude before frame zero. Keep
+    // playback at zero while observers/layout run; do not consume song time.
+    for (let i = 0; i < 20; i++) {
+      await page.evaluate(() => window.__lyricRender!.setPlayback!(0, true))
+      await page.clock.runFor(16)
+      await page.evaluate(() => window.__renderAnimations(0))
+    }
+    await page.evaluate(async () => {
+      await window.__lyricRender!.setPlayback!(0, true)
+      window.__lyricRender!.preparing = false
+    })
     const encoded = join(temp, 'frames.mp4')
     encoder = spawn(
       'ffmpeg',

@@ -116,7 +116,17 @@ test('export frame centers left metadata and a two-line lyric against the video'
     await page.clock.pauseAt(await page.evaluate(() => Date.now() + 10))
     await page.evaluate(() => {
       const line = document.querySelector<HTMLElement>('.lyricLine')!
+      window.__lyricRender!.preparing = true
       window.__lyricRender!.follow!(line, line, window.__lyricRender!.anchorY!(line))
+    })
+    assert.ok(
+      await page.evaluate(() => {
+        const line = document.querySelector<HTMLElement>('.lyricLine')!
+        return Math.abs(line.getBoundingClientRect().top - window.__lyricRender!.anchorY!(line)) < 1
+      }),
+    )
+    await page.evaluate(() => {
+      window.__lyricRender!.preparing = false
     })
     await page.clock.runFor(450)
     await page.evaluate(() => {

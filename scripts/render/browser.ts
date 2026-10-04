@@ -141,7 +141,8 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
   window.__lyricRender.follow = (line, reference, screenTop, initialTop) => {
     const rect = reference.getBoundingClientRect()
     const now = performance.now()
-    if (focus?.line !== line) focus = {line, from: initialTop ?? rect.top, start: now}
+    if (focus?.line !== line || window.__lyricRender!.preparing)
+      focus = {line, from: window.__lyricRender!.preparing ? screenTop : (initialTop ?? rect.top), start: now}
     const t = Math.min(1, (now - focus.start) / 400)
     const ease = 1 - (1 - t) ** 3
     const top = focus.from + (screenTop - focus.from) * ease

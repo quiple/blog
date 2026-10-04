@@ -85,6 +85,7 @@
           if (current < previousTime && previousTime - current < 200) current = previousTime
           player.setCurrentTime(current, Math.abs(current - previousTime) > 1000)
           const render = lyricRender()
+          if (render?.preparing) player.calcLayout('continuous-scroll')
           const upcoming = render ? player.activeLine(current) : undefined
           const initialTop = upcoming ? player.alignmentLine(upcoming).getBoundingClientRect().top : undefined
           player.update(previousFrame ? Math.min(50, now - previousFrame) : 0)
