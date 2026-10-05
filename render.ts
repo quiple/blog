@@ -10,8 +10,11 @@ import {fileURLToPath} from 'node:url'
 import {chromium} from 'playwright'
 import {createServer} from 'vite'
 import {parseSongYaml} from './src/lib/lyrics/yaml.server.ts'
-import {installRenderClock} from './scripts/render/browser.ts'
+import {applyRenderJapaneseFont, installRenderClock} from './scripts/render/browser.ts'
 import {prepareRenderFrame} from './scripts/render/crop.ts'
+
+// 영상의 일본어 폰트 웨이트: Hiragino Sans W0~W9 중 이 숫자만 변경하세요.
+const HIRAGINO_WEIGHT = 6
 
 const root = dirname(fileURLToPath(import.meta.url))
 const run = promisify(execFile)
@@ -220,6 +223,7 @@ async function main() {
     })
     console.log('페이지·폰트 로딩 중…')
     await page.goto(`${origin}/lyric/${slug}`, {waitUntil: 'domcontentloaded', timeout: 120000})
+    await page.evaluate(applyRenderJapaneseFont, HIRAGINO_WEIGHT)
     await page.locator('.lyric-player[data-ready="true"]').waitFor({timeout: 120000})
     const mvButton = page.getByRole('button', {name: 'YouTube 뮤비', exact: true})
     if ((await mvButton.count()) && (await mvButton.getAttribute('aria-pressed')) !== 'true')

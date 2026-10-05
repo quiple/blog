@@ -1,5 +1,25 @@
 import type {} from '../../src/lib/lyrics/render.ts'
 
+/** Keep Latin fonts unchanged; map Japanese characters to one installed face. */
+export async function applyRenderJapaneseFont(weight: number) {
+  const family = 'RenderHiragino'
+  const face = new FontFace(family, `local("HiraginoSans-W${weight}")`, {
+    weight: '100 900',
+    unicodeRange: 'U+3000-30FF,U+31F0-31FF,U+3400-4DBF,U+4E00-9FFF,U+F900-FAFF,U+FF00-FFEF,U+1B000-1B16F,U+20000-323AF',
+  })
+  try {
+    await face.load()
+  } catch {
+    throw Error(`Hiragino Sans W${weight}를 시스템에서 찾지 못했습니다.`)
+  }
+  document.fonts.add(face)
+  const root = document.documentElement
+  for (const mode of ['theme', 'system']) {
+    const property = `--font-sans-ja-${mode}`
+    root.style.setProperty(property, `${family}, ${getComputedStyle(root).getPropertyValue(property)}`)
+  }
+}
+
 /** Installed only inside the disposable export browser. */
 export function installRenderClock(options: {mediaUrl: string; duration: number; font: string}) {
   localStorage.setItem('mode-watcher-mode', 'dark')
