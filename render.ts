@@ -257,7 +257,9 @@ async function main() {
     }
     // Resolve resized rows and the opening interlude before frame zero. Keep
     // playback at zero while observers/layout run; do not consume song time.
-    for (let i = 0; i < 20; i++) {
+    // Position snapping does not snap AMLL's scale spring. Let that settle too,
+    // otherwise its final fraction of a pixel remains visible after frame zero.
+    for (let i = 0; i < 90; i++) {
       await page.evaluate(() => window.__lyricRender!.setPlayback!(0, true))
       await page.clock.runFor(16)
       await page.evaluate(() => window.__renderAnimations(0))
