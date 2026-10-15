@@ -248,8 +248,31 @@
   let scrollLeft = $state(0)
   let scrollTop = $state(0)
 
-  // Derived: current charset string for preview
-  let charsetPreview = $derived(getCharset(charsetKey))
+  // Keep only the selected combination; ignore loads from previous selections.
+  let charsetPreview = $state(getCharset('set2350') as string)
+  let previewKey = $state('set2350')
+  const charsetReady = $derived(charsetKey === 'custom' || previewKey === charsetKey)
+  $effect(() => {
+    const key = charsetKey
+    let cancelled = false
+    const result = getCharset(key)
+    const apply = (value: string) => {
+      if (cancelled) return
+      charsetPreview = value
+      previewKey = key
+    }
+    if (typeof result === 'string') apply(result)
+    else {
+      previewKey = ''
+      charsetPreview = ''
+      void result.then(apply).catch(() => {
+        if (!cancelled) toast.error('문자 집합을 불러오지 못했습니다.')
+      })
+    }
+    return () => {
+      cancelled = true
+    }
+  })
 
   let charsetLang = $derived(
     ['jis2965', 'jis6355', 'unicode2965', 'unicode6355', 'shiftjis', 'shiftjis_level1'].some((c) =>
@@ -297,7 +320,7 @@
   async function handleSubmit(e: SubmitEvent) {
     e.preventDefault()
 
-    if (drawing || destroyed) return
+    if (drawing || destroyed || !charsetReady) return
 
     if (charsetKey === 'custom' && !customCharset) {
       alert('사용자 지정 문자 집합을 입력하세요.')
@@ -318,7 +341,7 @@
 
     const font = fontsByValue.get(fontValue) ?? fontsByValue.get('maruminyahangul')!
     const fontPath = `/fonts/bdfs/${font.file}.bdf`
-    const __charset = charsetKey === 'custom' ? customCharset : getCharset(charsetKey)
+    const __charset = charsetKey === 'custom' ? customCharset : charsetPreview
     let characterCount = 0
     for (const _ of __charset) characterCount++
     const {width, height} = getRenderSize(characterCount, Number(tileWidth), Number(tileHeight), Number(tileColumn))
@@ -653,7 +676,7 @@
         </Card.Content>
         <Card.Footer class="flex-col gap-2 px-4">
           <!-- 액션 버튼들 -->
-          <Button type="submit" disabled={drawing} class="w-full" size="lg">
+          <Button type="submit" disabled={drawing || !charsetReady} class="w-full" size="lg">
             {#if drawing}
               <LoaderCircle class="size-4 animate-spin" />
               만드는 중...

@@ -1,8 +1,4 @@
 import hangul from './hangul'
-import hanja from './hanja'
-import japanese from './japanese'
-import kanji from './kanji'
-import korean from './korean'
 
 export interface CharsetEntry {
   key: string
@@ -37,35 +33,32 @@ export const charsetEntries: CharsetEntry[] = [
   {key: 'shiftjis_level1', label: '제1수준 한자만 포함', group: 'Shift_JIS', lang: 'ja'},
 ]
 
-// Lazily built charset map (only computed when first accessed)
-const charsetStrings: Record<string, string> = {
-  // Hangul syllables
-  set2350: hangul.set2350,
-  set2355: hangul.set2355,
-  set2780: hangul.set2780,
-  set4358: hangul.set4358,
-  set11172: hangul.set11172,
-  // Kanji
-  ks4888: hanja.ks4888,
-  unicode4888: hanja.unicode4888,
-  jis2965: kanji.jisX0208_level1,
-  unicode2965: kanji.unicode2965,
-  jis6355: kanji.jisX0208_level1 + kanji.jisX0208_level2,
-  unicode6355: kanji.unicode6355,
-  // EUC-KR
-  euckr: korean.restOfEuckr + hangul.set2350 + hanja.ks4888,
-  euckrWoHanja: korean.restOfEuckr + hangul.set2350,
-  euckrWoHanja2355: korean.restOfEuckr + hangul.set2355,
-  euckrWoHanja2780: korean.restOfEuckr + hangul.set2780,
-  euckrWoHanja4358: korean.restOfEuckr + hangul.set4358,
-  euckrWoHanja11172: korean.restOfEuckr + hangul.set11172,
-  // Shift_JIS
-  shiftjis: japanese.restOfShiftjis + kanji.jisX0208_level1 + kanji.jisX0208_level2,
-  shiftjis_level1: japanese.restOfShiftjis + kanji.jisX0208_level1,
-}
-
-export function getCharset(key: string): string {
-  return charsetStrings[key] ?? ''
+// Keep the default preview synchronous; load other scripts only when selected.
+export function getCharset(key: string): string | Promise<string> {
+  if (Object.hasOwn(hangul, key)) return hangul[key as keyof typeof hangul]
+  if (key === 'ks4888' || key === 'unicode4888') return import('./hanja').then(({default: hanja}) => hanja[key])
+  if (['jis2965', 'unicode2965', 'jis6355', 'unicode6355'].includes(key))
+    return import('./kanji').then(({default: kanji}) => {
+      if (key === 'jis2965') return kanji.jisX0208_level1
+      if (key === 'jis6355') return kanji.jisX0208_level1 + kanji.jisX0208_level2
+      return kanji[key as 'unicode2965' | 'unicode6355']
+    })
+  if (key.startsWith('euckr'))
+    return import('./korean').then(async ({default: korean}) => {
+      if (key === 'euckr') {
+        const {default: hanja} = await import('./hanja')
+        return korean.restOfEuckr + hangul.set2350 + hanja.ks4888
+      }
+      const suffix = key.slice('euckrWoHanja'.length) || '2350'
+      const syllables = hangul[`set${suffix}` as keyof typeof hangul]
+      return key.startsWith('euckrWoHanja') && syllables ? korean.restOfEuckr + syllables : ''
+    })
+  if (key === 'shiftjis' || key === 'shiftjis_level1')
+    return Promise.all([import('./japanese'), import('./kanji')]).then(
+      ([{default: japanese}, {default: kanji}]) =>
+        japanese.restOfShiftjis + kanji.jisX0208_level1 + (key === 'shiftjis' ? kanji.jisX0208_level2 : ''),
+    )
+  return ''
 }
 
 /** Group charsetEntries by group name, preserving insertion order. */

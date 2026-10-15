@@ -93,22 +93,33 @@
           previousFrame = now
           const active = player.activeLine(current)
           if (anchor && active !== anchor.line) release()
+          // Share the origin within this frame, but remeasure next frame so external
+          // layout shifts and the export camera cannot leave stale coordinates.
+          let origin: number | undefined
+          const lineTop = (line: HTMLElement, exactInterlude = false) =>
+            player.lineTop(line, exactInterlude, (origin ??= player.documentTop()))
+          let nextPadding = padding
           if (!anchor && (spacingDirty || spacingVersion !== player.layoutVersion)) {
             spacingDirty = false
             spacingVersion = player.layoutVersion
             const last = player.lastLine()
             if (last) {
-              const next = Math.max(
+              nextPadding = Math.max(
                 0,
-                Math.round(
-                  padding + player.lineTop(last) - inset(last) + innerHeight - document.documentElement.scrollHeight,
-                ),
+                Math.round(padding + lineTop(last) - inset(last) + innerHeight - document.documentElement.scrollHeight),
               )
-              if (next !== padding) {
-                padding = next
-                host.style.paddingBottom = `${padding}px`
-              }
             }
+          }
+          const target =
+            !anchor && sample.playing && active && now >= userUntil
+              ? lineTop(active, !!render) - inset(active)
+              : undefined
+          const reference = target !== undefined && active && render?.follow ? player.alignmentLine(active) : undefined
+          const referenceTop = reference ? lineTop(reference) : undefined
+          // Finish layout reads before changing bottom spacing or scrolling.
+          if (nextPadding !== padding) {
+            padding = nextPadding
+            host.style.paddingBottom = `${padding}px`
           }
           if (anchor) {
             const delta = anchor.line.getBoundingClientRect().top - anchor.top
@@ -118,11 +129,9 @@
               if (missing > 0) host.style.minHeight = `${host.offsetHeight + missing}px`
               window.scrollTo({top: target, behavior: 'instant'})
             }
-          } else if (sample.playing && active && now >= userUntil) {
-            const target = player.lineTop(active, !!render) - inset(active)
-            if (render?.follow) {
-              const reference = player.alignmentLine(active)
-              render.follow(active, reference, player.lineTop(reference) - target, initialTop)
+          } else if (active && target !== undefined) {
+            if (render?.follow && reference && referenceTop !== undefined) {
+              render.follow(active, reference, referenceTop - target, initialTop)
               followed = active
               followedTop = target
             } else if (active !== followed || Math.abs(target - followedTop) > 0.5) {

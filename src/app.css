@@ -374,3 +374,7 @@
 ::view-transition-new(header-wordmark-rest) {
   mix-blend-mode: normal;
 }
+
+@utility post-list-item {
+  @apply hover-bg-muted -mr-2 -ml-3.25 flex flex-col rounded-[1rem] py-2 pr-2 pl-3.25 before:rounded-[1rem];
+}

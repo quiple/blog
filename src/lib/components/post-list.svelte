@@ -95,7 +95,7 @@
 
 {#snippet skeletonItem()}
   <li>
-    <div class="pointer-events-none! list-item py-2">
+    <div class="pointer-events-none! post-list-item list-item py-2">
       <div class="flex gap-4">
         <div class="grow">
           <Skeleton class="mt-1 mb-2 h-4 w-3/5" />
@@ -124,7 +124,7 @@
       {@const displayDate =
         post.origDate instanceof Date ? post.origDate : new Date(`${post.origDate ?? post.pubDate}+09:00`)}
       <li>
-        <a href={post.relativeURL} class="list-item">
+        <a href={post.relativeURL} class="post-list-item list-item">
           <div class="flex gap-4">
             <div class="grow">
               <div class="mb-1 flex items-center gap-1">
@@ -178,9 +178,6 @@
 
 <style>
   @reference '#app.css';
-  .list-item {
-    @apply hover-bg-muted -mr-2 -ml-3.25 flex flex-col rounded-[1rem] py-2 pr-2 pl-3.25 before:rounded-[1rem];
-  }
   .list-item .img {
     @apply relative size-22 shrink-0 overflow-hidden rounded-md bg-cover bg-center shadow-xs;
   }

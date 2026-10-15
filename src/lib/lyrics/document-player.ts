@@ -22,7 +22,11 @@ export class DocumentLyricPlayer extends DomLyricPlayer {
     return group?.mainLine.getElement() ?? (this.interlude ? this.interludeDots.getElement() : undefined)
   }
 
-  lineTop(line: HTMLElement, exactInterlude = false) {
+  documentTop() {
+    return this.getElement().getBoundingClientRect().top + window.scrollY
+  }
+
+  lineTop(line: HTMLElement, exactInterlude = false, documentTop = this.documentTop()) {
     const group = line.parentElement ? this.lyricGroupElementMap.get(line.parentElement) : undefined
     // Match the next main line's anchor, including its inset inside the group.
     // The native dots themselves sit 0.4em inside the interlude slot.
@@ -34,7 +38,7 @@ export class DocumentLyricPlayer extends DomLyricPlayer {
       : exactInterlude
         ? this.interludeTop
         : this.interludeTop - (this.baseFontSize || 24) * 0.4 + (nextLine?.offsetTop ?? 0)
-    return this.getElement().getBoundingClientRect().top + window.scrollY + top
+    return documentTop + top
   }
 
   alignmentLine(line: HTMLElement) {
