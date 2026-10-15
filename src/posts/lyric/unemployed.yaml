@@ -276,132 +276,170 @@ lines:
     time: [42.451, 43.665]
   - words:
       - text: 'But '
+        pr: 벗
         time: [43.72, 43.799]
       - text: 'I '
+        pr: 아이
         time: [43.799, 43.897]
       - text: 'got '
+        pr: 갓
         time: [43.897, 44.247]
       - text: 'perfect '
+        pr: 퍼펙트
         time: [44.247, 44.801]
       - text: pitch
+        pr: 피치
         time: [44.801, 45.273]
-    pr: 벗 아이 갓 퍼펙트 피치
     tl: 그래도 절대음감은 있잖아
     time: [43.72, 45.273]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [45.273, 45.511]
       - text: 'trying '
+        pr: 트라잉
         time: [45.511, 45.687]
       - text: 'to '
+        pr: 투
         time: [45.687, 45.877]
       - text: 'find '
+        pr: 파인드
         time: [45.877, 46.056]
       - text: 'my '
+        pr: 마이
         time: [46.056, 46.409]
       - text: niche
+        pr: 니치
         time: [46.409, 47.458]
-    pr: 저스트 트라잉 투 파인드 마이 니치
     tl: 그냥 내가 설 자리를 찾는 중이야
     time: [45.273, 47.458]
   - words:
       - text: 'My '
+        pr: 마이
         time: [47.511, 47.691]
       - text: "retirement's "
+        pr: 리타이어먼츠
         time: [47.691, 48.02]
       - text: 'getting '
+        pr: 게팅
         time: [48.02, 48.239]
       - text: destroyed
+        pr: 디스트로잇
         time: [48.239, 48.691]
-    pr: 마이 리타이어먼츠 게팅 디스트로잇
     tl: 내 노후는 박살 나고 있어
     time: [47.511, 48.691]
   - words:
       - text: 'From '
+        pr: 프럼
         time: [48.691, 48.773]
       - text: 'sitting '
+        pr: 시팅
         time: [48.773, 48.879]
       - text: 'on '
+        pr: 온
         time: [48.879, 48.959]
       - text: 'my '
+        pr: 마이
         time: [48.959, 49.113]
       - text: 'ass '
+        pr: 애스
         time: [49.113, 49.283]
       - text: 'like '
+        pr: 라익
         time: [49.283, 49.351]
       - text: 'a '
+        pr: 어
         time: [49.351, 49.417]
       - text: hemorrhoid
+        pr: 헤머로잇
         time: [49.417, 50.213]
-    pr: 프럼 시팅 온 마이 애스 라익 어 헤머로잇
     tl: 치질처럼 엉덩이에 붙어 사느라
     time: [48.691, 50.213]
   - words:
       - text: 'Stop '
+        pr: 스탑
         time: [50.273, 50.575]
       - text: 'calling '
+        pr: 콜링
         time: [50.575, 50.937]
       - text: 'me '
+        pr: 미
         time: [50.937, 51.119]
       - text: 'a '
+        pr: 어
         time: [51.119, 51.302]
       - text: 'motherfucking '
+        pr: 머더퍼킹
         time: [51.302, 52.036]
       - text: 'Walmart '
+        pr: 월마트
         time: [52.036, 52.362]
       - text: Vocaloid
+        pr: 보컬로잇
         time: [52.362, 53.115]
-    pr: 스탑 콜링 미 어 머더퍼킹 월마트 보컬로잇
     tl: 씨발, 월마트표 싸구려 보컬로이드라고 부르지 좀 마
     time: [50.273, 53.115]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [53.115, 53.333]
       - text: 'just '
+        pr: 저스트
         time: [53.333, 53.535]
       - text: un
+        pr: 언
         time: [53.535, 54.026]
       - text: employed
+        pr: 임플로잇
         time: [54.026, 54.459]
-    pr: 아임 저스트 언임플로잇
     tl: 난 그냥 백수일 뿐이야
     time: [53.115, 54.459]
   - words:
       - text: 'I '
+        pr: 아이
         time: [54.459, 54.568]
       - text: 'got '
+        pr: 갓
         time: [54.568, 54.749]
       - text: 'no '
+        pr: 노
         time: [54.749, 54.842]
       - text: house
+        pr: 하우스
         time: [54.842, 55.185]
-    pr: 아이 갓 노 하우스
     tl: 집도 없어
     time: [54.459, 55.185]
   - words:
       - text: 'I '
+        pr: 아이
         time: [55.185, 55.274]
       - text: 'get '
+        pr: 겟
         time: [55.274, 55.455]
       - text: 'no '
+        pr: 노
         time: [55.455, 55.624]
       - text: pay
+        pr: 페이
         time: [55.624, 55.99]
-    pr: 아이 겟 노 페이
     tl: 월급도 못 받아
     time: [55.185, 55.99]
   - words:
       - text: 'Gonna '
+        pr: 거너
         time: [55.99, 56.278]
       - text: 'waste '
+        pr: 웨이스트
         time: [56.278, 56.724]
       - text: 'my '
+        pr: 마이
         time: [56.724, 57.079]
       - text: 'days '
+        pr: 데이즈
         time: [57.079, 57.449]
       - text: away
+        pr: 어웨이
         time: [57.449, 58.725]
-    pr: 거너 웨이스트 마이 데이즈 어웨이
     tl: 이렇게 하루하루 허비할 거야
     time: [55.99, 59.814]
     background:
@@ -416,16 +454,20 @@ lines:
       time: [58, 59.814]
   - words:
       - text: 'Yeah, '
+        pr: 예,
         time: [58.898, 59.045]
       - text: "I'm "
+        pr: 아임
         time: [59.045, 59.24]
       - text: 'chilling '
+        pr: 칠링
         time: [59.24, 59.631]
       - text: 'for '
+        pr: 포
         time: [59.631, 59.813]
       - text: free
+        pr: 프리
         time: [59.813, 60.521]
-    pr: 예, 아임 칠링 포 프리
     tl: 그래, 돈 한 푼 없이 빈둥대
     time: [58.898, 62.493]
     background:
@@ -440,54 +482,68 @@ lines:
       time: [60.521, 62.493]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [61.911, 62.149]
       - text: 'my '
+        pr: 마이
         time: [62.149, 62.333]
       - text: 'debt '
+        pr: 뎃
         time: [62.333, 62.5]
       - text: 'and '
+        pr: 앤드
         time: [62.5, 62.688]
       - text: me
+        pr: 미
         time: [62.688, 63.601]
-    pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
     time: [61.911, 63.601]
   - words:
       - text: "Can't "
+        pr: 캔트
         time: [65.032, 65.578]
       - text: unwind
+        pr: 언와인드
         time: [65.578, 66.119]
-    pr: 캔트 언와인드
     tl: 긴장을 풀 수가 없어
     time: [65.032, 66.119]
   - words:
       - text: 'Almost '
+        pr: 올모스트
         time: [66.119, 66.479]
       - text: 'lost '
+        pr: 로스트
         time: [66.479, 66.84]
       - text: 'my '
+        pr: 마이
         time: [66.84, 67.205]
       - text: mind
+        pr: 마인드
         time: [67.205, 67.565]
-    pr: 올모스트 로스트 마이 마인드
     tl: 거의 미쳐 버릴 뻔했어
     time: [66.119, 67.565]
   - words:
       - text: 'Viral '
+        pr: 바이럴
         time: [67.565, 67.852]
       - text: 'star, '
+        pr: 스타,
         time: [67.852, 68.293]
       - text: 'but '
+        pr: 벗
         time: [68.293, 68.465]
       - text: "I'm "
+        pr: 아임
         time: [68.465, 68.584]
       - text: 'still '
+        pr: 스틸
         time: [68.584, 68.846]
       - text: un
+        pr: 언
         time: [68.846, 69.118]
       - text: signed
+        pr: 사인드
         time: [69.118, 70.279]
-    pr: 바이럴 스타, 벗 아임 스틸 언사인드
     tl: 인터넷 스타지만 아직 계약한 데는 없어
     time: [67.565, 71.547]
     background:
@@ -502,18 +558,23 @@ lines:
       time: [69.482, 71.547]
   - words:
       - text: 'I '
+        pr: 아이
         time: [70.279, 70.457]
       - text: 'guess '
+        pr: 게스
         time: [70.457, 70.64]
       - text: "I'm "
+        pr: 아임
         time: [70.64, 70.792]
       - text: 'chilling '
+        pr: 칠링
         time: [70.792, 71.181]
       - text: 'for '
+        pr: 포
         time: [71.181, 71.363]
       - text: free
+        pr: 프리
         time: [71.363, 72.093]
-    pr: 아이 게스 아임 칠링 포 프리
     tl: 결국 돈 한 푼 없이 빈둥대는 거지
     time: [70.279, 73.637]
     background:
@@ -528,644 +589,833 @@ lines:
       time: [72.093, 73.637]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [73.308, 73.499]
       - text: 'my '
+        pr: 마이
         time: [73.499, 73.638]
       - text: 'baguette '
+        pr: 배겟
         time: [73.638, 74.069]
       - text: 'and '
+        pr: 앤드
         time: [74.069, 74.253]
       - text: me
+        pr: 미
         time: [74.253, 75.07]
-    pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
     time: [73.308, 75.07]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [76.058, 76.242]
       - text: 'poor '
+        pr: 푸어
         time: [76.242, 76.422]
       - text: 'as '
+        pr: 애즈
         time: [76.422, 76.596]
       - text: hell
+        pr: 헬
         time: [76.596, 77.09]
-    pr: 아임 푸어 애즈 헬
     tl: 난 더럽게 가난해
     time: [76.058, 77.09]
   - words:
       - text: 'Not '
+        pr: 낫
         time: [77.147, 77.507]
       - text: 'doing '
+        pr: 두잉
         time: [77.507, 78.051]
       - text: well
+        pr: 웰
         time: [78.051, 78.338]
-    pr: 낫 두잉 웰
     tl: 잘 지내지도 못해
     time: [77.147, 78.338]
   - words:
       - text: 'Locked '
+        pr: 락트
         time: [78.338, 78.601]
       - text: 'in '
+        pr: 인
         time: [78.601, 78.776]
       - text: 'a '
+        pr: 어
         time: [78.776, 78.954]
       - text: 'mental '
+        pr: 멘틀
         time: [78.954, 79.421]
       - text: cell
+        pr: 셀
         time: [79.421, 79.995]
-    pr: 락트 인 어 멘틀 셀
     tl: 마음속 감옥에 갇혀 있어
     time: [78.338, 79.995]
   - words:
       - text: 'My '
+        pr: 마이
         time: [80.03, 80.203]
       - text: 'bed '
+        pr: 벳
         time: [80.203, 80.384]
       - text: 'is '
+        pr: 이즈
         time: [80.384, 80.579]
       - text: 'where '
+        pr: 웨어
         time: [80.579, 80.758]
       - text: 'I '
+        pr: 아이
         time: [80.758, 81.059]
       - text: dwell
+        pr: 드웰
         time: [81.059, 81.848]
-    pr: 마이 벳 이즈 웨어 아이 드웰
     tl: 내가 사는 곳은 침대 위야
     time: [80.03, 81.848]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [81.848, 82.03]
       - text: 'broke '
+        pr: 브록
         time: [82.03, 82.211]
       - text: 'as '
+        pr: 애즈
         time: [82.211, 82.34]
       - text: fuck
+        pr: 퍽
         time: [82.34, 82.878]
-    pr: 아임 브록 애즈 퍽
     tl: 난 씨발, 돈이 한 푼도 없어
     time: [81.848, 82.878]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [82.878, 83.292]
       - text: 'my '
+        pr: 마이
         time: [83.292, 83.438]
       - text: 'shitty '
+        pr: 시티
         time: [83.438, 83.836]
       - text: luck
+        pr: 럭
         time: [83.836, 84.207]
-    pr: 저스트 마이 시티 럭
     tl: 그냥 내 운이 좆같은 거지
     time: [82.878, 84.207]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [84.207, 84.376]
       - text: 'a '
+        pr: 어
         time: [84.376, 84.668]
       - text: 'sitting '
+        pr: 시팅
         time: [84.668, 85.266]
       - text: duck
+        pr: 덕
         time: [85.266, 85.759]
-    pr: 아임 어 시팅 덕
     tl: 난 꼼짝없이 당할 신세야
     time: [84.207, 85.759]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [85.759, 85.963]
       - text: 'want '
+        pr: 원트
         time: [85.963, 86.14]
       - text: 'to '
+        pr: 투
         time: [86.14, 86.361]
       - text: 'get '
+        pr: 겟
         time: [86.361, 86.526]
       - text: un
+        pr: 언
         time: [86.526, 86.827]
       - text: stuck
+        pr: 스턱
         time: [86.827, 87.99]
-    pr: 저스트 원트 투 겟 언스턱
     tl: 그냥 이 신세에서 벗어나고 싶어
     time: [85.759, 87.99]
   - words:
       - text: 'My '
+        pr: 마이
         time: [87.99, 88.169]
       - text: "retirement's "
+        pr: 리타이어먼츠
         time: [88.169, 88.548]
       - text: 'getting '
+        pr: 게팅
         time: [88.548, 88.72]
       - text: destroyed
+        pr: 디스트로잇
         time: [88.72, 89.173]
-    pr: 마이 리타이어먼츠 게팅 디스트로잇
     tl: 내 노후는 박살 나고 있어
     time: [87.99, 89.173]
   - words:
       - text: 'From '
+        pr: 프럼
         time: [89.173, 89.252]
       - text: 'sitting '
+        pr: 시팅
         time: [89.252, 89.408]
       - text: 'on '
+        pr: 온
         time: [89.408, 89.486]
       - text: 'my '
+        pr: 마이
         time: [89.486, 89.54]
       - text: 'ass '
+        pr: 애스
         time: [89.54, 89.764]
       - text: 'like '
+        pr: 라익
         time: [89.764, 89.895]
       - text: 'a '
+        pr: 어
         time: [89.895, 89.989]
       - text: hemorrhoid
+        pr: 헤머로잇
         time: [89.989, 90.698]
-    pr: 프럼 시팅 온 마이 애스 라익 어 헤머로잇
     tl: 치질처럼 엉덩이에 붙어 사느라
     time: [89.173, 90.698]
   - words:
       - text: 'Stop '
+        pr: 스탑
         time: [90.698, 91.052]
       - text: 'telling '
+        pr: 텔링
         time: [91.052, 91.164]
       - text: 'me '
+        pr: 미
         time: [91.164, 91.241]
       - text: 'to '
+        pr: 투
         time: [91.241, 91.421]
       - text: 'get '
+        pr: 겟
         time: [91.421, 91.598]
       - text: 'a '
+        pr: 어
         time: [91.598, 91.766]
       - text: life
+        pr: 라입
         time: [91.766, 91.969]
-    pr: 스탑 텔링 미 투 겟 어 라입
     tl: 제발 제대로 좀 살라는 말은 그만해
     time: [90.698, 91.969]
   - words:
       - text: "I'd "
+        pr: 아잇
         time: [91.969, 92.127]
       - text: 'rather '
+        pr: 래더
         time: [92.127, 92.489]
       - text: 'live '
+        pr: 립
         time: [92.489, 92.696]
       - text: 'one '
+        pr: 원
         time: [92.696, 92.874]
       - text: 'I '
+        pr: 아이
         time: [92.874, 93.013]
       - text: enjoyed
+        pr: 인조잇
         time: [93.013, 93.713]
-    pr: 아잇 래더 립 원 아이 인조잇
     tl: 난 내가 즐거운 삶을 살고 싶어
     time: [91.969, 93.713]
   - words:
       - text: 'My '
+        pr: 마이
         time: [160.265, 160.456]
       - text: 'life '
+        pr: 라입
         time: [160.456, 160.637]
       - text: 'feels '
+        pr: 필즈
         time: [160.637, 160.818]
       - text: 'like '
+        pr: 라익
         time: [160.818, 160.991]
       - text: "it's "
+        pr: 이츠
         time: [160.991, 161.18]
       - text: 'flying '
+        pr: 플라잉
         time: [161.18, 161.544]
       - text: by
+        pr: 바이
         time: [161.544, 161.816]
-    pr: 마이 필즈 라익 이츠 플라잉 바이
     tl: 내 인생이 쏜살같이 지나가는 것 같아
     time: [160.265, 161.816]
   - words:
       - text: 'My '
+        pr: 마이
         time: [161.816, 161.91]
       - text: "future's "
+        pr: 퓨처스
         time: [161.91, 162.271]
       - text: 'gone, '
+        pr: 곤,
         time: [162.271, 162.385]
       - text: 'and '
+        pr: 앤드
         time: [162.385, 162.456]
       - text: 'my '
+        pr: 마이
         time: [162.456, 162.624]
       - text: 'dreams '
+        pr: 드림즈
         time: [162.624, 162.789]
       - text: 'have '
+        pr: 햅
         time: [162.789, 162.996]
       - text: died
+        pr: 다잇
         time: [162.996, 163.177]
-    pr: 마이 퓨처스 곤, 앤드 마이 드림즈 햅 다잇
     tl: 미래는 사라졌고 꿈도 죽어 버렸어
     time: [161.816, 163.177]
   - words:
       - text: 'This '
+        pr: 디스
         time: [163.177, 163.312]
       - text: 'song '
+        pr: 송
         time: [163.312, 163.542]
       - text: 'is '
+        pr: 이즈
         time: [163.542, 163.631]
       - text: 'just '
+        pr: 저스트
         time: [163.631, 163.846]
       - text: 'an '
+        pr: 언
         time: [163.846, 164.082]
       - text: outcry
+        pr: 아웃크라이
         time: [164.082, 164.635]
-    pr: 디스 송 이즈 저스트 언 아웃크라이
     tl: 이 노래는 그저 절규일 뿐이야
     time: [163.177, 164.635]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [164.635, 164.809]
       - text: 'need '
+        pr: 닛
         time: [164.809, 164.975]
       - text: 'some '
+        pr: 섬
         time: [164.975, 165.153]
       - text: 'space '
+        pr: 스페이스
         time: [165.153, 165.324]
       - text: 'to '
+        pr: 투
         time: [165.324, 165.507]
       - text: occupy
+        pr: 아큐파이
         time: [165.507, 166.166]
-    pr: 저스트 닛 섬 스페이스 투 아큐파이
     tl: 그냥 내가 있을 자리만 있으면 돼
     time: [164.635, 166.166]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [166.166, 166.236]
       - text: 'losing '
+        pr: 루징
         time: [166.236, 166.604]
       - text: 'all '
+        pr: 올
         time: [166.604, 166.783]
       - text: 'my '
+        pr: 마이
         time: [166.783, 166.938]
       - text: assets
+        pr: 에세츠
         time: [166.938, 167.463]
-    pr: 아임 루징 올 마이 에세츠
     tl: 가진 걸 전부 잃어 가고 있어
     time: [166.166, 167.463]
   - words:
       - text: 'So '
+        pr: 소
         time: [167.463, 167.521]
       - text: 'I '
+        pr: 아이
         time: [167.521, 167.646]
       - text: 'spend '
+        pr: 스펜드
         time: [167.646, 167.875]
       - text: 'my '
+        pr: 마이
         time: [167.875, 168.054]
       - text: 'time '
+        pr: 타임
         time: [168.054, 168.235]
       - text: 'in '
+        pr: 인
         time: [168.235, 168.415]
       - text: deficit
+        pr: 데퍼싯
         time: [168.415, 169.058]
-    pr: 소 아이 스펜드 마이 타임 인 데퍼싯
     tl: 그래서 적자 인생을 보내고 있지
     time: [167.463, 169.058]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [169.058, 169.144]
       - text: 'waking '
+        pr: 웨이킹
         time: [169.144, 169.507]
       - text: 'in '
+        pr: 인
         time: [169.507, 169.676]
       - text: 'a '
+        pr: 어
         time: [169.676, 169.772]
       - text: 'cold '
+        pr: 콜드
         time: [169.772, 170.104]
       - text: sweat
+        pr: 스웻
         time: [170.104, 170.391]
-    pr: 아임 웨이킹 인 어 콜드 스웻
     tl: 식은땀을 흘리며 잠에서 깨
     time: [169.058, 170.391]
   - words:
       - text: 'Can '
+        pr: 캔
         time: [170.391, 170.574]
       - text: 'barely '
+        pr: 베얼리
         time: [170.574, 170.758]
       - text: 'afford '
+        pr: 어포드
         time: [170.758, 171.12]
       - text: 'the '
+        pr: 디
         time: [171.12, 171.298]
       - text: internet
+        pr: 인터넷
         time: [171.298, 171.938]
-    pr: 캔 베얼리 어포드 디 인터넷
     tl: 인터넷 요금조차 내기 빠듯해
     time: [170.391, 171.938]
   - words:
       - text: 'I '
+        pr: 아이
         time: [171.938, 172.024]
       - text: 'need '
+        pr: 닛
         time: [172.024, 172.191]
       - text: 'some '
+        pr: 섬
         time: [172.191, 172.391]
       - text: help
+        pr: 헬프
         time: [172.391, 172.55]
-    pr: 아이 닛 섬 헬프
     tl: 도움이 좀 필요해
     time: [171.938, 172.55]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [172.55, 172.753]
       - text: 'need '
+        pr: 닛
         time: [172.753, 172.917]
       - text: 'some '
+        pr: 섬
         time: [172.917, 173.117]
       - text: time
+        pr: 타임
         time: [173.117, 173.306]
-    pr: 저스트 닛 섬 타임
     tl: 시간이 조금만 있으면 돼
     time: [172.55, 173.306]
   - words:
       - text: 'My '
+        pr: 마이
         time: [173.306, 173.438]
       - text: 'Spotify '
+        pr: 스포티파이
         time: [173.438, 173.843]
       - text: "doesn't "
+        pr: 더즌트
         time: [173.843, 174.191]
       - text: 'make '
+        pr: 메익
         time: [174.191, 174.384]
       - text: 'a '
+        pr: 어
         time: [174.384, 174.51]
       - text: dime
+        pr: 다임
         time: [174.51, 174.749]
-    pr: 마이 스포티파이 더즌트 메익 어 다임
     tl: 스포티파이로는 한 푼도 못 벌어
     time: [173.306, 174.749]
   - words:
       - text: 'But '
+        pr: 벗
         time: [174.749, 174.828]
       - text: 'my '
+        pr: 마이
         time: [174.828, 174.9]
       - text: 'stream '
+        pr: 스트림
         time: [174.9, 174.996]
       - text: 'has '
+        pr: 해즈
         time: [174.996, 175.179]
       - text: 'a '
+        pr: 어
         time: [175.179, 175.267]
       - text: 'record '
+        pr: 레코드
         time: [175.267, 175.684]
       - text: uptime
+        pr: 업타임
         time: [175.684, 176.182]
-    pr: 벗 마이 스트림 해즈 어 레코드 업타임
     tl: 그런데 방송 켜 둔 시간은 신기록이야
     time: [174.749, 176.182]
   - words:
       - text: '(Go '
+        pr: (고
         time: [176.182, 176.289]
       - text: 'sub '
+        pr: 섭
         time: [176.289, 176.535]
       - text: 'to '
+        pr: 투
         time: [176.535, 176.71]
       - text: 'me '
+        pr: 미
         time: [176.71, 176.888]
       - text: 'with '
+        pr: 윗
         time: [176.888, 176.972]
       - text: 'your '
+        pr: 유어
         time: [176.972, 177.048]
       - text: 'free '
+        pr: 프리
         time: [177.048, 177.179]
       - text: 'Twitch '
+        pr: 트위치
         time: [177.179, 177.405]
       - text: Prime)
+        pr: 프라임)
         time: [177.405, 177.544]
-    pr: (고 섭 투 미 윗 유어 프리 트위치 프라임)
     tl: (무료 트위치 프라임으로 내 채널 구독 좀 해 줘)
     time: [176.182, 177.544]
   - words:
       - text: 'Please '
+        pr: 플리즈
         time: [177.544, 177.764]
       - text: 'play '
+        pr: 플레이
         time: [177.764, 177.993]
       - text: 'me '
+        pr: 미
         time: [177.993, 178.178]
       - text: 'in '
+        pr: 인
         time: [178.178, 178.354]
       - text: 'your '
+        pr: 유어
         time: [178.354, 178.568]
       - text: ears
+        pr: 이어즈
         time: [178.568, 178.903]
-    pr: 플리즈 플레이 미 인 유어 이어즈
     tl: 제발 내 노래 좀 들어 줘
     time: [177.544, 178.903]
   - words:
       - text: 'I '
+        pr: 아이
         time: [178.903, 179.023]
       - text: "don't "
+        pr: 돈트
         time: [179.023, 179.199]
       - text: 'want '
+        pr: 원트
         time: [179.199, 179.44]
       - text: 'a '
+        pr: 어
         time: [179.44, 179.542]
       - text: 'real '
+        pr: 리얼
         time: [179.542, 179.806]
       - text: career
+        pr: 커리어
         time: [179.806, 180.33]
-    pr: 아이 돈트 원트 어 리얼 커리어
     tl: 제대로 된 직장은 갖기 싫어
     time: [178.903, 180.33]
   - words:
       - text: 'Oh, '
+        pr: 오,
         time: [180.33, 180.47]
       - text: 'please '
+        pr: 플리즈
         time: [180.47, 180.694]
       - text: 'play '
+        pr: 플레이
         time: [180.694, 180.873]
       - text: 'me '
+        pr: 미
         time: [180.873, 181.058]
       - text: 'in '
+        pr: 인
         time: [181.058, 181.239]
       - text: 'your '
+        pr: 유어
         time: [181.239, 181.446]
       - text: ears
+        pr: 이어즈
         time: [181.446, 181.785]
-    pr: 오, 플리즈 플레이 미 인 유어 이어즈
     tl: 아, 제발 내 노래 좀 들어 줘
     time: [180.33, 181.785]
   - words:
       - text: 'I '
+        pr: 아이
         time: [181.785, 181.961]
       - text: "don't "
+        pr: 돈트
         time: [181.961, 182.084]
       - text: 'want '
+        pr: 원트
         time: [182.084, 182.327]
       - text: 'a '
+        pr: 어
         time: [182.327, 182.484]
       - text: 'real '
+        pr: 리얼
         time: [182.484, 182.683]
       - text: career
+        pr: 커리어
         time: [182.683, 185.056]
-    pr: 아이 돈트 원트 어 리얼 커리어
     tl: 제대로 된 직장은 갖기 싫어
     time: [181.785, 185.056]
   - words:
       - text: Un
+        pr: 언
         time: [186.483, 187.028]
       - text: employed
+        pr: 임플로잇
         time: [187.028, 187.71]
-    pr: 언임플로잇
     tl: 백수
     time: [186.483, 187.71]
   - words:
       - text: 'No '
+        pr: 노
         time: [187.71, 187.858]
       - text: 'house, '
+        pr: 하우스,
         time: [187.858, 188.288]
       - text: 'no '
+        pr: 노
         time: [188.288, 188.645]
       - text: pay
+        pr: 페이
         time: [188.645, 189.003]
-    pr: 노 하우스, 노 페이
     tl: 집도 없고 월급도 없어
     time: [187.71, 189.003]
   - words:
       - text: 'Gonna '
+        pr: 거너
         time: [189.003, 189.38]
       - text: 'waste '
+        pr: 웨이스트
         time: [189.38, 189.74]
       - text: 'the '
+        pr: 더
         time: [189.74, 190.079]
       - text: 'day '
+        pr: 데이
         time: [190.079, 190.457]
       - text: away
+        pr: 어웨이
         time: [190.457, 191.916]
-    pr: 거너 웨이스트 더 데이 어웨이
     tl: 오늘도 하루를 허비할 거야
     time: [189.003, 191.916]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [192.095, 192.254]
       - text: 'chilling '
+        pr: 칠링
         time: [192.254, 192.631]
       - text: 'for '
+        pr: 포
         time: [192.631, 192.791]
       - text: free
+        pr: 프리
         time: [192.791, 193.639]
-    pr: 아임 칠링 포 프리
     tl: 돈 한 푼 없이 빈둥대
     time: [192.095, 193.639]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [194.953, 195.151]
       - text: 'my '
+        pr: 마이
         time: [195.151, 195.322]
       - text: 'debt '
+        pr: 뎃
         time: [195.322, 195.488]
       - text: 'and '
+        pr: 앤드
         time: [195.488, 195.689]
       - text: me
+        pr: 미
         time: [195.689, 196.606]
-    pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
     time: [194.953, 196.606]
   - words:
       - text: "Can't "
+        pr: 캔트
         time: [198.05, 198.6]
       - text: relax
+        pr: 릴랙스
         time: [198.6, 199.322]
-    pr: 캔트 릴랙스
     tl: 마음 편히 쉴 수가 없어
     time: [198.05, 199.322]
   - words:
       - text: 'My '
+        pr: 마이
         time: [199.322, 199.448]
       - text: "life's "
+        pr: 라입스
         time: [199.448, 199.678]
       - text: 'a '
+        pr: 어
         time: [199.678, 199.802]
       - text: 'cruel '
+        pr: 크루얼
         time: [199.802, 200.213]
       - text: gag
+        pr: 객
         time: [200.213, 200.583]
-    pr: 마이 라입스 어 크루얼 객
     tl: 내 인생은 잔인한 농담 같아
     time: [199.322, 200.583]
   - words:
       - text: 'Put '
+        pr: 풋
         time: [200.583, 200.718]
       - text: 'the '
+        pr: 더
         time: [200.718, 200.864]
       - text: 'fries '
+        pr: 프라이즈
         time: [200.864, 201.329]
       - text: 'in '
+        pr: 인
         time: [201.329, 201.478]
       - text: 'the '
+        pr: 더
         time: [201.478, 201.654]
       - text: 'god '
+        pr: 갓
         time: [201.654, 201.799]
       - text: 'damn '
+        pr: 댐
         time: [201.799, 202.207]
       - text: bag
+        pr: 백
         time: [202.207, 203.227]
-    pr: 풋 더 프라이즈 인 더 갓 댐 백
     tl: 씨발, 감자튀김이나 봉투에 담아
     time: [200.583, 203.227]
   - words:
       - text: 'Yeah, '
+        pr: 예,
         time: [203.397, 203.588]
       - text: "I'm "
+        pr: 아임
         time: [203.588, 203.814]
       - text: 'chilling '
+        pr: 칠링
         time: [203.814, 204.193]
       - text: 'for '
+        pr: 포
         time: [204.193, 204.361]
       - text: free
+        pr: 프리
         time: [204.361, 205.318]
-    pr: 예, 아임 칠링 포 프리
     tl: 그래, 돈 한 푼 없이 빈둥대
     time: [203.397, 205.318]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [206.31, 206.539]
       - text: 'my '
+        pr: 마이
         time: [206.539, 206.698]
       - text: 'baguette '
+        pr: 배겟
         time: [206.698, 207.064]
       - text: 'and '
+        pr: 앤드
         time: [207.064, 207.249]
       - text: me
+        pr: 미
         time: [207.249, 208.36]
-    pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
     time: [206.31, 208.36]
   - words:
       - text: 'Motherfucker, '
+        pr: 머더퍼커,
         time: [209.436, 209.782]
       - text: "I'm "
+        pr: 아임
         time: [209.782, 209.968]
       - text: un
+        pr: 언
         time: [209.968, 210.514]
       - text: employed
+        pr: 임플로잇
         time: [210.514, 211.048]
-    pr: 머더퍼커, 아임 언임플로잇
     tl: 씨발, 나 백수라고
     time: [209.436, 211.048]
   - words:
       - text: 'I '
+        pr: 아이
         time: [211.048, 211.133]
       - text: 'got '
+        pr: 갓
         time: [211.133, 211.241]
       - text: 'no '
+        pr: 노
         time: [211.241, 211.373]
       - text: house
+        pr: 하우스
         time: [211.373, 211.677]
-    pr: 아이 갓 노 하우스
     tl: 집도 없어
     time: [211.048, 211.677]
   - words:
       - text: 'I '
+        pr: 아이
         time: [211.677, 211.785]
       - text: 'get '
+        pr: 겟
         time: [211.785, 211.967]
       - text: 'no '
+        pr: 노
         time: [211.967, 212.15]
       - text: pay
+        pr: 페이
         time: [212.15, 212.502]
-    pr: 아이 겟 노 페이
     tl: 월급도 못 받아
     time: [211.677, 212.502]
   - words:
       - text: 'Gonna '
+        pr: 거너
         time: [212.502, 212.784]
       - text: 'waste '
+        pr: 웨이스트
         time: [212.784, 213.235]
       - text: 'my '
+        pr: 마이
         time: [213.235, 213.6]
       - text: 'days '
+        pr: 데이즈
         time: [213.6, 213.947]
       - text: away
+        pr: 어웨이
         time: [213.947, 215.638]
-    pr: 거너 웨이스트 마이 데이즈 어웨이
     tl: 이렇게 하루하루 허비할 거야
     time: [212.502, 216.305]
     background:
@@ -1180,14 +1430,17 @@ lines:
       time: [214.516, 216.305]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [215.638, 215.737]
       - text: 'chilling '
+        pr: 칠링
         time: [215.737, 216.117]
       - text: 'for '
+        pr: 포
         time: [216.117, 216.292]
       - text: free
+        pr: 프리
         time: [216.292, 217.031]
-    pr: 저스트 칠링 포 프리
     tl: 그냥 돈 한 푼 없이 빈둥대
     time: [215.638, 219.02]
     background:
@@ -1202,16 +1455,20 @@ lines:
       time: [217.031, 219.02]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [218.429, 218.658]
       - text: 'my '
+        pr: 마이
         time: [218.658, 218.843]
       - text: 'debt '
+        pr: 뎃
         time: [218.843, 219.023]
       - text: 'and '
+        pr: 앤드
         time: [219.023, 219.205]
       - text: me
+        pr: 미
         time: [219.205, 219.935]
-    pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
     time: [218.429, 221.514]
     background:
@@ -1226,54 +1483,71 @@ lines:
       time: [220.459, 221.514]
   - words:
       - text: 'Yeah, '
+        pr: 예,
         time: [221.194, 221.353]
       - text: 'I '
+        pr: 아이
         time: [221.353, 221.544]
       - text: "can't "
+        pr: 캔트
         time: [221.544, 222.089]
       - text: unwind
+        pr: 언와인드
         time: [222.089, 222.627]
-    pr: 예, 아이 캔트 언와인드
     tl: 그래, 긴장을 풀 수가 없어
     time: [221.194, 222.627]
   - words:
       - text: "I've "
+        pr: 아입
         time: [222.627, 222.761]
       - text: 'almost '
+        pr: 올모스트
         time: [222.761, 222.996]
       - text: 'lost '
+        pr: 로스트
         time: [222.996, 223.177]
       - text: 'my '
+        pr: 마이
         time: [223.177, 223.345]
       - text: 'god '
+        pr: 갓
         time: [223.345, 223.464]
       - text: 'damn '
+        pr: 댐
         time: [223.464, 223.639]
       - text: mind
+        pr: 마인드
         time: [223.639, 223.822]
-    pr: 아입 올모스트 로스트 마이 갓 댐 마인드
     tl: 씨발, 거의 미쳐 버릴 뻔했어
     time: [222.627, 223.822]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [223.822, 223.912]
       - text: 'a '
+        pr: 어
         time: [223.912, 224.078]
       - text: 'viral '
+        pr: 바이럴
         time: [224.078, 224.363]
       - text: 'star, '
+        pr: 스타,
         time: [224.363, 224.808]
       - text: 'but '
+        pr: 벗
         time: [224.808, 224.909]
       - text: "I'm "
+        pr: 아임
         time: [224.909, 225.121]
       - text: 'still '
+        pr: 스틸
         time: [225.121, 225.335]
       - text: un
+        pr: 언
         time: [225.335, 225.615]
       - text: signed
+        pr: 사인드
         time: [225.615, 226.963]
-    pr: 아임 어 바이럴 스타, 벗 아임 스틸 언사인드
     tl: 난 인터넷 스타인데 아직 계약한 데는 없어
     time: [223.822, 228.057]
     background:
@@ -1288,18 +1562,23 @@ lines:
       time: [225.964, 228.057]
   - words:
       - text: 'I '
+        pr: 아이
         time: [226.963, 227.052]
       - text: 'guess '
+        pr: 게스
         time: [227.052, 227.153]
       - text: "I'm "
+        pr: 아임
         time: [227.153, 227.306]
       - text: 'chilling '
+        pr: 칠링
         time: [227.306, 227.694]
       - text: 'for '
+        pr: 포
         time: [227.694, 227.876]
       - text: free
+        pr: 프리
         time: [227.876, 228.606]
-    pr: 아이 게스 아임 칠링 포 프리
     tl: 결국 돈 한 푼 없이 빈둥대는 거지
     time: [226.963, 230.758]
     background:
@@ -1314,16 +1593,20 @@ lines:
       time: [228.78, 230.758]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [229.823, 230.034]
       - text: 'my '
+        pr: 마이
         time: [230.034, 230.206]
       - text: 'baguette '
+        pr: 배겟
         time: [230.206, 230.561]
       - text: 'and '
+        pr: 앤드
         time: [230.561, 230.757]
       - text: me
+        pr: 미
         time: [230.757, 231.728]
-    pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
     time: [229.823, 233.481]
     background:
@@ -1338,14 +1621,17 @@ lines:
       time: [231.485, 233.481]
   - words:
       - text: 'Forever '
+        pr: 포에버
         time: [232.575, 233.098]
       - text: 'chilling '
+        pr: 칠링
         time: [233.098, 233.481]
       - text: 'for '
+        pr: 포
         time: [233.481, 233.659]
       - text: free
+        pr: 프리
         time: [233.659, 234.393]
-    pr: 포에버 칠링 포 프리
     tl: 영원히 돈 한 푼 없이 빈둥대
     time: [232.575, 236.361]
     background:
@@ -1360,16 +1646,20 @@ lines:
       time: [234.393, 236.361]
   - words:
       - text: 'My '
+        pr: 마이
         time: [235.638, 235.778]
       - text: 'immense '
+        pr: 이멘스
         time: [235.778, 236.094]
       - text: 'debt '
+        pr: 뎃
         time: [236.094, 236.344]
       - text: 'and '
+        pr: 앤드
         time: [236.344, 236.53]
       - text: me
+        pr: 미
         time: [236.53, 237.512]
-    pr: 마이 이멘스 뎃 앤드 미
     tl: 어마어마한 빚과 나
     time: [235.638, 238.538]
     background:
@@ -1384,16 +1674,20 @@ lines:
       time: [237.272, 238.538]
   - words:
       - text: "We'll "
+        pr: 윌
         time: [238.538, 238.724]
       - text: 'be '
+        pr: 비
         time: [238.724, 238.865]
       - text: 'chilling '
+        pr: 칠링
         time: [238.865, 239.264]
       - text: 'for '
+        pr: 포
         time: [239.264, 239.432]
       - text: free
+        pr: 프리
         time: [239.432, 241.33]
-    pr: 윌 비 칠링 포 프리
     tl: 우린 돈 한 푼 없이 빈둥댈 거야
     time: [238.538, 241.33]
     background:
@@ -1408,13 +1702,16 @@ lines:
       time: [238.538, 241.33]
   - words:
       - text: 'Forever '
+        pr: 포에버
         time: [241.33, 241.743]
       - text: 'chilling '
+        pr: 칠링
         time: [241.743, 242.146]
       - text: 'for '
+        pr: 포
         time: [242.146, 242.318]
       - text: free
+        pr: 프리
         time: [242.318, 243.603]
-    pr: 포에버 칠링 포 프리
     tl: 영원히 돈 한 푼 없이 빈둥대
     time: [241.33, 243.603]
