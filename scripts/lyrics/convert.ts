@@ -33,24 +33,21 @@ export function fromTTML(xml: string, timing?: 'Line' | 'Word') {
       ids.add(key)
     }
   }
-  const explicitWordLines = new Set(
-    paragraphs
-      .filter((paragraph) =>
-        Array.from(paragraph.childNodes).some(
-          (child) =>
-            child.nodeType === 1 &&
-            (child as Element).localName === 'span' &&
-            (child as Element).hasAttribute('begin') &&
-            (child as Element).hasAttribute('end') &&
-            !(child as Element).hasAttributeNS('http://www.w3.org/ns/ttml#metadata', 'role'),
-        ),
-      )
-      .map((paragraph) => paragraph.getAttributeNS(namespace, 'key')),
-  )
+  const paragraphById = new Map(paragraphs.map((p) => [p.getAttributeNS(namespace, 'key'), p]))
+  const hasTimedWords = (container?: Element) =>
+    container &&
+    Array.from(container.childNodes).some(
+      (child) =>
+        child.nodeType === 1 &&
+        (child as Element).localName === 'span' &&
+        (child as Element).hasAttribute('begin') &&
+        (child as Element).hasAttribute('end') &&
+        !(child as Element).hasAttributeNS('http://www.w3.org/ns/ttml#metadata', 'role'),
+    )
   const result = TTMLParser.parse(xml, {domParser: {parseFromString: () => document}})
   // Read the declared mode, not metadata.timingMode: the parser infers that from word count alone.
   const lineTiming = (timing ?? document.documentElement?.getAttributeNS(namespace, 'timing')) === 'Line'
-  function line(input: Line): SongLine {
+  function line(input: Line, container?: Element): SongLine {
     const parts = input.words ?? []
     const first = parts[0]
     const wordsCoverLine =
@@ -63,7 +60,7 @@ export function fromTTML(xml: string, timing?: 'Line' | 'Word') {
       !lineTiming &&
       parts.length > 0 &&
       parts.every((word) => word.endTime > word.startTime) &&
-      ((parts.length === 1 && explicitWordLines.has(input.id ?? '')) ||
+      ((parts.length === 1 && hasTimedWords(container)) ||
         parts.some((word) => word.startTime !== first.startTime || word.endTime !== first.endTime))
     // Ruby and per-word annotations cannot be represented by the plain text field.
     const keepWords =
@@ -102,7 +99,19 @@ export function fromTTML(xml: string, timing?: 'Line' | 'Word') {
       translation: annotations(input.translations),
       pronunciation: annotations(input.romanizations?.filter((roman) => !keepWords || !roman.words?.length)),
       ...(input.agentId === 'v2' ? {duet: true} : {}),
-      ...(input.backgroundVocal ? {background: line(input.backgroundVocal)} : {}),
+      ...(input.backgroundVocal
+        ? {
+            background: line(
+              input.backgroundVocal,
+              container &&
+                Array.from(container.childNodes).find(
+                  (child): child is Element =>
+                    child.nodeType === 1 &&
+                    (child as Element).getAttributeNS('http://www.w3.org/ns/ttml#metadata', 'role') === 'x-bg',
+                ),
+            ),
+          }
+        : {}),
     }
   }
   if (!result.lines.length) throw new Error('TTML에 가사 행이 없습니다.')
@@ -110,7 +119,9 @@ export function fromTTML(xml: string, timing?: 'Line' | 'Word') {
     title: result.metadata.title?.[0],
     lang: result.metadata.language,
     spotify: result.metadata.platformIds?.spotifyId?.[0],
-    lines: result.lines.map(line).sort((a, b) => (a.time?.[0] ?? 0) - (b.time?.[0] ?? 0)),
+    lines: result.lines
+      .map((input) => line(input, paragraphById.get(input.id ?? '')))
+      .sort((a, b) => (a.time?.[0] ?? 0) - (b.time?.[0] ?? 0)),
   })
   return {song, metadata: result.metadata}
 }

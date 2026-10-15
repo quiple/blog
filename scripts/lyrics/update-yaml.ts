@@ -1,7 +1,10 @@
 import {isMap, isScalar, isSeq, parseDocument, YAMLMap} from 'yaml'
 import {mapYamlFields} from '../../src/lib/lyrics/yaml-fields.ts'
 import {parseSongYaml} from '../../src/lib/lyrics/yaml.server.ts'
+import type {SongLine} from '../../src/lib/lyrics/model.ts'
 import type {ConversionMode, fromLRC} from './lrc.ts'
+
+export type ImportedLine = ReturnType<typeof fromLRC>['lines'][number] & {background?: ImportedLine}
 
 const normalize = (text: string) =>
   text
@@ -34,7 +37,7 @@ function splitOriginal(text: string, parts: string[]) {
 
 export function updateLyricsYaml(
   source: string,
-  converted: ReturnType<typeof fromLRC>,
+  converted: {lines: ImportedLine[]},
   force = false,
   mode: ConversionMode = 'auto',
   replaceText = false,
@@ -44,16 +47,14 @@ export function updateLyricsYaml(
   const lines = doc.get('lines')
   if (!isSeq(lines) || lines.items.length !== converted.lines.length)
     throw Error('기존 곡과 변환 가사의 행 수가 다릅니다. 번역 대응을 확인하세요.')
-  converted.lines.forEach((line, i) => {
-    const old = original.lines[i]
+  function updateLine(node: unknown, old: SongLine, line: ImportedLine, i: number) {
     const text = line.words?.map((w) => w.text).join('') ?? line.text ?? ''
     if (!replaceText && !force && normalize(old.text) !== normalize(text))
       throw Error(`${i + 1}행 원문이 다릅니다. 대응하는 행이 맞다면 --force로 갱신하세요.`)
-    let node = lines.items[i]
     if (isScalar(node) && typeof node.value === 'string') {
       const entry = new YAMLMap()
       entry.set('text', node)
-      lines.items[i] = node = entry
+      node = entry
     }
     if (!isMap(node)) throw Error(`${i + 1}행은 객체 형식이어야 합니다.`)
     const words = node.get('words')
@@ -127,6 +128,18 @@ export function updateLyricsYaml(
       node.delete('text')
     }
     node.set('time', doc.createNode(line.time))
+    if (line.background) {
+      const background = line.background
+      const previous = old.background ?? {
+        text: background.words?.map((word) => word.text).join('') ?? background.text ?? '',
+      }
+      const existing = node.get('background', true) ?? doc.createNode({text: previous.text})
+      node.set('background', updateLine(existing, previous, background, i))
+    }
+    return node
+  }
+  converted.lines.forEach((line, i) => {
+    lines.items[i] = updateLine(lines.items[i], original.lines[i], line, i)
   })
   return doc
 }

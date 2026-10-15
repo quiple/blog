@@ -4,8 +4,9 @@ import {readFile, writeFile} from 'node:fs/promises'
 import {resolve} from 'node:path'
 import {fileURLToPath} from 'node:url'
 import {fromTTML} from './scripts/lyrics/convert.ts'
-import {updateLyricsYaml} from './scripts/lyrics/update-yaml.ts'
+import {updateLyricsYaml, type ImportedLine} from './scripts/lyrics/update-yaml.ts'
 import {formatLyricsYaml} from './scripts/lyrics/format-yaml.ts'
+import type {SongLine} from './src/lib/lyrics/model.ts'
 import {parseSongYaml} from './src/lib/lyrics/yaml.server.ts'
 
 try {
@@ -25,12 +26,16 @@ try {
     const output = fileURLToPath(new URL(`src/posts/lyric/${slug}.yaml`, import.meta.url))
     const original = await readFile(output, 'utf8')
     const {song} = fromTTML(await readFile(input, 'utf8'))
-    const lines = song.lines.map((line, index) => {
+    const importLine = (line: SongLine, index: number): ImportedLine => {
       if (!line.time) throw Error(`${index + 1}행에 이식할 TTML 타이밍이 없습니다.`)
-      return line.words
-        ? {time: line.time, words: line.words.map((word) => ({...word, time: word.time ?? line.time!}))}
-        : {text: line.text, time: line.time}
-    })
+      return {
+        ...(line.words
+          ? {time: line.time, words: line.words.map((word) => ({...word, time: word.time ?? line.time!}))}
+          : {text: line.text, time: line.time}),
+        ...(line.background ? {background: importLine(line.background, index)} : {}),
+      }
+    }
+    const lines = song.lines.map(importLine)
     const doc = formatLyricsYaml(updateLyricsYaml(original, {lines}, values.force, 'auto', true))
     const yaml = doc.toString({lineWidth: 0, flowCollectionPadding: false, singleQuote: true})
     parseSongYaml(yaml, slug)
