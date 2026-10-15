@@ -45,6 +45,30 @@ export function fromTTML(xml: string, timing?: 'Line' | 'Word') {
         !(child as Element).hasAttributeNS('http://www.w3.org/ns/ttml#metadata', 'role'),
     )
   const result = TTMLParser.parse(xml, {domParser: {parseFromString: () => document}})
+  // The parser expands a main line to include its background. Read main timing
+  // separately so importing and exporting cannot lengthen the authored main line.
+  if (result.lines.some((input) => input.backgroundVocal)) {
+    const mainDocument = document.cloneNode(true) as typeof document
+    for (const paragraph of Array.from(mainDocument.getElementsByTagNameNS('http://www.w3.org/ns/ttml', 'p'))) {
+      for (const child of Array.from(paragraph.childNodes)) {
+        if (
+          child.nodeType === 1 &&
+          (child as Element).getAttributeNS('http://www.w3.org/ns/ttml#metadata', 'role') === 'x-bg'
+        )
+          paragraph.removeChild(child)
+      }
+    }
+    const mainLines = new Map(
+      TTMLParser.parse(xml, {domParser: {parseFromString: () => mainDocument}}).lines.map((input) => [input.id, input]),
+    )
+    for (const input of result.lines) {
+      const main = mainLines.get(input.id)
+      if (main && input.backgroundVocal) {
+        input.startTime = main.startTime
+        input.endTime = main.endTime
+      }
+    }
+  }
   // Read the declared mode, not metadata.timingMode: the parser infers that from word count alone.
   const lineTiming = (timing ?? document.documentElement?.getAttributeNS(namespace, 'timing')) === 'Line'
   function line(input: Line, container?: Element): SongLine {

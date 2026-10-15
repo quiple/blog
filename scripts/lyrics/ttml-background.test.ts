@@ -47,3 +47,20 @@ lines:
   assert.equal(result.background?.translation, '메아리')
   assert.equal(result.translation, '본문')
 })
+
+void test('TTML round trip keeps main timing independent of earlier or later background vocals', async () => {
+  const {songTTML} = await import('../../src/lib/lyrics/ttml.server.ts')
+  for (const [start, end] of [
+    [0.5, 0.9],
+    [3, 4],
+  ]) {
+    const source = xml(`<span begin="${start}s" end="${end}s">Echo</span>`).replace('end="5s"', 'end="2s"')
+    let song = fromTTML(source).song
+    for (let i = 0; i < 3; i++) {
+      assert.deepEqual(song.lines[0].time, [1, 2])
+      assert.deepEqual(song.lines[0].background?.time, [start, end])
+      assert.deepEqual(song.lines[0].background?.words?.[0].time, [start, end])
+      song = fromTTML(songTTML(song)).song
+    }
+  }
+})
