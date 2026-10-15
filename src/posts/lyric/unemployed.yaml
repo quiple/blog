@@ -20,411 +20,1283 @@ offsets:
   sp: -2.9
   ytAudio: -2.9
 lines:
-  - text: Unemployed
+  - words:
+      - text: Un
+        time: [12.992, 13.539]
+      - text: employed
+        time: [13.539, 14.081]
     pr: 언임플로잇
     tl: 백수
-    time: [15.936, 17.099]
-  - text: No house, no pay
+    time: [12.992, 14.081]
+  - words:
+      - text: 'No '
+        time: [14.259, 14.356]
+      - text: 'house, '
+        time: [14.356, 14.804]
+      - text: 'no '
+        time: [14.804, 15.135]
+      - text: pay
+        time: [15.135, 15.512]
     pr: 노 하우스, 노 페이
     tl: 집도 없고 월급도 없어
-    time: [17.099, 18.456]
-  - text: Gonna waste the day away
+    time: [14.259, 15.512]
+  - words:
+      - text: 'Gonna '
+        time: [15.512, 15.872]
+      - text: 'waste '
+        time: [15.872, 16.232]
+      - text: 'the '
+        time: [16.232, 16.595]
+      - text: 'day '
+        time: [16.595, 16.961]
+      - text: away
+        time: [16.961, 18.417]
     pr: 거너 웨이스트 더 데이 어웨이
     tl: 오늘도 하루를 허비할 거야
-    time: [18.456, 21.084]
-  - text: I'm chilling for free
+    time: [15.512, 18.417]
+  - words:
+      - text: "I'm "
+        time: [18.599, 18.76]
+      - text: 'chilling '
+        time: [18.76, 19.11]
+      - text: 'for '
+        time: [19.11, 19.309]
+      - text: free
+        time: [19.309, 20.269]
     pr: 아임 칠링 포 프리
     tl: 돈 한 푼 없이 빈둥대
-    time: [21.561, 23.561]
-  - text: Just my debt and me
+    time: [18.599, 20.269]
+  - words:
+      - text: 'Just '
+        time: [21.434, 21.665]
+      - text: 'my '
+        time: [21.665, 21.846]
+      - text: 'debt '
+        time: [21.846, 22.011]
+      - text: 'and '
+        time: [22.011, 22.205]
+      - text: me
+        time: [22.205, 23.177]
     pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
-    time: [24.315, 26.315]
-  - text: Can't relax
+    time: [21.434, 23.177]
+  - words:
+      - text: "Can't "
+        time: [24.563, 25.083]
+      - text: relax
+        time: [25.083, 25.756]
     pr: 캔트 릴랙스
     tl: 마음 편히 쉴 수가 없어
-    time: [27.476, 28.654]
-  - text: My life's a cruel gag
+    time: [24.563, 25.756]
+  - words:
+      - text: 'My '
+        time: [25.814, 25.99]
+      - text: "life's "
+        time: [25.99, 26.178]
+      - text: 'a '
+        time: [26.178, 26.294]
+      - text: 'cruel '
+        time: [26.294, 26.72]
+      - text: gag
+        time: [26.72, 27.084]
     pr: 마이 라입스 어 크루얼 객
     tl: 내 인생은 잔인한 농담 같아
-    time: [28.655, 29.93]
-  - text: Put the fries in the god damn bag
+    time: [25.814, 27.084]
+  - words:
+      - text: 'Put '
+        time: [27.084, 27.263]
+      - text: 'the '
+        time: [27.263, 27.445]
+      - text: 'fries '
+        time: [27.445, 27.806]
+      - text: 'in '
+        time: [27.806, 27.986]
+      - text: 'the '
+        time: [27.986, 28.169]
+      - text: 'god '
+        time: [28.169, 28.352]
+      - text: 'damn '
+        time: [28.352, 28.719]
+      - text: bag
+        time: [28.719, 29.989]
     pr: 풋 더 프라이즈 인 더 갓 댐 백
     tl: 씨발, 감자튀김이나 봉투에 담아
-    time: [29.93, 32.505]
-  - text: Yeah, I'm chilling for free
+    time: [27.084, 29.989]
+  - words:
+      - text: 'Yeah, '
+        time: [29.989, 30.16]
+      - text: "I'm "
+        time: [30.16, 30.317]
+      - text: 'chilling '
+        time: [30.317, 30.689]
+      - text: 'for '
+        time: [30.689, 30.874]
+      - text: free
+        time: [30.874, 31.839]
     pr: 예, 아임 칠링 포 프리
     tl: 그래, 돈 한 푼 없이 빈둥대
-    time: [32.898, 34.898]
-  - text: Just my baguette and me
+    time: [29.989, 31.839]
+  - words:
+      - text: 'Just '
+        time: [32.829, 33.056]
+      - text: 'my '
+        time: [33.056, 33.23]
+      - text: 'baguette '
+        time: [33.23, 33.581]
+      - text: 'and '
+        time: [33.581, 33.775]
+      - text: me
+        time: [33.775, 34.662]
     pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
-    time: [35.785, 37.667]
-  - text: I'm poor as shit
+    time: [32.829, 34.662]
+  - words:
+      - text: "I'm "
+        time: [35.575, 35.76]
+      - text: 'poor '
+        time: [35.76, 35.933]
+      - text: 'as '
+        time: [35.933, 36.09]
+      - text: shit
+        time: [36.09, 36.607]
     pr: 아임 푸어 애즈 싯
     tl: 난 존나 가난해
-    time: [38.536, 39.513]
-  - text: I admit
+    time: [35.575, 36.607]
+  - words:
+      - text: 'I '
+        time: [36.663, 37.026]
+      - text: admit
+        time: [37.026, 37.885]
     pr: 아이 앳밋
     tl: 인정해
-    time: [39.513, 40.878]
-  - text: But I make hits
+    time: [36.663, 37.885]
+  - words:
+      - text: 'But '
+        time: [37.932, 38.114]
+      - text: 'I '
+        time: [38.114, 38.474]
+      - text: 'make '
+        time: [38.474, 38.941]
+      - text: hits
+        time: [38.941, 39.519]
     pr: 벗 아이 메익 히츠
     tl: 그래도 히트곡은 만들잖아
-    time: [40.878, 42.43]
-  - text: And the internet's where I sit
+    time: [37.932, 39.519]
+  - words:
+      - text: 'And '
+        time: [39.569, 39.668]
+      - text: 'the '
+        time: [39.668, 39.75]
+      - text: "internet's "
+        time: [39.75, 40.09]
+      - text: 'where '
+        time: [40.09, 40.272]
+      - text: 'I '
+        time: [40.272, 40.692]
+      - text: sit
+        time: [40.692, 41.294]
     pr: 앤드 디 인터네츠 웨어 아이 싯
     tl: 인터넷에 눌러앉아 살고 있어
-    time: [42.431, 44.237]
-  - text: I'm a broke-ass bitch
+    time: [39.569, 41.294]
+  - words:
+      - text: "I'm "
+        time: [41.359, 41.467]
+      - text: 'a '
+        time: [41.467, 41.545]
+      - text: broke-
+        time: [41.545, 41.727]
+      - text: 'ass '
+        time: [41.727, 41.908]
+      - text: bitch
+        time: [41.908, 42.397]
     pr: 아임 어 브록애스 비치
     tl: 난 좆도 없는 빈털터리야
-    time: [44.237, 45.273]
-  - text: Hooked on Twitch
+    time: [41.359, 42.397]
+  - words:
+      - text: 'Hooked '
+        time: [42.451, 42.808]
+      - text: 'on '
+        time: [42.808, 43.247]
+      - text: Twitch
+        time: [43.247, 43.665]
     pr: 훅트 온 트위치
     tl: 트위치에 푹 빠져 살아
-    time: [45.273, 46.593]
-  - text: But I got perfect pitch
+    time: [42.451, 43.665]
+  - words:
+      - text: 'But '
+        time: [43.72, 43.799]
+      - text: 'I '
+        time: [43.799, 43.897]
+      - text: 'got '
+        time: [43.897, 44.247]
+      - text: 'perfect '
+        time: [44.247, 44.801]
+      - text: pitch
+        time: [44.801, 45.273]
     pr: 벗 아이 갓 퍼펙트 피치
     tl: 그래도 절대음감은 있잖아
-    time: [46.593, 48.19]
-  - text: Just trying to find my niche
+    time: [43.72, 45.273]
+  - words:
+      - text: 'Just '
+        time: [45.273, 45.511]
+      - text: 'trying '
+        time: [45.511, 45.687]
+      - text: 'to '
+        time: [45.687, 45.877]
+      - text: 'find '
+        time: [45.877, 46.056]
+      - text: 'my '
+        time: [46.056, 46.409]
+      - text: niche
+        time: [46.409, 47.458]
     pr: 저스트 트라잉 투 파인드 마이 니치
     tl: 그냥 내가 설 자리를 찾는 중이야
-    time: [48.191, 50.191]
-  - text: My retirement's getting destroyed
+    time: [45.273, 47.458]
+  - words:
+      - text: 'My '
+        time: [47.511, 47.691]
+      - text: "retirement's "
+        time: [47.691, 48.02]
+      - text: 'getting '
+        time: [48.02, 48.239]
+      - text: destroyed
+        time: [48.239, 48.691]
     pr: 마이 리타이어먼츠 게팅 디스트로잇
     tl: 내 노후는 박살 나고 있어
-    time: [50.356, 51.564]
-  - text: From sitting on my ass like a hemorrhoid
+    time: [47.511, 48.691]
+  - words:
+      - text: 'From '
+        time: [48.691, 48.773]
+      - text: 'sitting '
+        time: [48.773, 48.879]
+      - text: 'on '
+        time: [48.879, 48.959]
+      - text: 'my '
+        time: [48.959, 49.113]
+      - text: 'ass '
+        time: [49.113, 49.283]
+      - text: 'like '
+        time: [49.283, 49.351]
+      - text: 'a '
+        time: [49.351, 49.417]
+      - text: hemorrhoid
+        time: [49.417, 50.213]
     pr: 프럼 시팅 온 마이 애스 라익 어 헤머로잇
     tl: 치질처럼 엉덩이에 붙어 사느라
-    time: [51.564, 53.205]
-  - text: Stop calling me a motherfucking Walmart Vocaloid
+    time: [48.691, 50.213]
+  - words:
+      - text: 'Stop '
+        time: [50.273, 50.575]
+      - text: 'calling '
+        time: [50.575, 50.937]
+      - text: 'me '
+        time: [50.937, 51.119]
+      - text: 'a '
+        time: [51.119, 51.302]
+      - text: 'motherfucking '
+        time: [51.302, 52.036]
+      - text: 'Walmart '
+        time: [52.036, 52.362]
+      - text: Vocaloid
+        time: [52.362, 53.115]
     pr: 스탑 콜링 미 어 머더퍼킹 월마트 보컬로잇
     tl: 씨발, 월마트표 싸구려 보컬로이드라고 부르지 좀 마
-    time: [53.206, 56.1]
-  - text: I'm just unemployed
+    time: [50.273, 53.115]
+  - words:
+      - text: "I'm "
+        time: [53.115, 53.333]
+      - text: 'just '
+        time: [53.333, 53.535]
+      - text: un
+        time: [53.535, 54.026]
+      - text: employed
+        time: [54.026, 54.459]
     pr: 아임 저스트 언임플로잇
     tl: 난 그냥 백수일 뿐이야
-    time: [56.1, 57.428]
-  - text: I got no house
+    time: [53.115, 54.459]
+  - words:
+      - text: 'I '
+        time: [54.459, 54.568]
+      - text: 'got '
+        time: [54.568, 54.749]
+      - text: 'no '
+        time: [54.749, 54.842]
+      - text: house
+        time: [54.842, 55.185]
     pr: 아이 갓 노 하우스
     tl: 집도 없어
-    time: [57.428, 58.113]
-  - text: I get no pay
+    time: [54.459, 55.185]
+  - words:
+      - text: 'I '
+        time: [55.185, 55.274]
+      - text: 'get '
+        time: [55.274, 55.455]
+      - text: 'no '
+        time: [55.455, 55.624]
+      - text: pay
+        time: [55.624, 55.99]
     pr: 아이 겟 노 페이
     tl: 월급도 못 받아
-    time: [58.113, 58.91]
-  - text: Gonna waste my days away
+    time: [55.185, 55.99]
+  - words:
+      - text: 'Gonna '
+        time: [55.99, 56.278]
+      - text: 'waste '
+        time: [56.278, 56.724]
+      - text: 'my '
+        time: [56.724, 57.079]
+      - text: 'days '
+        time: [57.079, 57.449]
+      - text: away
+        time: [57.449, 58.725]
     pr: 거너 웨이스트 마이 데이즈 어웨이
     tl: 이렇게 하루하루 허비할 거야
-    time: [58.911, 60.835]
+    time: [55.99, 59.814]
     background:
       text: (ナマケモノ)
       pr: (나마케모노)
       tl: (게으름뱅이)
       time: [60.835, 61.804]
-  - text: Yeah, I'm chilling for free
+  - words:
+      - text: 'Yeah, '
+        time: [58.898, 59.045]
+      - text: "I'm "
+        time: [59.045, 59.24]
+      - text: 'chilling '
+        time: [59.24, 59.631]
+      - text: 'for '
+        time: [59.631, 59.813]
+      - text: free
+        time: [59.813, 60.521]
     pr: 예, 아임 칠링 포 프리
     tl: 그래, 돈 한 푼 없이 빈둥대
-    time: [61.804, 63.401]
+    time: [58.898, 62.493]
     background:
       text: (しゃっきんづけ)
       pr: (샷킨즈케)
       tl: (빚에 절었어)
       time: [63.401, 64.833]
-  - text: Just my debt and me
+  - words:
+      - text: 'Just '
+        time: [61.911, 62.149]
+      - text: 'my '
+        time: [62.149, 62.333]
+      - text: 'debt '
+        time: [62.333, 62.5]
+      - text: 'and '
+        time: [62.5, 62.688]
+      - text: me
+        time: [62.688, 63.601]
     pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
-    time: [64.833, 66.504]
-  - text: Can't unwind
+    time: [61.911, 63.601]
+  - words:
+      - text: "Can't "
+        time: [65.032, 65.578]
+      - text: unwind
+        time: [65.578, 66.119]
     pr: 캔트 언와인드
     tl: 긴장을 풀 수가 없어
-    time: [67.985, 69.066]
-  - text: Almost lost my mind
+    time: [65.032, 66.119]
+  - words:
+      - text: 'Almost '
+        time: [66.119, 66.479]
+      - text: 'lost '
+        time: [66.479, 66.84]
+      - text: 'my '
+        time: [66.84, 67.205]
+      - text: mind
+        time: [67.205, 67.565]
     pr: 올모스트 로스트 마이 마인드
     tl: 거의 미쳐 버릴 뻔했어
-    time: [69.067, 70.447]
-  - text: Viral star, but I'm still unsigned
+    time: [66.119, 67.565]
+  - words:
+      - text: 'Viral '
+        time: [67.565, 67.852]
+      - text: 'star, '
+        time: [67.852, 68.293]
+      - text: 'but '
+        time: [68.293, 68.465]
+      - text: "I'm "
+        time: [68.465, 68.584]
+      - text: 'still '
+        time: [68.584, 68.846]
+      - text: un
+        time: [68.846, 69.118]
+      - text: signed
+        time: [69.118, 70.279]
     pr: 바이럴 스타, 벗 아임 스틸 언사인드
     tl: 인터넷 스타지만 아직 계약한 데는 없어
-    time: [70.447, 72.4]
+    time: [67.565, 71.547]
     background:
       text: (仕方がない)
       pr: (시카타가나이)
       tl: (어쩔 수 없지)
       time: [72.401, 73.277]
-  - text: I guess I'm chilling for free
+  - words:
+      - text: 'I '
+        time: [70.279, 70.457]
+      - text: 'guess '
+        time: [70.457, 70.64]
+      - text: "I'm "
+        time: [70.64, 70.792]
+      - text: 'chilling '
+        time: [70.792, 71.181]
+      - text: 'for '
+        time: [71.181, 71.363]
+      - text: free
+        time: [71.363, 72.093]
     pr: 아이 게스 아임 칠링 포 프리
     tl: 결국 돈 한 푼 없이 빈둥대는 거지
-    time: [73.277, 74.933]
+    time: [70.279, 73.637]
     background:
       text: (むだなじんせい)
       pr: (무다나진세이)
       tl: (헛된 인생)
       time: [74.933, 76.261]
-  - text: Just my baguette and me
+  - words:
+      - text: 'Just '
+        time: [73.308, 73.499]
+      - text: 'my '
+        time: [73.499, 73.638]
+      - text: 'baguette '
+        time: [73.638, 74.069]
+      - text: 'and '
+        time: [74.069, 74.253]
+      - text: me
+        time: [74.253, 75.07]
     pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
-    time: [76.261, 78]
-  - text: I'm poor as hell
+    time: [73.308, 75.07]
+  - words:
+      - text: "I'm "
+        time: [76.058, 76.242]
+      - text: 'poor '
+        time: [76.242, 76.422]
+      - text: 'as '
+        time: [76.422, 76.596]
+      - text: hell
+        time: [76.596, 77.09]
     pr: 아임 푸어 애즈 헬
     tl: 난 더럽게 가난해
-    time: [78.96, 80]
-  - text: Not doing well
+    time: [76.058, 77.09]
+  - words:
+      - text: 'Not '
+        time: [77.147, 77.507]
+      - text: 'doing '
+        time: [77.507, 78.051]
+      - text: well
+        time: [78.051, 78.338]
     pr: 낫 두잉 웰
     tl: 잘 지내지도 못해
-    time: [80, 81.193]
-  - text: Locked in a mental cell
+    time: [77.147, 78.338]
+  - words:
+      - text: 'Locked '
+        time: [78.338, 78.601]
+      - text: 'in '
+        time: [78.601, 78.776]
+      - text: 'a '
+        time: [78.776, 78.954]
+      - text: 'mental '
+        time: [78.954, 79.421]
+      - text: cell
+        time: [79.421, 79.995]
     pr: 락트 인 어 멘틀 셀
     tl: 마음속 감옥에 갇혀 있어
-    time: [81.193, 82.924]
-  - text: My bed is where I dwell
+    time: [78.338, 79.995]
+  - words:
+      - text: 'My '
+        time: [80.03, 80.203]
+      - text: 'bed '
+        time: [80.203, 80.384]
+      - text: 'is '
+        time: [80.384, 80.579]
+      - text: 'where '
+        time: [80.579, 80.758]
+      - text: 'I '
+        time: [80.758, 81.059]
+      - text: dwell
+        time: [81.059, 81.848]
     pr: 마이 벳 이즈 웨어 아이 드웰
     tl: 내가 사는 곳은 침대 위야
-    time: [82.924, 84.73]
-  - text: I'm broke as fuck
+    time: [80.03, 81.848]
+  - words:
+      - text: "I'm "
+        time: [81.848, 82.03]
+      - text: 'broke '
+        time: [82.03, 82.211]
+      - text: 'as '
+        time: [82.211, 82.34]
+      - text: fuck
+        time: [82.34, 82.878]
     pr: 아임 브록 애즈 퍽
     tl: 난 씨발, 돈이 한 푼도 없어
-    time: [84.731, 85.767]
-  - text: Just my shitty luck
+    time: [81.848, 82.878]
+  - words:
+      - text: 'Just '
+        time: [82.878, 83.292]
+      - text: 'my '
+        time: [83.292, 83.438]
+      - text: 'shitty '
+        time: [83.438, 83.836]
+      - text: luck
+        time: [83.836, 84.207]
     pr: 저스트 마이 시티 럭
     tl: 그냥 내 운이 좆같은 거지
-    time: [85.768, 87.133]
-  - text: I'm a sitting duck
+    time: [82.878, 84.207]
+  - words:
+      - text: "I'm "
+        time: [84.207, 84.376]
+      - text: 'a '
+        time: [84.376, 84.668]
+      - text: 'sitting '
+        time: [84.668, 85.266]
+      - text: duck
+        time: [85.266, 85.759]
     pr: 아임 어 시팅 덕
     tl: 난 꼼짝없이 당할 신세야
-    time: [87.133, 88.685]
-  - text: Just want to get unstuck
+    time: [84.207, 85.759]
+  - words:
+      - text: 'Just '
+        time: [85.759, 85.963]
+      - text: 'want '
+        time: [85.963, 86.14]
+      - text: 'to '
+        time: [86.14, 86.361]
+      - text: 'get '
+        time: [86.361, 86.526]
+      - text: un
+        time: [86.526, 86.827]
+      - text: stuck
+        time: [86.827, 87.99]
     pr: 저스트 원트 투 겟 언스턱
     tl: 그냥 이 신세에서 벗어나고 싶어
-    time: [88.685, 90.872]
-  - text: My retirement's getting destroyed
+    time: [85.759, 87.99]
+  - words:
+      - text: 'My '
+        time: [87.99, 88.169]
+      - text: "retirement's "
+        time: [88.169, 88.548]
+      - text: 'getting '
+        time: [88.548, 88.72]
+      - text: destroyed
+        time: [88.72, 89.173]
     pr: 마이 리타이어먼츠 게팅 디스트로잇
     tl: 내 노후는 박살 나고 있어
-    time: [90.873, 92.089]
-  - text: From sitting on my ass like a hemorrhoid
+    time: [87.99, 89.173]
+  - words:
+      - text: 'From '
+        time: [89.173, 89.252]
+      - text: 'sitting '
+        time: [89.252, 89.408]
+      - text: 'on '
+        time: [89.408, 89.486]
+      - text: 'my '
+        time: [89.486, 89.54]
+      - text: 'ass '
+        time: [89.54, 89.764]
+      - text: 'like '
+        time: [89.764, 89.895]
+      - text: 'a '
+        time: [89.895, 89.989]
+      - text: hemorrhoid
+        time: [89.989, 90.698]
     pr: 프럼 시팅 온 마이 애스 라익 어 헤머로잇
     tl: 치질처럼 엉덩이에 붙어 사느라
-    time: [92.089, 93.668]
-  - text: Stop telling me to get a life
+    time: [89.173, 90.698]
+  - words:
+      - text: 'Stop '
+        time: [90.698, 91.052]
+      - text: 'telling '
+        time: [91.052, 91.164]
+      - text: 'me '
+        time: [91.164, 91.241]
+      - text: 'to '
+        time: [91.241, 91.421]
+      - text: 'get '
+        time: [91.421, 91.598]
+      - text: 'a '
+        time: [91.598, 91.766]
+      - text: life
+        time: [91.766, 91.969]
     pr: 스탑 텔링 미 투 겟 어 라입
     tl: 제발 제대로 좀 살라는 말은 그만해
-    time: [93.668, 94.884]
-  - text: I'd rather live one I enjoyed
+    time: [90.698, 91.969]
+  - words:
+      - text: "I'd "
+        time: [91.969, 92.127]
+      - text: 'rather '
+        time: [92.127, 92.489]
+      - text: 'live '
+        time: [92.489, 92.696]
+      - text: 'one '
+        time: [92.696, 92.874]
+      - text: 'I '
+        time: [92.874, 93.013]
+      - text: enjoyed
+        time: [93.013, 93.713]
     pr: 아잇 래더 립 원 아이 인조잇
     tl: 난 내가 즐거운 삶을 살고 싶어
-    time: [94.885, 96.885]
-  - text: My life feels like it's flying by
+    time: [91.969, 93.713]
+  - words:
+      - text: 'My '
+        time: [160.265, 160.456]
+      - text: 'life '
+        time: [160.456, 160.637]
+      - text: 'feels '
+        time: [160.637, 160.818]
+      - text: 'like '
+        time: [160.818, 160.991]
+      - text: "it's "
+        time: [160.991, 161.18]
+      - text: 'flying '
+        time: [161.18, 161.544]
+      - text: by
+        time: [161.544, 161.816]
     pr: 마이 필즈 라익 이츠 플라잉 바이
     tl: 내 인생이 쏜살같이 지나가는 것 같아
-    time: [163.034, 164.75]
-  - text: My future's gone, and my dreams have died
+    time: [160.265, 161.816]
+  - words:
+      - text: 'My '
+        time: [161.816, 161.91]
+      - text: "future's "
+        time: [161.91, 162.271]
+      - text: 'gone, '
+        time: [162.271, 162.385]
+      - text: 'and '
+        time: [162.385, 162.456]
+      - text: 'my '
+        time: [162.456, 162.624]
+      - text: 'dreams '
+        time: [162.624, 162.789]
+      - text: 'have '
+        time: [162.789, 162.996]
+      - text: died
+        time: [162.996, 163.145]
     pr: 마이 퓨처스 곤, 앤드 마이 드림즈 햅 다잇
     tl: 미래는 사라졌고 꿈도 죽어 버렸어
-    time: [164.75, 166.175]
-  - text: This song is just an outcry
+    time: [161.816, 163.145]
+  - words:
+      - text: 'This '
+        time: [163.145, 163.312]
+      - text: 'song '
+        time: [163.312, 163.542]
+      - text: 'is '
+        time: [163.542, 163.631]
+      - text: 'just '
+        time: [163.631, 163.846]
+      - text: 'an '
+        time: [163.846, 164.082]
+      - text: outcry
+        time: [164.082, 164.635]
     pr: 디스 송 이즈 저스트 언 아웃크라이
     tl: 이 노래는 그저 절규일 뿐이야
-    time: [166.175, 167.555]
-  - text: Just need some space to occupy
+    time: [163.145, 164.635]
+  - words:
+      - text: 'Just '
+        time: [164.635, 164.809]
+      - text: 'need '
+        time: [164.809, 164.975]
+      - text: 'some '
+        time: [164.975, 165.153]
+      - text: 'space '
+        time: [165.153, 165.324]
+      - text: 'to '
+        time: [165.324, 165.507]
+      - text: occupy
+        time: [165.507, 166.166]
     pr: 저스트 닛 섬 스페이스 투 아큐파이
     tl: 그냥 내가 있을 자리만 있으면 돼
-    time: [167.556, 169.085]
-  - text: I'm losing all my assets
+    time: [164.635, 166.166]
+  - words:
+      - text: "I'm "
+        time: [166.166, 166.236]
+      - text: 'losing '
+        time: [166.236, 166.604]
+      - text: 'all '
+        time: [166.604, 166.783]
+      - text: 'my '
+        time: [166.783, 166.938]
+      - text: assets
+        time: [166.938, 167.463]
     pr: 아임 루징 올 마이 에세츠
     tl: 가진 걸 전부 잃어 가고 있어
-    time: [169.085, 170.368]
-  - text: So I spend my time in deficit
+    time: [166.166, 167.463]
+  - words:
+      - text: 'So '
+        time: [167.463, 167.521]
+      - text: 'I '
+        time: [167.521, 167.646]
+      - text: 'spend '
+        time: [167.646, 167.875]
+      - text: 'my '
+        time: [167.875, 168.054]
+      - text: 'time '
+        time: [168.054, 168.235]
+      - text: 'in '
+        time: [168.235, 168.415]
+      - text: deficit
+        time: [168.415, 169.058]
     pr: 소 아이 스펜드 마이 타임 인 데퍼싯
     tl: 그래서 적자 인생을 보내고 있지
-    time: [170.368, 172]
-  - text: I'm waking in a cold sweat
+    time: [167.463, 169.058]
+  - words:
+      - text: "I'm "
+        time: [169.058, 169.144]
+      - text: 'waking '
+        time: [169.144, 169.507]
+      - text: 'in '
+        time: [169.507, 169.676]
+      - text: 'a '
+        time: [169.676, 169.772]
+      - text: 'cold '
+        time: [169.772, 170.104]
+      - text: sweat
+        time: [170.104, 170.391]
     pr: 아임 웨이킹 인 어 콜드 스웻
     tl: 식은땀을 흘리며 잠에서 깨
-    time: [172, 173.253]
-  - text: Can barely afford the internet
+    time: [169.058, 170.391]
+  - words:
+      - text: 'Can '
+        time: [170.391, 170.574]
+      - text: 'barely '
+        time: [170.574, 170.758]
+      - text: 'afford '
+        time: [170.758, 171.12]
+      - text: 'the '
+        time: [171.12, 171.298]
+      - text: internet
+        time: [171.298, 171.938]
     pr: 캔 베얼리 어포드 디 인터넷
     tl: 인터넷 요금조차 내기 빠듯해
-    time: [173.253, 174.865]
-  - text: I need some help
+    time: [170.391, 171.938]
+  - words:
+      - text: 'I '
+        time: [171.938, 172.024]
+      - text: 'need '
+        time: [172.024, 172.191]
+      - text: 'some '
+        time: [172.191, 172.391]
+      - text: help
+        time: [172.391, 172.55]
     pr: 아이 닛 섬 헬프
     tl: 도움이 좀 필요해
-    time: [174.865, 175.46]
-  - text: Just need some time
+    time: [171.938, 172.55]
+  - words:
+      - text: 'Just '
+        time: [172.55, 172.753]
+      - text: 'need '
+        time: [172.753, 172.917]
+      - text: 'some '
+        time: [172.917, 173.117]
+      - text: time
+        time: [173.117, 173.306]
     pr: 저스트 닛 섬 타임
     tl: 시간이 조금만 있으면 돼
-    time: [175.46, 176.324]
-  - text: My Spotify doesn't make a dime
+    time: [172.55, 173.306]
+  - words:
+      - text: 'My '
+        time: [173.306, 173.438]
+      - text: 'Spotify '
+        time: [173.438, 173.843]
+      - text: "doesn't "
+        time: [173.843, 174.191]
+      - text: 'make '
+        time: [174.191, 174.384]
+      - text: 'a '
+        time: [174.384, 174.51]
+      - text: dime
+        time: [174.51, 174.749]
     pr: 마이 스포티파이 더즌트 메익 어 다임
     tl: 스포티파이로는 한 푼도 못 벌어
-    time: [176.324, 177.577]
-  - text: But my stream has a record uptime
+    time: [173.306, 174.749]
+  - words:
+      - text: 'But '
+        time: [174.749, 174.828]
+      - text: 'my '
+        time: [174.828, 174.9]
+      - text: 'stream '
+        time: [174.9, 174.996]
+      - text: 'has '
+        time: [174.996, 175.179]
+      - text: 'a '
+        time: [175.179, 175.267]
+      - text: 'record '
+        time: [175.267, 175.684]
+      - text: uptime
+        time: [175.684, 176.182]
     pr: 벗 마이 스트림 해즈 어 레코드 업타임
     tl: 그런데 방송 켜 둔 시간은 신기록이야
-    time: [177.577, 179.091]
-  - text: (Go sub to me with your free Twitch Prime)
+    time: [174.749, 176.182]
+  - words:
+      - text: '(Go '
+        time: [176.182, 176.289]
+      - text: 'sub '
+        time: [176.289, 176.535]
+      - text: 'to '
+        time: [176.535, 176.71]
+      - text: 'me '
+        time: [176.71, 176.888]
+      - text: 'with '
+        time: [176.888, 176.972]
+      - text: 'your '
+        time: [176.972, 177.048]
+      - text: 'free '
+        time: [177.048, 177.179]
+      - text: 'Twitch '
+        time: [177.179, 177.405]
+      - text: Prime)
+        time: [177.405, 177.544]
     pr: (고 섭 투 미 윗 유어 프리 트위치 프라임)
     tl: (무료 트위치 프라임으로 내 채널 구독 좀 해 줘)
-    time: [179.092, 180.472]
-  - text: Please play me in your ears
+    time: [176.182, 177.544]
+  - words:
+      - text: 'Please '
+        time: [177.544, 177.764]
+      - text: 'play '
+        time: [177.764, 177.993]
+      - text: 'me '
+        time: [177.993, 178.178]
+      - text: 'in '
+        time: [178.178, 178.354]
+      - text: 'your '
+        time: [178.354, 178.568]
+      - text: ears
+        time: [178.568, 178.903]
     pr: 플리즈 플레이 미 인 유어 이어즈
     tl: 제발 내 노래 좀 들어 줘
-    time: [180.472, 181.77]
-  - text: I don't want a real career
+    time: [177.544, 178.903]
+  - words:
+      - text: 'I '
+        time: [178.903, 179.023]
+      - text: "don't "
+        time: [179.023, 179.199]
+      - text: 'want '
+        time: [179.199, 179.44]
+      - text: 'a '
+        time: [179.44, 179.542]
+      - text: 'real '
+        time: [179.542, 179.806]
+      - text: career
+        time: [179.806, 180.33]
     pr: 아이 돈트 원트 어 리얼 커리어
     tl: 제대로 된 직장은 갖기 싫어
-    time: [181.771, 183.285]
-  - text: Oh, please play me in your ears
+    time: [178.903, 180.33]
+  - words:
+      - text: 'Oh, '
+        time: [180.33, 180.47]
+      - text: 'please '
+        time: [180.47, 180.694]
+      - text: 'play '
+        time: [180.694, 180.873]
+      - text: 'me '
+        time: [180.873, 181.058]
+      - text: 'in '
+        time: [181.058, 181.239]
+      - text: 'your '
+        time: [181.239, 181.446]
+      - text: ears
+        time: [181.446, 181.785]
     pr: 오, 플리즈 플레이 미 인 유어 이어즈
     tl: 아, 제발 내 노래 좀 들어 줘
-    time: [183.285, 184.717]
-  - text: I don't want a real career
+    time: [180.33, 181.785]
+  - words:
+      - text: 'I '
+        time: [181.785, 181.961]
+      - text: "don't "
+        time: [181.961, 182.084]
+      - text: 'want '
+        time: [182.084, 182.327]
+      - text: 'a '
+        time: [182.327, 182.484]
+      - text: 'real '
+        time: [182.484, 182.683]
+      - text: career
+        time: [182.683, 185.056]
     pr: 아이 돈트 원트 어 리얼 커리어
     tl: 제대로 된 직장은 갖기 싫어
-    time: [184.717, 186.717]
-  - text: Unemployed
+    time: [181.785, 185.056]
+  - words:
+      - text: Un
+        time: [186.483, 187.028]
+      - text: employed
+        time: [187.028, 187.71]
     pr: 언임플로잇
     tl: 백수
-    time: [189.529, 190.595]
-  - text: No house, no pay
+    time: [186.483, 187.71]
+  - words:
+      - text: 'No '
+        time: [187.71, 187.858]
+      - text: 'house, '
+        time: [187.858, 188.288]
+      - text: 'no '
+        time: [188.288, 188.645]
+      - text: pay
+        time: [188.645, 189.003]
     pr: 노 하우스, 노 페이
     tl: 집도 없고 월급도 없어
-    time: [190.596, 191.901]
-  - text: Gonna waste the day away
+    time: [187.71, 189.003]
+  - words:
+      - text: 'Gonna '
+        time: [189.003, 189.38]
+      - text: 'waste '
+        time: [189.38, 189.74]
+      - text: 'the '
+        time: [189.74, 190.079]
+      - text: 'day '
+        time: [190.079, 190.457]
+      - text: away
+        time: [190.457, 191.916]
     pr: 거너 웨이스트 더 데이 어웨이
     tl: 오늘도 하루를 허비할 거야
-    time: [191.901, 195.037]
-  - text: I'm chilling for free
+    time: [189.003, 191.916]
+  - words:
+      - text: "I'm "
+        time: [192.095, 192.254]
+      - text: 'chilling '
+        time: [192.254, 192.631]
+      - text: 'for '
+        time: [192.631, 192.791]
+      - text: free
+        time: [192.791, 193.639]
     pr: 아임 칠링 포 프리
     tl: 돈 한 푼 없이 빈둥대
-    time: [195.037, 196.678]
-  - text: Just my debt and me
+    time: [192.095, 193.639]
+  - words:
+      - text: 'Just '
+        time: [194.953, 195.151]
+      - text: 'my '
+        time: [195.151, 195.322]
+      - text: 'debt '
+        time: [195.322, 195.488]
+      - text: 'and '
+        time: [195.488, 195.689]
+      - text: me
+        time: [195.689, 196.606]
     pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
-    time: [197.864, 199.55]
-  - text: Can't relax
+    time: [194.953, 196.606]
+  - words:
+      - text: "Can't "
+        time: [198.05, 198.6]
+      - text: relax
+        time: [198.6, 199.322]
     pr: 캔트 릴랙스
     tl: 마음 편히 쉴 수가 없어
-    time: [200.928, 202.196]
-  - text: My life's a cruel gag
+    time: [198.05, 199.322]
+  - words:
+      - text: 'My '
+        time: [199.322, 199.448]
+      - text: "life's "
+        time: [199.448, 199.678]
+      - text: 'a '
+        time: [199.678, 199.802]
+      - text: 'cruel '
+        time: [199.802, 200.213]
+      - text: gag
+        time: [200.213, 200.583]
     pr: 마이 라입스 어 크루얼 객
     tl: 내 인생은 잔인한 농담 같아
-    time: [202.197, 203.502]
-  - text: Put the fries in the god damn bag
+    time: [199.322, 200.583]
+  - words:
+      - text: 'Put '
+        time: [200.583, 200.718]
+      - text: 'the '
+        time: [200.718, 200.864]
+      - text: 'fries '
+        time: [200.864, 201.329]
+      - text: 'in '
+        time: [201.329, 201.478]
+      - text: 'the '
+        time: [201.478, 201.654]
+      - text: 'god '
+        time: [201.654, 201.799]
+      - text: 'damn '
+        time: [201.799, 202.207]
+      - text: bag
+        time: [202.207, 203.227]
     pr: 풋 더 프라이즈 인 더 갓 댐 백
     tl: 씨발, 감자튀김이나 봉투에 담아
-    time: [203.502, 206.339]
-  - text: Yeah, I'm chilling for free
+    time: [200.583, 203.227]
+  - words:
+      - text: 'Yeah, '
+        time: [203.397, 203.588]
+      - text: "I'm "
+        time: [203.588, 203.814]
+      - text: 'chilling '
+        time: [203.814, 204.193]
+      - text: 'for '
+        time: [204.193, 204.361]
+      - text: free
+        time: [204.361, 205.318]
     pr: 예, 아임 칠링 포 프리
     tl: 그래, 돈 한 푼 없이 빈둥대
-    time: [206.339, 208.175]
-  - text: Just my baguette and me
+    time: [203.397, 205.318]
+  - words:
+      - text: 'Just '
+        time: [206.31, 206.539]
+      - text: 'my '
+        time: [206.539, 206.698]
+      - text: 'baguette '
+        time: [206.698, 207.064]
+      - text: 'and '
+        time: [207.064, 207.249]
+      - text: me
+        time: [207.249, 208.36]
     pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
-    time: [209.229, 211.752]
-  - text: Motherfucker, I'm unemployed
+    time: [206.31, 208.36]
+  - words:
+      - text: 'Motherfucker, '
+        time: [209.436, 209.782]
+      - text: "I'm "
+        time: [209.782, 209.968]
+      - text: un
+        time: [209.968, 210.514]
+      - text: employed
+        time: [210.514, 211.048]
     pr: 머더퍼커, 아임 언임플로잇
     tl: 씨발, 나 백수라고
-    time: [212.35, 213.871]
-  - text: I got no house
+    time: [209.436, 211.048]
+  - words:
+      - text: 'I '
+        time: [211.048, 211.133]
+      - text: 'got '
+        time: [211.133, 211.241]
+      - text: 'no '
+        time: [211.241, 211.373]
+      - text: house
+        time: [211.373, 211.677]
     pr: 아이 갓 노 하우스
     tl: 집도 없어
-    time: [213.871, 214.541]
-  - text: I get no pay
+    time: [211.048, 211.677]
+  - words:
+      - text: 'I '
+        time: [211.677, 211.785]
+      - text: 'get '
+        time: [211.785, 211.967]
+      - text: 'no '
+        time: [211.967, 212.15]
+      - text: pay
+        time: [212.15, 212.502]
     pr: 아이 겟 노 페이
     tl: 월급도 못 받아
-    time: [214.541, 215.398]
-  - text: Gonna waste my days away
+    time: [211.677, 212.502]
+  - words:
+      - text: 'Gonna '
+        time: [212.502, 212.784]
+      - text: 'waste '
+        time: [212.784, 213.235]
+      - text: 'my '
+        time: [213.235, 213.6]
+      - text: 'days '
+        time: [213.6, 213.947]
+      - text: away
+        time: [213.947, 215.638]
     pr: 거너 웨이스트 마이 데이즈 어웨이
     tl: 이렇게 하루하루 허비할 거야
-    time: [215.399, 217.267]
+    time: [212.502, 216.305]
     background:
       text: (ナマケモノ)
       pr: (나마케모노)
       tl: (게으름뱅이)
       time: [217.267, 218.468]
-  - text: Just chilling for free
+  - words:
+      - text: 'Just '
+        time: [215.638, 215.737]
+      - text: 'chilling '
+        time: [215.737, 216.117]
+      - text: 'for '
+        time: [216.117, 216.292]
+      - text: free
+        time: [216.292, 217.031]
     pr: 저스트 칠링 포 프리
     tl: 그냥 돈 한 푼 없이 빈둥대
-    time: [218.469, 219.871]
+    time: [215.638, 219.02]
     background:
       text: (しゃっきんづけ)
       pr: (샷킨즈케)
       tl: (빚에 절었어)
       time: [219.872, 221.364]
-  - text: Just my debt and me
+  - words:
+      - text: 'Just '
+        time: [218.429, 218.658]
+      - text: 'my '
+        time: [218.658, 218.843]
+      - text: 'debt '
+        time: [218.843, 219.023]
+      - text: 'and '
+        time: [219.023, 219.205]
+      - text: me
+        time: [219.205, 219.935]
     pr: 저스트 마이 뎃 앤드 미
     tl: 빚과 나, 단둘이서
-    time: [221.364, 223.29]
+    time: [218.429, 221.514]
     background:
       text: (テトテトテトテトテト)
       pr: (테토테토테토테토테토)
       tl: (테토테토테토테토테토)
       time: [223.291, 224.103]
-  - text: Yeah, I can't unwind
+  - words:
+      - text: 'Yeah, '
+        time: [221.194, 221.353]
+      - text: 'I '
+        time: [221.353, 221.544]
+      - text: "can't "
+        time: [221.544, 222.089]
+      - text: unwind
+        time: [222.089, 222.627]
     pr: 예, 아이 캔트 언와인드
     tl: 그래, 긴장을 풀 수가 없어
-    time: [224.103, 225.453]
-  - text: I've almost lost my god damn mind
+    time: [221.194, 222.627]
+  - words:
+      - text: "I've "
+        time: [222.627, 222.761]
+      - text: 'almost '
+        time: [222.761, 222.996]
+      - text: 'lost '
+        time: [222.996, 223.177]
+      - text: 'my '
+        time: [223.177, 223.345]
+      - text: 'god '
+        time: [223.345, 223.464]
+      - text: 'damn '
+        time: [223.464, 223.639]
+      - text: mind
+        time: [223.639, 223.822]
     pr: 아입 올모스트 로스트 마이 갓 댐 마인드
     tl: 씨발, 거의 미쳐 버릴 뻔했어
-    time: [225.453, 226.848]
-  - text: I'm a viral star, but I'm still unsigned
+    time: [222.627, 223.822]
+  - words:
+      - text: "I'm "
+        time: [223.822, 223.912]
+      - text: 'a '
+        time: [223.912, 224.078]
+      - text: 'viral '
+        time: [224.078, 224.363]
+      - text: 'star, '
+        time: [224.363, 224.808]
+      - text: 'but '
+        time: [224.808, 224.909]
+      - text: "I'm "
+        time: [224.909, 225.121]
+      - text: 'still '
+        time: [225.121, 225.335]
+      - text: un
+        time: [225.335, 225.615]
+      - text: signed
+        time: [225.615, 226.963]
     pr: 아임 어 바이럴 스타, 벗 아임 스틸 언사인드
     tl: 난 인터넷 스타인데 아직 계약한 데는 없어
-    time: [226.848, 228.908]
+    time: [223.822, 228.057]
     background:
       text: (仕方がない)
       pr: (시카타가나이)
       tl: (어쩔 수 없지)
       time: [228.908, 229.84]
-  - text: I guess I'm chilling for free
+  - words:
+      - text: 'I '
+        time: [226.963, 227.052]
+      - text: 'guess '
+        time: [227.052, 227.153]
+      - text: "I'm "
+        time: [227.153, 227.306]
+      - text: 'chilling '
+        time: [227.306, 227.694]
+      - text: 'for '
+        time: [227.694, 227.876]
+      - text: free
+        time: [227.876, 228.606]
     pr: 아이 게스 아임 칠링 포 프리
     tl: 결국 돈 한 푼 없이 빈둥대는 거지
-    time: [229.841, 231.445]
+    time: [226.963, 230.758]
     background:
       text: (むだなじんせい)
       pr: (무다나진세이)
       tl: (헛된 인생)
       time: [231.445, 232.705]
-  - text: Just my baguette and me
+  - words:
+      - text: 'Just '
+        time: [229.823, 230.034]
+      - text: 'my '
+        time: [230.034, 230.206]
+      - text: 'baguette '
+        time: [230.206, 230.561]
+      - text: 'and '
+        time: [230.561, 230.757]
+      - text: me
+        time: [230.757, 231.728]
     pr: 저스트 마이 배겟 앤드 미
     tl: 바게트와 나, 단둘이서
-    time: [232.706, 234.392]
+    time: [229.823, 233.481]
     background:
       text: (テト・バゲット)
       pr: (테토 바겟토)
       tl: (테토 바게트)
       time: [234.392, 235.585]
-  - text: Forever chilling for free
+  - words:
+      - text: 'Forever '
+        time: [232.575, 233.098]
+      - text: 'chilling '
+        time: [233.098, 233.481]
+      - text: 'for '
+        time: [233.481, 233.659]
+      - text: free
+        time: [233.659, 234.393]
     pr: 포에버 칠링 포 프리
     tl: 영원히 돈 한 푼 없이 빈둥대
-    time: [235.585, 237.264]
+    time: [232.575, 236.361]
     background:
       text: (ずっといっしょに)
       pr: (즛토잇쇼니)
       tl: (언제까지나 함께)
       time: [237.264, 238.554]
-  - text: My immense debt and me
+  - words:
+      - text: 'My '
+        time: [235.638, 235.778]
+      - text: 'immense '
+        time: [235.778, 236.094]
+      - text: 'debt '
+        time: [236.094, 236.344]
+      - text: 'and '
+        time: [236.344, 236.53]
+      - text: me
+        time: [236.53, 237.512]
     pr: 마이 이멘스 뎃 앤드 미
     tl: 어마어마한 빚과 나
-    time: [238.554, 240.106]
+    time: [235.638, 238.538]
     background:
       text: (きんけつ)
       pr: (킨케츠)
       tl: (돈이 없어)
       time: [240.106, 241.419]
-  - text: We'll be chilling for free
+  - words:
+      - text: "We'll "
+        time: [238.538, 238.724]
+      - text: 'be '
+        time: [238.724, 238.865]
+      - text: 'chilling '
+        time: [238.865, 239.264]
+      - text: 'for '
+        time: [239.264, 239.432]
+      - text: free
+        time: [239.432, 241.33]
     pr: 윌 비 칠링 포 프리
     tl: 우린 돈 한 푼 없이 빈둥댈 거야
-    time: [241.419, 244.196]
+    time: [238.538, 241.33]
     background:
       text: (ずっといっしょに)
       pr: (즛토잇쇼니)
       tl: (언제까지나 함께)
-  - text: Forever chilling for free
+  - words:
+      - text: 'Forever '
+        time: [241.33, 241.743]
+      - text: 'chilling '
+        time: [241.743, 242.146]
+      - text: 'for '
+        time: [242.146, 242.318]
+      - text: free
+        time: [242.318, 243.603]
     pr: 포에버 칠링 포 프리
     tl: 영원히 돈 한 푼 없이 빈둥대
-    time: [244.197, 246.197]
+    time: [241.33, 243.603]
