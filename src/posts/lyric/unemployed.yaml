@@ -17,8 +17,7 @@ yt:
   audio: fiVl8xWgniE
   mv: mo3mYgFElJQ
 offsets:
-  sp: -2.9
-  ytAudio: -2.9
+  ytMV: 2.9
 lines:
   - words:
       - text: Un
