@@ -1218,11 +1218,12 @@ lines:
     time: [223.822, 228.057]
     background:
       words:
-        - text: 仕方が
+        - text: (仕方が
+          pr: (시카타가
           time: [225.964, 226.96]
-        - text: ない
+        - text: ない)
+          pr: 나이)
           time: [226.96, 228.057]
-      pr: (시카타가나이)
       tl: (어쩔 수 없지)
       time: [225.964, 228.057]
   - words:
@@ -1243,11 +1244,12 @@ lines:
     time: [226.963, 230.758]
     background:
       words:
-        - text: むだな
+        - text: (むだな
+          pr: (무다나
           time: [228.78, 229.127]
-        - text: じんせい
+        - text: じんせい)
+          pr: 진세이)
           time: [229.127, 230.758]
-      pr: (무다나진세이)
       tl: (헛된 인생)
       time: [228.78, 230.758]
   - words:
@@ -1266,11 +1268,12 @@ lines:
     time: [229.823, 233.481]
     background:
       words:
-        - text: テト・
+        - text: (テト・
+          pr: (테토
           time: [231.485, 231.845]
-        - text: バゲット
+        - text: バゲット)
+          pr: 바겟토)
           time: [231.845, 233.481]
-      pr: (테토 바겟토)
       tl: (테토 바게트)
       time: [231.485, 233.481]
   - words:
@@ -1287,11 +1290,12 @@ lines:
     time: [232.575, 236.361]
     background:
       words:
-        - text: ずっと
+        - text: (ずっと
+          pr: (즛토
           time: [234.393, 234.752]
-        - text: いっしょに
+        - text: いっしょに)
+          pr: 잇쇼니)
           time: [234.752, 236.361]
-      pr: (즛토잇쇼니)
       tl: (언제까지나 함께)
       time: [234.393, 236.361]
   - words:
@@ -1310,11 +1314,12 @@ lines:
     time: [235.638, 238.538]
     background:
       words:
-        - text: きん
+        - text: (きん
+          pr: (킨
           time: [237.272, 237.448]
-        - text: けつ
+        - text: けつ)
+          pr: 케츠)
           time: [237.448, 238.538]
-      pr: (킨케츠)
       tl: (돈이 없어)
       time: [237.272, 238.538]
   - words:
@@ -1333,11 +1338,12 @@ lines:
     time: [238.538, 241.33]
     background:
       words:
-        - text: ずっと
+        - text: (ずっと
+          pr: (즛토
           time: [238.538, 238.864]
-        - text: いっしょに
+        - text: いっしょに)
+          pr: 잇쇼니)
           time: [238.864, 241.33]
-      pr: (즛토잇쇼니)
       tl: (언제까지나 함께)
       time: [238.538, 241.33]
   - words:
