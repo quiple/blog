@@ -166,7 +166,7 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       typescript:
-        specifier: ~6.0.3
+        specifier: ^6.0.3
         version: 6.0.3
       unist-util-visit:
         specifier: ^5.1.0
@@ -239,9 +239,6 @@ packages:
     engines: {node: '>=16'}
     cpu: [x64]
     os: [win32]
-
-  '@cloudflare/workers-types@5.20261004.1':
-    resolution: {integrity: sha512-K9D4/Y6bSIDNYFzjqzFMNoWK99pLgfgFxqSa76kfW++3VCkTSzJbzsQRffir366G3kmNyjoigC6ekp7DxIkxkw==}
 
   '@cloudflare/workers-types@5.20261022.1':
     resolution: {integrity: sha512-irp6lxKgWTnIquva6iSaJhV9vCdGlhLIw3+vVOj1Glge38LnKb3jMQiB53gaUB+EgN47JVVg58kJ703V/00JYw==}
@@ -3074,8 +3071,6 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20261019.1':
     optional: true
 
-  '@cloudflare/workers-types@5.20261004.1': {}
-
   '@cloudflare/workers-types@5.20261022.1': {}
 
   '@cspotcode/source-map-support@0.8.1':
@@ -3622,7 +3617,7 @@ snapshots:
 
   '@sveltejs/adapter-cloudflare@8.0.1(@sveltejs/kit@3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(wrangler@4.152.0(@cloudflare/workers-types@5.20261022.1))':
     dependencies:
-      '@cloudflare/workers-types': 5.20261004.1
+      '@cloudflare/workers-types': 5.20261022.1
       '@rolldown/pluginutils': 1.0.1
       '@sveltejs/kit': 3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
       wrangler: 4.152.0(@cloudflare/workers-types@5.20261022.1)(@types/node@26.6.5)
