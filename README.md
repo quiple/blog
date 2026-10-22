@@ -34,10 +34,10 @@ nub run lint
 nub run build:fast
 ```
 
-의존성을 다시 설치한 뒤 Nub에서 `File '$app/tsconfig' not found`가 발생하면
-`nub --node exec svelte-kit sync`로 SvelteKit의 생성 설정을 복구한 다음 다시 실행하세요.
-Nub은 스크립트 실행 전에 TypeScript 설정을 읽으므로, 설정 파일이 없는 상태의
-최초 생성 명령에는 `--node`가 필요합니다.
+Nub은 `nub.jsonc`에 지정된 `tsconfig.runtime.json`을 사용합니다. 이 설정은
+SvelteKit이 생성하는 `$app/tsconfig`에 의존하지 않아, 의존성을 다시 설치한 뒤에도
+`svelte-kit sync`를 실행할 수 있습니다. 앱의 타입 검사는 기존 `tsconfig.json`을
+사용하며, `nub run check`는 먼저 `sync`로 SvelteKit 설정을 생성합니다.
 
 `build:fast`는 기본 빌드이고, `build`는 OG 이미지 사전 생성을 추가로 실행합니다. 운영 이미지 원본은 R2에 있으므로 저장소 복제만으로 운영 콘텐츠 전체가 제공되지는 않습니다. 자체 배포 시 `wrangler.toml`의 Worker·R2 설정을 자신의 리소스로 변경하고 필요한 이미지와 Secret을 설정하세요.
 

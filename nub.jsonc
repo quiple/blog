@@ -1,0 +1,4 @@
+{
+  // SvelteKit의 생성 설정이 없어도 sync를 실행할 수 있어야 합니다.
+  "tsconfig": "./tsconfig.runtime.json",
+}
