@@ -1,6 +1,6 @@
 <script lang="ts">
   import TextAlignStartIcon from '@lucide/svelte/icons/text-align-start'
-  import {afterNavigate} from '$app/navigation'
+  import {afterNavigate, pushState} from '$app/navigation'
   import {onMount} from 'svelte'
   import type {Snippet} from 'svelte'
 
@@ -8,11 +8,11 @@
     selector = 'article',
     title = '목차',
     footer,
-  } = $props<{
+  }: {
     selector?: string
     title?: string
     footer?: Snippet
-  }>()
+  } = $props()
 
   type Heading = {
     id: string

@@ -55,7 +55,7 @@ export const GET: RequestHandler = async ({params}) => {
     error(404, 'Not found')
   }
 
-  return new Response(object.body as ReadableStream, {
+  return new Response(object.body as unknown as ReadableStream, {
     headers: {
       'Content-Type': object.httpMetadata?.contentType ?? getMimeType(path),
       'Cache-Control': 'public, max-age=31536000, immutable',

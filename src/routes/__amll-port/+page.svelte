@@ -143,5 +143,5 @@
   id="result"
   style="position:fixed;right:0;top:0;z-index:100;background:#222;color:white;font-size:10px;max-height:40vh;overflow:auto">{result}</pre>
 <div bind:this={host} style="max-width:850px;margin:0 auto">
-  <SyncedLyrics {lines} {sample} onseek={(time) => set(time, true)} onfailure={() => (result = 'failure')} />
+  <SyncedLyrics {lines} {sample} onseek={(time: number) => set(time, true)} onfailure={() => (result = 'failure')} />
 </div>

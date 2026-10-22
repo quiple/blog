@@ -50,7 +50,7 @@
     totalPages={data.totalPages}
     perPage={data.perPage}
     currentPage={data.currentPage}
-    onPageChange={(page) => {
+    onPageChange={(page: number) => {
       window.scrollTo(0, 0)
       goto(`/${data.category}?p=${page}`)
     }}

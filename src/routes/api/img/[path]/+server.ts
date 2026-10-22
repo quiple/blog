@@ -1,3 +1,4 @@
+import type {Headers as WorkerHeaders} from '@cloudflare/workers-types'
 import {error} from '@sveltejs/kit'
 import {dev} from '$app/env'
 import {env} from 'cloudflare:workers'
@@ -69,11 +70,12 @@ export const GET: RequestHandler = async ({params, url}) => {
 
     const responseHeaders = new Headers()
 
-    object.writeHttpMetadata(responseHeaders)
+    // Workers와 DOM의 타입 선언은 다르지만 배포 시 같은 Headers 객체입니다.
+    object.writeHttpMetadata(responseHeaders as unknown as WorkerHeaders)
     responseHeaders.set('Cache-Control', 'public, max-age=31536000, immutable')
     responseHeaders.set('ETag', object.httpEtag)
 
-    return new Response(object.body as ReadableStream, {headers: responseHeaders})
+    return new Response(object.body as unknown as ReadableStream, {headers: responseHeaders})
   }
 
   const secret = env.INTERNAL_IMAGE_SECRET

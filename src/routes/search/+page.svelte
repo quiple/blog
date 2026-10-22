@@ -25,7 +25,7 @@
 
   function submitSearch() {
     const trimmed = searchInput.trim()
-    goto(trimmed ? `/search?q=${encodeURIComponent(trimmed)}` : '/search', {keepFocus: true})
+    goto(trimmed ? `/search?q=${encodeURIComponent(trimmed)}` : '/search', {reset: false})
   }
 
   function handleSearch() {
@@ -78,7 +78,7 @@
       totalPages={data.totalPages}
       perPage={data.perPage}
       currentPage={data.currentPage}
-      onPageChange={(page) => {
+      onPageChange={(page: number) => {
         window.scrollTo(0, 0)
         goto(`/search?q=${encodeURIComponent(data.searchQuery)}&p=${page}`)
       }}

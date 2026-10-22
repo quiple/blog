@@ -39,6 +39,18 @@ SvelteKit이 생성하는 `$app/tsconfig`에 의존하지 않아, 의존성을 �
 `svelte-kit sync`를 실행할 수 있습니다. 앱의 타입 검사는 기존 `tsconfig.json`을
 사용하며, `nub run check`는 먼저 `sync`로 SvelteKit 설정을 생성합니다.
 
+타입 검사는 TypeScript 7.1(`@typescript/native` 별칭)을 사용합니다.
+`typescript`의 6.0 버전은 Svelte 도구의 변환 API 호환용으로 함께 설치합니다.
+`check`와 `check:watch`는 `svelte-check --tsgo`를 사용하고,
+`check:import`와 `check:render`도 TS 7.1 실행 파일을 직접 지정합니다.
+일반 `tsc`는 호환용 TS 6을 실행할 수 있으므로 이 검사 명령들을 사용하세요.
+TS 7.1 개발 버전은 검증한 버전으로 고정했습니다. 현재 조합에서는
+`--tsgo-experimental-api`가 실패하므로 사용하지 않습니다.
+
+Cloudflare 타입은 `@cloudflare/workers-types`에서 필요한 타입만 가져옵니다.
+서버 바인딩은 `src/app.d.ts`와 `src/cloudflare.d.ts`에 선언하여 브라우저 DOM 타입과
+Workers 타입이 서로 충돌하지 않도록 합니다.
+
 `build:fast`는 기본 빌드이고, `build`는 OG 이미지 사전 생성을 추가로 실행합니다. 운영 이미지 원본은 R2에 있으므로 저장소 복제만으로 운영 콘텐츠 전체가 제공되지는 않습니다. 자체 배포 시 `wrangler.toml`의 Worker·R2 설정을 자신의 리소스로 변경하고 필요한 이미지와 Secret을 설정하세요.
 
 가사 데이터와 가져오기 명령은 [가사 작성 안내](src/posts/lyric/README.md)에 정리되어 있습니다.

@@ -83,6 +83,6 @@ MV를 프레임별로 탐색해 페이지에 합성하고 PNG를 FFmpeg에 바�
 검증:
 
 ```sh
-nub exec tsc -p scripts/render/tsconfig.json
+nub run check:render
 node --test scripts/render/clock.test.ts
 ```
