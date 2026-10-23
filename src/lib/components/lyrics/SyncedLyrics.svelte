@@ -36,7 +36,7 @@
         element.setAttribute('aria-hidden', 'true')
         host.append(element)
         player.setAlignPosition(0)
-        if (lyricRender()) player.setEnableBlur(false)
+        player.setEnableBlur(false)
         // Provider timestamps are interpolated below; seek detection is handled there.
         player.setEnableAutoSeekDetection(false)
         player.setOptimizeOptions({
@@ -80,6 +80,8 @@
             previousFrame = 0
             return
           }
+          // Match document auto-follow, including its existing manual-scroll timeout.
+          player.setEnableBlur(playing && now >= userUntil && !lyricRender())
           // Ignore small backwards corrections from embed timestamp samples.
           let current = time()
           if (current < previousTime && previousTime - current < 200) current = previousTime
@@ -164,7 +166,10 @@
             window.scrollTo({top: scrollY, behavior: 'instant'})
             playing = running
             if (playing) player.resume()
-            else player.pause()
+            else {
+              player.setEnableBlur(false)
+              player.pause()
+            }
           }
           wake()
         }
