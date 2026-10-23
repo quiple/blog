@@ -36,7 +36,7 @@
         element.setAttribute('aria-hidden', 'true')
         host.append(element)
         player.setAlignPosition(0)
-        player.setEnableBlur(false)
+        if (lyricRender()) player.setEnableBlur(false)
         // Provider timestamps are interpolated below; seek detection is handled there.
         player.setEnableAutoSeekDetection(false)
         player.setOptimizeOptions({
@@ -80,8 +80,8 @@
             previousFrame = 0
             return
           }
-          // Match document auto-follow, including its existing manual-scroll timeout.
-          player.setEnableBlur(playing && now >= userUntil && !lyricRender())
+          // Suppress the rendered filter without recalculating AMLL layout.
+          host.classList.toggle('following', playing && now >= userUntil && !lyricRender())
           // Ignore small backwards corrections from embed timestamp samples.
           let current = time()
           if (current < previousTime && previousTime - current < 200) current = previousTime
@@ -167,7 +167,7 @@
             playing = running
             if (playing) player.resume()
             else {
-              player.setEnableBlur(false)
+              host.classList.remove('following')
               player.pause()
             }
           }
@@ -182,6 +182,7 @@
           }
         }
         const manual = () => {
+          host.classList.remove('following')
           release()
           userUntil = performance.now() + 5000
           followed = undefined
@@ -191,7 +192,7 @@
           if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) manual()
         }
         const pointer = (event: PointerEvent) => {
-          if (event.target === document.documentElement) manual()
+          if (event.target === document.documentElement || event.target === document.body) manual()
         }
         const resize = () => {
           release()
@@ -222,8 +223,8 @@
           sync()
         })
         visibility.observe(host)
-        window.addEventListener('wheel', manual, {passive: true})
-        window.addEventListener('touchmove', manual, {passive: true})
+        window.addEventListener('wheel', manual, {passive: true, capture: true})
+        window.addEventListener('touchmove', manual, {passive: true, capture: true})
         window.addEventListener('keydown', key)
         window.addEventListener('pointerdown', pointer)
         window.addEventListener('resize', resize)
@@ -243,8 +244,8 @@
           sizes.disconnect()
           visibility.disconnect()
           player.dispose()
-          window.removeEventListener('wheel', manual)
-          window.removeEventListener('touchmove', manual)
+          window.removeEventListener('wheel', manual, true)
+          window.removeEventListener('touchmove', manual, true)
           window.removeEventListener('keydown', key)
           window.removeEventListener('pointerdown', pointer)
           window.removeEventListener('resize', resize)
@@ -282,6 +283,9 @@
     contain: none;
     overflow: visible;
     mix-blend-mode: normal;
+  }
+  .lyric-player:not(.following) :global([class*='_lyricLineWrapper']) {
+    filter: none !important;
   }
   .lyric-player :global([data-bottom-line]) {
     display: none;
