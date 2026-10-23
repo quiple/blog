@@ -144,11 +144,13 @@
             </div>
             {#if post.image}
               {@const isPixelImage = post.imageType === 'pixel'}
-              {@const src1x = getImageUrl(post.image, isPixelImage ? {original: true} : {h: 88})}
-              {@const src2x = getImageUrl(post.image, isPixelImage ? {original: true} : {h: 176})}
+              {@const src1x = getImageUrl(post.image, isPixelImage ? {original: true} : {w: 88, h: 88, fit: 'cover'})}
+              {@const src2x = getImageUrl(post.image, isPixelImage ? {original: true} : {w: 176, h: 176, fit: 'cover'})}
               <div class="img animate-pulse bg-muted" use:transition={postTransition(post.slug, 'image')}>
                 <img
                   alt=""
+                  width="88"
+                  height="88"
                   class={[
                     'absolute inset-0 size-full object-cover opacity-0 transition-opacity',
                     isPixelImage && 'pixel-image',

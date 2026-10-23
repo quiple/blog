@@ -20,7 +20,7 @@ export function getCategoryName(category: string) {
 
 export function getImageUrl(
   path: string,
-  options: {w?: number; h?: number; q?: number; f?: string; absolute?: boolean; original?: boolean} = {},
+  options: {w?: number; h?: number; q?: number; f?: string; fit?: 'cover'; absolute?: boolean; original?: boolean} = {},
 ) {
   const baseUrl = options.absolute ? 'https://quiple.dev' : ''
 
@@ -35,6 +35,7 @@ export function getImageUrl(
   if (options.h) parts.push(`h=${options.h}`)
   if (options.q) parts.push(`q=${options.q}`)
   if (options.f) parts.push(`f=${options.f}`)
+  if (options.fit) parts.push(`fit=${options.fit}`)
 
   return `${baseUrl}/api/img/${encodedPath}${parts.length ? `?${parts.join('&')}` : ''}`
 }

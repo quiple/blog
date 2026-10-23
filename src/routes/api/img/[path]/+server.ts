@@ -90,6 +90,7 @@ export const GET: RequestHandler = async ({params, url}) => {
 
   if (width) options.width = +width
   if (height) options.height = +height
+  if (url.searchParams.get('fit') === 'cover') options.fit = 'cover'
 
   return globalThis.fetch(imageUrl, {
     headers: {'x-internal-secret': secret},
