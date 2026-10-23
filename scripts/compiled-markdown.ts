@@ -31,7 +31,7 @@ const imageSizeMap = JSON.parse(await readFile(imageSizesPath, 'utf8')) as Recor
 >
 const widthClassRegex = /(^|\s)w-/
 const maxHeightClassRegex = /\bmax-h-(\d+(?:\.\d+)?)\b/
-const IMAGE_WIDTHS = [343, 576, 672, 686, 1152, 1344]
+const IMAGE_WIDTHS = [343, 384, 416, 576, 672, 686, 768, 960, 1152, 1344]
 const DEFAULT_SIZES = '(min-width: 1536px) 672px, (min-width: calc(576px + 32px)) 576px, calc(100vw - 32px)'
 
 export interface CompiledPostContent {
@@ -104,7 +104,7 @@ function imageFrameHtml({
   })}><img ${htmlAttrs({
     src,
     srcset,
-    sizes,
+    sizes: sizes && loading === 'lazy' ? `auto, ${sizes}` : sizes,
     alt,
     width,
     height,
@@ -155,6 +155,8 @@ function rehypeImageSizes(isProduction: boolean) {
         }
         if (srcClean.charCodeAt(0) === 47) srcClean = srcClean.slice(1)
 
+        const imageProperties = node.properties
+        const loading = imageProperties.loading || 'lazy'
         const sizeInfo = imageSizeMap[srcClean]
         const width = node.properties.width || sizeInfo?.width
         const height = node.properties.height || sizeInfo?.height
@@ -172,13 +174,13 @@ function rehypeImageSizes(isProduction: boolean) {
             properties: {
               src: getImageUrl(srcClean, {w: 1344}),
               srcset: generateSrcSet(srcClean),
-              sizes: DEFAULT_SIZES,
-              alt: node.properties.alt,
+              sizes: loading === 'lazy' ? `auto, ${DEFAULT_SIZES}` : DEFAULT_SIZES,
+              alt: imageProperties.alt,
               width,
               height,
               className: 'opacity-0 transition-opacity',
-              loading: node.properties.loading || 'lazy',
-              decoding: node.properties.decoding || 'async',
+              loading,
+              decoding: imageProperties.decoding || 'async',
             },
             children: [],
           },
