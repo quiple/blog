@@ -136,6 +136,9 @@
     let cancelled = false
     const fallback = node.parentElement?.querySelector<HTMLElement>('.hero-image-fallback')
     const releaseLayer = () => node.style.removeProperty('will-change')
+    // Only SPA navigation needs a crossfade; the initial hero must paint without hydration.
+    const viewTransition = animate ? document.activeViewTransition : undefined
+    if (viewTransition) node.classList.replace('opacity-100', 'opacity-0')
 
     const reveal = async () => {
       if (!animate) {
@@ -143,7 +146,6 @@
         return
       }
 
-      const viewTransition = document.activeViewTransition
       try {
         try {
           await node.decode()
@@ -153,15 +155,17 @@
         await viewTransition?.finished.catch(() => {})
         if (cancelled) return
 
-        node.style.willChange = 'opacity'
-        await nextFrame()
-        await nextFrame()
-        if (cancelled) return
+        if (viewTransition) {
+          node.style.willChange = 'opacity'
+          await nextFrame()
+          await nextFrame()
+          if (cancelled) return
 
-        node.classList.replace('opacity-0', 'opacity-100')
+          node.classList.replace('opacity-0', 'opacity-100')
 
-        await nextFrame()
-        await Promise.allSettled(node.getAnimations().map((animation) => animation.finished))
+          await nextFrame()
+          await Promise.allSettled(node.getAnimations().map((animation) => animation.finished))
+        }
         // The decoded full image now covers the preview. Stop carrying both
         // full-viewport image surfaces through the parallax animation.
         if (!cancelled && fallback) fallback.style.visibility = 'hidden'
@@ -387,7 +391,7 @@
         {/if}
         {#key data.slug}
           <img
-            class="hero-image-full opacity-0 transition-opacity"
+            class="hero-image-full opacity-100 transition-opacity"
             class:pixel-image={isPixelImage}
             src={imageDesktop}
             srcset={heroSrcset}
