@@ -57,7 +57,7 @@
           visible = true,
           autoFollow = true
         let lastInteraction = 0,
-          nearSince = 0,
+          visibleSince = 0,
           ownScrollUntil = 0
         let followed: HTMLElement | undefined,
           followedTop = NaN
@@ -114,10 +114,11 @@
             }
           }
           if (!autoFollow) {
-            const near = active && Math.abs(active.getBoundingClientRect().top - inset(active)) <= innerHeight * 0.2
-            if (!near) nearSince = 0
-            else if (!nearSince) nearSince = now
-            if (nearSince && now - Math.max(lastInteraction, nearSince) >= 1500) autoFollow = true
+            const rect = active?.getBoundingClientRect()
+            const inViewport = rect && rect.bottom > 0 && rect.top < innerHeight
+            if (!inViewport) visibleSince = 0
+            else if (!visibleSince) visibleSince = now
+            if (visibleSince && now - Math.max(lastInteraction, visibleSince) >= 1500) autoFollow = true
           }
           host.dataset.following = String(playing && autoFollow && !render)
           const target =
@@ -197,7 +198,7 @@
           release()
           autoFollow = false
           lastInteraction = performance.now()
-          nearSince = 0
+          visibleSince = 0
           ownScrollUntil = 0
           followed = undefined
           wake()
