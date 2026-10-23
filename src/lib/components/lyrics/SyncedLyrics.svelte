@@ -55,7 +55,10 @@
         let applied: LocalizedLyricLine[] | undefined
         let playing = false,
           visible = true,
-          userUntil = 0
+          autoFollow = true
+        let lastInteraction = 0,
+          nearSince = 0,
+          ownScrollUntil = 0
         let followed: HTMLElement | undefined,
           followedTop = NaN
         let anchor: {line: HTMLElement; top: number} | undefined
@@ -80,8 +83,6 @@
             previousFrame = 0
             return
           }
-          // Suppress the rendered filter without recalculating AMLL layout.
-          host.classList.toggle('following', playing && now >= userUntil && !lyricRender())
           // Ignore small backwards corrections from embed timestamp samples.
           let current = time()
           if (current < previousTime && previousTime - current < 200) current = previousTime
@@ -112,10 +113,15 @@
               )
             }
           }
+          if (!autoFollow) {
+            const near = active && Math.abs(active.getBoundingClientRect().top - inset(active)) <= innerHeight * 0.2
+            if (!near) nearSince = 0
+            else if (!nearSince) nearSince = now
+            if (nearSince && now - Math.max(lastInteraction, nearSince) >= 1500) autoFollow = true
+          }
+          host.dataset.following = String(playing && autoFollow && !render)
           const target =
-            !anchor && sample.playing && active && now >= userUntil
-              ? lineTop(active, !!render) - inset(active)
-              : undefined
+            !anchor && sample.playing && active && autoFollow ? lineTop(active, !!render) - inset(active) : undefined
           const reference = target !== undefined && active && render?.follow ? player.alignmentLine(active) : undefined
           const referenceTop = reference ? lineTop(reference) : undefined
           // Finish layout reads before changing bottom spacing or scrolling.
@@ -129,6 +135,7 @@
               const target = Math.max(0, scrollY + delta)
               const missing = target + innerHeight - document.documentElement.scrollHeight
               if (missing > 0) host.style.minHeight = `${host.offsetHeight + missing}px`
+              ownScrollUntil = performance.now() + 1500
               window.scrollTo({top: target, behavior: 'instant'})
             }
           } else if (active && target !== undefined) {
@@ -139,6 +146,7 @@
             } else if (active !== followed || Math.abs(target - followedTop) > 0.5) {
               followed = active
               followedTop = target
+              ownScrollUntil = performance.now() + 1500
               window.scrollTo({
                 top: Math.max(0, target),
                 behavior: motion.matches ? 'instant' : 'smooth',
@@ -163,11 +171,14 @@
             const top = active?.getBoundingClientRect().top
             release()
             if (active && top !== undefined && followed === active) anchor = {line: active, top}
-            window.scrollTo({top: scrollY, behavior: 'instant'})
+            if (autoFollow) {
+              ownScrollUntil = performance.now() + 1500
+              window.scrollTo({top: scrollY, behavior: 'instant'})
+            }
             playing = running
             if (playing) player.resume()
             else {
-              host.classList.remove('following')
+              host.dataset.following = 'false'
               player.pause()
             }
           }
@@ -182,11 +193,21 @@
           }
         }
         const manual = () => {
-          host.classList.remove('following')
+          host.dataset.following = 'false'
           release()
-          userUntil = performance.now() + 5000
+          autoFollow = false
+          lastInteraction = performance.now()
+          nearSince = 0
+          ownScrollUntil = 0
           followed = undefined
           wake()
+        }
+        const scrolled = () => {
+          if (lyricRender()) return
+          if (!autoFollow || performance.now() >= ownScrollUntil) manual()
+        }
+        const scrollEnded = () => {
+          ownScrollUntil = 0
         }
         const key = (event: KeyboardEvent) => {
           if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) manual()
@@ -208,7 +229,7 @@
           if (line) {
             release()
             followed = undefined
-            userUntil = 0
+            autoFollow = true
             onseek(Math.max(0, line.startTime + offset))
           }
         }
@@ -223,6 +244,8 @@
           sync()
         })
         visibility.observe(host)
+        window.addEventListener('scroll', scrolled, {passive: true})
+        window.addEventListener('scrollend', scrollEnded)
         window.addEventListener('wheel', manual, {passive: true, capture: true})
         window.addEventListener('touchmove', manual, {passive: true, capture: true})
         window.addEventListener('keydown', key)
@@ -244,6 +267,8 @@
           sizes.disconnect()
           visibility.disconnect()
           player.dispose()
+          window.removeEventListener('scroll', scrolled)
+          window.removeEventListener('scrollend', scrollEnded)
           window.removeEventListener('wheel', manual, true)
           window.removeEventListener('touchmove', manual, true)
           window.removeEventListener('keydown', key)
@@ -265,7 +290,7 @@
   })
 </script>
 
-<div bind:this={host} class="lyric-player"></div>
+<div bind:this={host} class="lyric-player" data-following="false"></div>
 
 <style>
   :global(html:has(.lyric-player)) {
@@ -284,7 +309,8 @@
     overflow: visible;
     mix-blend-mode: normal;
   }
-  .lyric-player:not(.following) :global([class*='_lyricLineWrapper']) {
+  .lyric-player[data-following='false'] :global([class*='_lyricLineWrapper']),
+  .lyric-player[data-following='false'] :global([class*='_lyricLine']) {
     filter: none !important;
   }
   .lyric-player :global([data-bottom-line]) {
