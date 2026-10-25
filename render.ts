@@ -129,14 +129,12 @@ async function main() {
       if (!name) throw Error('MV 다운로드 파일을 찾지 못했습니다.')
       media = join(temp, name)
     }
-    // Normalize decoding across browser platforms; preserve the MV timeline.
+    // Re-encode even H.264 sources: a compatible codec alone does not guarantee
+    // Chromium can repeatedly seek through the original bitstream. Short GOPs
+    // also bound the decoding work for each captured frame. Preserve timestamps.
     console.log('MV 준비 중…')
     const video = join(temp, 'mv.mp4')
     const probe = JSON.parse((await exec('ffprobe', ['-v', 'error', '-show_streams', '-of', 'json', media])).stdout)
-    const copyVideo = probe.streams.some(
-      (stream: {codec_type: string; codec_name: string; pix_fmt?: string}) =>
-        stream.codec_type === 'video' && stream.codec_name === 'h264' && stream.pix_fmt === 'yuv420p',
-    )
     const copyAudio =
       probe.streams.find((stream: {codec_type: string}) => stream.codec_type === 'audio')?.codec_name === 'aac'
     await exec(
@@ -151,7 +149,16 @@ async function main() {
         '0:v:0',
         '-map',
         '0:a:0',
-        ...(copyVideo ? ['-c:v', 'copy'] : ['-c:v', 'libx264', '-preset', 'fast', '-crf', '18', '-pix_fmt', 'yuv420p']),
+        '-c:v',
+        'libx264',
+        '-preset',
+        'fast',
+        '-crf',
+        '18',
+        '-pix_fmt',
+        'yuv420p',
+        '-g',
+        '30',
         ...(copyAudio ? ['-c:a', 'copy'] : ['-c:a', 'aac', '-b:a', '192k']),
         '-movflags',
         '+faststart',
@@ -350,7 +357,11 @@ async function main() {
               }
               const fail = () => {
                 cleanup()
-                reject(Error('MV 탐색 실패'))
+                reject(
+                  Error(
+                    `MV 탐색 실패 (${(time / 1000).toFixed(3)}초, code=${video.error?.code ?? 'unknown'}): ${video.error?.message ?? '상세 정보 없음'}`,
+                  ),
+                )
               }
               video.addEventListener('seeked', done, {once: true})
               video.addEventListener('error', fail, {once: true})
