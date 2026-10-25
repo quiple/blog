@@ -49,6 +49,11 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
     // Variable-font settings can make the computed `font` shorthand empty.
     const font = `${style.fontStyle} ${style.fontWeight} ${style.fontSize} ${style.fontFamily}`
     const canvas = document.createElement('canvas')
+    // Canvas text shaping reads inherited CSS (including Japanese `palt`) only
+    // while connected. Draw in the same font context as the layout spacer;
+    // otherwise full-width glyphs overlap the proportionally spaced DOM text.
+    canvas.style.position = 'absolute'
+    target.append(canvas)
     const ctx = canvas.getContext('2d')!
     ctx.font = font
     const metrics = ctx.measureText(target.textContent)
@@ -85,7 +90,6 @@ export function installRenderClock(options: {mediaUrl: string; duration: number;
     spacer.append(text)
     const position = target.style.position
     target.style.position = 'relative'
-    target.append(canvas)
     glyphs.set(target, {
       canvas,
       restore: () => {
