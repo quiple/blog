@@ -34,8 +34,8 @@ importers:
         specifier: 1.0.1
         version: 1.0.1
       '@cloudflare/workers-types':
-        specifier: ^5.20261023.1
-        version: 5.20261023.1
+        specifier: ^5.20261024.1
+        version: 5.20261024.1
       '@ethercorps/sveltekit-og':
         specifier: github:quiple/sveltekit-og
         version: https://codeload.github.com/quiple/sveltekit-og/tar.gz/7f72c3eef3aa8f7b52f1a575214c2106e9473f1c
@@ -47,7 +47,7 @@ importers:
         version: 1.61.0(svelte@5.57.2)
       '@sveltejs/adapter-cloudflare':
         specifier: ^8.0.1
-        version: 8.0.1(@sveltejs/kit@3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(wrangler@4.152.0(@cloudflare/workers-types@5.20261023.1))
+        version: 8.0.1(@sveltejs/kit@3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(wrangler@4.152.0(@cloudflare/workers-types@5.20261024.1))
       '@sveltejs/kit':
         specifier: ^3.1.0
         version: 3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
@@ -136,8 +136,8 @@ importers:
         specifier: github:quiple/remark-smartypants
         version: https://codeload.github.com/quiple/remark-smartypants/tar.gz/41f552daa3c7b4c0ee7eaab2f376e2f77be46fab
       shadcn-svelte:
-        specifier: ^1.7.0
-        version: 1.7.0(svelte@5.57.2)
+        specifier: ^1.7.1
+        version: 1.7.1(svelte@5.57.2)
       sharp:
         specifier: ^0.35.5
         version: 0.35.5(@types/node@26.6.5)
@@ -179,7 +179,7 @@ importers:
         version: 8.3.5(@types/node@26.6.5)(yaml@2.9.1)
       wrangler:
         specifier: ^4.152.0
-        version: 4.152.0(@cloudflare/workers-types@5.20261023.1)(@types/node@26.6.5)
+        version: 4.152.0(@cloudflare/workers-types@5.20261024.1)(@types/node@26.6.5)
 
 packages:
 
@@ -240,8 +240,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@cloudflare/workers-types@5.20261023.1':
-    resolution: {integrity: sha512-jRaMsWUF/08dd0dWnX3zPGPOjakkkA2JPnK5vLsCQFmYC40kbMPZ02fvOPO8kqjqgljoMZrKsRiXpR1u1Lp0Qg==}
+  '@cloudflare/workers-types@5.20261024.1':
+    resolution: {integrity: sha512-sNhbgBsuVvmumSurgCcIrXShqACPfRt/XlYFstBeANu5BHEJhXW+e7PmHxDNYRXxKYZV57toUfkLwFp8/0SZKA==}
 
   '@cspotcode/source-map-support@0.8.1':
     resolution: {integrity: sha512-IchNf6dN4tHoMFIn/7OE8LWZ19Y6q/67Bmf6vnGREv8RSbBVb9LPJxEcnwrcwX6ixSvaiGoomAUvu4YSxXrVgw==}
@@ -2574,8 +2574,8 @@ packages:
   set-cookie-parser@3.1.2:
     resolution: {integrity: sha512-5/r/lTwbJ3zQ+qwdUFZYeRNqda7P5HD8zQKqlSjdGt1/S0cjLAphHusj4Y58ahDtWn/g32xrIS58/ikOvwl0Lw==}
 
-  shadcn-svelte@1.7.0:
-    resolution: {integrity: sha512-AK3ZsYOL8PN/RxcEBCHGvQj2TrLfaaBsbw0QohyEb3nn/yPNDRC/+9iSjnTp/uKEe+tAi0tBxB/Yhzno0N7EEg==}
+  shadcn-svelte@1.7.1:
+    resolution: {integrity: sha512-tkUavVtc+6E2snOd7CmHZYq5hi1v9oM3KT0ks6cgN5G4IykbIbt+1xDrSWb9ENUh8PWqeses4xJPqRgCzkzcMQ==}
     hasBin: true
     peerDependencies:
       svelte: ^5.0.0
@@ -3073,7 +3073,7 @@ snapshots:
   '@cloudflare/workerd-windows-64@1.20261019.1':
     optional: true
 
-  '@cloudflare/workers-types@5.20261023.1': {}
+  '@cloudflare/workers-types@5.20261024.1': {}
 
   '@cspotcode/source-map-support@0.8.1':
     dependencies:
@@ -3618,12 +3618,12 @@ snapshots:
     dependencies:
       acorn: 8.18.0
 
-  '@sveltejs/adapter-cloudflare@8.0.1(@sveltejs/kit@3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(wrangler@4.152.0(@cloudflare/workers-types@5.20261023.1))':
+  '@sveltejs/adapter-cloudflare@8.0.1(@sveltejs/kit@3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(wrangler@4.152.0(@cloudflare/workers-types@5.20261024.1))':
     dependencies:
-      '@cloudflare/workers-types': 5.20261023.1
+      '@cloudflare/workers-types': 5.20261024.1
       '@rolldown/pluginutils': 1.0.1
       '@sveltejs/kit': 3.1.0(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))
-      wrangler: 4.152.0(@cloudflare/workers-types@5.20261023.1)(@types/node@26.6.5)
+      wrangler: 4.152.0(@cloudflare/workers-types@5.20261024.1)(@types/node@26.6.5)
 
   '@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.2)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1)))(svelte@5.57.2)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.5)(yaml@2.9.1))':
     dependencies:
@@ -4968,9 +4968,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  miniflare@5.20261019.2-beta(@cloudflare/workers-types@5.20261023.1)(@types/node@26.6.5):
+  miniflare@5.20261019.2-beta(@cloudflare/workers-types@5.20261024.1)(@types/node@26.6.5):
     dependencies:
-      '@cloudflare/workers-types': 5.20261023.1
+      '@cloudflare/workers-types': 5.20261024.1
       '@cspotcode/source-map-support': 0.8.1
       sharp: 0.35.5(@types/node@26.6.5)
       undici: 7.29.1
@@ -5394,7 +5394,7 @@ snapshots:
 
   set-cookie-parser@3.1.2: {}
 
-  shadcn-svelte@1.7.0(svelte@5.57.2):
+  shadcn-svelte@1.7.1(svelte@5.57.2):
     dependencies:
       cn: 0.3.3
       commander: 14.0.3
@@ -5747,14 +5747,14 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20261019.1
       '@cloudflare/workerd-windows-64': 1.20261019.1
 
-  wrangler@4.152.0(@cloudflare/workers-types@5.20261023.1)(@types/node@26.6.5):
+  wrangler@4.152.0(@cloudflare/workers-types@5.20261024.1)(@types/node@26.6.5):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.2(unenv@2.0.0-rc.24)(workerd@1.20261019.1)
-      '@cloudflare/workers-types': 5.20261023.1
+      '@cloudflare/workers-types': 5.20261024.1
       blake3-wasm: 2.1.5
       esbuild: 0.28.2
-      miniflare: 5.20261019.2-beta(@cloudflare/workers-types@5.20261023.1)(@types/node@26.6.5)
+      miniflare: 5.20261019.2-beta(@cloudflare/workers-types@5.20261024.1)(@types/node@26.6.5)
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.24
       workerd: 1.20261019.1
