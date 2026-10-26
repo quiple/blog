@@ -1,6 +1,7 @@
 import {createHash} from 'node:crypto'
 import {readFile} from 'node:fs/promises'
 import {createRequire} from 'node:module'
+import {fileURLToPath} from 'node:url'
 import {build, type Plugin} from 'vite'
 import patch from './document.patch.json' with {type: 'json'}
 
@@ -29,6 +30,7 @@ export function documentLyrics(): Plugin {
             throw new Error(`AMLL patch mismatch: ${label}`)
           code = code.replace(before, after)
         }
+        code = `import {createWrappedLineMaskAnimator} from ${JSON.stringify(fileURLToPath(new URL('./wrapped-mask.ts', import.meta.url)))};\n${code}`
         // This entry only exposes DOM lyrics. The upstream all-in-one bundle also
         // initializes unused WebGL/Pixi renderers at module scope, defeating
         // tree-shaking. Exclude those regions under the SHA guard above.

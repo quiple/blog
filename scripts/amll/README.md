@@ -74,3 +74,13 @@ Mixed line/word-timed background groups apply mask alpha to their unmasked
 line-timed member. Pronunciation margins exclude emphasis glyph padding, and
 emphasized CJK/Latin boundaries receive the 1/8-em space lost when native
 animation splits the text into atomic spans.
+
+Wrapped emphasis words use `wrapped-mask.ts` to feed their existing glyph spans
+to the upstream mask animator in reading order. Their original time interval is
+distributed by glyph width, so a second row no longer highlights together with
+the first row's left edge. Pronunciation keeps its own full-word mask. Layout,
+word data and emphasis motion are unchanged; resizing rebuilds and disposes the
+masks through the existing lifecycle. Single-row words retain the native path.
+
+Run `node --test scripts/amll/wrapped-mask.test.ts` to check wrapping and resizing
+against the bundled, patched AMLL engine in Chromium.

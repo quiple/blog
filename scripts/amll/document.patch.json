@@ -146,6 +146,11 @@
       "label": "Preserve outgoing mask progress after resize",
       "before": "\t\tthis.maskAnimator.apply();\n\t\tif (this.isEnabled) {",
       "after": "\t\tthis.maskAnimator.apply();\n        if (!this.isEnabled) this.maskAnimator.setCurrentTime(clampPositive(this.lyricPlayer.getCurrentTime() - this.lyricLine.startTime), false);\n\t\tif (this.isEnabled) {"
+    },
+    {
+      "label": "Read wrapped emphasis masks in glyph order",
+      "before": "\t\tthis.maskAnimator = createLineMaskAnimator(this.splittedWords, {\n\t\t\tlineStartTime: this.lyricLine.startTime,\n\t\t\tlineEndTime: maxEndTime,\n\t\t\twordFadeWidth: this.lyricPlayer.getWordFadeWidth(),\n\t\t\tsupportMaskImage: this.lyricPlayer.supportMaskImage\n\t\t});",
+      "after": "\t\tthis.maskAnimator = createWrappedLineMaskAnimator(this.splittedWords, {\n\t\t\tlineStartTime: this.lyricLine.startTime,\n\t\t\tlineEndTime: maxEndTime,\n\t\t\twordFadeWidth: this.lyricPlayer.getWordFadeWidth(),\n\t\t\tsupportMaskImage: this.lyricPlayer.supportMaskImage\n\t\t}, createLineMaskAnimator);"
     }
   ]
 }
