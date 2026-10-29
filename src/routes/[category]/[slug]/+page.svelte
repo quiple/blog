@@ -615,10 +615,6 @@
     box-shadow: none;
   }
 
-  :global(.mdx-image-frame.animate-pulse.mdx-constrained-width) {
-    width: var(--mdx-constrained-width) !important;
-  }
-
   :global(article iframe.mdx-embed-frame) {
     @apply rounded-lg inner-border;
   }
