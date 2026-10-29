@@ -20,192 +20,1030 @@ offsets:
   sp: 0.333
   ytAudio: 0.333
 lines:
-  - text: Fuck this thing called life
+  - words:
+      - text: 'Fuck '
+        time: [0.571, 0.925]
+      - text: 'this '
+        time: [0.925, 1.246]
+      - text: 'thing '
+        time: [1.246, 1.566]
+      - text: 'called '
+        time: [1.566, 1.901]
+      - text: life
+        time: [1.901, 2.384]
     pr: 퍽 디스 싱 콜드 라입
     tl: 인생이란 거 좆같네
-    time: [0.25, 1.959]
-  - text: I tried to make it end, but here I am once again
+    time: [0.571, 2.384]
+  - words:
+      - text: 'I '
+        time: [2.384, 2.484]
+      - text: 'tried '
+        time: [2.484, 2.982]
+      - text: 'to '
+        time: [2.982, 3.165]
+      - text: 'make '
+        time: [3.165, 3.663]
+      - text: 'it '
+        time: [3.663, 3.842]
+      - text: 'end, '
+        time: [3.842, 4.308]
+      - text: 'but '
+        time: [4.308, 4.421]
+      - text: 'here '
+        time: [4.421, 4.78]
+      - text: 'I '
+        time: [4.78, 5.111]
+      - text: 'am '
+        time: [5.111, 5.397]
+      - text: 'once '
+        time: [5.397, 5.622]
+      - text: again
+        time: [5.622, 6.068]
     pr: 아이 트라잇 투 메익 잇 엔드, 벗 히어 아이 앰 원스 어게인
     tl: 끝내 보려 했는데 또 이렇게 살아 있어
-    time: [1.959, 5.625]
-  - text: Let's congratulate myself
+    time: [2.384, 6.068]
+  - words:
+      - text: "Let's "
+        time: [6.068, 6.225]
+      - text: 'congratulate '
+        time: [6.225, 6.875]
+      - text: myself
+        time: [6.875, 7.44]
     pr: 레츠 컨그래출레잇 마이셀프
     tl: 나라도 나를 축하해 주자
-    time: [5.625, 7.083]
-  - text: See, no one's gonna clap for a mediocre health
+    time: [6.068, 7.44]
+  - words:
+      - text: 'See, '
+        time: [7.44, 7.67]
+      - text: 'no '
+        time: [7.67, 7.839]
+      - text: "one's "
+        time: [7.839, 8.005]
+      - text: 'gonna '
+        time: [8.005, 8.284]
+      - text: 'clap '
+        time: [8.284, 8.633]
+      - text: 'for '
+        time: [8.633, 8.813]
+      - text: 'a '
+        time: [8.813, 8.959]
+      - text: 'mediocre '
+        time: [8.959, 9.567]
+      - text: health
+        time: [9.567, 9.927]
     pr: 시, 노 원스 거너 클랩 포 어 미디오커 헬스
     tl: 그저 그런 건강 상태에 박수 쳐 줄 사람은 없잖아
-    time: [7.083, 9.458]
-  - text: Or a medium size on my biceps, I've been in the gym
+    time: [7.44, 9.927]
+  - words:
+      - text: 'Or '
+        time: [9.927, 10.076]
+      - text: 'a '
+        time: [10.076, 10.233]
+      - text: 'medium '
+        time: [10.233, 10.738]
+      - text: 'size '
+        time: [10.738, 11.201]
+      - text: 'on '
+        time: [11.201, 11.362]
+      - text: 'my '
+        time: [11.362, 11.519]
+      - text: 'biceps, '
+        time: [11.519, 12.131]
+      - text: "I've "
+        time: [12.131, 12.329]
+      - text: 'been '
+        time: [12.329, 12.493]
+      - text: 'in '
+        time: [12.493, 12.652]
+      - text: 'the '
+        time: [12.652, 12.748]
+      - text: gym
+        time: [12.748, 13.288]
     pr: 오어 어 미디엄 사이즈 온 마이 바이셉스, 아입 빈 인 더 짐
     tl: 적당히 붙은 팔 근육도 마찬가지, 헬스장도 다녔는데
-    time: [9.458, 12.832]
-  - text: And, sigh, Pinterest said I will never be like him
+    time: [9.927, 13.288]
+  - words:
+      - text: 'And, '
+        time: [13.288, 13.431]
+      - text: 'sigh, '
+        time: [13.431, 13.773]
+      - text: 'Pinterest '
+        time: [13.773, 14.098]
+      - text: 'said '
+        time: [14.098, 14.427]
+      - text: 'I '
+        time: [14.427, 14.575]
+      - text: 'will '
+        time: [14.575, 14.733]
+      - text: 'never '
+        time: [14.733, 15.034]
+      - text: 'be '
+        time: [15.034, 15.197]
+      - text: 'like '
+        time: [15.197, 15.334]
+      - text: him
+        time: [15.334, 15.605]
     pr: 앤드, 사이, 핀터레스트 셋 아이 윌 네버 비 라익 힘
     tl: 하, 핀터레스트는 난 절대 저 남자처럼 못 된대
-    time: [12.832, 15.207]
-  - text: So many years to be mid
+    time: [13.288, 15.605]
+  - words:
+      - text: 'So '
+        time: [15.605, 16.327]
+      - text: 'many '
+        time: [16.327, 16.613]
+      - text: 'years '
+        time: [16.613, 16.95]
+      - text: 'to '
+        time: [16.95, 17.128]
+      - text: 'be '
+        time: [17.128, 17.289]
+      - text: mid
+        time: [17.289, 17.721]
     pr: 소 매니 이어즈 투 비 밋
     tl: 고작 평범해지려고 그렇게 오랜 세월을 썼네
-    time: [15.207, 17.29]
-  - text: See people climb a cliff, while I'm crawling out a pit
+    time: [15.605, 17.721]
+  - words:
+      - text: 'See '
+        time: [17.721, 17.94]
+      - text: 'people '
+        time: [17.94, 18.222]
+      - text: 'climb '
+        time: [18.222, 18.424]
+      - text: 'a '
+        time: [18.424, 18.539]
+      - text: 'cliff, '
+        time: [18.539, 18.89]
+      - text: 'while '
+        time: [18.89, 19.073]
+      - text: "I'm "
+        time: [19.073, 19.211]
+      - text: 'crawling '
+        time: [19.211, 19.551]
+      - text: 'out '
+        time: [19.551, 19.73]
+      - text: 'a '
+        time: [19.73, 19.872]
+      - text: pit
+        time: [19.872, 20.169]
     pr: 시 피플 클라임 어 클립, 와일 아임 크롤링 아웃 어 핏
     tl: 남들은 절벽을 오르는데 난 구덩이에서 기어 나오고 있어
-    time: [17.29, 19.581]
-  - text: Fuck this thing, they say dating now is cooked
+    time: [17.721, 20.169]
+  - words:
+      - text: 'Fuck '
+        time: [21.131, 21.465]
+      - text: 'this '
+        time: [21.465, 21.782]
+      - text: 'thing, '
+        time: [21.782, 22.105]
+      - text: 'they '
+        time: [22.105, 22.246]
+      - text: 'say '
+        time: [22.246, 22.425]
+      - text: 'dating '
+        time: [22.425, 22.75]
+      - text: 'now '
+        time: [22.75, 22.918]
+      - text: 'is '
+        time: [22.918, 23.067]
+      - text: cooked
+        time: [23.067, 23.556]
     pr: 퍽 디스 싱, 데이 세이 데이팅 나우 이즈 쿡트
     tl: 좆같네, 요즘 연애는 글렀다더라
-    time: [20.748, 23.206]
-  - text: And evidence is people that are fucking by the books
+    time: [21.131, 23.556]
+  - words:
+      - text: 'And '
+        time: [23.556, 23.712]
+      - text: 'evidence '
+        time: [23.712, 24.209]
+      - text: 'is '
+        time: [24.209, 24.364]
+      - text: 'people '
+        time: [24.364, 24.689]
+      - text: 'that '
+        time: [24.689, 24.854]
+      - text: 'are '
+        time: [24.854, 24.977]
+      - text: 'fucking '
+        time: [24.977, 25.309]
+      - text: 'by '
+        time: [25.309, 25.468]
+      - text: 'the '
+        time: [25.468, 25.623]
+      - text: books
+        time: [25.623, 26.108]
     pr: 앤드 에버던스 이즈 피플 댓 어 퍼킹 바이 더 북스
     tl: 섹스마저 매뉴얼대로 하는 사람들이 그 증거지
-    time: [23.206, 25.664]
-  - text: And everyone's so pretty, and they're sitting in their rooms
+    time: [23.556, 26.108]
+  - words:
+      - text: 'And '
+        time: [26.108, 26.269]
+      - text: "everyone's "
+        time: [26.269, 26.764]
+      - text: 'so '
+        time: [26.764, 26.896]
+      - text: 'pretty, '
+        time: [26.896, 27.249]
+      - text: 'and '
+        time: [27.249, 27.405]
+      - text: "they're "
+        time: [27.405, 27.541]
+      - text: 'sitting '
+        time: [27.541, 27.891]
+      - text: 'in '
+        time: [27.891, 28.05]
+      - text: 'their '
+        time: [28.05, 28.199]
+      - text: rooms
+        time: [28.199, 28.683]
     pr: 앤드 에브리원스 소 프리티, 앤드 데어 시팅 인 데어 룸즈
     tl: 다들 그렇게 예쁜데 방 안에만 앉아 있어
-    time: [25.664, 28.288]
-  - text: You're also in a room, that means you're failing in your youth
+    time: [26.108, 28.683]
+  - words:
+      - text: "You're "
+        time: [28.683, 28.853]
+      - text: 'also '
+        time: [28.853, 29.177]
+      - text: 'in '
+        time: [29.177, 29.343]
+      - text: 'a '
+        time: [29.343, 29.499]
+      - text: 'room, '
+        time: [29.499, 29.653]
+      - text: 'that '
+        time: [29.653, 29.818]
+      - text: 'means '
+        time: [29.818, 29.963]
+      - text: "you're "
+        time: [29.963, 30.115]
+      - text: 'failing '
+        time: [30.115, 30.442]
+      - text: 'in '
+        time: [30.442, 30.581]
+      - text: 'your '
+        time: [30.581, 30.765]
+      - text: youth
+        time: [30.765, 31.202]
     pr: 유어 올소 인 어 룸, 댓 민즈 유어 페일링 인 유어 유스
     tl: 너도 방 안에 있잖아, 그럼 네 청춘도 망하고 있는 거네
-    time: [28.288, 30.871]
-  - text: 'Somebody asked: "What''s stopping you from flying to hotels?"'
+    time: [28.683, 31.202]
+  - words:
+      - text: 'Somebody '
+        time: [31.202, 31.729]
+      - text: 'asked: '
+        time: [31.729, 31.904]
+      - text: '"What''s '
+        time: [31.904, 32.028]
+      - text: 'stopping '
+        time: [32.028, 32.355]
+      - text: 'you '
+        time: [32.355, 32.507]
+      - text: 'from '
+        time: [32.507, 32.695]
+      - text: 'flying '
+        time: [32.695, 33.016]
+      - text: 'to '
+        time: [33.016, 33.189]
+      - text: hotels?"
+        time: [33.189, 33.83]
     pr: '섬버디 아스크트: "와츠 스타핑 유 프럼 플라잉 투 호텔즈?"'
     tl: '누가 묻더라, "비행기 타고 호텔로 떠나면 되잖아, 뭐가 문제야?"'
-    time: [30.871, 33.438]
-  - text: My bowl of instant ramen couldn't answer this as well
+    time: [31.202, 33.83]
+  - words:
+      - text: 'My '
+        time: [33.83, 33.991]
+      - text: 'bowl '
+        time: [33.991, 34.157]
+      - text: 'of '
+        time: [34.157, 34.314]
+      - text: 'instant '
+        time: [34.314, 34.622]
+      - text: 'ramen '
+        time: [34.622, 34.944]
+      - text: "couldn't "
+        time: [34.944, 35.254]
+      - text: 'answer '
+        time: [35.254, 35.58]
+      - text: 'this '
+        time: [35.58, 35.716]
+      - text: 'as '
+        time: [35.716, 35.898]
+      - text: well
+        time: [35.898, 36.376]
     pr: 마이 볼 옵 인스턴트 라멘 쿠든트 앤서 디스 애즈 웰
     tl: 내 컵라면 한 그릇도 그 말엔 대답을 못 했지
-    time: [33.438, 36]
-  - text: The media consumed is likely pushed to some extreme
+    time: [33.83, 36.376]
+  - words:
+      - text: 'The '
+        time: [36.376, 36.55]
+      - text: 'media '
+        time: [36.55, 37.026]
+      - text: 'consumed '
+        time: [37.026, 37.346]
+      - text: 'is '
+        time: [37.346, 37.497]
+      - text: 'likely '
+        time: [37.497, 37.821]
+      - text: 'pushed '
+        time: [37.821, 37.974]
+      - text: 'to '
+        time: [37.974, 38.13]
+      - text: 'some '
+        time: [38.13, 38.321]
+      - text: extreme
+        time: [38.321, 38.946]
     pr: 더 미디어 컨숨드 이즈 라이클리 푸싯 투 섬 익스트림
     tl: 우리가 보는 미디어는 대개 극단으로 치닫고 있어
-    time: [36, 38.537]
-  - text: You never left your home, and there is nothing you ain't seen
+    time: [36.376, 38.946]
+  - words:
+      - text: 'You '
+        time: [38.946, 39.123]
+      - text: 'never '
+        time: [39.123, 39.363]
+      - text: 'left '
+        time: [39.363, 39.57]
+      - text: 'your '
+        time: [39.57, 39.771]
+      - text: 'home, '
+        time: [39.771, 39.935]
+      - text: 'and '
+        time: [39.935, 40.069]
+      - text: 'there '
+        time: [40.069, 40.234]
+      - text: 'is '
+        time: [40.234, 40.391]
+      - text: 'nothing '
+        time: [40.391, 40.684]
+      - text: 'you '
+        time: [40.684, 40.878]
+      - text: "ain't "
+        time: [40.878, 41.016]
+      - text: seen
+        time: [41.016, 41.346]
     pr: 유 네버 레프트 유어 홈, 앤드 데어 이즈 너싱 유 에인트 신
     tl: 집 밖엔 나가지도 않았는데 안 본 게 없잖아
-    time: [38.537, 41.037]
-  - text: Fuck this thing, I been sipping on a smoothie
+    time: [38.946, 41.346]
+  - words:
+      - text: 'Fuck '
+        time: [41.656, 42.001]
+      - text: 'this '
+        time: [42.001, 42.322]
+      - text: 'thing, '
+        time: [42.322, 42.642]
+      - text: 'I '
+        time: [42.642, 42.809]
+      - text: 'been '
+        time: [42.809, 42.942]
+      - text: 'sipping '
+        time: [42.942, 43.287]
+      - text: 'on '
+        time: [43.287, 43.459]
+      - text: 'a '
+        time: [43.459, 43.56]
+      - text: smoothie
+        time: [43.56, 44.223]
     pr: 퍽 디스 싱, 아이 빈 시핑 온 어 스무디
     tl: 좆같네, 그냥 스무디 좀 마시고 있었는데
-    time: [41.328, 43.786]
-  - text: 700 calories, why am I being stupid?
+    time: [41.656, 44.223]
+  - words:
+      - text: '700 '
+        time: [44.223, 44.887]
+      - text: 'calories, '
+        time: [44.887, 45.369]
+      - text: 'why '
+        time: [45.369, 45.524]
+      - text: 'am '
+        time: [45.524, 45.684]
+      - text: 'I '
+        time: [45.684, 45.842]
+      - text: 'being '
+        time: [45.842, 46.146]
+      - text: stupid?
+        time: [46.146, 46.8]
     pr: 세븐 헌드레드 캘러리스, 와이 앰 아이 빙 스튜핏?
     tl: 700칼로리라니, 난 왜 이렇게 멍청한 짓을 하지?
-    time: [43.786, 46.369]
-  - text: People on the internet say this is not ideal
+    time: [44.223, 46.8]
+  - words:
+      - text: 'People '
+        time: [46.8, 47.134]
+      - text: 'on '
+        time: [47.134, 47.298]
+      - text: 'the '
+        time: [47.298, 47.465]
+      - text: 'internet '
+        time: [47.465, 47.885]
+      - text: 'say '
+        time: [47.885, 48.102]
+      - text: 'this '
+        time: [48.102, 48.267]
+      - text: 'is '
+        time: [48.267, 48.424]
+      - text: 'not '
+        time: [48.424, 48.595]
+      - text: ideal
+        time: [48.595, 49.233]
     pr: 피플 온 디 인터넷 세이 디스 이즈 낫 아이디얼
     tl: 인터넷 사람들은 이게 별로 좋지 않대
-    time: [46.369, 48.744]
-  - text: Now, every time I drink a smoothie, this is how I feel
+    time: [46.8, 49.233]
+  - words:
+      - text: 'Now, '
+        time: [49.233, 49.393]
+      - text: 'every '
+        time: [49.393, 49.688]
+      - text: 'time '
+        time: [49.688, 49.883]
+      - text: 'I '
+        time: [49.883, 50.011]
+      - text: 'drink '
+        time: [50.011, 50.172]
+      - text: 'a '
+        time: [50.172, 50.273]
+      - text: 'smoothie, '
+        time: [50.273, 50.659]
+      - text: 'this '
+        time: [50.659, 50.819]
+      - text: 'is '
+        time: [50.819, 50.966]
+      - text: 'how '
+        time: [50.966, 51.145]
+      - text: 'I '
+        time: [51.145, 51.303]
+      - text: feel
+        time: [51.303, 51.623]
     pr: 나우, 에브리 타임 아이 드링크 스무디, 디스 이즈 하우 아이 필
     tl: 이제 스무디를 마실 때마다 이런 기분이 들어
-    time: [48.744, 51.285]
-  - text: Fuck this thing called life
+    time: [49.233, 51.623]
+  - words:
+      - text: 'Fuck '
+        time: [51.911, 52.271]
+      - text: 'this '
+        time: [52.271, 52.593]
+      - text: 'thing '
+        time: [52.593, 52.914]
+      - text: 'called '
+        time: [52.914, 53.242]
+      - text: life
+        time: [53.242, 53.722]
     pr: 퍽 디스 싱 콜드 라입
     tl: 인생이란 거 좆같네
-    time: [51.577, 53.327]
-  - text: I swear, one more complaint and I'll go punch someone's kid
+    time: [51.911, 53.722]
+  - words:
+      - text: 'I '
+        time: [53.722, 53.813]
+      - text: 'swear, '
+        time: [53.813, 54.355]
+      - text: 'one '
+        time: [54.355, 54.509]
+      - text: 'more '
+        time: [54.509, 54.989]
+      - text: 'complaint '
+        time: [54.989, 55.637]
+      - text: 'and '
+        time: [55.637, 55.796]
+      - text: "I'll "
+        time: [55.796, 56.105]
+      - text: 'go '
+        time: [56.105, 56.438]
+      - text: 'punch '
+        time: [56.438, 56.722]
+      - text: "someone's "
+        time: [56.722, 57.083]
+      - text: kid
+        time: [57.083, 57.402]
     pr: 아이 스웨어, 원 모어 컴플레인트 앤드 아일 고 펀치 섬원즈 킷
     tl: 진짜, 불평 한 번만 더 들으면 누구네 애라도 한 대 칠 것 같아
-    time: [53.327, 57.042]
-  - text: I'm this close to crashing out, they're lying to get clout
+    time: [53.722, 57.402]
+  - words:
+      - text: "I'm "
+        time: [57.402, 57.568]
+      - text: 'this '
+        time: [57.568, 57.704]
+      - text: 'close '
+        time: [57.704, 57.892]
+      - text: 'to '
+        time: [57.892, 58.021]
+      - text: 'crashing '
+        time: [58.021, 58.363]
+      - text: 'out, '
+        time: [58.363, 58.86]
+      - text: "they're "
+        time: [58.86, 59.024]
+      - text: 'lying '
+        time: [59.024, 59.317]
+      - text: 'to '
+        time: [59.317, 59.499]
+      - text: 'get '
+        time: [59.499, 59.634]
+      - text: clout
+        time: [59.634, 59.984]
     pr: 아임 디스 클로즈 투 크래싱 아웃, 데어 라잉 투 겟 클라웃
     tl: 폭발하기 직전이야, 저들은 관심 좀 받으려고 거짓말을 해
-    time: [57.042, 59.534]
-  - text: Fill the unaware with doubt, that's a profitable crowd
+    time: [57.402, 59.984]
+  - words:
+      - text: 'Fill '
+        time: [59.984, 60.122]
+      - text: 'the '
+        time: [60.122, 60.288]
+      - text: 'unaware '
+        time: [60.288, 60.771]
+      - text: 'with '
+        time: [60.771, 60.93]
+      - text: 'doubt, '
+        time: [60.93, 61.257]
+      - text: "that's "
+        time: [61.257, 61.418]
+      - text: 'a '
+        time: [61.418, 61.545]
+      - text: 'profitable '
+        time: [61.545, 62.187]
+      - text: crowd
+        time: [62.187, 62.522]
     pr: 필 더 어너웨어 윗 다웃, 대츠 어 프라피터블 크라웃
     tl: 아무것도 모르는 사람들을 의심으로 채워, 돈이 되는 고객들이니까
-    time: [59.534, 61.992]
-  - text: Fuck things that changed to be subscribed
+    time: [59.984, 62.522]
+  - words:
+      - text: 'Fuck '
+        time: [62.522, 62.86]
+      - text: 'things '
+        time: [62.86, 63.189]
+      - text: 'that '
+        time: [63.189, 63.431]
+      - text: 'changed '
+        time: [63.431, 63.656]
+      - text: 'to '
+        time: [63.656, 63.835]
+      - text: 'be '
+        time: [63.835, 63.932]
+      - text: subscribed
+        time: [63.932, 64.624]
     pr: 퍽 싱스 댓 체인짓 투 비 섭스크라입드
     tl: 죄다 구독제로 바뀌는 것들 좆같네
-    time: [61.992, 64.229]
-  - text: More money for a company for customer---less rights
+    time: [62.522, 64.624]
+  - words:
+      - text: 'More '
+        time: [64.624, 64.803]
+      - text: 'money '
+        time: [64.803, 65.095]
+      - text: 'for '
+        time: [65.095, 65.261]
+      - text: 'a '
+        time: [65.261, 65.407]
+      - text: 'company '
+        time: [65.407, 65.836]
+      - text: 'for '
+        time: [65.836, 66.055]
+      - text: customer---
+        time: [66.055, 66.548]
+      - text: 'less '
+        time: [66.548, 66.688]
+      - text: rights
+        time: [66.688, 66.961]
     pr: 모어 머니 포 어 컴퍼니 포 커스터머---레스 라이츠
     tl: 회사는 돈을 더 벌고, 고객의 권리는 줄어들고
-    time: [64.229, 66.617]
-  - text: So many arts gotten stale
+    time: [64.624, 66.961]
+  - words:
+      - text: 'So '
+        time: [66.961, 67.674]
+      - text: 'many '
+        time: [67.674, 68.008]
+      - text: 'arts '
+        time: [68.008, 68.317]
+      - text: 'gotten '
+        time: [68.317, 68.611]
+      - text: stale
+        time: [68.611, 69.114]
     pr: 소 메니 아츠 가튼 스테일
     tl: 예술도 참 많이 진부해졌어
-    time: [66.617, 68.658]
-  - text: New movies got no balls, it's no wonder that they fail
+    time: [66.961, 69.114]
+  - words:
+      - text: 'New '
+        time: [69.114, 69.278]
+      - text: 'movies '
+        time: [69.278, 69.607]
+      - text: 'got '
+        time: [69.607, 69.771]
+      - text: 'no '
+        time: [69.771, 69.938]
+      - text: 'balls, '
+        time: [69.938, 70.239]
+      - text: "it's "
+        time: [70.239, 70.403]
+      - text: 'no '
+        time: [70.403, 70.544]
+      - text: 'wonder '
+        time: [70.544, 70.875]
+      - text: 'that '
+        time: [70.875, 71.037]
+      - text: 'they '
+        time: [71.037, 71.191]
+      - text: fail
+        time: [71.191, 71.526]
     pr: 누 무비스 갓 노 볼스, 이츠 노 원더 댓 데이 페일
     tl: 새 영화들은 배짱이 없으니 망하는 것도 당연하지
-    time: [68.658, 71.201]
-  - text: Levels of anxiety getting fed inside of me
+    time: [69.114, 71.526]
+  - words:
+      - text: 'Levels '
+        time: [72.466, 72.81]
+      - text: 'of '
+        time: [72.81, 72.951]
+      - text: 'anxiety '
+        time: [72.951, 73.769]
+      - text: 'getting '
+        time: [73.769, 74.069]
+      - text: 'fed '
+        time: [74.069, 74.275]
+      - text: 'inside '
+        time: [74.275, 74.59]
+      - text: 'of '
+        time: [74.59, 74.744]
+      - text: me
+        time: [74.744, 75.014]
     pr: 레벌 옵 앵자이어티 게팅 펫 인사잇 옵 미
     tl: 내 안에 불안이 자꾸만 쌓여 가
-    time: [72.116, 74.657]
-  - text: 'Charismatic people having fun, I''m thinking: "Why not me?"'
+    time: [72.466, 75.014]
+  - words:
+      - text: 'Charismatic '
+        time: [75.014, 75.685]
+      - text: 'people '
+        time: [75.685, 75.993]
+      - text: 'having '
+        time: [75.993, 76.313]
+      - text: 'fun, '
+        time: [76.313, 76.503]
+      - text: "I'm "
+        time: [76.503, 76.651]
+      - text: 'thinking: '
+        time: [76.651, 76.968]
+      - text: '"Why '
+        time: [76.968, 77.141]
+      - text: 'not '
+        time: [77.141, 77.296]
+      - text: me?"
+        time: [77.296, 77.623]
     pr: '캐러즈매틱 피플 해빙 펀, 아임 싱킹: "와이 낫 미?"'
     tl: '매력적인 사람들은 즐겁게 사는데, 난 생각해, "나는 왜 안 되지?"'
-    time: [74.657, 77.24]
+    time: [75.014, 77.623]
   - text: Is it ’cause I'm silently miserable in privacy?
     pr: 이즈 잇 코즈 아임 사일런틀리 미저러블 인 프라이버시?
     tl: 혼자서 말없이 불행해하고 있어서 그런 걸까?
-    time: [77.24, 79.782]
-  - text: Mirroring a pattern I'm afraid to be the same as
+    time: [77.623, 80.177]
+  - words:
+      - text: 'Mirroring '
+        time: [80.177, 80.652]
+      - text: 'a '
+        time: [80.652, 80.819]
+      - text: 'pattern '
+        time: [80.819, 81.144]
+      - text: "I'm "
+        time: [81.144, 81.311]
+      - text: 'afraid '
+        time: [81.311, 81.598]
+      - text: 'to '
+        time: [81.598, 81.786]
+      - text: 'be '
+        time: [81.786, 81.953]
+      - text: 'the '
+        time: [81.953, 82.074]
+      - text: 'same '
+        time: [82.074, 82.27]
+      - text: as
+        time: [82.27, 82.506]
     pr: 미러링 어 패턴 아임 어프레잇 투 비 더 세임 애즈
     tl: 닮을까 봐 두려워하던 모습을 그대로 되풀이하고 있어
-    time: [79.782, 82.156]
-  - text: Fuck this thing called life
+    time: [80.177, 82.506]
+  - words:
+      - text: 'Fuck '
+        time: [82.718, 83.08]
+      - text: 'this '
+        time: [83.08, 83.403]
+      - text: 'thing '
+        time: [83.403, 83.719]
+      - text: 'called '
+        time: [83.719, 84.04]
+      - text: life
+        time: [84.04, 84.523]
     pr: 퍽 디스 싱 콜드 라입
     tl: 인생이란 거 좆같네
-    time: [82.448, 84.031]
-  - text: I tried to make it end, but here I am once again
+    time: [82.718, 84.523]
+  - words:
+      - text: 'I '
+        time: [84.523, 84.621]
+      - text: 'tried '
+        time: [84.621, 85.112]
+      - text: 'to '
+        time: [85.112, 85.308]
+      - text: 'make '
+        time: [85.308, 85.794]
+      - text: 'it '
+        time: [85.794, 85.966]
+      - text: 'end, '
+        time: [85.966, 86.438]
+      - text: 'but '
+        time: [86.438, 86.576]
+      - text: 'here '
+        time: [86.576, 86.921]
+      - text: 'I '
+        time: [86.921, 87.267]
+      - text: 'am '
+        time: [87.267, 87.558]
+      - text: 'once '
+        time: [87.558, 87.743]
+      - text: again
+        time: [87.743, 88.156]
     pr: 아이 트라잇 투 메익 잇 엔드, 벗 히어 아이 앰 원스 어게인
     tl: 끝내 보려 했는데 또 이렇게 살아 있어
-    time: [84.031, 87.697]
-  - text: Let's congratulate myself
+    time: [84.523, 88.156]
+  - words:
+      - text: "Let's "
+        time: [88.156, 88.369]
+      - text: 'congratulate '
+        time: [88.369, 89.02]
+      - text: myself
+        time: [89.02, 89.595]
     pr: 레츠 컨그래출레잇 마이셀프
     tl: 나라도 나를 축하해 주자
-    time: [87.697, 89.312]
-  - text: See, no one's gonna clap for a medal on my shelf
+    time: [88.156, 89.595]
+  - words:
+      - text: 'See, '
+        time: [89.595, 89.828]
+      - text: 'no '
+        time: [89.828, 89.984]
+      - text: "one's "
+        time: [89.984, 90.125]
+      - text: 'gonna '
+        time: [90.125, 90.417]
+      - text: 'clap '
+        time: [90.417, 90.772]
+      - text: 'for '
+        time: [90.772, 90.93]
+      - text: 'a '
+        time: [90.93, 91.098]
+      - text: 'medal '
+        time: [91.098, 91.412]
+      - text: 'on '
+        time: [91.412, 91.556]
+      - text: 'my '
+        time: [91.556, 91.703]
+      - text: shelf
+        time: [91.703, 92.057]
     pr: 시, 노 원스 거너 클랩 포 어 메들 온 마이 셸프
     tl: 내 선반 위 메달에 박수 쳐 줄 사람은 없잖아
-    time: [89.312, 91.655]
-  - text: Or a medium size on my biceps, maybe I can chill
+    time: [89.595, 92.057]
+  - words:
+      - text: 'Or '
+        time: [92.057, 92.215]
+      - text: 'a '
+        time: [92.215, 92.363]
+      - text: 'medium '
+        time: [92.363, 92.916]
+      - text: 'size '
+        time: [92.916, 93.319]
+      - text: 'on '
+        time: [93.319, 93.511]
+      - text: 'my '
+        time: [93.511, 93.671]
+      - text: 'biceps, '
+        time: [93.671, 94.317]
+      - text: 'maybe '
+        time: [94.317, 94.632]
+      - text: 'I '
+        time: [94.632, 94.791]
+      - text: 'can '
+        time: [94.791, 94.928]
+      - text: chill
+        time: [94.928, 95.415]
     pr: 오어 어 미디엄 사이즈 온 마이 바이셉스, 메이비 아이 캔 칠
     tl: 적당히 붙은 팔 근육도 마찬가지, 그냥 좀 편하게 살아도 되겠지
-    time: [91.655, 95.071]
-  - text: If nobody cares, I will be the one who will
+    time: [92.057, 95.415]
+  - words:
+      - text: 'If '
+        time: [95.415, 95.572]
+      - text: 'nobody '
+        time: [95.572, 96.209]
+      - text: 'cares, '
+        time: [96.209, 96.55]
+      - text: 'I '
+        time: [96.55, 96.708]
+      - text: 'will '
+        time: [96.708, 96.872]
+      - text: 'be '
+        time: [96.872, 97.033]
+      - text: 'the '
+        time: [97.033, 97.195]
+      - text: 'one '
+        time: [97.195, 97.35]
+      - text: 'who '
+        time: [97.35, 97.515]
+      - text: will
+        time: [97.515, 97.794]
     pr: 입 노바디 케어스, 아이 윌 비 더 원 후 윌
     tl: 아무도 신경 안 쓴다면 나라도 나를 챙길래
-    time: [95.071, 97.363]
-  - text: So many years gone to waste
+    time: [95.415, 97.794]
+  - words:
+      - text: 'So '
+        time: [97.794, 98.482]
+      - text: 'many '
+        time: [98.482, 98.808]
+      - text: 'years '
+        time: [98.808, 99.124]
+      - text: 'gone '
+        time: [99.124, 99.287]
+      - text: 'to '
+        time: [99.287, 99.448]
+      - text: waste
+        time: [99.448, 99.909]
     pr: 소 메니 이어즈 곤 투 웨이스트
     tl: 그렇게 오랜 세월을 허비했네
-    time: [97.363, 99.446]
-  - text: To satisfy a crowd from a made-up fucking place
+    time: [97.794, 99.909]
+  - words:
+      - text: 'To '
+        time: [99.909, 100.045]
+      - text: 'satisfy '
+        time: [100.045, 100.557]
+      - text: 'a '
+        time: [100.557, 100.676]
+      - text: 'crowd '
+        time: [100.676, 100.964]
+      - text: 'from '
+        time: [100.964, 101.201]
+      - text: 'a '
+        time: [101.201, 101.358]
+      - text: made-
+        time: [101.358, 101.519]
+      - text: 'up '
+        time: [101.519, 101.675]
+      - text: 'fucking '
+        time: [101.675, 101.981]
+      - text: place
+        time: [101.981, 102.32]
     pr: 투 새티스파이 크라웃 프럼 어 메이덥 퍼킹 플레이스
     tl: 그 빌어먹을 가상의 공간 속 사람들을 만족시키려고
-    time: [99.446, 101.979]
+    time: [99.909, 102.32]
     background:
-      text: (From a made-up fucking place)
+      words:
+        - text: 'From '
+          time: [102.32, 102.489]
+        - text: 'a '
+          time: [102.489, 102.653]
+        - text: made-
+          time: [102.653, 102.811]
+        - text: 'up '
+          time: [102.811, 102.971]
+        - text: 'fucking '
+          time: [102.971, 103.296]
+        - text: place
+          time: [103.296, 103.618]
       pr: (프럼 어 메이덥 퍼킹 플레이스)
       tl: (빌어먹을 지어낸 곳에서)
-      time: [101.979, 103.271]
-  - text: It all comes down to what I chase, oh-oh, oh
+      time: [102.32, 103.618]
+  - words:
+      - text: 'It '
+        time: [103.618, 103.908]
+      - text: 'all '
+        time: [103.908, 104.253]
+      - text: 'comes '
+        time: [104.253, 104.583]
+      - text: 'down '
+        time: [104.583, 104.885]
+      - text: 'to '
+        time: [104.885, 105.046]
+      - text: 'what '
+        time: [105.046, 105.37]
+      - text: 'I '
+        time: [105.37, 105.636]
+      - text: 'chase, '
+        time: [105.636, 106.495]
+      - text: oh-
+        time: [106.495, 107.141]
+      - text: 'oh, '
+        time: [107.141, 107.783]
+      - text: oh
+        time: [107.783, 108.699]
     pr: 잇 올 컴즈 다운 투 왓 아이 체이스, 오오, 오
     tl: 결국 중요한 건 내가 뭘 좇느냐는 거야
-    time: [103.271, 108.361]
-  - text: Sometimes it's not the time and place, oh-oh, oh-oh
+    time: [103.618, 108.699]
+  - words:
+      - text: 'Sometimes '
+        time: [108.699, 109.4]
+      - text: "it's "
+        time: [109.4, 109.717]
+      - text: 'not '
+        time: [109.717, 110.02]
+      - text: 'the '
+        time: [110.02, 110.168]
+      - text: 'time '
+        time: [110.168, 110.499]
+      - text: 'and '
+        time: [110.499, 110.815]
+      - text: 'place, '
+        time: [110.815, 111.625]
+      - text: oh-
+        time: [111.625, 112.269]
+      - text: 'oh, '
+        time: [112.269, 112.917]
+      - text: oh-
+        time: [112.917, 113.565]
+      - text: oh
+        time: [113.565, 113.885]
     pr: 섬타임즈 이츠 낫 더 타임 앤드 플레이스, 오오, 오오
     tl: 때로는 지금이 그럴 때도, 그럴 곳도 아닌 거지
-    time: [108.361, 113.486]
-  - text: I feel like shit, but I'm okay, woah-oh, oh-oh
+    time: [108.699, 113.885]
+  - words:
+      - text: 'I '
+        time: [113.885, 114.144]
+      - text: 'feel '
+        time: [114.144, 114.53]
+      - text: 'like '
+        time: [114.53, 114.764]
+      - text: 'shit, '
+        time: [114.764, 115.151]
+      - text: 'but '
+        time: [115.151, 115.31]
+      - text: "I'm "
+        time: [115.31, 115.631]
+      - text: 'okay, '
+        time: [115.631, 116.746]
+      - text: woah-
+        time: [116.746, 117.406]
+      - text: 'oh, '
+        time: [117.406, 118.042]
+      - text: oh-
+        time: [118.042, 118.69]
+      - text: oh
+        time: [118.69, 119.021]
     pr: 아이 필 라익 싯, 벗 아임 오케이, 워어, 오오
     tl: 기분은 좆같지만 난 괜찮아
-    time: [113.486, 118.61]
-  - text: I'll fake a color out of gray, woah-oh, oh-oh
+    time: [113.885, 119.021]
+  - words:
+      - text: "I'll "
+        time: [119.021, 119.285]
+      - text: 'fake '
+        time: [119.285, 119.656]
+      - text: 'a '
+        time: [119.656, 119.973]
+      - text: 'color '
+        time: [119.973, 120.448]
+      - text: 'out '
+        time: [120.448, 120.766]
+      - text: 'of '
+        time: [120.766, 121.058]
+      - text: 'gray, '
+        time: [121.058, 121.886]
+      - text: woah-
+        time: [121.886, 122.533]
+      - text: 'oh, '
+        time: [122.533, 123.181]
+      - text: oh-
+        time: [123.181, 123.831]
+      - text: oh
+        time: [123.831, 124.269]
     pr: 아일 페익 어 컬러 아웃 옵 그레이, 워어, 오오
     tl: 잿빛 속에서라도 색을 만들어 낼 거야
-    time: [118.61, 123.526]
-  - text: Na-na-na, na-na-na, na-na
+    time: [119.021, 124.269]
+  - words:
+      - text: Na-
+        time: [134.079, 134.726]
+      - text: na-
+        time: [134.726, 135.353]
+      - text: 'na, '
+        time: [135.353, 135.988]
+      - text: na-
+        time: [135.988, 136.312]
+      - text: na-
+        time: [136.312, 136.63]
+      - text: 'na, '
+        time: [136.63, 137.277]
+      - text: na-
+        time: [137.277, 137.923]
+      - text: na
+        time: [137.923, 138.567]
     pr: 나나나, 나나나, 나나
     tl: 나나나, 나나나, 나나
-    time: [133.733, 138.149]
-  - text: Na-na-na, na-na, na-na-na, na-na, na-na
+    time: [134.079, 138.567]
+  - words:
+      - text: Na-
+        time: [138.567, 138.887]
+      - text: na-
+        time: [138.887, 139.214]
+      - text: 'na, '
+        time: [139.214, 139.854]
+      - text: na-
+        time: [139.854, 140.482]
+      - text: 'na, '
+        time: [140.482, 141.121]
+      - text: na-
+        time: [141.121, 141.449]
+      - text: na-
+        time: [141.449, 141.769]
+      - text: 'na, '
+        time: [141.769, 142.414]
+      - text: na-
+        time: [142.414, 143.061]
+      - text: 'na, '
+        time: [143.061, 143.707]
+      - text: na-
+        time: [143.707, 144.02]
+      - text: na
+        time: [144.02, 144.499]
     pr: 나나나, 나나, 나나나, 나나, 나나
     tl: 나나나, 나나, 나나나, 나나, 나나
-    time: [138.149, 144.107]
+    time: [138.567, 144.499]
