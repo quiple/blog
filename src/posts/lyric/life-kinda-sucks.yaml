@@ -447,142 +447,194 @@ lines:
     time: [33.83, 36.376]
   - words:
       - text: 'The '
+        pr: 더
         time: [36.376, 36.55]
       - text: 'media '
+        pr: 미디어
         time: [36.55, 37.026]
       - text: 'consumed '
+        pr: 컨숨드
         time: [37.026, 37.346]
       - text: 'is '
+        pr: 이즈
         time: [37.346, 37.497]
       - text: 'likely '
+        pr: 라이클리
         time: [37.497, 37.821]
       - text: 'pushed '
+        pr: 푸싯
         time: [37.821, 37.974]
       - text: 'to '
+        pr: 투
         time: [37.974, 38.13]
       - text: 'some '
+        pr: 섬
         time: [38.13, 38.321]
       - text: extreme
+        pr: 익스트림
         time: [38.321, 38.946]
-    pr: 더 미디어 컨숨드 이즈 라이클리 푸싯 투 섬 익스트림
     tl: 우리가 보는 미디어는 대개 극단으로 치닫고 있어
     time: [36.376, 38.946]
   - words:
       - text: 'You '
+        pr: 유
         time: [38.946, 39.123]
       - text: 'never '
+        pr: 네버
         time: [39.123, 39.363]
       - text: 'left '
+        pr: 레프트
         time: [39.363, 39.57]
       - text: 'your '
+        pr: 유어
         time: [39.57, 39.771]
       - text: 'home, '
+        pr: 홈,
         time: [39.771, 39.935]
       - text: 'and '
+        pr: 앤드
         time: [39.935, 40.069]
       - text: 'there '
+        pr: 데어
         time: [40.069, 40.234]
       - text: 'is '
+        pr: 이즈
         time: [40.234, 40.391]
       - text: 'nothing '
+        pr: 너싱
         time: [40.391, 40.684]
       - text: 'you '
+        pr: 유
         time: [40.684, 40.878]
       - text: "ain't "
+        pr: 에인트
         time: [40.878, 41.016]
       - text: seen
+        pr: 신
         time: [41.016, 41.346]
-    pr: 유 네버 레프트 유어 홈, 앤드 데어 이즈 너싱 유 에인트 신
     tl: 집 밖엔 나가지도 않았는데 안 본 게 없잖아
     time: [38.946, 41.346]
   - words:
       - text: 'Fuck '
+        pr: 퍽
         time: [41.656, 42.001]
       - text: 'this '
+        pr: 디스
         time: [42.001, 42.322]
       - text: 'thing, '
+        pr: 싱,
         time: [42.322, 42.642]
       - text: 'I '
+        pr: 아이
         time: [42.642, 42.809]
       - text: 'been '
+        pr: 빈
         time: [42.809, 42.942]
       - text: 'sipping '
+        pr: 시핑
         time: [42.942, 43.287]
       - text: 'on '
+        pr: 온
         time: [43.287, 43.459]
       - text: 'a '
+        pr: 어
         time: [43.459, 43.56]
       - text: smoothie
+        pr: 스무디
         time: [43.56, 44.223]
-    pr: 퍽 디스 싱, 아이 빈 시핑 온 어 스무디
     tl: 좆같네, 그냥 스무디 좀 마시고 있었는데
     time: [41.656, 44.223]
   - words:
       - text: '700 '
+        pr: 세븐 헌드레드
         time: [44.223, 44.887]
       - text: 'calories, '
+        pr: 캘러리스,
         time: [44.887, 45.369]
       - text: 'why '
+        pr: 와이
         time: [45.369, 45.524]
       - text: 'am '
+        pr: 앰
         time: [45.524, 45.684]
       - text: 'I '
+        pr: 아이
         time: [45.684, 45.842]
       - text: 'being '
+        pr: 빙
         time: [45.842, 46.146]
       - text: stupid?
+        pr: 스튜핏?
         time: [46.146, 46.8]
-    pr: 세븐 헌드레드 캘러리스, 와이 앰 아이 빙 스튜핏?
     tl: 700칼로리라니, 난 왜 이렇게 멍청한 짓을 하지?
     time: [44.223, 46.8]
   - words:
       - text: 'People '
+        pr: 피플
         time: [46.8, 47.134]
       - text: 'on '
+        pr: 온
         time: [47.134, 47.298]
       - text: 'the '
+        pr: 디
         time: [47.298, 47.465]
       - text: 'internet '
+        pr: 인터넷
         time: [47.465, 47.885]
       - text: 'say '
+        pr: 세이
         time: [47.885, 48.102]
       - text: 'this '
+        pr: 디스
         time: [48.102, 48.267]
       - text: 'is '
+        pr: 이즈
         time: [48.267, 48.424]
       - text: 'not '
+        pr: 낫
         time: [48.424, 48.595]
       - text: ideal
+        pr: 아이디얼
         time: [48.595, 49.233]
-    pr: 피플 온 디 인터넷 세이 디스 이즈 낫 아이디얼
     tl: 인터넷 사람들은 이게 별로 좋지 않대
     time: [46.8, 49.233]
   - words:
       - text: 'Now, '
+        pr: 나우,
         time: [49.233, 49.393]
       - text: 'every '
+        pr: 에브리
         time: [49.393, 49.688]
       - text: 'time '
+        pr: 타임
         time: [49.688, 49.883]
       - text: 'I '
+        pr: 아이
         time: [49.883, 50.011]
       - text: 'drink '
+        pr: 드링크
         time: [50.011, 50.172]
       - text: 'a '
+        pr: 어
         time: [50.172, 50.273]
       - text: 'smoothie, '
+        pr: 스무디,
         time: [50.273, 50.659]
       - text: 'this '
+        pr: 디스
         time: [50.659, 50.819]
       - text: 'is '
+        pr: 이즈
         time: [50.819, 50.966]
       - text: 'how '
+        pr: 하우
         time: [50.966, 51.145]
       - text: 'I '
+        pr: 아이
         time: [51.145, 51.303]
       - text: feel
+        pr: 필
         time: [51.303, 51.623]
-    pr: 나우, 에브리 타임 아이 드링크 스무디, 디스 이즈 하우 아이 필
     tl: 이제 스무디를 마실 때마다 이런 기분이 들어
     time: [49.233, 51.623]
   - words:
