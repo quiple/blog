@@ -895,7 +895,7 @@ lines:
     time: [99.909, 102.32]
     background:
       words:
-        - text: 'From '
+        - text: '(From '
           time: [102.32, 102.489]
         - text: 'a '
           time: [102.489, 102.653]
@@ -905,7 +905,7 @@ lines:
           time: [102.811, 102.971]
         - text: 'fucking '
           time: [102.971, 103.296]
-        - text: place
+        - text: place)
           time: [103.296, 103.618]
       pr: (프럼 어 메이덥 퍼킹 플레이스)
       tl: (빌어먹을 지어낸 곳에서)
