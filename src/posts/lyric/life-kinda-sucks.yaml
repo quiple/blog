@@ -78,128 +78,173 @@ lines:
     time: [2.384, 6.068]
   - words:
       - text: "Let's "
+        pr: 레츠
         time: [6.068, 6.225]
       - text: 'congratulate '
+        pr: 컨그래출레잇
         time: [6.225, 6.875]
       - text: myself
+        pr: 마이셀프
         time: [6.875, 7.44]
-    pr: 레츠 컨그래출레잇 마이셀프
     tl: 나라도 나를 축하해 주자
     time: [6.068, 7.44]
   - words:
       - text: 'See, '
+        pr: 시,
         time: [7.44, 7.67]
       - text: 'no '
+        pr: 노
         time: [7.67, 7.839]
       - text: "one's "
+        pr: 원스
         time: [7.839, 8.005]
       - text: 'gonna '
+        pr: 거너
         time: [8.005, 8.284]
       - text: 'clap '
+        pr: 클랩
         time: [8.284, 8.633]
       - text: 'for '
+        pr: 포
         time: [8.633, 8.813]
       - text: 'a '
+        pr: 어
         time: [8.813, 8.959]
       - text: 'mediocre '
+        pr: 미디오커
         time: [8.959, 9.567]
       - text: health
+        pr: 헬스
         time: [9.567, 9.927]
-    pr: 시, 노 원스 거너 클랩 포 어 미디오커 헬스
     tl: 그저 그런 건강 상태에 박수 쳐 줄 사람은 없잖아
     time: [7.44, 9.927]
   - words:
       - text: 'Or '
+        pr: 오어
         time: [9.927, 10.076]
       - text: 'a '
+        pr: 어
         time: [10.076, 10.233]
       - text: 'medium '
+        pr: 미디엄
         time: [10.233, 10.738]
       - text: 'size '
+        pr: 사이즈
         time: [10.738, 11.201]
       - text: 'on '
+        pr: 온
         time: [11.201, 11.362]
       - text: 'my '
+        pr: 마이
         time: [11.362, 11.519]
       - text: 'biceps, '
+        pr: 바이셉스,
         time: [11.519, 12.131]
       - text: "I've "
+        pr: 아입
         time: [12.131, 12.329]
       - text: 'been '
+        pr: 빈
         time: [12.329, 12.493]
       - text: 'in '
+        pr: 인
         time: [12.493, 12.652]
       - text: 'the '
+        pr: 더
         time: [12.652, 12.748]
       - text: gym
+        pr: 짐
         time: [12.748, 13.288]
-    pr: 오어 어 미디엄 사이즈 온 마이 바이셉스, 아입 빈 인 더 짐
     tl: 적당히 붙은 팔 근육도 마찬가지, 헬스장도 다녔는데
     time: [9.927, 13.288]
   - words:
       - text: 'And, '
+        pr: 앤드,
         time: [13.288, 13.431]
       - text: 'sigh, '
+        pr: 사이,
         time: [13.431, 13.773]
       - text: 'Pinterest '
+        pr: 핀터레스트
         time: [13.773, 14.098]
       - text: 'said '
+        pr: 셋
         time: [14.098, 14.427]
       - text: 'I '
+        pr: 아이
         time: [14.427, 14.575]
       - text: 'will '
+        pr: 윌
         time: [14.575, 14.733]
       - text: 'never '
+        pr: 네버
         time: [14.733, 15.034]
       - text: 'be '
+        pr: 비
         time: [15.034, 15.197]
       - text: 'like '
+        pr: 라익
         time: [15.197, 15.334]
       - text: him
+        pr: 힘
         time: [15.334, 15.605]
-    pr: 앤드, 사이, 핀터레스트 셋 아이 윌 네버 비 라익 힘
     tl: 하, 핀터레스트는 난 절대 저 남자처럼 못 된대
     time: [13.288, 15.605]
   - words:
       - text: 'So '
+        pr: 소
         time: [15.605, 16.327]
       - text: 'many '
+        pr: 매니
         time: [16.327, 16.613]
       - text: 'years '
+        pr: 이어즈
         time: [16.613, 16.95]
       - text: 'to '
+        pr: 투
         time: [16.95, 17.128]
       - text: 'be '
+        pr: 비
         time: [17.128, 17.289]
       - text: mid
+        pr: 밋
         time: [17.289, 17.721]
-    pr: 소 매니 이어즈 투 비 밋
     tl: 고작 평범해지려고 그렇게 오랜 세월을 썼네
     time: [15.605, 17.721]
   - words:
       - text: 'See '
+        pr: 시
         time: [17.721, 17.94]
       - text: 'people '
+        pr: 피플
         time: [17.94, 18.222]
       - text: 'climb '
+        pr: 클라임
         time: [18.222, 18.424]
       - text: 'a '
+        pr: 어
         time: [18.424, 18.539]
       - text: 'cliff, '
+        pr: 클립,
         time: [18.539, 18.89]
       - text: 'while '
+        pr: 와일
         time: [18.89, 19.073]
       - text: "I'm "
+        pr: 아임
         time: [19.073, 19.211]
       - text: 'crawling '
+        pr: 크롤링
         time: [19.211, 19.551]
       - text: 'out '
+        pr: 아웃
         time: [19.551, 19.73]
       - text: 'a '
+        pr: 어
         time: [19.73, 19.872]
       - text: pit
+        pr: 핏
         time: [19.872, 20.169]
-    pr: 시 피플 클라임 어 클립, 와일 아임 크롤링 아웃 어 핏
     tl: 남들은 절벽을 오르는데 난 구덩이에서 기어 나오고 있어
     time: [17.721, 20.169]
   - words:
