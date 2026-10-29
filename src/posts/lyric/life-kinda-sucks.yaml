@@ -924,309 +924,420 @@ lines:
     time: [75.014, 77.623]
   - words:
       - text: 'Is '
+        pr: 이즈
         time: [77.623, 77.77]
       - text: 'it '
+        pr: 잇
         time: [77.77, 77.938]
       - text: '’cause '
+        pr: 코즈
         time: [77.938, 78.107]
       - text: "I'm "
+        pr: 아임
         time: [78.107, 78.246]
       - text: 'silently '
+        pr: 사일런틀리
         time: [78.246, 78.903]
       - text: 'miserable '
+        pr: 미저러블
         time: [78.903, 79.392]
       - text: 'in '
+        pr: 인
         time: [79.392, 79.533]
       - text: privacy?
+        pr: 프라이버시?
         time: [79.533, 80.177]
-    pr: 이즈 잇 코즈 아임 사일런틀리 미저러블 인 프라이버시?
     tl: 혼자서 말없이 불행해하고 있어서 그런 걸까?
     time: [77.623, 80.177]
   - words:
       - text: 'Mirroring '
+        pr: 미러링
         time: [80.177, 80.652]
       - text: 'a '
+        pr: 어
         time: [80.652, 80.819]
       - text: 'pattern '
+        pr: 패턴
         time: [80.819, 81.144]
       - text: "I'm "
+        pr: 아임
         time: [81.144, 81.311]
       - text: 'afraid '
+        pr: 어프레잇
         time: [81.311, 81.598]
       - text: 'to '
+        pr: 투
         time: [81.598, 81.786]
       - text: 'be '
+        pr: 비
         time: [81.786, 81.953]
       - text: 'the '
+        pr: 더
         time: [81.953, 82.074]
       - text: 'same '
+        pr: 세임
         time: [82.074, 82.27]
       - text: as
+        pr: 애즈
         time: [82.27, 82.506]
-    pr: 미러링 어 패턴 아임 어프레잇 투 비 더 세임 애즈
     tl: 닮을까 봐 두려워하던 모습을 그대로 되풀이하고 있어
     time: [80.177, 82.506]
   - words:
       - text: 'Fuck '
+        pr: 퍽
         time: [82.718, 83.08]
       - text: 'this '
+        pr: 디스
         time: [83.08, 83.403]
       - text: 'thing '
+        pr: 싱
         time: [83.403, 83.719]
       - text: 'called '
+        pr: 콜드
         time: [83.719, 84.04]
       - text: life
+        pr: 라입
         time: [84.04, 84.523]
-    pr: 퍽 디스 싱 콜드 라입
     tl: 인생이란 거 좆같네
     time: [82.718, 84.523]
   - words:
       - text: 'I '
+        pr: 아이
         time: [84.523, 84.621]
       - text: 'tried '
+        pr: 트라잇
         time: [84.621, 85.112]
       - text: 'to '
+        pr: 투
         time: [85.112, 85.308]
       - text: 'make '
+        pr: 메익
         time: [85.308, 85.794]
       - text: 'it '
+        pr: 잇
         time: [85.794, 85.966]
       - text: 'end, '
+        pr: 엔드,
         time: [85.966, 86.438]
       - text: 'but '
+        pr: 벗
         time: [86.438, 86.576]
       - text: 'here '
+        pr: 히어
         time: [86.576, 86.921]
       - text: 'I '
+        pr: 아이
         time: [86.921, 87.267]
       - text: 'am '
+        pr: 앰
         time: [87.267, 87.558]
       - text: 'once '
+        pr: 원스
         time: [87.558, 87.743]
       - text: again
+        pr: 어게인
         time: [87.743, 88.156]
-    pr: 아이 트라잇 투 메익 잇 엔드, 벗 히어 아이 앰 원스 어게인
     tl: 끝내 보려 했는데 또 이렇게 살아 있어
     time: [84.523, 88.156]
   - words:
       - text: "Let's "
+        pr: 레츠
         time: [88.156, 88.369]
       - text: 'congratulate '
+        pr: 컨그래출레잇
         time: [88.369, 89.02]
       - text: myself
+        pr: 마이셀프
         time: [89.02, 89.595]
-    pr: 레츠 컨그래출레잇 마이셀프
     tl: 나라도 나를 축하해 주자
     time: [88.156, 89.595]
   - words:
       - text: 'See, '
+        pr: 시,
         time: [89.595, 89.828]
       - text: 'no '
+        pr: 노
         time: [89.828, 89.984]
       - text: "one's "
+        pr: 원스
         time: [89.984, 90.125]
       - text: 'gonna '
+        pr: 거너
         time: [90.125, 90.417]
       - text: 'clap '
+        pr: 클랩
         time: [90.417, 90.772]
       - text: 'for '
+        pr: 포
         time: [90.772, 90.93]
       - text: 'a '
+        pr: 어
         time: [90.93, 91.098]
       - text: 'medal '
+        pr: 메들
         time: [91.098, 91.412]
       - text: 'on '
+        pr: 온
         time: [91.412, 91.556]
       - text: 'my '
+        pr: 마이
         time: [91.556, 91.703]
       - text: shelf
+        pr: 셸프
         time: [91.703, 92.057]
-    pr: 시, 노 원스 거너 클랩 포 어 메들 온 마이 셸프
     tl: 내 선반 위 메달에 박수 쳐 줄 사람은 없잖아
     time: [89.595, 92.057]
   - words:
       - text: 'Or '
+        pr: 오어
         time: [92.057, 92.215]
       - text: 'a '
+        pr: 어
         time: [92.215, 92.363]
       - text: 'medium '
+        pr: 미디엄
         time: [92.363, 92.916]
       - text: 'size '
+        pr: 사이즈
         time: [92.916, 93.319]
       - text: 'on '
+        pr: 온
         time: [93.319, 93.511]
       - text: 'my '
+        pr: 마이
         time: [93.511, 93.671]
       - text: 'biceps, '
+        pr: 바이셉스,
         time: [93.671, 94.317]
       - text: 'maybe '
+        pr: 메이비
         time: [94.317, 94.632]
       - text: 'I '
+        pr: 아이
         time: [94.632, 94.791]
       - text: 'can '
+        pr: 캔
         time: [94.791, 94.928]
       - text: chill
+        pr: 칠
         time: [94.928, 95.415]
-    pr: 오어 어 미디엄 사이즈 온 마이 바이셉스, 메이비 아이 캔 칠
     tl: 적당히 붙은 팔 근육도 마찬가지, 그냥 좀 편하게 살아도 되겠지
     time: [92.057, 95.415]
   - words:
       - text: 'If '
+        pr: 입
         time: [95.415, 95.572]
       - text: 'nobody '
+        pr: 노바디
         time: [95.572, 96.209]
       - text: 'cares, '
+        pr: 케어스,
         time: [96.209, 96.55]
       - text: 'I '
+        pr: 아이
         time: [96.55, 96.708]
       - text: 'will '
+        pr: 윌
         time: [96.708, 96.872]
       - text: 'be '
+        pr: 비
         time: [96.872, 97.033]
       - text: 'the '
+        pr: 더
         time: [97.033, 97.195]
       - text: 'one '
+        pr: 원
         time: [97.195, 97.35]
       - text: 'who '
+        pr: 후
         time: [97.35, 97.515]
       - text: will
+        pr: 윌
         time: [97.515, 97.794]
-    pr: 입 노바디 케어스, 아이 윌 비 더 원 후 윌
     tl: 아무도 신경 안 쓴다면 나라도 나를 챙길래
     time: [95.415, 97.794]
   - words:
       - text: 'So '
+        pr: 소
         time: [97.794, 98.482]
       - text: 'many '
+        pr: 메니
         time: [98.482, 98.808]
       - text: 'years '
+        pr: 이어즈
         time: [98.808, 99.124]
       - text: 'gone '
+        pr: 곤
         time: [99.124, 99.287]
       - text: 'to '
+        pr: 투
         time: [99.287, 99.448]
       - text: waste
+        pr: 웨이스트
         time: [99.448, 99.909]
-    pr: 소 메니 이어즈 곤 투 웨이스트
     tl: 그렇게 오랜 세월을 허비했네
     time: [97.794, 99.909]
   - words:
       - text: 'To '
+        pr: 투
         time: [99.909, 100.045]
       - text: 'satisfy '
+        pr: 새티스파이
         time: [100.045, 100.557]
       - text: 'a '
+        pr:
         time: [100.557, 100.676]
       - text: 'crowd '
+        pr: 크라웃
         time: [100.676, 100.964]
       - text: 'from '
+        pr: 프럼
         time: [100.964, 101.201]
       - text: 'a '
+        pr: 어
         time: [101.201, 101.358]
       - text: made-
+        pr: 메이드
         time: [101.358, 101.519]
       - text: 'up '
+        pr: 업
         time: [101.519, 101.675]
       - text: 'fucking '
+        pr: 퍼킹
         time: [101.675, 101.981]
       - text: place
+        pr: 플레이스
         time: [101.981, 102.32]
-    pr: 투 새티스파이 크라웃 프럼 어 메이덥 퍼킹 플레이스
     tl: 그 빌어먹을 가상의 공간 속 사람들을 만족시키려고
     time: [99.909, 102.32]
     background:
       words:
         - text: '(From '
+          pr: (프럼
           time: [102.32, 102.489]
         - text: 'a '
+          pr: 어
           time: [102.489, 102.653]
         - text: made-
+          pr: 메이드
           time: [102.653, 102.811]
         - text: 'up '
+          pr: 업
           time: [102.811, 102.971]
         - text: 'fucking '
+          pr: 퍼킹
           time: [102.971, 103.296]
         - text: place)
+          pr: 플레이스)
           time: [103.296, 103.618]
-      pr: (프럼 어 메이덥 퍼킹 플레이스)
       tl: (빌어먹을 지어낸 곳에서)
       time: [102.32, 103.618]
   - words:
       - text: 'It '
+        pr: 잇
         time: [103.618, 103.908]
       - text: 'all '
+        pr: 올
         time: [103.908, 104.253]
       - text: 'comes '
+        pr: 컴즈
         time: [104.253, 104.583]
       - text: 'down '
+        pr: 다운
         time: [104.583, 104.885]
       - text: 'to '
+        pr: 투
         time: [104.885, 105.046]
       - text: 'what '
+        pr: 왓
         time: [105.046, 105.37]
       - text: 'I '
+        pr: 아이
         time: [105.37, 105.636]
       - text: 'chase, '
+        pr: 체이스,
         time: [105.636, 106.495]
       - text: oh-
+        pr: 오
         time: [106.495, 107.141]
       - text: 'oh, '
+        pr: 오,
         time: [107.141, 107.783]
       - text: oh
+        pr: 오
         time: [107.783, 108.699]
-    pr: 잇 올 컴즈 다운 투 왓 아이 체이스, 오오, 오
     tl: 결국 중요한 건 내가 뭘 좇느냐는 거야
     time: [103.618, 108.699]
   - words:
       - text: 'Sometimes '
+        pr: 섬타임즈
         time: [108.699, 109.4]
       - text: "it's "
+        pr: 이츠
         time: [109.4, 109.717]
       - text: 'not '
+        pr: 낫
         time: [109.717, 110.02]
       - text: 'the '
+        pr: 더
         time: [110.02, 110.168]
       - text: 'time '
+        pr: 타임
         time: [110.168, 110.499]
       - text: 'and '
+        pr: 앤드
         time: [110.499, 110.815]
       - text: 'place, '
+        pr: 플레이스,
         time: [110.815, 111.625]
       - text: oh-
+        pr: 오
         time: [111.625, 112.269]
       - text: 'oh, '
+        pr: 오,
         time: [112.269, 112.917]
       - text: oh-
+        pr: 오
         time: [112.917, 113.565]
       - text: oh
+        pr: 오
         time: [113.565, 113.885]
-    pr: 섬타임즈 이츠 낫 더 타임 앤드 플레이스, 오오, 오오
     tl: 때로는 지금이 그럴 때도, 그럴 곳도 아닌 거지
     time: [108.699, 113.885]
   - words:
       - text: 'I '
+        pr: 아이
         time: [113.885, 114.144]
       - text: 'feel '
+        pr: 필
         time: [114.144, 114.53]
       - text: 'like '
+        pr: 라익
         time: [114.53, 114.764]
       - text: 'shit, '
+        pr: 싯,
         time: [114.764, 115.151]
       - text: 'but '
+        pr: 벗
         time: [115.151, 115.31]
       - text: "I'm "
+        pr: 아임
         time: [115.31, 115.631]
       - text: 'okay, '
+        pr: 오케이,
         time: [115.631, 116.746]
       - text: woah-
+        pr: 워
         time: [116.746, 117.406]
       - text: 'oh, '
+        pr: 오,
         time: [117.406, 118.042]
       - text: oh-
+        pr: 오
         time: [118.042, 118.69]
       - text: oh
+        pr: 오
         time: [118.69, 119.021]
-    pr: 아이 필 라익 싯, 벗 아임 오케이, 워어, 오오
     tl: 기분은 좆같지만 난 괜찮아
     time: [113.885, 119.021]
   - words:
