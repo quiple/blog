@@ -32,10 +32,10 @@
   },
   "devDependencies": {
     "@applemusic-like-lyrics/ttml": "1.0.1",
-    "@cloudflare/workers-types": "^5.20261028.1",
+    "@cloudflare/workers-types": "^5.20261029.1",
     "@ethercorps/sveltekit-og": "github:quiple/sveltekit-og",
     "@internationalized/date": "^3.12.4",
-    "@lucide/svelte": "^1.62.0",
+    "@lucide/svelte": "^1.63.0",
     "@sveltejs/adapter-cloudflare": "^8.0.1",
     "@sveltejs/kit": "^3.1.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
@@ -43,7 +43,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@types/hast": "^3.0.5",
     "@types/mdast": "^4.0.4",
-    "@types/node": "^26.6.5",
+    "@types/node": "^26.6.6",
     "@typescript/native": "npm:typescript@7.1.0-dev.20261022.1",
     "@xmldom/xmldom": "0.9.12",
     "bits-ui": "^2.20.2",
@@ -80,7 +80,7 @@
     "unist-util-visit": "^5.2.0",
     "valibot": "^1.5.0",
     "vite": "^8.3.5",
-    "wrangler": "^4.154.0"
+    "wrangler": "^4.155.0"
   },
   "imports": {
     "#lib": "./src/lib/index.js",
