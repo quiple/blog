@@ -4,18 +4,20 @@
 # 가져온 시각: 2026-10-29T19:31:34.850Z
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
-title: フレンドカウンセリング/初音ミク,重音テト
+title: フレンドカウンセリング
+titleTl: 프렌드 카운슬링
 titleLang: ja
-year: '2023'
+year: '2026'
 artist:
   - kururi
   - hatsune-miku
   - kasane-teto
 lang: ja
 yt:
+  audio: 5W_0kmw_2LE
   mv: _ZyDkp9LfuU
 lines:
-  - text: 프렌드 카운슬링
+  - text:
     time: [2.477, 7.169]
   - text: "작곡 : 句るり 노래 : 하츠네 미쿠 , 카사네 테토"
     time: [7.299, 9.644]
