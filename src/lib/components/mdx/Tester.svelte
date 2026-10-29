@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Shuffle} from '@lucide/svelte'
+  import Shuffle from '@lucide/svelte/icons/shuffle'
   import {Button} from '#lib/components/ui/button/index.js'
   import {Checkbox} from '#lib/components/ui/checkbox/index.js'
   import {Label} from '#lib/components/ui/label/index.js'

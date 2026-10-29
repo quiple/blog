@@ -1,5 +1,7 @@
 <script lang="ts">
-  import {Copy, Download, LoaderCircle} from '@lucide/svelte'
+  import Copy from '@lucide/svelte/icons/copy'
+  import Download from '@lucide/svelte/icons/download'
+  import LoaderCircle from '@lucide/svelte/icons/loader-circle'
   import {page} from '$app/state'
   import {toast} from 'svelte-sonner'
   import {getCharset, getCharsetGroups} from '#lib/charsets/index.js'

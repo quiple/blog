@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {ExternalLink} from '@lucide/svelte'
+  import ExternalLink from '@lucide/svelte/icons/external-link'
   import PageTitle from '#lib/components/page-title.svelte'
   import {Badge} from '#lib/components/ui/badge/index.js'
   import * as Card from '#lib/components/ui/card/index.js'

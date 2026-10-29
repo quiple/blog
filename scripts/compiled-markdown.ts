@@ -262,10 +262,9 @@ function figure() {
   }
 }
 
-async function compilePost(rawContent: string, isProduction: boolean): Promise<CompiledPostContent> {
-  const {content, data} = matter(rawContent)
-  const contentHtml = (
-    await remark()
+function createMarkdownProcessor(isProduction: boolean) {
+  return (
+    remark()
       // MDX expressions are not rendered; let line-leading ruby be parsed as inline content.
       .data('micromarkExtensions', [{disable: {null: ['mdxFlowExpression']}}])
       .use(remarkDirective)
@@ -291,8 +290,15 @@ async function compilePost(rawContent: string, isProduction: boolean): Promise<C
       .use(smartypants, {dashes: 'oldschool'})
       .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow', 'noreferrer', 'noopener']})
       .use(rehypeStringify, {allowDangerousHtml: true})
-      .process(preprocessMdx(content))
-  ).toString()
+  )
+}
+
+async function compilePost(
+  rawContent: string,
+  processor: ReturnType<typeof createMarkdownProcessor>,
+): Promise<CompiledPostContent> {
+  const {content, data} = matter(rawContent)
+  const contentHtml = (await processor.process(preprocessMdx(content))).toString()
 
   return {
     contentHtml,
@@ -302,20 +308,20 @@ async function compilePost(rawContent: string, isProduction: boolean): Promise<C
 }
 
 export function compiledMarkdown(): Plugin {
-  let isProduction = false
+  let processor: ReturnType<typeof createMarkdownProcessor>
 
   return {
     name: 'compiled-markdown',
     enforce: 'pre',
     configResolved(config) {
-      isProduction = config.isProduction
+      processor = createMarkdownProcessor(config.isProduction)
     },
     async load(id) {
       if (!id.endsWith(COMPILED_MARKDOWN_QUERY)) return
 
       const filename = id.slice(0, -COMPILED_MARKDOWN_QUERY.length)
       this.addWatchFile(filename)
-      const compiled = await compilePost(await readFile(filename, 'utf8'), isProduction)
+      const compiled = await compilePost(await readFile(filename, 'utf8'), processor)
       return `export default ${JSON.stringify(compiled)}`
     },
   }

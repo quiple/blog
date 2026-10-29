@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Download} from '@lucide/svelte'
+  import Download from '@lucide/svelte/icons/download'
   import {Button} from '#lib/components/ui/button/index.js'
   import {cn} from 'cn'
 

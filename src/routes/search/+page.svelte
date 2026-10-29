@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {Search} from '@lucide/svelte'
+  import Search from '@lucide/svelte/icons/search'
   import {goto} from '$app/navigation'
   import PostPagination from '#lib/components/post-pagination.svelte'
   import PostList from '#lib/components/post-list.svelte'

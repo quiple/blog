@@ -1,5 +1,7 @@
 <script lang="ts">
-  import {Check, CircleAlert, X} from '@lucide/svelte'
+  import Check from '@lucide/svelte/icons/check'
+  import CircleAlert from '@lucide/svelte/icons/circle-alert'
+  import X from '@lucide/svelte/icons/x'
   import Exclamation from '#lib/components/icons/exclamation.svelte'
 
   const licenseRows = [

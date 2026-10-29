@@ -1,4 +1,4 @@
-import hangul from './hangul'
+import defaultHangul from './hangul-default'
 
 export interface CharsetEntry {
   key: string
@@ -35,7 +35,10 @@ export const charsetEntries: CharsetEntry[] = [
 
 // Keep the default preview synchronous; load other scripts only when selected.
 export function getCharset(key: string): string | Promise<string> {
-  if (Object.hasOwn(hangul, key)) return hangul[key as keyof typeof hangul]
+  if (key === 'set2350') return defaultHangul
+  if (key === 'set11172') return Array.from({length: 11172}, (_, index) => String.fromCharCode(0xac00 + index)).join('')
+  if (key === 'set2355' || key === 'set2780' || key === 'set4358')
+    return import('./hangul').then(({default: hangul}) => hangul[key])
   if (key === 'ks4888' || key === 'unicode4888') return import('./hanja').then(({default: hanja}) => hanja[key])
   if (['jis2965', 'unicode2965', 'jis6355', 'unicode6355'].includes(key))
     return import('./kanji').then(({default: kanji}) => {
@@ -47,11 +50,12 @@ export function getCharset(key: string): string | Promise<string> {
     return import('./korean').then(async ({default: korean}) => {
       if (key === 'euckr') {
         const {default: hanja} = await import('./hanja')
-        return korean.restOfEuckr + hangul.set2350 + hanja.ks4888
+        return korean.restOfEuckr + defaultHangul + hanja.ks4888
       }
       const suffix = key.slice('euckrWoHanja'.length) || '2350'
-      const syllables = hangul[`set${suffix}` as keyof typeof hangul]
-      return key.startsWith('euckrWoHanja') && syllables ? korean.restOfEuckr + syllables : ''
+      if (!key.startsWith('euckrWoHanja')) return ''
+      const syllables = await getCharset(`set${suffix}`)
+      return syllables ? korean.restOfEuckr + syllables : ''
     })
   if (key === 'shiftjis' || key === 'shiftjis_level1')
     return Promise.all([import('./japanese'), import('./kanji')]).then(

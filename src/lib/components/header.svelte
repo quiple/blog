@@ -1,5 +1,9 @@
 <script lang="ts">
-  import {Menu, Monitor, Moon, Search, Sun} from '@lucide/svelte'
+  import Menu from '@lucide/svelte/icons/menu'
+  import Monitor from '@lucide/svelte/icons/monitor'
+  import Moon from '@lucide/svelte/icons/moon'
+  import Search from '@lucide/svelte/icons/search'
+  import Sun from '@lucide/svelte/icons/sun'
   import {afterNavigate, beforeNavigate, goto} from '$app/navigation'
   import {page} from '$app/state'
   import {onDestroy, onMount} from 'svelte'
