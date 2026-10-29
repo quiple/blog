@@ -681,7 +681,23 @@ lines:
     pr: '캐러즈매틱 피플 해빙 펀, 아임 싱킹: "와이 낫 미?"'
     tl: '매력적인 사람들은 즐겁게 사는데, 난 생각해, "나는 왜 안 되지?"'
     time: [75.014, 77.623]
-  - text: Is it ’cause I'm silently miserable in privacy?
+  - words:
+      - text: 'Is '
+        time: [77.623, 77.77]
+      - text: 'it '
+        time: [77.77, 77.938]
+      - text: '’cause '
+        time: [77.938, 78.107]
+      - text: "I'm "
+        time: [78.107, 78.246]
+      - text: 'silently '
+        time: [78.246, 78.903]
+      - text: 'miserable '
+        time: [78.903, 79.392]
+      - text: 'in '
+        time: [79.392, 79.533]
+      - text: privacy?
+        time: [79.533, 80.177]
     pr: 이즈 잇 코즈 아임 사일런틀리 미저러블 인 프라이버시?
     tl: 혼자서 말없이 불행해하고 있어서 그런 걸까?
     time: [77.623, 80.177]
