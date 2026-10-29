@@ -574,6 +574,7 @@ lines:
     pr: 사
     tl: 자,
     time: [160.071, 160.328]
+    duet: true
   - words:
       - text: 相談
         time: [160.328, 161.002]
