@@ -1185,7 +1185,7 @@ lines:
         pr: 새티스파이
         time: [100.045, 100.557]
       - text: 'a '
-        pr:
+        pr: 어
         time: [100.557, 100.676]
       - text: 'crowd '
         pr: 크라웃
