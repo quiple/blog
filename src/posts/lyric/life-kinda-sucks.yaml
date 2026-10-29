@@ -1342,28 +1342,38 @@ lines:
     time: [113.885, 119.021]
   - words:
       - text: "I'll "
+        pr: 아일
         time: [119.021, 119.285]
       - text: 'fake '
+        pr: 페익
         time: [119.285, 119.656]
       - text: 'a '
+        pr: 어
         time: [119.656, 119.973]
       - text: 'color '
+        pr: 컬러
         time: [119.973, 120.448]
       - text: 'out '
+        pr: 아웃
         time: [120.448, 120.766]
       - text: 'of '
+        pr: 옵
         time: [120.766, 121.058]
       - text: 'gray, '
+        pr: 그레이,
         time: [121.058, 121.886]
       - text: woah-
+        pr: 워
         time: [121.886, 122.533]
       - text: 'oh, '
+        pr: 오,
         time: [122.533, 123.181]
       - text: oh-
+        pr: 오
         time: [123.181, 123.831]
       - text: oh
+        pr: 오
         time: [123.831, 124.269]
-    pr: 아일 페익 어 컬러 아웃 옵 그레이, 워어, 오오
     tl: 잿빛 속에서라도 색을 만들어 낼 거야
     time: [119.021, 124.269]
   - words:
