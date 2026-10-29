@@ -867,44 +867,59 @@ lines:
     time: [69.114, 71.526]
   - words:
       - text: 'Levels '
+        pr: 레블즈
         time: [72.466, 72.81]
       - text: 'of '
+        pr: 옵
         time: [72.81, 72.951]
       - text: 'anxiety '
+        pr: 앵자이어티
         time: [72.951, 73.769]
       - text: 'getting '
+        pr: 게팅
         time: [73.769, 74.069]
       - text: 'fed '
+        pr: 펫
         time: [74.069, 74.275]
       - text: 'inside '
+        pr: 인사잇
         time: [74.275, 74.59]
       - text: 'of '
+        pr: 옵
         time: [74.59, 74.744]
       - text: me
+        pr: 미
         time: [74.744, 75.014]
-    pr: 레벌 옵 앵자이어티 게팅 펫 인사잇 옵 미
     tl: 내 안에 불안이 자꾸만 쌓여 가
     time: [72.466, 75.014]
   - words:
       - text: 'Charismatic '
+        pr: 캐러즈매틱
         time: [75.014, 75.685]
       - text: 'people '
+        pr: 피플
         time: [75.685, 75.993]
       - text: 'having '
+        pr: 해빙
         time: [75.993, 76.313]
       - text: 'fun, '
+        pr: 펀,
         time: [76.313, 76.503]
       - text: "I'm "
+        pr: 아임
         time: [76.503, 76.651]
       - text: 'thinking: '
+        pr: '싱킹:'
         time: [76.651, 76.968]
       - text: '"Why '
+        pr: '"와이'
         time: [76.968, 77.141]
       - text: 'not '
+        pr: 낫
         time: [77.141, 77.296]
       - text: me?"
+        pr: 미?"
         time: [77.296, 77.623]
-    pr: '캐러즈매틱 피플 해빙 펀, 아임 싱킹: "와이 낫 미?"'
     tl: '매력적인 사람들은 즐겁게 사는데, 난 생각해, "나는 왜 안 되지?"'
     time: [75.014, 77.623]
   - words:
