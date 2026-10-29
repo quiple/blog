@@ -639,170 +639,230 @@ lines:
     time: [49.233, 51.623]
   - words:
       - text: 'Fuck '
+        pr: 퍽
         time: [51.911, 52.271]
       - text: 'this '
+        pr: 디스
         time: [52.271, 52.593]
       - text: 'thing '
+        pr: 싱
         time: [52.593, 52.914]
       - text: 'called '
+        pr: 콜드
         time: [52.914, 53.242]
       - text: life
+        pr: 라입
         time: [53.242, 53.722]
-    pr: 퍽 디스 싱 콜드 라입
     tl: 인생이란 거 좆같네
     time: [51.911, 53.722]
   - words:
       - text: 'I '
+        pr: 아이
         time: [53.722, 53.813]
       - text: 'swear, '
+        pr: 스웨어,
         time: [53.813, 54.355]
       - text: 'one '
+        pr: 원
         time: [54.355, 54.509]
       - text: 'more '
+        pr: 모어
         time: [54.509, 54.989]
       - text: 'complaint '
+        pr: 컴플레인트
         time: [54.989, 55.637]
       - text: 'and '
+        pr: 앤드
         time: [55.637, 55.796]
       - text: "I'll "
+        pr: 아일
         time: [55.796, 56.105]
       - text: 'go '
+        pr: 고
         time: [56.105, 56.438]
       - text: 'punch '
+        pr: 펀치
         time: [56.438, 56.722]
       - text: "someone's "
+        pr: 섬원즈
         time: [56.722, 57.083]
       - text: kid
+        pr: 킷
         time: [57.083, 57.402]
-    pr: 아이 스웨어, 원 모어 컴플레인트 앤드 아일 고 펀치 섬원즈 킷
     tl: 진짜, 불평 한 번만 더 들으면 누구네 애라도 한 대 칠 것 같아
     time: [53.722, 57.402]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [57.402, 57.568]
       - text: 'this '
+        pr: 디스
         time: [57.568, 57.704]
       - text: 'close '
+        pr: 클로즈
         time: [57.704, 57.892]
       - text: 'to '
+        pr: 투
         time: [57.892, 58.021]
       - text: 'crashing '
+        pr: 크래싱
         time: [58.021, 58.363]
       - text: 'out, '
+        pr: 아웃,
         time: [58.363, 58.86]
       - text: "they're "
+        pr: 데어
         time: [58.86, 59.024]
       - text: 'lying '
+        pr: 라잉
         time: [59.024, 59.317]
       - text: 'to '
+        pr: 투
         time: [59.317, 59.499]
       - text: 'get '
+        pr: 겟
         time: [59.499, 59.634]
       - text: clout
+        pr: 클라웃
         time: [59.634, 59.984]
-    pr: 아임 디스 클로즈 투 크래싱 아웃, 데어 라잉 투 겟 클라웃
     tl: 폭발하기 직전이야, 저들은 관심 좀 받으려고 거짓말을 해
     time: [57.402, 59.984]
   - words:
       - text: 'Fill '
+        pr: 필
         time: [59.984, 60.122]
       - text: 'the '
+        pr: 더
         time: [60.122, 60.288]
       - text: 'unaware '
+        pr: 어너웨어
         time: [60.288, 60.771]
       - text: 'with '
+        pr: 윗
         time: [60.771, 60.93]
       - text: 'doubt, '
+        pr: 다웃,
         time: [60.93, 61.257]
       - text: "that's "
+        pr: 대츠
         time: [61.257, 61.418]
       - text: 'a '
+        pr: 어
         time: [61.418, 61.545]
       - text: 'profitable '
+        pr: 프라피터블
         time: [61.545, 62.187]
       - text: crowd
+        pr: 크라웃
         time: [62.187, 62.522]
-    pr: 필 더 어너웨어 윗 다웃, 대츠 어 프라피터블 크라웃
     tl: 아무것도 모르는 사람들을 의심으로 채워, 돈이 되는 고객들이니까
     time: [59.984, 62.522]
   - words:
       - text: 'Fuck '
+        pr: 퍽
         time: [62.522, 62.86]
       - text: 'things '
+        pr: 싱스
         time: [62.86, 63.189]
       - text: 'that '
+        pr: 댓
         time: [63.189, 63.431]
       - text: 'changed '
+        pr: 체인짓
         time: [63.431, 63.656]
       - text: 'to '
+        pr: 투
         time: [63.656, 63.835]
       - text: 'be '
+        pr: 비
         time: [63.835, 63.932]
       - text: subscribed
+        pr: 섭스크라입드
         time: [63.932, 64.624]
-    pr: 퍽 싱스 댓 체인짓 투 비 섭스크라입드
     tl: 죄다 구독제로 바뀌는 것들 좆같네
     time: [62.522, 64.624]
   - words:
       - text: 'More '
+        pr: 모어
         time: [64.624, 64.803]
       - text: 'money '
+        pr: 머니
         time: [64.803, 65.095]
       - text: 'for '
+        pr: 포
         time: [65.095, 65.261]
       - text: 'a '
+        pr: 어
         time: [65.261, 65.407]
       - text: 'company '
+        pr: 컴퍼니
         time: [65.407, 65.836]
       - text: 'for '
+        pr: 포
         time: [65.836, 66.055]
       - text: customer---
+        pr: 커스터머---
         time: [66.055, 66.548]
       - text: 'less '
+        pr: 레스
         time: [66.548, 66.688]
       - text: rights
+        pr: 라이츠
         time: [66.688, 66.961]
-    pr: 모어 머니 포 어 컴퍼니 포 커스터머---레스 라이츠
     tl: 회사는 돈을 더 벌고, 고객의 권리는 줄어들고
     time: [64.624, 66.961]
   - words:
       - text: 'So '
+        pr: 소
         time: [66.961, 67.674]
       - text: 'many '
+        pr: 메니
         time: [67.674, 68.008]
       - text: 'arts '
+        pr: 아츠
         time: [68.008, 68.317]
       - text: 'gotten '
+        pr: 가튼
         time: [68.317, 68.611]
       - text: stale
+        pr: 스테일
         time: [68.611, 69.114]
-    pr: 소 메니 아츠 가튼 스테일
     tl: 예술도 참 많이 진부해졌어
     time: [66.961, 69.114]
   - words:
       - text: 'New '
+        pr: 누
         time: [69.114, 69.278]
       - text: 'movies '
+        pr: 무비스
         time: [69.278, 69.607]
       - text: 'got '
+        pr: 갓
         time: [69.607, 69.771]
       - text: 'no '
+        pr: 노
         time: [69.771, 69.938]
       - text: 'balls, '
+        pr: 볼스,
         time: [69.938, 70.239]
       - text: "it's "
+        pr: 이츠
         time: [70.239, 70.403]
       - text: 'no '
+        pr: 노
         time: [70.403, 70.544]
       - text: 'wonder '
+        pr: 원더
         time: [70.544, 70.875]
       - text: 'that '
+        pr: 댓
         time: [70.875, 71.037]
       - text: 'they '
+        pr: 데이
         time: [71.037, 71.191]
       - text: fail
+        pr: 페일
         time: [71.191, 71.526]
-    pr: 누 무비스 갓 노 볼스, 이츠 노 원더 댓 데이 페일
     tl: 새 영화들은 배짱이 없으니 망하는 것도 당연하지
     time: [69.114, 71.526]
   - words:
