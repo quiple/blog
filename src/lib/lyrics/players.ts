@@ -15,6 +15,11 @@ export interface YouTubePlayer {
   cueVideoById(options: {videoId: string; startSeconds: number}): void
   loadVideoById(options: {videoId: string; startSeconds: number}): void
   playVideo(): void
+  pauseVideo(): void
+  getVolume(): number
+  setVolume(volume: number): void
+  isMuted(): boolean
+  unMute(): void
   getCurrentTime(): number
   getDuration(): number
   getPlayerState(): number
@@ -40,6 +45,7 @@ interface YouTubeAPI {
 }
 export interface SpotifyController {
   destroy(): void
+  togglePlay(): void
   restart(): void
   seek(seconds: number): void
   addListener(

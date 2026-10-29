@@ -61,6 +61,7 @@
     }, 20000)
     let previous: Playback | undefined
     let queuedTime: number | undefined = initial.position
+    let controls: {toggle: () => void; seek: (time: number) => void; volume?: (delta: number) => void} | undefined
     const publish = (position: number, duration: number, playing: boolean) => {
       if (disposed) return
       if (previous && !playing && !previous.playing && previous.position === position && previous.duration === duration)
@@ -87,6 +88,36 @@
         interval = setInterval(sampleYouTube, 200)
       }
     }
+    const keydown = (event: KeyboardEvent) => {
+      if (
+        !controls ||
+        event.defaultPrevented ||
+        event.isComposing ||
+        event.altKey ||
+        event.ctrlKey ||
+        event.metaKey ||
+        event.shiftKey ||
+        (event.target instanceof Element &&
+          event.target.closest(
+            'input, textarea, select, button, a, [contenteditable]:not([contenteditable="false"]), [role="textbox"], [role="slider"]',
+          ))
+      )
+        return
+      if (event.key === ' ') {
+        event.preventDefault()
+        if (!event.repeat) controls.toggle()
+      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+        event.preventDefault()
+        const position = previous?.position ?? initial.position
+        const duration = previous?.duration ?? 0
+        const next = Math.max(0, position + (event.key === 'ArrowLeft' ? -5000 : 5000))
+        controls.seek(duration > 0 ? Math.min(duration, next) : next)
+      } else if ((event.key === 'ArrowUp' || event.key === 'ArrowDown') && controls.volume) {
+        event.preventDefault()
+        controls.volume(event.key === 'ArrowUp' ? 5 : -5)
+      }
+    }
+    window.addEventListener('keydown', keydown, true)
     if (current.provider === 'youtube') document.addEventListener('visibilitychange', visibility)
     async function connect() {
       if (current.provider === 'youtube') {
@@ -108,11 +139,21 @@
               loading = false
               message = ''
               resume = () => target.playVideo()
-              onseekready((time) => {
+              const seek = (time: number) => {
                 queuedTime = time
                 target.seekTo(time / 1000, true)
                 publish(time, target.getDuration() * 1000, target.getPlayerState() === 1)
-              })
+              }
+              controls = {
+                toggle: () => (target.getPlayerState() === 1 ? target.pauseVideo() : target.playVideo()),
+                seek,
+                volume: (delta) => {
+                  const volume = target.isMuted() ? 0 : target.getVolume()
+                  if (target.isMuted()) target.unMute()
+                  target.setVolume(Math.max(0, Math.min(100, volume + delta)))
+                },
+              }
+              onseekready(seek)
               const video = {videoId: current.id, startSeconds: initial.position / 1000}
               if (initial.playing) target.loadVideoById(video)
               else if (initial.position > 0) target.cueVideoById(video)
@@ -137,6 +178,7 @@
               loading = false
               message = `이 영상은 임베드에서 재생할 수 없습니다. YouTube에서 확인해 주세요. (${data})`
               autoplayBlocked = false
+              controls = undefined
               onseekready(undefined)
               publish(previous?.position ?? initial.position, previous?.duration ?? 0, false)
               onunavailable?.(true)
@@ -158,12 +200,15 @@
             clearTimeout(readyTimeout)
             loading = false
             message = ''
-            onseekready((time) => {
+            const seek = (time: number) => {
               // Spotify only seeks to whole seconds; retain the start of the selected line.
               const seconds = Math.max(0, Math.floor(time / 1000))
               if (seconds === 0) controller.restart()
               else controller.seek(seconds)
-            })
+              publish(seconds * 1000, previous?.duration ?? 0, previous?.playing ?? false)
+            }
+            controls = {toggle: () => controller.togglePlay(), seek}
+            onseekready(seek)
             controller.addListener('playback_update', ({data}) => {
               if (disposed) return
               if (data.playingURI && data.playingURI !== current.id) {
@@ -188,6 +233,7 @@
       clearTimeout(readyTimeout)
       clearInterval(interval)
       document.removeEventListener('visibilitychange', visibility)
+      window.removeEventListener('keydown', keydown, true)
       youtube?.destroy()
       spotify?.destroy()
       container.replaceChildren()

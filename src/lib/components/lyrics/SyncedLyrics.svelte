@@ -211,7 +211,11 @@
           ownScrollUntil = 0
         }
         const key = (event: KeyboardEvent) => {
-          if (['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)) manual()
+          if (
+            !event.defaultPrevented &&
+            ['ArrowUp', 'ArrowDown', 'PageUp', 'PageDown', 'Home', 'End', ' '].includes(event.key)
+          )
+            manual()
         }
         const pointer = (event: PointerEvent) => {
           if (event.target === document.documentElement || event.target === document.body) manual()
