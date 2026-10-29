@@ -238,21 +238,10 @@ function figure() {
           alt: attributes.alt ?? '',
           width: widthValue || undefined,
           height: heightValue || undefined,
-          className: cn(
-            'mx-auto self-center shadow-xs',
-            mdxImageClass,
-            constrainedWidth && 'mdx-constrained-width',
-            className,
-          ),
+          className: cn('mx-auto self-center shadow-xs', mdxImageClass, className),
           style:
             !hasWidthClass && widthValue && heightValue
-              ? [
-                  `width: ${constrainedWidth ? 'min(100%, var(--mdx-constrained-width))' : `${widthValue}px`}`,
-                  'max-width: 100%',
-                  constrainedWidth && `--mdx-constrained-width: ${constrainedWidth}`,
-                ]
-                  .filter(Boolean)
-                  .join('; ')
+              ? `width: ${constrainedWidth || `${widthValue}px`}; max-width: 100%`
               : undefined,
           imgClassName: hasWidthClass || hasHeightClass ? 'h-full w-full' : 'h-auto max-h-full',
         })
