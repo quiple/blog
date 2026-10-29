@@ -549,7 +549,7 @@ lines:
         pr: 세븐 헌드레드
         time: [44.223, 44.887]
       - text: 'calories, '
-        pr: 캘러리스,
+        pr: 캘러리즈,
         time: [44.887, 45.369]
       - text: 'why '
         pr: 와이
