@@ -732,7 +732,7 @@ lines:
         pr: 필
         time: [59.984, 60.122]
       - text: 'the '
-        pr: 더
+        pr: 디
         time: [60.122, 60.288]
       - text: 'unaware '
         pr: 어너웨어
