@@ -1016,49 +1016,65 @@ lines:
     time: [119.021, 124.269]
   - words:
       - text: Na-
+        pr: 나
         time: [134.079, 134.726]
       - text: na-
+        pr: 나
         time: [134.726, 135.353]
       - text: 'na, '
+        pr: 나,
         time: [135.353, 135.988]
       - text: na-
+        pr: 나
         time: [135.988, 136.312]
       - text: na-
+        pr: 나
         time: [136.312, 136.63]
       - text: 'na, '
+        pr: 나,
         time: [136.63, 137.277]
       - text: na-
+        pr: 나
         time: [137.277, 137.923]
       - text: na
+        pr: 나
         time: [137.923, 138.567]
-    pr: 나나나, 나나나, 나나
-    tl: 나나나, 나나나, 나나
     time: [134.079, 138.567]
   - words:
       - text: Na-
+        pr: 나
         time: [138.567, 138.887]
       - text: na-
+        pr: 나
         time: [138.887, 139.214]
       - text: 'na, '
+        pr: 나,
         time: [139.214, 139.854]
       - text: na-
+        pr: 나
         time: [139.854, 140.482]
       - text: 'na, '
+        pr: 나,
         time: [140.482, 141.121]
       - text: na-
+        pr: 나
         time: [141.121, 141.449]
       - text: na-
+        pr: 나
         time: [141.449, 141.769]
       - text: 'na, '
+        pr: 나,
         time: [141.769, 142.414]
       - text: na-
+        pr: 나
         time: [142.414, 143.061]
       - text: 'na, '
+        pr: 나,
         time: [143.061, 143.707]
       - text: na-
+        pr: 나
         time: [143.707, 144.02]
       - text: na
+        pr: 나
         time: [144.02, 144.499]
-    pr: 나나나, 나나, 나나나, 나나, 나나
-    tl: 나나나, 나나, 나나나, 나나, 나나
     time: [138.567, 144.499]
