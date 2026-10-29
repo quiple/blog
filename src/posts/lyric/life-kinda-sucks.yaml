@@ -17,8 +17,7 @@ yt:
   audio: 5JrhAsNH-lw
   mv: oT-G1wS-57c
 offsets:
-  sp: 0.333
-  ytAudio: 0.333
+  ytMV: -0.333
 lines:
   - words:
       - text: 'Fuck '
