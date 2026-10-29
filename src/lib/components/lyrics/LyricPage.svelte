@@ -19,12 +19,15 @@
   import MusicEmbed from './MusicEmbed.svelte'
   import SyncedLyrics from './SyncedLyrics.svelte'
   import LyricText from './LyricText.svelte'
-  import {siSpotify, siYoutube, siYoutubemusic} from 'simple-icons'
+  import spotifyIcon from 'simple-icons/icons/spotify.svg?raw'
+  import youtubeIcon from 'simple-icons/icons/youtube.svg?raw'
+  import youtubeMusicIcon from 'simple-icons/icons/youtubemusic.svg?raw'
 
+  const iconPath = (svg: string) => svg.match(/<path d="([^"]+)"/)?.[1] ?? ''
   const sourceIcons = {
-    youtubeAudio: siYoutubemusic.path,
-    youtubeMV: siYoutube.path,
-    spotify: siSpotify.path,
+    youtubeAudio: iconPath(youtubeMusicIcon),
+    youtubeMV: iconPath(youtubeIcon),
+    spotify: iconPath(spotifyIcon),
   }
 
   let {song, sources, artists}: {song: Song; sources: Source[]; artists: Artist[]} = $props()

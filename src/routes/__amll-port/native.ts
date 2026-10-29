@@ -1,4 +1,4 @@
-import {DomLyricPlayer as Native} from '@applemusic-like-lyrics/core'
+import {DomLyricPlayer as Native} from 'virtual:amll-native-dom'
 import '@applemusic-like-lyrics/core/style.css'
 import {DocumentLyricPlayer} from '#lib/lyrics/document-player.js'
 import type {LyricLine} from '@applemusic-like-lyrics/core'

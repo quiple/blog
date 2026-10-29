@@ -158,13 +158,16 @@
         }
         const sync = () => {
           if (disposed) return
-          if (applied?.length !== lines.length || lines.some((line, index) => line !== applied?.[index])) {
+          if (
+            applied !== lines &&
+            (applied?.length !== lines.length || lines.some((line, index) => line !== applied?.[index]))
+          ) {
             release()
             player.setLyricLines(lines, time())
-            applied = lines
             previousTime = NaN
             followed = undefined
           }
+          applied = lines
           if (!sample.playing && sample.position === 0) player.resetPlayback()
           const running = sample.playing && visible && !document.hidden
           if (running !== playing) {

@@ -12,7 +12,8 @@ version; do not simply replace the checksum.
 The DOM-only entry excludes upstream `bg-render` regions and their Pixi/gl-matrix
 imports under that same checksum guard. Export-only tree-shaking is insufficient:
 those unused renderers have module-level initializers. The native comparison
-entry still loads the unmodified upstream package.
+entry uses the same DOM-only extraction without applying the document patch,
+preserving the upstream DOM implementation for comparison.
 
 ## Optimization audit (2026-09-27)
 
