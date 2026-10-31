@@ -654,7 +654,7 @@ lines:
     time: [200.864, 202.208]
     background:
       words:
-        - text: menkyo
+        - text: (menkyo)
           time: [202.208, 203.014]
       time: [202.208, 203.014]
   - words:
@@ -666,9 +666,9 @@ lines:
     time: [203.014, 204.757]
     background:
       words:
-        - text: hoshii
+        - text: (hoshii
           time: [204.328, 205.01]
-        - text: yo
+        - text: yo)
           time: [205.01, 206.491]
       time: [204.328, 206.491]
   - words:
