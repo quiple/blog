@@ -1,6 +1,6 @@
 import type {} from '../../src/lib/lyrics/render.ts'
 
-/** Keep Latin fonts unchanged; map Japanese characters to one installed face. */
+/** Use one font stack for every language in the disposable export browser. */
 export async function applyRenderJapaneseFont(weight: number) {
   const family = 'RenderHiragino'
   const face = new FontFace(family, `local("HiraginoSans-W${weight}")`, {
@@ -14,10 +14,20 @@ export async function applyRenderJapaneseFont(weight: number) {
   }
   document.fonts.add(face)
   const root = document.documentElement
+  const fonts = getComputedStyle(root)
+    .getPropertyValue('--font-sans-theme')
+    .split(',')
+    .map((font) => font.trim())
+    .filter((font) => font && font.replace(/^['"]|['"]$/g, '') !== 'IBMPlexSansJP-web')
+  const hiragino = fonts.findIndex((font) => font.replace(/^['"]|['"]$/g, '') === 'Hiragino Sans')
+  if (hiragino < 0) throw Error('테마 폰트 목록에서 Hiragino Sans를 찾지 못했습니다.')
+  fonts.splice(hiragino, 0, family)
+  const stack = fonts.join(', ')
   for (const mode of ['theme', 'system']) {
-    const property = `--font-sans-ja-${mode}`
-    root.style.setProperty(property, `${family}, ${getComputedStyle(root).getPropertyValue(property)}`)
+    for (const name of ['sans', 'sans-ja', 'sans-zh-cn', 'sans-zh-tw'])
+      root.style.setProperty(`--font-${name}-${mode}`, stack)
   }
+  root.style.setProperty('--font-sans-emphasis-theme', stack)
 }
 
 /** Installed only inside the disposable export browser. */

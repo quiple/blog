@@ -20,10 +20,11 @@ nub run render anger-management --font theme --width 1920 --height 1080 --fps 60
 
 모든 출력은 **다크 모드·16:9 영역 캡처**입니다. 별도의 `--theme`, `--crop`
 옵션은 없습니다. 기본값은 1920×1080, 60fps, 테마 폰트, MV 전체 길이입니다.
-`--font system`은 실행 컴퓨터의 시스템 폰트를 사용합니다.
+`--font system`은 시스템 폰트 설정을 선택합니다. 영상의 산세리프 글꼴은 두 설정 모두 아래 스택을 사용합니다.
 
-일본어 글리프는 영상에서만 시스템의 **Hiragino Sans W6**를 사용합니다.
-라틴 글리프는 기존 폰트를 유지하며, 제목과 가사의 일본어에는 같은 웨이트가 적용됩니다.
+영상에서는 언어 구분 없이 `src/app.css`의 `--font-sans-theme` 순서를 사용하되
+`IBMPlexSansJP-web`을 제외하고 해당 위치의 Hiragino Sans에는 W6을 적용합니다.
+제목, 본 가사와 배경 가사에도 같은 스택이 적용됩니다.
 웨이트를 바꾸려면 `render.ts` 상단의 `HIRAGINO_WEIGHT`를 0~9 중 하나로 수정하세요.
 
 ```ts
