@@ -85,117 +85,148 @@ lines:
     time: [25.146, 28.795]
   - words:
       - text: 気付いた
+        pr: 키즈이타
         time: [29.423, 29.944]
       - text: ようね、
+        pr: 요네,
         time: [29.944, 30.358]
       - text: そうなの
+        pr: 소나노
         time: [30.358, 31.193]
-    pr: 키즈이타요네, 소나노
     tl: 알아챘구나, 그래
     time: [29.423, 31.193]
   - words:
       - text: あたし、
+        pr: 아타시,
         time: [31.193, 31.583]
       - text: いい
+        pr: 이이
         time: [31.583, 31.85]
       - text: 女
+        pr: 온나
         time: [31.85, 32.253]
       - text: な
+        pr: 나
         time: [32.253, 32.387]
       - text: の
+        pr: 노
         time: [32.387, 32.935]
-    pr: 아타시, 이이온나나노
     tl: 나, 괜찮은 여자야
     time: [31.193, 32.935]
   - words:
       - text: 左手に
+        pr: 히다리테니
         time: [33.581, 34.227]
       - text: アイス
+        pr: 아이스
         time: [34.227, 34.668]
       - text: コーヒー
+        pr: 코히
         time: [34.668, 35.322]
-    pr: 히다리테니아이스코히
     tl: 왼손에는 아이스커피
     time: [33.581, 35.322]
   - words:
       - text: ドライブ用の
+        pr: 도라이부요노
         time: [35.479, 36.38]
       - text: プレイリスト
+        pr: 푸레이리스토
         time: [36.38, 36.949]
       - text: かけ
+        pr: 카케
         time: [36.949, 37.223]
       - text: て
+        pr: 테
         time: [37.223, 37.611]
-    pr: 도라이부요노푸레이리스토카케테
     tl: 드라이브용 플레이리스트를 틀고
     time: [35.479, 37.611]
   - words:
       - text: 気温
+        pr: 키온
         time: [37.992, 38.332]
       - text: 30度の
+        pr: 산주도노
         time: [38.332, 39.064]
       - text: 中
+        pr: 나카
         time: [39.064, 39.875]
-    pr: 키온30도노나카
     tl: 기온 30도인 날에
     time: [37.992, 39.875]
   - words:
       - text: 準備は
+        pr: 준비와
         time: [39.875, 40.572]
       - text: 完
+        pr: 칸
         time: [40.572, 40.835]
       - text: 璧
+        pr: 페키
         time: [40.835, 41.751]
-    pr: 준비하칸페키
     tl: 준비는 완벽해
     time: [39.875, 41.751]
   - words:
       - text: カラカラ
+        pr: 카라카라
         time: [42.159, 42.733]
       - text: 青い空の
+        pr: 아오이소라노
         time: [42.733, 43.54]
       - text: 下を
+        pr: 시타오
         time: [43.54, 44.272]
       - text: 駆け
+        pr: 카케
         time: [44.272, 44.747]
       - text: 抜けて
+        pr: 누케테
         time: [44.747, 45.61]
       - text: い
+        pr: 유
         time: [45.61, 45.77]
       - text: く
+        pr: 쿠
         time: [45.77, 46.288]
-    pr: 카라카라아오이소라노시타오카케누케테이쿠
     tl: 쨍쨍한 푸른 하늘 아래를 달려 나가
     time: [42.159, 46.288]
   - words:
       - text: この
+        pr: 코노
         time: [46.288, 46.823]
       - text: 愛
+        pr: 아이
         time: [46.823, 47.263]
       - text: 車
+        pr: 샤
         time: [47.263, 47.651]
       - text: と
+        pr: 토
         time: [47.651, 47.935]
       - text: 共
+        pr: 토모
         time: [47.935, 48.447]
       - text: に
+        pr: 니
         time: [48.447, 49.946]
-    pr: 코노아이샤토토모니
     tl: 이 애마와 함께
     time: [46.288, 49.946]
   - words:
       - text: Demo
+        pr: 데모
         time: [52.74, 53.017]
     tl: 하지만
     time: [52.74, 53.017]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [53.017, 53.807]
       - text: 'NAI, '
+        pr: 나이,
         time: [53.807, 55.122]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [55.122, 55.931]
       - text: NAIYO
+        pr: 나이요
         time: [55.931, 56.892]
     tl: 면허가 없어, 면허가 없다고
     time: [53.017, 56.892]
@@ -219,12 +250,16 @@ lines:
     time: [57.162, 60.329]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [61.582, 62.366]
       - text: 'NAI, '
+        pr: 나이,
         time: [62.366, 63.706]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [63.706, 64.509]
       - text: NAIYO
+        pr: 나이요
         time: [64.509, 65.476]
     tl: 면허가 없어, 면허가 없다고
     time: [61.582, 65.476]
@@ -244,12 +279,16 @@ lines:
     time: [65.59, 68.137]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [70.123, 70.945]
       - text: 'NAI, '
+        pr: 나이,
         time: [70.945, 72.274]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [72.274, 73.096]
       - text: NAIYO
+        pr: 나이요
         time: [73.096, 74.051]
     tl: 면허가 없어, 면허가 없다고
     time: [70.123, 74.051]
@@ -269,12 +308,16 @@ lines:
     time: [74.425, 77.928]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [78.722, 79.532]
       - text: 'NAI, '
+        pr: 나이,
         time: [79.532, 80.851]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [80.851, 81.647]
       - text: NAIYO
+        pr: 나이요
         time: [81.647, 82.622]
     tl: 면허가 없어, 면허가 없다고
     time: [78.722, 82.622]
@@ -457,12 +500,16 @@ lines:
     time: [132.029, 132.291]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [132.291, 133.093]
       - text: 'NAI, '
+        pr: 나이,
         time: [133.093, 134.443]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [134.443, 135.224]
       - text: NAIYO
+        pr: 나이요
         time: [135.224, 136.176]
     tl: 면허가 없어, 면허가 없다고
     time: [132.291, 136.176]
@@ -486,12 +533,16 @@ lines:
     time: [136.308, 139.806]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [140.85, 141.651]
       - text: 'NAI, '
+        pr: 나이,
         time: [141.651, 142.995]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [142.995, 143.8]
       - text: NAIYO
+        pr: 나이요
         time: [143.8, 144.763]
     tl: 면허가 없어, 면허가 없다고
     time: [140.85, 144.763]
@@ -509,12 +560,16 @@ lines:
     time: [144.897, 147.45]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [149.433, 150.227]
       - text: 'NAI, '
+        pr: 나이,
         time: [150.227, 151.557]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [151.557, 152.375]
       - text: NAIYO
+        pr: 나이요
         time: [152.375, 153.332]
     tl: 면허가 없어, 면허가 없다고
     time: [149.433, 153.332]
@@ -534,12 +589,16 @@ lines:
     time: [153.465, 157.21]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [158.014, 158.815]
       - text: 'NAI, '
+        pr: 나이,
         time: [158.815, 160.134]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [160.134, 160.939]
       - text: NAIYO
+        pr: 나이요
         time: [160.939, 161.904]
     tl: 면허가 없어, 면허가 없다고
     time: [158.014, 161.904]
@@ -566,12 +625,16 @@ lines:
     time: [165.166, 166.533]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [166.605, 167.438]
       - text: 'NAI, '
+        pr: 나이,
         time: [167.438, 168.713]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [168.713, 169.58]
       - text: NAIYO
+        pr: 나이요
         time: [169.58, 170.641]
     tl: 면허가 없어, 면허가 없다고
     time: [166.605, 170.641]
@@ -589,12 +652,16 @@ lines:
     time: [170.641, 174.585]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [175.15, 176.01]
       - text: 'NAI, '
+        pr: 나이,
         time: [176.01, 177.312]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [177.312, 178.122]
       - text: NAIYO
+        pr: 나이요
         time: [178.122, 179.269]
     tl: 면허가 없어, 면허가 없다고
     time: [175.15, 179.269]
@@ -614,12 +681,16 @@ lines:
     time: [179.269, 182.126]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [183.72, 184.524]
       - text: 'NAI, '
+        pr: 나이,
         time: [184.524, 185.837]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [185.837, 186.657]
       - text: NAIYO
+        pr: 나이요
         time: [186.657, 187.607]
     tl: 면허가 없어, 면허가 없다고
     time: [183.72, 187.607]
@@ -639,26 +710,34 @@ lines:
     time: [187.748, 191.496]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [192.297, 193.097]
       - text: 'NAI, '
+        pr: 나이,
         time: [193.097, 194.421]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [194.421, 195.21]
       - text: NAIYO
+        pr: 나이요
         time: [195.21, 196.301]
     tl: 면허가 없어, 면허가 없다고
     time: [192.297, 196.301]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [196.843, 197.652]
       - text: HOSHII
+        pr: 호시
         time: [197.652, 198.465]
       - text: YO
+        pr: 요
         time: [198.465, 199.81]
     tl: 면허를 갖고 싶어
     time: [196.843, 199.81]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [200.864, 201.665]
       - text: NAI
         time: [201.665, 202.208]
@@ -667,30 +746,39 @@ lines:
     background:
       words:
         - text: (menkyo)
+          pr: (멘쿄)
           time: [202.208, 203.014]
       time: [202.208, 203.014]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [203.014, 203.808]
       - text: NAIYO
+        pr: 나이요
         time: [203.808, 204.757]
     tl: 면허가 없다고
     time: [203.014, 204.757]
     background:
       words:
         - text: (hoshii
+          pr: (호시
           time: [204.328, 205.01]
         - text: yo)
+          pr: 요)
           time: [205.01, 206.491]
       time: [204.328, 206.491]
   - words:
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [209.448, 210.23]
       - text: 'NAI, '
+        pr: 나이,
         time: [210.23, 211.556]
       - text: 'MENKYO '
+        pr: 멘쿄
         time: [211.556, 212.367]
       - text: NAIYO
+        pr: 나이요
         time: [212.367, 213.328]
     tl: 면허가 없어, 면허가 없다고
     time: [209.448, 213.328]
