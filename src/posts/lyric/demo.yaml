@@ -748,6 +748,7 @@ lines:
         - text: (menkyo)
           pr: (멘쿄)
           time: [202.208, 203.014]
+      tl: (면허)
       time: [202.208, 203.014]
   - words:
       - text: 'MENKYO '
@@ -766,6 +767,7 @@ lines:
         - text: yo)
           pr: 요)
           time: [205.01, 206.491]
+      tl: (원해)
       time: [204.328, 206.491]
   - words:
       - text: 'MENKYO '
