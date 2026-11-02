@@ -4,12 +4,12 @@ downloadURL: https://github.com/quiple/x10y12pxDenkiChipHangul/releases/latest
 image: font/x10y12pxDenkiChipHangul.png
 imageType: pixel
 imageForeground: fff
-pubDate: 2026-06-21T00:48
+pubDate: 2026-11-02T12:22
 ---
 
 **x10y12pxDenkiChipHangul(전기칩 한글)**은 12px 크기의 일본어 픽셀 폰트 '**[x8y12pxDenkiChip({{ja|でんきチップ}})](https://github.com/hicchicc/x8y12pxDenkiChip)**'을 기반으로 만들어진 한국어&middot;일본어 픽셀 폰트입니다.
 
-Adobe-KR-0 및 Adobe-KR-1의 한글 완성자 4,358자와 일본 한자 640자를 지원합니다.
+Adobe-KR-0 및 Adobe-KR-1의 한글 완성자 4,358자와 JIS 제1수준 한자 2,965자를 지원합니다.
 
 한글 및 추가 문자를 제외한 원본에 존재한 문자의 모양은 x8y12pxDenkiChip과 완전히 동일합니다.
 
