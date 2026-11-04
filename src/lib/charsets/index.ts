@@ -29,9 +29,9 @@ export const charsetEntries: CharsetEntry[] = [
   {key: 'adobekr-4', label: '보충 4까지', group: 'Adobe-KR', lang: 'ko'},
   {key: 'adobekr-5', label: '보충 5까지', group: 'Adobe-KR', lang: 'ko'},
   // {key: 'adobekr-6', label: '보충 6까지', group: 'Adobe-KR', lang: 'ko'},
-  {key: 'adobekr-7', label: '보충 7까지', group: 'Adobe-KR', lang: 'ko'},
-  {key: 'adobekr-8', label: '보충 8까지', group: 'Adobe-KR', lang: 'ko'},
-  {key: 'adobekr-9', label: '보충 9까지', group: 'Adobe-KR', lang: 'ko'},
+  {key: 'adobekr-7', label: '보충 7까지 (보충 6 제외)', group: 'Adobe-KR', lang: 'ko'},
+  {key: 'adobekr-8', label: '보충 8까지 (보충 6 제외)', group: 'Adobe-KR', lang: 'ko'},
+  {key: 'adobekr-9', label: '보충 9까지 (보충 6 제외)', group: 'Adobe-KR', lang: 'ko'},
   // EUC-KR
   {key: 'euckr', label: 'EUC-KR', group: 'EUC-KR', lang: 'ko'},
   {key: 'euckrWoHanja', label: '한자 제외', group: 'EUC-KR', lang: 'ko'},
@@ -50,6 +50,22 @@ export function getCharset(key: string): string | Promise<string> {
   if (key === 'set11172') return Array.from({length: 11172}, (_, index) => String.fromCharCode(0xac00 + index)).join('')
   if (key === 'set2355' || key === 'set2780' || key === 'set4358')
     return import('./hangul').then(({default: hangul}) => hangul[key])
+  if (/^adobekr-[0-5789]$/.test(key))
+    return Promise.all([import('./adobe-kr'), import('./hangul')]).then(([{default: adobe}, {default: hangul}]) => {
+      const supplements = [
+        adobe.adobekr0Prefix + hangul.set2780 + adobe.adobekr0Suffix,
+        adobe.adobekr1,
+        adobe.adobekr2,
+        adobe.adobekr3,
+        adobe.adobekr4,
+        adobe.adobekr5,
+        adobe.adobekr6,
+        adobe.adobekr7,
+        adobe.adobekr8,
+        adobe.adobekr9,
+      ]
+      return supplements.slice(0, Number(key.slice(-1)) + 1).join('')
+    })
   if (key === 'ks4888' || key === 'unicode4888') return import('./hanja').then(({default: hanja}) => hanja[key])
   if (['jis2965', 'unicode2965', 'jis6355', 'unicode6355'].includes(key))
     return import('./kanji').then(({default: kanji}) => {
