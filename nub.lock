@@ -43,8 +43,8 @@ importers:
         specifier: ^3.12.4
         version: 3.12.4
       '@lucide/svelte':
-        specifier: ^1.67.0
-        version: 1.67.0(svelte@5.57.3)
+        specifier: ^1.68.0
+        version: 1.68.0(svelte@5.57.3)
       '@sveltejs/adapter-cloudflare':
         specifier: ^8.0.2
         version: 8.0.2(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.5(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.6)(yaml@2.9.1)))(wrangler@4.157.0(@cloudflare/workers-types@5.20261104.1))
@@ -133,8 +133,8 @@ importers:
         specifier: ^0.4.0
         version: 0.4.0(remark-parse@9.0.0)
       remark-smartypants:
-        specifier: github:quiple/remark-smartypants
-        version: https://codeload.github.com/quiple/remark-smartypants/tar.gz/41f552daa3c7b4c0ee7eaab2f376e2f77be46fab
+        specifier: ^3.0.3
+        version: 3.0.3
       shadcn-svelte:
         specifier: ^1.8.0
         version: 1.8.0(svelte@5.57.3)
@@ -616,8 +616,8 @@ packages:
   '@lit/reactive-element@2.1.2':
     resolution: {integrity: sha512-pbCDiVMnne1lYUIaYNN5wrwQXDtHaYtg7YEFPeW+hws6U47WeFvISGUWekPGKWOP1ygrs0ef0o1VJMk1exos5A==}
 
-  '@lucide/svelte@1.67.0':
-    resolution: {integrity: sha512-DeqoOkMm3QihcNsrQB5drR/8azWDGuozfagDpm/anIqaJdflLUMhwLFPEANl/W3FLhXx6HmQwEWz7zBtZ6KXcQ==}
+  '@lucide/svelte@1.68.0':
+    resolution: {integrity: sha512-5iOupZmuGCJD89emoHsTlwkwMHzuNTBUwt/IbH3YVnmphBNqKqz4CKepzsOBXpf+c17DXlTOeV8nhzV0pU+5qw==}
     peerDependencies:
       svelte: ^5
 
@@ -2428,9 +2428,9 @@ packages:
     peerDependencies:
       remark-parse: ^9.0.0
 
-  remark-smartypants@https://codeload.github.com/quiple/remark-smartypants/tar.gz/41f552daa3c7b4c0ee7eaab2f376e2f77be46fab:
-    resolution: {gitHosted: true, integrity: sha512-MQJpyUl1vURbR8R/vQtcCkia04ppWoi7weE90BiuW8IOrYOu0kPrU4ikr4+IBruI8UJxOo6olg2+rLhcyczPPQ==, tarball: https://codeload.github.com/quiple/remark-smartypants/tar.gz/41f552daa3c7b4c0ee7eaab2f376e2f77be46fab}
-    version: 3.0.2
+  remark-smartypants@3.0.3:
+    resolution: {integrity: sha512-gCaK+ndZ0hYezlqFegHFCVh2CQemsi0Npdh1qVM9bxlUFknjkbP6VmojWhddOCrbK0PbbacmYLWfTULRiT1eWA==}
+    engines: {node: '>=16.0.0'}
 
   remark-stringify@11.0.0:
     resolution: {integrity: sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==}
@@ -3249,7 +3249,7 @@ snapshots:
     dependencies:
       '@lit-labs/ssr-dom-shim': 1.6.0
 
-  '@lucide/svelte@1.67.0(svelte@5.57.3)':
+  '@lucide/svelte@1.68.0(svelte@5.57.3)':
     dependencies:
       svelte: 5.57.3
 
@@ -5148,7 +5148,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  remark-smartypants@https://codeload.github.com/quiple/remark-smartypants/tar.gz/41f552daa3c7b4c0ee7eaab2f376e2f77be46fab:
+  remark-smartypants@3.0.3:
     dependencies:
       retext: 9.0.0
       retext-smartypants: https://codeload.github.com/quiple/retext-smartypants/tar.gz/1115a8c8c996360783f545363dac509ecf5b4533
