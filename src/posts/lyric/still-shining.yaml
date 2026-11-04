@@ -958,7 +958,7 @@ lines:
         time: [179.18, 179.74]
       - text: 'away '
         time: [179.74, 180.24]
-      - text: 'Into '
+      - text: 'into '
         time: [180.24, 180.5]
       - text: 'the '
         time: [180.5, 180.66]
