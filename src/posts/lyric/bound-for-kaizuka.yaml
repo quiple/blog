@@ -1,0 +1,56 @@
+# https://music.apple.com/kr/song/1888187333
+# Apple Music syllable-lyrics (TTML)
+# https://amp-api.music.apple.com/v1/catalog/kr/songs/1888187333?include%5Bsongs%5D=lyrics%2Csyllable-lyrics
+# Apple Music 곡: https://music.apple.com/song/1888187333
+# 선택 항목: Apple Music · Bound for Kaizuka (feat. KASANE TETO) · 음절별 가사 · 1888187333
+# 가져온 시각: 2026-11-04T14:41:23.878Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: 貝塚行に乗っちゃった
+titleLang: ja
+lang: ja
+lines:
+  - text: 慣れぬ朝が来て
+    time: [1.142, 4.358]
+  - text: ぼくはホームで小さくなる
+    time: [4.359, 7.979]
+  - text: 急ぎ地下鉄乗り込んで
+    time: [7.98, 11.603]
+  - text: 行き先をみたら姪浜
+    time: [11.604, 14.871]
+  - text: 反対側乗っちゃった
+    time: [15, 18.441]
+  - text: 駆け込みで乗ったのが悪いけどさ
+    time: [18.442, 22.477]
+  - text: 時計を見ればやっちった
+    time: [22.478, 25.558]
+  - text: 待ち合わせにゃ間に合いそうにない
+    time: [25.559, 28.953]
+  - text: きょうは東京行き
+    time: [29.405, 32.498]
+  - text: 飛行機チケット握り締める
+    time: [32.499, 36.235]
+  - text: 急ぎ地下鉄に乗り込んで
+    time: [36.236, 40.076]
+  - text: 窓の外みたら呉服町（ごふくちょう）
+    time: [40.077, 43.292]
+  - text: 貝塚行乗っちゃった
+    time: [43.42, 46.904]
+  - text: 駅の色表示違ったけどさ
+    time: [46.905, 50.919]
+  - text: 時計を見ればオワタ＼(^o^)／
+    time: [50.92, 53.961]
+  - text: 飛行機にゃ間に合いそうにない
+    time: [53.962, 57.61]
+  - text: 貝塚行乗っちゃった
+    time: [57.674, 61.013]
+  - text: 次は時間にもっと余裕持とう
+    time: [61.014, 65.132]
+  - text: バッファを取るの大事
+    time: [65.133, 68.283]
+  - text: こういうミスが起きるから……
+    time: [68.284, 71.889]
+  - text: 実話になるかもだから（実話かも）
+    time: [71.89, 75.393]
+  - text: お前に言ってんだぞー！
+    time: [75.394, 81.287]
