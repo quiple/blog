@@ -27,3 +27,7 @@ vite.config.ts.timestamp-*
 
 # Local video exports
 /renders
+
+# temp
+*.ttml
+*.mp3
