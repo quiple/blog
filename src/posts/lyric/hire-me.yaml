@@ -65,7 +65,7 @@ lines:
   - text: It's time to take a sip from my wine glass
     tl: 와인을 한 모금 마셔야겠어
     time: [60.365, 62.266]
-  - text: because I'm gonna sob
+  - text: Because I'm gonna sob
     tl: 엉엉 울어 버릴 테니까
     time: [62.266, 66.911]
   - text: I need a job
