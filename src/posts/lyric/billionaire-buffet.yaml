@@ -20,149 +20,222 @@ yt:
   mv: EIyqbc10O_A
 pubDate: 2026-09-27T18:22
 lines:
-  - text: Come on down to Billionaire Buffet
+  - text: Eat the rich
     tl: 억만장자 뷔페로 어서 오세요
-  - text: And have yourself an Oligarchy Omelette today
+    time: [0, 10.938]
+  - text: Come on down to Billionaire Buffet
     tl: 오늘은 과두제 오믈렛을 드셔 보세요
-  - text: Or perhaps you're in the mood for CEO Soufflé
+    time: [0.455, 2.337]
+  - text: And have yourself an Oligarchy Omelette today
     tl: 아니면 CEO 수플레가 당기시나요
-  - text: No need for cash or credit
+    time: [2.567, 4.335]
+  - text: Or perhaps you're in the mood for CEO Soufflé
     tl: 현금도 카드도 필요 없어요
-  - text: It's time for corporations to pay
+    time: [4.465, 6.543]
+  - text: No need for cash or credit
     tl: 이제 기업들이 대가를 지불할 차례니까
+    time: [6.694, 7.672]
+  - text: It's time for corporations to pay
+    tl: 부자들을 잡아먹어
+    time: [7.672, 9.859]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
-  - text: Eat the rich
-    tl: 부자들을 잡아먹어
+    time: [8.86, 9.912]
   - text: いただきます, bitch
     tl: 잘 먹겠습니다, 썅년아
+    time: [10.938, 12.953]
   - text: Skewer, then roast them on a spit
     tl: 꼬챙이에 꿰어 구워 버려
+    time: [12.953, 14.867]
   - text: Let's all agree not to snitch
     tl: 우리 모두 밀고하지 않기로 해
+    time: [15.07, 17.256]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
+    time: [17.256, 18.252]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
+    time: [18.252, 19.204]
   - text: Luigi, please have my kids
     tl: 루이지, 내 애를 낳아 줘
+    time: [19.298, 21.343]
   - text: Freedom sold to the highest bidder
     tl: 최고가 입찰자에게 팔려 버린 자유가
+    time: [21.369, 23.472]
   - text: Makes the future taste so bitter
     tl: 미래를 이토록 쓰게 만들어
+    time: [23.728, 25.517]
   - text: Fuck the guy who ruined Twitter
     tl: 트위터를 망친 놈은 좆까라지
+    time: [25.778, 27.636]
   - text: We got Robber Baron Roast Beef
     tl: 악덕 자본가 로스트비프도 있어요
+    time: [27.106, 28.949]
   - text: For when you've got grief with the system
     tl: 체제에 불만이 쌓였을 때 드세요
+    time: [29.612, 31.763]
   - text: Tyrant Tiramisu
     tl: 폭군 티라미수는
+    time: [31.763, 33.121]
   - text: For when you're blue about the state of the nation
     tl: 나라 꼴에 우울해질 때 드세요
+    time: [33.255, 35.929]
   - text: Union-Bustin' Bloomin' Onion
     tl: 노조 탄압 블루밍 어니언
+    time: [36.234, 38.072]
   - text: Labor laws are gonna be gutted
     tl: 노동법은 껍데기만 남게 될 거야
+    time: [38.332, 40.107]
   - text: While the rich line their pockets
     tl: 부자들이 제 주머니를 불리는 동안
+    time: [40.143, 41.991]
   - text: To ride on dick-shaped rockets
     tl: 좆 모양 로켓을 타려고 말이야
+    time: [42.125, 44.104]
   - text: All we wanted was healthcare
     tl: 우리가 원한 건 그저 의료 서비스였어
+    time: [44.336, 47.463]
   - text: All we wanted was equality
     tl: 우리가 원한 건 그저 평등이었어
+    time: [48.506, 52.16]
   - text: All we wanted were basic rights
     tl: 우리가 원한 건 그저 기본권이었어
+    time: [52.679, 56.073]
   - text: For a functioning society
     tl: 제대로 돌아가는 사회를 위한
+    time: [56.324, 59.475]
   - text: All we wanted was education
     tl: 우리가 원한 건 그저 교육이었어
+    time: [61.019, 64.892]
   - text: Wages that kept up with inflation
     tl: 물가 상승에 맞춰 오르는 임금이었어
+    time: [65.18, 69.052]
   - text: Since that's too much to ask
     tl: 그런 바람조차 지나치다니
+    time: [69.545, 71.142]
   - text: Guess there's no going back
     tl: 이젠 돌아갈 수 없겠네
+    time: [71.694, 73.295]
   - text: I summon the Mario Brothers in attack position
     tl: 마리오 형제를 공격 표시로 소환한다
+    time: [73.804, 76.675]
   - text: (Yahoo!)
     tl: (야호!)
+    time: [76.895, 77.723]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
+    time: [77.723, 78.779]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
+    time: [78.779, 79.827]
   - text: いただきます, bitch
     tl: 잘 먹겠습니다, 썅년아
+    time: [79.827, 81.819]
   - text: Skewer, then roast them on a spit
     tl: 꼬챙이에 꿰어 구워 버려
+    time: [81.819, 83.726]
   - text: Let's all agree not to snitch
     tl: 우리 모두 밀고하지 않기로 해
+    time: [83.959, 86.115]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
+    time: [86.115, 87.119]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
+    time: [87.119, 88.055]
   - text: Luigi, please have my kids
     tl: 루이지, 내 애를 낳아 줘
+    time: [88.159, 90.23]
   - text: Freedom sold to the highest bidder
     tl: 최고가 입찰자에게 팔려 버린 자유가
+    time: [90.23, 92.33]
   - text: Makes the future taste so bitter
     tl: 미래를 이토록 쓰게 만들어
+    time: [92.588, 94.423]
   - text: Fuck the guy who ruined Twitter
     tl: 트위터를 망친 놈은 좆까라지
+    time: [94.665, 96.5]
   - text: There's Corruption Crème Brûlée
     tl: 부패 크렘 브륄레도 있어요
+    time: [95.97, 97.816]
   - text: "'Cause they're all bought and paid for in D.C."
     tl: 워싱턴 D.C.의 그들은 죄다 돈에 팔린 자들이니까
+    time: [97.969, 100.409]
   - text: Voter Suppression Vanilla Shake
     tl: 투표권 억압 바닐라 셰이크
+    time: [100.669, 102.509]
   - text: "'Cause they don't represent you or me"
     tl: 그들은 너도 나도 대변하지 않으니까
+    time: [102.666, 104.87]
   - text: Crypto-Scam-Burgers
     tl: 암호화폐 사기 버거에
+    time: [105.105, 106.671]
   - text: With a side of Fascism Fries
     tl: 곁들여 나오는 파시즘 프라이
+    time: [106.671, 108.518]
   - text: Democracy disappears
     tl: 민주주의가 사라져
+    time: [109.274, 111.105]
   - text: Right before your eyes
     tl: 바로 네 눈앞에서
+    time: [111.105, 112.682]
   - text: Let me address the elephant in the room
     tl: 다들 외면하는 그 코끼리 얘기 좀 할게
+    time: [112.634, 114.99]
   - text: The one that wants the middle class in a tomb
     tl: 중산층을 무덤에 넣고 싶어 하는 그놈 말이야
+    time: [115.182, 116.909]
   - text: Slicing programs that people need faster than Vergil
     tl: 사람들에게 필요한 제도를 버질보다 빠르게 베어 버려
+    time: [116.909, 119.47]
   - text: Medicaid, Social Security are roadkill
     tl: 메디케이드와 사회보장은 로드킬 신세
+    time: [119.47, 121.794]
   - text: Devil may cry "woke" to deflect
     tl: 악마는 '정치적 올바름'을 들먹이며 시선을 돌리려 해
+    time: [121.794, 123.226]
   - text: From a shadow president that we didn't elect
     tl: 우리가 뽑지도 않은 그림자 대통령에게서
+    time: [123.331, 125.311]
   - text: But a storm is approaching
     tl: 하지만 폭풍이 다가오고 있어
+    time: [125.363, 126.542]
   - text: The rich will be roasting
     tl: 부자들은 구워질 거야
+    time: [126.666, 127.696]
   - text: Now we 'bout to put the king in checkmate
     tl: 이제 우린 왕을 체크메이트할 거야
+    time: [128.057, 129.907]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
+    time: [129.907, 130.939]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
+    time: [130.939, 131.988]
   - text: いただきます, bitch
     tl: 잘 먹겠습니다, 썅년아
+    time: [131.988, 133.998]
   - text: Skewer, then roast them on a spit
     tl: 꼬챙이에 꿰어 구워 버려
+    time: [133.998, 135.891]
   - text: Let's all agree not to snitch
     tl: 우리 모두 밀고하지 않기로 해
+    time: [136.115, 138.252]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
+    time: [138.252, 139.302]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
+    time: [139.302, 140.22]
   - text: Luigi, please have my kids
     tl: 루이지, 내 애를 낳아 줘
+    time: [140.315, 142.414]
   - text: Freedom sold to the highest bidder
     tl: 최고가 입찰자에게 팔려 버린 자유가
+    time: [142.414, 144.518]
   - text: Makes the future taste so bitter
     tl: 미래를 이토록 쓰게 만들어
+    time: [144.776, 146.676]
   - text: Fuck the guy who ruined Twitter
     tl: 트위터를 망친 놈은 좆까라지
+    time: [146.828, 148.837]
