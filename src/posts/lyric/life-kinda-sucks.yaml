@@ -801,8 +801,8 @@ lines:
       - text: 'for '
         pr: 포
         time: [65.836, 66.055]
-      - text: customer---
-        pr: 커스터머---
+      - text: customer--
+        pr: 커스터머--
         time: [66.055, 66.548]
       - text: 'less '
         pr: 레스
