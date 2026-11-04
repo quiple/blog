@@ -75,7 +75,7 @@ Asta Sans와 Inter의 자형과 기능을 그대로 유지하고 있기 때문�
 
 New Directions, 347 Adams Street Brooklyn, N.Y. (「욕망이라는 이름의 전차」의 역자)
 
-<small class="text-muted-foreground">--- 「한국일보」 (1955년 8월 24일)</small>
+<small class="text-muted-foreground">-- 「한국일보」 (1955년 8월 24일)</small>
 </div>
 
 Astr는 Inter Italic과 섞어 짜기에도 적합합니다.
@@ -99,8 +99,8 @@ Astr는 SIL 오픈 폰트 라이선스 1.1에 따라 이용할 수 있습니다.
 
 ## 크레딧
 
-- [Rasmus Andersson](https://rsms.me) --- [Inter](https://rsms.me/inter) 원본 디자인
-- 최성우, 이수현, 이유빈, 정현아 ([Sandoll Inc.](https://sandoll.co.kr)) --- [Asta Sans](https://github.com/42dot/Asta-Sans) 원본 디자인
-- 이민서 --- 조정 및 제작
+- [Rasmus Andersson](https://rsms.me) -- [Inter](https://rsms.me/inter) 원본 디자인
+- 최성우, 이수현, 이유빈, 정현아 ([Sandoll Inc.](https://sandoll.co.kr)) -- [Asta Sans](https://github.com/42dot/Asta-Sans) 원본 디자인
+- 이민서 -- 조정 및 제작
 
 Inter는 Rasmus Andersson의 상표입니다.

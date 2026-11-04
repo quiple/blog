@@ -31,8 +31,8 @@ pubDate: 2026-11-02T12:22
 
 ## 크레딧
 
-- [{{ja|患者長ひっく}}](https://hicchicc.github.io) --- [x8y12pxDenkiChip](https://github.com/hicchicc/x8y12pxDenkiChip) 원본 디자인
-- 이민서 --- 한글 확장 및 추가 글리프 디자인
+- [{{ja|患者長ひっく}}](https://hicchicc.github.io) -- [x8y12pxDenkiChip](https://github.com/hicchicc/x8y12pxDenkiChip) 원본 디자인
+- 이민서 -- 한글 확장 및 추가 글리프 디자인
 
 ## 다른 파생 폰트
 
