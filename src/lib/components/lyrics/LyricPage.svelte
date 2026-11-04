@@ -127,36 +127,36 @@
 >
   <aside class="min-w-0 md:sticky md:top-21">
     {#if source}
-        <div class="mb-3 flex flex-wrap gap-2" role="group" aria-label="음악 소스 선택">
-          {#each sources as item (item.key)}
-            {@const restart = restarts(item)}
-            {@const label = `${item.label}${restart ? ' · 처음부터' : ''}`}
-            {@const color = item.provider === 'spotify' ? '#1ED760' : '#FF0000'}
-            <Button
-              size="icon-sm"
-              variant={source.key === item.key ? 'default' : 'outline'}
-              style={source.key === item.key ? `background-color: ${color}; border-color: ${color}` : undefined}
-              aria-pressed={source.key === item.key}
-              aria-label={label}
-              title={label}
-              onclick={() => select(item.key)}
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" class="size-4" aria-hidden="true">
-                <path d={sourceIcons[item.key]} />
-              </svg>
-            </Button>
-          {/each}
+      <div class="mb-3 flex flex-wrap gap-2" role="group" aria-label="음악 소스 선택">
+        {#each sources as item (item.key)}
+          {@const restart = restarts(item)}
+          {@const label = `${item.label}${restart ? ' · 처음부터' : ''}`}
+          {@const color = item.provider === 'spotify' ? '#1ED760' : '#FF0000'}
           <Button
-            class="ms-auto"
-            size="sm"
-            variant="outline"
-            href={`/lyric/${page.params.musicTitle}/ttml`}
-            download={`${page.params.musicTitle}.ttml`}
+            size="icon-sm"
+            variant={source.key === item.key ? 'default' : 'outline'}
+            style={source.key === item.key ? `background-color: ${color}; border-color: ${color}` : undefined}
+            aria-pressed={source.key === item.key}
+            aria-label={label}
+            title={label}
+            onclick={() => select(item.key)}
           >
-            <DownloadIcon />
-            TTML 다운로드
+            <svg viewBox="0 0 24 24" fill="currentColor" class="size-4" aria-hidden="true">
+              <path d={sourceIcons[item.key]} />
+            </svg>
           </Button>
-        </div>
+        {/each}
+        <Button
+          class="ms-auto"
+          size="sm"
+          variant="outline"
+          href={`/lyric/${page.params.musicTitle}/ttml`}
+          download={`${page.params.musicTitle}.ttml`}
+        >
+          <DownloadIcon />
+          TTML 다운로드
+        </Button>
+      </div>
       <div>
         {#if rendering}
           <div class="relative overflow-hidden rounded-[.75rem] shadow-xs inner-border">
