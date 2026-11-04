@@ -17,82 +17,82 @@ lines:
   - text: Hey, what is this? Is this long-awaited bliss?
     tl: 어, 뭐야? 이게 그토록 기다리던 행복인가?
     time: [10.461, 12.642]
-  - text: I've been sending out these emails just for them to get dismissed.
+  - text: I've been sending out these emails just for them to get dismissed
     tl: 그동안 이메일을 보내도 번번이 퇴짜만 맞았는데
     time: [12.766, 15.247]
-  - text: Finally, a company has noticed me, so I won't live in poverty.
+  - text: Finally, a company has noticed me, so I won't live in poverty
     tl: 드디어 날 눈여겨본 회사가 생겼으니 가난하게 살진 않겠지
     time: [15.717, 20.662]
-  - text: So I get up to cheer and even scream.
+  - text: So I get up to cheer and even scream
     tl: 자리에서 일어나 환호하고 소리까지 질러
     time: [20.715, 24.742]
-  - text: I might then achieve my corporate dream.
+  - text: I might then achieve my corporate dream
     tl: 회사에 들어가겠다는 꿈을 이룰지도 몰라
     time: [26.2, 29.761]
   - text: Hire me!
     tl: 저를 채용해 주세요!
     time: [31.441, 32.48]
-  - text: I swear that you found just the perfect guy.
+  - text: I swear that you found just the perfect guy
     tl: 맹세해요, 완벽한 인재를 찾으신 거예요
     time: [32.48, 34.415]
-  - text: "'Cause I'm sitting here in suit and tie."
+  - text: "'Cause I'm sitting here in suit and tie"
     tl: 정장에 넥타이까지 매고 앉아 있잖아요
     time: [34.415, 36.36]
-  - text: And yes, I know I may not have much experience.
+  - text: And yes, I know I may not have much experience
     tl: 네, 저도 경력이 별로 없다는 건 알아요
     time: [36.36, 39.31]
-  - text: And I know that one-year gap might sound mysterious.
+  - text: And I know that one-year gap might sound mysterious
     tl: 1년의 공백이 수상하게 들릴 수도 있죠
     time: [39.31, 43.078]
-  - text: You just need to give me a single chance.
+  - text: You just need to give me a single chance
     tl: 딱 한 번만 기회를 주세요
     time: [43.078, 44.926]
-  - text: I'm a great colleague; I'm telling you it in advance.
+  - text: I'm a great colleague; I'm telling you it in advance
     tl: 전 좋은 동료가 될 거예요, 미리 말씀드리자면
     time: [44.926, 47.543]
-  - text: I may not have a degree, but please, just hire me.
+  - text: I may not have a degree, but please, just hire me
     tl: 학위는 없을지 몰라도 제발 저를 채용해 주세요
     time: [48.171, 51.947]
-  - text: Oh, well, I guess that just wasn't meant to be.
+  - text: Oh, well, I guess that just wasn't meant to be
     tl: 아, 뭐, 역시 인연이 아니었나 봐
     time: [51.947, 54.775]
-  - text: I read in my horoscope that it was destiny.
+  - text: I read in my horoscope that it was destiny
     tl: 별자리 운세에서는 운명이라고 했는데
     time: [55.049, 57.385]
-  - text: Even McDonald's somehow managed to deny my ass.
+  - text: Even McDonald's somehow managed to deny my ass
     tl: 맥도날드에서조차 날 거절해 버렸어
     time: [57.683, 60.365]
   - text: It's time to take a sip from my wine glass
     tl: 와인을 한 모금 마셔야겠어
     time: [60.365, 62.266]
-  - text: because I'm gonna sob.
+  - text: because I'm gonna sob
     tl: 엉엉 울어 버릴 테니까
     time: [62.266, 66.911]
-  - text: I need a job.
+  - text: I need a job
     tl: 일자리가 필요해
     time: [68.175, 72.24]
   - text: Hire me!
     tl: 저를 채용해 주세요!
     time: [73.411, 74.393]
-  - text: I swear that you found just the perfect guy.
+  - text: I swear that you found just the perfect guy
     tl: 맹세해요, 완벽한 인재를 찾으신 거예요
     time: [74.393, 76.362]
-  - text: "'Cause I'm sitting here in suit and tie."
+  - text: "'Cause I'm sitting here in suit and tie"
     tl: 정장에 넥타이까지 매고 앉아 있잖아요
     time: [76.362, 78.34]
-  - text: And yes, I know I may not have much experience.
+  - text: And yes, I know I may not have much experience
     tl: 네, 저도 경력이 별로 없다는 건 알아요
     time: [78.34, 81.298]
-  - text: And I know that one-year gap might sound mysterious.
+  - text: And I know that one-year gap might sound mysterious
     tl: 1년의 공백이 수상하게 들릴 수도 있죠
     time: [81.298, 84.641]
-  - text: You just need to give me a single chance.
+  - text: You just need to give me a single chance
     tl: 딱 한 번만 기회를 주세요
     time: [85.022, 86.874]
-  - text: I'm a great colleague; I'm telling you it in advance.
+  - text: I'm a great colleague; I'm telling you it in advance
     tl: 전 좋은 동료가 될 거예요, 미리 말씀드리자면
     time: [86.874, 89.51]
-  - text: I may not have a degree, but please, just hire me.
+  - text: I may not have a degree, but please, just hire me
     tl: 학위는 없을지 몰라도 제발 저를 채용해 주세요
     time: [90.118, 94.083]
   - text: Why do I try?
@@ -101,7 +101,7 @@ lines:
   - text: Why can't I seem to land a job?
     tl: 왜 취직을 할 수 없는 걸까?
     time: [104.885, 114.153]
-  - text: I'm broke, I smoke, I'm soaked in my own tears.
+  - text: I'm broke, I smoke, I'm soaked in my own tears
     tl: 돈은 없고, 담배를 피우며, 눈물에 흠뻑 젖었어
     time: [114.732, 121.954]
   - text: Oh, please, won't you look at my CV?
@@ -110,30 +110,30 @@ lines:
   - text: For me?
     tl: 부탁이에요
     time: [132.976, 135.738]
-  - text: Sigh, I'll never find a job like this.
+  - text: Sigh, I'll never find a job like this
     tl: 하, 이렇게는 절대 일자리를 못 구하겠어
     time: [136.327, 139.276]
   - text: Hire me!
     tl: 저를 채용해 주세요!
     time: [140.278, 141.273]
-  - text: I swear that you found just the perfect guy.
+  - text: I swear that you found just the perfect guy
     tl: 맹세해요, 완벽한 인재를 찾으신 거예요
     time: [141.273, 143.259]
-  - text: "'Cause I'm sitting here in suit and tie."
+  - text: "'Cause I'm sitting here in suit and tie"
     tl: 정장에 넥타이까지 매고 앉아 있잖아요
     time: [143.259, 145.217]
-  - text: And yes, I know I may not have much experience.
+  - text: And yes, I know I may not have much experience
     tl: 네, 저도 경력이 별로 없다는 건 알아요
     time: [145.217, 148.191]
-  - text: And I know that one-year gap might sound mysterious.
+  - text: And I know that one-year gap might sound mysterious
     tl: 1년의 공백이 수상하게 들릴 수도 있죠
     time: [148.191, 151.515]
-  - text: You just need to give me a single chance.
+  - text: You just need to give me a single chance
     tl: 딱 한 번만 기회를 주세요
     time: [151.925, 153.767]
-  - text: I'm a great colleague; I'm telling you it in advance.
+  - text: I'm a great colleague; I'm telling you it in advance
     tl: 전 좋은 동료가 될 거예요, 미리 말씀드리자면
     time: [153.767, 156.386]
-  - text: I may not have a degree, but please, just hire me.
+  - text: I may not have a degree, but please, just hire me
     tl: 학위는 없을지 몰라도 제발 저를 채용해 주세요
     time: [157.011, 172.525]
