@@ -287,7 +287,7 @@ function createMarkdownProcessor(isProduction: boolean) {
       .use(remarkRehype, {allowDangerousHtml: true, handlers: mdxHandlers()})
       .use(rehypeRubyLanguageTemplates)
       .use(() => rehypeImageSizes(isProduction))
-      .use(smartypants, {dashes: 'oldschool'})
+      .use(smartypants)
       .use(rehypeExternalLinks, {target: '_blank', rel: ['nofollow', 'noreferrer', 'noopener']})
       .use(rehypeStringify, {allowDangerousHtml: true})
   )
