@@ -20,7 +20,9 @@ export const charsetEntries: CharsetEntry[] = [
   {key: 'jis2965', label: '2,965자 (JIS 순서)', group: '한자', lang: 'ja'},
   {key: 'unicode2965', label: '2,965자 (Unicode 순서)', group: '한자', lang: 'ja'},
   {key: 'jis6355', label: '6,355자 (JIS 순서)', group: '한자', lang: 'ja'},
-  { key: 'unicode6355', label: '6,355자 (Unicode 순서)', group: '한자', lang: 'ja' },
+  {
+    key: 'unicode6355', label: '6,355자 (Unicode 순서)', group: '한자', lang: 'ja'
+  },
   // Adobe-KR-9
   {key: 'adobekr-0', label: '보충 0', group: 'Adobe-KR', lang: 'ko'},
   {key: 'adobekr-1', label: '보충 1까지', group: 'Adobe-KR', lang: 'ko'},
