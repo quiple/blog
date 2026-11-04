@@ -150,21 +150,54 @@ export function fromTTML(xml: string, timing?: 'Line' | 'Word') {
   return {song, metadata: result.metadata}
 }
 
-type CaptionEvent = {tStartMs?: number; dDurationMs?: number; segs?: {utf8?: string; tOffsetMs?: number}[]}
+type CaptionEvent = {
+  tStartMs?: number
+  dDurationMs?: number
+  wWinId?: number
+  wpWinPosId?: number
+  segs?: {utf8?: string; tOffsetMs?: number}[]
+}
 export function fromJSON3(data: {events?: CaptionEvent[]}, title: string, lang?: string) {
-  const events = data.events?.filter((event) => event.segs?.some((segment) => segment.utf8?.trim())) ?? []
-  const lines = events.map((event, index) => {
-    const text = event
-      .segs!.map((segment) => segment.utf8 ?? '')
-      .join('')
-      .replace(/\n/g, ' ')
-      .trim()
-    const start = event.tStartMs ?? 0
-    const end = event.dDurationMs ? start + event.dDurationMs : (events[index + 1]?.tStartMs ?? start)
-    return {text, time: time(start, end)}
-  })
+  const events = (data.events ?? [])
+    .flatMap((event) => {
+      const raw = event.segs?.map((segment) => segment.utf8 ?? '').join('') ?? ''
+      // Preserve zero-width word separators inside text, but remove layout padding.
+      const text = raw
+        .replace(/(^|[\s\u2800])[\u200b\ufeff]+|[\u200b\ufeff]+(?=$|[\s\u2800])/gu, '$1')
+        .replace(/\u2800/g, ' ')
+        .replace(/\n/g, ' ')
+        .trim()
+      // Styled captions may draw borders in their own padded text windows.
+      if (!text || (/[\u200b\ufeff]/u.test(raw) && /^[\s\u2500-\u259f\u25a0-\u25ff]+$/u.test(text))) return []
+      return [{...event, text, start: event.tStartMs ?? 0}]
+    })
+    .sort((a, b) => a.start - b.start)
+
+  const lines: {text: string; start: number; end: number; animated: boolean; short: boolean}[] = []
+  const previous = new Map<string, (typeof lines)[number]>()
+  for (const [index, event] of events.entries()) {
+    const end = event.dDurationMs ? event.start + event.dDurationMs : (events[index + 1]?.start ?? event.start)
+    const short = end > event.start && end - event.start <= 250
+    const key = JSON.stringify([event.wWinId ?? event.wpWinPosId ?? null, event.text])
+    const last = previous.get(key)
+    // Short, contiguous frames and identical overlapping layers are visual changes,
+    // not newly sung lines. Keep ordinary adjacent repeated lyrics separate.
+    if (
+      last &&
+      event.start <= last.end &&
+      (short || last.short || last.animated || (event.start === last.start && end === last.end))
+    ) {
+      last.end = Math.max(last.end, end)
+      last.animated = true
+      last.short = short
+    } else {
+      const line = {text: event.text, start: event.start, end, short, animated: false}
+      lines.push(line)
+      previous.set(key, line)
+    }
+  }
   if (!lines.length) throw new Error('선택한 자막에 텍스트가 없습니다.')
-  return parseSong({title, lang, lines})
+  return parseSong({title, lang, lines: lines.map(({text, start, end}) => ({text, time: time(start, end)}))})
 }
 
 export function compactSong(song: ReturnType<typeof parseSong>) {
