@@ -20,39 +20,39 @@ yt:
   mv: EIyqbc10O_A
 pubDate: 2026-09-27T18:22
 lines:
-  - text: Eat the rich
-    tl: 억만장자 뷔페로 어서 오세요
-    time: [0, 10.938]
   - text: Come on down to Billionaire Buffet
-    tl: 오늘은 과두제 오믈렛을 드셔 보세요
+    tl: 억만장자 뷔페로 어서 오세요
     time: [0.455, 2.337]
   - text: And have yourself an Oligarchy Omelette today
-    tl: 아니면 CEO 수플레가 당기시나요
+    tl: 오늘은 과두제 오믈렛을 드셔 보세요
     time: [2.567, 4.335]
   - text: Or perhaps you're in the mood for CEO Soufflé
-    tl: 현금도 카드도 필요 없어요
+    tl: 아니면 CEO 수플레가 당기시나요
     time: [4.465, 6.543]
   - text: No need for cash or credit
-    tl: 이제 기업들이 대가를 지불할 차례니까
+    tl: 현금도 카드도 필요 없어요
     time: [6.694, 7.672]
   - text: It's time for corporations to pay
-    tl: 부자들을 잡아먹어
+    tl: 이제 기업들이 대가를 지불할 차례니까
     time: [7.672, 9.859]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
     time: [8.86, 9.912]
+  - text: Eat the rich
+    tl: 부자들을 잡아먹어
+    time: [9.912, 10.94]
   - text: いただきます, bitch
     tl: 잘 먹겠습니다, 썅년아
-    time: [10.938, 12.953]
+    time: [10.94, 12.953]
   - text: Skewer, then roast them on a spit
     tl: 꼬챙이에 꿰어 구워 버려
     time: [12.953, 14.867]
   - text: Let's all agree not to snitch
     tl: 우리 모두 밀고하지 않기로 해
-    time: [15.07, 17.256]
+    time: [15.07, 17.241]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
-    time: [17.256, 18.252]
+    time: [17.241, 18.252]
   - text: Eat the rich
     tl: 부자들을 잡아먹어
     time: [18.252, 19.204]
