@@ -11,65 +11,52 @@ year: '2025'
 artist:
   - sasaki
   - kasane-teto
+  - hatsune-miku
 lang: ja
 sp: 26cuuYGKKrjpDYk9qiV38f
 yt:
   audio: iz5P5QoCeo0
   mv: ZCSo-zSI1to
 lines:
-  - text: Translation By Haruka   Subtitles By Kyou
-    time: [0.001, 0.718]
-  - text: Nothin' but the worst in every word you say
+  - text: 君の一言全部最低
     time: [0.718, 2.653]
-  - text: Tomorrow, the traces of my tears replay
+  - text: 泣いた跡は明日に再生
     time: [2.653, 4.555]
-  - text: Alone at night, my dreams put my regrets on display
+  - text: 一人の夜は夢で反省
     time: [4.555, 6.49]
-  - text: I rewrite these fleeting hours, day by day!
+  - text: 敢え無い時間を日々改正
     time: [6.49, 8.225]
-  - text: Takin' off my mascara
+  - text: 落とすマスカラ
     time: [8.425, 10.26]
-  - text: Feels like only
-    time: [10.26, 11.962]
-  - text: The second hand moves on.
-    time: [11.962, 14.164]
-  - text: Back to my room alone
+  - text: 秒針だけ進んでくみたいだ
+    time: [10.26, 14.164]
+  - text: 一人帰る部屋
     time: [15.866, 18.135]
-  - text: No reason
-    time: [18.135, 19.77]
-  - text: For feelin' this low.
-    time: [19.77, 21.839]
-  - text: Always making corrections, all so pointless
+  - text: 沈むのは理由なんてないな
+    time: [18.135, 21.839]
+  - text: 訂正ばっかしょうもないな
     time: [23.774, 25.709]
-  - text: Lookin' calmly at our relationship today
+  - text: 冷静に見る今日の関係
     time: [25.709, 27.644]
-  - text: Read receipts, all out of balance
+  - text: 均整欠いてる既読
     time: [27.644, 29.58]
-  - text: I'm already losing direction
+  - text: もう迷走している
     time: [29.58, 31.448]
-  - text: Sizing up the situation, reading your disposition
+  - text: 現状把握君の心情
     time: [31.448, 33.45]
-  - text: A circuit running round a railway loop
+  - text: 環状線の様な回路
     time: [33.45, 35.319]
-  - text: Your expression shifts
+  - text: 表情変える君の距離が
     time: [35.319, 37.254]
-  - text: Each time the distance between us ripples
+  - text: 波立つ度
     time: [37.254, 39.156]
-  - text: Hey!
-    time: [39.156, 39.656]
-  - text: We keep passing each other by,
-    time: [39.656, 41.325]
-  - text: passing each other by
-    time: [41.325, 42.993]
-  - text: These memories still haven't cooled
+    background:
+      text: (君の一言全部最低)
+  - text: ねぇすれ違うのすれ違うの
+    time: [39.156, 42.993]
+  - text: 記憶が冷め切らないな
     time: [42.993, 47.364]
-  - text: Hey!
-    time: [46.897, 47.364]
-  - text: Don't blur away
-    time: [47.364, 50.667]
-  - text: Before I knew it, I was chewing it over
+  - text: ねぇぼやけないでぼやけないで
+    time: [46.897, 50.667]
+  - text: 気づけば反芻していた
     time: [50.667, 54.038]
-  - text: Translation   Haruka    Subtitles   Kyou
-    time: [62.212, 67.985]
-  - text: "' Red Regret '"
-    time: [62.212, 67.985]
