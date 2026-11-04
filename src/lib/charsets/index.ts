@@ -25,6 +25,13 @@ export const charsetEntries: CharsetEntry[] = [
   {key: 'adobekr-0', label: '보충 0', group: 'Adobe-KR', lang: 'ko'},
   {key: 'adobekr-1', label: '보충 1까지', group: 'Adobe-KR', lang: 'ko'},
   {key: 'adobekr-2', label: '보충 2까지', group: 'Adobe-KR', lang: 'ko'},
+  {key: 'adobekr-3', label: '보충 3까지', group: 'Adobe-KR', lang: 'ko'},
+  {key: 'adobekr-4', label: '보충 4까지', group: 'Adobe-KR', lang: 'ko'},
+  {key: 'adobekr-5', label: '보충 5까지', group: 'Adobe-KR', lang: 'ko'},
+  // {key: 'adobekr-6', label: '보충 6까지', group: 'Adobe-KR', lang: 'ko'},
+  {key: 'adobekr-7', label: '보충 7까지', group: 'Adobe-KR', lang: 'ko'},
+  {key: 'adobekr-8', label: '보충 8까지', group: 'Adobe-KR', lang: 'ko'},
+  {key: 'adobekr-9', label: '보충 9까지', group: 'Adobe-KR', lang: 'ko'},
   // EUC-KR
   {key: 'euckr', label: 'EUC-KR', group: 'EUC-KR', lang: 'ko'},
   {key: 'euckrWoHanja', label: '한자 제외', group: 'EUC-KR', lang: 'ko'},
