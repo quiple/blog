@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  remark-smartypants>retext-smartypants: github:quiple/retext-smartypants#cjk
+
 importers:
 
   .:
@@ -2441,8 +2444,8 @@ packages:
   retext-latin@4.0.0:
     resolution: {integrity: sha512-hv9woG7Fy0M9IlRQloq/N6atV82NxLGveq+3H2WOi79dtIYWN8OaxogDm77f8YnVXJL2VD3bbqowu5E3EMhBYA==}
 
-  retext-smartypants@https://codeload.github.com/quiple/retext-smartypants/tar.gz/1115a8c8c996360783f545363dac509ecf5b4533:
-    resolution: {gitHosted: true, integrity: sha512-YS45/4/jCDhwuPUyO6gy2QZGfkhg52EHiYayAZp9jSFfHiOmxHlIDxZP5LlNd5KyIgrGGpCPHuLvMy6G9m/0MA==, tarball: https://codeload.github.com/quiple/retext-smartypants/tar.gz/1115a8c8c996360783f545363dac509ecf5b4533}
+  retext-smartypants@https://codeload.github.com/quiple/retext-smartypants/tar.gz/e243c4ee9dba21dc5935b141bba6134272bc5d1d:
+    resolution: {gitHosted: true, integrity: sha512-70YQytbYIfPyg71t6yGG9kKYXDpDnwpZzoTCqtptoUuaDgARI3ovax+6vFCeBfn7927By1H9LV/CE4fyQ1d9hw==, tarball: https://codeload.github.com/quiple/retext-smartypants/tar.gz/e243c4ee9dba21dc5935b141bba6134272bc5d1d}
     version: 6.2.0
 
   retext-stringify@4.0.0:
@@ -5151,7 +5154,7 @@ snapshots:
   remark-smartypants@3.0.3:
     dependencies:
       retext: 9.0.0
-      retext-smartypants: https://codeload.github.com/quiple/retext-smartypants/tar.gz/1115a8c8c996360783f545363dac509ecf5b4533
+      retext-smartypants: https://codeload.github.com/quiple/retext-smartypants/tar.gz/e243c4ee9dba21dc5935b141bba6134272bc5d1d
       unified: 11.0.5
       unist-util-visit: 5.2.0
 
@@ -5176,7 +5179,7 @@ snapshots:
       parse-latin: 7.0.0
       unified: 11.0.5
 
-  retext-smartypants@https://codeload.github.com/quiple/retext-smartypants/tar.gz/1115a8c8c996360783f545363dac509ecf5b4533:
+  retext-smartypants@https://codeload.github.com/quiple/retext-smartypants/tar.gz/e243c4ee9dba21dc5935b141bba6134272bc5d1d:
     dependencies:
       '@types/nlcst': 2.0.3
       nlcst-to-string: 4.0.0
