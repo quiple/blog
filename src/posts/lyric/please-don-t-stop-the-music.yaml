@@ -59,7 +59,7 @@ lines:
   - text: And that won't change forever
     tl: 그건 영원히 변하지 않을 거야
     time: [73.108, 75.149]
-  - text: ’Cause I love you, I love you, I love
+  - text: "'Cause I love you, I love you, I love"
     tl: 널 사랑해, 사랑해, 사랑하니까
     time: [76.106, 78.678]
   - text: I'm just a slave to you
@@ -107,7 +107,7 @@ lines:
   - text: And that won't change forever
     tl: 그건 영원히 변하지 않을 거야
     time: [125.443, 127.462]
-  - text: ’Cause I love you, I love you, I love
+  - text: "'Cause I love you, I love you, I love"
     tl: 널 사랑해, 사랑해, 사랑하니까
     time: [128.434, 130.924]
   - text: I don't need to travel far
@@ -125,7 +125,7 @@ lines:
   - text: Orchestrate my life all year round
     tl: 일 년 내내 내 삶을 지휘해 줘
     time: [141.913, 144.662]
-  - text: ’Cause I love this
+  - text: "'Cause I love this"
     tl: 난 이게 좋으니까
     time: [145.879, 147.189]
   - text: Please don't stop the music
@@ -140,7 +140,7 @@ lines:
   - text: And that won't change forever
     tl: 그건 영원히 변하지 않을 거야
     time: [160.409, 162.387]
-  - text: ’Cause I love you, I love you, I love
+  - text: "'Cause I love you, I love you, I love"
     tl: 널 사랑해, 사랑해, 사랑하니까
     time: [163.356, 165.841]
   - text: Please don't stop the music
@@ -155,7 +155,7 @@ lines:
   - text: And that won't change forever
     tl: 그건 영원히 변하지 않을 거야
     time: [177.867, 179.846]
-  - text: ’Cause I love you, I love you, I love
+  - text: "'Cause I love you, I love you, I love"
     tl: 널 사랑해, 사랑해, 사랑하니까
     time: [180.765, 183.198]
   - text: (Please don't stop the music)

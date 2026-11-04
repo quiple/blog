@@ -153,7 +153,7 @@ lines:
   - text: It hurts my eyes, and I'm without an alibi
     tl: 눈이 아파, 내겐 알리바이도 없어
     time: [147.16, 152.77]
-  - text: ’Cause all this time, I've been alive
+  - text: "'Cause all this time, I've been alive"
     tl: 줄곧 난 살아 있었으니까
     time: [152.77, 158.07]
   - text: And all that I could want is to be living by your side
@@ -169,7 +169,7 @@ lines:
   - text: Can we wander for a spell and live in parallel?
     tl: 잠시 거닐며 나란히 살아갈 수 있을까?
     time: [167.73, 171.3]
-  - text: ’Cause now I know it's true, I'll be like you
+  - text: "'Cause now I know it's true, I'll be like you"
     tl: 이젠 진짜라는 걸 아니까, 너처럼 될 거야
     time: [171.3, 173.92]
   - text: My heart beats a rhythm just for you

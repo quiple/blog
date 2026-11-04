@@ -930,7 +930,7 @@ lines:
       - text: 'it '
         pr: 잇
         time: [77.77, 77.938]
-      - text: '’cause '
+      - text: "'cause "
         pr: 코즈
         time: [77.938, 78.107]
       - text: "I'm "

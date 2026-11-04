@@ -67,13 +67,13 @@ lines:
   - text: Oh, no matter if it rains or shines
     tl: 아, 비가 오든 날이 개든
     time: [75.565, 79.661]
-  - text: "’Cuz I'll be by your side"
+  - text: "'Cuz I'll be by your side"
     tl: 네 곁에 있을 테니까
     time: [79.661, 82.64]
   - text: No worries about tomorrow
     tl: 내일 걱정은 없어
     time: [82.851, 86.048]
-  - text: "’Cuz I'll be looking fine"
+  - text: "'Cuz I'll be looking fine"
     tl: 난 멋진 모습일 테니까
     time: [86.058, 88.244]
   - text: Now here's another story
@@ -145,13 +145,13 @@ lines:
   - text: Oh, no matter if it rains or shines
     tl: 아, 비가 오든 날이 개든
     time: [181.853, 185.924]
-  - text: "’Cuz I'll be by your side"
+  - text: "'Cuz I'll be by your side"
     tl: 네 곁에 있을 테니까
     time: [185.924, 188.974]
   - text: No worries about tomorrow
     tl: 내일 걱정은 없어
     time: [189.065, 192.363]
-  - text: "’Cuz I'll be looking fine"
+  - text: "'Cuz I'll be looking fine"
     tl: 난 멋진 모습일 테니까
     time: [192.363, 194.637]
   - text: Yes, I'll be looking fine
