@@ -155,7 +155,7 @@
 </script>
 
 <svelte:head>
-  <title>Works – quiple</title>
+  <title>Works — quiple</title>
   <meta name="robots" content="noindex,nofollow,noarchive" />
 </svelte:head>
 

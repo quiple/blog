@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-  <title>{data.song.title} – quiple</title>
+  <title>{data.song.title} — quiple</title>
   <link rel="canonical" href={data.canonicalURL} />
   <meta property="og:title" content={`${data.song.title}`} />
   <meta property="og:url" content={data.canonicalURL} />

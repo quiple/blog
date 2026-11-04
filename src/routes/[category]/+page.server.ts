@@ -28,7 +28,7 @@ export const load: PageServerLoad = async ({params, url}) => {
 
   const start = (currentPage - 1) * PER_PAGE
   const categoryName = getCategoryName(params.category)
-  const title = `${categoryName}${currentPage > 1 ? ` – ${currentPage}페이지` : ''} – quiple`
+  const title = `${categoryName}${currentPage > 1 ? ` – ${currentPage}페이지` : ''} — quiple`
 
   return {
     category: params.category,

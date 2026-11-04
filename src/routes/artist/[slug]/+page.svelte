@@ -4,7 +4,7 @@
   let {data}: PageProps = $props()
 </script>
 
-<svelte:head><title>{data.artist.name} – quiple</title></svelte:head>
+<svelte:head><title>{data.artist.name} — quiple</title></svelte:head>
 <div class="mx-auto max-w-2xl py-12">
   <h1 lang={data.artist.lang === 'ko' ? undefined : (data.artist.lang ?? '')} class="text-3xl font-semibold">
     {data.artist.name}

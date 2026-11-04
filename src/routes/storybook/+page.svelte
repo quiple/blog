@@ -21,7 +21,7 @@
 </script>
 
 <svelte:head>
-  <title>Typography Storybook – quiple</title>
+  <title>Typography Storybook — quiple</title>
   <meta name="robots" content="noindex,nofollow,noarchive" />
 </svelte:head>
 
