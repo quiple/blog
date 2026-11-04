@@ -22,6 +22,7 @@ void test('single timed background span stays karaoke; plain background stays li
 void test('updates background words and timing while retaining existing annotations', () => {
   const song = fromTTML(xml('<span begin="3s" end="3.5s">Ec</span><span begin="3.5s" end="4s">ho</span>')).song
   const source = `title: Test
+pubDate: 2026-04-28T08:30
 lines:
   - text: Main
     pr: 메인

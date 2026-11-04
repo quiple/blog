@@ -8,6 +8,7 @@ import {parseSong} from './src/lib/lyrics/model.ts'
 import {compactSong, fromTTML} from './scripts/lyrics/convert.ts'
 import {choose, terminalText} from './scripts/lyrics/select.ts'
 import {fromDatabase, searchDatabase, youtubeCandidates, type Candidate} from './scripts/lyrics/sources.ts'
+import {importPubDate} from './scripts/lyrics/pub-date.ts'
 
 import {appleCandidates, spotifyCandidates} from './scripts/lyrics/platforms.ts'
 
@@ -95,9 +96,11 @@ async function main() {
     v.select ? Number(v.select) : undefined,
   )
   const result = await candidates[selected].load()
+  const importedAt = new Date()
   const lang = v.lang || result.song.lang
   const song = parseSong({
     ...result.song,
+    pubDate: importPubDate(importedAt),
     ...(v.title ? {title: v.title} : {}),
     lang,
     titleLang: lang,
@@ -125,7 +128,7 @@ async function main() {
     ...result.sources,
     ...(v.apple ? [`Apple Music 곡: https://music.apple.com/song/${v.apple}`] : []),
     `선택 항목: ${terminalText(candidates[selected].label)}`,
-    `가져온 시각: ${new Date().toISOString()}`,
+    `가져온 시각: ${importedAt.toISOString()}`,
     '원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.',
   ]
   const document = new Document(compactSong(song))

@@ -42,6 +42,16 @@ const mediaSchema = v.object(mediaEntries)
 const offset = v.optional(v.pipe(v.number(), v.finite()), 0)
 const songSchema = v.strictObject({
   title: v.optional(v.pipe(v.string(), v.minLength(1))),
+  pubDate: v.optional(
+    v.pipe(
+      v.string(),
+      v.regex(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/, 'pubDate는 YYYY-MM-DDTHH:mm 형식이어야 합니다.'),
+      v.check((value) => {
+        const date = new Date(`${value}:00Z`)
+        return Number.isFinite(date.getTime()) && date.toISOString().slice(0, 16) === value
+      }, 'pubDate가 유효한 날짜와 시간이 아닙니다.'),
+    ),
+  ),
   titleLang: v.optional(v.string()),
   titleTranslation: v.optional(v.string()),
   year: v.optional(v.pipe(v.string(), v.digits(), v.length(4))),
@@ -61,6 +71,7 @@ export type LocalizedLyricLine = LyricLine & LyricLanguages & {wordTimed?: boole
 export type Annotation = v.InferOutput<typeof annotationSchema>
 export type SongLine = BaseLine & {text: string; duet?: boolean; background?: SongLine}
 export type Song = Omit<SongInput, 'title' | 'lines'> & {title: string; lines: SongLine[]}
+export type PublishedSong = Song & {pubDate: string}
 export type Provider = 'youtube' | 'spotify'
 export type SourceKey = 'youtubeMV' | 'youtubeAudio' | 'spotify'
 export type Source = {key: SourceKey; provider: Provider; label: string; url: string; id: string; embedUrl: string}

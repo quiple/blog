@@ -2,13 +2,15 @@ import {songArtists} from '#lib/lyrics/artists.server.js'
 import {songs} from '#lib/lyrics/catalog.server.js'
 export const prerender = true
 export const load = () => ({
-  songs: Object.entries(songs).map(([slug, song]) => ({
-    slug,
-    title: song.title,
-    year: song.year,
-    translation: song.titleTranslation,
-    artists: songArtists(song.artist),
-    lang: song.titleLang ?? song.lang,
-    example: song.example,
-  })),
+  songs: Object.entries(songs)
+    .sort(([, a], [, b]) => b.pubDate.localeCompare(a.pubDate))
+    .map(([slug, song]) => ({
+      slug,
+      title: song.title,
+      year: song.year,
+      translation: song.titleTranslation,
+      artists: songArtists(song.artist),
+      lang: song.titleLang ?? song.lang,
+      example: song.example,
+    })),
 })

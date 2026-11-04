@@ -9,6 +9,7 @@ import {formatLyricsYaml} from './scripts/lyrics/format-yaml.ts'
 import {fromTTML} from './scripts/lyrics/convert.ts'
 import {fromLRC} from './scripts/lyrics/lrc.ts'
 import {parseSong} from './src/lib/lyrics/model.ts'
+import {importPubDate} from './scripts/lyrics/pub-date.ts'
 
 try {
   const {values, positionals} = parseArgs({
@@ -62,7 +63,10 @@ try {
       ? fileURLToPath(new URL('src/posts/lyric/' + slug + '.yaml', import.meta.url))
       : join(dir, name + '.yaml')
     const original = slug ? await readFile(output, 'utf8') : undefined
-    const doc = original === undefined ? new Document(song) : updateLyricsYaml(original, song, values.force, mode)
+    const doc =
+      original === undefined
+        ? new Document({pubDate: importPubDate(new Date()), ...song})
+        : updateLyricsYaml(original, song, values.force, mode)
     formatLyricsYaml(doc)
     const comment =
       '# 출처: ' +
@@ -72,9 +76,9 @@ try {
         ? '# 행 시작·종료 시간 출처: ' + ttmlPath.replace(/[\r\n]/g, ' ') + '\n'
         : '# 종료 태그가 없는 행은 다음 행 시작으로, 마지막 단어는 ' + values.tail + '초로 종료 시간을 추정했습니다.\n')
     const yaml = (slug ? '' : comment) + doc.toString({lineWidth: 0, flowCollectionPadding: false, singleQuote: true})
+    const {parseSongYaml} = await import('./src/lib/lyrics/yaml.server.ts')
+    parseSongYaml(yaml, slug ?? name)
     if (slug) {
-      const {parseSongYaml} = await import('./src/lib/lyrics/yaml.server.ts')
-      parseSongYaml(yaml, slug)
       if ((await readFile(output, 'utf8')) !== original) throw Error('실행 중 대상 YAML이 변경되었습니다.')
     }
     await writeFile(output, yaml, {

@@ -55,7 +55,7 @@ function displayLine(line: SongLine): SongLine {
   }
 }
 
-export function displaySong(song: Song): Song {
+export function displaySong<T extends Song>(song: T): T {
   return {
     ...song,
     title: smartText(song.title),
