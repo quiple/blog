@@ -127,7 +127,6 @@
 >
   <aside class="min-w-0 md:sticky md:top-21">
     {#if source}
-      {#if sources.length > 1}
         <div class="mb-3 flex flex-wrap gap-2" role="group" aria-label="음악 소스 선택">
           {#each sources as item (item.key)}
             {@const restart = restarts(item)}
@@ -158,7 +157,6 @@
             TTML 다운로드
           </Button>
         </div>
-      {/if}
       <div>
         {#if rendering}
           <div class="relative overflow-hidden rounded-[.75rem] shadow-xs inner-border">
