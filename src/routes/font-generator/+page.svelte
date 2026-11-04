@@ -773,6 +773,14 @@
         </li>
         <li>JIS 6,355자: JIS X 0208의 제1·제2수준 한자.</li>
       </ul>
+      <h2>Adobe-KR</h2>
+      <ul>
+        <li>
+          <a href="https://github.com/adobe-type-tools/Adobe-KR" target="_blank" rel="noopener noreferrer">Adobe-KR-9</a
+          >의 유니코드 문자 중 선택한 보충까지의 문자. 앞선 보충을 모두 포함하며 보충 6은 제외합니다.
+        </li>
+        <li>같은 문자에 대응하는 글리프 변형이나 유니코드 문자로 표현할 수 없는 글리프는 별도로 포함하지 않습니다.</li>
+      </ul>
       <h2>EUC-KR</h2>
       <ul>
         <li>EUC-KR: KS X 1001과 KS X 1003을 포함하는 문자 집합. 로마자와 기호, 한자 등을 포함합니다.</li>
