@@ -18,7 +18,7 @@ function stripRuby(node: RubyNode): Text {
 // Processors are frozen via .freeze() on first use, so creating them once is efficient.
 
 /** Strips markdown to plain text and applies smartypants for title processing. */
-export const titleProcessor = remark().use(strip).use(smartypants, {dashes: 'oldschool'})
+export const titleProcessor = remark().use(strip).use(smartypants)
 
 /** Strips markdown (with GFM support) to plain text for description generation. */
 export const descriptionProcessor = remark()
@@ -26,7 +26,7 @@ export const descriptionProcessor = remark()
   .use(remarkCjkFriendly)
   .use(remarkCjkFriendlyGfmStrikethrough)
   .use(strip, {remove: [['ruby', stripRuby]]})
-  .use(smartypants, {dashes: 'oldschool'})
+  .use(smartypants)
   .use(function () {
     // Descriptions are plain text; override the Markdown serializers' escaping rules.
     const extensions = this.data('toMarkdownExtensions') ?? []
@@ -41,7 +41,7 @@ const descriptionParser = descriptionProcessor().use(remarkRuby)
 export const simpleHtmlProcessor = remark()
   .use(remarkGfm)
   .use(remarkCjkFriendly)
-  .use(smartypants, {dashes: 'oldschool'})
+  .use(smartypants)
   .use(remarkRehype)
   .use(rehypeStringify)
 

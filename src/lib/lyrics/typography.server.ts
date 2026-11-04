@@ -3,7 +3,7 @@ import smartypants from 'remark-smartypants'
 import type {Root, Text} from 'mdast'
 import type {Annotation, Song, SongLine} from './model.ts'
 
-const processor = remark().use(smartypants, {dashes: 'oldschool'})
+const processor = remark().use(smartypants)
 
 // Supply literal text nodes: lyrics are not Markdown. Keeping each word as a
 // node lets smartypants use the whole line's quote context without losing timing.
