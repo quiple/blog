@@ -54,17 +54,17 @@ export function getCharset(key: string): string | Promise<string> {
     return import('./korean').then(async ({default: korean}) => {
       if (key === 'euckr') {
         const {default: hanja} = await import('./hanja')
-        return korean.restOfEuckr + defaultHangul + hanja.ks4888
+        return korean.euckrPrefix + defaultHangul + hanja.ks4888
       }
       const suffix = key.slice('euckrWoHanja'.length) || '2350'
       if (!key.startsWith('euckrWoHanja')) return ''
       const syllables = await getCharset(`set${suffix}`)
-      return syllables ? korean.restOfEuckr + syllables : ''
+      return syllables ? korean.euckrPrefix + syllables : ''
     })
   if (key === 'shiftjis' || key === 'shiftjis_level1')
     return Promise.all([import('./japanese'), import('./kanji')]).then(
       ([{default: japanese}, {default: kanji}]) =>
-        japanese.restOfShiftjis + kanji.jisX0208_level1 + (key === 'shiftjis' ? kanji.jisX0208_level2 : ''),
+        japanese.shiftjisPrefix + kanji.jisX0208_level1 + (key === 'shiftjis' ? kanji.jisX0208_level2 : ''),
     )
   return ''
 }
