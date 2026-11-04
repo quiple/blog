@@ -1,5 +1,5 @@
 ---
-title: 안식처는 도서실에 있었다 --- 우라 코유키(선데 메이 클럽)가 말하는 책과 가사의 세계
+title: 안식처는 도서실에 있었다 -- 우라 코유키(선데 메이 클럽)가 말하는 책과 가사의 세계
 media: 빌보드 재팬
 source: https://www.billboard-japan.com/special/detail/5227
 author: 우에노 미키 (上野三樹)
