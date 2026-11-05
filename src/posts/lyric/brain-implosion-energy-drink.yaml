@@ -381,14 +381,19 @@ lines:
     time: [44.718, 46.332]
   - words:
       - text: 'Everyone '
+        pr: 에브리원
         time: [46.332, 46.757]
       - text: 'needs '
+        pr: 니즈
         time: [46.757, 46.873]
       - text: 'something '
+        pr: 섬싱
         time: [46.873, 47.275]
       - text: 'to '
+        pr: 투
         time: [47.275, 47.43]
       - text: 'numb '
+        pr: 넘
         time: [47.43, 47.635]
       - text: 'the '
         pr: 더
