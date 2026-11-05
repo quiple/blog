@@ -92,16 +92,20 @@ lines:
     time: [10.981, 12.847]
   - words:
       - text: 'Crave '
+        pr: 크레이브
         time: [12.892, 13.101]
       - text: 'zero '
         time: [13.101, 13.648]
       - text: 'thoughts, '
+        pr: 소츠,
         time: [13.648, 14.005]
       - text: 'want '
         time: [14.005, 14.27]
       - text: 'head '
+        pr: 헷
         time: [14.27, 14.579]
       - text: empty
+        pr: 엠프티
         time: [14.579, 15.077]
     tl: 생각은 하나도 없이, 머릿속을 비우고 싶다면
     time: [12.892, 15.077]
@@ -604,16 +608,21 @@ lines:
     time: [106.896, 108.774]
   - words:
       - text: 'Crave '
+        pr: 크레이브
         time: [108.813, 109.086]
       - text: 'zero '
+        pr: 지로
         time: [109.086, 109.665]
       - text: 'thoughts, '
+        pr: 소츠,
         time: [109.665, 109.925]
       - text: 'want '
         time: [109.925, 110.168]
       - text: 'head '
+        pr: 헷
         time: [110.168, 110.479]
       - text: empty
+        pr: 엠프티
         time: [110.479, 111.006]
     tl: 생각은 하나도 없이, 머릿속을 비우고 싶다면
     time: [108.813, 111.006]
