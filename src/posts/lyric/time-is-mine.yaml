@@ -11,66 +11,27 @@ year: '2025'
 artist:
   - mashima-yuro
   - kasane-teto
+  - hatsune-miku
 lang: ja
 sp: 0fMo89d4cSDdeLij2LNx5X
 yt:
   audio: 0YhJ1VbCjp4
   mv: NxXIm8IbeVk
 lines:
-  - text: own
-    time: [1.125, 1.5]
-  - text: own tick
-    time: [1.5, 1.833]
-  - text: own ticktack
-    time: [1.833, 2.208]
-  - text: own ticktack own
-    time: [2.208, 2.583]
-  - text: own ticktack own tick
-    time: [2.583, 2.958]
   - text: own ticktack own ticktack
-    time: [2.958, 3.333]
+    time: [1.125, 3.333]
   - text: 🔔own🔔
     time: [3.333, 4.167]
-  - text: own
-    time: [4.167, 4.542]
-  - text: own tick
-    time: [4.542, 4.875]
-  - text: own ticktack
-    time: [4.875, 5.25]
-  - text: own ticktack own
-    time: [5.25, 5.625]
-  - text: own ticktack own tick
-    time: [5.625, 6]
   - text: own ticktack own ticktack
-    time: [6, 6.375]
+    time: [4.167, 6.375]
   - text: 🔔own🔔
     time: [6.375, 7.25]
-  - text: own
-    time: [7.25, 7.625]
-  - text: own tick
-    time: [7.625, 7.958]
-  - text: own ticktack
-    time: [7.958, 8.333]
-  - text: own ticktack own
-    time: [8.333, 8.708]
-  - text: own ticktack own tick
-    time: [8.708, 9.083]
   - text: own ticktack own ticktack
-    time: [9.083, 9.458]
+    time: [7.25, 9.458]
   - text: 🔔own🔔
     time: [9.458, 10.333]
-  - text: own
-    time: [10.333, 10.708]
-  - text: own tick
-    time: [10.708, 11.042]
-  - text: own ticktack
-    time: [11.042, 11.417]
-  - text: own ticktack own
-    time: [11.417, 11.792]
-  - text: own ticktack own tick
-    time: [11.792, 12.167]
   - text: own ticktack own ticktack
-    time: [12.167, 12.542]
+    time: [10.333, 12.542]
   - text: 🔔own🔔
     time: [12.542, 13.333]
   - text: 目覚ましのスヌーズのスクショが溜まっている
