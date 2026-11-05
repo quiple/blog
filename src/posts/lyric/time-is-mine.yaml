@@ -110,13 +110,13 @@ lines:
     pr: 타임 이즈 마인
     time: [62.917, 63.958]
     background:
-      text: own
+      text: (own)
       time: [63.958, 64.292]
   - text: 壊れてくブレイン
     pr: 코와레테쿠부레인
     time: [64.292, 65.458]
     background:
-      text: own
+      text: (own)
       time: [65.458, 65.875]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
