@@ -634,7 +634,7 @@ lines:
         pr: 그리빙
         time: [70.518, 71.023]
       - text: 'Grape, '
-        pr: 그레입
+        pr: 그레입,
         time: [71.023, 71.569]
       - text: 'Misery '
         pr: 미저리
@@ -646,14 +646,19 @@ lines:
     time: [70.518, 72.688]
   - words:
       - text: 'Trauma '
+        pr: 트라우머
         time: [72.843, 73.215]
       - text: Tri-
+        pr: 트라이
         time: [73.215, 73.446]
       - text: 'Tip, '
+        pr: 팁,
         time: [73.446, 73.724]
       - text: 'Depression '
+        pr: 디프레션
         time: [73.724, 74.345]
       - text: Durian
+        pr: 듀어리언
         time: [74.345, 74.895]
     tl: 트라우마 트라이팁, 우울증 두리안
     time: [72.843, 74.895]
