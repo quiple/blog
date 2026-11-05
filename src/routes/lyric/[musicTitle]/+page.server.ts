@@ -15,5 +15,6 @@ export const load: PageServerLoad = ({params}) => {
     artists: songArtists(song.artist),
     sources: getSources(song),
     canonicalURL: absoluteUrl(`/lyric/${params.musicTitle}`),
+    ogImageURL: absoluteUrl(`/api/og/lyric/${params.musicTitle}.png`),
   }
 }

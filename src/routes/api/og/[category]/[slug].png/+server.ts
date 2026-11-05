@@ -5,17 +5,20 @@ import plexSansJPFontPath from '#lib/assets/fonts/IBMPlexSansJP-Bold.otf?url'
 import {getCompiledContent} from '#lib/compiled-content.js'
 import OgImage from '#lib/components/og/post.svelte'
 import {blogArticles, blogFonts, blogPosts, parseMatter} from '#lib/content.js'
+import {songArtists} from '#lib/lyrics/artists.server.js'
+import {songs} from '#lib/lyrics/catalog.server.js'
 import type {EntryGenerator, RequestHandler} from './$types'
 
 export const entries: EntryGenerator = () => {
   const allFiles = [...Object.keys(blogPosts), ...Object.keys(blogArticles), ...Object.keys(blogFonts)]
 
-  return allFiles.map((filePath) => {
+  const posts = allFiles.map((filePath) => {
     const category = filePath.split('/').at(-2) as string
     const slug = filePath.split('/').at(-1)?.split('.')[0] as string
 
     return {category, slug}
   })
+  return [...posts, ...Object.keys(songs).map((slug) => ({category: 'lyric', slug}))]
 }
 
 export const prerender = import.meta.env.VITE_PRERENDER_OG_IMAGES === 'true'
@@ -40,22 +43,33 @@ function getResolvedFontOptions() {
 }
 
 export const GET: RequestHandler = async ({params}) => {
-  const {ImageResponse} = await import('@ethercorps/sveltekit-og')
-  const resolvedFontOptions = await getResolvedFontOptions()
-
-  const matchPath = `/src/posts/${params.category}/${params.slug}.md`
-  const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
-  const compiledContent = getCompiledContent(matchPath)
-  if (!rawContent || !compiledContent) return new Response(null, {status: 404})
-  const {data} = parseMatter(rawContent as string)
-
-  const props: ComponentProps<typeof OgImage> = {
-    title: compiledContent.title,
-    category: params.category as string,
-    image: (data.originalImage as string) ?? (data.image as string),
-    imageForeground: (data.imageForeground as string) ?? '09090b',
+  let props: ComponentProps<typeof OgImage>
+  if (params.category === 'lyric') {
+    const song = Object.hasOwn(songs, params.slug) ? songs[params.slug] : undefined
+    if (!song) return new Response(null, {status: 404})
+    const artists = songArtists(song.artist).map((artist) => artist.translation || artist.name)
+    props = {
+      title: song.titleTranslation ? `${song.title} (${song.titleTranslation})` : song.title,
+      category: 'lyric',
+      subtitle: artists.length ? artists.join(', ') : undefined,
+      imageForeground: '09090b',
+    }
+  } else {
+    const matchPath = `/src/posts/${params.category}/${params.slug}.md`
+    const rawContent = blogPosts[matchPath] ?? blogArticles[matchPath] ?? blogFonts[matchPath]
+    const compiledContent = getCompiledContent(matchPath)
+    if (!rawContent || !compiledContent) return new Response(null, {status: 404})
+    const {data} = parseMatter(rawContent as string)
+    props = {
+      title: compiledContent.title,
+      category: params.category as string,
+      image: (data.originalImage as string) ?? (data.image as string),
+      imageForeground: (data.imageForeground as string) ?? '09090b',
+    }
   }
 
+  const {ImageResponse} = await import('@ethercorps/sveltekit-og')
+  const resolvedFontOptions = await getResolvedFontOptions()
   return new ImageResponse(
     OgImage,
     {

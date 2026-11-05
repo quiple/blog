@@ -8,11 +8,12 @@
   type Props = {
     title: string
     category: string
+    subtitle?: string
     image?: string
     imageForeground?: string
   }
 
-  let {title, category, image, imageForeground}: Props = $props()
+  let {title, category, subtitle, image, imageForeground}: Props = $props()
 
   const isProd = import.meta.env.PROD
   const baseUrl = isProd ? 'https://quiple.dev' : ''
@@ -37,11 +38,12 @@
     <Q class="h-20 w-20" fill={`#${imageForeground}`} />
     <div class="flex w-full flex-col items-start">
       <span class="-mb-2.5 rounded-full px-3 py-0.5 text-2xl text-white" style:background-color="#27272a"
-        >{getCategoryName(category)}</span
+        >{category === 'lyric' ? '가사 번역' : getCategoryName(category)}</span
       >
       <h1 class="-mb-3 text-6xl leading-tight font-semibold" style="word-break: keep-all">
         {title}
       </h1>
+      {#if subtitle}<p class="mt-6 text-3xl">{subtitle}</p>{/if}
     </div>
   </div>
 </main>

@@ -1,4 +1,5 @@
 import {getAllBlogContentMetadata} from '#lib/content.js'
+import {songs} from '#lib/lyrics/catalog.server.js'
 import {absoluteUrl, toSitemapDateTime} from '#lib/seo.js'
 import {getImageUrl} from '#lib/utils.js'
 import type {RequestHandler} from './$types'
@@ -36,6 +37,10 @@ export const GET: RequestHandler = async () => {
       xmlElement('changefreq', 'daily'),
       xmlElement('priority', '1.0'),
     ],
+    [xmlElement('loc', absoluteUrl('/lyric'))],
+    ...Object.entries(songs)
+      .filter(([, song]) => !song.example)
+      .map(([slug]) => [xmlElement('loc', absoluteUrl(`/lyric/${slug}`))]),
     ...posts.map((post) => {
       const image = post.thumbnail ?? post.image
       const lastModified = toSitemapDateTime(post.pubDate)
