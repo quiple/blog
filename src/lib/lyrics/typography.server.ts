@@ -7,11 +7,16 @@ const processor = remark().use(smartypants)
 
 // Supply literal text nodes: lyrics are not Markdown. Keeping each word as a
 // node lets smartypants use the whole line's quote context without losing timing.
-export function smartTexts(values: string[]): string[] {
-  const children: Text[] = values.map((value) => ({type: 'text', value}))
+export function smartTexts(values: string[], separators: string[] = []): string[] {
+  const nodes: Text[] = values.map((value) => ({type: 'text', value}))
+  const children: Text[] = []
+  for (const [index, node] of nodes.entries()) {
+    children.push(node)
+    if (separators[index]) children.push({type: 'text', value: separators[index]})
+  }
   const tree: Root = {type: 'root', children: [{type: 'paragraph', children}]}
   processor.runSync(tree)
-  return children.map((node) => node.value)
+  return nodes.map((node) => node.value)
 }
 
 export function smartText(value: string): string {
@@ -27,12 +32,20 @@ function annotation(value: Annotation | undefined): Annotation | undefined {
 
 function wordPronunciations(words: NonNullable<SongLine['words']>) {
   const values = words.map((word) => word.pronunciation)
-  const plain = smartTexts(values.map((value) => (typeof value === 'string' ? value : '')))
+  // Pronunciations omit spaces, so use the source words to preserve quote context.
+  const separators = words.map((word) => /\s+$/u.exec(word.text)?.[0] ?? '')
+  const plain = smartTexts(
+    values.map((value) => (typeof value === 'string' ? value : '')),
+    separators,
+  )
   const languages = new Set(values.flatMap((value) => (value && typeof value !== 'string' ? Object.keys(value) : [])))
   const localized = new Map(
     [...languages].map((lang) => [
       lang,
-      smartTexts(values.map((value) => (value && typeof value !== 'string' ? (value[lang] ?? '') : ''))),
+      smartTexts(
+        values.map((value) => (value && typeof value !== 'string' ? (value[lang] ?? '') : '')),
+        separators,
+      ),
     ]),
   )
   return values.map((value, index) =>
