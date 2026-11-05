@@ -38,8 +38,10 @@ lines:
         pr: 텐 사우전드
         time: [4.108, 4.918]
       - text: 'grams '
+        pr: 그램즈
         time: [4.918, 5.193]
       - text: 'of '
+        pr: 옵
         time: [5.193, 5.46]
       - text: 'pure '
         time: [5.46, 5.732]
@@ -187,8 +189,10 @@ lines:
         pr: 텐 사우전드
         time: [30.677, 31.49]
       - text: 'grams '
+        pr: 그램즈
         time: [31.49, 31.778]
       - text: 'of '
+        pr: 옵
         time: [31.778, 32.052]
       - text: 'pure '
         time: [32.052, 32.327]
@@ -221,6 +225,7 @@ lines:
       - text: 'pounds '
         time: [38.101, 38.434]
       - text: 'of '
+        pr: 옵
         time: [38.434, 38.653]
       - text: 'caffeine '
         time: [38.653, 39.099]
@@ -339,6 +344,7 @@ lines:
       - text: 'cycle '
         time: [51.591, 51.94]
       - text: 'of '
+        pr: 옵
         time: [51.94, 52.195]
       - text: burnout
         time: [52.195, 52.793]
@@ -519,8 +525,10 @@ lines:
         pr: 텐 사우전드
         time: [100.002, 100.826]
       - text: 'grams '
+        pr: 그램즈
         time: [100.826, 101.117]
       - text: 'of '
+        pr: 옵
         time: [101.117, 101.384]
       - text: 'pure '
         time: [101.384, 101.657]
@@ -668,6 +676,7 @@ lines:
         pr: 텐 사우전드
         time: [126.597, 127.42]
       - text: 'grams '
+        pr: 그램즈
         time: [127.42, 127.704]
       - text: 'of '
         pr: 옵
