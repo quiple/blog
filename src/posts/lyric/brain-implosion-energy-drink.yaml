@@ -418,23 +418,31 @@ lines:
     time: [48.384, 50.369]
   - words:
       - text: 'Day '
+        pr: 데이
         time: [50.369, 50.557]
       - text: 'by '
+        pr: 바이
         time: [50.557, 50.726]
       - text: 'day, '
+        pr: 데이,
         time: [50.726, 51.114]
       - text: 'in '
+        pr: 인
         time: [51.114, 51.187]
       - text: 'an '
+        pr: 언
         time: [51.187, 51.256]
       - text: 'endless '
+        pr: 엔들리스
         time: [51.256, 51.591]
       - text: 'cycle '
+        pr: 사이클
         time: [51.591, 51.94]
       - text: 'of '
         pr: 옵
         time: [51.94, 52.195]
       - text: burnout
+        pr: 번아웃
         time: [52.195, 52.793]
     tl: 하루하루, 끝없이 반복되는 번아웃 속에서
     time: [50.369, 52.793]
@@ -593,8 +601,10 @@ lines:
     time: [66.177, 68.381]
   - words:
       - text: 'Burnout '
+        pr: 번아웃
         time: [68.381, 68.831]
       - text: 'Banana, '
+        pr: 버내너,
         time: [68.831, 69.212]
       - text: 'Repressed '
         time: [69.212, 69.771]
