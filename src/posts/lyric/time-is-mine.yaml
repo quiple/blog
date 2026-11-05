@@ -90,13 +90,15 @@ lines:
   - text: タイムイズマイン
     pr: 타임 이즈 마인
     time: [56.542, 57.792]
-  - text: own
-    time: [57.792, 58.083]
+    background:
+      text: own
+      time: [57.792, 58.083]
   - text: わがままでいたい
     pr: 와가마마데이타이
     time: [58.083, 59.292]
-  - text: own
-    time: [59.292, 59.792]
+    background:
+      text: own
+      time: [59.292, 59.792]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
     time: [59.792, 60.875]
