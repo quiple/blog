@@ -440,89 +440,121 @@ lines:
     time: [50.369, 52.793]
   - words:
       - text: 'Eat, '
+        pr: 잇,
         time: [52.964, 53.097]
       - text: 'sleep, '
+        pr: 슬립,
         time: [53.097, 53.468]
       - text: 'work, '
+        pr: 워크,
         time: [53.468, 53.648]
       - text: 'repeat '
+        pr: 리핏
         time: [53.648, 54.01]
       - text: "'til "
+        pr: 틸
         time: [54.01, 54.219]
       - text: 'the '
         pr: 더
         time: [54.219, 54.304]
       - text: 'clock '
+        pr: 클락
         time: [54.304, 54.527]
       - text: 'runs '
+        pr: 런즈
         time: [54.527, 54.878]
       - text: out
+        pr: 아웃
         time: [54.878, 55.127]
     tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
     time: [52.964, 55.127]
   - words:
       - text: 'Eat, '
+        pr: 잇,
         time: [55.127, 55.286]
       - text: 'sleep, '
+        pr: 슬립,
         time: [55.286, 55.651]
       - text: 'work, '
+        pr: 워크,
         time: [55.651, 55.82]
       - text: 'repeat '
+        pr: 리핏
         time: [55.82, 56.171]
       - text: "'til "
+        pr: 틸
         time: [56.171, 56.399]
       - text: 'the '
         pr: 더
         time: [56.399, 56.477]
       - text: 'clock '
+        pr: 클락
         time: [56.477, 56.775]
       - text: 'runs '
+        pr: 런즈
         time: [56.775, 57.049]
       - text: out
+        pr: 아웃
         time: [57.049, 57.319]
     tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
     time: [55.127, 57.319]
   - words:
       - text: 'Eat, '
+        pr: 잇,
         time: [57.319, 57.455]
       - text: 'sleep, '
+        pr: 슬립,
         time: [57.455, 57.821]
       - text: 'work, '
+        pr: 워크,
         time: [57.821, 58.008]
       - text: 'repeat '
+        pr: 리핏
         time: [58.008, 58.364]
       - text: "'til "
+        pr: 틸
         time: [58.364, 58.563]
       - text: 'the '
         pr: 더
         time: [58.563, 58.668]
       - text: 'clock '
+        pr: 클락
         time: [58.668, 58.895]
       - text: 'runs '
+        pr: 런즈
         time: [58.895, 59.228]
       - text: out
+        pr: 아웃
         time: [59.228, 59.517]
     tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
     time: [57.319, 59.517]
   - words:
       - text: 'Eat, '
+        pr: 잇,
         time: [59.517, 59.646]
       - text: 'sleep, '
+        pr: 슬립,
         time: [59.646, 60.002]
       - text: 'work, '
+        pr: 워크,
         time: [60.002, 60.185]
       - text: 'repeat '
+        pr: 리핏
         time: [60.185, 60.539]
       - text: "'til "
+        pr: 틸
         time: [60.539, 60.72]
       - text: 'the '
         pr: 더
         time: [60.72, 60.835]
       - text: 'clock '
+        pr: 클락
         time: [60.835, 61.066]
       - text: 'runs '
+        pr: 런즈
         time: [61.066, 61.386]
       - text: out-
+        pr: 아웃-
         time: [61.386, 61.818]
     tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해-
     time: [59.517, 61.818]
@@ -530,6 +562,7 @@ lines:
       - text: 'Comes '
         time: [64.663, 64.869]
       - text: 'in '
+        pr: 인
         time: [64.869, 65.032]
       - text: 'the '
         pr: 더
@@ -740,6 +773,7 @@ lines:
         pr: 임플로전
         time: [116.565, 117.329]
       - text: 'juice, '
+        pr: 주스,
         time: [117.329, 117.652]
       - text: 'it '
         pr: 잇
@@ -751,8 +785,10 @@ lines:
         pr: 마이
         time: [118.206, 118.381]
       - text: 'head '
+        pr: 헷
         time: [118.381, 118.758]
       - text: 'go '
+        pr: 고
         time: [118.758, 119.023]
       - text: brr
         time: [119.023, 120.016]
@@ -760,8 +796,10 @@ lines:
     time: [115.444, 120.016]
   - words:
       - text: 'But '
+        pr: 벗
         time: [120.016, 120.25]
       - text: 'will '
+        pr: 윌
         time: [120.25, 120.537]
       - text: 'it '
         pr: 잇
@@ -788,6 +826,7 @@ lines:
         pr: 캔트
         time: [123.023, 123.301]
       - text: 'be '
+        pr: 비
         time: [123.301, 123.455]
       - text: sure
         time: [123.455, 124.249]
