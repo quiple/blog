@@ -44,8 +44,10 @@ lines:
         pr: 옵
         time: [5.193, 5.46]
       - text: 'pure '
+        pr: 퓨어
         time: [5.46, 5.732]
       - text: caffeine
+        pr: 캐핀
         time: [5.732, 6.198]
     tl: 순수 카페인 10,000그램
     time: [4.108, 6.198]
@@ -195,8 +197,10 @@ lines:
         pr: 옵
         time: [31.778, 32.052]
       - text: 'pure '
+        pr: 퓨어
         time: [32.052, 32.327]
       - text: caffeine
+        pr: 캐핀
         time: [32.327, 32.795]
     tl: 순수 카페인 10,000그램
     time: [30.677, 32.795]
@@ -228,6 +232,7 @@ lines:
         pr: 옵
         time: [38.434, 38.653]
       - text: 'caffeine '
+        pr: 캐핀
         time: [38.653, 39.099]
       - text: 'in '
         time: [39.099, 39.222]
@@ -531,8 +536,10 @@ lines:
         pr: 옵
         time: [101.117, 101.384]
       - text: 'pure '
+        pr: 퓨어
         time: [101.384, 101.657]
       - text: caffeine
+        pr: 캐핀
         time: [101.657, 102.124]
     tl: 순수 카페인 10,000그램
     time: [100.002, 102.124]
@@ -682,8 +689,10 @@ lines:
         pr: 옵
         time: [127.704, 127.979]
       - text: 'pure '
+        pr: 퓨어
         time: [127.979, 128.256]
       - text: caffeine
+        pr: 캐핀
         time: [128.256, 128.723]
     tl: 순수 카페인 10,000그램
     time: [126.597, 128.723]
