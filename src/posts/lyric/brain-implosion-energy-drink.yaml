@@ -667,12 +667,16 @@ lines:
         pr: 앤드
         time: [75.072, 75.257]
       - text: 'our '
+        pr: 아워
         time: [75.257, 75.425]
       - text: 'newest '
+        pr: 누어스트
         time: [75.425, 75.711]
       - text: 'flavor, '
+        pr: 플레이버,
         time: [75.711, 76.929]
       - text: Fu-
+        pr: 퍼-
         time: [76.929, 78.3]
     tl: 그리고 신제품, 씹-
     time: [75.072, 78.3]
