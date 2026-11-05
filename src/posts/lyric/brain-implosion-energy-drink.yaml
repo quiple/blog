@@ -119,21 +119,25 @@ lines:
         pr: 드링크
         time: [15.348, 15.645]
       - text: 'and '
+        pr: 앤드
         time: [15.645, 15.922]
       - text: 'drink '
         pr: 드링크
         time: [15.922, 16.22]
       - text: 'and '
+        pr: 앤드
         time: [16.22, 16.473]
       - text: 'drink '
         pr: 드링크
         time: [16.473, 16.77]
       - text: 'until '
+        pr: 언틸
         time: [16.77, 17.263]
       - text: 'you '
         pr: 유
         time: [17.263, 17.569]
       - text: drop
+        pr: 드랍
         time: [17.569, 18.668]
     tl: 쓰러질 때까지 마시고 마시고 또 마셔
     time: [15.106, 18.668]
@@ -532,6 +536,7 @@ lines:
     time: [72.843, 74.895]
   - words:
       - text: 'And '
+        pr: 앤드
         time: [75.072, 75.257]
       - text: 'our '
         time: [75.257, 75.425]
@@ -641,21 +646,25 @@ lines:
         pr: 드링크
         time: [111.261, 111.57]
       - text: 'and '
+        pr: 앤드
         time: [111.57, 111.847]
       - text: 'drink '
         pr: 드링크
         time: [111.847, 112.144]
       - text: 'and '
+        pr: 앤드
         time: [112.144, 112.4]
       - text: 'drink '
         pr: 드링크
         time: [112.4, 112.695]
       - text: 'until '
+        pr: 언틸
         time: [112.695, 113.182]
       - text: 'you '
         pr: 유
         time: [113.182, 113.496]
       - text: drop
+        pr: 드랍
         time: [113.496, 114.621]
     tl: 쓰러질 때까지 마시고 마시고 또 마셔
     time: [111.028, 114.621]
