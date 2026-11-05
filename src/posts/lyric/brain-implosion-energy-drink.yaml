@@ -146,8 +146,10 @@ lines:
         pr: 아이
         time: [19.545, 19.816]
       - text: 'love '
+        pr: 러브
         time: [19.816, 20.067]
       - text: 'my '
+        pr: 마이
         time: [20.067, 20.347]
       - text: 'brain '
         pr: 브레인
@@ -158,10 +160,13 @@ lines:
       - text: 'juice, '
         time: [21.406, 21.609]
       - text: 'it '
+        pr: 잇
         time: [21.609, 22.006]
       - text: 'makes '
+        pr: 메익스
         time: [22.006, 22.282]
       - text: 'my '
+        pr: 마이
         time: [22.282, 22.514]
       - text: 'head '
         time: [22.514, 22.831]
@@ -177,15 +182,19 @@ lines:
       - text: 'will '
         time: [24.348, 24.635]
       - text: 'it '
+        pr: 잇
         time: [24.635, 24.783]
       - text: 'stop '
+        pr: 스탑
         time: [24.783, 25.16]
       - text: 'the '
         pr: 더
         time: [25.16, 25.446]
       - text: 'pain '
+        pr: 페인
         time: [25.446, 25.717]
       - text: 'forever? '
+        pr: 포에버?
         time: [25.717, 26.548]
       - text: 'I '
         pr: 아이
@@ -282,6 +291,7 @@ lines:
       - text: 'does '
         time: [40.303, 40.507]
       - text: 'it '
+        pr: 잇
         time: [40.507, 40.629]
       - text: fit?
         time: [40.629, 40.829]
@@ -289,12 +299,16 @@ lines:
     time: [37.561, 40.829]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [40.829, 41.142]
       - text: "don't "
+        pr: 돈트
         time: [41.142, 41.387]
       - text: 'question '
+        pr: 퀘스천
         time: [41.387, 41.707]
       - text: it!
+        pr: 잇!
         time: [41.707, 41.962]
     tl: 그냥 따지지 마!
     time: [40.829, 41.962]
@@ -332,12 +346,16 @@ lines:
       - text: 'said, '
         time: [44.919, 45.193]
       - text: '"Just '
+        pr: '"저스트'
         time: [45.193, 45.51]
       - text: "don't "
+        pr: 돈트
         time: [45.51, 45.749]
       - text: 'question '
+        pr: 퀘스천
         time: [45.749, 46.067]
       - text: it!"
+        pr: 잇!"
         time: [46.067, 46.332]
     tl: 그냥 따지지 말라니까!
     time: [44.718, 46.332]
@@ -353,8 +371,10 @@ lines:
       - text: 'numb '
         time: [47.43, 47.635]
       - text: 'the '
+        pr: 더
         time: [47.635, 47.877]
       - text: pain
+        pr: 페인
         time: [47.877, 48.118]
     tl: 누구나 고통을 무디게 해 줄 무언가가 필요해
     time: [46.332, 48.118]
@@ -688,8 +708,10 @@ lines:
         pr: 아이
         time: [115.444, 115.717]
       - text: 'love '
+        pr: 러브
         time: [115.717, 115.993]
       - text: 'my '
+        pr: 마이
         time: [115.993, 116.27]
       - text: 'brain '
         pr: 브레인
@@ -700,10 +722,13 @@ lines:
       - text: 'juice, '
         time: [117.329, 117.652]
       - text: 'it '
+        pr: 잇
         time: [117.652, 117.932]
       - text: 'makes '
+        pr: 메익스
         time: [117.932, 118.206]
       - text: 'my '
+        pr: 마이
         time: [118.206, 118.381]
       - text: 'head '
         time: [118.381, 118.758]
@@ -719,20 +744,25 @@ lines:
       - text: 'will '
         time: [120.25, 120.537]
       - text: 'it '
+        pr: 잇
         time: [120.537, 120.689]
       - text: 'stop '
+        pr: 스탑
         time: [120.689, 121.088]
       - text: 'the '
         pr: 더
         time: [121.088, 121.368]
       - text: 'pain '
+        pr: 페인
         time: [121.368, 121.643]
       - text: 'forever? '
+        pr: 포에버?
         time: [121.643, 122.472]
       - text: 'I '
         pr: 아이
         time: [122.472, 122.733]
       - text: 'just '
+        pr: 저스트
         time: [122.733, 123.023]
       - text: "can't "
         pr: 캔트
