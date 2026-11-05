@@ -26,6 +26,7 @@ lines:
         pr: 브레인
         time: [2.182, 2.452]
       - text: 'implosion '
+        pr: 임플로전
         time: [2.452, 3.288]
       - text: energy
         time: [3.288, 4.075]
@@ -68,6 +69,7 @@ lines:
         pr: 브레인
         time: [10.981, 11.259]
       - text: 'implosion '
+        pr: 임플로전
         time: [11.259, 12.095]
       - text: energy
         time: [12.095, 12.847]
@@ -120,6 +122,7 @@ lines:
         pr: 브레인
         time: [20.347, 20.638]
       - text: 'implosion '
+        pr: 임플로전
         time: [20.638, 21.406]
       - text: 'juice, '
         time: [21.406, 21.609]
@@ -169,6 +172,7 @@ lines:
         pr: 브레인
         time: [28.758, 29.044]
       - text: 'implosion '
+        pr: 임플로전
         time: [29.044, 29.866]
       - text: energy
         time: [29.866, 30.638]
@@ -498,6 +502,7 @@ lines:
         pr: 브레인
         time: [98.101, 98.378]
       - text: 'implosion '
+        pr: 임플로전
         time: [98.378, 99.214]
       - text: energy
         time: [99.214, 100.002]
@@ -540,6 +545,7 @@ lines:
         pr: 브레인
         time: [106.896, 107.185]
       - text: 'implosion '
+        pr: 임플로전
         time: [107.185, 108.021]
       - text: energy
         time: [108.021, 108.774]
@@ -592,6 +598,7 @@ lines:
         pr: 브레인
         time: [116.27, 116.565]
       - text: 'implosion '
+        pr: 임플로전
         time: [116.565, 117.329]
       - text: 'juice, '
         time: [117.329, 117.652]
@@ -641,6 +648,7 @@ lines:
         pr: 브레인
         time: [124.684, 124.96]
       - text: 'implosion '
+        pr: 임플로전
         time: [124.96, 125.769]
       - text: energy
         time: [125.769, 126.568]
@@ -648,10 +656,12 @@ lines:
     time: [124.684, 126.568]
   - words:
       - text: '10,000 '
+        pr: 텐 사우전드
         time: [126.597, 127.42]
       - text: 'grams '
         time: [127.42, 127.704]
       - text: 'of '
+        pr: 옵
         time: [127.704, 127.979]
       - text: 'pure '
         time: [127.979, 128.256]
