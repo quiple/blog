@@ -97,14 +97,5 @@
     "inter-ui": "^4.1.1",
     "yaml": "^2.9.1"
   },
-  "devEngines": {
-    "packageManager": {
-      "name": "nub",
-      "version": "^0.9.0",
-      "onFail": "ignore"
-    }
-  },
-  "overrides": {
-    "remark-smartypants>retext-smartypants": "github:quiple/retext-smartypants#cjk"
-  }
+  "packageManager": "pnpm@12.15.0"
 }

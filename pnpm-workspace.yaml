@@ -1,0 +1,11 @@
+minimumReleaseAge: 0
+blockExoticSubdeps: false
+trustPolicy: off
+
+overrides:
+  remark-smartypants>retext-smartypants: github:quiple/retext-smartypants#cjk
+
+allowBuilds:
+  esbuild: true
+  lefthook: true
+  workerd: true

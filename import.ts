@@ -14,12 +14,12 @@ import {appleCandidates, spotifyCandidates} from './scripts/lyrics/platforms.ts'
 
 const root = dirname(fileURLToPath(import.meta.url))
 const help = `가사 가져오기
-  nub run import -y YDLafQ-Rg-k
-  nub run import -a 1737842246 --slug wrong-world
-  nub run import -s 0tNSVPZeJjpNH7Q9VqrbyJ
-  nub run import --search '雑踏、僕らの街'
-  nub run import --amll 1779284741800-68000793-I1W5DuF4.ttml
-  nub run import --file ./lyrics.ttml --slug music-title
+  pnpm run import -y YDLafQ-Rg-k
+  pnpm run import -a 1737842246 --slug wrong-world
+  pnpm run import -s 0tNSVPZeJjpNH7Q9VqrbyJ
+  pnpm run import --search '雑踏、僕らの街'
+  pnpm run import --amll 1779284741800-68000793-I1W5DuF4.ttml
+  pnpm run import --file ./lyrics.ttml --slug music-title
 
 -y, --youtube ID       YouTube ID (yt-dlp 필요)
 -a, --apple ID         Apple Music에서 직접 가사 가져오기 (로그인 토큰 필요)

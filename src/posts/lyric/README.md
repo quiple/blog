@@ -144,20 +144,20 @@ YouTube 뮤비↔음원 전환은 소스별 보정값을 적용해 같은 가사
 
 ```sh
 # YouTube 동영상 ID: AMLL 가사와 제공되는 자막 중 선택
-nub run import -y YDLafQ-Rg-k --slug wrong-world-new --artist togenashi-togeari
+pnpm run import -y YDLafQ-Rg-k --slug wrong-world-new --artist togenashi-togeari
 
 # Apple Music / Spotify ID: 해당 서비스에서 직접 가사 가져오기 (.env.local 인증 필요)
-nub run import -a 1737842246 --slug wrong-world-new
-nub run import -s 0tNSVPZeJjpNH7Q9VqrbyJ --slug wrong-world-new
+pnpm run import -a 1737842246 --slug wrong-world-new
+pnpm run import -s 0tNSVPZeJjpNH7Q9VqrbyJ --slug wrong-world-new
 
 # AMLL DB 검색 / 파일명 / 다운로드 링크 / 로컬 TTML
-nub run import --search '雑踏、僕らの街' --slug wrong-world-new
-nub run import --amll 1779284741800-68000793-I1W5DuF4.ttml --slug wrong-world-new
-nub run import --amll 'https://amlldb.bikonoo.com/raw-lyrics/1779284741800-68000793-I1W5DuF4.ttml' --slug wrong-world-new
-nub run import --file ./lyrics.ttml --slug music-title
+pnpm run import --search '雑踏、僕らの街' --slug wrong-world-new
+pnpm run import --amll 1779284741800-68000793-I1W5DuF4.ttml --slug wrong-world-new
+pnpm run import --amll 'https://amlldb.bikonoo.com/raw-lyrics/1779284741800-68000793-I1W5DuF4.ttml' --slug wrong-world-new
+pnpm run import --file ./lyrics.ttml --slug music-title
 ```
 
-`node --env-file-if-exists=.env.local import.ts …`로도 실행할 수 있습니다. `nubx import.ts`는 패키지 실행용 명령이어서 로컬 TypeScript 파일을 찾지 못하므로 위 명령을 사용하세요.
+`node --env-file-if-exists=.env.local import.ts …`로도 실행할 수 있습니다.
 
 후보가 여러 개면 **↑/↓ 방향키로 이동하고 Enter로 선택**합니다. Esc 또는 Ctrl+C로 취소할 수 있습니다. 비대화형 실행에서는 `--select 2`처럼 후보 번호(1부터)를 지정하세요. 후보가 여러 개인데 번호를 지정하지 않으면 목록을 출력하고 파일을 만들지 않습니다.
 
@@ -175,7 +175,7 @@ nub run import --file ./lyrics.ttml --slug music-title
 
 ### Apple Music·Spotify 인증
 
-`nub run import`는 Git에서 제외된 `.env.local`을 읽습니다. `.env.example`의 빈 항목을 참고해 필요한 서비스의 값만 추가하세요. 토큰은 코드·YAML·명령행 인자에 넣지 않습니다. 이 설정은 로컬 import 전용이며 배포 환경에 설정할 필요가 없습니다.
+`pnpm run import`는 Git에서 제외된 `.env.local`을 읽습니다. `.env.example`의 빈 항목을 참고해 필요한 서비스의 값만 추가하세요. 토큰은 코드·YAML·명령행 인자에 넣지 않습니다. 이 설정은 로컬 import 전용이며 배포 환경에 설정할 필요가 없습니다.
 
 - **Spotify:** 로그인한 `open.spotify.com`에서 가사를 연 뒤 브라우저 개발자 도구 → Network에서 `color-lyrics` 요청을 찾습니다. Request Headers의 `authorization: Bearer …`에서 토큰 부분을 `SPOTIFY_ACCESS_TOKEN`에 넣으세요. 일반 Spotify 개발자 API용 Client Credentials 토큰과 다릅니다. 만료되면 새 값을 넣어야 합니다.
 - **Apple Music:** 로그인한 `music.apple.com`에서 가사를 연 뒤 Network의 `amp-api.music.apple.com` 요청에서 `authorization`의 Bearer 토큰을 `APPLE_MUSIC_TOKEN`, `media-user-token`을 `APPLE_MUSIC_USER_TOKEN`에 넣으세요. 후자는 브라우저의 같은 이름 쿠키에서도 확인할 수 있습니다. `APPLE_MUSIC_STOREFRONT`는 생략하면 계정에서 조회하며, 직접 지정할 경우 `kr`, `us`, `jp`처럼 입력합니다.
@@ -189,10 +189,10 @@ Apple Music은 제공된 음절별·행별 TTML을 후보로 표시하므로 여
 ## 음원 간 오프셋 비교
 
 ```sh
-nub run diff life-kinda-sucks
-nub run diff life-kinda-sucks --reference youtubeMV
-nub run diff life-kinda-sucks --seconds 60
-nub run diff song-slug --file spotify=/path/to/full-song.flac
+pnpm run diff life-kinda-sucks
+pnpm run diff life-kinda-sucks --reference youtubeMV
+pnpm run diff life-kinda-sucks --seconds 60
+pnpm run diff song-slug --file spotify=/path/to/full-song.flac
 ```
 
 `yt-dlp`와 `ffmpeg`가 필요합니다(macOS: `brew install yt-dlp ffmpeg`). 등록된 YouTube 오디오를 임시로 내려받아 비교하고 실행이 끝나면 임시 파일을 삭제합니다. Spotify는 전체 스트림을 자동 추출하지 않으며, 해당 서비스 버전의 **처음부터 시작하는 전체 음원**을 `--file 소스=경로`로 지정합니다. 중간부터 시작하는 미리듣기 파일은 전체 음원의 오프셋을 구하는 데 사용할 수 없습니다. 로컬 파일은 YouTube 소스에도 지정할 수 있습니다.
@@ -213,10 +213,10 @@ YAML은 수정하지 않습니다. 종료 코드는 성공 `0`, 입력·기준 �
 ## 한글 발음 자동 추가
 
 ```sh
-nub run pron anhelo
-nub run pron anhelo --dry-run # 저장하지 않고 결과 YAML 보기
-nub run pron anhelo --force   # 기존 한글/문자열 발음 덮어쓰기
-nub run pron anhelo --lang spa
+pnpm run pron anhelo
+pnpm run pron anhelo --dry-run # 저장하지 않고 결과 YAML 보기
+pnpm run pron anhelo --force   # 기존 한글/문자열 발음 덮어쓰기
+pnpm run pron anhelo --lang spa
 ```
 
 로컬 [Hangulize](https://github.com/hangulize/hangulize) CLI를 사용합니다. 현재 검증한 버전은 0.5.0입니다. Go를 설치한 환경에서 한 번 설치하고 실행 파일 경로를 PATH에 추가하세요.
@@ -243,7 +243,7 @@ YAML의 서비스 필드는 `yt`와 `sp`이며, Spotify 시간 보정은 `offset
 ## TTML 타이밍 이식
 
 ```sh
-nub run ttml city-girl
+pnpm run ttml city-girl
 ```
 
 현재 디렉토리의 `city-girl.ttml`에서 원문과 행·음절 타이밍을 읽어 `src/posts/lyric/city-girl.yaml`에 덮어씁니다. 기존 발음·번역·메타데이터는 유지하며, TTML의 행별/음절별 형식에 맞춰 `text` 또는 `words`로 저장합니다. `time`은 초 단위의 `[시작, 종료]`로 저장합니다.

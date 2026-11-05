@@ -34,9 +34,9 @@ function withTimeout<T>(promise: Promise<T>, message: string) {
   ]).finally(() => clearTimeout(timer))
 }
 const help = `가사 페이지와 YouTube MV를 MP4로 렌더링
-  nub run render anger-management
-  nub run render anger-management --seconds 20
-  nub run render anger-management --file ./mv.mp4 --output ./video.mp4
+  pnpm run render anger-management
+  pnpm run render anger-management --seconds 20
+  pnpm run render anger-management --file ./mv.mp4 --output ./video.mp4
 
 --width 1920 --height 1080 --fps 60   출력 크기·프레임 수
 --font theme|system                 기본 theme
@@ -44,7 +44,7 @@ const help = `가사 페이지와 YouTube MV를 MP4로 렌더링
 --file 경로                        다운로드 대신 동일한 MV 파일 사용
 --output 경로                      기본 renders/<슬러그>.mp4
 --force                            기존 출력 덮어쓰기
-필수: ffmpeg, ffprobe, yt-dlp, nub exec playwright install chromium --only-shell
+필수: ffmpeg, ffprobe, yt-dlp, pnpm exec playwright install chromium --only-shell
 가사/오프셋은 앱 그대로, MV 선택. 오디오는 MV에서 가져옵니다.
 출력 해상도로 프레임당 한 번 캡처합니다.`
 

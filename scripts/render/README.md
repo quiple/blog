@@ -1,8 +1,8 @@
 # 가사 영상 렌더링
 
 ```sh
-nub exec playwright install chromium --only-shell
-nub run render anger-management
+pnpm exec playwright install chromium --only-shell
+pnpm run render anger-management
 ```
 
 `ffmpeg`, `ffprobe`, `yt-dlp`가 PATH에 있어야 합니다. 결과는
@@ -11,11 +11,11 @@ nub run render anger-management
 
 ```sh
 # 짧은 미리보기
-nub run render anger-management --seconds 20 --output renders/preview.mp4
+pnpm run render anger-management --seconds 20 --output renders/preview.mp4
 # 이미 받은 동일한 MV 사용
-nub run render anger-management --file ./mv.mp4
+pnpm run render anger-management --file ./mv.mp4
 # 화면과 구간 설정 (시간은 MV 기준 초)
-nub run render anger-management --font theme --width 1920 --height 1080 --fps 60 --start 30 --seconds 15
+pnpm run render anger-management --font theme --width 1920 --height 1080 --fps 60 --start 30 --seconds 15
 ```
 
 모든 출력은 **다크 모드·16:9 영역 캡처**입니다. 별도의 `--theme`, `--crop`
@@ -90,6 +90,6 @@ MV를 프레임별로 탐색해 페이지에 합성하고 PNG를 FFmpeg에 바�
 검증:
 
 ```sh
-nub run check:render
+pnpm run check:render
 node --test scripts/render/clock.test.ts
 ```

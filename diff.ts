@@ -12,9 +12,9 @@ import {compareAudio, sampleRate} from './scripts/lyrics/audio-diff.ts'
 const exec = promisify(execFile)
 const root = dirname(fileURLToPath(import.meta.url))
 const help = `음원 시간 차이 비교
-  nub run diff life-kinda-sucks
-  nub run diff life-kinda-sucks --reference youtubeMV
-  nub run diff song-slug --file spotify=/path/to/full-song.flac
+  pnpm run diff life-kinda-sucks
+  pnpm run diff life-kinda-sucks --reference youtubeMV
+  pnpm run diff song-slug --file spotify=/path/to/full-song.flac
 
 --reference 소스   기준 소스 (기본: Spotify → YouTube 뮤비 → 음원)
 --seconds 초       처음부터 분석할 길이 (기본 180, 최대 900)
@@ -39,7 +39,7 @@ async function main() {
   }
   const [slug] = positionals
   if (positionals.length !== 1 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug ?? ''))
-    throw new Error('곡 슬러그 하나를 지정하세요. 예: nub run diff life-kinda-sucks')
+    throw new Error('곡 슬러그 하나를 지정하세요. 예: pnpm run diff life-kinda-sucks')
   const seconds = Number(values.seconds ?? 180)
   if (!Number.isFinite(seconds) || seconds < 6 || seconds > 900) throw new Error('--seconds는 6~900 사이여야 합니다.')
   let yaml: string

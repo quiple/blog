@@ -16,12 +16,12 @@ try {
   })
   if (values.help) {
     console.log(
-      'nub run ttml <곡-슬러그>\n현재 디렉토리의 <곡-슬러그>.ttml에서 원문과 행·음절 타이밍을 가져옵니다. 기존 YAML의 발음·번역·메타데이터는 유지합니다. 원문 차이는 기본적으로 허용하며 --force는 필요하지 않습니다.',
+      'pnpm run ttml <곡-슬러그>\n현재 디렉토리의 <곡-슬러그>.ttml에서 원문과 행·음절 타이밍을 가져옵니다. 기존 YAML의 발음·번역·메타데이터는 유지합니다. 원문 차이는 기본적으로 허용하며 --force는 필요하지 않습니다.',
     )
   } else {
     const [slug] = positionals
     if (positionals.length !== 1 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))
-      throw Error('사용법: nub run ttml <곡-슬러그> [--force]')
+      throw Error('사용법: pnpm run ttml <곡-슬러그> [--force]')
     const input = resolve(`${slug}.ttml`)
     const output = fileURLToPath(new URL(`src/posts/lyric/${slug}.yaml`, import.meta.url))
     const original = await readFile(output, 'utf8')

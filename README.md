@@ -24,20 +24,19 @@ Copyright © 2025–2026 Lee Minseo and contributors.
 
 ## 개발과 빌드
 
-Node.js 26과 `nub`을 사용합니다. 의존성 버전은 `nub.lock`에 기록합니다.
+Node.js 26과 pnpm 12.15.0을 사용합니다. 의존성 버전은 `pnpm-lock.yaml`에 기록합니다.
 
 ```sh
-nub install
-nub run dev
-nub run check
-nub run lint
-nub run build:fast
+pnpm install
+pnpm run dev
+pnpm run check
+pnpm run lint
+pnpm run build:fast
 ```
 
-Nub은 `nub.jsonc`에 지정된 `tsconfig.runtime.json`을 사용합니다. 이 설정은
-SvelteKit이 생성하는 `$app/tsconfig`에 의존하지 않아, 의존성을 다시 설치한 뒤에도
-`svelte-kit sync`를 실행할 수 있습니다. 앱의 타입 검사는 기존 `tsconfig.json`을
-사용하며, `nub run check`는 먼저 `sync`로 SvelteKit 설정을 생성합니다.
+Node.js 26은 TypeScript 실행에 내장 타입 제거 기능을 사용합니다.
+앱의 타입 검사는 `tsconfig.json`을 사용하며, `pnpm run check`는 먼저
+`svelte-kit sync`로 SvelteKit 설정을 생성합니다.
 
 타입 검사는 TypeScript 7.1(`@typescript/native` 별칭)을 사용합니다.
 `typescript`의 6.0 버전은 Svelte 도구의 변환 API 호환용으로 함께 설치합니다.
@@ -58,7 +57,7 @@ Workers 타입이 서로 충돌하지 않도록 합니다.
 ## 의존성 고지 갱신
 
 ```sh
-nub run licenses
+pnpm run licenses
 ```
 
 설치된 직접·간접 의존성의 라이선스 메타데이터와 포함된 LICENSE/COPYING/NOTICE 문서를 수집합니다. 의존성을 갱신하거나 배포 환경을 바꾸면 다시 생성하고 검토하세요. 설치되지 않은 플랫폼별 선택 의존성은 포함되지 않으며, 패키지에 누락된 고지나 별도 폰트·콘텐츠의 허가까지 자동으로 해결하지는 않습니다.

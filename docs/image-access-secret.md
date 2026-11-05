@@ -11,7 +11,7 @@ INTERNAL_IMAGE_SECRET=
 ```
 
 - Vite 개발 서버는 `.env.local`을 읽습니다. 변경 후 개발 서버를 재시작합니다.
-- `nub run sync-images`는 Node의 `--env-file-if-exists=.env.local`로 값을 읽습니다. 셸/CI에 같은 환경변수가 있으면 그 값이 우선합니다.
+- `pnpm run sync-images`는 Node의 `--env-file-if-exists=.env.local`로 값을 읽습니다. 셸/CI에 같은 환경변수가 있으면 그 값이 우선합니다.
 - Wrangler 로컬 실행은 `.dev.vars`에 같은 이름으로 설정할 수 있습니다. 이 파일도 Git에서 제외됩니다.
 - `.env*`, `.dev.vars*`는 Git에서 제외하며 `.env.example`, `.dev.vars.example`만 예외입니다. 예시 파일에는 실제 값을 쓰지 않습니다. `git add -f`는 이 보호를 우회하므로 사용하지 않습니다.
 

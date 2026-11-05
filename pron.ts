@@ -8,10 +8,10 @@ import {addPronunciation} from './scripts/lyrics/pronunciation.ts'
 const exec = promisify(execFile)
 const root = new URL('./', import.meta.url)
 const help = `가사에 한글 발음 추가 (로컬 Hangulize)
-  nub run pron anhelo
-  nub run pron anhelo --dry-run
-  nub run pron anhelo --force
-  nub run pron anhelo --lang spa
+  pnpm run pron anhelo
+  pnpm run pron anhelo --dry-run
+  pnpm run pron anhelo --force
+  pnpm run pron anhelo --lang spa
 
 --dry-run  저장하지 않고 결과 YAML 출력
 --force    기존 발음을 한글 발음 문자열로 덮어쓰기
@@ -34,7 +34,7 @@ async function main() {
   if (values.help) return console.log(help)
   const [slug] = positionals
   if (positionals.length !== 1 || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug ?? ''))
-    throw Error('곡 슬러그 하나를 지정하세요. 예: nub run pron anhelo')
+    throw Error('곡 슬러그 하나를 지정하세요. 예: pnpm run pron anhelo')
   const path = new URL(`src/posts/lyric/${slug}.yaml`, root)
   const source = await readFile(path, 'utf8')
   let binary = process.env.HANGULIZE_BIN
@@ -66,7 +66,7 @@ async function main() {
           throw Error(
             language === 'jpn'
               ? '일본어 변형 표기에는 Go가 필요합니다. Go를 설치하고 PATH에 추가하세요.'
-              : 'Hangulize가 없습니다. go install github.com/hangulize/hangulize/cmd/hangulize@v0.5.0 후 PATH를 설정하세요. nub run pron --help 참고',
+              : 'Hangulize가 없습니다. go install github.com/hangulize/hangulize/cmd/hangulize@v0.5.0 후 PATH를 설정하세요. pnpm run pron --help 참고',
           )
         throw error
       }
