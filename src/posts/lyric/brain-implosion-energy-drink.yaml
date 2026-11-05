@@ -400,19 +400,25 @@ lines:
     time: [46.332, 48.118]
   - words:
       - text: 'As '
+        pr: 애즈
         time: [48.384, 48.515]
       - text: 'time '
+        pr: 타임
         time: [48.515, 48.699]
       - text: 'slowly '
+        pr: 슬롤리
         time: [48.699, 49.133]
       - text: 'withers '
+        pr: 위더즈
         time: [49.133, 49.481]
       - text: 'their '
+        pr: 데어
         time: [49.481, 49.615]
       - text: 'life '
         pr: 라입
         time: [49.615, 49.891]
       - text: away
+        pr: 어웨이
         time: [49.891, 50.369]
     tl: 시간이 서서히 삶을 시들게 하는 동안
     time: [48.384, 50.369]
