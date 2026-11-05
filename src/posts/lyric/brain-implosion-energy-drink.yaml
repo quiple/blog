@@ -100,6 +100,7 @@ lines:
         pr: 소츠,
         time: [13.648, 14.005]
       - text: 'want '
+        pr: 원트
         time: [14.005, 14.27]
       - text: 'head '
         pr: 헷
@@ -617,6 +618,7 @@ lines:
         pr: 소츠,
         time: [109.665, 109.925]
       - text: 'want '
+        pr: 원트
         time: [109.925, 110.168]
       - text: 'head '
         pr: 헷
