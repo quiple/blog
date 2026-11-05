@@ -622,8 +622,10 @@ lines:
         pr: 버내너,
         time: [68.831, 69.212]
       - text: 'Repressed '
+        pr: 리프레스트
         time: [69.212, 69.771]
       - text: Raspberry
+        pr: 래즈베리
         time: [69.771, 70.518]
     tl: 번아웃 바나나, 억눌린 라즈베리
     time: [68.381, 70.518]
