@@ -560,6 +560,7 @@ lines:
     time: [59.517, 61.818]
   - words:
       - text: 'Comes '
+        pr: 컴즈
         time: [64.663, 64.869]
       - text: 'in '
         pr: 인
@@ -568,8 +569,10 @@ lines:
         pr: 더
         time: [65.032, 65.116]
       - text: 'following '
+        pr: 팔로잉
         time: [65.116, 65.544]
       - text: 'flavors:'
+        pr: '플레이버즈:'
         time: [65.544, 66.047]
     tl: '다음과 같은 맛이 있습니다:'
     time: [64.663, 66.047]
