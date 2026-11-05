@@ -61,15 +61,19 @@ lines:
       - text: "can't "
         time: [6.829, 7.125]
       - text: 'overthink '
+        pr: 오버싱크
         time: [7.125, 7.928]
       - text: 'if '
+        pr: 입
         time: [7.928, 8.186]
       - text: 'your '
         pr: 유어
         time: [8.186, 8.442]
       - text: 'heart '
+        pr: 하트
         time: [8.442, 8.673]
       - text: stops
+        pr: 스탑스
         time: [8.673, 9.643]
     tl: 심장이 멈추면 생각이 많아질 수 없으니까
     time: [6.291, 9.643]
@@ -218,15 +222,19 @@ lines:
       - text: "can't "
         time: [33.432, 33.714]
       - text: 'overthink '
+        pr: 오버싱크
         time: [33.714, 34.53]
       - text: 'if '
+        pr: 입
         time: [34.53, 34.779]
       - text: 'your '
         pr: 유어
         time: [34.779, 35.011]
       - text: 'heart '
+        pr: 하트
         time: [35.011, 35.251]
       - text: stops
+        pr: 스탑스
         time: [35.251, 36.222]
     tl: 심장이 멈추면 생각이 많아질 수 없으니까
     time: [32.886, 36.222]
@@ -335,6 +343,7 @@ lines:
       - text: 'their '
         time: [49.481, 49.615]
       - text: 'life '
+        pr: 라입
         time: [49.615, 49.891]
       - text: away
         time: [49.891, 50.369]
@@ -461,6 +470,7 @@ lines:
     time: [64.663, 66.047]
   - words:
       - text: 'Overthinking '
+        pr: 오버싱킹
         time: [66.177, 66.735]
       - text: 'Orange, '
         time: [66.735, 67.113]
@@ -560,15 +570,19 @@ lines:
       - text: "can't "
         time: [102.755, 103.051]
       - text: 'overthink '
+        pr: 오버싱크
         time: [103.051, 103.852]
       - text: 'if '
+        pr: 입
         time: [103.852, 104.133]
       - text: 'your '
         pr: 유어
         time: [104.133, 104.368]
       - text: 'heart '
+        pr: 하트
         time: [104.368, 104.657]
       - text: stops
+        pr: 스탑스
         time: [104.657, 105.544]
     tl: 심장이 멈추면 생각이 많아질 수 없으니까
     time: [102.214, 105.544]
@@ -717,15 +731,19 @@ lines:
       - text: "can't "
         time: [129.358, 129.638]
       - text: 'overthink '
+        pr: 오버싱크
         time: [129.638, 130.43]
       - text: 'if '
+        pr: 입
         time: [130.43, 130.678]
       - text: 'your '
         pr: 유어
         time: [130.678, 130.939]
       - text: 'heart '
+        pr: 하트
         time: [130.939, 131.225]
       - text: stops
+        pr: 스탑스
         time: [131.225, 132.149]
     tl: 심장이 멈추면 생각이 많아질 수 없으니까
     time: [128.809, 132.149]
