@@ -94,32 +94,12 @@ lines:
     time: [66.917, 67.375]
   - text: タイムイズマイン
     time: [67.375, 69]
-  - text: own
-    time: [69.042, 69.417]
-  - text: own tick
-    time: [69.417, 69.75]
-  - text: own ticktack
-    time: [69.75, 70.125]
-  - text: own ticktack own
-    time: [70.125, 70.5]
-  - text: own ticktack own tick
-    time: [70.5, 70.875]
   - text: own ticktack own ticktack
-    time: [70.875, 71.25]
+    time: [69.042, 71.25]
   - text: 🔔own🔔
     time: [71.25, 72.083]
-  - text: own
-    time: [72.083, 72.458]
-  - text: own tick
-    time: [72.458, 72.792]
-  - text: own ticktack
-    time: [72.792, 73.167]
-  - text: own ticktack own
-    time: [73.167, 73.542]
-  - text: own ticktack own tick
-    time: [73.542, 73.917]
   - text: own ticktack own ticktack
-    time: [73.917, 74.292]
+    time: [72.083, 74.292]
   - text: 🔔own🔔
     time: [74.292, 75.125]
   - text: 俺があーだこーだ言ってる間もアイツは成長中
@@ -224,59 +204,19 @@ lines:
     time: [157.125, 158.708]
   - text: 指図されない
     time: [158.708, 160.167]
-  - text: own
-    time: [160.542, 160.917]
-  - text: own tick
-    time: [160.917, 161.25]
-  - text: own ticktack
-    time: [161.25, 161.625]
-  - text: own ticktack own
-    time: [161.625, 162]
-  - text: own ticktack own tick
-    time: [162, 162.375]
   - text: own ticktack own ticktack
-    time: [162.375, 162.75]
+    time: [160.542, 162.75]
   - text: 🔔own🔔
     time: [162.75, 163.583]
-  - text: own
-    time: [163.583, 163.958]
-  - text: own tick
-    time: [163.958, 164.292]
-  - text: own ticktack
-    time: [164.292, 164.667]
-  - text: own ticktack own
-    time: [164.667, 165.042]
-  - text: own ticktack own tick
-    time: [165.042, 165.417]
   - text: own ticktack own ticktack
-    time: [165.417, 165.792]
+    time: [163.583, 165.792]
   - text: 🔔own🔔
     time: [165.792, 166.625]
-  - text: own
-    time: [166.708, 167.083]
-  - text: own tick
-    time: [167.083, 167.417]
-  - text: own ticktack
-    time: [167.417, 167.792]
-  - text: own ticktack own
-    time: [167.792, 168.167]
-  - text: own ticktack own tick
-    time: [168.167, 168.542]
   - text: own ticktack own ticktack
-    time: [168.542, 168.917]
+    time: [166.708, 168.917]
   - text: 🔔own🔔
     time: [168.917, 169.75]
-  - text: own
-    time: [169.75, 170.125]
-  - text: own tick
-    time: [170.125, 170.458]
-  - text: own ticktack
-    time: [170.458, 170.833]
-  - text: own ticktack own
-    time: [170.833, 171.208]
-  - text: own ticktack own tick
-    time: [171.208, 171.583]
   - text: own ticktack own ticktack
-    time: [171.583, 171.958]
+    time: [169.75, 171.958]
   - text: 🔔own🔔
     time: [171.958, 172.875]
