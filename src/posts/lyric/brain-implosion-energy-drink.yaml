@@ -143,6 +143,7 @@ lines:
     time: [15.106, 18.668]
   - words:
       - text: 'I '
+        pr: 아이
         time: [19.545, 19.816]
       - text: 'love '
         time: [19.816, 20.067]
@@ -186,6 +187,7 @@ lines:
       - text: 'forever? '
         time: [25.717, 26.548]
       - text: 'I '
+        pr: 아이
         time: [26.548, 26.808]
       - text: 'just '
         time: [26.808, 27.097]
@@ -297,8 +299,10 @@ lines:
     time: [40.829, 41.962]
   - words:
       - text: 'Uh, '
+        pr: 어,
         time: [42.33, 42.833]
       - text: 'I '
+        pr: 아이
         time: [42.833, 43.052]
       - text: "don't "
         time: [43.052, 43.171]
@@ -318,6 +322,7 @@ lines:
     time: [42.33, 44.718]
   - words:
       - text: 'I '
+        pr: 아이
         time: [44.718, 44.919]
       - text: 'said, '
         time: [44.919, 45.193]
@@ -670,6 +675,7 @@ lines:
     time: [111.028, 114.621]
   - words:
       - text: 'I '
+        pr: 아이
         time: [115.444, 115.717]
       - text: 'love '
         time: [115.717, 115.993]
@@ -713,6 +719,7 @@ lines:
       - text: 'forever? '
         time: [121.643, 122.472]
       - text: 'I '
+        pr: 아이
         time: [122.472, 122.733]
       - text: 'just '
         time: [122.733, 123.023]
