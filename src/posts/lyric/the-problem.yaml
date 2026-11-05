@@ -10,7 +10,7 @@ titleLang: ja
 year: '2025'
 artist:
   - yukatefu
-  - kasane-teto
+  - kaai-yuki
   - hatsune-miku
 lang: ja
 sp: 5erbuaxcvbjsr1jzrzbj3J
@@ -45,18 +45,23 @@ lines:
   - text: 分かんない、ほんと分かんない!
     pr: 와칸나이, 혼토와칸나이!
     time: [51.424, 54.76]
+    duet: true
   - text: 君がそんな些細なこと気にするならどけよ!
     pr: 키미가손나사사이나코토키니스루나라도케요!
     time: [54.76, 59.644]
+    duet: true
   - text: たまんない、マジたまんない!
     pr: 타만나이, 마지타만나이!
     time: [59.644, 62.485]
+    duet: true
   - text: 急に哲学に興味あるのか?
     pr: 큐니테츠가쿠니쿄미아루노카?
     time: [62.485, 65.898]
+    duet: true
   - text: 勉強邪魔しないでよ!
     pr: 벤쿄자마시나이데요!
     time: [65.898, 69.538]
+    duet: true
   - text: 時間は容赦なくながれてく
     pr: 지칸와요샤나쿠나가레테쿠
     time: [75.908, 78.125]
@@ -90,12 +95,15 @@ lines:
   - text: 分かんない、ほんと分かんない!
     pr: 와칸나이, 혼토와칸나이!
     time: [100.695, 103.881]
+    duet: true
   - text: 君がそんな深刻なこと気にするなら勉強してよ!
     pr: 키미가손나신코쿠나코토키니스루나라벤쿄시테요!
     time: [104, 108.853]
+    duet: true
   - text: たまんない、マジたまんない!
     pr: 타만나이, 마지타만나이!
     time: [108.853, 112.143]
+    duet: true
   - text: 急に仕事に興味あるのか?
     pr: 큐니시고토니쿄미아루노카?
     time: [112.143, 114.979]
