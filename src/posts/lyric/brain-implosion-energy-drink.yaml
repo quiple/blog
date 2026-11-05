@@ -269,8 +269,10 @@ lines:
     time: [32.886, 36.222]
   - words:
       - text: '22 '
+        pr: 트웬티 투
         time: [37.561, 38.101]
       - text: 'pounds '
+        pr: 파운즈
         time: [38.101, 38.434]
       - text: 'of '
         pr: 옵
@@ -279,21 +281,27 @@ lines:
         pr: 캐핀
         time: [38.653, 39.099]
       - text: 'in '
+        pr: 인
         time: [39.099, 39.222]
       - text: 'this '
+        pr: 디스
         time: [39.222, 39.437]
       - text: 'small '
         time: [39.437, 39.756]
       - text: 'can? '
+        pr: 캔?
         time: [39.756, 40.19]
       - text: 'How '
+        pr: 하우
         time: [40.19, 40.303]
       - text: 'does '
+        pr: 더즈
         time: [40.303, 40.507]
       - text: 'it '
         pr: 잇
         time: [40.507, 40.629]
       - text: fit?
+        pr: 핏?
         time: [40.629, 40.829]
     tl: 이 작은 캔에 카페인이 22파운드나? 어떻게 다 들어가?
     time: [37.561, 40.829]
@@ -332,10 +340,12 @@ lines:
         pr: 에프디에이
         time: [43.409, 43.871]
       - text: 'will '
+        pr: 윌
         time: [43.871, 44.001]
       - text: 'approve '
         time: [44.001, 44.229]
       - text: this
+        pr: 디스
         time: [44.229, 44.718]
     tl: 어, FDA에서 이걸 승인해 주진 않을 것 같은데
     time: [42.33, 44.718]
