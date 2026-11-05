@@ -53,6 +53,7 @@ lines:
     time: [4.108, 6.198]
   - words:
       - text: "'Cause "
+        pr: 코즈
         time: [6.291, 6.562]
       - text: 'you '
         time: [6.562, 6.829]
@@ -206,6 +207,7 @@ lines:
     time: [30.677, 32.795]
   - words:
       - text: "'Cause "
+        pr: 코즈
         time: [32.886, 33.139]
       - text: 'you '
         time: [33.139, 33.432]
@@ -545,6 +547,7 @@ lines:
     time: [100.002, 102.124]
   - words:
       - text: "'Cause "
+        pr: 코즈
         time: [102.214, 102.473]
       - text: 'you '
         time: [102.473, 102.755]
@@ -698,6 +701,7 @@ lines:
     time: [126.597, 128.723]
   - words:
       - text: "'Cause "
+        pr: 코즈
         time: [128.809, 129.059]
       - text: 'you '
         time: [129.059, 129.358]
