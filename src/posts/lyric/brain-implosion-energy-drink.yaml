@@ -181,6 +181,7 @@ lines:
       - text: 'stop '
         time: [24.783, 25.16]
       - text: 'the '
+        pr: 더
         time: [25.16, 25.446]
       - text: 'pain '
         time: [25.446, 25.717]
@@ -305,12 +306,16 @@ lines:
         pr: 아이
         time: [42.833, 43.052]
       - text: "don't "
+        pr: 돈트
         time: [43.052, 43.171]
       - text: 'think '
+        pr: 싱크
         time: [43.171, 43.277]
       - text: 'the '
+        pr: 디
         time: [43.277, 43.409]
       - text: 'FDA '
+        pr: 에프디에이
         time: [43.409, 43.871]
       - text: 'will '
         time: [43.871, 44.001]
@@ -405,6 +410,7 @@ lines:
       - text: "'til "
         time: [54.01, 54.219]
       - text: 'the '
+        pr: 더
         time: [54.219, 54.304]
       - text: 'clock '
         time: [54.304, 54.527]
@@ -426,6 +432,7 @@ lines:
       - text: "'til "
         time: [56.171, 56.399]
       - text: 'the '
+        pr: 더
         time: [56.399, 56.477]
       - text: 'clock '
         time: [56.477, 56.775]
@@ -447,6 +454,7 @@ lines:
       - text: "'til "
         time: [58.364, 58.563]
       - text: 'the '
+        pr: 더
         time: [58.563, 58.668]
       - text: 'clock '
         time: [58.668, 58.895]
@@ -468,6 +476,7 @@ lines:
       - text: "'til "
         time: [60.539, 60.72]
       - text: 'the '
+        pr: 더
         time: [60.72, 60.835]
       - text: 'clock '
         time: [60.835, 61.066]
@@ -483,6 +492,7 @@ lines:
       - text: 'in '
         time: [64.869, 65.032]
       - text: 'the '
+        pr: 더
         time: [65.032, 65.116]
       - text: 'following '
         time: [65.116, 65.544]
@@ -713,6 +723,7 @@ lines:
       - text: 'stop '
         time: [120.689, 121.088]
       - text: 'the '
+        pr: 더
         time: [121.088, 121.368]
       - text: 'pain '
         time: [121.368, 121.643]
