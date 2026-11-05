@@ -604,10 +604,13 @@ lines:
         pr: 오린지,
         time: [66.735, 67.113]
       - text: 'Socially '
+        pr: 소셜리
         time: [67.113, 67.73]
       - text: 'Anxious '
+        pr: 앵크셔스
         time: [67.73, 67.945]
       - text: Strawberry
+        pr: 스트로베리
         time: [67.945, 68.381]
     tl: 생각 과다 오렌지, 사회불안 딸기
     time: [66.177, 68.381]
