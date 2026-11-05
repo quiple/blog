@@ -176,13 +176,15 @@ lines:
   - text: タイムイズマイン
     pr: 타임 이즈 마인
     time: [106, 107.25]
-  - text: own
-    time: [107.25, 107.542]
+    background:
+      text: (own)
+      time: [107.25, 107.542]
   - text: わがままでいたい
     pr: 와가마마데이타이
     time: [107.542, 108.75]
-  - text: own
-    time: [108.75, 109.25]
+    background:
+      text: (own)
+      time: [108.75, 109.25]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
     time: [109.25, 110.333]
@@ -195,13 +197,15 @@ lines:
   - text: タイムイズマイン
     pr: 타임 이즈 마인
     time: [112.375, 113.417]
-  - text: own
-    time: [113.417, 113.75]
+    background:
+      text: own
+      time: [113.417, 113.75]
   - text: 衰えてくブレイン
     pr: 오토로에테쿠부레인
     time: [113.75, 114.917]
-  - text: own
-    time: [114.917, 115.333]
+    background:
+      text: own
+      time: [114.917, 115.333]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
     time: [115.333, 116.375]
@@ -243,13 +247,15 @@ lines:
   - text: タイムイズマイン
     pr: 타임 이즈 마인
     time: [146.292, 147.542]
-  - text: own
-    time: [147.542, 147.833]
+    background:
+      text: (own)
+      time: [147.542, 147.833]
   - text: わがままでいたい
     pr: 와가마마데이타이
     time: [147.833, 149.042]
-  - text: own
-    time: [149.042, 149.542]
+    background:
+      text: (own)
+      time: [149.042, 149.542]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
     time: [149.542, 150.625]
@@ -262,13 +268,15 @@ lines:
   - text: タイムイズマイン
     pr: 타임 이즈 마인
     time: [152.667, 153.708]
-  - text: own
-    time: [153.708, 154.042]
+    background:
+      text: (own)
+      time: [153.708, 154.042]
   - text: 壊れてくブレイン
     pr: 코와레테쿠부레인
     time: [154.042, 155.208]
-  - text: own
-    time: [155.208, 155.625]
+    background:
+      text: (own)
+      time: [155.208, 155.625]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
     time: [155.625, 156.667]
