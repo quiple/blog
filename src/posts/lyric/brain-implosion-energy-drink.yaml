@@ -581,6 +581,7 @@ lines:
         pr: 오버싱킹
         time: [66.177, 66.735]
       - text: 'Orange, '
+        pr: 오린지,
         time: [66.735, 67.113]
       - text: 'Socially '
         time: [67.113, 67.73]
