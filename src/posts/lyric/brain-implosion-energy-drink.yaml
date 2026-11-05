@@ -631,12 +631,16 @@ lines:
     time: [68.381, 70.518]
   - words:
       - text: 'Grieving '
+        pr: 그리빙
         time: [70.518, 71.023]
       - text: 'Grape, '
+        pr: 그레입
         time: [71.023, 71.569]
       - text: 'Misery '
+        pr: 미저리
         time: [71.569, 72.123]
       - text: Melon
+        pr: 멜런
         time: [72.123, 72.688]
     tl: 비탄의 포도, 비참한 멜론
     time: [70.518, 72.688]
