@@ -21,120 +21,652 @@ yt:
   mv: WgYaGPNRjgI
 pubDate: 2026-09-27T18:28
 lines:
-  - text: Brain implosion energy
+  - words:
+      - text: 'Brain '
+        time: [2.182, 2.452]
+      - text: 'implosion '
+        time: [2.452, 3.288]
+      - text: energy
+        time: [3.288, 4.075]
     tl: 뇌 내파 에너지
     time: [2.182, 4.075]
-  - text: 10,000 grams of pure caffeine
+  - words:
+      - text: '10,000 '
+        time: [4.108, 4.918]
+      - text: 'grams '
+        time: [4.918, 5.193]
+      - text: 'of '
+        time: [5.193, 5.46]
+      - text: 'pure '
+        time: [5.46, 5.732]
+      - text: caffeine
+        time: [5.732, 6.198]
     tl: 순수 카페인 10,000그램
     time: [4.108, 6.198]
-  - text: "'Cause you can't overthink if your heart stops"
+  - words:
+      - text: "'Cause "
+        time: [6.291, 6.562]
+      - text: 'you '
+        time: [6.562, 6.829]
+      - text: "can't "
+        time: [6.829, 7.125]
+      - text: 'overthink '
+        time: [7.125, 7.928]
+      - text: 'if '
+        time: [7.928, 8.186]
+      - text: 'your '
+        time: [8.186, 8.442]
+      - text: 'heart '
+        time: [8.442, 8.673]
+      - text: stops
+        time: [8.673, 9.643]
     tl: 심장이 멈추면 생각이 많아질 수 없으니까
     time: [6.291, 9.643]
-  - text: Brain implosion energy
+  - words:
+      - text: 'Brain '
+        time: [10.981, 11.259]
+      - text: 'implosion '
+        time: [11.259, 12.095]
+      - text: energy
+        time: [12.095, 12.847]
     tl: 뇌 내파 에너지
     time: [10.981, 12.847]
-  - text: Crave zero thoughts, want head empty
+  - words:
+      - text: 'Crave '
+        time: [12.892, 13.101]
+      - text: 'zero '
+        time: [13.101, 13.648]
+      - text: 'thoughts, '
+        time: [13.648, 14.005]
+      - text: 'want '
+        time: [14.005, 14.27]
+      - text: 'head '
+        time: [14.27, 14.579]
+      - text: empty
+        time: [14.579, 15.077]
     tl: 생각은 하나도 없이, 머릿속을 비우고 싶다면
     time: [12.892, 15.077]
-  - text: Then drink and drink and drink until you drop
+  - words:
+      - text: 'Then '
+        time: [15.106, 15.348]
+      - text: 'drink '
+        time: [15.348, 15.645]
+      - text: 'and '
+        time: [15.645, 15.922]
+      - text: 'drink '
+        time: [15.922, 16.22]
+      - text: 'and '
+        time: [16.22, 16.473]
+      - text: 'drink '
+        time: [16.473, 16.77]
+      - text: 'until '
+        time: [16.77, 17.263]
+      - text: 'you '
+        time: [17.263, 17.569]
+      - text: drop
+        time: [17.569, 18.668]
     tl: 쓰러질 때까지 마시고 마시고 또 마셔
     time: [15.106, 18.668]
-  - text: I love my brain implosion juice, it makes my head go brr
+  - words:
+      - text: 'I '
+        time: [19.545, 19.816]
+      - text: 'love '
+        time: [19.816, 20.067]
+      - text: 'my '
+        time: [20.067, 20.347]
+      - text: 'brain '
+        time: [20.347, 20.638]
+      - text: 'implosion '
+        time: [20.638, 21.406]
+      - text: 'juice, '
+        time: [21.406, 21.609]
+      - text: 'it '
+        time: [21.609, 22.006]
+      - text: 'makes '
+        time: [22.006, 22.282]
+      - text: 'my '
+        time: [22.282, 22.514]
+      - text: 'head '
+        time: [22.514, 22.831]
+      - text: 'go '
+        time: [22.831, 23.097]
+      - text: brr
+        time: [23.097, 24.116]
     tl: 난 내 뇌 내파 주스가 좋아, 머리가 부르르 돌아가거든
     time: [19.545, 24.116]
-  - text: But will it stop the pain forever? I just can't be sure
+  - words:
+      - text: 'But '
+        time: [24.116, 24.348]
+      - text: 'will '
+        time: [24.348, 24.635]
+      - text: 'it '
+        time: [24.635, 24.783]
+      - text: 'stop '
+        time: [24.783, 25.16]
+      - text: 'the '
+        time: [25.16, 25.446]
+      - text: 'pain '
+        time: [25.446, 25.717]
+      - text: 'forever? '
+        time: [25.717, 26.548]
+      - text: 'I '
+        time: [26.548, 26.808]
+      - text: 'just '
+        time: [26.808, 27.097]
+      - text: "can't "
+        time: [27.097, 27.375]
+      - text: 'be '
+        time: [27.375, 27.522]
+      - text: sure
+        time: [27.522, 28.32]
     tl: 하지만 이게 고통을 영원히 멈춰 줄까? 도무지 확신이 안 서
     time: [24.116, 28.32]
-  - text: Brain implosion energy
+  - words:
+      - text: 'Brain '
+        time: [28.758, 29.044]
+      - text: 'implosion '
+        time: [29.044, 29.866]
+      - text: energy
+        time: [29.866, 30.638]
     tl: 뇌 내파 에너지
     time: [28.758, 30.638]
-  - text: 10,000 grams of pure caffeine
+  - words:
+      - text: '10,000 '
+        time: [30.677, 31.49]
+      - text: 'grams '
+        time: [31.49, 31.778]
+      - text: 'of '
+        time: [31.778, 32.052]
+      - text: 'pure '
+        time: [32.052, 32.327]
+      - text: caffeine
+        time: [32.327, 32.795]
     tl: 순수 카페인 10,000그램
     time: [30.677, 32.795]
-  - text: "'Cause you can't overthink if your heart stops"
+  - words:
+      - text: "'Cause "
+        time: [32.886, 33.139]
+      - text: 'you '
+        time: [33.139, 33.432]
+      - text: "can't "
+        time: [33.432, 33.714]
+      - text: 'overthink '
+        time: [33.714, 34.53]
+      - text: 'if '
+        time: [34.53, 34.779]
+      - text: 'your '
+        time: [34.779, 35.011]
+      - text: 'heart '
+        time: [35.011, 35.251]
+      - text: stops
+        time: [35.251, 36.222]
     tl: 심장이 멈추면 생각이 많아질 수 없으니까
     time: [32.886, 36.222]
-  - text: 22 pounds of caffeine in this small can? How does it fit?
+  - words:
+      - text: '22 '
+        time: [37.561, 38.101]
+      - text: 'pounds '
+        time: [38.101, 38.434]
+      - text: 'of '
+        time: [38.434, 38.653]
+      - text: 'caffeine '
+        time: [38.653, 39.099]
+      - text: 'in '
+        time: [39.099, 39.222]
+      - text: 'this '
+        time: [39.222, 39.437]
+      - text: 'small '
+        time: [39.437, 39.756]
+      - text: 'can? '
+        time: [39.756, 40.19]
+      - text: 'How '
+        time: [40.19, 40.303]
+      - text: 'does '
+        time: [40.303, 40.507]
+      - text: 'it '
+        time: [40.507, 40.629]
+      - text: fit?
+        time: [40.629, 40.829]
     tl: 이 작은 캔에 카페인이 22파운드나? 어떻게 다 들어가?
     time: [37.561, 40.829]
-  - text: Just don't question it!
+  - words:
+      - text: 'Just '
+        time: [40.829, 41.142]
+      - text: "don't "
+        time: [41.142, 41.387]
+      - text: 'question '
+        time: [41.387, 41.707]
+      - text: it!
+        time: [41.707, 41.962]
     tl: 그냥 따지지 마!
     time: [40.829, 41.962]
-  - text: Uh, I don't think the FDA will approve this
+  - words:
+      - text: 'Uh, '
+        time: [42.33, 42.833]
+      - text: 'I '
+        time: [42.833, 43.052]
+      - text: "don't "
+        time: [43.052, 43.171]
+      - text: 'think '
+        time: [43.171, 43.277]
+      - text: 'the '
+        time: [43.277, 43.409]
+      - text: 'FDA '
+        time: [43.409, 43.871]
+      - text: 'will '
+        time: [43.871, 44.001]
+      - text: 'approve '
+        time: [44.001, 44.229]
+      - text: this
+        time: [44.229, 44.718]
     tl: 어, FDA에서 이걸 승인해 주진 않을 것 같은데
     time: [42.33, 44.718]
-  - text: I said, "Just don't question it!"
+  - words:
+      - text: 'I '
+        time: [44.718, 44.919]
+      - text: 'said, '
+        time: [44.919, 45.193]
+      - text: '"Just '
+        time: [45.193, 45.51]
+      - text: "don't "
+        time: [45.51, 45.749]
+      - text: 'question '
+        time: [45.749, 46.067]
+      - text: it!"
+        time: [46.067, 46.332]
     tl: 그냥 따지지 말라니까!
     time: [44.718, 46.332]
-  - text: Everyone needs something to numb the pain
+  - words:
+      - text: 'Everyone '
+        time: [46.332, 46.757]
+      - text: 'needs '
+        time: [46.757, 46.873]
+      - text: 'something '
+        time: [46.873, 47.275]
+      - text: 'to '
+        time: [47.275, 47.43]
+      - text: 'numb '
+        time: [47.43, 47.635]
+      - text: 'the '
+        time: [47.635, 47.877]
+      - text: pain
+        time: [47.877, 48.118]
     tl: 누구나 고통을 무디게 해 줄 무언가가 필요해
     time: [46.332, 48.118]
-  - text: As time slowly withers their life away
+  - words:
+      - text: 'As '
+        time: [48.384, 48.515]
+      - text: 'time '
+        time: [48.515, 48.699]
+      - text: 'slowly '
+        time: [48.699, 49.133]
+      - text: 'withers '
+        time: [49.133, 49.481]
+      - text: 'their '
+        time: [49.481, 49.615]
+      - text: 'life '
+        time: [49.615, 49.891]
+      - text: away
+        time: [49.891, 50.369]
     tl: 시간이 서서히 삶을 시들게 하는 동안
     time: [48.384, 50.369]
-  - text: Day by day, in an endless cycle of burnout
+  - words:
+      - text: 'Day '
+        time: [50.369, 50.557]
+      - text: 'by '
+        time: [50.557, 50.726]
+      - text: 'day, '
+        time: [50.726, 51.114]
+      - text: 'in '
+        time: [51.114, 51.187]
+      - text: 'an '
+        time: [51.187, 51.256]
+      - text: 'endless '
+        time: [51.256, 51.591]
+      - text: 'cycle '
+        time: [51.591, 51.94]
+      - text: 'of '
+        time: [51.94, 52.195]
+      - text: burnout
+        time: [52.195, 52.793]
     tl: 하루하루, 끝없이 반복되는 번아웃 속에서
     time: [50.369, 52.793]
-  - text: Eat, sleep, work, repeat 'til the clock runs out
+  - words:
+      - text: 'Eat, '
+        time: [52.964, 53.097]
+      - text: 'sleep, '
+        time: [53.097, 53.468]
+      - text: 'work, '
+        time: [53.468, 53.648]
+      - text: 'repeat '
+        time: [53.648, 54.01]
+      - text: "'til "
+        time: [54.01, 54.219]
+      - text: 'the '
+        time: [54.219, 54.304]
+      - text: 'clock '
+        time: [54.304, 54.527]
+      - text: 'runs '
+        time: [54.527, 54.878]
+      - text: out
+        time: [54.878, 55.127]
     tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
     time: [52.964, 55.127]
-  - text: Eat, sleep, work, repeat 'til the clock runs out
+  - words:
+      - text: 'Eat, '
+        time: [55.127, 55.286]
+      - text: 'sleep, '
+        time: [55.286, 55.651]
+      - text: 'work, '
+        time: [55.651, 55.82]
+      - text: 'repeat '
+        time: [55.82, 56.171]
+      - text: "'til "
+        time: [56.171, 56.399]
+      - text: 'the '
+        time: [56.399, 56.477]
+      - text: 'clock '
+        time: [56.477, 56.775]
+      - text: 'runs '
+        time: [56.775, 57.049]
+      - text: out
+        time: [57.049, 57.319]
     tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
     time: [55.127, 57.319]
-  - text: Eat, sleep, work, repeat 'til the clock runs out
+  - words:
+      - text: 'Eat, '
+        time: [57.319, 57.455]
+      - text: 'sleep, '
+        time: [57.455, 57.821]
+      - text: 'work, '
+        time: [57.821, 58.008]
+      - text: 'repeat '
+        time: [58.008, 58.364]
+      - text: "'til "
+        time: [58.364, 58.563]
+      - text: 'the '
+        time: [58.563, 58.668]
+      - text: 'clock '
+        time: [58.668, 58.895]
+      - text: 'runs '
+        time: [58.895, 59.228]
+      - text: out
+        time: [59.228, 59.517]
     tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해
     time: [57.319, 59.517]
-  - text: Eat, sleep, work, repeat 'til the clock runs out-
+  - words:
+      - text: 'Eat, '
+        time: [59.517, 59.646]
+      - text: 'sleep, '
+        time: [59.646, 60.002]
+      - text: 'work, '
+        time: [60.002, 60.185]
+      - text: 'repeat '
+        time: [60.185, 60.539]
+      - text: "'til "
+        time: [60.539, 60.72]
+      - text: 'the '
+        time: [60.72, 60.835]
+      - text: 'clock '
+        time: [60.835, 61.066]
+      - text: 'runs '
+        time: [61.066, 61.386]
+      - text: out-
+        time: [61.386, 61.818]
     tl: 먹고, 자고, 일하고, 시간이 다할 때까지 반복해-
     time: [59.517, 61.818]
-  - text: 'Comes in the following flavors:'
+  - words:
+      - text: 'Comes '
+        time: [64.663, 64.869]
+      - text: 'in '
+        time: [64.869, 65.032]
+      - text: 'the '
+        time: [65.032, 65.116]
+      - text: 'following '
+        time: [65.116, 65.544]
+      - text: 'flavors:'
+        time: [65.544, 66.047]
     tl: '다음과 같은 맛이 있습니다:'
     time: [64.663, 66.047]
-  - text: Overthinking Orange, Socially Anxious Strawberry
+  - words:
+      - text: 'Overthinking '
+        time: [66.177, 66.735]
+      - text: 'Orange, '
+        time: [66.735, 67.113]
+      - text: 'Socially '
+        time: [67.113, 67.73]
+      - text: 'Anxious '
+        time: [67.73, 67.945]
+      - text: Strawberry
+        time: [67.945, 68.381]
     tl: 생각 과다 오렌지, 사회불안 딸기
     time: [66.177, 68.381]
-  - text: Burnout Banana, Repressed Raspberry
+  - words:
+      - text: 'Burnout '
+        time: [68.381, 68.831]
+      - text: 'Banana, '
+        time: [68.831, 69.212]
+      - text: 'Repressed '
+        time: [69.212, 69.771]
+      - text: Raspberry
+        time: [69.771, 70.518]
     tl: 번아웃 바나나, 억눌린 라즈베리
     time: [68.381, 70.518]
-  - text: Grieving Grape, Misery Melon
+  - words:
+      - text: 'Grieving '
+        time: [70.518, 71.023]
+      - text: 'Grape, '
+        time: [71.023, 71.569]
+      - text: 'Misery '
+        time: [71.569, 72.123]
+      - text: Melon
+        time: [72.123, 72.688]
     tl: 비탄의 포도, 비참한 멜론
     time: [70.518, 72.688]
-  - text: Trauma Tri-Tip, Depression Durian
+  - words:
+      - text: 'Trauma '
+        time: [72.843, 73.215]
+      - text: Tri-
+        time: [73.215, 73.446]
+      - text: 'Tip, '
+        time: [73.446, 73.724]
+      - text: 'Depression '
+        time: [73.724, 74.345]
+      - text: Durian
+        time: [74.345, 74.895]
     tl: 트라우마 트라이팁, 우울증 두리안
     time: [72.843, 74.895]
-  - text: And our newest flavor, Fu-
+  - words:
+      - text: 'And '
+        time: [75.072, 75.257]
+      - text: 'our '
+        time: [75.257, 75.425]
+      - text: 'newest '
+        time: [75.425, 75.711]
+      - text: 'flavor, '
+        time: [75.711, 76.929]
+      - text: Fu-
+        time: [76.929, 78.3]
     tl: 그리고 신제품, 씹-
     time: [75.072, 78.3]
-  - text: Brain implosion energy
+  - words:
+      - text: 'Brain '
+        time: [98.101, 98.378]
+      - text: 'implosion '
+        time: [98.378, 99.214]
+      - text: energy
+        time: [99.214, 100.002]
     tl: 뇌 내파 에너지
     time: [98.101, 100.002]
-  - text: 10,000 grams of pure caffeine
+  - words:
+      - text: '10,000 '
+        time: [100.002, 100.826]
+      - text: 'grams '
+        time: [100.826, 101.117]
+      - text: 'of '
+        time: [101.117, 101.384]
+      - text: 'pure '
+        time: [101.384, 101.657]
+      - text: caffeine
+        time: [101.657, 102.124]
     tl: 순수 카페인 10,000그램
     time: [100.002, 102.124]
-  - text: "'Cause you can't overthink if your heart stops"
+  - words:
+      - text: "'Cause "
+        time: [102.214, 102.473]
+      - text: 'you '
+        time: [102.473, 102.755]
+      - text: "can't "
+        time: [102.755, 103.051]
+      - text: 'overthink '
+        time: [103.051, 103.852]
+      - text: 'if '
+        time: [103.852, 104.133]
+      - text: 'your '
+        time: [104.133, 104.368]
+      - text: 'heart '
+        time: [104.368, 104.657]
+      - text: stops
+        time: [104.657, 105.544]
     tl: 심장이 멈추면 생각이 많아질 수 없으니까
     time: [102.214, 105.544]
-  - text: Brain implosion energy
+  - words:
+      - text: 'Brain '
+        time: [106.896, 107.185]
+      - text: 'implosion '
+        time: [107.185, 108.021]
+      - text: energy
+        time: [108.021, 108.774]
     tl: 뇌 내파 에너지
     time: [106.896, 108.774]
-  - text: Crave zero thoughts, want head empty
+  - words:
+      - text: 'Crave '
+        time: [108.813, 109.086]
+      - text: 'zero '
+        time: [109.086, 109.665]
+      - text: 'thoughts, '
+        time: [109.665, 109.925]
+      - text: 'want '
+        time: [109.925, 110.168]
+      - text: 'head '
+        time: [110.168, 110.479]
+      - text: empty
+        time: [110.479, 111.006]
     tl: 생각은 하나도 없이, 머릿속을 비우고 싶다면
     time: [108.813, 111.006]
-  - text: Then drink and drink and drink until you drop
+  - words:
+      - text: 'Then '
+        time: [111.028, 111.261]
+      - text: 'drink '
+        time: [111.261, 111.57]
+      - text: 'and '
+        time: [111.57, 111.847]
+      - text: 'drink '
+        time: [111.847, 112.144]
+      - text: 'and '
+        time: [112.144, 112.4]
+      - text: 'drink '
+        time: [112.4, 112.695]
+      - text: 'until '
+        time: [112.695, 113.182]
+      - text: 'you '
+        time: [113.182, 113.496]
+      - text: drop
+        time: [113.496, 114.621]
     tl: 쓰러질 때까지 마시고 마시고 또 마셔
     time: [111.028, 114.621]
-  - text: I love my brain implosion juice, it makes my head go brr
+  - words:
+      - text: 'I '
+        time: [115.444, 115.717]
+      - text: 'love '
+        time: [115.717, 115.993]
+      - text: 'my '
+        time: [115.993, 116.27]
+      - text: 'brain '
+        time: [116.27, 116.565]
+      - text: 'implosion '
+        time: [116.565, 117.329]
+      - text: 'juice, '
+        time: [117.329, 117.652]
+      - text: 'it '
+        time: [117.652, 117.932]
+      - text: 'makes '
+        time: [117.932, 118.206]
+      - text: 'my '
+        time: [118.206, 118.381]
+      - text: 'head '
+        time: [118.381, 118.758]
+      - text: 'go '
+        time: [118.758, 119.023]
+      - text: brr
+        time: [119.023, 120.016]
     tl: 난 내 뇌 내파 주스가 좋아, 머리가 부르르 돌아가거든
     time: [115.444, 120.016]
-  - text: But will it stop the pain forever? I just can't be sure
+  - words:
+      - text: 'But '
+        time: [120.016, 120.25]
+      - text: 'will '
+        time: [120.25, 120.537]
+      - text: 'it '
+        time: [120.537, 120.689]
+      - text: 'stop '
+        time: [120.689, 121.088]
+      - text: 'the '
+        time: [121.088, 121.368]
+      - text: 'pain '
+        time: [121.368, 121.643]
+      - text: 'forever? '
+        time: [121.643, 122.472]
+      - text: 'I '
+        time: [122.472, 122.733]
+      - text: 'just '
+        time: [122.733, 123.023]
+      - text: "can't "
+        time: [123.023, 123.301]
+      - text: 'be '
+        time: [123.301, 123.455]
+      - text: sure
+        time: [123.455, 124.249]
     tl: 하지만 이게 고통을 영원히 멈춰 줄까? 도무지 확신이 안 서
     time: [120.016, 124.249]
-  - text: Brain implosion energy
+  - words:
+      - text: 'Brain '
+        time: [124.684, 124.96]
+      - text: 'implosion '
+        time: [124.96, 125.769]
+      - text: energy
+        time: [125.769, 126.568]
     tl: 뇌 내파 에너지
     time: [124.684, 126.568]
-  - text: 10,000 grams of pure caffeine
+  - words:
+      - text: '10,000 '
+        time: [126.597, 127.42]
+      - text: 'grams '
+        time: [127.42, 127.704]
+      - text: 'of '
+        time: [127.704, 127.979]
+      - text: 'pure '
+        time: [127.979, 128.256]
+      - text: caffeine
+        time: [128.256, 128.723]
     tl: 순수 카페인 10,000그램
     time: [126.597, 128.723]
-  - text: "'Cause you can't overthink if your heart stops"
+  - words:
+      - text: "'Cause "
+        time: [128.809, 129.059]
+      - text: 'you '
+        time: [129.059, 129.358]
+      - text: "can't "
+        time: [129.358, 129.638]
+      - text: 'overthink '
+        time: [129.638, 130.43]
+      - text: 'if '
+        time: [130.43, 130.678]
+      - text: 'your '
+        time: [130.678, 130.939]
+      - text: 'heart '
+        time: [130.939, 131.225]
+      - text: stops
+        time: [131.225, 132.149]
     tl: 심장이 멈추면 생각이 많아질 수 없으니까
     time: [128.809, 132.149]
