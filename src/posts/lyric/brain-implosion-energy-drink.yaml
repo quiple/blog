@@ -356,6 +356,7 @@ lines:
         pr: 아이
         time: [44.718, 44.919]
       - text: 'said, '
+        pr: 셋,
         time: [44.919, 45.193]
       - text: '"Just '
         pr: '"저스트'
