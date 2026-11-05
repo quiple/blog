@@ -56,6 +56,7 @@ lines:
         pr: 코즈
         time: [6.291, 6.562]
       - text: 'you '
+        pr: 유
         time: [6.562, 6.829]
       - text: "can't "
         time: [6.829, 7.125]
@@ -64,6 +65,7 @@ lines:
       - text: 'if '
         time: [7.928, 8.186]
       - text: 'your '
+        pr: 유어
         time: [8.186, 8.442]
       - text: 'heart '
         time: [8.442, 8.673]
@@ -114,6 +116,7 @@ lines:
       - text: 'until '
         time: [16.77, 17.263]
       - text: 'you '
+        pr: 유
         time: [17.263, 17.569]
       - text: drop
         time: [17.569, 18.668]
@@ -210,6 +213,7 @@ lines:
         pr: 코즈
         time: [32.886, 33.139]
       - text: 'you '
+        pr: 유
         time: [33.139, 33.432]
       - text: "can't "
         time: [33.432, 33.714]
@@ -218,6 +222,7 @@ lines:
       - text: 'if '
         time: [34.53, 34.779]
       - text: 'your '
+        pr: 유어
         time: [34.779, 35.011]
       - text: 'heart '
         time: [35.011, 35.251]
@@ -550,6 +555,7 @@ lines:
         pr: 코즈
         time: [102.214, 102.473]
       - text: 'you '
+        pr: 유
         time: [102.473, 102.755]
       - text: "can't "
         time: [102.755, 103.051]
@@ -558,6 +564,7 @@ lines:
       - text: 'if '
         time: [103.852, 104.133]
       - text: 'your '
+        pr: 유어
         time: [104.133, 104.368]
       - text: 'heart '
         time: [104.368, 104.657]
@@ -608,6 +615,7 @@ lines:
       - text: 'until '
         time: [112.695, 113.182]
       - text: 'you '
+        pr: 유
         time: [113.182, 113.496]
       - text: drop
         time: [113.496, 114.621]
@@ -704,6 +712,7 @@ lines:
         pr: 코즈
         time: [128.809, 129.059]
       - text: 'you '
+        pr: 유
         time: [129.059, 129.358]
       - text: "can't "
         time: [129.358, 129.638]
@@ -712,6 +721,7 @@ lines:
       - text: 'if '
         time: [130.43, 130.678]
       - text: 'your '
+        pr: 유어
         time: [130.678, 130.939]
       - text: 'heart '
         time: [130.939, 131.225]
