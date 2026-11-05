@@ -287,6 +287,7 @@ lines:
         pr: 디스
         time: [39.222, 39.437]
       - text: 'small '
+        pr: 스몰
         time: [39.437, 39.756]
       - text: 'can? '
         pr: 캔?
@@ -343,6 +344,7 @@ lines:
         pr: 윌
         time: [43.871, 44.001]
       - text: 'approve '
+        pr: 어프루브
         time: [44.001, 44.229]
       - text: this
         pr: 디스
