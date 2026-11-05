@@ -2,6 +2,7 @@
 export interface LyricRender {
   mediaUrl: string
   duration: number
+  lyricBlur: boolean
   preparing?: boolean
   anchorY?: (line: HTMLElement) => number
   follow?: (line: HTMLElement, reference: HTMLElement, screenTop: number, initialTop?: number) => void

@@ -36,7 +36,8 @@
         element.setAttribute('aria-hidden', 'true')
         host.append(element)
         player.setAlignPosition(0)
-        if (lyricRender()) player.setEnableBlur(false)
+        const renderSettings = lyricRender()
+        if (renderSettings) player.setEnableBlur(renderSettings.lyricBlur)
         // Provider timestamps are interpolated below; seek detection is handled there.
         player.setEnableAutoSeekDetection(false)
         player.setOptimizeOptions({
@@ -120,7 +121,7 @@
             else if (!visibleSince) visibleSince = now
             if (visibleSince && now - Math.max(lastInteraction, visibleSince) >= 1500) autoFollow = true
           }
-          host.dataset.following = String(playing && autoFollow && !render)
+          host.dataset.following = String(playing && autoFollow)
           const target =
             !anchor && sample.playing && active && autoFollow ? lineTop(active, !!render) - inset(active) : undefined
           const reference = target !== undefined && active && render?.follow ? player.alignmentLine(active) : undefined

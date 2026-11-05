@@ -31,10 +31,10 @@ export async function applyRenderJapaneseFont(weight: number) {
 }
 
 /** Installed only inside the disposable export browser. */
-export function installRenderClock(options: {mediaUrl: string; duration: number; font: string}) {
+export function installRenderClock(options: {mediaUrl: string; duration: number; font: string; lyricBlur?: boolean}) {
   localStorage.setItem('mode-watcher-mode', 'dark')
   localStorage.setItem('font-family', options.font)
-  window.__lyricRender = {mediaUrl: options.mediaUrl, duration: options.duration}
+  window.__lyricRender = {mediaUrl: options.mediaUrl, duration: options.duration, lyricBlur: options.lyricBlur ?? true}
 
   // Playwright clocks JS timers, but not compositor animations. Freeze those
   // separately while preserving AMLL's own play/pause/currentTime operations.

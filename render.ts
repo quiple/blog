@@ -15,6 +15,8 @@ import {prepareRenderFrame} from './scripts/render/crop.ts'
 
 // 영상의 일본어 폰트 웨이트: Hiragino Sans W0~W9 중 이 숫자만 변경하세요.
 const HIRAGINO_WEIGHT = 6
+// 영상의 비활성 가사 블러를 끄려면 false로 변경하세요.
+const ENABLE_LYRIC_BLUR = true
 
 const root = dirname(fileURLToPath(import.meta.url))
 const run = promisify(execFile)
@@ -43,7 +45,7 @@ const help = `가사 페이지와 YouTube MV를 MP4로 렌더링
 --output 경로                      기본 renders/<슬러그>.mp4
 --force                            기존 출력 덮어쓰기
 필수: ffmpeg, ffprobe, yt-dlp, nub exec playwright install chromium --only-shell
-가사/오프셋은 앱 그대로, MV 선택, 비활성 행 블러 해제. 오디오는 MV에서 가져옵니다.
+가사/오프셋은 앱 그대로, MV 선택. 오디오는 MV에서 가져옵니다.
 출력 해상도로 프레임당 한 번 캡처합니다.`
 
 async function main() {
@@ -223,6 +225,7 @@ async function main() {
       mediaUrl: `${origin}/__render_mv.mp4`,
       duration: duration * 1000,
       font,
+      lyricBlur: ENABLE_LYRIC_BLUR,
     })
     const errors: string[] = []
     page.on('pageerror', (error) => {
@@ -395,12 +398,14 @@ async function main() {
     }
     encoder.stdin!.end()
     await encoding
-    const blurred = await page
-      .locator('.amll-lyric-player [class*="lyricLineWrapper"]')
-      .evaluateAll((elements) =>
-        elements.some((element) => !['none', 'blur(0px)'].includes(getComputedStyle(element).filter)),
-      )
-    if (blurred) throw Error('렌더링 가사에 블러가 남아 있습니다.')
+    if (!ENABLE_LYRIC_BLUR) {
+      const blurred = await page
+        .locator('.amll-lyric-player [class*="lyricLineWrapper"]')
+        .evaluateAll((elements) =>
+          elements.some((element) => !['none', 'blur(0px)'].includes(getComputedStyle(element).filter)),
+        )
+      if (blurred) throw Error('렌더링 가사에 블러가 남아 있습니다.')
+    }
     const final = join(dirname(output), `.${slug}-${process.pid}.mp4`)
     try {
       await exec('ffmpeg', [
