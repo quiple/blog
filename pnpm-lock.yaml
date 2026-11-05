@@ -171,7 +171,7 @@ importers:
     dependencies:
       '@applemusic-like-lyrics/core':
         specifier: ^0.6.0
-        version: 0.6.0(@pixi/app@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/filter-blur@7.4.3(@pixi/core@7.4.3))(@pixi/filter-bulge-pinch@5.1.1(@pixi/core@7.4.3))(@pixi/filter-color-matrix@7.4.3(@pixi/core@7.4.3))(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@types/node@26.6.6)(@vitest/expect@4.1.11)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
+        version: 0.6.0(@pixi/app@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/filter-blur@7.4.3(@pixi/core@7.4.3))(@pixi/filter-bulge-pinch@5.1.1(@pixi/core@7.4.3))(@pixi/filter-color-matrix@7.4.3(@pixi/core@7.4.3))(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@types/node@26.6.6)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@giscus/svelte':
         specifier: ^3.1.0
         version: 3.1.0(svelte@5.57.3)
@@ -199,7 +199,7 @@ importers:
         version: 5.20261104.1
       '@ethercorps/sveltekit-og':
         specifier: github:quiple/sveltekit-og
-        version: https://codeload.github.com/quiple/sveltekit-og/tar.gz/7f72c3eef3aa8f7b52f1a575214c2106e9473f1c
+        version: https://codeload.github.com/quiple/sveltekit-og/tar.gz/7f72c3eef3aa8f7b52f1a575214c2106e9473f1c(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))
       '@internationalized/date':
         specifier: ^3.12.4
         version: 3.12.4
@@ -208,19 +208,19 @@ importers:
         version: 1.69.0(svelte@5.57.3)
       '@sveltejs/adapter-cloudflare':
         specifier: ^8.0.2
-        version: 8.0.2(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(wrangler@4.157.0(@cloudflare/workers-types@5.20261104.1))
+        version: 8.0.2(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(wrangler@4.157.0(@cloudflare/workers-types@5.20261104.1)(@img/sharp-wasm32@0.35.5)(@types/node@26.6.6)(undici@7.30.1))
       '@sveltejs/kit':
         specifier: ^3.1.1
-        version: 3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
+        version: 3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^7.3.1
-        version: 7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
+        version: 7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@tailwindcss/typography':
         specifier: ^0.5.20
         version: 0.5.20(tailwindcss@4.3.4)
       '@tailwindcss/vite':
         specifier: ^4.3.4
-        version: 4.3.4(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
+        version: 4.3.4(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@types/hast':
         specifier: ^3.0.5
         version: 3.0.5
@@ -238,7 +238,7 @@ importers:
         version: 0.9.12
       bits-ui:
         specifier: ^2.20.6
-        version: 2.20.6(@internationalized/date@3.12.4)(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)
+        version: 2.20.6(@internationalized/date@3.12.4)(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -268,31 +268,31 @@ importers:
         version: 10.0.1
       remark:
         specifier: ^15.0.1
-        version: 15.0.1
+        version: 15.0.1(supports-color@10.2.2)
       remark-cjk-friendly:
         specifier: ^2.3.4
-        version: 2.3.4(@types/mdast@4.0.4)(micromark@4.0.2)(unified@11.0.5)
+        version: 2.3.4(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2(supports-color@10.2.2))(unified@11.0.5)
       remark-cjk-friendly-gfm-strikethrough:
         specifier: ^2.3.3
-        version: 2.3.3(@types/mdast@4.0.4)(micromark@4.0.2)(unified@11.0.5)
+        version: 2.3.3(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2(supports-color@10.2.2))(supports-color@10.2.2)(unified@11.0.5)
       remark-directive:
         specifier: ^4.0.0
-        version: 4.0.0
+        version: 4.0.0(supports-color@10.2.2)
       remark-gfm:
         specifier: ^4.0.1
-        version: 4.0.1
+        version: 4.0.1(supports-color@10.2.2)
       remark-github-alerts:
         specifier: 0.1.1
         version: 0.1.1(@types/mdast@4.0.4)(unified@11.0.5)
       remark-mdx:
         specifier: ^3.1.1
-        version: 3.1.1(unified@11.0.5)
+        version: 3.1.1(supports-color@10.2.2)
       remark-rehype:
         specifier: ^11.1.2
         version: 11.1.2
       remark-ruby:
         specifier: ^0.4.0
-        version: 0.4.0(remark-parse@9.0.0)
+        version: 0.4.0(remark-parse@9.0.0(supports-color@10.2.2))(supports-color@10.2.2)
       remark-smartypants:
         specifier: ^3.0.3
         version: 3.0.3
@@ -301,7 +301,7 @@ importers:
         version: 1.8.0(svelte@5.57.3)
       sharp:
         specifier: ^0.35.5
-        version: 0.35.5(@types/node@26.6.6)
+        version: 0.35.5(@img/sharp-wasm32@0.35.5)(@types/node@26.6.6)
       simple-icons:
         specifier: ^16.36.0
         version: 16.36.0
@@ -313,7 +313,7 @@ importers:
         version: 5.57.3
       svelte-check:
         specifier: ^4.7.8
-        version: 4.7.8(svelte@5.57.3)(typescript@6.0.3)
+        version: 4.7.8(picomatch@4.0.7)(svelte@5.57.3)(typescript@6.0.3)
       svelte-sonner:
         specifier: ^1.2.3
         version: 1.2.3(svelte@5.57.3)
@@ -337,10 +337,10 @@ importers:
         version: 1.5.0(typescript@6.0.3)
       vite:
         specifier: ^8.3.6
-        version: 8.3.6(@types/node@26.6.6)(yaml@2.9.1)
+        version: 8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
       wrangler:
         specifier: ^4.157.0
-        version: 4.157.0(@cloudflare/workers-types@5.20261104.1)(@types/node@26.6.6)
+        version: 4.157.0(@cloudflare/workers-types@5.20261104.1)(@img/sharp-wasm32@0.35.5)(@types/node@26.6.6)(undici@7.30.1)
 
 packages:
 
@@ -570,6 +570,7 @@ packages:
   '@ethercorps/sveltekit-og@https://codeload.github.com/quiple/sveltekit-og/tar.gz/7f72c3eef3aa8f7b52f1a575214c2106e9473f1c':
     resolution: {gitHosted: true, integrity: sha512-guAAkoOk3Xy+BjRV56cmGxNqKy/lTlcIfQrVKIhibmTe0sMhJHwkMr+RMoVNT/wlO+Uky/YYPDgWYvEFaRQsSQ==, tarball: https://codeload.github.com/quiple/sveltekit-og/tar.gz/7f72c3eef3aa8f7b52f1a575214c2106e9473f1c}
     version: 4.3.1-next.3
+    engines: {node: '>=22.16.0'}
     peerDependencies:
       '@sveltejs/kit': '>=2.0.0'
 
@@ -1243,22 +1244,6 @@ packages:
       '@sveltejs/kit': ^3.0.0-next.0
       wrangler: ^4.118.0
 
-  '@sveltejs/kit@2.70.3':
-    resolution: {integrity: sha512-UDvEYuZqAMbfB/oXIoqKvbKcb7YczK5zYrzmsGV1zRJk03jntwp8dXiYoIJotxAndsKvcPFtx9H1GRSKFdSHgg==}
-    engines: {node: '>=18.13'}
-    hasBin: true
-    peerDependencies:
-      '@opentelemetry/api': ^1.0.0
-      '@sveltejs/vite-plugin-svelte': ^3.0.0 || ^4.0.0-next.1 || ^5.0.0 || ^6.0.0-next.0 || ^7.0.0
-      svelte: ^4.0.0 || ^5.0.0-next.0
-      typescript: ^5.3.3 || ^6.0.0
-      vite: ^5.0.3 || ^6.0.0 || ^7.0.0-beta.0 || ^8.0.0
-    peerDependenciesMeta:
-      '@opentelemetry/api':
-        optional: true
-      typescript:
-        optional: true
-
   '@sveltejs/kit@3.1.1':
     resolution: {integrity: sha512-BiEMvekYXE9Gu/YhWJ/yJ0WDLH1PX/dmjuAeFp5rrtdmgdzkjt7DvimlSP+/U4tgposl7pkE20luHpcnc6BgRw==}
     engines: {node: '>=22.17'}
@@ -1386,9 +1371,6 @@ packages:
 
   '@types/chai@5.2.3':
     resolution: {integrity: sha512-Mw558oeA9fFbv65/y4mHtXDs9bPnFMZAL/jxdPFUpOHHIXX91mcgEHbS5Lahr+pwZFR8A7GQleRWeI6cGFC2UA==}
-
-  '@types/cookie@0.6.0':
-    resolution: {integrity: sha512-4Kh9a6B2bQciAhf7FSuMRRkUWecJgJu9nPnx3yzpsfXX/c50REIqpHY4C82bXP90qrLtXtkDxTZosYO3UpOwlA==}
 
   '@types/css-font-loading-module@0.0.12':
     resolution: {integrity: sha512-x2tZZYkSxXqWvTDgveSynfjq/T2HyiZHXb00j/+gy19yp70PHCizM48XFdjBCWH7eHBD0R5i/pw9yMBP/BH5uA==}
@@ -1644,10 +1626,6 @@ packages:
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
 
-  cookie@0.6.0:
-    resolution: {integrity: sha512-U71cyTamuh1CRNCfpGY6to28lxvNwPG4Guz/EVjgf3Jmzv0vlDp1atT9eS5dDjMYHucpHbWns6Lwf3BKz6svdw==}
-    engines: {node: '>= 0.6'}
-
   cookie@1.1.1:
     resolution: {integrity: sha512-ei8Aos7ja0weRpFzJnEA9UHJ/7XQmqglbRwnf2ATjcB9Wq874VKH9kfjjirM6UhU2/E5fFYadylyhFldcqSidQ==}
     engines: {node: '>=18'}
@@ -1748,11 +1726,6 @@ packages:
     resolution: {integrity: sha512-HKVLS8dvII+xoKW9kmqxbRKrnWEXfJJr/FZhhJmiqIB0e053QNYFqOBouTMO/k5sID4MvCiUCvv8b9M4h32wIA==}
     engines: {node: '>=18'}
     hasBin: true
-    peerDependencies:
-      pnpapi: '*'
-    peerDependenciesMeta:
-      pnpapi:
-        optional: true
 
   escape-html@1.0.3:
     resolution: {integrity: sha512-NiSupZ4OeuGwr68lGIeym/ksIZMJodUGOSCZ/FSnTxcrekbvqrgdUxlJOMpijaKZVjAJrWrGs/6Jy8OMuyj9ow==}
@@ -2563,11 +2536,6 @@ packages:
 
   remark-mdx@3.1.1:
     resolution: {integrity: sha512-Pjj2IYlUY3+D8x00UJsIOg5BEvfMyeI+2uLPn9VO9Wg4MEtN/VTIq2NEJQfde9PnX15KgtHyl9S0BcTnWrIuWg==}
-    peerDependencies:
-      unified: '*'
-    peerDependenciesMeta:
-      unified:
-        optional: true
 
   remark-parse@11.0.0:
     resolution: {integrity: sha512-FCxlKLNGknS5ba/1lmpYijMUzX2esxW5xQqjWxw2eHFfS2MSdaHVINFmhjo+qN1WhZhNimq0dZATN9pH0IDrpA==}
@@ -2649,9 +2617,6 @@ packages:
     resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
     hasBin: true
-
-  set-cookie-parser@3.1.2:
-    resolution: {integrity: sha512-5/r/lTwbJ3zQ+qwdUFZYeRNqda7P5HD8zQKqlSjdGt1/S0cjLAphHusj4Y58ahDtWn/g32xrIS58/ikOvwl0Lw==}
 
   shadcn-svelte@1.8.0:
     resolution: {integrity: sha512-B9EEH85xYUdLP12Dyf6raqMbtOGLeg47wnSd7+dTCmWibO6jHZg85alBo0pQsJkAiQ8IolNU/5RBjyOxNl//HQ==}
@@ -2988,12 +2953,9 @@ packages:
       '@vitest/browser-webdriverio': 4.1.11
       '@vitest/coverage-istanbul': 4.1.11
       '@vitest/coverage-v8': 4.1.11
-      '@vitest/expect': '*'
       '@vitest/ui': 4.1.11
-      bufferutil: '*'
       happy-dom: '*'
       jsdom: '*'
-      utf-8-validate: '*'
       vite: ^6.0.0 || ^7.0.0 || ^8.0.0
     peerDependenciesMeta:
       '@edge-runtime/vm':
@@ -3012,17 +2974,11 @@ packages:
         optional: true
       '@vitest/coverage-v8':
         optional: true
-      '@vitest/expect':
-        optional: true
       '@vitest/ui':
-        optional: true
-      bufferutil:
         optional: true
       happy-dom:
         optional: true
       jsdom:
-        optional: true
-      utf-8-validate:
         optional: true
 
   why-is-node-running@2.3.0:
@@ -3102,7 +3058,7 @@ packages:
 
 snapshots:
 
-  '@applemusic-like-lyrics/core@0.6.0(@pixi/app@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/filter-blur@7.4.3(@pixi/core@7.4.3))(@pixi/filter-bulge-pinch@5.1.1(@pixi/core@7.4.3))(@pixi/filter-color-matrix@7.4.3(@pixi/core@7.4.3))(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@types/node@26.6.6)(@vitest/expect@4.1.11)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))':
+  '@applemusic-like-lyrics/core@0.6.0(@pixi/app@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))(@pixi/filter-blur@7.4.3(@pixi/core@7.4.3))(@pixi/filter-bulge-pinch@5.1.1(@pixi/core@7.4.3))(@pixi/filter-color-matrix@7.4.3(@pixi/core@7.4.3))(@pixi/sprite@7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3)))(@types/node@26.6.6)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@pixi/app': 7.4.3(@pixi/core@7.4.3)(@pixi/display@7.4.3(@pixi/core@7.4.3))
       '@pixi/core': 7.4.3
@@ -3115,21 +3071,21 @@ snapshots:
       bezier-easing: 3.1.0
       deep-freeze: 0.0.1
       gl-matrix: 4.0.0-beta.2
-      vitest: 4.1.11(@types/node@26.6.6)(@vitest/expect@4.1.11)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
+      vitest: 4.1.11(@types/node@26.6.6)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
     transitivePeerDependencies:
       - '@edge-runtime/vm'
       - '@opentelemetry/api'
+      - '@types/node'
       - '@vitest/browser-playwright'
       - '@vitest/browser-preview'
       - '@vitest/browser-webdriverio'
       - '@vitest/coverage-istanbul'
       - '@vitest/coverage-v8'
       - '@vitest/ui'
-      - bufferutil
       - happy-dom
       - jsdom
       - msw
-      - utf-8-validate
+      - vite
 
   '@applemusic-like-lyrics/ttml@1.0.1': {}
 
@@ -3138,6 +3094,7 @@ snapshots:
   '@cloudflare/unenv-preset@2.16.2(unenv@2.0.0-rc.24)(workerd@1.20261103.1)':
     dependencies:
       unenv: 2.0.0-rc.24
+    optionalDependencies:
       workerd: 1.20261103.1
 
   '@cloudflare/workerd-darwin-64@1.20261103.1':
@@ -3244,10 +3201,10 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@ethercorps/sveltekit-og@https://codeload.github.com/quiple/sveltekit-og/tar.gz/7f72c3eef3aa8f7b52f1a575214c2106e9473f1c':
+  '@ethercorps/sveltekit-og@https://codeload.github.com/quiple/sveltekit-og/tar.gz/7f72c3eef3aa8f7b52f1a575214c2106e9473f1c(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))':
     dependencies:
       '@resvg/resvg-wasm': 2.6.2
-      '@sveltejs/kit': 3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
+      '@sveltejs/kit': 3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       satori: 0.24.1
       satori-html: 0.3.2
       std-env: 3.10.0
@@ -3700,37 +3657,18 @@ snapshots:
     dependencies:
       acorn: 8.18.0
 
-  '@sveltejs/adapter-cloudflare@8.0.2(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(wrangler@4.157.0(@cloudflare/workers-types@5.20261104.1))':
+  '@sveltejs/adapter-cloudflare@8.0.2(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(wrangler@4.157.0(@cloudflare/workers-types@5.20261104.1)(@img/sharp-wasm32@0.35.5)(@types/node@26.6.6)(undici@7.30.1))':
     dependencies:
       '@cloudflare/workers-types': 5.20261104.1
       '@rolldown/pluginutils': 1.0.1
-      '@sveltejs/kit': 3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
-      wrangler: 4.157.0(@cloudflare/workers-types@5.20261104.1)(@types/node@26.6.6)
+      '@sveltejs/kit': 3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
+      wrangler: 4.157.0(@cloudflare/workers-types@5.20261104.1)(@img/sharp-wasm32@0.35.5)(@types/node@26.6.6)(undici@7.30.1)
 
-  '@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))':
-    dependencies:
-      '@standard-schema/spec': 1.1.0
-      '@sveltejs/acorn-typescript': 1.0.13(acorn@8.18.0)
-      '@sveltejs/vite-plugin-svelte': 7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
-      '@types/cookie': 0.6.0
-      acorn: 8.18.0
-      cookie: 0.6.0
-      devalue: 5.9.4
-      esm-env: 1.2.2
-      kleur: 4.1.5
-      magic-string: 0.30.21
-      mrmime: 2.0.1
-      set-cookie-parser: 3.1.2
-      sirv: 3.0.2
-      svelte: 5.57.3
-      typescript: 6.0.3
-      vite: 8.3.6(@types/node@26.6.6)(yaml@2.9.1)
-
-  '@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))':
+  '@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       '@standard-schema/spec': 1.1.0
-      '@sveltejs/vite-plugin-svelte': 7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
+      '@sveltejs/vite-plugin-svelte': 7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       cookie: 2.0.1
       devalue: 5.9.4
       esm-env: 1.2.2
@@ -3738,19 +3676,20 @@ snapshots:
       mrmime: 2.0.1
       sirv: 3.0.2
       svelte: 5.57.3
+      vite: 8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
+    optionalDependencies:
       typescript: 6.0.3
-      vite: 8.3.6(@types/node@26.6.6)(yaml@2.9.1)
 
   '@sveltejs/load-config@0.2.3': {}
 
-  '@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))':
+  '@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       deepmerge: 4.3.1
       magic-string: 1.2.3
       obug: 2.1.4
       svelte: 5.57.3
-      vite: 8.3.6(@types/node@26.6.6)(yaml@2.9.1)
-      vitefu: 1.1.3(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
+      vite: 8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
+      vitefu: 1.1.3(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
 
   '@swc/helpers@0.5.23':
     dependencies:
@@ -3822,12 +3761,12 @@ snapshots:
       postcss-selector-parser: 6.0.10
       tailwindcss: 4.3.4
 
-  '@tailwindcss/vite@4.3.4(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))':
+  '@tailwindcss/vite@4.3.4(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@tailwindcss/node': 4.3.4
       '@tailwindcss/oxide': 4.3.4
       tailwindcss: 4.3.4
-      vite: 8.3.6(@types/node@26.6.6)(yaml@2.9.1)
+      vite: 8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
     transitivePeerDependencies:
       - '@tailwindcss/oxide-android-arm-eabi'
       - '@tailwindcss/oxide-win32-ia32-msvc'
@@ -3836,8 +3775,6 @@ snapshots:
     dependencies:
       '@types/deep-eql': 4.0.2
       assertion-error: 2.0.1
-
-  '@types/cookie@0.6.0': {}
 
   '@types/css-font-loading-module@0.0.12': {}
 
@@ -3915,12 +3852,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.1
 
-  '@vitest/mocker@4.1.11(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))':
+  '@vitest/mocker@4.1.11(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))':
     dependencies:
       '@vitest/spy': 4.1.11
       estree-walker: 3.0.3
       magic-string: 0.30.21
-      vite: 8.3.6(@types/node@26.6.6)(yaml@2.9.1)
+    optionalDependencies:
+      vite: 8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
 
   '@vitest/pretty-format@4.1.11':
     dependencies:
@@ -3974,16 +3912,18 @@ snapshots:
 
   bezier-easing@3.1.0: {}
 
-  bits-ui@2.20.6(@internationalized/date@3.12.4)(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3):
+  bits-ui@2.20.6(@internationalized/date@3.12.4)(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3):
     dependencies:
       '@floating-ui/core': 1.8.0
       '@floating-ui/dom': 1.8.0
       '@internationalized/date': 3.12.4
       esm-env: 1.2.2
-      runed: 0.35.1(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)
+      runed: 0.35.1(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)
       svelte: 5.57.3
-      svelte-toolbelt: 0.10.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)
+      svelte-toolbelt: 0.10.7(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)
       tabbable: 6.5.1
+    transitivePeerDependencies:
+      - '@sveltejs/kit'
 
   blake3-wasm@2.1.5: {}
 
@@ -4041,8 +3981,6 @@ snapshots:
 
   convert-source-map@2.0.0: {}
 
-  cookie@0.6.0: {}
-
   cookie@1.1.1: {}
 
   cookie@2.0.1: {}
@@ -4063,9 +4001,11 @@ snapshots:
 
   cssesc@3.0.0: {}
 
-  debug@4.4.3:
+  debug@4.4.3(supports-color@10.2.2):
     dependencies:
       ms: 2.1.3
+    optionalDependencies:
+      supports-color: 10.2.2
 
   decode-named-character-reference@1.3.0:
     dependencies:
@@ -4176,10 +4116,8 @@ snapshots:
 
   extend@3.0.2: {}
 
-  fdir@6.5.0: {}
-
   fdir@6.5.0(picomatch@4.0.7):
-    dependencies:
+    optionalDependencies:
       picomatch: 4.0.7
 
   fflate@0.7.5: {}
@@ -4444,13 +4382,13 @@ snapshots:
 
   math-intrinsics@1.1.0: {}
 
-  mdast-util-directive@3.1.0:
+  mdast-util-directive@3.1.0(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
       '@types/unist': 3.0.3
       ccount: 2.0.1
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
       parse-entities: 4.0.2
       stringify-entities: 4.0.4
@@ -4465,24 +4403,24 @@ snapshots:
       unist-util-is: 6.0.1
       unist-util-visit-parents: 6.0.2
 
-  mdast-util-from-markdown@0.8.5:
+  mdast-util-from-markdown@0.8.5(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 3.0.15
       mdast-util-to-string: 2.0.0
-      micromark: 2.11.4
+      micromark: 2.11.4(supports-color@10.2.2)
       parse-entities: 2.0.0
       unist-util-stringify-position: 2.0.3
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-from-markdown@2.0.3:
+  mdast-util-from-markdown@2.0.3(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
       '@types/unist': 3.0.3
       decode-named-character-reference: 1.3.0
       devlop: 1.1.0
       mdast-util-to-string: 4.0.0
-      micromark: 4.0.2
+      micromark: 4.0.2(supports-color@10.2.2)
       micromark-util-decode-numeric-character-reference: 2.0.2
       micromark-util-decode-string: 2.0.1
       micromark-util-normalize-identifier: 2.0.1
@@ -4500,75 +4438,75 @@ snapshots:
       mdast-util-find-and-replace: 3.0.2
       micromark-util-character: 2.1.1
 
-  mdast-util-gfm-footnote@2.1.0:
+  mdast-util-gfm-footnote@2.1.0(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
       micromark-util-normalize-identifier: 2.0.1
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-gfm-strikethrough@2.0.0:
+  mdast-util-gfm-strikethrough@2.0.0(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-gfm-strikethrough@2.0.1:
+  mdast-util-gfm-strikethrough@2.0.1(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-gfm-table@2.0.0:
+  mdast-util-gfm-table@2.0.0(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
       devlop: 1.1.0
       markdown-table: 3.0.4
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-gfm-task-list-item@2.0.0:
+  mdast-util-gfm-task-list-item@2.0.0(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-gfm@3.1.0:
+  mdast-util-gfm@3.1.0(supports-color@10.2.2):
     dependencies:
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       mdast-util-gfm-autolink-literal: 2.0.1
-      mdast-util-gfm-footnote: 2.1.0
-      mdast-util-gfm-strikethrough: 2.0.0
-      mdast-util-gfm-table: 2.0.0
-      mdast-util-gfm-task-list-item: 2.0.0
+      mdast-util-gfm-footnote: 2.1.0(supports-color@10.2.2)
+      mdast-util-gfm-strikethrough: 2.0.0(supports-color@10.2.2)
+      mdast-util-gfm-table: 2.0.0(supports-color@10.2.2)
+      mdast-util-gfm-task-list-item: 2.0.0(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-mdx-expression@2.0.1:
+  mdast-util-mdx-expression@2.0.1(supports-color@10.2.2):
     dependencies:
       '@types/estree-jsx': 1.0.5
       '@types/hast': 3.0.5
       '@types/mdast': 4.0.4
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-mdx-jsx@3.2.0:
+  mdast-util-mdx-jsx@3.2.0(supports-color@10.2.2):
     dependencies:
       '@types/estree-jsx': 1.0.5
       '@types/hast': 3.0.5
@@ -4576,7 +4514,7 @@ snapshots:
       '@types/unist': 3.0.3
       ccount: 2.0.1
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
       parse-entities: 4.0.2
       stringify-entities: 4.0.4
@@ -4585,23 +4523,23 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-mdx@3.0.0:
+  mdast-util-mdx@3.0.0(supports-color@10.2.2):
     dependencies:
-      mdast-util-from-markdown: 2.0.3
-      mdast-util-mdx-expression: 2.0.1
-      mdast-util-mdx-jsx: 3.2.0
-      mdast-util-mdxjs-esm: 2.0.1
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
+      mdast-util-mdx-expression: 2.0.1(supports-color@10.2.2)
+      mdast-util-mdx-jsx: 3.2.0(supports-color@10.2.2)
+      mdast-util-mdxjs-esm: 2.0.1(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
     transitivePeerDependencies:
       - supports-color
 
-  mdast-util-mdxjs-esm@2.0.1:
+  mdast-util-mdxjs-esm@2.0.1(supports-color@10.2.2):
     dependencies:
       '@types/estree-jsx': 1.0.5
       '@types/hast': 3.0.5
       '@types/mdast': 4.0.4
       devlop: 1.1.0
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.2
     transitivePeerDependencies:
       - supports-color
@@ -4623,24 +4561,26 @@ snapshots:
       unist-util-visit: 5.1.0
       vfile: 6.0.3
 
-  mdast-util-to-markdown-cjk-friendly-gfm-strikethrough@1.0.2(@types/mdast@4.0.4):
+  mdast-util-to-markdown-cjk-friendly-gfm-strikethrough@1.0.2(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(supports-color@10.2.2):
     dependencies:
-      '@types/mdast': 4.0.4
-      mdast-util-gfm-strikethrough: 2.0.1
+      mdast-util-gfm-strikethrough: 2.0.1(supports-color@10.2.2)
       mdast-util-to-markdown: 2.1.3
-      mdast-util-to-markdown-cjk-friendly: 1.0.2(@types/mdast@4.0.4)
+      mdast-util-to-markdown-cjk-friendly: 1.0.2(@types/mdast@4.0.4)(micromark-util-types@2.0.2)
+    optionalDependencies:
+      '@types/mdast': 4.0.4
     transitivePeerDependencies:
       - micromark-util-types
       - supports-color
 
-  mdast-util-to-markdown-cjk-friendly@1.0.2(@types/mdast@4.0.4):
+  mdast-util-to-markdown-cjk-friendly@1.0.2(@types/mdast@4.0.4)(micromark-util-types@2.0.2):
     dependencies:
-      '@types/mdast': 4.0.4
       mdast-util-to-markdown: 2.1.3
-      micromark-extension-cjk-friendly-util: 3.0.1
+      micromark-extension-cjk-friendly-util: 3.0.1(micromark-util-types@2.0.2)
       micromark-util-character: 2.1.1
       micromark-util-classify-character: 2.0.1
       micromark-util-html-tag-name: 2.0.1
+    optionalDependencies:
+      '@types/mdast': 4.0.4
     transitivePeerDependencies:
       - micromark-util-types
 
@@ -4695,35 +4635,37 @@ snapshots:
       micromark-util-symbol: 2.0.1
       micromark-util-types: 2.0.2
 
-  micromark-extension-cjk-friendly-gfm-strikethrough@2.0.1(micromark@4.0.2):
+  micromark-extension-cjk-friendly-gfm-strikethrough@2.0.1(micromark-util-types@2.0.2)(micromark@4.0.2(supports-color@10.2.2)):
     dependencies:
       devlop: 1.1.0
       get-east-asian-width: 1.6.0
-      micromark: 4.0.2
-      micromark-extension-cjk-friendly-util: 3.0.1
+      micromark: 4.0.2(supports-color@10.2.2)
+      micromark-extension-cjk-friendly-util: 3.0.1(micromark-util-types@2.0.2)
       micromark-util-character: 2.1.1
       micromark-util-chunked: 2.0.1
       micromark-util-resolve-all: 2.0.1
       micromark-util-symbol: 2.0.1
-    transitivePeerDependencies:
-      - micromark-util-types
+    optionalDependencies:
+      micromark-util-types: 2.0.2
 
-  micromark-extension-cjk-friendly-util@3.0.1:
+  micromark-extension-cjk-friendly-util@3.0.1(micromark-util-types@2.0.2):
     dependencies:
       get-east-asian-width: 1.6.0
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
+    optionalDependencies:
+      micromark-util-types: 2.0.2
 
-  micromark-extension-cjk-friendly@2.0.2(micromark@4.0.2):
+  micromark-extension-cjk-friendly@2.0.2(micromark-util-types@2.0.2)(micromark@4.0.2(supports-color@10.2.2)):
     dependencies:
       devlop: 1.1.0
-      micromark: 4.0.2
-      micromark-extension-cjk-friendly-util: 3.0.1
+      micromark: 4.0.2(supports-color@10.2.2)
+      micromark-extension-cjk-friendly-util: 3.0.1(micromark-util-types@2.0.2)
       micromark-util-chunked: 2.0.1
       micromark-util-resolve-all: 2.0.1
       micromark-util-symbol: 2.0.1
-    transitivePeerDependencies:
-      - micromark-util-types
+    optionalDependencies:
+      micromark-util-types: 2.0.2
 
   micromark-extension-directive@4.0.0:
     dependencies:
@@ -4958,17 +4900,17 @@ snapshots:
 
   micromark-util-types@2.0.2: {}
 
-  micromark@2.11.4:
+  micromark@2.11.4(supports-color@10.2.2):
     dependencies:
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@10.2.2)
       parse-entities: 2.0.0
     transitivePeerDependencies:
       - supports-color
 
-  micromark@4.0.2:
+  micromark@4.0.2(supports-color@10.2.2):
     dependencies:
       '@types/debug': 4.1.13
-      debug: 4.4.3
+      debug: 4.4.3(supports-color@10.2.2)
       decode-named-character-reference: 1.3.0
       devlop: 1.1.0
       micromark-core-commonmark: 2.0.3
@@ -4987,18 +4929,20 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  miniflare@5.20261103.0-beta(@cloudflare/workers-types@5.20261104.1)(@types/node@26.6.6):
+  miniflare@5.20261103.0-beta(@cloudflare/workers-types@5.20261104.1)(@img/sharp-wasm32@0.35.5)(@types/node@26.6.6):
     dependencies:
-      '@cloudflare/workers-types': 5.20261104.1
       '@cspotcode/source-map-support': 0.8.1
-      sharp: 0.35.5(@types/node@26.6.6)
+      sharp: 0.35.5(@img/sharp-wasm32@0.35.5)(@types/node@26.6.6)
       undici: 7.30.1
       workerd: 1.20261103.1
       ws: 8.21.0
       youch: 4.1.0-beta.10
+    optionalDependencies:
+      '@cloudflare/workers-types': 5.20261104.1
     transitivePeerDependencies:
       - '@img/sharp-libvips-dev'
       - '@img/sharp-wasm32'
+      - '@types/node'
       - bufferutil
       - pnpapi
       - utf-8-validate
@@ -5038,7 +4982,6 @@ snapshots:
 
   oxfmt@0.76.0(svelte@5.57.3):
     dependencies:
-      svelte: 5.57.3
       tinypool: 2.2.0
     optionalDependencies:
       '@oxfmt/binding-android-arm-eabi': 0.76.0
@@ -5060,6 +5003,7 @@ snapshots:
       '@oxfmt/binding-win32-arm64-msvc': 0.76.0
       '@oxfmt/binding-win32-ia32-msvc': 0.76.0
       '@oxfmt/binding-win32-x64-msvc': 0.76.0
+      svelte: 5.57.3
 
   oxlint-tsgolint@7.0.2005:
     optionalDependencies:
@@ -5071,8 +5015,6 @@ snapshots:
       '@oxlint-tsgolint/win32-x64': 7.0.2005
 
   oxlint@1.91.0(oxlint-tsgolint@7.0.2005):
-    dependencies:
-      oxlint-tsgolint: 7.0.2005
     optionalDependencies:
       '@oxlint/binding-android-arm-eabi': 1.91.0
       '@oxlint/binding-android-arm64': 1.91.0
@@ -5093,6 +5035,7 @@ snapshots:
       '@oxlint/binding-win32-arm64-msvc': 1.91.0
       '@oxlint/binding-win32-ia32-msvc': 1.91.0
       '@oxlint/binding-win32-x64-msvc': 1.91.0
+      oxlint-tsgolint: 7.0.2005
 
   pako@0.2.9: {}
 
@@ -5207,40 +5150,44 @@ snapshots:
       hast-util-to-html: 9.0.5
       unified: 11.0.5
 
-  remark-cjk-friendly-gfm-strikethrough@2.3.3(@types/mdast@4.0.4)(micromark@4.0.2)(unified@11.0.5):
+  remark-cjk-friendly-gfm-strikethrough@2.3.3(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2(supports-color@10.2.2))(supports-color@10.2.2)(unified@11.0.5):
     dependencies:
-      '@types/mdast': 4.0.4
-      mdast-util-to-markdown-cjk-friendly-gfm-strikethrough: 1.0.2(@types/mdast@4.0.4)
-      micromark-extension-cjk-friendly-gfm-strikethrough: 2.0.1(micromark@4.0.2)
+      mdast-util-to-markdown-cjk-friendly-gfm-strikethrough: 1.0.2(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(supports-color@10.2.2)
+      micromark-extension-cjk-friendly-gfm-strikethrough: 2.0.1(micromark-util-types@2.0.2)(micromark@4.0.2(supports-color@10.2.2))
       unified: 11.0.5
+    optionalDependencies:
+      '@types/mdast': 4.0.4
     transitivePeerDependencies:
+      - micromark
       - micromark-util-types
       - supports-color
 
-  remark-cjk-friendly@2.3.4(@types/mdast@4.0.4)(micromark@4.0.2)(unified@11.0.5):
+  remark-cjk-friendly@2.3.4(@types/mdast@4.0.4)(micromark-util-types@2.0.2)(micromark@4.0.2(supports-color@10.2.2))(unified@11.0.5):
     dependencies:
-      '@types/mdast': 4.0.4
-      mdast-util-to-markdown-cjk-friendly: 1.0.2(@types/mdast@4.0.4)
-      micromark-extension-cjk-friendly: 2.0.2(micromark@4.0.2)
+      mdast-util-to-markdown-cjk-friendly: 1.0.2(@types/mdast@4.0.4)(micromark-util-types@2.0.2)
+      micromark-extension-cjk-friendly: 2.0.2(micromark-util-types@2.0.2)(micromark@4.0.2(supports-color@10.2.2))
       unified: 11.0.5
+    optionalDependencies:
+      '@types/mdast': 4.0.4
     transitivePeerDependencies:
+      - micromark
       - micromark-util-types
 
-  remark-directive@4.0.0:
+  remark-directive@4.0.0(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
-      mdast-util-directive: 3.1.0
+      mdast-util-directive: 3.1.0(supports-color@10.2.2)
       micromark-extension-directive: 4.0.0
       unified: 11.0.5
     transitivePeerDependencies:
       - supports-color
 
-  remark-gfm@4.0.1:
+  remark-gfm@4.0.1(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
-      mdast-util-gfm: 3.1.0
+      mdast-util-gfm: 3.1.0(supports-color@10.2.2)
       micromark-extension-gfm: 3.0.0
-      remark-parse: 11.0.0
+      remark-parse: 11.0.0(supports-color@10.2.2)
       remark-stringify: 11.0.0
       unified: 11.0.5
     transitivePeerDependencies:
@@ -5252,26 +5199,25 @@ snapshots:
       unified: 11.0.5
       unist-util-visit: 5.2.0
 
-  remark-mdx@3.1.1(unified@11.0.5):
+  remark-mdx@3.1.1(supports-color@10.2.2):
     dependencies:
-      mdast-util-mdx: 3.0.0
+      mdast-util-mdx: 3.0.0(supports-color@10.2.2)
       micromark-extension-mdxjs: 3.0.0
-      unified: 11.0.5
     transitivePeerDependencies:
       - supports-color
 
-  remark-parse@11.0.0:
+  remark-parse@11.0.0(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
-      mdast-util-from-markdown: 2.0.3
+      mdast-util-from-markdown: 2.0.3(supports-color@10.2.2)
       micromark-util-types: 2.0.2
       unified: 11.0.5
     transitivePeerDependencies:
       - supports-color
 
-  remark-parse@9.0.0:
+  remark-parse@9.0.0(supports-color@10.2.2):
     dependencies:
-      mdast-util-from-markdown: 0.8.5
+      mdast-util-from-markdown: 0.8.5(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -5283,11 +5229,11 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.3
 
-  remark-ruby@0.4.0(remark-parse@9.0.0):
+  remark-ruby@0.4.0(remark-parse@9.0.0(supports-color@10.2.2))(supports-color@10.2.2):
     dependencies:
       browser-assert: 1.2.1
-      micromark: 2.11.4
-      remark-parse: 9.0.0
+      micromark: 2.11.4(supports-color@10.2.2)
+      remark-parse: 9.0.0(supports-color@10.2.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -5304,10 +5250,10 @@ snapshots:
       mdast-util-to-markdown: 2.1.2
       unified: 11.0.5
 
-  remark@15.0.1:
+  remark@15.0.1(supports-color@10.2.2):
     dependencies:
       '@types/mdast': 4.0.4
-      remark-parse: 11.0.0
+      remark-parse: 11.0.0(supports-color@10.2.2)
       remark-stringify: 11.0.0
       unified: 11.0.5
     transitivePeerDependencies:
@@ -5369,13 +5315,14 @@ snapshots:
       esm-env: 1.2.2
       svelte: 5.57.3
 
-  runed@0.35.1(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3):
+  runed@0.35.1(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3):
     dependencies:
-      '@sveltejs/kit': 2.70.3(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
       dequal: 2.0.3
       esm-env: 1.2.2
       lz-string: 1.5.0
       svelte: 5.57.3
+    optionalDependencies:
+      '@sveltejs/kit': 3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
 
   sade@1.8.1:
     dependencies:
@@ -5406,8 +5353,6 @@ snapshots:
 
   semver@7.8.5: {}
 
-  set-cookie-parser@3.1.2: {}
-
   shadcn-svelte@1.8.0(svelte@5.57.3):
     dependencies:
       cn: 0.3.3
@@ -5416,10 +5361,9 @@ snapshots:
       postcss: 8.5.28
       svelte: 5.57.3
 
-  sharp@0.35.5(@types/node@26.6.6):
+  sharp@0.35.5(@img/sharp-wasm32@0.35.5)(@types/node@26.6.6):
     dependencies:
       '@img/colour': 1.1.0
-      '@types/node': 26.6.6
       detect-libc: 2.1.2
       semver: 7.8.5
     optionalDependencies:
@@ -5444,10 +5388,12 @@ snapshots:
       '@img/sharp-linux-x64': 0.35.5
       '@img/sharp-linuxmusl-arm64': 0.35.5
       '@img/sharp-linuxmusl-x64': 0.35.5
+      '@img/sharp-wasm32': 0.35.5
       '@img/sharp-webcontainers-wasm32': 0.35.5
       '@img/sharp-win32-arm64': 0.35.5
       '@img/sharp-win32-ia32': 0.35.5
       '@img/sharp-win32-x64': 0.35.5
+      '@types/node': 26.6.6
 
   side-channel-list@1.0.1:
     dependencies:
@@ -5520,29 +5466,31 @@ snapshots:
 
   supports-color@10.2.2: {}
 
-  svelte-check@4.7.8(svelte@5.57.3)(typescript@6.0.3):
+  svelte-check@4.7.8(picomatch@4.0.7)(svelte@5.57.3)(typescript@6.0.3):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.31
       '@sveltejs/load-config': 0.2.3
       chokidar: 4.0.3
-      fdir: 6.5.0
+      fdir: 6.5.0(picomatch@4.0.7)
       picocolors: 1.1.1
       sade: 1.8.1
       svelte: 5.57.3
       typescript: 6.0.3
-    transitivePeerDependencies:
-      - picomatch
+    optionalDependencies:
+      picomatch: 4.0.7
 
   svelte-sonner@1.2.3(svelte@5.57.3):
     dependencies:
       svelte: 5.57.3
 
-  svelte-toolbelt@0.10.7(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3):
+  svelte-toolbelt@0.10.7(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3):
     dependencies:
       clsx: 2.1.1
-      runed: 0.35.1(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)))(svelte@5.57.3)
+      runed: 0.35.1(@sveltejs/kit@3.1.1(@sveltejs/vite-plugin-svelte@7.3.1(svelte@5.57.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)(typescript@6.0.3)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)))(svelte@5.57.3)
       style-to-object: 1.0.14
       svelte: 5.57.3
+    transitivePeerDependencies:
+      - '@sveltejs/kit'
 
   svelte-toolbelt@0.7.1(svelte@5.57.3):
     dependencies:
@@ -5711,7 +5659,7 @@ snapshots:
   util-deprecate@1.0.2: {}
 
   valibot@1.5.0(typescript@6.0.3):
-    dependencies:
+    optionalDependencies:
       typescript: 6.0.3
 
   vfile-message@4.0.3:
@@ -5724,27 +5672,28 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1):
+  vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1):
     dependencies:
-      '@types/node': 26.6.6
       lightningcss: 1.33.0
       picomatch: 4.0.7
       postcss: 8.5.32
       rolldown: 1.2.16
       tinyglobby: 0.2.17
-      yaml: 2.9.1
     optionalDependencies:
-      fsevents: 2.3.3
-
-  vitefu@1.1.3(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)):
-    dependencies:
-      vite: 8.3.6(@types/node@26.6.6)(yaml@2.9.1)
-
-  vitest@4.1.11(@types/node@26.6.6)(@vitest/expect@4.1.11)(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1)):
-    dependencies:
       '@types/node': 26.6.6
+      esbuild: 0.28.2
+      fsevents: 2.3.3
+      jiti: 2.7.0
+      yaml: 2.9.1
+
+  vitefu@1.1.3(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)):
+    optionalDependencies:
+      vite: 8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
+
+  vitest@4.1.11(@types/node@26.6.6)(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)):
+    dependencies:
       '@vitest/expect': 4.1.11
-      '@vitest/mocker': 4.1.11(vite@8.3.6(@types/node@26.6.6)(yaml@2.9.1))
+      '@vitest/mocker': 4.1.11(vite@8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1))
       '@vitest/pretty-format': 4.1.11
       '@vitest/runner': 4.1.11
       '@vitest/snapshot': 4.1.11
@@ -5761,8 +5710,10 @@ snapshots:
       tinyexec: 1.3.1
       tinyglobby: 0.2.17
       tinyrainbow: 3.1.1
-      vite: 8.3.6(@types/node@26.6.6)(yaml@2.9.1)
+      vite: 8.3.6(@types/node@26.6.6)(esbuild@0.28.2)(jiti@2.7.0)(yaml@2.9.1)
       why-is-node-running: 2.3.0
+    optionalDependencies:
+      '@types/node': 26.6.6
     transitivePeerDependencies:
       - msw
 
@@ -5779,26 +5730,27 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20261103.1
       '@cloudflare/workerd-windows-64': 1.20261103.1
 
-  wrangler@4.157.0(@cloudflare/workers-types@5.20261104.1)(@types/node@26.6.6):
+  wrangler@4.157.0(@cloudflare/workers-types@5.20261104.1)(@img/sharp-wasm32@0.35.5)(@types/node@26.6.6)(undici@7.30.1):
     dependencies:
       '@cloudflare/kv-asset-handler': 0.5.0
       '@cloudflare/unenv-preset': 2.16.2(unenv@2.0.0-rc.24)(workerd@1.20261103.1)
-      '@cloudflare/workers-types': 5.20261104.1
       '@cspotcode/source-map-support': 0.8.1
       blake3-wasm: 2.1.5
       esbuild: 0.28.2
-      miniflare: 5.20261103.0-beta(@cloudflare/workers-types@5.20261104.1)(@types/node@26.6.6)
+      miniflare: 5.20261103.0-beta(@cloudflare/workers-types@5.20261104.1)(@img/sharp-wasm32@0.35.5)(@types/node@26.6.6)
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.24
       workerd: 1.20261103.1
     optionalDependencies:
+      '@cloudflare/workers-types': 5.20261104.1
       fsevents: 2.3.3
+      undici: 7.30.1
     transitivePeerDependencies:
       - '@cloudflare/config'
-      - '@cloudflare/workers-shared'
       - '@img/sharp-libvips-dev'
       - '@img/sharp-wasm32'
       - '@puppeteer/browsers'
+      - '@types/node'
       - bufferutil
       - pnpapi
       - utf-8-validate
