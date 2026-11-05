@@ -582,6 +582,7 @@
   }
   :global(article :is(.astr-preview-big, .astr-preview-mid, .astr-preview)) {
     font-family: Astr, sans-serif;
+    font-feature-settings: normal;
   }
   :global(article .astr-preview :is(em, i)) {
     font-family: InterVariable, Inter, Astr, sans-serif;
@@ -593,7 +594,7 @@
     @apply mt-[-0.125em]! cursor-text text-[6vw]! leading-tight! text-foreground outline-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary;
   }
   :global(article .astr-preview) {
-    @apply columns-1 gap-6 font-features-[normal] *:text-base! *:leading-6! sm:*:leading-7! md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5;
+    @apply columns-1 gap-6 *:text-base! *:leading-6! sm:*:leading-7! md:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5;
   }
   :global(article .astr-preview > :first-child) {
     @apply mt-0!;
