@@ -59,6 +59,7 @@ lines:
         pr: 유
         time: [6.562, 6.829]
       - text: "can't "
+        pr: 캔트
         time: [6.829, 7.125]
       - text: 'overthink '
         pr: 오버싱크
@@ -175,6 +176,7 @@ lines:
       - text: 'just '
         time: [26.808, 27.097]
       - text: "can't "
+        pr: 캔트
         time: [27.097, 27.375]
       - text: 'be '
         time: [27.375, 27.522]
@@ -220,6 +222,7 @@ lines:
         pr: 유
         time: [33.139, 33.432]
       - text: "can't "
+        pr: 캔트
         time: [33.432, 33.714]
       - text: 'overthink '
         pr: 오버싱크
@@ -568,6 +571,7 @@ lines:
         pr: 유
         time: [102.473, 102.755]
       - text: "can't "
+        pr: 캔트
         time: [102.755, 103.051]
       - text: 'overthink '
         pr: 오버싱크
@@ -684,6 +688,7 @@ lines:
       - text: 'just '
         time: [122.733, 123.023]
       - text: "can't "
+        pr: 캔트
         time: [123.023, 123.301]
       - text: 'be '
         time: [123.301, 123.455]
@@ -729,6 +734,7 @@ lines:
         pr: 유
         time: [129.059, 129.358]
       - text: "can't "
+        pr: 캔트
         time: [129.358, 129.638]
       - text: 'overthink '
         pr: 오버싱크
