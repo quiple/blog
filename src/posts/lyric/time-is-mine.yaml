@@ -1,0 +1,321 @@
+# https://www.youtube.com/watch?v=NxXIm8IbeVk
+# YouTube 등록 자막: ja (json3, 행별 타이밍)
+# 선택 항목: YouTube 등록 자막 · ja · Japanese
+# 가져온 시각: 2026-11-05T07:40:09.477Z
+# 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
+
+title: タイムイズマイン
+pubDate: 2026-11-05T16:40
+titleLang: ja
+year: '2025'
+artist:
+  - mashima-yuro
+  - kasane-teto
+lang: ja
+sp: 0fMo89d4cSDdeLij2LNx5X
+yt:
+  audio: 0YhJ1VbCjp4
+  mv: NxXIm8IbeVk
+lines:
+  - text: own
+    time: [1.125, 1.5]
+  - text: own tick
+    time: [1.5, 1.833]
+  - text: own ticktack
+    time: [1.833, 2.208]
+  - text: own ticktack own
+    time: [2.208, 2.583]
+  - text: own ticktack own tick
+    time: [2.583, 2.958]
+  - text: own ticktack own ticktack
+    time: [2.958, 3.333]
+  - text: 🔔own🔔
+    time: [3.333, 4.167]
+  - text: own
+    time: [4.167, 4.542]
+  - text: own tick
+    time: [4.542, 4.875]
+  - text: own ticktack
+    time: [4.875, 5.25]
+  - text: own ticktack own
+    time: [5.25, 5.625]
+  - text: own ticktack own tick
+    time: [5.625, 6]
+  - text: own ticktack own ticktack
+    time: [6, 6.375]
+  - text: 🔔own🔔
+    time: [6.375, 7.25]
+  - text: own
+    time: [7.25, 7.625]
+  - text: own tick
+    time: [7.625, 7.958]
+  - text: own ticktack
+    time: [7.958, 8.333]
+  - text: own ticktack own
+    time: [8.333, 8.708]
+  - text: own ticktack own tick
+    time: [8.708, 9.083]
+  - text: own ticktack own ticktack
+    time: [9.083, 9.458]
+  - text: 🔔own🔔
+    time: [9.458, 10.333]
+  - text: own
+    time: [10.333, 10.708]
+  - text: own tick
+    time: [10.708, 11.042]
+  - text: own ticktack
+    time: [11.042, 11.417]
+  - text: own ticktack own
+    time: [11.417, 11.792]
+  - text: own ticktack own tick
+    time: [11.792, 12.167]
+  - text: own ticktack own ticktack
+    time: [12.167, 12.542]
+  - text: 🔔own🔔
+    time: [12.542, 13.333]
+  - text: 目覚ましのスヌーズのスクショが溜まっている
+    time: [13.417, 16.25]
+  - text: (目覚ましのスヌーズのスクショが溜まっている)
+    time: [16.25, 19.5]
+  - text: 流し台 箸と器洗わずに乾いてる
+    time: [19.5, 22.583]
+  - text: (流し台 箸と器洗わずに乾いてる)
+    time: [22.583, 25.667]
+  - text: 気がつきゃ新機種のその次が出ている
+    time: [25.667, 28.667]
+  - text: (気がつきゃ新機種のその次が出ている)
+    time: [28.667, 31.833]
+  - text: いつかやりたいと言いながら死んでいる
+    time: [31.833, 34.833]
+  - text: (いつかやりたいと言いながら死んでいる)
+    time: [34.833, 37.917]
+  - text: 若い頃から頑張っていたら
+    time: [37.917, 41.083]
+  - text: もっとマシな暮らしが出来たね
+    time: [41.083, 43.75]
+  - text: うるせーー！！
+    time: [43.75, 44.375]
+  - text: 損してようが得してようが知ったこっちゃねーわ
+    time: [44.375, 47.417]
+  - text: 何度繰り返したって学ばない失敗
+    time: [47.417, 50.5]
+  - text: 悔やみたくないから黙れる言い訳でっちあっげてたいわ
+    time: [50.5, 53.583]
+  - text: 無駄って言わないで
+    time: [53.583, 55.083]
+  - text: 怠け者って言わないで
+    time: [55.083, 56.542]
+  - text: タイムイズマイン
+    time: [56.542, 57.792]
+  - text: own
+    time: [57.792, 58.083]
+  - text: わがままでいたい
+    time: [58.083, 59.292]
+  - text: own
+    time: [59.292, 59.792]
+  - text: タイムイズマネー
+    time: [59.792, 60.875]
+  - text: じゃなくて
+    time: [60.875, 61.333]
+  - text: タイムイズマイン
+    time: [61.333, 62.917]
+  - text: タイムイズマイン
+    time: [62.917, 63.958]
+  - text: own
+    time: [63.958, 64.292]
+  - text: 壊れてくブレイン
+    time: [64.292, 65.458]
+  - text: own
+    time: [65.458, 65.875]
+  - text: タイムイズマネー
+    time: [65.875, 66.917]
+  - text: じゃなくて
+    time: [66.917, 67.375]
+  - text: タイムイズマイン
+    time: [67.375, 69]
+  - text: own
+    time: [69.042, 69.417]
+  - text: own tick
+    time: [69.417, 69.75]
+  - text: own ticktack
+    time: [69.75, 70.125]
+  - text: own ticktack own
+    time: [70.125, 70.5]
+  - text: own ticktack own tick
+    time: [70.5, 70.875]
+  - text: own ticktack own ticktack
+    time: [70.875, 71.25]
+  - text: 🔔own🔔
+    time: [71.25, 72.083]
+  - text: own
+    time: [72.083, 72.458]
+  - text: own tick
+    time: [72.458, 72.792]
+  - text: own ticktack
+    time: [72.792, 73.167]
+  - text: own ticktack own
+    time: [73.167, 73.542]
+  - text: own ticktack own tick
+    time: [73.542, 73.917]
+  - text: own ticktack own ticktack
+    time: [73.917, 74.292]
+  - text: 🔔own🔔
+    time: [74.292, 75.125]
+  - text: 俺があーだこーだ言ってる間もアイツは成長中
+    time: [75.125, 78.375]
+  - text: こちとら全然伸びんのにずっと痛い成長痛
+    time: [78.375, 81.458]
+  - text: だらけてばっかだから足りんね経験不足
+    time: [81.458, 84.458]
+  - text: 接骨院行っても全然治らん頸肩腕症候群
+    time: [84.458, 88.25]
+  - text: あとまわしにしてたら
+    time: [88.25, 90.583]
+  - text: 掴めたはずのチャンスも失ったね
+    time: [90.583, 93.208]
+  - text: しらねーー！！
+    time: [93.208, 93.833]
+  - text: 無益だろうが有益だろうがったこっちゃねーわ
+    time: [93.833, 96.875]
+  - text: 何度繰り返したって変わらないよ実際
+    time: [96.875, 99.958]
+  - text: 病みたくないから責任転嫁で跋扈跋扈したいわ
+    time: [99.958, 103.042]
+  - text: 有害って言わないで
+    time: [103.042, 104.542]
+  - text: 愚か者って言わないで
+    time: [104.542, 106]
+  - text: タイムイズマイン
+    time: [106, 107.25]
+  - text: own
+    time: [107.25, 107.542]
+  - text: わがままでいたい
+    time: [107.542, 108.75]
+  - text: own
+    time: [108.75, 109.25]
+  - text: タイムイズマネー
+    time: [109.25, 110.333]
+  - text: じゃなくて
+    time: [110.333, 110.792]
+  - text: タイムイズマイン
+    time: [110.792, 112.375]
+  - text: タイムイズマイン
+    time: [112.375, 113.417]
+  - text: own
+    time: [113.417, 113.75]
+  - text: 衰えてくブレイン
+    time: [113.75, 114.917]
+  - text: own
+    time: [114.917, 115.333]
+  - text: タイムイズマネー
+    time: [115.333, 116.375]
+  - text: じゃなくて
+    time: [116.375, 116.833]
+  - text: タイムイズマイン
+    time: [116.833, 118.458]
+  - text: 甘いジュースを飲みながら
+    time: [118.458, 121.958]
+  - text: ふて寝したまま溶かす時間
+    time: [121.958, 124.792]
+  - text: こんな音楽聴いていたら
+    time: [124.792, 131.125]
+  - text: ロクな大人になれないぞ
+    time: [131.125, 133.458]
+  - text: FINAL FANT
+    time: [133.458, 134.125]
+  - text: 損してようが得してようが知ったこっちゃねーわ
+    time: [134.125, 137.167]
+  - text: 何度繰り返したって学ばない失敗
+    time: [137.167, 140.25]
+  - text: 悔やみたくないから黙れる言い訳でっちあっげてたいわ
+    time: [140.25, 143.333]
+  - text: 無駄って言わないで
+    time: [143.333, 144.833]
+  - text: 怠け者って言わないで
+    time: [144.833, 146.292]
+  - text: タイムイズマイン
+    time: [146.292, 147.542]
+  - text: own
+    time: [147.542, 147.833]
+  - text: わがままでいたい
+    time: [147.833, 149.042]
+  - text: own
+    time: [149.042, 149.542]
+  - text: タイムイズマネー
+    time: [149.542, 150.625]
+  - text: じゃなくて
+    time: [150.625, 151.083]
+  - text: タイムイズマイン
+    time: [151.083, 152.667]
+  - text: タイムイズマイン
+    time: [152.667, 153.708]
+  - text: own
+    time: [153.708, 154.042]
+  - text: 壊れてくブレイン
+    time: [154.042, 155.208]
+  - text: own
+    time: [155.208, 155.625]
+  - text: タイムイズマネー
+    time: [155.625, 156.667]
+  - text: じゃなくて
+    time: [156.667, 157.125]
+  - text: タイムイズマイン
+    time: [157.125, 158.708]
+  - text: 指図されない
+    time: [158.708, 160.167]
+  - text: own
+    time: [160.542, 160.917]
+  - text: own tick
+    time: [160.917, 161.25]
+  - text: own ticktack
+    time: [161.25, 161.625]
+  - text: own ticktack own
+    time: [161.625, 162]
+  - text: own ticktack own tick
+    time: [162, 162.375]
+  - text: own ticktack own ticktack
+    time: [162.375, 162.75]
+  - text: 🔔own🔔
+    time: [162.75, 163.583]
+  - text: own
+    time: [163.583, 163.958]
+  - text: own tick
+    time: [163.958, 164.292]
+  - text: own ticktack
+    time: [164.292, 164.667]
+  - text: own ticktack own
+    time: [164.667, 165.042]
+  - text: own ticktack own tick
+    time: [165.042, 165.417]
+  - text: own ticktack own ticktack
+    time: [165.417, 165.792]
+  - text: 🔔own🔔
+    time: [165.792, 166.625]
+  - text: own
+    time: [166.708, 167.083]
+  - text: own tick
+    time: [167.083, 167.417]
+  - text: own ticktack
+    time: [167.417, 167.792]
+  - text: own ticktack own
+    time: [167.792, 168.167]
+  - text: own ticktack own tick
+    time: [168.167, 168.542]
+  - text: own ticktack own ticktack
+    time: [168.542, 168.917]
+  - text: 🔔own🔔
+    time: [168.917, 169.75]
+  - text: own
+    time: [169.75, 170.125]
+  - text: own tick
+    time: [170.125, 170.458]
+  - text: own ticktack
+    time: [170.458, 170.833]
+  - text: own ticktack own
+    time: [170.833, 171.208]
+  - text: own ticktack own tick
+    time: [171.208, 171.583]
+  - text: own ticktack own ticktack
+    time: [171.583, 171.958]
+  - text: 🔔own🔔
+    time: [171.958, 172.875]
