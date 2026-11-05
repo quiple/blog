@@ -95,6 +95,7 @@ lines:
         pr: 크레이브
         time: [12.892, 13.101]
       - text: 'zero '
+        pr: 지로
         time: [13.101, 13.648]
       - text: 'thoughts, '
         pr: 소츠,
@@ -112,16 +113,20 @@ lines:
     time: [12.892, 15.077]
   - words:
       - text: 'Then '
+        pr: 덴
         time: [15.106, 15.348]
       - text: 'drink '
+        pr: 드링크
         time: [15.348, 15.645]
       - text: 'and '
         time: [15.645, 15.922]
       - text: 'drink '
+        pr: 드링크
         time: [15.922, 16.22]
       - text: 'and '
         time: [16.22, 16.473]
       - text: 'drink '
+        pr: 드링크
         time: [16.473, 16.77]
       - text: 'until '
         time: [16.77, 17.263]
@@ -630,16 +635,20 @@ lines:
     time: [108.813, 111.006]
   - words:
       - text: 'Then '
+        pr: 덴
         time: [111.028, 111.261]
       - text: 'drink '
+        pr: 드링크
         time: [111.261, 111.57]
       - text: 'and '
         time: [111.57, 111.847]
       - text: 'drink '
+        pr: 드링크
         time: [111.847, 112.144]
       - text: 'and '
         time: [112.144, 112.4]
       - text: 'drink '
+        pr: 드링크
         time: [112.4, 112.695]
       - text: 'until '
         time: [112.695, 113.182]
