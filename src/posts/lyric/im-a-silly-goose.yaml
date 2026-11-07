@@ -7,6 +7,7 @@
 # 원본 타이밍을 유지했습니다. 선택한 음원/뮤비와의 차이는 offsets로 보정하세요.
 
 title: i'm a silly goose
+titleTl: 난 바보 같은 거위야
 pubDate: 2026-11-08T07:39
 titleLang: en
 year: '2026'
@@ -20,100 +21,149 @@ yt:
   mv: 8uMbLSfJHcc
 lines:
   - text: I used to have such lofty goals when I was a child
+    tl: 어릴 적엔 원대한 꿈이 있었어
     time: [11.99, 17.48]
   - text: But now I scroll my phone all day without going outside
+    tl: 하지만 이젠 밖에도 나가지 않고 온종일 휴대폰만 들여다봐
     time: [17.48, 22.97]
-  - text: Where did my motivation go? did it waddle away?
+  - text: Where did my motivation go? Did it waddle away?
+    tl: 내 의욕은 어디로 갔을까? 뒤뚱뒤뚱 도망가 버렸나?
     time: [22.97, 28.45]
   - text: The weeks fly by as my mind starts to decline and decay
+    tl: 몇 주가 쏜살같이 지나는 동안 내 정신은 쇠하고 썩어 가
     time: [28.45, 34.28]
   - text: I tell everybody I'm a silly little goose
+    tl: 모두에게 난 바보 같은 꼬마 거위라고 말해
     time: [34.28, 39.42]
-  - text: But really I'm too scared to let my thoughts out on the loose
+  - text: But really, I'm too scared to let my thoughts out on the loose
+    tl: 하지만 사실 속마음을 털어놓기가 너무 두려울 뿐이야
     time: [39.42, 44.91]
   - text: I'm such a useless piece of shit I can't make an excuse
+    tl: 난 변명조차 할 수 없는 쓸모없는 쓰레기야
     time: [44.91, 50.39]
   - text: And every day's a struggle to force myself to push through
+    tl: 하루하루 억지로 버텨 내는 것만으로도 힘겨워
     time: [50.39, 56.39]
   - text: Is it even still worth to really try?
+    tl: 아직도 정말 노력할 가치가 있을까?
     time: [56.39, 59.14]
-  - text: Cause there's no light or life left in my eyes
+  - text: "'Cause there's no light or life left in my eyes"
+    tl: 내 눈에는 빛도 생기도 남아 있지 않으니까
     time: [59.14, 61.88]
   - text: A goose like me will never touch the sky
+    tl: 나 같은 거위는 절대 하늘에 닿지 못할 거야
     time: [61.88, 64.62]
   - text: As long as I'm alive
+    tl: 내가 살아 있는 한
     time: [64.62, 66.85]
   - text: I trip and I fall
+    tl: 난 걸려 넘어지고
     time: [66.85, 69.25]
   - text: But there's nothing here at all
+    tl: 하지만 여기엔 아무것도 없어
     time: [69.25, 72.34]
-  - text: For my faults, flaws, and failures I still fight
+  - text: For my faults, flaws, and failures, I still fight
+    tl: 내 잘못과 결점과 실패에도 난 여전히 싸워
     time: [72.34, 77.14]
   - text: But I don't know why
+    tl: 하지만 왜 그러는지 모르겠어
     time: [77.14, 79.54]
-  - text: I just fuck up fuck up and up fuck up
+  - text: I just fuck up, fuck up, and up, fuck up
+    tl: 난 그저 망치고 망치고 또 망치고 또 망쳐
     time: [88.79, 91.19]
-  - text: Oh I wish I could leave here
+  - text: Oh, I wish I could leave here
+    tl: 아, 여기서 떠날 수 있다면 좋을 텐데
     time: [91.19, 94.28]
-  - text: And fly up and up and up fly up
+  - text: And fly up and up and up, fly up
+    tl: 높이 높이 더 높이 날아갈 수 있다면
     time: [94.28, 96.68]
-  - text: Oh I wish I could see clear
+  - text: Oh, I wish I could see clear
+    tl: 아, 선명하게 볼 수 있다면 좋을 텐데
     time: [96.68, 99.77]
   - text: Is it pointless for me to dream high
+    tl: 내가 높은 꿈을 꾸는 건 헛된 일일까
     time: [99.77, 102.34]
-  - text: When I'm a waste of air
+  - text: When I'm a waste of air?
+    tl: 난 공기만 낭비하는 존재인데
     time: [102.34, 105.25]
   - text: Why do I fantasize
+    tl: 어째서 나는 상상에 빠지는 걸까
     time: [105.25, 107.14]
-  - text: When my life is in disrepair
+  - text: When my life is in disrepair?
+    tl: 내 삶은 엉망진창인데
     time: [107.14, 111.08]
   - text: I tell everybody I'm a silly little goose
+    tl: 모두에게 난 바보 같은 꼬마 거위라고 말해
     time: [111.08, 116.22]
-  - text: But really I'm too scared to let my thoughts out on the loose
+  - text: But really, I'm too scared to let my thoughts out on the loose
+    tl: 하지만 사실 속마음을 털어놓기가 너무 두려울 뿐이야
     time: [116.22, 121.71]
   - text: I'm such a useless piece of shit I can't make an excuse
+    tl: 난 변명조차 할 수 없는 쓸모없는 쓰레기야
     time: [121.71, 127.19]
   - text: And every day's a struggle to force myself to push through
+    tl: 하루하루 억지로 버텨 내는 것만으로도 힘겨워
     time: [127.19, 133.19]
   - text: Is it even still worth to really try?
+    tl: 아직도 정말 노력할 가치가 있을까?
     time: [133.19, 135.94]
-  - text: Cause there's no light or life left in my eyes
+  - text: "'Cause there's no light or life left in my eyes"
+    tl: 내 눈에는 빛도 생기도 남아 있지 않으니까
     time: [135.94, 138.68]
   - text: A goose like me will never touch the sky
+    tl: 나 같은 거위는 절대 하늘에 닿지 못할 거야
     time: [138.68, 141.42]
   - text: As long as I'm alive
+    tl: 내가 살아 있는 한
     time: [141.42, 143.65]
   - text: I trip and I fall
+    tl: 난 걸려 넘어지고
     time: [143.65, 146.05]
   - text: But there's nothing here at all
+    tl: 하지만 여기엔 아무것도 없어
     time: [146.05, 149.14]
-  - text: For my faults, flaws, and failures I still fight
+  - text: For my faults, flaws, and failures, I still fight
+    tl: 내 잘못과 결점과 실패에도 난 여전히 싸워
     time: [149.14, 153.94]
   - text: But I want to cry
+    tl: 하지만 울고 싶어
     time: [153.94, 156.34]
-  - text: Oh the precious gift of life is wasted
+  - text: Oh, the precious gift of life is wasted
+    tl: 아, 소중한 생명의 선물이 낭비되고 있어
     time: [176.91, 182.39]
   - text: On a flightless bird like me
+    tl: 나처럼 날지 못하는 새에게
     time: [182.39, 187.88]
   - text: But the wonder of art and creation
+    tl: 하지만 예술과 창조가 지닌 경이로움은
     time: [187.88, 193.19]
   - text: Gives hope back to the worn and weary
+    tl: 지치고 고단한 이들에게 희망을 되돌려 줘
     time: [193.19, 195.94]
   - text: Shining brilliantly
+    tl: 눈부시게 빛나면서
     time: [195.94, 198.85]
   - text: Maybe it is still worth to keep on trying
+    tl: 어쩌면 계속 노력할 가치가 있는지도 몰라
     time: [198.85, 201.77]
-  - text: Cause you bring light and life back to my eyes
+  - text: "'Cause you bring light and life back to my eyes"
+    tl: 네가 내 눈에 빛과 생기를 되돌려 주니까
     time: [201.77, 204.51]
   - text: A goose like me may one day touch the sky
+    tl: 나 같은 거위도 언젠가 하늘에 닿을 수 있을 거야
     time: [204.51, 207.25]
   - text: Because I'm still alive
+    tl: 난 아직 살아 있으니까
     time: [207.25, 209.48]
   - text: I trip and I fall
+    tl: 난 걸려 넘어져도
     time: [209.48, 211.88]
   - text: But I get up with my all
+    tl: 온 힘을 다해 다시 일어나
     time: [211.88, 214.97]
-  - text: For my faults, flaws, and failures I still fight
+  - text: For my faults, flaws, and failures, I still fight
+    tl: 내 잘못과 결점과 실패에도 난 여전히 싸워
     time: [214.97, 219.77]
-  - text: Cause I want to fly
+  - text: "'Cause I want to fly"
+    tl: 날고 싶으니까
     time: [219.77, 223.71]
