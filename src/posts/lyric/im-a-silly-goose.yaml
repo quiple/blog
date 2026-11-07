@@ -19,52 +19,101 @@ yt:
   audio: G7biL7AKSAg
   mv: 8uMbLSfJHcc
 lines:
-  - I used to have such lofty goals when I was a child
-  - But now I scroll my phone all day without going outside
-  - Where did my motivation go? did it waddle away?
-  - The weeks fly by as my mind starts to decline and decay
-  - I tell everybody I'm a silly little goose
-  - But really I'm too scared to let my thoughts out on the loose
-  - I'm such a useless piece of shit I can't make an excuse
-  - And every day's a struggle to force myself to push through
-  - Is it even still worth to really try?
-  - Cause there's no light or life left in my eyes
-  - A goose like me will never touch the sky
-  - As long as I'm alive
-  - I trip and I fall
-  - But there's nothing here at all
-  - For my faults, flaws, and failures I still fight
-  - But I don't know why
-  - I just fuck up fuck up and up fuck up
-  - Oh I wish I could leave here
-  - And fly up and up and up fly up
-  - Oh I wish I could see clear
-  - Is it pointless for me to dream high
-  - When I'm a waste of air
-  - Why do I fantasize
-  - When my life is in disrepair
-  - I tell everybody I'm a silly little goose
-  - But really I'm too scared to let my thoughts out on the loose
-  - I'm such a useless piece of shit I can't make an excuse
-  - And every day's a struggle to force myself to push through
-  - Is it even still worth to really try?
-  - Cause there's no light or life left in my eyes
-  - A goose like me will never touch the sky
-  - As long as I'm alive
-  - I trip and I fall
-  - But there's nothing here at all
-  - For my faults, flaws, and failures I still fight
-  - But I want to cry
-  - Oh the precious gift of life is wasted
-  - On a flightless bird like me
-  - But the wonder of art and creation
-  - Gives hope back to the worn and weary
-  - Shining brilliantly
-  - Maybe it is still worth to keep on trying
-  - Cause you bring light and life back to my eyes
-  - A goose like me may one day touch the sky
-  - Because I'm still alive
-  - I trip and I fall
-  - But I get up with my all
-  - For my faults, flaws, and failures I still fight
-  - Cause I want to fly
+  - text: I used to have such lofty goals when I was a child
+    time: [11.99, 17.48]
+  - text: But now I scroll my phone all day without going outside
+    time: [17.48, 22.97]
+  - text: Where did my motivation go? did it waddle away?
+    time: [22.97, 28.45]
+  - text: The weeks fly by as my mind starts to decline and decay
+    time: [28.45, 34.28]
+  - text: I tell everybody I'm a silly little goose
+    time: [34.28, 39.42]
+  - text: But really I'm too scared to let my thoughts out on the loose
+    time: [39.42, 44.91]
+  - text: I'm such a useless piece of shit I can't make an excuse
+    time: [44.91, 50.39]
+  - text: And every day's a struggle to force myself to push through
+    time: [50.39, 56.39]
+  - text: Is it even still worth to really try?
+    time: [56.39, 59.14]
+  - text: Cause there's no light or life left in my eyes
+    time: [59.14, 61.88]
+  - text: A goose like me will never touch the sky
+    time: [61.88, 64.62]
+  - text: As long as I'm alive
+    time: [64.62, 66.85]
+  - text: I trip and I fall
+    time: [66.85, 69.25]
+  - text: But there's nothing here at all
+    time: [69.25, 72.34]
+  - text: For my faults, flaws, and failures I still fight
+    time: [72.34, 77.14]
+  - text: But I don't know why
+    time: [77.14, 79.54]
+  - text: I just fuck up fuck up and up fuck up
+    time: [88.79, 91.19]
+  - text: Oh I wish I could leave here
+    time: [91.19, 94.28]
+  - text: And fly up and up and up fly up
+    time: [94.28, 96.68]
+  - text: Oh I wish I could see clear
+    time: [96.68, 99.77]
+  - text: Is it pointless for me to dream high
+    time: [99.77, 102.34]
+  - text: When I'm a waste of air
+    time: [102.34, 105.25]
+  - text: Why do I fantasize
+    time: [105.25, 107.14]
+  - text: When my life is in disrepair
+    time: [107.14, 111.08]
+  - text: I tell everybody I'm a silly little goose
+    time: [111.08, 116.22]
+  - text: But really I'm too scared to let my thoughts out on the loose
+    time: [116.22, 121.71]
+  - text: I'm such a useless piece of shit I can't make an excuse
+    time: [121.71, 127.19]
+  - text: And every day's a struggle to force myself to push through
+    time: [127.19, 133.19]
+  - text: Is it even still worth to really try?
+    time: [133.19, 135.94]
+  - text: Cause there's no light or life left in my eyes
+    time: [135.94, 138.68]
+  - text: A goose like me will never touch the sky
+    time: [138.68, 141.42]
+  - text: As long as I'm alive
+    time: [141.42, 143.65]
+  - text: I trip and I fall
+    time: [143.65, 146.05]
+  - text: But there's nothing here at all
+    time: [146.05, 149.14]
+  - text: For my faults, flaws, and failures I still fight
+    time: [149.14, 153.94]
+  - text: But I want to cry
+    time: [153.94, 156.34]
+  - text: Oh the precious gift of life is wasted
+    time: [176.91, 182.39]
+  - text: On a flightless bird like me
+    time: [182.39, 187.88]
+  - text: But the wonder of art and creation
+    time: [187.88, 193.19]
+  - text: Gives hope back to the worn and weary
+    time: [193.19, 195.94]
+  - text: Shining brilliantly
+    time: [195.94, 198.85]
+  - text: Maybe it is still worth to keep on trying
+    time: [198.85, 201.77]
+  - text: Cause you bring light and life back to my eyes
+    time: [201.77, 204.51]
+  - text: A goose like me may one day touch the sky
+    time: [204.51, 207.25]
+  - text: Because I'm still alive
+    time: [207.25, 209.48]
+  - text: I trip and I fall
+    time: [209.48, 211.88]
+  - text: But I get up with my all
+    time: [211.88, 214.97]
+  - text: For my faults, flaws, and failures I still fight
+    time: [214.97, 219.77]
+  - text: Cause I want to fly
+    time: [219.77, 223.71]
