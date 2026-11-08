@@ -22,934 +22,1327 @@ yt:
 lines:
   - words:
       - text: 'I '
+        pr: 아이
         time: [11.99, 12.327]
       - text: 'used '
+        pr: 유스트
         time: [12.327, 12.508]
       - text: 'to '
+        pr: 투
         time: [12.508, 12.809]
       - text: 'have '
+        pr: 햅
         time: [12.809, 13.079]
       - text: 'such '
+        pr: 서치
         time: [13.079, 13.508]
       - text: 'lofty '
+        pr: 라프티
         time: [13.508, 14.209]
       - text: 'goals '
+        pr: 골즈
         time: [14.209, 14.532]
       - text: 'when '
+        pr: 웬
         time: [14.532, 15.036]
       - text: 'I '
+        pr: 아이
         time: [15.036, 15.363]
       - text: 'was '
+        pr: 워즈
         time: [15.363, 15.76]
       - text: 'a '
+        pr: 어
         time: [15.76, 16.028]
       - text: child
+        pr: 차일드
         time: [16.028, 17.115]
     tl: 어릴 적엔 원대한 꿈이 있었어
     time: [11.99, 17.115]
   - words:
       - text: 'But '
+        pr: 벗
         time: [17.459, 17.805]
       - text: 'now '
+        pr: 나우
         time: [17.805, 17.976]
       - text: 'I '
+        pr: 아이
         time: [17.976, 18.155]
       - text: 'scroll '
+        pr: 스크롤
         time: [18.155, 18.665]
       - text: 'my '
+        pr: 마이
         time: [18.665, 19.012]
       - text: 'phone '
+        pr: 폰
         time: [19.012, 19.355]
       - text: 'all '
+        pr: 올
         time: [19.355, 19.69]
       - text: 'day '
+        pr: 데이
         time: [19.69, 20.015]
       - text: 'without '
+        pr: 위다웃
         time: [20.015, 20.54]
       - text: 'going '
+        pr: 고잉
         time: [20.54, 21.224]
       - text: outside
+        pr: 아웃사이드
         time: [21.224, 22.607]
     tl: 하지만 이젠 밖에도 나가지 않고 온종일 휴대폰만 들여다봐
     time: [17.459, 22.607]
   - words:
       - text: 'Where '
+        pr: 웨어
         time: [22.951, 23.282]
       - text: 'did '
+        pr: 딛
         time: [23.282, 23.465]
       - text: 'my '
+        pr: 마이
         time: [23.465, 23.806]
       - text: 'motivation '
+        pr: 모터베이션
         time: [23.806, 25.161]
       - text: 'go? '
+        pr: 고?
         time: [25.161, 25.506]
       - text: 'Did '
+        pr: 딛
         time: [25.506, 25.862]
       - text: 'it '
+        pr: 잇
         time: [25.862, 26.023]
       - text: 'waddle '
+        pr: 와들
         time: [26.023, 26.714]
       - text: away?
+        pr: 어웨이?
         time: [26.714, 28.092]
     tl: 내 의욕은 어디로 갔을까? 뒤뚱뒤뚱 도망가 버렸나?
     time: [22.951, 28.092]
   - words:
       - text: 'The '
+        pr: 더
         time: [28.45, 28.714]
       - text: 'weeks '
+        pr: 윅스
         time: [28.714, 28.948]
       - text: 'fly '
+        pr: 플라이
         time: [28.948, 29.298]
       - text: 'by '
+        pr: 바이
         time: [29.298, 29.642]
       - text: 'as '
+        pr: 애즈
         time: [29.642, 29.979]
       - text: 'my '
+        pr: 마이
         time: [29.979, 30.308]
       - text: 'mind '
+        pr: 마인드
         time: [30.308, 30.535]
       - text: 'starts '
+        pr: 스타츠
         time: [30.535, 30.984]
       - text: 'to '
+        pr: 투
         time: [30.984, 31.168]
       - text: 'decline '
+        pr: 디클라인
         time: [31.168, 31.842]
       - text: 'and '
+        pr: 앤드
         time: [31.842, 32.181]
       - text: decay
+        pr: 디케이
         time: [32.181, 33.586]
     tl: 몇 주가 쏜살같이 지나는 동안 내 정신은 쇠하고 썩어 가
     time: [28.45, 33.586]
   - words:
       - text: 'I '
+        pr: 아이
         time: [34.273, 34.591]
       - text: 'tell '
+        pr: 텔
         time: [34.591, 34.96]
       - text: 'everybody '
+        pr: 에브리바디
         time: [34.96, 36.311]
       - text: "I'm "
+        pr: 아임
         time: [36.311, 36.658]
       - text: 'a '
+        pr: 어
         time: [36.658, 36.847]
       - text: 'silly '
+        pr: 실리
         time: [36.847, 37.689]
       - text: 'little '
+        pr: 리틀
         time: [37.689, 38.369]
       - text: goose
+        pr: 구스
         time: [38.369, 39.069]
     tl: 모두에게 난 바보 같은 꼬마 거위라고 말해
     time: [34.273, 39.069]
   - words:
       - text: 'But '
+        pr: 벗
         time: [39.42, 39.732]
       - text: 'really, '
+        pr: 리얼리,
         time: [39.732, 40.423]
       - text: "I'm "
+        pr: 아임
         time: [40.423, 40.73]
       - text: 'too '
+        pr: 투
         time: [40.73, 40.942]
       - text: 'scared '
+        pr: 스케어드
         time: [40.942, 41.41]
       - text: 'to '
+        pr: 투
         time: [41.41, 41.793]
       - text: 'let '
+        pr: 렛
         time: [41.793, 42.141]
       - text: 'my '
+        pr: 마이
         time: [42.141, 42.487]
       - text: 'thoughts '
+        pr: 소츠
         time: [42.487, 42.853]
       - text: 'out '
+        pr: 아웃
         time: [42.853, 43.181]
       - text: 'on '
+        pr: 온
         time: [43.181, 43.525]
       - text: 'the '
+        pr: 더
         time: [43.525, 43.817]
       - text: loose
+        pr: 루스
         time: [43.817, 44.562]
     tl: 하지만 사실 속마음을 털어놓기가 너무 두려울 뿐이야
     time: [39.42, 44.562]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [44.91, 45.129]
       - text: 'such '
+        pr: 서치
         time: [45.129, 45.58]
       - text: 'a '
+        pr: 어
         time: [45.58, 45.895]
       - text: 'useless '
+        pr: 유슬리스
         time: [45.895, 46.6]
       - text: 'piece '
+        pr: 피스
         time: [46.6, 46.953]
       - text: 'of '
+        pr: 옵
         time: [46.953, 47.179]
       - text: 'shit '
+        pr: 싯
         time: [47.179, 47.634]
       - text: 'I '
+        pr: 아이
         time: [47.634, 47.959]
       - text: "can't "
+        pr: 캔트
         time: [47.959, 48.322]
       - text: 'make '
+        pr: 메익
         time: [48.322, 48.658]
       - text: 'an '
+        pr: 언
         time: [48.658, 49.012]
       - text: excuse
+        pr: 익스큐스
         time: [49.012, 50.032]
     tl: 난 변명조차 할 수 없는 쓸모없는 쓰레기야
     time: [44.91, 50.032]
   - words:
       - text: 'And '
+        pr: 앤드
         time: [50.39, 50.717]
       - text: 'every '
+        pr: 에브리
         time: [50.717, 51.402]
       - text: "day's "
+        pr: 데이즈
         time: [51.402, 51.76]
       - text: 'a '
+        pr: 어
         time: [51.76, 51.909]
       - text: 'struggle '
+        pr: 스트러글
         time: [51.909, 52.749]
       - text: 'to '
+        pr: 투
         time: [52.749, 53.12]
       - text: 'force '
+        pr: 포스
         time: [53.12, 53.447]
       - text: 'myself '
+        pr: 마이셀프
         time: [53.447, 54.123]
       - text: 'to '
+        pr: 투
         time: [54.123, 54.497]
       - text: 'push '
+        pr: 푸시
         time: [54.497, 54.783]
       - text: through
+        pr: 스루
         time: [54.783, 56.001]
     tl: 하루하루 억지로 버텨 내는 것만으로도 힘겨워
     time: [50.39, 56.001]
   - words:
       - text: 'Is '
+        pr: 이즈
         time: [56.39, 56.559]
       - text: 'it '
+        pr: 잇
         time: [56.559, 56.72]
       - text: 'even '
+        pr: 이븐
         time: [56.72, 56.975]
       - text: 'still '
+        pr: 스틸
         time: [56.975, 57.402]
       - text: 'worth '
+        pr: 워스
         time: [57.402, 57.719]
       - text: 'to '
+        pr: 투
         time: [57.719, 58.093]
       - text: 'really '
+        pr: 리얼리
         time: [58.093, 58.72]
       - text: try?
+        pr: 트라이?
         time: [58.72, 59.14]
     tl: 아직도 정말 노력할 가치가 있을까?
     time: [56.39, 59.14]
   - words:
       - text: "'Cause "
+        pr: 코즈
         time: [59.14, 59.303]
       - text: "there's "
+        pr: 데어즈
         time: [59.303, 59.471]
       - text: 'no '
+        pr: 노
         time: [59.471, 59.61]
       - text: 'light '
+        pr: 라잇
         time: [59.61, 59.822]
       - text: 'or '
+        pr: 오어
         time: [59.822, 60.138]
       - text: 'life '
+        pr: 라입
         time: [60.138, 60.485]
       - text: 'left '
+        pr: 렙트
         time: [60.485, 60.819]
       - text: 'in '
+        pr: 인
         time: [60.819, 61.218]
       - text: 'my '
+        pr: 마이
         time: [61.218, 61.441]
       - text: eyes
+        pr: 아이즈
         time: [61.441, 61.88]
     tl: 내 눈에는 빛도 생기도 남아 있지 않으니까
     time: [59.14, 61.88]
   - words:
       - text: 'A '
+        pr: 어
         time: [61.88, 62.03]
       - text: 'goose '
+        pr: 구스
         time: [62.03, 62.21]
       - text: 'like '
+        pr: 라익
         time: [62.21, 62.385]
       - text: 'me '
+        pr: 미
         time: [62.385, 62.548]
       - text: 'will '
+        pr: 윌
         time: [62.548, 62.891]
       - text: 'never '
+        pr: 네버
         time: [62.891, 63.553]
       - text: 'touch '
+        pr: 터치
         time: [63.553, 63.921]
       - text: 'the '
+        pr: 더
         time: [63.921, 64.073]
       - text: sky
+        pr: 스카이
         time: [64.073, 64.62]
     tl: 나 같은 거위는 절대 하늘에 닿지 못할 거야
     time: [61.88, 64.62]
   - words:
       - text: 'As '
+        pr: 애즈
         time: [64.62, 64.946]
       - text: 'long '
+        pr: 롱
         time: [64.946, 65.287]
       - text: 'as '
+        pr: 애즈
         time: [65.287, 65.641]
       - text: "I'm "
+        pr: 아임
         time: [65.641, 66.314]
       - text: alive
+        pr: 얼라입
         time: [66.314, 66.85]
     tl: 내가 살아 있는 한
     time: [64.62, 66.85]
   - words:
       - text: 'I '
+        pr: 아이
         time: [66.85, 67.116]
       - text: 'trip '
+        pr: 트립
         time: [67.116, 67.67]
       - text: 'and '
+        pr: 앤드
         time: [67.67, 68.038]
       - text: 'I '
+        pr: 아이
         time: [68.038, 68.364]
       - text: fall
+        pr: 폴
         time: [68.364, 69.25]
     tl: 난 걸려 넘어지고
     time: [66.85, 69.25]
   - words:
       - text: 'But '
+        pr: 벗
         time: [69.25, 69.595]
       - text: "there's "
+        pr: 데어즈
         time: [69.595, 69.902]
       - text: 'nothing '
+        pr: 너싱
         time: [69.902, 70.355]
       - text: 'here '
+        pr: 히어
         time: [70.355, 70.787]
       - text: 'at '
+        pr: 앳
         time: [70.787, 71.108]
       - text: all
+        pr: 올
         time: [71.108, 72.202]
     tl: 하지만 여기엔 아무것도 없어
     time: [69.25, 72.202]
   - words:
       - text: 'For '
+        pr: 포
         time: [72.34, 72.657]
       - text: 'my '
+        pr: 마이
         time: [72.657, 72.829]
       - text: 'faults, '
+        pr: 폴츠,
         time: [72.829, 73.135]
       - text: 'flaws, '
+        pr: 플로즈,
         time: [73.135, 73.54]
       - text: 'and '
+        pr: 앤드
         time: [73.54, 73.872]
       - text: 'failures, '
+        pr: 페일리어즈,
         time: [73.872, 74.573]
       - text: 'I '
+        pr: 아이
         time: [74.573, 74.759]
       - text: 'still '
+        pr: 스틸
         time: [74.759, 75.228]
       - text: fight
+        pr: 파잇
         time: [75.228, 76.978]
     tl: 내 잘못과 결점과 실패에도 난 여전히 싸워
     time: [72.34, 76.978]
   - words:
       - text: 'But '
+        pr: 벗
         time: [77.123, 77.294]
       - text: 'I '
+        pr: 아이
         time: [77.294, 77.461]
       - text: "don't "
+        pr: 돈트
         time: [77.461, 77.632]
       - text: 'know '
+        pr: 노
         time: [77.632, 77.911]
       - text: why
+        pr: 와이
         time: [77.911, 79.54]
     tl: 하지만 왜 그러는지 모르겠어
     time: [77.123, 79.54]
   - words:
       - text: 'I '
+        pr: 아이
         time: [88.79, 88.939]
       - text: 'just '
+        pr: 저스트
         time: [88.939, 89.101]
       - text: 'fuck '
+        pr: 퍽
         time: [89.101, 89.284]
       - text: 'up, '
+        pr: 업,
         time: [89.284, 89.628]
       - text: 'fuck '
+        pr: 퍽
         time: [89.628, 89.802]
       - text: 'up, '
+        pr: 업,
         time: [89.802, 90.166]
       - text: 'and '
+        pr: 앤드
         time: [90.166, 90.319]
       - text: 'up, '
+        pr: 업,
         time: [90.319, 90.644]
       - text: 'fuck '
+        pr: 퍽
         time: [90.644, 90.818]
       - text: up
+        pr: 업
         time: [90.818, 91.19]
     tl: 난 그저 망치고 망치고 또 망치고 또 망쳐
     time: [88.79, 91.19]
   - words:
       - text: 'Oh, '
+        pr: 오,
         time: [91.19, 91.55]
       - text: 'I '
+        pr: 아이
         time: [91.55, 91.706]
       - text: 'wish '
+        pr: 위시
         time: [91.706, 92.055]
       - text: 'I '
+        pr: 아이
         time: [92.055, 92.369]
       - text: 'could '
+        pr: 쿳
         time: [92.369, 92.896]
       - text: 'leave '
+        pr: 립
         time: [92.896, 93.584]
       - text: here
+        pr: 히어
         time: [93.584, 94.28]
     tl: 아, 여기서 떠날 수 있다면 좋을 텐데
     time: [91.19, 94.28]
   - words:
       - text: 'And '
+        pr: 앤드
         time: [94.28, 94.607]
       - text: 'fly '
+        pr: 플라이
         time: [94.607, 94.78]
       - text: 'up '
+        pr: 업
         time: [94.78, 95.109]
       - text: 'and '
+        pr: 앤드
         time: [95.109, 95.277]
       - text: 'up '
+        pr: 업
         time: [95.277, 95.625]
       - text: 'and '
+        pr: 앤드
         time: [95.625, 95.799]
       - text: 'up, '
+        pr: 업,
         time: [95.799, 96.142]
       - text: 'fly '
+        pr: 플라이
         time: [96.142, 96.316]
       - text: up
+        pr: 업
         time: [96.316, 96.661]
     tl: 높이 높이 더 높이 날아갈 수 있다면
     time: [94.28, 96.661]
   - words:
       - text: 'Oh, '
+        pr: 오,
         time: [96.661, 97.089]
       - text: 'I '
+        pr: 아이
         time: [97.089, 97.174]
       - text: 'wish '
+        pr: 위시
         time: [97.174, 97.543]
       - text: 'I '
+        pr: 아이
         time: [97.543, 97.843]
       - text: 'could '
+        pr: 쿳
         time: [97.843, 98.277]
       - text: 'see '
+        pr: 시
         time: [98.277, 98.965]
       - text: clear
+        pr: 클리어
         time: [98.965, 99.77]
     tl: 아, 선명하게 볼 수 있다면 좋을 텐데
     time: [96.661, 99.77]
   - words:
       - text: 'Is '
+        pr: 이즈
         time: [99.77, 99.954]
       - text: 'it '
+        pr: 잇
         time: [99.954, 100.124]
       - text: 'pointless '
+        pr: 포인트리스
         time: [100.124, 100.583]
       - text: 'for '
+        pr: 포
         time: [100.583, 100.933]
       - text: 'me '
+        pr: 미
         time: [100.933, 101.246]
       - text: 'to '
+        pr: 투
         time: [101.246, 101.585]
       - text: 'dream '
+        pr: 드림
         time: [101.585, 101.942]
       - text: high
+        pr: 하이
         time: [101.942, 102.326]
     tl: 내가 높은 꿈을 꾸는 건 헛된 일일까
     time: [99.77, 102.326]
   - words:
       - text: 'When '
+        pr: 웬
         time: [102.326, 102.656]
       - text: "I'm "
+        pr: 아임
         time: [102.656, 103.001]
       - text: 'a '
+        pr: 어
         time: [103.001, 103.348]
       - text: 'waste '
+        pr: 웨이스트
         time: [103.348, 103.705]
       - text: 'of '
+        pr: 옵
         time: [103.705, 104.039]
       - text: air?
+        pr: 에어?
         time: [104.039, 105.093]
     tl: 난 공기만 낭비하는 존재인데
     time: [102.326, 105.093]
   - words:
       - text: 'Why '
+        pr: 와이
         time: [105.236, 105.562]
       - text: 'do '
+        pr: 두
         time: [105.562, 105.735]
       - text: 'I '
+        pr: 아이
         time: [105.735, 106.084]
       - text: fantasize
+        pr: 팬터사이즈
         time: [106.084, 107.119]
     tl: 어째서 나는 상상에 빠지는 걸까
     time: [105.236, 107.119]
   - words:
       - text: 'When '
+        pr: 웬
         time: [107.119, 107.452]
       - text: 'my '
+        pr: 마이
         time: [107.452, 107.799]
       - text: 'life '
+        pr: 라입
         time: [107.799, 108.136]
       - text: 'is '
+        pr: 이즈
         time: [108.136, 108.507]
       - text: 'in '
+        pr: 인
         time: [108.507, 108.83]
       - text: disrepair?
+        pr: 디스리페어?
         time: [108.83, 110.367]
     tl: 내 삶은 엉망진창인데
     time: [107.119, 110.367]
   - words:
       - text: 'I '
+        pr: 아이
         time: [111.063, 111.377]
       - text: 'tell '
+        pr: 텔
         time: [111.377, 111.743]
       - text: 'everybody '
+        pr: 에브리바디
         time: [111.743, 113.118]
       - text: "I'm "
+        pr: 아임
         time: [113.118, 113.456]
       - text: 'a '
+        pr: 어
         time: [113.456, 113.656]
       - text: 'silly '
+        pr: 실리
         time: [113.656, 114.485]
       - text: 'little '
+        pr: 리틀
         time: [114.485, 115.18]
       - text: goose
+        pr: 구스
         time: [115.18, 116.22]
     tl: 모두에게 난 바보 같은 꼬마 거위라고 말해
     time: [111.063, 116.22]
   - words:
       - text: 'But '
+        pr: 벗
         time: [116.22, 116.513]
       - text: 'really, '
+        pr: 리얼리,
         time: [116.513, 117.235]
       - text: "I'm "
+        pr: 아임
         time: [117.235, 117.544]
       - text: 'too '
+        pr: 투
         time: [117.544, 117.755]
       - text: 'scared '
+        pr: 스케어드
         time: [117.755, 118.22]
       - text: 'to '
+        pr: 투
         time: [118.22, 118.597]
       - text: 'let '
+        pr: 렛
         time: [118.597, 118.945]
       - text: 'my '
+        pr: 마이
         time: [118.945, 119.297]
       - text: 'thoughts '
+        pr: 소츠
         time: [119.297, 119.65]
       - text: 'out '
+        pr: 아웃
         time: [119.65, 119.984]
       - text: 'on '
+        pr: 온
         time: [119.984, 120.311]
       - text: 'the '
+        pr: 더
         time: [120.311, 120.637]
       - text: loose
+        pr: 루스
         time: [120.637, 121.347]
     tl: 하지만 사실 속마음을 털어놓기가 너무 두려울 뿐이야
     time: [116.22, 121.347]
   - words:
       - text: "I'm "
+        pr: 아임
         time: [121.71, 121.941]
       - text: 'such '
+        pr: 서치
         time: [121.941, 122.401]
       - text: 'a '
+        pr: 어
         time: [122.401, 122.71]
       - text: 'useless '
+        pr: 유슬리스
         time: [122.71, 123.414]
       - text: 'piece '
+        pr: 피스
         time: [123.414, 123.727]
       - text: 'of '
+        pr: 옵
         time: [123.727, 123.964]
       - text: 'shit '
+        pr: 싯
         time: [123.964, 124.443]
       - text: 'I '
+        pr: 아이
         time: [124.443, 124.766]
       - text: "can't "
+        pr: 캔트
         time: [124.766, 125.105]
       - text: 'make '
+        pr: 메익
         time: [125.105, 125.432]
       - text: 'an '
+        pr: 언
         time: [125.432, 125.797]
       - text: excuse
+        pr: 익스큐스
         time: [125.797, 126.842]
     tl: 난 변명조차 할 수 없는 쓸모없는 쓰레기야
     time: [121.71, 126.842]
   - words:
       - text: 'And '
+        pr: 앤드
         time: [127.19, 127.522]
       - text: 'every '
+        pr: 에브리
         time: [127.522, 128.211]
       - text: "day's "
+        pr: 데이즈
         time: [128.211, 128.569]
       - text: 'a '
+        pr: 어
         time: [128.569, 128.725]
       - text: 'struggle '
+        pr: 스트러글
         time: [128.725, 129.561]
       - text: 'to '
+        pr: 투
         time: [129.561, 129.93]
       - text: 'force '
+        pr: 포스
         time: [129.93, 130.252]
       - text: 'myself '
+        pr: 마이셀프
         time: [130.252, 130.911]
       - text: 'to '
+        pr: 투
         time: [130.911, 131.288]
       - text: 'push '
+        pr: 푸시
         time: [131.288, 131.568]
       - text: through
+        pr: 스루
         time: [131.568, 132.811]
     tl: 하루하루 억지로 버텨 내는 것만으로도 힘겨워
     time: [127.19, 132.811]
   - words:
       - text: 'Is '
+        pr: 이즈
         time: [133.19, 133.364]
       - text: 'it '
+        pr: 잇
         time: [133.364, 133.525]
       - text: 'even '
+        pr: 이븐
         time: [133.525, 133.785]
       - text: 'still '
+        pr: 스틸
         time: [133.785, 134.209]
       - text: 'worth '
+        pr: 워스
         time: [134.209, 134.529]
       - text: 'to '
+        pr: 투
         time: [134.529, 134.9]
       - text: 'really '
+        pr: 리얼리
         time: [134.9, 135.508]
       - text: try?
+        pr: 트라이?
         time: [135.508, 135.914]
     tl: 아직도 정말 노력할 가치가 있을까?
     time: [133.19, 135.914]
   - words:
       - text: "'Cause "
+        pr: 코즈
         time: [135.914, 136.086]
       - text: "there's "
+        pr: 데어즈
         time: [136.086, 136.259]
       - text: 'no '
+        pr: 노
         time: [136.259, 136.421]
       - text: 'light '
+        pr: 라잇
         time: [136.421, 136.608]
       - text: 'or '
+        pr: 오어
         time: [136.608, 136.942]
       - text: 'life '
+        pr: 라입
         time: [136.942, 137.284]
       - text: 'left '
+        pr: 렙트
         time: [137.284, 137.631]
       - text: 'in '
+        pr: 인
         time: [137.631, 137.975]
       - text: 'my '
+        pr: 마이
         time: [137.975, 138.305]
       - text: eyes
+        pr: 아이즈
         time: [138.305, 138.685]
     tl: 내 눈에는 빛도 생기도 남아 있지 않으니까
     time: [135.914, 138.685]
   - words:
       - text: 'A '
+        pr: 어
         time: [138.685, 138.837]
       - text: 'goose '
+        pr: 구스
         time: [138.837, 139.016]
       - text: 'like '
+        pr: 라익
         time: [139.016, 139.167]
       - text: 'me '
+        pr: 미
         time: [139.167, 139.348]
       - text: 'will '
+        pr: 윌
         time: [139.348, 139.701]
       - text: 'never '
+        pr: 네버
         time: [139.701, 140.341]
       - text: 'touch '
+        pr: 터치
         time: [140.341, 140.708]
       - text: 'the '
+        pr: 더
         time: [140.708, 140.885]
       - text: sky
+        pr: 스카이
         time: [140.885, 141.403]
     tl: 나 같은 거위는 절대 하늘에 닿지 못할 거야
     time: [138.685, 141.403]
   - words:
       - text: 'As '
+        pr: 애즈
         time: [141.403, 141.725]
       - text: 'long '
+        pr: 롱
         time: [141.725, 142.081]
       - text: 'as '
+        pr: 애즈
         time: [142.081, 142.455]
       - text: "I'm "
+        pr: 아임
         time: [142.455, 143.12]
       - text: alive
+        pr: 얼라입
         time: [143.12, 143.65]
     tl: 내가 살아 있는 한
     time: [141.403, 143.65]
   - words:
       - text: 'I '
+        pr: 아이
         time: [143.65, 143.933]
       - text: 'trip '
+        pr: 트립
         time: [143.933, 144.506]
       - text: 'and '
+        pr: 앤드
         time: [144.506, 144.826]
       - text: 'I '
+        pr: 아이
         time: [144.826, 145.152]
       - text: fall
+        pr: 폴
         time: [145.152, 146.033]
     tl: 난 걸려 넘어지고
     time: [143.65, 146.033]
   - words:
       - text: 'But '
+        pr: 벗
         time: [146.033, 146.373]
       - text: "there's "
+        pr: 데어즈
         time: [146.373, 146.683]
       - text: 'nothing '
+        pr: 너싱
         time: [146.683, 147.167]
       - text: 'here '
+        pr: 히어
         time: [147.167, 147.595]
       - text: 'at '
+        pr: 앳
         time: [147.595, 147.917]
       - text: all
+        pr: 올
         time: [147.917, 149.006]
     tl: 하지만 여기엔 아무것도 없어
     time: [146.033, 149.006]
   - words:
       - text: 'For '
+        pr: 포
         time: [149.131, 149.426]
       - text: 'my '
+        pr: 마이
         time: [149.426, 149.625]
       - text: 'faults, '
+        pr: 폴츠,
         time: [149.625, 149.961]
       - text: 'flaws, '
+        pr: 플로즈,
         time: [149.961, 150.326]
       - text: 'and '
+        pr: 앤드
         time: [150.326, 150.658]
       - text: 'failures, '
+        pr: 페일리어즈,
         time: [150.658, 151.354]
       - text: 'I '
+        pr: 아이
         time: [151.354, 151.536]
       - text: 'still '
+        pr: 스틸
         time: [151.536, 152.032]
       - text: fight
+        pr: 파잇
         time: [152.032, 153.754]
     tl: 내 잘못과 결점과 실패에도 난 여전히 싸워
     time: [149.126, 153.754]
   - words:
       - text: 'But '
+        pr: 벗
         time: [153.928, 154.099]
       - text: 'I '
+        pr: 아이
         time: [154.099, 154.249]
       - text: 'want '
+        pr: 원트
         time: [154.249, 154.44]
       - text: 'to '
+        pr: 투
         time: [154.44, 154.699]
       - text: cry
+        pr: 크라이
         time: [154.699, 156.309]
     tl: 하지만 울고 싶어
     time: [153.928, 156.309]
   - words:
       - text: 'Oh, '
+        pr: 오,
         time: [176.905, 177.92]
       - text: 'the '
+        pr: 더
         time: [177.92, 178.177]
       - text: 'precious '
+        pr: 프레셔스
         time: [178.177, 178.945]
       - text: 'gift '
+        pr: 기프트
         time: [178.945, 179.303]
       - text: 'of '
+        pr: 옵
         time: [179.303, 179.642]
       - text: 'life '
+        pr: 라입
         time: [179.642, 180.358]
       - text: 'is '
+        pr: 이즈
         time: [180.358, 180.958]
       - text: wasted
+        pr: 웨이스팃
         time: [180.958, 182.409]
     tl: 아, 소중한 생명의 선물이 낭비되고 있어
     time: [176.905, 182.409]
   - words:
       - text: 'On '
+        pr: 온
         time: [182.409, 183.4]
       - text: 'a '
+        pr: 어
         time: [183.4, 183.679]
       - text: 'flightless '
+        pr: 플라잇리스
         time: [183.679, 184.438]
       - text: 'bird '
+        pr: 버드
         time: [184.438, 184.786]
       - text: 'like '
+        pr: 라익
         time: [184.786, 185.142]
       - text: me
+        pr: 미
         time: [185.142, 187.88]
     tl: 나처럼 날지 못하는 새에게
     time: [182.409, 187.88]
   - words:
       - text: 'But '
+        pr: 벗
         time: [187.88, 188.897]
       - text: 'the '
+        pr: 더
         time: [188.897, 189.233]
       - text: 'wonder '
+        pr: 원더
         time: [189.233, 189.922]
       - text: 'of '
+        pr: 옵
         time: [189.922, 190.261]
       - text: 'art '
+        pr: 아트
         time: [190.261, 190.639]
       - text: 'and '
+        pr: 앤드
         time: [190.639, 191.275]
       - text: creation
+        pr: 크리에이션
         time: [191.275, 193.19]
     tl: 하지만 예술과 창조가 지닌 경이로움은
     time: [187.88, 193.19]
   - words:
       - text: 'Gives '
+        pr: 깁즈
         time: [193.19, 193.357]
       - text: 'hope '
+        pr: 홉
         time: [193.357, 193.533]
       - text: 'back '
+        pr: 백
         time: [193.533, 193.831]
       - text: 'to '
+        pr: 투
         time: [193.831, 194.212]
       - text: 'the '
+        pr: 더
         time: [194.212, 194.539]
       - text: 'worn '
+        pr: 원
         time: [194.539, 194.904]
       - text: 'and '
+        pr: 앤드
         time: [194.904, 195.199]
       - text: weary
+        pr: 위어리
         time: [195.199, 195.78]
     tl: 지치고 고단한 이들에게 희망을 되돌려 줘
     time: [193.19, 195.78]
   - words:
       - text: 'Shining '
+        pr: 샤이닝
         time: [195.78, 197.382]
       - text: brilliantly
+        pr: 브릴리언틀리
         time: [197.382, 198.712]
     tl: 눈부시게 빛나면서
     time: [195.78, 198.712]
   - words:
       - text: 'Maybe '
+        pr: 메이비
         time: [199.019, 199.372]
       - text: 'it '
+        pr: 잇
         time: [199.372, 199.539]
       - text: 'is '
+        pr: 이즈
         time: [199.539, 199.646]
       - text: 'still '
+        pr: 스틸
         time: [199.646, 200.03]
       - text: 'worth '
+        pr: 워스
         time: [200.03, 200.339]
       - text: 'to '
+        pr: 투
         time: [200.339, 200.695]
       - text: 'keep '
+        pr: 킵
         time: [200.695, 201.061]
       - text: 'on '
+        pr: 온
         time: [201.061, 201.347]
       - text: trying
+        pr: 트라잉
         time: [201.347, 201.753]
     tl: 어쩌면 계속 노력할 가치가 있는지도 몰라
     time: [199.019, 201.753]
   - words:
       - text: "'Cause "
+        pr: 코즈
         time: [201.753, 201.923]
       - text: 'you '
+        pr: 유
         time: [201.923, 202.093]
       - text: 'bring '
+        pr: 브링
         time: [202.093, 202.251]
       - text: 'light '
+        pr: 라잇
         time: [202.251, 202.428]
       - text: 'and '
+        pr: 앤드
         time: [202.428, 202.775]
       - text: 'life '
+        pr: 라입
         time: [202.775, 203.12]
       - text: 'back '
+        pr: 백
         time: [203.12, 203.42]
       - text: 'to '
+        pr: 투
         time: [203.42, 203.82]
       - text: 'my '
+        pr: 마이
         time: [203.82, 204.163]
       - text: eyes
+        pr: 아이즈
         time: [204.163, 204.527]
     tl: 네가 내 눈에 빛과 생기를 되돌려 주니까
     time: [201.753, 204.527]
   - words:
       - text: 'A '
+        pr: 어
         time: [204.527, 204.673]
       - text: 'goose '
+        pr: 구스
         time: [204.673, 204.846]
       - text: 'like '
+        pr: 라익
         time: [204.846, 205.005]
       - text: 'me '
+        pr: 미
         time: [205.005, 205.161]
       - text: 'may '
+        pr: 메이
         time: [205.161, 205.509]
       - text: 'one '
+        pr: 원
         time: [205.509, 205.852]
       - text: 'day '
+        pr: 데이
         time: [205.852, 206.183]
       - text: 'touch '
+        pr: 터치
         time: [206.183, 206.539]
       - text: 'the '
+        pr: 더
         time: [206.539, 206.722]
       - text: sky
+        pr: 스카이
         time: [206.722, 207.24]
     tl: 나 같은 거위도 언젠가 하늘에 닿을 수 있을 거야
     time: [204.527, 207.24]
   - words:
       - text: 'Because '
+        pr: 비코즈
         time: [207.24, 207.914]
       - text: "I'm "
+        pr: 아임
         time: [207.914, 208.133]
       - text: 'still '
+        pr: 스틸
         time: [208.133, 208.953]
       - text: alive
+        pr: 얼라입
         time: [208.953, 209.48]
     tl: 난 아직 살아 있으니까
     time: [207.24, 209.48]
   - words:
       - text: 'I '
+        pr: 아이
         time: [209.48, 209.763]
       - text: 'trip '
+        pr: 트립
         time: [209.763, 210.339]
       - text: 'and '
+        pr: 앤드
         time: [210.339, 210.664]
       - text: 'I '
+        pr: 아이
         time: [210.664, 210.98]
       - text: fall
+        pr: 폴
         time: [210.98, 211.868]
     tl: 난 걸려 넘어져도
     time: [209.48, 211.868]
   - words:
       - text: 'But '
+        pr: 벗
         time: [211.868, 212.208]
       - text: 'I '
+        pr: 아이
         time: [212.208, 212.547]
       - text: 'get '
+        pr: 겟
         time: [212.547, 212.726]
       - text: 'up '
+        pr: 업
         time: [212.726, 213.047]
       - text: 'with '
+        pr: 윗
         time: [213.047, 213.388]
       - text: 'my '
+        pr: 마이
         time: [213.388, 213.753]
       - text: all
+        pr: 올
         time: [213.753, 214.958]
     tl: 온 힘을 다해 다시 일어나
     time: [211.868, 214.958]
   - words:
       - text: 'For '
+        pr: 포
         time: [214.958, 215.271]
       - text: 'my '
+        pr: 마이
         time: [215.271, 215.448]
       - text: 'faults, '
+        pr: 폴츠,
         time: [215.448, 215.795]
       - text: 'flaws, '
+        pr: 플로즈,
         time: [215.795, 216.158]
       - text: 'and '
+        pr: 앤드
         time: [216.158, 216.486]
       - text: 'failures, '
+        pr: 페일리어즈,
         time: [216.486, 217.184]
       - text: 'I '
+        pr: 아이
         time: [217.184, 217.382]
       - text: 'still '
+        pr: 스틸
         time: [217.382, 217.867]
       - text: fight
+        pr: 파잇
         time: [217.867, 219.751]
     tl: 내 잘못과 결점과 실패에도 난 여전히 싸워
     time: [214.958, 219.751]
   - words:
       - text: "'Cause "
+        pr: 코즈
         time: [219.751, 219.958]
       - text: 'I '
+        pr: 아이
         time: [219.958, 220.063]
       - text: 'want '
+        pr: 원트
         time: [220.063, 220.283]
       - text: 'to '
+        pr: 투
         time: [220.283, 220.609]
       - text: fly
+        pr: 플라이
         time: [220.609, 222.431]
     tl: 날고 싶으니까
     time: [219.751, 222.431]
