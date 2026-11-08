@@ -20,150 +20,936 @@ yt:
   audio: G7biL7AKSAg
   mv: 8uMbLSfJHcc
 lines:
-  - text: I used to have such lofty goals when I was a child
+  - words:
+      - text: 'I '
+        time: [11.99, 12.327]
+      - text: 'used '
+        time: [12.327, 12.508]
+      - text: 'to '
+        time: [12.508, 12.809]
+      - text: 'have '
+        time: [12.809, 13.079]
+      - text: 'such '
+        time: [13.079, 13.508]
+      - text: 'lofty '
+        time: [13.508, 14.209]
+      - text: 'goals '
+        time: [14.209, 14.532]
+      - text: 'when '
+        time: [14.532, 15.036]
+      - text: 'I '
+        time: [15.036, 15.363]
+      - text: 'was '
+        time: [15.363, 15.76]
+      - text: 'a '
+        time: [15.76, 16.028]
+      - text: child
+        time: [16.028, 17.115]
     tl: 어릴 적엔 원대한 꿈이 있었어
-    time: [11.99, 17.48]
-  - text: But now I scroll my phone all day without going outside
+    time: [11.99, 17.115]
+  - words:
+      - text: 'But '
+        time: [17.459, 17.805]
+      - text: 'now '
+        time: [17.805, 17.976]
+      - text: 'I '
+        time: [17.976, 18.155]
+      - text: 'scroll '
+        time: [18.155, 18.665]
+      - text: 'my '
+        time: [18.665, 19.012]
+      - text: 'phone '
+        time: [19.012, 19.355]
+      - text: 'all '
+        time: [19.355, 19.69]
+      - text: 'day '
+        time: [19.69, 20.015]
+      - text: 'without '
+        time: [20.015, 20.54]
+      - text: 'going '
+        time: [20.54, 21.224]
+      - text: outside
+        time: [21.224, 22.607]
     tl: 하지만 이젠 밖에도 나가지 않고 온종일 휴대폰만 들여다봐
-    time: [17.48, 22.97]
-  - text: Where did my motivation go? Did it waddle away?
+    time: [17.459, 22.607]
+  - words:
+      - text: 'Where '
+        time: [22.951, 23.282]
+      - text: 'did '
+        time: [23.282, 23.465]
+      - text: 'my '
+        time: [23.465, 23.806]
+      - text: 'motivation '
+        time: [23.806, 25.161]
+      - text: 'go? '
+        time: [25.161, 25.506]
+      - text: 'Did '
+        time: [25.506, 25.862]
+      - text: 'it '
+        time: [25.862, 26.023]
+      - text: 'waddle '
+        time: [26.023, 26.714]
+      - text: away?
+        time: [26.714, 28.092]
     tl: 내 의욕은 어디로 갔을까? 뒤뚱뒤뚱 도망가 버렸나?
-    time: [22.97, 28.45]
-  - text: The weeks fly by as my mind starts to decline and decay
+    time: [22.951, 28.092]
+  - words:
+      - text: 'The '
+        time: [28.45, 28.714]
+      - text: 'weeks '
+        time: [28.714, 28.948]
+      - text: 'fly '
+        time: [28.948, 29.298]
+      - text: 'by '
+        time: [29.298, 29.642]
+      - text: 'as '
+        time: [29.642, 29.979]
+      - text: 'my '
+        time: [29.979, 30.308]
+      - text: 'mind '
+        time: [30.308, 30.535]
+      - text: 'starts '
+        time: [30.535, 30.984]
+      - text: 'to '
+        time: [30.984, 31.168]
+      - text: 'decline '
+        time: [31.168, 31.842]
+      - text: 'and '
+        time: [31.842, 32.181]
+      - text: decay
+        time: [32.181, 33.586]
     tl: 몇 주가 쏜살같이 지나는 동안 내 정신은 쇠하고 썩어 가
-    time: [28.45, 34.28]
-  - text: I tell everybody I'm a silly little goose
+    time: [28.45, 33.586]
+  - words:
+      - text: 'I '
+        time: [34.273, 34.591]
+      - text: 'tell '
+        time: [34.591, 34.96]
+      - text: 'everybody '
+        time: [34.96, 36.311]
+      - text: "I'm "
+        time: [36.311, 36.658]
+      - text: 'a '
+        time: [36.658, 36.847]
+      - text: 'silly '
+        time: [36.847, 37.689]
+      - text: 'little '
+        time: [37.689, 38.369]
+      - text: goose
+        time: [38.369, 39.069]
     tl: 모두에게 난 바보 같은 꼬마 거위라고 말해
-    time: [34.28, 39.42]
-  - text: But really, I'm too scared to let my thoughts out on the loose
+    time: [34.273, 39.069]
+  - words:
+      - text: 'But '
+        time: [39.42, 39.732]
+      - text: 'really, '
+        time: [39.732, 40.423]
+      - text: "I'm "
+        time: [40.423, 40.73]
+      - text: 'too '
+        time: [40.73, 40.942]
+      - text: 'scared '
+        time: [40.942, 41.41]
+      - text: 'to '
+        time: [41.41, 41.793]
+      - text: 'let '
+        time: [41.793, 42.141]
+      - text: 'my '
+        time: [42.141, 42.487]
+      - text: 'thoughts '
+        time: [42.487, 42.853]
+      - text: 'out '
+        time: [42.853, 43.181]
+      - text: 'on '
+        time: [43.181, 43.525]
+      - text: 'the '
+        time: [43.525, 43.817]
+      - text: loose
+        time: [43.817, 44.562]
     tl: 하지만 사실 속마음을 털어놓기가 너무 두려울 뿐이야
-    time: [39.42, 44.91]
-  - text: I'm such a useless piece of shit I can't make an excuse
+    time: [39.42, 44.562]
+  - words:
+      - text: "I'm "
+        time: [44.91, 45.129]
+      - text: 'such '
+        time: [45.129, 45.58]
+      - text: 'a '
+        time: [45.58, 45.895]
+      - text: 'useless '
+        time: [45.895, 46.6]
+      - text: 'piece '
+        time: [46.6, 46.953]
+      - text: 'of '
+        time: [46.953, 47.179]
+      - text: 'shit '
+        time: [47.179, 47.634]
+      - text: 'I '
+        time: [47.634, 47.959]
+      - text: "can't "
+        time: [47.959, 48.322]
+      - text: 'make '
+        time: [48.322, 48.658]
+      - text: 'an '
+        time: [48.658, 49.012]
+      - text: excuse
+        time: [49.012, 50.032]
     tl: 난 변명조차 할 수 없는 쓸모없는 쓰레기야
-    time: [44.91, 50.39]
-  - text: And every day's a struggle to force myself to push through
+    time: [44.91, 50.032]
+  - words:
+      - text: 'And '
+        time: [50.39, 50.717]
+      - text: 'every '
+        time: [50.717, 51.402]
+      - text: "day's "
+        time: [51.402, 51.76]
+      - text: 'a '
+        time: [51.76, 51.909]
+      - text: 'struggle '
+        time: [51.909, 52.749]
+      - text: 'to '
+        time: [52.749, 53.12]
+      - text: 'force '
+        time: [53.12, 53.447]
+      - text: 'myself '
+        time: [53.447, 54.123]
+      - text: 'to '
+        time: [54.123, 54.497]
+      - text: 'push '
+        time: [54.497, 54.783]
+      - text: through
+        time: [54.783, 56.001]
     tl: 하루하루 억지로 버텨 내는 것만으로도 힘겨워
-    time: [50.39, 56.39]
-  - text: Is it even still worth to really try?
+    time: [50.39, 56.001]
+  - words:
+      - text: 'Is '
+        time: [56.39, 56.559]
+      - text: 'it '
+        time: [56.559, 56.72]
+      - text: 'even '
+        time: [56.72, 56.975]
+      - text: 'still '
+        time: [56.975, 57.402]
+      - text: 'worth '
+        time: [57.402, 57.719]
+      - text: 'to '
+        time: [57.719, 58.093]
+      - text: 'really '
+        time: [58.093, 58.72]
+      - text: try?
+        time: [58.72, 59.14]
     tl: 아직도 정말 노력할 가치가 있을까?
     time: [56.39, 59.14]
-  - text: "'Cause there's no light or life left in my eyes"
+  - words:
+      - text: "'Cause "
+        time: [59.14, 59.303]
+      - text: "there's "
+        time: [59.303, 59.471]
+      - text: 'no '
+        time: [59.471, 59.61]
+      - text: 'light '
+        time: [59.61, 59.822]
+      - text: 'or '
+        time: [59.822, 60.138]
+      - text: 'life '
+        time: [60.138, 60.485]
+      - text: 'left '
+        time: [60.485, 60.819]
+      - text: 'in '
+        time: [60.819, 61.218]
+      - text: 'my '
+        time: [61.218, 61.441]
+      - text: eyes
+        time: [61.441, 61.88]
     tl: 내 눈에는 빛도 생기도 남아 있지 않으니까
     time: [59.14, 61.88]
-  - text: A goose like me will never touch the sky
+  - words:
+      - text: 'A '
+        time: [61.88, 62.03]
+      - text: 'goose '
+        time: [62.03, 62.21]
+      - text: 'like '
+        time: [62.21, 62.385]
+      - text: 'me '
+        time: [62.385, 62.548]
+      - text: 'will '
+        time: [62.548, 62.891]
+      - text: 'never '
+        time: [62.891, 63.553]
+      - text: 'touch '
+        time: [63.553, 63.921]
+      - text: 'the '
+        time: [63.921, 64.073]
+      - text: sky
+        time: [64.073, 64.62]
     tl: 나 같은 거위는 절대 하늘에 닿지 못할 거야
     time: [61.88, 64.62]
-  - text: As long as I'm alive
+  - words:
+      - text: 'As '
+        time: [64.62, 64.946]
+      - text: 'long '
+        time: [64.946, 65.287]
+      - text: 'as '
+        time: [65.287, 65.641]
+      - text: "I'm "
+        time: [65.641, 66.314]
+      - text: alive
+        time: [66.314, 66.85]
     tl: 내가 살아 있는 한
     time: [64.62, 66.85]
-  - text: I trip and I fall
+  - words:
+      - text: 'I '
+        time: [66.85, 67.116]
+      - text: 'trip '
+        time: [67.116, 67.67]
+      - text: 'and '
+        time: [67.67, 68.038]
+      - text: 'I '
+        time: [68.038, 68.364]
+      - text: fall
+        time: [68.364, 69.25]
     tl: 난 걸려 넘어지고
     time: [66.85, 69.25]
-  - text: But there's nothing here at all
+  - words:
+      - text: 'But '
+        time: [69.25, 69.595]
+      - text: "there's "
+        time: [69.595, 69.902]
+      - text: 'nothing '
+        time: [69.902, 70.355]
+      - text: 'here '
+        time: [70.355, 70.787]
+      - text: 'at '
+        time: [70.787, 71.108]
+      - text: all
+        time: [71.108, 72.202]
     tl: 하지만 여기엔 아무것도 없어
-    time: [69.25, 72.34]
-  - text: For my faults, flaws, and failures, I still fight
+    time: [69.25, 72.202]
+  - words:
+      - text: 'For '
+        time: [72.34, 72.657]
+      - text: 'my '
+        time: [72.657, 72.829]
+      - text: 'faults, '
+        time: [72.829, 73.135]
+      - text: 'flaws, '
+        time: [73.135, 73.54]
+      - text: 'and '
+        time: [73.54, 73.872]
+      - text: 'failures, '
+        time: [73.872, 74.573]
+      - text: 'I '
+        time: [74.573, 74.759]
+      - text: 'still '
+        time: [74.759, 75.228]
+      - text: fight
+        time: [75.228, 76.978]
     tl: 내 잘못과 결점과 실패에도 난 여전히 싸워
-    time: [72.34, 77.14]
-  - text: But I don't know why
+    time: [72.34, 76.978]
+  - words:
+      - text: 'But '
+        time: [77.123, 77.294]
+      - text: 'I '
+        time: [77.294, 77.461]
+      - text: "don't "
+        time: [77.461, 77.632]
+      - text: 'know '
+        time: [77.632, 77.911]
+      - text: why
+        time: [77.911, 79.54]
     tl: 하지만 왜 그러는지 모르겠어
-    time: [77.14, 79.54]
-  - text: I just fuck up, fuck up, and up, fuck up
+    time: [77.123, 79.54]
+  - words:
+      - text: 'I '
+        time: [88.79, 88.939]
+      - text: 'just '
+        time: [88.939, 89.101]
+      - text: 'fuck '
+        time: [89.101, 89.284]
+      - text: 'up, '
+        time: [89.284, 89.628]
+      - text: 'fuck '
+        time: [89.628, 89.802]
+      - text: 'up, '
+        time: [89.802, 90.166]
+      - text: 'and '
+        time: [90.166, 90.319]
+      - text: 'up, '
+        time: [90.319, 90.644]
+      - text: 'fuck '
+        time: [90.644, 90.818]
+      - text: up
+        time: [90.818, 91.19]
     tl: 난 그저 망치고 망치고 또 망치고 또 망쳐
     time: [88.79, 91.19]
-  - text: Oh, I wish I could leave here
+  - words:
+      - text: 'Oh, '
+        time: [91.19, 91.55]
+      - text: 'I '
+        time: [91.55, 91.706]
+      - text: 'wish '
+        time: [91.706, 92.055]
+      - text: 'I '
+        time: [92.055, 92.369]
+      - text: 'could '
+        time: [92.369, 92.896]
+      - text: 'leave '
+        time: [92.896, 93.584]
+      - text: here
+        time: [93.584, 94.28]
     tl: 아, 여기서 떠날 수 있다면 좋을 텐데
     time: [91.19, 94.28]
-  - text: And fly up and up and up, fly up
+  - words:
+      - text: 'And '
+        time: [94.28, 94.607]
+      - text: 'fly '
+        time: [94.607, 94.78]
+      - text: 'up '
+        time: [94.78, 95.109]
+      - text: 'and '
+        time: [95.109, 95.277]
+      - text: 'up '
+        time: [95.277, 95.625]
+      - text: 'and '
+        time: [95.625, 95.799]
+      - text: 'up, '
+        time: [95.799, 96.142]
+      - text: 'fly '
+        time: [96.142, 96.316]
+      - text: up
+        time: [96.316, 96.661]
     tl: 높이 높이 더 높이 날아갈 수 있다면
-    time: [94.28, 96.68]
-  - text: Oh, I wish I could see clear
+    time: [94.28, 96.661]
+  - words:
+      - text: 'Oh, '
+        time: [96.661, 97.089]
+      - text: 'I '
+        time: [97.089, 97.174]
+      - text: 'wish '
+        time: [97.174, 97.543]
+      - text: 'I '
+        time: [97.543, 97.843]
+      - text: 'could '
+        time: [97.843, 98.277]
+      - text: 'see '
+        time: [98.277, 98.965]
+      - text: clear
+        time: [98.965, 99.77]
     tl: 아, 선명하게 볼 수 있다면 좋을 텐데
-    time: [96.68, 99.77]
-  - text: Is it pointless for me to dream high
+    time: [96.661, 99.77]
+  - words:
+      - text: 'Is '
+        time: [99.77, 99.954]
+      - text: 'it '
+        time: [99.954, 100.124]
+      - text: 'pointless '
+        time: [100.124, 100.583]
+      - text: 'for '
+        time: [100.583, 100.933]
+      - text: 'me '
+        time: [100.933, 101.246]
+      - text: 'to '
+        time: [101.246, 101.585]
+      - text: 'dream '
+        time: [101.585, 101.942]
+      - text: high
+        time: [101.942, 102.326]
     tl: 내가 높은 꿈을 꾸는 건 헛된 일일까
-    time: [99.77, 102.34]
-  - text: When I'm a waste of air?
+    time: [99.77, 102.326]
+  - words:
+      - text: 'When '
+        time: [102.326, 102.656]
+      - text: "I'm "
+        time: [102.656, 103.001]
+      - text: 'a '
+        time: [103.001, 103.348]
+      - text: 'waste '
+        time: [103.348, 103.705]
+      - text: 'of '
+        time: [103.705, 104.039]
+      - text: air?
+        time: [104.039, 105.093]
     tl: 난 공기만 낭비하는 존재인데
-    time: [102.34, 105.25]
-  - text: Why do I fantasize
+    time: [102.326, 105.093]
+  - words:
+      - text: 'Why '
+        time: [105.236, 105.562]
+      - text: 'do '
+        time: [105.562, 105.735]
+      - text: 'I '
+        time: [105.735, 106.084]
+      - text: fantasize
+        time: [106.084, 107.119]
     tl: 어째서 나는 상상에 빠지는 걸까
-    time: [105.25, 107.14]
-  - text: When my life is in disrepair?
+    time: [105.236, 107.119]
+  - words:
+      - text: 'When '
+        time: [107.119, 107.452]
+      - text: 'my '
+        time: [107.452, 107.799]
+      - text: 'life '
+        time: [107.799, 108.136]
+      - text: 'is '
+        time: [108.136, 108.507]
+      - text: 'in '
+        time: [108.507, 108.83]
+      - text: disrepair?
+        time: [108.83, 110.367]
     tl: 내 삶은 엉망진창인데
-    time: [107.14, 111.08]
-  - text: I tell everybody I'm a silly little goose
+    time: [107.119, 110.367]
+  - words:
+      - text: 'I '
+        time: [111.063, 111.377]
+      - text: 'tell '
+        time: [111.377, 111.743]
+      - text: 'everybody '
+        time: [111.743, 113.118]
+      - text: "I'm "
+        time: [113.118, 113.456]
+      - text: 'a '
+        time: [113.456, 113.656]
+      - text: 'silly '
+        time: [113.656, 114.485]
+      - text: 'little '
+        time: [114.485, 115.18]
+      - text: goose
+        time: [115.18, 116.22]
     tl: 모두에게 난 바보 같은 꼬마 거위라고 말해
-    time: [111.08, 116.22]
-  - text: But really, I'm too scared to let my thoughts out on the loose
+    time: [111.063, 116.22]
+  - words:
+      - text: 'But '
+        time: [116.22, 116.513]
+      - text: 'really, '
+        time: [116.513, 117.235]
+      - text: "I'm "
+        time: [117.235, 117.544]
+      - text: 'too '
+        time: [117.544, 117.755]
+      - text: 'scared '
+        time: [117.755, 118.22]
+      - text: 'to '
+        time: [118.22, 118.597]
+      - text: 'let '
+        time: [118.597, 118.945]
+      - text: 'my '
+        time: [118.945, 119.297]
+      - text: 'thoughts '
+        time: [119.297, 119.65]
+      - text: 'out '
+        time: [119.65, 119.984]
+      - text: 'on '
+        time: [119.984, 120.311]
+      - text: 'the '
+        time: [120.311, 120.637]
+      - text: loose
+        time: [120.637, 121.347]
     tl: 하지만 사실 속마음을 털어놓기가 너무 두려울 뿐이야
-    time: [116.22, 121.71]
-  - text: I'm such a useless piece of shit I can't make an excuse
+    time: [116.22, 121.347]
+  - words:
+      - text: "I'm "
+        time: [121.71, 121.941]
+      - text: 'such '
+        time: [121.941, 122.401]
+      - text: 'a '
+        time: [122.401, 122.71]
+      - text: 'useless '
+        time: [122.71, 123.414]
+      - text: 'piece '
+        time: [123.414, 123.727]
+      - text: 'of '
+        time: [123.727, 123.964]
+      - text: 'shit '
+        time: [123.964, 124.443]
+      - text: 'I '
+        time: [124.443, 124.766]
+      - text: "can't "
+        time: [124.766, 125.105]
+      - text: 'make '
+        time: [125.105, 125.432]
+      - text: 'an '
+        time: [125.432, 125.797]
+      - text: excuse
+        time: [125.797, 126.842]
     tl: 난 변명조차 할 수 없는 쓸모없는 쓰레기야
-    time: [121.71, 127.19]
-  - text: And every day's a struggle to force myself to push through
+    time: [121.71, 126.842]
+  - words:
+      - text: 'And '
+        time: [127.19, 127.522]
+      - text: 'every '
+        time: [127.522, 128.211]
+      - text: "day's "
+        time: [128.211, 128.569]
+      - text: 'a '
+        time: [128.569, 128.725]
+      - text: 'struggle '
+        time: [128.725, 129.561]
+      - text: 'to '
+        time: [129.561, 129.93]
+      - text: 'force '
+        time: [129.93, 130.252]
+      - text: 'myself '
+        time: [130.252, 130.911]
+      - text: 'to '
+        time: [130.911, 131.288]
+      - text: 'push '
+        time: [131.288, 131.568]
+      - text: through
+        time: [131.568, 132.811]
     tl: 하루하루 억지로 버텨 내는 것만으로도 힘겨워
-    time: [127.19, 133.19]
-  - text: Is it even still worth to really try?
+    time: [127.19, 132.811]
+  - words:
+      - text: 'Is '
+        time: [133.19, 133.364]
+      - text: 'it '
+        time: [133.364, 133.525]
+      - text: 'even '
+        time: [133.525, 133.785]
+      - text: 'still '
+        time: [133.785, 134.209]
+      - text: 'worth '
+        time: [134.209, 134.529]
+      - text: 'to '
+        time: [134.529, 134.9]
+      - text: 'really '
+        time: [134.9, 135.508]
+      - text: try?
+        time: [135.508, 135.914]
     tl: 아직도 정말 노력할 가치가 있을까?
-    time: [133.19, 135.94]
-  - text: "'Cause there's no light or life left in my eyes"
+    time: [133.19, 135.914]
+  - words:
+      - text: "'Cause "
+        time: [135.914, 136.086]
+      - text: "there's "
+        time: [136.086, 136.259]
+      - text: 'no '
+        time: [136.259, 136.421]
+      - text: 'light '
+        time: [136.421, 136.608]
+      - text: 'or '
+        time: [136.608, 136.942]
+      - text: 'life '
+        time: [136.942, 137.284]
+      - text: 'left '
+        time: [137.284, 137.631]
+      - text: 'in '
+        time: [137.631, 137.975]
+      - text: 'my '
+        time: [137.975, 138.305]
+      - text: eyes
+        time: [138.305, 138.685]
     tl: 내 눈에는 빛도 생기도 남아 있지 않으니까
-    time: [135.94, 138.68]
-  - text: A goose like me will never touch the sky
+    time: [135.914, 138.685]
+  - words:
+      - text: 'A '
+        time: [138.685, 138.837]
+      - text: 'goose '
+        time: [138.837, 139.016]
+      - text: 'like '
+        time: [139.016, 139.167]
+      - text: 'me '
+        time: [139.167, 139.348]
+      - text: 'will '
+        time: [139.348, 139.701]
+      - text: 'never '
+        time: [139.701, 140.341]
+      - text: 'touch '
+        time: [140.341, 140.708]
+      - text: 'the '
+        time: [140.708, 140.885]
+      - text: sky
+        time: [140.885, 141.403]
     tl: 나 같은 거위는 절대 하늘에 닿지 못할 거야
-    time: [138.68, 141.42]
-  - text: As long as I'm alive
+    time: [138.685, 141.403]
+  - words:
+      - text: 'As '
+        time: [141.403, 141.725]
+      - text: 'long '
+        time: [141.725, 142.081]
+      - text: 'as '
+        time: [142.081, 142.455]
+      - text: "I'm "
+        time: [142.455, 143.12]
+      - text: alive
+        time: [143.12, 143.65]
     tl: 내가 살아 있는 한
-    time: [141.42, 143.65]
-  - text: I trip and I fall
+    time: [141.403, 143.65]
+  - words:
+      - text: 'I '
+        time: [143.65, 143.933]
+      - text: 'trip '
+        time: [143.933, 144.506]
+      - text: 'and '
+        time: [144.506, 144.826]
+      - text: 'I '
+        time: [144.826, 145.152]
+      - text: fall
+        time: [145.152, 146.033]
     tl: 난 걸려 넘어지고
-    time: [143.65, 146.05]
-  - text: But there's nothing here at all
+    time: [143.65, 146.033]
+  - words:
+      - text: 'But '
+        time: [146.033, 146.373]
+      - text: "there's "
+        time: [146.373, 146.683]
+      - text: 'nothing '
+        time: [146.683, 147.167]
+      - text: 'here '
+        time: [147.167, 147.595]
+      - text: 'at '
+        time: [147.595, 147.917]
+      - text: all
+        time: [147.917, 149.006]
     tl: 하지만 여기엔 아무것도 없어
-    time: [146.05, 149.14]
-  - text: For my faults, flaws, and failures, I still fight
+    time: [146.033, 149.006]
+  - words:
+      - text: 'For '
+        time: [149.131, 149.426]
+      - text: 'my '
+        time: [149.426, 149.625]
+      - text: 'faults, '
+        time: [149.625, 149.961]
+      - text: 'flaws, '
+        time: [149.961, 150.326]
+      - text: 'and '
+        time: [150.326, 150.658]
+      - text: 'failures, '
+        time: [150.658, 151.354]
+      - text: 'I '
+        time: [151.354, 151.536]
+      - text: 'still '
+        time: [151.536, 152.032]
+      - text: fight
+        time: [152.032, 153.754]
     tl: 내 잘못과 결점과 실패에도 난 여전히 싸워
-    time: [149.14, 153.94]
-  - text: But I want to cry
+    time: [149.126, 153.754]
+  - words:
+      - text: 'But '
+        time: [153.928, 154.099]
+      - text: 'I '
+        time: [154.099, 154.249]
+      - text: 'want '
+        time: [154.249, 154.44]
+      - text: 'to '
+        time: [154.44, 154.699]
+      - text: cry
+        time: [154.699, 156.309]
     tl: 하지만 울고 싶어
-    time: [153.94, 156.34]
-  - text: Oh, the precious gift of life is wasted
+    time: [153.928, 156.309]
+  - words:
+      - text: 'Oh, '
+        time: [176.905, 177.92]
+      - text: 'the '
+        time: [177.92, 178.177]
+      - text: 'precious '
+        time: [178.177, 178.945]
+      - text: 'gift '
+        time: [178.945, 179.303]
+      - text: 'of '
+        time: [179.303, 179.642]
+      - text: 'life '
+        time: [179.642, 180.358]
+      - text: 'is '
+        time: [180.358, 180.958]
+      - text: wasted
+        time: [180.958, 182.409]
     tl: 아, 소중한 생명의 선물이 낭비되고 있어
-    time: [176.91, 182.39]
-  - text: On a flightless bird like me
+    time: [176.905, 182.409]
+  - words:
+      - text: 'On '
+        time: [182.409, 183.4]
+      - text: 'a '
+        time: [183.4, 183.679]
+      - text: 'flightless '
+        time: [183.679, 184.438]
+      - text: 'bird '
+        time: [184.438, 184.786]
+      - text: 'like '
+        time: [184.786, 185.142]
+      - text: me
+        time: [185.142, 187.88]
     tl: 나처럼 날지 못하는 새에게
-    time: [182.39, 187.88]
-  - text: But the wonder of art and creation
+    time: [182.409, 187.88]
+  - words:
+      - text: 'But '
+        time: [187.88, 188.897]
+      - text: 'the '
+        time: [188.897, 189.233]
+      - text: 'wonder '
+        time: [189.233, 189.922]
+      - text: 'of '
+        time: [189.922, 190.261]
+      - text: 'art '
+        time: [190.261, 190.639]
+      - text: 'and '
+        time: [190.639, 191.275]
+      - text: creation
+        time: [191.275, 193.19]
     tl: 하지만 예술과 창조가 지닌 경이로움은
     time: [187.88, 193.19]
-  - text: Gives hope back to the worn and weary
+  - words:
+      - text: 'Gives '
+        time: [193.19, 193.357]
+      - text: 'hope '
+        time: [193.357, 193.533]
+      - text: 'back '
+        time: [193.533, 193.831]
+      - text: 'to '
+        time: [193.831, 194.212]
+      - text: 'the '
+        time: [194.212, 194.539]
+      - text: 'worn '
+        time: [194.539, 194.904]
+      - text: 'and '
+        time: [194.904, 195.199]
+      - text: weary
+        time: [195.199, 195.78]
     tl: 지치고 고단한 이들에게 희망을 되돌려 줘
-    time: [193.19, 195.94]
-  - text: Shining brilliantly
+    time: [193.19, 195.78]
+  - words:
+      - text: 'Shining '
+        time: [195.78, 197.382]
+      - text: brilliantly
+        time: [197.382, 198.712]
     tl: 눈부시게 빛나면서
-    time: [195.94, 198.85]
-  - text: Maybe it is still worth to keep on trying
+    time: [195.78, 198.712]
+  - words:
+      - text: 'Maybe '
+        time: [199.019, 199.372]
+      - text: 'it '
+        time: [199.372, 199.539]
+      - text: 'is '
+        time: [199.539, 199.646]
+      - text: 'still '
+        time: [199.646, 200.03]
+      - text: 'worth '
+        time: [200.03, 200.339]
+      - text: 'to '
+        time: [200.339, 200.695]
+      - text: 'keep '
+        time: [200.695, 201.061]
+      - text: 'on '
+        time: [201.061, 201.347]
+      - text: trying
+        time: [201.347, 201.753]
     tl: 어쩌면 계속 노력할 가치가 있는지도 몰라
-    time: [198.85, 201.77]
-  - text: "'Cause you bring light and life back to my eyes"
+    time: [199.019, 201.753]
+  - words:
+      - text: "'Cause "
+        time: [201.753, 201.923]
+      - text: 'you '
+        time: [201.923, 202.093]
+      - text: 'bring '
+        time: [202.093, 202.251]
+      - text: 'light '
+        time: [202.251, 202.428]
+      - text: 'and '
+        time: [202.428, 202.775]
+      - text: 'life '
+        time: [202.775, 203.12]
+      - text: 'back '
+        time: [203.12, 203.42]
+      - text: 'to '
+        time: [203.42, 203.82]
+      - text: 'my '
+        time: [203.82, 204.163]
+      - text: eyes
+        time: [204.163, 204.527]
     tl: 네가 내 눈에 빛과 생기를 되돌려 주니까
-    time: [201.77, 204.51]
-  - text: A goose like me may one day touch the sky
+    time: [201.753, 204.527]
+  - words:
+      - text: 'A '
+        time: [204.527, 204.673]
+      - text: 'goose '
+        time: [204.673, 204.846]
+      - text: 'like '
+        time: [204.846, 205.005]
+      - text: 'me '
+        time: [205.005, 205.161]
+      - text: 'may '
+        time: [205.161, 205.509]
+      - text: 'one '
+        time: [205.509, 205.852]
+      - text: 'day '
+        time: [205.852, 206.183]
+      - text: 'touch '
+        time: [206.183, 206.539]
+      - text: 'the '
+        time: [206.539, 206.722]
+      - text: sky
+        time: [206.722, 207.24]
     tl: 나 같은 거위도 언젠가 하늘에 닿을 수 있을 거야
-    time: [204.51, 207.25]
-  - text: Because I'm still alive
+    time: [204.527, 207.24]
+  - words:
+      - text: 'Because '
+        time: [207.24, 207.914]
+      - text: "I'm "
+        time: [207.914, 208.133]
+      - text: 'still '
+        time: [208.133, 208.953]
+      - text: alive
+        time: [208.953, 209.48]
     tl: 난 아직 살아 있으니까
-    time: [207.25, 209.48]
-  - text: I trip and I fall
+    time: [207.24, 209.48]
+  - words:
+      - text: 'I '
+        time: [209.48, 209.763]
+      - text: 'trip '
+        time: [209.763, 210.339]
+      - text: 'and '
+        time: [210.339, 210.664]
+      - text: 'I '
+        time: [210.664, 210.98]
+      - text: fall
+        time: [210.98, 211.868]
     tl: 난 걸려 넘어져도
-    time: [209.48, 211.88]
-  - text: But I get up with my all
+    time: [209.48, 211.868]
+  - words:
+      - text: 'But '
+        time: [211.868, 212.208]
+      - text: 'I '
+        time: [212.208, 212.547]
+      - text: 'get '
+        time: [212.547, 212.726]
+      - text: 'up '
+        time: [212.726, 213.047]
+      - text: 'with '
+        time: [213.047, 213.388]
+      - text: 'my '
+        time: [213.388, 213.753]
+      - text: all
+        time: [213.753, 214.958]
     tl: 온 힘을 다해 다시 일어나
-    time: [211.88, 214.97]
-  - text: For my faults, flaws, and failures, I still fight
+    time: [211.868, 214.958]
+  - words:
+      - text: 'For '
+        time: [214.958, 215.271]
+      - text: 'my '
+        time: [215.271, 215.448]
+      - text: 'faults, '
+        time: [215.448, 215.795]
+      - text: 'flaws, '
+        time: [215.795, 216.158]
+      - text: 'and '
+        time: [216.158, 216.486]
+      - text: 'failures, '
+        time: [216.486, 217.184]
+      - text: 'I '
+        time: [217.184, 217.382]
+      - text: 'still '
+        time: [217.382, 217.867]
+      - text: fight
+        time: [217.867, 219.751]
     tl: 내 잘못과 결점과 실패에도 난 여전히 싸워
-    time: [214.97, 219.77]
-  - text: "'Cause I want to fly"
+    time: [214.958, 219.751]
+  - words:
+      - text: "'Cause "
+        time: [219.751, 219.958]
+      - text: 'I '
+        time: [219.958, 220.063]
+      - text: 'want '
+        time: [220.063, 220.283]
+      - text: 'to '
+        time: [220.283, 220.609]
+      - text: fly
+        time: [220.609, 222.431]
     tl: 날고 싶으니까
-    time: [219.77, 223.71]
+    time: [219.751, 222.431]
