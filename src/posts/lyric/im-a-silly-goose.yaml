@@ -100,7 +100,7 @@ lines:
         pr: 웨어
         time: [22.951, 23.282]
       - text: 'did '
-        pr: 딛
+        pr: 딧
         time: [23.282, 23.465]
       - text: 'my '
         pr: 마이
@@ -112,7 +112,7 @@ lines:
         pr: 고?
         time: [25.161, 25.506]
       - text: 'Did '
-        pr: 딛
+        pr: 딧
         time: [25.506, 25.862]
       - text: 'it '
         pr: 잇
