@@ -22,1484 +22,2122 @@ pubDate: 2026-09-20T19:37
 lines:
   - words:
       - text: 'Glittering '
+        pr: 글리터링
         time: [26.819, 27.34]
       - text: 'tears '
+        pr: 티어즈
         time: [27.34, 27.54]
       - text: 'are '
+        pr: 어
         time: [27.54, 27.68]
       - text: 'falling '
+        pr: 폴링
         time: [27.68, 28]
       - text: 'down '
+        pr: 다운
         time: [28, 28.22]
       - text: 'on '
+        pr: 온
         time: [28.22, 28.34]
       - text: 'the '
+        pr: 더
         time: [28.34, 28.48]
       - text: sidewalk
+        pr: 사이드워크
         time: [28.48, 29.099]
     tl: 반짝이는 눈물이 보도 위로 떨어져
     time: [26.819, 29.099]
   - words:
       - text: 'Time '
+        pr: 타임
         time: [29.159, 29.48]
       - text: "won't "
+        pr: 원트
         time: [29.48, 29.68]
       - text: 'let '
+        pr: 렛
         time: [29.68, 29.84]
       - text: 'me '
+        pr: 미
         time: [29.84, 30]
       - text: 'wait '
+        pr: 웨잇
         time: [30, 30.24]
       - text: 'another '
+        pr: 어나더
         time: [30.24, 30.68]
       - text: day
+        pr: 데이
         time: [30.68, 30.799]
     tl: 시간은 하루 더 기다리게 해 주지 않아
     time: [29.159, 30.799]
   - words:
       - text: 'While '
+        pr: 와일
         time: [30.819, 31.04]
       - text: "I'm "
+        pr: 아임
         time: [31.04, 31.16]
       - text: 'thinking '
+        pr: 싱킹
         time: [31.16, 31.86]
       - text: 'of '
+        pr: 옵
         time: [31.86, 32.66]
       - text: 'the '
+        pr: 더
         time: [32.66, 33.32]
       - text: 'sadness '
+        pr: 새드니스
         time: [33.32, 34.68]
       - text: 'behind '
+        pr: 비하인드
         time: [34.68, 36]
       - text: 'your '
+        pr: 유어
         time: [36, 36.58]
       - text: smile
+        pr: 스마일
         time: [36.58, 37.359]
     tl: 네 미소 뒤의 슬픔을 생각하는 동안
     time: [30.819, 37.359]
   - words:
       - text: 'My '
+        pr: 마이
         time: [37.499, 37.66]
       - text: 'dreams '
+        pr: 드림즈
         time: [37.66, 37.86]
       - text: 'dissolve '
+        pr: 디졸브
         time: [37.86, 38.18]
       - text: 'like '
+        pr: 라익
         time: [38.18, 38.32]
       - text: 'shining '
+        pr: 샤이닝
         time: [38.32, 38.68]
       - text: 'rays '
+        pr: 레이즈
         time: [38.68, 38.88]
       - text: 'on '
+        pr: 온
         time: [38.88, 39]
       - text: 'the '
+        pr: 더
         time: [39, 39.16]
       - text: 'dew '
+        pr: 듀
         time: [39.16, 39.48]
       - text: drops
+        pr: 드롭스
         time: [39.48, 39.779]
     tl: 내 꿈은 이슬방울 위의 빛처럼 녹아내려
     time: [37.499, 39.779]
   - words:
       - text: 'Now '
+        pr: 나우
         time: [39.839, 40.22]
       - text: "it's "
+        pr: 이츠
         time: [40.22, 40.34]
       - text: 'disappeared, '
+        pr: 디서피어드,
         time: [40.34, 40.9]
       - text: 'I '
+        pr: 아이
         time: [40.9, 41]
       - text: 'know '
+        pr: 노
         time: [41, 41.18]
       - text: 'that '
+        pr: 댓
         time: [41.18, 41.36]
       - text: 'I '
+        pr: 아이
         time: [41.36, 41.48]
       - text: 'can '
+        pr: 캔
         time: [41.48, 41.68]
       - text: 'never '
+        pr: 네버
         time: [41.68, 42.16]
       - text: 'hold '
+        pr: 홀드
         time: [42.16, 42.54]
       - text: on
+        pr: 온
         time: [42.54, 43.279]
     tl: 이제 사라졌어, 더는 붙잡을 수 없다는 걸 알아
     time: [39.839, 43.279]
   - words:
       - text: 'To '
+        pr: 투
         time: [43.319, 44.66]
       - text: 'who '
+        pr: 후
         time: [44.66, 45.16]
       - text: 'I '
+        pr: 아이
         time: [45.16, 45.34]
       - text: 'thought '
+        pr: 솟
         time: [45.34, 46.06]
       - text: 'I '
+        pr: 아이
         time: [46.06, 46.64]
       - text: 'would '
+        pr: 웃
         time: [46.64, 47.34]
       - text: be
+        pr: 비
         time: [47.34, 47.939]
     tl: 내가 될 거라 생각했던 모습을
     time: [43.319, 47.939]
   - words:
       - text: 'Even '
+        pr: 이븐
         time: [48.059, 48.34]
       - text: 'when '
+        pr: 웬
         time: [48.34, 48.52]
       - text: 'my '
+        pr: 마이
         time: [48.52, 48.7]
       - text: 'heart '
+        pr: 하트
         time: [48.7, 48.9]
       - text: 'is '
+        pr: 이즈
         time: [48.9, 49.02]
       - text: 'filled '
+        pr: 필드
         time: [49.02, 49.2]
       - text: 'with '
+        pr: 윗
         time: [49.2, 49.32]
       - text: 'shimmering '
+        pr: 시머링
         time: [49.32, 49.86]
       - text: sorrow
+        pr: 서로우
         time: [49.86, 50.499]
     tl: 마음이 반짝이는 슬픔으로 가득해도
     time: [48.059, 50.499]
   - words:
       - text: 'I '
+        pr: 아이
         time: [50.619, 50.84]
       - text: 'can '
+        pr: 캔
         time: [50.84, 51.02]
       - text: 'recall '
+        pr: 리콜
         time: [51.02, 51.52]
       - text: 'memories '
+        pr: 메머리즈
         time: [51.52, 52.18]
       - text: 'that '
+        pr: 댓
         time: [52.18, 52.34]
       - text: 'last '
+        pr: 라스트
         time: [52.34, 52.54]
       - text: forever
+        pr: 포레버
         time: [52.54, 53.199]
     tl: 영원히 남을 기억을 떠올릴 수 있어
     time: [50.619, 53.199]
   - words:
       - text: 'Feeling '
+        pr: 필링
         time: [53.339, 53.68]
       - text: 'like '
+        pr: 라익
         time: [53.68, 53.9]
       - text: 'a '
+        pr: 어
         time: [53.9, 54]
       - text: 'new '
+        pr: 누
         time: [54, 54.18]
       - text: 'reality '
+        pr: 리앨러티
         time: [54.18, 54.92]
       - text: 'in '
+        pr: 인
         time: [54.92, 55.02]
       - text: 'this '
+        pr: 디스
         time: [55.02, 55.18]
       - text: life
+        pr: 라입
         time: [55.18, 55.479]
     tl: 이 삶의 새로운 현실 같은 기분
     time: [53.339, 55.479]
   - words:
       - text: 'Without '
+        pr: 위다웃
         time: [55.499, 56.18]
       - text: 'the '
+        pr: 더
         time: [56.18, 56.68]
       - text: 'time '
+        pr: 타임
         time: [56.68, 57.02]
       - text: 'we '
+        pr: 위
         time: [57.02, 57.28]
       - text: 'spent '
+        pr: 스펜트
         time: [57.28, 57.68]
       - text: together
+        pr: 투게더
         time: [57.68, 58.599]
     tl: 우리가 함께 보낸 시간 없이
     time: [55.499, 58.599]
   - words:
       - text: 'Time '
+        pr: 타임
         time: [58.659, 58.88]
       - text: 'is '
+        pr: 이즈
         time: [58.88, 59]
       - text: 'shattering '
+        pr: 섀터링
         time: [59, 59.52]
       - text: 'the '
+        pr: 더
         time: [59.52, 59.66]
       - text: 'glass '
+        pr: 글래스
         time: [59.66, 59.9]
       - text: 'of '
+        pr: 옵
         time: [59.9, 60.04]
       - text: 'everything '
+        pr: 에브리싱
         time: [60.04, 60.5]
       - text: 'that '
+        pr: 댓
         time: [60.5, 60.82]
       - text: 'you '
+        pr: 유
         time: [60.82, 61.18]
       - text: gave
+        pr: 게입
         time: [61.18, 61.479]
     tl: 시간이 네가 준 모든 것의 유리를 산산조각 내
     time: [58.659, 61.479]
   - words:
       - text: 'And '
+        pr: 앤드
         time: [61.559, 61.7]
       - text: "it's "
+        pr: 이츠
         time: [61.7, 61.86]
       - text: 'fading '
+        pr: 페이딩
         time: [61.86, 62.4]
       - text: 'away '
+        pr: 어웨이
         time: [62.4, 62.9]
       - text: 'into '
+        pr: 인투
         time: [62.9, 63.18]
       - text: 'the '
+        pr: 더
         time: [63.18, 63.32]
       - text: shadows
+        pr: 섀도즈
         time: [63.32, 63.918]
     tl: 그리고 그림자 속으로 사라져 가
     time: [61.559, 63.918]
   - words:
       - text: 'Finally, '
+        pr: 파이널리,
         time: [64.018, 64.54]
       - text: "I'm "
+        pr: 아임
         time: [64.54, 64.68]
       - text: 'feeling '
+        pr: 필링
         time: [64.68, 65.02]
       - text: 'like '
+        pr: 라익
         time: [65.02, 65.2]
       - text: "I'm "
+        pr: 아임
         time: [65.2, 65.36]
       - text: 'ready '
+        pr: 레디
         time: [65.36, 65.7]
       - text: 'to '
+        pr: 투
         time: [65.7, 65.84]
       - text: 'just '
+        pr: 저스트
         time: [65.84, 66.18]
       - text: 'move '
+        pr: 뭅
         time: [66.18, 66.56]
       - text: 'on '
+        pr: 온
         time: [66.56, 66.86]
       - text: now
+        pr: 나우
         time: [66.86, 67.318]
     tl: 마침내 이제 나아갈 준비가 된 것 같아
     time: [64.018, 67.318]
   - words:
       - text: 'Thinking '
+        pr: 싱킹
         time: [67.338, 68.04]
       - text: of
+        pr: 옵
         time: [68.04, 68.978]
     tl: 생각하며
     time: [67.338, 68.978]
   - words:
       - text: 'My '
+        pr: 마이
         time: [68.998, 69.18]
       - text: 'reflection, '
+        pr: 리플렉션,
         time: [69.18, 69.66]
       - text: 'brightest '
+        pr: 브라이티스트
         time: [69.66, 69.98]
       - text: 'sunlight, '
+        pr: 선라잇,
         time: [69.98, 70.34]
       - text: 'ran '
+        pr: 랜
         time: [70.34, 70.48]
       - text: 'too '
+        pr: 투
         time: [70.48, 70.66]
       - text: 'far, '
+        pr: 파,
         time: [70.66, 70.84]
       - text: 'forgot '
+        pr: 퍼갓
         time: [70.84, 71.16]
       - text: 'my '
+        pr: 마이
         time: [71.16, 71.34]
       - text: name
+        pr: 네임
         time: [71.34, 71.638]
     tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
     time: [68.998, 71.638]
   - words:
       - text: 'Falling '
+        pr: 폴링
         time: [71.658, 72]
       - text: 'tears '
+        pr: 티어즈
         time: [72, 72.16]
       - text: 'still '
+        pr: 스틸
         time: [72.16, 72.34]
       - text: 'shine '
+        pr: 샤인
         time: [72.34, 72.5]
       - text: 'like '
+        pr: 라익
         time: [72.5, 72.66]
       - text: 'dreams, '
+        pr: 드림즈,
         time: [72.66, 72.84]
       - text: 'turning '
+        pr: 터닝
         time: [72.84, 73.18]
       - text: 'the '
+        pr: 더
         time: [73.18, 73.34]
       - text: 'pain '
+        pr: 페인
         time: [73.34, 73.5]
       - text: 'to '
+        pr: 투
         time: [73.5, 73.66]
       - text: 'brighter '
+        pr: 브라이터
         time: [73.66, 74.02]
       - text: days
+        pr: 데이즈
         time: [74.02, 74.318]
     tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
     time: [71.658, 74.318]
   - words:
       - text: 'Even '
+        pr: 이븐
         time: [74.358, 74.72]
       - text: 'if '
+        pr: 입
         time: [74.72, 74.88]
       - text: 'I '
+        pr: 아이
         time: [74.88, 74.98]
       - text: 'lose '
+        pr: 루즈
         time: [74.98, 75.18]
       - text: 'my '
+        pr: 마이
         time: [75.18, 75.34]
       - text: 'way '
+        pr: 웨이
         time: [75.34, 75.56]
       - text: 'as '
+        pr: 애즈
         time: [75.56, 75.68]
       - text: 'feelings '
+        pr: 필링즈
         time: [75.68, 76]
       - text: 'fade, '
+        pr: 페잇,
         time: [76, 76.18]
       - text: 'they '
+        pr: 데이
         time: [76.18, 76.3]
       - text: 'stay '
+        pr: 스테이
         time: [76.3, 76.52]
       - text: 'the '
+        pr: 더
         time: [76.52, 76.66]
       - text: same
+        pr: 세임
         time: [76.66, 76.978]
     tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
     time: [74.358, 76.978]
   - words:
       - text: 'May '
+        pr: 메이
         time: [77.018, 77.18]
       - text: 'be '
+        pr: 비
         time: [77.18, 77.34]
       - text: 'beaten '
+        pr: 비튼
         time: [77.34, 77.66]
       - text: 'when '
+        pr: 웬
         time: [77.66, 77.86]
       - text: "I'm "
+        pr: 아임
         time: [77.86, 78]
       - text: 'broken, '
+        pr: 브로큰,
         time: [78, 78.32]
       - text: 'but '
+        pr: 벗
         time: [78.32, 78.54]
       - text: 'I '
+        pr: 아이
         time: [78.54, 78.66]
       - text: 'know '
+        pr: 노
         time: [78.66, 78.86]
       - text: "I'm "
+        pr: 아임
         time: [78.86, 79]
       - text: 'still '
+        pr: 스틸
         time: [79, 79.32]
       - text: shining
+        pr: 샤이닝
         time: [79.32, 79.958]
     tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
     time: [77.018, 79.958]
   - words:
       - text: 'Waking '
+        pr: 웨이킹
         time: [79.998, 80.4]
       - text: 'in '
+        pr: 인
         time: [80.4, 80.52]
       - text: 'the '
+        pr: 더
         time: [80.52, 80.68]
       - text: 'morning, '
+        pr: 모닝,
         time: [80.68, 81]
       - text: 'dreams '
+        pr: 드림즈
         time: [81, 81.2]
       - text: 'dissolve '
+        pr: 디졸브
         time: [81.2, 81.54]
       - text: 'before '
+        pr: 비포
         time: [81.54, 81.84]
       - text: 'they '
+        pr: 데이
         time: [81.84, 82]
       - text: wait
+        pr: 웨잇
         time: [82, 82.298]
     tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
     time: [79.998, 82.298]
   - words:
       - text: 'Disappearing '
+        pr: 디서피어링
         time: [82.338, 83]
       - text: 'memories '
+        pr: 메머리즈
         time: [83, 83.54]
       - text: 'are '
+        pr: 어
         time: [83.54, 83.66]
       - text: 'something '
+        pr: 섬싱
         time: [83.66, 84.04]
       - text: 'I '
+        pr: 아이
         time: [84.04, 84.16]
       - text: 'just '
+        pr: 저스트
         time: [84.16, 84.34]
       - text: "can't "
+        pr: 캔트
         time: [84.34, 84.5]
       - text: translate
+        pr: 트랜슬레잇
         time: [84.5, 84.978]
     tl: 사라지는 기억은 도무지 풀어낼 수 없어
     time: [82.338, 84.978]
   - words:
       - text: 'Feel '
+        pr: 필
         time: [84.998, 85.2]
       - text: 'the '
+        pr: 더
         time: [85.2, 85.34]
       - text: 'pain, '
+        pr: 페인,
         time: [85.34, 85.52]
       - text: 'but '
+        pr: 벗
         time: [85.52, 85.68]
       - text: "that's "
+        pr: 대츠
         time: [85.68, 85.88]
       - text: 'okay, '
+        pr: 오케이,
         time: [85.88, 86.22]
       - text: 'I '
+        pr: 아이
         time: [86.22, 86.34]
       - text: 'keep '
+        pr: 킵
         time: [86.34, 86.54]
       - text: 'on '
+        pr: 온
         time: [86.54, 86.68]
       - text: 'wishing '
+        pr: 위싱
         time: [86.68, 87.02]
       - text: 'once '
+        pr: 원스
         time: [87.02, 87.22]
       - text: again
+        pr: 어게인
         time: [87.22, 87.638]
     tl: 아프지만 괜찮아, 다시 한번 계속 바라
     time: [84.998, 87.638]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [87.658, 87.86]
       - text: 'as '
+        pr: 애즈
         time: [87.86, 88.02]
       - text: 'long '
+        pr: 롱
         time: [88.02, 88.2]
       - text: 'as '
+        pr: 애즈
         time: [88.2, 88.38]
       - text: "I'm "
+        pr: 아임
         time: [88.38, 88.52]
       - text: 'still '
+        pr: 스틸
         time: [88.52, 88.7]
       - text: 'here '
+        pr: 히어
         time: [88.7, 88.86]
       - text: 'to '
+        pr: 투
         time: [88.86, 89]
       - text: 'stay, '
+        pr: 스테이,
         time: [89, 89.22]
       - text: 'I '
+        pr: 아이
         time: [89.22, 89.32]
       - text: 'know '
+        pr: 노
         time: [89.32, 89.54]
       - text: "I'm "
+        pr: 아임
         time: [89.54, 89.66]
       - text: 'still '
+        pr: 스틸
         time: [89.66, 89.98]
       - text: shining
+        pr: 샤이닝
         time: [89.98, 90.678]
     tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
     time: [87.658, 90.678]
   - words:
       - text: 'I '
+        pr: 아이
         time: [94.558, 94.66]
       - text: 'know '
+        pr: 노
         time: [94.66, 94.86]
       - text: "I'm "
+        pr: 아임
         time: [94.86, 95]
       - text: 'still '
+        pr: 스틸
         time: [95, 95.32]
       - text: shining
+        pr: 샤이닝
         time: [95.32, 96.018]
     tl: 난 여전히 빛난다는 걸 알아
     time: [94.558, 96.018]
   - words:
       - text: 'I '
+        pr: 아이
         time: [99.818, 99.98]
       - text: 'know '
+        pr: 노
         time: [99.98, 100.2]
       - text: "I'm "
+        pr: 아임
         time: [100.2, 100.32]
       - text: 'still '
+        pr: 스틸
         time: [100.32, 100.64]
       - text: shining
+        pr: 샤이닝
         time: [100.64, 101.358]
     tl: 난 여전히 빛난다는 걸 알아
     time: [99.818, 101.358]
   - words:
       - text: 'I '
+        pr: 아이
         time: [102.498, 105.32]
       - text: 'know '
+        pr: 노
         time: [105.32, 105.52]
       - text: "I'm "
+        pr: 아임
         time: [105.52, 105.66]
       - text: 'still '
+        pr: 스틸
         time: [105.66, 105.98]
       - text: shining
+        pr: 샤이닝
         time: [105.98, 106.677]
     tl: 난 여전히 빛난다는 걸 알아
     time: [102.498, 106.677]
   - words:
       - text: 'My '
+        pr: 마이
         time: [106.837, 111.76]
       - text: 'reflection, '
+        pr: 리플렉션,
         time: [111.76, 112.32]
       - text: 'brightest '
+        pr: 브라이티스트
         time: [112.32, 112.66]
       - text: 'sunlight, '
+        pr: 선라잇,
         time: [112.66, 113.02]
       - text: 'ran '
+        pr: 랜
         time: [113.02, 113.16]
       - text: 'too '
+        pr: 투
         time: [113.16, 113.34]
       - text: 'far, '
+        pr: 파,
         time: [113.34, 113.5]
       - text: 'forgot '
+        pr: 퍼갓
         time: [113.5, 113.84]
       - text: 'my '
+        pr: 마이
         time: [113.84, 113.98]
       - text: name
+        pr: 네임
         time: [113.98, 114.317]
     tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
     time: [106.837, 114.317]
   - words:
       - text: 'Falling '
+        pr: 폴링
         time: [114.337, 114.66]
       - text: 'tears '
+        pr: 티어즈
         time: [114.66, 114.84]
       - text: 'still '
+        pr: 스틸
         time: [114.84, 115]
       - text: 'shine '
+        pr: 샤인
         time: [115, 115.18]
       - text: 'like '
+        pr: 라익
         time: [115.18, 115.32]
       - text: 'dreams, '
+        pr: 드림즈,
         time: [115.32, 115.5]
       - text: 'turning '
+        pr: 터닝
         time: [115.5, 115.84]
       - text: 'the '
+        pr: 더
         time: [115.84, 116]
       - text: 'pain '
+        pr: 페인
         time: [116, 116.18]
       - text: 'to '
+        pr: 투
         time: [116.18, 116.34]
       - text: 'brighter '
+        pr: 브라이터
         time: [116.34, 116.68]
       - text: days
+        pr: 데이즈
         time: [116.68, 116.957]
     tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
     time: [114.337, 116.957]
   - words:
       - text: 'Even '
+        pr: 이븐
         time: [117.017, 117.4]
       - text: 'if '
+        pr: 입
         time: [117.4, 117.54]
       - text: 'I '
+        pr: 아이
         time: [117.54, 117.68]
       - text: 'lose '
+        pr: 루즈
         time: [117.68, 117.86]
       - text: 'my '
+        pr: 마이
         time: [117.86, 118]
       - text: 'way '
+        pr: 웨이
         time: [118, 118.22]
       - text: 'as '
+        pr: 애즈
         time: [118.22, 118.34]
       - text: 'feelings '
+        pr: 필링즈
         time: [118.34, 118.68]
       - text: 'fade, '
+        pr: 페잇,
         time: [118.68, 118.86]
       - text: 'they '
+        pr: 데이
         time: [118.86, 119]
       - text: 'stay '
+        pr: 스테이
         time: [119, 119.18]
       - text: 'the '
+        pr: 더
         time: [119.18, 119.32]
       - text: same
+        pr: 세임
         time: [119.32, 119.637]
     tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
     time: [117.017, 119.637]
   - words:
       - text: 'May '
+        pr: 메이
         time: [119.677, 119.84]
       - text: 'be '
+        pr: 비
         time: [119.84, 120.02]
       - text: 'beaten '
+        pr: 비튼
         time: [120.02, 120.32]
       - text: 'when '
+        pr: 웬
         time: [120.32, 120.54]
       - text: "I'm "
+        pr: 아임
         time: [120.54, 120.66]
       - text: 'broken, '
+        pr: 브로큰,
         time: [120.66, 121]
       - text: 'but '
+        pr: 벗
         time: [121, 121.22]
       - text: 'I '
+        pr: 아이
         time: [121.22, 121.34]
       - text: 'know '
+        pr: 노
         time: [121.34, 121.52]
       - text: "I'm "
+        pr: 아임
         time: [121.52, 121.66]
       - text: 'still '
+        pr: 스틸
         time: [121.66, 121.98]
       - text: shining
+        pr: 샤이닝
         time: [121.98, 122.617]
     tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
     time: [119.677, 122.617]
   - words:
       - text: 'Waking '
+        pr: 웨이킹
         time: [122.657, 123.06]
       - text: 'in '
+        pr: 인
         time: [123.06, 123.18]
       - text: 'the '
+        pr: 더
         time: [123.18, 123.34]
       - text: 'morning, '
+        pr: 모닝,
         time: [123.34, 123.68]
       - text: 'dreams '
+        pr: 드림즈
         time: [123.68, 123.86]
       - text: 'dissolve '
+        pr: 디졸브
         time: [123.86, 124.2]
       - text: 'before '
+        pr: 비포
         time: [124.2, 124.52]
       - text: 'they '
+        pr: 데이
         time: [124.52, 124.66]
       - text: wait
+        pr: 웨잇
         time: [124.66, 124.977]
     tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
     time: [122.657, 124.977]
   - words:
       - text: 'Disappearing '
+        pr: 디서피어링
         time: [124.997, 125.68]
       - text: 'memories '
+        pr: 메머리즈
         time: [125.68, 126.2]
       - text: 'are '
+        pr: 어
         time: [126.2, 126.34]
       - text: 'something '
+        pr: 섬싱
         time: [126.34, 126.7]
       - text: 'I '
+        pr: 아이
         time: [126.7, 126.84]
       - text: 'just '
+        pr: 저스트
         time: [126.84, 127]
       - text: "can't "
+        pr: 캔트
         time: [127, 127.16]
       - text: translate
+        pr: 트랜슬레잇
         time: [127.16, 127.637]
     tl: 사라지는 기억은 도무지 풀어낼 수 없어
     time: [124.997, 127.637]
   - words:
       - text: 'Feel '
+        pr: 필
         time: [127.657, 127.86]
       - text: 'the '
+        pr: 더
         time: [127.86, 128]
       - text: 'pain, '
+        pr: 페인,
         time: [128, 128.18]
       - text: 'but '
+        pr: 벗
         time: [128.18, 128.34]
       - text: "that's "
+        pr: 대츠
         time: [128.34, 128.56]
       - text: 'okay, '
+        pr: 오케이,
         time: [128.56, 128.92]
       - text: 'I '
+        pr: 아이
         time: [128.92, 129]
       - text: 'keep '
+        pr: 킵
         time: [129, 129.2]
       - text: 'on '
+        pr: 온
         time: [129.2, 129.36]
       - text: 'wishing '
+        pr: 위싱
         time: [129.36, 129.7]
       - text: 'once '
+        pr: 원스
         time: [129.7, 129.9]
       - text: again
+        pr: 어게인
         time: [129.9, 130.297]
     tl: 아프지만 괜찮아, 다시 한번 계속 바라
     time: [127.657, 130.297]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [130.317, 130.56]
       - text: 'as '
+        pr: 애즈
         time: [130.56, 130.66]
       - text: 'long '
+        pr: 롱
         time: [130.66, 130.8]
       - text: 'as '
+        pr: 애즈
         time: [130.8, 130.86]
       - text: "I'm "
+        pr: 아임
         time: [130.86, 131]
       - text: 'still '
+        pr: 스틸
         time: [131, 131.36]
       - text: 'here '
+        pr: 히어
         time: [131.36, 131.52]
       - text: 'to '
+        pr: 투
         time: [131.52, 131.66]
       - text: 'stay, '
+        pr: 스테이,
         time: [131.66, 131.88]
       - text: 'I '
+        pr: 아이
         time: [131.88, 132]
       - text: 'know '
+        pr: 노
         time: [132, 132.2]
       - text: "I'm "
+        pr: 아임
         time: [132.2, 132.34]
       - text: 'still '
+        pr: 스틸
         time: [132.34, 132.64]
       - text: shining
+        pr: 샤이닝
         time: [132.64, 133.277]
     tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
     time: [130.317, 133.277]
   - words:
       - text: 'And '
+        pr: 앤드
         time: [144.197, 144.38]
       - text: 'even '
+        pr: 이븐
         time: [144.38, 144.72]
       - text: 'if '
+        pr: 입
         time: [144.72, 144.86]
       - text: 'I '
+        pr: 아이
         time: [144.86, 144.98]
       - text: 'lose '
+        pr: 루즈
         time: [144.98, 145.18]
       - text: 'my '
+        pr: 마이
         time: [145.18, 145.34]
       - text: way
+        pr: 웨이
         time: [145.34, 145.496]
     tl: 설령 길을 잃더라도
     time: [144.197, 145.496]
   - words:
       - text: 'I '
+        pr: 아이
         time: [145.536, 145.64]
       - text: 'still '
+        pr: 스틸
         time: [145.64, 145.84]
       - text: 'know '
+        pr: 노
         time: [145.84, 146.16]
       - text: 'the '
+        pr: 더
         time: [146.16, 146.52]
       - text: 'light '
+        pr: 라잇
         time: [146.52, 146.84]
       - text: 'will '
+        pr: 윌
         time: [146.84, 147]
       - text: 'keep '
+        pr: 킵
         time: [147, 147.2]
       - text: 'on '
+        pr: 온
         time: [147.2, 147.32]
       - text: shining
+        pr: 샤이닝
         time: [147.32, 147.636]
     tl: 빛은 계속 빛날 거라는 걸 알아
     time: [145.536, 147.636]
   - words:
       - text: 'Turning '
+        pr: 터닝
         time: [147.656, 148]
       - text: 'pain '
+        pr: 페인
         time: [148, 148.22]
       - text: 'into '
+        pr: 인투
         time: [148.22, 148.48]
       - text: 'brighter '
+        pr: 브라이터
         time: [148.48, 149.16]
       - text: 'days '
+        pr: 데이즈
         time: [149.16, 150.14]
       - text: 'until '
+        pr: 언틸
         time: [150.14, 151.32]
       - text: 'the '
+        pr: 더
         time: [151.32, 152]
       - text: 'day '
+        pr: 데이
         time: [152, 152.7]
       - text: 'I '
+        pr: 아이
         time: [152.7, 153.32]
       - text: 'fade '
+        pr: 페잇
         time: [153.32, 154.06]
       - text: away
+        pr: 어웨이
         time: [154.06, 154.696]
     tl: 내가 사라질 날까지 고통을 더 밝은 날로 바꿔
     time: [147.656, 154.696]
   - words:
       - text: 'My '
+        pr: 마이
         time: [154.836, 154.98]
       - text: 'hopes '
+        pr: 홉스
         time: [154.98, 155.22]
       - text: 'and '
+        pr: 앤드
         time: [155.22, 155.32]
       - text: 'dreams '
+        pr: 드림즈
         time: [155.32, 155.54]
       - text: 'are '
+        pr: 어
         time: [155.54, 155.68]
       - text: 'waking '
+        pr: 웨이킹
         time: [155.68, 156.04]
       - text: 'up '
+        pr: 업
         time: [156.04, 156.2]
       - text: 'in '
+        pr: 인
         time: [156.2, 156.34]
       - text: 'the '
+        pr: 더
         time: [156.34, 156.5]
       - text: morning
+        pr: 모닝
         time: [156.5, 157.076]
     tl: 내 희망과 꿈이 아침에 깨어나
     time: [154.836, 157.076]
   - words:
       - text: 'Facing '
+        pr: 페이싱
         time: [157.156, 157.66]
       - text: 'brighter '
+        pr: 브라이터
         time: [157.66, 158]
       - text: 'days '
+        pr: 데이즈
         time: [158, 158.16]
       - text: 'where '
+        pr: 웨어
         time: [158.16, 158.38]
       - text: 'I '
+        pr: 아이
         time: [158.38, 158.48]
       - text: 'know '
+        pr: 노
         time: [158.48, 158.72]
       - text: 'I '
+        pr: 아이
         time: [158.72, 158.82]
       - text: 'can '
+        pr: 캔
         time: [158.82, 158.98]
       - text: 'keep '
+        pr: 킵
         time: [158.98, 159.22]
       - text: 'moving '
+        pr: 무빙
         time: [159.22, 159.86]
       - text: on
+        pr: 온
         time: [159.86, 160.656]
     tl: 계속 나아갈 수 있음을 아는 더 밝은 날들을 마주해
     time: [157.156, 160.656]
   - words:
       - text: 'I '
+        pr: 아이
         time: [160.716, 161.3]
       - text: "won't "
+        pr: 원트
         time: [161.3, 162]
       - text: 'forget '
+        pr: 퍼겟
         time: [162, 163.3]
       - text: you
+        pr: 유
         time: [163.3, 164.816]
     tl: 널 잊지 않을게
     time: [160.716, 164.816]
   - words:
       - text: 'Even '
+        pr: 이븐
         time: [165.376, 165.68]
       - text: 'when '
+        pr: 웬
         time: [165.68, 165.84]
       - text: 'my '
+        pr: 마이
         time: [165.84, 166]
       - text: 'heart '
+        pr: 하트
         time: [166, 166.22]
       - text: 'is '
+        pr: 이즈
         time: [166.22, 166.34]
       - text: 'filled '
+        pr: 필드
         time: [166.34, 166.54]
       - text: 'with '
+        pr: 윗
         time: [166.54, 166.66]
       - text: 'shimmering '
+        pr: 시머링
         time: [166.66, 167.18]
       - text: sorrow
+        pr: 서로우
         time: [167.18, 167.876]
     tl: 마음이 반짝이는 슬픔으로 가득해도
     time: [165.376, 167.876]
   - words:
       - text: 'I '
+        pr: 아이
         time: [167.936, 168.16]
       - text: 'can '
+        pr: 캔
         time: [168.16, 168.36]
       - text: 'recall '
+        pr: 리콜
         time: [168.36, 168.86]
       - text: 'memories '
+        pr: 메머리즈
         time: [168.86, 169.52]
       - text: 'that '
+        pr: 댓
         time: [169.52, 169.68]
       - text: 'last '
+        pr: 라스트
         time: [169.68, 169.84]
       - text: forever
+        pr: 포레버
         time: [169.84, 170.576]
     tl: 영원히 남을 기억을 떠올릴 수 있어
     time: [167.936, 170.576]
   - words:
       - text: 'Feeling '
+        pr: 필링
         time: [170.656, 171.02]
       - text: 'like '
+        pr: 라익
         time: [171.02, 171.24]
       - text: 'a '
+        pr: 어
         time: [171.24, 171.34]
       - text: 'new '
+        pr: 누
         time: [171.34, 171.5]
       - text: 'reality '
+        pr: 리앨러티
         time: [171.5, 172.24]
       - text: 'in '
+        pr: 인
         time: [172.24, 172.34]
       - text: 'this '
+        pr: 디스
         time: [172.34, 172.52]
       - text: life
+        pr: 라입
         time: [172.52, 172.796]
     tl: 이 삶의 새로운 현실 같은 기분
     time: [170.656, 172.796]
   - words:
       - text: 'Without '
+        pr: 위다웃
         time: [172.836, 173.52]
       - text: 'the '
+        pr: 더
         time: [173.52, 174.02]
       - text: 'time '
+        pr: 타임
         time: [174.02, 174.34]
       - text: 'we '
+        pr: 위
         time: [174.34, 174.62]
       - text: 'spent '
+        pr: 스펜트
         time: [174.62, 175.02]
       - text: together
+        pr: 투게더
         time: [175.02, 175.916]
     tl: 우리가 함께 보낸 시간 없이
     time: [172.836, 175.916]
   - words:
       - text: 'Time '
+        pr: 타임
         time: [175.996, 176.22]
       - text: 'is '
+        pr: 이즈
         time: [176.22, 176.34]
       - text: 'shattering '
+        pr: 섀터링
         time: [176.34, 176.84]
       - text: 'the '
+        pr: 더
         time: [176.84, 176.98]
       - text: 'glass '
+        pr: 글래스
         time: [176.98, 177.24]
       - text: 'of '
+        pr: 옵
         time: [177.24, 177.38]
       - text: 'everything '
+        pr: 에브리싱
         time: [177.38, 177.84]
       - text: 'that '
+        pr: 댓
         time: [177.84, 178.16]
       - text: 'you '
+        pr: 유
         time: [178.16, 178.52]
       - text: gave
+        pr: 게입
         time: [178.52, 178.816]
     tl: 시간이 네가 준 모든 것의 유리를 산산조각 내
     time: [175.996, 178.816]
   - words:
       - text: 'And '
+        pr: 앤드
         time: [178.896, 179.04]
       - text: "it's "
+        pr: 이츠
         time: [179.04, 179.18]
       - text: 'fading '
+        pr: 페이딩
         time: [179.18, 179.74]
       - text: 'away '
+        pr: 어웨이
         time: [179.74, 180.24]
       - text: 'into '
+        pr: 인투
         time: [180.24, 180.5]
       - text: 'the '
+        pr: 더
         time: [180.5, 180.66]
       - text: shadows
+        pr: 섀도즈
         time: [180.66, 181.256]
     tl: 그리고 그림자 속으로 사라져 가
     time: [178.896, 181.256]
   - words:
       - text: 'Finally, '
+        pr: 파이널리,
         time: [181.336, 181.88]
       - text: "I'm "
+        pr: 아임
         time: [181.88, 182]
       - text: 'feeling '
+        pr: 필링
         time: [182, 182.36]
       - text: 'like '
+        pr: 라익
         time: [182.36, 182.54]
       - text: "I'm "
+        pr: 아임
         time: [182.54, 182.7]
       - text: 'ready '
+        pr: 레디
         time: [182.7, 183.02]
       - text: 'to '
+        pr: 투
         time: [183.02, 183.2]
       - text: 'just '
+        pr: 저스트
         time: [183.2, 183.5]
       - text: 'move '
+        pr: 뭅
         time: [183.5, 183.9]
       - text: 'on '
+        pr: 온
         time: [183.9, 184.18]
       - text: now
+        pr: 나우
         time: [184.18, 184.636]
     tl: 마침내 이제 나아갈 준비가 된 것 같아
     time: [181.336, 184.636]
   - words:
       - text: 'Thinking '
+        pr: 싱킹
         time: [184.676, 185.38]
       - text: of
+        pr: 옵
         time: [185.38, 186.296]
     tl: 생각하며
     time: [184.676, 186.296]
   - words:
       - text: 'My '
+        pr: 마이
         time: [186.336, 186.52]
       - text: 'reflection, '
+        pr: 리플렉션,
         time: [186.52, 186.98]
       - text: 'brightest '
+        pr: 브라이티스트
         time: [186.98, 187.32]
       - text: 'sunlight, '
+        pr: 선라잇,
         time: [187.32, 187.68]
       - text: 'ran '
+        pr: 랜
         time: [187.68, 187.82]
       - text: 'too '
+        pr: 투
         time: [187.82, 188]
       - text: 'far, '
+        pr: 파,
         time: [188, 188.16]
       - text: 'forgot '
+        pr: 퍼갓
         time: [188.16, 188.5]
       - text: 'my '
+        pr: 마이
         time: [188.5, 188.68]
       - text: name
+        pr: 네임
         time: [188.68, 188.975]
     tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
     time: [186.336, 188.975]
   - words:
       - text: 'Falling '
+        pr: 폴링
         time: [188.995, 189.34]
       - text: 'tears '
+        pr: 티어즈
         time: [189.34, 189.46]
       - text: 'still '
+        pr: 스틸
         time: [189.46, 189.66]
       - text: 'shine '
+        pr: 샤인
         time: [189.66, 189.84]
       - text: 'like '
+        pr: 라익
         time: [189.84, 189.98]
       - text: 'dreams, '
+        pr: 드림즈,
         time: [189.98, 190.18]
       - text: 'turning '
+        pr: 터닝
         time: [190.18, 190.5]
       - text: 'the '
+        pr: 더
         time: [190.5, 190.66]
       - text: 'pain '
+        pr: 페인
         time: [190.66, 190.84]
       - text: 'to '
+        pr: 투
         time: [190.84, 191]
       - text: 'brighter '
+        pr: 브라이터
         time: [191, 191.34]
       - text: days
+        pr: 데이즈
         time: [191.34, 191.615]
     tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
     time: [188.995, 191.615]
   - words:
       - text: 'Even '
+        pr: 이븐
         time: [191.675, 192.06]
       - text: 'if '
+        pr: 입
         time: [192.06, 192.22]
       - text: 'I '
+        pr: 아이
         time: [192.22, 192.34]
       - text: 'lose '
+        pr: 루즈
         time: [192.34, 192.52]
       - text: 'my '
+        pr: 마이
         time: [192.52, 192.66]
       - text: 'way '
+        pr: 웨이
         time: [192.66, 192.88]
       - text: 'as '
+        pr: 애즈
         time: [192.88, 193]
       - text: 'feelings '
+        pr: 필링즈
         time: [193, 193.36]
       - text: 'fade, '
+        pr: 페잇,
         time: [193.36, 193.52]
       - text: 'they '
+        pr: 데이
         time: [193.52, 193.66]
       - text: 'stay '
+        pr: 스테이
         time: [193.66, 193.84]
       - text: 'the '
+        pr: 더
         time: [193.84, 193.98]
       - text: same
+        pr: 세임
         time: [193.98, 194.295]
     tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
     time: [191.675, 194.295]
   - words:
       - text: 'May '
+        pr: 메이
         time: [194.335, 194.54]
       - text: 'be '
+        pr: 비
         time: [194.54, 194.68]
       - text: 'beaten '
+        pr: 비튼
         time: [194.68, 195]
       - text: 'when '
+        pr: 웬
         time: [195, 195.24]
       - text: "I'm "
+        pr: 아임
         time: [195.24, 195.32]
       - text: 'broken, '
+        pr: 브로큰,
         time: [195.32, 195.66]
       - text: 'but '
+        pr: 벗
         time: [195.66, 195.88]
       - text: 'I '
+        pr: 아이
         time: [195.88, 195.98]
       - text: 'know '
+        pr: 노
         time: [195.98, 196.2]
       - text: "I'm "
+        pr: 아임
         time: [196.2, 196.34]
       - text: 'still '
+        pr: 스틸
         time: [196.34, 196.66]
       - text: shining
+        pr: 샤이닝
         time: [196.66, 197.295]
     tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
     time: [194.335, 197.295]
   - words:
       - text: 'Waking '
+        pr: 웨이킹
         time: [197.335, 197.72]
       - text: 'in '
+        pr: 인
         time: [197.72, 197.86]
       - text: 'the '
+        pr: 더
         time: [197.86, 198]
       - text: 'morning, '
+        pr: 모닝,
         time: [198, 198.34]
       - text: 'dreams '
+        pr: 드림즈
         time: [198.34, 198.52]
       - text: 'dissolve '
+        pr: 디졸브
         time: [198.52, 198.86]
       - text: 'before '
+        pr: 비포
         time: [198.86, 199.18]
       - text: 'they '
+        pr: 데이
         time: [199.18, 199.36]
       - text: wait
+        pr: 웨잇
         time: [199.36, 199.635]
     tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
     time: [197.335, 199.635]
   - words:
       - text: 'Disappearing '
+        pr: 디서피어링
         time: [199.655, 200.34]
       - text: 'memories '
+        pr: 메머리즈
         time: [200.34, 200.88]
       - text: 'are '
+        pr: 어
         time: [200.88, 201]
       - text: 'something '
+        pr: 섬싱
         time: [201, 201.38]
       - text: 'I '
+        pr: 아이
         time: [201.38, 201.5]
       - text: 'just '
+        pr: 저스트
         time: [201.5, 201.66]
       - text: "can't "
+        pr: 캔트
         time: [201.66, 201.84]
       - text: translate
+        pr: 트랜슬레잇
         time: [201.84, 202.315]
     tl: 사라지는 기억은 도무지 풀어낼 수 없어
     time: [199.655, 202.315]
   - words:
       - text: 'Feel '
+        pr: 필
         time: [202.335, 202.52]
       - text: 'the '
+        pr: 더
         time: [202.52, 202.68]
       - text: 'pain, '
+        pr: 페인,
         time: [202.68, 202.84]
       - text: 'but '
+        pr: 벗
         time: [202.84, 203]
       - text: "that's "
+        pr: 대츠
         time: [203, 203.22]
       - text: 'okay, '
+        pr: 오케이,
         time: [203.22, 203.58]
       - text: 'I '
+        pr: 아이
         time: [203.58, 203.66]
       - text: 'keep '
+        pr: 킵
         time: [203.66, 203.88]
       - text: 'on '
+        pr: 온
         time: [203.88, 204.02]
       - text: 'wishing '
+        pr: 위싱
         time: [204.02, 204.36]
       - text: 'once '
+        pr: 원스
         time: [204.36, 204.54]
       - text: again
+        pr: 어게인
         time: [204.54, 204.975]
     tl: 아프지만 괜찮아, 다시 한번 계속 바라
     time: [202.335, 204.975]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [204.995, 205.2]
       - text: 'as '
+        pr: 애즈
         time: [205.2, 205.34]
       - text: 'long '
+        pr: 롱
         time: [205.34, 205.56]
       - text: 'as '
+        pr: 애즈
         time: [205.56, 205.7]
       - text: "I'm "
+        pr: 아임
         time: [205.7, 205.82]
       - text: 'still '
+        pr: 스틸
         time: [205.82, 206.04]
       - text: 'here '
+        pr: 히어
         time: [206.04, 206.2]
       - text: 'to '
+        pr: 투
         time: [206.2, 206.32]
       - text: 'stay, '
+        pr: 스테이,
         time: [206.32, 206.56]
       - text: 'I '
+        pr: 아이
         time: [206.56, 206.66]
       - text: 'know '
+        pr: 노
         time: [206.66, 206.86]
       - text: "I'm "
+        pr: 아임
         time: [206.86, 207]
       - text: 'still '
+        pr: 스틸
         time: [207, 207.3]
       - text: shining
+        pr: 샤이닝
         time: [207.3, 208.015]
     tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
     time: [204.995, 208.015]
   - words:
       - text: 'I '
+        pr: 아이
         time: [211.875, 212.01]
       - text: 'know '
+        pr: 노
         time: [212.01, 212.19]
       - text: "I'm "
+        pr: 아임
         time: [212.19, 212.31]
       - text: 'still '
+        pr: 스틸
         time: [212.31, 212.63]
       - text: shining
+        pr: 샤이닝
         time: [212.63, 213.295]
     tl: 난 여전히 빛난다는 걸 알아
     time: [211.875, 213.295]
   - words:
       - text: 'I '
+        pr: 아이
         time: [214.655, 217.33]
       - text: 'know '
+        pr: 노
         time: [217.33, 217.51]
       - text: "I'm "
+        pr: 아임
         time: [217.51, 217.65]
       - text: 'still '
+        pr: 스틸
         time: [217.65, 217.97]
       - text: shining
+        pr: 샤이닝
         time: [217.97, 218.595]
     tl: 난 여전히 빛난다는 걸 알아
     time: [214.655, 218.595]
   - words:
       - text: 'I '
+        pr: 아이
         time: [219.995, 222.67]
       - text: 'know '
+        pr: 노
         time: [222.67, 222.85]
       - text: "I'm "
+        pr: 아임
         time: [222.85, 222.99]
       - text: 'still '
+        pr: 스틸
         time: [222.99, 223.31]
       - text: shining
+        pr: 샤이닝
         time: [223.31, 223.975]
     tl: 난 여전히 빛난다는 걸 알아
     time: [219.995, 223.975]
   - words:
       - text: 'I '
+        pr: 아이
         time: [227.875, 228.01]
       - text: 'know '
+        pr: 노
         time: [228.01, 228.17]
       - text: "I'm "
+        pr: 아임
         time: [228.17, 228.31]
       - text: 'still '
+        pr: 스틸
         time: [228.31, 228.65]
       - text: shining
+        pr: 샤이닝
         time: [228.65, 229.154]
     tl: 난 여전히 빛난다는 걸 알아
     time: [227.875, 229.154]
   - words:
       - text: 'My '
+        pr: 마이
         time: [229.174, 229.25]
       - text: 'reflection, '
+        pr: 리플렉션,
         time: [229.25, 229.65]
       - text: 'brightest '
+        pr: 브라이티스트
         time: [229.65, 229.97]
       - text: 'sunlight, '
+        pr: 선라잇,
         time: [229.97, 230.31]
       - text: 'ran '
+        pr: 랜
         time: [230.31, 230.49]
       - text: 'too '
+        pr: 투
         time: [230.49, 230.65]
       - text: 'far, '
+        pr: 파,
         time: [230.65, 230.81]
       - text: 'forgot '
+        pr: 퍼갓
         time: [230.81, 231.15]
       - text: 'my '
+        pr: 마이
         time: [231.15, 231.33]
       - text: name
+        pr: 네임
         time: [231.33, 231.634]
     tl: 비친 내 모습, 가장 밝은 햇살, 너무 멀리 달려 이름을 잊었어
     time: [229.174, 231.634]
   - words:
       - text: 'Falling '
+        pr: 폴링
         time: [231.674, 231.99]
       - text: 'tears '
+        pr: 티어즈
         time: [231.99, 232.15]
       - text: 'still '
+        pr: 스틸
         time: [232.15, 232.31]
       - text: 'shine '
+        pr: 샤인
         time: [232.31, 232.49]
       - text: 'like '
+        pr: 라익
         time: [232.49, 232.65]
       - text: 'dreams, '
+        pr: 드림즈,
         time: [232.65, 232.85]
       - text: 'turning '
+        pr: 터닝
         time: [232.85, 233.17]
       - text: 'the '
+        pr: 더
         time: [233.17, 233.33]
       - text: 'pain '
+        pr: 페인
         time: [233.33, 233.49]
       - text: 'to '
+        pr: 투
         time: [233.49, 233.65]
       - text: 'brighter '
+        pr: 브라이터
         time: [233.65, 234.01]
       - text: days
+        pr: 데이즈
         time: [234.01, 234.294]
     tl: 떨어지는 눈물은 꿈처럼 빛나며 고통을 더 밝은 날로 바꿔
     time: [231.674, 234.294]
   - words:
       - text: 'Even '
+        pr: 이븐
         time: [234.354, 234.71]
       - text: 'if '
+        pr: 입
         time: [234.71, 234.85]
       - text: 'I '
+        pr: 아이
         time: [234.85, 235.01]
       - text: 'lose '
+        pr: 루즈
         time: [235.01, 235.17]
       - text: 'my '
+        pr: 마이
         time: [235.17, 235.33]
       - text: 'way '
+        pr: 웨이
         time: [235.33, 235.53]
       - text: 'as '
+        pr: 애즈
         time: [235.53, 235.69]
       - text: 'feelings '
+        pr: 필링즈
         time: [235.69, 236.01]
       - text: 'fade, '
+        pr: 페잇,
         time: [236.01, 236.17]
       - text: 'they '
+        pr: 데이
         time: [236.17, 236.31]
       - text: 'stay '
+        pr: 스테이
         time: [236.31, 236.51]
       - text: 'the '
+        pr: 더
         time: [236.51, 236.65]
       - text: same
+        pr: 세임
         time: [236.65, 236.974]
     tl: 감정이 희미해지고 내가 길을 잃어도, 그것들은 그대로야
     time: [234.354, 236.974]
   - words:
       - text: 'May '
+        pr: 메이
         time: [236.994, 237.17]
       - text: 'be '
+        pr: 비
         time: [237.17, 237.33]
       - text: 'beaten '
+        pr: 비튼
         time: [237.33, 237.65]
       - text: 'when '
+        pr: 웬
         time: [237.65, 237.87]
       - text: "I'm "
+        pr: 아임
         time: [237.87, 237.99]
       - text: 'broken, '
+        pr: 브로큰,
         time: [237.99, 238.31]
       - text: 'but '
+        pr: 벗
         time: [238.31, 238.53]
       - text: 'I '
+        pr: 아이
         time: [238.53, 238.65]
       - text: 'know '
+        pr: 노
         time: [238.65, 238.85]
       - text: "I'm "
+        pr: 아임
         time: [238.85, 238.99]
       - text: 'still '
+        pr: 스틸
         time: [238.99, 239.31]
       - text: shining
+        pr: 샤이닝
         time: [239.31, 239.954]
     tl: 부서져 쓰러질지 몰라도 난 여전히 빛난다는 걸 알아
     time: [236.994, 239.954]
   - words:
       - text: 'Waking '
+        pr: 웨이킹
         time: [239.994, 240.37]
       - text: 'in '
+        pr: 인
         time: [240.37, 240.51]
       - text: 'the '
+        pr: 더
         time: [240.51, 240.67]
       - text: 'morning, '
+        pr: 모닝,
         time: [240.67, 240.99]
       - text: 'dreams '
+        pr: 드림즈
         time: [240.99, 241.15]
       - text: 'dissolve '
+        pr: 디졸브
         time: [241.15, 241.53]
       - text: 'before '
+        pr: 비포
         time: [241.53, 241.85]
       - text: 'they '
+        pr: 데이
         time: [241.85, 241.99]
       - text: wait
+        pr: 웨잇
         time: [241.99, 242.294]
     tl: 아침에 눈을 뜨면 꿈은 기다리지 않고 녹아내려
     time: [239.994, 242.294]
   - words:
       - text: 'Disappearing '
+        pr: 디서피어링
         time: [242.334, 243.01]
       - text: 'memories '
+        pr: 메머리즈
         time: [243.01, 243.53]
       - text: 'are '
+        pr: 어
         time: [243.53, 243.67]
       - text: 'something '
+        pr: 섬싱
         time: [243.67, 244.03]
       - text: 'I '
+        pr: 아이
         time: [244.03, 244.17]
       - text: 'just '
+        pr: 저스트
         time: [244.17, 244.33]
       - text: "can't "
+        pr: 캔트
         time: [244.33, 244.49]
       - text: translate
+        pr: 트랜슬레잇
         time: [244.49, 244.974]
     tl: 사라지는 기억은 도무지 풀어낼 수 없어
     time: [242.334, 244.974]
   - words:
       - text: 'Feel '
+        pr: 필
         time: [244.994, 245.19]
       - text: 'the '
+        pr: 더
         time: [245.19, 245.33]
       - text: 'pain, '
+        pr: 페인,
         time: [245.33, 245.49]
       - text: 'but '
+        pr: 벗
         time: [245.49, 245.67]
       - text: "that's "
+        pr: 대츠
         time: [245.67, 245.87]
       - text: 'okay, '
+        pr: 오케이,
         time: [245.87, 246.21]
       - text: 'I '
+        pr: 아이
         time: [246.21, 246.33]
       - text: 'keep '
+        pr: 킵
         time: [246.33, 246.53]
       - text: 'on '
+        pr: 온
         time: [246.53, 246.67]
       - text: 'wishing '
+        pr: 위싱
         time: [246.67, 247.03]
       - text: 'once '
+        pr: 원스
         time: [247.03, 247.21]
       - text: again
+        pr: 어게인
         time: [247.21, 247.634]
     tl: 아프지만 괜찮아, 다시 한번 계속 바라
     time: [244.994, 247.634]
   - words:
       - text: 'Just '
+        pr: 저스트
         time: [247.654, 247.87]
       - text: 'as '
+        pr: 애즈
         time: [247.87, 247.99]
       - text: 'long '
+        pr: 롱
         time: [247.99, 248.21]
       - text: 'as '
+        pr: 애즈
         time: [248.21, 248.37]
       - text: "I'm "
+        pr: 아임
         time: [248.37, 248.49]
       - text: 'still '
+        pr: 스틸
         time: [248.49, 248.67]
       - text: 'here '
+        pr: 히어
         time: [248.67, 248.85]
       - text: 'to '
+        pr: 투
         time: [248.85, 248.99]
       - text: 'stay, '
+        pr: 스테이,
         time: [248.99, 249.21]
       - text: 'I '
+        pr: 아이
         time: [249.21, 249.31]
       - text: 'know '
+        pr: 노
         time: [249.31, 249.53]
       - text: "I'm "
+        pr: 아임
         time: [249.53, 249.65]
       - text: 'still '
+        pr: 스틸
         time: [249.65, 249.97]
       - text: shining
+        pr: 샤이닝
         time: [249.97, 250.634]
     tl: 여기 남아 있는 한 난 여전히 빛난다는 걸 알아
     time: [247.654, 250.634]
   - words:
       - text: 'Glittering '
+        pr: 글리터링
         time: [261.454, 261.99]
       - text: 'tears '
+        pr: 티어즈
         time: [261.99, 262.19]
       - text: 'are '
+        pr: 어
         time: [262.19, 262.33]
       - text: 'falling '
+        pr: 폴링
         time: [262.33, 262.67]
       - text: 'down '
+        pr: 다운
         time: [262.67, 262.87]
       - text: 'on '
+        pr: 온
         time: [262.87, 262.99]
       - text: 'the '
+        pr: 더
         time: [262.99, 263.15]
       - text: sidewalk
+        pr: 사이드워크
         time: [263.15, 263.774]
     tl: 반짝이는 눈물이 보도 위로 떨어져
     time: [261.454, 263.774]
   - words:
       - text: 'Time '
+        pr: 타임
         time: [263.834, 264.13]
       - text: "won't "
+        pr: 원트
         time: [264.13, 264.35]
       - text: 'let '
+        pr: 렛
         time: [264.35, 264.51]
       - text: 'me '
+        pr: 미
         time: [264.51, 264.65]
       - text: 'wait '
+        pr: 웨잇
         time: [264.65, 264.87]
       - text: 'another '
+        pr: 어나더
         time: [264.87, 265.33]
       - text: 'day '
+        pr: 데이
         time: [265.33, 265.47]
       - text: 'while '
+        pr: 와일
         time: [265.47, 265.71]
       - text: "I'm "
+        pr: 아임
         time: [265.71, 265.83]
       - text: 'thinking '
+        pr: 싱킹
         time: [265.83, 266.53]
       - text: of
+        pr: 옵
         time: [266.53, 268.034]
     tl: 시간은 하루 더 기다리게 해 주지 않아, 내가 생각하는 동안
     time: [263.834, 268.034]

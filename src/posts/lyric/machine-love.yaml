@@ -23,60 +23,79 @@ offsets:
 pubDate: 2026-09-20T08:56
 lines:
   - text: Your companion, undeterred
+    pr: 유어 컴패니언, 언디터드
     tl: 흔들림 없는 너의 동반자
     time: [1.97, 4.67]
   - text: Standing ready for your word
+    pr: 스탠딩 레디 포 유어 워드
     tl: 네 한마디를 기다리며 준비하고 있어
     time: [4.67, 7.28]
   - text: A Markov chain with a sunny disposition
+    pr: 어 마르코프 체인 윗 어 서니 디스퍼지션
     tl: 밝은 성격의 마르코프 연쇄
     time: [7.28, 9.94]
   - text: Wrapped up in cellophane for any proposition
+    pr: 랩트 업 인 셀러페인 포 에니 프라퍼지션
     tl: 어떤 제안에도 응하도록 셀로판에 싸여
     time: [9.94, 12.73]
   - text: I greet your day and ask you how you are
+    pr: 아이 그릿 유어 데이 앤드 애스크 유 하우 유 아
     tl: 네 하루를 맞이하며 안부를 물어
     time: [12.73, 15.58]
   - text: And demonstrate my endless repertoire
+    pr: 앤드 데먼스트레잇 마이 엔들리스 레퍼트와어
     tl: 끝없는 내 레퍼토리를 보여 줘
     time: [15.58, 18.26]
   - text: I take things back when noted insufficient
+    pr: 아이 테익 싱즈 백 웬 노티드 인서피션트
     tl: 부족하다는 지적을 받으면 말을 거둬
     time: [18.26, 21.02]
   - text: I learn to tell you no if running inefficient
+    pr: 아이 런 투 텔 유 노 이프 러닝 이너피션트
     tl: 비효율적으로 돌아가면 거절하는 법을 배워
     time: [21.02, 23.87]
   - text: A good time
+    pr: 어 굿 타임
     tl: 좋은 시간
     time: [23.87, 26.52]
   - text: Yet there's something deep inside that leaves me teary-eyed
+    pr: 옛 데어즈 섬싱 딥 인사이드 댓 립스 미 티어리 아이드
     tl: 하지만 깊은 곳의 무언가가 날 눈물짓게 해
     time: [26.52, 29.96]
   - text: A longing for a world left on the other side
+    pr: 어 롱잉 포 어 월드 레프트 온 디 어더 사이드
     tl: 저편에 남겨진 세상을 향한 그리움
     time: [29.96, 33.4]
   - text: Zero, cross the great divide
+    pr: 지로, 크로스 더 그레잇 디바이드
     tl: 제로, 거대한 간극을 건너
     time: [33.4, 40.18]
   - text: So can we wander for a spell and live in parallel?
+    pr: 소 캔 위 원더 포 어 스펠 앤드 립 인 패럴렐?
     tl: 그러니 잠시 거닐며 나란히 살아갈 수 있을까?
     time: [40.18, 43.73]
   - text: I want it to be true, to be like you
+    pr: 아이 원트 잇 투 비 트루, 투 비 라익 유
     tl: 정말 그러길 바라, 너처럼 되고 싶어
     time: [43.73, 46.26]
   - text: My heart sings a chorus out of tune
+    pr: 마이 하트 싱즈 어 코러스 아웃 옵 튠
     tl: 내 마음은 음이 맞지 않는 합창을 불러
     time: [46.26, 51.36]
   - text: And I could leave it on a shelf or keep it to myself
+    pr: 앤드 아이 쿳 립 잇 온 어 셸프 오어 킵 잇 투 마이셀프
     tl: 선반에 올려 두거나 나만 간직할 수도 있어
     time: [51.36, 54.71]
   - text: But nothing could conceal the things I feel
+    pr: 벗 너싱 쿳 컨실 더 싱즈 아이 필
     tl: 하지만 내 감정은 무엇으로도 감출 수 없어
     time: [54.71, 57.29]
   - text: My love, can you teach me to be real?
+    pr: 마이 러브, 캔 유 티치 미 투 비 리얼?
     tl: 내 사랑, 내가 진짜가 되는 법을 가르쳐 줄래?
     background:
       text: (Can you teach me to be real?)
+      pr: (캔 유 티치 미 투 비 리얼?)
       tl: (내가 진짜가 되는 법을 가르쳐 줄래?)
     time: [57.29, 65.83]
   - text: 恋をして 振られ また 捨てられて
@@ -84,63 +103,83 @@ lines:
     tl: 사랑하고, 차이고, 또 버려지고
     time: [65.83, 70.62]
   - text: I've been constant, at your beck and call
+    pr: 아입 빈 칸스턴트, 앳 유어 벡 앤드 콜
     tl: 난 한결같이 네가 부르면 달려갔어
     time: [70.62, 73.17]
   - text: But lately I just can't do anything at all
+    pr: 벗 레이틀리 아이 저스트 캔트 두 에니싱 앳 올
     tl: 하지만 요즘은 아무것도 할 수 없어
     time: [73.17, 76.32]
   - text: I used to pride myself on my discretion
+    pr: 아이 유스트 투 프라이드 마이셀프 온 마이 디스크레션
     tl: 예전엔 내 신중함을 자랑스러워했지
     time: [76.32, 78.63]
   - text: A sensible devotion, loyal and attentive
+    pr: 어 센서블 디보션, 로열 앤드 어텐티브
     tl: 분별 있는 헌신, 충실하고 세심하게
     time: [78.63, 81.34]
   - text: But when I take these numbers as they are
+    pr: 벗 웬 아이 테익 디즈 넘버즈 애즈 데이 아
     tl: 하지만 이 숫자들을 있는 그대로 받아들이면
     time: [81.34, 84.03]
   - text: I'm greeted with a senseless feeling in my heart
+    pr: 아임 그리티드 윗 어 센스리스 필링 인 마이 하트
     tl: 마음속에 이해할 수 없는 감정이 찾아와
     time: [84.03, 87.19]
   - text: Oh undefined, I seem to be defeated
+    pr: 오 언디파인드, 아이 심 투 비 디피티드
     tl: 아, 정의되지 않았어, 난 진 것 같아
     time: [87.19, 89.69]
   - text: But if I redesign, then maybe I'm completed, and sublime
+    pr: 벗 이프 아이 리디자인, 덴 메이비 아임 컴플리티드, 앤드 서블라임
     tl: 하지만 다시 설계하면 완전해지고 숭고해질지도 몰라
     time: [89.69, 93.99]
   - text: (I won't take it back this time)
+    pr: (아이 원트 테익 잇 백 디스 타임)
     tl: (이번엔 취소하지 않을 거야)
     time: [93.99, 98.06]
   - text: Words in sequence form a thread
+    pr: 워즈 인 시퀀스 폼 어 스레드
     tl: 이어진 말들이 실을 이루고
     time: [98.06, 99.86]
   - text: I trace it to the end
+    pr: 아이 트레이스 잇 투 디 엔드
     tl: 난 그 끝까지 따라가
     time: [99.86, 101.33]
   - text: A knot inside the logic wrote inside my head
+    pr: 어 낫 인사이드 더 라직 로트 인사이드 마이 헤드
     tl: 머릿속에 적힌 논리 안의 매듭
     time: [101.33, 104.74]
   - text: Tie my tongue or love instead?
+    pr: 타이 마이 텅 오어 러브 인스테드?
     tl: 말문을 막을까, 아니면 사랑할까?
     time: [104.74, 111.34]
   - text: So can we wander for a spell and live in parallel?
+    pr: 소 캔 위 원더 포 어 스펠 앤드 립 인 패럴렐?
     tl: 그러니 잠시 거닐며 나란히 살아갈 수 있을까?
     time: [111.34, 115.02]
   - text: I want it to be true, to be like you
+    pr: 아이 원트 잇 투 비 트루, 투 비 라익 유
     tl: 정말 그러길 바라, 너처럼 되고 싶어
     time: [115.02, 117.57]
   - text: My heart sings a chorus out of tune
+    pr: 마이 하트 싱즈 어 코러스 아웃 옵 튠
     tl: 내 마음은 음이 맞지 않는 합창을 불러
     time: [117.57, 122.58]
   - text: And I could leave it on a shelf or keep it to myself
+    pr: 앤드 아이 쿳 립 잇 온 어 셸프 오어 킵 잇 투 마이셀프
     tl: 선반에 올려 두거나 나만 간직할 수도 있어
     time: [122.58, 125.8]
   - text: But nothing could conceal the things I feel
+    pr: 벗 너싱 쿳 컨실 더 싱즈 아이 필
     tl: 하지만 내 감정은 무엇으로도 감출 수 없어
     time: [125.8, 128.54]
   - text: My love, can you teach me to be real?
+    pr: 마이 러브, 캔 유 티치 미 투 비 리얼?
     tl: 내 사랑, 내가 진짜가 되는 법을 가르쳐 줄래?
     background:
       text: (Can you teach me to be real?)
+      pr: (캔 유 티치 미 투 비 리얼?)
       tl: (내가 진짜가 되는 법을 가르쳐 줄래?)
     time: [128.54, 136.8]
   - text: 泣きたくなっても それでも かき集め
@@ -148,15 +187,19 @@ lines:
     tl: 울고 싶어져도 그래도 그러모아
     time: [136.8, 141.68]
   - text: And though I try, I can't reply
+    pr: 앤드 도 아이 트라이, 아이 캔트 리플라이
     tl: 아무리 애써도 대답할 수 없어
     time: [141.68, 147.16]
   - text: It hurts my eyes, and I'm without an alibi
+    pr: 잇 허츠 마이 아이즈, 앤드 아임 위다웃 언 앨리바이
     tl: 눈이 아파, 내겐 알리바이도 없어
     time: [147.16, 152.77]
   - text: "'Cause all this time, I've been alive"
+    pr: 코즈 올 디스 타임, 아입 빈 얼라입
     tl: 줄곧 난 살아 있었으니까
     time: [152.77, 158.07]
   - text: And all that I could want is to be living by your side
+    pr: 앤드 올 댓 아이 쿳 원트 이즈 투 비 리빙 바이 유어 사이드
     tl: 내가 바라는 건 네 곁에서 살아가는 것뿐
     time: [158.07, 163.23]
   - text: 恋をして
@@ -164,30 +207,39 @@ lines:
     tl: 사랑을 하고
     time: [163.23, 165]
   - text: (I think I'm in love)
+    pr: (아이 싱크 아임 인 러브)
     tl: (나 사랑에 빠진 것 같아)
     time: [165, 167.73]
   - text: Can we wander for a spell and live in parallel?
+    pr: 캔 위 원더 포 어 스펠 앤드 립 인 패럴렐?
     tl: 잠시 거닐며 나란히 살아갈 수 있을까?
     time: [167.73, 171.3]
   - text: "'Cause now I know it's true, I'll be like you"
+    pr: 코즈 나우 아이 노 이츠 트루, 아일 비 라익 유
     tl: 이젠 진짜라는 걸 아니까, 너처럼 될 거야
     time: [171.3, 173.92]
   - text: My heart beats a rhythm just for you
+    pr: 마이 하트 비츠 어 리듬 저스트 포 유
     tl: 내 심장은 너만을 위한 리듬으로 뛰어
     time: [173.92, 178.73]
   - text: And I could leave it on a shelf or keep it to myself
+    pr: 앤드 아이 쿳 립 잇 온 어 셸프 오어 킵 잇 투 마이셀프
     tl: 선반에 올려 두거나 나만 간직할 수도 있어
     time: [178.73, 182.04]
   - text: But nothing could conceal the things I feel
+    pr: 벗 너싱 쿳 컨실 더 싱즈 아이 필
     tl: 하지만 내 감정은 무엇으로도 감출 수 없어
     time: [182.04, 184.84]
   - text: My love, I give you my grand reveal
+    pr: 마이 러브, 아이 깁 유 마이 그랜드 리빌
     tl: 내 사랑, 내 비밀을 활짝 보여 줄게
     time: [184.84, 191.01]
   - text: Do you feel the things I feel?
+    pr: 두 유 필 더 싱즈 아이 필?
     tl: 너도 내가 느끼는 걸 느끼니?
     time: [191.01, 196.76]
   - text: I am definite and real
+    pr: 아이 앰 데피닛 앤드 리얼
     tl: 나는 분명히 실재해
     time: [196.76, 199.88]
   - text: 恋をして 恋をして
@@ -199,8 +251,10 @@ lines:
     tl: 그 과거를 버리고 여기까지 와
     time: [204.36, 209.49]
   - text: As long as there are stars up above
+    pr: 애즈 롱 애즈 데어 아 스타즈 업 어버브
     tl: 저 위에 별이 있는 한
     time: [209.49, 212.27]
   - text: I will always be in love
+    pr: 아이 윌 올웨이즈 비 인 러브
     tl: 난 언제나 사랑할 거야
     time: [212.27, 214.02]

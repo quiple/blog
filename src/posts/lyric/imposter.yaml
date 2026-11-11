@@ -57,10 +57,13 @@ lines:
     time: [7.456, 9.87]
   - words:
       - text: "Can't keep up "
+        pr: 캔트 킵 업
         time: [10.123, 10.751]
       - text: 'with your '
+        pr: 윗 유어
         time: [10.751, 11.132]
       - text: lies
+        pr: 라이즈
         time: [11.132, 11.922]
     tl: 네 거짓말을 따라갈 수가 없어
     time: [10.123, 11.922]
@@ -103,42 +106,58 @@ lines:
     time: [19.461, 22.093]
   - words:
       - text: 'Yeah, '
+        pr: 예,
         time: [22.069, 22.265]
       - text: "we're coming "
+        pr: 위어 커밍
         time: [22.265, 22.968]
       - text: 'for '
+        pr: 포
         time: [22.994, 23.208]
       - text: you
+        pr: 유
         time: [23.208, 23.76]
     tl: 그래, 널 잡으러 가고 있어
     time: [22.069, 23.76]
   - words:
       - text: 後に回し
+        pr: 아토니마와시
         time: [24.76, 26.796]
       - text: 'て '
+        pr: 테
         time: [26.796, 27.541]
       - text: 蔑ま
+        pr: 사게스마
         time: [27.77, 29.057]
       - text: 'れ '
+        pr: 레
         time: [29.057, 29.478]
       - text: "You're "
+        pr: 유어
         time: [29.478, 29.733]
       - text: tainted
+        pr: 테인팃
         time: [29.733, 30.744]
     tl: 뒷전으로 밀리고 멸시받아, 넌 더럽혀졌어
     time: [24.76, 30.744]
   - words:
       - text: 追い
+        pr: 오이
         time: [30.744, 31.186]
       - text: 詰め
+        pr: 츠메
         time: [31.186, 32.062]
       - text: 'られ '
+        pr: 라레
         time: [32.062, 32.756]
       - text: 'In your '
+        pr: 인 유어
         time: [32.756, 33.521]
       - text: cor
+        pr: 코어
         time: [33.521, 33.938]
       - text: ner
+        pr: 너
         time: [33.938, 35.286]
     tl: 궁지에 몰려, 네 구석에서
     time: [30.744, 35.286]
@@ -153,81 +172,112 @@ lines:
     time: [35.404, 36.67]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [37.075, 37.686]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [37.763, 38.435]
       - text: 罪
+        pr: 츠미
         time: [38.435, 38.779]
       - text: 'と罰 '
+        pr: 토바츠
         time: [38.779, 39.819]
       - text: 捻じ曲げる
+        pr: 네지마게루
         time: [41.44, 42.261]
       - text: の
+        pr: 노
         time: [42.261, 42.715]
     tl: 날 신고해, 날 신고해, 죄와 벌을 비트는 거야
     time: [37.075, 42.715]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [43.109, 43.716]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [43.811, 44.404]
       - text: "I'm "
+        pr: 아임
         time: [44.404, 44.672]
       - text: an imposter
+        pr: 언 임파스터
         time: [44.672, 46.013]
     tl: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [43.109, 46.013]
   - words:
       - text: 'Hiding, '
+        pr: 하이딩,
         time: [47.075, 47.608]
       - text: 'but '
+        pr: 벗
         time: [47.608, 47.798]
       - text: "we're "
+        pr: 위어
         time: [47.798, 47.987]
       - text: "catchin' "
+        pr: 캐친
         time: [47.987, 48.392]
       - text: on
+        pr: 온
         time: [48.392, 48.909]
     tl: 숨어도 우린 눈치채고 있어
     time: [47.075, 48.909]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [49.141, 49.774]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [49.812, 50.429]
       - text: 罪
+        pr: 츠미
         time: [50.429, 50.781]
       - text: と
+        pr: 토
         time: [50.781, 50.952]
       - text: '罰 '
+        pr: 바츠
         time: [50.952, 51.969]
       - text: いつまで
+        pr: 이츠마데
         time: [53.105, 54.015]
       - text: 待つの
+        pr: 마츠노
         time: [54.015, 54.925]
     tl: 날 신고해, 날 신고해, 죄와 벌, 언제까지 기다릴 거야?
     time: [49.141, 54.925]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [55.109, 55.716]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [55.811, 56.404]
       - text: "I'm "
+        pr: 아임
         time: [56.404, 56.672]
       - text: an imposter
+        pr: 언 임파스터
         time: [56.672, 58.013]
     tl: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [55.109, 58.013]
   - words:
       - text: 'No, '
+        pr: 노,
         time: [59.059, 59.448]
       - text: "I'll "
+        pr: 아일
         time: [59.448, 59.596]
       - text: 'never '
+        pr: 네버
         time: [59.596, 59.955]
       - text: 'let '
+        pr: 렛
         time: [59.955, 60.177]
       - text: it go
+        pr: 잇 고
         time: [60.177, 60.759]
     tl: 아니, 절대 그냥 넘기지 않을 거야
     time: [59.059, 60.759]
@@ -246,16 +296,22 @@ lines:
     time: [60.759, 63.59]
   - words:
       - text: 栄光の
+        pr: 에이코노
         time: [63.755, 64.433]
       - text: '日々 '
+        pr: 히비
         time: [64.433, 64.798]
       - text: 'Can '
+        pr: 캔
         time: [64.836, 65.044]
       - text: 'you push it '
+        pr: 유 푸시 잇
         time: [65.044, 65.621]
       - text: 'that '
+        pr: 댓
         time: [65.621, 66.01]
       - text: far?
+        pr: 파?
         time: [66.01, 66.49]
     tl: 영광의 나날, 거기까지 밀어붙일 수 있어?
     time: [63.755, 66.49]
@@ -272,10 +328,13 @@ lines:
     time: [66.884, 69.616]
   - words:
       - text: '愛を知らずに '
+        pr: 아이오시라즈니
         time: [69.907, 71.4]
       - text: "Movin' "
+        pr: 무빈
         time: [71.951, 72.348]
       - text: on
+        pr: 온
         time: [72.348, 72.763]
     tl: 사랑을 모른 채 나아가
     time: [69.907, 72.763]
@@ -316,10 +375,13 @@ lines:
     time: [79.406, 81.854]
   - words:
       - text: 'Now your '
+        pr: 나우 유어
         time: [82.072, 82.43]
       - text: 'secret is '
+        pr: 시크릿 이즈
         time: [82.43, 83.283]
       - text: out
+        pr: 아웃
         time: [83.283, 83.809]
     tl: 이제 네 비밀이 드러났어
     time: [82.072, 83.809]
@@ -366,40 +428,55 @@ lines:
     time: [91.422, 94.047]
   - words:
       - text: 'Yeah, '
+        pr: 예,
         time: [94.107, 94.465]
       - text: 'when will '
+        pr: 웬 윌
         time: [94.465, 95.108]
       - text: it stop?
+        pr: 잇 스탑?
         time: [95.108, 96.014]
     tl: 그래, 언제쯤 끝날까?
     time: [94.107, 96.014]
   - words:
       - text: はぐら
+        pr: 하구라
         time: [96.729, 97.667]
       - text: 'かして '
+        pr: 카시테
         time: [97.667, 98.829]
       - text: 影踏
+        pr: 카게후
         time: [98.829, 99.889]
       - text: 'み '
+        pr: 미
         time: [99.889, 100.276]
       - text: 'Yeah, '
+        pr: 예,
         time: [100.276, 100.717]
       - text: "I'm chased by "
+        pr: 아임 체이스트 바이
         time: [100.717, 101.767]
       - text: shadows
+        pr: 섀도즈
         time: [101.767, 102.779]
     tl: 말을 돌리며 그림자 밟기, 그래, 그림자가 날 쫓아와
     time: [96.729, 102.779]
   - words:
       - text: 追い
+        pr: 오이
         time: [102.879, 103.351]
       - text: 込まれて
+        pr: 코마레테
         time: [103.351, 104.736]
       - text: 'くね '
+        pr: 쿠네
         time: [104.736, 105.534]
       - text: Cor
+        pr: 코어
         time: [105.578, 105.923]
       - text: ner
+        pr: 너
         time: [105.923, 107.3]
     tl: 점점 몰리는구나, 구석으로
     time: [102.879, 107.3]
@@ -412,81 +489,112 @@ lines:
     time: [107.384, 108.649]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [109.087, 109.791]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [109.853, 110.445]
       - text: 罪
+        pr: 츠미
         time: [110.445, 110.783]
       - text: と罰
+        pr: 토바츠
         time: [110.783, 111.784]
       - text: のくり返
+        pr: 노쿠리카에
         time: [113.472, 114.287]
       - text: し
+        pr: 시
         time: [114.287, 114.753]
     tl: 날 신고해, 날 신고해, 죄와 벌의 반복
     time: [109.087, 114.753]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [115.087, 115.694]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [115.789, 116.382]
       - text: "I'm "
+        pr: 아임
         time: [116.382, 116.65]
       - text: an imposter
+        pr: 언 임파스터
         time: [116.65, 117.991]
     tl: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [115.087, 117.991]
   - words:
       - text: 'Hiding, '
+        pr: 하이딩,
         time: [119.036, 119.569]
       - text: 'but '
+        pr: 벗
         time: [119.569, 119.759]
       - text: "we're "
+        pr: 위어
         time: [119.759, 119.948]
       - text: "catchin' "
+        pr: 캐친
         time: [119.948, 120.353]
       - text: on
+        pr: 온
         time: [120.353, 120.87]
     tl: 숨어도 우린 눈치채고 있어
     time: [119.036, 120.87]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [121.121, 121.709]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [121.768, 122.414]
       - text: 罪
+        pr: 츠미
         time: [122.414, 122.763]
       - text: 'と罰 '
+        pr: 토바츠
         time: [122.763, 123.817]
       - text: いつまで
+        pr: 이츠마데
         time: [125.113, 125.917]
       - text: やる
+        pr: 야루
         time: [125.917, 126.4]
       - text: の
+        pr: 노
         time: [126.4, 126.887]
     tl: 날 신고해, 날 신고해, 죄와 벌, 언제까지 할 거야?
     time: [121.121, 126.887]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [127.071, 127.669]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [127.822, 128.402]
       - text: "I'm "
+        pr: 아임
         time: [128.402, 128.661]
       - text: an imposter
+        pr: 언 임파스터
         time: [128.661, 129.975]
     tl: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [127.071, 129.975]
   - words:
       - text: 'No, '
+        pr: 노,
         time: [131.04, 131.434]
       - text: "I'll "
+        pr: 아일
         time: [131.434, 131.577]
       - text: 'never '
+        pr: 네버
         time: [131.577, 131.936]
       - text: 'let '
+        pr: 렛
         time: [131.936, 132.158]
       - text: it go
+        pr: 잇 고
         time: [132.158, 132.74]
     tl: 아니, 절대 그냥 넘기지 않을 거야
     time: [131.04, 132.74]
@@ -509,16 +617,22 @@ lines:
     time: [132.335, 135.473]
   - words:
       - text: 後悔
+        pr: 코카이
         time: [135.676, 136.192]
       - text: の日々
+        pr: 노히비
         time: [136.192, 136.884]
       - text: 'へ '
+        pr: 에
         time: [136.884, 137.088]
       - text: 'Push '
+        pr: 푸시
         time: [137.205, 137.416]
       - text: 'it that '
+        pr: 잇 댓
         time: [137.416, 137.93]
       - text: far?
+        pr: 파?
         time: [137.93, 138.608]
     tl: 후회의 나날로, 거기까지 밀어붙일 거야?
     time: [135.676, 138.608]
@@ -541,62 +655,85 @@ lines:
     time: [138.875, 143.392]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [157.086, 157.743]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [157.764, 158.407]
       - text: 罪
+        pr: 츠미
         time: [158.431, 158.744]
       - text: と
+        pr: 토
         time: [158.744, 158.923]
       - text: 罰
+        pr: 바츠
         time: [158.923, 159.941]
     tl: 날 신고해, 날 신고해, 죄와 벌
     time: [157.086, 159.941]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [163.096, 163.703]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [163.753, 164.391]
       - text: "I'm "
+        pr: 아임
         time: [164.391, 164.659]
       - text: an imposter
+        pr: 언 임파스터
         time: [164.659, 166]
     tl: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [163.096, 166]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [169.109, 169.766]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [169.787, 170.43]
       - text: 罪
+        pr: 츠미
         time: [170.454, 170.767]
       - text: と
+        pr: 토
         time: [170.767, 170.946]
       - text: 罰
+        pr: 바츠
         time: [170.946, 171.964]
     tl: 날 신고해, 날 신고해, 죄와 벌
     time: [169.109, 171.964]
   - words:
       - text: 'Turn me in, '
+        pr: 턴 미 인,
         time: [175.059, 175.666]
       - text: 'turn me in, '
+        pr: 턴 미 인,
         time: [175.761, 176.394]
       - text: "I'm "
+        pr: 아임
         time: [176.394, 176.711]
       - text: an imposter
+        pr: 언 임파스터
         time: [176.711, 177.963]
     tl: 날 신고해, 날 신고해, 난 사기꾼이야
     time: [175.059, 177.963]
   - words:
       - text: 'No, '
+        pr: 노,
         time: [179.099, 179.488]
       - text: "I'll "
+        pr: 아일
         time: [179.488, 179.636]
       - text: 'never '
+        pr: 네버
         time: [179.636, 179.995]
       - text: 'let '
+        pr: 렛
         time: [179.995, 180.146]
       - text: it go
+        pr: 잇 고
         time: [180.146, 180.799]
     tl: 아니, 절대 그냥 넘기지 않을 거야
     time: [179.099, 180.799]

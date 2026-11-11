@@ -196,7 +196,7 @@ lines:
         pr: 소
         time: [15.605, 16.327]
       - text: 'many '
-        pr: 매니
+        pr: 메니
         time: [16.327, 16.613]
       - text: 'years '
         pr: 이어즈
@@ -283,7 +283,7 @@ lines:
         pr: 앤드
         time: [23.556, 23.712]
       - text: 'evidence '
-        pr: 에버던스
+        pr: 에비던스
         time: [23.712, 24.209]
       - text: 'is '
         pr: 이즈

@@ -23,68 +23,87 @@ offsets:
 pubDate: 2026-09-17T19:56
 lines:
   - text: To the beach
+    pr: 투 더 비치
     tl: 해변으로
     time: [16.759, 17.56]
   - text: Music on
+    pr: 뮤직 온
     tl: 음악을 틀고
     time: [17.642, 18.375]
   - text: Brand new shades from Amazon
+    pr: 브랜드 뉴 셰이즈 프럼 아마존
     tl: 아마존에서 산 새 선글라스
     time: [18.576, 20.225]
   - text: Been working out for about a week
+    pr: 빈 워킹 아웃 포 어바웃 어 위크
     tl: 한 일주일쯤 운동했어
     time: [20.225, 22.039]
   - text: Takes time to keep this sexy physique
+    pr: 테익스 타임 투 킵 디스 섹시 피지크
     tl: 이 섹시한 몸매를 유지하려면 시간이 들지
     time: [22.039, 24.104]
   - text: Throw me the ball
+    pr: 스로 미 더 볼
     tl: 공 좀 던져 줘
     time: [24.104, 24.906]
   - text: But not too hard
+    pr: 벗 낫 투 하드
     tl: 너무 세게는 말고
     time: [24.906, 25.704]
   - text: Kinda pulled my back working in the Vineyard
+    pr: 카인다 풀드 마이 백 워킹 인 더 빈야드
     tl: 포도밭에서 일하다 허리를 좀 삐끗했거든
     time: [25.704, 27.688]
   - text: Ooh lala, what do I see?
+    pr: 우 라라, 왓 두 아이 시?
     tl: 울라라, 이게 뭐야?
     time: [27.804, 29.421]
   - text: Def Majik with a beer for me
+    pr: 데프 매직 윗 어 비어 포 미
     tl: 날 위한 맥주를 든 데프 매직
     time: [29.421, 31.322]
   - text: It's definitively magic in the waves we play
+    pr: 이츠 디피니틀리 매직 인 더 웨이브즈 위 플레이
     tl: 우리가 노니는 파도 속, 그건 분명 마법이야
     time: [31.322, 33.157]
     duet: true
   - text: Feeling the way 'cuz the city's insane
+    pr: 필링 더 웨이 커즈 더 시티즈 인세인
     tl: 도시가 미쳐 있으니 감각을 따라가
     time: [33.322, 35.072]
     duet: true
   - text: We take it in stride as the moment flies by
+    pr: 위 테익 잇 인 스트라이드 애즈 더 모먼트 플라이즈 바이
     tl: 순간이 흘러가도 우린 여유롭게 받아들여
     time: [35.072, 36.889]
     duet: true
   - text: Shooting the moon, soaring high, red eye
+    pr: 슈팅 더 문, 소어링 하이, 레드 아이
     tl: 달을 노리고 높이 날아올라, 충혈된 눈
     time: [37.028, 38.655]
     duet: true
   - text: We definitely Old School
+    pr: 위 데피니틀리 올드 스쿨
     tl: 우린 확실히 올드스쿨
     time: [38.755, 40.604]
     duet: true
   - text: Ocean Grown and so cool
+    pr: 오션 그로운 앤드 소 쿨
     tl: 바다에서 자라 정말 멋지지
     time: [40.723, 42.407]
     duet: true
   - text: Recognize the game, fool
+    pr: 레커그나이즈 더 게임, 풀
     tl: 뭘 좀 알아봐, 바보야
     time: [42.523, 44.256]
     duet: true
   - text: Aligned into the breath of the Divine pool
+    pr: 얼라인드 인투 더 브레스 옵 더 디바인 풀
     tl: 신성한 물의 숨결과 하나가 돼
     time: [44.272, 46.231]
     duet: true
   - text: Break down to the beat
+    pr: 브레익 다운 투 더 비트
     tl: 비트에 맞춰 춤을 춰
     time: [46.231, 47.78]
     duet: true
@@ -97,6 +116,7 @@ lines:
     time: [49.031, 49.747]
     duet: true
   - text: Get down to the sea
+    pr: 겟 다운 투 더 시
     tl: 바다로 내려가
     time: [49.98, 51.43]
     duet: true
@@ -117,6 +137,7 @@ lines:
     time: [57.332, 59.164]
     duet: true
   - text: I feel no pain
+    pr: 아이 필 노 페인
     tl: 아픔은 느껴지지 않아
     time: [58.492, 60.293]
   - text: ヨイヨイヨイヨイ
@@ -124,27 +145,35 @@ lines:
     time: [59.181, 61.114]
     duet: true
   - text: It's just a game
+    pr: 이츠 저스트 어 게임
     tl: 그냥 놀이일 뿐이야
     time: [60.377, 62.226]
   - text: Now say my name
+    pr: 나우 세이 마이 네임
     tl: 자, 내 이름을 불러
     time: [62.126, 64.827]
   - text: I'm getting ready for the summer
+    pr: 아임 게팅 레디 포 더 서머
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [64.986, 67.233]
   - text: I'm getting ready for the summer
+    pr: 아임 게팅 레디 포 더 서머
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [68.6, 70.884]
   - text: It's just the way I move my body
+    pr: 이츠 저스트 더 웨이 아이 무브 마이 바디
     tl: 그냥 이렇게 몸을 움직이는 거야
     time: [72.266, 75.548]
   - text: Shake it like nobody
+    pr: 셰익 잇 라익 노바디
     tl: 누구보다 신나게 흔들어
     time: [75.599, 77.184]
   - text: I'm aging, but I'm still young at heart
+    pr: 아임 에이징, 벗 아임 스틸 영 앳 하트
     tl: 나이는 들어도 마음은 아직 젊어
     time: [77.4, 79.756]
   - text: I'm getting ready for the summer
+    pr: 아임 게팅 레디 포 더 서머
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [79.766, 81.932]
   - text: 裸の王様
@@ -154,6 +183,7 @@ lines:
     tl: 난 이런 차림밖에 안 어울려
     time: [87.1, 89.433]
   - text: 3-piece setup
+    pr: 스리 피스 셋업
     tl: 세 가지로 맞춘 한 벌
     time: [89.433, 90.284]
   - text: ビーサン 短パン タンクトップ
@@ -163,46 +193,59 @@ lines:
     tl: 아무도 없는 바다
     time: [92.408, 94.41]
   - text: Sandals, socks, towels drop
+    pr: 샌들즈, 삭스, 타월즈 드랍
     tl: 샌들, 양말, 수건을 내려놓고
     time: [110.84, 112.489]
   - text: I'mma get up early, gotta hold my spot
+    pr: 아마 겟 업 얼리, 가터 홀드 마이 스팟
     tl: 일찍 일어나서 내 자리를 맡아야지
     time: [112.691, 114.374]
   - text: Truth be known, I've got unusual hobbies
+    pr: 트루스 비 논, 아입 갓 언유주얼 하비스
     tl: 사실 내겐 별난 취미가 있어
     time: [114.49, 116.356]
   - text: Metal detectors and a thing for beach hockey
+    pr: 메틀 디텍터즈 앤드 어 싱 포 비치 하키
     tl: 금속 탐지기, 그리고 비치 하키에 대한 애착
     time: [116.452, 118.236]
   - text: Neon shades and well behaved
+    pr: 니온 셰이즈 앤드 웰 비헤이브드
     tl: 네온색 선글라스에 얌전한 태도
     time: [118.237, 119.885]
   - text: It's the humpty hump when I'm outa my cave
+    pr: 이츠 더 험프티 험프 웬 아임 아우터 마이 케이브
     tl: 굴 밖에 나오면 험프티 험프 댄스
     time: [119.885, 121.72]
   - text: The rizz is on, yeah, feel the groove
+    pr: 더 리즈 이즈 온, 예, 필 더 그루브
     tl: 매력을 발산해, 그래, 그루브를 느껴 봐
     time: [121.742, 123.528]
   - text: Like Young MC, I gotta bust a move
+    pr: 라익 영 엠씨, 아이 가터 버스트 어 무브
     tl: 영 MC처럼 춤을 춰야지
     time: [123.61, 125.46]
   - text: We definitely Old School
+    pr: 위 데피니틀리 올드 스쿨
     tl: 우린 확실히 올드스쿨
     time: [125.56, 127.293]
     duet: true
   - text: Ocean Grown and so cool
+    pr: 오션 그로운 앤드 소 쿨
     tl: 바다에서 자라 정말 멋지지
     time: [127.476, 129.226]
     duet: true
   - text: Recognize the game, fool
+    pr: 레커그나이즈 더 게임, 풀
     tl: 뭘 좀 알아봐, 바보야
     time: [129.342, 131.043]
     duet: true
   - text: Aligned into the breath of the Divine pool
+    pr: 얼라인드 인투 더 브레스 옵 더 디바인 풀
     tl: 신성한 물의 숨결과 하나가 돼
     time: [131.059, 133.061]
     duet: true
   - text: Break down to the beat
+    pr: 브레익 다운 투 더 비트
     tl: 비트에 맞춰 춤을 춰
     time: [133.061, 134.495]
     duet: true
@@ -215,6 +258,7 @@ lines:
     time: [135.799, 136.62]
     duet: true
   - text: Get down to the sea
+    pr: 겟 다운 투 더 시
     tl: 바다로 내려가
     time: [136.75, 138.218]
     duet: true
@@ -235,6 +279,7 @@ lines:
     time: [144.12, 145.918]
     duet: true
   - text: I feel no pain
+    pr: 아이 필 노 페인
     tl: 아픔은 느껴지지 않아
     time: [145.278, 147.153]
   - text: ヨイヨイヨイヨイ
@@ -242,30 +287,39 @@ lines:
     time: [145.919, 147.803]
     duet: true
   - text: It's just a game
+    pr: 이츠 저스트 어 게임
     tl: 그냥 놀이일 뿐이야
     time: [147.153, 148.943]
   - text: Now say my name
+    pr: 나우 세이 마이 네임
     tl: 자, 내 이름을 불러
     time: [148.943, 151.687]
   - text: I'm getting ready for the summer
+    pr: 아임 게팅 레디 포 더 서머
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [151.687, 153.854]
   - text: I'm getting ready for the summer
+    pr: 아임 게팅 레디 포 더 서머
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [155.402, 157.669]
   - text: It's just the way I move my body
+    pr: 이츠 저스트 더 웨이 아이 무브 마이 바디
     tl: 그냥 이렇게 몸을 움직이는 거야
     time: [159.165, 162.267]
   - text: Shake it like nobody
+    pr: 셰익 잇 라익 노바디
     tl: 누구보다 신나게 흔들어
     time: [162.365, 163.931]
   - text: I'm aging, but I'm still young at heart
+    pr: 아임 에이징, 벗 아임 스틸 영 앳 하트
     tl: 나이는 들어도 마음은 아직 젊어
     time: [164.116, 166.455]
   - text: I'm getting ready for the summer
+    pr: 아임 게팅 레디 포 더 서머
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [166.455, 168.641]
   - text: Crazy, sexy おじさま
+    pr: 크레이지, 섹시 오지사마
     tl: 엉뚱하고 섹시한 아저씨
     time: [170.144, 172.273]
   - text: 冷えたビールを飲みたい 踊りたい
@@ -278,36 +332,47 @@ lines:
     tl: 쪼리를 신은 신데렐라
     time: [178.989, 181.157]
   - text: Dance tonight
+    pr: 댄스 투나잇
     tl: 오늘 밤 춤을 춰
     time: [182.872, 184.722]
   - text: Groove tonight
+    pr: 그루브 투나잇
     tl: 오늘 밤 리듬을 타
     time: [184.738, 186.474]
   - text: Feel the vibe
+    pr: 필 더 바이브
     tl: 분위기를 느껴 봐
     time: [186.59, 189.855]
   - text: I'm feeling the moment
+    pr: 아임 필링 더 모먼트
     tl: 이 순간을 느끼고 있어
     time: [188.173, 190.279]
   - text: Dance tonight
+    pr: 댄스 투나잇
     tl: 오늘 밤 춤을 춰
     time: [190.279, 192.032]
   - text: Groove tonight
+    pr: 그루브 투나잇
     tl: 오늘 밤 리듬을 타
     time: [192.131, 193.863]
   - text: I gotta wear my headphones
+    pr: 아이 가터 웨어 마이 헤드폰즈
     tl: 헤드폰을 써야겠어
     time: [193.971, 195.847]
   - text: I'm getting ready for the summer
+    pr: 아임 게팅 레디 포 더 서머
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [196.006, 198.305]
   - text: I'm getting ready for the summer
+    pr: 아임 게팅 레디 포 더 서머
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [199.747, 201.944]
   - text: It's just the way I move my body
+    pr: 이츠 저스트 더 웨이 아이 무브 마이 바디
     tl: 그냥 이렇게 몸을 움직이는 거야
     time: [203.427, 206.49]
   - text: Shake it like nobody
+    pr: 셰익 잇 라익 노바디
     tl: 누구보다 신나게 흔들어
     time: [206.661, 208.244]
   - text: こたつで夏を待つ

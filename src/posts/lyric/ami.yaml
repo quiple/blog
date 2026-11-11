@@ -39,10 +39,13 @@ lines:
     tl: 지인의 도움을 받아 바다로
     time: [26.283, 29.013]
   - text: You see weaker
+    pr: 유 시 위커
     time: [29.259, 30.635]
   - text: I'm weaker
+    pr: 아임 위커
     time: [30.984, 32.052]
   - text: You see weaker
+    pr: 유 시 위커
     time: [32.1, 33.578]
   - text: In my defense 息はつけそうかい
     pr: 인 마이 디휀스 이키와츠케소카이
@@ -77,10 +80,13 @@ lines:
     tl: 온 힘을 다한 뒤처리가 필요해
     time: [56.798, 59.558]
   - text: You see caesar
+    pr: 유 시 시저
     time: [59.793, 61.247]
   - text: I'm caesar
+    pr: 아임 시저
     time: [61.567, 62.651]
   - text: You see caesar
+    pr: 유 시 시저
     time: [62.656, 64.08]
   - text: In my defense 永遠に惚れそうかい
     pr: 인 마이 디휀스 토와니호레소카이

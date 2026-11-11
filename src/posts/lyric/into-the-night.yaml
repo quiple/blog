@@ -33,60 +33,79 @@ lines:
     tl: 마치 공기처럼
     time: [57.728, 62.555]
   - text: Into the night
+    pr: 인투 더 나잇
     tl: 밤속으로
     time: [62.565, 65.548]
   - text: She dances with the light
+    pr: 시 댄시즈 윗 더 라잇
     tl: 그녀는 빛과 춤춰
     time: [65.558, 68.655]
   - text: Look how she shines the skies
+    pr: 룩 하우 시 샤인즈 더 스카이즈
     tl: 그녀가 하늘을 밝히는 모습을 봐
     time: [68.665, 70.956]
   - text: A part of her is within you
+    pr: 어 파트 옵 허 이즈 위딘 유
     tl: 그녀의 일부는 네 안에 있어
     time: [70.966, 74.515]
   - text: There's a part of you in me
+    pr: 데어즈 어 파트 옵 유 인 미
     tl: 네 일부는 내 안에 있어
     time: [74.525, 77.558]
   - text: Everything's how it should be
+    pr: 에브리싱즈 하우 잇 슈드 비
     tl: 모든 게 있어야 할 모습 그대로야
     time: [77.656, 81.865]
   - text: I miss you
+    pr: 아이 미스 유
     tl: 네가 그리워
     time: [82.476, 84.071]
   - text: I kiss you goodbye
+    pr: 아이 키스 유 굿바이
     tl: 입맞춤으로 작별을 고해
     time: [84.081, 87.98]
   - text: What would the world be like
+    pr: 왓 웃 더 월드 비 라익
     tl: 세상은 어떤 모습이었을까
     time: [90.096, 95.776]
   - text: If you were never born?
+    pr: 이프 유 워 네버 본?
     tl: 네가 태어나지 않았다면?
     time: [96.448, 101.819]
   - text: Would all of history change?
+    pr: 웃 올 옵 히스토리 체인지?
     tl: 모든 역사가 바뀌었을까?
     time: [102.819, 105.836]
   - text: Would all the lives you saved
+    pr: 웃 올 더 라이브즈 유 세이브드
     tl: 네가 구한 모든 생명은
     time: [106.07, 108.858]
   - text: Fade away just like your name?
+    pr: 페이드 어웨이 저스트 라익 유어 네임?
     tl: 네 이름처럼 사라졌을까?
     time: [108.868, 114.59]
   - text: I guess it's a story
+    pr: 아이 게스 이츠 어 스토리
     tl: 하나의 이야기인가 봐
     time: [116.041, 120.97]
   - text: A song never sung
+    pr: 어 송 네버 성
     tl: 한 번도 불리지 않은 노래
     time: [122.319, 128.087]
   - text: We're all extraordinary
+    pr: 위어 올 익스트로디너리
     tl: 우리는 모두 특별해
     time: [128.666, 131.448]
   - text: So never mind the worries
+    pr: 소 네버 마인드 더 워리즈
     tl: 그러니 걱정은 접어 둬
     time: [131.776, 134.558]
   - text: Come and play
+    pr: 컴 앤드 플레이
     tl: 와서 함께 놀아
     time: [134.568, 137.05]
   - text: Or stay away
+    pr: 오어 스테이 어웨이
     tl: 아니면 멀리 있어
     time: [137.307, 139.257]
   - text: あなたのその笑顔も その声も
@@ -99,15 +118,19 @@ lines:
     tl: 조용히 녹는 이 눈처럼
     time: [151.187, 158.901]
   - text: I miss you
+    pr: 아이 미스 유
     tl: 네가 그리워
     time: [159.295, 160.885]
   - text: I kiss you goodbye
+    pr: 아이 키스 유 굿바이
     tl: 입맞춤으로 작별을 고해
     time: [160.895, 166.066]
   - text: I guess we just don't know what we're looking for
+    pr: 아이 게스 위 저스트 돈트 노 왓 위어 루킹 포
     tl: 우리가 뭘 찾는지 모르는 건가 봐
     time: [166.39, 172.152]
   - text: We got lost in a moment parted out the door
+    pr: 위 갓 로스트 인 어 모먼트 파티드 아웃 더 도어
     tl: 한순간에 길을 잃고 문밖에서 헤어졌어
     time: [172.963, 179.089]
   - text: 君は優しすぎるから 突然姿を
@@ -123,14 +146,18 @@ lines:
     tl: 조용히 녹는 이 눈처럼
     time: [202.428, 210.159]
   - text: I miss you
+    pr: 아이 미스 유
     tl: 네가 그리워
     time: [210.43, 212.018]
   - text: I kiss you goodbye
+    pr: 아이 키스 유 굿바이
     tl: 입맞춤으로 작별을 고해
     time: [212.028, 216.832]
   - text: I miss you
+    pr: 아이 미스 유
     tl: 네가 그리워
     time: [216.842, 218.316]
   - text: I kiss you goodbye
+    pr: 아이 키스 유 굿바이
     tl: 입맞춤으로 작별을 고해
     time: [218.533, 223.048]

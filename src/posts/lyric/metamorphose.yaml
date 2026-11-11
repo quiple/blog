@@ -21,6 +21,7 @@ lines:
     tl: 모습과 형태를 능숙하게 바꿔
     time: [4.57, 9.17]
   - text: 自由自在に on and on and on
+    pr: 지유지자이니 온 앤드 온 앤드 온
     tl: 자유자재로 계속, 계속, 계속
     time: [9.18, 13.699]
   - text: 幼き日のある夏 心を奪われた
@@ -36,9 +37,11 @@ lines:
     tl: 마치 신의 장난 같네
     time: [50.877, 55.405]
   - text: そうやって play the fool
+    pr: 소얏테 플레이 더 풀
     tl: 그렇게 바보처럼 굴어
     time: [55.516, 58.755]
   - text: この世の神秘 Metamorphose
+    pr: 코노요노신피 메터모어포즈
     tl: 이 세상의 신비, 메타모르포제
     time: [60.041, 64.559]
   - text: 新世界への扉に立って
@@ -48,45 +51,58 @@ lines:
     tl: 모습과 형태를 능숙하게 바꿔
     time: [68.571, 73.123]
   - text: 自由自在に何処だって Freedom calling
+    pr: 지유지자이니도코닷테 프리덤 콜링
     tl: 자유자재로 어디든, 자유가 부르고 있어
     time: [73.133, 77.741]
   - text: I don't know where I went wrong
+    pr: 아이 돈트 노 웨어 아이 웬트 롱
     tl: 어디서 잘못됐는지 모르겠어
     time: [77.851, 79.922]
   - text: Sorry for the things I've done
+    pr: 소리 포 더 싱즈 아입 던
     tl: 내가 한 일들은 미안해
     time: [80.032, 82.331]
   - text: Lift me up and keep me strong
+    pr: 리프트 미 업 앤드 킵 미 스트롱
     tl: 날 일으켜 줘, 강하게 지켜 줘
     time: [82.43, 84.514]
   - text: On and on and on
+    pr: 온 앤드 온 앤드 온
     tl: 계속, 계속, 계속
     time: [84.583, 86.903]
   - text: Who's got the best
+    pr: 후즈 갓 더 베스트
     tl: 누가 최고를 가졌든
     time: [86.913, 88.75]
   - text: I don't care
+    pr: 아이 돈트 케어
     tl: 난 상관없어
     time: [88.76, 90.631]
   - text: I won't contest, I'm movin' on
+    pr: 아이 원트 컨테스트, 아임 무빈 온
     tl: 다투지 않을게, 난 나아갈 거야
     time: [91.661, 94.723]
   - text: Yeah, who's got the best
+    pr: 예, 후즈 갓 더 베스트
     tl: 그래, 누가 최고를 가졌든
     time: [95.642, 97.839]
   - text: Leave it, I don't care
+    pr: 립 잇, 아이 돈트 케어
     tl: 놔둬, 난 상관없어
     time: [97.849, 99.766]
   - text: No, no, there's nothing left worth holding on
+    pr: 노, 노, 데어즈 너싱 레프트 워스 홀딩 온
     tl: 아니, 아니, 붙잡을 만한 건 아무것도 남지 않았어
     time: [99.776, 103.946]
   - text: まるで神の悪戯だね
     tl: 마치 신의 장난 같네
     time: [105.463, 110.252]
   - text: Coming out of my cocoon
+    pr: 커밍 아웃 옵 마이 커쿤
     tl: 내 고치에서 나와
     time: [110.362, 113.427]
   - text: この世の神秘 Metamorphose
+    pr: 코노요노신피 메터모어포즈
     tl: 이 세상의 신비, 메타모르포제
     time: [114.851, 119.318]
   - text: 新世界への扉に立って
@@ -96,62 +112,80 @@ lines:
     tl: 모습과 형태를 능숙하게 바꿔
     time: [123.466, 128.054]
   - text: 自由自在に何処だって Freedom calling
+    pr: 지유지자이니도코닷테 프리덤 콜링
     tl: 자유자재로 어디든, 자유가 부르고 있어
     time: [128.064, 132.575]
   - text: I don't know where I went wrong
+    pr: 아이 돈트 노 웨어 아이 웬트 롱
     tl: 어디서 잘못됐는지 모르겠어
     time: [132.668, 134.763]
   - text: Sorry for the things I've done
+    pr: 소리 포 더 싱즈 아입 던
     tl: 내가 한 일들은 미안해
     time: [134.868, 137.213]
   - text: Lift me up and keep me strong
+    pr: 리프트 미 업 앤드 킵 미 스트롱
     tl: 날 일으켜 줘, 강하게 지켜 줘
     time: [137.223, 139.326]
   - text: On and on and on
+    pr: 온 앤드 온 앤드 온
     tl: 계속, 계속, 계속
     time: [139.425, 141.269]
   - text: It seems right
+    pr: 잇 심즈 라잇
     tl: 맞는 것 같지만
     time: [141.279, 143.16]
   - text: But it feels wrong
+    pr: 벗 잇 필즈 롱
     tl: 잘못된 기분이야
     time: [143.438, 145.755]
   - text: Yeah, it seems right
+    pr: 예, 잇 심즈 라잇
     tl: 그래, 맞는 것 같아
     time: [145.765, 148.679]
   - text: 姿形を巧みに変えて
     tl: 모습과 형태를 능숙하게 바꿔
     time: [169.186, 173.772]
   - text: 自由自在に何処だって Freedom calling
+    pr: 지유지자이니도코닷테 프리덤 콜링
     tl: 자유자재로 어디든, 자유가 부르고 있어
     time: [173.782, 178.34]
   - text: I don't know where I went wrong
+    pr: 아이 돈트 노 웨어 아이 웬트 롱
     tl: 어디서 잘못됐는지 모르겠어
     time: [178.427, 180.471]
   - text: Sorry for the things I've done
+    pr: 소리 포 더 싱즈 아입 던
     tl: 내가 한 일들은 미안해
     time: [180.569, 182.961]
   - text: Lift me up and keep me strong
+    pr: 리프트 미 업 앤드 킵 미 스트롱
     tl: 날 일으켜 줘, 강하게 지켜 줘
     time: [183.048, 185.057]
   - text: On and on and on
+    pr: 온 앤드 온 앤드 온
     tl: 계속, 계속, 계속
     time: [185.149, 187.513]
   - text: 姿形を巧みに変えて
     tl: 모습과 형태를 능숙하게 바꿔
     time: [187.523, 191.998]
   - text: 自由自在に何処だって Freedom calling
+    pr: 지유지자이니도코닷테 프리덤 콜링
     tl: 자유자재로 어디든, 자유가 부르고 있어
     time: [192.103, 196.59]
   - text: I don't know where I went wrong
+    pr: 아이 돈트 노 웨어 아이 웬트 롱
     tl: 어디서 잘못됐는지 모르겠어
     time: [196.689, 198.721]
   - text: Sorry for the things I've done
+    pr: 소리 포 더 싱즈 아입 던
     tl: 내가 한 일들은 미안해
     time: [198.842, 201.164]
   - text: Lift me up and keep me strong
+    pr: 리프트 미 업 앤드 킵 미 스트롱
     tl: 날 일으켜 줘, 강하게 지켜 줘
     time: [201.269, 203.312]
   - text: On and on and on
+    pr: 온 앤드 온 앤드 온
     tl: 계속, 계속, 계속
     time: [203.423, 205.919]

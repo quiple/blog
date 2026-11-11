@@ -16,125 +16,166 @@ yt:
 pubDate: 2026-11-04T12:54
 lines:
   - text: Hey, what is this? Is this long-awaited bliss?
+    pr: 헤이, 왓 이즈 디스? 이즈 디스 롱 어웨이팃 블리스?
     tl: 어, 뭐야? 이게 그토록 기다리던 행복인가?
     time: [10.461, 12.642]
   - text: I've been sending out these emails just for them to get dismissed
+    pr: 아입 빈 센딩 아웃 디즈 이메일즈 저스트 포 뎀 투 겟 디스미스트
     tl: 그동안 이메일을 보내도 번번이 퇴짜만 맞았는데
     time: [12.766, 15.247]
   - text: Finally, a company has noticed me, so I won't live in poverty
+    pr: 파이널리, 어 컴퍼니 해즈 노티스트 미, 소 아이 원트 립 인 파버티
     tl: 드디어 날 눈여겨본 회사가 생겼으니 가난하게 살진 않겠지
     time: [15.717, 20.662]
   - text: So I get up to cheer and even scream
+    pr: 소 아이 겟 업 투 치어 앤드 이븐 스크림
     tl: 자리에서 일어나 환호하고 소리까지 질러
     time: [20.715, 24.742]
   - text: I might then achieve my corporate dream
+    pr: 아이 마이트 덴 어치브 마이 코퍼릿 드림
     tl: 회사에 들어가겠다는 꿈을 이룰지도 몰라
     time: [26.2, 29.761]
   - text: Hire me!
+    pr: 하이어 미!
     tl: 날 채용해 줘!
     time: [31.441, 32.48]
   - text: I swear that you found just the perfect guy
+    pr: 아이 스웨어 댓 유 파운드 저스트 더 퍼펙트 가이
     tl: 맹세해, 완벽한 인재를 찾은 거야
     time: [32.48, 34.415]
   - text: "'Cause I'm sitting here in suit and tie"
+    pr: 코즈 아임 시팅 히어 인 수트 앤드 타이
     tl: 정장에 넥타이까지 매고 앉아 있잖아
     time: [34.415, 36.36]
   - text: And yes, I know I may not have much experience
+    pr: 앤드 예스, 아이 노 아이 메이 낫 햅 머치 익스피리언스
     tl: 그래, 나도 경력이 별로 없다는 건 알아
     time: [36.36, 39.31]
   - text: And I know that one-year gap might sound mysterious
+    pr: 앤드 아이 노 댓 원 이어 갭 마이트 사운드 미스티리어스
     tl: 1년의 공백이 수상하게 들릴 수도 있지
     time: [39.31, 43.078]
   - text: You just need to give me a single chance
+    pr: 유 저스트 니드 투 깁 미 어 싱글 찬스
     tl: 딱 한 번만 기회를 줘
     time: [43.078, 44.926]
   - text: I'm a great colleague; I'm telling you it in advance
+    pr: 아임 어 그레잇 칼리그; 아임 텔링 유 잇 인 어드밴스
     tl: 난 좋은 동료가 될 거야, 미리 말해 두지만
     time: [44.926, 47.543]
   - text: I may not have a degree, but please, just hire me
+    pr: 아이 메이 낫 햅 어 디그리, 벗 플리즈, 저스트 하이어 미
     tl: 학위는 없을지 몰라도 제발 날 채용해 줘
     time: [48.171, 51.947]
   - text: Oh, well, I guess that just wasn't meant to be
+    pr: 오, 웰, 아이 게스 댓 저스트 워즌트 멘트 투 비
     tl: 아, 뭐, 역시 인연이 아니었나 봐
     time: [51.947, 54.775]
   - text: I read in my horoscope that it was destiny
+    pr: 아이 레드 인 마이 호러스코프 댓 잇 워즈 데스티니
     tl: 별자리 운세에서는 운명이라고 했는데
     time: [55.049, 57.385]
   - text: Even McDonald's somehow managed to deny my ass
+    pr: 이븐 맥도널즈 섬하우 매니지드 투 디나이 마이 애스
     tl: 맥도날드에서조차 날 거절해 버렸어
     time: [57.683, 60.365]
   - text: It's time to take a sip from my wine glass
+    pr: 이츠 타임 투 테익 어 십 프럼 마이 와인 글래스
     tl: 와인을 한 모금 마셔야겠어
     time: [60.365, 62.266]
   - text: Because I'm gonna sob
+    pr: 비코즈 아임 거너 삽
     tl: 엉엉 울어 버릴 테니까
     time: [62.266, 66.911]
   - text: I need a job
+    pr: 아이 니드 어 잡
     tl: 일자리가 필요해
     time: [68.175, 72.24]
   - text: Hire me!
+    pr: 하이어 미!
     tl: 날 채용해 줘!
     time: [73.411, 74.393]
   - text: I swear that you found just the perfect guy
+    pr: 아이 스웨어 댓 유 파운드 저스트 더 퍼펙트 가이
     tl: 맹세해, 완벽한 인재를 찾은 거야
     time: [74.393, 76.362]
   - text: "'Cause I'm sitting here in suit and tie"
+    pr: 코즈 아임 시팅 히어 인 수트 앤드 타이
     tl: 정장에 넥타이까지 매고 앉아 있잖아
     time: [76.362, 78.34]
   - text: And yes, I know I may not have much experience
+    pr: 앤드 예스, 아이 노 아이 메이 낫 햅 머치 익스피리언스
     tl: 그래, 나도 경력이 별로 없다는 건 알아
     time: [78.34, 81.298]
   - text: And I know that one-year gap might sound mysterious
+    pr: 앤드 아이 노 댓 원 이어 갭 마이트 사운드 미스티리어스
     tl: 1년의 공백이 수상하게 들릴 수도 있지
     time: [81.298, 84.641]
   - text: You just need to give me a single chance
+    pr: 유 저스트 니드 투 깁 미 어 싱글 찬스
     tl: 딱 한 번만 기회를 줘
     time: [85.022, 86.874]
   - text: I'm a great colleague; I'm telling you it in advance
+    pr: 아임 어 그레잇 칼리그; 아임 텔링 유 잇 인 어드밴스
     tl: 난 좋은 동료가 될 거야, 미리 말해 두지만
     time: [86.874, 89.51]
   - text: I may not have a degree, but please, just hire me
+    pr: 아이 메이 낫 햅 어 디그리, 벗 플리즈, 저스트 하이어 미
     tl: 학위는 없을지 몰라도 제발 날 채용해 줘
     time: [90.118, 94.083]
   - text: Why do I try?
+    pr: 와이 두 아이 트라이?
     tl: 난 왜 애쓰는 걸까?
     time: [94.407, 102.242]
   - text: Why can't I seem to land a job?
+    pr: 와이 캔트 아이 심 투 랜드 어 잡?
     tl: 왜 취직을 할 수 없는 걸까?
     time: [104.885, 114.153]
   - text: I'm broke, I smoke, I'm soaked in my own tears
+    pr: 아임 브로크, 아이 스모크, 아임 소크트 인 마이 오운 티어즈
     tl: 돈은 없고, 담배를 피우며, 눈물에 흠뻑 젖었어
     time: [114.732, 121.954]
   - text: Oh, please, won't you look at my CV?
+    pr: 오, 플리즈, 원트 유 룩 앳 마이 시비?
     tl: 제발, 내 이력서 좀 봐 주면 안 돼?
     time: [125.207, 132.976]
   - text: For me?
+    pr: 포 미?
     tl: 부탁이야
     time: [132.976, 135.738]
   - text: Sigh, I'll never find a job like this
+    pr: 사이, 아일 네버 파인드 어 잡 라익 디스
     tl: 하, 이렇게는 절대 일자리를 못 구하겠어
     time: [136.327, 139.276]
   - text: Hire me!
+    pr: 하이어 미!
     tl: 날 채용해 줘!
     time: [140.278, 141.273]
   - text: I swear that you found just the perfect guy
+    pr: 아이 스웨어 댓 유 파운드 저스트 더 퍼펙트 가이
     tl: 맹세해, 완벽한 인재를 찾은 거야
     time: [141.273, 143.259]
   - text: "'Cause I'm sitting here in suit and tie"
+    pr: 코즈 아임 시팅 히어 인 수트 앤드 타이
     tl: 정장에 넥타이까지 매고 앉아 있잖아
     time: [143.259, 145.217]
   - text: And yes, I know I may not have much experience
+    pr: 앤드 예스, 아이 노 아이 메이 낫 햅 머치 익스피리언스
     tl: 그래, 나도 경력이 별로 없다는 건 알아
     time: [145.217, 148.191]
   - text: And I know that one-year gap might sound mysterious
+    pr: 앤드 아이 노 댓 원 이어 갭 마이트 사운드 미스티리어스
     tl: 1년의 공백이 수상하게 들릴 수도 있지
     time: [148.191, 151.515]
   - text: You just need to give me a single chance
+    pr: 유 저스트 니드 투 깁 미 어 싱글 찬스
     tl: 딱 한 번만 기회를 줘
     time: [151.925, 153.767]
   - text: I'm a great colleague; I'm telling you it in advance
+    pr: 아임 어 그레잇 칼리그; 아임 텔링 유 잇 인 어드밴스
     tl: 난 좋은 동료가 될 거야, 미리 말해 두지만
     time: [153.767, 156.386]
   - text: I may not have a degree, but please, just hire me
+    pr: 아이 메이 낫 햅 어 디그리, 벗 플리즈, 저스트 하이어 미
     tl: 학위는 없을지 몰라도 제발 날 채용해 줘
     time: [157.011, 172.525]

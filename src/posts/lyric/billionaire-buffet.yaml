@@ -21,221 +21,294 @@ yt:
 pubDate: 2026-09-27T18:22
 lines:
   - text: Come on down to Billionaire Buffet
+    pr: 컴 온 다운 투 빌리어네어 버페이
     tl: 억만장자 뷔페로 어서 오세요
     time: [0.455, 2.337]
   - text: And have yourself an Oligarchy Omelette today
+    pr: 앤드 햅 유어셀프 언 알리가키 아믈릿 투데이
     tl: 오늘은 과두제 오믈렛을 드셔 보세요
     time: [2.515, 4.335]
   - text: Or perhaps you're in the mood for CEO Soufflé
+    pr: 오어 퍼햅스 유어 인 더 무드 포 씨이오 수플레
     tl: 아니면 CEO 수플레가 당기시나요
     time: [4.465, 6.543]
   - text: No need for cash or credit
+    pr: 노 니드 포 캐시 오어 크레딧
     tl: 현금도 카드도 필요 없어요
     time: [6.694, 7.672]
   - text: It's time for corporations to pay
+    pr: 이츠 타임 포 코퍼레이션즈 투 페이
     tl: 이제 기업들이 대가를 지불할 차례니까
     time: [7.672, 9.859]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [8.86, 9.912]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [9.912, 10.94]
   - text: いただきます, bitch
+    pr: 이타다키마스, 비치
     tl: 잘 먹겠습니다, 썅년아
     time: [10.94, 12.953]
   - text: Skewer, then roast them on a spit
+    pr: 스큐어, 덴 로스트 뎀 온 어 스핏
     tl: 꼬챙이에 꿰어 구워 버려
     time: [12.953, 14.867]
   - text: Let's all agree not to snitch
+    pr: 레츠 올 어그리 낫 투 스니치
     tl: 우리 모두 밀고하지 않기로 해
     time: [15.07, 17.241]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [17.241, 18.252]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [18.252, 19.204]
   - text: Luigi, please have my kids
+    pr: 루이지, 플리즈 햅 마이 키즈
     tl: 루이지, 내 애를 낳아 줘
     time: [19.298, 21.343]
   - text: Freedom sold to the highest bidder
+    pr: 프리덤 솔드 투 더 하이이스트 비더
     tl: 최고가 입찰자에게 팔려 버린 자유가
     time: [21.369, 23.472]
   - text: Makes the future taste so bitter
+    pr: 메익스 더 퓨처 테이스트 소 비터
     tl: 미래를 이토록 쓰게 만들어
     time: [23.728, 25.517]
   - text: Fuck the guy who ruined Twitter
+    pr: 퍽 더 가이 후 루인드 트위터
     tl: 트위터를 망친 놈은 좆까라지
     time: [25.778, 27.636]
   - text: We got Robber Baron Roast Beef
+    pr: 위 갓 라버 배런 로스트 비프
     tl: 악덕 자본가 로스트비프도 있어요
     time: [27.106, 28.949]
   - text: For when you've got grief with the system
+    pr: 포 웬 윱 갓 그리프 윗 더 시스템
     tl: 체제에 불만이 쌓였을 때 드세요
     time: [29.612, 31.763]
   - text: Tyrant Tiramisu
+    pr: 타이런트 티라미수
     tl: 폭군 티라미수는
     time: [31.763, 33.121]
   - text: For when you're blue about the state of the nation
+    pr: 포 웬 유어 블루 어바웃 더 스테이트 옵 더 네이션
     tl: 나라 꼴에 우울해질 때 드세요
     time: [33.255, 35.929]
   - text: Union-Bustin' Bloomin' Onion
+    pr: 유니언 버스틴 블루민 어니언
     tl: 노조 탄압 블루밍 어니언
     time: [36.234, 38.072]
   - text: Labor laws are gonna be gutted
+    pr: 레이버 로즈 아 거너 비 거티드
     tl: 노동법은 껍데기만 남게 될 거야
     time: [38.332, 40.107]
   - text: While the rich line their pockets
+    pr: 와일 더 리치 라인 데어 파킷츠
     tl: 부자들이 제 주머니를 불리는 동안
     time: [40.143, 41.991]
   - text: To ride on dick-shaped rockets
+    pr: 투 라이드 온 딕 셰이프트 라킷츠
     tl: 좆 모양 로켓을 타려고 말이야
     time: [42.125, 44.104]
   - text: All we wanted was healthcare
+    pr: 올 위 원팃 워즈 헬스케어
     tl: 우리가 원한 건 그저 의료 서비스였어
     time: [44.336, 47.463]
   - text: All we wanted was equality
+    pr: 올 위 원팃 워즈 이퀄리티
     tl: 우리가 원한 건 그저 평등이었어
     time: [48.506, 52.16]
   - text: All we wanted were basic rights
+    pr: 올 위 원팃 워 베이식 라이츠
     tl: 우리가 원한 건 그저 기본권이었어
     time: [52.679, 56.073]
   - text: For a functioning society
+    pr: 포 어 펑크셔닝 서사이어티
     tl: 제대로 돌아가는 사회를 위한
     time: [56.324, 59.475]
   - text: All we wanted was education
+    pr: 올 위 원팃 워즈 에듀케이션
     tl: 우리가 원한 건 그저 교육이었어
     time: [61.019, 64.892]
   - text: Wages that kept up with inflation
+    pr: 웨이지즈 댓 켑트 업 윗 인플레이션
     tl: 물가 상승에 맞춰 오르는 임금이었어
     time: [65.18, 69.052]
   - text: Since that's too much to ask
+    pr: 신스 대츠 투 머치 투 애스크
     tl: 그런 바람조차 지나치다니
     time: [69.545, 71.142]
   - text: Guess there's no going back
+    pr: 게스 데어즈 노 고잉 백
     tl: 이젠 돌아갈 수 없겠네
     time: [71.694, 73.295]
   - text: I summon the Mario Brothers in attack position
+    pr: 아이 서먼 더 마리오 브러더즈 인 어택 퍼지션
     tl: 마리오 형제를 공격 표시로 소환한다
     time: [73.804, 76.675]
   - text: (Yahoo!)
+    pr: (야후!)
     tl: (야호!)
     time: [76.895, 77.723]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [77.723, 78.779]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [78.779, 79.827]
   - text: いただきます, bitch
+    pr: 이타다키마스, 비치
     tl: 잘 먹겠습니다, 썅년아
     time: [79.827, 81.819]
   - text: Skewer, then roast them on a spit
+    pr: 스큐어, 덴 로스트 뎀 온 어 스핏
     tl: 꼬챙이에 꿰어 구워 버려
     time: [81.819, 83.726]
   - text: Let's all agree not to snitch
+    pr: 레츠 올 어그리 낫 투 스니치
     tl: 우리 모두 밀고하지 않기로 해
     time: [83.959, 86.115]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [86.115, 87.119]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [87.119, 88.055]
   - text: Luigi, please have my kids
+    pr: 루이지, 플리즈 햅 마이 키즈
     tl: 루이지, 내 애를 낳아 줘
     time: [88.159, 90.23]
   - text: Freedom sold to the highest bidder
+    pr: 프리덤 솔드 투 더 하이이스트 비더
     tl: 최고가 입찰자에게 팔려 버린 자유가
     time: [90.23, 92.33]
   - text: Makes the future taste so bitter
+    pr: 메익스 더 퓨처 테이스트 소 비터
     tl: 미래를 이토록 쓰게 만들어
     time: [92.588, 94.423]
   - text: Fuck the guy who ruined Twitter
+    pr: 퍽 더 가이 후 루인드 트위터
     tl: 트위터를 망친 놈은 좆까라지
     time: [94.665, 96.5]
   - text: There's Corruption Crème Brûlée
+    pr: 데어즈 커럽션 크렘 브륄레
     tl: 부패 크렘 브륄레도 있어요
     time: [95.97, 97.816]
   - text: "'Cause they're all bought and paid for in D.C."
+    pr: 코즈 데어 올 봇 앤드 페이드 포 인 디씨
     tl: 워싱턴 D.C.의 그들은 죄다 돈에 팔린 자들이니까
     time: [97.969, 100.409]
   - text: Voter Suppression Vanilla Shake
+    pr: 보터 서프레션 버닐러 셰이크
     tl: 투표권 억압 바닐라 셰이크
     time: [100.669, 102.509]
   - text: "'Cause they don't represent you or me"
+    pr: 코즈 데이 돈트 레프리젠트 유 오어 미
     tl: 그들은 너도 나도 대변하지 않으니까
     time: [102.666, 104.87]
   - text: Crypto-Scam-Burgers
+    pr: 크립토 스캠 버거즈
     tl: 암호화폐 사기 버거에
     time: [105.105, 106.671]
   - text: With a side of Fascism Fries
+    pr: 윗 어 사이드 옵 패시즘 프라이즈
     tl: 곁들여 나오는 파시즘 프라이
     time: [106.671, 108.518]
   - text: Democracy disappears
+    pr: 디마크러시 디서피어즈
     tl: 민주주의가 사라져
     time: [109.274, 111.105]
   - text: Right before your eyes
+    pr: 라잇 비포어 유어 아이즈
     tl: 바로 네 눈앞에서
     time: [111.105, 112.648]
   - text: Let me address the elephant in the room
+    pr: 렛 미 어드레스 디 엘리펀트 인 더 룸
     tl: 다들 외면하는 그 코끼리 얘기 좀 할게
     time: [112.648, 114.99]
   - text: The one that wants the middle class in a tomb
+    pr: 더 원 댓 원츠 더 미들 클래스 인 어 툼
     tl: 중산층을 무덤에 넣고 싶어 하는 그놈 말이야
     time: [115.182, 116.909]
   - text: Slicing programs that people need faster than Vergil
+    pr: 슬라이싱 프로그램즈 댓 피플 니드 패스터 댄 버질
     tl: 사람들에게 필요한 제도를 버질보다 빠르게 베어 버려
     time: [116.909, 119.47]
   - text: Medicaid, Social Security are roadkill
+    pr: 메디케이드, 소셜 시큐리티 아 로드킬
     tl: 메디케이드와 사회보장은 로드킬 신세
     time: [119.47, 121.794]
   - text: Devil may cry "woke" to deflect
+    pr: 데빌 메이 크라이 "워크" 투 디플렉트
     tl: 악마는 '정치적 올바름'을 들먹이며 시선을 돌리려 해
     time: [121.794, 123.226]
   - text: From a shadow president that we didn't elect
+    pr: 프럼 어 섀도 프레지던트 댓 위 디든트 일렉트
     tl: 우리가 뽑지도 않은 그림자 대통령에게서
     time: [123.331, 125.311]
   - text: But a storm is approaching
+    pr: 벗 어 스톰 이즈 어프로칭
     tl: 하지만 폭풍이 다가오고 있어
     time: [125.363, 126.542]
   - text: The rich will be roasting
+    pr: 더 리치 윌 비 로스팅
     tl: 부자들은 구워질 거야
     time: [126.666, 127.696]
   - text: Now we 'bout to put the king in checkmate
+    pr: 나우 위 바웃 투 풋 더 킹 인 체크메이트
     tl: 이제 우린 왕을 체크메이트할 거야
     time: [128.057, 129.907]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [129.907, 130.939]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [130.939, 131.988]
   - text: いただきます, bitch
+    pr: 이타다키마스, 비치
     tl: 잘 먹겠습니다, 썅년아
     time: [131.988, 133.998]
   - text: Skewer, then roast them on a spit
+    pr: 스큐어, 덴 로스트 뎀 온 어 스핏
     tl: 꼬챙이에 꿰어 구워 버려
     time: [133.998, 135.891]
   - text: Let's all agree not to snitch
+    pr: 레츠 올 어그리 낫 투 스니치
     tl: 우리 모두 밀고하지 않기로 해
     time: [136.115, 138.252]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [138.252, 139.302]
   - text: Eat the rich
+    pr: 잇 더 리치
     tl: 부자들을 잡아먹어
     time: [139.302, 140.22]
   - text: Luigi, please have my kids
+    pr: 루이지, 플리즈 햅 마이 키즈
     tl: 루이지, 내 애를 낳아 줘
     time: [140.315, 142.414]
   - text: Freedom sold to the highest bidder
+    pr: 프리덤 솔드 투 더 하이이스트 비더
     tl: 최고가 입찰자에게 팔려 버린 자유가
     time: [142.414, 144.518]
   - text: Makes the future taste so bitter
+    pr: 메익스 더 퓨처 테이스트 소 비터
     tl: 미래를 이토록 쓰게 만들어
     time: [144.776, 146.676]
   - text: Fuck the guy who ruined Twitter
+    pr: 퍽 더 가이 후 루인드 트위터
     tl: 트위터를 망친 놈은 좆까라지
     time: [146.828, 148.837]

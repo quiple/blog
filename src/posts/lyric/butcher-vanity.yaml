@@ -23,7 +23,7 @@ offsets:
 pubDate: 2026-09-17T01:06
 lines:
   - text: They say my hunger's a problem
-    pr: 데이 세이 마이 헝거스 어 프라블럼
+    pr: 데이 세이 마이 헝거즈 어 프라블럼
     tl: 사람들은 내 허기가 문제라고 해
     time: [1.785, 3.933]
   - text: They tell me to curb my appetite
@@ -39,7 +39,7 @@ lines:
     tl: 사람들은 인내라는 미덕을 숭배해
     time: [15.32, 17.672]
   - text: Oh, they tell me gluttony's a sin
-    pr: 오, 데이 텔 미 글러터니스 어 신
+    pr: 오, 데이 텔 미 글러터니즈 어 신
     tl: 탐식은 죄악이라고 내게 말하지
     time: [18.082, 20.752]
   - text: But my desire is bottomless, I wanna slit your throat and eat till I get sick!
@@ -47,7 +47,7 @@ lines:
     tl: 하지만 내 욕망은 끝이 없지, 네 목을 그어 속이 뒤집힐 때까지 먹고 싶어!
     time: [22.088, 27.541]
   - text: The slaughter's on, I'd love to see you come undone
-    pr: 더 슬로터스 온, 아잇 럽 투 시 유 컴 언던
+    pr: 더 슬로터즈 온, 아잇 럽 투 시 유 컴 언던
     tl: 도살이 시작돼, 네가 무너져 내리는 걸 보고 싶어
     time: [28.187, 31.469]
   - text: Unsatisfied until I've got you flayed alive
@@ -59,11 +59,11 @@ lines:
     tl: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해
     time: [34.747, 38.155]
   - text: I'm still preying on a butcher's vein
-    pr: 아임 스틸 프레잉 온 어 부처스 베인
+    pr: 아임 스틸 프레잉 온 어 부처즈 베인
     tl: 난 여전히 도살자의 본능으로 잡아먹어
     time: [38.155, 41.041]
   - text: To truss you up in pretty patterns
-    pr: 투 트러스 유 업 인 프리티 패턴스
+    pr: 투 트러스 유 업 인 프리티 패턴즈
     tl: 너를 예쁜 모양으로 묶어 두고
     time: [45.703, 47.823]
   - text: Oh, to dress your flesh up with the works
@@ -95,7 +95,7 @@ lines:
     tl: 네 얼굴에 공포를 새겨 둘 완벽한 일격!
     time: [68.558, 71.363]
   - text: The slaughter's mine, oh, blood and viscera divine
-    pr: 더 슬로터스 마인, 오, 블럿 앤드 비서러 디바인
+    pr: 더 슬로터즈 마인, 오, 블럿 앤드 비서러 디바인
     tl: 도살은 내 몫, 성스러운 피와 내장
     time: [72.14, 75.476]
   - text: Preserved and primed, each muscle divvied up to dine
@@ -123,7 +123,7 @@ lines:
     tl: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해
     time: [92.169, 95.627]
   - text: I'm still preying on a butcher's vein
-    pr: 아임 스틸 프레잉 온 어 부처스 베인
+    pr: 아임 스틸 프레잉 온 어 부처즈 베인
     tl: 난 여전히 도살자의 본능으로 잡아먹어
     time: [95.627, 98.518]
   - text: To snap the sinew, I want to get within you, I want
@@ -139,7 +139,7 @@ lines:
     tl: 하지만 그대, 내가 좋은 식사를 낭비하지 않는 걸 고마워해야지
     time: [105.948, 109.348]
   - text: That all my love's precision carves a cut to simply die for
-    pr: 댓 올 마이 럽스 프리시전 캅스 어 컷 투 심플리 다이 포
+    pr: 댓 올 마이 럽즈 프리시전 캅즈 어 컷 투 심플리 다이 포
     tl: 내 사랑의 정교함으로 죽을 만큼 탐나는 한 점을 도려내는 걸
     time: [109.348, 113.225]
     background:
@@ -163,7 +163,7 @@ lines:
     tl: 맙소사, 포크와 나이프 따위 집어치워, 손과 이로 찢어 한 입 베어 물겠어!
     time: [123.055, 127.137]
   - text: The slaughter's on, I'd love to see you come undone
-    pr: 더 슬로터스 온, 아잇 럽 투 시 유 컴 언던
+    pr: 더 슬로터즈 온, 아잇 럽 투 시 유 컴 언던
     tl: 도살이 시작돼, 네가 무너져 내리는 걸 보고 싶어
     time: [131.32, 134.555]
   - text: Unsatisfied until I've got you flayed alive
@@ -175,11 +175,11 @@ lines:
     tl: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해
     time: [137.851, 141.269]
   - text: I'm still preying on a butcher's vein
-    pr: 아임 스틸 프레잉 온 어 부처스 베인
+    pr: 아임 스틸 프레잉 온 어 부처즈 베인
     tl: 난 여전히 도살자의 본능으로 잡아먹어
     time: [141.269, 144.643]
   - text: And now the slaughter's mine, my darling, get under the knife
-    pr: 앤드 나우 더 슬로터스 마인, 마이 달링, 겟 언더 더 나입
+    pr: 앤드 나우 더 슬로터즈 마인, 마이 달링, 겟 언더 더 나입
     tl: 이제 도살은 내 몫, 내 사랑, 칼 아래로 와
     time: [144.643, 148.141]
   - text: Your broken pride, a cut so perfect in its prime
@@ -207,7 +207,7 @@ lines:
     tl: 그러니 접시를 들고 맛을 봐, 이 맛에 난 취해
     time: [164.881, 168.303]
   - text: I'm still preying on a butcher's vein
-    pr: 아임 스틸 프레잉 온 어 부처스 베인
+    pr: 아임 스틸 프레잉 온 어 부처즈 베인
     tl: 난 여전히 도살자의 본능으로 잡아먹어
     time: [168.303, 172.004]
   - text: Still praying, hopeless and in vain
