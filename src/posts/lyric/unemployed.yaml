@@ -205,7 +205,7 @@ lines:
         pr: 아이
         time: [36.663, 37.026]
       - text: admit
-        pr: 앳밋
+        pr: 어드밋
         time: [37.026, 37.885]
     tl: 인정해
     time: [36.663, 37.885]
@@ -854,7 +854,7 @@ lines:
         pr: 마이
         time: [161.816, 161.91]
       - text: "future's "
-        pr: 퓨처스
+        pr: 퓨처즈
         time: [161.91, 162.271]
       - text: 'gone, '
         pr: 곤,
@@ -932,7 +932,7 @@ lines:
         pr: 마이
         time: [166.783, 166.938]
       - text: assets
-        pr: 에세츠
+        pr: 애세츠
         time: [166.938, 167.463]
     tl: 가진 걸 전부 잃어 가고 있어
     time: [166.166, 167.463]
@@ -1622,7 +1622,7 @@ lines:
       time: [231.485, 233.481]
   - words:
       - text: 'Forever '
-        pr: 포에버
+        pr: 포레버
         time: [232.575, 233.098]
       - text: 'chilling '
         pr: 칠링
@@ -1703,7 +1703,7 @@ lines:
       time: [238.538, 241.33]
   - words:
       - text: 'Forever '
-        pr: 포에버
+        pr: 포레버
         time: [241.33, 241.743]
       - text: 'chilling '
         pr: 칠링

@@ -39,7 +39,7 @@ lines:
     tl: 한 일주일쯤 운동했어
     time: [20.225, 22.039]
   - text: Takes time to keep this sexy physique
-    pr: 테익스 타임 투 킵 디스 섹시 피지크
+    pr: 테익스 타임 투 킵 디스 섹시 피직
     tl: 이 섹시한 몸매를 유지하려면 시간이 들지
     time: [22.039, 24.104]
   - text: Throw me the ball
@@ -63,7 +63,7 @@ lines:
     tl: 날 위한 맥주를 든 데프 매직
     time: [29.421, 31.322]
   - text: It's definitively magic in the waves we play
-    pr: 이츠 디피니틀리 매직 인 더 웨이브즈 위 플레이
+    pr: 이츠 디피너티블리 매직 인 더 웨이브즈 위 플레이
     tl: 우리가 노니는 파도 속, 그건 분명 마법이야
     time: [31.322, 33.157]
     duet: true

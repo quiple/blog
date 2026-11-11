@@ -199,7 +199,7 @@ lines:
         pr: 페인
         time: [25.446, 25.717]
       - text: 'forever? '
-        pr: 포에버?
+        pr: 포레버?
         time: [25.717, 26.548]
       - text: 'I '
         pr: 아이
@@ -858,7 +858,7 @@ lines:
         pr: 페인
         time: [121.368, 121.643]
       - text: 'forever? '
-        pr: 포에버?
+        pr: 포레버?
         time: [121.643, 122.472]
       - text: 'I '
         pr: 아이
