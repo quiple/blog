@@ -27,7 +27,7 @@ lines:
     tl: 안녕하세요, 무엇을 도와드릴까요?
     time: [0.92, 2.3]
   - text: Thanks for checking in, I'm not doing well
-    pr: 땡크스 포 체킹 인, 아임 낫 두잉 웰
+    pr: 생크스 포 체킹 인, 아임 낫 두잉 웰
     tl: 물어봐 줘서 고마워, 난 잘 못 지내
     time: [12.8, 14.95]
   - text: I'm the new face of management, it's basically hell
@@ -111,7 +111,7 @@ lines:
     tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
     time: [66.82, 69.62]
   - text: Thanks for checking in, the shit hit the shit
-    pr: 땡크스 포 체킹 인, 더 싯 힛 더 싯
+    pr: 생크스 포 체킹 인, 더 싯 힛 더 싯
     tl: 물어봐 줘서 고마워, 상황은 개판 위에 개판이야
     time: [80.12, 82.23]
   - text: A lot of money is missing from during my shift
