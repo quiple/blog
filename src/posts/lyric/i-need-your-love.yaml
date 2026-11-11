@@ -38,7 +38,7 @@ lines:
     tl: 하지만 내 삶은 끝나지 않았어, 아직 더 남았어
     time: [10.646, 13.187]
   - text: I showed you a view from the south to the north
-    pr: 아이 쇼드 유 어 뷰 프럼 더 사우스 투 더 노스
+    pr: 아이 숏 유 어 뷰 프럼 더 사우스 투 더 노스
     tl: 남쪽부터 북쪽까지의 풍경을 보여 줬지
     time: [13.197, 15.836]
   - text: I think we've covered everything eh!
@@ -104,7 +104,7 @@ lines:
     tl: 오, 안 돼, 안 돼! 그래도
     time: [55.04, 57.191]
   - text: Take my hand and fade away
-    pr: 테익 마이 핸드 앤드 페이드 어웨이
+    pr: 테익 마이 핸드 앤드 페잇 어웨이
     tl: 내 손을 잡고 함께 사라져 가
     time: [57.289, 61.002]
   - text: For every single smile
@@ -112,7 +112,7 @@ lines:
     tl: 미소 하나하나마다
     time: [58.897, 61.008]
   - text: I need your love
-    pr: 아이 니드 유어 럽
+    pr: 아이 닛 유어 럽
     tl: 네 사랑이 필요해
     time: [61.113, 63.527]
   - text: For every little tear
@@ -160,7 +160,7 @@ lines:
     tl: 언제나 내 곁에 간직할게
     time: [94.92, 97.158]
   - text: Even pretty pictures fade away
-    pr: 이븐 프리티 픽처즈 페이드 어웨이
+    pr: 이븐 프리티 픽처즈 페잇 어웨이
     tl: 아름다운 사진도 빛바래지만
     time: [97.28, 99.915]
   - text: "'Cause it's all because of you"
@@ -208,7 +208,7 @@ lines:
     tl: 미소 하나하나마다
     time: [118.427, 120.517]
   - text: I need your love
-    pr: 아이 니드 유어 럽
+    pr: 아이 닛 유어 럽
     tl: 네 사랑이 필요해
     time: [120.527, 123.273]
   - text: For every little tear
@@ -236,7 +236,7 @@ lines:
     tl: 미소 하나하나마다
     time: [137.958, 140.186]
   - text: I need your love
-    pr: 아이 니드 유어 럽
+    pr: 아이 닛 유어 럽
     tl: 네 사랑이 필요해
     time: [140.279, 142.729]
   - text: For every little tear
@@ -287,7 +287,7 @@ lines:
     tl: 어디에 있든
     time: [177.66, 179.886]
   - text: I need your love
-    pr: 아이 니드 유어 럽
+    pr: 아이 닛 유어 럽
     tl: 네 사랑이 필요해
     time: [179.896, 182.315]
   - text: 海を越えて
@@ -309,6 +309,6 @@ lines:
     tl: 미소 하나하나마다
     time: [197.489, 199.55]
   - text: I need your love
-    pr: 아이 니드 유어 럽
+    pr: 아이 닛 유어 럽
     tl: 네 사랑이 필요해
     time: [199.566, 202.208]

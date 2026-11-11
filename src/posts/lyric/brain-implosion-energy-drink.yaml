@@ -92,7 +92,7 @@ lines:
     time: [10.981, 12.847]
   - words:
       - text: 'Crave '
-        pr: 크레이브
+        pr: 크레입
         time: [12.892, 13.101]
       - text: 'zero '
         pr: 지로
@@ -146,7 +146,7 @@ lines:
         pr: 아이
         time: [19.545, 19.816]
       - text: 'love '
-        pr: 러브
+        pr: 럽
         time: [19.816, 20.067]
       - text: 'my '
         pr: 마이
@@ -352,7 +352,7 @@ lines:
         pr: 윌
         time: [43.871, 44.001]
       - text: 'approve '
-        pr: 어프루브
+        pr: 어프룹
         time: [44.001, 44.229]
       - text: this
         pr: 디스
@@ -751,7 +751,7 @@ lines:
     time: [106.896, 108.774]
   - words:
       - text: 'Crave '
-        pr: 크레이브
+        pr: 크레입
         time: [108.813, 109.086]
       - text: 'zero '
         pr: 지로
@@ -805,7 +805,7 @@ lines:
         pr: 아이
         time: [115.444, 115.717]
       - text: 'love '
-        pr: 러브
+        pr: 럽
         time: [115.717, 115.993]
       - text: 'my '
         pr: 마이

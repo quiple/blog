@@ -20,28 +20,28 @@ yt:
   mv: NxXIm8IbeVk
 lines:
   - text: own ticktack own ticktack
-    pr: 오운 틱택 오운 틱택
+    pr: 온 틱택 온 틱택
     time: [1.125, 3.333]
   - text: 🔔own🔔
-    pr: 🔔오운🔔
+    pr: 🔔온🔔
     time: [3.333, 4.167]
   - text: own ticktack own ticktack
-    pr: 오운 틱택 오운 틱택
+    pr: 온 틱택 온 틱택
     time: [4.167, 6.375]
   - text: 🔔own🔔
-    pr: 🔔오운🔔
+    pr: 🔔온🔔
     time: [6.375, 7.25]
   - text: own ticktack own ticktack
-    pr: 오운 틱택 오운 틱택
+    pr: 온 틱택 온 틱택
     time: [7.25, 9.458]
   - text: 🔔own🔔
-    pr: 🔔오운🔔
+    pr: 🔔온🔔
     time: [9.458, 10.333]
   - text: own ticktack own ticktack
-    pr: 오운 틱택 오운 틱택
+    pr: 온 틱택 온 틱택
     time: [10.333, 12.542]
   - text: 🔔own🔔
-    pr: 🔔오운🔔
+    pr: 🔔온🔔
     time: [12.542, 13.333]
   - text: 目覚ましのスヌーズのスクショが溜まっている
     pr: 메자마시노스누즈노스쿠쇼가타맛테이루
@@ -116,7 +116,7 @@ lines:
     time: [56.542, 57.792]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [57.792, 58.083]
   - text: わがままでいたい
     pr: 와가마마데이타이
@@ -124,7 +124,7 @@ lines:
     time: [58.083, 59.292]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [59.292, 59.792]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
@@ -141,7 +141,7 @@ lines:
     time: [62.917, 63.958]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [63.958, 64.292]
   - text: 壊れてくブレイン
     pr: 코와레테쿠부레인
@@ -149,7 +149,7 @@ lines:
     time: [64.292, 65.458]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [65.458, 65.875]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
@@ -162,16 +162,16 @@ lines:
     pr: 타임 이즈 마인
     time: [67.375, 69]
   - text: own ticktack own ticktack
-    pr: 오운 틱택 오운 틱택
+    pr: 온 틱택 온 틱택
     time: [69.042, 71.25]
   - text: 🔔own🔔
-    pr: 🔔오운🔔
+    pr: 🔔온🔔
     time: [71.25, 72.083]
   - text: own ticktack own ticktack
-    pr: 오운 틱택 오운 틱택
+    pr: 온 틱택 온 틱택
     time: [72.083, 74.292]
   - text: 🔔own🔔
-    pr: 🔔오운🔔
+    pr: 🔔온🔔
     time: [74.292, 75.125]
   - text: 俺があーだこーだ言ってる間もアイツは成長中
     pr: 오레가아다코다잇테루마모아이츠와세초추
@@ -226,7 +226,7 @@ lines:
     time: [106, 107.25]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [107.25, 107.542]
   - text: わがままでいたい
     pr: 와가마마데이타이
@@ -234,7 +234,7 @@ lines:
     time: [107.542, 108.75]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [108.75, 109.25]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
@@ -251,7 +251,7 @@ lines:
     time: [112.375, 113.417]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [113.417, 113.75]
   - text: 衰えてくブレイン
     pr: 오토로에테쿠부레인
@@ -259,7 +259,7 @@ lines:
     time: [113.75, 114.917]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [114.917, 115.333]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
@@ -315,7 +315,7 @@ lines:
     time: [146.292, 147.542]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [147.542, 147.833]
   - text: わがままでいたい
     pr: 와가마마데이타이
@@ -323,7 +323,7 @@ lines:
     time: [147.833, 149.042]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [149.042, 149.542]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
@@ -340,7 +340,7 @@ lines:
     time: [152.667, 153.708]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [153.708, 154.042]
   - text: 壊れてくブレイン
     pr: 코와레테쿠부레인
@@ -348,7 +348,7 @@ lines:
     time: [154.042, 155.208]
     background:
       text: (own)
-      pr: (오운)
+      pr: (온)
       time: [155.208, 155.625]
   - text: タイムイズマネー
     pr: 타임 이즈 머니
@@ -365,26 +365,26 @@ lines:
     tl: 누구한테도 지시받지 않아
     time: [158.708, 160.167]
   - text: own ticktack own ticktack
-    pr: 오운 틱택 오운 틱택
+    pr: 온 틱택 온 틱택
     time: [160.542, 162.75]
   - text: 🔔own🔔
-    pr: 🔔오운🔔
+    pr: 🔔온🔔
     time: [162.75, 163.583]
   - text: own ticktack own ticktack
-    pr: 오운 틱택 오운 틱택
+    pr: 온 틱택 온 틱택
     time: [163.583, 165.792]
   - text: 🔔own🔔
-    pr: 🔔오운🔔
+    pr: 🔔온🔔
     time: [165.792, 166.625]
   - text: own ticktack own ticktack
-    pr: 오운 틱택 오운 틱택
+    pr: 온 틱택 온 틱택
     time: [166.708, 168.917]
   - text: 🔔own🔔
-    pr: 🔔오운🔔
+    pr: 🔔온🔔
     time: [168.917, 169.75]
   - text: own ticktack own ticktack
-    pr: 오운 틱택 오운 틱택
+    pr: 온 틱택 온 틱택
     time: [169.75, 171.958]
   - text: 🔔own🔔
-    pr: 🔔오운🔔
+    pr: 🔔온🔔
     time: [171.958, 172.875]

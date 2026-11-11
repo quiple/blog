@@ -139,7 +139,7 @@ lines:
     tl: 집에 가고 싶어 죽겠는데 시계를 보니
     time: [95.53, 98.18]
   - text: Made me cry so hard that I need a mop
-    pr: 메이드 미 크라이 소 하드 댓 아이 니드 어 맙
+    pr: 메잇 미 크라이 소 하드 댓 아이 닛 어 맙
     tl: 대걸레가 필요할 만큼 울었어
     time: [98.18, 101.27]
   - text: Please look away
@@ -147,7 +147,7 @@ lines:
     tl: 다른 데를 봐 주세요
     time: [101.27, 103.35]
   - text: I need a second to reset, today I don't get a break
-    pr: 아이 니드 어 세컨드 투 리셋, 투데이 아이 돈트 겟 어 브레이크
+    pr: 아이 닛 어 세컨드 투 리셋, 투데이 아이 돈트 겟 어 브레익
     tl: 마음을 추스를 시간이 필요해요, 오늘은 쉴 틈도 없어요
     time: [103.35, 106.49]
   - text: Please let me go
@@ -155,7 +155,7 @@ lines:
     tl: 제발 보내 주세요
     time: [106.49, 108.63]
   - text: I'm out of sick days, so I can't afford to break another bone
-    pr: 아임 아웃 옵 식 데이즈, 소 아이 캔트 어포드 투 브레이크 어나더 본
+    pr: 아임 아웃 옵 식 데이즈, 소 아이 캔트 어포드 투 브레익 어나더 본
     tl: 병가를 다 써서 뼈가 또 부러질 여유도 없어요
     time: [108.63, 112.97]
   - text: Smile, baby, smile for the corporation
@@ -195,7 +195,7 @@ lines:
     tl: 이것보다 나은 게 있을 거야, 이것보다 나은 게 있을 거야
     time: [133.98, 137.11]
   - text: I'm reaching my limit, red-hot fever like a sickness
-    pr: 아임 리칭 마이 리밋, 레드 핫 피버 라익 어 시크니스
+    pr: 아임 리칭 마이 리밋, 렛 핫 피버 라익 어 시크니스
     tl: 한계에 다다랐어, 병처럼 시뻘건 열기
     time: [139.61, 144.28]
   - text: At the maximum, it's pain, and at minimum, it's rage
@@ -203,7 +203,7 @@ lines:
     tl: 최대로 느끼면 고통이고, 최소한으로 느껴도 분노야
     time: [144.28, 150.16]
   - text: I'm reaching my limit, red-hot fever like a sickness
-    pr: 아임 리칭 마이 리밋, 레드 핫 피버 라익 어 시크니스
+    pr: 아임 리칭 마이 리밋, 렛 핫 피버 라익 어 시크니스
     tl: 한계에 다다랐어, 병처럼 시뻘건 열기
     time: [150.16, 154.61]
   - text: At the maximum, it's pain, and at minimum, it's rage

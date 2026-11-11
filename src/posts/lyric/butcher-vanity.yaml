@@ -27,7 +27,7 @@ lines:
     tl: 사람들은 내 허기가 문제라고 해
     time: [1.785, 3.933]
   - text: They tell me to curb my appetite
-    pr: 데이 텔 미 투 컵 마이 애퍼타잇
+    pr: 데이 텔 미 투 커브 마이 애퍼타잇
     tl: 내 식욕을 억누르라고 하지
     time: [4.727, 7.178]
   - text: They say I can't keep myself from trying a bite of every plate in sight
@@ -115,7 +115,7 @@ lines:
     tl: 네 심장, 대동맥이 빚은 예술품
     time: [85.907, 89.144]
   - text: My love, my knife to carve it out, your life
-    pr: 마이 럽, 마이 나입 투 캅 잇 아웃, 유어 라입
+    pr: 마이 럽, 마이 나입 투 카브 잇 아웃, 유어 라입
     tl: 내 사랑, 그걸 도려낼 내 칼, 네 생명
     time: [89.246, 92.169]
   - text: So grab a plate, have a taste, 这口味让我沉醉
@@ -199,7 +199,7 @@ lines:
     tl: 네 심장, 대동맥이 빚은 예술품
     time: [158.603, 161.84]
   - text: My love, my knife to carve it out, your life
-    pr: 마이 럽, 마이 나입 투 캅 잇 아웃, 유어 라입
+    pr: 마이 럽, 마이 나입 투 카브 잇 아웃, 유어 라입
     tl: 내 사랑, 그걸 도려낼 내 칼, 네 생명
     time: [161.923, 164.881]
   - text: So grab a plate, have a taste, 这口味让我沉醉

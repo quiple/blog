@@ -463,7 +463,7 @@ lines:
         pr: 라이클리
         time: [37.497, 37.821]
       - text: 'pushed '
-        pr: 푸싯
+        pr: 푸시트
         time: [37.821, 37.974]
       - text: 'to '
         pr: 투
@@ -769,7 +769,7 @@ lines:
         pr: 댓
         time: [63.189, 63.431]
       - text: 'changed '
-        pr: 체인짓
+        pr: 체인지드
         time: [63.431, 63.656]
       - text: 'to '
         pr: 투
@@ -1198,7 +1198,7 @@ lines:
         pr: 어
         time: [101.201, 101.358]
       - text: made-
-        pr: 메이드
+        pr: 메잇
         time: [101.358, 101.519]
       - text: 'up '
         pr: 업
@@ -1220,7 +1220,7 @@ lines:
           pr: 어
           time: [102.489, 102.653]
         - text: made-
-          pr: 메이드
+          pr: 메잇
           time: [102.653, 102.811]
         - text: 'up '
           pr: 업

@@ -35,7 +35,7 @@ lines:
     tl: 아마존에서 산 새 선글라스
     time: [18.576, 20.225]
   - text: Been working out for about a week
-    pr: 빈 워킹 아웃 포 어바웃 어 위크
+    pr: 빈 워킹 아웃 포 어바웃 어 윅
     tl: 한 일주일쯤 운동했어
     time: [20.225, 22.039]
   - text: Takes time to keep this sexy physique
@@ -73,12 +73,12 @@ lines:
     time: [33.322, 35.072]
     duet: true
   - text: We take it in stride as the moment flies by
-    pr: 위 테익 잇 인 스트라이드 애즈 더 모먼트 플라이즈 바이
+    pr: 위 테익 잇 인 스트라잇 애즈 더 모먼트 플라이즈 바이
     tl: 순간이 흘러가도 우린 여유롭게 받아들여
     time: [35.072, 36.889]
     duet: true
   - text: Shooting the moon, soaring high, red eye
-    pr: 슈팅 더 문, 소어링 하이, 레드 아이
+    pr: 슈팅 더 문, 소어링 하이, 렛 아이
     tl: 달을 노리고 높이 날아올라, 충혈된 눈
     time: [37.028, 38.655]
     duet: true
@@ -88,7 +88,7 @@ lines:
     time: [38.755, 40.604]
     duet: true
   - text: Ocean Grown and so cool
-    pr: 오션 그로운 앤드 소 쿨
+    pr: 오션 그론 앤드 소 쿨
     tl: 바다에서 자라 정말 멋지지
     time: [40.723, 42.407]
     duet: true
@@ -103,7 +103,7 @@ lines:
     time: [44.272, 46.231]
     duet: true
   - text: Break down to the beat
-    pr: 브레익 다운 투 더 비트
+    pr: 브레익 다운 투 더 빗
     tl: 비트에 맞춰 춤을 춰
     time: [46.231, 47.78]
     duet: true
@@ -161,7 +161,7 @@ lines:
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [68.6, 70.884]
   - text: It's just the way I move my body
-    pr: 이츠 저스트 더 웨이 아이 무브 마이 바디
+    pr: 이츠 저스트 더 웨이 아이 뭅 마이 바디
     tl: 그냥 이렇게 몸을 움직이는 거야
     time: [72.266, 75.548]
   - text: Shake it like nobody
@@ -213,15 +213,15 @@ lines:
     tl: 네온색 선글라스에 얌전한 태도
     time: [118.237, 119.885]
   - text: It's the humpty hump when I'm outa my cave
-    pr: 이츠 더 험프티 험프 웬 아임 아우터 마이 케이브
+    pr: 이츠 더 험프티 험프 웬 아임 아우터 마이 케입
     tl: 굴 밖에 나오면 험프티 험프 댄스
     time: [119.885, 121.72]
   - text: The rizz is on, yeah, feel the groove
-    pr: 더 리즈 이즈 온, 예, 필 더 그루브
+    pr: 더 리즈 이즈 온, 예, 필 더 그룹
     tl: 매력을 발산해, 그래, 그루브를 느껴 봐
     time: [121.742, 123.528]
   - text: Like Young MC, I gotta bust a move
-    pr: 라익 영 엠씨, 아이 가터 버스트 어 무브
+    pr: 라익 영 엠시, 아이 가터 버스트 어 뭅
     tl: 영 MC처럼 춤을 춰야지
     time: [123.61, 125.46]
   - text: We definitely Old School
@@ -230,7 +230,7 @@ lines:
     time: [125.56, 127.293]
     duet: true
   - text: Ocean Grown and so cool
-    pr: 오션 그로운 앤드 소 쿨
+    pr: 오션 그론 앤드 소 쿨
     tl: 바다에서 자라 정말 멋지지
     time: [127.476, 129.226]
     duet: true
@@ -245,7 +245,7 @@ lines:
     time: [131.059, 133.061]
     duet: true
   - text: Break down to the beat
-    pr: 브레익 다운 투 더 비트
+    pr: 브레익 다운 투 더 빗
     tl: 비트에 맞춰 춤을 춰
     time: [133.061, 134.495]
     duet: true
@@ -303,7 +303,7 @@ lines:
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [155.402, 157.669]
   - text: It's just the way I move my body
-    pr: 이츠 저스트 더 웨이 아이 무브 마이 바디
+    pr: 이츠 저스트 더 웨이 아이 뭅 마이 바디
     tl: 그냥 이렇게 몸을 움직이는 거야
     time: [159.165, 162.267]
   - text: Shake it like nobody
@@ -336,11 +336,11 @@ lines:
     tl: 오늘 밤 춤을 춰
     time: [182.872, 184.722]
   - text: Groove tonight
-    pr: 그루브 투나잇
+    pr: 그룹 투나잇
     tl: 오늘 밤 리듬을 타
     time: [184.738, 186.474]
   - text: Feel the vibe
-    pr: 필 더 바이브
+    pr: 필 더 바입
     tl: 분위기를 느껴 봐
     time: [186.59, 189.855]
   - text: I'm feeling the moment
@@ -352,7 +352,7 @@ lines:
     tl: 오늘 밤 춤을 춰
     time: [190.279, 192.032]
   - text: Groove tonight
-    pr: 그루브 투나잇
+    pr: 그룹 투나잇
     tl: 오늘 밤 리듬을 타
     time: [192.131, 193.863]
   - text: I gotta wear my headphones
@@ -368,7 +368,7 @@ lines:
     tl: 난 여름을 맞을 준비를 하고 있어
     time: [199.747, 201.944]
   - text: It's just the way I move my body
-    pr: 이츠 저스트 더 웨이 아이 무브 마이 바디
+    pr: 이츠 저스트 더 웨이 아이 뭅 마이 바디
     tl: 그냥 이렇게 몸을 움직이는 거야
     time: [203.427, 206.49]
   - text: Shake it like nobody

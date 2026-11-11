@@ -29,11 +29,11 @@ lines:
     tl: 오늘은 과두제 오믈렛을 드셔 보세요
     time: [2.515, 4.335]
   - text: Or perhaps you're in the mood for CEO Soufflé
-    pr: 오어 퍼햅스 유어 인 더 무드 포 씨이오 수플레
+    pr: 오어 퍼햅스 유어 인 더 뭇 포 시이오 수플레
     tl: 아니면 CEO 수플레가 당기시나요
     time: [4.465, 6.543]
   - text: No need for cash or credit
-    pr: 노 니드 포 캐시 오어 크레딧
+    pr: 노 닛 포 캐시 오어 크레딧
     tl: 현금도 카드도 필요 없어요
     time: [6.694, 7.672]
   - text: It's time for corporations to pay
@@ -97,7 +97,7 @@ lines:
     tl: 폭군 티라미수는
     time: [31.763, 33.121]
   - text: For when you're blue about the state of the nation
-    pr: 포 웬 유어 블루 어바웃 더 스테이트 옵 더 네이션
+    pr: 포 웬 유어 블루 어바웃 더 스테잇 옵 더 네이션
     tl: 나라 꼴에 우울해질 때 드세요
     time: [33.255, 35.929]
   - text: Union-Bustin' Bloomin' Onion
@@ -105,7 +105,7 @@ lines:
     tl: 노조 탄압 블루밍 어니언
     time: [36.234, 38.072]
   - text: Labor laws are gonna be gutted
-    pr: 레이버 로즈 아 거너 비 거티드
+    pr: 레이버 로즈 아 거너 비 거팃
     tl: 노동법은 껍데기만 남게 될 거야
     time: [38.332, 40.107]
   - text: While the rich line their pockets
@@ -113,7 +113,7 @@ lines:
     tl: 부자들이 제 주머니를 불리는 동안
     time: [40.143, 41.991]
   - text: To ride on dick-shaped rockets
-    pr: 투 라이드 온 딕 셰이프트 라킷츠
+    pr: 투 라잇 온 딕 셰입트 라킷츠
     tl: 좆 모양 로켓을 타려고 말이야
     time: [42.125, 44.104]
   - text: All we wanted was healthcare
@@ -205,11 +205,11 @@ lines:
     tl: 부패 크렘 브륄레도 있어요
     time: [95.97, 97.816]
   - text: "'Cause they're all bought and paid for in D.C."
-    pr: 코즈 데어 올 봇 앤드 페이드 포 인 디씨
+    pr: 코즈 데어 올 봇 앤드 페잇 포 인 디시
     tl: 워싱턴 D.C.의 그들은 죄다 돈에 팔린 자들이니까
     time: [97.969, 100.409]
   - text: Voter Suppression Vanilla Shake
-    pr: 보터 서프레션 버닐러 셰이크
+    pr: 보터 서프레션 버닐러 셰익
     tl: 투표권 억압 바닐라 셰이크
     time: [100.669, 102.509]
   - text: "'Cause they don't represent you or me"
@@ -221,7 +221,7 @@ lines:
     tl: 암호화폐 사기 버거에
     time: [105.105, 106.671]
   - text: With a side of Fascism Fries
-    pr: 윗 어 사이드 옵 패시즘 프라이즈
+    pr: 윗 어 사잇 옵 패시즘 프라이즈
     tl: 곁들여 나오는 파시즘 프라이
     time: [106.671, 108.518]
   - text: Democracy disappears
@@ -241,15 +241,15 @@ lines:
     tl: 중산층을 무덤에 넣고 싶어 하는 그놈 말이야
     time: [115.182, 116.909]
   - text: Slicing programs that people need faster than Vergil
-    pr: 슬라이싱 프로그램즈 댓 피플 니드 패스터 댄 버질
+    pr: 슬라이싱 프로그램즈 댓 피플 닛 패스터 댄 버질
     tl: 사람들에게 필요한 제도를 버질보다 빠르게 베어 버려
     time: [116.909, 119.47]
   - text: Medicaid, Social Security are roadkill
-    pr: 메디케이드, 소셜 시큐리티 아 로드킬
+    pr: 메디케잇, 소셜 시큐리티 아 로드킬
     tl: 메디케이드와 사회보장은 로드킬 신세
     time: [119.47, 121.794]
   - text: Devil may cry "woke" to deflect
-    pr: 데빌 메이 크라이 "워크" 투 디플렉트
+    pr: 데빌 메이 크라이 "웍" 투 디플렉트
     tl: 악마는 '정치적 올바름'을 들먹이며 시선을 돌리려 해
     time: [121.794, 123.226]
   - text: From a shadow president that we didn't elect
@@ -265,7 +265,7 @@ lines:
     tl: 부자들은 구워질 거야
     time: [126.666, 127.696]
   - text: Now we 'bout to put the king in checkmate
-    pr: 나우 위 바웃 투 풋 더 킹 인 체크메이트
+    pr: 나우 위 바웃 투 풋 더 킹 인 체크메잇
     tl: 이제 우린 왕을 체크메이트할 거야
     time: [128.057, 129.907]
   - text: Eat the rich

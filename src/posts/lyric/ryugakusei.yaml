@@ -23,7 +23,7 @@ offsets:
 pubDate: 2026-09-17T19:17
 lines:
   - text: You're out a sight
-    pr: 유어 아웃 어 사이트
+    pr: 유어 아웃 어 사잇
     tl: 넌 정말 멋져
     time: [31.37, 33.335]
     background:
@@ -65,7 +65,7 @@ lines:
       text: (冗談通じない)
       tl: (농담이 안 통해)
   - text: All I know is that I love you, babe
-    pr: 올 아이 노 이즈 댓 아이 러브 유, 베이브
+    pr: 올 아이 노 이즈 댓 아이 럽 유, 베입
     tl: 내가 아는 건 널 사랑한다는 것뿐이야, 자기야
     time: [48.146, 51.247]
   - text: 不安な日々送る 捨て猫のように
@@ -73,7 +73,7 @@ lines:
     time: [51.691, 54.879]
     duet: true
   - text: I never forget you, never, babe
-    pr: 아이 네버 퍼겟 유, 네버, 베이브
+    pr: 아이 네버 퍼겟 유, 네버, 베입
     tl: 널 절대 잊지 않아, 절대로, 자기야
     time: [55.913, 58.882]
   - text: 人見知り いつもしてんな もったいない
@@ -88,7 +88,7 @@ lines:
       text: (留学生)
       tl: (유학생)
   - text: Hey, I need you here, babe
-    pr: 헤이, 아이 니드 유 히어, 베이브
+    pr: 헤이, 아이 닛 유 히어, 베입
     tl: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [65.625, 67.166]
     background:
@@ -109,14 +109,14 @@ lines:
       text: (留学生)
       tl: (유학생)
   - text: Hey, I need you here, babe
-    pr: 헤이, 아이 니드 유 히어, 베이브
+    pr: 헤이, 아이 닛 유 히어, 베입
     tl: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [73.626, 75.256]
     background:
       text: (部屋20平米)
       tl: (방은 20제곱미터)
   - text: I messed up, should've known last time I met ya!
-    pr: 아이 메스트 업, 슈더브 노운 라스트 타임 아이 멧 야!
+    pr: 아이 메스트 업, 슈덥 논 라스트 타임 아이 멧 야!
     tl: 내가 망쳤어, 지난번 널 만났을 때 알았어야 했는데!
     time: [75.942, 78.918]
     background:
@@ -173,7 +173,7 @@ lines:
     time: [109.17, 111.966]
     duet: true
   - text: All I know is that I love you, babe
-    pr: 올 아이 노 이즈 댓 아이 러브 유, 베이브
+    pr: 올 아이 노 이즈 댓 아이 럽 유, 베입
     tl: 내가 아는 건 널 사랑한다는 것뿐이야, 자기야
     time: [112.208, 115.006]
   - text: いいんや ひとりでもやったるがな
@@ -181,7 +181,7 @@ lines:
     time: [115.662, 118.799]
     duet: true
   - text: I never forget you, never, babe
-    pr: 아이 네버 퍼겟 유, 네버, 베이브
+    pr: 아이 네버 퍼겟 유, 네버, 베입
     tl: 널 절대 잊지 않아, 절대로, 자기야
     time: [119.9, 122.837]
   - text: でもやっぱ不安だもん 気まじぃな 辛ぇ
@@ -196,7 +196,7 @@ lines:
       text: (留学生)
       tl: (유학생)
   - text: Hey, I need you here, babe
-    pr: 헤이, 아이 니드 유 히어, 베이브
+    pr: 헤이, 아이 닛 유 히어, 베입
     tl: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [129.635, 131.117]
     background:
@@ -217,14 +217,14 @@ lines:
       text: (留学生)
       tl: (유학생)
   - text: Hey, I need you here, babe
-    pr: 헤이, 아이 니드 유 히어, 베이브
+    pr: 헤이, 아이 닛 유 히어, 베입
     tl: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [137.651, 139.171]
     background:
       text: (部屋20平米)
       tl: (방은 20제곱미터)
   - text: I messed up, should've known last time I met ya!
-    pr: 아이 메스트 업, 슈더브 노운 라스트 타임 아이 멧 야!
+    pr: 아이 메스트 업, 슈덥 논 라스트 타임 아이 멧 야!
     tl: 내가 망쳤어, 지난번 널 만났을 때 알았어야 했는데!
     time: [139.897, 143.228]
     background:
@@ -268,7 +268,7 @@ lines:
       text: (留学生)
       tl: (유학생)
   - text: Hey, I need you here, babe
-    pr: 헤이, 아이 니드 유 히어, 베이브
+    pr: 헤이, 아이 닛 유 히어, 베입
     tl: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [177.67, 179.086]
     background:
@@ -289,14 +289,14 @@ lines:
       text: (留学生)
       tl: (유학생)
   - text: Hey, I need you here, babe
-    pr: 헤이, 아이 니드 유 히어, 베이브
+    pr: 헤이, 아이 닛 유 히어, 베입
     tl: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [185.622, 187.04]
     background:
       text: (部屋20平米)
       tl: (방은 20제곱미터)
   - text: I messed up, should've known last time I met ya!
-    pr: 아이 메스트 업, 슈더브 노운 라스트 타임 아이 멧 야!
+    pr: 아이 메스트 업, 슈덥 논 라스트 타임 아이 멧 야!
     tl: 내가 망쳤어, 지난번 널 만났을 때 알았어야 했는데!
     time: [187.89, 190.926]
     background:
@@ -310,7 +310,7 @@ lines:
       text: (留学生)
       tl: (유학생)
   - text: Hey, I need you here, babe
-    pr: 헤이, 아이 니드 유 히어, 베이브
+    pr: 헤이, 아이 닛 유 히어, 베입
     tl: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [193.633, 195.062]
     background:
@@ -331,14 +331,14 @@ lines:
       text: (留学生)
       tl: (유학생)
   - text: Hey, I need you here, babe
-    pr: 헤이, 아이 니드 유 히어, 베이브
+    pr: 헤이, 아이 닛 유 히어, 베입
     tl: 있잖아, 네가 여기 있어 줘야 해, 자기야
     time: [201.634, 203.026]
     background:
       text: (部屋20平米)
       tl: (방은 20제곱미터)
   - text: I messed up, should've known last time I met ya!
-    pr: 아이 메스트 업, 슈더브 노운 라스트 타임 아이 멧 야!
+    pr: 아이 메스트 업, 슈덥 논 라스트 타임 아이 멧 야!
     tl: 내가 망쳤어, 지난번 널 만났을 때 알았어야 했는데!
     time: [203.874, 206.969]
     background:

@@ -25,7 +25,7 @@ lines:
     tl: 그래, 맞아, 내가 완벽하다는 건 알아
     time: [7.611, 10.318]
   - text: No need for reflection
-    pr: 노 니드 포 리플렉션
+    pr: 노 닛 포 리플렉션
     tl: 돌아볼 필요도 없어
     time: [10.34, 12.228]
   - text: I'm happy and I ain't going back
@@ -57,7 +57,7 @@ lines:
     tl: 자, 자, 이러다 내가 자제력을 잃겠어
     time: [32.194, 36.164]
   - text: Oh, baby, baby, don't make me beg for more
-    pr: 오, 베이비, 베이비, 돈트 메익 미 베그 포 모어
+    pr: 오, 베이비, 베이비, 돈트 메익 미 벡 포 모어
     tl: 오, 베이비, 베이비, 더 달라고 애원하게 하지 마
     time: [36.454, 42.062]
   - text: I've been bitten by you
@@ -85,7 +85,7 @@ lines:
     tl: 내 비밀이야, 혼자 있고 싶어
     time: [80.109, 83.533]
   - text: Shop! I guess I can Vogue it up now
-    pr: 숍! 아이 게스 아이 캔 보그 잇 업 나우
+    pr: 숍! 아이 게스 아이 캔 복 잇 업 나우
     tl: 쇼핑! 이제 보그처럼 멋을 부려도 되겠네
     time: [83.543, 85.755]
   - text: Ever seen a Dark Lord Athleisure down
@@ -93,7 +93,7 @@ lines:
     tl: 어둠의 군주가 애슬레저 차림인 걸 본 적 있어?
     time: [85.765, 87.774]
   - text: All day sleep in, all night fun
-    pr: 올 데이 슬립 인, 올 나이트 펀
+    pr: 올 데이 슬립 인, 올 나잇 펀
     tl: 온종일 늦잠, 밤새 즐겨
     time: [87.784, 89.853]
   - text: Can I get a coffin
@@ -149,7 +149,7 @@ lines:
     tl: 자, 자, 이제 조금 더 줘
     time: [111.51, 115.519]
   - text: Now, baby, baby, don't make me beg for more
-    pr: 나우, 베이비, 베이비, 돈트 메익 미 베그 포 모어
+    pr: 나우, 베이비, 베이비, 돈트 메익 미 벡 포 모어
     tl: 자, 베이비, 베이비, 더 달라고 애원하게 하지 마
     time: [115.667, 120.7]
   - text: I've been bitten by you
