@@ -23,17 +23,19 @@ const afterNavigationCallbacks = new Set<NavigationCallback>()
 const transitionFinishedCallbacks = new Set<() => void>()
 let navigationHookRegistered = false
 
-function shouldUseViewTransitions(navigation: OnNavigate) {
-  if (!document.startViewTransition) return false
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false
-  if (navigation.type === 'popstate' && /iPhone|iPad|iPod/.test(navigator.userAgent)) return false
-  if (
+function isReturningToPostList(navigation: OnNavigate) {
+  return (
     navigation.type === 'popstate' &&
     navigation.delta < 0 &&
     navigation.from?.route.id === '/[category]/[slug]' &&
     ['/', '/[category]', '/search'].includes(navigation.to?.route.id ?? '')
   )
-    return false
+}
+
+function shouldUseViewTransitions(navigation: OnNavigate) {
+  if (!document.startViewTransition) return false
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false
+  if (navigation.type === 'popstate' && /iPhone|iPad|iPod/.test(navigator.userAgent)) return false
 
   const navigatorInfo = navigator as Navigator & {deviceMemory?: number; hardwareConcurrency?: number}
 
@@ -71,21 +73,37 @@ function registerNavigationHook() {
   if (!browser || navigationHookRegistered) return
 
   navigationHookRegistered = true
+  let fadeTransition: ViewTransition | undefined
 
   onNavigate((navigation) => {
     if (navigation.shallow) return
     if (!shouldUseViewTransitions(navigation)) return
 
+    const fadeOnly = isReturningToPostList(navigation)
+    const root = document.documentElement
+    root.classList.toggle('view-transition-fade-only', fadeOnly)
+
     return new Promise<void>((resolve) => {
-      dispatch(beforeTransitionCallbacks, navigation)
+      if (!fadeOnly) dispatch(beforeTransitionCallbacks, navigation)
 
       const viewTransition = document.startViewTransition!(async () => {
         resolve()
         await navigation.complete
-        dispatch(afterNavigationCallbacks, navigation)
+        if (!fadeOnly) dispatch(afterNavigationCallbacks, navigation)
       })
 
-      viewTransition.finished.then(finishTransition, finishTransition)
+      fadeTransition = fadeOnly ? viewTransition : undefined
+
+      if (fadeOnly) {
+        const clearFade = () => {
+          if (fadeTransition !== viewTransition) return
+          fadeTransition = undefined
+          root.classList.remove('view-transition-fade-only')
+        }
+        viewTransition.ready.then(clearFade, clearFade)
+      } else {
+        viewTransition.finished.then(finishTransition, finishTransition)
+      }
     })
   })
 }
