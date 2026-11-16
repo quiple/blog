@@ -357,6 +357,11 @@
   }
 }
 
+/* Capture only the root to use the browser's default crossfade. */
+:root.view-transition-fade-only * {
+  view-transition-name: none !important;
+}
+
 ::view-transition-group(header) {
   z-index: 20;
 }
