@@ -27,6 +27,13 @@ function shouldUseViewTransitions(navigation: OnNavigate) {
   if (!document.startViewTransition) return false
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return false
   if (navigation.type === 'popstate' && /iPhone|iPad|iPod/.test(navigator.userAgent)) return false
+  if (
+    navigation.type === 'popstate' &&
+    navigation.delta < 0 &&
+    navigation.from?.route.id === '/[category]/[slug]' &&
+    ['/', '/[category]', '/search'].includes(navigation.to?.route.id ?? '')
+  )
+    return false
 
   const navigatorInfo = navigator as Navigator & {deviceMemory?: number; hardwareConcurrency?: number}
 
